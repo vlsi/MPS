@@ -17,6 +17,7 @@ package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
@@ -36,6 +37,6 @@ public class TypecheckerStateView extends BaseProjectTool {
 
   public void initComponent() {
     super.initComponent();
-    myComponent = new TypecheckerStateViewComponent(ProjectOperationContext.get(getProject()));
+    myComponent = new TypecheckerStateViewComponent(ProjectOperationContext.get(ProjectHelper.toMPSProject(getProject())));
   }
 }

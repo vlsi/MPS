@@ -16,8 +16,8 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
@@ -25,6 +25,7 @@ import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -186,9 +187,9 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   private boolean showPropertiesAndReferences() {
-    Project project = getOperationContext().getIdeaProject();
+    Project project = getOperationContext().getProject();
     return getTree() instanceof LogicalViewTree &&
-      ProjectPane.getInstance(project).isShowPropertiesAndReferences();
+      ProjectPane.getInstance(ProjectHelper.toIdeaProject(project)).isShowPropertiesAndReferences();
   }
 
   public void doubleClick() {

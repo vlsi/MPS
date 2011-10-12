@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopup;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.IModule;
@@ -191,7 +192,7 @@ public class ShowImplementationComponent extends JPanel {
       IOperationContext operationContext = myEditor.getEditor().getOperationContext();
       final SNode selectedNode = myItemToNode.get((String) myNodeChooser.getSelectedItem());
       operationContext.getComponent(MPSEditorOpener.class).editNode(selectedNode, operationContext);
-      ProjectPane.getInstance(operationContext.getIdeaProject()).selectNode(selectedNode, false);
+      ProjectPane.getInstance(ProjectHelper.toIdeaProject(operationContext.getProject())).selectNode(selectedNode, false);
       if (myClosePopup) {
         myPopup.cancel();
       }

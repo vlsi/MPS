@@ -22,11 +22,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
-  public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
+  public static ProjectModuleTreeNode createFor(Project project, IModule module) {
     return createFor(project, module, false);
   }
 
-  public static ProjectModuleTreeNode createFor(MPSProject project, IModule module, boolean shortNameOnly) {
+  public static ProjectModuleTreeNode createFor(Project project, IModule module, boolean shortNameOnly) {
     if (module instanceof Language) {
       return new ProjectLanguageTreeNode((Language) module, project, shortNameOnly);
     } else if (module instanceof Solution || module instanceof ProjectStructureModule) {

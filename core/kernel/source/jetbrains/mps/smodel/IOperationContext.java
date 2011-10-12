@@ -23,10 +23,6 @@ public interface IOperationContext {
 
   Project getProject();
 
-  // TODO get rid of
-  @Deprecated
-  com.intellij.openapi.project.Project getIdeaProject();
-
   IModule getModule();
 
   @NotNull

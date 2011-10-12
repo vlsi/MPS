@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import javax.swing.Icon;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 
 public class VariableDeclaration_BehaviorDescriptor extends BaseVariableDeclaration_BehaviorDescriptor implements HasAnnotation_BehaviorDescriptor, TypeDerivable_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor {
   public VariableDeclaration_BehaviorDescriptor() {

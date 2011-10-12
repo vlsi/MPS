@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SReference;
@@ -45,7 +44,7 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
         SNode node = SModelOperations.getRootByName(model, "MyVeryGoodConcept1");
         SNode link = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "linkDeclaration", true)).first();
         linkName[0] = SPropertyOperations.getString(link, "role");
-        refactoringContext.setSelectedProject(project.getComponent(MPSProject.class).getProject());
+        refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(link);
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setDoesGenerateModels(false);

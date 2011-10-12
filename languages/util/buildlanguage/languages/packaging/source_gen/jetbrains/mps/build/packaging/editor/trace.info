@@ -3134,61 +3134,61 @@
     <unitInfo nodeId="1206440283018" fileName="IncludeExcludeInInspector.java" startLine="16" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector" />
   </root>
   <root nodeId="1209469283133">
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="18" startPosition="26" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="19" startPosition="42" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="20" startPosition="34" endLine="21" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="21" startPosition="55" endLine="22" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="26" startPosition="36" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="30" startPosition="40" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="34" startPosition="91" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="36" startPosition="34" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="38" startPosition="7" endLine="39" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="40" startPosition="32" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="43" startPosition="94" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="45" startPosition="7" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="49" startPosition="85" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="50" startPosition="62" endLine="51" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1211529688554" fileName="Module_KeyMap.java" startLine="54" startPosition="146" endLine="55" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7360913708305787120" fileName="Module_KeyMap.java" startLine="55" startPosition="79" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7360913708305789089" fileName="Module_KeyMap.java" startLine="56" startPosition="0" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1211529709717" fileName="Module_KeyMap.java" startLine="57" startPosition="58" endLine="58" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="61" startPosition="34" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="20" startPosition="34" endLine="22" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="25" startPosition="76" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Module_KeyMap_Action0#()V" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="35" startPosition="62" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="39" startPosition="49" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="42" startPosition="7" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="42" startPosition="7" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="17" startPosition="53" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Module_KeyMap#()V" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="53" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="33" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="26" startPosition="36" endLine="27" endPosition="38" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="30" startPosition="40" endLine="31" endPosition="19" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="36" startPosition="34" endLine="37" endPosition="21" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="40" startPosition="32" endLine="41" endPosition="21" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="43" startPosition="94" endLine="44" endPosition="20" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="61" startPosition="34" endLine="62" endPosition="22" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="20" startPosition="34" endLine="22" endPosition="43" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="49" startPosition="85" endLine="51" endPosition="115" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="25" startPosition="76" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="18" startPosition="26" endLine="22" endPosition="43" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="42" startPosition="7" endLine="46" endPosition="19" />
-    <scopeInfo nodeId="1209469313530" fileName="Module_KeyMap.java" startLine="54" startPosition="146" endLine="58" endPosition="111">
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="19" startPosition="26" endLine="20" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="20" startPosition="42" endLine="21" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="21" startPosition="34" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="22" startPosition="55" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="27" startPosition="36" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="31" startPosition="40" endLine="32" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="35" startPosition="91" endLine="36" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="37" startPosition="34" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="39" startPosition="7" endLine="40" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="41" startPosition="32" endLine="42" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="44" startPosition="94" endLine="45" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="46" startPosition="7" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="50" startPosition="85" endLine="51" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="51" startPosition="62" endLine="52" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1211529688554" fileName="Module_KeyMap.java" startLine="55" startPosition="146" endLine="56" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7360913708305787120" fileName="Module_KeyMap.java" startLine="56" startPosition="79" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7360913708305789089" fileName="Module_KeyMap.java" startLine="57" startPosition="0" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1211529709717" fileName="Module_KeyMap.java" startLine="58" startPosition="54" endLine="59" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="62" startPosition="34" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="21" startPosition="34" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="26" startPosition="76" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Module_KeyMap_Action0#()V" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="36" startPosition="62" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="40" startPosition="49" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="43" startPosition="7" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="43" startPosition="7" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="18" startPosition="53" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Module_KeyMap#()V" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="34" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="27" startPosition="36" endLine="28" endPosition="38" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="31" startPosition="40" endLine="32" endPosition="19" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="37" startPosition="34" endLine="38" endPosition="21" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="41" startPosition="32" endLine="42" endPosition="21" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="44" startPosition="94" endLine="45" endPosition="20" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="62" startPosition="34" endLine="63" endPosition="22" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="21" startPosition="34" endLine="23" endPosition="43" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="50" startPosition="85" endLine="52" endPosition="115" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="26" startPosition="76" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="19" startPosition="26" endLine="23" endPosition="43" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="43" startPosition="7" endLine="47" endPosition="19" />
+    <scopeInfo nodeId="1209469313530" fileName="Module_KeyMap.java" startLine="55" startPosition="146" endLine="59" endPosition="140">
       <varInfo nodeId="7360913708305789090" varName="project" />
       <varInfo nodeId="1211529688555" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="17" startPosition="53" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="53" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="34" startPosition="91" endLine="46" endPosition="19" />
-    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="33" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="25" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_KeyMap$Module_KeyMap_Action0" />
-    <unitInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_KeyMap" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="18" startPosition="53" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="35" startPosition="91" endLine="47" endPosition="19" />
+    <scopeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="34" startPosition="0" endLine="49" endPosition="0" />
+    <unitInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="26" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_KeyMap$Module_KeyMap_Action0" />
+    <unitInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_KeyMap" />
   </root>
   <root nodeId="1210777580376">
     <nodeInfo nodeId="1210777580376" fileName="Antcall_Editor.java" startLine="99" startPosition="69" endLine="99" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

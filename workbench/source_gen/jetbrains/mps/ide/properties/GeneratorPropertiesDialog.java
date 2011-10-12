@@ -4,7 +4,7 @@ package jetbrains.mps.ide.properties;
 
 import jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog;
 import jetbrains.mps.smodel.Generator;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ModuleContext;
 import javax.swing.JPanel;
 import java.util.List;

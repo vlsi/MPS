@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.ide.modelchecker;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.generator.ModelValidator;
 import jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;

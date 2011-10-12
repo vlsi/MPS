@@ -28,7 +28,7 @@ import java.util.Collections;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -124,7 +124,7 @@ public class ReplaceDialog extends BaseDialog {
     final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value.getModelDescriptor());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getIdeaProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+        ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
       }
     });
     this.myEditor.disposeEditor();

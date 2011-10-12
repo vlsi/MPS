@@ -46,11 +46,6 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     return myProject.getComponent(MPSProject.class);
   }
 
-  @Deprecated
-  public com.intellij.openapi.project.Project getIdeaProject() {
-    return myProject;
-  }
-
   @NotNull
   public IScope getScope() {
     return getProject().getScope();

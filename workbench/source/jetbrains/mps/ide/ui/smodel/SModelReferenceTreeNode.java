@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.ui.LayeredIcon;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -32,7 +33,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
 
   public SModelReferenceTreeNode(SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super(operationContext);
-    myProject = operationContext.getIdeaProject();
+    myProject = operationContext.getProject();
     myModelDescriptor = modelDescriptor;
     String name = modelDescriptor.getLongName();
     if (modelDescriptor.getStereotype().length() > 0) {
@@ -48,7 +49,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
   public void doubleClick() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ProjectPane projectPane = ProjectPane.getInstance(myProject);
+        ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(myProject));
         projectPane.selectModel(myModelDescriptor, false);
       }
     });

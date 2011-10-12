@@ -28,6 +28,7 @@ import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.pluginparts.tool.IComponentDisposer;
 
 public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
@@ -175,7 +176,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
 
     if (errors != 0) {
       String dialogMessage = "Model checker found " + errors + " errors and " + warnings + " warnings. Would you like to review them?";
-      int dialogAnswer = Messages.showDialog(operationContext.getIdeaProject(), dialogMessage, "Model Checking", new String[]{"Review", "Commit", "Cancel"}, 0, null);
+      int dialogAnswer = Messages.showDialog(ProjectHelper.toIdeaProject(operationContext.getProject()), dialogMessage, "Model Checking", new String[]{"Review", "Commit", "Cancel"}, 0, null);
       if (dialogAnswer == 0) {
         // review errors and warnings, don't commit 
         ModelCheckerTool_Tool.this.showTabWithResults(viewer);

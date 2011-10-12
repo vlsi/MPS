@@ -5,6 +5,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTree" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
@@ -61,15 +62,15 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.paramchooser.BaseChooser" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.refactorings.Rename" file="Rename.java">
-    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
+    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.JFrame" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.lang.core.refactorings.Rename_Target" />
     <classNode dependClassName="jetbrains.mps.lang.core.refactorings.Rename_newName_Settings" />
     <classNode dependClassName="jetbrains.mps.lang.core.scripts.RenameUtil" />

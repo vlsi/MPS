@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.refactoring.RefactoringViewAction;
@@ -48,7 +48,7 @@ public class InlineMethodDialogModel {
 
   private void findUssages() {
     if (this.myForAll) {
-      ProgressManager.getInstance().run(new Task.Modal(InlineMethodDialogModel.this.myOperationContext.getIdeaProject(), "Searching for ussages", true) {
+      ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(InlineMethodDialogModel.this.myOperationContext.getProject()), "Searching for ussages", true) {
         public void run(@NotNull final ProgressIndicator indiactor) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -145,6 +145,6 @@ public class InlineMethodDialogModel {
         InlineMethodDialogModel.this.doRefactoring();
       }
     };
-    this.myOperationContext.getComponent(RefactoringView.class).showRefactoringView(myOperationContext.getIdeaProject(), refactoringViewAction, this.myResults, false);
+    this.myOperationContext.getComponent(RefactoringView.class).showRefactoringView(ProjectHelper.toIdeaProject(myOperationContext.getProject()), refactoringViewAction, this.myResults, false);
   }
 }

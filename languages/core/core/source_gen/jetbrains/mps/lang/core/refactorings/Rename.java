@@ -8,8 +8,8 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.core.scripts.RenameUtil;
-import javax.swing.JFrame;
-import com.intellij.openapi.wm.WindowManager;
+import java.awt.Frame;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JOptionPane;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -45,7 +45,7 @@ public class Rename extends BaseRefactoring {
       }
     });
     if (!(result.value)) {
-      JFrame frame = WindowManager.getInstance().getFrame(refactoringContext.getSelectedProject());
+      Frame frame = ProjectHelper.toMainFrame(refactoringContext.getSelectedProject());
       JOptionPane.showMessageDialog(frame, "Nodes with getter for the \"name\" property can't be renamed", "Node can't be renamed", JOptionPane.INFORMATION_MESSAGE);
       return false;
     }

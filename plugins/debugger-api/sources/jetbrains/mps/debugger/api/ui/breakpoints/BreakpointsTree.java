@@ -31,7 +31,7 @@ class BreakpointsTree extends AbstractBreakpointsTree {
   }
 
   private void loadState() {
-    TreeState treeState = BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).getTreeState();
+    TreeState treeState = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getTreeState();
     if (treeState != null) {
       myTree.loadState(treeState);
     } else {
@@ -42,7 +42,7 @@ class BreakpointsTree extends AbstractBreakpointsTree {
   @Override
   public void saveState() {
     super.saveState();
-    BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).setTreeState(myTree.saveState());
+    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setTreeState(myTree.saveState());
   }
 
   @Override
@@ -53,17 +53,17 @@ class BreakpointsTree extends AbstractBreakpointsTree {
   // todo: refactor
   public void toggleModuleGroup(boolean value) {
     myModuleKind.setVisible(value);
-    BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).setGroupByModule(value);
+    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setGroupByModule(value);
   }
 
   public void toggleRootGroup(boolean value) {
     myRootKind.setVisible(value);
-    BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).setGroupByRoot(value);
+    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setGroupByRoot(value);
   }
 
   public void toggleModelGroup(boolean value) {
     myModelKind.setVisible(value);
-    BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).setGroupByModel(value);
+    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setGroupByModel(value);
   }
 
   public boolean isModuleGroupVisible() {

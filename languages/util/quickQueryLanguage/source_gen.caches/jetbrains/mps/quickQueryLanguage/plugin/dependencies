@@ -26,18 +26,17 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesContext" file="FindInstancesContext.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.project.StandaloneMPSContext" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog" file="FindInstancesDialog.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.lang.Class" />
@@ -70,6 +69,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.QueryExecutor" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.QueryFinder" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
@@ -119,7 +119,6 @@
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog" file="ReplaceDialog.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.lang.Class" />
@@ -148,6 +147,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.QueryExecutor" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />

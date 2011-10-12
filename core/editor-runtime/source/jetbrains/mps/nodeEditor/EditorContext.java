@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -94,9 +94,9 @@ public class EditorContext {
   }
 
   public final Frame getMainFrame() {
-    Project project = getOperationContext().getIdeaProject();
+    Project project = getOperationContext().getProject();
     if (project == null) return null;
-    return WindowManager.getInstance().getFrame(project);
+    return ProjectHelper.toMainFrame(project);
   }
 
   public void resetModelEvents() {

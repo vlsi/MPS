@@ -17,6 +17,7 @@ package jetbrains.mps.ide.generator;
 
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
@@ -40,7 +41,7 @@ import java.util.List;
  */
 public class OutputViewGenerationHandler extends TextGenerationHandler {
   public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ProgressMonitor progressMonitor) {
-    final OutputViewTool viewTool = OutputViewTool.getOutputViewTool(context.getIdeaProject());
+    final OutputViewTool viewTool = OutputViewTool.getOutputViewTool(ProjectHelper.toIdeaProject(context.getProject()));
     viewTool.clear();
 
     SModel outputModel = status.getOutputModel();

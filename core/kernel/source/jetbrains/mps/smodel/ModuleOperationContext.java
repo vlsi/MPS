@@ -43,11 +43,6 @@ public class ModuleOperationContext extends StandaloneMPSContext {
     return null;
   }
 
-  @Deprecated
-  public com.intellij.openapi.project.Project getIdeaProject() {
-    return null;
-  }
-
   public IModule getModule() {
     return MPSModuleRepository.getInstance().getModule(myModuleReference);
   }

@@ -58,10 +58,6 @@ public class ModuleContext extends StandaloneMPSContext {
     return myProject.getComponent(MPSProject.class);
   }
 
-  public com.intellij.openapi.project.Project getIdeaProject() {
-    return myProject;
-  }
-
   public IModule getModule() {
     return MPSModuleRepository.getInstance().getModule(myModuleReference);
   }

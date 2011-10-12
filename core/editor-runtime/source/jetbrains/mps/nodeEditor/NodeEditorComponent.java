@@ -20,6 +20,7 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
@@ -61,7 +62,7 @@ public class NodeEditorComponent extends EditorComponent {
         }
         if (!isShowing()) return;
 
-        ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(operationContext.getIdeaProject());
+        ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(ProjectHelper.toIdeaProject(operationContext.getProject()));
         toolWindowManager.getFocusManager().requestFocus(NodeEditorComponent.this,false);
         
         adjustInspector();
@@ -141,7 +142,7 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public InspectorTool getInspectorTool() {
-    if (getOperationContext().getIdeaProject().isDisposed()) return null;
+    if (getOperationContext().getProject().isDisposed()) return null;
     return getOperationContext().getComponent(InspectorTool.class);
   }
 

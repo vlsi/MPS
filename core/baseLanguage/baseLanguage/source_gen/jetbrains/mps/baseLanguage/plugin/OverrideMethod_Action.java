@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -74,7 +74,7 @@ public class OverrideMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getIdeaProject();
+      Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
       Frame frame = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getMainFrame();
       new StratergyAddMethodDialog(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), frame, new AddClassMethodStrategy(((SNode) MapSequence.fromMap(_params).get("selectedNode"))), new MethodsToOverrideStrategy(), new OverrideClassMethodStrategy(project)).showDialog();
     } catch (Throwable t) {

@@ -16,7 +16,6 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelLoadingState;
 
@@ -43,7 +42,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
         SModel model = structureModelDescriptor.getSModel();
         SNode concept = SModelOperations.getRootByName(model, "MyVeryGoodConcept1");
         refactoringContext.setSelectedNode(concept);
-        refactoringContext.setSelectedProject(project.getComponent(MPSProject.class).getProject());
+        refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter("newName", newConceptName);
       }

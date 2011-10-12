@@ -52,7 +52,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface");
       }
     });
-    this.myIndexWasNotReady = !(ClassifierSuccessorsFinder.isIndexReady(editorContext.getOperationContext().getIdeaProject()));
+    this.myIndexWasNotReady = !(ClassifierSuccessorsFinder.isIndexReady(editorContext.getOperationContext().getProject()));
     if (Sequence.fromIterable(classifiers).isEmpty() || this.myIndexWasNotReady) {
       return Collections.<EditorMessage>emptySet();
     }

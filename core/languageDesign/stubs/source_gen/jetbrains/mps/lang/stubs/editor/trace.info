@@ -244,7 +244,7 @@
     <nodeInfo nodeId="4293145514664643841" fileName="StubSolutionCreateHelper.java" startLine="50" startPosition="71" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4293145514664643848" fileName="StubSolutionCreateHelper.java" startLine="51" startPosition="56" endLine="52" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4293145514664643853" fileName="StubSolutionCreateHelper.java" startLine="54" startPosition="7" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4293145514664643854" fileName="StubSolutionCreateHelper.java" startLine="55" startPosition="0" endLine="56" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4293145514664643854" fileName="StubSolutionCreateHelper.java" startLine="55" startPosition="0" endLine="56" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1910096640874368520" fileName="StubSolutionCreateHelper.java" startLine="20" startPosition="39" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubSolutionCreateHelper#()V" />
     <nodeInfo nodeId="4293145514664530024" fileName="StubSolutionCreateHelper.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAvailableStubSolutions#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="4293145514664537358" fileName="StubSolutionCreateHelper.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCurrentLanguage#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/Language;" />
@@ -269,7 +269,7 @@
       <varInfo nodeId="4293145514664537361" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4293145514664643833" fileName="StubSolutionCreateHelper.java" startLine="48" startPosition="57" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="4293145514664643775" fileName="StubSolutionCreateHelper.java" startLine="34" startPosition="83" endLine="56" endPosition="36">
+    <scopeInfo nodeId="4293145514664643775" fileName="StubSolutionCreateHelper.java" startLine="34" startPosition="83" endLine="56" endPosition="61">
       <varInfo nodeId="4293145514664643792" varName="stubSolution" />
       <varInfo nodeId="4293145514664643783" varName="solutionName" />
       <varInfo nodeId="4293145514664643777" varName="language" />

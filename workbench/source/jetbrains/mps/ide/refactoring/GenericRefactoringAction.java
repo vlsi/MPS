@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.keymap.KeymapManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
@@ -74,7 +75,7 @@ public class GenericRefactoringAction extends BaseAction {
     context.setSelectedModules(getModules(e, isOneTarget));
 
     //noinspection ConstantConditions
-    context.setSelectedProject(e.getData(MPSDataKeys.PROJECT));
+    context.setSelectedProject(ProjectHelper.toMPSProject(e.getData(MPSDataKeys.PROJECT)));
     context.setCurrentScope(e.getData(MPSDataKeys.SCOPE));
 
     new Thread() {

@@ -186,7 +186,6 @@
   <dependency className="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent" file="LanguageHierarchiesComponent.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="java.awt.BasicStroke" />
     <classNode dependClassName="java.awt.BorderLayout" />
@@ -226,6 +225,7 @@
     <classNode dependClassName="javax.swing.SwingConstants" />
     <classNode dependClassName="javax.swing.border.LineBorder" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.icons.Icons" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPaneActionGroups" />
     <classNode dependClassName="jetbrains.mps.ide.util.ColorAndGraphicsUtil" />
@@ -238,6 +238,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />

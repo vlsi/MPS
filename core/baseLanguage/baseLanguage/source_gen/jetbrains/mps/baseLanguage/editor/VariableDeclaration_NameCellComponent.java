@@ -24,7 +24,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.NameUtil;
@@ -86,7 +86,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
         List<String> names = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
-        Project project = operationContext.getIdeaProject();
+        Project project = operationContext.getProject();
         for (String name : names) {
           String prefix = VariableDeclaration_Behavior.call_getPrefix_3012473318495495520(node, project);
           String suffix = VariableDeclaration_Behavior.call_getSuffix_3012473318495499856(node, project);

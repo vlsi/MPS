@@ -16,6 +16,7 @@ import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -66,7 +67,7 @@ public class AnnotationHelper {
       return false;
     }
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
-    final Project project = editorComponent.getOperationContext().getIdeaProject();
+    final Project project = ProjectHelper.toIdeaProject(editorComponent.getOperationContext().getProject());
     final AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
     if (vcs == null) {
       return false;

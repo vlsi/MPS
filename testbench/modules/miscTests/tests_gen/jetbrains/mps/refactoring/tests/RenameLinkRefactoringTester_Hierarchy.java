@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelLoadingState;
 
@@ -42,7 +41,7 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
         SModel model = structureModelDescriptor.getSModel();
         SNode node = SModelOperations.getRootByName(model, "AbstractGoodConcept");
         SNode link = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "linkDeclaration", true)).first();
-        refactoringContext.setSelectedProject(project.getComponent(MPSProject.class).getProject());
+        refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(link);
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter("newName", newLinkName);

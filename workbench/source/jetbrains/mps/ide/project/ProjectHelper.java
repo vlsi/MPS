@@ -36,6 +36,14 @@ public class ProjectHelper {
   }
 
   @Nullable
+  public static Project toMPSProject(com.intellij.openapi.project.Project p) {
+    if (p != null) {
+      return p.getComponent(MPSProject.class);
+    }
+    return null;
+  }
+
+  @Nullable
   public static Frame toMainFrame(Project p) {
     if (p instanceof MPSProject) {
       com.intellij.openapi.project.Project project = ((MPSProject) p).getProject();

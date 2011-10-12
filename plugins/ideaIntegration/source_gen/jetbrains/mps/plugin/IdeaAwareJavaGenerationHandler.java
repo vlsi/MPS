@@ -13,7 +13,8 @@ import java.io.IOException;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.MPSCore;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
   public IdeaAwareJavaGenerationHandler() {
@@ -32,7 +33,7 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
       boolean[] ideaIsFresh = new boolean[]{false};
       writeFiles(monitor.subTask(1));
       monitor.advance(0);
-      IProjectHandler projectHandler = getProjectHandler(operationContext.getIdeaProject());
+      IProjectHandler projectHandler = getProjectHandler(operationContext.getProject());
       if (generationOK) {
         long compilationStart = System.currentTimeMillis();
         boolean needToReload = false;
@@ -130,6 +131,6 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
     if (MPSCore.getInstance().isTestMode()) {
       return null;
     }
-    return MPSPlugin.getInstance().getProjectHandler(p);
+    return MPSPlugin.getInstance().getProjectHandler(ProjectHelper.toIdeaProject(p));
   }
 }

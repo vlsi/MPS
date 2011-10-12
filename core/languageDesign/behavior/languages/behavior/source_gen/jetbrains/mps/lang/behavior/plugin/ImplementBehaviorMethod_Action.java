@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
@@ -74,7 +74,7 @@ public class ImplementBehaviorMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getIdeaProject();
+      Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
       Frame frame = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getMainFrame();
       new StratergyAddMethodDialog(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), frame, new AddConceptMethodStrategy(((SNode) MapSequence.fromMap(_params).get("selectedNode"))), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
 

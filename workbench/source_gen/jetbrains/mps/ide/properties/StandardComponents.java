@@ -430,7 +430,7 @@ public class StandardComponents {
         final JList jlist = result_wf5hwp_a0a0a81.getList();
         final BaseValidatedAction result_wf5hwp_a3a0a0a81 = new ListAddAction(jlist) {
           protected int doAdd(AnActionEvent e) {
-            TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getIdeaProject(), null);
+            TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getProject(), null);
             dialog.showDialog();
             BaseTestConfiguration config = dialog.getResult();
             if (config == null) {
@@ -457,7 +457,7 @@ public class StandardComponents {
             if (value == null) {
               return;
             }
-            TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getIdeaProject(), (BaseTestConfiguration) value);
+            TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getProject(), (BaseTestConfiguration) value);
             dialog.showDialog();
             BaseTestConfiguration config = dialog.getResult();
             if (config == null) {

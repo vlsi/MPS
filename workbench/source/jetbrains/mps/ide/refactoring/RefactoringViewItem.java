@@ -24,6 +24,7 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -53,7 +54,7 @@ public abstract class RefactoringViewItem {
 
   public RefactoringViewItem(@NotNull RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
     myRefactoringContext = refactoringContext;
-    init(refactoringViewAction, searchResults, hasModelsToGenerate, refactoringContext.getSelectedProject());
+    init(refactoringViewAction, searchResults, hasModelsToGenerate, ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()));
   }
 
   public RefactoringViewItem(Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {

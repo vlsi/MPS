@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ThreadUtils;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.util.Disposer;
 
 public class LanguagePropertiesDialog extends BasePropertiesDialog {
@@ -58,8 +59,8 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
     }, getOperationContext().getProject());
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        Project project = LanguagePropertiesDialog.this.getOperationContext().getIdeaProject();
-        ProjectPane.getInstance(project).selectModule(myLanguage, false);
+        Project project = LanguagePropertiesDialog.this.getOperationContext().getProject();
+        ProjectPane.getInstance(ProjectHelper.toIdeaProject(project)).selectModule(myLanguage, false);
       }
     });
     return true;

@@ -25,7 +25,7 @@ public abstract class AbstractEvaluationDialog extends BaseDialog {
 
     myProvider = provider;
     final DebugSession debugSession = provider.getDebugSession();
-    myEvaluationPanel = new EvaluationPanel(context.getIdeaProject(), debugSession, model, false);
+    myEvaluationPanel = new EvaluationPanel(ProjectHelper.toIdeaProject(context.getProject()), debugSession, model, false);
     myEvaluationPanel.setErrorTextListener(new EvaluationUi.IErrorTextListener() {
       public void updateErrorText(String text) {
         setErrorText(text);

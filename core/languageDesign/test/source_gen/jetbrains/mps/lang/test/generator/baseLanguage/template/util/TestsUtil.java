@@ -5,6 +5,7 @@ package jetbrains.mps.lang.test.generator.baseLanguage.template.util;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SNode;
@@ -20,7 +21,7 @@ public class TestsUtil {
     if (projectPath != null) {
       return projectPath;
     }
-    String url = operationContext.getIdeaProject().getPresentableUrl();
+    String url = ProjectHelper.toIdeaProject(operationContext.getProject()).getPresentableUrl();
     if (url != null) {
       return MacrosFactory.mpsHomeMacros().shrinkPath(url, (IFile) null);
     }

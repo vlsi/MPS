@@ -27,6 +27,7 @@ import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -54,7 +55,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   private IOperationContext myContext;
 
   public MPSFileNodeEditor(IOperationContext context, final MPSNodeVirtualFile file) {
-    this(context.getIdeaProject(), file, context);
+    this(ProjectHelper.toIdeaProject(context.getProject()), file, context);
   }
 
   public MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file) {

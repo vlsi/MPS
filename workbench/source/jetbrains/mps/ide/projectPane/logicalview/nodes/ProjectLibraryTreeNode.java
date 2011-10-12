@@ -21,8 +21,8 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SModelsSubtree;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -33,7 +33,7 @@ public class ProjectLibraryTreeNode extends ProjectModuleTreeNode {
 
   private boolean myInitialized;
 
-  protected ProjectLibraryTreeNode(AbstractModule library, MPSProject project, boolean shortNameOnly) {
+  protected ProjectLibraryTreeNode(AbstractModule library, Project project, boolean shortNameOnly) {
     super(new ModuleContext(library, project));
     myShortNameOnly = shortNameOnly;
     myLibrary = library;

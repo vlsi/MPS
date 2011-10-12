@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DependencyRecorder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -188,7 +188,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
     }
 
     public void run() {
-      if (myProject.getDisposed().value(null)) return;
+      if (myProject.isDisposed()) return;
 
       final Set<SNode> addedRoots = new LinkedHashSet<SNode>();
       final Set<SNode> removedRoots = new LinkedHashSet<SNode>();

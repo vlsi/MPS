@@ -67,7 +67,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.properties.ModuleProperties" />
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.GeneratorPropertiesDialog" file="GeneratorPropertiesDialog.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -76,6 +75,7 @@
     <classNode dependClassName="jetbrains.mps.ide.properties.GeneratorProperties" />
     <classNode dependClassName="jetbrains.mps.ide.properties.StandardComponents" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
@@ -98,7 +98,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.LanguagePropertiesDialog" file="LanguagePropertiesDialog.java">
     <classNode dependClassName="com.intellij.openapi.Disposable" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -107,10 +106,12 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.properties.LanguageProperties" />
     <classNode dependClassName="jetbrains.mps.ide.properties.ModuleProperties" />
     <classNode dependClassName="jetbrains.mps.ide.properties.StandardComponents" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -161,15 +162,15 @@
     <classNode extendsClassName="jetbrains.mps.ide.properties.NodeData" />
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.ModelProperties" file="ModelProperties.java">
-    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
+    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="javax.swing.JFrame" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MissingDependenciesFixer" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.project.DevKit" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />

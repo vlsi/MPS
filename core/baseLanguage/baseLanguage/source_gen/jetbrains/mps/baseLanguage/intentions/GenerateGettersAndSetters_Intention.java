@@ -10,7 +10,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
@@ -60,7 +60,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       return false;
     }
     boolean allGettersImplemented = true;
-    Project project = editorContext.getOperationContext().getIdeaProject();
+    Project project = editorContext.getOperationContext().getProject();
     for (SNode fieldDeclaration : fields) {
       boolean hasCurrentFieldGetter = false;
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(fieldDeclaration, project);
@@ -102,9 +102,9 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode lastAdded = null;
-    Project ideaProject = editorContext.getOperationContext().getIdeaProject();
+    Project project = editorContext.getOperationContext().getProject();
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
-      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, ideaProject);
+      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
       final Wrappers._boolean getterIsAbsent = new Wrappers._boolean(true);
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
@@ -120,7 +120,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
       lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a6a3a7().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
 
-      final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, ideaProject);
+      final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
       final Wrappers._boolean setterIsAbsent = new Wrappers._boolean(true);
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode method) {
@@ -132,7 +132,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       if (!(setterIsAbsent.value)) {
         continue;
       }
-      String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, ideaProject);
+      String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, project);
       lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a31a3a7().createNode(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
     }
     if (lastAdded != null) {

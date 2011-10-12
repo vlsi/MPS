@@ -21,8 +21,8 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SModelsSubtree;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -30,7 +30,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 public class GeneratorTreeNode extends jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode implements StereotypeProvider {
   private boolean myInitialized;
 
-  public GeneratorTreeNode(Generator generator, MPSProject project) {
+  public GeneratorTreeNode(Generator generator, Project project) {
     super(new ModuleContext(generator, project));
     setNodeIdentifier(calculateNodeIdenifier());
     setIcon(Icons.GENERATOR_ICON);

@@ -18,8 +18,8 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.DumbService;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
@@ -96,7 +96,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   private GenerationStatus generationRequired(ProjectModuleTreeNode node) {
     IModule module = node.getModule();
     for (SModelDescriptor md : module.getOwnModelDescriptors()) {
-      boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md, ProjectOperationContext.get(node.getOperationContext().getIdeaProject()));
+      boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md, ProjectOperationContext.get(node.getOperationContext().getProject()));
       if (required) return GenerationStatus.REQUIRED;
     }
 
@@ -108,8 +108,8 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     if (isPackaged(node)) return GenerationStatus.PACKAGED;
     if (isDoNotGenerate(node)) return GenerationStatus.DO_NOT_GENERATE;
 
-    Project project = node.getOperationContext().getIdeaProject();
-    if (DumbService.getInstance(project).isDumb()) return GenerationStatus.UPDATING;
+    jetbrains.mps.project.Project project = node.getOperationContext().getProject();
+    if (DumbService.getInstance(ProjectHelper.toIdeaProject(project)).isDumb()) return GenerationStatus.UPDATING;
 
     boolean required = ModelGenerationStatusManager.getInstance().generationRequired(node.getSModelDescriptor(), ProjectOperationContext.get(project));
     return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;

@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
 
@@ -90,7 +91,7 @@ public class GenericRefactoringAction_Action extends GeneratedAction {
       context.setSelectedModels(GenericRefactoringHelper.getModels(event, isOneTarget));
       context.setSelectedModule(event.getData(MPSDataKeys.MODULE));
       context.setSelectedModules(GenericRefactoringHelper.getModules(event, isOneTarget));
-      context.setSelectedProject(event.getData(PlatformDataKeys.PROJECT));
+      context.setSelectedProject(ProjectHelper.toMPSProject(event.getData(PlatformDataKeys.PROJECT)));
       context.setCurrentScope(event.getData(MPSDataKeys.SCOPE));
       new Thread() {
         public void run() {

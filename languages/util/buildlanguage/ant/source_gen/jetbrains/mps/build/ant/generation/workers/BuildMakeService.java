@@ -24,6 +24,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.script.ScriptBuilder;
@@ -123,7 +124,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
         super.setup(pool);
         Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         if (vars != null) {
-          vars._0(msess.getContext().getIdeaProject());
+          vars._0(ProjectHelper.toIdeaProject(msess.getContext().getProject()));
           vars._1(msess.getContext());
           vars._2(true);
           vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
@@ -169,7 +170,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
       IScriptController ctl = BuildMakeService.this.completeController(makeSession, controller);
 
-      MakeTask task = new MakeTask(makeSession.getContext().getIdeaProject(), taskName, scripts, taskName, clustRes, ctl, makeSession.getMessageHandler(), PerformInBackgroundOption.DEAF);
+      MakeTask task = new MakeTask(ProjectHelper.toIdeaProject(makeSession.getContext().getProject()), taskName, scripts, taskName, clustRes, ctl, makeSession.getMessageHandler(), PerformInBackgroundOption.DEAF);
       ProgressManager.getInstance().run(task);
 
       return task;

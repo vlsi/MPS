@@ -38,6 +38,7 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
@@ -565,10 +566,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myOperationContext == null) {
       LOG.warning("Trying to notify EditorComponent creation with null operation context");
     } else {
-      if (myOperationContext.getIdeaProject() == null) {
+      if (myOperationContext.getProject() == null) {
         return;
       }
-      EditorComponentCreateListener listener = myOperationContext.getIdeaProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+      Project ideaProject = ProjectHelper.toIdeaProject(myOperationContext.getProject());
+      if (ideaProject == null) {
+        return;
+      }
+      EditorComponentCreateListener listener = ideaProject.getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
       listener.editorComponentCreated(this);
     }
   }
@@ -578,14 +583,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       LOG.warning("Trying to notify disposal with empty operation context");
       return;
     }
-    if (myOperationContext.getIdeaProject() == null) {
+    if (myOperationContext.getProject() == null) {
       return;
     }
-    if (myOperationContext.getIdeaProject().isDisposed()) {
+    if (myOperationContext.getProject().isDisposed()) {
       LOG.error("Trying to notify disposal of EditorComponent related to disposed project. This may cause memory leaks.");
       return;
     }
-    EditorComponentCreateListener listener = myOperationContext.getIdeaProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+    Project ideaProject = ProjectHelper.toIdeaProject(myOperationContext.getProject());
+    if (ideaProject == null) {
+      return;
+    }
+    EditorComponentCreateListener listener = ideaProject.getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
     listener.editorComponentDisposed(this);
   }
 
@@ -726,7 +735,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         if (!isFocusOwner()) return;
-        if (getOperationContext() == null || getOperationContext().getIdeaProject() == null) return;
+        if (getOperationContext() == null || getOperationContext().getProject() == null) return;
         if (isProjectDisposed()) return;
 
         EditorCell selection = getSelectedCell();
@@ -738,8 +747,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
         }
 
-        Project project = getOperationContext().getIdeaProject();
-        IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(project);
+        jetbrains.mps.project.Project project = getOperationContext().getProject();
+        IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(ProjectHelper.toIdeaProject(project));
         StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
 
         //current info is significant or the editor removes its own message
@@ -2835,7 +2844,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private boolean isProjectDisposed() {
-    return getOperationContext() != null && getOperationContext().getIdeaProject() != null && getOperationContext().getIdeaProject().isDisposed();
+    return getOperationContext() != null && getOperationContext().getProject() != null && getOperationContext().getProject().isDisposed();
   }
 
   private boolean isNodeDisposed() {

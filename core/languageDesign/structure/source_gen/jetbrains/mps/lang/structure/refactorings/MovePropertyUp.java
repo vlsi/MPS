@@ -16,7 +16,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
 import java.util.Map;
 import jetbrains.mps.project.IModule;

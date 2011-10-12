@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.IModule.ModelAdjuster;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -170,7 +170,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     final IModule module = operationContext.getModule();
     assert module != null;
 
-    Project project = getOperationContext().getIdeaProject();
+    Project project = getOperationContext().getProject();
     assert project != null;
 
     for (SModelDescriptor model : module.getOwnModelDescriptors()) {
@@ -208,14 +208,14 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
             }
           });
         }
-      }, project.getComponent(MPSProject.class));
+      }, project);
 
     if (modelDescriptor == null) {
       setErrorText("You can't create a model in the model root that you specified");
       return false;
     }
 
-    final ProjectPane pane = ProjectPane.getInstance(project);
+    final ProjectPane pane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
     assert pane != null;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {

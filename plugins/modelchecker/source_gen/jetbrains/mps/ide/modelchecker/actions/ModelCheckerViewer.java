@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.smodel.SNodePointer;
@@ -125,7 +126,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
           Messages.showInfoMessage("There are no quick fixes for current problems", "No Quick Fixes");
           return;
         }
-        int dialogAnswer = Messages.showYesNoDialog(myOperationContext.getIdeaProject(), "You are going to remove undeclared properties, children from nodes and resolve references. " + "You may not be able to undo it. Are you sure?", "Warning", null);
+        int dialogAnswer = Messages.showYesNoDialog(ProjectHelper.toIdeaProject(myOperationContext.getProject()), "You are going to remove undeclared properties, children from nodes and resolve references. " + "You may not be able to undo it. Are you sure?", "Warning", null);
         if (dialogAnswer != 0) {
           return;
         }
@@ -146,7 +147,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
 
     // Perform recheck if needed 
     if (fixedTotal.value != 0) {
-      int dialogAnswer1 = Messages.showYesNoDialog(myOperationContext.getIdeaProject(), "Model checker fixed " + fixedTotal.value + " issues. Do you wish to recheck?", "Recheck", null);
+      int dialogAnswer1 = Messages.showYesNoDialog(ProjectHelper.toIdeaProject(myOperationContext.getProject()), "Model checker fixed " + fixedTotal.value + " issues. Do you wish to recheck?", "Recheck", null);
       if (dialogAnswer1 != 0) {
         return;
       }

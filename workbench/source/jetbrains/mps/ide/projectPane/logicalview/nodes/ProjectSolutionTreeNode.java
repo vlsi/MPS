@@ -30,7 +30,7 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
 
   private boolean myInitialized;
 
-  protected ProjectSolutionTreeNode(AbstractModule solution, MPSProject project, boolean shortNameOnly) {
+  protected ProjectSolutionTreeNode(AbstractModule solution, Project project, boolean shortNameOnly) {
     super(new ModuleContext(solution, project));
     myShortNameOnly = shortNameOnly;
     mySolution = solution;
