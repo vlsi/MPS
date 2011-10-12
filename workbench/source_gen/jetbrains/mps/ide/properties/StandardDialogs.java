@@ -42,7 +42,7 @@ public class StandardDialogs {
         result_960thj_a2a1a0a0a0.setConstraints(result_960thj_a1a2a1a0a0a0);
         result_960thj_a1a0a0a0.addComponent(result_960thj_a2a1a0a0a0);
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a3a1a0a0a0 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a3a1a0a0a0 = StandardComponents.createModelsPanel(dialog, "Accessory Models", dialog.myProperties.getAccessoryModels(), null);
+        final JComponent result_960thj_a0a3a1a0a0a0 = StandardComponents.createModelsPanel(dialog, "Accessory Models", dialog.myProperties.getAccessoryModels(), null, false);
         result_960thj_a3a1a0a0a0.setComponent(result_960thj_a0a3a1a0a0a0);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a3a1a0a0a0 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a3a1a0a0a0.setConstraints(result_960thj_a1a3a1a0a0a0);
@@ -417,7 +417,7 @@ public class StandardDialogs {
 
         }
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a2a1a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a2a1a0a0a5 = StandardComponents.createModelsPanel(dialog, "Imported Models", dialog.myPresenter.getImportedModels(), dialog.getImportedModelsRemoveCondition());
+        final JComponent result_960thj_a0a2a1a0a0a5 = StandardComponents.createModelsPanel(dialog, "Imported Models", dialog.myPresenter.getImportedModels(), dialog.getImportedModelsRemoveCondition(), true);
         result_960thj_a2a1a0a0a5.setComponent(result_960thj_a0a2a1a0a0a5);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a2a1a0a0a5 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a2a1a0a0a5.setConstraints(result_960thj_a1a2a1a0a0a5);

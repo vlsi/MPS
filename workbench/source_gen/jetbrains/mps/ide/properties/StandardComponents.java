@@ -95,20 +95,22 @@ public class StandardComponents {
   public StandardComponents() {
   }
 
-  public static JPanel createModelsPanel(final IBindedDialog owner, final String caption, final List<SModelReference> list, final Condition<SModelReference> canRemove) {
+  public static JPanel createModelsPanel(final IBindedDialog owner, final String caption, final List<SModelReference> list, final Condition<SModelReference> canRemove, final boolean removeAnyway) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a0 = new BoundListPanel(owner, caption, list);
         final Condition result_wf5hwp_a0a0a0a0 = canRemove;
         result_wf5hwp_a0a0a0.setCanRemoveCondition(result_wf5hwp_a0a0a0a0);
-        final Computable result_wf5hwp_a1a0a0a0 = new ModelChooser(owner);
-        result_wf5hwp_a0a0a0.setMultipleChooser(result_wf5hwp_a1a0a0a0);
-        final DefaultListCellRenderer result_wf5hwp_a2a0a0a0 = new ModelRenderer(owner.getModuleScope(), owner.getProjectScope());
-        result_wf5hwp_a0a0a0.setCellRenderer(result_wf5hwp_a2a0a0a0);
-        final TransferHandler result_wf5hwp_a3a0a0a0 = new CopySupport.ModelReferenceTransferHandler();
-        result_wf5hwp_a0a0a0.setTransferHandler(result_wf5hwp_a3a0a0a0);
-        final Validator result_wf5hwp_a4a0a0a0 = new ModelValidator(owner.getModuleScope());
-        result_wf5hwp_a0a0a0.setObjectValidator(result_wf5hwp_a4a0a0a0);
+        final boolean result_wf5hwp_a1a0a0a0 = removeAnyway;
+        result_wf5hwp_a0a0a0.setAllowRemoveAnyway(result_wf5hwp_a1a0a0a0);
+        final Computable result_wf5hwp_a2a0a0a0 = new ModelChooser(owner);
+        result_wf5hwp_a0a0a0.setMultipleChooser(result_wf5hwp_a2a0a0a0);
+        final DefaultListCellRenderer result_wf5hwp_a3a0a0a0 = new ModelRenderer(owner.getModuleScope(), owner.getProjectScope());
+        result_wf5hwp_a0a0a0.setCellRenderer(result_wf5hwp_a3a0a0a0);
+        final TransferHandler result_wf5hwp_a4a0a0a0 = new CopySupport.ModelReferenceTransferHandler();
+        result_wf5hwp_a0a0a0.setTransferHandler(result_wf5hwp_a4a0a0a0);
+        final Validator result_wf5hwp_a5a0a0a0 = new ModelValidator(owner.getModuleScope());
+        result_wf5hwp_a0a0a0.setObjectValidator(result_wf5hwp_a5a0a0a0);
         result_wf5hwp_a0a0a0.init();
         return result_wf5hwp_a0a0a0;
       }
