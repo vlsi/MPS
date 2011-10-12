@@ -4032,22 +4032,25 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6299533519672652011">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6299533519672652012">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6299533519672652013">
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672652014">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="6299533519672652015">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672651967" resolveInfo="flavors" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672652016">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dclone()%cjava%dlang%dObject" resolveInfo="clone" />
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5249055041137751430">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5249055041137751429">
+              <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6299533519672652013">
+                <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="6299533519672652015">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672651967" resolveInfo="flavors" />
+                </node>
+                <node role="type" roleId="tpee.1070534934091" type="tpee.ArrayType" typeId="tpee.1070534760951" id="6299533519672652017">
+                  <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6299533519672652018">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tt4m.~DataFlavor" resolveInfo="DataFlavor" />
+                  </node>
+                </node>
               </node>
             </node>
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ArrayType" typeId="tpee.1070534760951" id="6299533519672652017">
-              <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6299533519672652018">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tt4m.~DataFlavor" resolveInfo="DataFlavor" />
-              </node>
-            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.ArrayCloneOperation" typeId="tpee.5205855332950442198" id="5249055041137751434" />
           </node>
         </node>
+      </node>
+      <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5249055041137750184">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~CloneNotSupportedException" resolveInfo="CloneNotSupportedException" />
       </node>
     </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="6299533519672652019">

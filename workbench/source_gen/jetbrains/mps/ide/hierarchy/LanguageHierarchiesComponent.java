@@ -117,7 +117,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     toolsPane.add(new JButton(new AbstractAction(null, Icons.ZOOM_IN_ICON) {
       public void actionPerformed(ActionEvent e) {
         if (myScale < 6) {
-          myScale += 0.2;
+          myScale += 0.2f;
           if (myScale > 6) {
             myScale = 6;
           }
@@ -132,7 +132,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     toolsPane.add(new JButton(new AbstractAction(null, Icons.ZOOM_OUT_ICON) {
       public void actionPerformed(ActionEvent e) {
         if (myScale > 0.2) {
-          myScale -= 0.2;
+          myScale -= 0.2f;
           if (myScale < 0.2) {
             myScale = 0.2f;
           }

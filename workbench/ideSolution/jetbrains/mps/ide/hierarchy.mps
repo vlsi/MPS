@@ -6532,8 +6532,8 @@
                                     <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5797068448049413939">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049412043" resolveInfo="myScale" />
                                     </node>
-                                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="5797068448049413940">
-                                      <property name="value" nameId="tpee.1113006610751" value="0.2" />
+                                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="5249055041137756476">
+                                      <property name="value" nameId="tpee.5279705229678483899" value="0.2f" />
                                     </node>
                                   </node>
                                 </node>
@@ -6681,8 +6681,8 @@
                                     <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5797068448049413984">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049412043" resolveInfo="myScale" />
                                     </node>
-                                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="5797068448049413985">
-                                      <property name="value" nameId="tpee.1113006610751" value="0.2" />
+                                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="5249055041137756475">
+                                      <property name="value" nameId="tpee.5279705229678483899" value="0.2f" />
                                     </node>
                                   </node>
                                 </node>
