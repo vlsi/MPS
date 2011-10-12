@@ -367,6 +367,7 @@ public class NodeTypesComponent {
 
     private void markDependentOnPropertyNodesForInvalidation(SNode eventNode, String propertyName) {
       myNonTypeSystemComponent.addPropertyToInvalidate(eventNode, propertyName);
+      myTypeSystemComponent.addNodeToInvalidate(eventNode);
     }
   }
 
