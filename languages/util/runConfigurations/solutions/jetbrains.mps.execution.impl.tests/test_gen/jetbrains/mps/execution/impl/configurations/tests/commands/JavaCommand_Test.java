@@ -80,6 +80,7 @@ public class JavaCommand_Test extends BaseTransformationTest {
           }
         }
       });
+      System.err.println(currentClassPath);
       return Sequence.fromIterable(currentClassPath).where(new IWhereFilter<String>() {
         public boolean accept(String it) {
           return !(it.startsWith(System.getProperty("java.home")));
