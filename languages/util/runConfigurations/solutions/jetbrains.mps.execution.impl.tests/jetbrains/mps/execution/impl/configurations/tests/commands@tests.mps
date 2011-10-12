@@ -189,8 +189,18 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7120092006645143075" resolveInfo="process" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="rzqf.StartAndWaitOperation" typeId="rzqf.2459753140357918802" id="7120092006645143119">
-                    <node role="timeout" roleId="rzqf.454072909645280896" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7120092006645143120">
-                      <property name="value" nameId="tpee.1068580320021" value="3000000" />
+                    <node role="timeout" roleId="rzqf.454072909645280896" type="tpee.MulExpression" typeId="tpee.1092119917967" id="1145700203434862220">
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1145700203434862223">
+                        <property name="value" nameId="tpee.1068580320021" value="1000" />
+                      </node>
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.MulExpression" typeId="tpee.1092119917967" id="1145700203434862216">
+                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1145700203434862215">
+                          <property name="value" nameId="tpee.1068580320021" value="5" />
+                        </node>
+                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1145700203434862219">
+                          <property name="value" nameId="tpee.1068580320021" value="60" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

@@ -67,7 +67,7 @@ public class JUnitCommand_Test extends BaseTransformationTest {
         TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
         OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
         // 5 minutes 
-        int exitcode = ProcessHandlerBuilder.startAndWait(process, 3000000);
+        int exitcode = ProcessHandlerBuilder.startAndWait(process, 5 * 60 * 1000);
         if (exitcode > 0) {
           Assert.fail("Exit code is not 0 but " + exitcode);
         } else if (exitcode < 0) {

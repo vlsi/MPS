@@ -171,6 +171,7 @@ public class ProcessHandlerBuilder {
     try {
       ProcessHandlerBuilder.startCountDown(process, exitCode).await();
     } catch (InterruptedException e) {
+      process.destroyProcess();
     }
     return exitCode[0];
   }
@@ -180,8 +181,11 @@ public class ProcessHandlerBuilder {
     try {
       ProcessHandlerBuilder.startCountDown(process, exitCode).await(timeout, TimeUnit.MILLISECONDS);
     } catch (InterruptedException e) {
+      process.destroyProcess();
+    }
+    if (exitCode[0] < 0) {
+      process.destroyProcess();
     }
     return exitCode[0];
-
   }
 }
