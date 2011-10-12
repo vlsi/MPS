@@ -232,8 +232,12 @@
     <dep model="r:6a4f00d3-a72e-48b0-96be-a5139db9536c(jetbrains.mps.baseLanguage.closures)" />
     <file name="UIDemo.gwt.xml" />
   </source>
-  <source id="7001216437968616991" name="PanelsDemo" hash="2u2m73vdxwg4sjoko9tyn02d83u8h24" dependsOnCreated="true">
+  <source id="7001216437968616991" name="PanelsDemo" hash="2u2m73vdxwg4sjoko9tyn02d83u8h24" dependsOnCreated="true" dependsOnNodes="true">
+    <dep root="1438009850184735648" />
+    <dep root="3546006303814922744" />
     <dep root="7046856741208198715" />
+    <dep root="7046856741208199003" />
+    <dep root="7046856741208290890" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(MPS.Classpath/jetbrains.mps.generator@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
     <dep model="f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
@@ -320,12 +324,8 @@
     <file name="PanelsDemo_SWT.java" />
     <file name="PanelsDemo_Swing.java" />
   </source>
-  <source id="1438009850184735648" name="ControlsDemo" hash="-f9w3fc13oe3walulvdpaey28bq8u29" dependsOnCreated="true" dependsOnNodes="true">
-    <dep root="3546006303814922744" />
-    <dep root="7001216437968616991" />
+  <source id="1438009850184735648" name="ControlsDemo" hash="-f9w3fc13oe3walulvdpaey28bq8u29" dependsOnCreated="true">
     <dep root="7046856741208198715" />
-    <dep root="7046856741208199003" />
-    <dep root="7046856741208290890" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(MPS.Classpath/jetbrains.mps.generator@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
     <dep model="f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
