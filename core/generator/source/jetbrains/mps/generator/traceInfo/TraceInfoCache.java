@@ -25,6 +25,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -132,7 +133,12 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Nullable
   private URL getCacheUrl(@NotNull SModelDescriptor sm, IModule module) {
-    IClassPathItem classPathItem = module.getClassPathItem();
+    IClassPathItem classPathItem;
+    if (module.isCompileInMPS() || !module.getModuleDescriptor().getStubModelEntries().isEmpty()) {
+      classPathItem = module.getClassPathItem();
+    } else {
+      classPathItem = CommonPaths.getMPSClassPath();
+    }
     if (classPathItem == null) {
       return null;
     }
