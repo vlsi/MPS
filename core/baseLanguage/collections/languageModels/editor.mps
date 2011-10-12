@@ -3041,7 +3041,7 @@
   </root>
   <root id="1576845966386891440">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1576845966386891442">
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1562299158921811349" resolveInfo="HashMapCreator_editorComponent" />
+      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1318124229580968555" resolveInfo="CustomMapCreator_component" />
     </node>
     <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1576845966386891443">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1576845966386891444">

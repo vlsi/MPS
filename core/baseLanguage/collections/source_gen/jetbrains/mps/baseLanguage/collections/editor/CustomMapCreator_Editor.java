@@ -47,7 +47,7 @@ public class CustomMapCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_jxu7lh_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new HashMapCreator_editorComponent(node);
+    AbstractCellProvider provider = new CustomMapCreator_component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
