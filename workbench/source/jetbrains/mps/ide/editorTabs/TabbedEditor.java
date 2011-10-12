@@ -59,7 +59,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private BaseNavigationAction myNextTabAction;
   private BaseNavigationAction myPrevTabAction;
 
-  public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, IOperationContext context) {
+  public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, @NotNull IOperationContext context) {
     super(context);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
@@ -67,10 +67,10 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     myColorProvider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
 
     myTabsComponent = TabComponentFactory.createTabsComponent(baseNode, possibleTabs, getComponent(), new NodeChangeCallback() {
-      public void changeNode(SNode newNode) {
-        showNodeInternal(newNode, !newNode.isRoot(), true);
-      }
-    }, new CreateModeCallback() {
+        public void changeNode(SNode newNode) {
+          showNodeInternal(newNode, !newNode.isRoot(), true);
+        }
+      }, new CreateModeCallback() {
       public void exitCreateMode() {
         showEditor();
       }
@@ -78,7 +78,8 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       public void enterCreateMode(JComponent replace) {
         showComponent(replace);
       }
-    });
+    }
+    );
 
     showNode(baseNode.getNode(), false);
 
@@ -136,6 +137,11 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
     SNodePointer currentlyEditedNode = getCurrentlyEditedNode();
     EditorComponent editor = getCurrentEditorComponent();
+    if (editor == null) {
+      showEditor();
+      editor = getCurrentEditorComponent();
+    }
+
     boolean rootChange = getCurrentlyEditedNode() == null || (containingRoot != currentlyEditedNode.getNode());
 
     if (!fromTabs) {
