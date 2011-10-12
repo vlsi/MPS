@@ -4,42 +4,39 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.List;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 
 public class ModuleChecker {
-  private ProgressContext myProgressContext;
   private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
 
-  public ModuleChecker(ProgressContext progressContext) {
-    myProgressContext = progressContext;
+  public ModuleChecker() {
   }
 
-  public void checkModule(IModule module) {
-    myProgressContext.getProgressIndicator().setText("Checking " + module.getModuleFqName() + " module properties...");
-    myProgressContext.getProgressIndicator().setText2("");
-
-    // TODO:  Provide the full list of errors when usages view framework supports multiple 
-    // TODO:  search results for one module 
-    List<String> errors = ModuleValidatorFactory.createValidator(module).getErrors();
-    if (!(ListSequence.fromList(errors).isEmpty())) {
-      String extraMessage = ListSequence.fromList(errors).getElement(0);
-      if ((int) ListSequence.fromList(errors).count() == 2) {
-        extraMessage += "; " + ListSequence.fromList(errors).getElement(1);
-      } else if (ListSequence.fromList(errors).count() > 2) {
-        extraMessage += "; ...";
+  public void checkModule(IModule module, ProgressMonitor monitor) {
+    monitor.start("Checking " + module.getModuleFqName() + " module properties...", 1);
+    try {
+      // TODO:  Provide the full list of errors when usages view framework supports multiple 
+      // TODO:  search results for one module 
+      List<String> errors = ModuleValidatorFactory.createValidator(module).getErrors();
+      if (!(ListSequence.fromList(errors).isEmpty())) {
+        String extraMessage = ListSequence.fromList(errors).getElement(0);
+        if ((int) ListSequence.fromList(errors).count() == 2) {
+          extraMessage += "; " + ListSequence.fromList(errors).getElement(1);
+        } else if (ListSequence.fromList(errors).count() > 2) {
+          extraMessage += "; ...";
+        }
+        myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, module.getModuleFqName() + ": " + NameUtil.formatNumericalString(ListSequence.fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see module properties)", null, ModelChecker.SEVERITY_ERROR, "Module properties"));
       }
-      myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, module.getModuleFqName() + ": " + NameUtil.formatNumericalString(ListSequence.fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see module properties)", null, ModelChecker.SEVERITY_ERROR, "Module properties"));
+    } finally {
+      monitor.done();
     }
   }
 
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myResults;
-  }
-
-  public boolean isCancelled() {
-    return myProgressContext.getProgressIndicator().isCanceled();
   }
 }

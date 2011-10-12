@@ -189,7 +189,6 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.AbstractMainNodeChooser" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser" file="MultiConceptChooser.java">
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
