@@ -56,7 +56,7 @@ public class SNodeTransferable implements Transferable {
     saveNodes(list, null);
   }
 
-  public DataFlavor[] getTransferDataFlavors() throws CloneNotSupportedException {
+  public DataFlavor[] getTransferDataFlavors() {
     return ((DataFlavor[]) flavors).clone();
   }
 
