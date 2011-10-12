@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.StringUtils;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -35,7 +36,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class CreateGroupsBuilder {
-  public static List<DefaultActionGroup> getCreateGroups(SNodePointer baseNode, Collection<EditorTabDescriptor> possibleTabs, EditorTabDescriptor currentAspect, NodeChangeCallback callback) {
+  public static List<DefaultActionGroup> getCreateGroups(SNodePointer baseNode, Collection<EditorTabDescriptor> possibleTabs, @NotNull EditorTabDescriptor currentAspect, NodeChangeCallback callback) {
     List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
 
     List<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(possibleTabs);

@@ -18,6 +18,7 @@ package jetbrains.mps.ide.editorTabs.tabfactory;
 import com.intellij.openapi.editor.Document;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
 import java.util.List;
@@ -29,6 +30,7 @@ public interface TabsComponent {
 
   List<Document> getAllEditedDocuments();
 
+  @NotNull
   EditorTabDescriptor getCurrentTabAspect();
 
   void setLastNode(SNodePointer sNodePointer);
