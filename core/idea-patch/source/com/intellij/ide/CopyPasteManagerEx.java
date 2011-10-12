@@ -39,7 +39,7 @@ import java.util.concurrent.TimeoutException;
 
 public class CopyPasteManagerEx extends CopyPasteManager implements ClipboardOwner {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.CopyPasteManagerEx");
-  private static final int MAX_NORMAL_CLIPBOARD_ACCESS_DELAY = 700;
+  private static final int MAX_NORMAL_CLIPBOARD_ACCESS_DELAY = 300;
 
   private final ArrayList<Transferable> myDatas;
 
