@@ -24,7 +24,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.ProjectScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
@@ -45,7 +45,7 @@ import java.io.File;
 public class ProjectLibraryManager extends BaseLibraryManager implements ProjectComponent {
   private Project myProject;
 
-  public ProjectLibraryManager(Project project, MPSModuleRepository repo, ProjectScope projectScope, DumbService dumbService) {
+  public ProjectLibraryManager(Project project, MPSModuleRepository repo, MPSProject mpsProject, DumbService dumbService) {
     super(repo);
     myProject = project;
   }
@@ -60,7 +60,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
     if (myProject.isDefault()) {
       return;
     }
-    myProject.getComponent(ProjectScope.class);
+    myProject.getComponent(MPSProject.class);
     if (!ThreadUtils.isEventDispatchThread()) {
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         @Override

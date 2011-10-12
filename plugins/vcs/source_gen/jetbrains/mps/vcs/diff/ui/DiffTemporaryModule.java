@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.project.ProjectScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
@@ -79,7 +79,7 @@ public class DiffTemporaryModule extends AbstractModule {
       return myModel.getModelDescriptor();
     }
     List<IScope> scopes = ListSequence.fromList(new ArrayList<IScope>());
-    ProjectScope ps = myProject.getComponent(ProjectScope.class);
+    IScope ps = myProject.getComponent(MPSProject.class).getScope();
     if (ps != null) {
       ListSequence.fromList(scopes).addElement(ps);
     }

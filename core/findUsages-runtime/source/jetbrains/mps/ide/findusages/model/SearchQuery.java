@@ -23,6 +23,7 @@ import jetbrains.mps.ide.findusages.model.holders.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.AbstractModule.ModuleScope;
+import jetbrains.mps.project.Project.ProjectScope;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -137,7 +138,7 @@ public class SearchQuery implements IExternalizeable {
     if (scopeType.equals(SCOPE_TYPE_GLOBAL)) {
       myScope = GlobalScopeMinusTransient.getInstance();
     } else if (scopeType.equals(SCOPE_TYPE_PROJECT)) {
-      myScope = project.getComponent(ProjectScope.class);
+      myScope = project.getScope();
     } else if (scopeType.equals(SCOPE_TYPE_MODULE)) {
       String moduleUID = scopeXML.getAttribute(MODULE_ID).getValue();
       myScope = null;
@@ -155,7 +156,7 @@ public class SearchQuery implements IExternalizeable {
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (Element modelXML : (List<Element>) modelsXML.getChildren(MODEL)) {
         String modelUID = modelXML.getAttribute(MODEL_ID).getValue();
-        SModelDescriptor sModelDescriptor = project.getComponent(ProjectScope.class).getModelDescriptor(SModelReference.fromString(modelUID));
+        SModelDescriptor sModelDescriptor = project.getScope().getModelDescriptor(SModelReference.fromString(modelUID));
         if (sModelDescriptor == null) {
           LOG.warning("model scope not found for model " + modelUID);
           throw new CantLoadSomethingException("model scope not found for model " + modelUID);

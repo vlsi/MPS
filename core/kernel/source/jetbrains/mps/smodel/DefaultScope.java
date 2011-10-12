@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
@@ -25,7 +24,6 @@ import jetbrains.mps.util.CollectionUtil;
 import java.util.*;
 
 public abstract class DefaultScope extends BaseScope {
-  private static final Logger LOG = Logger.getLogger(DefaultScope.class);
 
   private final Object LOCK = new Object();
 

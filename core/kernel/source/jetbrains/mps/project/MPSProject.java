@@ -109,21 +109,11 @@ public class MPSProject extends Project implements ProjectComponent, PersistentS
   public static final String COMPONENT = "component";
   public static final String CLASS = "class";
 
+  @Override
   public void init(final File projectFile, final ProjectDescriptor projectDescriptor) {
     if (myProject.isDefault()) return;
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        myProjectFile = projectFile;
-        myProjectDescriptor = projectDescriptor;
-
-        readModules();
-
-        for (IModule m : getModules()) {
-          m.onModuleLoad();
-        }
-      }
-    });
+    super.init(projectFile, projectDescriptor);
   }
 
   @Deprecated //now this is done in ProjectCloseClassReloader
@@ -131,7 +121,9 @@ public class MPSProject extends Project implements ProjectComponent, PersistentS
     dispose();
   }
 
+  @Override
   public void dispose() {
+    super.dispose();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());

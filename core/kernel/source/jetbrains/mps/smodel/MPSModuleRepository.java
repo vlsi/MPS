@@ -16,8 +16,6 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentManager;
@@ -88,7 +86,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-          p.getComponent(ProjectScope.class).invalidateCaches();
+          p.getScope().invalidateCaches();
         }
 
         for (IModule m : getAllModules()) {

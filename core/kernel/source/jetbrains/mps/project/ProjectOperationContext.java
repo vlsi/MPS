@@ -53,7 +53,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
 
   @NotNull
   public IScope getScope() {
-    return getIdeaProject().getComponent(ProjectScope.class);
+    return getProject().getScope();
   }
 
   public String toString() {

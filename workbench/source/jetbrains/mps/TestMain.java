@@ -242,16 +242,12 @@ public class TestMain {
   }
 
 
-  private static ProjectScope getProjectScope(Project project) {
-    return project.getComponent(ProjectScope.class);
-  }
-
   public static SModelDescriptor getModel(Project project, String modelName) {
-    return getProjectScope(project).getModelDescriptor(SModelReference.fromString(modelName));
+    return project.getScope().getModelDescriptor(SModelReference.fromString(modelName));
   }
 
   public static Language getLanguage(Project project, String languageName) {
-    return getProjectScope(project).getLanguage(languageName);
+    return project.getScope().getLanguage(languageName);
   }
 
   public static void updateLanguageClasspath(Language l, String classpath) {
