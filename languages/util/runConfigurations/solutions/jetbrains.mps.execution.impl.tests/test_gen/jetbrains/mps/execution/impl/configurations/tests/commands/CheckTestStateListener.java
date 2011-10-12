@@ -8,38 +8,37 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class CheckTestStateListener implements TestStateListener {
-  private final Set<String> mySuccess = SetSequence.fromSet(new HashSet<String>());
+  private final Set<String> mySuccessExpected = SetSequence.fromSet(new HashSet<String>());
+  private final Set<String> myFailExpected = SetSequence.fromSet(new HashSet<String>());
   private final Set<String> myFailed = SetSequence.fromSet(new HashSet<String>());
   private final StringBuilder myMessages = new StringBuilder();
 
   public CheckTestStateListener(List<ITestNodeWrapper> success, List<ITestNodeWrapper> failed) {
-    SetSequence.fromSet(mySuccess).addSequence(ListSequence.fromList(success).select(new ISelector<ITestNodeWrapper, String>() {
-      public String select(ITestNodeWrapper it) {
-        return it.getName();
-      }
-    }));
-    SetSequence.fromSet(myFailed).addSequence(ListSequence.fromList(failed).select(new ISelector<ITestNodeWrapper, String>() {
-      public String select(ITestNodeWrapper it) {
-        return it.getName();
-      }
-    }));
+    SetSequence.fromSet(mySuccessExpected).addSequence(Sequence.fromIterable(selectNames(success)));
+    SetSequence.fromSet(myFailExpected).addSequence(Sequence.fromIterable(selectNames(failed)));
   }
 
-  private void check(TestEvent event, Set<String> collection, String message) {
-    final String method = event.getTestMethodName();
-    if (SetSequence.fromSet(collection).findFirst(new IWhereFilter<String>() {
-      public boolean accept(String it) {
-        return eq_bojeyd_a0a0a0a0a0a1a0(it, method);
+  private Iterable<String> selectNames(List<ITestNodeWrapper> tests) {
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    for (final ITestNodeWrapper test : ListSequence.fromList(tests)) {
+      if (test.isTestCase()) {
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(test.getTestMethods()).select(new ISelector<ITestNodeWrapper, String>() {
+          public String select(ITestNodeWrapper method) {
+            return test.getFqName() + "." + method.getName();
+          }
+        }));
+      } else {
+        ListSequence.fromList(result).addElement(test.getTestCase().getFqName() + "." + test.getName());
       }
-    }) == null) {
-      myMessages.append(message).append(event.getTestCaseName()).append(".").append(method).append("\n");
     }
+    return result;
   }
 
   public void onLooseTest(String className, String methodName) {
@@ -47,15 +46,31 @@ public class CheckTestStateListener implements TestStateListener {
   }
 
   public void onTestFailure(TestEvent event) {
-    this.check(event, myFailed, "Unexpected failure: ");
+    SetSequence.fromSet(myFailed).addElement(this.getNameFromEvent(event));
+    if (!(SetSequence.fromSet(myFailExpected).contains(this.getNameFromEvent(event)))) {
+      myMessages.append("Unexpected failure: ").append(this.getNameFromEvent(event)).append("\n");
+    } else {
+    }
   }
 
   public void onTestError(TestEvent event) {
-    this.check(event, myFailed, "Unexpected error: ");
+    SetSequence.fromSet(myFailed).addElement(this.getNameFromEvent(event));
+    if (!(SetSequence.fromSet(myFailExpected).contains(this.getNameFromEvent(event)))) {
+      myMessages.append("Unexpected error: ").append(this.getNameFromEvent(event)).append("\n");
+    } else {
+    }
+  }
+
+  private String getNameFromEvent(TestEvent event) {
+    return event.getTestCaseName() + "." + event.getTestMethodName();
   }
 
   public void onTestEnd(TestEvent event) {
-    this.check(event, mySuccess, "Unexpected success: ");
+    if (!(SetSequence.fromSet(myFailed).contains(this.getNameFromEvent(event)))) {
+      if (!(SetSequence.fromSet(mySuccessExpected).contains(this.getNameFromEvent(event)))) {
+        myMessages.append("Unexpected success: ").append(this.getNameFromEvent(event)).append("\n");
+      }
+    }
   }
 
   public void onTestStart(TestEvent event) {
@@ -63,12 +78,5 @@ public class CheckTestStateListener implements TestStateListener {
 
   public String getMessages() {
     return myMessages.toString();
-  }
-
-  private static boolean eq_bojeyd_a0a0a0a0a0a1a0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 }
