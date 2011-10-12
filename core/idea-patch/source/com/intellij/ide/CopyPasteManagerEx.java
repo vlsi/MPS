@@ -63,9 +63,9 @@ public class CopyPasteManagerEx extends CopyPasteManager implements ClipboardOwn
   }
 
   public Transferable getSystemClipboardContents() {
-    long start = System.currentTimeMillis();
+//    long start = System.currentTimeMillis();
     Transferable systemClipboardContents = getSystemClipboardContents(true);
-    System.err.println("clipboard polling took " + (System.currentTimeMillis() - start));
+//    System.err.println("clipboard polling took " + (System.currentTimeMillis() - start));
     return systemClipboardContents;
   }
 
