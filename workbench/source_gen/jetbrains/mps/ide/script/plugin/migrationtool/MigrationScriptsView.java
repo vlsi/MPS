@@ -28,6 +28,7 @@ import javax.swing.SwingUtilities;
 import java.awt.Rectangle;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
@@ -142,7 +143,10 @@ public abstract class MigrationScriptsView {
             //  ---- 
             checkMigrationResults();
           }
-        }, "migration refactoring", null, UndoConfirmationPolicy.REQUEST_CONFIRMATION, myProject);
+        }, "migration refactoring", null, UndoConfirmationPolicy.REQUEST_CONFIRMATION, (myProject != null ?
+          myProject.getComponent(MPSProject.class) :
+          null
+        ));
       }
     });
   }

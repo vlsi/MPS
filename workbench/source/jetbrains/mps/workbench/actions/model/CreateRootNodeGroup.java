@@ -31,6 +31,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -217,7 +218,7 @@ public class CreateRootNodeGroup extends BaseGroup {
           myModelDescriptor.getSModel().addRoot(result);
           return result;
         }
-      }, myProject);
+      }, myProject.getComponent(MPSProject.class));
 
       if (!trySelectInCurrentPane(node)) {
         ProjectPane pane = ProjectPane.getInstance(myProject);

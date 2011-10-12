@@ -55,7 +55,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
         myLanguage.validateExtends();
         myLanguage.save();
       }
-    }, getOperationContext().getIdeaProject());
+    }, getOperationContext().getProject());
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         Project project = LanguagePropertiesDialog.this.getOperationContext().getIdeaProject();

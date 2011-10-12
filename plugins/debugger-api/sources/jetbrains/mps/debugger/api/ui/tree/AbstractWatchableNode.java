@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -48,7 +49,7 @@ abstract class AbstractWatchableNode extends MPSTreeNode {
               assert opener != null;
               opener.openNode(node, context, true, true);
             }
-          }, project);
+          }, project.getComponent(MPSProject.class));
         }
     }
   });
@@ -85,7 +86,7 @@ abstract class AbstractWatchableNode extends MPSTreeNode {
           assert opener != null;
           opener.openNode(myNode, context, focus, select);
         }
-      }, project);
+      }, project.getComponent(MPSProject.class));
     }
   }
 

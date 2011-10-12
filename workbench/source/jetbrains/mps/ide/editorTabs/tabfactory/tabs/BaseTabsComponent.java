@@ -86,8 +86,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
     addListeners();
   }
 
-  public abstract EditorTabDescriptor getCurrentTabAspect();
-
   public void dispose() {
     removeListeners();
   }

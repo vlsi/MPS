@@ -91,7 +91,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           }
         }, ModalityState.NON_MODAL);
       }
-    }, myProject);
+    }, myProject.getComponent(MPSProject.class));
   }
 
   protected List<ModuleReference> getModuleReferencesToAdd() {

@@ -457,7 +457,7 @@
     <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="242" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="279" startPosition="0" endLine="311" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7285053786290847981" fileName="BuildGeneratorImpl.java" startLine="59" startPosition="59" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7285053786290847973" fileName="BuildGeneratorImpl.java" startLine="58" startPosition="26" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7285053786290847973" fileName="BuildGeneratorImpl.java" startLine="58" startPosition="26" endLine="94" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241461839315" fileName="BuildGeneratorImpl.java" startLine="141" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMPSLayout#(Ljetbrains/mps/smodel/SModelDescriptor;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1222854026109" fileName="BuildGeneratorImpl.java" startLine="57" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#()V" />
     <nodeInfo nodeId="1224167141110" fileName="BuildGeneratorImpl.java" startLine="198" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createContent#(Ljava/util/List;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;)V" />
@@ -602,7 +602,7 @@
       <varInfo nodeId="1241461839337" varName="targetSModel" />
     </scopeInfo>
     <scopeInfo nodeId="7285053786290847981" fileName="BuildGeneratorImpl.java" startLine="59" startPosition="59" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1222854026112" fileName="BuildGeneratorImpl.java" startLine="58" startPosition="26" endLine="94" endPosition="18" />
+    <scopeInfo nodeId="1222854026112" fileName="BuildGeneratorImpl.java" startLine="58" startPosition="26" endLine="94" endPosition="49" />
     <scopeInfo nodeId="1241461839315" fileName="BuildGeneratorImpl.java" startLine="141" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="1241461839318" varName="targetModelDescriptor" />
       <varInfo nodeId="1241461839320" varName="name" />

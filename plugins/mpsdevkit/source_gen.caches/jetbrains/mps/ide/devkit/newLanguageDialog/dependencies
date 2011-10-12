@@ -11,7 +11,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane" file="NewLanguageDialogContentPane.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Object" />
@@ -33,6 +32,7 @@
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />

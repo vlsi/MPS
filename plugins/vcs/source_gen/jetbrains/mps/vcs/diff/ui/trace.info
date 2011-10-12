@@ -3149,7 +3149,7 @@
     <nodeInfo nodeId="4707157387247571674" fileName="OldRootDifferenceDialog.java" startLine="205" startPosition="72" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4707157387247571852" fileName="OldRootDifferenceDialog.java" startLine="261" startPosition="77" endLine="269" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4707157387247571556" fileName="OldRootDifferenceDialog.java" startLine="180" startPosition="38" endLine="189" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4707157387247571667" fileName="OldRootDifferenceDialog.java" startLine="204" startPosition="95" endLine="213" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247571667" fileName="OldRootDifferenceDialog.java" startLine="204" startPosition="95" endLine="213" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247571810" fileName="OldRootDifferenceDialog.java" startLine="250" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <nodeInfo nodeId="4707157387247572030" fileName="OldRootDifferenceDialog.java" startLine="65" startPosition="59" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4707157387247571424" fileName="OldRootDifferenceDialog.java" startLine="140" startPosition="65" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljavax/swing/event/ChangeEvent;)V" />
@@ -3298,7 +3298,7 @@
     <scopeInfo nodeId="4707157387247571551" fileName="OldRootDifferenceDialog.java" startLine="179" startPosition="77" endLine="190" endPosition="5">
       <varInfo nodeId="4707157387247571553" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247571648" fileName="OldRootDifferenceDialog.java" startLine="201" startPosition="38" endLine="213" endPosition="68">
+    <scopeInfo nodeId="4707157387247571648" fileName="OldRootDifferenceDialog.java" startLine="201" startPosition="38" endLine="213" endPosition="64">
       <varInfo nodeId="4707157387247571658" varName="revertChanges" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247571750" fileName="OldRootDifferenceDialog.java" startLine="232" startPosition="73" endLine="244" endPosition="7" />

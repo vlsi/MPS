@@ -39,7 +39,7 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
         myDevKit.save();
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
-    }, getOperationContext().getIdeaProject());
+    }, getOperationContext().getProject());
     return true;
   }
 }

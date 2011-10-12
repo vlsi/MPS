@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.RuntimeInterruptedException;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
@@ -32,6 +31,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
@@ -238,7 +238,7 @@ public class IntentionsSupport {
 
       @Override
       public void actionPerformed(AnActionEvent e) {
-        Project project = myEditor.getOperationContext().getIdeaProject();
+        Project project = myEditor.getOperationContext().getProject();
         if (project == null) {
           return;
         }
