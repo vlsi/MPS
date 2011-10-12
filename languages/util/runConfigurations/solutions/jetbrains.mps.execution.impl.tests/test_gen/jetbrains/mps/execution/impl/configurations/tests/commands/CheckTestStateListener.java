@@ -4,38 +4,42 @@ package jetbrains.mps.execution.impl.configurations.tests.commands;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener;
 import java.util.Set;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.List;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class CheckTestStateListener implements TestStateListener {
-  private final Set<ITestNodeWrapper> mySuccess = SetSequence.fromSet(new HashSet<ITestNodeWrapper>());
-  private final Set<ITestNodeWrapper> myFailed = SetSequence.fromSet(new HashSet<ITestNodeWrapper>());
+  private final Set<String> mySuccess = SetSequence.fromSet(new HashSet<String>());
+  private final Set<String> myFailed = SetSequence.fromSet(new HashSet<String>());
   private final StringBuilder myMessages = new StringBuilder();
 
   public CheckTestStateListener(List<ITestNodeWrapper> success, List<ITestNodeWrapper> failed) {
-    SetSequence.fromSet(mySuccess).addSequence(ListSequence.fromList(success));
-    SetSequence.fromSet(myFailed).addSequence(ListSequence.fromList(failed));
+    SetSequence.fromSet(mySuccess).addSequence(ListSequence.fromList(success).select(new ISelector<ITestNodeWrapper, String>() {
+      public String select(ITestNodeWrapper it) {
+        return it.getName();
+      }
+    }));
+    SetSequence.fromSet(myFailed).addSequence(ListSequence.fromList(failed).select(new ISelector<ITestNodeWrapper, String>() {
+      public String select(ITestNodeWrapper it) {
+        return it.getName();
+      }
+    }));
   }
 
-  private void check(final TestEvent event, final Set<ITestNodeWrapper> collection, final String message) {
+  private void check(TestEvent event, Set<String> collection, String message) {
     final String method = event.getTestMethodName();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (SetSequence.fromSet(collection).findFirst(new IWhereFilter<ITestNodeWrapper>() {
-          public boolean accept(ITestNodeWrapper it) {
-            return eq_bojeyd_a0a0a0a0a0a0a0a0a0a1a0(it.getName(), method);
-          }
-        }) == null) {
-          myMessages.append(message).append(event.getTestCaseName()).append(".").append(method).append("\n");
-        }
+    if (SetSequence.fromSet(collection).findFirst(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return eq_bojeyd_a0a0a0a0a0a1a0(it, method);
       }
-    });
+    }) == null) {
+      myMessages.append(message).append(event.getTestCaseName()).append(".").append(method).append("\n");
+    }
   }
 
   public void onLooseTest(String className, String methodName) {
@@ -61,7 +65,7 @@ public class CheckTestStateListener implements TestStateListener {
     return myMessages.toString();
   }
 
-  private static boolean eq_bojeyd_a0a0a0a0a0a0a0a0a0a1a0(Object a, Object b) {
+  private static boolean eq_bojeyd_a0a0a0a0a0a1a0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

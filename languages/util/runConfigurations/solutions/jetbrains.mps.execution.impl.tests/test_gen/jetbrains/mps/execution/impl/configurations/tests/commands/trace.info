@@ -251,79 +251,84 @@
     <unitInfo nodeId="8128243960970298959" fileName="SplitCommandInParts_Test.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.SplitCommandInParts_Test" />
   </root>
   <root nodeId="8128243960970299735">
-    <nodeInfo nodeId="8128243960970299784" fileName="CheckTestStateListener.java" startLine="16" startPosition="66" endLine="17" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuccess" />
-    <nodeInfo nodeId="8128243960970299790" fileName="CheckTestStateListener.java" startLine="17" startPosition="103" endLine="18" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFailed" />
-    <nodeInfo nodeId="8128243960970299901" fileName="CheckTestStateListener.java" startLine="18" startPosition="102" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessages" />
-    <nodeInfo nodeId="8128243960970299825" fileName="CheckTestStateListener.java" startLine="21" startPosition="96" endLine="22" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8128243960970299801" fileName="CheckTestStateListener.java" startLine="22" startPosition="79" endLine="23" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8128243960970300013" fileName="CheckTestStateListener.java" startLine="26" startPosition="107" endLine="27" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8128243960970300042" fileName="CheckTestStateListener.java" startLine="31" startPosition="54" endLine="32" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8128243960970300020" fileName="CheckTestStateListener.java" startLine="34" startPosition="21" endLine="35" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8128243960970300074" fileName="CheckTestStateListener.java" startLine="41" startPosition="64" endLine="42" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8128243960970300050" fileName="CheckTestStateListener.java" startLine="45" startPosition="46" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8128243960970300059" fileName="CheckTestStateListener.java" startLine="49" startPosition="44" endLine="50" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8128243960970300066" fileName="CheckTestStateListener.java" startLine="53" startPosition="42" endLine="54" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8128243960970300117" fileName="CheckTestStateListener.java" startLine="60" startPosition="31" endLine="61" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8128243960970299768" fileName="CheckTestStateListener.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestStart#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
-    <nodeInfo nodeId="8128243960970299737" fileName="CheckTestStateListener.java" startLine="20" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckTestStateListener#(Ljava/util/List;Ljava/util/List;)V" />
-    <nodeInfo nodeId="8128243960970300040" fileName="CheckTestStateListener.java" startLine="30" startPosition="92" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
-    <nodeInfo nodeId="8128243960970299742" fileName="CheckTestStateListener.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onLooseTest#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8128243960970299750" fileName="CheckTestStateListener.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestFailure#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
-    <nodeInfo nodeId="8128243960970299756" fileName="CheckTestStateListener.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestError#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
-    <nodeInfo nodeId="8128243960970299762" fileName="CheckTestStateListener.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestEnd#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
-    <nodeInfo nodeId="8128243960970300112" fileName="CheckTestStateListener.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessages#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="64" startPosition="79" endLine="68" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8128243960970300018" fileName="CheckTestStateListener.java" startLine="29" startPosition="25" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="63" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_bojeyd_a0a0a0a0a0a0a0a0a0a1a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1948964387641231162" fileName="CheckTestStateListener.java" startLine="28" startPosition="57" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1948964387641231161" fileName="CheckTestStateListener.java" startLine="27" startPosition="52" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8128243960970300005" fileName="CheckTestStateListener.java" startLine="25" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;Ljava/util/Set;Ljava/lang/String;)V" />
-    <scopeInfo nodeId="8128243960970299773" fileName="CheckTestStateListener.java" startLine="57" startPosition="44" endLine="57" endPosition="44" />
-    <scopeInfo nodeId="8128243960970300041" fileName="CheckTestStateListener.java" startLine="31" startPosition="54" endLine="32" endPosition="74" />
-    <scopeInfo nodeId="8128243960970300019" fileName="CheckTestStateListener.java" startLine="34" startPosition="21" endLine="35" endPosition="109" />
-    <scopeInfo nodeId="8128243960970299749" fileName="CheckTestStateListener.java" startLine="41" startPosition="64" endLine="42" endPosition="99" />
-    <scopeInfo nodeId="8128243960970299755" fileName="CheckTestStateListener.java" startLine="45" startPosition="46" endLine="46" endPosition="56" />
-    <scopeInfo nodeId="8128243960970299761" fileName="CheckTestStateListener.java" startLine="49" startPosition="44" endLine="50" endPosition="54" />
-    <scopeInfo nodeId="8128243960970299767" fileName="CheckTestStateListener.java" startLine="53" startPosition="42" endLine="54" endPosition="57" />
-    <scopeInfo nodeId="8128243960970300115" fileName="CheckTestStateListener.java" startLine="60" startPosition="31" endLine="61" endPosition="33" />
-    <scopeInfo nodeId="8128243960970299740" fileName="CheckTestStateListener.java" startLine="21" startPosition="96" endLine="23" endPosition="77" />
-    <scopeInfo nodeId="8128243960970299768" fileName="CheckTestStateListener.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
+    <nodeInfo nodeId="8128243960970299784" fileName="CheckTestStateListener.java" startLine="16" startPosition="66" endLine="17" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuccess" />
+    <nodeInfo nodeId="8128243960970299790" fileName="CheckTestStateListener.java" startLine="17" startPosition="83" endLine="18" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFailed" />
+    <nodeInfo nodeId="8128243960970299901" fileName="CheckTestStateListener.java" startLine="18" startPosition="82" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessages" />
+    <nodeInfo nodeId="8552960886532756829" fileName="CheckTestStateListener.java" startLine="23" startPosition="49" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8552960886532756843" fileName="CheckTestStateListener.java" startLine="28" startPosition="49" endLine="29" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8128243960970300013" fileName="CheckTestStateListener.java" startLine="34" startPosition="79" endLine="35" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8128243960970300042" fileName="CheckTestStateListener.java" startLine="37" startPosition="40" endLine="38" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8128243960970300020" fileName="CheckTestStateListener.java" startLine="40" startPosition="17" endLine="41" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960970300074" fileName="CheckTestStateListener.java" startLine="45" startPosition="64" endLine="46" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960970300050" fileName="CheckTestStateListener.java" startLine="49" startPosition="46" endLine="50" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960970300059" fileName="CheckTestStateListener.java" startLine="53" startPosition="44" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960970300066" fileName="CheckTestStateListener.java" startLine="57" startPosition="42" endLine="58" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960970300117" fileName="CheckTestStateListener.java" startLine="64" startPosition="31" endLine="65" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8128243960970299768" fileName="CheckTestStateListener.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestStart#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
+    <nodeInfo nodeId="8552960886532756825" fileName="CheckTestStateListener.java" startLine="22" startPosition="128" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8552960886532756841" fileName="CheckTestStateListener.java" startLine="27" startPosition="126" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8128243960970300040" fileName="CheckTestStateListener.java" startLine="36" startPosition="78" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="8128243960970299742" fileName="CheckTestStateListener.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onLooseTest#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8128243960970299750" fileName="CheckTestStateListener.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestFailure#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
+    <nodeInfo nodeId="8128243960970299756" fileName="CheckTestStateListener.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestError#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
+    <nodeInfo nodeId="8128243960970299762" fileName="CheckTestStateListener.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestEnd#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
+    <nodeInfo nodeId="8128243960970300112" fileName="CheckTestStateListener.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessages#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="68" startPosition="71" endLine="72" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8128243960970299825" fileName="CheckTestStateListener.java" startLine="21" startPosition="96" endLine="26" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960970299801" fileName="CheckTestStateListener.java" startLine="26" startPosition="8" endLine="31" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960970300018" fileName="CheckTestStateListener.java" startLine="35" startPosition="52" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="67" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_bojeyd_a0a0a0a0a0a1a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="8128243960970300005" fileName="CheckTestStateListener.java" startLine="33" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;Ljava/util/Set;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8128243960970299737" fileName="CheckTestStateListener.java" startLine="20" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckTestStateListener#(Ljava/util/List;Ljava/util/List;)V" />
+    <scopeInfo nodeId="8128243960970299773" fileName="CheckTestStateListener.java" startLine="61" startPosition="44" endLine="61" endPosition="44" />
+    <scopeInfo nodeId="8552960886532756826" fileName="CheckTestStateListener.java" startLine="23" startPosition="49" endLine="24" endPosition="28" />
+    <scopeInfo nodeId="8552960886532756842" fileName="CheckTestStateListener.java" startLine="28" startPosition="49" endLine="29" endPosition="28" />
+    <scopeInfo nodeId="8128243960970300041" fileName="CheckTestStateListener.java" startLine="37" startPosition="40" endLine="38" endPosition="52" />
+    <scopeInfo nodeId="8128243960970300019" fileName="CheckTestStateListener.java" startLine="40" startPosition="17" endLine="41" endPosition="105" />
+    <scopeInfo nodeId="8128243960970299749" fileName="CheckTestStateListener.java" startLine="45" startPosition="64" endLine="46" endPosition="99" />
+    <scopeInfo nodeId="8128243960970299755" fileName="CheckTestStateListener.java" startLine="49" startPosition="46" endLine="50" endPosition="56" />
+    <scopeInfo nodeId="8128243960970299761" fileName="CheckTestStateListener.java" startLine="53" startPosition="44" endLine="54" endPosition="54" />
+    <scopeInfo nodeId="8128243960970299767" fileName="CheckTestStateListener.java" startLine="57" startPosition="42" endLine="58" endPosition="57" />
+    <scopeInfo nodeId="8128243960970300115" fileName="CheckTestStateListener.java" startLine="64" startPosition="31" endLine="65" endPosition="33" />
+    <scopeInfo nodeId="8128243960970299768" fileName="CheckTestStateListener.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="8128243960970299771" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8128243960970299737" fileName="CheckTestStateListener.java" startLine="20" startPosition="0" endLine="24" endPosition="3">
-      <varInfo nodeId="8128243960970299779" varName="failed" />
-      <varInfo nodeId="8128243960970299774" varName="success" />
-    </scopeInfo>
-    <scopeInfo nodeId="8128243960970300040" fileName="CheckTestStateListener.java" startLine="30" startPosition="92" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="8128243960970299742" fileName="CheckTestStateListener.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="8552960886532756825" fileName="CheckTestStateListener.java" startLine="22" startPosition="128" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="8552960886532756841" fileName="CheckTestStateListener.java" startLine="27" startPosition="126" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="8128243960970300040" fileName="CheckTestStateListener.java" startLine="36" startPosition="78" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8128243960970299742" fileName="CheckTestStateListener.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="8128243960970299745" varName="className" />
       <varInfo nodeId="8128243960970299747" varName="methodName" />
     </scopeInfo>
-    <scopeInfo nodeId="8128243960970299750" fileName="CheckTestStateListener.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="8128243960970299750" fileName="CheckTestStateListener.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="8128243960970299753" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8128243960970299756" fileName="CheckTestStateListener.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="8128243960970299756" fileName="CheckTestStateListener.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="8128243960970299759" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8128243960970299762" fileName="CheckTestStateListener.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="8128243960970299762" fileName="CheckTestStateListener.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="8128243960970299765" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8128243960970300112" fileName="CheckTestStateListener.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="64" startPosition="79" endLine="68" endPosition="6" />
-    <scopeInfo nodeId="1948964387641231163" fileName="CheckTestStateListener.java" startLine="29" startPosition="25" endLine="36" endPosition="9" />
-    <scopeInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="63" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1948964387641231162" fileName="CheckTestStateListener.java" startLine="28" startPosition="57" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="8128243960970300012" fileName="CheckTestStateListener.java" startLine="26" startPosition="107" endLine="38" endPosition="7">
+    <scopeInfo nodeId="8128243960970300112" fileName="CheckTestStateListener.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="68" startPosition="71" endLine="72" endPosition="6" />
+    <scopeInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="67" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="8128243960970300012" fileName="CheckTestStateListener.java" startLine="34" startPosition="79" endLine="42" endPosition="5">
       <varInfo nodeId="8128243960970300000" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="8128243960970300005" fileName="CheckTestStateListener.java" startLine="25" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="8128243960970299740" fileName="CheckTestStateListener.java" startLine="21" startPosition="96" endLine="31" endPosition="8" />
+    <scopeInfo nodeId="8128243960970300005" fileName="CheckTestStateListener.java" startLine="33" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="8128243960970300003" varName="message" />
       <varInfo nodeId="8128243960970300002" varName="event" />
       <varInfo nodeId="8128243960970300004" varName="collection" />
     </scopeInfo>
-    <unitInfo nodeId="8128243960970300040" fileName="CheckTestStateListener.java" startLine="30" startPosition="58" endLine="34" endPosition="9" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener$2" />
-    <unitInfo nodeId="1948964387641231162" fileName="CheckTestStateListener.java" startLine="28" startPosition="45" endLine="38" endPosition="5" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener$1" />
-    <unitInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener" />
+    <scopeInfo nodeId="8128243960970299737" fileName="CheckTestStateListener.java" startLine="20" startPosition="0" endLine="32" endPosition="3">
+      <varInfo nodeId="8128243960970299779" varName="failed" />
+      <varInfo nodeId="8128243960970299774" varName="success" />
+    </scopeInfo>
+    <unitInfo nodeId="8552960886532756825" fileName="CheckTestStateListener.java" startLine="22" startPosition="89" endLine="26" endPosition="5" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener$1" />
+    <unitInfo nodeId="8552960886532756841" fileName="CheckTestStateListener.java" startLine="27" startPosition="87" endLine="31" endPosition="5" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener$2" />
+    <unitInfo nodeId="8128243960970300040" fileName="CheckTestStateListener.java" startLine="36" startPosition="54" endLine="40" endPosition="5" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener$3" />
+    <unitInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="16" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener" />
   </root>
 </debugInfo>
 
