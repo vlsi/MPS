@@ -17,7 +17,7 @@ public class AddExtendedLanguage_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    ((Language) AddExtendedLanguage_QuickFix.this.getField("lang")[0]).addExtendedLanguage(((Language) AddExtendedLanguage_QuickFix.this.getField("extLang")[0]));
+    ((Language) AddExtendedLanguage_QuickFix.this.getField("lang")[0]).addExtendedLanguage(((Language) AddExtendedLanguage_QuickFix.this.getField("extLang")[0]).getModuleReference());
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 }

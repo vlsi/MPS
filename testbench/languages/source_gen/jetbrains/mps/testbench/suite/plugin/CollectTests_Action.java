@@ -30,6 +30,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.project.Solution;
@@ -160,7 +161,7 @@ public class CollectTests_Action extends GeneratedAction {
                       model.addModelImport(smd.getSModelReference(), false);
                       ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getModule().addDependency(module.getModuleReference(), false);
                     }
-                  }, ((Project) MapSequence.fromMap(_params).get("project")));
+                  }, ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class));
                 }
               });
             }

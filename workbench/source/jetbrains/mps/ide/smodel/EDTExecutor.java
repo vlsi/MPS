@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.ide.smodel;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.Project;
 
 import javax.swing.SwingUtilities;
 import java.util.concurrent.ConcurrentLinkedQueue;

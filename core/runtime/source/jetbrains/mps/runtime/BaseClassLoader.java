@@ -24,6 +24,26 @@ abstract class BaseClassLoader extends ClassLoader {
 
   protected abstract Class findAfterCurrent(String name);
 
+  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    Class c = findLoadedClass(name);
+    if (c == null) {
+      c = findClass(name);
+
+      if (c == null) {
+        try {
+          c = getParent().loadClass(name);
+        } catch (ClassNotFoundException e) {
+          throw e;
+        }
+      }
+      if (resolve) {
+        resolveClass(c);
+      }
+    }
+
+    return c;
+  }
+
   protected Class<?> findClass(String name) throws ClassNotFoundException {
     byte[] bytes = findInCurrent(name);
     if (bytes != null) {

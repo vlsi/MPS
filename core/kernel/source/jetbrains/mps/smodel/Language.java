@@ -158,9 +158,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     revalidateGenerators();
   }
 
-  public void addExtendedLanguage(Language lang) {
-    if (getExtendedLanguages().contains(lang)) return;
-    myAllExtendedLanguages.add(lang);
+  public void addExtendedLanguage(ModuleReference langRef) {
+    if (getExtendedLanguageRefs().contains(langRef)) return;
+    getModuleDescriptor().getExtendedLanguages().add(langRef);
   }
 
   public List<ModuleReference> getExtendedLanguageRefs() {

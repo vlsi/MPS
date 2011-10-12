@@ -23,7 +23,7 @@ import org.junit.Test;
 public class BundleLoadingTest {
   @Test
   public void simpleBundleReloading() {
-    RuntimeEnvironment<String> re = new RuntimeEnvironment();
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
     RBundle<String> a = bundle("a", A.class);
     re.add(a);
 

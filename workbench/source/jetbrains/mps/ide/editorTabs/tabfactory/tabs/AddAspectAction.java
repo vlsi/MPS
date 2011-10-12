@@ -20,7 +20,6 @@ import jetbrains.mps.ide.actions.CreateAspect_Action;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 import javax.swing.Icon;
@@ -58,23 +57,18 @@ public abstract class AddAspectAction extends AnAction {
     });
   }
 
-  protected abstract SNode getCurrentAspect();
+  protected abstract EditorTabDescriptor getCurrentAspect();
 
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
     Iterator<DefaultActionGroup> it = CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, getCurrentAspect(), myCallback).iterator();
-
-    if (it.hasNext()) {
-      DefaultActionGroup current = it.next();
-      result.add(current);
-      result.add(new Separator());
-    }
-
     while (it.hasNext()) {
       DefaultActionGroup g = it.next();
-      g.setPopup(true);
       result.add(g);
+      if (it.hasNext() && !g.isPopup()){
+        result.add(new Separator());
+      }
     }
 
     return result;

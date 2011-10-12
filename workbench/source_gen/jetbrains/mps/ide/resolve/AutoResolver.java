@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import java.util.Iterator;
 import jetbrains.mps.ide.ThreadUtils;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.smodel.SModelReference;
@@ -61,7 +61,7 @@ public class AutoResolver extends EditorCheckerAdapter {
           return;
         }
         Project p = (editorContext != null && editorContext.getOperationContext() != null ?
-          editorContext.getOperationContext().getIdeaProject() :
+          editorContext.getOperationContext().getProject() :
           null
         );
         if (p == null) {

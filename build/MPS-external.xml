@@ -185,9 +185,6 @@
       <fileset dir="${mps_home}/core/kernel/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/core/languageDesign/test/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
@@ -210,7 +207,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
     <antcall target="MPS-languages.pack.jetbrains.mps.kernel" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make" />
     <antcall target="MPS-languages.pack.jetbrains.mps.plugin.runtime" />
@@ -359,6 +355,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationContext" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationParameters" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.textGen" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.traceable" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.stubs" />

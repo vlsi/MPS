@@ -24,9 +24,11 @@ import jetbrains.mps.newTypesystem.relations.ComparableRelation;
 import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
 import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.util.Pair;
 
+import javax.management.relation.Relation;
 import java.util.*;
 
 public class Inequalities {
@@ -115,6 +117,8 @@ public class Inequalities {
     myInputsToOutputsInc.clear();
     myNodesToBlocksInc.clear();
     myNodesInc.clear();
+    mySolvableLeft.clear();
+    mySolvableRight.clear();
     for (RelationBlock inequality : inequalities) {
       onInequalityAdded(inequality);
     }
@@ -186,20 +190,6 @@ public class Inequalities {
     }
   }
 
-  private boolean compareMap (ManyToManyMap m1, ManyToManyMap m2) {
-    Set first1 = m1.getFirst();
-    Set first2 = m2.getFirst();
-
-    if (!(first1.containsAll(first2) && first2.containsAll(first1))) {
-      return false;
-    }
-    for (Object f : first1) {
-      if (!m1.getByFirst(f).containsAll(m2.getByFirst(f))) return false;
-      if (!m2.getByFirst(f).containsAll(m1.getByFirst(f))) return false;
-    }
-    return true;
-  }
-
   private boolean chooseVarAndSolve(Set<SNode> nodes) {
     //Solves relation for an independent node
     //first tries to solve for when concrete waiting node
@@ -245,7 +235,10 @@ public class Inequalities {
     return false;
   }
 
-  private void collectNodesInRelation(SNode node, Set<SNode> lefts, Set<SNode> rights, Set<RelationBlock> blocks, Map<SNode, RelationBlock> typesToBlocks) {
+  private void collectNodesTransitive(SNode node, Set<SNode> collected, boolean isLeft, Map<SNode, RelationBlock> typesToBlocks, AbstractRelation relation, Set<SNode> alreadyPassed) {
+    Set<RelationBlock> blocks = myNodesToBlocksInc.getByFirst(node);
+    alreadyPassed.add(node);
+    blocks = getRelationBlocks(blocks, relation);
     for (RelationBlock block : blocks) {
       if (block.isCheckOnly()) {
         continue;
@@ -255,15 +248,18 @@ public class Inequalities {
       if (right == left) {
         continue;
       }
-      if (left == node && !TypesUtil.isVariable(right)) {
-        SNode type = myState.expand(right);
-        rights.add(type);
-        typesToBlocks.put(type, block);
-      }
-      if (right == node && !TypesUtil.isVariable(left)) {
-        SNode type = myState.expand(left);
-        lefts.add(type);
-        typesToBlocks.put(type, block);
+      SNode cur = isLeft ? left : right;
+      SNode other = isLeft ? right : left;
+      if (cur == node) {
+        if (!TypesUtil.isVariable(other)) {
+          SNode type = myState.expand(other);
+          collected.add(type);
+          typesToBlocks.put(type, block);
+        } else {
+          if (!alreadyPassed.contains(other)){
+            collectNodesTransitive(other, collected, isLeft, typesToBlocks, relation, alreadyPassed);
+          }
+        }
       }
     }
   }
@@ -285,12 +281,12 @@ public class Inequalities {
   private boolean solveRelationForNode(SNode node, AbstractRelation relation) {
     Map<SNode, RelationBlock> typesToBlocks = new THashMap<SNode, RelationBlock>();
     assert TypesUtil.isVariable(node);
-    Set<RelationBlock> blocks = myNodesToBlocksInc.getByFirst(node);
-    blocks = getRelationBlocks(blocks, relation);
     Set<SNode> rightTypes = new LinkedHashSet<SNode>();
     Set<SNode> leftTypes = new LinkedHashSet<SNode>();
 
-    collectNodesInRelation(node, leftTypes, rightTypes, blocks, typesToBlocks);
+    //collectNodesInRelation(node, leftTypes, rightTypes, blocks, typesToBlocks);
+    collectNodesTransitive(node, leftTypes, false, typesToBlocks, relation, new HashSet<SNode>());
+    collectNodesTransitive(node, rightTypes, true, typesToBlocks, relation, new HashSet<SNode>());
     return relation.solve(node, leftTypes, rightTypes, myState, typesToBlocks);
   }
 

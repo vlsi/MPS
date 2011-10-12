@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.ide.ThreadUtils;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -125,7 +125,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
           return;
         }
         Project p = (editorContext != null && editorContext.getOperationContext() != null ?
-          editorContext.getOperationContext().getIdeaProject() :
+          editorContext.getOperationContext().getProject() :
           null
         );
         if (p == null) {

@@ -251,8 +251,8 @@
   </root>
   <root nodeId="3013258720419439302">
     <nodeInfo nodeId="3013258720419439309" fileName="AddExtendedLanguage_QuickFix.java" startLine="15" startPosition="34" endLine="16" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3013258720419439332" fileName="AddExtendedLanguage_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="668792151828683952" fileName="AddExtendedLanguage_QuickFix.java" startLine="20" startPosition="162" endLine="21" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3013258720419439332" fileName="AddExtendedLanguage_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="668792151828683952" fileName="AddExtendedLanguage_QuickFix.java" startLine="20" startPosition="183" endLine="21" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3013258720419439302" fileName="AddExtendedLanguage_QuickFix.java" startLine="11" startPosition="68" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddExtendedLanguage_QuickFix#()V" />
     <nodeInfo nodeId="3013258720419439302" fileName="AddExtendedLanguage_QuickFix.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
     <nodeInfo nodeId="3013258720419439302" fileName="AddExtendedLanguage_QuickFix.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />

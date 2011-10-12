@@ -36,7 +36,7 @@ public class RBundle<T> {
     return myId;
   }
 
-  public RBundle addDependency(T id) {
+  public RBundle<T> addDependency(T id) {
     myDependencies.add(id);
     return this;
   }

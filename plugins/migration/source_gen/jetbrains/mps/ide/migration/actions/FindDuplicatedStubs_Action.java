@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.ProjectScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -60,7 +60,7 @@ public class FindDuplicatedStubs_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Map<String, List<SModelReference>> n2m = MapSequence.fromMap(new HashMap<String, List<SModelReference>>());
-      Iterable<SModelDescriptor> models = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectScope.class).getModelDescriptors();
+      Iterable<SModelDescriptor> models = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getScope().getModelDescriptors();
       Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor it) {
           return SModelStereotype.isStubModelStereotype(it.getStereotype());

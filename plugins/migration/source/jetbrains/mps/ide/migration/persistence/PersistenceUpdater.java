@@ -111,7 +111,7 @@ public class PersistenceUpdater {
 
   public void upgradePersistenceInProject(Project project, JFrame mainFrame, boolean silent) {
     MPSProject p = project.getComponent(MPSProject.class);
-    upgradePersistenceInUnit(project.getComponent(ProjectScope.class), "Project " + p.getProjectFile().toString(), mainFrame, silent);
+    upgradePersistenceInUnit(p.getScope(), "Project " + p.getProjectFile().toString(), mainFrame, silent);
   }
 
   public void upgradePersistenceInAllVisibleModels(Frame mainFrame) {

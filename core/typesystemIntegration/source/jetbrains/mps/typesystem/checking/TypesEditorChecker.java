@@ -17,7 +17,6 @@ package jetbrains.mps.typesystem.checking;
 
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.impl.LaterInvocator;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
@@ -31,6 +30,7 @@ import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -123,7 +123,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                         int caretY = 0;
 
                         Project p = (editorContext != null && editorContext.getOperationContext() != null ?
-                          editorContext.getOperationContext().getIdeaProject() :
+                          editorContext.getOperationContext().getProject() :
                           null
                         );
                         if (p == null) {

@@ -34,7 +34,7 @@ public class LibraryPropertiesDialog extends BasePropertiesDialog {
         myLibrary.setLibraryDescriptor(descriptor, true);
         myLibrary.save();
       }
-    }, getOperationContext().getIdeaProject());
+    }, getOperationContext().getProject());
     return true;
   }
 

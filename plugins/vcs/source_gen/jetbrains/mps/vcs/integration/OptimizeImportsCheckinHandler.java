@@ -82,7 +82,7 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
       final IOperationContext operationContext = ProjectOperationContext.get(myProject);
       ThreadUtils.assertLogIsEDT();
       try {
-        Project project = operationContext.getIdeaProject();
+        jetbrains.mps.project.Project project = operationContext.getProject();
         if (project != null) {
           ModelAccess.instance().runCommandInEDT(new Runnable() {
             public void run() {

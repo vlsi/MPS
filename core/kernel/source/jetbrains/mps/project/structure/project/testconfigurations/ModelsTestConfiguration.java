@@ -20,7 +20,6 @@ import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
@@ -49,7 +48,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
     Set<SModelDescriptor> modelDescriptors = new LinkedHashSet<SModelDescriptor>();
 
     for (SModelReference m : getModels()) {
-      modelDescriptors.add(project.getComponent(ProjectScope.class).getModelDescriptor(m));
+      modelDescriptors.add(project.getScope().getModelDescriptor(m));
     }
 
     if (modelDescriptors.isEmpty()) {

@@ -181,7 +181,7 @@ public class TypecheckerStateViewComponent extends JPanel {
       public void run() {
         myOperationContext.getComponent(MPSEditorOpener.class).openNode(rule);
       }
-    }, myOperationContext.getIdeaProject());
+    }, myOperationContext.getProject());
   }
 
   public class SNodeTree extends MPSTree {

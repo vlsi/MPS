@@ -22,6 +22,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.IModule.ModelAdjuster;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
@@ -207,7 +208,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
             }
           });
         }
-      }, project);
+      }, project.getComponent(MPSProject.class));
 
     if (modelDescriptor == null) {
       setErrorText("You can't create a model in the model root that you specified");

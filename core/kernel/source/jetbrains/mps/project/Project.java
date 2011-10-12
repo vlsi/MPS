@@ -24,10 +24,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
@@ -35,9 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Evgeny Gryaznov, 9/29/11
@@ -51,6 +46,38 @@ public abstract class Project implements MPSModuleOwner {
   protected ProjectDescriptor myProjectDescriptor;
   private List<ModuleReference> myModules = new ArrayList<ModuleReference>();
   private String myErrors = null;
+  private ProjectScope myScope = new ProjectScope();
+  private boolean isDisposed;
+
+  public void init(final File projectFile, final ProjectDescriptor projectDescriptor) {
+    isDisposed = false;
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        myProjectFile = projectFile;
+        myProjectDescriptor = projectDescriptor;
+
+        myScope = new ProjectScope();
+
+        readModules();
+
+        for (IModule m : getModules()) {
+          m.onModuleLoad();
+        }
+      }
+    });
+  }
+
+  public void dispose() {
+    isDisposed = true;
+  }
+
+  public boolean isDisposed() {
+    return isDisposed;
+  }
+
+  public ProjectScope getScope() {
+    return myScope;
+  }
 
   @NotNull
   public List<IModule> getModules() {
@@ -206,7 +233,26 @@ public abstract class Project implements MPSModuleOwner {
       }
     }
   }
+
   @Deprecated
   // should be left for compatibility with generated plugins (editor openers)
   public abstract <T> T getComponent(Class<T> t);
+
+  public class ProjectScope extends DefaultScope {
+
+    protected Set<IModule> getInitialModules() {
+
+      Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
+      assert Arrays.asList(openProjects).contains(Project.this) : "trying to get scope on a not-yet-loaded project";
+
+      Set<IModule> result = new HashSet<IModule>();
+      result.addAll(getProjectModules(IModule.class));
+
+      for (Language l : getProjectModules(Language.class)) {
+        result.addAll(l.getGenerators());
+      }
+      return result;
+    }
+  }
+
 }

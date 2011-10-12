@@ -36,7 +36,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
-import jetbrains.mps.project.ProjectScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -178,7 +178,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
 
   public void prepareAndCheckModules(List<IModule> modules, String taskTargetTitle, Icon taskIcon) {
     IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
-    SearchQuery searchQuery = new SearchQuery(new ModulesHolder(modules, myOperationContext), myProject.getComponent(ProjectScope.class));
+    SearchQuery searchQuery = new SearchQuery(new ModulesHolder(modules, myOperationContext), myProject.getComponent(MPSProject.class).getScope());
     myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
 
     myCheckProgressTitle = "Checking " + taskTargetTitle;
@@ -189,7 +189,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
 
   public void prepareAndCheckModels(List<SModelDescriptor> modelDescriptors, String taskTargetTitle, Icon taskIcon, ModelCheckerIssueFinder issueFinder) {
     IResultProvider resultProvider = FindUtils.makeProvider(issueFinder);
-    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, myOperationContext), myProject.getComponent(ProjectScope.class));
+    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, myOperationContext), myProject.getComponent(MPSProject.class).getScope());
     myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
 
     myCheckProgressTitle = "Checking " + taskTargetTitle;

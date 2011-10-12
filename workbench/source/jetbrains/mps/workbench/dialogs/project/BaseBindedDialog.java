@@ -24,7 +24,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
@@ -62,7 +61,7 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
   }
 
   public IScope getProjectScope() {
-    return getOperationContext().getIdeaProject().getComponent(ProjectScope.class);
+    return getOperationContext().getProject().getScope();
   }
 
   public void addNotify() {
