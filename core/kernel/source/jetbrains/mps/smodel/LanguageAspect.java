@@ -202,6 +202,24 @@ public enum LanguageAspect {
     return null;
   }
 
+  public EditableSModelDescriptor get(Language l, boolean doNotCreate) {
+    SModelFqName fqName = new SModelFqName(l.getModuleFqName() + "." + myName, null);
+
+    EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(fqName);
+    if (md != null && SModelRepository.getInstance().getOwners(md).contains(l))  return md;
+
+    if (doNotCreate)  return null;
+
+    SModelRoot modelRoot;
+    SModelDescriptor structureModel = l.getStructureModelDescriptor();
+    if (structureModel == null) {
+      modelRoot = l.getSModelRoots().get(0);
+    } else {
+      modelRoot = ModelRootUtil.getSModelRoot(structureModel);
+    }
+    return l.createModel(getModuleUID(l), modelRoot);
+  }
+
   public SModelReference get(ModuleReference l) {
     return new SModelReference(l.getModuleFqName() + "." + myName, null);
   }
