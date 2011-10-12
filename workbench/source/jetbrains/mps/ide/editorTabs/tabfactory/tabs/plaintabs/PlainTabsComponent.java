@@ -91,6 +91,11 @@ public class PlainTabsComponent extends BaseTabsComponent {
     });
   }
 
+  public EditorTabDescriptor getCurrentTabAspect() {
+    if (myLastEmptyTab != null) return myLastEmptyTab;
+    return myRealTabs.get(myJbTabs.getSelectedIndex()).getTab();
+  }
+
   public void setLastNode(SNodePointer node) {
     //not to make infinite recursion when tab is clicked
     if (ObjectUtils.equals(node, getLastNode())) return;

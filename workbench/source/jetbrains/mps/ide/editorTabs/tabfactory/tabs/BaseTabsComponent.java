@@ -74,8 +74,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
         onNodeChange(newNode);
       }
     }) {
-      protected SNode getCurrentAspect() {
-        return getLastNode().getNode();
+      protected EditorTabDescriptor getCurrentAspect() {
+        return getCurrentTabAspect();
       }
     };
 
@@ -85,6 +85,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
     addListeners();
   }
+
+  public abstract EditorTabDescriptor getCurrentTabAspect();
 
   public void dispose() {
     removeListeners();
