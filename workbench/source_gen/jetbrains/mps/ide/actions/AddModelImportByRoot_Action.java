@@ -103,7 +103,7 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
           NodeSubstituteInfo substituteInfo = errorLabel.getSubstituteInfo();
           substituteInfo.invalidateActions();
           List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(textToMatch, true);
-          if (ListSequence.fromList(matchingActions).count() == 1) {
+          if ((int) ListSequence.fromList(matchingActions).count() == 1) {
             ListSequence.fromList(matchingActions).first().substitute(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), initialText);
           }
         }
