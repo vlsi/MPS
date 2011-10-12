@@ -81,6 +81,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       }
     });
     if (!(canRefactor.value)) {
+      Messages.showErrorDialog("All concept should be from the same language.", "Move concepts");
       return false;
     }
     if (hasGenerator.value) {
@@ -103,7 +104,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     // move aspects 
     for (LanguageAspect aspect : SetSequence.fromSet(MapSequence.fromMap(aspectNodes).keySet())) {
       SModel fromModel = aspect.get(((Language) refactoringContext.getParameter("sourceLanguage"))).getSModel();
-      SModel toModel = aspect.get(targetLanguage, false).getSModel();
+      SModel toModel = aspect.getOrCreate(targetLanguage).getSModel();
       refactoringContext.updateByDefault(fromModel);
       refactoringContext.moveNodesToModel(MapSequence.fromMap(aspectNodes).get(aspect), toModel);
       refactoringContext.updateByDefault(toModel);
