@@ -59,14 +59,22 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   public void run(@NotNull final ProgressIndicator pi) {
     if (myState.compareAndSet(MakeTask.TaskState.NOT_STARTED, MakeTask.TaskState.RUNNING)) {
       if (ThreadUtils.isEventDispatchThread()) {
-        doRun(pi);
+        try {
+          doRun(pi);
+        } finally {
+          try {
+            reconcile();
+          } catch (RuntimeException ex) {
+            LOG.debug("Unexpected exception", ex);
+          }
+        }
       } else {
-        this.spawnMakeThreadThenDoRun(pi);
+        this.spawnMakeThreadThenDoRunRelayingLog(pi);
       }
     }
   }
 
-  private void spawnMakeThreadThenDoRun(final ProgressIndicator pi) {
+  private void spawnMakeThreadThenDoRunRelayingLog(final ProgressIndicator pi) {
     ThreadGroup tg = new ThreadGroup("MPS Make Thread Group");
     Thread makeThread = new Thread(tg, new Runnable() {
       public void run() {
