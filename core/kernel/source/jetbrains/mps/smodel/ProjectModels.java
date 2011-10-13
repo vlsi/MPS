@@ -23,12 +23,11 @@ public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
 
   @NotNull
-  public static BaseSModelDescriptor createDescriptorFor() {
+  public static BaseSModelDescriptor createDescriptorFor(boolean canFireEvents) {
     SModelFqName fqName = new SModelFqName("projectModel" + ourProjectModelDescriptorCount++, SModelStereotype.INTERNAL);
 
     SModelReference ref = new SModelReference(fqName, SModelId.generate());
-    BaseSModelDescriptor result = new MyBaseSModelDescriptor(ref);
-    return result;
+    return new MyBaseSModelDescriptor(ref,canFireEvents);
   }
 
   public static boolean isProjectModel(@NotNull SModelReference reference) {
@@ -36,12 +35,19 @@ public class ProjectModels {
   }
 
   private static class MyBaseSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor{
-    public MyBaseSModelDescriptor(SModelReference ref) {
+    private final boolean myCanFireEvents;
+
+    public MyBaseSModelDescriptor(SModelReference ref, boolean canFireEvents) {
       super(ref, false);
+      myCanFireEvents = canFireEvents;
     }
 
     protected ModelLoadResult initialLoad() {
-      SModel model = new SModel(this.getSModelReference());
+      SModel model = new SModel(this.getSModelReference()){
+        protected boolean canFireEvent() {
+          return myCanFireEvents;
+        }
+      };
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 

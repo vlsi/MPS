@@ -115,7 +115,7 @@ public abstract class BaseTransformationTest extends TestCase {
   private final void setModelDescriptor(SModelDescriptor modelDescriptor) {
     myModel = modelDescriptor;
     myModelOwner = new TemporaryModelOwner();
-    myTransidentModel = ProjectModels.createDescriptorFor();
+    myTransidentModel = ProjectModels.createDescriptorFor(true);
     CloneUtil.cloneModel(myModel.getSModel(), myTransidentModel.getSModel(), false);
     SModelOperations.validateLanguagesAndImports(myTransidentModel.getSModel(), false, false);
     SModelRepository.getInstance().registerModelDescriptor(myTransidentModel, myModelOwner);
