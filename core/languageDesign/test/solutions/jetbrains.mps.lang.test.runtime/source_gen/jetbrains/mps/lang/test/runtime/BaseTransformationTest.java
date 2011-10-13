@@ -5,17 +5,17 @@ package jetbrains.mps.lang.test.runtime;
 import junit.framework.TestCase;
 import java.awt.datatransfer.StringSelection;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.idea.LoggerFactory;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import jetbrains.mps.project.MPSProject;
 import junit.framework.Assert;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
@@ -41,14 +41,14 @@ public abstract class BaseTransformationTest extends TestCase {
 
   private SModelDescriptor myModel;
   private SModelDescriptor myTransidentModel;
-  private MPSProject myProject;
+  private Project myProject;
   private TemporaryModelOwner myModelOwner;
 
   public BaseTransformationTest() {
     Logger.setFactory(LoggerFactory.getInstance());
   }
 
-  public BaseTransformationTest(Project project, SModelDescriptor modelDescriptor) {
+  public BaseTransformationTest(com.intellij.openapi.project.Project project, SModelDescriptor modelDescriptor) {
     this();
     setProject(project);
     setModelDescriptor(modelDescriptor);
@@ -63,7 +63,7 @@ public abstract class BaseTransformationTest extends TestCase {
     // see MPS-10568 
     readSystemMacro();
     if (StringUtils.isEmpty(projectName)) {
-      for (Project project : ProjectManagerEx.getInstanceEx().getOpenProjects()) {
+      for (com.intellij.openapi.project.Project project : ProjectManagerEx.getInstanceEx().getOpenProjects()) {
         if ((myProject = project.getComponent(MPSProject.class)) != null) {
           break;
         }
@@ -91,7 +91,7 @@ public abstract class BaseTransformationTest extends TestCase {
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(EMPTY_CLIPBOARD_CONTENT, EMPTY_CLIPBOARD_CONTENT);
   }
 
-  private final void setProject(Project project) {
+  private final void setProject(com.intellij.openapi.project.Project project) {
     this.myProject = project.getComponent(MPSProject.class);
   }
 

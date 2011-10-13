@@ -20,14 +20,15 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IGenerationTracer;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -47,7 +48,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     SNodePointer nodePointer = myTracerNode.getNodePointer();
     if (nodePointer != null) {
       setNodeIdentifier("" + nodePointer.hashCode());
-    }else {
+    } else {
       setNodeIdentifier("<" + myTracerNode.getKind() + ">");
     }
     setIcon(Icons.getIcon(myTracerNode));
@@ -174,9 +175,9 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     SNode nodeToOpen = myTracerNode.getNodePointer().getNode();
     if (nodeToOpen == null) return;
 
-    IOperationContext context = ProjectOperationContext.get(myProject);
+    IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
 
-    new MPSEditorOpener(myProject).openNode(nodeToOpen, context,true,true);
+    new MPSEditorOpener(myProject).openNode(nodeToOpen, context, true, true);
   }
 
   public void doubleClick() {

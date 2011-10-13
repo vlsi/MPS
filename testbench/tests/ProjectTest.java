@@ -15,12 +15,11 @@
  */
 
 import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.MpsMakeHelper;
@@ -55,7 +54,7 @@ public class ProjectTest {
 
   private static ProjectTestHelper HELPER;
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
-  private static MPSProject mpsProject;
+  private static Project mpsProject;
 
   public static class Fixture {
     String fixtureId;
@@ -122,7 +121,7 @@ public class ProjectTest {
     });
     for (IModule module : allModules) {
       if (needsGeneration(module) && !(module instanceof Generator)) {
-        fixtures.add(new Object[]{new Fixture(module, mpsProject.getProject())});
+        fixtures.add(new Object[]{new Fixture(module, mpsProject)});
       }
     }
     return fixtures;
@@ -154,7 +153,7 @@ public class ProjectTest {
   public static void disposeProject() {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        mpsProject.dispose(false);
+        mpsProject.dispose();
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
       }

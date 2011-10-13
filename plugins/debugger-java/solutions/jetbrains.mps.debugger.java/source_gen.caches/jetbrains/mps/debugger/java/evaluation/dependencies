@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.ui.evaluation.EditWatchDialog" />
     <classNode dependClassName="jetbrains.mps.debugger.java.ui.evaluation.EvaluationDialog" />
     <classNode dependClassName="jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />

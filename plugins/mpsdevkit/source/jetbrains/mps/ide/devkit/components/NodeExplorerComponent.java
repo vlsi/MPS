@@ -17,8 +17,7 @@ package jetbrains.mps.ide.devkit.components;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.typesystem.PresentationManager;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -29,6 +28,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.typesystem.PresentationManager;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
@@ -49,7 +50,7 @@ public class NodeExplorerComponent {
 
   public void showNode(SNode node, Project project) {
     myNode = node == null ? null : new SNodePointer(node);
-    myTree.setOperationContext(ProjectOperationContext.get(project));
+    myTree.setOperationContext(new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
     myTree.rebuildNow();
   }
 

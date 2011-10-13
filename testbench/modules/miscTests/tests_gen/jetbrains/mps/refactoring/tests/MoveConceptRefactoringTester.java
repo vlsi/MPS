@@ -33,7 +33,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
       }
     });
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
-    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
+    refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
     final SModelDescriptor[] targetStructureModelDescriptor = new SModelDescriptor[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

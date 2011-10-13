@@ -21,6 +21,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -51,7 +52,7 @@ public class VariablesTree extends MPSTree implements DataProvider {
     ApplicationManager.getApplication().assertIsDispatchThread();
     myUiState = state;
     myProject = project;
-    myContext = ProjectOperationContext.get(project);
+    myContext = new ProjectOperationContext(ProjectHelper.toMPSProject(project));
 
     getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_OPEN_NODE_IN_PROJECT);
     getActionMap().put(COMMAND_OPEN_NODE_IN_PROJECT, new AbstractAction() {

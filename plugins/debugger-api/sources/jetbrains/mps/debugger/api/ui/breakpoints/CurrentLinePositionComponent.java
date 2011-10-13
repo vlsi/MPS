@@ -29,6 +29,7 @@ import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.NullLocation;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -165,7 +166,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   }
 
   private void attachPainterAndOpenEditor(@NotNull final CurrentLinePainter painter) {
-    EditorComponent currentEditorComponent = myEditorOpener.openNode(painter.getItem(), ProjectOperationContext.get(myProject), true, false).getCurrentEditorComponent();
+    EditorComponent currentEditorComponent = myEditorOpener.openNode(painter.getItem(), new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
     currentEditorComponent = EditorUtil.scrollToNode(painter.getItem(), currentEditorComponent, myFileEditorManager);
     if (currentEditorComponent != null) {
       attach(painter, currentEditorComponent);

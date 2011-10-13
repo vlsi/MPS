@@ -25,26 +25,19 @@ import org.jetbrains.annotations.Nullable;
 public class ModuleContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(ModuleContext.class);
 
-  // TODO use mps.Project
-  private com.intellij.openapi.project.Project myProject;
+  private Project myProject;
 
   //we need to store module reference this way because generator are recreated on every reload
   //and if we store generator reference here it will be stale
   private ModuleReference myModuleReference;
 
-  @Deprecated
-  public ModuleContext(@NotNull final IModule module, @NotNull final com.intellij.openapi.project.Project project) {
+  public ModuleContext(@NotNull final IModule module, @NotNull final Project project) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myModuleReference = module.getModuleReference();
       }
     });
     myProject = project;
-  }
-
-  public ModuleContext(@NotNull final IModule module, @NotNull final Project project) {
-    // TODO do not cast!!
-    this(module, ((MPSProject)project).getProject());
   }
 
   public <T> T getComponent(Class<T> clazz) {
@@ -55,7 +48,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @Override
   public Project getProject() {
-    return myProject.getComponent(MPSProject.class);
+    return myProject;
   }
 
   public IModule getModule() {
@@ -80,10 +73,10 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @Nullable
   @Deprecated
-  public static ModuleContext create(final SNode node, com.intellij.openapi.project.Project project) {
-    SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
-      public SModel compute() {
-        return node.getModel();
+  public static ModuleContext create(final SNode node, Project project) {
+    SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
+      public SModelDescriptor compute() {
+        return node.getModel().getModelDescriptor();
       }
     });
     return create(model, project);
@@ -91,18 +84,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @Nullable
   @Deprecated
-  public static ModuleContext create(final SModel model, com.intellij.openapi.project.Project project) {
-    SModelDescriptor modelDescriptor = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
-      public SModelDescriptor compute() {
-        return model.getModelDescriptor();
-      }
-    });
-    return create(modelDescriptor, project);
-  }
-
-  @Nullable
-  @Deprecated
-  public static ModuleContext create(@NotNull final SModelDescriptor model, com.intellij.openapi.project.Project project) {
+  public static ModuleContext create(@NotNull final SModelDescriptor model, Project project) {
 
     IModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
       public IModule compute() {

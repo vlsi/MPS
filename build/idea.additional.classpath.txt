@@ -12,6 +12,7 @@ core/baseLanguage/collections/runtime/classes
 core/baseLanguage/collections/languages/trove/runtime/classes
 core/baseLanguage/tuples/runtime/classes
 core/baseLanguage/closures/runtime/classes
+core/baseLanguage/unitTest/solutions/runtime/classes
 :editor
 core/editor-runtime/classes
 core/actions-runtime/classes

@@ -19,7 +19,7 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
@@ -59,7 +59,7 @@ public class ModelsExtractor {
   }
 
   private Iterable<SModelDescriptor> doLoadModels(Iterable<IFile> files, Collection<SModelDescriptor> models) {
-    for (MPSProject prj : collectFromProjects(files)) {
+    for (Project prj : collectFromProjects(files)) {
       extractModels(models, prj);
     }
     for (IModule mod : collectFromModuleFiles(files)) {
@@ -68,12 +68,12 @@ public class ModelsExtractor {
     return models;
   }
 
-  private Iterable<MPSProject> collectFromProjects(Iterable<IFile> files) {
-    Set<MPSProject> projects = new HashSet<MPSProject>();
+  private Iterable<Project> collectFromProjects(Iterable<IFile> files) {
+    Set<Project> projects = new HashSet<Project>();
     for (IFile projectFile : files) {
       if (projectFile.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
         assert !FileSystem.getInstance().isPackaged(projectFile);
-        final MPSProject project = TestMain.loadProject(new File(projectFile.getPath()));
+        final Project project = TestMain.loadProject(new File(projectFile.getPath()));
         projects.add(project);
       }
     }
@@ -120,7 +120,7 @@ public class ModelsExtractor {
     }
   }
 
-  private void extractModels(Collection<SModelDescriptor> modelDescriptors, MPSProject project) {
+  private void extractModels(Collection<SModelDescriptor> modelDescriptors, Project project) {
     List<SModelDescriptor> models = project.getProjectModels();
     for (Language language : project.getProjectModules(Language.class)) {
       models.addAll(language.getOwnModelDescriptors());

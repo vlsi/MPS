@@ -37,6 +37,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 
 public abstract class AbstractHierarchyView extends BaseProjectTool {
@@ -150,7 +151,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         }
         CommonChoosers.showSimpleNodeChooser(nodes, new CommonChoosers.ChooserCallback<SNode>() {
           public void execute(SNode node) {
-            final IOperationContext operationContext = ProjectOperationContext.get(getProject());
+            final IOperationContext operationContext = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
             showItemInHierarchy(node, operationContext);
           }
         });

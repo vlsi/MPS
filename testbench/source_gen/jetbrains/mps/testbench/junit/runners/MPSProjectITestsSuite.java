@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
@@ -78,7 +78,7 @@ public class MPSProjectITestsSuite extends Suite {
   }
 
   private List<SModelDescriptor> getModelDescriptors(org.junit.runners.model.TestClass klass) throws InitializationError {
-    MPSProject mpsProject = MPSOpenProjectRunner.getCurrentMPSProject();
+    Project mpsProject = MPSOpenProjectRunner.getCurrentMPSProject();
 
     String moduleUUID = getModuleUUID(klass);
     if (moduleUUID != null) {

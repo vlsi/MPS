@@ -27,6 +27,7 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.InspectorTool;
@@ -77,7 +78,7 @@ public class MPSEditorOpener {
     //todo why later?
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ModuleContext context = ModuleContext.create(node, myProject);
+        ModuleContext context = ModuleContext.create(node, ProjectHelper.toMPSProject(myProject));
         if (context == null) return;
         boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
           public Boolean compute() {

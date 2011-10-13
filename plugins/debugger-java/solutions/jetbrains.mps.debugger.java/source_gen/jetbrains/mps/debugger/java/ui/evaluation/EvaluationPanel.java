@@ -46,7 +46,7 @@ public class EvaluationPanel extends EvaluationUi {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        myEditor = new EmbeddableEditor(new ModuleContext(myEvaluationModel.getModule(), myEvaluationModel.getModule().getMPSProject().getProject()), myEvaluationModel.getModel(), myEvaluationModel.getRootToShow(), myEvaluationModel.getNodeToShow(), true);
+        myEditor = new EmbeddableEditor(new ModuleContext(myEvaluationModel.getModule(), myEvaluationModel.getModule().getMPSProject()), myEvaluationModel.getModel(), myEvaluationModel.getRootToShow(), myEvaluationModel.getNodeToShow(), true);
 
         for (Language language : myEvaluationModel.getRequiredLanguages()) {
           myEditor.addLanguage(language);

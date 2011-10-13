@@ -171,4 +171,9 @@ public class MPSProject extends Project implements ProjectComponent, PersistentS
   public <T> T getComponent(Class<T> clazz) {
     return getProject().getComponent(clazz);
   }
+
+  @Override
+  public String getName() {
+    return getProject().getName();
+  }
 }

@@ -26,7 +26,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
@@ -90,7 +90,7 @@ public class ClassPathTest extends BaseMPSTest {
     todo:explanation
   */
   public void testMPSModulesAreNotLoadingSameClasses() throws InvocationTargetException, InterruptedException {
-    final MPSProject project = loadProject(MPS_CORE_PROJECT);
+    final Project project = loadProject(MPS_CORE_PROJECT);
     assertNotNull("Can't open project " + MPS_CORE_PROJECT, project);
     waitForEDTTasksToComplete();
 
@@ -174,8 +174,8 @@ public class ClassPathTest extends BaseMPSTest {
     return classNames;
   }
 
-  private MPSProject loadProject(final String projectFilePath) {
-    final MPSProject[] projectArray = new MPSProject[]{null};
+  private Project loadProject(final String projectFilePath) {
+    final Project[] projectArray = new Project[]{null};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         try {
@@ -190,7 +190,7 @@ public class ClassPathTest extends BaseMPSTest {
         }
       }
     });
-    final MPSProject project = projectArray[0];
+    final Project project = projectArray[0];
     return project;
   }
 

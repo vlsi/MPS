@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
@@ -56,7 +57,7 @@ public class ModelDiffTool implements DiffTool {
           if (modelDescriptor == null) {
             context = new GlobalOperationContext();
           } else {
-            context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
+            context = new ModuleContext(modelDescriptor.getModule(), ProjectHelper.toMPSProject(request.getProject()));
           }
           boolean modal = !(request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
           JFrame frame = WindowManager.getInstance().getFrame(request.getProject());

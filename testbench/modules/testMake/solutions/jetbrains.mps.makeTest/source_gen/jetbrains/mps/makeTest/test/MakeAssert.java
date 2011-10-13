@@ -17,6 +17,7 @@ import java.lang.reflect.Method;
 import java.io.File;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
@@ -93,7 +94,7 @@ public class MakeAssert {
       return null;
     }
     System.out.println("Loading project");
-    return TestMain.loadProject(projectFile).getProject();
+    return ProjectHelper.toIdeaProject(TestMain.loadProject(projectFile));
   }
 
   private static void disposeProject(final Project project) {

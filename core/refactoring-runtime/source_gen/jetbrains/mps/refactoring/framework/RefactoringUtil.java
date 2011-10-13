@@ -26,7 +26,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.LinkedHashMap;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import java.util.Collections;
@@ -184,11 +183,6 @@ public class RefactoringUtil {
     return result;
   }
 
-  @Deprecated
-  public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(com.intellij.openapi.project.Project project, Language language) {
-    return RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project.getComponent(MPSProject.class), language);
-  }
-
   private static List<SModel> getLanguageModelsList(Project project, Language l) {
     ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
     languageConfig.setModuleRef(l.getModuleReference());
@@ -204,12 +198,7 @@ public class RefactoringUtil {
 
   }
 
-  @Deprecated
-  public static Map<IModule, List<SModel>> getLanguageModels(com.intellij.openapi.project.Project project, Language language) {
-    return RefactoringUtil.getLanguageModels(project.getComponent(MPSProject.class), language);
-  }
-
-  public static   enum Applicability {
+  public static enum Applicability {
     APPLICABLE() {
 
       public boolean lessThan(RefactoringUtil.Applicability level) {

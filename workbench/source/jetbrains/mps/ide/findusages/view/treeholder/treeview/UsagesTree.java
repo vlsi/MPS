@@ -31,6 +31,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNode
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -672,7 +673,7 @@ public class UsagesTree extends MPSTree {
   }
 
   public void navigateToNode(final SNode node, boolean focus) {
-    ModuleContext context = ModuleContext.create(node, myProject);
+    ModuleContext context = ModuleContext.create(node, ProjectHelper.toMPSProject(myProject));
     boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         return !node.isRoot();

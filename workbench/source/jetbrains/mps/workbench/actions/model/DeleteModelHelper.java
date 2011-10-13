@@ -26,6 +26,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.refactoring.GenericRefactoringAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.Message;
@@ -111,7 +112,7 @@ public class DeleteModelHelper {
         else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
           Object operationContext = myRealContext.getData(dataId);
           if (operationContext == null) {
-            operationContext = ProjectOperationContext.get(project);
+            operationContext = new ProjectOperationContext(ProjectHelper.toMPSProject(project));
           }
           return operationContext;
         }

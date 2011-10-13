@@ -135,7 +135,7 @@ public class RefactoringFacade {
               public void run() {
                 try {
                   jetbrains.mps.project.Project project = refactoringContext.getSelectedProject();
-                  refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
+                  refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
                   IRefactoring refactoring = refactoringContext.getRefactoring();
                   result[0] = refactoring.getAffectedNodes(refactoringContext);
                   if (result[0] == null) {
@@ -232,7 +232,7 @@ public class RefactoringFacade {
         }
       }
     });
-    final IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
+    final IOperationContext operationContext = new ProjectOperationContext(refactoringContext.getSelectedProject());
     new Thread() {
       public void run() {
         try {

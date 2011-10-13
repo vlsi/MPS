@@ -34,7 +34,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
       }
     });
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
-    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
+    refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         final SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();

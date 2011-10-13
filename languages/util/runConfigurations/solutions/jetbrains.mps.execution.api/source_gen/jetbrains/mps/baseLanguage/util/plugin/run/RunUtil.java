@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
@@ -54,7 +55,7 @@ public class RunUtil {
           }
         }).distinct().where(new IWhereFilter<SModelDescriptor>() {
           public boolean accept(SModelDescriptor it) {
-            return ModelGenerationStatusManager.getInstance().generationRequired(it, ProjectOperationContext.get(project));
+            return ModelGenerationStatusManager.getInstance().generationRequired(it, new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
           }
         }).toListSequence();
       }
@@ -67,9 +68,9 @@ public class RunUtil {
       return true;
     }
 
-    MakeSession session = new MakeSession(ProjectOperationContext.get(project), null, true);
+    MakeSession session = new MakeSession(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), null, true);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(ProjectOperationContext.get(project), models).resources(false));
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), models).resources(false));
       IResult result = null;
       try {
         result = future.get();

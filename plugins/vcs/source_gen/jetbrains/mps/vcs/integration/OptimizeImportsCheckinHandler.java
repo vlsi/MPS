@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -79,7 +80,7 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
         }
         affectedModels.add(model);
       }
-      final IOperationContext operationContext = ProjectOperationContext.get(myProject);
+      final IOperationContext operationContext = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
       ThreadUtils.assertLogIsEDT();
       try {
         jetbrains.mps.project.Project project = operationContext.getProject();

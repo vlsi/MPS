@@ -36,7 +36,7 @@ public class ProjectManager {
     final com.intellij.openapi.project.Project[] openProjects = com.intellij.openapi.project.ProjectManager.getInstance().getOpenProjects();
     List<Project> result = new ArrayList<Project>();
     for(com.intellij.openapi.project.Project p : openProjects) {
-      final MPSProject component = p.getComponent(MPSProject.class);
+      final Project component = p.getComponent(MPSProject.class);
       if(component != null) {
         result.add(component);
       }

@@ -15,6 +15,7 @@ public class MakeAddition_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       MakeAddition_ActionGroup.this.addSeparator();
+      MakeAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.RebuildRequiredModels_Action");
       MakeAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.BuildAllLanguageDescriptors_Action");
       MakeAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.BuildAllGenerators_Action");
       MakeAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.BuildAllStructures_Action");

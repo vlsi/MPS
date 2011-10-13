@@ -21,6 +21,7 @@ import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.DiffTemporaryModule;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -79,10 +80,11 @@ public class MergeModelsDialog extends BaseDialog {
         myInitialState = myMergeContext.getCurrentState();
       }
     });
-    DiffTemporaryModule.createModuleForModel(myMergeContext.getResultModel(), "result", myProject, true);
+    jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
+    DiffTemporaryModule.createModuleForModel(myMergeContext.getResultModel(), "result", p, true);
     myMergeContext.installResultModelListener();
-    DiffTemporaryModule.createModuleForModel(mineModel, "mine", myProject);
-    DiffTemporaryModule.createModuleForModel(repositoryModel, "repository", myProject);
+    DiffTemporaryModule.createModuleForModel(mineModel, "mine", p);
+    DiffTemporaryModule.createModuleForModel(repositoryModel, "repository", p);
 
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
 

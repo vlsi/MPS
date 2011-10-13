@@ -21,6 +21,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel;
 import org.jetbrains.annotations.NotNull;
@@ -123,7 +124,7 @@ public class EvaluationProvider implements IEvaluationProvider {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
-            EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(myDebugSession.getProject()), EvaluationProvider.this, model, new _FunctionTypes._void_P0_E0() {
+            EditWatchDialog editWatchDialog = new EditWatchDialog(new ProjectOperationContext(ProjectHelper.toMPSProject(myDebugSession.getProject())), EvaluationProvider.this, model, new _FunctionTypes._void_P0_E0() {
               @Override
               public void invoke() {
                 addWatch(model);

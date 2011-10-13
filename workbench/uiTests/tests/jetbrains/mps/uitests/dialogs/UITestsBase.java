@@ -26,7 +26,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.common.PathField;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.util.Computable;
 import junit.extensions.jfcunit.JFCTestCase;
 import junit.extensions.jfcunit.JFCTestHelper;
@@ -118,7 +118,7 @@ public abstract class UITestsBase extends JFCTestCase {
         }
       });
 
-      final MPSProject[] project = new MPSProject[1];
+      final jetbrains.mps.project.Project[] project = new jetbrains.mps.project.Project[1];
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           project[0] = TestMain.loadProject(new File(myProjectPath));
@@ -127,11 +127,11 @@ public abstract class UITestsBase extends JFCTestCase {
 
       TestUtil.conditionalWaitAndFlush(this, new Computable<Boolean>() {
         public Boolean compute() {
-          return project[0] != null && project[0].getProject() != null;
+          return project[0] != null && ProjectHelper.toIdeaProject(project[0]) != null;
         }
       });
 
-      return project[0].getProject();
+      return ProjectHelper.toIdeaProject(project[0]);
     }
   }
 

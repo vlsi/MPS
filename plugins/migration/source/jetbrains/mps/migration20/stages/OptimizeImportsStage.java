@@ -30,7 +30,7 @@ public class OptimizeImportsStage implements MigrationStage {
   }
 
   public void execute(MPSProject p) {
-    new OptimizeImportsHelper(ProjectOperationContext.get(p.getProject())).optimizeProjectImports(p);
+    new OptimizeImportsHelper(new ProjectOperationContext(p)).optimizeProjectImports(p);
     for (IModule module : ListSequence.fromList(p.getModules())) {
       module.save();
     }

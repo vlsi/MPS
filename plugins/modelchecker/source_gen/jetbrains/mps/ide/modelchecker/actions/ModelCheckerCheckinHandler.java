@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import java.awt.GridLayout;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.File;
@@ -64,7 +65,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
       return CheckinHandler.ReturnResult.COMMIT;
     }
 
-    return myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(ProjectOperationContext.get(myProject), getModelDescriptorsByFiles(myPanel.getFiles()));
+    return myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), getModelDescriptorsByFiles(myPanel.getFiles()));
   }
 
   private static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {

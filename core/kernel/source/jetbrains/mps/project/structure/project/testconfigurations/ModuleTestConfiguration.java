@@ -61,7 +61,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       }
 
       if(!fullRegeneration) {
-        models = new ArrayList<SModelDescriptor>(GenerationFacade.getModifiedModels(models, ProjectOperationContext.get(project)));
+        models = new ArrayList<SModelDescriptor>(GenerationFacade.getModifiedModels(models, new ProjectOperationContext(project)));
       }
 
       return new GenParameters(models, solution);
@@ -79,7 +79,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       }
 
       if(!fullRegeneration) {
-        inputModels = new ArrayList<SModelDescriptor>(GenerationFacade.getModifiedModels(inputModels, ProjectOperationContext.get(project)));
+        inputModels = new ArrayList<SModelDescriptor>(GenerationFacade.getModifiedModels(inputModels, new ProjectOperationContext(project)));
       }
 
       return new GenParameters(inputModels, lang);

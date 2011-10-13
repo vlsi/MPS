@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
@@ -120,7 +121,7 @@ public class VcsHelper {
         if (modelDescriptor == null) {
           context = new GlobalOperationContext();
         } else {
-          context = new ModuleContext(modelDescriptor.getModule(), project);
+          context = new ModuleContext(modelDescriptor.getModule(), ProjectHelper.toMPSProject(project));
         }
         JFrame frame = WindowManager.getInstance().getFrame(project);
         if (ModelDiffTool.isNewDiffEnabled()) {
@@ -144,7 +145,7 @@ public class VcsHelper {
     LOG.assertLog(file != null);
     final OldMergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<OldMergeModelsDialog>() {
       public OldMergeModelsDialog compute() {
-        IOperationContext context = new ModuleContext(base.getModelDescriptor().getModule(), project);
+        IOperationContext context = new ModuleContext(base.getModelDescriptor().getModule(), ProjectHelper.toMPSProject(project));
         return new OldMergeModelsDialog(context, base, mine, repo);
       }
     });

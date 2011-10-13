@@ -26,8 +26,8 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -72,7 +72,7 @@ public class GenerationTestBase {
     Testbench.reloadAll();
   }
 
-  protected void doMeasureParallelGeneration(final MPSProject p, final SModelDescriptor descr, int threads) throws IOException {
+  protected void doMeasureParallelGeneration(final Project p, final SModelDescriptor descr, int threads) throws IOException {
 
     // Stage 1. Regenerate
 
@@ -81,7 +81,7 @@ public class GenerationTestBase {
       .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new MyNonIncrementalGenerationStrategy()).create();
     IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
     GenerationFacade.generateModels(p,
-      Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+      Collections.singletonList(descr), ModuleContext.create(descr, p),
       generationHandler,
       new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
 
@@ -95,7 +95,7 @@ public class GenerationTestBase {
     generationHandler = new IncrementalTestGenerationHandler();
     long start = System.nanoTime();
     GenerationFacade.generateModels(p,
-      Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+      Collections.singletonList(descr), ModuleContext.create(descr, p),
       generationHandler,
       new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
     long singleThread = System.nanoTime() - start;
@@ -108,7 +108,7 @@ public class GenerationTestBase {
     generationHandler = new IncrementalTestGenerationHandler();
     start = System.nanoTime();
     GenerationFacade.generateModels(p,
-      Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+      Collections.singletonList(descr), ModuleContext.create(descr, p),
       generationHandler,
       new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
     long severalThreads = System.nanoTime() - start;
@@ -122,7 +122,7 @@ public class GenerationTestBase {
     }
   }
 
-  protected void doTestIncrementalGeneration(final MPSProject p, final SModelDescriptor originalModel, final ModelChangeRunnable... changeModel) throws IOException {
+  protected void doTestIncrementalGeneration(final Project p, final SModelDescriptor originalModel, final ModelChangeRunnable... changeModel) throws IOException {
     String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleFqName();
     String randomId = UUID.randomUUID().toString();
     final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
@@ -159,7 +159,7 @@ public class GenerationTestBase {
         .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
       IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
       GenerationFacade.generateModels(p,
-        Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+        Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
 
@@ -203,7 +203,7 @@ public class GenerationTestBase {
         generationHandler.checkIncremental(options);
         long start = System.nanoTime();
         GenerationFacade.generateModels(p,
-          Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+          Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
           new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
         time.add(System.nanoTime() - start);
@@ -220,7 +220,7 @@ public class GenerationTestBase {
       generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
       long start = System.nanoTime();
       GenerationFacade.generateModels(p,
-        Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+        Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
       time.add(System.nanoTime() - start);
@@ -254,7 +254,7 @@ public class GenerationTestBase {
     return result;
   }
 
-  protected static SModelDescriptor findModel(MPSProject project, String fqName) {
+  protected static SModelDescriptor findModel(Project project, String fqName) {
     for (IModule m : project.getModules()) {
       for (SModelDescriptor descr : m.getOwnModelDescriptors()) {
         if (!(descr instanceof EditableSModelDescriptor)) {
@@ -266,15 +266,15 @@ public class GenerationTestBase {
         }
       }
     }
-    Assert.fail(fqName + " not found in " + project.getProject().getName());
+    Assert.fail(fqName + " not found in " + project.getName());
     return null;
   }
 
-  protected static void cleanup(final MPSProject p) {
+  protected static void cleanup(final Project p) {
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        p.dispose(false);
+        p.dispose();
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
       }

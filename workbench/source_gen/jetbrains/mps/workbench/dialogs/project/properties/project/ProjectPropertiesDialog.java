@@ -5,6 +5,7 @@ package jetbrains.mps.workbench.dialogs.project.properties.project;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.properties.StandardComponents;
 import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -19,14 +20,14 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
   private ProjectPrefsExtraPanel[] myExtraPanels;
 
   public ProjectPropertiesDialog(final Project project) {
-    super(project.getName() + " Properties", ProjectOperationContext.get(project));
+    super(project.getName() + " Properties", new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
     myProject = project;
     collectProjectProperties();
     initUI();
   }
 
   public ProjectPropertiesDialog(final Project project, ProjectProperties properties, ProjectPrefsExtraPanel[] extraPanels) {
-    super(project.getName() + " Properties", ProjectOperationContext.get(project));
+    super(project.getName() + " Properties", new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
     myProject = project;
     myProperties = properties;
     myExtraPanels = extraPanels;
