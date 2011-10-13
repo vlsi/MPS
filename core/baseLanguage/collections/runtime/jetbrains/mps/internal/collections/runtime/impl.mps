@@ -1264,8 +1264,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6256642990713378576">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6256642990713378577">
             <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="6256642990713378565">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6543581031674026960" resolveInfo="INSTANCE" />
               <link role="classifier" roleId="tpee.1144433057691" targetNodeId="6543581031674024631" resolveInfo="NullCollectionSequence" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6256642990713378988" resolveInfo="INSTANCE" />
             </node>
             <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6256642990713378578">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6543581031674024631" resolveInfo="NullCollectionSequence" />
