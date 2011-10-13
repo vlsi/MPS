@@ -245,8 +245,8 @@
     </scopeInfo>
     <scopeInfo nodeId="8382013213871414454" fileName="AllMembersJavaStubs.java" startLine="50" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="8382013213871414554" varName="result" />
-      <varInfo nodeId="8382013213871414557" varName="startPath" />
       <varInfo nodeId="8382013213871414565" varName="module" />
+      <varInfo nodeId="8382013213871414557" varName="startPath" />
       <varInfo nodeId="8382013213871414559" varName="cp" />
       <varInfo nodeId="8382013213871414561" varName="prefix" />
       <varInfo nodeId="8382013213871414563" varName="languageId" />
