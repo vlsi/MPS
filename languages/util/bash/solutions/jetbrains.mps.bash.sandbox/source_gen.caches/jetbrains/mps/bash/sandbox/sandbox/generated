@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5mvhnwzhfrg9oebtzbeuxdleubypf0n">
+<dependencies version="2" modelHash="-1o7l8a9l6h89h5llyi6fsb7uimttbpc">
   <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" hash="67i7oghv65vyzyi0nktmd5fhen02az" />
   <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" hash="-5gilomj0upz2lx6vzb38bqslvfu9564" />
   <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="5kqdkiuumzl5w5r4bez4flvg8dzvzmj" />
@@ -30,7 +30,7 @@
     <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
     <file name="hello_world.sh" />
   </source>
-  <source id="3835416431562293713" name="example2" hash="-cxx5qlq3iwg0fn6e1inu9np2jeqv664">
+  <source id="3835416431562293713" name="example2" hash="6cxhgypcoloovbaw5eh8hgfbvrfgs87">
     <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
@@ -46,8 +46,9 @@
     <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
     <file name="example3.sh" />
   </source>
-  <source id="3835416431562846467" name="test" hash="6x2oicdi9jo5j52q3jmilzuoknaizm3">
+  <source id="3835416431562846467" name="test" hash="7uovpamtxpf45lm9hcipl7b7xwyhxfh">
     <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
     <file name="test.sh" />
   </source>
