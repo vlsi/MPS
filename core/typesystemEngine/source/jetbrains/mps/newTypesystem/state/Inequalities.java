@@ -26,9 +26,9 @@ import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
 import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ManyToManyMap;
- 
+
 import java.util.*;
- 
+
 public class Inequalities {
   private final State myState;
   private ManyToManyMap<SNode, SNode> myInputsToOutputsInc = new ManyToManyMap<SNode, SNode>();
@@ -36,31 +36,31 @@ public class Inequalities {
   private Set<SNode> myNodesInc = new THashSet<SNode>();
   private Set<SNode> mySolvableLeft = new THashSet<SNode>();
   private Set<SNode> mySolvableRight = new THashSet<SNode>();
- 
+
   private static final ComparableRelation comparableRelation = new ComparableRelation();
   private static final SubTypingRelation subTypingRelation = new SubTypingRelation();
- 
+
   private boolean solvingInProcess = false;
- 
+
   public void setSolvingInProcess(boolean solvingInProcess) {
     this.solvingInProcess = solvingInProcess;
   }
- 
+
   public boolean isSolvingInProcess() {
     return solvingInProcess;
   }
- 
+
   public Inequalities(State state) {
     myState = state;
   }
- 
+
   public void printAll() {
     System.out.println("Relations");
     for (Block node : getRelationsToSolve()) {
       System.out.println(node.getExpandedPresentation(myState));
     }
   }
- 
+
   private void printMMMap(ManyToManyMap<SNode, SNode> map) {
     for (SNode node :map.getFirst()) {
       System.out.print(node + " <- " );
@@ -70,7 +70,7 @@ public class Inequalities {
       System.out.println();
     }
   }
- 
+
   private SNode getNodeWithNoInput(Set<SNode> unsorted, Set<SNode> used) {
     for (SNode node : unsorted) {
       if (used.containsAll(myInputsToOutputsInc.getBySecond(node))) {
@@ -80,7 +80,7 @@ public class Inequalities {
     }
     return unsorted.iterator().next();
   }
- 
+
   public List<RelationBlock> getRelationsToSolve() {
     List<RelationBlock> result = new LinkedList<RelationBlock>();
     for (Block block : myState.getBlocks()) {
@@ -93,7 +93,7 @@ public class Inequalities {
     }
     return result;
   }
- 
+
   public void solveRelations() {
     solvingInProcess = true;
     List<RelationBlock> inequalities = getRelationsToSolve();
@@ -103,30 +103,32 @@ public class Inequalities {
     }
     solvingInProcess = false;
   }
- 
+
   private void addVariablesLinkInc(SNode input, SNode output) {
      if (!TypesUtil.isVariable(input)) return;
      if (!TypesUtil.isVariable(output)) return;
      if (input == output) return;
      myInputsToOutputsInc.addLink(input, output);
    }
- 
+
   private void initializeMapsInc(List<RelationBlock> inequalities) {
     myInputsToOutputsInc.clear();
     myNodesToBlocksInc.clear();
     myNodesInc.clear();
+    mySolvableLeft.clear();
+    mySolvableRight.clear();
     for (RelationBlock inequality : inequalities) {
       onInequalityAdded(inequality);
     }
   }
- 
+
   private void substituteVarInSet(SNode oldVar, SNode newVar, Set<SNode> varSet) {
     varSet.remove(oldVar);
     if (TypesUtil.isVariable(newVar)) {
       myNodesInc.add(newVar);
     }
   }
- 
+
   public void onEquationAdded(SNode child, SNode parent) {
     if (!solvingInProcess) return;
     for (RelationBlock block : new ArrayList<RelationBlock>(myNodesToBlocksInc.getByFirst(child))) {
@@ -152,11 +154,11 @@ public class Inequalities {
       myInputsToOutputsInc.removeLink(inputVar, child);
     }
   }
- 
+
   public void onInequalityAdded(RelationBlock inequality) {
     if (!solvingInProcess) return;
     if (inequality.isCheckOnly()) { return; }
-    for (Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
+    for (com.intellij.openapi.util.Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
       SNode input = myState.getRepresentative(pair.first);
       SNode output = myState.getRepresentative(pair.second);
       if (input == null || output == null) continue;
@@ -185,21 +187,7 @@ public class Inequalities {
       mySolvableRight.add(right);
     }
   }
- 
-  private boolean compareMap (ManyToManyMap m1, ManyToManyMap m2) {
-    Set first1 = m1.getFirst();
-    Set first2 = m2.getFirst();
- 
-    if (!(first1.containsAll(first2) && first2.containsAll(first1))) {
-      return false;
-    }
-    for (Object f : first1) {
-      if (!m1.getByFirst(f).containsAll(m2.getByFirst(f))) return false;
-      if (!m2.getByFirst(f).containsAll(m1.getByFirst(f))) return false;
-    }
-    return true;
-  }
- 
+
   private boolean chooseVarAndSolve(Set<SNode> nodes) {
     //Solves relation for an independent node
     //first tries to solve for when concrete waiting node
@@ -224,7 +212,7 @@ public class Inequalities {
     }
     return false;
   }
- 
+
   private boolean iteration(List<RelationBlock> inequalities) {
     if (myNodesInc.size() == 0) {
       return false;
@@ -234,7 +222,7 @@ public class Inequalities {
     if (lastChance(inequalities)) return true;
     return false;
   }
- 
+
   private boolean lastChance(List<RelationBlock> inequalities) {
     for (RelationBlock inequality : inequalities) {
       if (!(TypesUtil.isVariable(inequality.getLeftNode()) && TypesUtil.isVariable(inequality.getRightNode()))) {
@@ -244,8 +232,11 @@ public class Inequalities {
     }
     return false;
   }
- 
-  private void collectNodesInRelation(SNode node, Set<SNode> lefts, Set<SNode> rights, Set<RelationBlock> blocks, Map<SNode, RelationBlock> typesToBlocks) {
+
+  private void collectNodesTransitive(SNode node, Set<SNode> collected, boolean isLeft, Map<SNode, RelationBlock> typesToBlocks, AbstractRelation relation, Set<SNode> alreadyPassed) {
+    Set<RelationBlock> blocks = myNodesToBlocksInc.getByFirst(node);
+    alreadyPassed.add(node);
+    blocks = getRelationBlocks(blocks, relation);
     for (RelationBlock block : blocks) {
       if (block.isCheckOnly()) {
         continue;
@@ -255,23 +246,26 @@ public class Inequalities {
       if (right == left) {
         continue;
       }
-      if (left == node && !TypesUtil.isVariable(right)) {
-        SNode type = myState.expand(right);
-        rights.add(type);
-        typesToBlocks.put(type, block);
-      }
-      if (right == node && !TypesUtil.isVariable(left)) {
-        SNode type = myState.expand(left);
-        lefts.add(type);
-        typesToBlocks.put(type, block);
+      SNode cur = isLeft ? left : right;
+      SNode other = isLeft ? right : left;
+      if (cur == node) {
+        if (!TypesUtil.isVariable(other)) {
+          SNode type = myState.expand(other);
+          collected.add(type);
+          typesToBlocks.put(type, block);
+        } else {
+          if (!alreadyPassed.contains(other)){
+            collectNodesTransitive(other, collected, isLeft, typesToBlocks, relation, alreadyPassed);
+          }
+        }
       }
     }
   }
- 
+
   private boolean solveRelationsForNode(SNode node) {
     return solveRelationForNode(node, subTypingRelation) || solveRelationForNode(node, comparableRelation);
   }
- 
+
   private Set<RelationBlock> getRelationBlocks(Set<RelationBlock> blocks, AbstractRelation relation) {
     Set<RelationBlock> result = new THashSet<RelationBlock>();
     for (RelationBlock block : blocks) {
@@ -281,26 +275,26 @@ public class Inequalities {
     }
     return result;
   }
- 
+
   private boolean solveRelationForNode(SNode node, AbstractRelation relation) {
     Map<SNode, RelationBlock> typesToBlocks = new THashMap<SNode, RelationBlock>();
     assert TypesUtil.isVariable(node);
-    Set<RelationBlock> blocks = myNodesToBlocksInc.getByFirst(node);
-    blocks = getRelationBlocks(blocks, relation);
     Set<SNode> rightTypes = new LinkedHashSet<SNode>();
     Set<SNode> leftTypes = new LinkedHashSet<SNode>();
- 
-    collectNodesInRelation(node, leftTypes, rightTypes, blocks, typesToBlocks);
+
+    //collectNodesInRelation(node, leftTypes, rightTypes, blocks, typesToBlocks);
+    collectNodesTransitive(node, leftTypes, false, typesToBlocks, relation, new HashSet<SNode>());
+    collectNodesTransitive(node, rightTypes, true, typesToBlocks, relation, new HashSet<SNode>());
     return relation.solve(node, leftTypes, rightTypes, myState, typesToBlocks);
   }
- 
+
   public Map<Set<SNode>, Set<InequalityBlock>> getInequalityGroups(Set<Block> inequalities) {
     Map<SNode, Set<SNode>> components = new HashMap<SNode, Set<SNode>>(1);
     Map<Set<SNode>, Set<InequalityBlock>> groupsToInequalities = new HashMap<Set<SNode>, Set<InequalityBlock>>();
     Set<SNode> emptySet = new HashSet<SNode>(1);
     for (Block block : inequalities) {
       InequalityBlock inequality = (InequalityBlock) block;
- 
+
       List<SNode> variables = TypesUtil.getVariables(inequality.getRightNode(), myState);
       variables.addAll(TypesUtil.getVariables(inequality.getLeftNode(), myState));
       if (variables.size() == 0) {
@@ -313,7 +307,7 @@ public class Inequalities {
         continue;
       }
       Set<SNode> currentResult = new HashSet<SNode>();
- 
+
       Set<InequalityBlock> currentInequalities = new HashSet<InequalityBlock>();
       currentInequalities.add(inequality);
       for (SNode var : variables) {
@@ -338,8 +332,8 @@ public class Inequalities {
     }
     return groupsToInequalities;
   }
- 
+
   public void clear() {
- 
+
   }
 }
