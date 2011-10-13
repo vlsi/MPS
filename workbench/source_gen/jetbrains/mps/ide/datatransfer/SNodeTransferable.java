@@ -57,7 +57,7 @@ public class SNodeTransferable implements Transferable {
   }
 
   public DataFlavor[] getTransferDataFlavors() {
-    return (DataFlavor[]) flavors.clone();
+    return ((DataFlavor[]) flavors).clone();
   }
 
   public boolean isDataFlavorSupported(DataFlavor flavor) {

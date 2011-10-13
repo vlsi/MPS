@@ -12,6 +12,9 @@ import jetbrains.mps.ide.properties.StandardDialogs;
 import jetbrains.mps.smodel.Language;
 
 public class NewModelUtil {
+  public NewModelUtil() {
+  }
+
   public static void ShowModulePropertiesDialog(final IModule module, final IOperationContext context) {
     final Wrappers._T<BasePropertiesDialog> dialog = new Wrappers._T<BasePropertiesDialog>();
     if (module instanceof Solution) {

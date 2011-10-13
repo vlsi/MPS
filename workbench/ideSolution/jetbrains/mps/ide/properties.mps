@@ -7965,6 +7965,11 @@
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3201642974933960739" />
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5249055041137646133">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5249055041137646134" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5249055041137646135" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5249055041137646136" />
+    </node>
   </root>
   <root id="901357770590699924">
     <node role="builder" roleId="pmg0.7288041816792374845" type="pmg0.SimpleBuilderDeclaration" typeId="pmg0.7288041816792374840" id="901357770590699925">
@@ -8514,7 +8519,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="106298403293410345">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="106298403293410346">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6j9k.~StandardComponents$CheckboxDescriptor%d&lt;init&gt;(java%dlang%dObject,java%dlang%dString,java%dlang%dString)" resolveInfo="StandardComponents.CheckboxDescriptor" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4060390951635972895" resolveInfo="StandardComponents.CheckboxDescriptor" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="106298403293410347">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5923576889075041659" resolveInfo="myProperties" />
                   </node>
@@ -8905,15 +8910,15 @@
             <property name="name" nameId="tpck.1169194664001" value="list" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075041867">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075041868">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6j9k.~StandardComponents$CheckboxDescriptor" resolveInfo="StandardComponents.CheckboxDescriptor" />
+              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5249055041137639298">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4060390951635972881" resolveInfo="StandardComponents.CheckboxDescriptor" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5923576889075041869">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5923576889075041870">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075041871">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6j9k.~StandardComponents$CheckboxDescriptor" resolveInfo="StandardComponents.CheckboxDescriptor" />
+                <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5249055041137639299">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4060390951635972881" resolveInfo="StandardComponents.CheckboxDescriptor" />
                 </node>
               </node>
             </node>
@@ -8928,7 +8933,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5923576889075041890">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5923576889075041891">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6j9k.~StandardComponents$CheckboxDescriptor%d&lt;init&gt;(java%dlang%dObject,java%dlang%dString,java%dlang%dString)" resolveInfo="StandardComponents.CheckboxDescriptor" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4060390951635972895" resolveInfo="StandardComponents.CheckboxDescriptor" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8692480643148204682">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5923576889075041825" resolveInfo="myProperties" />
                   </node>
@@ -8955,7 +8960,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7168227884262510670">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7168227884262510671">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6j9k.~StandardComponents$CheckboxDescriptor%d&lt;init&gt;(java%dlang%dObject,java%dlang%dString,java%dlang%dString)" resolveInfo="StandardComponents.CheckboxDescriptor" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4060390951635972895" resolveInfo="StandardComponents.CheckboxDescriptor" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8692480643148205170">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5923576889075041825" resolveInfo="myProperties" />
                       </node>
@@ -10875,15 +10880,15 @@
             <property name="name" nameId="tpck.1169194664001" value="list" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075042725">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2215918467464704736">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6j9k.~StandardComponents$CheckboxDescriptor" resolveInfo="StandardComponents.CheckboxDescriptor" />
+              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5249055041137646131">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4060390951635972881" resolveInfo="StandardComponents.CheckboxDescriptor" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5923576889075042727">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5923576889075042728">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075042729">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6j9k.~StandardComponents$CheckboxDescriptor" resolveInfo="StandardComponents.CheckboxDescriptor" />
+                <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5249055041137646132">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4060390951635972881" resolveInfo="StandardComponents.CheckboxDescriptor" />
                 </node>
               </node>
             </node>
@@ -10898,7 +10903,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5923576889075042745">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5923576889075042746">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6j9k.~StandardComponents$CheckboxDescriptor%d&lt;init&gt;(java%dlang%dObject,java%dlang%dString,java%dlang%dString)" resolveInfo="StandardComponents.CheckboxDescriptor" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4060390951635972895" resolveInfo="StandardComponents.CheckboxDescriptor" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8692480643148205178">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5923576889075042687" resolveInfo="myProperties" />
                   </node>
@@ -20009,7 +20014,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5923576889075048072">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="1200564340082201715">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Window%ddispose()%cvoid" resolveInfo="dispose" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xpbq.~BaseDialog%ddispose()%cvoid" resolveInfo="dispose" />
           </node>
         </node>
       </node>
@@ -20056,7 +20061,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5923576889075048095">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="1200564340082201677">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Window%ddispose()%cvoid" resolveInfo="dispose" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xpbq.~BaseDialog%ddispose()%cvoid" resolveInfo="dispose" />
           </node>
         </node>
       </node>

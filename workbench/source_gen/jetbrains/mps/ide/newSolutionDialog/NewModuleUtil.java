@@ -19,6 +19,9 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 
 public class NewModuleUtil {
+  public NewModuleUtil() {
+  }
+
   public static String check(String extension, String namespace, String rootPath) {
     if (!(SourceVersion.isName(namespace))) {
       return "Module namespace should be valid Java package";

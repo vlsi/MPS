@@ -616,7 +616,7 @@
     <nodeInfo nodeId="6299533519672652076" fileName="SNodeTransferable.java" startLine="53" startPosition="40" endLine="54" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6299533519672652083" fileName="SNodeTransferable.java" startLine="54" startPosition="46" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6299533519672652088" fileName="SNodeTransferable.java" startLine="55" startPosition="19" endLine="56" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6299533519672652012" fileName="SNodeTransferable.java" startLine="59" startPosition="48" endLine="60" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6299533519672652012" fileName="SNodeTransferable.java" startLine="59" startPosition="48" endLine="60" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6299533519672652109" fileName="SNodeTransferable.java" startLine="65" startPosition="35" endLine="66" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6299533519672652111" fileName="SNodeTransferable.java" startLine="68" startPosition="5" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6299533519672652155" fileName="SNodeTransferable.java" startLine="73" startPosition="39" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -662,7 +662,7 @@
     <nodeInfo nodeId="6299533519672652247" fileName="SNodeTransferable.java" startLine="106" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeData#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/datatransfer/PasteNodeData;" />
     <nodeInfo nodeId="6299533519672652165" fileName="SNodeTransferable.java" startLine="89" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveNodes#(Ljava/util/List;Ljava/util/Map;)V" />
     <scopeInfo nodeId="6299533519672652042" fileName="SNodeTransferable.java" startLine="44" startPosition="47" endLine="45" endPosition="27" />
-    <scopeInfo nodeId="6299533519672652011" fileName="SNodeTransferable.java" startLine="59" startPosition="48" endLine="60" endPosition="42" />
+    <scopeInfo nodeId="6299533519672652011" fileName="SNodeTransferable.java" startLine="59" startPosition="48" endLine="60" endPosition="44" />
     <scopeInfo nodeId="6299533519672652108" fileName="SNodeTransferable.java" startLine="65" startPosition="35" endLine="66" endPosition="20" />
     <scopeInfo nodeId="6299533519672652154" fileName="SNodeTransferable.java" startLine="73" startPosition="39" endLine="74" endPosition="18" />
     <scopeInfo nodeId="6299533519672652151" fileName="SNodeTransferable.java" startLine="76" startPosition="41" endLine="77" endPosition="27" />

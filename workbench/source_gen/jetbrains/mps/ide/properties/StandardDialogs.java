@@ -17,6 +17,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class StandardDialogs {
+  public StandardDialogs() {
+  }
+
   public static LanguagePropertiesDialog createLanguagePropertiesDialog(final Language l, final IOperationContext context) {
     return new _FunctionTypes._return_P0_E0<LanguagePropertiesDialog>() {
       public LanguagePropertiesDialog invoke() {

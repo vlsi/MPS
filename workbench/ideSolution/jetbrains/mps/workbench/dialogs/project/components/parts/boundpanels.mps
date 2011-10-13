@@ -2519,7 +2519,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499497619" resolveInfo="myChooser" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1560298786499498029">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8a0f.~Computable%dcompute()%cjava%dlang%dObject" resolveInfo="compute" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~Computable%dcompute()%cjava%dlang%dObject" resolveInfo="compute" />
                 </node>
               </node>
             </node>
