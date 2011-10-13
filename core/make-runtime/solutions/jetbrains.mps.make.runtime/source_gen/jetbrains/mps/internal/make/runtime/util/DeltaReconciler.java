@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.make.delta.IDeltaVisitor;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.util.Iterator;
@@ -41,6 +43,22 @@ public class DeltaReconciler {
         dc.mergeContent().reconcile();
       }
     });
+    final List<IFile> writtenFiles = ListSequence.fromList(new ArrayList<IFile>());
+    final List<IFile> deletedFiles = ListSequence.fromList(new ArrayList<IFile>());
+    visitAll(new FilesDelta.Visitor() {
+      @Override
+      public boolean acceptDeleted(IFile file) {
+        ListSequence.fromList(deletedFiles).addElement(file);
+        return true;
+      }
+
+      @Override
+      public boolean acceptWritten(IFile file) {
+        ListSequence.fromList(writtenFiles).addElement(file);
+        return true;
+      }
+    });
+    FileSystem.getInstance().scheduleUpdateForWrittenFiles(writtenFiles);
   }
 
   public void visitAll(final IDeltaVisitor visitor) {
