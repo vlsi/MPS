@@ -15410,8 +15410,8 @@
       <varInfo nodeId="6974494769387270827" varName="rightType" />
     </scopeInfo>
     <scopeInfo nodeId="6974494769387270871" fileName="Queries.java" startLine="31" startPosition="22" endLine="40" endPosition="7">
-      <varInfo nodeId="6974494769387270891" varName="stringClass" />
       <varInfo nodeId="6974494769387270885" varName="javaLang" />
+      <varInfo nodeId="6974494769387270891" varName="stringClass" />
       <varInfo nodeId="6974494769387270873" varName="javaLangJavaStubModelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="6974494769387270844" fileName="Queries.java" startLine="27" startPosition="100" endLine="47" endPosition="51">
