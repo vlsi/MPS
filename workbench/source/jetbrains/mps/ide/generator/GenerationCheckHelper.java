@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.generator;
 
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 

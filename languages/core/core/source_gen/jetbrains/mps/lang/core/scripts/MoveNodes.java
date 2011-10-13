@@ -127,8 +127,8 @@ public class MoveNodes extends BaseGeneratedRefactoring {
     }
     if (targetModel != null) {
       IModule module = targetModel.getModelDescriptor().getModule();
-      if (refactoringContext.getSelectedMPSProject() != null) {
-        final IOperationContext operationContext = new ModuleContext(module, refactoringContext.getSelectedMPSProject());
+      if (refactoringContext.getSelectedProject() != null) {
+        final IOperationContext operationContext = new ModuleContext(module, refactoringContext.getSelectedProject());
         if (operationContext != null) {
           refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
         }

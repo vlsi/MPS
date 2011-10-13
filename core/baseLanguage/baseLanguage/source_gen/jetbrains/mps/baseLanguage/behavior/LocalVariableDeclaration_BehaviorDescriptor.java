@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 
 public class LocalVariableDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements IResolveInfo_BehaviorDescriptor, IVariableAssignment_BehaviorDescriptor, IVariableDeclaration_BehaviorDescriptor, ILocalDeclaration_BehaviorDescriptor {
   public LocalVariableDeclaration_BehaviorDescriptor() {

@@ -3784,7 +3784,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215084972903" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1215084972899">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ge2m.4792031542972815482" resolveInfo="getSelectedMPSProject" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ge2m.4792031542972815491" resolveInfo="getSelectedProject" />
             </node>
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1215084972900" />
           </node>
@@ -6096,7 +6096,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7953996722066276303" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7953996722066276301">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ge2m.4792031542972815482" resolveInfo="getSelectedMPSProject" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ge2m.4792031542972815491" resolveInfo="getSelectedProject" />
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7953996722066278788" />
             </node>
           </node>

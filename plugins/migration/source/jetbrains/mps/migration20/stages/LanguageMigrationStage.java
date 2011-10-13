@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.migration20.stages;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -27,6 +26,7 @@ import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -40,7 +40,7 @@ public class LanguageMigrationStage implements MigrationStage {
   }
 
   public void execute(MPSProject p) {
-    executeScripts(p.getProject(), ScriptsFinder.find());
+    executeScripts(p, ScriptsFinder.find());
   }
 
   public boolean needsCommand() {
@@ -57,7 +57,7 @@ public class LanguageMigrationStage implements MigrationStage {
   }
 
   private static void executeScripts(Project project, List<SNodePointer> scripts) {
-    SearchQuery query = new SearchQuery(new ModulesOnlyScope(project.getComponent(MPSProject.class).getModulesWithGenerators()));
+    SearchQuery query = new SearchQuery(new ModulesOnlyScope(project.getModulesWithGenerators()));
     MigrationScriptFinder finder = new MigrationScriptFinder(scripts, ProjectOperationContext.get(project));
     IResultProvider provider = FindUtils.makeProvider(finder);
     SearchResults<SNode> results = FindUtils.getSearchResults(new EmptyProgressMonitor(), query, provider);

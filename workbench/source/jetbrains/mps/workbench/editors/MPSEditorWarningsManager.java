@@ -28,6 +28,7 @@ import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.IModule;
@@ -85,7 +86,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void updateWarnings(@NotNull final MPSFileNodeEditor editor) {
-    final Project project = editor.getNodeEditor().getOperationContext().getIdeaProject();
+    final Project project = ProjectHelper.toIdeaProject(editor.getNodeEditor().getOperationContext().getProject());
 
     DumbService.getInstance(project).smartInvokeLater(new Runnable() {
       public void run() {

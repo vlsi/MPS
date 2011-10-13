@@ -17,6 +17,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.ide.ThreadUtils;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
@@ -57,31 +58,39 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
 
   public void run(@NotNull final ProgressIndicator pi) {
     if (myState.compareAndSet(MakeTask.TaskState.NOT_STARTED, MakeTask.TaskState.RUNNING)) {
-      ThreadGroup tg = new ThreadGroup("Make Thread Group");
-      Thread makeThread = new Thread(tg, new Runnable() {
-        public void run() {
-          MakeTask.RelayingLoggingHandler rlh = new MakeTask.RelayingLoggingHandler(myMessageHandler);
-          try {
-            rlh.startRelaying();
-            doRun(pi);
-          } finally {
-            try {
-              reconcile();
-            } catch (RuntimeException ex) {
-              MakeTask.LOG.debug("Unexpected exception", ex);
-            }
-            rlh.stopRelaying();
-          }
-        }
-      });
-      makeThread.start();
-      do {
-        try {
-          makeThread.join();
-        } catch (InterruptedException ie) {
-        }
-      } while (makeThread.isAlive());
+      if (ThreadUtils.isEventDispatchThread()) {
+        doRun(pi);
+      } else {
+        this.spawnMakeThreadThenDoRun(pi);
+      }
     }
+  }
+
+  private void spawnMakeThreadThenDoRun(final ProgressIndicator pi) {
+    ThreadGroup tg = new ThreadGroup("MPS Make Thread Group");
+    Thread makeThread = new Thread(tg, new Runnable() {
+      public void run() {
+        MakeTask.RelayingLoggingHandler rlh = new MakeTask.RelayingLoggingHandler(myMessageHandler);
+        try {
+          rlh.startRelaying();
+          doRun(pi);
+        } finally {
+          try {
+            reconcile();
+          } catch (RuntimeException ex) {
+            MakeTask.LOG.debug("Unexpected exception", ex);
+          }
+          rlh.stopRelaying();
+        }
+      }
+    }, "MPS Make Thread");
+    makeThread.start();
+    do {
+      try {
+        makeThread.join();
+      } catch (InterruptedException ie) {
+      }
+    } while (makeThread.isAlive());
   }
 
   @Override

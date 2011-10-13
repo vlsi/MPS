@@ -23,7 +23,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590592(jetbrains.mps.xmlInternal.generator.baseLanguage.template.main@generator)" hash="-askbll7vk05trff5hqzgmhsvb5rr48g" />
   <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" hash="-bgznvokgb361qonnvwu1ytof1l3k61k" />
   <dep model="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)" hash="-6xjiub2ivxcuyxpttsgzrcg5i905lqe" />
-  <dep model="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)" hash="-4nceabf05v9pdf2w2v8e24r7zrn98hv" />
+  <dep model="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)" hash="-4iisv0iw8dniqhbo54zglbwa13j0gtu" />
   <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="2svbhresarem3nqzd415j9rlpqg8k40" />
   <dep model="r:6a4f00d3-a72e-48b0-96be-a5139db9536c(jetbrains.mps.baseLanguage.closures)" hash="8wwaipgi6b6pnq9zq4wkezbiarfaswi" />
   <dep model="r:9e8f23e3-7bd3-4292-ac1d-5693a6c373f3(jetbrains.mps.internal.collections)" hash="2vtkvhnznw3r7v0gvr9qkvod8xbyk7k" />

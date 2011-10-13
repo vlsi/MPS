@@ -6,6 +6,7 @@ import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -23,7 +24,7 @@ public class ModelOrNodeChooser extends JBScrollPane {
 
   public ModelOrNodeChooser(final RefactoringContext context) {
     super();
-    this.myTree = new ProjectTree(context.getSelectedProject());
+    this.myTree = new ProjectTree(ProjectHelper.toIdeaProject(context.getSelectedProject()));
     this.setViewportView(this.myTree);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {

@@ -32,11 +32,6 @@ class NullOperationContext implements IOperationContext {
     return null;
   }
 
-  @Deprecated
-  public com.intellij.openapi.project.Project getIdeaProject() {
-    return null;
-  }
-
   public IModule getModule() {
     return null;
   }

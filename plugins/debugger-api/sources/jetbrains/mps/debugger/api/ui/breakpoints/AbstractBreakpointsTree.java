@@ -125,9 +125,9 @@ abstract class AbstractBreakpointsTree extends BreakpointsView {
   }
 
   protected void updateView() {
-    myModelKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).isGroupByModel());
-    myModuleKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).isGroupByModule());
-    myRootKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).isGroupByRoot());
+    myModelKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getProject()).isGroupByModel());
+    myModuleKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getProject()).isGroupByModule());
+    myRootKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getProject()).isGroupByRoot());
   }
 
   protected void updateBreakpointsData() {

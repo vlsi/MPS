@@ -5,9 +5,10 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.util.Pair;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.codeStyle.CodeStyleSettings;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GenerateGettersAndSettersUtil {
@@ -47,7 +48,7 @@ public class GenerateGettersAndSettersUtil {
 
   public static String getParameterNameForField(SNode field, Project project) {
     String preparedFieldName = getPreparedFieldName(field, project);
-    CodeStyleSettings codeStyleSettings = CodeStyleSettings.getInstance(project);
+    CodeStyleSettings codeStyleSettings = CodeStyleSettings.getInstance(ProjectHelper.toIdeaProject(project));
     if (codeStyleSettings == null) {
       return NameUtil.decapitalize(preparedFieldName);
     }
@@ -77,7 +78,7 @@ public class GenerateGettersAndSettersUtil {
     if (rawName == null || rawName.length() == 0) {
       return "unnamedField";
     }
-    CodeStyleSettings codeStyleSettings = CodeStyleSettings.getInstance(project);
+    CodeStyleSettings codeStyleSettings = CodeStyleSettings.getInstance(ProjectHelper.toIdeaProject(project));
     if (codeStyleSettings == null) {
       return rawName;
     }

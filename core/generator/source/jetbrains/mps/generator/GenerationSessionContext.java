@@ -106,12 +106,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   @NotNull
-  @Deprecated
-  public com.intellij.openapi.project.Project getIdeaProject() {
-    return myInvocationContext.getIdeaProject();
-  }
-
-  @NotNull
   public IScope getScope() {
     return getModule().getScope();
   }

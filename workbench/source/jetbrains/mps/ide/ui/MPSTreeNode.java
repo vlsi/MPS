@@ -16,12 +16,12 @@
 package jetbrains.mps.ide.ui;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessage;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -333,7 +333,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
               IOperationContext context = getOperationContext();
               if (context == null) return;
               if (!context.isValid()) return;
-              Project project = context.getIdeaProject();
+              Project project = context.getProject();
               if (project == null) return;
               if (project.isDisposed()) return;
 

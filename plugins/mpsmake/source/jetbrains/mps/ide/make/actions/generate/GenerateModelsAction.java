@@ -49,7 +49,7 @@ public abstract class GenerateModelsAction extends BaseAction {
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     //noinspection ConstantConditions
     boolean checkSuccessful = GenerationCheckHelper.getInstance()
-      .checkModelsBeforeGenerationIfNeeded(myContext.getIdeaProject(), myContext, (List<SModelDescriptor>) ((List) myModels), new Runnable() {
+      .checkModelsBeforeGenerationIfNeeded(myContext.getProject(), myContext, (List<SModelDescriptor>) ((List) myModels), new Runnable() {
         public void run() {
           GeneratorUIFacade.getInstance().generateModels(
             myContext,

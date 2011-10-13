@@ -48,11 +48,6 @@ public class ModuleChangingOperationContext implements IOperationContext {
     return myOperationContext.getProject();
   }
 
-  @Deprecated
-  public com.intellij.openapi.project.Project getIdeaProject() {
-    return myOperationContext.getIdeaProject();
-  }
-
   @NotNull
   public IScope getScope() {
     return myOperationContext.getScope();

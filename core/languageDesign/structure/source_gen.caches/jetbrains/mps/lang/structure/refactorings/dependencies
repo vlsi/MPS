@@ -16,7 +16,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.refactorings.MoveConcepts" file="MoveConcepts.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -44,6 +43,7 @@
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
@@ -74,7 +74,6 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.BaseChooserSettings" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.refactorings.MoveLinkUp" file="MoveLinkUp.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -97,6 +96,7 @@
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
@@ -127,7 +127,6 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.paramchooser.BaseChooser" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.refactorings.MovePropertyUp" file="MovePropertyUp.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -148,6 +147,7 @@
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />

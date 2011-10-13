@@ -10,11 +10,9 @@ public class JobMonitorProgressIndicator extends ProgressIndicatorAdapter {
 
   private IJobMonitor jm;
   private LinkedList<String> workStack = new LinkedList<String>();
-  private int workLeft;
 
   public JobMonitorProgressIndicator(IJobMonitor jm) {
     this.jm = jm;
-    this.workLeft = jm.currentProgress().workLeft();
   }
 
   @Override
@@ -31,9 +29,11 @@ public class JobMonitorProgressIndicator extends ProgressIndicatorAdapter {
   }
 
   @Override
-  public void setFraction(double d) {
+  public void setFraction(double frac) {
     if (!(workStack.isEmpty())) {
-      jm.currentProgress().advanceWork(workStack.peek(), (int) (WORK_AMOUNT * d));
+      jm.currentProgress().workLeft();
+      double currFrac = 1. - (double) jm.currentProgress().workLeft() / WORK_AMOUNT;
+      jm.currentProgress().advanceWork(workStack.peek(), (int) (WORK_AMOUNT * (Math.max(0., frac - currFrac))));
     }
   }
 

@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.GlobalScope;
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
 import jetbrains.mps.ide.actions.AddConceptMethodStrategy;
 import jetbrains.mps.ide.actions.MethodsToImplementStrategy;
@@ -57,7 +57,7 @@ public class ImplementMethods_Intention extends BaseIntention implements Intenti
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         Frame frame = editorContext.getMainFrame();
-        Project project = editorContext.getOperationContext().getIdeaProject();
+        Project project = editorContext.getOperationContext().getProject();
         new StratergyAddMethodDialog(editorContext, frame, new AddConceptMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
       }
     });

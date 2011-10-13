@@ -100,6 +100,7 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog;
@@ -738,7 +739,7 @@ __switch__:
                     public void run() {
                       final Wrappers._T<BaseDialog> dialog = new Wrappers._T<BaseDialog>();
                       if (ModelDiffTool.isNewDiffEnabled()) {
-                        dialog.value = new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(operationContext.getIdeaProject(), beforeRevNumber, afterRevNumber));
+                        dialog.value = new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(ProjectHelper.toIdeaProject(operationContext.getProject()), beforeRevNumber, afterRevNumber));
                       } else {
                         dialog.value = new OldModelDifferenceDialog(operationContext, frame, beforeModel.value, afterModel, "Model Difference", false, new String[]{beforeRevNumber, afterRevNumber});
                       }

@@ -369,6 +369,7 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerSettings" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerUtils" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerViewer" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.IComponentDisposer" />
@@ -433,6 +434,7 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelChecker" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssueFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

@@ -164,11 +164,6 @@ public class DynamicReference extends SReferenceBase {
     }
 
     @Override
-    public com.intellij.openapi.project.Project getIdeaProject() {
-      return null;
-    }
-
-    @Override
     public IModule getModule() {
       return module;
     }

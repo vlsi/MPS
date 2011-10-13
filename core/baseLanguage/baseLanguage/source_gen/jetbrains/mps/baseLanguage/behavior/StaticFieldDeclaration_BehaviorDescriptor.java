@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import javax.swing.Icon;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 
 public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
   public StaticFieldDeclaration_BehaviorDescriptor() {

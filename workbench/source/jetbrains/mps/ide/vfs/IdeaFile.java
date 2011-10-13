@@ -21,7 +21,6 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.commons.lang.ObjectUtils;
@@ -37,7 +36,6 @@ import java.util.List;
  * @author Evgeny Gerashchenko
  */
 class IdeaFile implements IFileEx {
-  private static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
 
   // Class invariant: myVirtualFile and myPath cannot be both null/both not-null
   private String myPath = null;
@@ -47,7 +45,7 @@ class IdeaFile implements IFileEx {
     myPath = path;
   }
 
-  IdeaFile(@NotNull VirtualFile virtualFile) {
+  private IdeaFile(@NotNull VirtualFile virtualFile) {
     myVirtualFile = virtualFile;
   }
 
@@ -154,7 +152,7 @@ class IdeaFile implements IFileEx {
         myPath = null;
         return true;
       } catch (IOException e) {
-        LOG.error(e);
+        IdeaFileSystemProvider.LOG.error(e);
         return false;
       }
     }
@@ -233,7 +231,7 @@ class IdeaFile implements IFileEx {
         ((NewVirtualFile) myVirtualFile).setTimeStamp(time);
         return true;
       } catch (IOException e) {
-        LOG.warning("", e);
+        IdeaFileSystemProvider.LOG.warning("", e);
       }
     }
     return false;

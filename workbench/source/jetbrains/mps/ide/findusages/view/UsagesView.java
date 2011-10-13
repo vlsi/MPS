@@ -39,6 +39,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
@@ -143,7 +144,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
       models.add(modelDescriptor);
     }
 
-    ProjectOperationContext context = ProjectOperationContext.get(myProject);
+    ProjectOperationContext context = ProjectOperationContext.get(myProject.getComponent(MPSProject.class));
     if (myMakeSession.compareAndSet(null, new MakeSession(context))) {
       try {
         if (IMakeService.INSTANCE.get().openNewSession(myMakeSession.get())) {

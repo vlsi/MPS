@@ -3164,7 +3164,7 @@
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ista.~GenerationCheckHelper%dgetInstance()%cjetbrains%dmps%dide%dgenerator%dGenerationCheckHelper" resolveInfo="getInstance" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3519555968774803950">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ista.~GenerationCheckHelper%dcheckModelsBeforeGenerationIfNeeded(com%dintellij%dopenapi%dproject%dProject,jetbrains%dmps%dsmodel%dIOperationContext,java%dutil%dList,java%dlang%dRunnable)%cboolean" resolveInfo="checkModelsBeforeGenerationIfNeeded" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ista.~GenerationCheckHelper%dcheckModelsBeforeGenerationIfNeeded(jetbrains%dmps%dproject%dProject,jetbrains%dmps%dsmodel%dIOperationContext,java%dutil%dList,java%dlang%dRunnable)%cboolean" resolveInfo="checkModelsBeforeGenerationIfNeeded" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3519555968774803951">
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3519555968774803952">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3519555968774803953">
@@ -3175,7 +3175,7 @@
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3519555968774803955">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~IOperationContext%dgetIdeaProject()%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="getIdeaProject" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~IOperationContext%dgetProject()%cjetbrains%dmps%dproject%dProject" resolveInfo="getProject" />
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3519555968774803956">

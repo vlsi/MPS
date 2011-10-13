@@ -23,6 +23,7 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.intentions.*;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
@@ -258,12 +259,12 @@ public class IntentionsSupport {
           public void run() {
             SNode intentionNode = intentionsManager.getNodeByIntention(intention);
             if (intentionNode == null) {
-              Messages.showErrorDialog(myEditor.getOperationContext().getIdeaProject(),
+              Messages.showErrorDialog(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject()),
                 "Could not find declaration for " + intention.getClass().getSimpleName()
                   + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
             } else {
               myEditor.getOperationContext().getComponent(MPSEditorOpener.class).editNode(intentionNode, myEditor.getOperationContext());
-              ProjectPane.getInstance(myEditor.getOperationContext().getIdeaProject()).selectNode(intentionNode, false);
+              ProjectPane.getInstance(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject())).selectNode(intentionNode, false);
             }
           }
         });

@@ -45,7 +45,7 @@ import jetbrains.mps.util.NameUtil;
       return Collections.emptyList();
     }
 
-    ISearchScope allNodesScope = SModelSearchUtil.createModelAndImportedModelsScope(myReferenceConceptLink.getModel(), myScope);
+    ISearchScope allNodesScope = SModelSearchUtil.createModelAndImportedModelsScope(SNodeOperations.getModel(myReferenceConceptLink), myScope);
     return allNodesScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode n) {
         return SNodeOperations.isInstanceOf(n, NameUtil.nodeFQName(targetConcept));

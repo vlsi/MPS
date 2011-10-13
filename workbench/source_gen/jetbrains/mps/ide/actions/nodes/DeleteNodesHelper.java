@@ -6,6 +6,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Iterator;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,7 +32,7 @@ public class DeleteNodesHelper {
     if (myNodes.size() == 0) {
       return;
     }
-    ProjectPane projectPane = ProjectPane.getInstance(myContext.getIdeaProject());
+    ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(myContext.getProject()));
     if (myNodes.size() == 1) {
       deleteSingle(projectPane, fromProjectPane, myNodes.get(0));
     } else {
@@ -101,7 +102,7 @@ public class DeleteNodesHelper {
       }
     });
     refactoringContext.setSelectedModule(context.getModule());
-    refactoringContext.setSelectedProject(context.getIdeaProject());
+    refactoringContext.setSelectedProject(context.getProject());
     new Thread() {
       public void run() {
         new RefactoringFacade().execute(refactoring, refactoringContext);

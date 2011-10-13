@@ -30,7 +30,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   private boolean myShortNameOnly;
   private boolean myInitialized;
 
-  protected ProjectDevKitTreeNode(DevKit devkit, MPSProject project, boolean shortNameOnly) {
+  protected ProjectDevKitTreeNode(DevKit devkit, Project project, boolean shortNameOnly) {
     super(new ModuleContext(devkit, project));
     myShortNameOnly = shortNameOnly;
     myDevKit = devkit;
@@ -84,7 +84,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    MPSProject project = getOperationContext().getIdeaProject().getComponent(MPSProject.class);
+    Project project = getOperationContext().getProject();
 
     TextTreeNode extendedDevkits = new TextTreeNode("extended devkits");
     for (DevKit d : myDevKit.getExtendedDevKits()) {

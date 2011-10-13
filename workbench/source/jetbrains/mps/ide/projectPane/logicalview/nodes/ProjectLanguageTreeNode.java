@@ -25,8 +25,8 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelReferenceTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
@@ -37,11 +37,11 @@ import java.util.List;
 
 public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   private Language myLanguage;
-  private MPSProject myProject;
+  private Project myProject;
   private boolean myShortNameOnly;
   private boolean myInitialized;
 
-  protected ProjectLanguageTreeNode(@NotNull Language language, MPSProject project, boolean shortNameOnly) {
+  protected ProjectLanguageTreeNode(@NotNull Language language, Project project, boolean shortNameOnly) {
     super(new ModuleContext(language, project));
     myShortNameOnly = shortNameOnly;
     myLanguage = language;

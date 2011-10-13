@@ -19,7 +19,6 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -129,13 +128,13 @@ public class RefactoringFacade {
     final SearchResults[] result = new SearchResults[]{null};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getIdeaProject(), "Finding usages...", false) {
+        ProgressManager.getInstance().run(new Modal(ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject()), "Finding usages...", false) {
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 try {
-                  Project project = refactoringContext.getSelectedProject();
+                  jetbrains.mps.project.Project project = refactoringContext.getSelectedProject();
                   refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
                   IRefactoring refactoring = refactoringContext.getRefactoring();
                   result[0] = refactoring.getAffectedNodes(refactoringContext);

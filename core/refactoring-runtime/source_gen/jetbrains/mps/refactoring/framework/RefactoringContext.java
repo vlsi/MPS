@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationData;
 import jetbrains.mps.smodel.SNodeId;
@@ -39,7 +39,6 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -541,10 +540,6 @@ public class RefactoringContext {
 
   public void setCurrentOperationContext(IOperationContext currentOperationContext) {
     myCurrentOperationContext = currentOperationContext;
-  }
-
-  public MPSProject getSelectedMPSProject() {
-    return getSelectedProject().getComponent(MPSProject.class);
   }
 
   public Project getSelectedProject() {

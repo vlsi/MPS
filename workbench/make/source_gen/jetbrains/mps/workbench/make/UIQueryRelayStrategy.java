@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class UIQueryRelayStrategy {
   public UIQueryRelayStrategy() {
@@ -28,7 +29,7 @@ public class UIQueryRelayStrategy {
     final Wrappers._int res = new Wrappers._int(-1);
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        res.value = Messages.showDialog(context.getIdeaProject(), query.getText(), query.getTitle(), options, defopt, defopt, Messages.getQuestionIcon());
+        res.value = Messages.showDialog(ProjectHelper.toIdeaProject(context.getProject()), query.getText(), query.getTitle(), options, defopt, defopt, Messages.getQuestionIcon());
       }
     });
     if (res.value < 0) {

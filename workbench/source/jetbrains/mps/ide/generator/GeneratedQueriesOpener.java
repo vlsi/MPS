@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.ide.generator;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.navigation.NavigationProvider;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -40,7 +39,7 @@ public class GeneratedQueriesOpener {
     for (Method m : cls.getMethods()) {
       if (m.getName().endsWith("_" + node.getId())) {
         for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
-          if (np.openMethod(getProjectPath(context.getIdeaProject()), modelName + ".QueriesGenerated", m.getName(), m.getParameterTypes().length)) {
+          if (np.openMethod(getProjectPath(context.getProject()), modelName + ".QueriesGenerated", m.getName(), m.getParameterTypes().length)) {
             return true;
           }
         }
@@ -54,7 +53,7 @@ public class GeneratedQueriesOpener {
   private static String getProjectPath(Project p) {
     if (p == null) return null;
 
-    File mpsProject = p.getComponent(MPSProject.class).getProjectFile();
+    File mpsProject = p.getProjectFile();
 
     File projectFile = mpsProject.getParentFile();
     return projectFile.getAbsolutePath();

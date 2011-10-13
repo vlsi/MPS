@@ -22,6 +22,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.resources.FResource;
 import javax.swing.SwingUtilities;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import java.util.concurrent.ExecutionException;
@@ -52,7 +54,8 @@ public class TextPreviewUtil {
 
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                FileEditorManager.getInstance(context.getIdeaProject()).openTextEditor(new OpenFileDescriptor(context.getIdeaProject(), tfile), true);
+                Project p = ProjectHelper.toIdeaProject(context.getProject());
+                FileEditorManager.getInstance(p).openTextEditor(new OpenFileDescriptor(p, tfile), true);
               }
             });
           }

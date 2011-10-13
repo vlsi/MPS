@@ -32,6 +32,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.TabComponentFactory;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateGroupsBuilder;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -161,7 +162,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       SModelDescriptor md = containingRoot.getModel().getModelDescriptor();
       IModule module = md.getModule();
       assert module != null : md.getSModelReference().toString() + "; node is disposed = " + node.isDisposed();
-      editor.editNode(containingRoot, new ModuleContext(module, myContext.getIdeaProject()));
+      editor.editNode(containingRoot, new ModuleContext(module, myContext.getProject()));
 
       model = getCurrentNodeModel();
       assert model != null;
@@ -187,7 +188,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   }
 
   private boolean updateProperties() {
-    final Project project = getOperationContext().getIdeaProject();
+    final Project project = ProjectHelper.toIdeaProject(getOperationContext().getProject());
     FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
     VirtualFile virtualFile = manager.getCurrentFile();
     if (virtualFile == null) return true;

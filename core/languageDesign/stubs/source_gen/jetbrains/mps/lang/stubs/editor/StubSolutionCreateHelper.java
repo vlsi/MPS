@@ -53,6 +53,6 @@ public class StubSolutionCreateHelper {
       }
     });
 
-    context.getIdeaProject().save();
+    ProjectHelper.toIdeaProject(context.getProject()).save();
   }
 }

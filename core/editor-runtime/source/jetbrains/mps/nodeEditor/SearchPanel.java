@@ -22,6 +22,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.cellLayout.PunctuationUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -59,7 +60,7 @@ public class SearchPanel extends AbstractSearchPanel {
     if (operationContext == null) {
       return new SearchHistoryComponent();
     }
-    return operationContext.getIdeaProject().getComponent(SearchHistoryComponent.class);
+    return operationContext.getProject().getComponent(SearchHistoryComponent.class);
   }
 
   private Pair<List<EditorCell_Label>, String> allCellsAndContent() {
@@ -296,7 +297,7 @@ public class SearchPanel extends AbstractSearchPanel {
         return i1.compareTo(i2);
       }
     });
-    UsagesViewTool usagesViewTool = new UsagesViewTool(myEditor.getOperationContext().getIdeaProject());
+    UsagesViewTool usagesViewTool = new UsagesViewTool(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject()));
     BaseNode baseNode = new BaseNode() {
       public SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor) {
         monitor.start("", 1);

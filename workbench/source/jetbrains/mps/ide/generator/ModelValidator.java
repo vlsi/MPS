@@ -16,14 +16,14 @@
 package jetbrains.mps.ide.generator;
 
 import com.intellij.openapi.extensions.ExtensionPointName;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.List;
 
 /**
- *  evgeny, 2/24/11
+ * evgeny, 2/24/11
  */
 public interface ModelValidator {
 

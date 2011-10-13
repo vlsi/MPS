@@ -16,7 +16,6 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.project.MPSProject;
 import java.util.Arrays;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelLoadingState;
@@ -42,7 +41,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
         targetStructureModelDescriptor[0] = testRefactoringTargetLanguage.getStructureModelDescriptor();
         SModel model = structureModelDescriptor.getSModel();
         SNode concept = SModelOperations.getRootByName(model, conceptName);
-        refactoringContext.setSelectedProject(project.getComponent(MPSProject.class).getProject());
+        refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(concept);
         refactoringContext.setSelectedNodes(Arrays.asList(concept));
         refactoringContext.setSelectedModel(structureModelDescriptor);

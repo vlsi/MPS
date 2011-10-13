@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
@@ -32,6 +32,7 @@ import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeGroupTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -61,7 +62,7 @@ public class SModelNodeListeners implements NodeListeners {
     mySimpleModelListener = new MySimpleModelListener(modelNode);
     myStatusListener = new MyGenerationStatusListener();
     if (myModel instanceof EditableSModelDescriptor) {
-      myTreeUpdater = new MySNodeTreeUpdater(modelNode.getOperationContext().getIdeaProject(), modelNode);
+      myTreeUpdater = new MySNodeTreeUpdater(modelNode.getOperationContext().getProject(), modelNode);
       myTreeUpdater.setDependencyRecorder(modelNode.getDependencyRecorder());
     }
     myEventsListener = new MySModelEventsListener();
@@ -156,9 +157,9 @@ public class SModelNodeListeners implements NodeListeners {
     }
 
     private boolean showPropertiesAndReferences(SModelTreeNode node) {
-      Project project = node.getOperationContext().getIdeaProject();
+      Project project = node.getOperationContext().getProject();
       return node.getTree() instanceof LogicalViewTree &&
-        ProjectPane.getInstance(project).isShowPropertiesAndReferences();
+        ProjectPane.getInstance(ProjectHelper.toIdeaProject(project)).isShowPropertiesAndReferences();
     }
 
     private SNodeTreeNode findRootSNodeTreeNode(SNode node) {

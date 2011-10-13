@@ -116,7 +116,7 @@ public abstract class BaseGenerateAction extends BaseAction {
     final IOperationContext invocationContext1 = invocationContext;
     //noinspection ConstantConditions
     boolean checkSuccessful = GenerationCheckHelper.getInstance()
-      .checkModelsBeforeGenerationIfNeeded(myProject, invocationContext, modelsToGenerate, new Runnable() {
+      .checkModelsBeforeGenerationIfNeeded(myProject.getComponent(MPSProject.class), invocationContext, modelsToGenerate, new Runnable() {
         public void run() {
           IGenerationHandler generationHandler = GeneratorUIFacade.getInstance().getDefaultGenerationHandler();
           GeneratorUIFacade.getInstance().generateModels(

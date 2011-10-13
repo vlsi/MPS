@@ -69,10 +69,10 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     setModal(false);
 
     myContext = context;
-    myBreakpointsManager = BreakpointManagerComponent.getInstance(myContext.getIdeaProject());
-    myBreakpointsUi = BreakpointsUiComponent.getInstance(myContext.getIdeaProject());
+    myBreakpointsManager = BreakpointManagerComponent.getInstance(ProjectHelper.toIdeaProject(myContext.getProject()));
+    myBreakpointsUi = BreakpointsUiComponent.getInstance(ProjectHelper.toIdeaProject(myContext.getProject()));
     myProvidersManager = myContext.getComponent(BreakpointProvidersManager.class);
-    myCurrentViewIndex = BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).getViewIndex();
+    myCurrentViewIndex = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getViewIndex();
     myViews = new BreakpointsView[]{new BreakpointsTable(myContext, myBreakpointsManager), new BreakpointsTree(myContext, myBreakpointsManager)};
 
     myMainPanel = new JPanel(new BorderLayout());
@@ -105,7 +105,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   }
 
   private void saveState() {
-    if (myContext.getIdeaProject().isDisposed()) return;
+    if (myContext.getProject().isDisposed()) return;
     for (BreakpointsView view : myViews) {
       view.saveState();
     }
@@ -354,7 +354,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
   private void switchView() {
     myCurrentViewIndex = 1 - myCurrentViewIndex;
-    BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).setViewIndex(myCurrentViewIndex);
+    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setViewIndex(myCurrentViewIndex);
     myBreakpointsScrollPane.setViewportView(myViews[myCurrentViewIndex].getMainComponent());
   }
 

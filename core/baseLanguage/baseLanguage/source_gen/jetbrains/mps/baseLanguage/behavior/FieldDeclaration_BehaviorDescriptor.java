@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 
 public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
   public FieldDeclaration_BehaviorDescriptor() {

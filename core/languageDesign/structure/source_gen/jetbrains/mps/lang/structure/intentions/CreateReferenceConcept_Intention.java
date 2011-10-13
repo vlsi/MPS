@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -76,7 +77,7 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
     SPropertyOperations.set(editor, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
 
     IOperationContext context = editorContext.getOperationContext();
-    new MPSEditorOpener(context.getIdeaProject()).editNode(concept, context);
+    new MPSEditorOpener(ProjectHelper.toIdeaProject(context.getProject())).editNode(concept, context);
   }
 
   public String getLocationString() {

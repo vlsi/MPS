@@ -18,6 +18,7 @@ package jetbrains.mps.refactoring.framework.paramchooser.mps.internal;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
@@ -44,7 +45,7 @@ public class MPSNodeChooser implements IChooser {
     }
 
     protected Project getProject() {
-      return myContext.getSelectedProject();
+      return ProjectHelper.toIdeaProject(myContext.getSelectedProject());
     }
 
     protected ProjectModulesPoolTreeNode getModulesPoolNode() {
@@ -61,7 +62,7 @@ public class MPSNodeChooser implements IChooser {
     myContext = context;
     mySettings = settings;
 
-    initUI(myContext.getCurrentOperationContext().getIdeaProject());
+    initUI(myContext.getCurrentOperationContext().getProject());
 
     Object value = settings.getInitialValue();
     if (value == null) {
@@ -70,8 +71,8 @@ public class MPSNodeChooser implements IChooser {
     setInitialValue(value);
   }
 
-  private void initUI(Project project) {
-    myTree = new ProjectTree(project);
+  private void initUI(jetbrains.mps.project.Project project) {
+    myTree = new ProjectTree(ProjectHelper.toIdeaProject(project));
     myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {

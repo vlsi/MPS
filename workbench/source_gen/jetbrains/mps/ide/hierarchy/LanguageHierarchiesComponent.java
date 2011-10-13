@@ -58,8 +58,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
@@ -87,7 +88,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
   public LanguageHierarchiesComponent(Language language, IOperationContext context) {
     myLanguage = language;
-    myOperationContext = new ModuleContext(language, context.getIdeaProject());
+    myOperationContext = new ModuleContext(language, context.getProject());
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         for (LanguageHierarchiesComponent.ConceptContainer conceptContainer : myRoots) {
@@ -385,8 +386,8 @@ outer:
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-          Project project = myOperationContext.getIdeaProject();
-          ProjectPane projectPane = ProjectPane.getInstance(project);
+          Project project = myOperationContext.getProject();
+          ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
           myComponent.select(ConceptContainer.this);
           if (e.isPopupTrigger()) {
             myComponent.processPopupMenu(e);
