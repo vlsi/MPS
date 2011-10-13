@@ -15,18 +15,19 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.ClasspathReader;
+import jetbrains.mps.ClasspathReader.ClassType;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.Callback;
 import jetbrains.mps.util.PathManager;
 import sun.misc.Launcher;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class CommonPaths {
   private static final String OS_NAME = System.getProperty("os.name").toLowerCase();
@@ -36,62 +37,18 @@ public class CommonPaths {
 
   //--------paths-----------
 
-  public static List<String> getMPSCorePaths() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    //addIfExists(result,"/classes");
-    addIfExists(result, "/core/kernel/classes");
-    addIfExists(result, "/core/findUsages-runtime/classes");
-    addIfExists(result, "/core/refactoring-runtime/classes");
-    addIfExists(result, "/core/typesystemEngine/classes");
-    addIfExists(result, "/core/typesystemIntegration/classes");
-    addIfExists(result, "/core/generator/classes");
-    addIfExists(result, "/core/make-runtime/classes");
-    addIfExists(result, "/core/baseLanguage/closures/runtime/classes");
-    addIfExists(result, "/core/baseLanguage/collections/runtime/classes");
-    addIfExists(result, "/core/baseLanguage/collections/languages/trove/runtime/classes");
-    addIfExists(result, "/core/baseLanguage/tuples/runtime/classes");
-    addIfExists(result, "/core/baseLanguage/closures/runtime/classes");
-    addIfExists(result, "/core/baseLanguage/collections/languages/trove/runtime/classes");
-    addIfExists(result, "/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar");
-    addIfExists(result, "/core/baseLanguage/unitTest/solutions/runtime/classes");
-    addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar");
-    addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar");
-    addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar");
-    addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar");
-    addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar");
-    addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar");
-    addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar");
-    addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar");
-    addIfExists(result, "/core/baseLanguage/tuples/runtime/classes");
-    addIfExists(result, "/core/runtime/classes");
-    return itemToPath(result);
-  }
-
-  public static List<String> getMPSEditorPaths() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    addIfExists(result, "/core/editor-runtime/classes");
-    addIfExists(result, "/core/actions-runtime/classes");
-    addIfExists(result, "/core/intentions-runtime/classes");
-    return itemToPath(result);
-  }
-
-  public static List<String> getMPSWorkbenchPaths() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    addIfExists(result, "/core/idea-patch/classes");
-    addIfExists(result, "/core/plugin-runtime/classes");
-    addIfExists(result, "/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen");
-    addIfExists(result, "/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen");
-    addIfExists(result, "/core/baseLanguage/runConfigurations/runtime/classes");
-    addIfExists(result, "/core/languageDesign/test/classes");
-    addIfExists(result, "/workbench/classes");
-    addIfExists(result, "/languages/util/runConfigurations/classes");
-    addIfExists(result, "/workbench/typesystemUi/classes");
-    addIfExists(result, "/languages/util/uiLanguage/runtime/classes");
-    addIfExists(result, "/MPSPlugin/apiclasses");
-    addIfExists(result, "/core/baseLanguage/runConfigurations/runtime/classes");
-    addIfExists(result, "/core/analyzers/classes");
-    addIfExists(result, "/core/debug/classes");
-    addIfExists(result, "/core/debug-api/classes");
+  public static List<String> getMPSPaths(ClassType... types) {
+    final CompositeClassPathItem result = new CompositeClassPathItem();
+    ClasspathReader.addClasses(PathManager.getHomePath(), new Callback<String>() {
+      public void call(String param) {
+        addIfExists(result, File.separator + param);
+      }
+    }, types);
+    for (ClassType type : types) {
+      if (type == ClassType.WORKBENCH) {
+        addJars(result, new File(PathManager.getHomePath()));
+      }
+    }
     return itemToPath(result);
   }
 
@@ -113,11 +70,6 @@ public class CommonPaths {
       return mpsJarPath;
     }
     return null;
-  }
-
-  @Deprecated
-  public static List<String> getMPSPaths() {
-    return itemToPath(getMPSClassPath());
   }
 
   //------classpaths : JDK--------
@@ -206,24 +158,18 @@ public class CommonPaths {
     addIfExists(result, "/lib/ecj.jar");
   }
 
-  private static void addClasses(CompositeClassPathItem result, String homePath) {
-    File acp = new File(homePath + File.separator + "build" + File.separator + "idea.additional.classpath.txt");
-    if (!acp.exists()) return;
-
-    try {
-      Scanner sc;
-      for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine(); ) {
-        File dir = new File(homePath, sc.nextLine());
-        if (!dir.exists()) continue;
+  public static void addClasses(final CompositeClassPathItem result, final String homePath) {
+    ClasspathReader.addClasses(homePath, new Callback<String>() {
+      public void call(String param) {
+        File dir = new File(homePath, param);
+        if (!dir.exists()) return;
         try {
           result.add(ClassPathFactory.getInstance().createFromPath(dir.getAbsolutePath(), "Common paths"));
         } catch (IOException e) {
           LOG.error(e);
         }
       }
-      sc.close();
-    } catch (FileNotFoundException ignore) {
-    }
+    }, ClassType.values());
   }
 
   private static String libPath() {
