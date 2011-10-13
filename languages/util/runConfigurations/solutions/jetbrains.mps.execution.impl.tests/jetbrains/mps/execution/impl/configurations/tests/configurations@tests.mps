@@ -48,6 +48,9 @@
       <property name="extension" nameId="tpkv.1234428502488" value="xml" />
       <property name="name" nameId="tpck.1169194664001" value="old.junit.configuration" />
     </node>
+    <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="1720689066387515336">
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+    </node>
   </roots>
   <root id="8128243960970298563">
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="8128243960970298564">
@@ -1226,5 +1229,6 @@
       </node>
     </node>
   </root>
+  <root id="1720689066387515336" />
 </model>
 

@@ -49,6 +49,9 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8128243960970299735">
       <property name="name" nameId="tpck.1169194664001" value="CheckTestStateListener" />
     </node>
+    <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="1720689066387515336">
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+    </node>
   </roots>
   <root id="8128243960970298224">
     <node role="methods" roleId="tp5g.1216993439383" type="tp4f.DefaultClassifierMethodDeclaration" typeId="tp4f.1205769003971" id="7120092006645138817">
@@ -1920,5 +1923,6 @@
       </node>
     </node>
   </root>
+  <root id="1720689066387515336" />
 </model>
 
