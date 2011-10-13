@@ -144,7 +144,7 @@ public class TextGen_Facet extends IFacet.Stub {
 
                 final SModelDescriptor outputMD = gres.status().getOutputModelDescriptor();
                 if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
-                  ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                  if (!(ThreadUtils.runInUIThreadAndWait(new Runnable() {
                     public void run() {
                       ModelAccess.instance().requireWrite(new Runnable() {
                         public void run() {
@@ -156,7 +156,10 @@ public class TextGen_Facet extends IFacet.Stub {
                         }
                       });
                     }
-                  });
+                  }))) {
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to remove transient models")));
+                    return new IResult.FAILURE(_output_21gswx_a0a);
+                  }
                 }
 
                 if (!(ok.value)) {
@@ -166,7 +169,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-                ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                if (!(ThreadUtils.runInUIThreadAndWait(new Runnable() {
                   public void run() {
                     ModelAccess.instance().requireWrite(new Runnable() {
                       public void run() {
@@ -174,7 +177,10 @@ public class TextGen_Facet extends IFacet.Stub {
                       }
                     });
                   }
-                });
+                }))) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
+                  return new IResult.FAILURE(_output_21gswx_a0a);
+                }
                 monitor.currentProgress().advanceWork("Writing", 50);
                 _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), Sequence.fromIterable(javaStreamHandler.delta()).concat(Sequence.fromIterable(retainedFilesDelta)).concat(Sequence.fromIterable(retainedCachesDelta)), gres.model()))));
               }

@@ -910,7 +910,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7012097027058828347" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7012097027058828348">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="4272582839150467879">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JScrollPane%d&lt;init&gt;()" resolveInfo="JScrollPane" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9e9t.~JBScrollPane%d&lt;init&gt;()" resolveInfo="JBScrollPane" />
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4284078376668355730">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="4284078376668355731">
@@ -919,7 +919,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6mgc.~ProjectTree%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject)" resolveInfo="ProjectTree" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2270577049313345360">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4284078376668355734">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4284078376668130771" resolveInfo="project" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4284078376668130771" resolveInfo="context" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp1h.MainProjectOperation" typeId="tp1h.8113680833395644310" id="2270577049313345364" />
                 </node>
