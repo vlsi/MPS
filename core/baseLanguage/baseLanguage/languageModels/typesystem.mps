@@ -14226,6 +14226,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1223640538238" resolveInfo="n" />
               </node>
             </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4774098015044126456" />
           </node>
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1223640538237">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1223640538227" resolveInfo="unreachable" />
