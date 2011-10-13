@@ -287,23 +287,23 @@ public class DebugInfo {
   }
 
   public Element toXml() {
-    Element root = new Element(DebugInfo.DEBUG_INFO);
+    Element element = new Element(DebugInfo.DEBUG_INFO);
     if (myRoots != null) {
       String[] roots = SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).toGenericArray(String.class);
       Arrays.sort(roots);
       for (String id : roots) {
         DebugInfoRoot dir = MapSequence.fromMap(myRoots).get(id);
         if (id.equals(DebugInfo.UNSPECIFIED_ROOT)) {
-          dir.toXml(root);
+          dir.toXml(element);
         } else {
           Element e = new Element(DebugInfo.ROOT);
           e.setAttribute(DebugInfo.ROOT_ID_ATTR, id);
           dir.toXml(e);
-          root.addContent(e);
+          element.addContent(e);
         }
       }
     }
-    return root;
+    return element;
   }
 
   public static DebugInfo fromXml(Element root) {

@@ -4,8 +4,8 @@ package jetbrains.mps.traceInfo;
 
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import java.util.TreeSet;
+import java.util.HashSet;
 import org.jdom.Element;
 import java.util.Comparator;
 import org.jdom.DataConversionException;
@@ -21,9 +21,9 @@ public class DebugInfoRoot {
   private static final String UNIT_INFO = "unitInfo";
 
   private String myRootId;
-  private Set<TraceablePositionInfo> myPositions;
-  private Set<ScopePositionInfo> myScopePositions;
-  private Set<UnitPositionInfo> myUnitPositions;
+  private final Set<TraceablePositionInfo> myPositions = SetSequence.fromSet(new TreeSet<TraceablePositionInfo>());
+  private final Set<ScopePositionInfo> myScopePositions = SetSequence.fromSet(new TreeSet<ScopePositionInfo>());
+  private final Set<UnitPositionInfo> myUnitPositions = SetSequence.fromSet(new TreeSet<UnitPositionInfo>());
   private final Set<String> myFileNames = SetSequence.fromSet(new HashSet<String>());
 
   public DebugInfoRoot(String rootId) {
@@ -31,25 +31,16 @@ public class DebugInfoRoot {
   }
 
   public void addPosition(TraceablePositionInfo position) {
-    if (myPositions == null) {
-      myPositions = SetSequence.fromSet(new TreeSet<TraceablePositionInfo>());
-    }
     SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myPositions).addElement(position);
   }
 
   public void addScopePosition(ScopePositionInfo position) {
-    if (myScopePositions == null) {
-      myScopePositions = SetSequence.fromSet(new TreeSet<ScopePositionInfo>());
-    }
     SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myScopePositions).addElement(position);
   }
 
   public void addUnitPosition(UnitPositionInfo unitPosition) {
-    if (myUnitPositions == null) {
-      myUnitPositions = SetSequence.fromSet(new TreeSet<UnitPositionInfo>());
-    }
     SetSequence.fromSet(myFileNames).addElement(unitPosition.getFileName());
     SetSequence.fromSet(myUnitPositions).addElement(unitPosition);
   }
@@ -75,38 +66,32 @@ public class DebugInfoRoot {
   }
 
   public void toXml(Element container) {
-    if (myPositions != null) {
-      for (PositionInfo position : SetSequence.fromSet(myPositions).toListSequence().sort(new Comparator<TraceablePositionInfo>() {
-        public int compare(TraceablePositionInfo a, TraceablePositionInfo b) {
-          return a.compareTo(b);
-        }
-      }, true)) {
-        Element e = new Element(DebugInfoRoot.NODE_INFO);
-        position.saveTo(e);
-        container.addContent(e);
+    for (PositionInfo position : SetSequence.fromSet(myPositions).toListSequence().sort(new Comparator<TraceablePositionInfo>() {
+      public int compare(TraceablePositionInfo a, TraceablePositionInfo b) {
+        return a.compareTo(b);
       }
+    }, true)) {
+      Element e = new Element(DebugInfoRoot.NODE_INFO);
+      position.saveTo(e);
+      container.addContent(e);
     }
-    if (myScopePositions != null) {
-      for (ScopePositionInfo position : SetSequence.fromSet(myScopePositions).toListSequence().sort(new Comparator<ScopePositionInfo>() {
-        public int compare(ScopePositionInfo a, ScopePositionInfo b) {
-          return a.compareTo(b);
-        }
-      }, true)) {
-        Element e = new Element(DebugInfoRoot.SCOPE_INFO);
-        position.saveTo(e);
-        container.addContent(e);
+    for (ScopePositionInfo position : SetSequence.fromSet(myScopePositions).toListSequence().sort(new Comparator<ScopePositionInfo>() {
+      public int compare(ScopePositionInfo a, ScopePositionInfo b) {
+        return a.compareTo(b);
       }
+    }, true)) {
+      Element e = new Element(DebugInfoRoot.SCOPE_INFO);
+      position.saveTo(e);
+      container.addContent(e);
     }
-    if (myUnitPositions != null) {
-      for (UnitPositionInfo position : SetSequence.fromSet(myUnitPositions).toListSequence().sort(new Comparator<UnitPositionInfo>() {
-        public int compare(UnitPositionInfo a, UnitPositionInfo b) {
-          return a.compareTo(b);
-        }
-      }, true)) {
-        Element e = new Element(DebugInfoRoot.UNIT_INFO);
-        position.saveTo(e);
-        container.addContent(e);
+    for (UnitPositionInfo position : SetSequence.fromSet(myUnitPositions).toListSequence().sort(new Comparator<UnitPositionInfo>() {
+      public int compare(UnitPositionInfo a, UnitPositionInfo b) {
+        return a.compareTo(b);
       }
+    }, true)) {
+      Element e = new Element(DebugInfoRoot.UNIT_INFO);
+      position.saveTo(e);
+      container.addContent(e);
     }
   }
 

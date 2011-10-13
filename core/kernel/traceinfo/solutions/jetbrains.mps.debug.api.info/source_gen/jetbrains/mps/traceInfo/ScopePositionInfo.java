@@ -5,9 +5,11 @@ package jetbrains.mps.traceInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.SortedMapSequence;
+import java.util.TreeMap;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
@@ -17,7 +19,7 @@ public class ScopePositionInfo extends PositionInfo {
   private static String VAR_INFO = "varInfo";
   protected static Log log = LogFactory.getLog(ScopePositionInfo.class);
 
-  private Map<String, VarInfo> myVars = MapSequence.fromMap(new HashMap<String, VarInfo>());
+  private Map<String, VarInfo> myVars = SortedMapSequence.fromMap(new TreeMap<String, VarInfo>());
   private Map<SNode, VarInfo> myTempNodeToVarMap = MapSequence.fromMap(new HashMap<SNode, VarInfo>());
 
   public ScopePositionInfo() {
