@@ -24,7 +24,7 @@ import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -77,7 +77,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
 
     if (model == null) {
       //todo only roots loading
-      IFile file = new IdeaFileSystemProvider().getFile(inputData.getFile());
+      IFile file = VirtualFileUtils.toIFile(inputData.getFile());
       model = ModelPersistence.readModel(file, false);
       inputData.putUserData(PARSED_MODEL, model);
     }

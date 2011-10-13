@@ -47,10 +47,6 @@ public class IdeaFileSystemProvider implements FileSystemProvider {
     return FileTypeManager.getInstance().isFileIgnored(name);
   }
 
-  public IFile getFile(@NotNull VirtualFile file) {
-    return new IdeaFile(file);
-  }
-
   // Workaround for IDEA-75359
   static void jarRootAccessed(final VirtualFile jarRootFile) {
     synchronized (ourJarRootsAccessedAtLeastOnce) {
