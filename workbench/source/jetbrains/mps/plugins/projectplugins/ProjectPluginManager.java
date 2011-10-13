@@ -78,7 +78,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager, MPSEditorOpener editorOpener) {
     myProject = project;
     myManager = manager;
-    MPSEditorOpener editorOpener1 = editorOpener;
   }
 
   public void projectOpened() {
@@ -288,6 +287,10 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     public SNode getBaseNode(IOperationContext context, SNode node) {
       for (EditorTabDescriptor d : getTabDescriptors()) {
         SNode baseNode = d.getBaseNode(node);
+        if (baseNode == node) {
+          LOG.error("Editor tabs should not return node as a base node of itself: " + d.getClass().getName());
+          continue;
+        }
         if (baseNode != null) return baseNode;
       }
       return null;
