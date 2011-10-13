@@ -971,10 +971,10 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp5v.1172029167443" resolveInfo="Generics1_Test" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707832486">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp7g.1571838961922998404" resolveInfo="Mapping_Test1_Test" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp7g.1571838961922998404" resolveInfo="Mapping_Test1" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707832487">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp7g.1571838961923334327" resolveInfo="Where_Select_Test1_Test" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp7g.1571838961923334327" resolveInfo="Where_Select_Test1" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit3TestCaseRef" typeId="pop3.4504141816188599481" id="2712670354707832489">
       <link role="klass" roleId="pop3.1280144168199457727" targetNodeId="tp7g.1170283270068" resolveInfo="ForEach_Test1" />
@@ -1788,8 +1788,8 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1538369951873468541">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="96t8.8128243960970298563" resolveInfo="TestConfigurationsMigration" />
     </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7181359126575139604">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298959" resolveInfo="SplitCommandInParts_Test" />
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8989032736195149097">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298959" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7120092006645362350">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298224" resolveInfo="JUnitCommand" />
