@@ -6,8 +6,6 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.execution.lib.Java_Command;
-import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
@@ -19,12 +17,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
-import java.io.File;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.io.IOException;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main;
+import jetbrains.mps.execution.lib.Java_Command;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessEvent;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
@@ -37,12 +31,6 @@ import junit.framework.Assert;
 @MPSLaunch
 public class JavaCommand_Test extends BaseTransformationTest {
   @Test
-  public void test_startJavaByClassName() throws Throwable {
-    this.initTest("${mps_home}/languages/util/runConfigurations/runConfigurations.mpr", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)");
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody", "test_startJavaByClassName", true);
-  }
-
-  @Test
   public void test_startJavaByNode() throws Throwable {
     this.initTest("${mps_home}/languages/util/runConfigurations/runConfigurations.mpr", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)");
     this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody", "test_startJavaByNode", true);
@@ -50,10 +38,6 @@ public class JavaCommand_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_startJavaByClassName() throws Exception {
-      this.checkProcess(new Java_Command().createProcess(Main.class.getName(), this.getClasspath()), Main.MESSAGE + "\n");
-    }
-
     public void test_startJavaByNode() throws Exception {
       final Wrappers._T<SNodePointer> pointer = new Wrappers._T<SNodePointer>();
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -61,35 +45,13 @@ public class JavaCommand_Test extends BaseTransformationTest {
           SModel model = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox", "tests")).getSModel();
           SNode mainNode = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.core.structure.INamedConcept")).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a1a(SPropertyOperations.getString(it, "name"), Main.class.getSimpleName());
+              return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0a(SPropertyOperations.getString(it, "name"), Main.class.getSimpleName());
             }
           });
           pointer.value = new SNodePointer(mainNode);
         }
       });
       this.checkProcess(new Java_Command().createProcess(pointer.value), Main.MESSAGE + "\n");
-    }
-
-    public List<File> getClasspath() {
-      Iterable<String> currentClassPath = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(File.pathSeparator))).select(new ISelector<String, String>() {
-        public String select(String it) {
-          try {
-            return new File(it).getCanonicalPath();
-          } catch (IOException e) {
-            return it;
-          }
-        }
-      });
-      System.err.println(currentClassPath);
-      return Sequence.fromIterable(currentClassPath).where(new IWhereFilter<String>() {
-        public boolean accept(String it) {
-          return !(it.startsWith(System.getProperty("java.home")));
-        }
-      }).select(new ISelector<String, File>() {
-        public File select(String it) {
-          return new File(it);
-        }
-      }).toListSequence();
     }
 
     public void checkProcess(ProcessHandler process, final String expectedSysErr) {
@@ -100,7 +62,7 @@ public class JavaCommand_Test extends BaseTransformationTest {
         @Override
         public void onTextAvailable(ProcessEvent event, Key key) {
           if (ProcessOutputTypes.STDERR.equals(key)) {
-            if (neq_849b2c_a0a0a0a0a1a3a3a(event.getText(), expectedSysErr)) {
+            if (neq_849b2c_a0a0a0a0a1a3a1a(event.getText(), expectedSysErr)) {
               failed[0] = event;
               System.err.print(event.getText());
             } else {
@@ -124,14 +86,14 @@ public class JavaCommand_Test extends BaseTransformationTest {
       }
     }
 
-    private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a1a(Object a, Object b) {
+    private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0a(Object a, Object b) {
       return (a != null ?
         a.equals(b) :
         a == b
       );
     }
 
-    private static boolean neq_849b2c_a0a0a0a0a1a3a3a(Object a, Object b) {
+    private static boolean neq_849b2c_a0a0a0a0a1a3a1a(Object a, Object b) {
       return !((a != null ?
         a.equals(b) :
         a == b
