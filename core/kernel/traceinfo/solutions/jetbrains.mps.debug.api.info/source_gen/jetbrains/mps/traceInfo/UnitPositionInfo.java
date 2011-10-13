@@ -38,13 +38,11 @@ public class UnitPositionInfo extends PositionInfo {
 
   @Override
   public int compareTo(PositionInfo p) {
-    int result = super.compareTo(p);
-    if (result != 0) {
-      return result;
-    }
-    assert p instanceof UnitPositionInfo;
     UnitPositionInfo upi = (UnitPositionInfo) p;
-    if (myUnitName != null) {
+    if (eq_9jw0bh_a0b0d(myUnitName, upi.myUnitName)) {
+      return super.compareTo(upi);
+    }
+    if (myUnitName != null && upi.myUnitName != null) {
       return myUnitName.compareTo(upi.myUnitName);
     }
     return (upi.myUnitName == null ?
@@ -58,5 +56,12 @@ public class UnitPositionInfo extends PositionInfo {
       return checkedDotOperand.getValue();
     }
     return null;
+  }
+
+  private static boolean eq_9jw0bh_a0b0d(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

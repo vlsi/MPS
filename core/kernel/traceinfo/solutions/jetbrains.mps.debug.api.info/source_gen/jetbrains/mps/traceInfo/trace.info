@@ -119,8 +119,8 @@
       <varInfo nodeId="2897370900776703196" varName="fqName" />
     </scopeInfo>
     <scopeInfo nodeId="8667045979110387344" fileName="TraceInfoManager.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
-      <varInfo nodeId="8667045979110387356" varName="propertyGetter" />
       <varInfo nodeId="8667045979110387347" varName="fqName" />
+      <varInfo nodeId="8667045979110387356" varName="propertyGetter" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776703204" fileName="TraceInfoManager.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="2897370900776703207" varName="fqName" />
@@ -615,32 +615,32 @@
     <nodeInfo nodeId="1881043622582098587" fileName="UnitPositionInfo.java" startLine="26" startPosition="29" endLine="27" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2897370900776711742" fileName="UnitPositionInfo.java" startLine="31" startPosition="31" endLine="32" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2897370900776711750" fileName="UnitPositionInfo.java" startLine="35" startPosition="44" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="292567340231719063" fileName="UnitPositionInfo.java" startLine="40" startPosition="40" endLine="41" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="292567340231719070" fileName="UnitPositionInfo.java" startLine="42" startPosition="22" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="292567340231719075" fileName="UnitPositionInfo.java" startLine="44" startPosition="5" endLine="45" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="292567340231719079" fileName="UnitPositionInfo.java" startLine="45" startPosition="41" endLine="46" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2473231587536809431" fileName="UnitPositionInfo.java" startLine="47" startPosition="29" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="57" startPosition="36" endLine="58" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="59" startPosition="5" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="292567340231719079" fileName="UnitPositionInfo.java" startLine="40" startPosition="40" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6095402850431612399" fileName="UnitPositionInfo.java" startLine="42" startPosition="54" endLine="43" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2473231587536809431" fileName="UnitPositionInfo.java" startLine="45" startPosition="55" endLine="46" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="55" startPosition="36" endLine="56" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="57" startPosition="5" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2897370900776711762" fileName="UnitPositionInfo.java" startLine="14" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnitPositionInfo#()V" />
     <nodeInfo nodeId="1881043622582098578" fileName="UnitPositionInfo.java" startLine="25" startPosition="26" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="292567340231719068" fileName="UnitPositionInfo.java" startLine="41" startPosition="36" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2473231587536809403" fileName="UnitPositionInfo.java" startLine="46" startPosition="48" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="56" startPosition="73" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6095402850431612385" fileName="UnitPositionInfo.java" startLine="41" startPosition="48" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2473231587536809403" fileName="UnitPositionInfo.java" startLine="44" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="54" startPosition="73" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2897370900776711766" fileName="UnitPositionInfo.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnitPositionInfo#(Lorg/jdom/Element;)V" />
     <nodeInfo nodeId="2897370900776711738" fileName="UnitPositionInfo.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnitName#()Ljava/lang/String;" />
     <nodeInfo nodeId="2897370900776711744" fileName="UnitPositionInfo.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUnitName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2473231587536809439" fileName="UnitPositionInfo.java" startLine="49" startPosition="5" endLine="53" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9jw0bh_a0b0b#(Lorg/jdom/Attribute;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2473231587536809439" fileName="UnitPositionInfo.java" startLine="47" startPosition="5" endLine="51" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="61" startPosition="62" endLine="65" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="53" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9jw0bh_a0b0b#(Lorg/jdom/Attribute;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="60" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_9jw0bh_a0b0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="2897370900776711722" fileName="UnitPositionInfo.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveTo#(Lorg/jdom/Element;)V" />
-    <nodeInfo nodeId="292567340231719057" fileName="UnitPositionInfo.java" startLine="38" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Ljetbrains/mps/traceInfo/PositionInfo;)I" />
+    <nodeInfo nodeId="292567340231719057" fileName="UnitPositionInfo.java" startLine="38" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Ljetbrains/mps/traceInfo/PositionInfo;)I" />
     <scopeInfo nodeId="2897370900776711765" fileName="UnitPositionInfo.java" startLine="15" startPosition="29" endLine="15" endPosition="29" />
     <scopeInfo nodeId="1881043622582098579" fileName="UnitPositionInfo.java" startLine="26" startPosition="29" endLine="27" endPosition="50" />
     <scopeInfo nodeId="2897370900776711741" fileName="UnitPositionInfo.java" startLine="31" startPosition="31" endLine="32" endPosition="22" />
     <scopeInfo nodeId="2897370900776711749" fileName="UnitPositionInfo.java" startLine="35" startPosition="44" endLine="36" endPosition="26" />
-    <scopeInfo nodeId="292567340231719069" fileName="UnitPositionInfo.java" startLine="42" startPosition="22" endLine="43" endPosition="20" />
-    <scopeInfo nodeId="2473231587536809404" fileName="UnitPositionInfo.java" startLine="47" startPosition="29" endLine="48" endPosition="50" />
-    <scopeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="57" startPosition="36" endLine="58" endPosition="42" />
+    <scopeInfo nodeId="6095402850431612386" fileName="UnitPositionInfo.java" startLine="42" startPosition="54" endLine="43" endPosition="34" />
+    <scopeInfo nodeId="2473231587536809404" fileName="UnitPositionInfo.java" startLine="45" startPosition="55" endLine="46" endPosition="50" />
+    <scopeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="55" startPosition="36" endLine="56" endPosition="42" />
     <scopeInfo nodeId="2897370900776711762" fileName="UnitPositionInfo.java" startLine="14" startPosition="0" endLine="16" endPosition="3" />
     <scopeInfo nodeId="2897370900776711769" fileName="UnitPositionInfo.java" startLine="18" startPosition="84" endLine="20" endPosition="86" />
     <scopeInfo nodeId="2897370900776711766" fileName="UnitPositionInfo.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
@@ -651,19 +651,20 @@
     <scopeInfo nodeId="2897370900776711744" fileName="UnitPositionInfo.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="2897370900776711745" varName="unitName" />
     </scopeInfo>
-    <scopeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="56" startPosition="73" endLine="60" endPosition="16" />
-    <scopeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="55" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="54" startPosition="73" endLine="58" endPosition="16" />
+    <scopeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="61" startPosition="62" endLine="65" endPosition="6" />
+    <scopeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="53" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="60" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="2897370900776711722" fileName="UnitPositionInfo.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="2897370900776711725" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="292567340231719062" fileName="UnitPositionInfo.java" startLine="40" startPosition="40" endLine="53" endPosition="6">
-      <varInfo nodeId="292567340231719064" varName="result" />
+    <scopeInfo nodeId="292567340231719062" fileName="UnitPositionInfo.java" startLine="40" startPosition="40" endLine="51" endPosition="6">
       <varInfo nodeId="292567340231719080" varName="upi" />
     </scopeInfo>
-    <scopeInfo nodeId="292567340231719057" fileName="UnitPositionInfo.java" startLine="38" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="292567340231719057" fileName="UnitPositionInfo.java" startLine="38" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="292567340231719060" varName="p" />
     </scopeInfo>
-    <unitInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="10" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.traceInfo.UnitPositionInfo" />
+    <unitInfo nodeId="2897370900776711721" fileName="UnitPositionInfo.java" startLine="10" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.traceInfo.UnitPositionInfo" />
   </root>
   <root nodeId="2897370900776711785">
     <nodeInfo nodeId="2897370900776711903" fileName="DebugInfoRoot.java" startLine="18" startPosition="28" endLine="19" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NODE_INFO" />
@@ -786,8 +787,8 @@
       <varInfo nodeId="2897370900776711988" varName="unitPosition" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776711864" fileName="DebugInfoRoot.java" startLine="112" startPosition="0" endLine="118" endPosition="0">
-      <varInfo nodeId="2897370900776711899" varName="outputDir" />
       <varInfo nodeId="2897370900776711901" varName="model" />
+      <varInfo nodeId="2897370900776711899" varName="outputDir" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712059" fileName="DebugInfoRoot.java" startLine="68" startPosition="40" endLine="77" endPosition="5">
       <varInfo nodeId="2897370900776712078" varName="position" />
@@ -803,17 +804,17 @@
       <varInfo nodeId="2897370900776711791" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776711786" fileName="DebugInfoRoot.java" startLine="97" startPosition="0" endLine="112" endPosition="0">
-      <varInfo nodeId="2897370900776711861" varName="id" />
       <varInfo nodeId="2897370900776711859" varName="element" />
+      <varInfo nodeId="2897370900776711861" varName="id" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712056" fileName="DebugInfoRoot.java" startLine="68" startPosition="40" endLine="95" endPosition="5" />
     <scopeInfo nodeId="2897370900776712053" fileName="DebugInfoRoot.java" startLine="67" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="2897370900776712135" varName="container" />
     </scopeInfo>
+    <unitInfo nodeId="2897370900776711785" fileName="DebugInfoRoot.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.traceInfo.DebugInfoRoot" />
     <unitInfo nodeId="292567340231693129" fileName="DebugInfoRoot.java" startLine="69" startPosition="92" endLine="73" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfoRoot$1" />
     <unitInfo nodeId="292567340231693194" fileName="DebugInfoRoot.java" startLine="78" startPosition="102" endLine="82" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfoRoot$2" />
     <unitInfo nodeId="292567340231693224" fileName="DebugInfoRoot.java" startLine="87" startPosition="100" endLine="91" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfoRoot$3" />
-    <unitInfo nodeId="2897370900776711785" fileName="DebugInfoRoot.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.traceInfo.DebugInfoRoot" />
   </root>
   <root nodeId="2897370900776712137">
     <nodeInfo nodeId="2897370900776712138" fileName="DebugInfo.java" startLine="25" startPosition="24" endLine="26" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ROOT" />
@@ -1140,8 +1141,8 @@
       <varInfo nodeId="2897370900776712262" varName="rootId" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712264" fileName="DebugInfo.java" startLine="68" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="2897370900776712305" varName="unitPosition" />
       <varInfo nodeId="2897370900776712307" varName="rootId" />
+      <varInfo nodeId="2897370900776712305" varName="unitPosition" />
     </scopeInfo>
     <scopeInfo nodeId="497036873155670759" fileName="DebugInfo.java" startLine="198" startPosition="57" endLine="211" endPosition="5" />
     <scopeInfo nodeId="1689763677888154799" fileName="DebugInfo.java" startLine="260" startPosition="67" endLine="273" endPosition="5" />
@@ -1164,8 +1165,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712791" fileName="DebugInfo.java" startLine="216" startPosition="59" endLine="232" endPosition="43">
       <varInfo nodeId="2897370900776712863" varName="firstPositionInfo" />
-      <varInfo nodeId="2897370900776712849" varName="sorted" />
       <varInfo nodeId="2897370900776712795" varName="resultList" />
+      <varInfo nodeId="2897370900776712849" varName="sorted" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776713017" fileName="DebugInfo.java" startLine="289" startPosition="26" endLine="306" endPosition="19">
       <varInfo nodeId="2897370900776713019" varName="element" />
@@ -1175,67 +1176,67 @@
     </scopeInfo>
     <scopeInfo nodeId="1689763677888153882" fileName="DebugInfo.java" startLine="258" startPosition="0" endLine="276" endPosition="0">
       <varInfo nodeId="1689763677888153895" varName="file" />
-      <varInfo nodeId="1689763677888153898" varName="line" />
       <varInfo nodeId="1689763677888153901" varName="getAllPositionsForRoot" />
+      <varInfo nodeId="1689763677888153898" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776713106" fileName="DebugInfo.java" startLine="308" startPosition="0" endLine="326" endPosition="0">
       <varInfo nodeId="2897370900776713176" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712652" fileName="DebugInfo.java" startLine="160" startPosition="83" endLine="180" endPosition="16">
-      <varInfo nodeId="2897370900776712708" varName="sorted" />
       <varInfo nodeId="2897370900776712654" varName="resultList" />
+      <varInfo nodeId="2897370900776712708" varName="sorted" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712785" fileName="DebugInfo.java" startLine="214" startPosition="0" endLine="234" endPosition="0">
       <varInfo nodeId="2897370900776712786" varName="file" />
       <varInfo nodeId="2897370900776712788" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712882" fileName="DebugInfo.java" startLine="236" startPosition="72" endLine="256" endPosition="33">
-      <varInfo nodeId="2897370900776712960" varName="id" />
       <varInfo nodeId="2897370900776712954" varName="firstPositionInfo" />
-      <varInfo nodeId="2897370900776712940" varName="sorted" />
+      <varInfo nodeId="2897370900776712960" varName="id" />
       <varInfo nodeId="2897370900776712886" varName="resultList" />
+      <varInfo nodeId="2897370900776712940" varName="sorted" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776713014" fileName="DebugInfo.java" startLine="288" startPosition="0" endLine="308" endPosition="0" />
     <scopeInfo nodeId="2897370900776712549" fileName="DebugInfo.java" startLine="132" startPosition="52" endLine="153" endPosition="7">
       <varInfo nodeId="2897370900776712551" varName="sameSpacePositions" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712650" fileName="DebugInfo.java" startLine="158" startPosition="0" endLine="182" endPosition="0">
-      <varInfo nodeId="2897370900776712747" varName="model" />
-      <varInfo nodeId="2897370900776712749" varName="varName" />
       <varInfo nodeId="2897370900776712743" varName="file" />
       <varInfo nodeId="2897370900776712745" varName="line" />
+      <varInfo nodeId="2897370900776712747" varName="model" />
+      <varInfo nodeId="2897370900776712749" varName="varName" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712873" fileName="DebugInfo.java" startLine="234" startPosition="0" endLine="258" endPosition="0">
-      <varInfo nodeId="2897370900776712878" varName="model" />
       <varInfo nodeId="2897370900776712874" varName="file" />
       <varInfo nodeId="2897370900776712876" varName="line" />
+      <varInfo nodeId="2897370900776712878" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712397" fileName="DebugInfo.java" startLine="93" startPosition="68" endLine="156" endPosition="37">
-      <varInfo nodeId="2897370900776712473" varName="nodeId" />
       <varInfo nodeId="2897370900776712467" varName="firstPositionInfo" />
-      <varInfo nodeId="2897370900776712453" varName="sorted" />
+      <varInfo nodeId="2897370900776712473" varName="nodeId" />
       <varInfo nodeId="2897370900776712399" varName="resultList" />
+      <varInfo nodeId="2897370900776712453" varName="sorted" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712395" fileName="DebugInfo.java" startLine="91" startPosition="0" endLine="158" endPosition="0">
-      <varInfo nodeId="2897370900776712647" varName="model" />
       <varInfo nodeId="2897370900776712643" varName="file" />
       <varInfo nodeId="2897370900776712645" varName="line" />
+      <varInfo nodeId="2897370900776712647" varName="model" />
     </scopeInfo>
+    <unitInfo nodeId="2897370900776712137" fileName="DebugInfo.java" startLine="25" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.traceInfo.DebugInfo" />
     <unitInfo nodeId="1689763677888154921" fileName="DebugInfo.java" startLine="94" startPosition="80" endLine="98" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$1" />
+    <unitInfo nodeId="1689763677888154888" fileName="DebugInfo.java" startLine="238" startPosition="75" endLine="242" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$10" />
+    <unitInfo nodeId="2897370900776712946" fileName="DebugInfo.java" startLine="246" startPosition="83" endLine="250" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$11" />
+    <unitInfo nodeId="3148964879880006190" fileName="DebugInfo.java" startLine="261" startPosition="92" endLine="265" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$12" />
+    <unitInfo nodeId="1689763677888154838" fileName="DebugInfo.java" startLine="265" startPosition="21" endLine="269" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$13" />
     <unitInfo nodeId="2897370900776712459" fileName="DebugInfo.java" startLine="102" startPosition="88" endLine="106" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$2" />
     <unitInfo nodeId="2897370900776712557" fileName="DebugInfo.java" startLine="133" startPosition="99" endLine="137" endPosition="7" unitName="jetbrains.mps.traceInfo.DebugInfo$3" />
     <unitInfo nodeId="1689763677888154910" fileName="DebugInfo.java" startLine="161" startPosition="76" endLine="165" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$4" />
     <unitInfo nodeId="2897370900776712714" fileName="DebugInfo.java" startLine="169" startPosition="84" endLine="173" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$5" />
     <unitInfo nodeId="2897370900776712772" fileName="DebugInfo.java" startLine="185" startPosition="116" endLine="189" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$6" />
+    <unitInfo nodeId="497036873155670776" fileName="DebugInfo.java" startLine="199" startPosition="111" endLine="207" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$7" />
     <unitInfo nodeId="1375871677230360570" fileName="DebugInfo.java" startLine="201" startPosition="67" endLine="205" endPosition="9" unitName="jetbrains.mps.traceInfo.DebugInfo$8" />
     <unitInfo nodeId="1689763677888154899" fileName="DebugInfo.java" startLine="218" startPosition="75" endLine="222" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$8" />
     <unitInfo nodeId="2897370900776712855" fileName="DebugInfo.java" startLine="226" startPosition="83" endLine="230" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$9" />
-    <unitInfo nodeId="1689763677888154888" fileName="DebugInfo.java" startLine="238" startPosition="75" endLine="242" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$10" />
-    <unitInfo nodeId="2897370900776712946" fileName="DebugInfo.java" startLine="246" startPosition="83" endLine="250" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$11" />
-    <unitInfo nodeId="3148964879880006190" fileName="DebugInfo.java" startLine="261" startPosition="92" endLine="265" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$12" />
-    <unitInfo nodeId="1689763677888154838" fileName="DebugInfo.java" startLine="265" startPosition="21" endLine="269" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$13" />
-    <unitInfo nodeId="497036873155670776" fileName="DebugInfo.java" startLine="199" startPosition="111" endLine="207" endPosition="5" unitName="jetbrains.mps.traceInfo.DebugInfo$7" />
-    <unitInfo nodeId="2897370900776712137" fileName="DebugInfo.java" startLine="25" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.traceInfo.DebugInfo" />
   </root>
   <root nodeId="4835974019530166876">
     <nodeInfo nodeId="4835974019530166963" fileName="TraceablePositionInfo.java" startLine="11" startPosition="57" endLine="12" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONCEPT_FQ_NAME" />
