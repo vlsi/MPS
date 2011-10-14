@@ -225,6 +225,10 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.ide.generator.TransientModelsComponent</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.workbench.structureview.StructureViewBuilderFactory</implementation-class>
     </component>
 

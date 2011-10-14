@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.generator.TransientModelsComponent;
+import jetbrains.mps.ide.generator.TransientModelsComponent;
 
 public class RemoveTransientModels_Action extends GeneratedAction {
   private static final Icon ICON = null;

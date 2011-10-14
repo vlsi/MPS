@@ -253,7 +253,7 @@ public class GeneratorUIFacade {
           .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())
           .create();
 
-        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, monitor, messages, options);
+        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, monitor, messages, options, ideaProject.getComponent(TransientModelsComponent.class));
       }
     }, "Generation", true, invocationContext.getProject());
 

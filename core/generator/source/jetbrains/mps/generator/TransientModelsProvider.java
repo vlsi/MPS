@@ -15,98 +15,33 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- * Evgeny Gryaznov, 12/3/10
- */
-public class TransientModelsComponent implements ProjectComponent {
+public class TransientModelsProvider {
 
   private final ConcurrentMap<IModule, TransientModelsModule> myModuleMap = new ConcurrentHashMap<IModule, TransientModelsModule>();
   private int myModelsToKeepMax = 0; /* unlimited */
   private Project myProject;
   private int myKeptModels;
-  private TransientSwapOwner myTransientSwapOwner;
+  private final TransientSwapOwner myTransientSwapOwner;
   private String mySessionId;
 
-  public TransientModelsComponent(com.intellij.openapi.project.Project ideaProject, MPSProject project) {
+  public TransientModelsProvider(MPSProject project, TransientSwapOwner owner) {
     myProject = project;
+    myTransientSwapOwner = owner;
   }
 
-  @Override
-  public void projectOpened() {
-  }
-
-  @Override
-  public void projectClosed() {
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Transient Models Component";
-  }
-
-  @Override
-  public void initComponent() {
-    // TODO unhackme
-
-    try {
-      Class<?> soc = Class.forName("jetbrains.mps.ide.generator.TransientSwapOwnerComponent");
-      Method getInstance = soc.getMethod("getInstance");
-      setTransientSwapOwner((TransientSwapOwner) getInstance.invoke(null));
-    } catch (ClassNotFoundException ignore) {
-    } catch (NoSuchMethodException ignore) {
-    } catch (InvocationTargetException ignore) {
-    } catch (IllegalAccessException ignore) {
-    }
-  }
-
-  @Override
-  public void disposeComponent() {
-    clearAll();
-  }
-
-  public void removeAllTransient() {
-    clearAll();
-  }
-
-  public Iterable<TransientModelsModule> getModules() {
-    ModelAccess.assertLegalRead();
-
-    List<TransientModelsModule> result = new ArrayList<TransientModelsModule>(myModuleMap.size());
-    for (TransientModelsModule m : myModuleMap.values()) {
-      if (m.hasPublished()) {
-        result.add(m);
-      }
-    }
-
-    return result;
-  }
-
-  public void startGeneration(int numberOfModelsToKeep) {
-    clearAll();
-    mySessionId = newSessionId();
-    myKeptModels = 0;
-    myModelsToKeepMax = numberOfModelsToKeep;
-  }
-
-  private void clearAll() {
+  protected void clearAll() {
     ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
@@ -139,7 +74,7 @@ public class TransientModelsComponent implements ProjectComponent {
       return;
     }
 
-    final TransientModelsModule transientModelsModule = new TransientModelsModule(module, TransientModelsComponent.this);
+    final TransientModelsModule transientModelsModule = new TransientModelsModule(module, TransientModelsProvider.this);
     transientModelsModule.initModule();
     myModuleMap.put(module, transientModelsModule);
   }
@@ -169,10 +104,6 @@ public class TransientModelsComponent implements ProjectComponent {
     return myTransientSwapOwner;
   }
 
-  public void setTransientSwapOwner(TransientSwapOwner transientSwapOwner) {
-    myTransientSwapOwner = transientSwapOwner;
-  }
-
   public TransientSwapSpace getTransientSwapSpace() {
     if (mySessionId == null) {
       return null;
@@ -191,10 +122,33 @@ public class TransientModelsComponent implements ProjectComponent {
     return tso.initSwapSpace(mySessionId);
   }
 
+  public void removeAllTransient() {
+    clearAll();
+  }
+
+  public Iterable<TransientModelsModule> getModules() {
+    ModelAccess.assertLegalRead();
+
+    List<TransientModelsModule> result = new ArrayList<TransientModelsModule>(myModuleMap.size());
+    for (TransientModelsModule m : myModuleMap.values()) {
+      if (m.hasPublished()) {
+        result.add(m);
+      }
+    }
+
+    return result;
+  }
+
+  public void startGeneration(int numberOfModelsToKeep) {
+    clearAll();
+    mySessionId = newSessionId();
+    myKeptModels = 0;
+    myModelsToKeepMax = numberOfModelsToKeep;
+  }
+
   private String newSessionId() {
     return myProject.getProjectFile().getAbsolutePath().hashCode() + Long.toHexString(System.currentTimeMillis());
   }
-
 
   public static interface TransientSwapSpace {
 
@@ -211,5 +165,4 @@ public class TransientModelsComponent implements ProjectComponent {
 
     TransientSwapSpace accessSwapSpace(String spaceId);
   }
-
 }

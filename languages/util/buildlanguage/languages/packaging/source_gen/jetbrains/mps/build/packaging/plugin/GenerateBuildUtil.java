@@ -25,6 +25,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.ide.generator.TransientModelsComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
@@ -79,7 +80,7 @@ public class GenerateBuildUtil {
         if (false && showWindow) {
           result.value = GeneratorUIFacade.getInstance().generateModels(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new BuildGenerationHandler(baseFolder.value), true, true);
         } else {
-          result.value = GenerationFacade.generateModels(project.getComponent(MPSProject.class), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new ProjectOperationContext(ProjectHelper.toMPSProject(project)), new BuildGenerationHandler(baseFolder.value), new EmptyProgressMonitor(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
+          result.value = GenerationFacade.generateModels(project.getComponent(MPSProject.class), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new ProjectOperationContext(ProjectHelper.toMPSProject(project)), new BuildGenerationHandler(baseFolder.value), new EmptyProgressMonitor(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create(), project.getComponent(TransientModelsComponent.class));
         }
       }
     };

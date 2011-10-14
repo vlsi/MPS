@@ -133,9 +133,10 @@ public class GenerationFacade {
                                        final IGenerationHandler generationHandler,
                                        final ProgressMonitor monitor,
                                        final IMessageHandler messages,
-                                       final GenerationOptions options) {
+                                       final GenerationOptions options,
+                                       final TransientModelsProvider tmProvider) {
     final boolean[] result = new boolean[1];
-    final TransientModelsComponent transientModelsComponent = p.getComponent(TransientModelsComponent.class);
+    final TransientModelsProvider transientModelsComponent = tmProvider;
 
     // Calls requireWrite at some point
     transientModelsComponent.startGeneration(options.getNumberOfModelsToKeep());

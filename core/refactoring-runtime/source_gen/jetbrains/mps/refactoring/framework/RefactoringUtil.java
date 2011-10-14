@@ -198,7 +198,7 @@ public class RefactoringUtil {
 
   }
 
-  public static enum Applicability {
+  public static   enum Applicability {
     APPLICABLE() {
 
       public boolean lessThan(RefactoringUtil.Applicability level) {
