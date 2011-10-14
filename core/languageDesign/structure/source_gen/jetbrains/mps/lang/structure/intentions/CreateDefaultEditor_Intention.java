@@ -78,6 +78,9 @@ public class CreateDefaultEditor_Intention extends BaseIntention implements Inte
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode editorDeclaration = SNodeOperations.cast(ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.EDITOR, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
+    if (SPropertyOperations.getString(node, "virtualPackage") != null) {
+      SPropertyOperations.set(editorDeclaration, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
+    }
     new DefaultEditorBuilder(editorDeclaration).buildExpressionLike();
     editorContext.getNodeEditorComponent().update();
   }
