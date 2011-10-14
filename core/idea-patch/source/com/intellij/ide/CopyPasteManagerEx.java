@@ -27,6 +27,7 @@ import com.intellij.openapi.ide.CutElementMarker;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.util.EventDispatcher;
+import jetbrains.mps.util.annotation.Patch;
 
 import java.awt.*;
 import java.awt.datatransfer.*;
@@ -39,6 +40,7 @@ import java.util.concurrent.TimeoutException;
 
 public class CopyPasteManagerEx extends CopyPasteManager implements ClipboardOwner {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.CopyPasteManagerEx");
+  @Patch
   private static final int MAX_NORMAL_CLIPBOARD_ACCESS_DELAY = 300;
 
   private final ArrayList<Transferable> myDatas;
@@ -51,7 +53,9 @@ public class CopyPasteManagerEx extends CopyPasteManager implements ClipboardOwn
   private final EventDispatcher<ContentChangedListener> myDispatcher = EventDispatcher.create(ContentChangedListener.class);
   private static final int DELAY_UNTIL_ABORT_CLIPBOARD_ACCESS = 2000;
   private boolean myIsWarningShown = false;
+  @Patch
   private int myMaxNormalTiming = 70;
+  @Patch
   private boolean myBugHappened = false;
 
   public static CopyPasteManagerEx getInstanceEx() {
@@ -69,6 +73,7 @@ public class CopyPasteManagerEx extends CopyPasteManager implements ClipboardOwn
     return systemClipboardContents;
   }
 
+  @Patch
   public Transferable getSystemClipboardContents(boolean showMessage) {
     final Transferable[] contents = new Transferable[] {null};
     final boolean[] success = new boolean[] {false};
@@ -105,6 +110,8 @@ public class CopyPasteManagerEx extends CopyPasteManager implements ClipboardOwn
     if (Patches.SUN_BUG_ID_4818143) {
       final Future<?> accessorFuture = ApplicationManager.getApplication().executeOnPooledThread(accessor);
 
+      // here we are fixing MPS-14400 here
+      // MPS PATCH START
       long start = System.currentTimeMillis();
       try {
         int delay = DELAY_UNTIL_ABORT_CLIPBOARD_ACCESS;
@@ -133,6 +140,7 @@ public class CopyPasteManagerEx extends CopyPasteManager implements ClipboardOwn
       }
       accessorFuture.cancel(true);
       myBugHappened = true;
+      // MPS PATCH END
       if (showMessage) {
         showWorkaroundMessage();
       } else {
