@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs;
 
+import com.intellij.openapi.util.io.StreamUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.FileUtil;
 
@@ -33,27 +34,15 @@ public class IFileUtils {
     try {
       in = new BufferedInputStream(oldFile.openInputStream());
       out = newFile.openOutputStream();
-      byte[] buf = new byte[1024 * 1024];
-      int len;
-      while ((len = in.read(buf)) > 0){
-        out.write(buf, 0, len);
-      }
+      StreamUtil.copyStreamContent(in, out);
       return true;
     } catch (IOException e) {
       LOG.error(e);
+      return false;
     } finally {
-      try {
-        if (in != null) {
-          in.close();
-        }
-        if (out != null) {
-          out.close();
-        }
-      } catch (IOException e) {
-        LOG.error(e);
-      }
+      FileUtil.closeFileSafe(in);
+      FileUtil.closeFileSafe(out);
     }
-    return false;
   }
 
   public static IFile createTmpDir() {
