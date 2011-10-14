@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.MPSWorkbench;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -22,9 +22,9 @@ public class HierarchyViewTool extends AbstractHierarchyView implements INavigat
   private SModelListener myModelListener;
   private LanguageHierarchyCache myCache;
 
-  public HierarchyViewTool(Project project, MPSWorkbench workbench) {
+  public HierarchyViewTool(Project project, MPSCoreComponents coreComponents) {
     super(project, "Hierarchy", 8, Icons.HIERARCHY_ICON);
-    myCache = LanguageHierarchyCache.getInstance();
+    myCache = coreComponents.getLanguageHierarchyCache();
   }
 
   public void onCreateStructureModel(SModelDescriptor md) {

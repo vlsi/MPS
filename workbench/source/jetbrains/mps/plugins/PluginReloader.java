@@ -20,7 +20,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.MPSWorkbench;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
@@ -37,7 +37,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class PluginReloader implements ApplicationComponent {
   private ReloadAdapter myReloadListener = new MyReloadAdapter();
-  private IMakeNotificationListener myMakeListener = new MyMakeListener ();
+  private IMakeNotificationListener myMakeListener = new MyMakeListener();
 
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
@@ -47,8 +47,8 @@ public class PluginReloader implements ApplicationComponent {
   private AtomicReference<Runnable> myLoadPluginsRunnable = new AtomicReference<Runnable>();
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public PluginReloader(MPSWorkbench dep, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
-    myClassLoaderManager = ClassLoaderManager.getInstance();
+  public PluginReloader(MPSCoreComponents coreComponents, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
+    myClassLoaderManager = coreComponents.getClassLoaderManager();
     myProjectManager = projectManager;
     myPluginManager = pluginManager;
   }
@@ -92,12 +92,11 @@ public class PluginReloader implements ApplicationComponent {
     }
   }
 
-  public void setMakeService (IMakeService makeService) {
+  public void setMakeService(IMakeService makeService) {
     if (myMakeService == null && makeService != null) {
       this.myMakeService = makeService;
       myMakeService.addListener(myMakeListener);
-    }
-    else if (myMakeService != null && makeService == null) {
+    } else if (myMakeService != null && makeService == null) {
       myMakeService.removeListener(myMakeListener);
       this.myMakeService = null;
     }
@@ -122,11 +121,11 @@ public class PluginReloader implements ApplicationComponent {
     myPluginManager = null;
   }
 
-  private void checkDisposed () {
+  private void checkDisposed() {
     if (isDisposed()) throw new IllegalStateException("already disposed");
   }
 
-  private boolean isDisposed () {
+  private boolean isDisposed() {
     return myClassLoaderManager == null || myProjectManager == null || myPluginManager == null;
   }
 

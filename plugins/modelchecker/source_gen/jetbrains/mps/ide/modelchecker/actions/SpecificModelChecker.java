@@ -5,7 +5,6 @@ package jetbrains.mps.ide.modelchecker.actions;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import java.util.List;
 import jetbrains.mps.checkers.INodeChecker;
-import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.checkers.CheckersComponent;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SModel;
@@ -26,7 +25,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
   private List<INodeChecker> myLanguageCheckers;
 
   public SpecificModelChecker() {
-    myLanguageCheckers = ComponentManager.getInstance().getComponent(CheckersComponent.class).getCheckers();
+    myLanguageCheckers = CheckersComponent.getInstance().getCheckers();
   }
 
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, IOperationContext operationContext) {

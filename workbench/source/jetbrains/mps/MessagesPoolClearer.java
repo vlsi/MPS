@@ -17,7 +17,7 @@ package jetbrains.mps;
 
 import com.intellij.diagnostic.MessagePool;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.ide.MPSWorkbench;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.annotations.NotNull;
@@ -29,8 +29,8 @@ public class MessagesPoolClearer implements ApplicationComponent {
   private ClassLoaderManager myManager;
   private ReloadAdapter myHandler;
 
-  public MessagesPoolClearer(MPSWorkbench dep) {
-    myManager = ClassLoaderManager.getInstance();
+  public MessagesPoolClearer(MPSCoreComponents coreComponents) {
+    myManager = coreComponents.getClassLoaderManager();
   }
 
   @NotNull

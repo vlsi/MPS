@@ -22,8 +22,8 @@ import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.MPSCore;
-import jetbrains.mps.ide.MPSWorkbench;
+import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -34,9 +34,11 @@ import org.jetbrains.annotations.NotNull;
 
 class OnReloadingUndoCleaner implements ApplicationComponent {
   private ProjectManager myProjectManager;
+  private GlobalSModelEventsManager myEventsManager;
 
-  OnReloadingUndoCleaner(MPSWorkbench dependency, ProjectManager projectManager) {
+  OnReloadingUndoCleaner(MPSCoreComponents coreComponents, ProjectManager projectManager) {
     myProjectManager = projectManager;
+    myEventsManager = coreComponents.getGlobalSModelEventsManager();
   }
 
   @NotNull
@@ -46,7 +48,7 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
 
   public void initComponent() {
 
-    MPSCore.getInstance().getGlobalSModelEventsManager().addGlobalModelListener(new SModelAdapter() {
+    myEventsManager.addGlobalModelListener(new SModelAdapter() {
       @Override
       public void modelReplaced(SModelDescriptor sm) {
         for (SNode root : sm.getSModel().roots()) {

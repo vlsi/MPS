@@ -614,7 +614,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.checkers.CheckersComponent" />
     <classNode dependClassName="jetbrains.mps.checkers.INodeChecker" />
-    <classNode dependClassName="jetbrains.mps.components.ComponentManager" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFix_Runtime" />

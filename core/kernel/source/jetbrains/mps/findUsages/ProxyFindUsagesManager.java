@@ -15,31 +15,32 @@
  */
 package jetbrains.mps.findUsages;
 
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Set;
 
-public class ProxyFindUsagesManager extends FindUsagesManager {
+public class ProxyFindUsagesManager extends FindUsagesManager implements CoreComponent {
   private static boolean ourUseFastManager = true;
+  private static ProxyFindUsagesManager INSTANCE;
+
+  public static ProxyFindUsagesManager getProxyInstance() {
+    return INSTANCE;
+  }
 
   private DefaultFindUsagesManager myDefault;
   private FindUsagesManager myFast;
 
-  public ProxyFindUsagesManager() {
-    myDefault = new DefaultFindUsagesManager(ClassLoaderManager.getInstance());
+  public ProxyFindUsagesManager(ClassLoaderManager classLoaderManager) {
+    myDefault = new DefaultFindUsagesManager(classLoaderManager);
   }
 
-  @NotNull
-  public String getComponentName() {
-    return "Proxy Find Usages Manager";
-  }
 
   public static void setOurUseFastManager(boolean useFastManager) {
     ourUseFastManager = useFastManager;
@@ -53,12 +54,18 @@ public class ProxyFindUsagesManager extends FindUsagesManager {
     return myFast != null && ourUseFastManager ? myFast : myDefault;
   }
 
-  public void initComponent() {
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
     myDefault.init();
   }
 
-  public void disposeComponent() {
+  public void dispose() {
     myDefault.dispose();
+    INSTANCE = null;
   }
 
   public Set<SNode> findDescendants(SNode node, IScope scope) {

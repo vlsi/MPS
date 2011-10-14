@@ -29,6 +29,7 @@ import com.intellij.util.text.CharArrayUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.ProxyFindUsagesManager;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -48,8 +49,8 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
   private static final String TYPE_PREFIX = "type=\"";
   private final ProxyFindUsagesManager myProxyManager;
 
-  public FastFindUsagesManager(ProxyFindUsagesManager proxyManager) {
-    myProxyManager = proxyManager;
+  public FastFindUsagesManager(MPSCoreComponents coreComponents) {
+    myProxyManager = coreComponents.getFindUsagesManager();
   }
 
   @NotNull

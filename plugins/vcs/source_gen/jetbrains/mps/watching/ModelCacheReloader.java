@@ -8,7 +8,7 @@ import java.util.List;
 import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.ide.MPSWorkbench;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
@@ -27,7 +27,7 @@ public class ModelCacheReloader implements ApplicationComponent {
   private ModelCacheReloader.CacheFileListener myFileListener = new ModelCacheReloader.CacheFileListener();
   private List<BaseModelCache> myCaches = ListSequence.fromList(new ArrayList<BaseModelCache>());
 
-  public ModelCacheReloader(VirtualFileManager virtualFileManager, MPSWorkbench workbench) {
+  public ModelCacheReloader(VirtualFileManager virtualFileManager, MPSCoreComponents coreComponents) {
     myVirtualFileManager = virtualFileManager;
     ListSequence.fromList(myCaches).addElement(TraceInfoCache.getInstance());
     ListSequence.fromList(myCaches).addElement(BLDependenciesCache.getInstance());

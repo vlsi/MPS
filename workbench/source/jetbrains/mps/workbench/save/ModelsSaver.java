@@ -22,7 +22,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileEditor.FileDocumentManagerAdapter;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.ide.MPSWorkbench;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +30,7 @@ import org.jetbrains.annotations.NotNull;
 public class ModelsSaver implements ApplicationComponent {
   private MessageBusConnection myMessageBusConnection;
 
-  public ModelsSaver(MPSWorkbench dependsOn) {
+  public ModelsSaver(MPSCoreComponents coreComponents) {
   }
 
   @NotNull

@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="3364928926666865010">
-    <nodeInfo nodeId="3364928926666865036" fileName="TypesystemCheckerComponent.java" startLine="10" startPosition="73" endLine="11" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckersComponent" />
-    <nodeInfo nodeId="3364928926666865139" fileName="TypesystemCheckerComponent.java" startLine="11" startPosition="48" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChecker" />
-    <nodeInfo nodeId="3364928926666865040" fileName="TypesystemCheckerComponent.java" startLine="14" startPosition="66" endLine="15" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3364928926666865143" fileName="TypesystemCheckerComponent.java" startLine="15" startPosition="36" endLine="16" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3364928926666865031" fileName="TypesystemCheckerComponent.java" startLine="21" startPosition="36" endLine="22" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3364928926666865046" fileName="TypesystemCheckerComponent.java" startLine="25" startPosition="31" endLine="26" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3364928926666865153" fileName="TypesystemCheckerComponent.java" startLine="29" startPosition="34" endLine="30" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3364928926666865012" fileName="TypesystemCheckerComponent.java" startLine="13" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypesystemCheckerComponent#(Ljetbrains/mps/checkers/CheckersComponent;)V" />
-    <nodeInfo nodeId="3364928926666865027" fileName="TypesystemCheckerComponent.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="3364928926666865017" fileName="TypesystemCheckerComponent.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="3364928926666865021" fileName="TypesystemCheckerComponent.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <scopeInfo nodeId="3364928926666865026" fileName="TypesystemCheckerComponent.java" startLine="21" startPosition="36" endLine="22" endPosition="42" />
-    <scopeInfo nodeId="3364928926666865030" fileName="TypesystemCheckerComponent.java" startLine="25" startPosition="31" endLine="26" endPosition="46" />
-    <scopeInfo nodeId="3364928926666865020" fileName="TypesystemCheckerComponent.java" startLine="29" startPosition="34" endLine="30" endPosition="49" />
-    <scopeInfo nodeId="3364928926666865015" fileName="TypesystemCheckerComponent.java" startLine="14" startPosition="66" endLine="16" endPosition="40" />
-    <scopeInfo nodeId="3364928926666865012" fileName="TypesystemCheckerComponent.java" startLine="13" startPosition="0" endLine="17" endPosition="3">
+    <nodeInfo nodeId="3364928926666865036" fileName="TypesystemCheckerComponent.java" startLine="8" startPosition="66" endLine="9" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckersComponent" />
+    <nodeInfo nodeId="3364928926666865139" fileName="TypesystemCheckerComponent.java" startLine="9" startPosition="48" endLine="10" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChecker" />
+    <nodeInfo nodeId="3364928926666865040" fileName="TypesystemCheckerComponent.java" startLine="12" startPosition="66" endLine="13" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3364928926666865143" fileName="TypesystemCheckerComponent.java" startLine="13" startPosition="36" endLine="14" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3364928926666865046" fileName="TypesystemCheckerComponent.java" startLine="17" startPosition="22" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3364928926666865153" fileName="TypesystemCheckerComponent.java" startLine="21" startPosition="25" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3364928926666865012" fileName="TypesystemCheckerComponent.java" startLine="11" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypesystemCheckerComponent#(Ljetbrains/mps/checkers/CheckersComponent;)V" />
+    <nodeInfo nodeId="3364928926666865027" fileName="TypesystemCheckerComponent.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="3364928926666865017" fileName="TypesystemCheckerComponent.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <scopeInfo nodeId="3364928926666865030" fileName="TypesystemCheckerComponent.java" startLine="17" startPosition="22" endLine="18" endPosition="46" />
+    <scopeInfo nodeId="3364928926666865020" fileName="TypesystemCheckerComponent.java" startLine="21" startPosition="25" endLine="22" endPosition="49" />
+    <scopeInfo nodeId="3364928926666865015" fileName="TypesystemCheckerComponent.java" startLine="12" startPosition="66" endLine="14" endPosition="40" />
+    <scopeInfo nodeId="3364928926666865012" fileName="TypesystemCheckerComponent.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
       <varInfo nodeId="3364928926666865034" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="3364928926666865027" fileName="TypesystemCheckerComponent.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="3364928926666865017" fileName="TypesystemCheckerComponent.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="3364928926666865021" fileName="TypesystemCheckerComponent.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="3364928926666865010" fileName="TypesystemCheckerComponent.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.typesystemEngine.checker.TypesystemCheckerComponent" />
+    <scopeInfo nodeId="3364928926666865027" fileName="TypesystemCheckerComponent.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="3364928926666865017" fileName="TypesystemCheckerComponent.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="3364928926666865010" fileName="TypesystemCheckerComponent.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.typesystemEngine.checker.TypesystemCheckerComponent" />
   </root>
   <root nodeId="5231630840089786268">
     <nodeInfo nodeId="5231630840089786288" fileName="TypesystemChecker.java" startLine="21" startPosition="31" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -50,8 +46,8 @@
       <varInfo nodeId="1453248744423272923" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="5231630840089786279" fileName="TypesystemChecker.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="5231630840089786283" varName="node" />
       <varInfo nodeId="5231630840089786285" varName="context" />
+      <varInfo nodeId="5231630840089786283" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="5231630840089786268" fileName="TypesystemChecker.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.typesystemEngine.checker.TypesystemChecker" />
   </root>

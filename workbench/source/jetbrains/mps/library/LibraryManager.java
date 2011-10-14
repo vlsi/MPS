@@ -20,8 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.MPSCore;
-import jetbrains.mps.ide.MPSWorkbench;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -45,8 +44,8 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
-  public LibraryManager(MPSWorkbench dependency) {
-    super(MPSCore.getInstance().getModuleRepository());
+  public LibraryManager(MPSCoreComponents coreComponents) {
+    super(coreComponents.getModuleRepository());
   }
 
   private boolean myInitializing = false;

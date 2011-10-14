@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.ide.findusages;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.logging.Logger;
@@ -27,13 +26,17 @@ import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class FindersManager implements ApplicationComponent, LanguageRegistryListener {
+public class FindersManager implements CoreComponent, LanguageRegistryListener {
   private static final Logger LOG = Logger.getLogger(FindersManager.class);
+
+  private static FindersManager INSTANCE;
+
+  public static FindersManager getInstance() {
+    return INSTANCE;
+  }
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
   private Map<GeneratedFinder, SNodePointer> myNodesByFinder = new HashMap<GeneratedFinder, SNodePointer>();
@@ -41,8 +44,22 @@ public class FindersManager implements ApplicationComponent, LanguageRegistryLis
 
   private LanguageRegistry myLanguageRegistry;
 
-  public FindersManager() {
-    myLanguageRegistry = LanguageRegistry.getInstance();
+  public FindersManager(LanguageRegistry languageRegistry) {
+    myLanguageRegistry = languageRegistry;
+  }
+
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+    myLanguageRegistry.addRegistryListener(this);
+  }
+
+  public void dispose() {
+    myLanguageRegistry.removeRegistryListener(this);
+    INSTANCE = null;
   }
 
   public Set<ReloadableFinder> getAvailableFinders(final SNode node) {
@@ -149,26 +166,6 @@ public class FindersManager implements ApplicationComponent, LanguageRegistryLis
     } catch (Throwable throwable) {
       LOG.error("Error while initializing find usages descriptor for language " + language.getNamespace(), throwable);
     }
-  }
-
-  //-------------component stuff----------------
-
-  public static FindersManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(FindersManager.class);
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Finders Manager";
-  }
-
-  public void initComponent() {
-    myLanguageRegistry.addRegistryListener(this);
-  }
-
-  public void disposeComponent() {
-    myLanguageRegistry.removeRegistryListener(this);
   }
 
   @Override

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
@@ -27,7 +26,7 @@ import java.util.Set;
 public abstract class FindUsagesManager {
 
   public static FindUsagesManager getInstance() {
-    return ComponentManager.getInstance().getComponent(ProxyFindUsagesManager.class);
+    return ProxyFindUsagesManager.getProxyInstance();
   }
 
   public abstract Set<SNode> findDescendants(SNode node, IScope scope);

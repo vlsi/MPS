@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
@@ -30,20 +29,22 @@ import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class TypeContextManager implements ApplicationComponent {
+public class TypeContextManager implements CoreComponent {
+
+  private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.getLogger(TypeContextManager.class);
+
+  private static TypeContextManager INSTANCE;
+  private static boolean myReported = false;
+
   private final Object myLock = new Object();
   private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
-  private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
-    new THashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
+  private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts = new THashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
   private boolean myComputeInNormalMode = false;
   private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
-  private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.getLogger(TypeContextManager.class);
-  private static boolean myReported = false;
 
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
@@ -72,6 +73,7 @@ public class TypeContextManager implements ApplicationComponent {
       }
     }
   };
+
   private SModelRepositoryAdapter mySModelRepositoryListener = new SModelRepositoryAdapter() {
     public void modelDeleted(SModelDescriptor modelDescriptor) {
       myListeningForModels.remove(modelDescriptor);
@@ -81,34 +83,36 @@ public class TypeContextManager implements ApplicationComponent {
       myListeningForModels.remove(modelDescriptor);
     }
   };
+
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
       clearForClassesUnload();
     }
   };
 
-  public TypeContextManager(TypeChecker typeChecker) {
+  public static TypeContextManager getInstance() {
+    return INSTANCE;
+  }
+
+  public TypeContextManager(TypeChecker typeChecker, ClassLoaderManager classLoaderManager) {
     myTypeChecker = typeChecker;
     myClassLoaderManager = ClassLoaderManager.getInstance();
   }
 
-  @NotNull
-  public String getComponentName() {
-    return "Type Context Manager";
-  }
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
 
-  public void initComponent() {
+    INSTANCE = this;
     myClassLoaderManager.addReloadHandler(myReloadHandler);
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
   }
 
-  public void disposeComponent() {
+  public void dispose() {
     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
-  }
-
-  public static TypeContextManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(TypeContextManager.class);
+    INSTANCE = null;
   }
 
   public void runResolveAction(Runnable r) {

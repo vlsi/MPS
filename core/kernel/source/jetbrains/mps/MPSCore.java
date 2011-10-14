@@ -16,10 +16,14 @@
 package jetbrains.mps;
 
 import jetbrains.mps.cache.CachesManager;
+import jetbrains.mps.checkers.CheckersComponent;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
+import jetbrains.mps.findUsages.ProxyFindUsagesManager;
+import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -62,6 +66,7 @@ public class MPSCore extends ComponentPlugin {
     myModuleRepository = init(new MPSModuleRepository());
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
 
+    init(new AuxilaryRuntimeModel(myModelRepository));
     init(new ImmatureReferences(myModelRepository));
     init(new CommandEventsManager(myModelRepository, myGlobalSModelEventsManager));
     init(new LibrariesLoader(myModuleRepository));
@@ -82,6 +87,10 @@ public class MPSCore extends ComponentPlugin {
     init(new PasteWrappersManager(classLoaderManager));
     init(new TraceInfoManager());
     init(new BLDependenciesCache(myModelRepository));
+    init(new ProxyFindUsagesManager(classLoaderManager));
+    init(new DataFlowManager(classLoaderManager, myModuleRepository));
+
+    init(new CheckersComponent());
   }
 
   @Override

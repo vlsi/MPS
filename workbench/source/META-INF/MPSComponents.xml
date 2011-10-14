@@ -6,7 +6,7 @@
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.ide.MPSWorkbench</implementation-class>
+      <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
     </component>
     <component>
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
@@ -65,7 +65,6 @@
   <xi:include href="/componentSets/Editor.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/META-INF/MPSDebuggerComponents.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>

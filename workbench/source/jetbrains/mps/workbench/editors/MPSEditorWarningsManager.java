@@ -28,7 +28,7 @@ import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.MPSWorkbench;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -58,10 +58,10 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   private MyFileEditorManagerListener myFileEditorManagerListener = new MyFileEditorManagerListener();
   private Map<MPSFileNodeEditor, Set<WarningPanel>> myWarnings = new HashMap<MPSFileNodeEditor, Set<WarningPanel>>();
 
-  public MPSEditorWarningsManager(Project project, FileEditorManager fileEditorManager, MPSWorkbench workbench) {
+  public MPSEditorWarningsManager(Project project, FileEditorManager fileEditorManager, MPSCoreComponents coreComponents) {
     myProject = project;
     myFileEditorManager = fileEditorManager;
-    myClassLoaderManager = ClassLoaderManager.getInstance();
+    myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
 
   public void projectOpened() {

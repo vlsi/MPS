@@ -23,7 +23,6 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.ide.MPSWorkbench;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;

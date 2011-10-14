@@ -17,19 +17,23 @@ package jetbrains.mps.ide;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.findUsages.ProxyFindUsagesManager;
 import jetbrains.mps.generator.MPSGenerator;
+import jetbrains.mps.ide.findusages.MPSFindUsages;
 import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
-public class MPSWorkbench implements ApplicationComponent {
+public class MPSCoreComponents implements ApplicationComponent {
   @NotNull
   @Override
   public String getComponentName() {
@@ -40,7 +44,7 @@ public class MPSWorkbench implements ApplicationComponent {
   public void initComponent() {
     // setup filesystem provider
     boolean useIoFile = MPSCore.getInstance().isTestMode() && "true".equals(System.getProperty("mps.vfs.useIoFile"));
-    if(!useIoFile) {
+    if (!useIoFile) {
       FileSystem.getInstance().setFileSystemProvider(new IdeaFileSystemProvider());
     }
 
@@ -52,20 +56,40 @@ public class MPSWorkbench implements ApplicationComponent {
 
     // setup MPS.Core
     MPSCore.getInstance().init();
-
-    // setup MPS.Generator
+    MPSTypesystem.getInstance().init();
     MPSGenerator.getInstance().init();
+    MPSFindUsages.getInstance().init();
   }
 
   @Override
   public void disposeComponent() {
-    // dispose MPS.Generator
+    // dispose Core
+    MPSFindUsages.getInstance().dispose();
     MPSGenerator.getInstance().dispose();
-
-    // dispose MPS.Core
+    MPSTypesystem.getInstance().dispose();
     MPSCore.getInstance().dispose();
 
     // cleanup
     ModelAccess.instance().dispose();
+  }
+
+  public ClassLoaderManager getClassLoaderManager() {
+    return ClassLoaderManager.getInstance();
+  }
+
+  public MPSModuleRepository getModuleRepository() {
+    return MPSModuleRepository.getInstance();
+  }
+
+  public GlobalSModelEventsManager getGlobalSModelEventsManager() {
+    return GlobalSModelEventsManager.getInstance();
+  }
+
+  public LanguageHierarchyCache getLanguageHierarchyCache() {
+    return LanguageHierarchyCache.getInstance();
+  }
+
+  public ProxyFindUsagesManager getFindUsagesManager() {
+    return ProxyFindUsagesManager.getProxyInstance();
   }
 }

@@ -28,7 +28,7 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.MPSWorkbench;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
@@ -123,11 +123,11 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
    * MPSProject was used as a parameter of this constructor because corresponding component should be initialised after
    * MPSProject and un-initialized before it.
    */
-  public Highlighter(MPSProject mpsProject, Project project, ProjectManager projectManager, FileEditorManager fileEditorManager, InspectorTool inspector, MPSWorkbench workbench) {
+  public Highlighter(MPSProject mpsProject, Project project, ProjectManager projectManager, FileEditorManager fileEditorManager, InspectorTool inspector, MPSCoreComponents coreComponents) {
     myProject = project;
     myFileEditorManager = fileEditorManager;
-    myGlobalSModelEventsManager = GlobalSModelEventsManager.getInstance();
-    myClassLoaderManager = ClassLoaderManager.getInstance();
+    myGlobalSModelEventsManager = coreComponents.getGlobalSModelEventsManager();
+    myClassLoaderManager = coreComponents.getClassLoaderManager();
     myInspectorTool = inspector;
   }
 

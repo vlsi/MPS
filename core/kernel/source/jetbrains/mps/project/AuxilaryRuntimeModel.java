@@ -15,35 +15,27 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.*;
 
 /**
  * Igor Alshannikov
  * May 31, 2007
  */
-public class AuxilaryRuntimeModel implements ModelOwner {
+public class AuxilaryRuntimeModel implements ModelOwner, CoreComponent {
   private static final SModelFqName myModelFqName = new SModelFqName("" + System.currentTimeMillis(), "$orphan-stuff$");
   private static final SModelReference MY_MODEL_REFERENCE = new SModelReference(myModelFqName, SModelId.generate());
 
-  public AuxilaryRuntimeModel() {
+  private static AuxilaryRuntimeModel INSTANCE;
+
+  public AuxilaryRuntimeModel(SModelRepository repository) {
+    ourInstance = new AuxModelDescriptor();
   }
 
-  private static final Object LOCK = new Object();
-  private static volatile SModelDescriptor ourInstance = null;
+  private final SModelDescriptor ourInstance;
 
   public static SModelDescriptor getDescriptor() {
-    if (ourInstance != null) return ourInstance;
-    synchronized (LOCK) {
-      if (ourInstance != null) return ourInstance;
-      AuxilaryRuntimeModel instance = ComponentManager.getInstance().getComponent(AuxilaryRuntimeModel.class);
-      ourInstance = SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE);
-      if (ourInstance == null) {
-        ourInstance = new AuxModelDescriptor();
-        SModelRepository.getInstance().registerModelDescriptor(ourInstance, instance);
-      }
-      return ourInstance;
-    }
+    return INSTANCE.ourInstance;
   }
 
   public static boolean isAuxModel(SModel model) {
@@ -52,13 +44,29 @@ public class AuxilaryRuntimeModel implements ModelOwner {
     return model.getModelDescriptor() == descriptor;
   }
 
+  @Override
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+    SModelRepository.getInstance().registerModelDescriptor(ourInstance, this);
+  }
+
+  @Override
+  public void dispose() {
+    SModelRepository.getInstance().unRegisterModelDescriptor(ourInstance, this);
+    INSTANCE = null;
+  }
+
   private static class AuxModelDescriptor extends BaseSModelDescriptor {
     public AuxModelDescriptor() {
       super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
     }
 
     protected ModelLoadResult initialLoad() {
-      SModel model = new SModel(getSModelReference()){
+      SModel model = new SModel(getSModelReference()) {
         protected void performUndoableAction(SNodeUndoableAction action) {
           if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
           UndoHelper.getInstance().addUndoableAction(action);

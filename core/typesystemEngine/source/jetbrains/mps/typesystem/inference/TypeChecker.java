@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
 import gnu.trove.THashMap;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
@@ -36,8 +35,6 @@ import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -45,10 +42,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-public class TypeChecker implements ApplicationComponent, LanguageRegistryListener {
+public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   private static final String RUNTIME_TYPES = "$runtimeTypes$";
   private static final String TYPES_MODEL_NAME = "typesModel";
   private static final SModelFqName TYPES_MODEL_UID = new SModelFqName(TYPES_MODEL_NAME, RUNTIME_TYPES);
+  private static TypeChecker INSTANCE;
 
   public final Object LISTENERS_LOCK = new Object();
 
@@ -81,8 +79,8 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
   };
   private Thread myMainGenerationThread;
 
-  public TypeChecker() {
-    myLanguageRegistry = LanguageRegistry.getInstance();
+  public TypeChecker(LanguageRegistry languageRegistry) {
+    myLanguageRegistry = languageRegistry;
     myRuntimeSupport = new RuntimeSupportNew(this);
     mySubtypingManager = new SubTypingManagerNew(this);
     myRulesManager = new RulesManager(this);
@@ -90,7 +88,12 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
     mySubtypingManagerTracer = new SubtypingManager_Tracer(this);
   }
 
-  public void initComponent() {
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -105,8 +108,9 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
     });
   }
 
-  public void disposeComponent() {
+  public void dispose() {
     myLanguageRegistry.removeRegistryListener(this);
+    INSTANCE = null;
   }
 
   @Override
@@ -122,14 +126,8 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
   }
 
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Type Checker";
-  }
-
   public static TypeChecker getInstance() {
-    return ApplicationManager.getApplication().getComponent(TypeChecker.class);
+    return INSTANCE;
   }
 
   private boolean isMainGenerationThread() {
