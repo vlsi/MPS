@@ -22,24 +22,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vfs.IFile;
 
 public interface VCSHandler {
-  //-----suspicious
-
-  // NEEDED IN CORE
-  @Deprecated
-  void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict);
-
-  // NEEDED IN CORE
-  @Deprecated
-  void addSuspiciousModel(DefaultSModelDescriptor modelDescriptor, boolean isInConflict);
-
-  //-----misc
-
-  // NOT NEEDED IN CORE
   VcsRevisionNumber getRevisionNumber(IFile file);
-
   boolean isInConflict(IFile iFile, boolean synchronously);
-
-  // NEEDED IN CORE
-  @Deprecated
-  boolean resolveDiskMemoryConflict(IFile modelFile, SModel model);
 }

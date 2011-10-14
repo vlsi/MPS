@@ -775,8 +775,8 @@
     <scopeInfo nodeId="3613324658897713979" fileName="ModelUtils.java" startLine="66" startPosition="58" endLine="87" endPosition="0" />
     <scopeInfo nodeId="3613324658897713971" fileName="ModelUtils.java" startLine="65" startPosition="113" endLine="87" endPosition="7" />
     <scopeInfo nodeId="3613324658897714112" fileName="ModelUtils.java" startLine="110" startPosition="38" endLine="133" endPosition="14">
-      <varInfo nodeId="3613324658897714175" varName="fis" />
       <varInfo nodeId="3613324658897714170" varName="baos" />
+      <varInfo nodeId="3613324658897714175" varName="fis" />
       <varInfo nodeId="8429850548531109922" varName="files" />
       <varInfo nodeId="3613324658897714114" varName="file" />
     </scopeInfo>
@@ -798,8 +798,8 @@
       <varInfo nodeId="3613324658897714058" varName="tmpdir" />
     </scopeInfo>
     <scopeInfo nodeId="3613324658897714287" fileName="ModelUtils.java" startLine="172" startPosition="0" endLine="205" endPosition="0">
-      <varInfo nodeId="3613324658897714292" varName="path" />
       <varInfo nodeId="3613324658897714290" varName="inputSourceFactory" />
+      <varInfo nodeId="3613324658897714292" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="3613324658897714029" fileName="ModelUtils.java" startLine="104" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="3613324658897714035" varName="versions" />
@@ -817,54 +817,33 @@
     <unitInfo nodeId="3613324658897713898" fileName="ModelUtils.java" startLine="40" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.vcs.ModelUtils" />
   </root>
   <root nodeId="3613324658897714583">
-    <nodeInfo nodeId="3613324658897714599" fileName="RealVcsHandler.java" startLine="17" startPosition="88" endLine="18" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897714613" fileName="RealVcsHandler.java" startLine="21" startPosition="97" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897714625" fileName="RealVcsHandler.java" startLine="25" startPosition="58" endLine="26" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897714636" fileName="RealVcsHandler.java" startLine="29" startPosition="67" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897714648" fileName="RealVcsHandler.java" startLine="33" startPosition="75" endLine="34" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897714656" fileName="RealVcsHandler.java" startLine="38" startPosition="36" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897714587" fileName="RealVcsHandler.java" startLine="13" startPosition="73" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RealVcsHandler#()V" />
-    <nodeInfo nodeId="3613324658897714659" fileName="RealVcsHandler.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="3613324658897714663" fileName="RealVcsHandler.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="3613324658897714591" fileName="RealVcsHandler.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSuspiciousModule#(Ljetbrains/mps/project/AbstractModule;Z)V" />
-    <nodeInfo nodeId="3613324658897714605" fileName="RealVcsHandler.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSuspiciousModel#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;Z)V" />
-    <nodeInfo nodeId="3613324658897714619" fileName="RealVcsHandler.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRevisionNumber#(Ljetbrains/mps/vfs/IFile;)Lcom/intellij/openapi/vcs/history/VcsRevisionNumber;" />
-    <nodeInfo nodeId="3613324658897714628" fileName="RealVcsHandler.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInConflict#(Ljetbrains/mps/vfs/IFile;Z)Z" />
-    <nodeInfo nodeId="3613324658897714640" fileName="RealVcsHandler.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveDiskMemoryConflict#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;)Z" />
-    <nodeInfo nodeId="3613324658897714652" fileName="RealVcsHandler.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <scopeInfo nodeId="3613324658897714590" fileName="RealVcsHandler.java" startLine="14" startPosition="27" endLine="14" endPosition="27" />
-    <scopeInfo nodeId="3613324658897714662" fileName="RealVcsHandler.java" startLine="42" startPosition="31" endLine="42" endPosition="31" />
-    <scopeInfo nodeId="3613324658897714666" fileName="RealVcsHandler.java" startLine="45" startPosition="34" endLine="45" endPosition="34" />
-    <scopeInfo nodeId="3613324658897714598" fileName="RealVcsHandler.java" startLine="17" startPosition="88" endLine="18" endPosition="76" />
-    <scopeInfo nodeId="3613324658897714612" fileName="RealVcsHandler.java" startLine="21" startPosition="97" endLine="22" endPosition="76" />
-    <scopeInfo nodeId="3613324658897714624" fileName="RealVcsHandler.java" startLine="25" startPosition="58" endLine="26" endPosition="43" />
-    <scopeInfo nodeId="3613324658897714635" fileName="RealVcsHandler.java" startLine="29" startPosition="67" endLine="30" endPosition="54" />
-    <scopeInfo nodeId="3613324658897714647" fileName="RealVcsHandler.java" startLine="33" startPosition="75" endLine="34" endPosition="65" />
-    <scopeInfo nodeId="3613324658897714655" fileName="RealVcsHandler.java" startLine="38" startPosition="36" endLine="39" endPosition="25" />
-    <scopeInfo nodeId="3613324658897714587" fileName="RealVcsHandler.java" startLine="13" startPosition="73" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="3613324658897714659" fileName="RealVcsHandler.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="3613324658897714663" fileName="RealVcsHandler.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="3613324658897714591" fileName="RealVcsHandler.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="3613324658897714596" varName="isInConflict" />
-      <varInfo nodeId="3613324658897714594" varName="abstractModule" />
-    </scopeInfo>
-    <scopeInfo nodeId="3613324658897714605" fileName="RealVcsHandler.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="3613324658897714610" varName="isInConflict" />
-      <varInfo nodeId="3613324658897714608" varName="modelDescriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="3613324658897714619" fileName="RealVcsHandler.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+    <nodeInfo nodeId="3613324658897714625" fileName="RealVcsHandler.java" startLine="14" startPosition="58" endLine="15" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897714636" fileName="RealVcsHandler.java" startLine="18" startPosition="67" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897714656" fileName="RealVcsHandler.java" startLine="23" startPosition="36" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897714587" fileName="RealVcsHandler.java" startLine="10" startPosition="73" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RealVcsHandler#()V" />
+    <nodeInfo nodeId="3613324658897714659" fileName="RealVcsHandler.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="3613324658897714663" fileName="RealVcsHandler.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="3613324658897714619" fileName="RealVcsHandler.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRevisionNumber#(Ljetbrains/mps/vfs/IFile;)Lcom/intellij/openapi/vcs/history/VcsRevisionNumber;" />
+    <nodeInfo nodeId="3613324658897714628" fileName="RealVcsHandler.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInConflict#(Ljetbrains/mps/vfs/IFile;Z)Z" />
+    <nodeInfo nodeId="3613324658897714652" fileName="RealVcsHandler.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <scopeInfo nodeId="3613324658897714590" fileName="RealVcsHandler.java" startLine="11" startPosition="27" endLine="11" endPosition="27" />
+    <scopeInfo nodeId="3613324658897714662" fileName="RealVcsHandler.java" startLine="27" startPosition="31" endLine="27" endPosition="31" />
+    <scopeInfo nodeId="3613324658897714666" fileName="RealVcsHandler.java" startLine="30" startPosition="34" endLine="30" endPosition="34" />
+    <scopeInfo nodeId="3613324658897714624" fileName="RealVcsHandler.java" startLine="14" startPosition="58" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="3613324658897714635" fileName="RealVcsHandler.java" startLine="18" startPosition="67" endLine="19" endPosition="54" />
+    <scopeInfo nodeId="3613324658897714655" fileName="RealVcsHandler.java" startLine="23" startPosition="36" endLine="24" endPosition="25" />
+    <scopeInfo nodeId="3613324658897714587" fileName="RealVcsHandler.java" startLine="10" startPosition="73" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="3613324658897714659" fileName="RealVcsHandler.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="3613324658897714663" fileName="RealVcsHandler.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="3613324658897714619" fileName="RealVcsHandler.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="3613324658897714622" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714628" fileName="RealVcsHandler.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="3613324658897714628" fileName="RealVcsHandler.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="3613324658897714633" varName="synchronously" />
       <varInfo nodeId="3613324658897714631" varName="iFile" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714640" fileName="RealVcsHandler.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="3613324658897714645" varName="model" />
-      <varInfo nodeId="3613324658897714643" varName="modelFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="3613324658897714652" fileName="RealVcsHandler.java" startLine="36" startPosition="0" endLine="41" endPosition="0" />
-    <unitInfo nodeId="3613324658897714583" fileName="RealVcsHandler.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.vcs.RealVcsHandler" />
+    <scopeInfo nodeId="3613324658897714652" fileName="RealVcsHandler.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <unitInfo nodeId="3613324658897714583" fileName="RealVcsHandler.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.vcs.RealVcsHandler" />
   </root>
   <root nodeId="3613324658897714667">
     <nodeInfo nodeId="3613324658897714685" fileName="VcsHelper.java" startLine="36" startPosition="24" endLine="37" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

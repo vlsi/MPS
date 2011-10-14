@@ -16,29 +16,14 @@
 package jetbrains.mps.vcs;
 
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vfs.IFile;
 
 public class VoidVCSHandler implements VCSHandler {
-  public void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict) {
-
-  }
-
-  public void addSuspiciousModel(DefaultSModelDescriptor modelDescriptor, boolean isInConflict) {
-
-  }
-
   public VcsRevisionNumber getRevisionNumber(IFile file) {
     return null;
   }
 
   public boolean isInConflict(IFile iFile, boolean synchronously) {
     return false;
-  }
-
-  public boolean resolveDiskMemoryConflict(IFile modelFile, SModel model) {
-    return true;
   }
 }
