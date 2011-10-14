@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.stubs;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
@@ -29,13 +28,18 @@ import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LibrariesLoader implements ApplicationComponent {
+public class LibrariesLoader implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(LibrariesLoader.class);
+
+  private static LibrariesLoader INSTANCE;
+
+  public static LibrariesLoader getInstance() {
+    return INSTANCE;
+  }
 
   private MPSModuleRepository myModuleRepository;
 
@@ -44,6 +48,20 @@ public class LibrariesLoader implements ApplicationComponent {
 
   public LibrariesLoader(MPSModuleRepository moduleRepository) {
     myModuleRepository = moduleRepository;
+  }
+
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+  }
+
+  public void dispose() {
+    myLoadedSolutions.clear();
+
+    INSTANCE = null;
   }
 
   public void reload() {
@@ -132,24 +150,5 @@ public class LibrariesLoader implements ApplicationComponent {
     }
 
     return result;
-  }
-
-  //---------component stuff----------
-
-  public static LibrariesLoader getInstance() {
-    return ComponentManager.getInstance().getComponent(LibrariesLoader.class);
-  }
-
-  @NotNull
-  public String getComponentName() {
-    return "Stub Reload Manager";
-  }
-
-  public void initComponent() {
-
-  }
-
-  public void disposeComponent() {
-    myLoadedSolutions.clear();
   }
 }

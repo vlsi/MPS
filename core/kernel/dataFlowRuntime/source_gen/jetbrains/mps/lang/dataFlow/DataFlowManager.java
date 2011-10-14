@@ -30,9 +30,9 @@ public class DataFlowManager implements ApplicationComponent {
     }
   };
 
-  public DataFlowManager(ClassLoaderManager manager, MPSModuleRepository repo) {
-    this.myClassLoaderManager = manager;
-    this.myModuleRepository = repo;
+  public DataFlowManager() {
+    this.myClassLoaderManager = ClassLoaderManager.getInstance();
+    this.myModuleRepository = MPSModuleRepository.getInstance();
   }
 
   public void initComponent() {

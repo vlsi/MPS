@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.util;
 
-import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
@@ -34,17 +33,32 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-public class QueryMethodGenerated implements ApplicationComponent {
+public class QueryMethodGenerated implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
 
   private static ConcurrentMap<SModelReference, Map<String, Method>> ourMethods = new ConcurrentHashMap<SModelReference, Map<String, Method>>();
   private static ConcurrentMap<String, Constructor> ourAdaptorsConstructors = new ConcurrentHashMap<String, Constructor>();
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();
+
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
       clearCaches();
     }
   };
+
+  private ClassLoaderManager myClassLoaderManager;
+
+  public QueryMethodGenerated(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
+  }
+
+  public void init() {
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
+  }
+
+  public void dispose() {
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
+  }
 
   public static void clearCaches() {
     ourMethods.clear();
@@ -182,25 +196,5 @@ public class QueryMethodGenerated implements ApplicationComponent {
       LOG.error("no class def found : " + e.getMessage() + " because of " + className);
     }
     return null;
-  }
-
-  private ClassLoaderManager myClassLoaderManager;
-
-  public QueryMethodGenerated(ClassLoaderManager manager) {
-    myClassLoaderManager = manager;
-  }
-
-  public void initComponent() {
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Query Methods Generated";
-  }
-
-  public void disposeComponent() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 }

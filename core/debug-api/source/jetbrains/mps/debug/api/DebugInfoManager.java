@@ -54,8 +54,8 @@ public class DebugInfoManager implements ApplicationComponent {
     return "Debug Info Manager";
   }
 
-  public DebugInfoManager(TraceInfoManager manager) {
-    myTraceInfoManager = manager;
+  public DebugInfoManager() {
+    myTraceInfoManager = TraceInfoManager.getInstance();
   }
 
   @Deprecated

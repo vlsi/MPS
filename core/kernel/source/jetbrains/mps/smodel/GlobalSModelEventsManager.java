@@ -15,15 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.MPSCore;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -32,11 +30,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class GlobalSModelEventsManager implements ApplicationComponent {
+public class GlobalSModelEventsManager implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
 
   public static GlobalSModelEventsManager getInstance() {
-    return ComponentManager.getInstance().getComponent(GlobalSModelEventsManager.class);
+    return MPSCore.getInstance().getGlobalSModelEventsManager();
   }
 
   private SModelRepository mySModelRepository;
@@ -57,7 +55,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
     }
   }
 
-  public void initComponent() {
+  public void init() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
@@ -77,13 +75,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
     });
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Global SModel Events Manager";
-  }
-
-  public void disposeComponent() {
+  public void dispose() {
   }
 
   private void addListeners(SModelDescriptor sm) {

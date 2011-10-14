@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.cache;
 
-import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
@@ -30,9 +30,12 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.WeakHashMap;
 
-public abstract class BaseModelCache<T> implements ApplicationComponent {
+public abstract class BaseModelCache<T> implements CoreComponent {
 
   protected final Map<SModelDescriptor, T> myCache = new WeakHashMap<SModelDescriptor, T>();
   protected final BidirectionalMap<IFile, SModelDescriptor> myFilesToModels = new BidirectionalMap<IFile, SModelDescriptor>();
@@ -62,11 +65,11 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
     return myCacheGenerator;
   }
 
-  public void initComponent() {
+  public void init() {
     myModelRepository.addModelRepositoryListener(myModelRepositoryListener);
   }
 
-  public void disposeComponent() {
+  public void dispose() {
     myModelRepository.removeModelRepositoryListener(myModelRepositoryListener);
   }
 
@@ -173,7 +176,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
     }
   }
 
-  protected void cleanup () {
+  protected void cleanup() {
     synchronized (myCache) {
       myCache.clear();
     }

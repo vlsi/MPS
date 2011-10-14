@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
@@ -29,7 +29,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,16 +36,11 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class MPSModuleRepository implements ApplicationComponent {
+public class MPSModuleRepository implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
-  private static MPSModuleRepository ourInstance = null;
-
   public static MPSModuleRepository getInstance() {
-    if (ourInstance == null) {
-      ourInstance = ComponentManager.getInstance().getComponent(MPSModuleRepository.class);
-    }
-    return ourInstance;
+    return MPSCore.getInstance().getModuleRepository();
   }
 
   private Map<String, IModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, IModule>();
@@ -64,7 +58,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   public MPSModuleRepository() {
   }
 
-  public void initComponent() {
+  public void init() {
     CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
       public void performCleanup() {
         removeUnusedModules();
@@ -72,13 +66,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     });
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "MPS Module Repository";
-  }
-
-  public void disposeComponent() {
+  public void dispose() {
 
   }
 

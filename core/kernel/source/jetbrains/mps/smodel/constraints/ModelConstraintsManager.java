@@ -16,8 +16,7 @@
 package jetbrains.mps.smodel.constraints;
 
 import com.google.common.collect.ImmutableMap;
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -31,8 +30,6 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedList;
@@ -40,7 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class ModelConstraintsManager implements ApplicationComponent {
+public class ModelConstraintsManager implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
 
   private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
@@ -59,8 +56,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
   };
   private final Object myLock = new Object();
 
+  private static ModelConstraintsManager INSTANCE;
+
   public static ModelConstraintsManager getInstance() {
-    return ComponentManager.getInstance().getComponent(ModelConstraintsManager.class);
+    return INSTANCE;
   }
 
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new ConcurrentHashMap<String, List<IModelConstraints>>();
@@ -77,20 +76,20 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public ModelConstraintsManager() {
   }
 
-  public void initComponent() {
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
     ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Model Constraints Manager";
-  }
-
-  public void disposeComponent() {
+  public void dispose() {
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
+    INSTANCE = null;
   }
 
   // register/unregister stuff

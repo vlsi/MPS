@@ -87,9 +87,9 @@ public class TypeContextManager implements ApplicationComponent {
     }
   };
 
-  public TypeContextManager(TypeChecker typeChecker, ClassLoaderManager classLoaderManager) {
+  public TypeContextManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
-    myClassLoaderManager = classLoaderManager;
+    myClassLoaderManager = ClassLoaderManager.getInstance();
   }
 
   @NotNull

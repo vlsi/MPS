@@ -11,6 +11,7 @@ import java.util.Map;
 import java.lang.reflect.Constructor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.ide.MPSWorkbench;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.INodeEditor;
@@ -54,8 +55,8 @@ public class EditorsFinderManager implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
   private Map<String, Constructor> myCachedEditors = MapSequence.fromMap(new HashMap<String, Constructor>());
 
-  public EditorsFinderManager(ClassLoaderManager classLoaderManager) {
-    myClassLoaderManager = classLoaderManager;
+  public EditorsFinderManager(MPSWorkbench workbench) {
+    myClassLoaderManager = ClassLoaderManager.getInstance();
   }
 
   public void initComponent() {

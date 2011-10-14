@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.actions.goTo.index;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import gnu.trove.THashMap;
+import jetbrains.mps.ide.MPSWorkbench;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -40,7 +41,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
     }
   };
 
-  public StubsNodeDescriptorsCache() {
+  public StubsNodeDescriptorsCache(MPSWorkbench workbench) {
   }
 
   public static StubsNodeDescriptorsCache getInstance() {

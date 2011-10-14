@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.project.structure;
 
-import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -30,7 +28,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * evgeny, 4/21/11
  */
-public class LanguageDescriptorModelProvider implements ApplicationComponent {
+public class LanguageDescriptorModelProvider implements CoreComponent {
 
   private Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
 
@@ -71,6 +69,21 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
     });
   }
 
+  @Override
+  public void init() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        refresh();
+      }
+    });
+  }
+
+  @Override
+  public void dispose() {
+    clearAll();
+  }
+
+
   private void refreshModule(Language module, boolean isDeleted) {
     ModelAccess.assertLegalWrite();
 
@@ -84,7 +97,7 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
       createModel(module);
     } else {
       LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
-      if(languageModelDescriptor != null) {
+      if (languageModelDescriptor != null) {
         languageModelDescriptor.invalidate();
       }
     }
@@ -99,7 +112,7 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
       if (myModels.containsKey(ref)) {
         old.remove(ref);
         LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
-        if(languageModelDescriptor != null) {
+        if (languageModelDescriptor != null) {
           languageModelDescriptor.invalidate();
         }
       } else {
@@ -113,20 +126,6 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
         removeModel(model);
       }
     }
-  }
-
-  @Override
-  public void initComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        refresh();
-      }
-    });
-  }
-
-  @Override
-  public void disposeComponent() {
-    clearAll();
   }
 
   public void clearAll() {
@@ -171,13 +170,7 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
   }
 
   public String toString() {
-    return "component: " + getComponentName();
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "Language Descriptor Models Provider";
+    return "component: Language Descriptor Models Provider";
   }
 
   public class LanguageModelDescriptor extends BaseSModelDescriptor {
@@ -191,7 +184,7 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
     }
 
     protected ModelLoadResult initialLoad() {
-      SModel model = new SModel(getSModelReference()){
+      SModel model = new SModel(getSModelReference()) {
         protected boolean canFireEvent() {
           return false;
         }
@@ -207,7 +200,7 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
 
     public String getModelHash() {
       String hash = myHash;
-      if(hash == null) {
+      if (hash == null) {
         IFile descriptorFile = myModule.getDescriptorFile();
         hash = ModelDigestUtil.hash(descriptorFile);
         myHash = hash;

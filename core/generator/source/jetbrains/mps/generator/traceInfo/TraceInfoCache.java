@@ -17,7 +17,6 @@ package jetbrains.mps.generator.traceInfo;
 
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
@@ -33,7 +32,6 @@ import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -46,28 +44,35 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   public static final String TRACE_FILE_NAME = "trace.info";
 
+  private static TraceInfoCache INSTANCE;
+
+  public static TraceInfoCache getInstance() {
+    return INSTANCE;
+  }
+
   public TraceInfoCache(SModelRepository modelRepository) {
     super(modelRepository);
   }
 
-  public static TraceInfoCache getInstance() {
-    return ApplicationManager.getApplication().getComponent(TraceInfoCache.class);
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Debug Info Cache";
-  }
-
   @Override
-  public void initComponent() {
-    super.initComponent();
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+    super.init();
     CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
       public void performCleanup() {
         cleanup();
       }
     });
+  }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+    INSTANCE = null;
   }
 
   @NotNull

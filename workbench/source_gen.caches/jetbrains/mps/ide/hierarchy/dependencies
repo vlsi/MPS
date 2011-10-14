@@ -165,6 +165,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
+    <classNode dependClassName="jetbrains.mps.ide.MPSWorkbench" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.INavigator" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.UsagesViewTracker" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />

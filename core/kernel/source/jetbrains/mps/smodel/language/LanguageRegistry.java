@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.smodel.language;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -32,7 +30,7 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
 /**
  * evgeny, 3/11/11
  */
-public class LanguageRegistry implements ApplicationComponent {
+public class LanguageRegistry implements CoreComponent {
 
   private static final Logger LOG = Logger.getLogger(LanguageRegistry.class);
 
@@ -46,8 +44,10 @@ public class LanguageRegistry implements ApplicationComponent {
 
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<LanguageRegistryListener>();
 
+  private static LanguageRegistry INSTANCE;
+
   public static LanguageRegistry getInstance() {
-    return ComponentManager.getInstance().getComponent(LanguageRegistry.class);
+    return INSTANCE;
   }
 
   public LanguageRegistry(MPSModuleRepository repository, ClassLoaderManager loaderManager, ConceptRegistry registry) {
@@ -55,10 +55,27 @@ public class LanguageRegistry implements ApplicationComponent {
   }
 
   @Override
-  public void initComponent() {
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
   }
 
-  public void init() {
+  @Override
+  public void dispose() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        notifyUnload(myLanguages.values(), true);
+        myLanguageToNamespace.clear();
+        myLanguages.clear();
+      }
+    });
+    INSTANCE = null;
+  }
+
+  public void loadLanguages() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         myLanguageToNamespace = new HashMap<Language, String>();
@@ -174,25 +191,8 @@ public class LanguageRegistry implements ApplicationComponent {
     return languageRuntime;
   }
 
-  @Override
-  public void disposeComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        notifyUnload(myLanguages.values(), true);
-        myLanguageToNamespace.clear();
-        myLanguages.clear();
-      }
-    });
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "MPS Language Registry";
-  }
-
   public String toString() {
-    return "component: " + getComponentName();
+    return "LanguageRegistry";
   }
 
   public void addRegistryListener(LanguageRegistryListener listener) {

@@ -15,29 +15,24 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.*;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class LanguageHierarchyCache implements ApplicationComponent {
-  private static LanguageHierarchyCache ourInstance = null;
+public class LanguageHierarchyCache implements CoreComponent {
+  private static LanguageHierarchyCache INSTANCE;
 
   public static LanguageHierarchyCache getInstance() {
-    if (ourInstance == null) {
-      ourInstance = ComponentManager.getInstance().getComponent(LanguageHierarchyCache.class);
-    }
-    return ourInstance;
+    return INSTANCE;
   }
 
   private ConcurrentMap<String, InternAwareStringSet> myAncestorsNamesMap = new ConcurrentHashMap<String, InternAwareStringSet>();
@@ -61,12 +56,12 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     myModuleRepository = moduleRepository;
   }
 
-  @NotNull
-  public String getComponentName() {
-    return "Language Hierarchy Cache";
-  }
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
 
-  public void initComponent() {
+    INSTANCE = this;
     MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryAdapter() {
       @Override
       public void repositoryChanged() {
@@ -84,9 +79,11 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     });
   }
 
-  public void disposeComponent() {
+  public void dispose() {
+    // TODO unregister listeners?
     myCacheChangeListeners.clear();
     myCacheReadAccessListener = null;
+    INSTANCE = null;
   }
 
   public void addCacheChangeListener(CacheChangeListener listener) {

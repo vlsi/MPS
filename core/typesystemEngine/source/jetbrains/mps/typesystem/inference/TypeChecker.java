@@ -81,8 +81,8 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
   };
   private Thread myMainGenerationThread;
 
-  public TypeChecker(LanguageRegistry languageRegistry) {
-    myLanguageRegistry = languageRegistry;
+  public TypeChecker() {
+    myLanguageRegistry = LanguageRegistry.getInstance();
     myRuntimeSupport = new RuntimeSupportNew(this);
     mySubtypingManager = new SubTypingManagerNew(this);
     myRulesManager = new RulesManager(this);

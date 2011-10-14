@@ -12,6 +12,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import java.util.HashMap;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
+import jetbrains.mps.ide.MPSWorkbench;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.library.ProjectLibraryManager;
@@ -31,10 +32,10 @@ public class WatchedRoots implements ApplicationComponent {
   private final ProjectManager myProjectManager;
   private ProjectManagerAdapter myProjectManagerListener;
 
-  public WatchedRoots(LocalFileSystem lfs, ClassLoaderManager classLoaderManager, LibraryManager libraryManager, ProjectManager projectManager) {
+  public WatchedRoots(LocalFileSystem lfs, MPSWorkbench workbench, LibraryManager libraryManager, ProjectManager projectManager) {
     myLibraryManager = libraryManager;
     myProjectManager = projectManager;
-    myClassLoaderManager = classLoaderManager;
+    myClassLoaderManager = ClassLoaderManager.getInstance();
     myLocalFileSystem = lfs;
   }
 

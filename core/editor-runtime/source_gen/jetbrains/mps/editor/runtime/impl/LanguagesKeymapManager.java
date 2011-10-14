@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.ide.MPSWorkbench;
 import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
@@ -43,9 +44,9 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   private MPSModuleRepository myRepository;
   private ClassLoaderManager myClassLoaderManager;
 
-  public LanguagesKeymapManager(MPSModuleRepository repository, ClassLoaderManager manager, LibraryManager libraryManager) {
-    myRepository = repository;
-    myClassLoaderManager = manager;
+  public LanguagesKeymapManager(MPSWorkbench workbench, LibraryManager libraryManager) {
+    myRepository = MPSModuleRepository.getInstance();
+    myClassLoaderManager = ClassLoaderManager.getInstance();
   }
 
   public List<EditorCellKeyMap> getKeyMapsForLanguage(@NotNull Language l) {

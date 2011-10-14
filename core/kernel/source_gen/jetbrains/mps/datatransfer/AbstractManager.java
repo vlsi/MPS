@@ -15,6 +15,9 @@ public abstract class AbstractManager {
     }
   };
 
+  public AbstractManager() {
+  }
+
   public void init() {
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }

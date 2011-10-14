@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.project.structure;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.TransientModelNodeFinder;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -36,15 +35,17 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * evgeny, 3/18/11
  */
-public class ProjectStructureModule extends AbstractModule implements ApplicationComponent {
+public class ProjectStructureModule extends AbstractModule implements CoreComponent {
 
   //  private static final Logger LOG = Logger.getLogger(ProjectStructureModule.class);
   private static final ModuleReference MODULE_REFERENCE = ModuleReference.fromString("642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)");
 
   private Map<SModelReference, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, ProjectStructureSModelDescriptor>();
 
+  private static ProjectStructureModule INSTANCE;
+
   public static ProjectStructureModule getInstance() {
-    return ComponentManager.getInstance().getComponent(ProjectStructureModule.class);
+    return INSTANCE;
   }
 
   public ProjectStructureModule(MPSModuleRepository repository, SModelRepository modelRepository) {
@@ -136,7 +137,12 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   }
 
   @Override
-  public void initComponent() {
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         MPSModuleRepository.getInstance().addModule(ProjectStructureModule.this, new MPSModuleOwner() {
@@ -146,18 +152,16 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   }
 
   @Override
-  public void disposeComponent() {
+  public void dispose() {
+    if (INSTANCE == null) return;
     clearAll();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
+        ProjectStructureModule.super.dispose();
         MPSModuleRepository.getInstance().removeModule(ProjectStructureModule.this);
       }
     });
-  }
-
-  public void dispose() {
-    super.dispose();
-    clearAll();
+    INSTANCE = null;
   }
 
   public void clearAll() {
@@ -245,12 +249,6 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
   protected ModuleScope createScope() {
     return new ProjectStructureModuleScope();
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "Project Structure Models Provider";
   }
 
   public class ProjectStructureModuleScope extends ModuleScope {

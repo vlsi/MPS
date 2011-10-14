@@ -12,12 +12,12 @@
   </dependency>
   <dependency className="jetbrains.mps.datatransfer.CopyPasteManager" file="CopyPasteManager.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.components.ComponentManager" />
     <classNode dependClassName="jetbrains.mps.datatransfer.CopyPreProcessor" />
     <classNode dependClassName="jetbrains.mps.datatransfer.PastePostProcessor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -35,9 +35,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.ConditionalIterable" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
+    <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
     <classNode extendsClassName="jetbrains.mps.datatransfer.AbstractManager" />
   </dependency>
   <dependency className="jetbrains.mps.datatransfer.CopyPreProcessor" file="CopyPreProcessor.java">

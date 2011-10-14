@@ -15,40 +15,34 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class CommandEventsManager implements ApplicationComponent {
+public class CommandEventsManager implements CoreComponent {
 
   private SModelRepository mySModelRepository;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
+
+  private SModelCommandListener myListener = new SModelCommandListener() {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
+      fireEvents(events);
+    }
+  };
 
   public CommandEventsManager(SModelRepository SModelRepository, GlobalSModelEventsManager eventsManager) {
     mySModelRepository = SModelRepository;
     myGlobalSModelEventsManager = eventsManager;
   }
 
-  public void initComponent() {
-    myGlobalSModelEventsManager.addGlobalCommandListener(new SModelCommandListener() {
-      public void eventsHappenedInCommand(List<SModelEvent> events) {
-        fireEvents(events);
-      }
-    });
+  public void init() {
+    myGlobalSModelEventsManager.addGlobalCommandListener(myListener);
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Command Events Manager";
-  }
-
-  public void disposeComponent() {
-
+  public void dispose() {
+    myGlobalSModelEventsManager.removeGlobalCommandListener(myListener);
   }
 
   private void fireEvents(List<SModelEvent> events) {

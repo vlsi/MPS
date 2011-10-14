@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.cache;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +28,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-public class CachesManager implements ApplicationComponent {
+public class CachesManager implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(CachesManager.class);
 
   private final ClassLoaderManager myClassLoaderManager;
@@ -52,8 +49,10 @@ public class CachesManager implements ApplicationComponent {
     }
   };
 
+  private static CachesManager INSTANCE;
+
   public static CachesManager getInstance() {
-    return ComponentManager.getInstance().getComponent(CachesManager.class);
+    return INSTANCE;
   }
 
   public CachesManager(ClassLoaderManager classLoaderManager, SModelRepository repo) {
@@ -61,20 +60,20 @@ public class CachesManager implements ApplicationComponent {
     mySModelRepository = repo;
   }
 
-  public void initComponent() {
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
     mySModelRepository.addModelRepositoryListener(myModelRepoListener);
     myClassLoaderManager.addReloadHandler(myCLMListener);
   }
 
-  public void disposeComponent() {
+  public void dispose() {
     myClassLoaderManager.removeReloadHandler(myCLMListener);
     mySModelRepository.removeModelRepositoryListener(myModelRepoListener);
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Caches Manager";
+    INSTANCE = null;
   }
 
   private AbstractCache putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {

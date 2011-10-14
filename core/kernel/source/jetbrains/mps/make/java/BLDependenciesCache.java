@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.make.java;
 
-import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.smodel.SModelRepository;
@@ -32,22 +31,36 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
+
+  private static BLDependenciesCache INSTANCE;
+
   public static BLDependenciesCache getInstance() {
-    return ComponentManager.getInstance().getComponent(BLDependenciesCache.class);
+    return INSTANCE;
   }
 
   public BLDependenciesCache(SModelRepository modelRepository) {
     super(modelRepository);
   }
 
-  @NotNull
-  public String getCacheFileName() {
-    return "dependencies";
+  @Override
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+    super.init();
+  }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+    INSTANCE = null;
   }
 
   @NotNull
-  public String getComponentName() {
-    return "Base Language Dependencies Cache";
+  public String getCacheFileName() {
+    return "dependencies";
   }
 
   protected Element toXml(ModelDependencies modelDependencies) {

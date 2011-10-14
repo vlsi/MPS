@@ -41,8 +41,8 @@ public class FindersManager implements ApplicationComponent, LanguageRegistryLis
 
   private LanguageRegistry myLanguageRegistry;
 
-  public FindersManager(LanguageRegistry registry) {
-    myLanguageRegistry = registry;
+  public FindersManager() {
+    myLanguageRegistry = LanguageRegistry.getInstance();
   }
 
   public Set<ReloadableFinder> getAvailableFinders(final SNode node) {

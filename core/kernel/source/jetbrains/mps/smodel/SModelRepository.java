@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
 import gnu.trove.THashMap;
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
@@ -29,25 +28,16 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class SModelRepository implements ApplicationComponent {
+public class SModelRepository implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
-  private static SModelRepository ourInstance = null;
-
   public static SModelRepository getInstance() {
-    if (ourInstance == null) {
-      Application application = ApplicationManager.getApplication();
-      if (application != null) {
-        ourInstance = application.getComponent(SModelRepository.class);
-      }
-    }
-    return ourInstance;
+    return MPSCore.getInstance().getModelRepository();
   }
 
   private final Map<String, EditableSModelDescriptor> myCanonicalPathsToModelDescriptorMap = new ConcurrentHashMap<String, EditableSModelDescriptor>();
@@ -64,20 +54,13 @@ public class SModelRepository implements ApplicationComponent {
   private SModelListener myModelsListener = new ModelChangeListener();
 
   public SModelRepository() {
+  }
+
+  public void init() {
 
   }
 
-  public void initComponent() {
-
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "SModel Repository";
-  }
-
-  public void disposeComponent() {
+  public void dispose() {
 
   }
 

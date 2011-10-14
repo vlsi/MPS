@@ -20,6 +20,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.MPSWorkbench;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
@@ -46,8 +47,8 @@ public class PluginReloader implements ApplicationComponent {
   private AtomicReference<Runnable> myLoadPluginsRunnable = new AtomicReference<Runnable>();
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
-    myClassLoaderManager = classLoaderManager;
+  public PluginReloader(MPSWorkbench dep, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
+    myClassLoaderManager = ClassLoaderManager.getInstance();
     myProjectManager = projectManager;
     myPluginManager = pluginManager;
   }

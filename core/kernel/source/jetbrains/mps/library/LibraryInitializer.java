@@ -80,8 +80,8 @@ public class LibraryInitializer {
 
     if (myFirstLoad) {
       myFirstLoad = false;
-      myCLM.init();
-      LanguageRegistry.getInstance().init();
+      myCLM.initRuntimeEnvironment();
+      LanguageRegistry.getInstance().loadLanguages();
     }
   }
 

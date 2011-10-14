@@ -32,8 +32,8 @@ public class ProxyFindUsagesManager extends FindUsagesManager {
   private DefaultFindUsagesManager myDefault;
   private FindUsagesManager myFast;
 
-  public ProxyFindUsagesManager(ClassLoaderManager manager) {
-    myDefault = new DefaultFindUsagesManager(manager);
+  public ProxyFindUsagesManager() {
+    myDefault = new DefaultFindUsagesManager(ClassLoaderManager.getInstance());
   }
 
   @NotNull

@@ -17,6 +17,7 @@ package jetbrains.mps.ide;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
@@ -48,10 +49,23 @@ public class MPSWorkbench implements ApplicationComponent {
 
     // setup model access
     ModelAccess.setInstance(new WorkbenchModelAccess());
+
+    // setup MPS.Core
+    MPSCore.getInstance().init();
+
+    // setup MPS.Generator
+    MPSGenerator.getInstance().init();
   }
 
   @Override
   public void disposeComponent() {
+    // dispose MPS.Generator
+    MPSGenerator.getInstance().dispose();
+
+    // dispose MPS.Core
+    MPSCore.getInstance().dispose();
+
+    // cleanup
     ModelAccess.instance().dispose();
   }
 }

@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
@@ -27,12 +26,11 @@ import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class StructureAspectInterpreted implements StructureAspectDescriptor, ApplicationComponent {
+public class StructureAspectInterpreted implements StructureAspectDescriptor, CoreComponent {
   private Map<String, ConceptDescriptor> descriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
 
   private ThreadLocal<Set<String>> inLoad = new ThreadLocal<Set<String>>() {
@@ -45,8 +43,10 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Ap
   public StructureAspectInterpreted() {
   }
 
+  private static StructureAspectInterpreted INSTANCE;
+
   public static StructureAspectInterpreted getInstance() {
-    return ComponentManager.getInstance().getComponent(StructureAspectInterpreted.class);
+    return INSTANCE;
   }
 
   @Override
@@ -70,7 +70,12 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Ap
   }
 
   @Override
-  public void initComponent() {
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
     MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryAdapter() {
       @Override
       public void repositoryChanged() {
@@ -88,18 +93,14 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Ap
     });
   }
 
+  @Override
+  public void dispose() {
+    // TODO unregister listeners?
+    INSTANCE = null;
+  }
+
   private void invalidateDescriptors() {
     descriptors.clear();
-  }
-
-  @Override
-  public void disposeComponent() {
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "Structure aspect interpreted";
   }
 
   private class InterpretedConceptDescriptor extends BaseConceptDescriptor {

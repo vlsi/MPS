@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.dependencies;
 
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
@@ -25,7 +24,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
@@ -35,24 +33,35 @@ import java.util.Arrays;
  */
 public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDependencies> {
 
+  private static GenerationDependenciesCache INSTANCE;
+
+  public static GenerationDependenciesCache getInstance() {
+    return INSTANCE;
+  }
+
   public GenerationDependenciesCache(SModelRepository modelRepository) {
     super(modelRepository);
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Generation Dependencies Cache";
-  }
-
   @Override
-  public void initComponent() {
-    super.initComponent();
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+    super.init();
     CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
       public void performCleanup() {
         cleanup();
       }
     });
+  }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+    INSTANCE = null;
   }
 
   @NotNull
@@ -79,9 +88,5 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
       ModelGenerationStatusManager.getInstance().invalidateData(Arrays.asList(md));
     }
     return md;
-  }
-
-  public static GenerationDependenciesCache getInstance() {
-    return ApplicationManager.getApplication().getComponent(GenerationDependenciesCache.class);
   }
 }

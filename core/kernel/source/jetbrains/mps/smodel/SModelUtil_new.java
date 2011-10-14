@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
@@ -31,13 +31,12 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SModelUtil_new implements ApplicationComponent {
+public class SModelUtil_new implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(SModelUtil_new.class);
   private ClassLoaderManager myClManager;
   private GlobalSModelEventsManager myMeManager;
@@ -88,18 +87,12 @@ public class SModelUtil_new implements ApplicationComponent {
     myMeManager = meManager;
   }
 
-  public void initComponent() {
+  public void init() {
     myClManager.addReloadHandler(myReloadHandler);
     myMeManager.addGlobalModelListener(myModelListener);
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "SModelUtil";
-  }
-
-  public void disposeComponent() {
+  public void dispose() {
     myMeManager.removeGlobalModelListener(myModelListener);
     myClManager.removeReloadHandler(myReloadHandler);
   }

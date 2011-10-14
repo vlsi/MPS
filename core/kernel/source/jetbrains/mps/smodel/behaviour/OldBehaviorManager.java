@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -26,7 +25,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
@@ -37,7 +35,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public final class OldBehaviorManager implements ApplicationComponent {
+public final class OldBehaviorManager implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(OldBehaviorManager.class);
 
   private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.([^\\.]+)$");
@@ -48,8 +46,10 @@ public final class OldBehaviorManager implements ApplicationComponent {
     }
   };
 
+  private static OldBehaviorManager INSTANCE;
+
   public static OldBehaviorManager getInstance() {
-    return ComponentManager.getInstance().getComponent(OldBehaviorManager.class);
+    return INSTANCE;
   }
 
   private final ConcurrentMap<MethodInfo, Object> myMethods = new ConcurrentHashMap<MethodInfo, Object>();
@@ -61,18 +61,18 @@ public final class OldBehaviorManager implements ApplicationComponent {
     myClassLoaderManager = classLoaderManager;
   }
 
-  public void initComponent() {
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
     myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Old Behavior Manager";
-  }
-
-  public void disposeComponent() {
+  public void dispose() {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
+    INSTANCE = null;
   }
 
   public void clear() {

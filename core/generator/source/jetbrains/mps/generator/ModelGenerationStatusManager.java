@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
@@ -30,10 +29,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ModelGenerationStatusManager implements ApplicationComponent {
+public class ModelGenerationStatusManager implements CoreComponent {
+
+  private static ModelGenerationStatusManager INSTANCE;
 
   public static ModelGenerationStatusManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(ModelGenerationStatusManager.class);
+    return INSTANCE;
   }
 
   private final List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
@@ -50,17 +51,18 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     myGlobalEventsManager = globalEventsManager;
   }
 
-  @NotNull
-  public String getComponentName() {
-    return "Model Status Manager";
-  }
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
 
-  public void initComponent() {
+    INSTANCE = this;
     myGlobalEventsManager.addGlobalModelListener(mySmodelReloadListener);
   }
 
-  public void disposeComponent() {
+  public void dispose() {
     myGlobalEventsManager.removeGlobalModelListener(mySmodelReloadListener);
+    INSTANCE = null;
   }
 
   public String currentHash(SModelDescriptor sm, IOperationContext operationContext) {

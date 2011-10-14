@@ -41,6 +41,7 @@
     <classNode dependClassName="jetbrains.mps.generator.cache.BaseModelCache" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
+    <classNode dependClassName="jetbrains.mps.ide.MPSWorkbench" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -214,6 +215,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.ide.MPSWorkbench" />
     <classNode dependClassName="jetbrains.mps.library.Library" />
     <classNode dependClassName="jetbrains.mps.library.LibraryManager" />
     <classNode dependClassName="jetbrains.mps.library.ProjectLibraryManager" />

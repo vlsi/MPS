@@ -15,23 +15,19 @@
  */
 package jetbrains.mps.reloading;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.components.ComponentManager;
-import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.stubs.LibrariesLoader;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -40,7 +36,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class ClassLoaderManager implements ApplicationComponent {
+public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(ClassLoaderManager.class);
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
@@ -48,8 +44,10 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   };
 
+  private static ClassLoaderManager INSTANCE;
+
   public static ClassLoaderManager getInstance() {
-    return ComponentManager.getInstance().getComponent(ClassLoaderManager.class);
+    return INSTANCE;
   }
 
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
@@ -63,6 +61,20 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+    INSTANCE = this;
+
+    addReloadHandler(myReloadHandler);
+  }
+
+  public void dispose() {
+    removeReloadHandler(myReloadHandler);
+    INSTANCE = null;
+  }
+
+  public void initRuntimeEnvironment() {
     synchronized (myLock) {
       if (myRuntimeEnvironment == null) {
         myRuntimeEnvironment = createRuntimeEnvironment();
@@ -231,22 +243,6 @@ public class ClassLoaderManager implements ApplicationComponent {
 
   public boolean canLoadClasses(AbstractModule m) {
     return myRuntimeEnvironment == null ? false : myRuntimeEnvironment.get(m.getModuleReference()) != null;
-  }
-
-  //---------------component stuff------------------
-
-  public void initComponent() {
-    addReloadHandler(myReloadHandler);
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Class Loader Manager";
-  }
-
-  public void disposeComponent() {
-    removeReloadHandler(myReloadHandler);
   }
 
   //---------------reload handlers------------------

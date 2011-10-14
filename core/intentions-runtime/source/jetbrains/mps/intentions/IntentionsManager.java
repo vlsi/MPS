@@ -81,8 +81,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private ClassLoaderManager myClassLoaderManager;
 
-  public IntentionsManager(ClassLoaderManager manager) {
-    myClassLoaderManager = manager;
+  public IntentionsManager() {
+    myClassLoaderManager = ClassLoaderManager.getInstance();
   }
 
   public synchronized Collection<Pair<Intention, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context) {

@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.smodel.language;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
@@ -41,7 +40,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class ConceptRegistry implements ApplicationComponent {
+public class ConceptRegistry implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(ConceptRegistry.class);
 
   private final Map<String, ConceptDescriptor> conceptDescriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
@@ -58,29 +57,23 @@ public class ConceptRegistry implements ApplicationComponent {
   public ConceptRegistry() {
   }
 
-  private static ConceptRegistry ourInstance = null;
+  private static ConceptRegistry INSTANCE;
 
   public static ConceptRegistry getInstance() {
-    if (ourInstance == null) {
-      ourInstance = ComponentManager.getInstance().getComponent(ConceptRegistry.class);
+    return INSTANCE;
+  }
+
+  @Override
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
     }
-    return ourInstance;
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "Concept Registry";
+    INSTANCE = this;
   }
 
   @Override
-  public void initComponent() {
-    // ?
-  }
-
-  @Override
-  public void disposeComponent() {
-    // ?
+  public void dispose() {
+    INSTANCE = null;
   }
 
   private boolean startLoad(String fqName, LanguageAspect aspect) {

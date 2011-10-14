@@ -15,24 +15,18 @@
  */
 package jetbrains.mps.datatransfer;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class PasteWrappersManager implements ApplicationComponent {
-  public static PasteWrappersManager getInstance() {
-    return ComponentManager.getInstance().getComponent(PasteWrappersManager.class);
-  }
+public class PasteWrappersManager implements CoreComponent {
 
   public static final String PASTE_WRAPPER_CLASS_NAME = "PasteWrappers";
   public static final String PASTE_WRAPPERS_FACTORY_METHOD = "createPasteWrappers";
@@ -48,8 +42,28 @@ public class PasteWrappersManager implements ApplicationComponent {
   private Map<String, Map<String, PasteWrapper>> myWrappers = new HashMap<String, Map<String, PasteWrapper>>();
   private boolean myLoaded = false;
 
+  private static PasteWrappersManager INSTANCE;
+
+  public static PasteWrappersManager getInstance() {
+    return INSTANCE;
+  }
+
   public PasteWrappersManager(ClassLoaderManager classLoaderManager) {
     myClassLoaderManager = classLoaderManager;
+  }
+
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
+  }
+
+  public void dispose() {
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
+    INSTANCE = null;
   }
 
   public boolean canWrapInto(SNode node, SNode targetConcept) {
@@ -118,21 +132,5 @@ public class PasteWrappersManager implements ApplicationComponent {
       myWrappers.put(wrapper.getTargetConceptFqName(), new HashMap<String, PasteWrapper>());
     }
     myWrappers.get(wrapper.getTargetConceptFqName()).put(wrapper.getSourceConceptFqName(), wrapper);
-  }
-
-  //-------------component methods-----------------
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Paste Wrapper Manager";
-  }
-
-  public void initComponent() {
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
-  }
-
-  public void disposeComponent() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 }

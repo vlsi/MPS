@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.ComponentManager;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.components.CoreComponent;
 
 import java.util.Map.Entry;
 import java.util.NoSuchElementException;
@@ -26,14 +24,16 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ConcurrentMap;
 
 
-class ImmatureReferences implements ApplicationComponent {
+public class ImmatureReferences implements CoreComponent {
   // How many threads _simultaneously_ accessing the pool are allowed to succeed without congestion
   private static final int POOL_SIZE = 4;
 
   private static final Object PRESENT = new Object();
 
+  private static ImmatureReferences INSTANCE;
+
   static ImmatureReferences getInstance() {
-    return ComponentManager.getInstance().getComponent(ImmatureReferences.class);
+    return INSTANCE;
   }
 
   private SModelRepositoryAdapter myReposListener = new MySModelRepositoryAdapter();
@@ -48,7 +48,7 @@ class ImmatureReferences implements ApplicationComponent {
 
   private boolean myDisabled = true;
 
-  ImmatureReferences(SModelRepository modelRepository) {
+  public ImmatureReferences(SModelRepository modelRepository) {
     mySModelRepository = modelRepository;
     for (int i = 0; i < POOL_SIZE; i++) {
       myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, Object>());
@@ -64,14 +64,21 @@ class ImmatureReferences implements ApplicationComponent {
     cleanup();
   }
 
-  @NotNull
-  public String getComponentName() {
-    return "Immature References";
-  }
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
 
-  public void initComponent() {
+    INSTANCE = this;
     mySModelRepository.addModelRepositoryListener(myReposListener);
     ModelAccess.instance().addCommandListener(myModelAccessListener);
+  }
+
+  public void dispose() {
+    mySModelRepository.removeModelRepositoryListener(myReposListener);
+    ModelAccess.instance().removeCommandListener(myModelAccessListener);
+
+    INSTANCE = null;
   }
 
   public void cleanup() {
@@ -81,11 +88,6 @@ class ImmatureReferences implements ApplicationComponent {
       }
     }
     myReferences.clear();
-  }
-
-  public void disposeComponent() {
-    mySModelRepository.removeModelRepositoryListener(myReposListener);
-    ModelAccess.instance().removeCommandListener(myModelAccessListener);
   }
 
   void add(SReferenceBase ref) {
