@@ -22,6 +22,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.project.MPSProject;
@@ -153,7 +154,7 @@ public class RenameLanguageDialog extends BaseDialog {
           return;
         }
 
-        ModuleContext context = new ModuleContext(myLanguage, myProject);
+        ModuleContext context = new ModuleContext(myLanguage, ProjectHelper.toMPSProject(myProject));
         MakeSession sess = new MakeSession(context);
         if (IMakeService.INSTANCE.get().openNewSession(sess)) {
           IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, params.getModelDescriptors()).resources(false));

@@ -35,6 +35,7 @@
     <classNode dependClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
     <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />

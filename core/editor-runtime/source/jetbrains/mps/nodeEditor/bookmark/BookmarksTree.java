@@ -15,23 +15,23 @@
  */
 package jetbrains.mps.nodeEditor.bookmark;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import java.util.List;
 import java.util.Map;
@@ -84,7 +84,7 @@ public class BookmarksTree extends MPSTree {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeNumbered(i);
         textTreeNode.setIcon(BookmarkManager.getIcon(i));
-        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, ProjectOperationContext.get(myProject)));
+        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, new ProjectOperationContext(myProject)));
         root.add(textTreeNode);
       }
     }
@@ -94,7 +94,7 @@ public class BookmarksTree extends MPSTree {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeUnnumbered(nodePointer);
         textTreeNode.setIcon(BookmarkManager.getIcon(-1));
-        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, ProjectOperationContext.get(myProject)));
+        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, new ProjectOperationContext(myProject)));
         root.add(textTreeNode);
       }
     }
@@ -131,6 +131,7 @@ public class BookmarksTree extends MPSTree {
 
   private interface BookmarkNode {
     public void navigateToBookmark();
+
     public void removeBookmark();
   }
 
@@ -140,7 +141,7 @@ public class BookmarksTree extends MPSTree {
     public MyTextTreeNodeNumbered(int i) {
       super("bookmark " + i);
       myNumber = i;
-      setNodeIdentifier("bookmark"+i);
+      setNodeIdentifier("bookmark" + i);
     }
 
     public void removeBookmark() {
@@ -167,7 +168,7 @@ public class BookmarksTree extends MPSTree {
     public MyTextTreeNodeUnnumbered(SNode node) {
       super("bookmark");
       myNodePointer = new SNodePointer(node);
-      setNodeIdentifier("bookmark_"+node.getId());
+      setNodeIdentifier("bookmark_" + node.getId());
     }
 
     public void removeBookmark() {
@@ -177,7 +178,7 @@ public class BookmarksTree extends MPSTree {
     public MyTextTreeNodeUnnumbered(SNodePointer nodePointer) {
       super("bookmark");
       myNodePointer = nodePointer;
-      setNodeIdentifier("bookmark_"+nodePointer.getNodeId().toString());
+      setNodeIdentifier("bookmark_" + nodePointer.getNodeId().toString());
     }
 
     public void navigateToBookmark() {
@@ -187,7 +188,7 @@ public class BookmarksTree extends MPSTree {
     public ActionGroup getActionGroup() {
       BaseAction action = new BaseAction("Remove Bookmark") {
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-         removeBookmark();
+          removeBookmark();
         }
       };
       return ActionUtils.groupFromActions(action);

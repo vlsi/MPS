@@ -115,7 +115,6 @@
   <property name="ypath.test.classes" value="${base_dir}/languages/util/ypath/solutions/test/classes_gen" />
   <path id="common.classpath">
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
@@ -124,17 +123,7 @@
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
@@ -536,7 +525,6 @@
   <path id="cycle.jetbrains.mps.analyzers_tjc.classpaths">
     <path path="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
@@ -726,7 +714,6 @@
     <path path="${base_dir}/core/languageDesign/make/languages/script/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -870,7 +857,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.builders_tjc.classpaths">
     <path path="${base_dir}/languages/util/builders/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -1015,7 +1001,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths">
     <path path="${base_dir}/core/baseLanguage/constructors/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -1160,7 +1145,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths">
     <path path="${base_dir}/languages/util/contracts/languages/contracts/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -1305,7 +1289,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths">
     <path path="${base_dir}/languages/util/dates/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -1463,7 +1446,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.datesInternal_tjc.classpaths">
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -1608,7 +1590,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths">
     <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -1753,7 +1734,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.jdk7_tjc.classpaths">
     <path path="${base_dir}/core/baseLanguage/jdk7/languages/jdk7/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -1898,7 +1878,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.logging_tjc.classpaths">
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -2042,7 +2021,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths">
     <path path="${base_dir}/languages/util/math/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -2187,7 +2165,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths">
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
@@ -2248,7 +2225,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths">
     <path path="${base_dir}/languages/util/money/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -2400,7 +2376,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.classpaths">
     <path path="${base_dir}/core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -2545,7 +2520,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths">
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
@@ -2613,7 +2587,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc.classpaths">
     <path path="${base_dir}/core/baseLanguage/runConfigurations/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -2758,7 +2731,6 @@
   <path id="cycle.jetbrains.mps.bash_tjc.classpaths">
     <path path="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -2904,7 +2876,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -3052,7 +3023,6 @@
   <path id="cycle.jetbrains.mps.build.dependency_tjc.classpaths">
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -3199,7 +3169,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -3343,7 +3312,6 @@
   <path id="cycle.jetbrains.mps.build.gentest_tjc.classpaths">
     <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -3487,7 +3455,6 @@
   <path id="cycle.jetbrains.mps.build.packaging_tjc.classpaths">
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -3633,7 +3600,6 @@
   <path id="cycle.jetbrains.mps.debug.customViewers_tjc.classpaths">
     <path path="${base_dir}/core/debug/languages/customViewers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -3780,7 +3746,6 @@
   <path id="cycle.jetbrains.mps.debug.evaluation_tjc.classpaths">
     <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -3926,7 +3891,6 @@
   <path id="cycle.jetbrains.mps.debug.privateMembers_tjc.classpaths">
     <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -4071,7 +4035,6 @@
   <path id="cycle.jetbrains.mps.execution.lib.startup_tjc.classpaths">
     <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
@@ -4080,15 +4043,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
@@ -4128,7 +4082,6 @@
   <path id="cycle.jetbrains.mps.gtext_tjc.classpaths">
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -4281,7 +4234,6 @@
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-dev.jar" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -4425,7 +4377,6 @@
   <path id="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths">
     <path path="${base_dir}/workbench/ideUiLanguage/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -4577,7 +4528,6 @@
   <path id="cycle.jetbrains.mps.lang.descriptor_tjc.classpaths">
     <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -4722,7 +4672,6 @@
   <path id="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -4867,7 +4816,6 @@
   <path id="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/editor/languages/table/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -5012,7 +4960,6 @@
   <path id="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/editor/languages/table/runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -5156,7 +5103,6 @@
   <path id="cycle.jetbrains.mps.lang.pattern.testLang_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -5301,7 +5247,6 @@
   <path id="cycle.jetbrains.mps.lang.script_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/script/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -5445,7 +5390,6 @@
   <path id="cycle.jetbrains.mps.lang.smodelTests_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/smodel/languages/smodelTests/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -5590,7 +5534,6 @@
   <path id="cycle.jetbrains.mps.lang.stubs_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -5734,7 +5677,6 @@
   <path id="cycle.jetbrains.mps.nanoj_tjc.classpaths">
     <path path="${base_dir}/languages/util/mps-lite/languages/nanoj/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -5879,7 +5821,6 @@
   <path id="cycle.jetbrains.mps.platform.conf_tjc.classpaths">
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -6023,7 +5964,6 @@
   <path id="cycle.jetbrains.mps.quickQuery.runtime_tjc.classpaths">
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
@@ -6032,15 +5972,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
@@ -6079,7 +6010,6 @@
   <path id="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths">
     <path path="${base_dir}/languages/util/quickQueryLanguage/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -6225,7 +6155,6 @@
     <path path="${base_dir}/languages/util/ui/languages/ui/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -6372,7 +6301,6 @@
   <path id="cycle.jetbrains.mps.ui.gwt_tjc.classpaths">
     <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -6520,7 +6448,6 @@
   <path id="cycle.jetbrains.mps.ui.modeling_tjc.classpaths">
     <path path="${base_dir}/languages/util/ui/languages/meta/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -6665,7 +6592,6 @@
   <path id="cycle.jetbrains.mps.ui.swing_tjc.classpaths">
     <path path="${base_dir}/languages/util/ui/languages/swing/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -6823,7 +6749,6 @@
   <path id="cycle.jetbrains.mps.ui.swt_tjc.classpaths">
     <path path="${base_dir}/languages/util/ui/languages/swt/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -6984,7 +6909,6 @@
   <path id="cycle.jetbrains.mps.uiLanguage_tjc.classpaths">
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -7129,7 +7053,6 @@
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -7273,7 +7196,6 @@
   <path id="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths">
     <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -7417,7 +7339,6 @@
   <path id="cycle.jetbrains.mps.xmlQuery_tjc.classpaths">
     <path path="${base_dir}/languages/util/xml/xmlQuery/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -7563,7 +7484,6 @@
   <path id="cycle.jetbrains.mps.xmlSchema_tjc.classpaths">
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -7707,7 +7627,6 @@
   <path id="cycle.jetbrains.mps.xmlUnitTest_tjc.classpaths">
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -7874,7 +7793,6 @@
   <path id="cycle.jetbrains.mpslite_tjc.classpaths">
     <path path="${base_dir}/languages/util/mps-lite/languages/mpslite/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -8019,7 +7937,6 @@
   <path id="cycle.ypath.main_tjc.classpaths">
     <path path="${base_dir}/languages/util/ypath/solutions/main/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
@@ -8164,7 +8081,6 @@
   <path id="cycle.ypath.test_tjc.classpaths">
     <path path="${base_dir}/languages/util/ypath/solutions/test/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />

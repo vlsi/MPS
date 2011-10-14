@@ -7,7 +7,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.TestMain;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
@@ -65,7 +65,7 @@ public class TraceInfoTest {
   }
 
   private void invokeTest(final _FunctionTypes._void_P0_E0 test) {
-    MPSProject project = TestMain.loadProject(new File(PathManager.getHomePath() + "/core/kernel/traceinfo/traceInfo.mpr"));
+    Project project = TestMain.loadProject(new File(PathManager.getHomePath() + "/core/kernel/traceinfo/traceInfo.mpr"));
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -89,11 +89,11 @@ public class TraceInfoTest {
     return null;
   }
 
-  private void cleanup(final MPSProject p) {
+  private void cleanup(final Project p) {
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        p.dispose(false);
+        p.dispose();
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
       }

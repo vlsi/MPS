@@ -96,11 +96,11 @@ import jetbrains.mps.vcs.plugin.VcsActionsHelper;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog;
@@ -728,7 +728,7 @@ __switch__:
                 }));
 
                 final JFrame frame = WindowManager.getInstance().getFrame(project);
-                final ModuleContext operationContext = new ModuleContext(myModelDescriptor.getModule(), project);
+                final ModuleContext operationContext = new ModuleContext(myModelDescriptor.getModule(), ProjectHelper.toMPSProject(project));
                 final String beforeRevNumber = (before == null ?
                   "<no revision>" :
                   before.getRevisionNumber().asString()

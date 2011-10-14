@@ -25,6 +25,7 @@ import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper;
 import jetbrains.mps.smodel.IScope;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -134,7 +135,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
       }
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          GoToEditorDeclaration_Action.this.navigateToEditorDeclaration(editorNode, new ModuleContext(l.value, ((Project) MapSequence.fromMap(_params).get("project"))), ((IEditor) MapSequence.fromMap(_params).get("editor")), _params);
+          GoToEditorDeclaration_Action.this.navigateToEditorDeclaration(editorNode, new ModuleContext(l.value, ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project")))), ((IEditor) MapSequence.fromMap(_params).get("editor")), _params);
         }
       });
     } catch (Throwable t) {

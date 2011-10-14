@@ -220,7 +220,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
     assert sm != null : "Model descriptor is null for model: " + myFile.getNode().getModel();
 
-    IOperationContext result = new ModuleContext(sm.getModule(), myProject);
+    IOperationContext result = new ModuleContext(sm.getModule(), ProjectHelper.toMPSProject(myProject));
     assert result.getModule() == sm.getModule() : "Different modules: " + result.getModule() + "/" + sm.getModule();
     return result;
   }

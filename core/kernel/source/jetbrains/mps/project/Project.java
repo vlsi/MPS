@@ -238,6 +238,8 @@ public abstract class Project implements MPSModuleOwner {
   // should be left for compatibility with generated plugins (editor openers)
   public abstract <T> T getComponent(Class<T> t);
 
+  public abstract String getName();
+
   public class ProjectScope extends DefaultScope {
 
     protected Set<IModule> getInitialModules() {

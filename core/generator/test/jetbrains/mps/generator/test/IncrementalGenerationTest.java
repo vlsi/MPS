@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.test;
 
 import jetbrains.mps.TestMain;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
@@ -34,7 +34,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testIncSolution1() throws IOException {
-    final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator/generator.mpr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator/generator.mpr"));
     SModelDescriptor descr = findModel(p, "test_Closure");
 
     doTestIncrementalGeneration(p, descr,
@@ -60,7 +60,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testIdeActions() throws IOException {
-    final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/workbench/workbench.mpr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/workbench/workbench.mpr"));
     SModelDescriptor descr = findModel(p, "jetbrains.mps.ide.actions");
 
     doTestIncrementalGeneration(p, descr,
@@ -78,7 +78,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testPluginStructure() throws IOException {
-    final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/languageDesign/plugin/plugin.mpr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/languageDesign/plugin/plugin.mpr"));
     SModelDescriptor descr = findModel(p, "jetbrains.mps.lang.plugin.structure");
 
     doTestIncrementalGeneration(p, descr,
@@ -96,7 +96,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testBaseLanguageEditor() throws IOException {
-    final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/baseLanguage/baseLanguage/baseLanguage.mpr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/baseLanguage/baseLanguage/baseLanguage.mpr"));
     SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
 
     doTestIncrementalGeneration(p, descr,

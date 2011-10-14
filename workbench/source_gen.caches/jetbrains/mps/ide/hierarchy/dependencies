@@ -54,6 +54,7 @@
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />

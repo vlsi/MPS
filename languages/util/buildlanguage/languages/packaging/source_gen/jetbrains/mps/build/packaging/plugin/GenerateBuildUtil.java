@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.ArrayList;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.MPSProject;
@@ -76,9 +77,9 @@ public class GenerateBuildUtil {
     final _FunctionTypes._void_P0_E0 generate = new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         if (false && showWindow) {
-          result.value = GeneratorUIFacade.getInstance().generateModels(ProjectOperationContext.get(project), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new BuildGenerationHandler(baseFolder.value), true, true);
+          result.value = GeneratorUIFacade.getInstance().generateModels(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new BuildGenerationHandler(baseFolder.value), true, true);
         } else {
-          result.value = GenerationFacade.generateModels(project.getComponent(MPSProject.class), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), ProjectOperationContext.get(project), new BuildGenerationHandler(baseFolder.value), new EmptyProgressMonitor(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
+          result.value = GenerationFacade.generateModels(project.getComponent(MPSProject.class), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new ProjectOperationContext(ProjectHelper.toMPSProject(project)), new BuildGenerationHandler(baseFolder.value), new EmptyProgressMonitor(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
         }
       }
     };

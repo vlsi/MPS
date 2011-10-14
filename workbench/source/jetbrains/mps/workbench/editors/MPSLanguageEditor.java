@@ -24,6 +24,7 @@ import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
@@ -39,7 +40,7 @@ public class MPSLanguageEditor extends UserDataHolderBase implements FileEditor 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myFile = file;
-        myHierarchiesComponent = new LanguageHierarchiesComponent(myFile.getLanguage(), ProjectOperationContext.get(project));
+        myHierarchiesComponent = new LanguageHierarchiesComponent(myFile.getLanguage(), new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
         myHierarchiesComponent.rebuild();
       }
     });

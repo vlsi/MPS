@@ -35,7 +35,7 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
       }
     });
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
-    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
+    refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
     final String[] linkName = new String[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

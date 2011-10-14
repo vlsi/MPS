@@ -8,6 +8,7 @@ import com.intellij.ui.awt.RelativePoint;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Collections;
 import javax.swing.ListCellRenderer;
 import javax.swing.JList;
@@ -47,7 +48,7 @@ public class GoToHelper {
       return;
     }
     List<NodeNavigationItem> navigatables = new ArrayList<NodeNavigationItem>();
-    ProjectOperationContext context = ProjectOperationContext.get(project);
+    ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(project));
     for (SNode node : nodes) {
       navigatables.add(new NodeNavigationItem(node, context, project));
     }

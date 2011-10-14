@@ -71,7 +71,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
     if(fullRegeneration) {
       models.addAll(modelDescriptors);
     } else {
-      models.addAll(GenerationFacade.getModifiedModels(modelDescriptors, ProjectOperationContext.get(project)));
+      models.addAll(GenerationFacade.getModifiedModels(modelDescriptors, new ProjectOperationContext(project)));
     }
     return new GenParameters(models, module);
   }

@@ -21,6 +21,7 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.AsyncResult.Handler;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -84,7 +85,7 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
         });
 
         if (module == null) return;
-        new MPSEditorOpener(p).editNode(node, new ModuleContext(module, p));
+        new MPSEditorOpener(p).editNode(node, new ModuleContext(module, ProjectHelper.toMPSProject(p)));
       }
     });
   }

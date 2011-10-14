@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.changes.ChangeSetBuilder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -55,8 +56,9 @@ public class ModelDifferenceDialog extends BaseDialog {
   public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
     super(WindowManager.getInstance().getFrame(diffRequest.getProject()), "Difference for model: " + SModelOperations.getModelName(newModel));
     myProject = diffRequest.getProject();
-    DiffTemporaryModule.createModuleForModel(oldModel, "old", myProject);
-    DiffTemporaryModule.createModuleForModel(newModel, "new", myProject);
+    jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
+    DiffTemporaryModule.createModuleForModel(oldModel, "old", p);
+    DiffTemporaryModule.createModuleForModel(newModel, "new", p);
     myContentTitles = diffRequest.getContentTitles();
     assert myContentTitles.length == 2;
     ModelAccess.instance().runReadAction(new Runnable() {

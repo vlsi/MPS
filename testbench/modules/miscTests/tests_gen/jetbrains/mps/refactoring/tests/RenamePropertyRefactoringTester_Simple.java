@@ -33,7 +33,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
       }
     });
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
-    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
+    refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
     final String newPropertyName = "niceProperty";
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

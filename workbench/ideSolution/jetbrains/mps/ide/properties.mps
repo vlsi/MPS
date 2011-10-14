@@ -62,6 +62,7 @@
   <import index="q11f" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.wm(MPS.Classpath/com.intellij.openapi.wm@java_stub)" version="-1" />
   <import index="k6pq" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.progress(MPS.Classpath/jetbrains.mps.progress@java_stub)" version="-1" />
   <import index="f6g4" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.project(MPS.Classpath/jetbrains.mps.ide.project@java_stub)" version="-1" />
+  <import index="xick" modelUID="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="pmg0" modelUID="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" version="0" implicit="yes" />
@@ -3299,8 +3300,8 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4060390951635974478">
         <property name="name" nameId="tpck.1169194664001" value="properties" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4060390951635974479">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rnbq.~ProjectProperties" resolveInfo="ProjectProperties" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1504158228282964360">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xick.3201642974933580312" resolveInfo="ProjectProperties" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4060390951635974480">
@@ -3432,7 +3433,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4060390951635974478" resolveInfo="properties" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3416087927885130214">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rnbq.~ProjectProperties%dtestConfigsChanged()%cvoid" resolveInfo="testConfigsChanged" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xick.3201642974933580368" resolveInfo="testConfigsChanged" />
                                   </node>
                                 </node>
                               </node>
@@ -3518,7 +3519,7 @@
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4060390951635974478" resolveInfo="properties" />
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3416087927885130246">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rnbq.~ProjectProperties%dtestConfigsChanged()%cvoid" resolveInfo="testConfigsChanged" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xick.3201642974933580368" resolveInfo="testConfigsChanged" />
                                       </node>
                                     </node>
                                   </node>
@@ -3672,7 +3673,7 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4060390951635974478" resolveInfo="properties" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3416087927885130311">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rnbq.~ProjectProperties%dgetTestConfigurations()%cjava%dutil%dList" resolveInfo="getTestConfigurations" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xick.3201642974933580405" resolveInfo="getTestConfigurations" />
                                     </node>
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3416087927885130312">
@@ -3695,7 +3696,7 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4060390951635974478" resolveInfo="properties" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3416087927885130320">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rnbq.~ProjectProperties%dgetTestConfigurations()%cjava%dutil%dList" resolveInfo="getTestConfigurations" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xick.3201642974933580405" resolveInfo="getTestConfigurations" />
                                     </node>
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3416087927885130321">
@@ -3712,7 +3713,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4060390951635974478" resolveInfo="properties" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3416087927885130326">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rnbq.~ProjectProperties%dtestConfigsChanged()%cvoid" resolveInfo="testConfigsChanged" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xick.3201642974933580368" resolveInfo="testConfigsChanged" />
                                   </node>
                                 </node>
                               </node>
@@ -4597,7 +4598,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5652969333075988090">
             <node role="operand" roleId="tpee.1197027771414" type="pmg0.SimpleBuilderPropertyParent" typeId="pmg0.5389689214217248368" id="5652969333075988089" />
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5652969333075990995">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ulpw.5652969333075988072" resolveInfo="setAllowRemoveAnywhere" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ulpw.5652969333075988072" resolveInfo="setAllowRemoveAnyway" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="pmg0.SimpleBuilderPropertyValue" typeId="pmg0.5389689214217248394" id="5652969333075990996" />
             </node>
           </node>

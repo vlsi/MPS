@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.messages.navigation;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -29,7 +30,7 @@ public class NodeNavigationHandler implements INavigationHandler<SNode> {
     if (node.getModel().getModelDescriptor() == null) return;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ModuleContext context = ModuleContext.create(node, project);
+        ModuleContext context = ModuleContext.create(node, ProjectHelper.toMPSProject(project));
         if (context == null) return;
 
         if (node.isRegistered()) {

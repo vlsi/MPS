@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModel;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -21,6 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -123,14 +124,14 @@ public class DiffTemporaryModule extends AbstractModule {
     model.setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, model, mergeResultModel));
   }
 
-  public static IOperationContext getOperationContext(Project project, SModel model) {
+  public static IOperationContext getOperationContext(com.intellij.openapi.project.Project project, SModel model) {
     SModelDescriptor md = model.getModelDescriptor();
     assert md != null;
     IModule module = md.getModule();
     if (module instanceof DiffTemporaryModule) {
       return ((DiffTemporaryModule) module).createContext();
     } else {
-      return new ModuleContext(module, project);
+      return new ModuleContext(module, ProjectHelper.toMPSProject(project));
     }
   }
 

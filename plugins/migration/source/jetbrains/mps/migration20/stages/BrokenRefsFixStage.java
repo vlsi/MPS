@@ -43,7 +43,7 @@ public class BrokenRefsFixStage implements MigrationStage {
     ModelCheckerSettings mcSettings = ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
     try {
       mcSettings.setMigrationMode(true);
-      ModelCheckerViewer res = tool.checkProject(ideaProject, ProjectOperationContext.get(ideaProject), false);
+      ModelCheckerViewer res = tool.checkProject(ideaProject, new ProjectOperationContext(p), false);
       for (final ModelCheckerIssue issue : res.getSearchResults().getResultObjects()) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
@@ -52,7 +52,7 @@ public class BrokenRefsFixStage implements MigrationStage {
         });
       }
 
-      res = tool.checkProject(ideaProject, ProjectOperationContext.get(ideaProject), true);
+      res = tool.checkProject(ideaProject, new ProjectOperationContext(p), true);
       Set<ModelCheckerIssue> problems = res.getSearchResults().getResultObjects();
       myProblems = problems.size();
     } finally {

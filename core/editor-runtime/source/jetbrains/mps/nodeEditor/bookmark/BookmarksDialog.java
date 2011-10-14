@@ -16,16 +16,16 @@
 package jetbrains.mps.nodeEditor.bookmark;
 
 import com.intellij.openapi.project.Project;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.project.ProjectHelper;
+
+import javax.swing.*;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
 
 
 public class BookmarksDialog extends BaseDialog {
@@ -34,10 +34,10 @@ public class BookmarksDialog extends BaseDialog {
   private BookmarksTree myTree;
 
   public BookmarksDialog(Project project, BookmarkManager bookmarkManager) {
-     super(WindowManager.getInstance().getFrame(project), 
-       "Editor Bookmarks");
+    super(WindowManager.getInstance().getFrame(project),
+      "Editor Bookmarks");
     myBookmarkManager = bookmarkManager;
-    myTree = new BookmarksTree(project, bookmarkManager);
+    myTree = new BookmarksTree(ProjectHelper.toMPSProject(project), bookmarkManager);
 
     setTitle("Editor Bookmarks");
 
@@ -119,6 +119,6 @@ public class BookmarksDialog extends BaseDialog {
 
   @Override
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(100,100,400,300);
+    return new DialogDimensions(100, 100, 400, 300);
   }
 }

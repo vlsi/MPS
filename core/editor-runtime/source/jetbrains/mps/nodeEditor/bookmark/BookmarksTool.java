@@ -15,30 +15,29 @@
  */
 package jetbrains.mps.nodeEditor.bookmark;
 
-import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTree.TreeState;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.MPSTree.TreeState;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
-import javax.swing.JScrollPane;
 import javax.swing.JComponent;
+import javax.swing.JScrollPane;
 
 @State(
   name = "BookmarksTool",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$WORKSPACE_FILE$"
-  )
-    }
+    @Storage(
+      id = "other",
+      file = "$WORKSPACE_FILE$"
+    )
+  }
 )
 public class BookmarksTool extends BaseProjectTool implements PersistentStateComponent<BookmarksTool.MyState> {
   JScrollPane myComponent;
@@ -52,7 +51,7 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
 
   public void initComponent() {
     myBookmarkManager = getProject().getComponent(BookmarkManager.class);
-    myTree = new BookmarksTree(getProject(), myBookmarkManager);
+    myTree = new BookmarksTree(ProjectHelper.toMPSProject(getProject()), myBookmarkManager);
     myComponent = ScrollPaneFactory.createScrollPane(myTree);
     if (myTreeState != null) {
       ModelAccess.instance().runReadInEDT(new Runnable() {

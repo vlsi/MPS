@@ -32,6 +32,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.concurrent.atomic.AtomicReference" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.make.IMakeService" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />

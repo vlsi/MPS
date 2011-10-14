@@ -292,6 +292,6 @@ public class GeneratorUIFacade {
       }
     }
 
-    return GenerationFacade.getModifiedModels(result, ProjectOperationContext.get(ProjectHelper.toIdeaProject(project)));
+    return GenerationFacade.getModifiedModels(result, new ProjectOperationContext(project));
   }
 }

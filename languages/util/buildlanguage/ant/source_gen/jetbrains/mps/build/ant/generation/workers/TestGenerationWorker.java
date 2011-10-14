@@ -225,7 +225,7 @@ public class TestGenerationWorker extends MpsWorker {
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        IOperationContext context = ProjectOperationContext.get(project.getProject());
+        IOperationContext context = new ProjectOperationContext(project);
         try {
           BuildMakeService bms = new BuildMakeService();
           MakeSession ms = new MakeSession(context, myMessageHandler, true) {

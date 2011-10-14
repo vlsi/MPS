@@ -26,7 +26,7 @@ public class RegenerationStage implements MigrationStage {
   }
 
   public void execute(MPSProject p) {
-    ProjectOperationContext poc = ProjectOperationContext.get(p.getProject());
+    ProjectOperationContext poc = new ProjectOperationContext(p);
     new MakeActionImpl(poc, new MakeActionParameters(poc, null, null, p.getModules(), null), true).executeAction();
   }
 

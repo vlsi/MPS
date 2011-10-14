@@ -20,13 +20,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ProjectOperationContext extends StandaloneMPSContext {
-  private com.intellij.openapi.project.Project myProject;
+  private Project myProject;
 
-  private ProjectOperationContext(Project project) {
-    myProject = project.getComponent(MPSProject.class).getProject();
-  }
-
-  private ProjectOperationContext(com.intellij.openapi.project.Project project) {
+  public ProjectOperationContext(Project project) {
     myProject = project;
   }
 
@@ -43,7 +39,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
 
   @Override
   public Project getProject() {
-    return myProject.getComponent(MPSProject.class);
+    return myProject;
   }
 
   @NotNull
@@ -53,13 +49,5 @@ public class ProjectOperationContext extends StandaloneMPSContext {
 
   public String toString() {
     return "project context";
-  }
-
-  public static ProjectOperationContext get(com.intellij.openapi.project.Project project) {
-    return new ProjectOperationContext(project);
-  }
-
-  public static ProjectOperationContext get(Project project) {
-    return new ProjectOperationContext(project);
   }
 }

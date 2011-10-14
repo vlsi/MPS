@@ -27,6 +27,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.ui.EmptyIcon;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager.MPSFavoritesListener;
@@ -71,7 +72,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     super(project);
     myFavoritesManager = manager;
     myProjectView = projectView;
-    myContext = ProjectOperationContext.get(getProject());
+    myContext = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
   }
 
   public void rebuild() {

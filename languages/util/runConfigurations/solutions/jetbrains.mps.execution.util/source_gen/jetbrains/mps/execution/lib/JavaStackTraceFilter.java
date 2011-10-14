@@ -10,6 +10,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import com.intellij.execution.filters.HyperlinkInfo;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class JavaStackTraceFilter implements Filter {
@@ -55,7 +56,7 @@ public class JavaStackTraceFilter implements Filter {
   }
 
   private static void showNode(Project p, SNode node) {
-    ProjectOperationContext operationContext = ProjectOperationContext.get(p);
+    ProjectOperationContext operationContext = new ProjectOperationContext(ProjectHelper.toMPSProject(p));
     MPSEditorOpener opener = p.getComponent(MPSEditorOpener.class);
     opener.editNode(node, operationContext);
   }

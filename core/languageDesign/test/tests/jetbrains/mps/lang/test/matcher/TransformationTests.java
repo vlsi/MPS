@@ -18,7 +18,7 @@ package jetbrains.mps.lang.test.matcher;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
@@ -38,7 +38,7 @@ public class TransformationTests {
   @Test
   public void equalNodeTest() throws Throwable {
     TestMain.configureMPS();
-    MPSProject project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
+    Project project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -53,7 +53,7 @@ public class TransformationTests {
   @Test
   public void conceptDiffernse() {
     TestMain.configureMPS();
-    MPSProject project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
+    Project project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -69,7 +69,7 @@ public class TransformationTests {
   @Test
   public void propertyDiffernce() {
     TestMain.configureMPS();
-    MPSProject project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
+    Project project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -88,7 +88,7 @@ public class TransformationTests {
 
   @Test
   public void childrenDiffernce() {
-    MPSProject project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
+    Project project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -108,7 +108,7 @@ public class TransformationTests {
   @Test
   public void referenceDiffernce() {
     TestMain.configureMPS();
-    MPSProject project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
+    Project project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -140,7 +140,7 @@ public class TransformationTests {
     return sm.getSModel();
   }
 
-  public void runCommand(final Runnable command, MPSProject project) {
+  public void runCommand(final Runnable command, Project project) {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {

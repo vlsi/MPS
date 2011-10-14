@@ -274,6 +274,7 @@
     <classNode dependClassName="javax.swing.ListCellRenderer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.NodeNavigationItem" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />

@@ -28,6 +28,7 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionAdapter;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
 import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.LeftMarginMouseListener;
@@ -110,7 +111,7 @@ public class BreakpointsUiComponent implements ProjectComponent {
   }
 
   public void editBreakpointProperties(final ILocationBreakpoint breakpoint) {
-    final BreakpointsBrowserDialog breakpointsBrowserDialog = new BreakpointsBrowserDialog(ProjectOperationContext.get(myProject));
+    final BreakpointsBrowserDialog breakpointsBrowserDialog = new BreakpointsBrowserDialog(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)));
     breakpointsBrowserDialog.showDialog();
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override

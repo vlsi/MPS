@@ -28,6 +28,6 @@ public class ContextRule implements GetDataRule {
   public Object getData(DataProvider dataProvider) {
     Project project = (Project) dataProvider.getData(MPSDataKeys.PROJECT.getName());
     if (project == null) return null;
-    return ProjectOperationContext.get(project.getComponent(MPSProject.class));
+    return new ProjectOperationContext(project.getComponent(MPSProject.class));
   }
 }

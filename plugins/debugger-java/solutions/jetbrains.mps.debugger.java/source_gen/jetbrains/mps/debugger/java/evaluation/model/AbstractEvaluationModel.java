@@ -19,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelRepository;
@@ -84,9 +85,9 @@ public abstract class AbstractEvaluationModel {
     myUiState = session.getUiState();
     myDebugSession = session;
     if (context.getLocationNode() != null) {
-      myContext = ModuleContext.create(context.getLocationNode(), project);
+      myContext = ModuleContext.create(context.getLocationNode(), ProjectHelper.toMPSProject(project));
     } else {
-      myContext = new ModuleContext(auxModule, project);
+      myContext = new ModuleContext(auxModule, ProjectHelper.toMPSProject(project));
     }
     myAuxModule = auxModule;
 

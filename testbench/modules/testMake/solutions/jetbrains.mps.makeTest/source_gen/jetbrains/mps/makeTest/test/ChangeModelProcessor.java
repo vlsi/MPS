@@ -21,6 +21,7 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -105,7 +106,7 @@ public class ChangeModelProcessor {
       }
     };
     model.getModule().getModuleDescriptor().setCompileInMPS(false);
-    GenerationFacade.generateModels(this.myProject.getComponent(MPSProject.class), models, new ModuleContext(model.getModule(), this.myProject), generationHandler, new EmptyProgressMonitor(), handler, GenerationOptions.getDefaults().create());
+    GenerationFacade.generateModels(this.myProject.getComponent(MPSProject.class), models, new ModuleContext(model.getModule(), ProjectHelper.toMPSProject(this.myProject)), generationHandler, new EmptyProgressMonitor(), handler, GenerationOptions.getDefaults().create());
     model.getModule().getModuleDescriptor().setCompileInMPS(true);
     return results;
   }

@@ -18,6 +18,7 @@ package jetbrains.mps.ide.projectPane.logicalview.nodes;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.*;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -29,7 +30,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   public TransientModelsTreeNode(final Project project, final TransientModelsModule module) {
     //sometimes (when opening another project after first project) module repository does not contain transient module
     //temp fix
-    super(new ModuleContext(module, project));
+    super(new ModuleContext(module, ProjectHelper.toMPSProject(project)));
     myTransientModule = module;
     populate();
     setNodeIdentifier(myTransientModule.getModuleReference().toString());

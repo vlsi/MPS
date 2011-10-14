@@ -133,7 +133,7 @@ public class TestMain {
       }
     }
 
-    final MPSProject[] project = new MPSProject[]{null};
+    final Project[] project = new MPSProject[]{null};
     try {
       // load a project
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -181,7 +181,7 @@ public class TestMain {
   }
 
   @NotNull
-  public static MPSProject loadProject(File projectFile) {
+  public static Project loadProject(File projectFile) {
     if (!projectFile.exists()) {
       throw new RuntimeException("Can't find project file " + projectFile.getAbsolutePath());
     }
@@ -233,7 +233,7 @@ public class TestMain {
 
     TestMain.configureMPS();
 
-    final MPSProject project = loadProject(projectFile);
+    final Project project = loadProject(projectFile);
     return testActionForLeaks(new Runnable() {
       public void run() {
         new ProjectTester(project).testProject();
@@ -265,7 +265,7 @@ public class TestMain {
   public static boolean testRefactoringTestEnvironment(File projectDirectory) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
-    final MPSProject project = loadProject(new File(projectDirectory, REFACTORING_PROJECT));
+    final Project project = loadProject(new File(projectDirectory, REFACTORING_PROJECT));
 
     final boolean[] b = new boolean[]{true};
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -320,7 +320,7 @@ public class TestMain {
 
     return testActionForLeaks(new Runnable() {
       public void run() {
-        MPSProject project = loadProject(projectFile);
+        Project project = loadProject(projectFile);
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         project.dispose();
       }
@@ -395,7 +395,7 @@ public class TestMain {
       throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
     }
 
-    final MPSProject project = loadProject(projectFile);
+    final Project project = loadProject(projectFile);
     TestResult result = new ProjectTester(project, isRunnable).testProject(configurations);
 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -775,7 +775,7 @@ public class TestMain {
 
   public static class ProjectContainer {
     private String projectName;
-    private MPSProject lastProject;
+    private Project lastProject;
 
     public ProjectContainer() {
     }
@@ -796,14 +796,14 @@ public class TestMain {
       }
     }
 
-    public MPSProject getProject(String name) {
+    public Project getProject(String name) {
       if ((name != null ?
         name.equals(this.projectName) :
         name == this.projectName
       )) {
         return this.lastProject;
       } else {
-        MPSProject p = TestMain.loadProject(new File(name));
+        Project p = TestMain.loadProject(new File(name));
         if (this.lastProject != null) {
           try {
             SwingUtilities.invokeAndWait(new Runnable() {

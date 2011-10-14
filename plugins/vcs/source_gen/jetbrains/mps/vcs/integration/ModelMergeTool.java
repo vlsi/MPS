@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog;
 import java.io.IOException;
 
@@ -72,7 +73,7 @@ public class ModelMergeTool implements DiffTool {
           return;
         }
         assert modelDescriptor != null;
-        IOperationContext context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
+        IOperationContext context = new ModuleContext(modelDescriptor.getModule(), ProjectHelper.toMPSProject(request.getProject()));
         final OldMergeModelsDialog dialog = new OldMergeModelsDialog(context, baseModel, mineModel, newModel);
 
         SwingUtilities.invokeLater(new Runnable() {

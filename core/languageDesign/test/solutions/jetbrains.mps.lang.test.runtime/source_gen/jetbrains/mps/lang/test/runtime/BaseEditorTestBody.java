@@ -23,11 +23,12 @@ import java.util.Collection;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import java.lang.reflect.InvocationTargetException;
@@ -156,14 +157,14 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  public static IEditor openEditor(MPSProject project, SModelDescriptor model, SNode node) {
-    IOperationContext context = new ModuleContext(model.getModule(), project.getProject());
-    MPSEditorOpener opener = new MPSEditorOpener(project.getProject());
+  public static IEditor openEditor(Project project, SModelDescriptor model, SNode node) {
+    IOperationContext context = new ModuleContext(model.getModule(), project);
+    MPSEditorOpener opener = new MPSEditorOpener(ProjectHelper.toIdeaProject(project));
     return opener.editNode(node, context);
   }
 
-  public static void closeEditor(MPSProject project, SNode node) {
-    FileEditorManager editorManager = FileEditorManager.getInstance(project.getProject());
+  public static void closeEditor(Project project, SNode node) {
+    FileEditorManager editorManager = FileEditorManager.getInstance(ProjectHelper.toIdeaProject(project));
     editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
   }
 

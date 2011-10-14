@@ -8,6 +8,7 @@ import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.build.ant.generation.GenerateTask;
 import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -87,7 +88,7 @@ public class GeneratorWorker extends MpsWorker {
     failBuild("generation");
   }
 
-  private void generate(MPSProject project, MpsWorker.ObjectsToProcess go) {
+  private void generate(Project project, MpsWorker.ObjectsToProcess go) {
     StringBuffer s = new StringBuffer("Generating:");
     for (MPSProject p : go.getProjects()) {
       s.append("\n    ");
@@ -102,7 +103,7 @@ public class GeneratorWorker extends MpsWorker {
       s.append(m);
     }
     info(s.toString());
-    final ProjectOperationContext ctx = ProjectOperationContext.get(project.getProject());
+    final ProjectOperationContext ctx = new ProjectOperationContext(project);
 
     final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
     ModelAccess.instance().flushEventQueue();

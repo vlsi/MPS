@@ -30,7 +30,7 @@ public class ProjectTreeNode extends MPSTreeNode {
   private MPSProject myProject;
 
   public ProjectTreeNode(MPSProject project) {
-    super(ProjectOperationContext.get(project.getProject()));
+    super(new ProjectOperationContext(project));
 
     myProject = project;
 
