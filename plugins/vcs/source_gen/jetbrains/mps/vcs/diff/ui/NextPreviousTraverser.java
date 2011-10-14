@@ -206,7 +206,7 @@ public class NextPreviousTraverser {
     goToY((int) bounds.start());
   }
 
-  private void goToY(int y) {
+  private synchronized void goToY(int y) {
     EditorCell editorCell = myLastEditor.findCellWeak(1, y + 1);
     if (editorCell != null) {
       myLastEditor.changeSelection(editorCell);
