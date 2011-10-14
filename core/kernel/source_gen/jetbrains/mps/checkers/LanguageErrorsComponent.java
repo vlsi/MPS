@@ -6,8 +6,8 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
+import java.util.HashMap;
+import java.util.HashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.IOperationContext;
-import java.util.HashSet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -33,14 +32,14 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 
 public class LanguageErrorsComponent {
-  private Map<SNode, Set<IErrorReporter>> myNodesToErrors = new THashMap<SNode, Set<IErrorReporter>>();
-  private Map<SNode, Set<SNode>> myDependenciesToNodes = new THashMap<SNode, Set<SNode>>();
-  private Map<SNode, Set<SNode>> myNodesToDependecies = new THashMap<SNode, Set<SNode>>();
-  private Set<SNode> myInvalidNodes = new THashSet<SNode>();
-  private Set<SNode> myInvalidation = new THashSet<SNode>();
+  private Map<SNode, Set<IErrorReporter>> myNodesToErrors = new HashMap<SNode, Set<IErrorReporter>>();
+  private Map<SNode, Set<SNode>> myDependenciesToNodes = new HashMap<SNode, Set<SNode>>();
+  private Map<SNode, Set<SNode>> myNodesToDependecies = new HashMap<SNode, Set<SNode>>();
+  private Set<SNode> myInvalidNodes = new HashSet<SNode>();
+  private Set<SNode> myInvalidation = new HashSet<SNode>();
   private LanguageErrorsComponent.MyModelListener myModelListener = new LanguageErrorsComponent.MyModelListener();
   private LanguageErrorsComponent.MyModelRepositoryListener myModelRepositoryListener = new LanguageErrorsComponent.MyModelRepositoryListener();
-  private Set<SModelDescriptor> myListenedModels = new THashSet<SModelDescriptor>();
+  private Set<SModelDescriptor> myListenedModels = new HashSet<SModelDescriptor>();
   private boolean myCheckedRoot = false;
   private SNode myCurrentNode = null;
   private SNode myRoot;
@@ -74,13 +73,13 @@ public class LanguageErrorsComponent {
     }
     Set<SNode> errorNodes = MapSequence.fromMap(myDependenciesToNodes).get(dependency);
     if (errorNodes == null) {
-      errorNodes = new THashSet<SNode>(1);
+      errorNodes = new HashSet<SNode>(1);
       MapSequence.fromMap(myDependenciesToNodes).put(dependency, errorNodes);
     }
     SetSequence.fromSet(errorNodes).addElement(currentNode);
     Set<SNode> additional = MapSequence.fromMap(myNodesToDependecies).get(currentNode);
     if (additional == null) {
-      additional = new THashSet<SNode>(1);
+      additional = new HashSet<SNode>(1);
       MapSequence.fromMap(myNodesToDependecies).put(currentNode, additional);
     }
     SetSequence.fromSet(additional).addElement(dependency);
@@ -106,7 +105,7 @@ public class LanguageErrorsComponent {
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, modelId, id, MessageStatus.ERROR, messageTarget);
     Set<IErrorReporter> reporters = MapSequence.fromMap(myNodesToErrors).get(errorNode);
     if (reporters == null) {
-      reporters = new THashSet<IErrorReporter>(1);
+      reporters = new HashSet<IErrorReporter>(1);
       MapSequence.fromMap(myNodesToErrors).put(errorNode, reporters);
     }
     SetSequence.fromSet(reporters).addElement(reporter);
@@ -174,7 +173,7 @@ public class LanguageErrorsComponent {
   }
 
   public Set<IErrorReporter> getErrors() {
-    Set<IErrorReporter> result = new THashSet<IErrorReporter>(1);
+    Set<IErrorReporter> result = new HashSet<IErrorReporter>(1);
     for (SNode errorNode : MapSequence.fromMap(myNodesToErrors).keySet()) {
       SetSequence.fromSet(result).addSequence(SetSequence.fromSet(MapSequence.fromMap(myNodesToErrors).get(errorNode)));
     }
@@ -219,7 +218,7 @@ public class LanguageErrorsComponent {
     if (!(myRoot.shouldHaveBeenDisposed()) && SNodeOperations.getModel(myRoot) == model) {
       return;
     }
-    for (SNode additional : new THashSet<SNode>(MapSequence.fromMap(myDependenciesToNodes).keySet())) {
+    for (SNode additional : new HashSet<SNode>(MapSequence.fromMap(myDependenciesToNodes).keySet())) {
       if (additional.shouldHaveBeenDisposed() || SNodeOperations.getModel(additional) == model) {
         processNodeChange(additional);
       }
@@ -242,7 +241,7 @@ public class LanguageErrorsComponent {
   }
 
   public <Result> Result runCheckingAction(_FunctionTypes._return_P0_E0<? extends Result> action) {
-    final Set<SNode> accessedNodes = new THashSet<SNode>();
+    final Set<SNode> accessedNodes = new HashSet<SNode>();
     final Object[] result = new Object[1];
     try {
       AbstractNodesReadListener listener = new AbstractNodesReadListener() {

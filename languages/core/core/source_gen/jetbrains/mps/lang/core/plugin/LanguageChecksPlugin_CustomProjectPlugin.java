@@ -4,7 +4,7 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.checkers.LanguageChecker;
-import jetbrains.mps.checkers.TypesystemChecker;
+import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.extensions.Extensions;
