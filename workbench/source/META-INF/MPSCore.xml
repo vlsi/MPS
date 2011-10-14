@@ -133,6 +133,14 @@
     <component>
       <implementation-class>jetbrains.mps.ide.findusages.FindersManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.checkers.CheckersComponent</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.typesystemEngine.checker.TypesystemCheckerComponent</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

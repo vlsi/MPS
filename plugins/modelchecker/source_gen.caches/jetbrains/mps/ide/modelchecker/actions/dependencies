@@ -609,11 +609,12 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.SpecificModelChecker" file="SpecificModelChecker.java">
-    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.checkers.CheckersComponent" />
     <classNode dependClassName="jetbrains.mps.checkers.INodeChecker" />
+    <classNode dependClassName="jetbrains.mps.components.ComponentManager" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFix_Runtime" />
