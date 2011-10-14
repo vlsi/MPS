@@ -1725,11 +1725,6 @@
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.pattern.runtime" />
       <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
     </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8818360886175288935">
-      <property name="id" nameId="tps4.1222447189012" value="707c4fde-f79a-44b5-b3d7-b5cef8844ccf" />
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.test.runtime" />
-      <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
-    </node>
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="7451905405776981193">
       <property name="id" nameId="tps4.1222447189012" value="df9d410f-2ebb-43f7-893a-483a4f085250" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.smodel.resources" />

@@ -284,6 +284,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationContext" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationParameters" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.textGen" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.traceable" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.stubs" />
@@ -324,7 +325,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.smodel.resources" />
     <antcall target="MPS-languages.pack.jetbrains.mps.traceInfo" />
     <antcall target="MPS-languages.pack.jetbrains.mps.dataFlow.runtime" />
