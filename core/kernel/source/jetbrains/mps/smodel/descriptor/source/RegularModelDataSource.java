@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vcs.SuspiciousModelHandler;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -96,19 +97,19 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
       if (result.getState() == ModelLoadingState.NOT_LOADED) {
         // TODO this is a temporary fix to enable invoking merge dialog for model with wrong markup
         if (state != ModelLoadingState.NOT_LOADED) {
-          VcsMigrationUtil.getHandler().addSuspiciousModel(dsm, false);
+          SuspiciousModelHandler.getHandler().handleSuspiciousModel(dsm, false);
         }
 
         return result;
       }
     } catch (ModelFileReadException t) {
-      VcsMigrationUtil.getHandler().addSuspiciousModel(dsm, false);
+      SuspiciousModelHandler.getHandler().handleSuspiciousModel(dsm, false);
       SModel newModel = new StubModel(dsm.getSModelReference());
       LOG.error(t.getMessage(), newModel);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     } catch (PersistenceVersionNotFoundException e) {
       LOG.error("Trying to load model " + dsm.getLongName() + " from file " + dsm.getModelFile().toString(), e);
-      VcsMigrationUtil.getHandler().addSuspiciousModel(dsm, false);
+      SuspiciousModelHandler.getHandler().handleSuspiciousModel(dsm, false);
       StubModel model = new StubModel(dsmRef);
       return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
     }

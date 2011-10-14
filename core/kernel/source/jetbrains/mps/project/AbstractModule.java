@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.*;
+import jetbrains.mps.vcs.SuspiciousModelHandler;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -523,7 +524,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void handleReadProblem(Exception e, boolean isInConflict) {
-    VcsMigrationUtil.getHandler().addSuspiciousModule(this, isInConflict);
+    SuspiciousModelHandler.getHandler().handleSuspiciousModule(this, isInConflict);
     LOG.error(e.getMessage());
     e.printStackTrace();
   }

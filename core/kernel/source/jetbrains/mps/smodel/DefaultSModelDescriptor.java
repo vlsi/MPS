@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vcs.DiskMemoryConflictResolver;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -349,7 +350,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   public void resolveDiskConflict() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(getModelFile(), getSModel());
+        final boolean needSave = DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getModelFile(), getSModel());
         if (needSave) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {

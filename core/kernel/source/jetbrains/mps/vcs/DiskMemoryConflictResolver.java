@@ -15,31 +15,31 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vfs.IFile;
 
-public interface VCSHandler {
-  //-----suspicious
+/**
+ * @author Evgeny Gerashchenko
+ * @since 10/14/11
+ */
+public abstract class DiskMemoryConflictResolver {
+  // TODO replace with extension point & interface
+  public abstract boolean resolveDiskMemoryConflict(IFile modelFile, SModel model);
 
-  // NEEDED IN CORE
-  @Deprecated
-  void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict);
+  private static DiskMemoryConflictResolver ourResolver = new DiskMemoryConflictResolver() {
+    @Override
+    public boolean resolveDiskMemoryConflict(IFile modelFile, SModel model) {
+      return true;
+    }
+  };
 
-  // NEEDED IN CORE
-  @Deprecated
-  void addSuspiciousModel(DefaultSModelDescriptor modelDescriptor, boolean isInConflict);
+  public static DiskMemoryConflictResolver getResolver() {
+    return ourResolver;
+  }
 
-  //-----misc
-
-  // NOT NEEDED IN CORE
-  VcsRevisionNumber getRevisionNumber(IFile file);
-
-  boolean isInConflict(IFile iFile, boolean synchronously);
-
-  // NEEDED IN CORE
-  @Deprecated
-  boolean resolveDiskMemoryConflict(IFile modelFile, SModel model);
+  public static void setResolver(DiskMemoryConflictResolver resolver) {
+    ourResolver = resolver;
+  }
 }
