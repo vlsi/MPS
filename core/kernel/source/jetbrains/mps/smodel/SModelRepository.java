@@ -180,7 +180,9 @@ public class SModelRepository implements ApplicationComponent {
       if (modelReference.getSModelId() != null) {
         myIdToModelDescriptorMap.put(modelReference.getSModelId(), modelDescriptor);
       }
-      myFqNameToModelDescriptorMap.put(modelDescriptor.getSModelReference().getSModelFqName(), modelDescriptor);
+      if (modelReference.getSModelFqName() != null) {
+        myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
+      }
 
       if (modelDescriptor instanceof EditableSModelDescriptor) {
         addModelToFileCache(((EditableSModelDescriptor) modelDescriptor));
