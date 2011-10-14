@@ -228,9 +228,9 @@
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.LanguageChecksPlugin_CustomProjectPlugin" file="LanguageChecksPlugin_CustomProjectPlugin.java">
-    <classNode dependClassName="jetbrains.mps.checkers.LanguageEditorChecker" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="typesystemIntegration.languageChecker.LanguageEditorChecker" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.Make_Facet" file="Make_Facet.java">
