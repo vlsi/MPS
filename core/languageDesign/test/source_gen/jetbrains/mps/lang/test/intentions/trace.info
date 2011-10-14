@@ -234,10 +234,10 @@
       <varInfo nodeId="6268941039745612490" varName="label" />
     </scopeInfo>
     <scopeInfo nodeId="1226066626118" fileName="AddCellAnnotation_Intention.java" startLine="57" startPosition="76" endLine="92" endPosition="40">
-      <varInfo nodeId="1226066626901" varName="newAnnotation" />
-      <varInfo nodeId="1228588344666" varName="contextCell" />
-      <varInfo nodeId="1017540429574408418" varName="selection" />
       <varInfo nodeId="1229956339937" varName="ancessor" />
+      <varInfo nodeId="1228588344666" varName="contextCell" />
+      <varInfo nodeId="1226066626901" varName="newAnnotation" />
+      <varInfo nodeId="1017540429574408418" varName="selection" />
     </scopeInfo>
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="56" startPosition="0" endLine="94" endPosition="0" />
     <unitInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="22" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddCellAnnotation_Intention" />

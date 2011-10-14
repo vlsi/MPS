@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QuickQueryLanguage_ProjectPlugin.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ProjectPlugin" />
   <unitInfo fileName="QuickQueryLanguage_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ApplicationPlugin" />
+  <unitInfo fileName="QuickQueryLanguage_ProjectPlugin.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ProjectPlugin" />
   <root nodeId="1219056224639">
     <nodeInfo nodeId="1220257798123" fileName="QueryExecutor.java" startLine="6" startPosition="28" endLine="7" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATED_QUERY_NAME" />
     <nodeInfo nodeId="1235926499683" fileName="QueryExecutor.java" startLine="8" startPosition="0" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryExecutor#()V" />
@@ -284,47 +284,47 @@
     <scopeInfo nodeId="3939031372534980280" fileName="FindInstancesDialog.java" startLine="170" startPosition="0" endLine="181" endPosition="0" />
     <scopeInfo nodeId="1219416909857" fileName="FindInstancesDialog.java" startLine="106" startPosition="0" endLine="118" endPosition="0" />
     <scopeInfo nodeId="1235929414114" fileName="FindInstancesDialog.java" startLine="156" startPosition="96" endLine="168" endPosition="133">
-      <varInfo nodeId="1235929414148" varName="tool" />
       <varInfo nodeId="1235929414116" varName="searchQuery" />
+      <varInfo nodeId="1235929414148" varName="tool" />
     </scopeInfo>
     <scopeInfo nodeId="9161136784551423088" fileName="FindInstancesDialog.java" startLine="54" startPosition="25" endLine="68" endPosition="10">
-      <varInfo nodeId="9161136784551423101" varName="statementList" />
       <varInfo nodeId="9161136784551423113" varName="defaultCondition" />
       <varInfo nodeId="9161136784551423107" varName="expressionStatement" />
+      <varInfo nodeId="9161136784551423101" varName="statementList" />
     </scopeInfo>
     <scopeInfo nodeId="1235929414111" fileName="FindInstancesDialog.java" startLine="155" startPosition="0" endLine="170" endPosition="0">
-      <varInfo nodeId="1235929414171" varName="queryNode" />
       <varInfo nodeId="1235929414167" varName="project" />
-      <varInfo nodeId="1235929414173" varName="scope" />
       <varInfo nodeId="1235929414169" varName="query" />
+      <varInfo nodeId="1235929414171" varName="queryNode" />
+      <varInfo nodeId="1235929414173" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="9161136784551423087" fileName="FindInstancesDialog.java" startLine="53" startPosition="67" endLine="70" endPosition="0" />
     <scopeInfo nodeId="7003329281689298964" fileName="FindInstancesDialog.java" startLine="119" startPosition="54" endLine="148" endPosition="7">
-      <varInfo nodeId="7003329281689298981" varName="model" />
-      <varInfo nodeId="7003329281689299026" varName="scope" />
-      <varInfo nodeId="7003329281689299061" varName="query" />
-      <varInfo nodeId="7003329281689299006" varName="loader" />
       <varInfo nodeId="7003329281689298993" varName="fqName" />
+      <varInfo nodeId="7003329281689299006" varName="loader" />
+      <varInfo nodeId="7003329281689298981" varName="model" />
+      <varInfo nodeId="7003329281689299061" varName="query" />
+      <varInfo nodeId="7003329281689299026" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="7003329281689298961" fileName="FindInstancesDialog.java" startLine="118" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="7003329281689298967" varName="cd" />
     </scopeInfo>
     <scopeInfo nodeId="1219405656223" fileName="FindInstancesDialog.java" startLine="48" startPosition="85" endLine="92" endPosition="7" />
     <scopeInfo nodeId="1219405656220" fileName="FindInstancesDialog.java" startLine="47" startPosition="0" endLine="93" endPosition="3">
-      <varInfo nodeId="1219418030427" varName="module" />
       <varInfo nodeId="1219405698827" varName="context" />
+      <varInfo nodeId="1219418030427" varName="module" />
     </scopeInfo>
-    <unitInfo nodeId="360888998500705298" fileName="FindInstancesDialog.java" startLine="73" startPosition="47" endLine="77" endPosition="7" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$7" />
+    <unitInfo nodeId="1219405656218" fileName="FindInstancesDialog.java" startLine="40" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog" />
     <unitInfo nodeId="1219672944710" fileName="FindInstancesDialog.java" startLine="100" startPosition="55" endLine="104" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$1" />
     <unitInfo nodeId="5658679531526817449" fileName="FindInstancesDialog.java" startLine="110" startPosition="46" endLine="114" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$2" />
     <unitInfo nodeId="7003329281689298984" fileName="FindInstancesDialog.java" startLine="124" startPosition="45" endLine="128" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$3" />
     <unitInfo nodeId="7003329281689299043" fileName="FindInstancesDialog.java" startLine="144" startPosition="45" endLine="148" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$4" />
+    <unitInfo nodeId="1235929414119" fileName="FindInstancesDialog.java" startLine="158" startPosition="45" endLine="166" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$5" />
+    <unitInfo nodeId="9161136784551423087" fileName="FindInstancesDialog.java" startLine="53" startPosition="55" endLine="70" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$6" />
+    <unitInfo nodeId="360888998500705298" fileName="FindInstancesDialog.java" startLine="73" startPosition="47" endLine="77" endPosition="7" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$7" />
     <unitInfo nodeId="7003329281689298949" fileName="FindInstancesDialog.java" startLine="63" startPosition="48" endLine="68" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$7" />
     <unitInfo nodeId="1219671439845" fileName="FindInstancesDialog.java" startLine="87" startPosition="45" endLine="92" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$8" />
     <unitInfo nodeId="7438865109565559110" fileName="FindInstancesDialog.java" startLine="174" startPosition="45" endLine="179" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$9" />
-    <unitInfo nodeId="1235929414119" fileName="FindInstancesDialog.java" startLine="158" startPosition="45" endLine="166" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$5" />
-    <unitInfo nodeId="9161136784551423087" fileName="FindInstancesDialog.java" startLine="53" startPosition="55" endLine="70" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$6" />
-    <unitInfo nodeId="1219405656218" fileName="FindInstancesDialog.java" startLine="40" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog" />
   </root>
   <root nodeId="1219746404210">
     <nodeInfo nodeId="1219746458485" fileName="ReplaceDialog.java" startLine="36" startPosition="47" endLine="37" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
@@ -466,10 +466,10 @@
     <scopeInfo nodeId="2268726300190430250" fileName="ReplaceDialog.java" startLine="47" startPosition="67" endLine="59" endPosition="0" />
     <scopeInfo nodeId="1219748065866" fileName="ReplaceDialog.java" startLine="87" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="1235929460010" fileName="ReplaceDialog.java" startLine="138" startPosition="0" endLine="152" endPosition="0">
-      <varInfo nodeId="1235929460058" varName="queryNode" />
       <varInfo nodeId="1235929460054" varName="project" />
-      <varInfo nodeId="1235929460060" varName="scope" />
       <varInfo nodeId="1235929460056" varName="query" />
+      <varInfo nodeId="1235929460058" varName="queryNode" />
+      <varInfo nodeId="1235929460060" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="1219746404215" fileName="ReplaceDialog.java" startLine="44" startPosition="82" endLine="73" endPosition="25">
       <varInfo nodeId="1220271011315" varName="languageList" />
@@ -479,25 +479,25 @@
       <varInfo nodeId="1219747590277" varName="language" />
     </scopeInfo>
     <scopeInfo nodeId="7003329281689298766" fileName="ReplaceDialog.java" startLine="100" startPosition="54" endLine="131" endPosition="19">
-      <varInfo nodeId="7003329281689298796" varName="model" />
-      <varInfo nodeId="7003329281689298842" varName="scope" />
-      <varInfo nodeId="7003329281689298831" varName="query" />
-      <varInfo nodeId="7003329281689298822" varName="loader" />
       <varInfo nodeId="7003329281689298809" varName="fqName" />
+      <varInfo nodeId="7003329281689298822" varName="loader" />
+      <varInfo nodeId="7003329281689298796" varName="model" />
+      <varInfo nodeId="7003329281689298831" varName="query" />
+      <varInfo nodeId="7003329281689298842" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="7003329281689298763" fileName="ReplaceDialog.java" startLine="99" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="7003329281689298778" varName="cd" />
     </scopeInfo>
-    <unitInfo nodeId="1220271002686" fileName="ReplaceDialog.java" startLine="62" startPosition="45" endLine="66" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$8" />
+    <unitInfo nodeId="1219746404210" fileName="ReplaceDialog.java" startLine="36" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog" />
     <unitInfo nodeId="1219749141722" fileName="ReplaceDialog.java" startLine="81" startPosition="55" endLine="85" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$1" />
     <unitInfo nodeId="5658679531526822186" fileName="ReplaceDialog.java" startLine="91" startPosition="46" endLine="95" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$2" />
     <unitInfo nodeId="7003329281689298799" fileName="ReplaceDialog.java" startLine="105" startPosition="45" endLine="109" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$3" />
     <unitInfo nodeId="7003329281689298859" fileName="ReplaceDialog.java" startLine="125" startPosition="45" endLine="129" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$4" />
-    <unitInfo nodeId="7003329281689298749" fileName="ReplaceDialog.java" startLine="50" startPosition="42" endLine="55" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$8" />
-    <unitInfo nodeId="7438865109565559139" fileName="ReplaceDialog.java" startLine="156" startPosition="45" endLine="161" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$6" />
     <unitInfo nodeId="1235929460018" fileName="ReplaceDialog.java" startLine="141" startPosition="45" endLine="149" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$5" />
+    <unitInfo nodeId="7438865109565559139" fileName="ReplaceDialog.java" startLine="156" startPosition="45" endLine="161" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$6" />
     <unitInfo nodeId="2268726300190430250" fileName="ReplaceDialog.java" startLine="47" startPosition="55" endLine="59" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$7" />
-    <unitInfo nodeId="1219746404210" fileName="ReplaceDialog.java" startLine="36" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog" />
+    <unitInfo nodeId="1220271002686" fileName="ReplaceDialog.java" startLine="62" startPosition="45" endLine="66" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$8" />
+    <unitInfo nodeId="7003329281689298749" fileName="ReplaceDialog.java" startLine="50" startPosition="42" endLine="55" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$8" />
   </root>
   <root nodeId="1219749269092">
     <nodeInfo nodeId="1219749269092" fileName="ReplacementQueryAction_Action.java" startLine="19" startPosition="68" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -653,17 +653,17 @@
     </scopeInfo>
     <scopeInfo nodeId="1219918588184" fileName="ReplacementView.java" startLine="36" startPosition="0" endLine="76" endPosition="3">
       <varInfo nodeId="1219924916377" varName="project" />
-      <varInfo nodeId="1220015472850" varName="query" />
-      <varInfo nodeId="1220012589986" varName="tool" />
-      <varInfo nodeId="1219926850761" varName="searchQuery" />
       <varInfo nodeId="1219926805788" varName="provider" />
+      <varInfo nodeId="1220015472850" varName="query" />
+      <varInfo nodeId="1219926850761" varName="searchQuery" />
+      <varInfo nodeId="1220012589986" varName="tool" />
     </scopeInfo>
+    <unitInfo nodeId="1219918588182" fileName="ReplacementView.java" startLine="31" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView" />
     <unitInfo nodeId="1219919492676" fileName="ReplacementView.java" startLine="39" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView$1" />
-    <unitInfo nodeId="1235928525885" fileName="ReplacementView.java" startLine="68" startPosition="46" endLine="73" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView$4" />
+    <unitInfo nodeId="1220015599105" fileName="ReplacementView.java" startLine="45" startPosition="40" endLine="61" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView$2" />
     <unitInfo nodeId="1235928518142" fileName="ReplacementView.java" startLine="66" startPosition="35" endLine="75" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView$3" />
     <unitInfo nodeId="1220015646504" fileName="ReplacementView.java" startLine="47" startPosition="59" endLine="59" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView$3" />
-    <unitInfo nodeId="1220015599105" fileName="ReplacementView.java" startLine="45" startPosition="40" endLine="61" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView$2" />
-    <unitInfo nodeId="1219918588182" fileName="ReplacementView.java" startLine="31" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView" />
+    <unitInfo nodeId="1235928525885" fileName="ReplacementView.java" startLine="68" startPosition="46" endLine="73" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView$4" />
   </root>
   <root nodeId="1219922562111">
     <nodeInfo nodeId="1219923186802" fileName="QueryFinder.java" startLine="17" startPosition="45" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQuery" />
@@ -695,10 +695,10 @@
       <varInfo nodeId="1219923106418" varName="current" />
     </scopeInfo>
     <scopeInfo nodeId="1219922585250" fileName="QueryFinder.java" startLine="24" startPosition="79" endLine="39" endPosition="74">
+      <varInfo nodeId="1219922952072" varName="instances" />
+      <varInfo nodeId="1219923125636" varName="instancesList" />
       <varInfo nodeId="1219923106405" varName="it" />
       <varInfo nodeId="2215757419096004044" varName="queryObject" />
-      <varInfo nodeId="1219923125636" varName="instancesList" />
-      <varInfo nodeId="1219922952072" varName="instances" />
     </scopeInfo>
     <scopeInfo nodeId="1219922585243" fileName="QueryFinder.java" startLine="23" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1219922585248" varName="monitor" />
@@ -764,8 +764,8 @@
       <varInfo nodeId="1220015856879" varName="query" />
       <varInfo nodeId="1220015059277" varName="searchQuery" />
     </scopeInfo>
-    <unitInfo nodeId="1220011802514" fileName="RunReplacement_Tool.java" startLine="45" startPosition="45" endLine="58" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool$1" />
     <unitInfo nodeId="1220008857613" fileName="RunReplacement_Tool.java" startLine="21" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool" />
+    <unitInfo nodeId="1220011802514" fileName="RunReplacement_Tool.java" startLine="45" startPosition="45" endLine="58" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool$1" />
   </root>
 </debugInfo>
 

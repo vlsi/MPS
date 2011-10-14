@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="128" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0s" />
   <unitInfo fileName="QueriesGenerated.java" startLine="26" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.generator.template.main.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="128" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0s" />
   <root nodeId="2319519288049960714">
     <nodeInfo nodeId="2319519288049960748" fileName="QueriesGenerated.java" startLine="49" startPosition="151" endLine="50" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4741735385321357381" fileName="QueriesGenerated.java" startLine="124" startPosition="155" endLine="125" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -67,8 +67,8 @@
     <scopeInfo nodeId="5837079428841717875" fileName="QueriesGenerated.java" startLine="114" startPosition="12" endLine="115" endPosition="67" />
     <scopeInfo nodeId="3391577739833596042" fileName="QueriesGenerated.java" startLine="120" startPosition="155" endLine="121" endPosition="189" />
     <scopeInfo nodeId="5837079428841717747" fileName="QueriesGenerated.java" startLine="109" startPosition="155" endLine="117" endPosition="71">
-      <varInfo nodeId="5837079428841717814" varName="operation" />
       <varInfo nodeId="5837079428841717825" varName="declaration" />
+      <varInfo nodeId="5837079428841717814" varName="operation" />
     </scopeInfo>
   </root>
 </debugInfo>

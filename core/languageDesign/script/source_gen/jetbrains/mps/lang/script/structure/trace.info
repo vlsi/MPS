@@ -82,8 +82,8 @@
     <scopeInfo nodeId="5299416737274925392" fileName="ScriptType.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="5299416737274925392" fileName="ScriptType_PropertySupport.java" startLine="9" startPosition="65" endLine="23" endPosition="0" />
     <scopeInfo nodeId="5299416737274925392" fileName="ScriptType_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="5299416737274925392" fileName="ScriptType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.script.structure.ScriptType_PropertySupport" />
     <unitInfo nodeId="5299416737274925392" fileName="ScriptType.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.script.structure.ScriptType" />
+    <unitInfo nodeId="5299416737274925392" fileName="ScriptType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.script.structure.ScriptType_PropertySupport" />
   </root>
 </debugInfo>
 

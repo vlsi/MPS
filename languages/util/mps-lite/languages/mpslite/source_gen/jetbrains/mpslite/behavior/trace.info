@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IMPSLiteConcept_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mpslite.behavior.IMPSLiteConcept_BehaviorDescriptor" />
-  <unitInfo fileName="BlockReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockReference_BehaviorDescriptor" />
-  <unitInfo fileName="OptionalPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mpslite.behavior.OptionalPart_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.ConceptContainer_BehaviorDescriptor" />
-  <unitInfo fileName="LineList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.LineList_BehaviorDescriptor" />
-  <unitInfo fileName="Line_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.Line_BehaviorDescriptor" />
   <unitInfo fileName="AbstractConceptReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mpslite.behavior.AbstractConceptReference_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mpslite.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BinaryOperationConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.BinaryOperationConcept_BehaviorDescriptor" />
   <unitInfo fileName="BlockBodyPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockBodyPart_BehaviorDescriptor" />
-  <unitInfo fileName="TypePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.TypePart_BehaviorDescriptor" />
-  <unitInfo fileName="NamePropertyNamePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.NamePropertyNamePart_BehaviorDescriptor" />
-  <unitInfo fileName="RegularConceptReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.RegularConceptReference_BehaviorDescriptor" />
+  <unitInfo fileName="BlockConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockConcept_BehaviorDescriptor" />
+  <unitInfo fileName="BlockReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockReference_BehaviorDescriptor" />
+  <unitInfo fileName="ChildPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.ChildPart_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.ConceptContainer_BehaviorDescriptor" />
+  <unitInfo fileName="ConcreteChildPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcreteChildPart_BehaviorDescriptor" />
+  <unitInfo fileName="ConcretePropertyPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcretePropertyPart_BehaviorDescriptor" />
+  <unitInfo fileName="ConcreteReferencePart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcreteReferencePart_BehaviorDescriptor" />
+  <unitInfo fileName="ConstantLinePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.ConstantLinePart_BehaviorDescriptor" />
+  <unitInfo fileName="ExpressionConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.ExpressionConcept_BehaviorDescriptor" />
+  <unitInfo fileName="FeatureAccessConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.FeatureAccessConcept_BehaviorDescriptor" />
+  <unitInfo fileName="IMPSLiteConcept_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mpslite.behavior.IMPSLiteConcept_BehaviorDescriptor" />
+  <unitInfo fileName="IndentLinePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.IndentLinePart_BehaviorDescriptor" />
+  <unitInfo fileName="LineList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.LineList_BehaviorDescriptor" />
+  <unitInfo fileName="LinePart_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mpslite.behavior.LinePart_BehaviorDescriptor" />
+  <unitInfo fileName="Line_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.Line_BehaviorDescriptor" />
+  <unitInfo fileName="MPSLiteConceptDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.MPSLiteConceptDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="MPSLiteConceptReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.MPSLiteConceptReference_BehaviorDescriptor" />
+  <unitInfo fileName="NamePropertyNamePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.NamePropertyNamePart_BehaviorDescriptor" />
+  <unitInfo fileName="OptionalPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mpslite.behavior.OptionalPart_BehaviorDescriptor" />
   <unitInfo fileName="PropertyPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.PropertyPart_BehaviorDescriptor" />
   <unitInfo fileName="ReferencePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.ReferencePart_BehaviorDescriptor" />
-  <unitInfo fileName="ChildPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.ChildPart_BehaviorDescriptor" />
-  <unitInfo fileName="IndentLinePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.IndentLinePart_BehaviorDescriptor" />
-  <unitInfo fileName="ConstantLinePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.ConstantLinePart_BehaviorDescriptor" />
-  <unitInfo fileName="LinePart_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mpslite.behavior.LinePart_BehaviorDescriptor" />
-  <unitInfo fileName="ConcretePropertyPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcretePropertyPart_BehaviorDescriptor" />
-  <unitInfo fileName="ConcreteChildPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcreteChildPart_BehaviorDescriptor" />
-  <unitInfo fileName="ConcreteReferencePart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcreteReferencePart_BehaviorDescriptor" />
-  <unitInfo fileName="BlockConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockConcept_BehaviorDescriptor" />
-  <unitInfo fileName="ExpressionConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.ExpressionConcept_BehaviorDescriptor" />
+  <unitInfo fileName="RegularConceptReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.RegularConceptReference_BehaviorDescriptor" />
   <unitInfo fileName="StatementConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.StatementConcept_BehaviorDescriptor" />
+  <unitInfo fileName="TypePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.TypePart_BehaviorDescriptor" />
   <unitInfo fileName="VariableConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_BehaviorDescriptor" />
-  <unitInfo fileName="FeatureAccessConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.FeatureAccessConcept_BehaviorDescriptor" />
-  <unitInfo fileName="BinaryOperationConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.BinaryOperationConcept_BehaviorDescriptor" />
-  <unitInfo fileName="MPSLiteConceptDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mpslite.behavior.MPSLiteConceptDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mpslite.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1238593663511">
     <nodeInfo nodeId="1238593813124" fileName="LineList_Behavior.java" startLine="15" startPosition="81" endLine="16" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238593663511" fileName="LineList_Behavior.java" startLine="9" startPosition="32" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -48,8 +48,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1238593663511" fileName="LineList_Behavior.java" startLine="12" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1238593709765" varName="concept" />
-      <varInfo nodeId="1238595425945" varName="partsToLinks" />
       <varInfo nodeId="1238595437161" varName="conceptsToTargets" />
+      <varInfo nodeId="1238595425945" varName="partsToLinks" />
     </scopeInfo>
     <unitInfo nodeId="1238593663511" fileName="LineList_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.LineList_Behavior" />
   </root>
@@ -81,24 +81,24 @@
     <scopeInfo nodeId="1238593832053" fileName="LinePart_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1238593832053" fileName="LinePart_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1238593858178" varName="concept" />
-      <varInfo nodeId="1238595500170" varName="partsToLinks" />
       <varInfo nodeId="1238595095607" varName="conceptsToTargets" />
+      <varInfo nodeId="1238595500170" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1238614099940" fileName="LinePart_Behavior.java" startLine="24" startPosition="109" endLine="27" endPosition="18">
       <varInfo nodeId="1238614269574" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1238593832053" fileName="LinePart_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1238593858178" varName="concept" />
-      <varInfo nodeId="1238595500170" varName="partsToLinks" />
       <varInfo nodeId="1238595095607" varName="conceptsToTargets" />
+      <varInfo nodeId="1238595500170" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1238593832053" fileName="LinePart_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1238614209112" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1238593832053" fileName="LinePart_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="1238593858178" varName="concept" />
-      <varInfo nodeId="1238595500170" varName="partsToLinks" />
       <varInfo nodeId="1238595095607" varName="conceptsToTargets" />
+      <varInfo nodeId="1238595500170" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1238593832053" fileName="LinePart_Behavior.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1238614209112" varName="partsToLinks" />
@@ -129,8 +129,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1238593955222" fileName="ConcreteChildPart_Behavior.java" startLine="14" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1239201104782" varName="concept" />
-      <varInfo nodeId="1239201104789" varName="partsToLinks" />
       <varInfo nodeId="1239201104785" varName="conceptsToTargets" />
+      <varInfo nodeId="1239201104789" varName="partsToLinks" />
     </scopeInfo>
     <unitInfo nodeId="1238593955222" fileName="ConcreteChildPart_Behavior.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcreteChildPart_Behavior" />
   </root>
@@ -199,8 +199,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1238595289056" fileName="ConcreteReferencePart_Behavior.java" startLine="14" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1238595523675" varName="concept" />
-      <varInfo nodeId="1238595523681" varName="partsToLinks" />
       <varInfo nodeId="1238595523677" varName="conceptsToTargets" />
+      <varInfo nodeId="1238595523681" varName="partsToLinks" />
     </scopeInfo>
     <unitInfo nodeId="1238595289056" fileName="ConcreteReferencePart_Behavior.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcreteReferencePart_Behavior" />
   </root>
@@ -256,16 +256,16 @@
     </scopeInfo>
     <scopeInfo nodeId="1238595645642" fileName="ConcretePropertyPart_Behavior.java" startLine="21" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1239201159266" varName="concept" />
-      <varInfo nodeId="1239201159272" varName="partsToLinks" />
       <varInfo nodeId="1239201159268" varName="conceptsToTargets" />
+      <varInfo nodeId="1239201159272" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1238595645642" fileName="ConcretePropertyPart_Behavior.java" startLine="37" startPosition="31" endLine="48" endPosition="20" />
     <scopeInfo nodeId="1238595645642" fileName="ConcretePropertyPart_Behavior.java" startLine="56" startPosition="31" endLine="67" endPosition="20" />
     <scopeInfo nodeId="1238595645642" fileName="ConcretePropertyPart_Behavior.java" startLine="36" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="1238595645642" fileName="ConcretePropertyPart_Behavior.java" startLine="55" startPosition="0" endLine="69" endPosition="0" />
-    <unitInfo nodeId="1238595645642" fileName="ConcretePropertyPart_Behavior.java" startLine="33" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcretePropertyPart_Behavior$QuotationClass_e1pb6q_a0c0a0c0b" />
-    <unitInfo nodeId="1238595645642" fileName="ConcretePropertyPart_Behavior.java" startLine="52" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcretePropertyPart_Behavior$QuotationClass_e1pb6q_a0c0a0a2a1" />
     <unitInfo nodeId="1238595645642" fileName="ConcretePropertyPart_Behavior.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcretePropertyPart_Behavior" />
+    <unitInfo nodeId="1238595645642" fileName="ConcretePropertyPart_Behavior.java" startLine="52" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcretePropertyPart_Behavior$QuotationClass_e1pb6q_a0c0a0a2a1" />
+    <unitInfo nodeId="1238595645642" fileName="ConcretePropertyPart_Behavior.java" startLine="33" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcretePropertyPart_Behavior$QuotationClass_e1pb6q_a0c0a0c0b" />
   </root>
   <root nodeId="1238687944902">
     <nodeInfo nodeId="1238687995430" fileName="IndentLinePart_Behavior.java" startLine="13" startPosition="109" endLine="14" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -360,8 +360,8 @@
     <scopeInfo nodeId="1238700598618" fileName="ReferencePart_Behavior.java" startLine="26" startPosition="130" endLine="27" endPosition="179" />
     <scopeInfo nodeId="1238691351907" fileName="ReferencePart_Behavior.java" startLine="13" startPosition="37" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1238691363937" fileName="ReferencePart_Behavior.java" startLine="17" startPosition="109" endLine="29" endPosition="19">
-      <varInfo nodeId="1238694443676" varName="linkDeclaration" />
       <varInfo nodeId="1238694392848" varName="component" />
+      <varInfo nodeId="1238694443676" varName="linkDeclaration" />
       <varInfo nodeId="1238694514851" varName="propertyCell" />
       <varInfo nodeId="1238691379976" varName="refCell" />
       <varInfo nodeId="1238700725849" varName="targetConcept" />
@@ -409,29 +409,29 @@
     <scopeInfo nodeId="1239278953841" fileName="BinaryOperationConcept_Behavior.java" startLine="15" startPosition="46" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1239893282674" fileName="BinaryOperationConcept_Behavior.java" startLine="32" startPosition="336" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1239893361452" fileName="BinaryOperationConcept_Behavior.java" startLine="42" startPosition="143" endLine="53" endPosition="18">
-      <varInfo nodeId="1239893439746" varName="result" />
       <varInfo nodeId="1239893394119" varName="contentCell" />
-      <varInfo nodeId="1239893394152" varName="signCell" />
       <varInfo nodeId="1239893394132" varName="leftCell" />
+      <varInfo nodeId="1239893439746" varName="result" />
       <varInfo nodeId="1239893394169" varName="rightCell" />
+      <varInfo nodeId="1239893394152" varName="signCell" />
     </scopeInfo>
     <scopeInfo nodeId="1239278953841" fileName="BinaryOperationConcept_Behavior.java" startLine="41" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="1239893364860" varName="partsToLinks" />
       <varInfo nodeId="1239893364856" varName="conceptsToTargets" />
+      <varInfo nodeId="1239893364860" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239892735578" fileName="BinaryOperationConcept_Behavior.java" startLine="19" startPosition="156" endLine="39" endPosition="111">
-      <varInfo nodeId="1239893282567" varName="leftLink" />
       <varInfo nodeId="1239893282560" varName="conceptDeclaration" />
-      <varInfo nodeId="1239893282575" varName="rightLink" />
       <varInfo nodeId="1239893282653" varName="conceptProperty" />
+      <varInfo nodeId="1239893282567" varName="leftLink" />
+      <varInfo nodeId="1239893282575" varName="rightLink" />
     </scopeInfo>
     <scopeInfo nodeId="1239278953841" fileName="BinaryOperationConcept_Behavior.java" startLine="18" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1239892739112" varName="concept" />
-      <varInfo nodeId="1239892739118" varName="partsToLinks" />
       <varInfo nodeId="1239892739114" varName="conceptsToTargets" />
+      <varInfo nodeId="1239892739118" varName="partsToLinks" />
     </scopeInfo>
-    <unitInfo nodeId="1239893282674" fileName="BinaryOperationConcept_Behavior.java" startLine="32" startPosition="313" endLine="36" endPosition="5" unitName="jetbrains.mpslite.behavior.BinaryOperationConcept_Behavior$1" />
     <unitInfo nodeId="1239278953841" fileName="BinaryOperationConcept_Behavior.java" startLine="15" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mpslite.behavior.BinaryOperationConcept_Behavior" />
+    <unitInfo nodeId="1239893282674" fileName="BinaryOperationConcept_Behavior.java" startLine="32" startPosition="313" endLine="36" endPosition="5" unitName="jetbrains.mpslite.behavior.BinaryOperationConcept_Behavior$1" />
   </root>
   <root nodeId="1239376624585">
     <nodeInfo nodeId="1239376627485" fileName="TypePart_Behavior.java" startLine="16" startPosition="109" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -443,8 +443,8 @@
     <scopeInfo nodeId="1239376624587" fileName="TypePart_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="1239376624585" fileName="TypePart_Behavior.java" startLine="12" startPosition="32" endLine="15" endPosition="0" />
     <scopeInfo nodeId="1239376627450" fileName="TypePart_Behavior.java" startLine="16" startPosition="109" endLine="20" endPosition="19">
-      <varInfo nodeId="1239376684352" varName="variableConcept" />
       <varInfo nodeId="1239376627486" varName="refNode" />
+      <varInfo nodeId="1239376684352" varName="variableConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1239376624585" fileName="TypePart_Behavior.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1239376627503" varName="partsToLinks" />
@@ -461,8 +461,8 @@
     <scopeInfo nodeId="1239376774741" fileName="NamePropertyNamePart_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="1239376774739" fileName="NamePropertyNamePart_Behavior.java" startLine="12" startPosition="44" endLine="15" endPosition="0" />
     <scopeInfo nodeId="1239376776708" fileName="NamePropertyNamePart_Behavior.java" startLine="16" startPosition="109" endLine="20" endPosition="24">
-      <varInfo nodeId="1239377785748" varName="variableConcept" />
       <varInfo nodeId="1239376776710" varName="propertyCell" />
+      <varInfo nodeId="1239377785748" varName="variableConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1239376774739" fileName="NamePropertyNamePart_Behavior.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1239376776727" varName="partsToLinks" />
@@ -536,50 +536,50 @@
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="1239890269984" varName="partsToLinks" />
       <varInfo nodeId="1239818237137" varName="conceptsToTargets" />
+      <varInfo nodeId="1239890269984" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="1239891670856" varName="partsToLinks" />
       <varInfo nodeId="1239891670851" varName="conceptsToTargets" />
+      <varInfo nodeId="1239891670856" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="1239891587006" varName="concept" />
-      <varInfo nodeId="1239891643179" varName="partsToLinks" />
       <varInfo nodeId="1239891643175" varName="conceptsToTargets" />
+      <varInfo nodeId="1239891643179" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
-      <varInfo nodeId="1239890004884" varName="partsToLinks" />
       <varInfo nodeId="1239890004880" varName="conceptsToTargets" />
+      <varInfo nodeId="1239890004884" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="1239890269984" varName="partsToLinks" />
       <varInfo nodeId="1239818237137" varName="conceptsToTargets" />
+      <varInfo nodeId="1239890269984" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="89" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="1239891670856" varName="partsToLinks" />
       <varInfo nodeId="1239891670851" varName="conceptsToTargets" />
+      <varInfo nodeId="1239891670856" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="49" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1239891587006" varName="concept" />
-      <varInfo nodeId="1239891643179" varName="partsToLinks" />
       <varInfo nodeId="1239891643175" varName="conceptsToTargets" />
+      <varInfo nodeId="1239891643179" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="54" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="1239890004884" varName="partsToLinks" />
       <varInfo nodeId="1239890004880" varName="conceptsToTargets" />
+      <varInfo nodeId="1239890004884" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="1239890269984" varName="partsToLinks" />
       <varInfo nodeId="1239818237137" varName="conceptsToTargets" />
+      <varInfo nodeId="1239890269984" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="64" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="1239891670856" varName="partsToLinks" />
       <varInfo nodeId="1239891670851" varName="conceptsToTargets" />
+      <varInfo nodeId="1239891670856" varName="partsToLinks" />
     </scopeInfo>
     <unitInfo nodeId="1239714831415" fileName="IMPSLiteConcept_Behavior.java" startLine="13" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mpslite.behavior.IMPSLiteConcept_Behavior" />
   </root>
@@ -602,18 +602,18 @@
     <scopeInfo nodeId="1239714952932" fileName="StatementConcept_Behavior.java" startLine="11" startPosition="40" endLine="14" endPosition="0" />
     <scopeInfo nodeId="1239714952932" fileName="StatementConcept_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1239940817948" varName="concept" />
-      <varInfo nodeId="1239940817954" varName="partsToLinks" />
       <varInfo nodeId="1239940817950" varName="conceptsToTargets" />
+      <varInfo nodeId="1239940817954" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239714952932" fileName="StatementConcept_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1239714952932" fileName="StatementConcept_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="1239940831749" fileName="StatementConcept_Behavior.java" startLine="26" startPosition="143" endLine="30" endPosition="18">
-      <varInfo nodeId="1239940850230" varName="result" />
       <varInfo nodeId="1239940956804" varName="cellModelError" />
+      <varInfo nodeId="1239940850230" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1239714952932" fileName="StatementConcept_Behavior.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1239940840728" varName="partsToLinks" />
       <varInfo nodeId="1239940840724" varName="conceptsToTargets" />
+      <varInfo nodeId="1239940840728" varName="partsToLinks" />
     </scopeInfo>
     <unitInfo nodeId="1239714952932" fileName="StatementConcept_Behavior.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mpslite.behavior.StatementConcept_Behavior" />
   </root>
@@ -636,18 +636,18 @@
     <scopeInfo nodeId="1239715003737" fileName="ExpressionConcept_Behavior.java" startLine="11" startPosition="41" endLine="14" endPosition="0" />
     <scopeInfo nodeId="1239715003737" fileName="ExpressionConcept_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1239941003547" varName="concept" />
-      <varInfo nodeId="1239941003553" varName="partsToLinks" />
       <varInfo nodeId="1239941003549" varName="conceptsToTargets" />
+      <varInfo nodeId="1239941003553" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239715003737" fileName="ExpressionConcept_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1239715003737" fileName="ExpressionConcept_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="1239941004756" fileName="ExpressionConcept_Behavior.java" startLine="26" startPosition="143" endLine="30" endPosition="18">
-      <varInfo nodeId="1239941018537" varName="result" />
       <varInfo nodeId="1239941018543" varName="cellModelError" />
+      <varInfo nodeId="1239941018537" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1239715003737" fileName="ExpressionConcept_Behavior.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1239941007717" varName="partsToLinks" />
       <varInfo nodeId="1239941007713" varName="conceptsToTargets" />
+      <varInfo nodeId="1239941007717" varName="partsToLinks" />
     </scopeInfo>
     <unitInfo nodeId="1239715003737" fileName="ExpressionConcept_Behavior.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mpslite.behavior.ExpressionConcept_Behavior" />
   </root>
@@ -702,24 +702,24 @@
     </scopeInfo>
     <scopeInfo nodeId="1239801516053" fileName="ConceptContainer_Behavior.java" startLine="17" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1239802881893" fileName="ConceptContainer_Behavior.java" startLine="26" startPosition="89" endLine="36" endPosition="18">
-      <varInfo nodeId="1239802996661" varName="result" />
       <varInfo nodeId="1239802954319" varName="mpsLiteConcepts" />
+      <varInfo nodeId="1239802996661" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1239806149723" fileName="ConceptContainer_Behavior.java" startLine="39" startPosition="91" endLine="49" endPosition="18">
-      <varInfo nodeId="1239806149743" varName="result" />
       <varInfo nodeId="1239806149725" varName="mpsLiteConcepts" />
+      <varInfo nodeId="1239806149743" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1239806150739" fileName="ConceptContainer_Behavior.java" startLine="52" startPosition="84" endLine="62" endPosition="18">
-      <varInfo nodeId="1239806150759" varName="result" />
       <varInfo nodeId="1239806150741" varName="mpsLiteConcepts" />
+      <varInfo nodeId="1239806150759" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1239801516053" fileName="ConceptContainer_Behavior.java" startLine="25" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1239801516053" fileName="ConceptContainer_Behavior.java" startLine="38" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1239801516053" fileName="ConceptContainer_Behavior.java" startLine="51" startPosition="0" endLine="64" endPosition="0" />
+    <unitInfo nodeId="1239801516053" fileName="ConceptContainer_Behavior.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mpslite.behavior.ConceptContainer_Behavior" />
     <unitInfo nodeId="1239802954327" fileName="ConceptContainer_Behavior.java" startLine="27" startPosition="132" endLine="31" endPosition="5" unitName="jetbrains.mpslite.behavior.ConceptContainer_Behavior$1" />
     <unitInfo nodeId="1239806149733" fileName="ConceptContainer_Behavior.java" startLine="40" startPosition="132" endLine="44" endPosition="5" unitName="jetbrains.mpslite.behavior.ConceptContainer_Behavior$2" />
     <unitInfo nodeId="1239806150749" fileName="ConceptContainer_Behavior.java" startLine="53" startPosition="132" endLine="57" endPosition="5" unitName="jetbrains.mpslite.behavior.ConceptContainer_Behavior$3" />
-    <unitInfo nodeId="1239801516053" fileName="ConceptContainer_Behavior.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mpslite.behavior.ConceptContainer_Behavior" />
   </root>
   <root nodeId="1239817627559">
     <nodeInfo nodeId="1239817651694" fileName="VariableConcept_Behavior.java" startLine="28" startPosition="74" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1362,10 +1362,10 @@
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="523" startPosition="33" endLine="527" endPosition="93" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="587" startPosition="27" endLine="591" endPosition="87" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="93" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="1239972548480" varName="statementConcept" />
-      <varInfo nodeId="1239972620716" varName="partsToLinks" />
       <varInfo nodeId="1239972556683" varName="conceptReferences" />
       <varInfo nodeId="1239978220377" varName="conceptsToTargets" />
+      <varInfo nodeId="1239972620716" varName="partsToLinks" />
+      <varInfo nodeId="1239972548480" varName="statementConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="107" startPosition="7" endLine="112" endPosition="31" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="242" startPosition="55" endLine="247" endPosition="19" />
@@ -1396,8 +1396,8 @@
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="603" startPosition="21" endLine="608" endPosition="21" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="619" startPosition="51" endLine="624" endPosition="15" />
     <scopeInfo nodeId="1239942296624" fileName="VariableConcept_Behavior.java" startLine="85" startPosition="147" endLine="91" endPosition="164">
-      <varInfo nodeId="1239943000568" varName="statementConcept" />
       <varInfo nodeId="1239972498330" varName="conceptReferences" />
+      <varInfo nodeId="1239943000568" varName="statementConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="125" startPosition="32" endLine="131" endPosition="7" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="294" startPosition="59" endLine="300" endPosition="23" />
@@ -1406,15 +1406,15 @@
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="586" startPosition="64" endLine="592" endPosition="27" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="106" startPosition="32" endLine="113" endPosition="7" />
     <scopeInfo nodeId="1239890836534" fileName="VariableConcept_Behavior.java" startLine="50" startPosition="143" endLine="58" endPosition="18">
-      <varInfo nodeId="1239891342932" varName="editor" />
       <varInfo nodeId="1239891342944" varName="contentCell" />
+      <varInfo nodeId="1239891342932" varName="editor" />
       <varInfo nodeId="1239891342938" varName="lineList" />
     </scopeInfo>
     <scopeInfo nodeId="1239889832199" fileName="VariableConcept_Behavior.java" startLine="74" startPosition="153" endLine="82" endPosition="18">
-      <varInfo nodeId="1239890117357" varName="editor" />
       <varInfo nodeId="1239890174306" varName="contentCell" />
-      <varInfo nodeId="1239890553375" varName="propertyCell" />
+      <varInfo nodeId="1239890117357" varName="editor" />
       <varInfo nodeId="1239890415489" varName="editorComponent" />
+      <varInfo nodeId="1239890553375" varName="propertyCell" />
     </scopeInfo>
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="240" startPosition="17" endLine="248" endPosition="64" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="253" startPosition="19" endLine="261" endPosition="70" />
@@ -1422,8 +1422,8 @@
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="433" startPosition="23" endLine="441" endPosition="74" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="617" startPosition="13" endLine="625" endPosition="66" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="84" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="1239942474294" varName="partsToLinks" />
       <varInfo nodeId="1239942474289" varName="conceptsToTargets" />
+      <varInfo nodeId="1239942474294" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="292" startPosition="21" endLine="301" endPosition="74" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="360" startPosition="25" endLine="369" endPosition="79" />
@@ -1443,16 +1443,16 @@
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="616" startPosition="13" endLine="626" endPosition="13" />
     <scopeInfo nodeId="1239891762166" fileName="VariableConcept_Behavior.java" startLine="36" startPosition="156" endLine="47" endPosition="66">
       <varInfo nodeId="1239891768990" varName="conceptDeclaration" />
-      <varInfo nodeId="1239891768997" varName="typeLink" />
       <varInfo nodeId="1239891769040" varName="propertyDecl" />
+      <varInfo nodeId="1239891768997" varName="typeLink" />
     </scopeInfo>
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="49" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="1239890858208" varName="partsToLinks" />
       <varInfo nodeId="1239890858204" varName="conceptsToTargets" />
+      <varInfo nodeId="1239890858208" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="73" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="1239891757111" varName="partsToLinks" />
       <varInfo nodeId="1239891757107" varName="conceptsToTargets" />
+      <varInfo nodeId="1239891757111" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="103" startPosition="31" endLine="114" endPosition="20" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="291" startPosition="57" endLine="302" endPosition="21" />
@@ -1462,8 +1462,8 @@
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="553" startPosition="19" endLine="564" endPosition="19" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="583" startPosition="62" endLine="594" endPosition="25" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="60" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="1239890254387" varName="partsToLinks" />
       <varInfo nodeId="1239818113054" varName="conceptsToTargets" />
+      <varInfo nodeId="1239890254387" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="121" startPosition="0" endLine="134" endPosition="0" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="250" startPosition="17" endLine="263" endPosition="71" />
@@ -1474,8 +1474,8 @@
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="485" startPosition="21" endLine="498" endPosition="73" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="35" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1239891765779" varName="concept" />
-      <varInfo nodeId="1239891765785" varName="partsToLinks" />
       <varInfo nodeId="1239891765781" varName="conceptsToTargets" />
+      <varInfo nodeId="1239891765785" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="102" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="357" startPosition="23" endLine="371" endPosition="77" />
@@ -1550,10 +1550,10 @@
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="222" startPosition="33" endLine="632" endPosition="7" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="140" startPosition="139" endLine="645" endPosition="20" />
     <scopeInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="139" startPosition="0" endLine="647" endPosition="0" />
-    <unitInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="118" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior$QuotationClass_mkovpu_a0a0a0c0h" />
-    <unitInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="99" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior$QuotationClass_mkovpu_a0c0h0d" />
-    <unitInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="136" startPosition="0" endLine="648" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior$QuotationClass_mkovpu_a0a0a8" />
     <unitInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="24" startPosition="0" endLine="649" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior" />
+    <unitInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="118" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior$QuotationClass_mkovpu_a0a0a0c0h" />
+    <unitInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="136" startPosition="0" endLine="648" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior$QuotationClass_mkovpu_a0a0a8" />
+    <unitInfo nodeId="1239817627559" fileName="VariableConcept_Behavior.java" startLine="99" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior$QuotationClass_mkovpu_a0c0h0d" />
   </root>
   <root nodeId="1239891097205">
     <nodeInfo nodeId="1239891097210" fileName="GenerationUtils.java" startLine="23" startPosition="110" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1892,10 +1892,10 @@
     <scopeInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="279" startPosition="19" endLine="287" endPosition="71" />
     <scopeInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="293" startPosition="15" endLine="301" endPosition="67" />
     <scopeInfo nodeId="1239891097628" fileName="GenerationUtils.java" startLine="59" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="1239891097742" varName="linePartsToLinks" />
+      <varInfo nodeId="1239891097736" varName="actions" />
       <varInfo nodeId="1239891097734" varName="binaryOperationConcept" />
       <varInfo nodeId="1239891097738" varName="conceptsToTargets" />
-      <varInfo nodeId="1239891097736" varName="actions" />
+      <varInfo nodeId="1239891097742" varName="linePartsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="119" startPosition="19" endLine="129" endPosition="19" />
     <scopeInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="155" startPosition="19" endLine="165" endPosition="19" />
@@ -1934,8 +1934,8 @@
     <scopeInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="256" startPosition="15" endLine="292" endPosition="15" />
     <scopeInfo nodeId="1239891097206" fileName="GenerationUtils.java" startLine="22" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1239891097376" varName="concept" />
-      <varInfo nodeId="1239891097378" varName="partsToLinks" />
       <varInfo nodeId="1239891097374" varName="lineList" />
+      <varInfo nodeId="1239891097378" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="106" startPosition="13" endLine="180" endPosition="60" />
     <scopeInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="229" startPosition="13" endLine="303" endPosition="60" />
@@ -1957,9 +1957,9 @@
     <scopeInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="196" startPosition="92" endLine="311" endPosition="20" />
     <scopeInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="73" startPosition="0" endLine="190" endPosition="0" />
     <scopeInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="195" startPosition="0" endLine="313" endPosition="0" />
+    <unitInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="19" startPosition="0" endLine="315" endPosition="0" unitName="jetbrains.mpslite.behavior.GenerationUtils" />
     <unitInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="70" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mpslite.behavior.GenerationUtils$QuotationClass_vxpwrw_a0a0a1a1" />
     <unitInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="192" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mpslite.behavior.GenerationUtils$QuotationClass_vxpwrw_a0a1a1a1" />
-    <unitInfo nodeId="1239891097205" fileName="GenerationUtils.java" startLine="19" startPosition="0" endLine="315" endPosition="0" unitName="jetbrains.mpslite.behavior.GenerationUtils" />
   </root>
   <root nodeId="1239891982899">
     <nodeInfo nodeId="1239891996626" fileName="MPSLiteConceptDeclaration_Behavior.java" startLine="15" startPosition="156" endLine="16" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1979,17 +1979,17 @@
     <scopeInfo nodeId="1239891982899" fileName="MPSLiteConceptDeclaration_Behavior.java" startLine="11" startPosition="49" endLine="14" endPosition="0" />
     <scopeInfo nodeId="1239891982899" fileName="MPSLiteConceptDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1239891990692" varName="concept" />
-      <varInfo nodeId="1239891990698" varName="partsToLinks" />
       <varInfo nodeId="1239891990694" varName="conceptsToTargets" />
+      <varInfo nodeId="1239891990698" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239892074822" fileName="MPSLiteConceptDeclaration_Behavior.java" startLine="19" startPosition="143" endLine="27" endPosition="18">
-      <varInfo nodeId="1239892141135" varName="editor" />
       <varInfo nodeId="1239892141148" varName="contentCell" />
+      <varInfo nodeId="1239892141135" varName="editor" />
       <varInfo nodeId="1239892141142" varName="lineList" />
     </scopeInfo>
     <scopeInfo nodeId="1239891982899" fileName="MPSLiteConceptDeclaration_Behavior.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="1239892082111" varName="partsToLinks" />
       <varInfo nodeId="1239892082107" varName="conceptsToTargets" />
+      <varInfo nodeId="1239892082111" varName="partsToLinks" />
     </scopeInfo>
     <unitInfo nodeId="1239891982899" fileName="MPSLiteConceptDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mpslite.behavior.MPSLiteConceptDeclaration_Behavior" />
   </root>
@@ -2017,18 +2017,18 @@
       <varInfo nodeId="1239940148983" varName="linkDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1239939790921" fileName="BlockConcept_Behavior.java" startLine="26" startPosition="143" endLine="34" endPosition="18">
-      <varInfo nodeId="1239939828595" varName="editor" />
       <varInfo nodeId="1239939828607" varName="contentCell" />
+      <varInfo nodeId="1239939828595" varName="editor" />
       <varInfo nodeId="1239939828601" varName="lineList" />
     </scopeInfo>
     <scopeInfo nodeId="1239939662258" fileName="BlockConcept_Behavior.java" startLine="16" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1239939671894" varName="concept" />
-      <varInfo nodeId="1239939671900" varName="partsToLinks" />
       <varInfo nodeId="1239939671896" varName="conceptsToTargets" />
+      <varInfo nodeId="1239939671900" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1239939662258" fileName="BlockConcept_Behavior.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1239939797403" varName="partsToLinks" />
       <varInfo nodeId="1239939797399" varName="conceptsToTargets" />
+      <varInfo nodeId="1239939797403" varName="partsToLinks" />
     </scopeInfo>
     <unitInfo nodeId="1239939662258" fileName="BlockConcept_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockConcept_Behavior" />
   </root>
@@ -2079,30 +2079,30 @@
     <scopeInfo nodeId="8405639817129357296" fileName="FeatureAccessConcept_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="8405639817129357296" fileName="FeatureAccessConcept_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="8405639817129357302" varName="concept" />
-      <varInfo nodeId="8405639817129357308" varName="partsToLinks" />
       <varInfo nodeId="8405639817129357304" varName="conceptsToTargets" />
+      <varInfo nodeId="8405639817129357308" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="8405639817129357296" fileName="FeatureAccessConcept_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="8405639817129358598" varName="partsToLinks" />
       <varInfo nodeId="8405639817129358594" varName="conceptsToTargets" />
+      <varInfo nodeId="8405639817129358598" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="8405639817129357296" fileName="FeatureAccessConcept_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="8405639817129357302" varName="concept" />
-      <varInfo nodeId="8405639817129357308" varName="partsToLinks" />
       <varInfo nodeId="8405639817129357304" varName="conceptsToTargets" />
+      <varInfo nodeId="8405639817129357308" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="8405639817129357296" fileName="FeatureAccessConcept_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="8405639817129358598" varName="partsToLinks" />
       <varInfo nodeId="8405639817129358594" varName="conceptsToTargets" />
+      <varInfo nodeId="8405639817129358598" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="8405639817129357296" fileName="FeatureAccessConcept_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="8405639817129357302" varName="concept" />
-      <varInfo nodeId="8405639817129357308" varName="partsToLinks" />
       <varInfo nodeId="8405639817129357304" varName="conceptsToTargets" />
+      <varInfo nodeId="8405639817129357308" varName="partsToLinks" />
     </scopeInfo>
     <scopeInfo nodeId="8405639817129357296" fileName="FeatureAccessConcept_Behavior.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="8405639817129358598" varName="partsToLinks" />
       <varInfo nodeId="8405639817129358594" varName="conceptsToTargets" />
+      <varInfo nodeId="8405639817129358598" varName="partsToLinks" />
     </scopeInfo>
     <unitInfo nodeId="8405639817129357296" fileName="FeatureAccessConcept_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mpslite.behavior.FeatureAccessConcept_Behavior" />
   </root>

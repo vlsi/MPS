@@ -15,8 +15,8 @@
     <scopeInfo nodeId="931497059330196854" fileName="QueriesGenerated.java" startLine="57" startPosition="149" endLine="58" endPosition="308" />
     <scopeInfo nodeId="7609957718756197744" fileName="QueriesGenerated.java" startLine="89" startPosition="155" endLine="90" endPosition="227" />
     <scopeInfo nodeId="931497059330190639" fileName="QueriesGenerated.java" startLine="22" startPosition="153" endLine="26" endPosition="39">
-      <varInfo nodeId="7609957718756389944" varName="extension" />
       <varInfo nodeId="931497059330195813" varName="className" />
+      <varInfo nodeId="7609957718756389944" varName="extension" />
       <varInfo nodeId="7609957718756389955" varName="namespace" />
     </scopeInfo>
   </root>

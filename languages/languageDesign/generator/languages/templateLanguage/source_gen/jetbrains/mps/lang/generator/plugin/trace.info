@@ -204,8 +204,8 @@
       <varInfo nodeId="3911341278723505753" varName="moduleRef" />
     </scopeInfo>
     <scopeInfo nodeId="3911341278723505422" fileName="Generator_TabDescriptor.java" startLine="164" startPosition="27" endLine="181" endPosition="59">
-      <varInfo nodeId="3911341278723505463" varName="node" />
       <varInfo nodeId="3911341278723505424" varName="model" />
+      <varInfo nodeId="3911341278723505463" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3911341278723505522" fileName="Generator_TabDescriptor.java" startLine="196" startPosition="25" endLine="213" endPosition="9">
       <varInfo nodeId="3911341278723505524" varName="model" />
@@ -217,27 +217,27 @@
     </scopeInfo>
     <scopeInfo nodeId="3911341278723505417" fileName="Generator_TabDescriptor.java" startLine="161" startPosition="52" endLine="183" endPosition="9" />
     <scopeInfo nodeId="3911341278723505633" fileName="Generator_TabDescriptor.java" startLine="90" startPosition="52" endLine="120" endPosition="18">
-      <varInfo nodeId="3911341278723505654" varName="rootable" />
-      <varInfo nodeId="3911341278723505635" varName="result" />
       <varInfo nodeId="3911341278723505666" varName="isInterface" />
+      <varInfo nodeId="3911341278723505635" varName="result" />
+      <varInfo nodeId="3911341278723505654" varName="rootable" />
     </scopeInfo>
     <scopeInfo nodeId="3911341278723505277" fileName="Generator_TabDescriptor.java" startLine="89" startPosition="0" endLine="122" endPosition="0" />
     <scopeInfo nodeId="3911341278723505293" fileName="Generator_TabDescriptor.java" startLine="127" startPosition="66" endLine="216" endPosition="24">
-      <varInfo nodeId="3911341278723505331" varName="genList" />
-      <varInfo nodeId="3911341278723505518" varName="result" />
-      <varInfo nodeId="3911341278723505295" varName="project" />
       <varInfo nodeId="3911341278723505304" varName="frame" />
-      <varInfo nodeId="3911341278723505389" varName="mappings" />
-      <varInfo nodeId="3911341278723505483" varName="mapping" />
+      <varInfo nodeId="3911341278723505331" varName="genList" />
       <varInfo nodeId="3911341278723505312" varName="language" />
+      <varInfo nodeId="3911341278723505483" varName="mapping" />
+      <varInfo nodeId="3911341278723505389" varName="mappings" />
+      <varInfo nodeId="3911341278723505295" varName="project" />
+      <varInfo nodeId="3911341278723505518" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3911341278723505277" fileName="Generator_TabDescriptor.java" startLine="126" startPosition="0" endLine="218" endPosition="0" />
     <unitInfo nodeId="3911341278723505805" fileName="Generator_Order.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.generator.plugin.Generator_Order" />
+    <unitInfo nodeId="3911341278723505277" fileName="Generator_TabDescriptor.java" startLine="46" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.lang.generator.plugin.Generator_TabDescriptor" />
     <unitInfo nodeId="3911341278723505315" fileName="Generator_TabDescriptor.java" startLine="132" startPosition="45" endLine="137" endPosition="5" unitName="jetbrains.mps.lang.generator.plugin.Generator_TabDescriptor$1" />
     <unitInfo nodeId="3911341278723505395" fileName="Generator_TabDescriptor.java" startLine="151" startPosition="45" endLine="159" endPosition="5" unitName="jetbrains.mps.lang.generator.plugin.Generator_TabDescriptor$2" />
     <unitInfo nodeId="3911341278723505421" fileName="Generator_TabDescriptor.java" startLine="163" startPosition="57" endLine="183" endPosition="7" unitName="jetbrains.mps.lang.generator.plugin.Generator_TabDescriptor$3" />
     <unitInfo nodeId="3911341278723505521" fileName="Generator_TabDescriptor.java" startLine="195" startPosition="55" endLine="215" endPosition="5" unitName="jetbrains.mps.lang.generator.plugin.Generator_TabDescriptor$4" />
-    <unitInfo nodeId="3911341278723505277" fileName="Generator_TabDescriptor.java" startLine="46" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.lang.generator.plugin.Generator_TabDescriptor" />
   </root>
 </debugInfo>
 

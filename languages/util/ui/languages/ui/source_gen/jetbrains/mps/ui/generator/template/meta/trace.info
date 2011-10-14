@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="30" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.ui.generator.template.meta.QueriesGenerated" />
   <unitInfo fileName="QueriesGenerated.java" startLine="215" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.ui.generator.template.meta.QueriesGenerated$QuotationClass_x583g4_a0a0a0b" />
   <unitInfo fileName="QueriesGenerated.java" startLine="233" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.ui.generator.template.meta.QueriesGenerated$QuotationClass_x583g4_a0a0a0c" />
   <unitInfo fileName="QueriesGenerated.java" startLine="251" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.ui.generator.template.meta.QueriesGenerated$QuotationClass_x583g4_a0a0a0d" />
   <unitInfo fileName="QueriesGenerated.java" startLine="269" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.ui.generator.template.meta.QueriesGenerated$QuotationClass_x583g4_a0a0a0e" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="30" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.ui.generator.template.meta.QueriesGenerated" />
   <root nodeId="5745619648519185358">
     <nodeInfo nodeId="6991444902044075341" fileName="QueriesGenerated.java" startLine="199" startPosition="139" endLine="200" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6991444902044075340" fileName="QueriesGenerated.java" startLine="199" startPosition="139" endLine="200" endPosition="110" />
@@ -141,9 +141,9 @@
     <scopeInfo nodeId="8504596698668712519" fileName="QueriesGenerated.java" startLine="207" startPosition="139" endLine="208" endPosition="30" />
     <scopeInfo nodeId="8504596698668712536" fileName="QueriesGenerated.java" startLine="211" startPosition="139" endLine="212" endPosition="30" />
     <scopeInfo nodeId="8504596698668712450" fileName="QueriesGenerated.java" startLine="82" startPosition="154" endLine="87" endPosition="16">
-      <varInfo nodeId="8504596698668712469" varName="uniq" />
       <varInfo nodeId="8504596698668712452" varName="ctx" />
       <varInfo nodeId="8504596698668712462" varName="key" />
+      <varInfo nodeId="8504596698668712469" varName="uniq" />
     </scopeInfo>
   </root>
 </debugInfo>

@@ -21,13 +21,13 @@
       <varInfo nodeId="8288845019109253881" varName="field" />
     </scopeInfo>
     <scopeInfo nodeId="8288845019109238333" fileName="PatternGeneratorUtil.java" startLine="15" startPosition="71" endLine="27" endPosition="16">
-      <varInfo nodeId="8288845019109253848" varName="varPattern" />
       <varInfo nodeId="8288845019109253873" varName="nodes" />
       <varInfo nodeId="8288845019109253866" varName="patternClass" />
+      <varInfo nodeId="8288845019109253848" varName="varPattern" />
     </scopeInfo>
     <scopeInfo nodeId="8288845019109238330" fileName="PatternGeneratorUtil.java" startLine="14" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="8288845019109252780" varName="var" />
       <varInfo nodeId="8288845019109252778" varName="genContext" />
+      <varInfo nodeId="8288845019109252780" varName="var" />
     </scopeInfo>
     <unitInfo nodeId="8288845019109238320" fileName="PatternGeneratorUtil.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.pattern.generator.baseLanguage.template.util.PatternGeneratorUtil" />
   </root>

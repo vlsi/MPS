@@ -30,9 +30,9 @@
       <varInfo nodeId="8382013213871428255" varName="modelRef" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213871428283" fileName="ProjectStubs.java" startLine="49" startPosition="130" endLine="53" endPosition="48">
-      <varInfo nodeId="8382013213871428307" varName="modelId" />
-      <varInfo nodeId="8382013213871428285" varName="longName" />
       <varInfo nodeId="8382013213871428295" varName="fqname" />
+      <varInfo nodeId="8382013213871428285" varName="longName" />
+      <varInfo nodeId="8382013213871428307" varName="modelId" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213871428218" fileName="ProjectStubs.java" startLine="29" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="8382013213871428252" fileName="ProjectStubs.java" startLine="40" startPosition="122" endLine="46" endPosition="0" />
@@ -42,16 +42,16 @@
       <varInfo nodeId="8382013213871428328" varName="stereotype" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213871428224" fileName="ProjectStubs.java" startLine="36" startPosition="96" endLine="46" endPosition="7">
+      <varInfo nodeId="8382013213871428235" varName="descriptors" />
       <varInfo nodeId="8382013213871428226" varName="folder" />
       <varInfo nodeId="8382013213871428244" varName="stereotype" />
-      <varInfo nodeId="8382013213871428235" varName="descriptors" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213871428221" fileName="ProjectStubs.java" startLine="35" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="8382013213871443225" varName="module" />
       <varInfo nodeId="8382013213871443223" varName="path" />
     </scopeInfo>
-    <unitInfo nodeId="8382013213871428252" fileName="ProjectStubs.java" startLine="40" startPosition="57" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.project.stubs.ProjectStubs$1" />
     <unitInfo nodeId="8382013213871428218" fileName="ProjectStubs.java" startLine="26" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.project.stubs.ProjectStubs" />
+    <unitInfo nodeId="8382013213871428252" fileName="ProjectStubs.java" startLine="40" startPosition="57" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.project.stubs.ProjectStubs$1" />
   </root>
 </debugInfo>
 

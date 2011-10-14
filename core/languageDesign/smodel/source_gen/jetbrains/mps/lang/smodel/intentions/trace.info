@@ -83,11 +83,11 @@
     </scopeInfo>
     <scopeInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="47" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1193745200278" fileName="AddSNodeCastStatement_Intention.java" startLine="63" startPosition="76" endLine="80" endPosition="153">
-      <varInfo nodeId="1193746216328" varName="expression" />
+      <varInfo nodeId="1193745326616" varName="castVariable" />
+      <varInfo nodeId="1193745830777" varName="conceptDeclaration" />
       <varInfo nodeId="1193745326632" varName="de" />
       <varInfo nodeId="1193745326640" varName="declaration" />
-      <varInfo nodeId="1193745830777" varName="conceptDeclaration" />
-      <varInfo nodeId="1193745326616" varName="castVariable" />
+      <varInfo nodeId="1193746216328" varName="expression" />
     </scopeInfo>
     <scopeInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="62" startPosition="0" endLine="82" endPosition="0" />
     <unitInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="17" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.AddSNodeCastStatement_Intention" />
@@ -281,9 +281,9 @@
     <scopeInfo nodeId="1224687584077" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1224687584077" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1224687584081" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="38" startPosition="76" endLine="47" endPosition="60">
-      <varInfo nodeId="1224687624711" varName="lValue" />
       <varInfo nodeId="1224687610606" varName="assignment" />
       <varInfo nodeId="1224687770056" varName="dotExpr" />
+      <varInfo nodeId="1224687624711" varName="lValue" />
       <varInfo nodeId="1224687794887" varName="rValue" />
     </scopeInfo>
     <scopeInfo nodeId="1224687584077" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="37" startPosition="0" endLine="49" endPosition="0" />
@@ -328,9 +328,9 @@
     <scopeInfo nodeId="1224751635787" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1224751635787" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1224751635791" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="38" startPosition="76" endLine="47" endPosition="66">
-      <varInfo nodeId="1224751695537" varName="lValue" />
       <varInfo nodeId="1224751808497" varName="assignment" />
       <varInfo nodeId="1224751802833" varName="dotExpression" />
+      <varInfo nodeId="1224751695537" varName="lValue" />
       <varInfo nodeId="1224751741303" varName="rValue" />
     </scopeInfo>
     <scopeInfo nodeId="1224751635787" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="37" startPosition="0" endLine="49" endPosition="0" />
@@ -414,9 +414,9 @@
     <scopeInfo nodeId="4726561250374329612" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="4726561250374329612" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="4726561250374329616" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="38" startPosition="76" endLine="47" endPosition="60">
-      <varInfo nodeId="4726561250374329637" varName="lValue" />
       <varInfo nodeId="4726561250374329667" varName="assignment" />
       <varInfo nodeId="4726561250374329655" varName="dotExpr" />
+      <varInfo nodeId="4726561250374329637" varName="lValue" />
       <varInfo nodeId="4726561250374329643" varName="rValue" />
     </scopeInfo>
     <scopeInfo nodeId="4726561250374329612" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="37" startPosition="0" endLine="49" endPosition="0" />
@@ -467,8 +467,8 @@
     <scopeInfo nodeId="8288233991428663607" fileName="ConvertCastToNodeCast_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="8288233991428663607" fileName="ConvertCastToNodeCast_Intention.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="8288233991428663611" fileName="ConvertCastToNodeCast_Intention.java" startLine="49" startPosition="76" endLine="54" endPosition="53">
-      <varInfo nodeId="8288233991428709982" varName="result" />
       <varInfo nodeId="8288233991428709997" varName="concept" />
+      <varInfo nodeId="8288233991428709982" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8288233991428663607" fileName="ConvertCastToNodeCast_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="8288233991428663607" fileName="ConvertCastToNodeCast_Intention.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
@@ -523,10 +523,10 @@
     <scopeInfo nodeId="8288233991428710054" fileName="ConvertInstanceofToNodeInstanceof_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="8288233991428710054" fileName="ConvertInstanceofToNodeInstanceof_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="8288233991428710060" fileName="ConvertInstanceofToNodeInstanceof_Intention.java" startLine="49" startPosition="76" endLine="57" endPosition="53">
-      <varInfo nodeId="8288233991428710132" varName="operation" />
-      <varInfo nodeId="8288233991428710062" varName="result" />
       <varInfo nodeId="8288233991428710068" varName="concept" />
       <varInfo nodeId="8288233991428774901" varName="conceptReference" />
+      <varInfo nodeId="8288233991428710132" varName="operation" />
+      <varInfo nodeId="8288233991428710062" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8288233991428710054" fileName="ConvertInstanceofToNodeInstanceof_Intention.java" startLine="48" startPosition="0" endLine="59" endPosition="0" />
     <unitInfo nodeId="8288233991428710054" fileName="ConvertInstanceofToNodeInstanceof_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ConvertInstanceofToNodeInstanceof_Intention" />

@@ -704,8 +704,8 @@
     <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="9" startPosition="79" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum_PropertySupport" />
     <unitInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum" />
+    <unitInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum_PropertySupport" />
   </root>
   <root nodeId="1237896192386">
     <nodeInfo nodeId="1237896192386" fileName="AbstractConceptReference.java" startLine="12" startPosition="59" endLine="13" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

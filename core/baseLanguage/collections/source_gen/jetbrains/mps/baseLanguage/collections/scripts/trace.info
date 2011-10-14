@@ -884,16 +884,8 @@
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="711" startPosition="0" endLine="720" endPosition="0" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="17" startPosition="85" endLine="829" endPosition="7" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="16" startPosition="81" endLine="830" endPosition="3" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="46" startPosition="28" endLine="70" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$2" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="99" startPosition="28" endLine="123" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$4" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="179" startPosition="28" endLine="203" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$7" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="448" startPosition="28" endLine="472" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$17" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="725" startPosition="28" endLine="750" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$27" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="751" startPosition="28" endLine="776" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$28" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="777" startPosition="28" endLine="802" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$29" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="16" startPosition="0" endLine="860" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="19" startPosition="28" endLine="45" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$1" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="124" startPosition="28" endLine="150" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$5" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="232" startPosition="28" endLine="258" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$9" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="259" startPosition="28" endLine="285" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$10" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="286" startPosition="28" endLine="312" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$11" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="313" startPosition="28" endLine="339" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$12" />
@@ -901,20 +893,28 @@
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="367" startPosition="28" endLine="393" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$14" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="394" startPosition="28" endLine="420" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$15" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="421" startPosition="28" endLine="447" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$16" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="448" startPosition="28" endLine="472" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$17" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="473" startPosition="28" endLine="502" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$18" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="503" startPosition="28" endLine="529" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$19" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="46" startPosition="28" endLine="70" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$2" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="530" startPosition="28" endLine="556" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$20" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="557" startPosition="28" endLine="583" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$21" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="584" startPosition="28" endLine="610" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$22" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="611" startPosition="28" endLine="637" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$23" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="638" startPosition="28" endLine="664" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$24" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="803" startPosition="28" endLine="829" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$30" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="71" startPosition="28" endLine="98" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$3" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="151" startPosition="28" endLine="178" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$6" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="204" startPosition="28" endLine="231" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$8" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="473" startPosition="28" endLine="502" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$18" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="665" startPosition="28" endLine="694" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$25" />
     <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="695" startPosition="28" endLine="724" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$26" />
-    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="16" startPosition="0" endLine="860" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="725" startPosition="28" endLine="750" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$27" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="751" startPosition="28" endLine="776" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$28" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="777" startPosition="28" endLine="802" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$29" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="71" startPosition="28" endLine="98" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$3" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="803" startPosition="28" endLine="829" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$30" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="99" startPosition="28" endLine="123" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$4" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="124" startPosition="28" endLine="150" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$5" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="151" startPosition="28" endLine="178" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$6" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="179" startPosition="28" endLine="203" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$7" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="204" startPosition="28" endLine="231" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$8" />
+    <unitInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="232" startPosition="28" endLine="258" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$9" />
   </root>
   <root nodeId="1236863766974">
     <nodeInfo nodeId="1240070059593" fileName="ListMigrationUtil.java" startLine="20" startPosition="129" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1047,35 +1047,35 @@
     </scopeInfo>
     <scopeInfo nodeId="1237030149970" fileName="ListMigrationUtil.java" startLine="98" startPosition="38" endLine="108" endPosition="9" />
     <scopeInfo nodeId="1237037981322" fileName="ListMigrationUtil.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="1237037981323" varName="node" />
       <varInfo nodeId="1237037981325" varName="name" />
+      <varInfo nodeId="1237037981323" varName="node" />
       <varInfo nodeId="1237037981327" varName="params" />
     </scopeInfo>
     <scopeInfo nodeId="1237218573103" fileName="ListMigrationUtil.java" startLine="29" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="1237218573104" varName="node" />
       <varInfo nodeId="1237218573106" varName="name" />
+      <varInfo nodeId="1237218573104" varName="node" />
       <varInfo nodeId="1237218573108" varName="params" />
     </scopeInfo>
     <scopeInfo nodeId="1238772012592" fileName="ListMigrationUtil.java" startLine="40" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="1238772012593" varName="node" />
       <varInfo nodeId="1238772012595" varName="name" />
+      <varInfo nodeId="1238772012593" varName="node" />
       <varInfo nodeId="1238772012597" varName="params" />
     </scopeInfo>
     <scopeInfo nodeId="1237030023768" fileName="ListMigrationUtil.java" startLine="51" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="1237030088159" varName="node" />
       <varInfo nodeId="1237030088162" varName="name" />
+      <varInfo nodeId="1237030088159" varName="node" />
       <varInfo nodeId="1237030088164" varName="params" />
     </scopeInfo>
     <scopeInfo nodeId="1238518113112" fileName="ListMigrationUtil.java" startLine="62" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="1238518113113" varName="node" />
       <varInfo nodeId="1238518113115" varName="name" />
+      <varInfo nodeId="1238518113113" varName="node" />
       <varInfo nodeId="1238518113117" varName="params" />
     </scopeInfo>
     <scopeInfo nodeId="1237030149959" fileName="ListMigrationUtil.java" startLine="90" startPosition="20" endLine="108" endPosition="9" />
     <scopeInfo nodeId="1237031067495" fileName="ListMigrationUtil.java" startLine="114" startPosition="94" endLine="133" endPosition="17" />
     <scopeInfo nodeId="1237031067491" fileName="ListMigrationUtil.java" startLine="113" startPosition="0" endLine="135" endPosition="0">
-      <varInfo nodeId="1237031067493" varName="node" />
       <varInfo nodeId="1237031076908" varName="classifiers" />
+      <varInfo nodeId="1237031067493" varName="node" />
       <varInfo nodeId="1237031314163" varName="params" />
     </scopeInfo>
     <scopeInfo nodeId="1237030149959" fileName="ListMigrationUtil.java" startLine="85" startPosition="5" endLine="109" endPosition="7">
@@ -1086,8 +1086,8 @@
       <varInfo nodeId="1237030149911" varName="declaration" />
     </scopeInfo>
     <scopeInfo nodeId="1237030149899" fileName="ListMigrationUtil.java" startLine="73" startPosition="0" endLine="113" endPosition="0">
-      <varInfo nodeId="1237030149902" varName="node" />
       <varInfo nodeId="1237030149904" varName="name" />
+      <varInfo nodeId="1237030149902" varName="node" />
       <varInfo nodeId="1237030149906" varName="params" />
     </scopeInfo>
     <unitInfo nodeId="1236863766974" fileName="ListMigrationUtil.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ListMigrationUtil" />
@@ -1307,22 +1307,22 @@
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="63" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="1238584067089" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="92" startPosition="52" endLine="99" endPosition="88">
-      <varInfo nodeId="1238584067091" varName="operation" />
       <varInfo nodeId="1238584151460" varName="assignment" />
+      <varInfo nodeId="1238584067091" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="200" startPosition="0" endLine="207" endPosition="0" />
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="213" startPosition="0" endLine="220" endPosition="0" />
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="91" startPosition="0" endLine="101" endPosition="0" />
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="17" startPosition="93" endLine="211" endPosition="7" />
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="16" startPosition="89" endLine="212" endPosition="3" />
+    <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="16" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript" />
+    <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="19" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$1" />
+    <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="47" startPosition="28" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$2" />
+    <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="75" startPosition="28" endLine="105" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$3" />
     <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="106" startPosition="28" endLine="131" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$4" />
     <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="132" startPosition="28" endLine="157" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$5" />
     <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="158" startPosition="28" endLine="183" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$6" />
-    <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="19" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$1" />
-    <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="47" startPosition="28" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$2" />
     <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="184" startPosition="28" endLine="211" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$7" />
-    <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="75" startPosition="28" endLine="105" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$3" />
-    <unitInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="16" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript" />
   </root>
 </debugInfo>
 

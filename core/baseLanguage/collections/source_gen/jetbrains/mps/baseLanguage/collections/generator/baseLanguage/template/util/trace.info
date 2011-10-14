@@ -64,8 +64,8 @@
       <varInfo nodeId="3444116434173277204" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="3002214349487398171" fileName="Values.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="3002214349487398178" varName="to" />
       <varInfo nodeId="3002214349487398175" varName="from" />
+      <varInfo nodeId="3002214349487398178" varName="to" />
     </scopeInfo>
     <unitInfo nodeId="3444116434173277154" fileName="Values.java" startLine="7" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values" />
   </root>

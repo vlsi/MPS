@@ -27,9 +27,9 @@
     <scopeInfo nodeId="1236701463015" fileName="BaseLangInternal.java" startLine="21" startPosition="44" endLine="23" endPosition="43" />
     <scopeInfo nodeId="1236701501695" fileName="BaseLangInternal.java" startLine="24" startPosition="14" endLine="26" endPosition="56" />
     <scopeInfo nodeId="1997029474304170778" fileName="BaseLangInternal.java" startLine="14" startPosition="12" endLine="28" endPosition="77">
+      <varInfo nodeId="1236701430575" varName="className" />
       <varInfo nodeId="1236701436391" varName="packageAndClassName" />
       <varInfo nodeId="1236701413836" varName="packageName" />
-      <varInfo nodeId="1236701430575" varName="className" />
     </scopeInfo>
     <scopeInfo nodeId="1236701327640" fileName="BaseLangInternal.java" startLine="10" startPosition="80" endLine="29" endPosition="5" />
     <scopeInfo nodeId="1236701327640" fileName="BaseLangInternal.java" startLine="9" startPosition="68" endLine="31" endPosition="0">

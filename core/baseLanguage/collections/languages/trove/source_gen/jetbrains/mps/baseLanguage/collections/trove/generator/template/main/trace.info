@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="24" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="QueriesGenerated.java" startLine="170" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a43" />
   <unitInfo fileName="QueriesGenerated.java" startLine="187" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a2a0a43" />
   <unitInfo fileName="QueriesGenerated.java" startLine="204" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a3a0a43" />
   <unitInfo fileName="QueriesGenerated.java" startLine="221" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a4a0a43" />
   <unitInfo fileName="QueriesGenerated.java" startLine="238" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a5a0a43" />
   <unitInfo fileName="QueriesGenerated.java" startLine="255" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a6a0a43" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="24" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated" />
   <root nodeId="5499565529811338419">
     <nodeInfo nodeId="5499565529811713158" fileName="QueriesGenerated.java" startLine="25" startPosition="154" endLine="26" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4737294400113452187" fileName="QueriesGenerated.java" startLine="29" startPosition="154" endLine="30" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

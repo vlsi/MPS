@@ -22,9 +22,9 @@
       <varInfo nodeId="1759628044690734840" varName="inequationsGroup" />
     </scopeInfo>
     <scopeInfo nodeId="1759628044690734773" fileName="TypesLanguageScriptsUtil.java" startLine="17" startPosition="64" endLine="30" endPosition="16">
+      <varInfo nodeId="1759628044690734799" varName="coreTypes" />
       <varInfo nodeId="1759628044690734793" varName="name" />
       <varInfo nodeId="1759628044690734815" varName="registry" />
-      <varInfo nodeId="1759628044690734799" varName="coreTypes" />
     </scopeInfo>
     <scopeInfo nodeId="1759628044690734770" fileName="TypesLanguageScriptsUtil.java" startLine="16" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1759628044690734775" varName="priority" />
@@ -67,8 +67,8 @@
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="32" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="14" startPosition="89" endLine="46" endPosition="7" />
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="13" startPosition="85" endLine="47" endPosition="3" />
-    <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="16" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript$1" />
     <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript" />
+    <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="16" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript$1" />
   </root>
 </debugInfo>
 

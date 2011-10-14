@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Intentions_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.Intentions_ProjectPlugin" />
   <unitInfo fileName="Intentions_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.Intentions_ApplicationPlugin" />
+  <unitInfo fileName="Intentions_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.Intentions_ProjectPlugin" />
   <root nodeId="3464435412756546019">
     <nodeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="19" startPosition="69" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="20" startPosition="40" endLine="21" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -81,8 +81,8 @@
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="54" startPosition="96" endLine="66" endPosition="5" />
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="68" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="53" startPosition="0" endLine="68" endPosition="0" />
-    <unitInfo nodeId="3464435412756546049" fileName="GenerateIntentionAction_Action.java" startLine="58" startPosition="59" endLine="62" endPosition="9" unitName="jetbrains.mps.lang.intentions.plugin.GenerateIntentionAction_Action$1" />
     <unitInfo nodeId="3464435412756546019" fileName="GenerateIntentionAction_Action.java" startLine="19" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.GenerateIntentionAction_Action" />
+    <unitInfo nodeId="3464435412756546049" fileName="GenerateIntentionAction_Action.java" startLine="58" startPosition="59" endLine="62" endPosition="9" unitName="jetbrains.mps.lang.intentions.plugin.GenerateIntentionAction_Action$1" />
   </root>
   <root nodeId="3464435412756546091">
     <nodeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="33" startPosition="76" endLine="34" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -145,17 +145,17 @@
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="39" startPosition="45" endLine="46" endPosition="5" />
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="38" startPosition="0" endLine="47" endPosition="3" />
     <scopeInfo nodeId="3464435412756546094" fileName="GenerationIntentions_ActionGroup.java" startLine="50" startPosition="9" endLine="77" endPosition="9">
-      <varInfo nodeId="3464435412756546128" varName="node" />
-      <varInfo nodeId="3464435412756546117" varName="groupItems" />
-      <varInfo nodeId="3464435412756546101" varName="query" />
-      <varInfo nodeId="3464435412756546143" varName="intentions" />
       <varInfo nodeId="3464435412756546135" varName="context" />
+      <varInfo nodeId="3464435412756546117" varName="groupItems" />
+      <varInfo nodeId="3464435412756546143" varName="intentions" />
+      <varInfo nodeId="3464435412756546128" varName="node" />
+      <varInfo nodeId="3464435412756546101" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="49" startPosition="45" endLine="83" endPosition="5" />
     <scopeInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="48" startPosition="0" endLine="85" endPosition="0" />
+    <unitInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="33" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup" />
     <unitInfo nodeId="3464435412756546181" fileName="GenerationIntentions_ActionGroup.java" startLine="69" startPosition="49" endLine="73" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup$1" />
     <unitInfo nodeId="3464435412756546210" fileName="GenerationIntentions_ActionGroup.java" startLine="73" startPosition="28" endLine="77" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup$2" />
-    <unitInfo nodeId="3464435412756546091" fileName="GenerationIntentions_ActionGroup.java" startLine="33" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup" />
   </root>
   <root nodeId="3464435412756546224">
     <nodeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="26" startPosition="70" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -231,16 +231,16 @@
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="53" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="41" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="66" startPosition="9" endLine="89" endPosition="38">
-      <varInfo nodeId="3464435412756546320" varName="relativePoint" />
       <varInfo nodeId="3464435412756546275" varName="popup" />
+      <varInfo nodeId="3464435412756546320" varName="relativePoint" />
       <varInfo nodeId="3464435412756546228" varName="selectedCell" />
-      <varInfo nodeId="3464435412756546242" varName="y" />
       <varInfo nodeId="3464435412756546236" varName="x" />
+      <varInfo nodeId="3464435412756546242" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="65" startPosition="96" endLine="92" endPosition="5" />
     <scopeInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="64" startPosition="0" endLine="94" endPosition="0" />
-    <unitInfo nodeId="3464435412756546279" fileName="ShowGenerationIntentions_Action.java" startLine="74" startPosition="47" endLine="83" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.ShowGenerationIntentions_Action$1" />
     <unitInfo nodeId="3464435412756546224" fileName="ShowGenerationIntentions_Action.java" startLine="26" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.ShowGenerationIntentions_Action" />
+    <unitInfo nodeId="3464435412756546279" fileName="ShowGenerationIntentions_Action.java" startLine="74" startPosition="47" endLine="83" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.ShowGenerationIntentions_Action$1" />
   </root>
   <root nodeId="3464435412756546339">
     <nodeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="33" startPosition="78" endLine="34" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -304,17 +304,17 @@
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="39" startPosition="47" endLine="46" endPosition="5" />
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="38" startPosition="0" endLine="47" endPosition="3" />
     <scopeInfo nodeId="3464435412756546342" fileName="SurroundWithIntentions_ActionGroup.java" startLine="50" startPosition="9" endLine="78" endPosition="9">
-      <varInfo nodeId="3464435412756546381" varName="node" />
-      <varInfo nodeId="3464435412756546370" varName="groupItems" />
-      <varInfo nodeId="3464435412756546349" varName="query" />
-      <varInfo nodeId="3464435412756546396" varName="intentions" />
       <varInfo nodeId="3464435412756546388" varName="context" />
+      <varInfo nodeId="3464435412756546370" varName="groupItems" />
+      <varInfo nodeId="3464435412756546396" varName="intentions" />
+      <varInfo nodeId="3464435412756546381" varName="node" />
+      <varInfo nodeId="3464435412756546349" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="49" startPosition="45" endLine="84" endPosition="5" />
     <scopeInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="48" startPosition="0" endLine="86" endPosition="0" />
+    <unitInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="33" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.SurroundWithIntentions_ActionGroup" />
     <unitInfo nodeId="3464435412756546434" fileName="SurroundWithIntentions_ActionGroup.java" startLine="70" startPosition="49" endLine="74" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.SurroundWithIntentions_ActionGroup$1" />
     <unitInfo nodeId="3464435412756546463" fileName="SurroundWithIntentions_ActionGroup.java" startLine="74" startPosition="28" endLine="78" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.SurroundWithIntentions_ActionGroup$2" />
-    <unitInfo nodeId="3464435412756546339" fileName="SurroundWithIntentions_ActionGroup.java" startLine="33" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.SurroundWithIntentions_ActionGroup" />
   </root>
   <root nodeId="3464435412756546477">
     <nodeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="28" startPosition="72" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -406,16 +406,16 @@
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="46" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="3464435412756546478" fileName="ShowSurroundWithIntentions_Action.java" startLine="97" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="71" startPosition="9" endLine="92" endPosition="38">
-      <varInfo nodeId="3464435412756546603" varName="relativePoint" />
       <varInfo nodeId="3464435412756546558" varName="popup" />
+      <varInfo nodeId="3464435412756546603" varName="relativePoint" />
       <varInfo nodeId="3464435412756546521" varName="selectedCell" />
-      <varInfo nodeId="3464435412756546533" varName="y" />
       <varInfo nodeId="3464435412756546527" varName="x" />
+      <varInfo nodeId="3464435412756546533" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="70" startPosition="96" endLine="95" endPosition="5" />
     <scopeInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="69" startPosition="0" endLine="97" endPosition="0" />
-    <unitInfo nodeId="3464435412756546562" fileName="ShowSurroundWithIntentions_Action.java" startLine="77" startPosition="47" endLine="86" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.ShowSurroundWithIntentions_Action$1" />
     <unitInfo nodeId="3464435412756546477" fileName="ShowSurroundWithIntentions_Action.java" startLine="28" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.intentions.plugin.ShowSurroundWithIntentions_Action" />
+    <unitInfo nodeId="3464435412756546562" fileName="ShowSurroundWithIntentions_Action.java" startLine="77" startPosition="47" endLine="86" endPosition="7" unitName="jetbrains.mps.lang.intentions.plugin.ShowSurroundWithIntentions_Action$1" />
   </root>
   <root nodeId="3464435412756546630">
     <nodeInfo nodeId="3464435412756546630" fileName="SurroundIntentionAction_Action.java" startLine="17" startPosition="69" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

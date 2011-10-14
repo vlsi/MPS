@@ -91,9 +91,9 @@
     <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="41" startPosition="84" endLine="45" endPosition="16" />
     <scopeInfo nodeId="3514655265371724202" fileName="CreatePropertyPatternVariable_Intention.java" startLine="53" startPosition="76" endLine="57" endPosition="304">
-      <varInfo nodeId="3514655265371756797" varName="propertyName" />
       <varInfo nodeId="3514655265371756789" varName="cell" />
       <varInfo nodeId="8843103228116965301" varName="cellNode" />
+      <varInfo nodeId="3514655265371756797" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="47" startPosition="0" endLine="52" endPosition="0" />

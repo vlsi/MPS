@@ -57,8 +57,8 @@
     <scopeInfo nodeId="5553449326502623316" fileName="ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule.java" startLine="58" startPosition="31" endLine="68" endPosition="20" />
     <scopeInfo nodeId="5553449326502623316" fileName="ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule.java" startLine="44" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="5553449326502623316" fileName="ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule.java" startLine="57" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="5553449326502623316" fileName="ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.stubs.typesystem.ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule$QuotationClass_2ew8he_a0a0a" />
     <unitInfo nodeId="5553449326502623316" fileName="ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.stubs.typesystem.ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule" />
+    <unitInfo nodeId="5553449326502623316" fileName="ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.stubs.typesystem.ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule$QuotationClass_2ew8he_a0a0a" />
   </root>
   <root nodeId="972176972348203852">
     <nodeInfo nodeId="972176972348206638" fileName="typeof_Stereotype_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -154,9 +154,9 @@
     <scopeInfo nodeId="972176972348203852" fileName="typeof_Stereotype_InferenceRule.java" startLine="81" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="972176972348203852" fileName="typeof_Stereotype_InferenceRule.java" startLine="93" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="972176972348203852" fileName="typeof_Stereotype_InferenceRule.java" startLine="20" startPosition="0" endLine="33" endPosition="0" />
+    <unitInfo nodeId="972176972348203852" fileName="typeof_Stereotype_InferenceRule.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.stubs.typesystem.typeof_Stereotype_InferenceRule" />
     <unitInfo nodeId="972176972348203852" fileName="typeof_Stereotype_InferenceRule.java" startLine="49" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.stubs.typesystem.typeof_Stereotype_InferenceRule$QuotationClass_oclwdn_a0a0a0" />
     <unitInfo nodeId="972176972348203852" fileName="typeof_Stereotype_InferenceRule.java" startLine="78" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.stubs.typesystem.typeof_Stereotype_InferenceRule$QuotationClass_oclwdn_a0a1a0" />
-    <unitInfo nodeId="972176972348203852" fileName="typeof_Stereotype_InferenceRule.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.stubs.typesystem.typeof_Stereotype_InferenceRule" />
   </root>
 </debugInfo>
 

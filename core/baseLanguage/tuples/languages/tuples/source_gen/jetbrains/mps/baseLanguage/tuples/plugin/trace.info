@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Tuples_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.Tuples_ProjectPlugin" />
-  <unitInfo fileName="Tuples_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.Tuples_ApplicationPlugin" />
   <unitInfo fileName="CustomViewersInitializer_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.CustomViewersInitializer_CustomApplicationPlugin" />
+  <unitInfo fileName="Tuples_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.Tuples_ApplicationPlugin" />
+  <unitInfo fileName="Tuples_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.Tuples_ProjectPlugin" />
   <root nodeId="2603491487853694400">
     <nodeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="31" startPosition="58" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -65,11 +65,11 @@
     <scopeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="30" startPosition="108" endLine="41" endPosition="0" />
     <scopeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="29" startPosition="67" endLine="41" endPosition="14" />
     <scopeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="27" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="50" startPosition="60" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory$1" />
-    <unitInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="67" startPosition="60" endLine="71" endPosition="7" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory$2" />
-    <unitInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="30" startPosition="58" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory$1" />
-    <unitInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory$IndexedTupleViewerWrapper" />
     <unitInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory" />
+    <unitInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="50" startPosition="60" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory$1" />
+    <unitInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="30" startPosition="58" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory$1" />
+    <unitInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="67" startPosition="60" endLine="71" endPosition="7" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory$2" />
+    <unitInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory$IndexedTupleViewerWrapper" />
   </root>
   <root nodeId="4712912993948287708">
     <nodeInfo nodeId="4712912993948287708" fileName="TuplesWatchables.java" startLine="13" startPosition="71" endLine="14" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourCategory" />
@@ -84,8 +84,8 @@
     <scopeInfo nodeId="4712912993948287708" fileName="TuplesWatchables.java" startLine="9" startPosition="31" endLine="11" endPosition="3" />
     <scopeInfo nodeId="4712912993948287708" fileName="TuplesWatchables.java" startLine="15" startPosition="0" endLine="18" endPosition="5" />
     <scopeInfo nodeId="4712912993948287708" fileName="TuplesWatchables.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <unitInfo nodeId="4712912993948287708" fileName="TuplesWatchables.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.TuplesWatchables$MyWatchable_element" />
     <unitInfo nodeId="4712912993948287708" fileName="TuplesWatchables.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.TuplesWatchables" />
+    <unitInfo nodeId="4712912993948287708" fileName="TuplesWatchables.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.TuplesWatchables$MyWatchable_element" />
   </root>
 </debugInfo>
 

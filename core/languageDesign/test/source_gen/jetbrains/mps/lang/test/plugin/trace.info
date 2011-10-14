@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Test_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.test.plugin.Test_ProjectPlugin" />
   <unitInfo fileName="Test_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.test.plugin.Test_ApplicationPlugin" />
+  <unitInfo fileName="Test_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.test.plugin.Test_ProjectPlugin" />
   <root nodeId="1224594241712">
     <nodeInfo nodeId="1224594241712" fileName="RunTestInMPS_Action.java" startLine="28" startPosition="58" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1224594241712" fileName="RunTestInMPS_Action.java" startLine="29" startPosition="40" endLine="30" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -106,13 +106,13 @@
     <scopeInfo nodeId="1224594241712" fileName="RunTestInMPS_Action.java" startLine="41" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1224594241712" fileName="RunTestInMPS_Action.java" startLine="83" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="1224598709254" fileName="RunTestInMPS_Action.java" startLine="97" startPosition="9" endLine="114" endPosition="21">
-      <varInfo nodeId="1224600415985" varName="testName" />
-      <varInfo nodeId="7189304461457269348" varName="ctor" />
       <varInfo nodeId="1224598709273" varName="c" />
-      <varInfo nodeId="1224599962066" varName="thread" />
+      <varInfo nodeId="1224600432262" varName="className" />
+      <varInfo nodeId="7189304461457269348" varName="ctor" />
       <varInfo nodeId="7189304461457269411" varName="meth" />
       <varInfo nodeId="7189304461457269374" varName="testClass" />
-      <varInfo nodeId="1224600432262" varName="className" />
+      <varInfo nodeId="1224600415985" varName="testName" />
+      <varInfo nodeId="1224599962066" varName="thread" />
     </scopeInfo>
     <scopeInfo nodeId="1224595034233" fileName="RunTestInMPS_Action.java" startLine="96" startPosition="81" endLine="117" endPosition="5" />
     <scopeInfo nodeId="1224595034231" fileName="RunTestInMPS_Action.java" startLine="95" startPosition="0" endLine="119" endPosition="0">
@@ -120,8 +120,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1224594241712" fileName="RunTestInMPS_Action.java" startLine="54" startPosition="95" endLine="81" endPosition="16" />
     <scopeInfo nodeId="1224594241712" fileName="RunTestInMPS_Action.java" startLine="53" startPosition="0" endLine="83" endPosition="0" />
-    <unitInfo nodeId="1224599969188" fileName="RunTestInMPS_Action.java" startLine="105" startPosition="37" endLine="113" endPosition="7" unitName="jetbrains.mps.lang.test.plugin.RunTestInMPS_Action$1" />
     <unitInfo nodeId="1224594241712" fileName="RunTestInMPS_Action.java" startLine="28" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.test.plugin.RunTestInMPS_Action" />
+    <unitInfo nodeId="1224599969188" fileName="RunTestInMPS_Action.java" startLine="105" startPosition="37" endLine="113" endPosition="7" unitName="jetbrains.mps.lang.test.plugin.RunTestInMPS_Action$1" />
   </root>
   <root nodeId="1224594330528">
     <nodeInfo nodeId="1224594330528" fileName="EditorInternalAddition_ActionGroup.java" startLine="8" startPosition="78" endLine="9" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

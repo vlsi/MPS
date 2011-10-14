@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Quotation_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.Quotation_ProjectPlugin" />
   <unitInfo fileName="Quotation_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.Quotation_ApplicationPlugin" />
+  <unitInfo fileName="Quotation_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.Quotation_ProjectPlugin" />
   <root nodeId="3981318653438276869">
     <nodeInfo nodeId="3981318653438276869" fileName="ShowMetaLevel_Action.java" startLine="19" startPosition="59" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="3981318653438276869" fileName="ShowMetaLevel_Action.java" startLine="20" startPosition="40" endLine="21" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

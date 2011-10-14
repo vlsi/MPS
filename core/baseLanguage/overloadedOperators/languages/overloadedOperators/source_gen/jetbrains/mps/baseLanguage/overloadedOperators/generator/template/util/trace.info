@@ -98,12 +98,12 @@
     <scopeInfo nodeId="8177032930858801937" fileName="BinaryOperationUtil.java" startLine="42" startPosition="38" endLine="48" endPosition="7" />
     <scopeInfo nodeId="4598061146291975628" fileName="BinaryOperationUtil.java" startLine="57" startPosition="38" endLine="63" endPosition="7" />
     <scopeInfo nodeId="2673276898228732390" fileName="BinaryOperationUtil.java" startLine="115" startPosition="85" endLine="121" endPosition="7">
-      <varInfo nodeId="2673276898228732402" varName="reversed" />
       <varInfo nodeId="2673276898228732421" varName="operator" />
+      <varInfo nodeId="2673276898228732402" varName="reversed" />
     </scopeInfo>
     <scopeInfo nodeId="2673276898228732459" fileName="BinaryOperationUtil.java" startLine="93" startPosition="0" endLine="100" endPosition="0">
-      <varInfo nodeId="2673276898228732498" varName="subOperator" />
       <varInfo nodeId="2673276898228732507" varName="reversed" />
+      <varInfo nodeId="2673276898228732498" varName="subOperator" />
       <varInfo nodeId="2673276898228732500" varName="superOperator" />
     </scopeInfo>
     <scopeInfo nodeId="8177032930858801936" fileName="BinaryOperationUtil.java" startLine="41" startPosition="5" endLine="49" endPosition="5">
@@ -129,31 +129,31 @@
       <varInfo nodeId="2673276898228719428" varName="superOperator" />
     </scopeInfo>
     <scopeInfo nodeId="4598061146291975012" fileName="BinaryOperationUtil.java" startLine="52" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="4598061146291975599" varName="node" />
       <varInfo nodeId="4598061146291975601" varName="leftType" />
+      <varInfo nodeId="4598061146291975599" varName="node" />
       <varInfo nodeId="4598061146291975607" varName="operators" />
       <varInfo nodeId="4598061146291975605" varName="rightType" />
     </scopeInfo>
     <scopeInfo nodeId="8177032930858801870" fileName="BinaryOperationUtil.java" startLine="20" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="8177032930858801907" varName="node" />
       <varInfo nodeId="20865837589516559" varName="leftType" />
-      <varInfo nodeId="20865837589516557" varName="rightType" />
+      <varInfo nodeId="8177032930858801907" varName="node" />
       <varInfo nodeId="8177032930858801914" varName="operator" />
+      <varInfo nodeId="20865837589516557" varName="rightType" />
     </scopeInfo>
     <scopeInfo nodeId="8177032930858801917" fileName="BinaryOperationUtil.java" startLine="36" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="8177032930858801922" varName="node" />
       <varInfo nodeId="20865837589516568" varName="leftType" />
+      <varInfo nodeId="8177032930858801922" varName="node" />
       <varInfo nodeId="8177032930858801926" varName="operators" />
       <varInfo nodeId="20865837589516566" varName="rightType" />
     </scopeInfo>
     <scopeInfo nodeId="2511109317222758463" fileName="BinaryOperationUtil.java" startLine="101" startPosition="112" endLine="125" endPosition="18">
+      <varInfo nodeId="2673276898228719358" varName="operatorMap" />
       <varInfo nodeId="2673276898228775775" varName="result" />
       <varInfo nodeId="2673276898228719435" varName="resultReversed" />
-      <varInfo nodeId="2673276898228719358" varName="operatorMap" />
     </scopeInfo>
     <scopeInfo nodeId="2511109317222758460" fileName="BinaryOperationUtil.java" startLine="100" startPosition="0" endLine="127" endPosition="0">
-      <varInfo nodeId="5277715307557177068" varName="node" />
       <varInfo nodeId="20865837589516578" varName="leftType" />
+      <varInfo nodeId="5277715307557177068" varName="node" />
       <varInfo nodeId="2511109317222758565" varName="operators" />
       <varInfo nodeId="20865837589516576" varName="rightType" />
     </scopeInfo>

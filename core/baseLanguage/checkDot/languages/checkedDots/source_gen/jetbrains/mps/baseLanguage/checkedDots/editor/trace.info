@@ -107,8 +107,8 @@
     <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_DeleteOperation$CheckedDot_Actions_DeleteOperation_DELETE" />
     <unitInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_DeleteOperation" />
+    <unitInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_DeleteOperation$CheckedDot_Actions_DeleteOperation_DELETE" />
   </root>
   <root nodeId="5314141825909190989">
     <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="14" startPosition="95" endLine="15" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -137,8 +137,8 @@
       <varInfo nodeId="5314141825909197142" varName="dotExpression" />
     </scopeInfo>
     <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="18" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked$CheckedDot_Actions_MakeUnchecked_DELETE" />
     <unitInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked" />
+    <unitInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="18" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked$CheckedDot_Actions_MakeUnchecked_DELETE" />
   </root>
 </debugInfo>
 

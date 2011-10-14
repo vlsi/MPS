@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="36" startPosition="0" endLine="1030" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="865" startPosition="0" endLine="903" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a0a0a0a81" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="923" startPosition="0" endLine="941" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a0a0xb" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="904" startPosition="0" endLine="922" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a0a94" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="942" startPosition="0" endLine="960" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a1a0xb" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="1012" startPosition="0" endLine="1029" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a09" />
   <unitInfo fileName="QueriesGenerated.java" startLine="961" startPosition="0" endLine="977" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a78" />
   <unitInfo fileName="QueriesGenerated.java" startLine="978" startPosition="0" endLine="994" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a88" />
   <unitInfo fileName="QueriesGenerated.java" startLine="995" startPosition="0" endLine="1011" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a98" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="1012" startPosition="0" endLine="1029" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a09" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="904" startPosition="0" endLine="922" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a0a94" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="923" startPosition="0" endLine="941" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a0a0xb" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="942" startPosition="0" endLine="960" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a1a0xb" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="865" startPosition="0" endLine="903" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a0a0a0a81" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="36" startPosition="0" endLine="1030" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated" />
   <root nodeId="1189697446192">
     <nodeInfo nodeId="6528618226609204858" fileName="QueriesGenerated.java" startLine="65" startPosition="154" endLine="66" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1199462161181" fileName="QueriesGenerated.java" startLine="69" startPosition="148" endLine="70" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -226,16 +226,16 @@
     </scopeInfo>
     <scopeInfo nodeId="7110754463748604114" fileName="QueriesGenerated.java" startLine="122" startPosition="5" endLine="129" endPosition="7" />
     <scopeInfo nodeId="1198673830802" fileName="QueriesGenerated.java" startLine="792" startPosition="149" endLine="800" endPosition="18">
-      <varInfo nodeId="1198673856745" varName="result" />
       <varInfo nodeId="1198673856751" varName="requiredUserEnteredArguments" />
+      <varInfo nodeId="1198673856745" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1197992301258" fileName="QueriesGenerated.java" startLine="811" startPosition="149" endLine="819" endPosition="18">
-      <varInfo nodeId="1197992501751" varName="result" />
       <varInfo nodeId="1197992349424" varName="requiredUserEnteredArguments" />
+      <varInfo nodeId="1197992501751" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1198600029015" fileName="QueriesGenerated.java" startLine="822" startPosition="149" endLine="830" endPosition="18">
-      <varInfo nodeId="1198600062743" varName="result" />
       <varInfo nodeId="1198600062749" varName="requiredUserEnteredArguments" />
+      <varInfo nodeId="1198600062743" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7110754463748604113" fileName="QueriesGenerated.java" startLine="121" startPosition="154" endLine="131" endPosition="16" />
     <scopeInfo nodeId="1201177824404" fileName="QueriesGenerated.java" startLine="777" startPosition="149" endLine="789" endPosition="18">
@@ -332,8 +332,8 @@
     <scopeInfo nodeId="3302086321379147989" fileName="QueriesGenerated.java" startLine="741" startPosition="150" endLine="742" endPosition="83" />
     <scopeInfo nodeId="5934994956485965450" fileName="QueriesGenerated.java" startLine="745" startPosition="150" endLine="746" endPosition="119" />
     <scopeInfo nodeId="3060724424231928585" fileName="QueriesGenerated.java" startLine="235" startPosition="154" endLine="238" endPosition="143">
-      <varInfo nodeId="3302086321381316515" varName="refactoringParameter" />
       <varInfo nodeId="3302086321381316525" varName="refactoring" />
+      <varInfo nodeId="3302086321381316515" varName="refactoringParameter" />
     </scopeInfo>
   </root>
   <root nodeId="3242588059496756721">
@@ -389,8 +389,8 @@
     <scopeInfo nodeId="3644668945280073846" fileName="QueriesGenerated.java" startLine="725" startPosition="150" endLine="726" endPosition="125" />
     <scopeInfo nodeId="3644668945280073867" fileName="QueriesGenerated.java" startLine="729" startPosition="150" endLine="730" endPosition="175" />
     <scopeInfo nodeId="3644668945280073884" fileName="QueriesGenerated.java" startLine="229" startPosition="154" endLine="232" endPosition="144">
-      <varInfo nodeId="3302086321381313309" varName="refactoringParameter" />
       <varInfo nodeId="3302086321381316488" varName="refactoring" />
+      <varInfo nodeId="3302086321381313309" varName="refactoringParameter" />
     </scopeInfo>
   </root>
   <root nodeId="3644668945280073957">

@@ -64,8 +64,8 @@
     <scopeInfo nodeId="1218796573288" fileName="typeof_Query_node_Parameter_InferenceRule.java" startLine="63" startPosition="49" endLine="73" endPosition="20" />
     <scopeInfo nodeId="1218796573288" fileName="typeof_Query_node_Parameter_InferenceRule.java" startLine="49" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1218796573288" fileName="typeof_Query_node_Parameter_InferenceRule.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
-    <unitInfo nodeId="1218796573288" fileName="typeof_Query_node_Parameter_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.typesystem.typeof_Query_node_Parameter_InferenceRule$QuotationClass_yud2ar_a0a1a0" />
     <unitInfo nodeId="1218796573288" fileName="typeof_Query_node_Parameter_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.typesystem.typeof_Query_node_Parameter_InferenceRule" />
+    <unitInfo nodeId="1218796573288" fileName="typeof_Query_node_Parameter_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.typesystem.typeof_Query_node_Parameter_InferenceRule$QuotationClass_yud2ar_a0a1a0" />
   </root>
   <root nodeId="5046156961652249696">
     <nodeInfo nodeId="5046156961652249706" fileName="typeof_AbstractQueryFunction_InferenceRule.java" startLine="25" startPosition="116" endLine="26" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -137,8 +137,8 @@
     <scopeInfo nodeId="5046156961652249740" fileName="typeof_AbstractQueryFunction_InferenceRule.java" startLine="37" startPosition="12" endLine="52" endPosition="7" />
     <scopeInfo nodeId="5046156961652249741" fileName="typeof_AbstractQueryFunction_InferenceRule.java" startLine="37" startPosition="12" endLine="52" endPosition="7" />
     <scopeInfo nodeId="5046156961652249697" fileName="typeof_AbstractQueryFunction_InferenceRule.java" startLine="25" startPosition="116" endLine="64" endPosition="5">
-      <varInfo nodeId="5046156961652249713" varName="returnStatements" />
       <varInfo nodeId="5046156961652249707" varName="expectedRetType" />
+      <varInfo nodeId="5046156961652249713" varName="returnStatements" />
     </scopeInfo>
     <scopeInfo nodeId="5046156961652249696" fileName="typeof_AbstractQueryFunction_InferenceRule.java" startLine="24" startPosition="0" endLine="66" endPosition="0" />
     <unitInfo nodeId="5046156961652249696" fileName="typeof_AbstractQueryFunction_InferenceRule.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.typesystem.typeof_AbstractQueryFunction_InferenceRule" />

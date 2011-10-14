@@ -114,8 +114,8 @@
     <scopeInfo nodeId="1239207077016" fileName="QueriesUtil.java" startLine="102" startPosition="114" endLine="105" endPosition="7" />
     <scopeInfo nodeId="1239207395025" fileName="QueriesUtil.java" startLine="120" startPosition="114" endLine="123" endPosition="7" />
     <scopeInfo nodeId="1168979165565" fileName="QueriesUtil.java" startLine="141" startPosition="109" endLine="144" endPosition="77">
-      <varInfo nodeId="1170702261831" varName="defMember" />
       <varInfo nodeId="1220269378440" varName="dataTypeDeclaration" />
+      <varInfo nodeId="1170702261831" varName="defMember" />
     </scopeInfo>
     <scopeInfo nodeId="1168979519280" fileName="QueriesUtil.java" startLine="147" startPosition="106" endLine="150" endPosition="81">
       <varInfo nodeId="1220269492074" varName="datatype" />
@@ -149,16 +149,16 @@
       <varInfo nodeId="1168968630548" varName="parm" />
     </scopeInfo>
     <scopeInfo nodeId="1168979165563" fileName="QueriesUtil.java" startLine="140" startPosition="0" endLine="146" endPosition="0">
-      <varInfo nodeId="1168979234216" varName="op" />
       <varInfo nodeId="1168979379803" varName="generator" />
+      <varInfo nodeId="1168979234216" varName="op" />
     </scopeInfo>
     <scopeInfo nodeId="1168979519274" fileName="QueriesUtil.java" startLine="146" startPosition="0" endLine="152" endPosition="0">
-      <varInfo nodeId="1168979519275" varName="op" />
       <varInfo nodeId="1168979519277" varName="generator" />
+      <varInfo nodeId="1168979519275" varName="op" />
     </scopeInfo>
     <scopeInfo nodeId="1239205674054" fileName="QueriesUtil.java" startLine="21" startPosition="84" endLine="29" endPosition="18">
-      <varInfo nodeId="1239205980407" varName="result" />
       <varInfo nodeId="1239205751279" varName="parm_ConceptList" />
+      <varInfo nodeId="1239205980407" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1168968334480" fileName="QueriesUtil.java" startLine="131" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="1168968445647" varName="op" />
@@ -171,21 +171,21 @@
       <varInfo nodeId="3769812235505815463" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1239206506017" fileName="QueriesUtil.java" startLine="58" startPosition="91" endLine="71" endPosition="16">
-      <varInfo nodeId="1239206931282" varName="operationClass" />
       <varInfo nodeId="1239206637809" varName="methodName" />
+      <varInfo nodeId="1239206931282" varName="operationClass" />
     </scopeInfo>
     <scopeInfo nodeId="2648652578096508177" fileName="QueriesUtil.java" startLine="74" startPosition="91" endLine="87" endPosition="16">
-      <varInfo nodeId="2648652578096508207" varName="operationClass" />
       <varInfo nodeId="2648652578096508179" varName="methodName" />
+      <varInfo nodeId="2648652578096508207" varName="operationClass" />
     </scopeInfo>
     <scopeInfo nodeId="3769812235505815451" fileName="QueriesUtil.java" startLine="31" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="3769812235505815490" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1239207301825" fileName="QueriesUtil.java" startLine="110" startPosition="92" endLine="125" endPosition="16">
-      <varInfo nodeId="1239207395011" varName="operationClass" />
       <varInfo nodeId="1239207394967" varName="datatype" />
-      <varInfo nodeId="1239207424155" varName="primitiveDatatype" />
       <varInfo nodeId="1239207394975" varName="methodName" />
+      <varInfo nodeId="1239207395011" varName="operationClass" />
+      <varInfo nodeId="1239207424155" varName="primitiveDatatype" />
     </scopeInfo>
     <scopeInfo nodeId="1239206506014" fileName="QueriesUtil.java" startLine="57" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1239206579910" varName="operation" />
@@ -196,9 +196,9 @@
       <varInfo nodeId="2648652578096508234" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="1239207076972" fileName="QueriesUtil.java" startLine="90" startPosition="94" endLine="107" endPosition="16">
-      <varInfo nodeId="1239207077002" varName="operationClass" />
       <varInfo nodeId="1239207160871" varName="datatype" />
       <varInfo nodeId="1239207076974" varName="methodName" />
+      <varInfo nodeId="1239207077002" varName="operationClass" />
     </scopeInfo>
     <scopeInfo nodeId="1239207301822" fileName="QueriesUtil.java" startLine="109" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="1239207338828" varName="operation" />

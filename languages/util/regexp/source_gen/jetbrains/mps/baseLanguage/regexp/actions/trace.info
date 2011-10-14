@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="575" startPosition="34" endLine="579" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$14" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="726" startPosition="34" endLine="730" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$22" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="761" startPosition="34" endLine="765" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$24" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="690" startPosition="34" endLine="695" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$20" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="617" startPosition="53" endLine="624" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$16" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="366" startPosition="53" endLine="375" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$7" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="389" startPosition="53" endLine="398" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$8" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="412" startPosition="53" endLine="421" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$9" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="39" startPosition="0" endLine="1080" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="150" startPosition="53" endLine="175" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="435" startPosition="53" endLine="444" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$10" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="454" startPosition="51" endLine="483" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$11" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="487" startPosition="51" endLine="519" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$12" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="523" startPosition="51" endLine="571" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$13" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="575" startPosition="34" endLine="579" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$14" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="583" startPosition="53" endLine="598" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$15" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="617" startPosition="53" endLine="624" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$16" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="629" startPosition="51" endLine="643" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$17" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="652" startPosition="34" endLine="667" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$18" />
   <unitInfo fileName="QueriesGenerated.java" startLine="671" startPosition="53" endLine="680" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$19" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="187" startPosition="53" endLine="213" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$2" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="690" startPosition="34" endLine="695" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$20" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="699" startPosition="53" endLine="721" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$21" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="726" startPosition="34" endLine="730" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$22" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="734" startPosition="53" endLine="756" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$23" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="761" startPosition="34" endLine="765" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$24" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="769" startPosition="53" endLine="791" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$25" />
   <unitInfo fileName="QueriesGenerated.java" startLine="810" startPosition="53" endLine="819" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$26" />
   <unitInfo fileName="QueriesGenerated.java" startLine="838" startPosition="53" endLine="847" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$27" />
   <unitInfo fileName="QueriesGenerated.java" startLine="866" startPosition="53" endLine="875" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$28" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="629" startPosition="51" endLine="643" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$17" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="583" startPosition="53" endLine="598" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$15" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="652" startPosition="34" endLine="667" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$18" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="1063" startPosition="0" endLine="1079" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$QuotationClass_x583g4_a1a0a0a" />
   <unitInfo fileName="QueriesGenerated.java" startLine="885" startPosition="51" endLine="902" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$29" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="225" startPosition="53" endLine="247" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$3" />
   <unitInfo fileName="QueriesGenerated.java" startLine="911" startPosition="51" endLine="928" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$30" />
   <unitInfo fileName="QueriesGenerated.java" startLine="937" startPosition="51" endLine="954" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$31" />
   <unitInfo fileName="QueriesGenerated.java" startLine="963" startPosition="51" endLine="980" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$32" />
   <unitInfo fileName="QueriesGenerated.java" startLine="989" startPosition="51" endLine="1006" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$33" />
   <unitInfo fileName="QueriesGenerated.java" startLine="1015" startPosition="51" endLine="1032" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$34" />
   <unitInfo fileName="QueriesGenerated.java" startLine="1041" startPosition="51" endLine="1058" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$35" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="225" startPosition="53" endLine="247" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$3" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="699" startPosition="53" endLine="721" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$21" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="734" startPosition="53" endLine="756" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$23" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="769" startPosition="53" endLine="791" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$25" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="150" startPosition="53" endLine="175" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$1" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="187" startPosition="53" endLine="213" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$2" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="254" startPosition="53" endLine="281" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$4" />
   <unitInfo fileName="QueriesGenerated.java" startLine="288" startPosition="53" endLine="314" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$5" />
   <unitInfo fileName="QueriesGenerated.java" startLine="321" startPosition="53" endLine="347" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$6" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="254" startPosition="53" endLine="281" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$4" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="454" startPosition="51" endLine="483" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$11" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="487" startPosition="51" endLine="519" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$12" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="523" startPosition="51" endLine="571" endPosition="7" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$13" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="39" startPosition="0" endLine="1080" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="366" startPosition="53" endLine="375" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$7" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="389" startPosition="53" endLine="398" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$8" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="412" startPosition="53" endLine="421" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$9" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="1063" startPosition="0" endLine="1079" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated$QuotationClass_x583g4_a1a0a0a" />
   <root nodeId="1174484726883">
     <nodeInfo nodeId="6129327962764136332" fileName="QueriesGenerated.java" startLine="56" startPosition="196" endLine="57" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6129327962763602706" fileName="QueriesGenerated.java" startLine="369" startPosition="13" endLine="370" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -226,8 +226,8 @@
     <scopeInfo nodeId="1227876797204" fileName="QueriesGenerated.java" startLine="657" startPosition="45" endLine="662" endPosition="15" />
     <scopeInfo nodeId="1227876797203" fileName="QueriesGenerated.java" startLine="657" startPosition="45" endLine="663" endPosition="26" />
     <scopeInfo nodeId="1182890259438" fileName="QueriesGenerated.java" startLine="672" startPosition="53" endLine="678" endPosition="29">
-      <varInfo nodeId="1182890689928" varName="result" />
       <varInfo nodeId="1182890812060" varName="newRegexp" />
+      <varInfo nodeId="1182890689928" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3050481019131578428" fileName="QueriesGenerated.java" startLine="700" startPosition="53" endLine="707" endPosition="23">
       <varInfo nodeId="3050481019131578436" varName="ref" />
@@ -255,8 +255,8 @@
       <varInfo nodeId="5334827395122388943" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1182890259436" fileName="QueriesGenerated.java" startLine="653" startPosition="35" endLine="665" endPosition="30">
-      <varInfo nodeId="1182890525522" varName="regexps" />
       <varInfo nodeId="1182890339091" varName="excludeList" />
+      <varInfo nodeId="1182890525522" varName="regexps" />
     </scopeInfo>
     <scopeInfo nodeId="5334827395122644683" fileName="QueriesGenerated.java" startLine="524" startPosition="51" endLine="542" endPosition="22">
       <varInfo nodeId="5334827395122644685" varName="node" />

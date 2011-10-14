@@ -93,8 +93,8 @@
     <nodeInfo nodeId="1174924153372" fileName="QueriesGenerated.java" startLine="97" startPosition="242" endLine="98" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1174924152207" fileName="QueriesGenerated.java" startLine="93" startPosition="148" endLine="98" endPosition="65">
       <varInfo nodeId="1174924153351" varName="c" />
-      <varInfo nodeId="1222874311687" varName="parensList" />
       <varInfo nodeId="1174924153345" varName="parens" />
+      <varInfo nodeId="1222874311687" varName="parensList" />
     </scopeInfo>
   </root>
   <root nodeId="1175155416895">
@@ -149,8 +149,8 @@
     <scopeInfo nodeId="1175170026389" fileName="QueriesGenerated.java" startLine="160" startPosition="145" endLine="161" endPosition="137" />
     <scopeInfo nodeId="1175170026398" fileName="QueriesGenerated.java" startLine="121" startPosition="148" endLine="126" endPosition="65">
       <varInfo nodeId="5588026655405965642" varName="c" />
-      <varInfo nodeId="5588026655405965647" varName="parensList" />
       <varInfo nodeId="5588026655405965636" varName="parens" />
+      <varInfo nodeId="5588026655405965647" varName="parensList" />
     </scopeInfo>
   </root>
   <root nodeId="1179358112803">

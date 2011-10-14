@@ -75,14 +75,14 @@
     </scopeInfo>
     <scopeInfo nodeId="7193161318487124696" fileName="ContractsUtils.java" startLine="62" startPosition="70" endLine="71" endPosition="5" />
     <scopeInfo nodeId="8892289062514538588" fileName="ContractsUtils.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="8892289062514559951" varName="method" />
       <varInfo nodeId="8892289062514559953" varName="filter" />
+      <varInfo nodeId="8892289062514559951" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="5441818957473952095" fileName="ContractsUtils.java" startLine="55" startPosition="72" endLine="72" endPosition="22">
-      <varInfo nodeId="5441818957475661253" varName="scope" />
+      <varInfo nodeId="2034418810855952546" varName="overridenMethods" />
       <varInfo nodeId="5441818957475729623" varName="parent" />
       <varInfo nodeId="2203155934613891626" varName="resultList" />
-      <varInfo nodeId="2034418810855952546" varName="overridenMethods" />
+      <varInfo nodeId="5441818957475661253" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5441818957473952092" fileName="ContractsUtils.java" startLine="54" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="5441818957473952198" varName="method" />

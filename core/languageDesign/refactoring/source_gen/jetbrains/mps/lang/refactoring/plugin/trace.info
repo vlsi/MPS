@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Refactoring_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ProjectPlugin" />
   <unitInfo fileName="Refactoring_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ApplicationPlugin" />
+  <unitInfo fileName="Refactoring_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ProjectPlugin" />
   <root nodeId="1106479162954038584">
     <nodeInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="23" startPosition="70" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="24" startPosition="40" endLine="25" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -94,20 +94,20 @@
       <varInfo nodeId="1106479162954057271" varName="isOneTarget" />
     </scopeInfo>
     <scopeInfo nodeId="1106479162954057197" fileName="GenericRefactoringAction_Action.java" startLine="38" startPosition="7" endLine="63" endPosition="99">
-      <varInfo nodeId="1106479162954057226" varName="text" />
-      <varInfo nodeId="1106479162954058856" varName="oneEntity" />
-      <varInfo nodeId="1106479162954058863" varName="entities" />
       <varInfo nodeId="1106479162954058913" varName="disabled" />
+      <varInfo nodeId="1106479162954058863" varName="entities" />
+      <varInfo nodeId="1106479162954058856" varName="oneEntity" />
       <varInfo nodeId="1106479162954058850" varName="refTarget" />
+      <varInfo nodeId="1106479162954057226" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="78" startPosition="96" endLine="103" endPosition="5" />
     <scopeInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="37" startPosition="9" endLine="64" endPosition="7" />
     <scopeInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="77" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="36" startPosition="89" endLine="68" endPosition="5" />
     <scopeInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="35" startPosition="0" endLine="70" endPosition="0" />
+    <unitInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="23" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.GenericRefactoringAction_Action" />
     <unitInfo nodeId="1106479162954057373" fileName="GenericRefactoringAction_Action.java" startLine="80" startPosition="48" endLine="84" endPosition="7" unitName="jetbrains.mps.lang.refactoring.plugin.GenericRefactoringAction_Action$1" />
     <unitInfo nodeId="1106479162954057358" fileName="GenericRefactoringAction_Action.java" startLine="96" startPosition="10" endLine="100" endPosition="7" unitName="jetbrains.mps.lang.refactoring.plugin.GenericRefactoringAction_Action$2" />
-    <unitInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="23" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.GenericRefactoringAction_Action" />
   </root>
   <root nodeId="1106479162954058963">
     <nodeInfo nodeId="1106479162954059028" fileName="GenericRefactoringHelper.java" startLine="23" startPosition="55" endLine="24" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -164,9 +164,9 @@
       <varInfo nodeId="1106479162954059012" varName="refactoring" />
     </scopeInfo>
     <scopeInfo nodeId="1106479162954059051" fileName="GenericRefactoringHelper.java" startLine="31" startPosition="126" endLine="47" endPosition="15">
+      <varInfo nodeId="1106479162954059060" varName="list" />
       <varInfo nodeId="1106479162954059068" varName="res" />
       <varInfo nodeId="1106479162954059053" varName="single" />
-      <varInfo nodeId="1106479162954059060" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="1106479162954059516" fileName="GenericRefactoringHelper.java" startLine="29" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1106479162954059040" varName="e" />
@@ -208,8 +208,8 @@
     <scopeInfo nodeId="1106479162954059190" fileName="Default_KeymapChanges.java" startLine="14" startPosition="62" endLine="20" endPosition="3" />
     <scopeInfo nodeId="1106479162954059190" fileName="Default_KeymapChanges.java" startLine="34" startPosition="62" endLine="42" endPosition="21" />
     <scopeInfo nodeId="1106479162954059190" fileName="Default_KeymapChanges.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
-    <unitInfo nodeId="1106479162954059190" fileName="Default_KeymapChanges.java" startLine="30" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Default_KeymapChanges$GenericRefactoringAction_ShortcutChange_qjewi8_a" />
     <unitInfo nodeId="1106479162954059190" fileName="Default_KeymapChanges.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Default_KeymapChanges" />
+    <unitInfo nodeId="1106479162954059190" fileName="Default_KeymapChanges.java" startLine="30" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Default_KeymapChanges$GenericRefactoringAction_ShortcutChange_qjewi8_a" />
   </root>
   <root nodeId="1229259662341">
     <nodeInfo nodeId="1229259662341" fileName="NodeRefactoring_ActionGroup.java" startLine="16" startPosition="71" endLine="17" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

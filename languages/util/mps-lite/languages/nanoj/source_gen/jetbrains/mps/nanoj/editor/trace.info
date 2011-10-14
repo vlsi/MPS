@@ -339,8 +339,8 @@
     <scopeInfo nodeId="689680155165915376" fileName="NanoStatementList_Editor.java" startLine="24" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="689680155165915376" fileName="NanoStatementList_Editor.java" startLine="79" startPosition="132" endLine="88" endPosition="7" />
     <scopeInfo nodeId="689680155165915376" fileName="NanoStatementList_Editor.java" startLine="78" startPosition="0" endLine="90" endPosition="0" />
-    <unitInfo nodeId="689680155165915376" fileName="NanoStatementList_Editor.java" startLine="56" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoStatementList_Editor$bodyListHandler_9k6qx_b0" />
     <unitInfo nodeId="689680155165915376" fileName="NanoStatementList_Editor.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoStatementList_Editor" />
+    <unitInfo nodeId="689680155165915376" fileName="NanoStatementList_Editor.java" startLine="56" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoStatementList_Editor$bodyListHandler_9k6qx_b0" />
   </root>
   <root nodeId="689680155165915383">
     <nodeInfo nodeId="689680155165915383" fileName="NanoExpression_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -445,8 +445,8 @@
     <scopeInfo nodeId="689680155165915387" fileName="VarDeclReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="689680155165915387" fileName="VarDeclReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="689680155165915387" fileName="VarDeclReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="689680155165915387" fileName="VarDeclReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.nanoj.editor.VarDeclReference_Editor$_Inline_kyygu1_a0a" />
     <unitInfo nodeId="689680155165915387" fileName="VarDeclReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.nanoj.editor.VarDeclReference_Editor" />
+    <unitInfo nodeId="689680155165915387" fileName="VarDeclReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.nanoj.editor.VarDeclReference_Editor$_Inline_kyygu1_a0a" />
   </root>
 </debugInfo>
 

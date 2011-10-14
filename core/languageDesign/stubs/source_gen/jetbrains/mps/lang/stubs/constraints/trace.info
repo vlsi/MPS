@@ -40,8 +40,8 @@
     <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="31" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="24" startPosition="82" endLine="54" endPosition="22" />
     <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="22" startPosition="0" endLine="56" endPosition="0" />
-    <unitInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="26" startPosition="41" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.stubs.constraints.LanguageRef_Constraints$1" />
     <unitInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.LanguageRef_Constraints" />
+    <unitInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="26" startPosition="41" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.stubs.constraints.LanguageRef_Constraints$1" />
   </root>
   <root nodeId="7076427504342075467">
     <nodeInfo nodeId="7076427504342075467" fileName="LibraryStubDescriptor_Constraints.java" startLine="19" startPosition="46" endLine="20" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -82,8 +82,8 @@
     <scopeInfo nodeId="7076427504342075467" fileName="LibraryStubDescriptor_Constraints.java" startLine="31" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="7076427504342075467" fileName="LibraryStubDescriptor_Constraints.java" startLine="24" startPosition="82" endLine="54" endPosition="22" />
     <scopeInfo nodeId="7076427504342075467" fileName="LibraryStubDescriptor_Constraints.java" startLine="22" startPosition="0" endLine="56" endPosition="0" />
-    <unitInfo nodeId="7076427504342075467" fileName="LibraryStubDescriptor_Constraints.java" startLine="26" startPosition="37" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.stubs.constraints.LibraryStubDescriptor_Constraints$1" />
     <unitInfo nodeId="7076427504342075467" fileName="LibraryStubDescriptor_Constraints.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.LibraryStubDescriptor_Constraints" />
+    <unitInfo nodeId="7076427504342075467" fileName="LibraryStubDescriptor_Constraints.java" startLine="26" startPosition="37" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.stubs.constraints.LibraryStubDescriptor_Constraints$1" />
   </root>
   <root nodeId="972176972348253740">
     <nodeInfo nodeId="972176972348253740" fileName="Stereotype_Constraints.java" startLine="14" startPosition="71" endLine="15" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />

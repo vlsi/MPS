@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="872" startPosition="0" endLine="888" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.QueriesGenerated$QuotationClass_x583g4_a1a0a0ud" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="48" startPosition="0" endLine="889" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.QueriesGenerated" />
   <unitInfo fileName="QueriesGenerated.java" startLine="818" startPosition="0" endLine="835" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.QueriesGenerated$QuotationClass_x583g4_a0a0a0dd" />
   <unitInfo fileName="QueriesGenerated.java" startLine="836" startPosition="0" endLine="853" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.QueriesGenerated$QuotationClass_x583g4_a0a0a0ed" />
   <unitInfo fileName="QueriesGenerated.java" startLine="854" startPosition="0" endLine="871" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.QueriesGenerated$QuotationClass_x583g4_a0a0e0sd" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="48" startPosition="0" endLine="889" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="872" startPosition="0" endLine="888" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.QueriesGenerated$QuotationClass_x583g4_a1a0a0ud" />
   <root nodeId="1347772807199312495">
     <nodeInfo nodeId="1563971100923563867" fileName="QueriesGenerated.java" startLine="763" startPosition="155" endLine="764" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1563971100923549099" fileName="QueriesGenerated.java" startLine="763" startPosition="155" endLine="764" endPosition="118" />

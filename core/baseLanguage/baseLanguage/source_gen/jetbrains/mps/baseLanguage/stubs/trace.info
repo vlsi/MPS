@@ -65,8 +65,8 @@
       <varInfo nodeId="4063774604867752532" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="4063774604867744445" fileName="JavaStubs.java" startLine="31" startPosition="85" endLine="38" endPosition="18">
-      <varInfo nodeId="4063774604867752372" varName="result" />
       <varInfo nodeId="4063774604867752379" varName="cp" />
+      <varInfo nodeId="4063774604867752372" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4063774604867752408" fileName="JavaStubs.java" startLine="41" startPosition="50" endLine="48" endPosition="16" />
     <scopeInfo nodeId="4063774604867753520" fileName="JavaStubs.java" startLine="71" startPosition="61" endLine="79" endPosition="26">
@@ -77,8 +77,8 @@
       <varInfo nodeId="4063774604867752410" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="4063774604867753518" fileName="JavaStubs.java" startLine="70" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="4063774604867753522" varName="startPath" />
       <varInfo nodeId="4063774604867753524" varName="prefix" />
+      <varInfo nodeId="4063774604867753522" varName="startPath" />
     </scopeInfo>
     <scopeInfo nodeId="4063774604867752493" fileName="JavaStubs.java" startLine="53" startPosition="63" endLine="65" endPosition="105">
       <varInfo nodeId="4063774604867752495" varName="modelReference" />
@@ -90,12 +90,12 @@
       <varInfo nodeId="4063774604867752481" varName="subpackage" />
     </scopeInfo>
     <scopeInfo nodeId="4063774604867752447" fileName="JavaStubs.java" startLine="50" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="4063774604867752456" varName="result" />
-      <varInfo nodeId="4063774604867752473" varName="module" />
-      <varInfo nodeId="4063774604867752460" varName="startPath" />
       <varInfo nodeId="4063774604867752463" varName="cp" />
-      <varInfo nodeId="4063774604867752466" varName="prefix" />
       <varInfo nodeId="4063774604867752470" varName="languageId" />
+      <varInfo nodeId="4063774604867752473" varName="module" />
+      <varInfo nodeId="4063774604867752466" varName="prefix" />
+      <varInfo nodeId="4063774604867752456" varName="result" />
+      <varInfo nodeId="4063774604867752460" varName="startPath" />
     </scopeInfo>
     <unitInfo nodeId="4063774604867744443" fileName="JavaStubs.java" startLine="27" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
   </root>
@@ -219,8 +219,8 @@
       <varInfo nodeId="8382013213871414512" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213871414609" fileName="AllMembersJavaStubs.java" startLine="31" startPosition="85" endLine="38" endPosition="18">
-      <varInfo nodeId="8382013213871414611" varName="result" />
       <varInfo nodeId="8382013213871414618" varName="cp" />
+      <varInfo nodeId="8382013213871414611" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213871414431" fileName="AllMembersJavaStubs.java" startLine="41" startPosition="50" endLine="48" endPosition="16" />
     <scopeInfo nodeId="8382013213871414568" fileName="AllMembersJavaStubs.java" startLine="71" startPosition="61" endLine="79" endPosition="26">
@@ -231,8 +231,8 @@
       <varInfo nodeId="8382013213871414452" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213871414567" fileName="AllMembersJavaStubs.java" startLine="70" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="8382013213871414604" varName="startPath" />
       <varInfo nodeId="8382013213871414606" varName="prefix" />
+      <varInfo nodeId="8382013213871414604" varName="startPath" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213871414474" fileName="AllMembersJavaStubs.java" startLine="53" startPosition="63" endLine="65" endPosition="115">
       <varInfo nodeId="8382013213871414476" varName="modelReference" />
@@ -244,12 +244,12 @@
       <varInfo nodeId="8382013213871414462" varName="subpackage" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213871414454" fileName="AllMembersJavaStubs.java" startLine="50" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="8382013213871414554" varName="result" />
-      <varInfo nodeId="8382013213871414565" varName="module" />
-      <varInfo nodeId="8382013213871414557" varName="startPath" />
       <varInfo nodeId="8382013213871414559" varName="cp" />
-      <varInfo nodeId="8382013213871414561" varName="prefix" />
       <varInfo nodeId="8382013213871414563" varName="languageId" />
+      <varInfo nodeId="8382013213871414565" varName="module" />
+      <varInfo nodeId="8382013213871414561" varName="prefix" />
+      <varInfo nodeId="8382013213871414554" varName="result" />
+      <varInfo nodeId="8382013213871414557" varName="startPath" />
     </scopeInfo>
     <unitInfo nodeId="8382013213871414428" fileName="AllMembersJavaStubs.java" startLine="27" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs" />
   </root>

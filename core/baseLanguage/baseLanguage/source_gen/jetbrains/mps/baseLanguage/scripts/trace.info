@@ -40,8 +40,8 @@
     <scopeInfo nodeId="1240068519431" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="26" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1240068519431" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="12" startPosition="85" endLine="43" endPosition="7" />
     <scopeInfo nodeId="1240068519431" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="11" startPosition="81" endLine="44" endPosition="3" />
-    <unitInfo nodeId="1240068519431" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="14" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript$1" />
     <unitInfo nodeId="1240068519431" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript" />
+    <unitInfo nodeId="1240068519431" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="14" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript$1" />
   </root>
   <root nodeId="1704189004094297789">
     <nodeInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="14" startPosition="89" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -132,10 +132,10 @@
     <scopeInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="84" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="14" startPosition="89" endLine="99" endPosition="7" />
     <scopeInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="13" startPosition="85" endLine="100" endPosition="3" />
+    <unitInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="13" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript" />
     <unitInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="16" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript$1" />
     <unitInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="44" startPosition="28" endLine="71" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript$2" />
     <unitInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="72" startPosition="28" endLine="99" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript$3" />
-    <unitInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="13" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript" />
   </root>
   <root nodeId="4581730695772514123">
     <nodeInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="22" startPosition="87" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -273,14 +273,14 @@
     <scopeInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="144" startPosition="0" endLine="148" endPosition="0" />
     <scopeInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="159" startPosition="7" endLine="163" endPosition="31" />
     <scopeInfo nodeId="4900012836837561041" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="61" startPosition="52" endLine="67" endPosition="54">
-      <varInfo nodeId="4900012836837561052" varName="ref" />
       <varInfo nodeId="4900012836837561043" varName="declaration" />
       <varInfo nodeId="4900012836837561064" varName="inc" />
+      <varInfo nodeId="4900012836837561052" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="4900012836837561170" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="111" startPosition="52" endLine="117" endPosition="54">
-      <varInfo nodeId="4900012836837561181" varName="ref" />
       <varInfo nodeId="4900012836837561193" varName="dec" />
       <varInfo nodeId="4900012836837561172" varName="declaration" />
+      <varInfo nodeId="4900012836837561181" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="158" startPosition="32" endLine="164" endPosition="7" />
     <scopeInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="60" startPosition="0" endLine="69" endPosition="0" />
@@ -292,18 +292,18 @@
       <varInfo nodeId="4900012836837561114" varName="plusExpr" />
     </scopeInfo>
     <scopeInfo nodeId="4900012836837561210" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="87" startPosition="59" endLine="108" endPosition="20">
-      <varInfo nodeId="4900012836837561243" varName="minusExpr" />
       <varInfo nodeId="4900012836837561223" varName="declaration" />
+      <varInfo nodeId="4900012836837561243" varName="minusExpr" />
     </scopeInfo>
     <scopeInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="36" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="86" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="22" startPosition="87" endLine="148" endPosition="7" />
     <scopeInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="21" startPosition="83" endLine="149" endPosition="3" />
-    <unitInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="151" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$QuotationClass_3alopx_a0a0a0d0a0a0d0a" />
-    <unitInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="124" startPosition="28" endLine="148" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$3" />
+    <unitInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="21" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript" />
     <unitInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="24" startPosition="28" endLine="73" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$1" />
     <unitInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="74" startPosition="28" endLine="123" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$2" />
-    <unitInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="21" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript" />
+    <unitInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="124" startPosition="28" endLine="148" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$3" />
+    <unitInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="151" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$QuotationClass_3alopx_a0a0a0d0a0a0d0a" />
   </root>
   <root nodeId="8647043020514320142">
     <nodeInfo nodeId="8647043020514320142" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="13" startPosition="89" endLine="14" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -335,8 +335,8 @@
     <scopeInfo nodeId="8647043020514320142" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="8647043020514320142" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="13" startPosition="89" endLine="39" endPosition="7" />
     <scopeInfo nodeId="8647043020514320142" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="12" startPosition="85" endLine="40" endPosition="3" />
-    <unitInfo nodeId="8647043020514320142" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="15" startPosition="28" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ConvertAnnotationInstances_MigrationScript$1" />
     <unitInfo nodeId="8647043020514320142" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.ConvertAnnotationInstances_MigrationScript" />
+    <unitInfo nodeId="8647043020514320142" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="15" startPosition="28" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ConvertAnnotationInstances_MigrationScript$1" />
   </root>
 </debugInfo>
 

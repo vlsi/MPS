@@ -463,13 +463,13 @@
     <scopeInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="185" startPosition="0" endLine="199" endPosition="0" />
     <scopeInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="46" startPosition="90" endLine="69" endPosition="22" />
     <scopeInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="45" startPosition="0" endLine="71" endPosition="0" />
+    <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="28" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor" />
     <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="275" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$authorListHandler_q2jz9e_b2a" />
+    <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="224" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$bodyListHandler_q2jz9e_b0" />
+    <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="419" startPosition="0" endLine="454" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$paramListHandler_q2jz9e_f2a" />
+    <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="383" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$seeListHandler_q2jz9e_e2a" />
     <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="311" startPosition="0" endLine="346" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$sinceListHandler_q2jz9e_c2a" />
     <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="347" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$versionListHandler_q2jz9e_d2a" />
-    <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="383" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$seeListHandler_q2jz9e_e2a" />
-    <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="419" startPosition="0" endLine="454" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$paramListHandler_q2jz9e_f2a" />
-    <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="224" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$bodyListHandler_q2jz9e_b0" />
-    <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="28" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor" />
   </root>
   <root nodeId="2217234381367049475">
     <nodeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -557,8 +557,8 @@
     <scopeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="85" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="44" startPosition="95" endLine="60" endPosition="22" />
     <scopeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="43" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="63" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor$lineListHandler_xp1rdu_b0" />
     <unitInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="23" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor" />
+    <unitInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="63" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor$lineListHandler_xp1rdu_b0" />
   </root>
   <root nodeId="2217234381367188010">
     <nodeInfo nodeId="2217234381367188010" fileName="FieldDocReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -633,8 +633,8 @@
     <scopeInfo nodeId="2217234381367188010" fileName="FieldDocReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="2217234381367188010" fileName="FieldDocReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="2217234381367188010" fileName="FieldDocReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="2217234381367188010" fileName="FieldDocReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocReference_Editor$_Inline_mgmaof_a0a" />
     <unitInfo nodeId="2217234381367188010" fileName="FieldDocReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocReference_Editor" />
+    <unitInfo nodeId="2217234381367188010" fileName="FieldDocReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocReference_Editor$_Inline_mgmaof_a0a" />
   </root>
   <root nodeId="2217234381367190446">
     <nodeInfo nodeId="2217234381367190446" fileName="SeeBlockDocTag_Editor.java" startLine="44" startPosition="58" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -787,8 +787,8 @@
     <scopeInfo nodeId="2217234381367530197" fileName="MethodDocReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="2217234381367530197" fileName="MethodDocReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="2217234381367530197" fileName="MethodDocReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="2217234381367530197" fileName="MethodDocReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocReference_Editor$_Inline_t5duq4_a0a" />
     <unitInfo nodeId="2217234381367530197" fileName="MethodDocReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocReference_Editor" />
+    <unitInfo nodeId="2217234381367530197" fileName="MethodDocReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocReference_Editor$_Inline_t5duq4_a0a" />
   </root>
   <root nodeId="2217234381367530214">
     <nodeInfo nodeId="2217234381367530214" fileName="ClassifierDocReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -863,8 +863,8 @@
     <scopeInfo nodeId="2217234381367530214" fileName="ClassifierDocReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="2217234381367530214" fileName="ClassifierDocReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="2217234381367530214" fileName="ClassifierDocReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="2217234381367530214" fileName="ClassifierDocReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocReference_Editor$_Inline_yqqfxo_a0a" />
     <unitInfo nodeId="2217234381367530214" fileName="ClassifierDocReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocReference_Editor" />
+    <unitInfo nodeId="2217234381367530214" fileName="ClassifierDocReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocReference_Editor$_Inline_yqqfxo_a0a" />
   </root>
   <root nodeId="2217234381368368304">
     <nodeInfo nodeId="2217234381368368304" fileName="BaseInlineDocTag_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1006,8 +1006,8 @@
     <scopeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="63" startPosition="95" endLine="79" endPosition="22" />
     <scopeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="62" startPosition="0" endLine="81" endPosition="0" />
-    <unitInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="82" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor$lineListHandler_bju3wr_c0" />
     <unitInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="24" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor" />
+    <unitInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="82" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor$lineListHandler_bju3wr_c0" />
   </root>
   <root nodeId="2565027568480537754">
     <nodeInfo nodeId="2565027568480537754" fileName="ValueInlineDocTag_Actions.java" startLine="13" startPosition="95" endLine="14" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1027,8 +1027,8 @@
     <scopeInfo nodeId="2565027568480537754" fileName="ValueInlineDocTag_Actions.java" startLine="12" startPosition="40" endLine="16" endPosition="0" />
     <scopeInfo nodeId="2565027568480537754" fileName="ValueInlineDocTag_Actions.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2565027568480537754" fileName="ValueInlineDocTag_Actions.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <unitInfo nodeId="2565027568480537754" fileName="ValueInlineDocTag_Actions.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ValueInlineDocTag_Actions$ValueInlineDocTag_Actions_RIGHT_TRANSFORM" />
     <unitInfo nodeId="2565027568480537754" fileName="ValueInlineDocTag_Actions.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ValueInlineDocTag_Actions" />
+    <unitInfo nodeId="2565027568480537754" fileName="ValueInlineDocTag_Actions.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ValueInlineDocTag_Actions$ValueInlineDocTag_Actions_RIGHT_TRANSFORM" />
   </root>
   <root nodeId="2565027568480905752">
     <nodeInfo nodeId="2565027568480905752" fileName="CodeSnippet_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1125,8 +1125,8 @@
     <scopeInfo nodeId="2565027568480905752" fileName="CodeSnippet_Editor.java" startLine="56" startPosition="91" endLine="68" endPosition="22" />
     <scopeInfo nodeId="2565027568480905752" fileName="CodeSnippet_Editor.java" startLine="93" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="2565027568480905752" fileName="CodeSnippet_Editor.java" startLine="55" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="2565027568480905752" fileName="CodeSnippet_Editor.java" startLine="71" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeSnippet_Editor$statementListHandler_jmxmb2_b0" />
     <unitInfo nodeId="2565027568480905752" fileName="CodeSnippet_Editor.java" startLine="24" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeSnippet_Editor" />
+    <unitInfo nodeId="2565027568480905752" fileName="CodeSnippet_Editor.java" startLine="71" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeSnippet_Editor$statementListHandler_jmxmb2_b0" />
   </root>
   <root nodeId="2668265993332352057">
     <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="24" startPosition="39" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1392,8 +1392,8 @@
     <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="195" startPosition="0" endLine="200" endPosition="0" />
     <scopeInfo nodeId="677166607849361520" fileName="TextCommentLinePart_KeyMap.java" startLine="221" startPosition="61" endLine="226" endPosition="0" />
     <scopeInfo nodeId="677166607848001776" fileName="TextCommentLinePart_KeyMap.java" startLine="64" startPosition="146" endLine="70" endPosition="79">
-      <varInfo nodeId="677166607848011995" varName="editorCell" />
       <varInfo nodeId="7903528363752588030" varName="caretPosition" />
+      <varInfo nodeId="677166607848011995" varName="editorCell" />
       <varInfo nodeId="677166607848001778" varName="nextLine" />
     </scopeInfo>
     <scopeInfo nodeId="677166607849364201" fileName="TextCommentLinePart_KeyMap.java" startLine="207" startPosition="58" endLine="213" endPosition="11" />
@@ -1414,14 +1414,14 @@
     <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="87" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="180" startPosition="0" endLine="195" endPosition="0" />
     <scopeInfo nodeId="677166607849361599" fileName="TextCommentLinePart_KeyMap.java" startLine="241" startPosition="33" endLine="256" endPosition="99">
+      <varInfo nodeId="677166607849361601" varName="curLine" />
       <varInfo nodeId="677166607849361625" varName="index" />
       <varInfo nodeId="677166607849361610" varName="nextLine" />
-      <varInfo nodeId="677166607849361601" varName="curLine" />
     </scopeInfo>
     <scopeInfo nodeId="2668265993332362654" fileName="TextCommentLinePart_KeyMap.java" startLine="127" startPosition="16" endLine="144" endPosition="17">
-      <varInfo nodeId="2668265993332376897" varName="prevLine" />
-      <varInfo nodeId="2668265993332376912" varName="index" />
       <varInfo nodeId="2668265993332376890" varName="curLine" />
+      <varInfo nodeId="2668265993332376912" varName="index" />
+      <varInfo nodeId="2668265993332376897" varName="prevLine" />
     </scopeInfo>
     <scopeInfo nodeId="2668265993332362751" fileName="TextCommentLinePart_KeyMap.java" startLine="146" startPosition="14" endLine="163" endPosition="15" />
     <scopeInfo nodeId="677166607849361689" fileName="TextCommentLinePart_KeyMap.java" startLine="261" startPosition="16" endLine="278" endPosition="17" />
@@ -1430,8 +1430,8 @@
     <scopeInfo nodeId="2668265993332362606" fileName="TextCommentLinePart_KeyMap.java" startLine="116" startPosition="24" endLine="145" endPosition="9" />
     <scopeInfo nodeId="677166607849361546" fileName="TextCommentLinePart_KeyMap.java" startLine="227" startPosition="31" endLine="260" endPosition="11" />
     <scopeInfo nodeId="2668265993332352061" fileName="TextCommentLinePart_KeyMap.java" startLine="108" startPosition="146" endLine="164" endPosition="7">
-      <varInfo nodeId="2668265993332362577" varName="isFirstLine" />
       <varInfo nodeId="2668265993332364351" varName="caret" />
+      <varInfo nodeId="2668265993332362577" varName="isFirstLine" />
       <varInfo nodeId="2668265993332362574" varName="isFirstPart" />
       <varInfo nodeId="2835762905325592877" varName="nodeToSelect" />
     </scopeInfo>
@@ -1442,16 +1442,16 @@
     </scopeInfo>
     <scopeInfo nodeId="677166607849351213" fileName="TextCommentLinePart_KeyMap.java" startLine="201" startPosition="146" endLine="283" endPosition="7">
       <varInfo nodeId="677166607849361443" varName="caret" />
-      <varInfo nodeId="677166607849363893" varName="selectedCell" />
       <varInfo nodeId="677166607849361439" varName="nodeToSelect" />
+      <varInfo nodeId="677166607849363893" varName="selectedCell" />
     </scopeInfo>
     <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="200" startPosition="0" endLine="285" endPosition="0" />
+    <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="23" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap" />
     <unitInfo nodeId="677166607849361520" fileName="TextCommentLinePart_KeyMap.java" startLine="221" startPosition="49" endLine="226" endPosition="9" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$1" />
     <unitInfo nodeId="677166607849361598" fileName="TextCommentLinePart_KeyMap.java" startLine="240" startPosition="63" endLine="258" endPosition="13" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$2" />
     <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="35" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action0" />
     <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="78" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action1" />
     <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="172" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action2" />
-    <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="23" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap" />
   </root>
   <root nodeId="4021391592913766809">
     <nodeInfo nodeId="4021391592913766809" fileName="StaticFieldDocReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1526,8 +1526,8 @@
     <scopeInfo nodeId="4021391592913766809" fileName="StaticFieldDocReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="4021391592913766809" fileName="StaticFieldDocReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="4021391592913766809" fileName="StaticFieldDocReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="4021391592913766809" fileName="StaticFieldDocReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.StaticFieldDocReference_Editor$_Inline_np8u6u_a0a" />
     <unitInfo nodeId="4021391592913766809" fileName="StaticFieldDocReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.StaticFieldDocReference_Editor" />
+    <unitInfo nodeId="4021391592913766809" fileName="StaticFieldDocReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.StaticFieldDocReference_Editor$_Inline_np8u6u_a0a" />
   </root>
   <root nodeId="4730661099054379107">
     <nodeInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1587,8 +1587,8 @@
     <scopeInfo nodeId="4941637334112852301" fileName="IntlineTagCommentLinePart_Actions.java" startLine="15" startPosition="48" endLine="19" endPosition="0" />
     <scopeInfo nodeId="4941637334112852301" fileName="IntlineTagCommentLinePart_Actions.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="4941637334113609265" fileName="IntlineTagCommentLinePart_Actions.java" startLine="35" startPosition="122" endLine="42" endPosition="9">
-      <varInfo nodeId="4941637334113609276" varName="part2" />
       <varInfo nodeId="4941637334113609267" varName="part1" />
+      <varInfo nodeId="4941637334113609276" varName="part2" />
     </scopeInfo>
     <scopeInfo nodeId="4941637334113609264" fileName="IntlineTagCommentLinePart_Actions.java" startLine="34" startPosition="39" endLine="43" endPosition="7">
       <varInfo nodeId="4941637334113609310" varName="i" />
@@ -1597,8 +1597,8 @@
       <varInfo nodeId="4941637334113609254" varName="commentLine" />
     </scopeInfo>
     <scopeInfo nodeId="4941637334112852301" fileName="IntlineTagCommentLinePart_Actions.java" startLine="30" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="4941637334112852301" fileName="IntlineTagCommentLinePart_Actions.java" startLine="20" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.IntlineTagCommentLinePart_Actions$IntlineTagCommentLinePart_Actions_DELETE" />
     <unitInfo nodeId="4941637334112852301" fileName="IntlineTagCommentLinePart_Actions.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.IntlineTagCommentLinePart_Actions" />
+    <unitInfo nodeId="4941637334112852301" fileName="IntlineTagCommentLinePart_Actions.java" startLine="20" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.IntlineTagCommentLinePart_Actions$IntlineTagCommentLinePart_Actions_DELETE" />
   </root>
   <root nodeId="5349172909345532803">
     <nodeInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="120" startPosition="67" endLine="120" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2157,14 +2157,14 @@
     <scopeInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="221" startPosition="0" endLine="243" endPosition="0" />
     <scopeInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="48" startPosition="90" endLine="77" endPosition="22" />
     <scopeInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" />
-    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="327" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$authorListHandler_ls0i5e_b2a" />
-    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="363" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$sinceListHandler_ls0i5e_c2a" />
-    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="399" startPosition="0" endLine="434" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$versionListHandler_ls0i5e_d2a" />
-    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="435" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$seeListHandler_ls0i5e_e2a" />
-    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="471" startPosition="0" endLine="506" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$paramListHandler_ls0i5e_f2a" />
-    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="507" startPosition="0" endLine="542" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$throwsTagListHandler_ls0i5e_g2a" />
-    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="276" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$bodyListHandler_ls0i5e_b0" />
     <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="30" startPosition="0" endLine="543" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor" />
+    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="327" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$authorListHandler_ls0i5e_b2a" />
+    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="276" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$bodyListHandler_ls0i5e_b0" />
+    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="471" startPosition="0" endLine="506" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$paramListHandler_ls0i5e_f2a" />
+    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="435" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$seeListHandler_ls0i5e_e2a" />
+    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="363" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$sinceListHandler_ls0i5e_c2a" />
+    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="507" startPosition="0" endLine="542" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$throwsTagListHandler_ls0i5e_g2a" />
+    <unitInfo nodeId="5349172909345532803" fileName="MethodDocComment_Editor.java" startLine="399" startPosition="0" endLine="434" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$versionListHandler_ls0i5e_d2a" />
   </root>
   <root nodeId="5349172909345532827">
     <nodeInfo nodeId="5349172909345532827" fileName="AuthorBlockDocTag_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2444,8 +2444,8 @@
       <varInfo nodeId="2668265993332135347" varName="tagPart" />
     </scopeInfo>
     <scopeInfo nodeId="677166607849581575" fileName="TextCommentPartUtil.java" startLine="29" startPosition="28" endLine="35" endPosition="13">
-      <varInfo nodeId="7903528363752367940" varName="nextLine" />
       <varInfo nodeId="677166607849581577" varName="codeSnippet" />
+      <varInfo nodeId="7903528363752367940" varName="nextLine" />
     </scopeInfo>
     <scopeInfo nodeId="677166607849581641" fileName="TextCommentPartUtil.java" startLine="40" startPosition="69" endLine="47" endPosition="0" />
     <scopeInfo nodeId="2668265993332135209" fileName="TextCommentPartUtil.java" startLine="53" startPosition="94" endLine="61" endPosition="62">
@@ -2457,34 +2457,34 @@
       <varInfo nodeId="677166607849581638" varName="htmlElement" />
     </scopeInfo>
     <scopeInfo nodeId="2668265993332135206" fileName="TextCommentPartUtil.java" startLine="52" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="2668265993332135285" varName="text" />
-      <varInfo nodeId="2668265993332135282" varName="node" />
       <varInfo nodeId="2668265993332135278" varName="index1" />
       <varInfo nodeId="677166607849476863" varName="index2" />
+      <varInfo nodeId="2668265993332135282" varName="node" />
+      <varInfo nodeId="2668265993332135285" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="677166607848012432" fileName="TextCommentPartUtil.java" startLine="64" startPosition="111" endLine="82" endPosition="20">
-      <varInfo nodeId="677166607848012483" varName="thisLine" />
+      <varInfo nodeId="677166607848012515" varName="indexInParent" />
       <varInfo nodeId="677166607848012458" varName="leftPart" />
       <varInfo nodeId="677166607848012492" varName="nextLine" />
-      <varInfo nodeId="677166607848012515" varName="indexInParent" />
       <varInfo nodeId="677166607848012476" varName="rightPart" />
+      <varInfo nodeId="677166607848012483" varName="thisLine" />
     </scopeInfo>
     <scopeInfo nodeId="677166607848012429" fileName="TextCommentPartUtil.java" startLine="63" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="677166607848012450" varName="text" />
-      <varInfo nodeId="677166607848012446" varName="node" />
       <varInfo nodeId="677166607848012448" varName="index1" />
       <varInfo nodeId="7903528363752578379" varName="index2" />
+      <varInfo nodeId="677166607848012446" varName="node" />
+      <varInfo nodeId="677166607848012450" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="2668265993332126256" fileName="TextCommentPartUtil.java" startLine="19" startPosition="107" endLine="50" endPosition="5">
       <varInfo nodeId="2668265993332134707" varName="index" />
     </scopeInfo>
     <scopeInfo nodeId="2668265993332134247" fileName="TextCommentPartUtil.java" startLine="18" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="2668265993332134266" varName="node" />
-      <varInfo nodeId="2668265993332134270" varName="newText" />
       <varInfo nodeId="2668265993332134264" varName="editorContext" />
+      <varInfo nodeId="2668265993332134270" varName="newText" />
+      <varInfo nodeId="2668265993332134266" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="677166607849581641" fileName="TextCommentPartUtil.java" startLine="40" startPosition="57" endLine="47" endPosition="7" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentPartUtil$1" />
     <unitInfo nodeId="6253469183661714779" fileName="TextCommentPartUtil.java" startLine="15" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentPartUtil" />
+    <unitInfo nodeId="677166607849581641" fileName="TextCommentPartUtil.java" startLine="40" startPosition="57" endLine="47" endPosition="7" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentPartUtil$1" />
   </root>
   <root nodeId="6612597108003615645">
     <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="48" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2786,10 +2786,10 @@
     <scopeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="160" startPosition="0" endLine="183" endPosition="0" />
     <scopeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="183" startPosition="0" endLine="206" endPosition="0" />
     <scopeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="206" startPosition="0" endLine="229" endPosition="0" />
+    <unitInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="35" startPosition="0" endLine="288" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor" />
     <unitInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="234" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor$HTMLElement_name_cellMenu_a0b0a" />
     <unitInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="243" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor$HTMLElement_name_cellMenu_a0b0a_0" />
     <unitInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="252" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor$lineListHandler_h096ql_d0a" />
-    <unitInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="35" startPosition="0" endLine="288" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor" />
   </root>
   <root nodeId="6832197706140518111">
     <nodeInfo nodeId="6832197706140518111" fileName="DocTypeParameterReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2864,8 +2864,8 @@
     <scopeInfo nodeId="6832197706140518111" fileName="DocTypeParameterReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="6832197706140518111" fileName="DocTypeParameterReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="6832197706140518111" fileName="DocTypeParameterReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="6832197706140518111" fileName="DocTypeParameterReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocTypeParameterReference_Editor$_Inline_9ukojg_a0a" />
     <unitInfo nodeId="6832197706140518111" fileName="DocTypeParameterReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocTypeParameterReference_Editor" />
+    <unitInfo nodeId="6832197706140518111" fileName="DocTypeParameterReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocTypeParameterReference_Editor$_Inline_9ukojg_a0a" />
   </root>
   <root nodeId="6832197706140518117">
     <nodeInfo nodeId="6832197706140518117" fileName="DocMethodParameterReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2940,8 +2940,8 @@
     <scopeInfo nodeId="6832197706140518117" fileName="DocMethodParameterReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="6832197706140518117" fileName="DocMethodParameterReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="6832197706140518117" fileName="DocMethodParameterReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="6832197706140518117" fileName="DocMethodParameterReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocMethodParameterReference_Editor$_Inline_q8vom0_a0a" />
     <unitInfo nodeId="6832197706140518117" fileName="DocMethodParameterReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocMethodParameterReference_Editor" />
+    <unitInfo nodeId="6832197706140518117" fileName="DocMethodParameterReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocMethodParameterReference_Editor$_Inline_q8vom0_a0a" />
   </root>
   <root nodeId="6832197706140745184">
     <nodeInfo nodeId="6832197706140745184" fileName="BaseParameterReference_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3362,12 +3362,12 @@
     <scopeInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="168" startPosition="0" endLine="182" endPosition="0" />
     <scopeInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="46" startPosition="90" endLine="66" endPosition="22" />
     <scopeInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="45" startPosition="0" endLine="68" endPosition="0" />
+    <unitInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="28" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor" />
     <unitInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="254" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$authorListHandler_c4imx1_b2a" />
+    <unitInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="203" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$bodyListHandler_c4imx1_b0" />
+    <unitInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="362" startPosition="0" endLine="397" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$seeListHandler_c4imx1_e2a" />
     <unitInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="290" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$sinceListHandler_c4imx1_c2a" />
     <unitInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="326" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$versionListHandler_c4imx1_d2a" />
-    <unitInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="362" startPosition="0" endLine="397" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$seeListHandler_c4imx1_e2a" />
-    <unitInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="203" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$bodyListHandler_c4imx1_b0" />
-    <unitInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="28" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor" />
   </root>
   <root nodeId="6962838954693749205">
     <nodeInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="38" startPosition="58" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3684,8 +3684,8 @@
     <scopeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="39" startPosition="87" endLine="49" endPosition="22" />
     <scopeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="86" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="38" startPosition="0" endLine="51" endPosition="0" />
-    <unitInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="64" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CommentLine_Editor$partListHandler_dzsxo_b0" />
     <unitInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="24" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CommentLine_Editor" />
+    <unitInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="64" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CommentLine_Editor$partListHandler_dzsxo_b0" />
   </root>
   <root nodeId="8465538089690881935">
     <nodeInfo nodeId="8465538089690881935" fileName="ParameterBlockDocTag_Editor.java" startLine="44" startPosition="58" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3810,8 +3810,8 @@
     <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="22" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="35" startPosition="103" endLine="55" endPosition="22" />
     <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="34" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="36" startPosition="38" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_Editor$1" />
     <unitInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="18" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_Editor" />
+    <unitInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="36" startPosition="38" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_Editor$1" />
   </root>
   <root nodeId="8970989240999060766">
     <nodeInfo nodeId="8970989240999060766" fileName="InlineTagCommentLinePart_Editor.java" startLine="84" startPosition="58" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

@@ -62,8 +62,8 @@
     <scopeInfo nodeId="5990338083470604760" fileName="HLineCellProvider.java" startLine="20" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5990338083470604763" varName="p0" />
     </scopeInfo>
-    <unitInfo nodeId="5990338083470604771" fileName="HLineCellProvider.java" startLine="22" startPosition="34" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.plugin.HLineCellProvider$1" />
     <unitInfo nodeId="5990338083470604753" fileName="HLineCellProvider.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.plugin.HLineCellProvider" />
+    <unitInfo nodeId="5990338083470604771" fileName="HLineCellProvider.java" startLine="22" startPosition="34" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.plugin.HLineCellProvider$1" />
   </root>
   <root nodeId="5990338083470605915">
     <nodeInfo nodeId="5990338083470606011" fileName="EditorCell_VerticalLine.java" startLine="13" startPosition="63" endLine="14" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isCaretShown" />
@@ -88,17 +88,17 @@
     <scopeInfo nodeId="5990338083470605985" fileName="EditorCell_VerticalLine.java" startLine="33" startPosition="36" endLine="34" endPosition="45" />
     <scopeInfo nodeId="5990338083470605998" fileName="EditorCell_VerticalLine.java" startLine="37" startPosition="30" endLine="39" endPosition="22" />
     <scopeInfo nodeId="5990338083470606015" fileName="EditorCell_VerticalLine.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
-      <varInfo nodeId="5990338083470606024" varName="node" />
       <varInfo nodeId="5990338083470606022" varName="context" />
+      <varInfo nodeId="5990338083470606024" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5990338083470605982" fileName="EditorCell_VerticalLine.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="5990338083470605995" fileName="EditorCell_VerticalLine.java" startLine="36" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="5990338083470605923" fileName="EditorCell_VerticalLine.java" startLine="21" startPosition="28" endLine="29" endPosition="42">
       <varInfo nodeId="5990338083470605954" varName="height" />
-      <varInfo nodeId="5990338083470605948" varName="width" />
       <varInfo nodeId="5990338083470605930" varName="parent" />
-      <varInfo nodeId="5990338083470605942" varName="y" />
+      <varInfo nodeId="5990338083470605948" varName="width" />
       <varInfo nodeId="5990338083470605936" varName="x" />
+      <varInfo nodeId="5990338083470605942" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="5990338083470605921" fileName="EditorCell_VerticalLine.java" startLine="20" startPosition="71" endLine="30" endPosition="5" />
     <scopeInfo nodeId="5990338083470605916" fileName="EditorCell_VerticalLine.java" startLine="19" startPosition="0" endLine="32" endPosition="0">

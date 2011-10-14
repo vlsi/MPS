@@ -35,8 +35,8 @@
     <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="17" startPosition="95" endLine="46" endPosition="7" />
     <scopeInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="16" startPosition="91" endLine="47" endPosition="3" />
-    <unitInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="19" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.behavior.scripts.ConvertBehaviorMethodCallToLocal_MigrationScript$1" />
     <unitInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.behavior.scripts.ConvertBehaviorMethodCallToLocal_MigrationScript" />
+    <unitInfo nodeId="7148319044498588900" fileName="ConvertBehaviorMethodCallToLocal_MigrationScript.java" startLine="19" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.behavior.scripts.ConvertBehaviorMethodCallToLocal_MigrationScript$1" />
   </root>
 </debugInfo>
 

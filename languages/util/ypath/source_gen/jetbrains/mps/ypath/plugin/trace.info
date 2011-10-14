@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Ypath_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.plugin.Ypath_ProjectPlugin" />
   <unitInfo fileName="Ypath_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ypath.plugin.Ypath_ApplicationPlugin" />
+  <unitInfo fileName="Ypath_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.plugin.Ypath_ProjectPlugin" />
   <root nodeId="1216917978220">
     <nodeInfo nodeId="1216918074000" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="11" startPosition="24" endLine="12" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1216918094368" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -116,11 +116,11 @@
       <varInfo nodeId="6854028447099503393" varName="smodel" />
     </scopeInfo>
     <scopeInfo nodeId="6854028447099503279" fileName="DesignPartLoader.java" startLine="38" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="6854028447099503284" varName="module" />
       <varInfo nodeId="6854028447099503282" varName="fqClassName" />
+      <varInfo nodeId="6854028447099503284" varName="module" />
     </scopeInfo>
-    <unitInfo nodeId="6854028447099503202" fileName="DesignPartLoader.java" startLine="98" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ypath.plugin.DesignPartLoader$ReloadHandler" />
     <unitInfo nodeId="6854028447099503200" fileName="DesignPartLoader.java" startLine="20" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ypath.plugin.DesignPartLoader" />
+    <unitInfo nodeId="6854028447099503202" fileName="DesignPartLoader.java" startLine="98" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ypath.plugin.DesignPartLoader$ReloadHandler" />
   </root>
 </debugInfo>
 

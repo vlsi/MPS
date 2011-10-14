@@ -116,9 +116,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1767845709140806680" fileName="GeneratorUtil.java" startLine="55" startPosition="104" endLine="68" endPosition="5" />
     <scopeInfo nodeId="1767845709140806677" fileName="GeneratorUtil.java" startLine="54" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1767845709140806825" varName="found" />
       <varInfo nodeId="1767845709140806682" varName="node" />
       <varInfo nodeId="1767845709140806684" varName="seen" />
-      <varInfo nodeId="1767845709140806825" varName="found" />
     </scopeInfo>
     <scopeInfo nodeId="2588298302278069744" fileName="GeneratorUtil.java" startLine="76" startPosition="126" endLine="92" endPosition="7">
       <varInfo nodeId="2588298302278069746" varName="toCollect" />
@@ -130,9 +130,9 @@
       <varInfo nodeId="2588298302278069723" varName="matches" />
     </scopeInfo>
     <scopeInfo nodeId="1174923515100" fileName="GeneratorUtil.java" startLine="13" startPosition="65" endLine="38" endPosition="16">
-      <varInfo nodeId="1174923539422" varName="ruc" />
-      <varInfo nodeId="1174923539416" varName="parens" />
       <varInfo nodeId="2588298302278050824" varName="dcl" />
+      <varInfo nodeId="1174923539416" varName="parens" />
+      <varInfo nodeId="1174923539422" varName="ruc" />
     </scopeInfo>
     <scopeInfo nodeId="2588298302278069715" fileName="GeneratorUtil.java" startLine="70" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="2588298302278069720" varName="enclosingNode" />

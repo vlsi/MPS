@@ -35,8 +35,8 @@
     <scopeInfo nodeId="1640281869714700106" fileName="UpdateTabCreation_MigrationScript.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1640281869714700106" fileName="UpdateTabCreation_MigrationScript.java" startLine="13" startPosition="80" endLine="42" endPosition="7" />
     <scopeInfo nodeId="1640281869714700106" fileName="UpdateTabCreation_MigrationScript.java" startLine="12" startPosition="76" endLine="43" endPosition="3" />
-    <unitInfo nodeId="1640281869714700106" fileName="UpdateTabCreation_MigrationScript.java" startLine="15" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpdateTabCreation_MigrationScript$1" />
     <unitInfo nodeId="1640281869714700106" fileName="UpdateTabCreation_MigrationScript.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpdateTabCreation_MigrationScript" />
+    <unitInfo nodeId="1640281869714700106" fileName="UpdateTabCreation_MigrationScript.java" startLine="15" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpdateTabCreation_MigrationScript$1" />
   </root>
   <root nodeId="3822000666564607217">
     <nodeInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="33" startPosition="88" endLine="34" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -582,8 +582,8 @@
     <scopeInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="495" startPosition="9" endLine="508" endPosition="56" />
     <scopeInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="536" startPosition="0" endLine="549" endPosition="0" />
     <scopeInfo nodeId="3822000666564607327" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="74" startPosition="57" endLine="88" endPosition="32">
-      <varInfo nodeId="3822000666564607329" varName="behaviorNode" />
       <varInfo nodeId="3822000666564607344" varName="behaviorModel" />
+      <varInfo nodeId="3822000666564607329" varName="behaviorNode" />
     </scopeInfo>
     <scopeInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="287" startPosition="9" endLine="302" endPosition="9" />
     <scopeInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="391" startPosition="9" endLine="406" endPosition="9" />
@@ -616,29 +616,29 @@
     <scopeInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="51" startPosition="0" endLine="161" endPosition="0" />
     <scopeInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="33" startPosition="88" endLine="165" endPosition="7" />
     <scopeInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="32" startPosition="84" endLine="166" endPosition="3" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="32" startPosition="0" endLine="551" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="35" startPosition="28" endLine="165" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$1" />
     <unitInfo nodeId="7037272110513679990" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="53" startPosition="357" endLine="57" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$2" />
-    <unitInfo nodeId="3822000666564662901" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="97" startPosition="156" endLine="101" endPosition="13" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$3" />
-    <unitInfo nodeId="3822000666564662879" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="120" startPosition="157" endLine="124" endPosition="13" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$3" />
-    <unitInfo nodeId="3822000666564662857" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="141" startPosition="156" endLine="145" endPosition="13" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$3" />
     <unitInfo nodeId="3822000666564662716" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="95" startPosition="129" endLine="103" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$2" />
     <unitInfo nodeId="3822000666564662783" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="118" startPosition="123" endLine="126" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$2" />
     <unitInfo nodeId="3822000666564662820" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="139" startPosition="121" endLine="147" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$2" />
+    <unitInfo nodeId="3822000666564607326" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="73" startPosition="95" endLine="90" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$2" />
+    <unitInfo nodeId="3822000666564662901" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="97" startPosition="156" endLine="101" endPosition="13" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$3" />
+    <unitInfo nodeId="3822000666564662879" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="120" startPosition="157" endLine="124" endPosition="13" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$3" />
+    <unitInfo nodeId="3822000666564662857" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="141" startPosition="156" endLine="145" endPosition="13" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$3" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="430" startPosition="0" endLine="447" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0a0a0a0a0a0a01a4a0a0a1a0" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="533" startPosition="0" endLine="550" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0a0a0a0a0a0a31a4a0a0a1a0" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="326" startPosition="0" endLine="343" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0a0a0a0a0a0a7a4a0a0a1a0" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="189" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0a0c0a0e0a0a0b0a" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="234" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0b0h0e0a0a0b0a" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="344" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0b0k0e0a0a0b0a" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="448" startPosition="0" endLine="465" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0b0n0e0a0a0b0a" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="252" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a1a2a7a4a0a0a1a0" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="362" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a3a01a4a0a0a1a0" />
+    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="466" startPosition="0" endLine="515" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a3a31a4a0a0a1a0" />
     <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="309" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a1a0a4a2a7a4a0a0a1a0" />
     <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="413" startPosition="0" endLine="429" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a1a0a6a01a4a0a0a1a0" />
     <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="516" startPosition="0" endLine="532" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a1a0a6a31a4a0a0a1a0" />
-    <unitInfo nodeId="3822000666564607326" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="73" startPosition="95" endLine="90" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$2" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="234" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0b0h0e0a0a0b0a" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="326" startPosition="0" endLine="343" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0a0a0a0a0a0a7a4a0a0a1a0" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="344" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0b0k0e0a0a0b0a" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="430" startPosition="0" endLine="447" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0a0a0a0a0a0a01a4a0a0a1a0" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="448" startPosition="0" endLine="465" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0b0n0e0a0a0b0a" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="533" startPosition="0" endLine="550" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0a0a0a0a0a0a31a4a0a0a1a0" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="189" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a0a0c0a0e0a0a0b0a" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="466" startPosition="0" endLine="515" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a3a31a4a0a0a1a0" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="362" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a3a01a4a0a0a1a0" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="252" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$QuotationClass_nt6246_a0a1a2a7a4a0a0a1a0" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="35" startPosition="28" endLine="165" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript$1" />
-    <unitInfo nodeId="3822000666564607217" fileName="UpgradeTraceInfoGeeration_MigrationScript.java" startLine="32" startPosition="0" endLine="551" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpgradeTraceInfoGeeration_MigrationScript" />
   </root>
   <root nodeId="4470409037200904672">
     <nodeInfo nodeId="4470409037200904672" fileName="UpdateIcons_MigrationScript.java" startLine="14" startPosition="74" endLine="15" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -703,9 +703,9 @@
     <scopeInfo nodeId="4470409037200904672" fileName="UpdateIcons_MigrationScript.java" startLine="59" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="4470409037200904672" fileName="UpdateIcons_MigrationScript.java" startLine="14" startPosition="74" endLine="69" endPosition="7" />
     <scopeInfo nodeId="4470409037200904672" fileName="UpdateIcons_MigrationScript.java" startLine="13" startPosition="70" endLine="70" endPosition="3" />
+    <unitInfo nodeId="4470409037200904672" fileName="UpdateIcons_MigrationScript.java" startLine="13" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpdateIcons_MigrationScript" />
     <unitInfo nodeId="4470409037200904672" fileName="UpdateIcons_MigrationScript.java" startLine="16" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpdateIcons_MigrationScript$1" />
     <unitInfo nodeId="4470409037200904672" fileName="UpdateIcons_MigrationScript.java" startLine="43" startPosition="28" endLine="69" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpdateIcons_MigrationScript$2" />
-    <unitInfo nodeId="4470409037200904672" fileName="UpdateIcons_MigrationScript.java" startLine="13" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpdateIcons_MigrationScript" />
   </root>
   <root nodeId="4729897692521570243">
     <nodeInfo nodeId="4729897692521570243" fileName="MoveKeyStrokesToKeymaps_MigrationScript.java" startLine="22" startPosition="86" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -786,10 +786,10 @@
     <scopeInfo nodeId="4729897692521570243" fileName="MoveKeyStrokesToKeymaps_MigrationScript.java" startLine="66" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="4729897692521570243" fileName="MoveKeyStrokesToKeymaps_MigrationScript.java" startLine="22" startPosition="86" endLine="60" endPosition="7" />
     <scopeInfo nodeId="4729897692521570243" fileName="MoveKeyStrokesToKeymaps_MigrationScript.java" startLine="21" startPosition="82" endLine="61" endPosition="3" />
+    <unitInfo nodeId="4729897692521570243" fileName="MoveKeyStrokesToKeymaps_MigrationScript.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveKeyStrokesToKeymaps_MigrationScript" />
+    <unitInfo nodeId="4729897692521570243" fileName="MoveKeyStrokesToKeymaps_MigrationScript.java" startLine="24" startPosition="28" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.MoveKeyStrokesToKeymaps_MigrationScript$1" />
     <unitInfo nodeId="4729897692521570289" fileName="MoveKeyStrokesToKeymaps_MigrationScript.java" startLine="42" startPosition="178" endLine="46" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.MoveKeyStrokesToKeymaps_MigrationScript$2" />
     <unitInfo nodeId="4729897692521570243" fileName="MoveKeyStrokesToKeymaps_MigrationScript.java" startLine="63" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveKeyStrokesToKeymaps_MigrationScript$QuotationClass_guynmc_a0a0d0e0a0a0b0a" />
-    <unitInfo nodeId="4729897692521570243" fileName="MoveKeyStrokesToKeymaps_MigrationScript.java" startLine="24" startPosition="28" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.MoveKeyStrokesToKeymaps_MigrationScript$1" />
-    <unitInfo nodeId="4729897692521570243" fileName="MoveKeyStrokesToKeymaps_MigrationScript.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveKeyStrokesToKeymaps_MigrationScript" />
   </root>
   <root nodeId="5866603471302721315">
     <nodeInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="29" startPosition="81" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1266,31 +1266,31 @@
     <scopeInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="184" startPosition="0" endLine="253" endPosition="0" />
     <scopeInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="347" startPosition="0" endLine="417" endPosition="0" />
     <scopeInfo nodeId="5866603471302721318" fileName="SplitTabbedEditors_MigrationScript.java" startLine="48" startPosition="52" endLine="123" endPosition="41">
+      <varInfo nodeId="5032697908782435756" varName="callHelperStmt" />
+      <varInfo nodeId="2974336669141907543" varName="helperClass" />
+      <varInfo nodeId="2974336669141988726" varName="method" />
       <varInfo nodeId="5866603471302721332" varName="model" />
       <varInfo nodeId="5032697908782389892" varName="order" />
-      <varInfo nodeId="2974336669142017086" varName="p2" />
       <varInfo nodeId="2974336669142017079" varName="p1" />
-      <varInfo nodeId="2974336669141988726" varName="method" />
-      <varInfo nodeId="2974336669141907543" varName="helperClass" />
+      <varInfo nodeId="2974336669142017086" varName="p2" />
       <varInfo nodeId="2974336669142069930" varName="tabs" />
-      <varInfo nodeId="5032697908782435756" varName="callHelperStmt" />
     </scopeInfo>
     <scopeInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="47" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="29" startPosition="81" endLine="129" endPosition="7" />
     <scopeInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="28" startPosition="77" endLine="130" endPosition="3" />
+    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="28" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript" />
+    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="31" startPosition="28" endLine="129" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$1" />
     <unitInfo nodeId="2974336669142017057" fileName="SplitTabbedEditors_MigrationScript.java" startLine="57" startPosition="175" endLine="61" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$2" />
     <unitInfo nodeId="2974336669142017111" fileName="SplitTabbedEditors_MigrationScript.java" startLine="62" startPosition="187" endLine="66" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$2" />
+    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="344" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a0a81a4a0a0a1a0" />
+    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="437" startPosition="0" endLine="454" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a" />
+    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="291" startPosition="0" endLine="343" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a21a4a0a0a1a0" />
+    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="132" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a4a4a0a0a1a0" />
+    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="156" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a5a4a0a0a1a0" />
+    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="181" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a7a4a0a0a1a0" />
     <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="255" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a1a0a0a0i0e0a0a0b0a" />
     <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="273" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a1a0a0a0j0e0a0a0b0a" />
     <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="419" startPosition="0" endLine="436" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a2a4a81a4a0a0a1a0" />
-    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="437" startPosition="0" endLine="454" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a" />
-    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="132" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a4a4a0a0a1a0" />
-    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="156" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a5a4a0a0a1a0" />
-    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="291" startPosition="0" endLine="343" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a21a4a0a0a1a0" />
-    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="181" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a7a4a0a0a1a0" />
-    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="344" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a0a81a4a0a0a1a0" />
-    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="31" startPosition="28" endLine="129" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$1" />
-    <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="28" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript" />
   </root>
 </debugInfo>
 

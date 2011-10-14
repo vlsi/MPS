@@ -59,9 +59,9 @@
     <scopeInfo nodeId="1203775431223" fileName="ConvertInlineTemplateToTemplateFragment_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="1203775431223" fileName="ConvertInlineTemplateToTemplateFragment_Intention.java" startLine="45" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1203775431229" fileName="ConvertInlineTemplateToTemplateFragment_Intention.java" startLine="54" startPosition="76" endLine="65" endPosition="39">
-      <varInfo nodeId="1615118447191169515" varName="templateRefNode" />
       <varInfo nodeId="1203776055300" varName="ruleNode" />
       <varInfo nodeId="1203775487327" varName="templateNode" />
+      <varInfo nodeId="1615118447191169515" varName="templateRefNode" />
     </scopeInfo>
     <scopeInfo nodeId="1203775431223" fileName="ConvertInlineTemplateToTemplateFragment_Intention.java" startLine="53" startPosition="0" endLine="67" endPosition="0" />
     <unitInfo nodeId="1203775431223" fileName="ConvertInlineTemplateToTemplateFragment_Intention.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ConvertInlineTemplateToTemplateFragment_Intention" />
@@ -128,11 +128,11 @@
     <scopeInfo nodeId="1205436780371" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1205436780371" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1205436780375" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="54" startPosition="76" endLine="75" endPosition="5">
-      <varInfo nodeId="1205437482224" varName="inlineTemplate" />
-      <varInfo nodeId="1205437393790" varName="oldTemplate" />
+      <varInfo nodeId="1205437054639" varName="TFs" />
       <varInfo nodeId="1205438118130" varName="TFtoDelete" />
       <varInfo nodeId="1205437576725" varName="fragmentToSet" />
-      <varInfo nodeId="1205437054639" varName="TFs" />
+      <varInfo nodeId="1205437482224" varName="inlineTemplate" />
+      <varInfo nodeId="1205437393790" varName="oldTemplate" />
       <varInfo nodeId="1205437833863" varName="option" />
     </scopeInfo>
     <scopeInfo nodeId="1205436780371" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="53" startPosition="0" endLine="77" endPosition="0" />
@@ -373,8 +373,8 @@
     <scopeInfo nodeId="1210374656847829417" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="77" startPosition="184" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="87" startPosition="28" endLine="92" endPosition="7" />
     <scopeInfo nodeId="1210374656847785819" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="56" startPosition="90" endLine="62" endPosition="82">
-      <varInfo nodeId="1210374656847785823" varName="sm" />
       <varInfo nodeId="1210374656847785874" varName="selectedNodeConcept" />
+      <varInfo nodeId="1210374656847785823" varName="sm" />
     </scopeInfo>
     <scopeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="64" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="1210374656847762904" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="75" startPosition="93" endLine="81" endPosition="24">
@@ -385,8 +385,8 @@
     <scopeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="74" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="84" startPosition="96" endLine="94" endPosition="16" />
     <scopeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="83" startPosition="0" endLine="96" endPosition="0" />
-    <unitInfo nodeId="1210374656847829417" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="77" startPosition="161" endLine="81" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.ReplaceWithConcreteSubconcept_Intention$1" />
     <unitInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="23" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ReplaceWithConcreteSubconcept_Intention" />
+    <unitInfo nodeId="1210374656847829417" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="77" startPosition="161" endLine="81" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.ReplaceWithConcreteSubconcept_Intention$1" />
   </root>
   <root nodeId="1216319039419">
     <nodeInfo nodeId="1216319039419" fileName="NewTemplateInWeaveEach_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -456,11 +456,11 @@
     </scopeInfo>
     <scopeInfo nodeId="1216319039419" fileName="NewTemplateInWeaveEach_Intention.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1216319039425" fileName="NewTemplateInWeaveEach_Intention.java" startLine="54" startPosition="76" endLine="79" endPosition="58">
-      <varInfo nodeId="1216319039467" varName="t" />
+      <varInfo nodeId="1216319039427" varName="applicableConcept" />
       <varInfo nodeId="1227226372561" varName="contextNodeType" />
       <varInfo nodeId="1216319039436" varName="name" />
-      <varInfo nodeId="1216319039427" varName="applicableConcept" />
       <varInfo nodeId="1227226315440" varName="ownerRule" />
+      <varInfo nodeId="1216319039467" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="1216319039419" fileName="NewTemplateInWeaveEach_Intention.java" startLine="53" startPosition="0" endLine="81" endPosition="0" />
     <unitInfo nodeId="1216319039419" fileName="NewTemplateInWeaveEach_Intention.java" startLine="19" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeaveEach_Intention" />
@@ -533,10 +533,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1216320260188" fileName="NewTemplateInReductionRule_Intention.java" startLine="48" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1216320260194" fileName="NewTemplateInReductionRule_Intention.java" startLine="63" startPosition="76" endLine="78" endPosition="56">
+      <varInfo nodeId="1216320260196" varName="applicableConcept" />
+      <varInfo nodeId="1216320260205" varName="name" />
       <varInfo nodeId="1216320260236" varName="t" />
       <varInfo nodeId="1216320260257" varName="tr" />
-      <varInfo nodeId="1216320260205" varName="name" />
-      <varInfo nodeId="1216320260196" varName="applicableConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1216320260188" fileName="NewTemplateInReductionRule_Intention.java" startLine="62" startPosition="0" endLine="80" endPosition="0" />
     <unitInfo nodeId="1216320260188" fileName="NewTemplateInReductionRule_Intention.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInReductionRule_Intention" />
@@ -593,9 +593,9 @@
     <scopeInfo nodeId="1216323872536" fileName="NewTemplateInSwitchDefault_Intention.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="1216323872536" fileName="NewTemplateInSwitchDefault_Intention.java" startLine="39" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1216323872542" fileName="NewTemplateInSwitchDefault_Intention.java" startLine="51" startPosition="76" endLine="62" endPosition="68">
+      <varInfo nodeId="1216323872558" varName="name" />
       <varInfo nodeId="1216323872612" varName="t" />
       <varInfo nodeId="1216323872633" varName="tr" />
-      <varInfo nodeId="1216323872558" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="1216323872536" fileName="NewTemplateInSwitchDefault_Intention.java" startLine="50" startPosition="0" endLine="64" endPosition="0" />
     <unitInfo nodeId="1216323872536" fileName="NewTemplateInSwitchDefault_Intention.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchDefault_Intention" />
@@ -673,13 +673,13 @@
     <scopeInfo nodeId="1216334966292" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="63" startPosition="35" endLine="76" endPosition="20" />
     <scopeInfo nodeId="1216334966291" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="62" startPosition="85" endLine="78" endPosition="0" />
     <scopeInfo nodeId="1216334426563" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="56" startPosition="76" endLine="88" endPosition="7">
-      <varInfo nodeId="1216335853054" varName="rule" />
       <varInfo nodeId="1216334426565" varName="name" />
+      <varInfo nodeId="1216335853054" varName="rule" />
     </scopeInfo>
     <scopeInfo nodeId="1216334426557" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="55" startPosition="0" endLine="90" endPosition="0" />
-    <unitInfo nodeId="1216335413270" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="78" startPosition="11" endLine="88" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$2" />
-    <unitInfo nodeId="1216334966291" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="62" startPosition="65" endLine="78" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$1" />
     <unitInfo nodeId="1216334426557" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention" />
+    <unitInfo nodeId="1216334966291" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="62" startPosition="65" endLine="78" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$1" />
+    <unitInfo nodeId="1216335413270" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="78" startPosition="11" endLine="88" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$2" />
   </root>
   <root nodeId="1216337594117">
     <nodeInfo nodeId="1216337594117" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -753,13 +753,13 @@
     <scopeInfo nodeId="1216337594158" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="61" startPosition="35" endLine="74" endPosition="20" />
     <scopeInfo nodeId="1216337594157" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="60" startPosition="85" endLine="76" endPosition="0" />
     <scopeInfo nodeId="1216337594123" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="54" startPosition="76" endLine="85" endPosition="7">
-      <varInfo nodeId="1216337594151" varName="rule" />
       <varInfo nodeId="1216337594125" varName="name" />
+      <varInfo nodeId="1216337594151" varName="rule" />
     </scopeInfo>
     <scopeInfo nodeId="1216337594117" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="53" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="1216337594195" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="76" startPosition="11" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$2" />
-    <unitInfo nodeId="1216337594157" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="60" startPosition="65" endLine="76" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$1" />
     <unitInfo nodeId="1216337594117" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention" />
+    <unitInfo nodeId="1216337594157" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="60" startPosition="65" endLine="76" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$1" />
+    <unitInfo nodeId="1216337594195" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="76" startPosition="11" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$2" />
   </root>
   <root nodeId="1227216572218">
     <nodeInfo nodeId="1227216572218" fileName="NewCreateRootRule_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -845,21 +845,21 @@
       <varInfo nodeId="1227218614365" varName="sameVPackConfigs" />
     </scopeInfo>
     <scopeInfo nodeId="1227216572222" fileName="NewCreateRootRule_Intention.java" startLine="82" startPosition="76" endLine="102" endPosition="63">
-      <varInfo nodeId="1227220716121" varName="opener" />
       <varInfo nodeId="1227218039959" varName="configs" />
+      <varInfo nodeId="1227220716121" varName="opener" />
       <varInfo nodeId="1227219164351" varName="rule" />
     </scopeInfo>
     <scopeInfo nodeId="1227216955655" fileName="NewCreateRootRule_Intention.java" startLine="57" startPosition="90" endLine="79" endPosition="25">
-      <varInfo nodeId="1227219557532" varName="configs" />
       <varInfo nodeId="1227217922382" varName="annotation" />
+      <varInfo nodeId="1227219557532" varName="configs" />
       <varInfo nodeId="1227219557547" varName="usage" />
     </scopeInfo>
     <scopeInfo nodeId="1227216572218" fileName="NewCreateRootRule_Intention.java" startLine="81" startPosition="0" endLine="104" endPosition="0" />
     <scopeInfo nodeId="1227216572218" fileName="NewCreateRootRule_Intention.java" startLine="56" startPosition="0" endLine="81" endPosition="0" />
+    <unitInfo nodeId="1227216572218" fileName="NewCreateRootRule_Intention.java" startLine="24" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention" />
+    <unitInfo nodeId="1227219557552" fileName="NewCreateRootRule_Intention.java" startLine="69" startPosition="63" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention$1" />
     <unitInfo nodeId="1227219557562" fileName="NewCreateRootRule_Intention.java" startLine="71" startPosition="107" endLine="75" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention$2" />
     <unitInfo nodeId="1227218669094" fileName="NewCreateRootRule_Intention.java" startLine="85" startPosition="82" endLine="89" endPosition="7" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention$2" />
-    <unitInfo nodeId="1227219557552" fileName="NewCreateRootRule_Intention.java" startLine="69" startPosition="63" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention$1" />
-    <unitInfo nodeId="1227216572218" fileName="NewCreateRootRule_Intention.java" startLine="24" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention" />
   </root>
   <root nodeId="1227221178632">
     <nodeInfo nodeId="1227221178632" fileName="NewRootMappingRule_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -946,21 +946,21 @@
       <varInfo nodeId="1227221178652" varName="sameVPackConfigs" />
     </scopeInfo>
     <scopeInfo nodeId="1227221178640" fileName="NewRootMappingRule_Intention.java" startLine="82" startPosition="76" endLine="103" endPosition="63">
-      <varInfo nodeId="1227221178717" varName="opener" />
       <varInfo nodeId="1227221178642" varName="configs" />
+      <varInfo nodeId="1227221178717" varName="opener" />
       <varInfo nodeId="1227221178702" varName="rule" />
     </scopeInfo>
     <scopeInfo nodeId="1227221178732" fileName="NewRootMappingRule_Intention.java" startLine="57" startPosition="90" endLine="79" endPosition="25">
-      <varInfo nodeId="1227221178757" varName="configs" />
       <varInfo nodeId="1227221178734" varName="annotation" />
+      <varInfo nodeId="1227221178757" varName="configs" />
       <varInfo nodeId="1227221178772" varName="usage" />
     </scopeInfo>
     <scopeInfo nodeId="1227221178632" fileName="NewRootMappingRule_Intention.java" startLine="81" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="1227221178632" fileName="NewRootMappingRule_Intention.java" startLine="56" startPosition="0" endLine="81" endPosition="0" />
+    <unitInfo nodeId="1227221178632" fileName="NewRootMappingRule_Intention.java" startLine="24" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention" />
+    <unitInfo nodeId="1227221178777" fileName="NewRootMappingRule_Intention.java" startLine="69" startPosition="63" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention$1" />
     <unitInfo nodeId="1227221178787" fileName="NewRootMappingRule_Intention.java" startLine="71" startPosition="108" endLine="75" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention$2" />
     <unitInfo nodeId="1227221178658" fileName="NewRootMappingRule_Intention.java" startLine="85" startPosition="82" endLine="89" endPosition="7" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention$2" />
-    <unitInfo nodeId="1227221178777" fileName="NewRootMappingRule_Intention.java" startLine="69" startPosition="63" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention$1" />
-    <unitInfo nodeId="1227221178632" fileName="NewRootMappingRule_Intention.java" startLine="24" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention" />
   </root>
   <root nodeId="1227291795686">
     <nodeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="143" startPosition="27" endLine="143" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1107,18 +1107,18 @@
     <scopeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="112" startPosition="117" endLine="159" endPosition="0" />
     <scopeInfo nodeId="1227291795690" fileName="AttachMappingLabel_Intention.java" startLine="103" startPosition="76" endLine="165" endPosition="7">
       <varInfo nodeId="1227316931919" varName="existingLabels" />
+      <varInfo nodeId="1227315359343" varName="mappings" />
       <varInfo nodeId="1227315137583" varName="module" />
       <varInfo nodeId="1227315087491" varName="operationContext" />
-      <varInfo nodeId="1227315359343" varName="mappings" />
     </scopeInfo>
     <scopeInfo nodeId="1227291795686" fileName="AttachMappingLabel_Intention.java" startLine="102" startPosition="0" endLine="167" endPosition="0" />
+    <unitInfo nodeId="1227291795686" fileName="AttachMappingLabel_Intention.java" startLine="30" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention" />
     <unitInfo nodeId="8900764248744327489" fileName="AttachMappingLabel_Intention.java" startLine="86" startPosition="97" endLine="90" endPosition="7" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$1" />
     <unitInfo nodeId="1227303582021" fileName="AttachMappingLabel_Intention.java" startLine="94" startPosition="97" endLine="98" endPosition="7" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$2" />
-    <unitInfo nodeId="1227316931941" fileName="AttachMappingLabel_Intention.java" startLine="160" startPosition="35" endLine="165" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$4" />
-    <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="116" startPosition="23" endLine="155" endPosition="13" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$5" />
-    <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="114" startPosition="19" endLine="157" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$4" />
     <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="112" startPosition="86" endLine="159" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$3" />
-    <unitInfo nodeId="1227291795686" fileName="AttachMappingLabel_Intention.java" startLine="30" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention" />
+    <unitInfo nodeId="1227316931941" fileName="AttachMappingLabel_Intention.java" startLine="160" startPosition="35" endLine="165" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$4" />
+    <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="114" startPosition="19" endLine="157" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$4" />
+    <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="116" startPosition="23" endLine="155" endPosition="13" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$5" />
   </root>
   <root nodeId="1227305822695">
     <nodeInfo nodeId="1227305822892" fileName="AttachMappingLabelDialog.java" startLine="29" startPosition="58" endLine="30" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
@@ -1206,9 +1206,9 @@
     <scopeInfo nodeId="5567550172873223977" fileName="AttachMappingLabelDialog.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="1227305822860" fileName="AttachMappingLabelDialog.java" startLine="73" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="1227305822899" fileName="AttachMappingLabelDialog.java" startLine="35" startPosition="0" endLine="42" endPosition="3">
+      <varInfo nodeId="1227305822916" varName="editorContext" />
       <varInfo nodeId="1227306253558" varName="existingLabels" />
       <varInfo nodeId="1227305822914" varName="frame" />
-      <varInfo nodeId="1227305822916" varName="editorContext" />
       <varInfo nodeId="1227319957549" varName="templateNode" />
     </scopeInfo>
     <scopeInfo nodeId="1227305822951" fileName="AttachMappingLabelDialog.java" startLine="110" startPosition="30" endLine="119" endPosition="48">
@@ -1216,23 +1216,23 @@
     </scopeInfo>
     <scopeInfo nodeId="1227305822948" fileName="AttachMappingLabelDialog.java" startLine="109" startPosition="0" endLine="121" endPosition="0" />
     <scopeInfo nodeId="1227305822932" fileName="AttachMappingLabelDialog.java" startLine="91" startPosition="25" endLine="105" endPosition="81">
+      <varInfo nodeId="1227320147348" varName="existingMacro" />
+      <varInfo nodeId="1227320059739" varName="mappingLabel" />
       <varInfo nodeId="1227320315576" varName="newMacro" />
       <varInfo nodeId="1227320214555" varName="templateFragment" />
-      <varInfo nodeId="1227320059739" varName="mappingLabel" />
-      <varInfo nodeId="1227320147348" varName="existingMacro" />
     </scopeInfo>
     <scopeInfo nodeId="1227305822931" fileName="AttachMappingLabelDialog.java" startLine="90" startPosition="67" endLine="107" endPosition="0" />
     <scopeInfo nodeId="1227305822922" fileName="AttachMappingLabelDialog.java" startLine="89" startPosition="41" endLine="107" endPosition="7" />
     <scopeInfo nodeId="1227305822919" fileName="AttachMappingLabelDialog.java" startLine="88" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="1227305822699" fileName="AttachMappingLabelDialog.java" startLine="44" startPosition="36" endLine="67" endPosition="21">
-      <varInfo nodeId="1227305822701" varName="namePanel" />
       <varInfo nodeId="1227305822708" varName="c" />
       <varInfo nodeId="1227305822759" varName="nameCombo" />
+      <varInfo nodeId="1227305822701" varName="namePanel" />
     </scopeInfo>
     <scopeInfo nodeId="1227305822696" fileName="AttachMappingLabelDialog.java" startLine="43" startPosition="0" endLine="69" endPosition="0" />
+    <unitInfo nodeId="1227305822695" fileName="AttachMappingLabelDialog.java" startLine="29" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabelDialog" />
     <unitInfo nodeId="1227305822783" fileName="AttachMappingLabelDialog.java" startLine="56" startPosition="36" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabelDialog$1" />
     <unitInfo nodeId="1227305822931" fileName="AttachMappingLabelDialog.java" startLine="90" startPosition="55" endLine="107" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabelDialog$2" />
-    <unitInfo nodeId="1227305822695" fileName="AttachMappingLabelDialog.java" startLine="29" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabelDialog" />
   </root>
   <root nodeId="1227319800070">
     <nodeInfo nodeId="1227319800076" fileName="MappingLabelUtil.java" startLine="20" startPosition="93" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1275,9 +1275,9 @@
     <scopeInfo nodeId="1227319800089" fileName="MappingLabelUtil.java" startLine="22" startPosition="213" endLine="30" endPosition="5" />
     <scopeInfo nodeId="1227319800127" fileName="MappingLabelUtil.java" startLine="35" startPosition="57" endLine="43" endPosition="9" />
     <scopeInfo nodeId="1227319800114" fileName="MappingLabelUtil.java" startLine="32" startPosition="31" endLine="51" endPosition="30">
-      <varInfo nodeId="1227319800178" varName="newLabel" />
-      <varInfo nodeId="1227319800116" varName="mc" />
       <varInfo nodeId="1227319800119" varName="localMCs" />
+      <varInfo nodeId="1227319800116" varName="mc" />
+      <varInfo nodeId="1227319800178" varName="newLabel" />
     </scopeInfo>
     <scopeInfo nodeId="1227319800075" fileName="MappingLabelUtil.java" startLine="20" startPosition="93" endLine="53" endPosition="24">
       <varInfo nodeId="1227319800081" varName="mappingConfigurations" />
@@ -1287,8 +1287,8 @@
       <varInfo nodeId="1227319800202" varName="labelName" />
       <varInfo nodeId="1227319800200" varName="templateNode" />
     </scopeInfo>
-    <unitInfo nodeId="1227319800134" fileName="MappingLabelUtil.java" startLine="36" startPosition="55" endLine="40" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.MappingLabelUtil$1" />
     <unitInfo nodeId="1227319800070" fileName="MappingLabelUtil.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MappingLabelUtil" />
+    <unitInfo nodeId="1227319800134" fileName="MappingLabelUtil.java" startLine="36" startPosition="55" endLine="40" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.MappingLabelUtil$1" />
   </root>
   <root nodeId="1240572960649">
     <nodeInfo nodeId="1240572960649" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="23" startPosition="93" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameter" />
@@ -1380,16 +1380,16 @@
     <scopeInfo nodeId="1240572960649" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="85" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="1240572960649" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="97" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="1240572960653" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="64" startPosition="76" endLine="79" endPosition="48">
-      <varInfo nodeId="1240843206033" varName="expressionStatement" />
       <varInfo nodeId="1240843205998" varName="dotExpression" />
-      <varInfo nodeId="1240573178824" varName="nodeMacro" />
+      <varInfo nodeId="1240843206033" varName="expressionStatement" />
+      <varInfo nodeId="1240837596079" varName="ifMacro" />
       <varInfo nodeId="1240843205992" varName="ifMacro_Condition" />
       <varInfo nodeId="1240843206004" varName="linkAccess" />
-      <varInfo nodeId="1240837596079" varName="ifMacro" />
+      <varInfo nodeId="1240573178824" varName="nodeMacro" />
     </scopeInfo>
     <scopeInfo nodeId="1240572960649" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="63" startPosition="0" endLine="81" endPosition="0" />
-    <unitInfo nodeId="7840798570674993612" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="91" startPosition="135" endLine="95" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_ifMacro_Intention$1" />
     <unitInfo nodeId="1240572960649" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="23" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_ifMacro_Intention" />
+    <unitInfo nodeId="7840798570674993612" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="91" startPosition="135" endLine="95" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_ifMacro_Intention$1" />
   </root>
   <root nodeId="1240573470307">
     <nodeInfo nodeId="1240573470307" fileName="AddReferenceMacroParam_link_Intention.java" startLine="22" startPosition="95" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameter" />
@@ -1488,11 +1488,11 @@
     </scopeInfo>
     <scopeInfo nodeId="1240573470307" fileName="AddReferenceMacroParam_link_Intention.java" startLine="54" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1240573470311" fileName="AddReferenceMacroParam_link_Intention.java" startLine="67" startPosition="76" endLine="80" endPosition="55">
-      <varInfo nodeId="1240594878639" varName="expressionStatement" />
       <varInfo nodeId="1240594878604" varName="dotExpression" />
+      <varInfo nodeId="1240594878639" varName="expressionStatement" />
       <varInfo nodeId="1240594878610" varName="linkAccess" />
-      <varInfo nodeId="1240594878598" varName="referentValue" />
       <varInfo nodeId="1240573753837" varName="referenceMacro" />
+      <varInfo nodeId="1240594878598" varName="referentValue" />
     </scopeInfo>
     <scopeInfo nodeId="1240573470307" fileName="AddReferenceMacroParam_link_Intention.java" startLine="100" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="1240573470307" fileName="AddReferenceMacroParam_link_Intention.java" startLine="86" startPosition="0" endLine="100" endPosition="0" />
@@ -1591,19 +1591,19 @@
     <scopeInfo nodeId="1240595522621" fileName="AddPropertyMacroParam_property_Intention.java" startLine="46" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1240595522621" fileName="AddPropertyMacroParam_property_Intention.java" startLine="53" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="1240833268381" fileName="AddPropertyMacroParam_property_Intention.java" startLine="92" startPosition="125" endLine="100" endPosition="7">
-      <varInfo nodeId="972611735517024552" varName="propertyDeclaration" />
       <varInfo nodeId="972611735517024566" varName="property" />
+      <varInfo nodeId="972611735517024552" varName="propertyDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1240833268380" fileName="AddPropertyMacroParam_property_Intention.java" startLine="91" startPosition="71" endLine="101" endPosition="5">
       <varInfo nodeId="1240833268384" varName="propertySource" />
     </scopeInfo>
     <scopeInfo nodeId="1240595522621" fileName="AddPropertyMacroParam_property_Intention.java" startLine="105" startPosition="96" endLine="115" endPosition="16" />
     <scopeInfo nodeId="1240595522631" fileName="AddPropertyMacroParam_property_Intention.java" startLine="62" startPosition="76" endLine="75" endPosition="54">
+      <varInfo nodeId="1240595522647" varName="dotExpression" />
       <varInfo nodeId="1240595522682" varName="expressionStatement" />
       <varInfo nodeId="1240595522653" varName="propertyAccess" />
-      <varInfo nodeId="1240595522647" varName="dotExpression" />
-      <varInfo nodeId="1240595522641" varName="propertyValue" />
       <varInfo nodeId="1240595522633" varName="propertyMacro" />
+      <varInfo nodeId="1240595522641" varName="propertyValue" />
     </scopeInfo>
     <scopeInfo nodeId="1240595522621" fileName="AddPropertyMacroParam_property_Intention.java" startLine="104" startPosition="0" endLine="117" endPosition="0" />
     <scopeInfo nodeId="1240595522621" fileName="AddPropertyMacroParam_property_Intention.java" startLine="61" startPosition="0" endLine="77" endPosition="0" />
@@ -1698,12 +1698,12 @@
     <scopeInfo nodeId="1240595838065" fileName="AddNodeMacroParam_copySrcMacro_Intention.java" startLine="88" startPosition="96" endLine="98" endPosition="16" />
     <scopeInfo nodeId="1240595838065" fileName="AddNodeMacroParam_copySrcMacro_Intention.java" startLine="87" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="1240595838071" fileName="AddNodeMacroParam_copySrcMacro_Intention.java" startLine="61" startPosition="76" endLine="76" endPosition="53">
-      <varInfo nodeId="1240838267946" varName="expressionStatement" />
-      <varInfo nodeId="1240838267911" varName="dotExpression" />
-      <varInfo nodeId="1240838267889" varName="nodeMacro" />
-      <varInfo nodeId="1240838267917" varName="linkAccess" />
-      <varInfo nodeId="1240838267905" varName="referentValue" />
       <varInfo nodeId="1240838267894" varName="copySrcMacro" />
+      <varInfo nodeId="1240838267911" varName="dotExpression" />
+      <varInfo nodeId="1240838267946" varName="expressionStatement" />
+      <varInfo nodeId="1240838267917" varName="linkAccess" />
+      <varInfo nodeId="1240838267889" varName="nodeMacro" />
+      <varInfo nodeId="1240838267905" varName="referentValue" />
     </scopeInfo>
     <scopeInfo nodeId="1240595838065" fileName="AddNodeMacroParam_copySrcMacro_Intention.java" startLine="60" startPosition="0" endLine="78" endPosition="0" />
     <unitInfo nodeId="1240595838065" fileName="AddNodeMacroParam_copySrcMacro_Intention.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrcMacro_Intention" />
@@ -1792,10 +1792,10 @@
     <scopeInfo nodeId="1240595864245" fileName="AddNodeMacroParam_copySrclMacro_Intention.java" startLine="87" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="1240595864251" fileName="AddNodeMacroParam_copySrclMacro_Intention.java" startLine="61" startPosition="76" endLine="76" endPosition="57">
       <varInfo nodeId="1240838336628" varName="copySrcListMacro" />
-      <varInfo nodeId="1240838336680" varName="expressionStatement" />
       <varInfo nodeId="1240838336645" varName="dotExpression" />
-      <varInfo nodeId="1240838336623" varName="nodeMacro" />
+      <varInfo nodeId="1240838336680" varName="expressionStatement" />
       <varInfo nodeId="1240838336651" varName="linkAccess" />
+      <varInfo nodeId="1240838336623" varName="nodeMacro" />
       <varInfo nodeId="1240838336639" varName="referentValue" />
     </scopeInfo>
     <scopeInfo nodeId="1240595864245" fileName="AddNodeMacroParam_copySrclMacro_Intention.java" startLine="60" startPosition="0" endLine="78" endPosition="0" />
@@ -1884,11 +1884,11 @@
     <scopeInfo nodeId="1240595919493" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="88" startPosition="96" endLine="98" endPosition="16" />
     <scopeInfo nodeId="1240595919493" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="87" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="1240595919499" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="61" startPosition="76" endLine="76" endPosition="50">
-      <varInfo nodeId="1240596309708" varName="expressionStatement" />
       <varInfo nodeId="1240596309673" varName="dotExpression" />
-      <varInfo nodeId="1240836734073" varName="nodeMacro" />
+      <varInfo nodeId="1240596309708" varName="expressionStatement" />
       <varInfo nodeId="1240596309679" varName="linkAccess" />
       <varInfo nodeId="1240596309659" varName="loopMacro" />
+      <varInfo nodeId="1240836734073" varName="nodeMacro" />
       <varInfo nodeId="1240596309667" varName="referentValue" />
     </scopeInfo>
     <scopeInfo nodeId="1240595919493" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="60" startPosition="0" endLine="78" endPosition="0" />
@@ -2085,8 +2085,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1980960612890491907" fileName="MacroIntentionsUtil.java" startLine="145" startPosition="9" endLine="162" endPosition="9" />
     <scopeInfo nodeId="3644457381597284169" fileName="MacroIntentionsUtil.java" startLine="74" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="3644457381597287280" varName="sourceNode" />
       <varInfo nodeId="3644457381597319613" varName="inCollection" />
+      <varInfo nodeId="3644457381597287280" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="1980960612890491907" fileName="MacroIntentionsUtil.java" startLine="142" startPosition="71" endLine="162" endPosition="9" />
     <scopeInfo nodeId="1980960612890491907" fileName="MacroIntentionsUtil.java" startLine="140" startPosition="7" endLine="162" endPosition="9" />
@@ -2099,9 +2099,9 @@
     <scopeInfo nodeId="1980960612890669631" fileName="MacroIntentionsUtil.java" startLine="34" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="2925366645633370440" varName="macro" />
     </scopeInfo>
-    <unitInfo nodeId="1980960612890491907" fileName="MacroIntentionsUtil.java" startLine="94" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil$Pattern_iiuth6_a0a0a0a3a1" />
-    <unitInfo nodeId="1980960612890491907" fileName="MacroIntentionsUtil.java" startLine="133" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil$Pattern_iiuth6_a0a0a0a0d0b" />
     <unitInfo nodeId="1980960612890491907" fileName="MacroIntentionsUtil.java" startLine="20" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil" />
+    <unitInfo nodeId="1980960612890491907" fileName="MacroIntentionsUtil.java" startLine="133" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil$Pattern_iiuth6_a0a0a0a0d0b" />
+    <unitInfo nodeId="1980960612890491907" fileName="MacroIntentionsUtil.java" startLine="94" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil$Pattern_iiuth6_a0a0a0a3a1" />
   </root>
   <root nodeId="2357139912674486242">
     <nodeInfo nodeId="2357139912674486242" fileName="CreateScript_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2327,8 +2327,8 @@
     <scopeInfo nodeId="3462145372628250475" fileName="AddContext_Intention.java" startLine="68" startPosition="32" endLine="96" endPosition="7" />
     <scopeInfo nodeId="3462145372628250475" fileName="AddContext_Intention.java" startLine="62" startPosition="49" endLine="97" endPosition="20" />
     <scopeInfo nodeId="3462145372628250475" fileName="AddContext_Intention.java" startLine="61" startPosition="0" endLine="99" endPosition="0" />
-    <unitInfo nodeId="3462145372628250475" fileName="AddContext_Intention.java" startLine="58" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddContext_Intention$QuotationClass_7sjj31_a2a0a3a5" />
     <unitInfo nodeId="3462145372628250475" fileName="AddContext_Intention.java" startLine="18" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddContext_Intention" />
+    <unitInfo nodeId="3462145372628250475" fileName="AddContext_Intention.java" startLine="58" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddContext_Intention$QuotationClass_7sjj31_a2a0a3a5" />
   </root>
   <root nodeId="3644457381597319727">
     <nodeInfo nodeId="3644457381597319727" fileName="AddNodeMacroParam_switch_Intention.java" startLine="21" startPosition="92" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameter" />
@@ -2481,8 +2481,8 @@
     <scopeInfo nodeId="7834938100936599479" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="7834938100936651133" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="80" startPosition="17" endLine="85" endPosition="15" />
     <scopeInfo nodeId="7834938100936635516" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="55" startPosition="105" endLine="61" endPosition="354">
-      <varInfo nodeId="7834938100936645017" varName="st" />
       <varInfo nodeId="7834938100936644927" varName="m" />
+      <varInfo nodeId="7834938100936645017" varName="st" />
     </scopeInfo>
     <scopeInfo nodeId="7834938100936599479" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="7834938100936651131" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="79" startPosition="27" endLine="88" endPosition="7" />
@@ -2504,9 +2504,9 @@
       <varInfo nodeId="7834938100936635486" varName="seen" />
     </scopeInfo>
     <scopeInfo nodeId="7834938100936599479" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="45" startPosition="0" endLine="71" endPosition="0" />
+    <unitInfo nodeId="7834938100936599479" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ConvertLoopWithCopySrc_Intention" />
     <unitInfo nodeId="7834938100936635467" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="47" startPosition="122" endLine="51" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.ConvertLoopWithCopySrc_Intention$1" />
     <unitInfo nodeId="7834938100936651117" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="73" startPosition="122" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.ConvertLoopWithCopySrc_Intention$2" />
-    <unitInfo nodeId="7834938100936599479" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ConvertLoopWithCopySrc_Intention" />
   </root>
   <root nodeId="8004199436029426156">
     <nodeInfo nodeId="8004199436029426156" fileName="NewTemplateInSwitchCase_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2576,10 +2576,10 @@
     </scopeInfo>
     <scopeInfo nodeId="8004199436029426156" fileName="NewTemplateInSwitchCase_Intention.java" startLine="48" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="8004199436029426162" fileName="NewTemplateInSwitchCase_Intention.java" startLine="63" startPosition="76" endLine="78" endPosition="56">
+      <varInfo nodeId="8004199436029426164" varName="applicableConcept" />
+      <varInfo nodeId="8004199436029426170" varName="name" />
       <varInfo nodeId="8004199436029426223" varName="t" />
       <varInfo nodeId="8004199436029426258" varName="tr" />
-      <varInfo nodeId="8004199436029426170" varName="name" />
-      <varInfo nodeId="8004199436029426164" varName="applicableConcept" />
     </scopeInfo>
     <scopeInfo nodeId="8004199436029426156" fileName="NewTemplateInSwitchCase_Intention.java" startLine="62" startPosition="0" endLine="80" endPosition="0" />
     <unitInfo nodeId="8004199436029426156" fileName="NewTemplateInSwitchCase_Intention.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchCase_Intention" />
@@ -2642,9 +2642,9 @@
     </scopeInfo>
     <scopeInfo nodeId="8004199436029429270" fileName="NewTemplateInInlineSwitchDefault_Intention.java" startLine="39" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="8004199436029429276" fileName="NewTemplateInInlineSwitchDefault_Intention.java" startLine="51" startPosition="76" endLine="66" endPosition="68">
+      <varInfo nodeId="8004199436029429278" varName="name" />
       <varInfo nodeId="8004199436029429302" varName="t" />
       <varInfo nodeId="8004199436029429330" varName="tr" />
-      <varInfo nodeId="8004199436029429278" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="8004199436029429270" fileName="NewTemplateInInlineSwitchDefault_Intention.java" startLine="50" startPosition="0" endLine="68" endPosition="0" />
     <unitInfo nodeId="8004199436029429270" fileName="NewTemplateInInlineSwitchDefault_Intention.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchDefault_Intention" />
@@ -2714,10 +2714,10 @@
     </scopeInfo>
     <scopeInfo nodeId="8004199436029429362" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="48" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="8004199436029429368" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="60" startPosition="76" endLine="75" endPosition="56">
+      <varInfo nodeId="8004199436029429805" varName="applicableConcept" />
+      <varInfo nodeId="8004199436029429376" varName="name" />
       <varInfo nodeId="8004199436029429407" varName="t" />
       <varInfo nodeId="8004199436029429442" varName="tr" />
-      <varInfo nodeId="8004199436029429376" varName="name" />
-      <varInfo nodeId="8004199436029429805" varName="applicableConcept" />
     </scopeInfo>
     <scopeInfo nodeId="8004199436029429362" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="59" startPosition="0" endLine="77" endPosition="0" />
     <unitInfo nodeId="8004199436029429362" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchCase_Intention" />
@@ -2799,11 +2799,11 @@
     </scopeInfo>
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="50" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="8699312839322230168" fileName="NewTemplateInWeavingRule_Intention.java" startLine="62" startPosition="76" endLine="87" endPosition="56">
-      <varInfo nodeId="8699312839322230238" varName="t" />
-      <varInfo nodeId="8699312839322230308" varName="tr" />
+      <varInfo nodeId="8699312839322230178" varName="applicableConcept" />
       <varInfo nodeId="8699312839322230395" varName="contextNodeType" />
       <varInfo nodeId="8699312839322230184" varName="name" />
-      <varInfo nodeId="8699312839322230178" varName="applicableConcept" />
+      <varInfo nodeId="8699312839322230238" varName="t" />
+      <varInfo nodeId="8699312839322230308" varName="tr" />
     </scopeInfo>
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="61" startPosition="0" endLine="89" endPosition="0" />
     <unitInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention" />
@@ -2871,9 +2871,9 @@
     <scopeInfo nodeId="9092065972411421046" fileName="NewTemplateFragment_Intention.java" startLine="61" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="9092065972411475166" fileName="NewTemplateFragment_Intention.java" startLine="45" startPosition="90" endLine="59" endPosition="16" />
     <scopeInfo nodeId="9092065972411421046" fileName="NewTemplateFragment_Intention.java" startLine="44" startPosition="0" endLine="61" endPosition="0" />
+    <unitInfo nodeId="9092065972411421046" fileName="NewTemplateFragment_Intention.java" startLine="14" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention" />
     <unitInfo nodeId="9092065972411475197" fileName="NewTemplateFragment_Intention.java" startLine="49" startPosition="89" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention$1" />
     <unitInfo nodeId="9092065972411475735" fileName="NewTemplateFragment_Intention.java" startLine="63" startPosition="104" endLine="67" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention$2" />
-    <unitInfo nodeId="9092065972411421046" fileName="NewTemplateFragment_Intention.java" startLine="14" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention" />
   </root>
 </debugInfo>
 

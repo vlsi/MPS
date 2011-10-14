@@ -375,10 +375,10 @@
     <scopeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="188" startPosition="87" endLine="206" endPosition="22" />
     <scopeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="229" startPosition="0" endLine="248" endPosition="0" />
     <scopeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="187" startPosition="0" endLine="208" endPosition="0" />
-    <unitInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="217" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionType_Editor$_Inline_bqk3nx_a1a0" />
-    <unitInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="312" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionType_Editor$throwsTypeListHandler_bqk3nx_b4a" />
-    <unitInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="250" startPosition="0" endLine="311" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionType_Editor$parameterTypeListHandler_bqk3nx_b0" />
     <unitInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="37" startPosition="0" endLine="358" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionType_Editor" />
+    <unitInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="217" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionType_Editor$_Inline_bqk3nx_a1a0" />
+    <unitInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="250" startPosition="0" endLine="311" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionType_Editor$parameterTypeListHandler_bqk3nx_b0" />
+    <unitInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="312" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionType_Editor$throwsTypeListHandler_bqk3nx_b4a" />
   </root>
   <root nodeId="1199547920905">
     <nodeInfo nodeId="1199547920905" fileName="InvokeFunctionExpression_Editor.java" startLine="96" startPosition="58" endLine="96" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -546,8 +546,8 @@
     <scopeInfo nodeId="1199547920905" fileName="InvokeFunctionExpression_Editor.java" startLine="134" startPosition="0" endLine="147" endPosition="0" />
     <scopeInfo nodeId="1199547920905" fileName="InvokeFunctionExpression_Editor.java" startLine="91" startPosition="86" endLine="105" endPosition="22" />
     <scopeInfo nodeId="1199547920905" fileName="InvokeFunctionExpression_Editor.java" startLine="90" startPosition="0" endLine="107" endPosition="0" />
-    <unitInfo nodeId="1199547920905" fileName="InvokeFunctionExpression_Editor.java" startLine="108" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.InvokeFunctionExpression_Editor$parameterListHandler_m4pbm_e0" />
     <unitInfo nodeId="1199547920905" fileName="InvokeFunctionExpression_Editor.java" startLine="30" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.InvokeFunctionExpression_Editor" />
+    <unitInfo nodeId="1199547920905" fileName="InvokeFunctionExpression_Editor.java" startLine="108" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.InvokeFunctionExpression_Editor$parameterListHandler_m4pbm_e0" />
   </root>
   <root nodeId="1199569939113">
     <nodeInfo nodeId="1199569939113" fileName="ClosureLiteral_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -723,9 +723,9 @@
     <scopeInfo nodeId="1199569939113" fileName="ClosureLiteral_Editor.java" startLine="100" startPosition="87" endLine="121" endPosition="22" />
     <scopeInfo nodeId="1199569939113" fileName="ClosureLiteral_Editor.java" startLine="61" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1199569939113" fileName="ClosureLiteral_Editor.java" startLine="99" startPosition="0" endLine="123" endPosition="0" />
+    <unitInfo nodeId="1199569939113" fileName="ClosureLiteral_Editor.java" startLine="34" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureLiteral_Editor" />
     <unitInfo nodeId="1199569939113" fileName="ClosureLiteral_Editor.java" startLine="68" startPosition="60" endLine="78" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureLiteral_Editor$1" />
     <unitInfo nodeId="1199569939113" fileName="ClosureLiteral_Editor.java" startLine="128" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureLiteral_Editor$parameterListHandler_9o2gp8_b0" />
-    <unitInfo nodeId="1199569939113" fileName="ClosureLiteral_Editor.java" startLine="34" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureLiteral_Editor" />
   </root>
   <root nodeId="1199711355895">
     <nodeInfo nodeId="1199711355895" fileName="InvokeExpression_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -847,8 +847,8 @@
     <scopeInfo nodeId="1199711355895" fileName="InvokeExpression_Editor.java" startLine="27" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1199711355895" fileName="InvokeExpression_Editor.java" startLine="96" startPosition="132" endLine="106" endPosition="7" />
     <scopeInfo nodeId="1199711355895" fileName="InvokeExpression_Editor.java" startLine="95" startPosition="0" endLine="108" endPosition="0" />
-    <unitInfo nodeId="1199711355895" fileName="InvokeExpression_Editor.java" startLine="69" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.InvokeExpression_Editor$parameterListHandler_r01tim_c0" />
     <unitInfo nodeId="1199711355895" fileName="InvokeExpression_Editor.java" startLine="23" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.InvokeExpression_Editor" />
+    <unitInfo nodeId="1199711355895" fileName="InvokeExpression_Editor.java" startLine="69" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.InvokeExpression_Editor$parameterListHandler_r01tim_c0" />
   </root>
   <root nodeId="1200830944297">
     <nodeInfo nodeId="1200830944297" fileName="YieldStatement_Editor.java" startLine="45" startPosition="58" endLine="45" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1136,8 +1136,8 @@
     <scopeInfo nodeId="1225797570688" fileName="InvokeFunctionOperation_Editor.java" startLine="133" startPosition="0" endLine="146" endPosition="0" />
     <scopeInfo nodeId="1225797570688" fileName="InvokeFunctionOperation_Editor.java" startLine="77" startPosition="95" endLine="96" endPosition="22" />
     <scopeInfo nodeId="1225797570688" fileName="InvokeFunctionOperation_Editor.java" startLine="76" startPosition="0" endLine="98" endPosition="0" />
-    <unitInfo nodeId="1225797570688" fileName="InvokeFunctionOperation_Editor.java" startLine="107" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.InvokeFunctionOperation_Editor$parameterListHandler_9wclje_c0" />
     <unitInfo nodeId="1225797570688" fileName="InvokeFunctionOperation_Editor.java" startLine="32" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.InvokeFunctionOperation_Editor" />
+    <unitInfo nodeId="1225797570688" fileName="InvokeFunctionOperation_Editor.java" startLine="107" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.InvokeFunctionOperation_Editor$parameterListHandler_9wclje_c0" />
   </root>
   <root nodeId="1229002135604">
     <nodeInfo nodeId="1229002135604" fileName="YieldAllStatement_Editor.java" startLine="45" startPosition="58" endLine="45" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1683,10 +1683,10 @@
     <scopeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="241" startPosition="87" endLine="260" endPosition="22" />
     <scopeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="44" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="240" startPosition="0" endLine="262" endPosition="0" />
-    <unitInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="394" startPosition="0" endLine="429" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionDeclaration_Editor$annotationListHandler_4f8got_b0" />
-    <unitInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="285" startPosition="0" endLine="330" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionDeclaration_Editor$typeVariableDeclarationListHandler_4f8got_b3a" />
-    <unitInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="331" startPosition="0" endLine="393" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionDeclaration_Editor$parameterListHandler_4f8got_h0" />
     <unitInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="36" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionDeclaration_Editor" />
+    <unitInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="394" startPosition="0" endLine="429" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionDeclaration_Editor$annotationListHandler_4f8got_b0" />
+    <unitInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="331" startPosition="0" endLine="393" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionDeclaration_Editor$parameterListHandler_4f8got_h0" />
+    <unitInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="285" startPosition="0" endLine="330" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionDeclaration_Editor$typeVariableDeclarationListHandler_4f8got_b3a" />
   </root>
   <root nodeId="1229604189999">
     <nodeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="79" startPosition="69" endLine="79" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2056,9 +2056,9 @@
     <scopeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="41" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="217" startPosition="88" endLine="238" endPosition="22" />
     <scopeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="216" startPosition="0" endLine="240" endPosition="0" />
-    <unitInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="249" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionContainer_Editor$typeVariableDeclarationListHandler_82dbmy_b6a" />
-    <unitInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="295" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionContainer_Editor$controlAbstractionListHandler_82dbmy_j0" />
     <unitInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="37" startPosition="0" endLine="346" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionContainer_Editor" />
+    <unitInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="295" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionContainer_Editor$controlAbstractionListHandler_82dbmy_j0" />
+    <unitInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="249" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ControlAbstractionContainer_Editor$typeVariableDeclarationListHandler_82dbmy_b6a" />
   </root>
   <root nodeId="1229629886791">
     <nodeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="173" startPosition="58" endLine="173" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2471,11 +2471,11 @@
     <scopeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="231" startPosition="92" endLine="251" endPosition="24" />
     <scopeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="184" startPosition="0" endLine="205" endPosition="0" />
     <scopeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="230" startPosition="0" endLine="253" endPosition="0" />
-    <unitInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="255" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureControlStatement_Editor$_Inline_2saq3j_a1b0" />
+    <unitInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="34" startPosition="0" endLine="391" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureControlStatement_Editor" />
     <unitInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="218" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureControlStatement_Editor$_Inline_2saq3j_a0a" />
+    <unitInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="255" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureControlStatement_Editor$_Inline_2saq3j_a1b0" />
     <unitInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="345" startPosition="0" endLine="390" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureControlStatement_Editor$actualParameterListHandler_2saq3j_b2b0" />
     <unitInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="284" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureControlStatement_Editor$parameterListHandler_2saq3j_a0a1b0" />
-    <unitInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="34" startPosition="0" endLine="391" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.ClosureControlStatement_Editor" />
   </root>
   <root nodeId="1229716582700">
     <nodeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="144" startPosition="58" endLine="144" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2776,9 +2776,9 @@
     <scopeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="138" startPosition="0" endLine="155" endPosition="0" />
     <scopeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="156" startPosition="87" endLine="174" endPosition="22" />
     <scopeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="155" startPosition="0" endLine="176" endPosition="0" />
-    <unitInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="242" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.UnrestrictedFunctionType_Editor$throwsTypeListHandler_vablur_b4a" />
-    <unitInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="181" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.UnrestrictedFunctionType_Editor$parameterTypeListHandler_vablur_b0" />
     <unitInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="33" startPosition="0" endLine="288" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.UnrestrictedFunctionType_Editor" />
+    <unitInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="181" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.UnrestrictedFunctionType_Editor$parameterTypeListHandler_vablur_b0" />
+    <unitInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="242" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.UnrestrictedFunctionType_Editor$throwsTypeListHandler_vablur_b4a" />
   </root>
   <root nodeId="1229718500328">
     <nodeInfo nodeId="1229718500328" fileName="UnrestrictedClosureLiteral_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2956,9 +2956,9 @@
     <scopeInfo nodeId="1229718500328" fileName="UnrestrictedClosureLiteral_Editor.java" startLine="104" startPosition="87" endLine="125" endPosition="22" />
     <scopeInfo nodeId="1229718500328" fileName="UnrestrictedClosureLiteral_Editor.java" startLine="61" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1229718500328" fileName="UnrestrictedClosureLiteral_Editor.java" startLine="103" startPosition="0" endLine="127" endPosition="0" />
+    <unitInfo nodeId="1229718500328" fileName="UnrestrictedClosureLiteral_Editor.java" startLine="34" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.UnrestrictedClosureLiteral_Editor" />
     <unitInfo nodeId="1229718500328" fileName="UnrestrictedClosureLiteral_Editor.java" startLine="68" startPosition="60" endLine="78" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.editor.UnrestrictedClosureLiteral_Editor$1" />
     <unitInfo nodeId="1229718500328" fileName="UnrestrictedClosureLiteral_Editor.java" startLine="132" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.UnrestrictedClosureLiteral_Editor$parameterListHandler_8l0in6_b0" />
-    <unitInfo nodeId="1229718500328" fileName="UnrestrictedClosureLiteral_Editor.java" startLine="34" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.UnrestrictedClosureLiteral_Editor" />
   </root>
   <root nodeId="1235747094428">
     <nodeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="84" startPosition="58" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3113,8 +3113,8 @@
     <scopeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="130" startPosition="0" endLine="143" endPosition="0" />
     <scopeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="79" startPosition="87" endLine="93" endPosition="22" />
     <scopeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="78" startPosition="0" endLine="95" endPosition="0" />
-    <unitInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="104" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.CompactInvokeFunctionExpression_Editor$parameterListHandler_1dey68_c0" />
     <unitInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="32" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.CompactInvokeFunctionExpression_Editor" />
+    <unitInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="104" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.CompactInvokeFunctionExpression_Editor$parameterListHandler_1dey68_c0" />
   </root>
   <root nodeId="1235747240808">
     <nodeInfo nodeId="1235747240808" fileName="CompactInvokeFunctionExpression_DELETE.java" startLine="14" startPosition="95" endLine="15" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3134,8 +3134,8 @@
     <scopeInfo nodeId="1235747240808" fileName="CompactInvokeFunctionExpression_DELETE.java" startLine="13" startPosition="53" endLine="17" endPosition="0" />
     <scopeInfo nodeId="1235747240808" fileName="CompactInvokeFunctionExpression_DELETE.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1235747240808" fileName="CompactInvokeFunctionExpression_DELETE.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <unitInfo nodeId="1235747240808" fileName="CompactInvokeFunctionExpression_DELETE.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.CompactInvokeFunctionExpression_DELETE$CompactInvokeFunctionExpression_DELETE_DELETE" />
     <unitInfo nodeId="1235747240808" fileName="CompactInvokeFunctionExpression_DELETE.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.CompactInvokeFunctionExpression_DELETE" />
+    <unitInfo nodeId="1235747240808" fileName="CompactInvokeFunctionExpression_DELETE.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.CompactInvokeFunctionExpression_DELETE$CompactInvokeFunctionExpression_DELETE_DELETE" />
   </root>
   <root nodeId="1236952075886">
     <nodeInfo nodeId="1236952075886" fileName="ControlClosureLiteral_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3740,10 +3740,10 @@
     <scopeInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="95" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="66" startPosition="89" endLine="93" endPosition="22" />
     <scopeInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="65" startPosition="0" endLine="95" endPosition="0" />
-    <unitInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="474" startPosition="0" endLine="509" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionMethodDeclaration_Editor$annotationListHandler_s8y0yt_b0" />
-    <unitInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="428" startPosition="0" endLine="473" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionMethodDeclaration_Editor$throwsItemListHandler_s8y0yt_b8a" />
-    <unitInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="366" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionMethodDeclaration_Editor$parameterListHandler_s8y0yt_f0" />
     <unitInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="45" startPosition="0" endLine="510" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionMethodDeclaration_Editor" />
+    <unitInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="474" startPosition="0" endLine="509" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionMethodDeclaration_Editor$annotationListHandler_s8y0yt_b0" />
+    <unitInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="366" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionMethodDeclaration_Editor$parameterListHandler_s8y0yt_f0" />
+    <unitInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="428" startPosition="0" endLine="473" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.FunctionMethodDeclaration_Editor$throwsItemListHandler_s8y0yt_b8a" />
   </root>
   <root nodeId="5612111951671422074">
     <nodeInfo nodeId="5612111951671422074" fileName="AbstractFunctionType_Editor.java" startLine="31" startPosition="79" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3907,8 +3907,8 @@
     <scopeInfo nodeId="5612111951671422074" fileName="AbstractFunctionType_Editor.java" startLine="133" startPosition="0" endLine="146" endPosition="0" />
     <scopeInfo nodeId="5612111951671422074" fileName="AbstractFunctionType_Editor.java" startLine="86" startPosition="86" endLine="104" endPosition="22" />
     <scopeInfo nodeId="5612111951671422074" fileName="AbstractFunctionType_Editor.java" startLine="85" startPosition="0" endLine="106" endPosition="0" />
-    <unitInfo nodeId="5612111951671422074" fileName="AbstractFunctionType_Editor.java" startLine="107" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.AbstractFunctionType_Editor$parameterTypeListHandler_55bd8_b0" />
     <unitInfo nodeId="5612111951671422074" fileName="AbstractFunctionType_Editor.java" startLine="30" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.AbstractFunctionType_Editor" />
+    <unitInfo nodeId="5612111951671422074" fileName="AbstractFunctionType_Editor.java" startLine="107" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.editor.AbstractFunctionType_Editor$parameterTypeListHandler_55bd8_b0" />
   </root>
 </debugInfo>
 

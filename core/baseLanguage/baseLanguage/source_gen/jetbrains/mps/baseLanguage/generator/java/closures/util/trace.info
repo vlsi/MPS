@@ -102,8 +102,8 @@
     <scopeInfo nodeId="1219331728661" fileName="QueriesUtil.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="121" startPosition="7" endLine="125" endPosition="31" />
     <scopeInfo nodeId="1196275284507" fileName="QueriesUtil.java" startLine="62" startPosition="113" endLine="67" endPosition="22">
-      <varInfo nodeId="1196275925820" varName="typeOfField" />
       <varInfo nodeId="1196275352612" varName="fieldRef" />
+      <varInfo nodeId="1196275925820" varName="typeOfField" />
     </scopeInfo>
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="96" startPosition="66" endLine="101" endPosition="9" />
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="101" startPosition="9" endLine="106" endPosition="9" />
@@ -112,34 +112,34 @@
     </scopeInfo>
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="120" startPosition="32" endLine="126" endPosition="7" />
     <scopeInfo nodeId="1170874151016" fileName="QueriesUtil.java" startLine="42" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="1170874368084" varName="scope" />
       <varInfo nodeId="1170874222693" varName="inputClosure" />
+      <varInfo nodeId="1170874368084" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="117" startPosition="31" endLine="127" endPosition="20" />
     <scopeInfo nodeId="1170730182544" fileName="QueriesUtil.java" startLine="27" startPosition="115" endLine="40" endPosition="27">
-      <varInfo nodeId="1170730182577" varName="outputClassType" />
       <varInfo nodeId="1170730182546" varName="enclosingClass" />
+      <varInfo nodeId="1170730182577" varName="outputClassType" />
       <varInfo nodeId="1170730182572" varName="outputModel" />
     </scopeInfo>
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="116" startPosition="0" endLine="129" endPosition="0" />
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="93" startPosition="7" endLine="107" endPosition="31" />
     <scopeInfo nodeId="1170730182542" fileName="QueriesUtil.java" startLine="26" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="1170730182591" varName="inputClosure" />
       <varInfo nodeId="1170730182593" varName="generator" />
+      <varInfo nodeId="1170730182591" varName="inputClosure" />
     </scopeInfo>
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="92" startPosition="32" endLine="108" endPosition="7" />
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="87" startPosition="31" endLine="109" endPosition="20" />
     <scopeInfo nodeId="1196274932498" fileName="QueriesUtil.java" startLine="52" startPosition="76" endLine="76" endPosition="102">
-      <varInfo nodeId="1196275252362" varName="enclosingMethodOrClosure" />
       <varInfo nodeId="1196275097910" varName="enclosingClass" />
+      <varInfo nodeId="1196275252362" varName="enclosingMethodOrClosure" />
     </scopeInfo>
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="86" startPosition="0" endLine="111" endPosition="0" />
     <scopeInfo nodeId="1196274932495" fileName="QueriesUtil.java" startLine="51" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="1196275018539" varName="nodeInsideClosure" />
     </scopeInfo>
+    <unitInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="23" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil" />
     <unitInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="113" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil$QuotationClass_w9106s_a0a0a0d" />
     <unitInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="83" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil$QuotationClass_w9106s_a0a0a7a2" />
-    <unitInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="23" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil" />
   </root>
   <root nodeId="1238940012773">
     <nodeInfo nodeId="1238941443937" fileName="ClosuresUtil.java" startLine="22" startPosition="27" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLOSURE_CONTEXT_DATA" />
@@ -314,8 +314,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1238940962004" fileName="ClosuresUtil.java" startLine="50" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1238940962020" varName="contextOwner" />
-      <varInfo nodeId="1238940996386" varName="var" />
       <varInfo nodeId="1238940962022" varName="generator" />
+      <varInfo nodeId="1238940996386" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="1238941081244" fileName="ClosuresUtil.java" startLine="64" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1238941081261" varName="contextOwner" />
@@ -329,18 +329,18 @@
       <varInfo nodeId="3087992888568584371" varName="contextData" />
     </scopeInfo>
     <scopeInfo nodeId="1238941203406" fileName="ClosuresUtil.java" startLine="158" startPosition="122" endLine="164" endPosition="66">
-      <varInfo nodeId="1238941303290" varName="sessionContext" />
       <varInfo nodeId="1238941331266" varName="closureContexts" />
+      <varInfo nodeId="1238941303290" varName="sessionContext" />
     </scopeInfo>
     <scopeInfo nodeId="1238940409643" fileName="ClosuresUtil.java" startLine="27" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="1238940440319" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1238942562295" fileName="ClosuresUtil.java" startLine="102" startPosition="95" endLine="109" endPosition="138" />
     <scopeInfo nodeId="1238943167066" fileName="ClosuresUtil.java" startLine="128" startPosition="0" endLine="135" endPosition="0">
-      <varInfo nodeId="1238943555584" varName="localVars" />
+      <varInfo nodeId="1238943309206" varName="closure" />
       <varInfo nodeId="1238943301376" varName="contextOwner" />
       <varInfo nodeId="1238943578355" varName="generator" />
-      <varInfo nodeId="1238943309206" varName="closure" />
+      <varInfo nodeId="1238943555584" varName="localVars" />
     </scopeInfo>
     <scopeInfo nodeId="1238944644566" fileName="ClosuresUtil.java" startLine="174" startPosition="0" endLine="181" endPosition="0" />
     <scopeInfo nodeId="1238944802681" fileName="ClosuresUtil.java" startLine="189" startPosition="0" endLine="196" endPosition="0">
@@ -353,8 +353,8 @@
     <scopeInfo nodeId="1238944338253" fileName="ClosuresUtil.java" startLine="211" startPosition="0" endLine="219" endPosition="0" />
     <scopeInfo nodeId="1238941047641" fileName="ClosuresUtil.java" startLine="55" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="1238941047658" varName="contextOwner" />
-      <varInfo nodeId="1238941047660" varName="var" />
       <varInfo nodeId="1238941047662" varName="generator" />
+      <varInfo nodeId="1238941047660" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="1238941203403" fileName="ClosuresUtil.java" startLine="157" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="1238941258159" varName="contextOwner" />
@@ -378,8 +378,8 @@
       <varInfo nodeId="1238944999951" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="1238941813058" fileName="ClosuresUtil.java" startLine="74" startPosition="57" endLine="87" endPosition="7">
-      <varInfo nodeId="1238941855244" varName="sessionContext" />
       <varInfo nodeId="1238941876349" varName="closureContexts" />
+      <varInfo nodeId="1238941855244" varName="sessionContext" />
     </scopeInfo>
     <scopeInfo nodeId="1238942731338" fileName="ClosuresUtil.java" startLine="112" startPosition="127" endLine="126" endPosition="26">
       <varInfo nodeId="1238942831386" varName="outerVarsFound" />
@@ -389,10 +389,10 @@
       <varInfo nodeId="1238944319657" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="1238942731335" fileName="ClosuresUtil.java" startLine="111" startPosition="0" endLine="128" endPosition="0">
-      <varInfo nodeId="1238942760827" varName="node" />
       <varInfo nodeId="1238942750200" varName="contextOwner" />
       <varInfo nodeId="1238942804335" varName="generator" />
       <varInfo nodeId="1238942766439" varName="localVariables" />
+      <varInfo nodeId="1238942760827" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1238943810509" fileName="ClosuresUtil.java" startLine="137" startPosition="35" endLine="154" endPosition="5" />
     <scopeInfo nodeId="1238941692849" fileName="ClosuresUtil.java" startLine="70" startPosition="100" endLine="88" endPosition="5" />
@@ -400,18 +400,18 @@
       <varInfo nodeId="1238943796965" varName="outerVarsFound" />
     </scopeInfo>
     <scopeInfo nodeId="1238941692846" fileName="ClosuresUtil.java" startLine="69" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="1238941724555" varName="node" />
       <varInfo nodeId="1238941728400" varName="generator" />
+      <varInfo nodeId="1238941724555" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1238943693568" fileName="ClosuresUtil.java" startLine="135" startPosition="0" endLine="157" endPosition="0">
-      <varInfo nodeId="1238943730126" varName="localVars" />
-      <varInfo nodeId="1238943722342" varName="node" />
       <varInfo nodeId="1238943716996" varName="contextOwner" />
       <varInfo nodeId="1238943751725" varName="generator" />
+      <varInfo nodeId="1238943730126" varName="localVars" />
+      <varInfo nodeId="1238943722342" varName="node" />
     </scopeInfo>
+    <unitInfo nodeId="1238940012773" fileName="ClosuresUtil.java" startLine="22" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil" />
     <unitInfo nodeId="1238946195592" fileName="ClosuresUtil.java" startLine="39" startPosition="31" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil$1" />
     <unitInfo nodeId="1238944138203" fileName="ClosuresUtil.java" startLine="167" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil$ClosureContextData" />
-    <unitInfo nodeId="1238940012773" fileName="ClosuresUtil.java" startLine="22" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil" />
   </root>
   <root nodeId="8428317315592447569">
     <nodeInfo nodeId="8428317315592447571" fileName="ClosuresMappingId.java" startLine="6" startPosition="36" endLine="7" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLOSURE__ADAPTER_CLASS" />
@@ -519,8 +519,8 @@
       <varInfo nodeId="8428317315592447659" varName="generatedClass" />
     </scopeInfo>
     <scopeInfo nodeId="8428317315592447684" fileName="_QueriesUtil.java" startLine="45" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="8428317315592447689" varName="generator" />
       <varInfo nodeId="8428317315592447687" varName="closure" />
+      <varInfo nodeId="8428317315592447689" varName="generator" />
     </scopeInfo>
     <scopeInfo nodeId="8428317315592447720" fileName="_QueriesUtil.java" startLine="51" startPosition="141" endLine="56" endPosition="16">
       <varInfo nodeId="2799691424948130512" varName="var" />
@@ -532,8 +532,8 @@
       <varInfo nodeId="8428317315592447822" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="8428317315592447851" fileName="_QueriesUtil.java" startLine="84" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="8428317315592447854" varName="varDecl" />
       <varInfo nodeId="8428317315592447856" varName="generator" />
+      <varInfo nodeId="8428317315592447854" varName="varDecl" />
     </scopeInfo>
     <scopeInfo nodeId="8428317315592447889" fileName="_QueriesUtil.java" startLine="95" startPosition="96" endLine="102" endPosition="0">
       <varInfo nodeId="8428317315592447892" varName="object" />
@@ -569,15 +569,15 @@
       <varInfo nodeId="8428317315592447785" varName="inputNode" />
     </scopeInfo>
     <scopeInfo nodeId="8428317315592447876" fileName="_QueriesUtil.java" startLine="93" startPosition="106" endLine="114" endPosition="107">
-      <varInfo nodeId="8428317315592447908" varName="model" />
       <varInfo nodeId="8428317315592447878" varName="enclosingClosureOrContextOwner" />
+      <varInfo nodeId="8428317315592447908" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="8428317315592447869" fileName="_QueriesUtil.java" startLine="89" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="8428317315592447874" varName="generator" />
       <varInfo nodeId="8428317315592447872" varName="nodeInsideClosure" />
     </scopeInfo>
-    <unitInfo nodeId="8428317315592447887" fileName="_QueriesUtil.java" startLine="95" startPosition="76" endLine="102" endPosition="5" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil$1" />
     <unitInfo nodeId="8428317315592447591" fileName="_QueriesUtil.java" startLine="19" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil" />
+    <unitInfo nodeId="8428317315592447887" fileName="_QueriesUtil.java" startLine="95" startPosition="76" endLine="102" endPosition="5" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil$1" />
   </root>
 </debugInfo>
 

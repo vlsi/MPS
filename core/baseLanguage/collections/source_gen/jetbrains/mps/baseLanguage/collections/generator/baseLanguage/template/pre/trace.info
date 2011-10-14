@@ -25,12 +25,12 @@
     <scopeInfo nodeId="5233164016162061055" fileName="QueriesGenerated.java" startLine="50" startPosition="150" endLine="51" endPosition="119" />
     <scopeInfo nodeId="5233164016162061065" fileName="QueriesGenerated.java" startLine="54" startPosition="150" endLine="55" endPosition="81" />
     <scopeInfo nodeId="5233164016162060883" fileName="QueriesGenerated.java" startLine="14" startPosition="152" endLine="17" endPosition="363">
-      <varInfo nodeId="5233164016162060893" varName="rt" />
       <varInfo nodeId="5233164016162060885" varName="lt" />
+      <varInfo nodeId="5233164016162060893" varName="rt" />
     </scopeInfo>
     <scopeInfo nodeId="5233164016162061002" fileName="QueriesGenerated.java" startLine="24" startPosition="152" endLine="27" endPosition="363">
-      <varInfo nodeId="5233164016162061012" varName="rt" />
       <varInfo nodeId="5233164016162061004" varName="lt" />
+      <varInfo nodeId="5233164016162061012" varName="rt" />
     </scopeInfo>
   </root>
 </debugInfo>

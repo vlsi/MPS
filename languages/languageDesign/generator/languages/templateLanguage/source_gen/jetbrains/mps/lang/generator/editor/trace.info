@@ -476,9 +476,9 @@
     <scopeInfo nodeId="1087926271843" fileName="NodeMacro_Editor.java" startLine="141" startPosition="0" endLine="159" endPosition="0" />
     <scopeInfo nodeId="1087926271843" fileName="NodeMacro_Editor.java" startLine="189" startPosition="94" endLine="209" endPosition="24" />
     <scopeInfo nodeId="1087926271843" fileName="NodeMacro_Editor.java" startLine="188" startPosition="0" endLine="211" endPosition="0" />
+    <unitInfo nodeId="1087926271843" fileName="NodeMacro_Editor.java" startLine="30" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_Editor" />
     <unitInfo nodeId="1087926271843" fileName="NodeMacro_Editor.java" startLine="164" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_Editor$NodeMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="1087926271843" fileName="NodeMacro_Editor.java" startLine="176" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_Editor$_Inline_e7cx8x_a2a2a" />
-    <unitInfo nodeId="1087926271843" fileName="NodeMacro_Editor.java" startLine="30" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_Editor" />
   </root>
   <root nodeId="1088762125437">
     <nodeInfo nodeId="1088762125437" fileName="ReferenceMacro_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1065,10 +1065,10 @@
     <scopeInfo nodeId="1092060948911" fileName="TemplateDeclaration_Editor.java" startLine="248" startPosition="94" endLine="268" endPosition="24" />
     <scopeInfo nodeId="1092060948911" fileName="TemplateDeclaration_Editor.java" startLine="198" startPosition="0" endLine="220" endPosition="0" />
     <scopeInfo nodeId="1092060948911" fileName="TemplateDeclaration_Editor.java" startLine="247" startPosition="0" endLine="270" endPosition="0" />
-    <unitInfo nodeId="1092060948911" fileName="TemplateDeclaration_Editor.java" startLine="221" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$TemplateDeclaration_name_cellMenu_a0b0a0" />
-    <unitInfo nodeId="1092060948911" fileName="TemplateDeclaration_Editor.java" startLine="272" startPosition="0" endLine="307" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$parameterListHandler_pyph5i_e0a" />
-    <unitInfo nodeId="1092060948911" fileName="TemplateDeclaration_Editor.java" startLine="235" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$_Inline_pyph5i_a1b0a" />
     <unitInfo nodeId="1092060948911" fileName="TemplateDeclaration_Editor.java" startLine="39" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor" />
+    <unitInfo nodeId="1092060948911" fileName="TemplateDeclaration_Editor.java" startLine="221" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$TemplateDeclaration_name_cellMenu_a0b0a0" />
+    <unitInfo nodeId="1092060948911" fileName="TemplateDeclaration_Editor.java" startLine="235" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$_Inline_pyph5i_a1b0a" />
+    <unitInfo nodeId="1092060948911" fileName="TemplateDeclaration_Editor.java" startLine="272" startPosition="0" endLine="307" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$parameterListHandler_pyph5i_e0a" />
   </root>
   <root nodeId="1095419078589">
     <nodeInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="823" startPosition="58" endLine="823" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2529,17 +2529,17 @@
     <scopeInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="852" startPosition="0" endLine="870" endPosition="0" />
     <scopeInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="35" startPosition="89" endLine="61" endPosition="22" />
     <scopeInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="34" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="871" startPosition="0" endLine="906" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$mappingLabelListHandler_g6pxeq_b1c0" />
-    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="907" startPosition="0" endLine="942" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$generationParametersListHandler_g6pxeq_b1e0" />
+    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="30" startPosition="0" endLine="1231" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor" />
     <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="943" startPosition="0" endLine="978" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$createRootRuleListHandler_g6pxeq_b1i0" />
+    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1123" startPosition="0" endLine="1158" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$dropRootRuleListHandler_g6pxeq_b1s0" />
+    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="907" startPosition="0" endLine="942" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$generationParametersListHandler_g6pxeq_b1e0" />
+    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="871" startPosition="0" endLine="906" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$mappingLabelListHandler_g6pxeq_b1c0" />
+    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1087" startPosition="0" endLine="1122" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$patternReductionRuleListHandler_g6pxeq_b1q0" />
+    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1195" startPosition="0" endLine="1230" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$postMappingScriptListHandler_g6pxeq_b1w0" />
+    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1159" startPosition="0" endLine="1194" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$preMappingScriptListHandler_g6pxeq_b1u0" />
+    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1051" startPosition="0" endLine="1086" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$reductionMappingRuleListHandler_g6pxeq_b1o0" />
     <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="979" startPosition="0" endLine="1014" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$rootMappingRuleListHandler_g6pxeq_b1k0" />
     <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1015" startPosition="0" endLine="1050" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$weavingMappingRuleListHandler_g6pxeq_b1m0" />
-    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1051" startPosition="0" endLine="1086" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$reductionMappingRuleListHandler_g6pxeq_b1o0" />
-    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1087" startPosition="0" endLine="1122" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$patternReductionRuleListHandler_g6pxeq_b1q0" />
-    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1123" startPosition="0" endLine="1158" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$dropRootRuleListHandler_g6pxeq_b1s0" />
-    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1159" startPosition="0" endLine="1194" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$preMappingScriptListHandler_g6pxeq_b1u0" />
-    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="1195" startPosition="0" endLine="1230" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$postMappingScriptListHandler_g6pxeq_b1w0" />
-    <unitInfo nodeId="1095419078589" fileName="MappingConfiguration_Editor.java" startLine="30" startPosition="0" endLine="1231" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor" />
   </root>
   <root nodeId="1095672501074">
     <nodeInfo nodeId="1095672501074" fileName="TemplateFragment_Editor.java" startLine="207" startPosition="58" endLine="207" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2923,9 +2923,9 @@
     <scopeInfo nodeId="1095672501074" fileName="TemplateFragment_Editor.java" startLine="308" startPosition="92" endLine="328" endPosition="24" />
     <scopeInfo nodeId="1095672501074" fileName="TemplateFragment_Editor.java" startLine="270" startPosition="0" endLine="293" endPosition="0" />
     <scopeInfo nodeId="1095672501074" fileName="TemplateFragment_Editor.java" startLine="307" startPosition="0" endLine="330" endPosition="0" />
-    <unitInfo nodeId="1095672501074" fileName="TemplateFragment_Editor.java" startLine="258" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateFragment_Editor$_Inline_73o0fl_a2a2a" />
-    <unitInfo nodeId="1095672501074" fileName="TemplateFragment_Editor.java" startLine="295" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateFragment_Editor$_Inline_73o0fl_a1a" />
     <unitInfo nodeId="1095672501074" fileName="TemplateFragment_Editor.java" startLine="24" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateFragment_Editor" />
+    <unitInfo nodeId="1095672501074" fileName="TemplateFragment_Editor.java" startLine="295" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateFragment_Editor$_Inline_73o0fl_a1a" />
+    <unitInfo nodeId="1095672501074" fileName="TemplateFragment_Editor.java" startLine="258" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateFragment_Editor$_Inline_73o0fl_a2a2a" />
   </root>
   <root nodeId="1112731832583">
     <nodeInfo nodeId="1112731832583" fileName="SwitchMacro_Editor.java" startLine="130" startPosition="69" endLine="130" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3415,10 +3415,10 @@
     <scopeInfo nodeId="1112731832583" fileName="SwitchMacro_Editor.java" startLine="361" startPosition="0" endLine="381" endPosition="0" />
     <scopeInfo nodeId="1112731832583" fileName="SwitchMacro_Editor.java" startLine="395" startPosition="0" endLine="415" endPosition="0" />
     <scopeInfo nodeId="1112731832583" fileName="SwitchMacro_Editor.java" startLine="279" startPosition="0" endLine="300" endPosition="0" />
+    <unitInfo nodeId="1112731832583" fileName="SwitchMacro_Editor.java" startLine="30" startPosition="0" endLine="417" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.SwitchMacro_Editor" />
     <unitInfo nodeId="1112731832583" fileName="SwitchMacro_Editor.java" startLine="337" startPosition="0" endLine="348" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.SwitchMacro_Editor$SwitchMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="1112731832583" fileName="SwitchMacro_Editor.java" startLine="349" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.SwitchMacro_Editor$_Inline_31t0mi_a2b2a" />
     <unitInfo nodeId="1112731832583" fileName="SwitchMacro_Editor.java" startLine="383" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.SwitchMacro_Editor$_Inline_31t0mi_a2e2a" />
-    <unitInfo nodeId="1112731832583" fileName="SwitchMacro_Editor.java" startLine="30" startPosition="0" endLine="417" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.SwitchMacro_Editor" />
   </root>
   <root nodeId="1112732167706">
     <nodeInfo nodeId="1112732167706" fileName="TemplateSwitch_Editor.java" startLine="248" startPosition="58" endLine="248" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3872,9 +3872,9 @@
     <scopeInfo nodeId="1112732167706" fileName="TemplateSwitch_Editor.java" startLine="241" startPosition="0" endLine="259" endPosition="0" />
     <scopeInfo nodeId="1112732167706" fileName="TemplateSwitch_Editor.java" startLine="293" startPosition="0" endLine="311" endPosition="0" />
     <scopeInfo nodeId="1112732167706" fileName="TemplateSwitch_Editor.java" startLine="324" startPosition="0" endLine="344" endPosition="0" />
+    <unitInfo nodeId="1112732167706" fileName="TemplateSwitch_Editor.java" startLine="30" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitch_Editor" />
     <unitInfo nodeId="1112732167706" fileName="TemplateSwitch_Editor.java" startLine="312" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitch_Editor$_Inline_q42gqn_a3a0" />
     <unitInfo nodeId="1112732167706" fileName="TemplateSwitch_Editor.java" startLine="346" startPosition="0" endLine="381" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitch_Editor$reductionMappingRuleListHandler_q42gqn_b4b2a" />
-    <unitInfo nodeId="1112732167706" fileName="TemplateSwitch_Editor.java" startLine="30" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitch_Editor" />
   </root>
   <root nodeId="1112911659681">
     <nodeInfo nodeId="1112911659681" fileName="TemplateSwitchReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3949,8 +3949,8 @@
     <scopeInfo nodeId="1112911659681" fileName="TemplateSwitchReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="1112911659681" fileName="TemplateSwitchReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1112911659681" fileName="TemplateSwitchReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="1112911659681" fileName="TemplateSwitchReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_Editor$_Inline_a3kslj_a0a" />
     <unitInfo nodeId="1112911659681" fileName="TemplateSwitchReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_Editor" />
+    <unitInfo nodeId="1112911659681" fileName="TemplateSwitchReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_Editor$_Inline_a3kslj_a0a" />
   </root>
   <root nodeId="1114707211025">
     <nodeInfo nodeId="1114707211025" fileName="IfMacro_Editor.java" startLine="311" startPosition="58" endLine="311" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4492,9 +4492,9 @@
     <scopeInfo nodeId="1114707211025" fileName="IfMacro_Editor.java" startLine="322" startPosition="0" endLine="342" endPosition="0" />
     <scopeInfo nodeId="1114707211025" fileName="IfMacro_Editor.java" startLine="433" startPosition="0" endLine="453" endPosition="0" />
     <scopeInfo nodeId="1114707211025" fileName="IfMacro_Editor.java" startLine="359" startPosition="0" endLine="381" endPosition="0" />
+    <unitInfo nodeId="1114707211025" fileName="IfMacro_Editor.java" startLine="32" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IfMacro_Editor" />
     <unitInfo nodeId="1114707211025" fileName="IfMacro_Editor.java" startLine="409" startPosition="0" endLine="420" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IfMacro_Editor$IfMacro_component_cellMenu_a0a0a" />
     <unitInfo nodeId="1114707211025" fileName="IfMacro_Editor.java" startLine="421" startPosition="0" endLine="454" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IfMacro_Editor$_Inline_t4g6n2_a2b2a" />
-    <unitInfo nodeId="1114707211025" fileName="IfMacro_Editor.java" startLine="32" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IfMacro_Editor" />
   </root>
   <root nodeId="1114729546995">
     <nodeInfo nodeId="1114729546995" fileName="CopySrcListMacro_Editor.java" startLine="115" startPosition="69" endLine="115" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4864,9 +4864,9 @@
     <scopeInfo nodeId="1114729546995" fileName="CopySrcListMacro_Editor.java" startLine="255" startPosition="0" endLine="274" endPosition="0" />
     <scopeInfo nodeId="1114729546995" fileName="CopySrcListMacro_Editor.java" startLine="235" startPosition="0" endLine="255" endPosition="0" />
     <scopeInfo nodeId="1114729546995" fileName="CopySrcListMacro_Editor.java" startLine="299" startPosition="0" endLine="319" endPosition="0" />
+    <unitInfo nodeId="1114729546995" fileName="CopySrcListMacro_Editor.java" startLine="30" startPosition="0" endLine="321" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcListMacro_Editor" />
     <unitInfo nodeId="1114729546995" fileName="CopySrcListMacro_Editor.java" startLine="275" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcListMacro_Editor$CopySrcListMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="1114729546995" fileName="CopySrcListMacro_Editor.java" startLine="287" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcListMacro_Editor$_Inline_vmyx7q_a2b2a" />
-    <unitInfo nodeId="1114729546995" fileName="CopySrcListMacro_Editor.java" startLine="30" startPosition="0" endLine="321" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcListMacro_Editor" />
   </root>
   <root nodeId="1118773368750">
     <nodeInfo nodeId="1118773368750" fileName="CopySrcNodeMacro_Editor.java" startLine="41" startPosition="69" endLine="41" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4935,8 +4935,8 @@
     <scopeInfo nodeId="1118773368750" fileName="CopySrcNodeMacro_Editor.java" startLine="52" startPosition="96" endLine="62" endPosition="72" />
     <scopeInfo nodeId="1118773368750" fileName="CopySrcNodeMacro_Editor.java" startLine="51" startPosition="88" endLine="65" endPosition="22" />
     <scopeInfo nodeId="1118773368750" fileName="CopySrcNodeMacro_Editor.java" startLine="50" startPosition="0" endLine="67" endPosition="0" />
-    <unitInfo nodeId="1118773368750" fileName="CopySrcNodeMacro_Editor.java" startLine="68" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcNodeMacro_Editor$CopySrcNodeMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="1118773368750" fileName="CopySrcNodeMacro_Editor.java" startLine="22" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcNodeMacro_Editor" />
+    <unitInfo nodeId="1118773368750" fileName="CopySrcNodeMacro_Editor.java" startLine="68" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcNodeMacro_Editor$CopySrcNodeMacro_component_cellMenu_a0a0" />
   </root>
   <root nodeId="1118786597045">
     <nodeInfo nodeId="1118786597045" fileName="LoopMacro_Editor.java" startLine="115" startPosition="69" endLine="115" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5306,9 +5306,9 @@
     <scopeInfo nodeId="1118786597045" fileName="LoopMacro_Editor.java" startLine="255" startPosition="0" endLine="274" endPosition="0" />
     <scopeInfo nodeId="1118786597045" fileName="LoopMacro_Editor.java" startLine="235" startPosition="0" endLine="255" endPosition="0" />
     <scopeInfo nodeId="1118786597045" fileName="LoopMacro_Editor.java" startLine="299" startPosition="0" endLine="319" endPosition="0" />
+    <unitInfo nodeId="1118786597045" fileName="LoopMacro_Editor.java" startLine="30" startPosition="0" endLine="321" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LoopMacro_Editor" />
     <unitInfo nodeId="1118786597045" fileName="LoopMacro_Editor.java" startLine="275" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LoopMacro_Editor$LoopMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="1118786597045" fileName="LoopMacro_Editor.java" startLine="287" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LoopMacro_Editor$_Inline_l06mua_a2b2a" />
-    <unitInfo nodeId="1118786597045" fileName="LoopMacro_Editor.java" startLine="30" startPosition="0" endLine="321" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LoopMacro_Editor" />
   </root>
   <root nodeId="1131073370410">
     <nodeInfo nodeId="1131073370410" fileName="MapSrcNodeMacro_Editor.java" startLine="143" startPosition="69" endLine="143" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5820,9 +5820,9 @@
     <scopeInfo nodeId="1131073370410" fileName="MapSrcNodeMacro_Editor.java" startLine="361" startPosition="0" endLine="380" endPosition="0" />
     <scopeInfo nodeId="1131073370410" fileName="MapSrcNodeMacro_Editor.java" startLine="307" startPosition="0" endLine="327" endPosition="0" />
     <scopeInfo nodeId="1131073370410" fileName="MapSrcNodeMacro_Editor.java" startLine="405" startPosition="0" endLine="425" endPosition="0" />
+    <unitInfo nodeId="1131073370410" fileName="MapSrcNodeMacro_Editor.java" startLine="30" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcNodeMacro_Editor" />
     <unitInfo nodeId="1131073370410" fileName="MapSrcNodeMacro_Editor.java" startLine="381" startPosition="0" endLine="392" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcNodeMacro_Editor$MapSrcNodeMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="1131073370410" fileName="MapSrcNodeMacro_Editor.java" startLine="393" startPosition="0" endLine="426" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcNodeMacro_Editor$_Inline_dms3bp_a2b2a" />
-    <unitInfo nodeId="1131073370410" fileName="MapSrcNodeMacro_Editor.java" startLine="30" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcNodeMacro_Editor" />
   </root>
   <root nodeId="1133037934981">
     <nodeInfo nodeId="1133037934981" fileName="MapSrcListMacro_Editor.java" startLine="143" startPosition="69" endLine="143" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -6330,9 +6330,9 @@
     <scopeInfo nodeId="1133037934981" fileName="MapSrcListMacro_Editor.java" startLine="357" startPosition="0" endLine="376" endPosition="0" />
     <scopeInfo nodeId="1133037934981" fileName="MapSrcListMacro_Editor.java" startLine="303" startPosition="0" endLine="323" endPosition="0" />
     <scopeInfo nodeId="1133037934981" fileName="MapSrcListMacro_Editor.java" startLine="401" startPosition="0" endLine="421" endPosition="0" />
+    <unitInfo nodeId="1133037934981" fileName="MapSrcListMacro_Editor.java" startLine="30" startPosition="0" endLine="423" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcListMacro_Editor" />
     <unitInfo nodeId="1133037934981" fileName="MapSrcListMacro_Editor.java" startLine="377" startPosition="0" endLine="388" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcListMacro_Editor$MapSrcListMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="1133037934981" fileName="MapSrcListMacro_Editor.java" startLine="389" startPosition="0" endLine="422" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcListMacro_Editor$_Inline_pr8n4z_a2b2a" />
-    <unitInfo nodeId="1133037934981" fileName="MapSrcListMacro_Editor.java" startLine="30" startPosition="0" endLine="423" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcListMacro_Editor" />
   </root>
   <root nodeId="1149868357716">
     <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="19" startPosition="32" endLine="20" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6621,14 +6621,14 @@
     <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="18" startPosition="59" endLine="32" endPosition="3" />
     <scopeInfo nodeId="1149868396497" fileName="MacrosSwitch_KeyMap.java" startLine="64" startPosition="152" endLine="81" endPosition="18" />
     <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="63" startPosition="0" endLine="83" endPosition="0" />
+    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="18" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap" />
     <unitInfo nodeId="1227876803815" fileName="MacrosSwitch_KeyMap.java" startLine="71" startPosition="91" endLine="75" endPosition="7" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$1" />
     <unitInfo nodeId="1227876799090" fileName="MacrosSwitch_KeyMap.java" startLine="86" startPosition="106" endLine="90" endPosition="7" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$2" />
-    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="249" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action4" />
+    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="34" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action0" />
     <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="99" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action1" />
     <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="147" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action2" />
     <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="198" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action3" />
-    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="34" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action0" />
-    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="18" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap" />
+    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="249" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action4" />
   </root>
   <root nodeId="1167088003562">
     <nodeInfo nodeId="1167088003562" fileName="CreateRootRule_Editor.java" startLine="176" startPosition="58" endLine="176" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -7036,10 +7036,10 @@
     <scopeInfo nodeId="1167088003562" fileName="CreateRootRule_Editor.java" startLine="257" startPosition="0" endLine="280" endPosition="0" />
     <scopeInfo nodeId="1167088003562" fileName="CreateRootRule_Editor.java" startLine="332" startPosition="0" endLine="355" endPosition="0" />
     <scopeInfo nodeId="1167088003562" fileName="CreateRootRule_Editor.java" startLine="294" startPosition="0" endLine="318" endPosition="0" />
+    <unitInfo nodeId="1167088003562" fileName="CreateRootRule_Editor.java" startLine="25" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor" />
     <unitInfo nodeId="1167088003562" fileName="CreateRootRule_Editor.java" startLine="245" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor$_Inline_7t32xl_a0d0" />
     <unitInfo nodeId="1167088003562" fileName="CreateRootRule_Editor.java" startLine="320" startPosition="0" endLine="356" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor$_Inline_7t32xl_a2c0" />
     <unitInfo nodeId="1167088003562" fileName="CreateRootRule_Editor.java" startLine="282" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor$_Inline_7t32xl_a4a" />
-    <unitInfo nodeId="1167088003562" fileName="CreateRootRule_Editor.java" startLine="25" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor" />
   </root>
   <root nodeId="1167171627113">
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="125" startPosition="69" endLine="125" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -7462,9 +7462,9 @@
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="334" startPosition="93" endLine="354" endPosition="24" />
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="296" startPosition="0" endLine="319" endPosition="0" />
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="333" startPosition="0" endLine="356" endPosition="0" />
+    <unitInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="25" startPosition="0" endLine="358" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor" />
     <unitInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="284" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor$_Inline_gkr2rl_a0c0" />
     <unitInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="321" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor$_Inline_gkr2rl_a1c0" />
-    <unitInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="25" startPosition="0" endLine="358" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor" />
   </root>
   <root nodeId="1167328078404">
     <nodeInfo nodeId="1167328078404" fileName="BaseMappingRule_premise.java" startLine="150" startPosition="58" endLine="150" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -7706,8 +7706,8 @@
     <scopeInfo nodeId="1167328078404" fileName="BaseMappingRule_premise.java" startLine="193" startPosition="93" endLine="213" endPosition="24" />
     <scopeInfo nodeId="1167328078404" fileName="BaseMappingRule_premise.java" startLine="123" startPosition="0" endLine="144" endPosition="0" />
     <scopeInfo nodeId="1167328078404" fileName="BaseMappingRule_premise.java" startLine="192" startPosition="0" endLine="215" endPosition="0" />
-    <unitInfo nodeId="1167328078404" fileName="BaseMappingRule_premise.java" startLine="180" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.BaseMappingRule_premise$_Inline_v63wqt_a1a0" />
     <unitInfo nodeId="1167328078404" fileName="BaseMappingRule_premise.java" startLine="23" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.BaseMappingRule_premise" />
+    <unitInfo nodeId="1167328078404" fileName="BaseMappingRule_premise.java" startLine="180" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.BaseMappingRule_premise$_Inline_v63wqt_a1a0" />
   </root>
   <root nodeId="1167328252970">
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="108" startPosition="69" endLine="108" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -8058,9 +8058,9 @@
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="280" startPosition="93" endLine="300" endPosition="24" />
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="242" startPosition="0" endLine="265" endPosition="0" />
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="279" startPosition="0" endLine="302" endPosition="0" />
+    <unitInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="25" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Reduction_MappingRule_Editor" />
     <unitInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="230" startPosition="0" endLine="266" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Reduction_MappingRule_Editor$_Inline_c84kqv_a0b1a" />
     <unitInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="267" startPosition="0" endLine="303" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Reduction_MappingRule_Editor$_Inline_c84kqv_a1c0" />
-    <unitInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="25" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Reduction_MappingRule_Editor" />
   </root>
   <root nodeId="1167514442227">
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="286" startPosition="58" endLine="286" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -8698,11 +8698,11 @@
     <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="440" startPosition="0" endLine="463" endPosition="0" />
     <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="515" startPosition="0" endLine="538" endPosition="0" />
     <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="477" startPosition="0" endLine="501" endPosition="0" />
-    <unitInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="391" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor$_Inline_pxqe0v_a1a0a" />
+    <unitInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="26" startPosition="0" endLine="540" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor" />
     <unitInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="428" startPosition="0" endLine="464" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor$_Inline_pxqe0v_a0c0" />
+    <unitInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="391" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor$_Inline_pxqe0v_a1a0a" />
     <unitInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="503" startPosition="0" endLine="539" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor$_Inline_pxqe0v_a1c0" />
     <unitInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="465" startPosition="0" endLine="502" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor$_Inline_pxqe0v_a3a" />
-    <unitInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="26" startPosition="0" endLine="540" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor" />
   </root>
   <root nodeId="1167859493978">
     <nodeInfo nodeId="1167859493978" fileName="MacroSymbol_Actions.java" startLine="13" startPosition="95" endLine="14" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8726,8 +8726,8 @@
     <scopeInfo nodeId="1167859493978" fileName="MacroSymbol_Actions.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1167859493978" fileName="MacroSymbol_Actions.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="1167859493978" fileName="MacroSymbol_Actions.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="1167859493978" fileName="MacroSymbol_Actions.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacroSymbol_Actions$MacroSymbol_Actions_DELETE" />
     <unitInfo nodeId="1167859493978" fileName="MacroSymbol_Actions.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacroSymbol_Actions" />
+    <unitInfo nodeId="1167859493978" fileName="MacroSymbol_Actions.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacroSymbol_Actions$MacroSymbol_Actions_DELETE" />
   </root>
   <root nodeId="1168559286756">
     <nodeInfo nodeId="1168559286756" fileName="RuleConsequence_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -8829,8 +8829,8 @@
     <scopeInfo nodeId="1168559415840" fileName="TemplateDeclarationReference_Editor.java" startLine="68" startPosition="92" endLine="85" endPosition="24" />
     <scopeInfo nodeId="1168559415840" fileName="TemplateDeclarationReference_Editor.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="1168559415840" fileName="TemplateDeclarationReference_Editor.java" startLine="67" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="1168559415840" fileName="TemplateDeclarationReference_Editor.java" startLine="55" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_Editor$_Inline_krqspc_a0a" />
     <unitInfo nodeId="1168559415840" fileName="TemplateDeclarationReference_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_Editor" />
+    <unitInfo nodeId="1168559415840" fileName="TemplateDeclarationReference_Editor.java" startLine="55" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_Editor$_Inline_krqspc_a0a" />
   </root>
   <root nodeId="1168559735661">
     <nodeInfo nodeId="1168559735661" fileName="DismissTopMappingRule_Editor.java" startLine="48" startPosition="58" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -9063,8 +9063,8 @@
     <scopeInfo nodeId="1168619539479" fileName="RootTemplateAnnotation_Editor.java" startLine="107" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="1168619539479" fileName="RootTemplateAnnotation_Editor.java" startLine="139" startPosition="94" endLine="159" endPosition="24" />
     <scopeInfo nodeId="1168619539479" fileName="RootTemplateAnnotation_Editor.java" startLine="138" startPosition="0" endLine="161" endPosition="0" />
-    <unitInfo nodeId="1168619539479" fileName="RootTemplateAnnotation_Editor.java" startLine="126" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_Editor$_Inline_1qmre8_a1b0a" />
     <unitInfo nodeId="1168619539479" fileName="RootTemplateAnnotation_Editor.java" startLine="21" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_Editor" />
+    <unitInfo nodeId="1168619539479" fileName="RootTemplateAnnotation_Editor.java" startLine="126" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_Editor$_Inline_1qmre8_a1b0a" />
   </root>
   <root nodeId="1168620373595">
     <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="22" startPosition="42" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -9123,13 +9123,13 @@
     <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="21" startPosition="69" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="42" startPosition="91" endLine="51" endPosition="114" />
     <scopeInfo nodeId="1168622085219" fileName="RootTemplateAnnotation_KeyMap.java" startLine="59" startPosition="152" endLine="68" endPosition="215">
-      <varInfo nodeId="1205883003794" varName="language" />
       <varInfo nodeId="1205883506609" varName="applyToNode" />
+      <varInfo nodeId="1205883003794" varName="language" />
     </scopeInfo>
     <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="41" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="29" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_KeyMap$RootTemplateAnnotation_KeyMap_Action0" />
     <unitInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_KeyMap" />
+    <unitInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="29" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_KeyMap$RootTemplateAnnotation_KeyMap_Action0" />
   </root>
   <root nodeId="1169570088021">
     <nodeInfo nodeId="1169570088021" fileName="WeaveEach_RuleConsequence_Editor.java" startLine="121" startPosition="58" endLine="121" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -9338,8 +9338,8 @@
     <scopeInfo nodeId="1169570088021" fileName="WeaveEach_RuleConsequence_Editor.java" startLine="163" startPosition="93" endLine="180" endPosition="24" />
     <scopeInfo nodeId="1169570088021" fileName="WeaveEach_RuleConsequence_Editor.java" startLine="114" startPosition="0" endLine="132" endPosition="0" />
     <scopeInfo nodeId="1169570088021" fileName="WeaveEach_RuleConsequence_Editor.java" startLine="162" startPosition="0" endLine="182" endPosition="0" />
-    <unitInfo nodeId="1169570088021" fileName="WeaveEach_RuleConsequence_Editor.java" startLine="150" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveEach_RuleConsequence_Editor$_Inline_hfot0g_a2b0" />
     <unitInfo nodeId="1169570088021" fileName="WeaveEach_RuleConsequence_Editor.java" startLine="21" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveEach_RuleConsequence_Editor" />
+    <unitInfo nodeId="1169570088021" fileName="WeaveEach_RuleConsequence_Editor.java" startLine="150" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveEach_RuleConsequence_Editor$_Inline_hfot0g_a2b0" />
   </root>
   <root nodeId="1169670569544">
     <nodeInfo nodeId="1169670569544" fileName="GeneratorMessage_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -9826,8 +9826,8 @@
     <scopeInfo nodeId="1184214289430" fileName="CopyScrNodeMacro_inspector.java" startLine="221" startPosition="0" endLine="240" endPosition="0" />
     <scopeInfo nodeId="1184214289430" fileName="CopyScrNodeMacro_inspector.java" startLine="201" startPosition="0" endLine="221" endPosition="0" />
     <scopeInfo nodeId="1184214289430" fileName="CopyScrNodeMacro_inspector.java" startLine="253" startPosition="0" endLine="273" endPosition="0" />
-    <unitInfo nodeId="1184214289430" fileName="CopyScrNodeMacro_inspector.java" startLine="241" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector$_Inline_m1raju_a2b2a" />
     <unitInfo nodeId="1184214289430" fileName="CopyScrNodeMacro_inspector.java" startLine="23" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector" />
+    <unitInfo nodeId="1184214289430" fileName="CopyScrNodeMacro_inspector.java" startLine="241" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector$_Inline_m1raju_a2b2a" />
   </root>
   <root nodeId="1184864447477">
     <nodeInfo nodeId="1184864447477" fileName="NodeMacro_postfix.java" startLine="116" startPosition="58" endLine="116" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -10029,9 +10029,9 @@
     <scopeInfo nodeId="1184864447477" fileName="NodeMacro_postfix.java" startLine="174" startPosition="0" endLine="194" endPosition="0" />
     <scopeInfo nodeId="1184864447477" fileName="NodeMacro_postfix.java" startLine="43" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1184864447477" fileName="NodeMacro_postfix.java" startLine="79" startPosition="0" endLine="101" endPosition="0" />
+    <unitInfo nodeId="1184864447477" fileName="NodeMacro_postfix.java" startLine="31" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_postfix" />
     <unitInfo nodeId="1184864447477" fileName="NodeMacro_postfix.java" startLine="81" startPosition="83" endLine="92" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_postfix$1" />
     <unitInfo nodeId="1184864447477" fileName="NodeMacro_postfix.java" startLine="162" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_postfix$_Inline_crgygw_a1a" />
-    <unitInfo nodeId="1184864447477" fileName="NodeMacro_postfix.java" startLine="31" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_postfix" />
   </root>
   <root nodeId="1194566459517">
     <nodeInfo nodeId="1194566459517" fileName="IncludeMacro_Editor.java" startLine="130" startPosition="69" endLine="130" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -10521,10 +10521,10 @@
     <scopeInfo nodeId="1194566459517" fileName="IncludeMacro_Editor.java" startLine="361" startPosition="0" endLine="381" endPosition="0" />
     <scopeInfo nodeId="1194566459517" fileName="IncludeMacro_Editor.java" startLine="395" startPosition="0" endLine="415" endPosition="0" />
     <scopeInfo nodeId="1194566459517" fileName="IncludeMacro_Editor.java" startLine="279" startPosition="0" endLine="300" endPosition="0" />
+    <unitInfo nodeId="1194566459517" fileName="IncludeMacro_Editor.java" startLine="30" startPosition="0" endLine="417" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor" />
     <unitInfo nodeId="1194566459517" fileName="IncludeMacro_Editor.java" startLine="337" startPosition="0" endLine="348" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor$IncludeMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="1194566459517" fileName="IncludeMacro_Editor.java" startLine="349" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor$_Inline_8okfes_a2b2a" />
     <unitInfo nodeId="1194566459517" fileName="IncludeMacro_Editor.java" startLine="383" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor$_Inline_8okfes_a2e2a" />
-    <unitInfo nodeId="1194566459517" fileName="IncludeMacro_Editor.java" startLine="30" startPosition="0" endLine="417" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor" />
   </root>
   <root nodeId="1194566703393">
     <nodeInfo nodeId="1194566703393" fileName="Styles_StyleSheet.java" startLine="13" startPosition="66" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -10859,8 +10859,8 @@
     <scopeInfo nodeId="1195158926900" fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="31" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="1195158926900" fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="89" startPosition="88" endLine="103" endPosition="22" />
     <scopeInfo nodeId="1195158926900" fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="88" startPosition="0" endLine="105" endPosition="0" />
-    <unitInfo nodeId="1195158926900" fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="106" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_RuleConsequence_Editor$caseListHandler_yn898b_a0" />
     <unitInfo nodeId="1195158926900" fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="27" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_RuleConsequence_Editor" />
+    <unitInfo nodeId="1195158926900" fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="106" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_RuleConsequence_Editor$caseListHandler_yn898b_a0" />
   </root>
   <root nodeId="1195501142572">
     <nodeInfo nodeId="1195501142572" fileName="MappingScript_Editor.java" startLine="160" startPosition="58" endLine="160" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -11219,8 +11219,8 @@
     <scopeInfo nodeId="1195502189033" fileName="MappingScriptReference_Editor.java" startLine="60" startPosition="92" endLine="77" endPosition="24" />
     <scopeInfo nodeId="1195502189033" fileName="MappingScriptReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1195502189033" fileName="MappingScriptReference_Editor.java" startLine="59" startPosition="0" endLine="79" endPosition="0" />
-    <unitInfo nodeId="1195502189033" fileName="MappingScriptReference_Editor.java" startLine="47" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingScriptReference_Editor$_Inline_t4awil_a0a" />
     <unitInfo nodeId="1195502189033" fileName="MappingScriptReference_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingScriptReference_Editor" />
+    <unitInfo nodeId="1195502189033" fileName="MappingScriptReference_Editor.java" startLine="47" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingScriptReference_Editor$_Inline_t4awil_a0a" />
   </root>
   <root nodeId="1200911357797">
     <nodeInfo nodeId="1200911357797" fileName="MappingLabelDeclaration_Editor.java" startLine="66" startPosition="58" endLine="66" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -11429,9 +11429,9 @@
     <scopeInfo nodeId="1200911357797" fileName="MappingLabelDeclaration_Editor.java" startLine="95" startPosition="0" endLine="117" endPosition="0" />
     <scopeInfo nodeId="1200911357797" fileName="MappingLabelDeclaration_Editor.java" startLine="130" startPosition="0" endLine="153" endPosition="0" />
     <scopeInfo nodeId="1200911357797" fileName="MappingLabelDeclaration_Editor.java" startLine="167" startPosition="0" endLine="190" endPosition="0" />
+    <unitInfo nodeId="1200911357797" fileName="MappingLabelDeclaration_Editor.java" startLine="21" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingLabelDeclaration_Editor" />
     <unitInfo nodeId="1200911357797" fileName="MappingLabelDeclaration_Editor.java" startLine="118" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingLabelDeclaration_Editor$_Inline_sexq64_a3a" />
     <unitInfo nodeId="1200911357797" fileName="MappingLabelDeclaration_Editor.java" startLine="155" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingLabelDeclaration_Editor$_Inline_sexq64_a5a" />
-    <unitInfo nodeId="1200911357797" fileName="MappingLabelDeclaration_Editor.java" startLine="21" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingLabelDeclaration_Editor" />
   </root>
   <root nodeId="1202780999264">
     <nodeInfo nodeId="1202780999264" fileName="AbandonInput_RuleConsequence_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -11617,14 +11617,14 @@
       <varInfo nodeId="1205859679049" varName="ancestorTFs" />
     </scopeInfo>
     <scopeInfo nodeId="1205879788735" fileName="QueriesUtil.java" startLine="179" startPosition="59" endLine="185" endPosition="76">
-      <varInfo nodeId="1205879900231" varName="referentNode" />
       <varInfo nodeId="1238593053241" varName="link" />
+      <varInfo nodeId="1205879900231" varName="referentNode" />
     </scopeInfo>
     <scopeInfo nodeId="1205869156696" fileName="QueriesUtil.java" startLine="152" startPosition="7" endLine="159" endPosition="5" />
     <scopeInfo nodeId="1205880048661" fileName="QueriesUtil.java" startLine="168" startPosition="63" endLine="176" endPosition="16" />
     <scopeInfo nodeId="1216154358071" fileName="QueriesUtil.java" startLine="111" startPosition="69" endLine="120" endPosition="25">
-      <varInfo nodeId="1216154409480" varName="propertyName" />
       <varInfo nodeId="1216154409485" varName="propertyMacro" />
+      <varInfo nodeId="1216154409480" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="1205859565509" fileName="QueriesUtil.java" startLine="135" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="1205859602132" varName="node" />
@@ -11634,8 +11634,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1216154498763" fileName="QueriesUtil.java" startLine="123" startPosition="70" endLine="133" endPosition="26">
       <varInfo nodeId="1216154550414" varName="linkRole" />
-      <varInfo nodeId="1216154550419" varName="referentNode" />
       <varInfo nodeId="1216154550442" varName="referenceMacro" />
+      <varInfo nodeId="1216154550419" varName="referentNode" />
     </scopeInfo>
     <scopeInfo nodeId="1205880048658" fileName="QueriesUtil.java" startLine="167" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="1205880064302" varName="cell" />
@@ -11645,28 +11645,28 @@
       <varInfo nodeId="1216154062314" varName="referentNode" />
     </scopeInfo>
     <scopeInfo nodeId="1216154358068" fileName="QueriesUtil.java" startLine="110" startPosition="0" endLine="122" endPosition="0">
-      <varInfo nodeId="1216154377369" varName="node" />
       <varInfo nodeId="1216154379778" varName="cell" />
+      <varInfo nodeId="1216154377369" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1216154498760" fileName="QueriesUtil.java" startLine="122" startPosition="0" endLine="135" endPosition="0">
-      <varInfo nodeId="1216154517281" varName="node" />
       <varInfo nodeId="1216154519579" varName="cell" />
+      <varInfo nodeId="1216154517281" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1216154022585" fileName="QueriesUtil.java" startLine="48" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="1216154022631" varName="node" />
       <varInfo nodeId="1216154022633" varName="cell" />
+      <varInfo nodeId="1216154022631" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1216153654896" fileName="QueriesUtil.java" startLine="29" startPosition="80" endLine="46" endPosition="215">
-      <varInfo nodeId="1216153800548" varName="propertyName" />
       <varInfo nodeId="1216153800536" varName="linkRole" />
+      <varInfo nodeId="1216153800548" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="1216154163932" fileName="QueriesUtil.java" startLine="89" startPosition="48" endLine="108" endPosition="21">
-      <varInfo nodeId="1216154257878" varName="nodeMacro" />
       <varInfo nodeId="1216154257832" varName="applyToNode" />
+      <varInfo nodeId="1216154257878" varName="nodeMacro" />
     </scopeInfo>
     <scopeInfo nodeId="1216153654893" fileName="QueriesUtil.java" startLine="28" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="1216153654900" varName="node" />
       <varInfo nodeId="1216153760417" varName="cell" />
+      <varInfo nodeId="1216153654900" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1205869137523" fileName="QueriesUtil.java" startLine="145" startPosition="63" endLine="165" endPosition="7">
       <varInfo nodeId="1205869156680" varName="children" />
@@ -11683,12 +11683,12 @@
     <scopeInfo nodeId="1216145916087" fileName="QueriesUtil.java" startLine="63" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="1216145971156" varName="node" />
     </scopeInfo>
+    <unitInfo nodeId="1205859480204" fileName="QueriesUtil.java" startLine="21" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.QueriesUtil" />
     <unitInfo nodeId="1227876795347" fileName="QueriesUtil.java" startLine="91" startPosition="104" endLine="95" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.QueriesUtil$1" />
     <unitInfo nodeId="1227876797778" fileName="QueriesUtil.java" startLine="137" startPosition="114" endLine="141" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.QueriesUtil$2" />
     <unitInfo nodeId="1227876799927" fileName="QueriesUtil.java" startLine="148" startPosition="98" endLine="152" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.QueriesUtil$3" />
     <unitInfo nodeId="1227876791160" fileName="QueriesUtil.java" startLine="154" startPosition="162" endLine="158" endPosition="7" unitName="jetbrains.mps.lang.generator.editor.QueriesUtil$4" />
     <unitInfo nodeId="1227876791388" fileName="QueriesUtil.java" startLine="161" startPosition="218" endLine="165" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.QueriesUtil$5" />
-    <unitInfo nodeId="1205859480204" fileName="QueriesUtil.java" startLine="21" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.QueriesUtil" />
   </root>
   <root nodeId="1219952444641">
     <nodeInfo nodeId="1219952444641" fileName="DropRootRule_Editor.java" startLine="88" startPosition="58" endLine="88" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -11826,8 +11826,8 @@
     <scopeInfo nodeId="1219952444641" fileName="DropRootRule_Editor.java" startLine="61" startPosition="87" endLine="80" endPosition="22" />
     <scopeInfo nodeId="1219952444641" fileName="DropRootRule_Editor.java" startLine="116" startPosition="0" endLine="135" endPosition="0" />
     <scopeInfo nodeId="1219952444641" fileName="DropRootRule_Editor.java" startLine="60" startPosition="0" endLine="82" endPosition="0" />
-    <unitInfo nodeId="1219952444641" fileName="DropRootRule_Editor.java" startLine="104" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.DropRootRule_Editor$_Inline_fdnaen_a0a" />
     <unitInfo nodeId="1219952444641" fileName="DropRootRule_Editor.java" startLine="25" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.DropRootRule_Editor" />
+    <unitInfo nodeId="1219952444641" fileName="DropRootRule_Editor.java" startLine="104" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.DropRootRule_Editor$_Inline_fdnaen_a0a" />
   </root>
   <root nodeId="1231693283891">
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="15" startPosition="95" endLine="16" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -11850,13 +11850,13 @@
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="14" startPosition="35" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1231693298176" fileName="PropertyMacroActions.java" startLine="30" startPosition="75" endLine="35" endPosition="39">
+      <varInfo nodeId="1231693361387" varName="attributedNode" />
       <varInfo nodeId="1231694378058" varName="cell" />
       <varInfo nodeId="1231694249738" varName="propertyDeclaration" />
-      <varInfo nodeId="1231693361387" varName="attributedNode" />
     </scopeInfo>
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="29" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="19" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions$PropertyMacroActions_DELETE" />
     <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions" />
+    <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="19" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions$PropertyMacroActions_DELETE" />
   </root>
   <root nodeId="1311078761699591092">
     <nodeInfo nodeId="1311078761699591092" fileName="InsertMacro_Editor.java" startLine="115" startPosition="69" endLine="115" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -12226,9 +12226,9 @@
     <scopeInfo nodeId="1311078761699591092" fileName="InsertMacro_Editor.java" startLine="255" startPosition="0" endLine="274" endPosition="0" />
     <scopeInfo nodeId="1311078761699591092" fileName="InsertMacro_Editor.java" startLine="235" startPosition="0" endLine="255" endPosition="0" />
     <scopeInfo nodeId="1311078761699591092" fileName="InsertMacro_Editor.java" startLine="299" startPosition="0" endLine="319" endPosition="0" />
+    <unitInfo nodeId="1311078761699591092" fileName="InsertMacro_Editor.java" startLine="30" startPosition="0" endLine="321" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InsertMacro_Editor" />
     <unitInfo nodeId="1311078761699591092" fileName="InsertMacro_Editor.java" startLine="275" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InsertMacro_Editor$InsertMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="1311078761699591092" fileName="InsertMacro_Editor.java" startLine="287" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InsertMacro_Editor$_Inline_iwpawc_a2b2a" />
-    <unitInfo nodeId="1311078761699591092" fileName="InsertMacro_Editor.java" startLine="30" startPosition="0" endLine="321" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InsertMacro_Editor" />
   </root>
   <root nodeId="1510949579266871957">
     <nodeInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="138" startPosition="69" endLine="138" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -12740,10 +12740,10 @@
     <scopeInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="375" startPosition="0" endLine="395" endPosition="0" />
     <scopeInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="409" startPosition="0" endLine="429" endPosition="0" />
     <scopeInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="293" startPosition="0" endLine="314" endPosition="0" />
-    <unitInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="351" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor$TemplateCallMacro_component_cellMenu_a0a0" />
-    <unitInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="363" startPosition="0" endLine="396" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor$_Inline_nnob7w_a2b2a" />
-    <unitInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="397" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor$_Inline_nnob7w_a0c4c0" />
     <unitInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="30" startPosition="0" endLine="431" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor" />
+    <unitInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="351" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor$TemplateCallMacro_component_cellMenu_a0a0" />
+    <unitInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="397" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor$_Inline_nnob7w_a0c4c0" />
+    <unitInfo nodeId="1510949579266871957" fileName="TemplateCallMacro_Editor.java" startLine="363" startPosition="0" endLine="396" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor$_Inline_nnob7w_a2b2a" />
   </root>
   <root nodeId="1722980698497626434">
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="30" startPosition="52" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -12916,8 +12916,8 @@
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="76" startPosition="89" endLine="90" endPosition="22" />
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="92" startPosition="0" endLine="107" endPosition="0" />
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="75" startPosition="0" endLine="92" endPosition="0" />
-    <unitInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="120" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments$actualArgumentListHandler_1xd1xh_b0a" />
     <unitInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="29" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments" />
+    <unitInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="120" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments$actualArgumentListHandler_1xd1xh_b0a" />
   </root>
   <root nodeId="1805153994416198156">
     <nodeInfo nodeId="1805153994416198156" fileName="TemplateParameterDeclaration_Editor.java" startLine="46" startPosition="58" endLine="46" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -13452,9 +13452,9 @@
     <scopeInfo nodeId="1805153994416878873" fileName="PatternReduction_MappingRule_Editor.java" startLine="359" startPosition="94" endLine="379" endPosition="24" />
     <scopeInfo nodeId="1805153994416878873" fileName="PatternReduction_MappingRule_Editor.java" startLine="321" startPosition="0" endLine="344" endPosition="0" />
     <scopeInfo nodeId="1805153994416878873" fileName="PatternReduction_MappingRule_Editor.java" startLine="358" startPosition="0" endLine="381" endPosition="0" />
-    <unitInfo nodeId="1805153994416878873" fileName="PatternReduction_MappingRule_Editor.java" startLine="309" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PatternReduction_MappingRule_Editor$_Inline_o2w2pr_a1c0" />
-    <unitInfo nodeId="1805153994416878873" fileName="PatternReduction_MappingRule_Editor.java" startLine="346" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PatternReduction_MappingRule_Editor$_Inline_o2w2pr_a0b1a" />
     <unitInfo nodeId="1805153994416878873" fileName="PatternReduction_MappingRule_Editor.java" startLine="24" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PatternReduction_MappingRule_Editor" />
+    <unitInfo nodeId="1805153994416878873" fileName="PatternReduction_MappingRule_Editor.java" startLine="346" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PatternReduction_MappingRule_Editor$_Inline_o2w2pr_a0b1a" />
+    <unitInfo nodeId="1805153994416878873" fileName="PatternReduction_MappingRule_Editor.java" startLine="309" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PatternReduction_MappingRule_Editor$_Inline_o2w2pr_a1c0" />
   </root>
   <root nodeId="2265407187494399846">
     <nodeInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="23" startPosition="31" endLine="24" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -13505,9 +13505,9 @@
     <scopeInfo nodeId="2265407187494399850" fileName="replace_node_macro.java" startLine="31" startPosition="105" endLine="36" endPosition="26" />
     <scopeInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="22" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.replace_node_macro" />
     <unitInfo nodeId="8399143188353015585" fileName="replace_node_macro.java" startLine="32" startPosition="217" endLine="36" endPosition="7" unitName="jetbrains.mps.lang.generator.editor.replace_node_macro$1" />
     <unitInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="27" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.replace_node_macro$NodeMacro_generic_cellMenu_a0" />
-    <unitInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="22" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.replace_node_macro" />
   </root>
   <root nodeId="3462145372628083185">
     <nodeInfo nodeId="3462145372628083185" fileName="WeaveMacro_Editor.java" startLine="264" startPosition="58" endLine="264" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -13952,9 +13952,9 @@
     <scopeInfo nodeId="3462145372628083185" fileName="WeaveMacro_Editor.java" startLine="312" startPosition="0" endLine="331" endPosition="0" />
     <scopeInfo nodeId="3462145372628083185" fileName="WeaveMacro_Editor.java" startLine="275" startPosition="0" endLine="295" endPosition="0" />
     <scopeInfo nodeId="3462145372628083185" fileName="WeaveMacro_Editor.java" startLine="356" startPosition="0" endLine="376" endPosition="0" />
+    <unitInfo nodeId="3462145372628083185" fileName="WeaveMacro_Editor.java" startLine="30" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveMacro_Editor" />
     <unitInfo nodeId="3462145372628083185" fileName="WeaveMacro_Editor.java" startLine="332" startPosition="0" endLine="343" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveMacro_Editor$WeaveMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="3462145372628083185" fileName="WeaveMacro_Editor.java" startLine="344" startPosition="0" endLine="377" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveMacro_Editor$_Inline_1n0h5d_a2b2a" />
-    <unitInfo nodeId="3462145372628083185" fileName="WeaveMacro_Editor.java" startLine="30" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveMacro_Editor" />
   </root>
   <root nodeId="4035562641222635168">
     <nodeInfo nodeId="4035562641222635168" fileName="TemplateArgumentQueryExpression_Editor.java" startLine="33" startPosition="58" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -14074,8 +14074,8 @@
     <scopeInfo nodeId="4665309944889425605" fileName="TemplateArgumentPatternVarRefExpression_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="4665309944889425605" fileName="TemplateArgumentPatternVarRefExpression_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24" />
     <scopeInfo nodeId="4665309944889425605" fileName="TemplateArgumentPatternVarRefExpression_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="4665309944889425605" fileName="TemplateArgumentPatternVarRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_Editor$_Inline_a5awwn_a0a" />
     <unitInfo nodeId="4665309944889425605" fileName="TemplateArgumentPatternVarRefExpression_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_Editor" />
+    <unitInfo nodeId="4665309944889425605" fileName="TemplateArgumentPatternVarRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_Editor$_Inline_a5awwn_a0a" />
   </root>
   <root nodeId="4816349095291149922">
     <nodeInfo nodeId="4816349095291149922" fileName="TemplateArgumentLinkPatternRefExpression_Editor.java" startLine="39" startPosition="58" endLine="39" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -14155,8 +14155,8 @@
     <scopeInfo nodeId="4816349095291149922" fileName="TemplateArgumentLinkPatternRefExpression_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="4816349095291149922" fileName="TemplateArgumentLinkPatternRefExpression_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24" />
     <scopeInfo nodeId="4816349095291149922" fileName="TemplateArgumentLinkPatternRefExpression_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="4816349095291149922" fileName="TemplateArgumentLinkPatternRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_Editor$_Inline_f8ef2o_a0a" />
     <unitInfo nodeId="4816349095291149922" fileName="TemplateArgumentLinkPatternRefExpression_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_Editor" />
+    <unitInfo nodeId="4816349095291149922" fileName="TemplateArgumentLinkPatternRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_Editor$_Inline_f8ef2o_a0a" />
   </root>
   <root nodeId="4816349095291149929">
     <nodeInfo nodeId="4816349095291149929" fileName="TemplateArgumentPropertyPatternRefExpression_Editor.java" startLine="39" startPosition="58" endLine="39" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -14236,8 +14236,8 @@
     <scopeInfo nodeId="4816349095291149929" fileName="TemplateArgumentPropertyPatternRefExpression_Editor.java" startLine="32" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="4816349095291149929" fileName="TemplateArgumentPropertyPatternRefExpression_Editor.java" startLine="64" startPosition="92" endLine="85" endPosition="24" />
     <scopeInfo nodeId="4816349095291149929" fileName="TemplateArgumentPropertyPatternRefExpression_Editor.java" startLine="63" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="4816349095291149929" fileName="TemplateArgumentPropertyPatternRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_Editor$_Inline_z0z5f6_a0a" />
     <unitInfo nodeId="4816349095291149929" fileName="TemplateArgumentPropertyPatternRefExpression_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_Editor" />
+    <unitInfo nodeId="4816349095291149929" fileName="TemplateArgumentPropertyPatternRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_Editor$_Inline_z0z5f6_a0a" />
   </root>
   <root nodeId="5005282049925926523">
     <nodeInfo nodeId="5005282049925926523" fileName="TemplateArgumentParameterExpression_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -14312,8 +14312,8 @@
     <scopeInfo nodeId="5005282049925926523" fileName="TemplateArgumentParameterExpression_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="5005282049925926523" fileName="TemplateArgumentParameterExpression_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="5005282049925926523" fileName="TemplateArgumentParameterExpression_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="5005282049925926523" fileName="TemplateArgumentParameterExpression_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_Editor$_Inline_k33vz5_a0a" />
     <unitInfo nodeId="5005282049925926523" fileName="TemplateArgumentParameterExpression_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_Editor" />
+    <unitInfo nodeId="5005282049925926523" fileName="TemplateArgumentParameterExpression_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_Editor$_Inline_k33vz5_a0a" />
   </root>
   <root nodeId="5023471013036368458">
     <nodeInfo nodeId="5023471013036368458" fileName="GeneratorParameterReference_Editor.java" startLine="162" startPosition="58" endLine="162" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -14573,9 +14573,9 @@
     <scopeInfo nodeId="5023471013036368458" fileName="GeneratorParameterReference_Editor.java" startLine="155" startPosition="0" endLine="173" endPosition="0" />
     <scopeInfo nodeId="5023471013036368458" fileName="GeneratorParameterReference_Editor.java" startLine="173" startPosition="0" endLine="191" endPosition="0" />
     <scopeInfo nodeId="5023471013036368458" fileName="GeneratorParameterReference_Editor.java" startLine="212" startPosition="0" endLine="231" endPosition="0" />
+    <unitInfo nodeId="5023471013036368458" fileName="GeneratorParameterReference_Editor.java" startLine="29" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.GeneratorParameterReference_Editor" />
     <unitInfo nodeId="5023471013036368458" fileName="GeneratorParameterReference_Editor.java" startLine="139" startPosition="83" endLine="150" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.GeneratorParameterReference_Editor$1" />
     <unitInfo nodeId="5023471013036368458" fileName="GeneratorParameterReference_Editor.java" startLine="200" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.GeneratorParameterReference_Editor$_Inline_p6qpij_a0a" />
-    <unitInfo nodeId="5023471013036368458" fileName="GeneratorParameterReference_Editor.java" startLine="29" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.GeneratorParameterReference_Editor" />
   </root>
   <root nodeId="5133195082121477320">
     <nodeInfo nodeId="5133195082121477320" fileName="LabelMacro_Editor.java" startLine="100" startPosition="69" endLine="100" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -14867,9 +14867,9 @@
     <scopeInfo nodeId="5133195082121477320" fileName="LabelMacro_Editor.java" startLine="176" startPosition="0" endLine="194" endPosition="0" />
     <scopeInfo nodeId="5133195082121477320" fileName="LabelMacro_Editor.java" startLine="194" startPosition="0" endLine="213" endPosition="0" />
     <scopeInfo nodeId="5133195082121477320" fileName="LabelMacro_Editor.java" startLine="238" startPosition="0" endLine="258" endPosition="0" />
+    <unitInfo nodeId="5133195082121477320" fileName="LabelMacro_Editor.java" startLine="29" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LabelMacro_Editor" />
     <unitInfo nodeId="5133195082121477320" fileName="LabelMacro_Editor.java" startLine="214" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LabelMacro_Editor$LabelMacro_component_cellMenu_a0a0" />
     <unitInfo nodeId="5133195082121477320" fileName="LabelMacro_Editor.java" startLine="226" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LabelMacro_Editor$_Inline_x0em22_a2b2a" />
-    <unitInfo nodeId="5133195082121477320" fileName="LabelMacro_Editor.java" startLine="29" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LabelMacro_Editor" />
   </root>
   <root nodeId="650531548511911822">
     <nodeInfo nodeId="650531548511911822" fileName="GeneratorDescriptor_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -14981,8 +14981,8 @@
       <varInfo nodeId="7386719926921899977" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="7386719926921899969" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="32" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="7386719926921899972" varName="templateCall" />
       <varInfo nodeId="7386719926921899970" varName="editorContext" />
+      <varInfo nodeId="7386719926921899972" varName="templateCall" />
     </scopeInfo>
     <scopeInfo nodeId="7386719926921915496" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="57" startPosition="92" endLine="72" endPosition="32" />
     <scopeInfo nodeId="7386719926921915490" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="56" startPosition="27" endLine="73" endPosition="5">
@@ -14992,12 +14992,12 @@
       <varInfo nodeId="7386719926921915475" varName="argumentIndex" />
     </scopeInfo>
     <scopeInfo nodeId="7386719926921915345" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="44" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="7386719926921915353" varName="styledText" />
       <varInfo nodeId="7386719926921915351" varName="selectedActualArgument" />
+      <varInfo nodeId="7386719926921915353" varName="styledText" />
       <varInfo nodeId="7386719926921915349" varName="templateDeclaration" />
     </scopeInfo>
-    <unitInfo nodeId="7386719926921899998" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="38" startPosition="148" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationParameterInformationQuery$1" />
     <unitInfo nodeId="7386719926921893550" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationParameterInformationQuery" />
+    <unitInfo nodeId="7386719926921899998" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="38" startPosition="148" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationParameterInformationQuery$1" />
   </root>
   <root nodeId="8900764248744242392">
     <nodeInfo nodeId="8900764248744242392" fileName="InlineTemplateWithContext_RuleConsequence_Editor.java" startLine="48" startPosition="58" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

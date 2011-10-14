@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" />
-  <unitInfo fileName="IContainer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
-  <unitInfo fileName="IWrapper_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor" />
-  <unitInfo fileName="IResolveInfo_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
-  <unitInfo fileName="IMetaLevelChanger_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor" />
-  <unitInfo fileName="INamedConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-  <unitInfo fileName="IDeprecatable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" />
-  <unitInfo fileName="NodeAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
-  <unitInfo fileName="LinkAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" />
   <unitInfo fileName="Attribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
-  <unitInfo fileName="ExportScope_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
+  <unitInfo fileName="BaseConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ExportScopeModule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeModule_BehaviorDescriptor" />
   <unitInfo fileName="ExportScopeNamespace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_BehaviorDescriptor" />
   <unitInfo fileName="ExportScopePublic_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopePublic_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="BaseConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+  <unitInfo fileName="ExportScope_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
+  <unitInfo fileName="IContainer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
+  <unitInfo fileName="IDeprecatable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
+  <unitInfo fileName="IMetaLevelChanger_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor" />
+  <unitInfo fileName="INamedConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+  <unitInfo fileName="IResolveInfo_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
+  <unitInfo fileName="IType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" />
+  <unitInfo fileName="IWrapper_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor" />
+  <unitInfo fileName="LinkAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" />
+  <unitInfo fileName="NodeAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" />
   <root nodeId="1213877396626">
     <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="18" startPosition="35" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_5017341185733863694" />
     <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3923831204883340393" />
@@ -140,8 +140,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="70" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1213877396642" fileName="BaseConcept_Behavior.java" startLine="45" startPosition="78" endLine="64" endPosition="98">
-      <varInfo nodeId="1213877396675" varName="smartRefPresentation" />
       <varInfo nodeId="1213877396688" varName="conceptAlias" />
+      <varInfo nodeId="1213877396675" varName="smartRefPresentation" />
     </scopeInfo>
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="44" startPosition="0" endLine="66" endPosition="0" />
     <unitInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="18" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
@@ -291,8 +291,8 @@
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="28" startPosition="120" endLine="30" endPosition="239" />
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="8259195909097960056" varName="targetNode" />
       <varInfo nodeId="2565736246230026589" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960056" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="48" startPosition="153" endLine="52" endPosition="0" />
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="84" startPosition="81" endLine="88" endPosition="16" />
@@ -300,8 +300,8 @@
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="98" startPosition="79" endLine="102" endPosition="16" />
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="105" startPosition="81" endLine="109" endPosition="16" />
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="8259195909097960056" varName="targetNode" />
       <varInfo nodeId="2565736246230026589" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960056" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="2565736246230026652" fileName="ExportScope_Behavior.java" startLine="37" startPosition="69" endLine="42" endPosition="57">
       <varInfo nodeId="4109418420583959989" varName="module" />
@@ -317,9 +317,9 @@
       <varInfo nodeId="2565736246230026654" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="75" startPosition="0" endLine="83" endPosition="0">
-      <varInfo nodeId="2565736246230031490" varName="node" />
       <varInfo nodeId="402007580867615938" varName="isConcept" />
       <varInfo nodeId="2565736246230031484" varName="namespace" />
+      <varInfo nodeId="2565736246230031490" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4075196924244445288" fileName="ExportScope_Behavior.java" startLine="45" startPosition="70" endLine="54" endPosition="217" />
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="44" startPosition="0" endLine="56" endPosition="0">
@@ -329,12 +329,12 @@
       <varInfo nodeId="976430961577062473" varName="targetNamespace" />
     </scopeInfo>
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="56" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="8259195909097980944" varName="node" />
       <varInfo nodeId="8259195909097980941" varName="isConcept" />
       <varInfo nodeId="8259195909097980947" varName="namespace" />
+      <varInfo nodeId="8259195909097980944" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="48" startPosition="130" endLine="52" endPosition="7" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior$1" />
     <unitInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="22" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior" />
+    <unitInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="48" startPosition="130" endLine="52" endPosition="7" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior$1" />
   </root>
   <root nodeId="402007580867586248">
     <nodeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="11" startPosition="41" endLine="12" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_402007580867586251" />
@@ -352,16 +352,16 @@
     <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="21" startPosition="119" endLine="23" endPosition="244" />
     <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="8259195909097960061" varName="targetNode" />
       <varInfo nodeId="402007580867586254" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960061" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="8259195909097960061" varName="targetNode" />
       <varInfo nodeId="402007580867586254" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960061" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="8259195909097960061" varName="targetNode" />
       <varInfo nodeId="402007580867586254" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960061" varName="targetNode" />
     </scopeInfo>
     <unitInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopePublic_Behavior" />
   </root>
@@ -381,16 +381,16 @@
     <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="21" startPosition="119" endLine="23" endPosition="244" />
     <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="8259195909097960064" varName="targetNode" />
       <varInfo nodeId="402007580867586266" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960064" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="8259195909097960064" varName="targetNode" />
       <varInfo nodeId="402007580867586266" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960064" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="8259195909097960064" varName="targetNode" />
       <varInfo nodeId="402007580867586266" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960064" varName="targetNode" />
     </scopeInfo>
     <unitInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeModule_Behavior" />
   </root>
@@ -410,16 +410,16 @@
     <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="22" startPosition="119" endLine="24" endPosition="247" />
     <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
     <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="8259195909097960068" varName="targetNode" />
       <varInfo nodeId="402007580867615881" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960068" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="8259195909097960068" varName="targetNode" />
       <varInfo nodeId="402007580867615881" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960068" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="8259195909097960068" varName="targetNode" />
       <varInfo nodeId="402007580867615881" varName="sourceNamespace" />
+      <varInfo nodeId="8259195909097960068" varName="targetNode" />
     </scopeInfo>
     <unitInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_Behavior" />
   </root>

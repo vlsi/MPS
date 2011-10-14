@@ -52,8 +52,8 @@
     <scopeInfo nodeId="1216916605972" fileName="SurrondWithVerticalCollection_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="1216916605972" fileName="SurrondWithVerticalCollection_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="1216916605976" fileName="SurrondWithVerticalCollection_Intention.java" startLine="50" startPosition="76" endLine="57" endPosition="5">
-      <varInfo nodeId="1216916676430" varName="result" />
       <varInfo nodeId="1216916712429" varName="nodes" />
+      <varInfo nodeId="1216916676430" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1216916605972" fileName="SurrondWithVerticalCollection_Intention.java" startLine="49" startPosition="0" endLine="59" endPosition="0" />
     <unitInfo nodeId="1216916605972" fileName="SurrondWithVerticalCollection_Intention.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.SurrondWithVerticalCollection_Intention" />
@@ -109,8 +109,8 @@
     <scopeInfo nodeId="1216916774011" fileName="SurrondWithHorizontalCollection_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="1216916774011" fileName="SurrondWithHorizontalCollection_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="1216916774017" fileName="SurrondWithHorizontalCollection_Intention.java" startLine="50" startPosition="76" endLine="57" endPosition="5">
-      <varInfo nodeId="1216916831749" varName="result" />
       <varInfo nodeId="1216916846427" varName="nodes" />
+      <varInfo nodeId="1216916831749" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1216916774011" fileName="SurrondWithHorizontalCollection_Intention.java" startLine="49" startPosition="0" endLine="59" endPosition="0" />
     <unitInfo nodeId="1216916774011" fileName="SurrondWithHorizontalCollection_Intention.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.SurrondWithHorizontalCollection_Intention" />
@@ -356,17 +356,17 @@
     </scopeInfo>
     <scopeInfo nodeId="1224529984417" fileName="SplitConstantCellIntoWords_Intention.java" startLine="67" startPosition="33" endLine="95" endPosition="10">
       <varInfo nodeId="1224529984419" varName="constantCell" />
-      <varInfo nodeId="1224537022537" varName="rightPaddingSet" />
       <varInfo nodeId="1224537011446" varName="leftPaddingSet" />
+      <varInfo nodeId="1224537022537" varName="rightPaddingSet" />
     </scopeInfo>
     <scopeInfo nodeId="1224529984413" fileName="SplitConstantCellIntoWords_Intention.java" startLine="66" startPosition="14" endLine="96" endPosition="5">
       <varInfo nodeId="1224529984415" varName="word" />
     </scopeInfo>
     <scopeInfo nodeId="1224529494091" fileName="SplitConstantCellIntoWords_Intention.java" startLine="60" startPosition="76" endLine="96" endPosition="5">
-      <varInfo nodeId="1224529950986" varName="text" />
-      <varInfo nodeId="1224529984406" varName="strings" />
       <varInfo nodeId="1224529984381" varName="collection" />
       <varInfo nodeId="1224539613970" varName="i" />
+      <varInfo nodeId="1224529984406" varName="strings" />
+      <varInfo nodeId="1224529950986" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1224529494087" fileName="SplitConstantCellIntoWords_Intention.java" startLine="59" startPosition="0" endLine="98" endPosition="0" />
     <unitInfo nodeId="1224529494087" fileName="SplitConstantCellIntoWords_Intention.java" startLine="15" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.SplitConstantCellIntoWords_Intention" />
@@ -1601,8 +1601,8 @@
     <scopeInfo nodeId="1239370629160" fileName="DefaultEditorBuilder.java" startLine="410" startPosition="0" endLine="417" endPosition="0" />
     <scopeInfo nodeId="1239370629160" fileName="DefaultEditorBuilder.java" startLine="417" startPosition="0" endLine="424" endPosition="0" />
     <scopeInfo nodeId="7709650976709227519" fileName="DefaultEditorBuilder.java" startLine="243" startPosition="47" endLine="251" endPosition="101">
-      <varInfo nodeId="7709650976709227564" varName="classItem" />
       <varInfo nodeId="7709650976709227529" varName="cell" />
+      <varInfo nodeId="7709650976709227564" varName="classItem" />
       <varInfo nodeId="7709650976709227521" varName="collection" />
     </scopeInfo>
     <scopeInfo nodeId="7709650976709228069" fileName="DefaultEditorBuilder.java" startLine="291" startPosition="0" endLine="299" endPosition="0">
@@ -1645,8 +1645,8 @@
       <varInfo nodeId="7709650976709284523" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="7709650976709227203" fileName="DefaultEditorBuilder.java" startLine="300" startPosition="44" endLine="323" endPosition="25">
-      <varInfo nodeId="7709650976709227206" varName="sb" />
       <varInfo nodeId="7709650976709284512" varName="cs" />
+      <varInfo nodeId="7709650976709227206" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="5469351333089013936" fileName="DefaultEditorBuilder.java" startLine="147" startPosition="5" endLine="171" endPosition="5" />
     <scopeInfo nodeId="7709650976709227309" fileName="DefaultEditorBuilder.java" startLine="348" startPosition="139" endLine="372" endPosition="60">
@@ -1674,20 +1674,21 @@
       <varInfo nodeId="5469351333089013817" varName="first" />
     </scopeInfo>
     <scopeInfo nodeId="5469351333089012660" fileName="DefaultEditorBuilder.java" startLine="108" startPosition="37" endLine="174" endPosition="20">
-      <varInfo nodeId="5469351333089012677" varName="nameProperty" />
-      <varInfo nodeId="5469351333089012728" varName="references" />
       <varInfo nodeId="5469351333089012708" varName="children" />
       <varInfo nodeId="5469351333089013898" varName="first" />
+      <varInfo nodeId="5469351333089012677" varName="nameProperty" />
       <varInfo nodeId="5469351333089012691" varName="props" />
+      <varInfo nodeId="5469351333089012728" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="7709650976709227141" fileName="DefaultEditorBuilder.java" startLine="38" startPosition="36" endLine="105" endPosition="20">
-      <varInfo nodeId="7709650976709227254" varName="nameProperty" />
-      <varInfo nodeId="7709650976709322715" varName="references" />
       <varInfo nodeId="7709650976709227421" varName="children" />
+      <varInfo nodeId="7709650976709227254" varName="nameProperty" />
       <varInfo nodeId="7709650976709227404" varName="props" />
+      <varInfo nodeId="7709650976709322715" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="5469351333089012657" fileName="DefaultEditorBuilder.java" startLine="107" startPosition="0" endLine="176" endPosition="0" />
     <scopeInfo nodeId="7709650976709227138" fileName="DefaultEditorBuilder.java" startLine="37" startPosition="0" endLine="107" endPosition="0" />
+    <unitInfo nodeId="1239370629160" fileName="DefaultEditorBuilder.java" startLine="28" startPosition="0" endLine="425" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder" />
     <unitInfo nodeId="7709650976709227412" fileName="DefaultEditorBuilder.java" startLine="46" startPosition="160" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder$1" />
     <unitInfo nodeId="652534631687722713" fileName="DefaultEditorBuilder.java" startLine="51" startPosition="155" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder$2" />
     <unitInfo nodeId="7709650976709322728" fileName="DefaultEditorBuilder.java" startLine="56" startPosition="71" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder$3" />
@@ -1696,7 +1697,6 @@
     <unitInfo nodeId="5469351333089012734" fileName="DefaultEditorBuilder.java" startLine="126" startPosition="71" endLine="130" endPosition="5" unitName="jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder$6" />
     <unitInfo nodeId="5469351333089046045" fileName="DefaultEditorBuilder.java" startLine="148" startPosition="74" endLine="152" endPosition="5" unitName="jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder$7" />
     <unitInfo nodeId="7709650976709228930" fileName="DefaultEditorBuilder.java" startLine="374" startPosition="84" endLine="378" endPosition="5" unitName="jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder$8" />
-    <unitInfo nodeId="1239370629160" fileName="DefaultEditorBuilder.java" startLine="28" startPosition="0" endLine="425" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder" />
   </root>
   <root nodeId="1239735706419">
     <nodeInfo nodeId="1239735706419" fileName="AddExtendsClause_Intention.java" startLine="16" startPosition="30" endLine="17" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2006,8 +2006,8 @@
     <scopeInfo nodeId="8868282734708519353" fileName="SurrondWithIndentCollection_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="8868282734708519353" fileName="SurrondWithIndentCollection_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="8868282734708519357" fileName="SurrondWithIndentCollection_Intention.java" startLine="50" startPosition="76" endLine="57" endPosition="5">
-      <varInfo nodeId="8868282734708519376" varName="result" />
       <varInfo nodeId="8868282734708519390" varName="nodes" />
+      <varInfo nodeId="8868282734708519376" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8868282734708519353" fileName="SurrondWithIndentCollection_Intention.java" startLine="49" startPosition="0" endLine="59" endPosition="0" />
     <unitInfo nodeId="8868282734708519353" fileName="SurrondWithIndentCollection_Intention.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.SurrondWithIndentCollection_Intention" />

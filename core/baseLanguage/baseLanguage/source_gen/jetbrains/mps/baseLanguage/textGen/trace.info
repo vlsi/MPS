@@ -411,8 +411,8 @@
       <varInfo nodeId="163269897332206397" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="3307061649401590290" fileName="BaseLanguageTextGen.java" startLine="112" startPosition="42" endLine="130" endPosition="7">
-      <varInfo nodeId="3307061649401590312" varName="modelReference" />
       <varInfo nodeId="3307061649401622624" varName="dot" />
+      <varInfo nodeId="3307061649401590312" varName="modelReference" />
     </scopeInfo>
     <scopeInfo nodeId="1234796104060" fileName="BaseLanguageTextGen.java" startLine="61" startPosition="79" endLine="80" endPosition="5" />
     <scopeInfo nodeId="1234796104060" fileName="BaseLanguageTextGen.java" startLine="60" startPosition="0" endLine="82" endPosition="0">
@@ -433,16 +433,16 @@
       <varInfo nodeId="3307061649401590262" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="1234796104060" fileName="BaseLanguageTextGen.java" startLine="262" startPosition="125" endLine="314" endPosition="5">
-      <varInfo nodeId="1236686502893" varName="importedNames" />
-      <varInfo nodeId="1236686502860" varName="importedFqName" />
       <varInfo nodeId="8518543064833793250" varName="addedImports" />
-      <varInfo nodeId="1236686502863" varName="importedShortName" />
+      <varInfo nodeId="1236686502860" varName="importedFqName" />
       <varInfo nodeId="6976359935507844262" varName="importedLongFqName" />
+      <varInfo nodeId="1236686502893" varName="importedNames" />
+      <varInfo nodeId="1236686502863" varName="importedShortName" />
     </scopeInfo>
     <scopeInfo nodeId="1234796104060" fileName="BaseLanguageTextGen.java" startLine="261" startPosition="0" endLine="316" endPosition="0">
-      <varInfo nodeId="1236686542697" varName="packageName" />
       <varInfo nodeId="1236686605887" varName="className" />
       <varInfo nodeId="1275823045676471986" varName="isInternal" />
+      <varInfo nodeId="1236686542697" varName="packageName" />
     </scopeInfo>
     <unitInfo nodeId="1234796104060" fileName="BaseLanguageTextGen.java" startLine="26" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
   </root>
@@ -3577,8 +3577,8 @@
     <scopeInfo nodeId="1236013947407" fileName="StringTextGen.java" startLine="13" startPosition="116" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1236013924714" fileName="StringTextGen.java" startLine="12" startPosition="44" endLine="16" endPosition="9" />
     <scopeInfo nodeId="1236013739107" fileName="StringTextGen.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="1236013974056" varName="s" />
       <varInfo nodeId="1236013975026" varName="i" />
+      <varInfo nodeId="1236013974056" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1236014353280" fileName="StringTextGen.java" startLine="43" startPosition="42" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1236013739107" fileName="StringTextGen.java" startLine="53" startPosition="73" endLine="58" endPosition="17">
@@ -3961,17 +3961,17 @@
       <varInfo nodeId="4555902841936368845" varName="conceptFunction" />
     </scopeInfo>
     <scopeInfo nodeId="4555902841936342310" fileName="LastStatementUtil.java" startLine="26" startPosition="103" endLine="31" endPosition="9">
-      <varInfo nodeId="4555902841936342317" varName="statements" />
       <varInfo nodeId="4555902841936342312" varName="bsStatementList" />
+      <varInfo nodeId="4555902841936342317" varName="statements" />
     </scopeInfo>
     <scopeInfo nodeId="4555902841936342297" fileName="LastStatementUtil.java" startLine="23" startPosition="105" endLine="32" endPosition="7">
       <varInfo nodeId="4555902841936342299" varName="blockStatement" />
     </scopeInfo>
     <scopeInfo nodeId="5245668348356342339" fileName="LastStatementUtil.java" startLine="16" startPosition="69" endLine="52" endPosition="21">
-      <varInfo nodeId="4555902841936342284" varName="statementList" />
-      <varInfo nodeId="4555902841936342291" varName="parent" />
       <varInfo nodeId="4555902841936368908" varName="canAdjust" />
+      <varInfo nodeId="4555902841936342291" varName="parent" />
       <varInfo nodeId="4555902841936368838" varName="returnType" />
+      <varInfo nodeId="4555902841936342284" varName="statementList" />
     </scopeInfo>
     <scopeInfo nodeId="5245668348356342332" fileName="LastStatementUtil.java" startLine="15" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="5245668348356342335" varName="lastStatement" />

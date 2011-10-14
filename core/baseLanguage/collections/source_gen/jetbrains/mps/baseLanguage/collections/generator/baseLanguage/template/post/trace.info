@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="183" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post.QueriesGenerated$QuotationClass_x583g4_a0b0m" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="201" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post.QueriesGenerated$QuotationClass_x583g4_a0a0p" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="219" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post.QueriesGenerated$QuotationClass_x583g4_a0b0t" />
   <unitInfo fileName="QueriesGenerated.java" startLine="27" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="201" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post.QueriesGenerated$QuotationClass_x583g4_a0a0p" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="183" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post.QueriesGenerated$QuotationClass_x583g4_a0b0m" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="219" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post.QueriesGenerated$QuotationClass_x583g4_a0b0t" />
   <root nodeId="1269198486696304624">
     <nodeInfo nodeId="1269198486696304773" fileName="QueriesGenerated.java" startLine="28" startPosition="152" endLine="29" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1269198486696304835" fileName="QueriesGenerated.java" startLine="32" startPosition="152" endLine="33" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

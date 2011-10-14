@@ -222,8 +222,8 @@
     <scopeInfo nodeId="4075196924244322258" fileName="SetExportAnnotation_Intention.java" startLine="72" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="4075196924244322258" fileName="SetExportAnnotation_Intention.java" startLine="82" startPosition="96" endLine="92" endPosition="16" />
     <scopeInfo nodeId="4075196924244322258" fileName="SetExportAnnotation_Intention.java" startLine="81" startPosition="0" endLine="94" endPosition="0" />
-    <unitInfo nodeId="4075196924244434148" fileName="SetExportAnnotation_Intention.java" startLine="75" startPosition="68" endLine="79" endPosition="5" unitName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention$1" />
     <unitInfo nodeId="4075196924244322258" fileName="SetExportAnnotation_Intention.java" startLine="22" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention" />
+    <unitInfo nodeId="4075196924244434148" fileName="SetExportAnnotation_Intention.java" startLine="75" startPosition="68" endLine="79" endPosition="5" unitName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention$1" />
   </root>
 </debugInfo>
 

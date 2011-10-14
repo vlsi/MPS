@@ -84,8 +84,8 @@
     <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="43" startPosition="26" endLine="60" endPosition="73" />
     <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="39" startPosition="95" endLine="68" endPosition="22" />
     <scopeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="38" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="48" startPosition="60" endLine="58" endPosition="7" unitName="jetbrains.mps.lang.core.editor.ExportScopePublic_Editor$1" />
     <unitInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ExportScopePublic_Editor" />
+    <unitInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="48" startPosition="60" endLine="58" endPosition="7" unitName="jetbrains.mps.lang.core.editor.ExportScopePublic_Editor$1" />
   </root>
   <root nodeId="2565736246230036164">
     <nodeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="35" startPosition="67" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -149,8 +149,8 @@
     <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="43" startPosition="26" endLine="60" endPosition="73" />
     <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="39" startPosition="95" endLine="68" endPosition="22" />
     <scopeInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="38" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="48" startPosition="60" endLine="58" endPosition="7" unitName="jetbrains.mps.lang.core.editor.ExportScopeModule_Editor$1" />
     <unitInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ExportScopeModule_Editor" />
+    <unitInfo nodeId="2565736246230036164" fileName="ExportScopeModule_Editor.java" startLine="48" startPosition="60" endLine="58" endPosition="7" unitName="jetbrains.mps.lang.core.editor.ExportScopeModule_Editor$1" />
   </root>
   <root nodeId="2565736246230036172">
     <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="68" startPosition="67" endLine="68" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -240,8 +240,8 @@
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="71" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="43" startPosition="88" endLine="62" endPosition="22" />
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="42" startPosition="0" endLine="64" endPosition="0" />
-    <unitInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="49" startPosition="60" endLine="59" endPosition="7" unitName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor$1" />
     <unitInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor" />
+    <unitInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="49" startPosition="60" endLine="59" endPosition="7" unitName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor$1" />
   </root>
   <root nodeId="2565736246230068875">
     <nodeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="13" startPosition="95" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -265,8 +265,8 @@
     <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.core.editor.DeleteExportScope$DeleteExportScope_DELETE" />
     <unitInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.core.editor.DeleteExportScope" />
+    <unitInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.core.editor.DeleteExportScope$DeleteExportScope_DELETE" />
   </root>
   <root nodeId="5169995583184591171">
     <nodeInfo nodeId="5169995583184591171" fileName="Attribute_Editor.java" startLine="20" startPosition="67" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

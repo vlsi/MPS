@@ -448,10 +448,10 @@
     <scopeInfo nodeId="278471160714227719" fileName="Root_Editor.java" startLine="36" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="278471160714227719" fileName="Root_Editor.java" startLine="238" startPosition="90" endLine="253" endPosition="22" />
     <scopeInfo nodeId="278471160714227719" fileName="Root_Editor.java" startLine="237" startPosition="0" endLine="255" endPosition="0" />
+    <unitInfo nodeId="278471160714227719" fileName="Root_Editor.java" startLine="32" startPosition="0" endLine="402" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor" />
     <unitInfo nodeId="278471160714227719" fileName="Root_Editor.java" startLine="366" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor$childSubConcept_0_nListHandler_30aiet_b5b1a" />
     <unitInfo nodeId="278471160714227719" fileName="Root_Editor.java" startLine="264" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor$child_0_nListHandler_30aiet_b1b1a" />
     <unitInfo nodeId="278471160714227719" fileName="Root_Editor.java" startLine="315" startPosition="0" endLine="365" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor$child_1_nListHandler_30aiet_b3b1a" />
-    <unitInfo nodeId="278471160714227719" fileName="Root_Editor.java" startLine="32" startPosition="0" endLine="402" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor" />
   </root>
   <root nodeId="278471160714227744">
     <nodeInfo nodeId="278471160714227744" fileName="Child_Editor.java" startLine="250" startPosition="58" endLine="250" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -921,9 +921,9 @@
     <scopeInfo nodeId="278471160714227744" fileName="Child_Editor.java" startLine="244" startPosition="0" endLine="261" endPosition="0" />
     <scopeInfo nodeId="278471160714227744" fileName="Child_Editor.java" startLine="261" startPosition="0" endLine="278" endPosition="0" />
     <scopeInfo nodeId="278471160714227744" fileName="Child_Editor.java" startLine="278" startPosition="0" endLine="296" endPosition="0" />
+    <unitInfo nodeId="278471160714227744" fileName="Child_Editor.java" startLine="33" startPosition="0" endLine="407" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Child_Editor" />
     <unitInfo nodeId="278471160714227744" fileName="Child_Editor.java" startLine="305" startPosition="0" endLine="355" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Child_Editor$grandChild_0_nListHandler_xbt7a0_b3b1a" />
     <unitInfo nodeId="278471160714227744" fileName="Child_Editor.java" startLine="356" startPosition="0" endLine="406" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Child_Editor$grandChild_1_nListHandler_xbt7a0_b5b1a" />
-    <unitInfo nodeId="278471160714227744" fileName="Child_Editor.java" startLine="33" startPosition="0" endLine="407" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Child_Editor" />
   </root>
   <root nodeId="278471160714227776">
     <nodeInfo nodeId="278471160714227776" fileName="GrandChild_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1318,10 +1318,10 @@
     <scopeInfo nodeId="2854075155748608739" fileName="ReferenceContainerSubConcept_Editor.java" startLine="238" startPosition="0" endLine="257" endPosition="0" />
     <scopeInfo nodeId="2854075155748608739" fileName="ReferenceContainerSubConcept_Editor.java" startLine="271" startPosition="0" endLine="290" endPosition="0" />
     <scopeInfo nodeId="2854075155748608739" fileName="ReferenceContainerSubConcept_Editor.java" startLine="304" startPosition="0" endLine="323" endPosition="0" />
+    <unitInfo nodeId="2854075155748608739" fileName="ReferenceContainerSubConcept_Editor.java" startLine="24" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainerSubConcept_Editor" />
     <unitInfo nodeId="2854075155748608739" fileName="ReferenceContainerSubConcept_Editor.java" startLine="226" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainerSubConcept_Editor$_Inline_j13i3b_a1a1b0" />
     <unitInfo nodeId="2854075155748608739" fileName="ReferenceContainerSubConcept_Editor.java" startLine="259" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainerSubConcept_Editor$_Inline_j13i3b_a1b1b0" />
     <unitInfo nodeId="2854075155748608739" fileName="ReferenceContainerSubConcept_Editor.java" startLine="292" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainerSubConcept_Editor$_Inline_j13i3b_a1c1b0" />
-    <unitInfo nodeId="2854075155748608739" fileName="ReferenceContainerSubConcept_Editor.java" startLine="24" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainerSubConcept_Editor" />
   </root>
   <root nodeId="34342663958607543">
     <nodeInfo nodeId="34342663958607543" fileName="ChildSubConcept_Editor.java" startLine="184" startPosition="58" endLine="184" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1629,8 +1629,8 @@
     <scopeInfo nodeId="34342663958607543" fileName="ChildSubConcept_Editor.java" startLine="196" startPosition="90" endLine="211" endPosition="22" />
     <scopeInfo nodeId="34342663958607543" fileName="ChildSubConcept_Editor.java" startLine="178" startPosition="0" endLine="195" endPosition="0" />
     <scopeInfo nodeId="34342663958607543" fileName="ChildSubConcept_Editor.java" startLine="195" startPosition="0" endLine="213" endPosition="0" />
-    <unitInfo nodeId="34342663958607543" fileName="ChildSubConcept_Editor.java" startLine="222" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ChildSubConcept_Editor$grandChild_0_nListHandler_d4chl0_b2b1a" />
     <unitInfo nodeId="34342663958607543" fileName="ChildSubConcept_Editor.java" startLine="33" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ChildSubConcept_Editor" />
+    <unitInfo nodeId="34342663958607543" fileName="ChildSubConcept_Editor.java" startLine="222" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ChildSubConcept_Editor$grandChild_0_nListHandler_d4chl0_b2b1a" />
   </root>
   <root nodeId="8758390115028851402">
     <nodeInfo nodeId="8758390115028851402" fileName="ReferenceContainer_Editor.java" startLine="170" startPosition="58" endLine="170" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2009,10 +2009,10 @@
     <scopeInfo nodeId="8758390115028851402" fileName="ReferenceContainer_Editor.java" startLine="238" startPosition="0" endLine="257" endPosition="0" />
     <scopeInfo nodeId="8758390115028851402" fileName="ReferenceContainer_Editor.java" startLine="271" startPosition="0" endLine="290" endPosition="0" />
     <scopeInfo nodeId="8758390115028851402" fileName="ReferenceContainer_Editor.java" startLine="304" startPosition="0" endLine="323" endPosition="0" />
+    <unitInfo nodeId="8758390115028851402" fileName="ReferenceContainer_Editor.java" startLine="24" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainer_Editor" />
     <unitInfo nodeId="8758390115028851402" fileName="ReferenceContainer_Editor.java" startLine="226" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainer_Editor$_Inline_jpb8dn_a1a1b0" />
     <unitInfo nodeId="8758390115028851402" fileName="ReferenceContainer_Editor.java" startLine="259" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainer_Editor$_Inline_jpb8dn_a1b1b0" />
     <unitInfo nodeId="8758390115028851402" fileName="ReferenceContainer_Editor.java" startLine="292" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainer_Editor$_Inline_jpb8dn_a1c1b0" />
-    <unitInfo nodeId="8758390115028851402" fileName="ReferenceContainer_Editor.java" startLine="24" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainer_Editor" />
   </root>
 </debugInfo>
 

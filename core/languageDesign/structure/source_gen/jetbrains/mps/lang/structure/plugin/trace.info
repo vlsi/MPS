@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" />
   <unitInfo fileName="Structure_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ApplicationPlugin" />
+  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" />
   <root nodeId="1216651471788">
     <nodeInfo nodeId="1216651471788" fileName="Structure_ActionGroup.java" startLine="11" startPosition="65" endLine="12" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1216651471788" fileName="Structure_ActionGroup.java" startLine="12" startPosition="76" endLine="13" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -269,22 +269,22 @@
       <varInfo nodeId="2510134983999478847" varName="contextModule" />
     </scopeInfo>
     <scopeInfo nodeId="2510134983999478455" fileName="HelpHelper.java" startLine="29" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="2510134983999478463" varName="node" />
       <varInfo nodeId="2510134983999478461" varName="contextModel" />
       <varInfo nodeId="2510134983999478459" varName="contextModule" />
+      <varInfo nodeId="2510134983999478463" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2510134983999435082" fileName="HelpHelper.java" startLine="16" startPosition="25" endLine="29" endPosition="0">
-      <varInfo nodeId="2510134983999435092" varName="node" />
       <varInfo nodeId="2510134983999435089" varName="contextModel" />
       <varInfo nodeId="2510134983999435087" varName="contextModule" />
+      <varInfo nodeId="2510134983999435092" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2510134983999432437" fileName="HelpHelper.java" startLine="55" startPosition="90" endLine="68" endPosition="5" />
     <scopeInfo nodeId="2510134983999432434" fileName="HelpHelper.java" startLine="54" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="2510134983999432565" varName="model" />
       <varInfo nodeId="2510134983999432555" varName="module" />
     </scopeInfo>
-    <unitInfo nodeId="2510134983999435097" fileName="HelpHelper.java" startLine="89" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.HelpHelper$HelpType" />
     <unitInfo nodeId="2510134983999358074" fileName="HelpHelper.java" startLine="16" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.HelpHelper" />
+    <unitInfo nodeId="2510134983999435097" fileName="HelpHelper.java" startLine="89" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.HelpHelper$HelpType" />
   </root>
   <root nodeId="2510134983999478954">
     <nodeInfo nodeId="2510134983999478954" fileName="ShowHelpForRoot_Action.java" startLine="17" startPosition="61" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -550,17 +550,17 @@
     </scopeInfo>
     <scopeInfo nodeId="3552608880959246811" fileName="ConceptEditorOpenHelper.java" startLine="80" startPosition="57" endLine="100" endPosition="20">
       <varInfo nodeId="3552608880959246813" varName="baseNode" />
-      <varInfo nodeId="3552608880959246882" varName="nodeModule" />
       <varInfo nodeId="3552608880959246872" varName="baseNodeModule" />
+      <varInfo nodeId="3552608880959246882" varName="nodeModule" />
     </scopeInfo>
     <scopeInfo nodeId="3552608880959246963" fileName="ConceptEditorOpenHelper.java" startLine="79" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="3552608880959246809" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3552608880959246970" fileName="ConceptEditorOpenHelper.java" startLine="20" startPosition="47" endLine="53" endPosition="20">
+      <varInfo nodeId="3552608880959247013" varName="baseModelDesIcriptor" />
+      <varInfo nodeId="3552608880959247037" varName="baseModule" />
       <varInfo nodeId="3552608880959246972" varName="baseNode" />
       <varInfo nodeId="3552608880959247021" varName="mainModelDescriptor" />
-      <varInfo nodeId="3552608880959247037" varName="baseModule" />
-      <varInfo nodeId="3552608880959247013" varName="baseModelDesIcriptor" />
       <varInfo nodeId="3552608880959247043" varName="mainModule" />
     </scopeInfo>
     <scopeInfo nodeId="3552608880959246967" fileName="ConceptEditorOpenHelper.java" startLine="19" startPosition="38" endLine="55" endPosition="0">
@@ -638,8 +638,8 @@
       <varInfo nodeId="2600311093289603751" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848822" fileName="ConceptEditorHelper.java" startLine="41" startPosition="91" endLine="46" endPosition="18">
-      <varInfo nodeId="6388164970935848824" varName="result" />
       <varInfo nodeId="6388164970935848831" varName="language" />
+      <varInfo nodeId="6388164970935848824" varName="result" />
       <varInfo nodeId="6388164970935848840" varName="structureModel" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848865" fileName="ConceptEditorHelper.java" startLine="49" startPosition="105" endLine="54" endPosition="25">
@@ -655,17 +655,17 @@
       <varInfo nodeId="6388164970935848777" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848820" fileName="ConceptEditorHelper.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="6388164970935848860" varName="node" />
       <varInfo nodeId="6388164970935848858" varName="aspect" />
+      <varInfo nodeId="6388164970935848860" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848862" fileName="ConceptEditorHelper.java" startLine="48" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="6388164970935848889" varName="model" />
-      <varInfo nodeId="6388164970935848887" varName="concept" />
       <varInfo nodeId="6388164970935848885" varName="applicableNode" />
+      <varInfo nodeId="6388164970935848887" varName="concept" />
+      <varInfo nodeId="6388164970935848889" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848894" fileName="ConceptEditorHelper.java" startLine="57" startPosition="114" endLine="65" endPosition="83">
-      <varInfo nodeId="6388164970935848911" varName="md" />
       <varInfo nodeId="6388164970935848896" varName="language" />
+      <varInfo nodeId="6388164970935848911" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="1214823353927928381" fileName="ConceptEditorHelper.java" startLine="69" startPosition="84" endLine="77" endPosition="0" />
     <scopeInfo nodeId="1214823353927923289" fileName="ConceptEditorHelper.java" startLine="68" startPosition="95" endLine="77" endPosition="30" />
@@ -676,22 +676,22 @@
       <varInfo nodeId="6388164970935848770" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848891" fileName="ConceptEditorHelper.java" startLine="56" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="6388164970935848940" varName="concept" />
-      <varInfo nodeId="6388164970935848936" varName="aspect" />
       <varInfo nodeId="6388164970935848938" varName="applicableNode" />
+      <varInfo nodeId="6388164970935848936" varName="aspect" />
+      <varInfo nodeId="6388164970935848940" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="1214823353927923286" fileName="ConceptEditorHelper.java" startLine="67" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="1214823353927928306" varName="roots" />
       <varInfo nodeId="1214823353927928294" varName="conceptOrder" />
+      <varInfo nodeId="1214823353927928306" varName="roots" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848764" fileName="ConceptEditorHelper.java" startLine="27" startPosition="34" endLine="40" endPosition="0">
       <varInfo nodeId="6388164970935848818" varName="node" />
       <varInfo nodeId="6388164970935848816" varName="structureModel" />
     </scopeInfo>
-    <unitInfo nodeId="1214823353927928381" fileName="ConceptEditorHelper.java" startLine="69" startPosition="49" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper$1" />
-    <unitInfo nodeId="2600311093289583832" fileName="ConceptEditorHelper.java" startLine="80" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper$ModelCondition" />
-    <unitInfo nodeId="822887956173266266" fileName="ConceptEditorHelper.java" startLine="94" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper$GeneratorCondition" />
     <unitInfo nodeId="6388164970935848749" fileName="ConceptEditorHelper.java" startLine="27" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper" />
+    <unitInfo nodeId="1214823353927928381" fileName="ConceptEditorHelper.java" startLine="69" startPosition="49" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper$1" />
+    <unitInfo nodeId="822887956173266266" fileName="ConceptEditorHelper.java" startLine="94" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper$GeneratorCondition" />
+    <unitInfo nodeId="2600311093289583832" fileName="ConceptEditorHelper.java" startLine="80" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper$ModelCondition" />
   </root>
   <root nodeId="902116341861940181">
     <nodeInfo nodeId="902116341861940181" fileName="Default_KeymapChanges.java" startLine="11" startPosition="34" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

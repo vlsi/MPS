@@ -494,8 +494,8 @@
     <scopeInfo nodeId="1140829206022" fileName="SideTransformTag_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1140829206022" fileName="SideTransformTag.java" startLine="52" startPosition="59" endLine="74" endPosition="41" />
     <scopeInfo nodeId="1140829206022" fileName="SideTransformTag.java" startLine="51" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="1140829206022" fileName="SideTransformTag_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag_PropertySupport" />
     <unitInfo nodeId="1140829206022" fileName="SideTransformTag.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag" />
+    <unitInfo nodeId="1140829206022" fileName="SideTransformTag_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag_PropertySupport" />
   </root>
   <root nodeId="1154465102724">
     <nodeInfo nodeId="1154465102724" fileName="NodeSubstitutePreconditionFunction.java" startLine="11" startPosition="73" endLine="12" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -736,9 +736,9 @@
     <scopeInfo nodeId="1158701352529" fileName="NodeSetupFunction_SampleNode.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1158870465687" fileName="NodeSetupFunction_EnclosingNode.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <unitInfo nodeId="1158701162220" fileName="NodeSetupFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeSetupFunction" />
+    <unitInfo nodeId="1158870465687" fileName="NodeSetupFunction_EnclosingNode.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode" />
     <unitInfo nodeId="1158701289411" fileName="NodeSetupFunction_NewNode.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode" />
     <unitInfo nodeId="1158701352529" fileName="NodeSetupFunction_SampleNode.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode" />
-    <unitInfo nodeId="1158870465687" fileName="NodeSetupFunction_EnclosingNode.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode" />
   </root>
   <root nodeId="1177323240852">
     <nodeInfo nodeId="1177323240852" fileName="MenuBuilderPart.java" startLine="11" startPosition="50" endLine="12" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -2480,8 +2480,8 @@
     <scopeInfo nodeId="1215604970641" fileName="Side.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1215604970641" fileName="Side_PropertySupport.java" startLine="9" startPosition="59" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1215604970641" fileName="Side_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="1215604970641" fileName="Side_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Side_PropertySupport" />
     <unitInfo nodeId="1215604970641" fileName="Side.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Side" />
+    <unitInfo nodeId="1215604970641" fileName="Side_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Side_PropertySupport" />
   </root>
   <root nodeId="1221135252814">
     <nodeInfo nodeId="1221135252814" fileName="PasteWrappers.java" startLine="16" startPosition="89" endLine="17" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

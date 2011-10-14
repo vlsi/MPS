@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="849" startPosition="0" endLine="880" endPosition="0" unitName="jetbrains.mps.ui.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0c0ch" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="812" startPosition="0" endLine="848" endPosition="0" unitName="jetbrains.mps.ui.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0eg" />
   <unitInfo fileName="QueriesGenerated.java" startLine="40" startPosition="0" endLine="881" endPosition="0" unitName="jetbrains.mps.ui.generator.template.main.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="812" startPosition="0" endLine="848" endPosition="0" unitName="jetbrains.mps.ui.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0eg" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="849" startPosition="0" endLine="880" endPosition="0" unitName="jetbrains.mps.ui.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0c0ch" />
   <root nodeId="1251509410704216601">
     <nodeInfo nodeId="1251509410704218202" fileName="QueriesGenerated.java" startLine="97" startPosition="152" endLine="98" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1251509410704218242" fileName="QueriesGenerated.java" startLine="101" startPosition="152" endLine="102" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -81,8 +81,8 @@
     <scopeInfo nodeId="1251509410704217988" fileName="QueriesGenerated.java" startLine="798" startPosition="139" endLine="799" endPosition="110" />
     <scopeInfo nodeId="1251509410704218063" fileName="QueriesGenerated.java" startLine="808" startPosition="139" endLine="809" endPosition="30" />
     <scopeInfo nodeId="1251509410704218027" fileName="QueriesGenerated.java" startLine="652" startPosition="150" endLine="655" endPosition="14">
-      <varInfo nodeId="1251509410704218029" varName="tpl" />
       <varInfo nodeId="1251509410704218038" varName="rt" />
+      <varInfo nodeId="1251509410704218029" varName="tpl" />
     </scopeInfo>
     <scopeInfo nodeId="1251509410704217998" fileName="QueriesGenerated.java" startLine="802" startPosition="139" endLine="805" endPosition="100">
       <varInfo nodeId="1251509410704218000" varName="uniq" />

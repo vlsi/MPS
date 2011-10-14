@@ -350,8 +350,8 @@
     <scopeInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="130" startPosition="0" endLine="141" endPosition="0" />
     <scopeInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="69" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="108" startPosition="0" endLine="121" endPosition="0" />
-    <unitInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="82" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.PrintStatement_Editor$textExpressionListHandler_nmgex1_c0" />
     <unitInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="24" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.PrintStatement_Editor" />
+    <unitInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="82" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.PrintStatement_Editor$textExpressionListHandler_nmgex1_c0" />
   </root>
 </debugInfo>
 

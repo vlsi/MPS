@@ -109,8 +109,8 @@
       <varInfo nodeId="1200411794380" varName="interfaceNode" />
     </scopeInfo>
     <scopeInfo nodeId="1200310248828" fileName="ImplementingClasses_Finder.java" startLine="37" startPosition="9" endLine="59" endPosition="7">
-      <varInfo nodeId="1200427260703" varName="derivedInterfacesUsages" />
       <varInfo nodeId="1200411695013" varName="derivedInterfaces" />
+      <varInfo nodeId="1200427260703" varName="derivedInterfacesUsages" />
     </scopeInfo>
     <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="35" startPosition="98" endLine="62" endPosition="5" />
     <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="34" startPosition="0" endLine="64" endPosition="0" />
@@ -164,8 +164,8 @@
       <varInfo nodeId="1205525109435" varName="passingNode" />
     </scopeInfo>
     <scopeInfo nodeId="1200310287395" fileName="DerivedInterfaces_Finder.java" startLine="36" startPosition="9" endLine="52" endPosition="7">
-      <varInfo nodeId="1205524854774" varName="passed" />
       <varInfo nodeId="1200311863793" varName="derived" />
+      <varInfo nodeId="1205524854774" varName="passed" />
     </scopeInfo>
     <scopeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="34" startPosition="98" endLine="55" endPosition="5" />
     <scopeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="33" startPosition="0" endLine="57" endPosition="0" />
@@ -217,8 +217,8 @@
       <varInfo nodeId="1205525161583" varName="passingNode" />
     </scopeInfo>
     <scopeInfo nodeId="1200310473081" fileName="DerivedClasses_Finder.java" startLine="36" startPosition="9" endLine="50" endPosition="7">
-      <varInfo nodeId="1205524751062" varName="passed" />
       <varInfo nodeId="1200315820136" varName="derived" />
+      <varInfo nodeId="1205524751062" varName="passed" />
     </scopeInfo>
     <scopeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="34" startPosition="98" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="33" startPosition="0" endLine="55" endPosition="0" />
@@ -493,8 +493,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="41" startPosition="98" endLine="61" endPosition="5" />
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="40" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="48" startPosition="92" endLine="52" endPosition="7" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder$1" />
     <unitInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" />
+    <unitInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="48" startPosition="92" endLine="52" endPosition="7" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder$1" />
   </root>
   <root nodeId="1200502085335">
     <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="15" startPosition="60" endLine="16" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -599,12 +599,12 @@
     <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1201108565454" fileName="ParameterUsages_Finder.java" startLine="46" startPosition="9" endLine="52" endPosition="7" />
     <scopeInfo nodeId="1206537383899" fileName="ParameterUsages_Finder.java" startLine="58" startPosition="80" endLine="66" endPosition="5">
-      <varInfo nodeId="1206537384327" varName="overridingMethods" />
       <varInfo nodeId="1206537384297" varName="nodeParentMethod" />
+      <varInfo nodeId="1206537384327" varName="overridingMethods" />
     </scopeInfo>
     <scopeInfo nodeId="1201092757785" fileName="ParameterUsages_Finder.java" startLine="41" startPosition="9" endLine="52" endPosition="7">
-      <varInfo nodeId="1201108396686" varName="overridingMethods" />
       <varInfo nodeId="1201112068290" varName="nodeParentMethod" />
+      <varInfo nodeId="1201108396686" varName="overridingMethods" />
     </scopeInfo>
     <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="57" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="39" startPosition="98" endLine="55" endPosition="5" />
@@ -717,8 +717,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="40" startPosition="98" endLine="94" endPosition="5" />
     <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="39" startPosition="0" endLine="96" endPosition="0" />
-    <unitInfo nodeId="1227876797642" fileName="ConstructorUsages_Finder.java" startLine="51" startPosition="144" endLine="55" endPosition="11" unitName="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder$1" />
     <unitInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="18" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder" />
+    <unitInfo nodeId="1227876797642" fileName="ConstructorUsages_Finder.java" startLine="51" startPosition="144" endLine="55" endPosition="11" unitName="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder$1" />
   </root>
   <root nodeId="1204122859723">
     <nodeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="15" startPosition="68" endLine="16" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -841,12 +841,12 @@
     </scopeInfo>
     <scopeInfo nodeId="1216393013709" fileName="BaseMethod_Finder.java" startLine="65" startPosition="69" endLine="84" endPosition="7" />
     <scopeInfo nodeId="1204898641599" fileName="BaseMethod_Finder.java" startLine="51" startPosition="9" endLine="87" endPosition="7">
-      <varInfo nodeId="1216393165136" varName="isStatic" />
-      <varInfo nodeId="1216400588562" varName="results" />
       <varInfo nodeId="1216391750269" varName="allAncestors" />
-      <varInfo nodeId="1216392973647" varName="interfaceNode" />
       <varInfo nodeId="1216392932421" varName="classNode" />
+      <varInfo nodeId="1216392973647" varName="interfaceNode" />
+      <varInfo nodeId="1216393165136" varName="isStatic" />
       <varInfo nodeId="1216391860777" varName="method" />
+      <varInfo nodeId="1216400588562" varName="results" />
     </scopeInfo>
     <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="49" startPosition="98" endLine="90" endPosition="5" />
     <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="48" startPosition="0" endLine="92" endPosition="0" />
@@ -1011,8 +1011,8 @@
     <scopeInfo nodeId="1216392459935" fileName="ImplementedInterfaces_Finder.java" startLine="41" startPosition="65" endLine="46" endPosition="9" />
     <scopeInfo nodeId="1216392203368" fileName="ImplementedInterfaces_Finder.java" startLine="40" startPosition="57" endLine="47" endPosition="7" />
     <scopeInfo nodeId="1216392046441" fileName="ImplementedInterfaces_Finder.java" startLine="37" startPosition="9" endLine="50" endPosition="7">
-      <varInfo nodeId="1216392185707" varName="result" />
       <varInfo nodeId="1216392709434" varName="classNodes" />
+      <varInfo nodeId="1216392185707" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="35" startPosition="98" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="34" startPosition="0" endLine="55" endPosition="0" />
@@ -1162,16 +1162,16 @@
     <scopeInfo nodeId="4151347580001030694" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="130" endLine="68" endPosition="9" />
     <scopeInfo nodeId="4151347580001030692" fileName="DerivedMethods_Finder.java" startLine="45" startPosition="40" endLine="69" endPosition="7" />
     <scopeInfo nodeId="4151347580001021183" fileName="DerivedMethods_Finder.java" startLine="43" startPosition="9" endLine="69" endPosition="7">
-      <varInfo nodeId="4151347580001040947" varName="instanceMethod" />
       <varInfo nodeId="4151347580001030664" varName="classifier" />
+      <varInfo nodeId="4151347580001040947" varName="instanceMethod" />
     </scopeInfo>
     <scopeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="41" startPosition="104" endLine="72" endPosition="5" />
     <scopeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="40" startPosition="0" endLine="74" endPosition="0" />
+    <unitInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder" />
     <unitInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="103" endLine="51" endPosition="9" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$1" />
     <unitInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="24" endLine="55" endPosition="9" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$2" />
     <unitInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="58" startPosition="102" endLine="62" endPosition="13" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$3" />
     <unitInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="62" startPosition="28" endLine="66" endPosition="13" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$4" />
-    <unitInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder" />
   </root>
 </debugInfo>
 

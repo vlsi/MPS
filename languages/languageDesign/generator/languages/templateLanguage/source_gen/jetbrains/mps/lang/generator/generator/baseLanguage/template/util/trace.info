@@ -60,17 +60,17 @@
       <varInfo nodeId="8285036680620283555" varName="original" />
     </scopeInfo>
     <scopeInfo nodeId="8285036680620283484" fileName="GenUtil.java" startLine="22" startPosition="88" endLine="32" endPosition="89">
-      <varInfo nodeId="8285036680620283516" varName="real" />
       <varInfo nodeId="8285036680620283496" varName="macros" />
+      <varInfo nodeId="8285036680620283516" varName="real" />
     </scopeInfo>
     <scopeInfo nodeId="8285036680620283543" fileName="GenUtil.java" startLine="34" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="8285036680620283547" varName="context" />
       <varInfo nodeId="8285036680620283549" varName="node" />
       <varInfo nodeId="8285036680620283551" varName="var" />
-      <varInfo nodeId="8285036680620283547" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="8285036680620283481" fileName="GenUtil.java" startLine="21" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="8285036680620283488" varName="node" />
       <varInfo nodeId="8285036680620283486" varName="context" />
+      <varInfo nodeId="8285036680620283488" varName="node" />
       <varInfo nodeId="8285036680620283490" varName="skipMacro" />
     </scopeInfo>
     <scopeInfo nodeId="5980832251990194326" fileName="GenUtil.java" startLine="57" startPosition="42" endLine="73" endPosition="7">
@@ -85,8 +85,8 @@
     <scopeInfo nodeId="5980832251990194296" fileName="GenUtil.java" startLine="54" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="5980832251990194301" varName="s" />
     </scopeInfo>
-    <unitInfo nodeId="8285036680620283505" fileName="GenUtil.java" startLine="23" startPosition="92" endLine="27" endPosition="5" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil$1" />
     <unitInfo nodeId="8285036680620268543" fileName="GenUtil.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil" />
+    <unitInfo nodeId="8285036680620283505" fileName="GenUtil.java" startLine="23" startPosition="92" endLine="27" endPosition="5" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil$1" />
   </root>
 </debugInfo>
 

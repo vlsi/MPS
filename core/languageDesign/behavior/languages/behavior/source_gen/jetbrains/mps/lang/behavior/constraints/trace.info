@@ -51,8 +51,8 @@
     <scopeInfo nodeId="1225194245328" fileName="ConceptBehavior_Constraints.java" startLine="53" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1225194245328" fileName="ConceptBehavior_Constraints.java" startLine="46" startPosition="82" endLine="68" endPosition="22" />
     <scopeInfo nodeId="1225194245328" fileName="ConceptBehavior_Constraints.java" startLine="44" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="1225194245328" fileName="ConceptBehavior_Constraints.java" startLine="48" startPosition="31" endLine="67" endPosition="5" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_Constraints$1" />
     <unitInfo nodeId="1225194245328" fileName="ConceptBehavior_Constraints.java" startLine="22" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_Constraints" />
+    <unitInfo nodeId="1225194245328" fileName="ConceptBehavior_Constraints.java" startLine="48" startPosition="31" endLine="67" endPosition="5" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_Constraints$1" />
   </root>
   <root nodeId="1225194475678">
     <nodeInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="26" startPosition="85" endLine="27" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_sgoqec_a0a1a0a0a4a0b0a1a0" />
@@ -107,8 +107,8 @@
     <scopeInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="80" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1225194475681" fileName="ConceptMethodDeclaration_Constraints.java" startLine="71" startPosition="142" endLine="78" endPosition="15">
-      <varInfo nodeId="1225194475692" varName="methods" />
       <varInfo nodeId="1225194475683" varName="concept" />
+      <varInfo nodeId="1225194475692" varName="methods" />
     </scopeInfo>
     <scopeInfo nodeId="1225194475710" fileName="ConceptMethodDeclaration_Constraints.java" startLine="49" startPosition="63" endLine="57" endPosition="161" />
     <scopeInfo nodeId="1225194475701" fileName="ConceptMethodDeclaration_Constraints.java" startLine="48" startPosition="139" endLine="58" endPosition="9" />
@@ -118,10 +118,10 @@
     <scopeInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="65" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="34" startPosition="83" endLine="88" endPosition="22" />
     <scopeInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="32" startPosition="0" endLine="90" endPosition="0" />
-    <unitInfo nodeId="7448639082793552059" fileName="ConceptMethodDeclaration_Constraints.java" startLine="74" startPosition="60" endLine="78" endPosition="13" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$3" />
-    <unitInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="69" startPosition="19" endLine="85" endPosition="9" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$2" />
-    <unitInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="36" startPosition="43" endLine="87" endPosition="5" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$1" />
     <unitInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="26" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints" />
+    <unitInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="36" startPosition="43" endLine="87" endPosition="5" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$1" />
+    <unitInfo nodeId="1225194475678" fileName="ConceptMethodDeclaration_Constraints.java" startLine="69" startPosition="19" endLine="85" endPosition="9" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$2" />
+    <unitInfo nodeId="7448639082793552059" fileName="ConceptMethodDeclaration_Constraints.java" startLine="74" startPosition="60" endLine="78" endPosition="13" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$3" />
   </root>
   <root nodeId="2043122710974690677">
     <nodeInfo nodeId="2043122710974690677" fileName="ThisNodeExpression_Constraints.java" startLine="13" startPosition="79" endLine="14" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -237,8 +237,8 @@
     <scopeInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="39" startPosition="166" endLine="46" endPosition="18" />
     <scopeInfo nodeId="5299096511375911561" fileName="SuperNodeExpression_Constraints.java" startLine="66" startPosition="136" endLine="74" endPosition="15">
-      <varInfo nodeId="5299096511375911623" varName="extendsNode" />
       <varInfo nodeId="5299096511375911595" varName="cd" />
+      <varInfo nodeId="5299096511375911623" varName="extendsNode" />
     </scopeInfo>
     <scopeInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="37" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="5299096511375909195" fileName="SuperNodeExpression_Constraints.java" startLine="63" startPosition="142" endLine="82" endPosition="26">
@@ -250,9 +250,9 @@
     <scopeInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="57" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="50" startPosition="83" endLine="92" endPosition="22" />
     <scopeInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="48" startPosition="0" endLine="94" endPosition="0" />
-    <unitInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="61" startPosition="19" endLine="89" endPosition="9" unitName="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_Constraints$2" />
-    <unitInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="52" startPosition="39" endLine="91" endPosition="5" unitName="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_Constraints$1" />
     <unitInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="25" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_Constraints" />
+    <unitInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="52" startPosition="39" endLine="91" endPosition="5" unitName="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_Constraints$1" />
+    <unitInfo nodeId="2043122710974691049" fileName="SuperNodeExpression_Constraints.java" startLine="61" startPosition="19" endLine="89" endPosition="9" unitName="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_Constraints$2" />
   </root>
   <root nodeId="6496299201655529040">
     <nodeInfo nodeId="6496299201655529040" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="23" startPosition="84" endLine="24" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -313,9 +313,9 @@
     <scopeInfo nodeId="6496299201655529040" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="55" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="6496299201655529040" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="48" startPosition="83" endLine="79" endPosition="22" />
     <scopeInfo nodeId="6496299201655529040" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="46" startPosition="0" endLine="81" endPosition="0" />
-    <unitInfo nodeId="6496299201655529040" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="59" startPosition="19" endLine="76" endPosition="9" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints$2" />
-    <unitInfo nodeId="6496299201655529040" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="50" startPosition="48" endLine="78" endPosition="5" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints$1" />
     <unitInfo nodeId="6496299201655529040" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="23" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints" />
+    <unitInfo nodeId="6496299201655529040" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="50" startPosition="48" endLine="78" endPosition="5" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints$1" />
+    <unitInfo nodeId="6496299201655529040" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="59" startPosition="19" endLine="76" endPosition="9" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints$2" />
   </root>
 </debugInfo>
 

@@ -1222,8 +1222,8 @@
     <scopeInfo nodeId="6370754048397540921" fileName="RuleType_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="6370754048397540921" fileName="RuleType.java" startLine="50" startPosition="51" endLine="69" endPosition="33" />
     <scopeInfo nodeId="6370754048397540921" fileName="RuleType.java" startLine="49" startPosition="0" endLine="71" endPosition="0" />
-    <unitInfo nodeId="6370754048397540921" fileName="RuleType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.project.structure.RuleType_PropertySupport" />
     <unitInfo nodeId="6370754048397540921" fileName="RuleType.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.project.structure.RuleType" />
+    <unitInfo nodeId="6370754048397540921" fileName="RuleType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.project.structure.RuleType_PropertySupport" />
   </root>
 </debugInfo>
 

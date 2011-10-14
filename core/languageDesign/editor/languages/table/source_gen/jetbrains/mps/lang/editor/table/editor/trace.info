@@ -364,10 +364,10 @@
     <scopeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="224" startPosition="0" endLine="243" endPosition="0" />
     <scopeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="257" startPosition="0" endLine="276" endPosition="0" />
     <scopeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="290" startPosition="0" endLine="309" endPosition="0" />
-    <unitInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="212" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.lang.editor.table.editor.CellModel_HierarchycalTable_Editor$_Inline_cqolwn_a1b0a" />
-    <unitInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="245" startPosition="0" endLine="277" endPosition="0" unitName="jetbrains.mps.lang.editor.table.editor.CellModel_HierarchycalTable_Editor$_Inline_cqolwn_a1a1a" />
-    <unitInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="278" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.lang.editor.table.editor.CellModel_HierarchycalTable_Editor$_Inline_cqolwn_a1b1a" />
     <unitInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="21" startPosition="0" endLine="311" endPosition="0" unitName="jetbrains.mps.lang.editor.table.editor.CellModel_HierarchycalTable_Editor" />
+    <unitInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="245" startPosition="0" endLine="277" endPosition="0" unitName="jetbrains.mps.lang.editor.table.editor.CellModel_HierarchycalTable_Editor$_Inline_cqolwn_a1a1a" />
+    <unitInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="212" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.lang.editor.table.editor.CellModel_HierarchycalTable_Editor$_Inline_cqolwn_a1b0a" />
+    <unitInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="278" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.lang.editor.table.editor.CellModel_HierarchycalTable_Editor$_Inline_cqolwn_a1b1a" />
   </root>
   <root nodeId="4677325677876404631">
     <nodeInfo nodeId="4677325677876404631" fileName="CellModel_Table_Editor.java" startLine="80" startPosition="69" endLine="80" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

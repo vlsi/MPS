@@ -159,18 +159,18 @@
     </scopeInfo>
     <scopeInfo nodeId="1198076144993" fileName="MoveNodes.java" startLine="114" startPosition="0" endLine="138" endPosition="0" />
     <scopeInfo nodeId="1198077782189" fileName="MoveNodes.java" startLine="58" startPosition="80" endLine="86" endPosition="18">
+      <varInfo nodeId="1198080415517" varName="childLinkDeclarations" />
+      <varInfo nodeId="1198078651967" varName="childLinksRoles" />
+      <varInfo nodeId="1198077941206" varName="concept" />
+      <varInfo nodeId="1199553331595" varName="linkDeclarations" />
       <varInfo nodeId="1199553244201" varName="superConceptsScope" />
       <varInfo nodeId="1198078072589" varName="targetNode" />
-      <varInfo nodeId="1198077941206" varName="concept" />
-      <varInfo nodeId="1198080415517" varName="childLinkDeclarations" />
-      <varInfo nodeId="1199553331595" varName="linkDeclarations" />
-      <varInfo nodeId="1198078651967" varName="childLinksRoles" />
     </scopeInfo>
     <scopeInfo nodeId="1198077595127" fileName="MoveNodes.java" startLine="57" startPosition="70" endLine="96" endPosition="17" />
     <scopeInfo nodeId="1198076144993" fileName="MoveNodes.java" startLine="56" startPosition="0" endLine="98" endPosition="0" />
+    <unitInfo nodeId="1198076144993" fileName="MoveNodes.java" startLine="34" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.MoveNodes" />
     <unitInfo nodeId="1227876803952" fileName="MoveNodes.java" startLine="63" startPosition="96" endLine="67" endPosition="7" unitName="jetbrains.mps.lang.core.scripts.MoveNodes$1" />
     <unitInfo nodeId="1227876794780" fileName="MoveNodes.java" startLine="68" startPosition="97" endLine="72" endPosition="7" unitName="jetbrains.mps.lang.core.scripts.MoveNodes$2" />
-    <unitInfo nodeId="1198076144993" fileName="MoveNodes.java" startLine="34" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.MoveNodes" />
   </root>
   <root nodeId="1199457919461">
     <nodeInfo nodeId="1199457919461" fileName="Rename.java" startLine="23" startPosition="54" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="newName" />
@@ -298,8 +298,8 @@
       <varInfo nodeId="8527005260551219707" varName="searchResult" />
     </scopeInfo>
     <scopeInfo nodeId="1200933346056" fileName="SafeDelete.java" startLine="49" startPosition="86" endLine="62" endPosition="25">
-      <varInfo nodeId="8527005260551219675" varName="searchResultsCopy" />
       <varInfo nodeId="8527005260551193787" varName="searchResults" />
+      <varInfo nodeId="8527005260551219675" varName="searchResultsCopy" />
       <varInfo nodeId="8527005260551219667" varName="searchResultsList" />
     </scopeInfo>
     <scopeInfo nodeId="1200665013408" fileName="SafeDelete.java" startLine="48" startPosition="0" endLine="64" endPosition="0" />
@@ -339,8 +339,8 @@
     <scopeInfo nodeId="3180819252996380865" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="30" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="3180819252996380865" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="12" startPosition="85" endLine="40" endPosition="7" />
     <scopeInfo nodeId="3180819252996380865" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="11" startPosition="81" endLine="41" endPosition="3" />
-    <unitInfo nodeId="3180819252996380865" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="14" startPosition="28" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.RestoreVirtualPackages_MigrationScript$1" />
     <unitInfo nodeId="3180819252996380865" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.RestoreVirtualPackages_MigrationScript" />
+    <unitInfo nodeId="3180819252996380865" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="14" startPosition="28" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.RestoreVirtualPackages_MigrationScript$1" />
   </root>
   <root nodeId="3364660638048049979">
     <nodeInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="14" startPosition="76" endLine="15" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -438,12 +438,12 @@
     <scopeInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="99" startPosition="0" endLine="104" endPosition="0" />
     <scopeInfo nodeId="3364660638048050059" fileName="ConvertAttributes_MigrationScript.java" startLine="41" startPosition="51" endLine="51" endPosition="0">
-      <varInfo nodeId="3364660638048050061" varName="link" />
       <varInfo nodeId="3364660638048050102" varName="attribute" />
+      <varInfo nodeId="3364660638048050061" varName="link" />
     </scopeInfo>
     <scopeInfo nodeId="3364660638048050161" fileName="ConvertAttributes_MigrationScript.java" startLine="52" startPosition="62" endLine="62" endPosition="11">
-      <varInfo nodeId="3364660638048050163" varName="prop" />
       <varInfo nodeId="3364660638048050201" varName="attribute" />
+      <varInfo nodeId="3364660638048050163" varName="prop" />
     </scopeInfo>
     <scopeInfo nodeId="3364660638048049982" fileName="ConvertAttributes_MigrationScript.java" startLine="37" startPosition="52" endLine="75" endPosition="83">
       <varInfo nodeId="3364660638048049986" varName="role" />
@@ -451,9 +451,9 @@
     <scopeInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="36" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="17" startPosition="80" endLine="108" endPosition="7" />
     <scopeInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="16" startPosition="0" endLine="109" endPosition="3" />
-    <unitInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="82" startPosition="28" endLine="108" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.ConvertAttributes_MigrationScript$2" />
-    <unitInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="19" startPosition="28" endLine="81" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.ConvertAttributes_MigrationScript$1" />
     <unitInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="14" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.ConvertAttributes_MigrationScript" />
+    <unitInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="19" startPosition="28" endLine="81" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.ConvertAttributes_MigrationScript$1" />
+    <unitInfo nodeId="3364660638048049979" fileName="ConvertAttributes_MigrationScript.java" startLine="82" startPosition="28" endLine="108" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.ConvertAttributes_MigrationScript$2" />
   </root>
   <root nodeId="4706738529699924056">
     <nodeInfo nodeId="7376433222636453019" fileName="RenameUtil.java" startLine="20" startPosition="50" endLine="21" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -493,9 +493,9 @@
     <scopeInfo nodeId="8311321388555090794" fileName="RenameUtil.java" startLine="29" startPosition="0" endLine="45" endPosition="5">
       <varInfo nodeId="8311321388555090815" varName="node" />
     </scopeInfo>
+    <unitInfo nodeId="4706738529699924056" fileName="RenameUtil.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.RenameUtil" />
     <unitInfo nodeId="8311321388555090823" fileName="RenameUtil.java" startLine="33" startPosition="47" endLine="41" endPosition="7" unitName="jetbrains.mps.lang.core.scripts.RenameUtil$1" />
     <unitInfo nodeId="8311321388555090792" fileName="RenameUtil.java" startLine="27" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.RenameUtil$NameComponent" />
-    <unitInfo nodeId="4706738529699924056" fileName="RenameUtil.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.RenameUtil" />
   </root>
 </debugInfo>
 

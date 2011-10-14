@@ -20,8 +20,8 @@
       <varInfo nodeId="7502385099314243458" varName="quotation" />
     </scopeInfo>
     <scopeInfo nodeId="7502385099314243450" fileName="QuotationUtil.java" startLine="12" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="7502385099314243455" varName="node" />
       <varInfo nodeId="7502385099314243480" varName="genContext" />
+      <varInfo nodeId="7502385099314243455" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="7502385099314243444" fileName="QuotationUtil.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.util.QuotationUtil" />
   </root>

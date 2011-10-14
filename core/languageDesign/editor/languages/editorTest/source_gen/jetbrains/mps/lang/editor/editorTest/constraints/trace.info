@@ -43,9 +43,9 @@
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="37" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="30" startPosition="83" endLine="62" endPosition="22" />
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="28" startPosition="0" endLine="64" endPosition="0" />
-    <unitInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="41" startPosition="19" endLine="59" endPosition="9" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$2" />
-    <unitInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="32" startPosition="46" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$1" />
     <unitInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="22" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints" />
+    <unitInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="32" startPosition="46" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$1" />
+    <unitInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="41" startPosition="19" endLine="59" endPosition="9" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$2" />
   </root>
   <root nodeId="7428162988805013921">
     <nodeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="22" startPosition="89" endLine="23" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_98f22q_a0a1a0a0a1a0b0a1a0" />
@@ -89,9 +89,9 @@
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="37" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="30" startPosition="83" endLine="62" endPosition="22" />
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="28" startPosition="0" endLine="64" endPosition="0" />
-    <unitInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="41" startPosition="19" endLine="59" endPosition="9" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$2" />
-    <unitInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="32" startPosition="30" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$1" />
     <unitInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="22" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints" />
+    <unitInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="32" startPosition="30" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$1" />
+    <unitInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="41" startPosition="19" endLine="59" endPosition="9" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$2" />
   </root>
 </debugInfo>
 

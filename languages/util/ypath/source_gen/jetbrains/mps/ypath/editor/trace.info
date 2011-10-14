@@ -905,6 +905,7 @@
     <scopeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="396" startPosition="0" endLine="419" endPosition="0" />
     <scopeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="170" startPosition="0" endLine="194" endPosition="0" />
     <scopeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="358" startPosition="0" endLine="382" endPosition="0" />
+    <unitInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="42" startPosition="0" endLine="421" endPosition="0" unitName="jetbrains.mps.ypath.editor.IterateOperation_Editor" />
     <unitInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="172" startPosition="83" endLine="183" endPosition="5" unitName="jetbrains.mps.ypath.editor.IterateOperation_Editor$1" />
     <unitInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="196" startPosition="83" endLine="207" endPosition="5" unitName="jetbrains.mps.ypath.editor.IterateOperation_Editor$2" />
     <unitInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="310" startPosition="0" endLine="321" endPosition="0" unitName="jetbrains.mps.ypath.editor.IterateOperation_Editor$IterateOperation_component_cellMenu_a0b1a" />
@@ -912,7 +913,6 @@
     <unitInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="334" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.ypath.editor.IterateOperation_Editor$IterateOperation_component_cellMenu_a0d1a" />
     <unitInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="384" startPosition="0" endLine="420" endPosition="0" unitName="jetbrains.mps.ypath.editor.IterateOperation_Editor$_Inline_wgzfn3_a1b0" />
     <unitInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="346" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.ypath.editor.IterateOperation_Editor$_Inline_wgzfn3_a2b0" />
-    <unitInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="42" startPosition="0" endLine="421" endPosition="0" unitName="jetbrains.mps.ypath.editor.IterateOperation_Editor" />
   </root>
   <root nodeId="1168527770204">
     <nodeInfo nodeId="1168527770204" fileName="WhereOperation_Editor.java" startLine="35" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2019,9 +2019,9 @@
     <scopeInfo nodeId="1168881569258" fileName="TreePathAspect_Editor.java" startLine="70" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="1168881569258" fileName="TreePathAspect_Editor.java" startLine="90" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="1168881569258" fileName="TreePathAspect_Editor.java" startLine="610" startPosition="0" endLine="632" endPosition="0" />
+    <unitInfo nodeId="1168881569258" fileName="TreePathAspect_Editor.java" startLine="34" startPosition="0" endLine="751" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathAspect_Editor" />
     <unitInfo nodeId="1168881569258" fileName="TreePathAspect_Editor.java" startLine="637" startPosition="0" endLine="693" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathAspect_Editor$featuresListHandler_6ko8zs_b3b2a" />
     <unitInfo nodeId="1168881569258" fileName="TreePathAspect_Editor.java" startLine="694" startPosition="0" endLine="750" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathAspect_Editor$nodeKindsListHandler_6ko8zs_b9b2a" />
-    <unitInfo nodeId="1168881569258" fileName="TreePathAspect_Editor.java" startLine="34" startPosition="0" endLine="751" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathAspect_Editor" />
   </root>
   <root nodeId="1168890305747">
     <nodeInfo nodeId="1168890305747" fileName="TreePathAdapterExpression_Editor.java" startLine="97" startPosition="58" endLine="97" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2171,8 +2171,8 @@
     <scopeInfo nodeId="1168890305747" fileName="TreePathAdapterExpression_Editor.java" startLine="70" startPosition="87" endLine="89" endPosition="22" />
     <scopeInfo nodeId="1168890305747" fileName="TreePathAdapterExpression_Editor.java" startLine="125" startPosition="0" endLine="144" endPosition="0" />
     <scopeInfo nodeId="1168890305747" fileName="TreePathAdapterExpression_Editor.java" startLine="69" startPosition="0" endLine="91" endPosition="0" />
-    <unitInfo nodeId="1168890305747" fileName="TreePathAdapterExpression_Editor.java" startLine="113" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathAdapterExpression_Editor$_Inline_7bcc0k_a1a" />
     <unitInfo nodeId="1168890305747" fileName="TreePathAdapterExpression_Editor.java" startLine="24" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathAdapterExpression_Editor" />
+    <unitInfo nodeId="1168890305747" fileName="TreePathAdapterExpression_Editor.java" startLine="113" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathAdapterExpression_Editor$_Inline_7bcc0k_a1a" />
   </root>
   <root nodeId="1169042401237">
     <nodeInfo nodeId="1169042401237" fileName="TreePathOperationExpression_DELETE.java" startLine="14" startPosition="95" endLine="15" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2196,8 +2196,8 @@
     <scopeInfo nodeId="1169042401237" fileName="TreePathOperationExpression_DELETE.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1169042401237" fileName="TreePathOperationExpression_DELETE.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1169042401237" fileName="TreePathOperationExpression_DELETE.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1169042401237" fileName="TreePathOperationExpression_DELETE.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathOperationExpression_DELETE$TreePathOperationExpression_DELETE_DELETE" />
     <unitInfo nodeId="1169042401237" fileName="TreePathOperationExpression_DELETE.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathOperationExpression_DELETE" />
+    <unitInfo nodeId="1169042401237" fileName="TreePathOperationExpression_DELETE.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathOperationExpression_DELETE$TreePathOperationExpression_DELETE_DELETE" />
   </root>
   <root nodeId="1172240672869">
     <nodeInfo nodeId="1172240672869" fileName="TreeNodeKind_Editor.java" startLine="117" startPosition="58" endLine="117" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2416,8 +2416,8 @@
     <scopeInfo nodeId="1172240672869" fileName="TreeNodeKind_Editor.java" startLine="129" startPosition="89" endLine="144" endPosition="22" />
     <scopeInfo nodeId="1172240672869" fileName="TreeNodeKind_Editor.java" startLine="111" startPosition="0" endLine="128" endPosition="0" />
     <scopeInfo nodeId="1172240672869" fileName="TreeNodeKind_Editor.java" startLine="128" startPosition="0" endLine="146" endPosition="0" />
-    <unitInfo nodeId="1172240672869" fileName="TreeNodeKind_Editor.java" startLine="147" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKind_Editor$propertiesListHandler_k9mv9o_b2a" />
     <unitInfo nodeId="1172240672869" fileName="TreeNodeKind_Editor.java" startLine="28" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKind_Editor" />
+    <unitInfo nodeId="1172240672869" fileName="TreeNodeKind_Editor.java" startLine="147" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKind_Editor$propertiesListHandler_k9mv9o_b2a" />
   </root>
   <root nodeId="1172242763064">
     <nodeInfo nodeId="1172242763064" fileName="MatchKindOperation_Editor.java" startLine="98" startPosition="58" endLine="98" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2595,8 +2595,8 @@
     <scopeInfo nodeId="1172242763064" fileName="MatchKindOperation_Editor.java" startLine="110" startPosition="88" endLine="128" endPosition="22" />
     <scopeInfo nodeId="1172242763064" fileName="MatchKindOperation_Editor.java" startLine="147" startPosition="0" endLine="166" endPosition="0" />
     <scopeInfo nodeId="1172242763064" fileName="MatchKindOperation_Editor.java" startLine="109" startPosition="0" endLine="130" endPosition="0" />
-    <unitInfo nodeId="1172242763064" fileName="MatchKindOperation_Editor.java" startLine="135" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.ypath.editor.MatchKindOperation_Editor$_Inline_1xyskv_a1a1a" />
     <unitInfo nodeId="1172242763064" fileName="MatchKindOperation_Editor.java" startLine="25" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.ypath.editor.MatchKindOperation_Editor" />
+    <unitInfo nodeId="1172242763064" fileName="MatchKindOperation_Editor.java" startLine="135" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.ypath.editor.MatchKindOperation_Editor$_Inline_1xyskv_a1a1a" />
   </root>
   <root nodeId="1175161115264">
     <nodeInfo nodeId="1175161115264" fileName="TreeNodeKindProperty_Editor.java" startLine="101" startPosition="58" endLine="101" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2765,8 +2765,8 @@
     <scopeInfo nodeId="1175161115264" fileName="TreeNodeKindProperty_Editor.java" startLine="113" startPosition="88" endLine="129" endPosition="22" />
     <scopeInfo nodeId="1175161115264" fileName="TreeNodeKindProperty_Editor.java" startLine="95" startPosition="0" endLine="112" endPosition="0" />
     <scopeInfo nodeId="1175161115264" fileName="TreeNodeKindProperty_Editor.java" startLine="112" startPosition="0" endLine="131" endPosition="0" />
-    <unitInfo nodeId="1175161115264" fileName="TreeNodeKindProperty_Editor.java" startLine="136" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindProperty_Editor$TreeNodeKindProperty_generic_cellMenu_a0a0" />
     <unitInfo nodeId="1175161115264" fileName="TreeNodeKindProperty_Editor.java" startLine="31" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindProperty_Editor" />
+    <unitInfo nodeId="1175161115264" fileName="TreeNodeKindProperty_Editor.java" startLine="136" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindProperty_Editor$TreeNodeKindProperty_generic_cellMenu_a0a0" />
   </root>
   <root nodeId="1175165546638">
     <nodeInfo nodeId="1175165546638" fileName="TreeNodeKindOccurrence_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2848,8 +2848,8 @@
     <scopeInfo nodeId="1175165546638" fileName="TreeNodeKindOccurrence_Editor.java" startLine="69" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="1175165546638" fileName="TreeNodeKindOccurrence_Editor.java" startLine="32" startPosition="87" endLine="54" endPosition="22" />
     <scopeInfo nodeId="1175165546638" fileName="TreeNodeKindOccurrence_Editor.java" startLine="31" startPosition="0" endLine="56" endPosition="0" />
-    <unitInfo nodeId="1175165546638" fileName="TreeNodeKindOccurrence_Editor.java" startLine="57" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindOccurrence_Editor$_Inline_guc81v_a0a" />
     <unitInfo nodeId="1175165546638" fileName="TreeNodeKindOccurrence_Editor.java" startLine="20" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindOccurrence_Editor" />
+    <unitInfo nodeId="1175165546638" fileName="TreeNodeKindOccurrence_Editor.java" startLine="57" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindOccurrence_Editor$_Inline_guc81v_a0a" />
   </root>
   <root nodeId="1175169829267">
     <nodeInfo nodeId="1175169829267" fileName="MatchPropertyOperation_Editor.java" startLine="131" startPosition="58" endLine="131" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3043,8 +3043,8 @@
     <scopeInfo nodeId="1175169829267" fileName="MatchPropertyOperation_Editor.java" startLine="155" startPosition="0" endLine="174" endPosition="0" />
     <scopeInfo nodeId="1175169829267" fileName="MatchPropertyOperation_Editor.java" startLine="83" startPosition="0" endLine="104" endPosition="0" />
     <scopeInfo nodeId="1175169829267" fileName="MatchPropertyOperation_Editor.java" startLine="104" startPosition="0" endLine="125" endPosition="0" />
-    <unitInfo nodeId="1175169829267" fileName="MatchPropertyOperation_Editor.java" startLine="143" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.ypath.editor.MatchPropertyOperation_Editor$_Inline_pl7j0v_a3a" />
     <unitInfo nodeId="1175169829267" fileName="MatchPropertyOperation_Editor.java" startLine="22" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.ypath.editor.MatchPropertyOperation_Editor" />
+    <unitInfo nodeId="1175169829267" fileName="MatchPropertyOperation_Editor.java" startLine="143" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.ypath.editor.MatchPropertyOperation_Editor$_Inline_pl7j0v_a3a" />
   </root>
   <root nodeId="1175878011400">
     <nodeInfo nodeId="1175878011400" fileName="keymap_TreeNodeKindProperty.java" startLine="16" startPosition="40" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3109,8 +3109,8 @@
     <scopeInfo nodeId="1175878011400" fileName="keymap_TreeNodeKindProperty.java" startLine="55" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="1175878011400" fileName="keymap_TreeNodeKindProperty.java" startLine="36" startPosition="91" endLine="48" endPosition="19" />
     <scopeInfo nodeId="1175878011400" fileName="keymap_TreeNodeKindProperty.java" startLine="35" startPosition="0" endLine="50" endPosition="0" />
-    <unitInfo nodeId="1175878011400" fileName="keymap_TreeNodeKindProperty.java" startLine="23" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ypath.editor.keymap_TreeNodeKindProperty$keymap_TreeNodeKindProperty_Action0" />
     <unitInfo nodeId="1175878011400" fileName="keymap_TreeNodeKindProperty.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ypath.editor.keymap_TreeNodeKindProperty" />
+    <unitInfo nodeId="1175878011400" fileName="keymap_TreeNodeKindProperty.java" startLine="23" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ypath.editor.keymap_TreeNodeKindProperty$keymap_TreeNodeKindProperty_Action0" />
   </root>
   <root nodeId="1175879264396">
     <nodeInfo nodeId="1175879264396" fileName="MatchDefaultPropertyOperation_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3204,8 +3204,8 @@
     <scopeInfo nodeId="1179164666211" fileName="TreePathAdapterExpression_DELETE.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1179164666211" fileName="TreePathAdapterExpression_DELETE.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1179164666211" fileName="TreePathAdapterExpression_DELETE.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1179164666211" fileName="TreePathAdapterExpression_DELETE.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathAdapterExpression_DELETE$TreePathAdapterExpression_DELETE_DELETE" />
     <unitInfo nodeId="1179164666211" fileName="TreePathAdapterExpression_DELETE.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathAdapterExpression_DELETE" />
+    <unitInfo nodeId="1179164666211" fileName="TreePathAdapterExpression_DELETE.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreePathAdapterExpression_DELETE$TreePathAdapterExpression_DELETE_DELETE" />
   </root>
   <root nodeId="1179305743047">
     <nodeInfo nodeId="1179305743047" fileName="TreePath_component.java" startLine="40" startPosition="58" endLine="40" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3459,9 +3459,9 @@
     <scopeInfo nodeId="1179740291108" fileName="TreeNodeKindReference_Editor.java" startLine="103" startPosition="95" endLine="122" endPosition="22" />
     <scopeInfo nodeId="1179740291108" fileName="TreeNodeKindReference_Editor.java" startLine="169" startPosition="0" endLine="188" endPosition="0" />
     <scopeInfo nodeId="1179740291108" fileName="TreeNodeKindReference_Editor.java" startLine="102" startPosition="0" endLine="124" endPosition="0" />
+    <unitInfo nodeId="1179740291108" fileName="TreeNodeKindReference_Editor.java" startLine="21" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindReference_Editor" />
     <unitInfo nodeId="1179740291108" fileName="TreeNodeKindReference_Editor.java" startLine="125" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindReference_Editor$_Inline_g2eo62_a2a" />
     <unitInfo nodeId="1179740291108" fileName="TreeNodeKindReference_Editor.java" startLine="157" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindReference_Editor$_Inline_g2eo62_a4a" />
-    <unitInfo nodeId="1179740291108" fileName="TreeNodeKindReference_Editor.java" startLine="21" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindReference_Editor" />
   </root>
   <root nodeId="1180007630819">
     <nodeInfo nodeId="1180007630819" fileName="NodeKindSpecificCase_Editor.java" startLine="130" startPosition="58" endLine="130" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3684,8 +3684,8 @@
     <scopeInfo nodeId="1180007630819" fileName="NodeKindSpecificCase_Editor.java" startLine="141" startPosition="0" endLine="158" endPosition="0" />
     <scopeInfo nodeId="1180007630819" fileName="NodeKindSpecificCase_Editor.java" startLine="123" startPosition="0" endLine="141" endPosition="0" />
     <scopeInfo nodeId="1180007630819" fileName="NodeKindSpecificCase_Editor.java" startLine="171" startPosition="0" endLine="189" endPosition="0" />
-    <unitInfo nodeId="1180007630819" fileName="NodeKindSpecificCase_Editor.java" startLine="159" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ypath.editor.NodeKindSpecificCase_Editor$_Inline_qnryu2_a1a0" />
     <unitInfo nodeId="1180007630819" fileName="NodeKindSpecificCase_Editor.java" startLine="22" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.ypath.editor.NodeKindSpecificCase_Editor" />
+    <unitInfo nodeId="1180007630819" fileName="NodeKindSpecificCase_Editor.java" startLine="159" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ypath.editor.NodeKindSpecificCase_Editor$_Inline_qnryu2_a1a0" />
   </root>
   <root nodeId="1180007820089">
     <nodeInfo nodeId="1180007820089" fileName="NodeKindDefaultCase_Editor.java" startLine="125" startPosition="58" endLine="125" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4262,8 +4262,8 @@
     <scopeInfo nodeId="1180011189625" fileName="VisitChildrenExpression_Editor.java" startLine="131" startPosition="0" endLine="144" endPosition="0" />
     <scopeInfo nodeId="1180011189625" fileName="VisitChildrenExpression_Editor.java" startLine="78" startPosition="95" endLine="98" endPosition="22" />
     <scopeInfo nodeId="1180011189625" fileName="VisitChildrenExpression_Editor.java" startLine="77" startPosition="0" endLine="100" endPosition="0" />
-    <unitInfo nodeId="1180011189625" fileName="VisitChildrenExpression_Editor.java" startLine="105" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.ypath.editor.VisitChildrenExpression_Editor$actualArgumentListHandler_kcujn9_b1a" />
     <unitInfo nodeId="1180011189625" fileName="VisitChildrenExpression_Editor.java" startLine="32" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.ypath.editor.VisitChildrenExpression_Editor" />
+    <unitInfo nodeId="1180011189625" fileName="VisitChildrenExpression_Editor.java" startLine="105" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.ypath.editor.VisitChildrenExpression_Editor$actualArgumentListHandler_kcujn9_b1a" />
   </root>
   <root nodeId="1180013809829">
     <nodeInfo nodeId="1180013809829" fileName="VisitParameterDeclaration_Editor.java" startLine="50" startPosition="58" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4554,8 +4554,8 @@
     <scopeInfo nodeId="1180023904914" fileName="SwitchNodeKindStatement_Editor.java" startLine="31" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1180023904914" fileName="SwitchNodeKindStatement_Editor.java" startLine="112" startPosition="87" endLine="126" endPosition="22" />
     <scopeInfo nodeId="1180023904914" fileName="SwitchNodeKindStatement_Editor.java" startLine="111" startPosition="0" endLine="128" endPosition="0" />
-    <unitInfo nodeId="1180023904914" fileName="SwitchNodeKindStatement_Editor.java" startLine="129" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ypath.editor.SwitchNodeKindStatement_Editor$nodeKindCaseListHandler_g3hzyr_f0" />
     <unitInfo nodeId="1180023904914" fileName="SwitchNodeKindStatement_Editor.java" startLine="27" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.ypath.editor.SwitchNodeKindStatement_Editor" />
+    <unitInfo nodeId="1180023904914" fileName="SwitchNodeKindStatement_Editor.java" startLine="129" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ypath.editor.SwitchNodeKindStatement_Editor$nodeKindCaseListHandler_g3hzyr_f0" />
   </root>
   <root nodeId="1180024974146">
     <nodeInfo nodeId="1180024974146" fileName="VisitNodesStatement_Editor.java" startLine="32" startPosition="58" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4697,8 +4697,8 @@
     <scopeInfo nodeId="1180025075860" fileName="VisitParameterDeclarationList_Editor.java" startLine="86" startPosition="132" endLine="95" endPosition="7" />
     <scopeInfo nodeId="1180025075860" fileName="VisitParameterDeclarationList_Editor.java" startLine="97" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="1180025075860" fileName="VisitParameterDeclarationList_Editor.java" startLine="85" startPosition="0" endLine="97" endPosition="0" />
-    <unitInfo nodeId="1180025075860" fileName="VisitParameterDeclarationList_Editor.java" startLine="59" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ypath.editor.VisitParameterDeclarationList_Editor$visitParameterDeclarationListHandler_4m7tk9_b0" />
     <unitInfo nodeId="1180025075860" fileName="VisitParameterDeclarationList_Editor.java" startLine="23" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.ypath.editor.VisitParameterDeclarationList_Editor" />
+    <unitInfo nodeId="1180025075860" fileName="VisitParameterDeclarationList_Editor.java" startLine="59" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ypath.editor.VisitParameterDeclarationList_Editor$visitParameterDeclarationListHandler_4m7tk9_b0" />
   </root>
   <root nodeId="1183979884557">
     <nodeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="71" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5435,13 +5435,13 @@
     <scopeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="485" startPosition="0" endLine="508" endPosition="0" />
     <scopeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="405" startPosition="117" endLine="430" endPosition="22" />
     <scopeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="404" startPosition="0" endLine="432" endPosition="0" />
+    <unitInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="44" startPosition="0" endLine="642" endPosition="0" unitName="jetbrains.mps.ypath.editor.ListFeature_Editor" />
+    <unitInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="406" startPosition="83" endLine="423" endPosition="5" unitName="jetbrains.mps.ypath.editor.ListFeature_Editor$1" />
     <unitInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="572" startPosition="0" endLine="583" endPosition="0" unitName="jetbrains.mps.ypath.editor.ListFeature_Editor$ListFeature_component_cellMenu_a0a0a2a0" />
     <unitInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="584" startPosition="0" endLine="595" endPosition="0" unitName="jetbrains.mps.ypath.editor.ListFeature_Editor$ListFeature_component_cellMenu_a0a0a2a0_0" />
     <unitInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="596" startPosition="0" endLine="607" endPosition="0" unitName="jetbrains.mps.ypath.editor.ListFeature_Editor$ListFeature_component_cellMenu_a0b0a2a0" />
-    <unitInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="406" startPosition="83" endLine="423" endPosition="5" unitName="jetbrains.mps.ypath.editor.ListFeature_Editor$1" />
-    <unitInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="608" startPosition="0" endLine="641" endPosition="0" unitName="jetbrains.mps.ypath.editor.ListFeature_Editor$_Inline_hr3usq_a2a0c0a" />
     <unitInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="529" startPosition="0" endLine="571" endPosition="0" unitName="jetbrains.mps.ypath.editor.ListFeature_Editor$ListFeature_generic_cellMenu_a0a0a" />
-    <unitInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="44" startPosition="0" endLine="642" endPosition="0" unitName="jetbrains.mps.ypath.editor.ListFeature_Editor" />
+    <unitInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="608" startPosition="0" endLine="641" endPosition="0" unitName="jetbrains.mps.ypath.editor.ListFeature_Editor$_Inline_hr3usq_a2a0c0a" />
   </root>
   <root nodeId="1184066566379">
     <nodeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="71" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -6180,13 +6180,13 @@
     <scopeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="486" startPosition="0" endLine="510" endPosition="0" />
     <scopeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="405" startPosition="117" endLine="431" endPosition="22" />
     <scopeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="404" startPosition="0" endLine="433" endPosition="0" />
+    <unitInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="44" startPosition="0" endLine="644" endPosition="0" unitName="jetbrains.mps.ypath.editor.SequenceFeature_Editor" />
+    <unitInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="406" startPosition="83" endLine="423" endPosition="5" unitName="jetbrains.mps.ypath.editor.SequenceFeature_Editor$1" />
     <unitInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="574" startPosition="0" endLine="585" endPosition="0" unitName="jetbrains.mps.ypath.editor.SequenceFeature_Editor$SequenceFeature_component_cellMenu_a0a0a2a0" />
     <unitInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="586" startPosition="0" endLine="597" endPosition="0" unitName="jetbrains.mps.ypath.editor.SequenceFeature_Editor$SequenceFeature_component_cellMenu_a0a0a2a0_0" />
     <unitInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="598" startPosition="0" endLine="609" endPosition="0" unitName="jetbrains.mps.ypath.editor.SequenceFeature_Editor$SequenceFeature_component_cellMenu_a0b0a2a0" />
-    <unitInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="406" startPosition="83" endLine="423" endPosition="5" unitName="jetbrains.mps.ypath.editor.SequenceFeature_Editor$1" />
-    <unitInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="610" startPosition="0" endLine="643" endPosition="0" unitName="jetbrains.mps.ypath.editor.SequenceFeature_Editor$_Inline_q0s13v_a2a0c0a" />
     <unitInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="531" startPosition="0" endLine="573" endPosition="0" unitName="jetbrains.mps.ypath.editor.SequenceFeature_Editor$SequenceFeature_generic_cellMenu_a0a0a" />
-    <unitInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="44" startPosition="0" endLine="644" endPosition="0" unitName="jetbrains.mps.ypath.editor.SequenceFeature_Editor" />
+    <unitInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="610" startPosition="0" endLine="643" endPosition="0" unitName="jetbrains.mps.ypath.editor.SequenceFeature_Editor$_Inline_q0s13v_a2a0c0a" />
   </root>
   <root nodeId="1184080799528">
     <nodeInfo nodeId="1184080799528" fileName="keymap_ListFeature.java" startLine="17" startPosition="31" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6250,8 +6250,8 @@
     <scopeInfo nodeId="1184080799528" fileName="keymap_ListFeature.java" startLine="56" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1184080799528" fileName="keymap_ListFeature.java" startLine="37" startPosition="91" endLine="49" endPosition="19" />
     <scopeInfo nodeId="1184080799528" fileName="keymap_ListFeature.java" startLine="36" startPosition="0" endLine="51" endPosition="0" />
-    <unitInfo nodeId="1184080799528" fileName="keymap_ListFeature.java" startLine="24" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ypath.editor.keymap_ListFeature$keymap_ListFeature_Action0" />
     <unitInfo nodeId="1184080799528" fileName="keymap_ListFeature.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ypath.editor.keymap_ListFeature" />
+    <unitInfo nodeId="1184080799528" fileName="keymap_ListFeature.java" startLine="24" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ypath.editor.keymap_ListFeature$keymap_ListFeature_Action0" />
   </root>
   <root nodeId="1184094836392">
     <nodeInfo nodeId="1184094836392" fileName="keymap_SequenceFeature.java" startLine="17" startPosition="35" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6315,8 +6315,8 @@
     <scopeInfo nodeId="1184094836392" fileName="keymap_SequenceFeature.java" startLine="56" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1184094836392" fileName="keymap_SequenceFeature.java" startLine="37" startPosition="91" endLine="49" endPosition="19" />
     <scopeInfo nodeId="1184094836392" fileName="keymap_SequenceFeature.java" startLine="36" startPosition="0" endLine="51" endPosition="0" />
-    <unitInfo nodeId="1184094836392" fileName="keymap_SequenceFeature.java" startLine="24" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ypath.editor.keymap_SequenceFeature$keymap_SequenceFeature_Action0" />
     <unitInfo nodeId="1184094836392" fileName="keymap_SequenceFeature.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ypath.editor.keymap_SequenceFeature" />
+    <unitInfo nodeId="1184094836392" fileName="keymap_SequenceFeature.java" startLine="24" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ypath.editor.keymap_SequenceFeature$keymap_SequenceFeature_Action0" />
   </root>
   <root nodeId="1184657730977">
     <nodeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="71" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -7350,13 +7350,13 @@
     <scopeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="700" startPosition="0" endLine="723" endPosition="0" />
     <scopeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="569" startPosition="117" endLine="594" endPosition="22" />
     <scopeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="568" startPosition="0" endLine="596" endPosition="0" />
+    <unitInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="44" startPosition="0" endLine="861" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamListFeature_Editor" />
+    <unitInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="570" startPosition="83" endLine="587" endPosition="5" unitName="jetbrains.mps.ypath.editor.ParamListFeature_Editor$1" />
     <unitInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="791" startPosition="0" endLine="802" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamListFeature_Editor$ParamListFeature_component_cellMenu_a0a0a5a0" />
     <unitInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="803" startPosition="0" endLine="814" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamListFeature_Editor$ParamListFeature_component_cellMenu_a0a0a5a0_0" />
     <unitInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="815" startPosition="0" endLine="826" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamListFeature_Editor$ParamListFeature_component_cellMenu_a0b0a5a0" />
-    <unitInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="570" startPosition="83" endLine="587" endPosition="5" unitName="jetbrains.mps.ypath.editor.ParamListFeature_Editor$1" />
-    <unitInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="827" startPosition="0" endLine="860" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamListFeature_Editor$_Inline_ldpt8g_a2a0f0a" />
     <unitInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="748" startPosition="0" endLine="790" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamListFeature_Editor$ParamListFeature_generic_cellMenu_a0a0a" />
-    <unitInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="44" startPosition="0" endLine="861" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamListFeature_Editor" />
+    <unitInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="827" startPosition="0" endLine="860" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamListFeature_Editor$_Inline_ldpt8g_a2a0f0a" />
   </root>
   <root nodeId="1184659126273">
     <nodeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="71" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -8386,13 +8386,13 @@
     <scopeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="835" startPosition="0" endLine="855" endPosition="0" />
     <scopeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="569" startPosition="117" endLine="594" endPosition="22" />
     <scopeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="568" startPosition="0" endLine="596" endPosition="0" />
+    <unitInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="44" startPosition="0" endLine="857" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor" />
+    <unitInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="570" startPosition="83" endLine="587" endPosition="5" unitName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor$1" />
     <unitInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="787" startPosition="0" endLine="798" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor$ParamSequenceFeature_component_cellMenu_a0a0a5a0" />
     <unitInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="799" startPosition="0" endLine="810" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor$ParamSequenceFeature_component_cellMenu_a0a0a5a0_0" />
     <unitInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="811" startPosition="0" endLine="822" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor$ParamSequenceFeature_component_cellMenu_a0b0a5a0" />
-    <unitInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="570" startPosition="83" endLine="587" endPosition="5" unitName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor$1" />
-    <unitInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="823" startPosition="0" endLine="856" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor$_Inline_a6whyq_a2a0f0a" />
     <unitInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="744" startPosition="0" endLine="786" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor$ParamSequenceFeature_generic_cellMenu_a0a0a" />
-    <unitInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="44" startPosition="0" endLine="857" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor" />
+    <unitInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="823" startPosition="0" endLine="856" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor$_Inline_a6whyq_a2a0f0a" />
   </root>
   <root nodeId="1184776130290">
     <nodeInfo nodeId="1184776130290" fileName="ParameterWrapper_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -8492,8 +8492,8 @@
     <scopeInfo nodeId="1184776130290" fileName="ParameterWrapper_Editor.java" startLine="86" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="1184776130290" fileName="ParameterWrapper_Editor.java" startLine="61" startPosition="114" endLine="84" endPosition="22" />
     <scopeInfo nodeId="1184776130290" fileName="ParameterWrapper_Editor.java" startLine="60" startPosition="0" endLine="86" endPosition="0" />
-    <unitInfo nodeId="1184776130290" fileName="ParameterWrapper_Editor.java" startLine="62" startPosition="83" endLine="77" endPosition="5" unitName="jetbrains.mps.ypath.editor.ParameterWrapper_Editor$1" />
     <unitInfo nodeId="1184776130290" fileName="ParameterWrapper_Editor.java" startLine="26" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ypath.editor.ParameterWrapper_Editor" />
+    <unitInfo nodeId="1184776130290" fileName="ParameterWrapper_Editor.java" startLine="62" startPosition="83" endLine="77" endPosition="5" unitName="jetbrains.mps.ypath.editor.ParameterWrapper_Editor$1" />
   </root>
   <root nodeId="1197460698446">
     <nodeInfo nodeId="1197460698446" fileName="menu_SubstituteFeatureAndParameter.java" startLine="29" startPosition="47" endLine="30" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -8564,8 +8564,8 @@
     <scopeInfo nodeId="1197465288047" fileName="menu_SubstituteFeatureAndParameter.java" startLine="46" startPosition="100" endLine="49" endPosition="15" />
     <scopeInfo nodeId="1197460698446" fileName="menu_SubstituteFeatureAndParameter.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1197462019060" fileName="menu_SubstituteFeatureAndParameter.java" startLine="63" startPosition="162" endLine="67" endPosition="64">
-      <varInfo nodeId="1197462131743" varName="pw" />
       <varInfo nodeId="1197462131736" varName="fe" />
+      <varInfo nodeId="1197462131743" varName="pw" />
     </scopeInfo>
     <scopeInfo nodeId="1197460698446" fileName="menu_SubstituteFeatureAndParameter.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1197460698446" fileName="menu_SubstituteFeatureAndParameter.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
@@ -8577,8 +8577,8 @@
       <varInfo nodeId="1197466284236" varName="fe" />
     </scopeInfo>
     <scopeInfo nodeId="1197462053559" fileName="menu_SubstituteFeatureAndParameter.java" startLine="78" startPosition="66" endLine="88" endPosition="7">
-      <varInfo nodeId="1197462053568" varName="pw" />
       <varInfo nodeId="1197462053561" varName="fe" />
+      <varInfo nodeId="1197462053568" varName="pw" />
     </scopeInfo>
     <scopeInfo nodeId="1197465288042" fileName="menu_SubstituteFeatureAndParameter.java" startLine="43" startPosition="224" endLine="54" endPosition="9" />
     <scopeInfo nodeId="1197465239740" fileName="menu_SubstituteFeatureAndParameter.java" startLine="42" startPosition="174" endLine="54" endPosition="9">
@@ -8592,8 +8592,8 @@
       <varInfo nodeId="1197462039682" varName="tpoe" />
     </scopeInfo>
     <scopeInfo nodeId="1197460698446" fileName="menu_SubstituteFeatureAndParameter.java" startLine="36" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="1197460698446" fileName="menu_SubstituteFeatureAndParameter.java" startLine="33" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ypath.editor.menu_SubstituteFeatureAndParameter$IterateOperation_generic_cellMenu_a0" />
     <unitInfo nodeId="1197460698446" fileName="menu_SubstituteFeatureAndParameter.java" startLine="28" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ypath.editor.menu_SubstituteFeatureAndParameter" />
+    <unitInfo nodeId="1197460698446" fileName="menu_SubstituteFeatureAndParameter.java" startLine="33" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ypath.editor.menu_SubstituteFeatureAndParameter$IterateOperation_generic_cellMenu_a0" />
   </root>
   <root nodeId="1197480027821">
     <nodeInfo nodeId="1197480027821" fileName="IterateOperation_DELETE.java" startLine="14" startPosition="95" endLine="15" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8624,8 +8624,8 @@
       <varInfo nodeId="1197480068830" varName="expr" />
     </scopeInfo>
     <scopeInfo nodeId="1197480027821" fileName="IterateOperation_DELETE.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="1197480027821" fileName="IterateOperation_DELETE.java" startLine="18" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ypath.editor.IterateOperation_DELETE$IterateOperation_DELETE_DELETE" />
     <unitInfo nodeId="1197480027821" fileName="IterateOperation_DELETE.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ypath.editor.IterateOperation_DELETE" />
+    <unitInfo nodeId="1197480027821" fileName="IterateOperation_DELETE.java" startLine="18" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ypath.editor.IterateOperation_DELETE$IterateOperation_DELETE_DELETE" />
   </root>
   <root nodeId="1197650203309">
     <nodeInfo nodeId="1197650203309" fileName="menu_SubstituteIterateOperationAxis.java" startLine="29" startPosition="48" endLine="30" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -8720,8 +8720,8 @@
     <scopeInfo nodeId="1197650203309" fileName="menu_SubstituteIterateOperationAxis.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
     <scopeInfo nodeId="1197650268191" fileName="menu_SubstituteIterateOperationAxis.java" startLine="67" startPosition="165" endLine="73" endPosition="63">
       <varInfo nodeId="1199387704116" varName="axis" />
-      <varInfo nodeId="1199387704130" varName="pw" />
       <varInfo nodeId="1199387704123" varName="feat" />
+      <varInfo nodeId="1199387704130" varName="pw" />
     </scopeInfo>
     <scopeInfo nodeId="1199387592231" fileName="menu_SubstituteIterateOperationAxis.java" startLine="91" startPosition="14" endLine="99" endPosition="9" />
     <scopeInfo nodeId="1199387644440" fileName="menu_SubstituteIterateOperationAxis.java" startLine="115" startPosition="14" endLine="123" endPosition="9" />
@@ -8733,15 +8733,15 @@
     <scopeInfo nodeId="1197650335095" fileName="menu_SubstituteIterateOperationAxis.java" startLine="41" startPosition="224" endLine="58" endPosition="9" />
     <scopeInfo nodeId="1197650442720" fileName="menu_SubstituteIterateOperationAxis.java" startLine="84" startPosition="69" endLine="101" endPosition="63">
       <varInfo nodeId="1199387592196" varName="axis" />
+      <varInfo nodeId="1199387592204" varName="feat" />
       <varInfo nodeId="1199387592211" varName="pw" />
       <varInfo nodeId="1199387592218" varName="suffix" />
-      <varInfo nodeId="1199387592204" varName="feat" />
     </scopeInfo>
     <scopeInfo nodeId="1197650652152" fileName="menu_SubstituteIterateOperationAxis.java" startLine="108" startPosition="72" endLine="125" endPosition="57">
       <varInfo nodeId="1199387644405" varName="axis" />
+      <varInfo nodeId="1199387644413" varName="feat" />
       <varInfo nodeId="1199387644420" varName="pw" />
       <varInfo nodeId="1199387644427" varName="suffix" />
-      <varInfo nodeId="1199387644413" varName="feat" />
     </scopeInfo>
     <scopeInfo nodeId="1199387398794" fileName="menu_SubstituteIterateOperationAxis.java" startLine="40" startPosition="174" endLine="58" endPosition="9">
       <varInfo nodeId="1199387408210" varName="nodeType" />
@@ -8753,8 +8753,8 @@
       <varInfo nodeId="1199387306980" varName="tpoe" />
     </scopeInfo>
     <scopeInfo nodeId="1197650203309" fileName="menu_SubstituteIterateOperationAxis.java" startLine="36" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="1197650203309" fileName="menu_SubstituteIterateOperationAxis.java" startLine="33" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.ypath.editor.menu_SubstituteIterateOperationAxis$IterateOperation_generic_cellMenu_a0_0" />
     <unitInfo nodeId="1197650203309" fileName="menu_SubstituteIterateOperationAxis.java" startLine="28" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ypath.editor.menu_SubstituteIterateOperationAxis" />
+    <unitInfo nodeId="1197650203309" fileName="menu_SubstituteIterateOperationAxis.java" startLine="33" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.ypath.editor.menu_SubstituteIterateOperationAxis$IterateOperation_generic_cellMenu_a0_0" />
   </root>
   <root nodeId="1197903738507">
     <nodeInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="24" startPosition="36" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -8800,8 +8800,8 @@
     <scopeInfo nodeId="1197903778937" fileName="menu_FeatureSetOpposite.java" startLine="43" startPosition="11" endLine="45" endPosition="91" />
     <scopeInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="23" startPosition="72" endLine="26" endPosition="3" />
     <scopeInfo nodeId="1197903759761" fileName="menu_FeatureSetOpposite.java" startLine="54" startPosition="162" endLine="57" endPosition="69">
-      <varInfo nodeId="1197903839974" varName="mu" />
       <varInfo nodeId="1197903839967" varName="fe" />
+      <varInfo nodeId="1197903839974" varName="mu" />
     </scopeInfo>
     <scopeInfo nodeId="1225096927283" fileName="menu_FeatureSetOpposite.java" startLine="37" startPosition="41" endLine="41" endPosition="13" />
     <scopeInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
@@ -8810,26 +8810,26 @@
     <scopeInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="53" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="1197903795099" fileName="menu_FeatureSetOpposite.java" startLine="68" startPosition="66" endLine="74" endPosition="8">
-      <varInfo nodeId="1197903803993" varName="mu" />
       <varInfo nodeId="1197903803986" varName="fe" />
+      <varInfo nodeId="1197903803993" varName="mu" />
     </scopeInfo>
     <scopeInfo nodeId="1197903822561" fileName="menu_FeatureSetOpposite.java" startLine="81" startPosition="69" endLine="87" endPosition="8">
-      <varInfo nodeId="1197903825014" varName="mu" />
       <varInfo nodeId="1197903825007" varName="fe" />
+      <varInfo nodeId="1197903825014" varName="mu" />
     </scopeInfo>
     <scopeInfo nodeId="1225096927280" fileName="menu_FeatureSetOpposite.java" startLine="36" startPosition="229" endLine="43" endPosition="0" />
     <scopeInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="67" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="80" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="1197903778920" fileName="menu_FeatureSetOpposite.java" startLine="35" startPosition="119" endLine="46" endPosition="7" />
     <scopeInfo nodeId="1197903759759" fileName="menu_FeatureSetOpposite.java" startLine="32" startPosition="105" endLine="47" endPosition="17">
-      <varInfo nodeId="1197903778917" varName="srcNode" />
-      <varInfo nodeId="1197903778910" varName="res" />
       <varInfo nodeId="1197920533795" varName="isGeneric" />
+      <varInfo nodeId="1197903778910" varName="res" />
+      <varInfo nodeId="1197903778917" varName="srcNode" />
     </scopeInfo>
     <scopeInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="31" startPosition="0" endLine="49" endPosition="0" />
+    <unitInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="23" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ypath.editor.menu_FeatureSetOpposite" />
     <unitInfo nodeId="1225096927280" fileName="menu_FeatureSetOpposite.java" startLine="36" startPosition="206" endLine="43" endPosition="7" unitName="jetbrains.mps.ypath.editor.menu_FeatureSetOpposite$1" />
     <unitInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="28" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.ypath.editor.menu_FeatureSetOpposite$IFeature_generic_cellMenu_a0" />
-    <unitInfo nodeId="1197903738507" fileName="menu_FeatureSetOpposite.java" startLine="23" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ypath.editor.menu_FeatureSetOpposite" />
   </root>
   <root nodeId="1197906509884">
     <nodeInfo nodeId="1197906509884" fileName="IFeature_opposite_DELETE.java" startLine="13" startPosition="95" endLine="14" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8849,8 +8849,8 @@
     <scopeInfo nodeId="1197906509884" fileName="IFeature_opposite_DELETE.java" startLine="12" startPosition="39" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1197906509884" fileName="IFeature_opposite_DELETE.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1197906509884" fileName="IFeature_opposite_DELETE.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <unitInfo nodeId="1197906509884" fileName="IFeature_opposite_DELETE.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ypath.editor.IFeature_opposite_DELETE$IFeature_opposite_DELETE_DELETE" />
     <unitInfo nodeId="1197906509884" fileName="IFeature_opposite_DELETE.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ypath.editor.IFeature_opposite_DELETE" />
+    <unitInfo nodeId="1197906509884" fileName="IFeature_opposite_DELETE.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ypath.editor.IFeature_opposite_DELETE$IFeature_opposite_DELETE_DELETE" />
   </root>
   <root nodeId="1197908223487">
     <nodeInfo nodeId="1197908223487" fileName="IFeature_default_DELETE.java" startLine="13" startPosition="95" endLine="14" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8870,8 +8870,8 @@
     <scopeInfo nodeId="1197908223487" fileName="IFeature_default_DELETE.java" startLine="12" startPosition="38" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1197908223487" fileName="IFeature_default_DELETE.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1197908223487" fileName="IFeature_default_DELETE.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <unitInfo nodeId="1197908223487" fileName="IFeature_default_DELETE.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ypath.editor.IFeature_default_DELETE$IFeature_default_DELETE_DELETE" />
     <unitInfo nodeId="1197908223487" fileName="IFeature_default_DELETE.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ypath.editor.IFeature_default_DELETE" />
+    <unitInfo nodeId="1197908223487" fileName="IFeature_default_DELETE.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ypath.editor.IFeature_default_DELETE$IFeature_default_DELETE_DELETE" />
   </root>
   <root nodeId="1197908358603">
     <nodeInfo nodeId="1197908358603" fileName="TreeNodeKindProperty_default_DELETE.java" startLine="13" startPosition="95" endLine="14" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8891,8 +8891,8 @@
     <scopeInfo nodeId="1197908358603" fileName="TreeNodeKindProperty_default_DELETE.java" startLine="12" startPosition="50" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1197908358603" fileName="TreeNodeKindProperty_default_DELETE.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1197908358603" fileName="TreeNodeKindProperty_default_DELETE.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <unitInfo nodeId="1197908358603" fileName="TreeNodeKindProperty_default_DELETE.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindProperty_default_DELETE$TreeNodeKindProperty_default_DELETE_DELETE" />
     <unitInfo nodeId="1197908358603" fileName="TreeNodeKindProperty_default_DELETE.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindProperty_default_DELETE" />
+    <unitInfo nodeId="1197908358603" fileName="TreeNodeKindProperty_default_DELETE.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ypath.editor.TreeNodeKindProperty_default_DELETE$TreeNodeKindProperty_default_DELETE_DELETE" />
   </root>
   <root nodeId="1197914357672">
     <nodeInfo nodeId="1197914357672" fileName="stylesheet_Feature_StyleSheet.java" startLine="12" startPosition="58" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -10092,13 +10092,13 @@
     <scopeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="424" startPosition="0" endLine="447" endPosition="0" />
     <scopeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="361" startPosition="116" endLine="386" endPosition="22" />
     <scopeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="360" startPosition="0" endLine="388" endPosition="0" />
+    <unitInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="44" startPosition="0" endLine="581" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericFeature_Editor" />
+    <unitInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="362" startPosition="83" endLine="379" endPosition="5" unitName="jetbrains.mps.ypath.editor.GenericFeature_Editor$1" />
     <unitInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="511" startPosition="0" endLine="522" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericFeature_Editor$GenericFeature_component_cellMenu_a0a0a2a0" />
     <unitInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="523" startPosition="0" endLine="534" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericFeature_Editor$GenericFeature_component_cellMenu_a0a0a2a0_0" />
     <unitInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="535" startPosition="0" endLine="546" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericFeature_Editor$GenericFeature_component_cellMenu_a0b0a2a0" />
-    <unitInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="362" startPosition="83" endLine="379" endPosition="5" unitName="jetbrains.mps.ypath.editor.GenericFeature_Editor$1" />
-    <unitInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="547" startPosition="0" endLine="580" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericFeature_Editor$_Inline_6zhae_a2a0c0a" />
     <unitInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="468" startPosition="0" endLine="510" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericFeature_Editor$GenericFeature_generic_cellMenu_a0a0a" />
-    <unitInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="44" startPosition="0" endLine="581" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericFeature_Editor" />
+    <unitInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="547" startPosition="0" endLine="580" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericFeature_Editor$_Inline_6zhae_a2a0c0a" />
   </root>
   <root nodeId="4581582910844784760">
     <nodeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="71" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -11045,13 +11045,13 @@
     <scopeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="774" startPosition="0" endLine="794" endPosition="0" />
     <scopeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="525" startPosition="117" endLine="550" endPosition="22" />
     <scopeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="524" startPosition="0" endLine="552" endPosition="0" />
+    <unitInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="44" startPosition="0" endLine="796" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor" />
+    <unitInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="526" startPosition="83" endLine="543" endPosition="5" unitName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor$1" />
     <unitInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="726" startPosition="0" endLine="737" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor$GenericParamFeature_component_cellMenu_a0a0a5a0" />
     <unitInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="738" startPosition="0" endLine="749" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor$GenericParamFeature_component_cellMenu_a0a0a5a0_0" />
     <unitInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="750" startPosition="0" endLine="761" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor$GenericParamFeature_component_cellMenu_a0b0a5a0" />
-    <unitInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="526" startPosition="83" endLine="543" endPosition="5" unitName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor$1" />
-    <unitInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="762" startPosition="0" endLine="795" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor$_Inline_a19ihi_a2a0f0a" />
     <unitInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="683" startPosition="0" endLine="725" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor$GenericParamFeature_generic_cellMenu_a0a0a" />
-    <unitInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="44" startPosition="0" endLine="796" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor" />
+    <unitInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="762" startPosition="0" endLine="795" endPosition="0" unitName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor$_Inline_a19ihi_a2a0f0a" />
   </root>
 </debugInfo>
 

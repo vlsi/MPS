@@ -151,8 +151,8 @@
     <scopeInfo nodeId="4234084459084291706" fileName="replace_whereBlock_with_closure_Intention.java" startLine="55" startPosition="170" endLine="61" endPosition="5" />
     <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="4234084459084260643" fileName="replace_whereBlock_with_closure_Intention.java" startLine="50" startPosition="76" endLine="63" endPosition="62">
-      <varInfo nodeId="4234084459084291790" varName="cp" />
       <varInfo nodeId="4234084459084260678" varName="cl" />
+      <varInfo nodeId="4234084459084291790" varName="cp" />
       <varInfo nodeId="4234084459084291586" varName="scpd" />
     </scopeInfo>
     <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="49" startPosition="0" endLine="65" endPosition="0" />

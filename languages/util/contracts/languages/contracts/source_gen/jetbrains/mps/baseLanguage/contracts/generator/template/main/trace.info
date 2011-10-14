@@ -25,8 +25,8 @@
     <nodeInfo nodeId="2203155934612650122" fileName="QueriesGenerated.java" startLine="74" startPosition="176" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="2203155934612650021" fileName="QueriesGenerated.java" startLine="69" startPosition="150" endLine="75" endPosition="17">
       <varInfo nodeId="2203155934612650064" varName="clone" />
-      <varInfo nodeId="2203155934613778332" varName="linkParent" />
       <varInfo nodeId="2203155934612650023" varName="declarationNum" />
+      <varInfo nodeId="2203155934613778332" varName="linkParent" />
       <varInfo nodeId="2203155934613778324" varName="nodeParent" />
     </scopeInfo>
   </root>

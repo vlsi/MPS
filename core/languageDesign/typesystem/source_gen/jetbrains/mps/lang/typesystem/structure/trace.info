@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Typesystem_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.Typesystem_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="277" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="Typesystem_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.Typesystem_Language" />
   <root nodeId="1076452857759748200">
     <nodeInfo nodeId="1076452857759748200" fileName="CaretPositionOperation.java" startLine="15" startPosition="79" endLine="16" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1076452857759748200" fileName="CaretPositionOperation.java" startLine="16" startPosition="104" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -1979,8 +1979,8 @@
     <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="9" startPosition="77" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="45" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum_PropertySupport" />
     <unitInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum" />
+    <unitInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum_PropertySupport" />
   </root>
   <root nodeId="1193733698246">
     <nodeInfo nodeId="1193733698246" fileName="Dependency.java" startLine="12" startPosition="45" endLine="13" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -2911,8 +2911,8 @@
     <scopeInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="50" startPosition="61" endLine="69" endPosition="43" />
     <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="49" startPosition="0" endLine="71" endPosition="0" />
-    <unitInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority_PropertySupport" />
     <unitInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority" />
+    <unitInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority_PropertySupport" />
   </root>
   <root nodeId="1212573620175">
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2994,8 +2994,8 @@
     <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="9" startPosition="70" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind_PropertySupport" />
     <unitInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind" />
+    <unitInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind_PropertySupport" />
   </root>
   <root nodeId="1216383170661">
     <nodeInfo nodeId="1216383170661" fileName="TypesystemQuickFix.java" startLine="15" startPosition="78" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -4823,8 +4823,8 @@
     <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="9" startPosition="73" endLine="23" endPosition="0" />
     <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="45" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequalityProperty_PropertySupport" />
     <unitInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequalityProperty" />
+    <unitInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequalityProperty_PropertySupport" />
   </root>
   <root nodeId="7884032992241804516">
     <nodeInfo nodeId="7884032992241804516" fileName="DependentComputationItem_BlockingBlock.java" startLine="11" startPosition="77" endLine="12" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Typesystem_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ProjectPlugin" />
   <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
+  <unitInfo fileName="Typesystem_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ProjectPlugin" />
   <root nodeId="1205244087094">
     <nodeInfo nodeId="1205244087094" fileName="TypesystemActions_ActionGroup.java" startLine="8" startPosition="73" endLine="9" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1205244087094" fileName="TypesystemActions_ActionGroup.java" startLine="9" startPosition="84" endLine="10" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -148,15 +148,15 @@
     <scopeInfo nodeId="1206184013394" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="32" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="1206184013394" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="45" startPosition="5" endLine="54" endPosition="5" />
     <scopeInfo nodeId="1206184013394" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="63" startPosition="9" endLine="72" endPosition="194">
-      <varInfo nodeId="8551151787057541473" varName="query" />
       <varInfo nodeId="8551151787057544279" varName="provider" />
+      <varInfo nodeId="8551151787057541473" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="1206184013394" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="62" startPosition="96" endLine="75" endPosition="5" />
     <scopeInfo nodeId="1206184013394" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="61" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="1206184013394" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="42" startPosition="95" endLine="59" endPosition="16" />
     <scopeInfo nodeId="1206184013394" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="41" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="8551151787057541077" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="66" startPosition="47" endLine="71" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action$1" />
     <unitInfo nodeId="1206184013394" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="23" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action" />
+    <unitInfo nodeId="8551151787057541077" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="66" startPosition="47" endLine="71" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action$1" />
   </root>
   <root nodeId="1206189513856">
     <nodeInfo nodeId="1215438799718" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="10" startPosition="83" endLine="11" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChecker" />
@@ -317,10 +317,10 @@
     <scopeInfo nodeId="4290387479601537374" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="28" startPosition="43" endLine="36" endPosition="5" />
     <scopeInfo nodeId="4290387479601537374" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="27" startPosition="0" endLine="37" endPosition="3" />
     <scopeInfo nodeId="4290387479601539561" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="40" startPosition="9" endLine="62" endPosition="182">
-      <varInfo nodeId="4290387479601539595" varName="node" />
-      <varInfo nodeId="4290387479601539605" varName="error" />
       <varInfo nodeId="8042441407353625226" varName="editorComponent" />
+      <varInfo nodeId="4290387479601539605" varName="error" />
       <varInfo nodeId="4290387479601583624" varName="firstId" />
+      <varInfo nodeId="4290387479601539595" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4290387479601537374" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="39" startPosition="45" endLine="68" endPosition="5" />
     <scopeInfo nodeId="4290387479601537374" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="38" startPosition="0" endLine="70" endPosition="0" />
@@ -395,8 +395,8 @@
     <scopeInfo nodeId="6359146168314435522" fileName="ShowInferredNodeType_Action.java" startLine="60" startPosition="96" endLine="77" endPosition="5" />
     <scopeInfo nodeId="6359146168314435522" fileName="ShowInferredNodeType_Action.java" startLine="40" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="6359146168314435522" fileName="ShowInferredNodeType_Action.java" startLine="59" startPosition="0" endLine="79" endPosition="0" />
-    <unitInfo nodeId="6359146168314435532" fileName="ShowInferredNodeType_Action.java" startLine="63" startPosition="47" endLine="67" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action$1" />
     <unitInfo nodeId="6359146168314435522" fileName="ShowInferredNodeType_Action.java" startLine="22" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action" />
+    <unitInfo nodeId="6359146168314435532" fileName="ShowInferredNodeType_Action.java" startLine="63" startPosition="47" endLine="67" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action$1" />
   </root>
   <root nodeId="7157723551789225032">
     <nodeInfo nodeId="7157723551789225167" fileName="Typesystem_Order.java" startLine="9" startPosition="29" endLine="10" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -474,12 +474,12 @@
     <scopeInfo nodeId="7157723551789225032" fileName="Typesystem_TabDescriptor.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="7157723551789225032" fileName="Typesystem_TabDescriptor.java" startLine="50" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="7157723551789225118" fileName="Typesystem_TabDescriptor.java" startLine="72" startPosition="41" endLine="80" endPosition="11">
-      <varInfo nodeId="7157723551789225129" varName="bConcept" />
       <varInfo nodeId="7157723551789225120" varName="aConcept" />
+      <varInfo nodeId="7157723551789225129" varName="bConcept" />
     </scopeInfo>
     <scopeInfo nodeId="7157723551789225076" fileName="Typesystem_TabDescriptor.java" startLine="59" startPosition="44" endLine="83" endPosition="17">
-      <varInfo nodeId="7157723551789225087" varName="bConceptRef" />
       <varInfo nodeId="7157723551789225078" varName="aConceptRef" />
+      <varInfo nodeId="7157723551789225087" varName="bConceptRef" />
     </scopeInfo>
     <scopeInfo nodeId="7157723551789225075" fileName="Typesystem_TabDescriptor.java" startLine="58" startPosition="70" endLine="85" endPosition="0" />
     <scopeInfo nodeId="7157723551789225061" fileName="Typesystem_TabDescriptor.java" startLine="56" startPosition="43" endLine="85" endPosition="31">
@@ -487,8 +487,8 @@
     </scopeInfo>
     <scopeInfo nodeId="7157723551789225032" fileName="Typesystem_TabDescriptor.java" startLine="55" startPosition="0" endLine="87" endPosition="0" />
     <unitInfo nodeId="7157723551789225167" fileName="Typesystem_Order.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_Order" />
-    <unitInfo nodeId="7157723551789225075" fileName="Typesystem_TabDescriptor.java" startLine="58" startPosition="49" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_TabDescriptor$1" />
     <unitInfo nodeId="7157723551789225032" fileName="Typesystem_TabDescriptor.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_TabDescriptor" />
+    <unitInfo nodeId="7157723551789225075" fileName="Typesystem_TabDescriptor.java" startLine="58" startPosition="49" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_TabDescriptor$1" />
   </root>
   <root nodeId="7796696880649589009">
     <nodeInfo nodeId="7796696880649589009" fileName="ShowNodeType_Action.java" startLine="27" startPosition="58" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -577,17 +577,17 @@
     <scopeInfo nodeId="7796696880649589009" fileName="ShowNodeType_Action.java" startLine="96" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="7796696880649589009" fileName="ShowNodeType_Action.java" startLine="46" startPosition="95" endLine="66" endPosition="16" />
     <scopeInfo nodeId="7796696880649589009" fileName="ShowNodeType_Action.java" startLine="70" startPosition="9" endLine="91" endPosition="26">
-      <varInfo nodeId="5038042706317339977" varName="reporter" />
-      <varInfo nodeId="8042441407353625194" varName="typeCheckingContext" />
       <varInfo nodeId="5501636852285516701" varName="dialog" />
+      <varInfo nodeId="5038042706317339977" varName="reporter" />
       <varInfo nodeId="7796696880649589052" varName="type" />
+      <varInfo nodeId="8042441407353625194" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="7796696880649589009" fileName="ShowNodeType_Action.java" startLine="45" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="7796696880649589009" fileName="ShowNodeType_Action.java" startLine="69" startPosition="96" endLine="94" endPosition="5" />
     <scopeInfo nodeId="7796696880649589009" fileName="ShowNodeType_Action.java" startLine="68" startPosition="0" endLine="96" endPosition="0" />
-    <unitInfo nodeId="5501636852285516654" fileName="ShowNodeType_Action.java" startLine="85" startPosition="47" endLine="89" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action$2" />
-    <unitInfo nodeId="7796696880649589048" fileName="ShowNodeType_Action.java" startLine="73" startPosition="47" endLine="78" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action$1" />
     <unitInfo nodeId="7796696880649589009" fileName="ShowNodeType_Action.java" startLine="27" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action" />
+    <unitInfo nodeId="7796696880649589048" fileName="ShowNodeType_Action.java" startLine="73" startPosition="47" endLine="78" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action$1" />
+    <unitInfo nodeId="5501636852285516654" fileName="ShowNodeType_Action.java" startLine="85" startPosition="47" endLine="89" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action$2" />
   </root>
   <root nodeId="902116341861939948">
     <nodeInfo nodeId="902116341861939948" fileName="Default_KeymapChanges.java" startLine="11" startPosition="34" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

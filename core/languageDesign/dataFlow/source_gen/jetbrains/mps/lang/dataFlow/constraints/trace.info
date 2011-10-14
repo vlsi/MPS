@@ -42,8 +42,8 @@
     <scopeInfo nodeId="1213104840433" fileName="DataFlowBuilderDeclaration_Constraints.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1213104840433" fileName="DataFlowBuilderDeclaration_Constraints.java" startLine="46" startPosition="82" endLine="60" endPosition="22" />
     <scopeInfo nodeId="1213104840433" fileName="DataFlowBuilderDeclaration_Constraints.java" startLine="44" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="1213104840433" fileName="DataFlowBuilderDeclaration_Constraints.java" startLine="48" startPosition="31" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.constraints.DataFlowBuilderDeclaration_Constraints$1" />
     <unitInfo nodeId="1213104840433" fileName="DataFlowBuilderDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.constraints.DataFlowBuilderDeclaration_Constraints" />
+    <unitInfo nodeId="1213104840433" fileName="DataFlowBuilderDeclaration_Constraints.java" startLine="48" startPosition="31" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.constraints.DataFlowBuilderDeclaration_Constraints$1" />
   </root>
   <root nodeId="1213104855807">
     <nodeInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="22" startPosition="74" endLine="23" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_t9qyyi_a0a1a0a0a1a0b0a1a0" />
@@ -69,8 +69,8 @@
     <scopeInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="51" startPosition="61" endLine="52" endPosition="58" />
     <scopeInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1213104855810" fileName="LabelPosition_Constraints.java" startLine="43" startPosition="142" endLine="47" endPosition="26">
-      <varInfo nodeId="1213104855812" varName="labels" />
       <varInfo nodeId="1213104855818" varName="builder" />
+      <varInfo nodeId="1213104855812" varName="labels" />
     </scopeInfo>
     <scopeInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="32" startPosition="83" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
@@ -79,9 +79,9 @@
     <scopeInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="37" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="30" startPosition="83" endLine="57" endPosition="22" />
     <scopeInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="28" startPosition="0" endLine="59" endPosition="0" />
-    <unitInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="41" startPosition="19" endLine="54" endPosition="9" unitName="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$2" />
-    <unitInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="32" startPosition="32" endLine="56" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$1" />
     <unitInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints" />
+    <unitInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="32" startPosition="32" endLine="56" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$1" />
+    <unitInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="41" startPosition="19" endLine="54" endPosition="9" unitName="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$2" />
   </root>
   <root nodeId="1213107437881">
     <nodeInfo nodeId="1213107437881" fileName="EmitStatement_Constraints.java" startLine="14" startPosition="74" endLine="15" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />

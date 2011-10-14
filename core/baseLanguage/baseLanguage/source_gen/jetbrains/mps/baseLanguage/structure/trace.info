@@ -7733,8 +7733,8 @@
     <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="9" startPosition="63" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="45" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" />
     <unitInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind" />
+    <unitInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" />
   </root>
   <root nodeId="1225271546410">
     <nodeInfo nodeId="1225271546410" fileName="TrimOperation.java" startLine="10" startPosition="56" endLine="11" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

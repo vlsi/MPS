@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ConceptConstraints_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_checkedNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_checkedNode_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_GetAlternativeIcon_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_GetAlternativeIcon_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunctionParameter_childConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childConcept_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_inEditor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_inEditor_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunctionParameter_smartReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_smartReference_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunctionParameter_visible_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_visible_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunctionParameter_parameterNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parameterNode_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_PropertyValidator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyValidator_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_linkTarget_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_linkTarget_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_link_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_link_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunctionParameter_childConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childConcept_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunctionParameter_parentNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parentNode_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_newReferentNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_newReferentNode_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunctionParameter_parameterNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parameterNode_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunctionParameter_parentNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parentNode_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunctionParameter_referenceNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_referenceNode_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_ReferentSetHandler_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSetHandler_BehaviorDescriptor" />
-  <unitInfo fileName="NodeDefaultSearchScope_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_PropertySetter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertySetter_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor" />
-  <unitInfo fileName="NodeReferentConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintsFunctionParameter_node_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_node_BehaviorDescriptor" />
-  <unitInfo fileName="NodePropertyConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_CanBeARoot_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeARoot_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_CanBeAParent_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAParent_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunctionParameter_smartReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_smartReference_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunctionParameter_visible_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_visible_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunction_CanBeAChild_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAChild_BehaviorDescriptor" />
-  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_CanBeAParent_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAParent_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_CanBeARoot_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeARoot_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_GetAlternativeIcon_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_GetAlternativeIcon_BehaviorDescriptor" />
   <unitInfo fileName="ConstraintFunction_PropertyGetter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptConstraints_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ConstraintFunction_PropertySetter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertySetter_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_PropertyValidator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyValidator_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintFunction_ReferentSetHandler_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSetHandler_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintsFunctionParameter_node_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_node_BehaviorDescriptor" />
+  <unitInfo fileName="ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor" />
+  <unitInfo fileName="NodeDefaultSearchScope_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_BehaviorDescriptor" />
+  <unitInfo fileName="NodePropertyConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_BehaviorDescriptor" />
+  <unitInfo fileName="NodeReferentConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_BehaviorDescriptor" />
   <root nodeId="1213877261402">
     <nodeInfo nodeId="1213877261414" fileName="NodeDefaultSearchScope_Behavior.java" startLine="14" startPosition="129" endLine="15" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877261423" fileName="NodeDefaultSearchScope_Behavior.java" startLine="17" startPosition="135" endLine="18" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -135,14 +135,14 @@
     <scopeInfo nodeId="1213877530539" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="35" startPosition="32" endLine="40" endPosition="7" />
     <scopeInfo nodeId="1213877530541" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="18" startPosition="83" endLine="25" endPosition="101">
       <varInfo nodeId="1213877530557" varName="dataType" />
-      <varInfo nodeId="1213877530543" varName="propertyConstraint" />
       <varInfo nodeId="1213877530551" varName="property" />
+      <varInfo nodeId="1213877530543" varName="propertyConstraint" />
     </scopeInfo>
     <scopeInfo nodeId="1213877530539" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="32" startPosition="31" endLine="41" endPosition="20" />
     <scopeInfo nodeId="1213877530539" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="17" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1213877530539" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="31" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="1213877530539" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_Behavior$QuotationClass_25x9xv_a0e0b" />
     <unitInfo nodeId="1213877530539" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_Behavior" />
+    <unitInfo nodeId="1213877530539" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_Behavior$QuotationClass_25x9xv_a0e0b" />
   </root>
   <root nodeId="1213877537278">
     <nodeInfo nodeId="1213877537281" fileName="ConstraintFunction_CanBeAParent_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -257,8 +257,8 @@
     <scopeInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="108" startPosition="32" endLine="118" endPosition="7" />
     <scopeInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="82" startPosition="9" endLine="93" endPosition="9" />
     <scopeInfo nodeId="2990203945683056981" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="32" startPosition="89" endLine="46" endPosition="16">
-      <varInfo nodeId="4799522809165718944" varName="sequenceType" />
       <varInfo nodeId="3842846413326532243" varName="lastStmt" />
+      <varInfo nodeId="4799522809165718944" varName="sequenceType" />
     </scopeInfo>
     <scopeInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="104" startPosition="31" endLine="119" endPosition="20" />
     <scopeInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0" />
@@ -267,9 +267,9 @@
     <scopeInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="73" startPosition="32" endLine="95" endPosition="7" />
     <scopeInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="67" startPosition="49" endLine="96" endPosition="20" />
     <scopeInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="66" startPosition="0" endLine="98" endPosition="0" />
+    <unitInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="20" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior" />
     <unitInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="100" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior$QuotationClass_q6xvx3_a0a1a2" />
     <unitInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="63" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior$QuotationClass_q6xvx3_a0c0b" />
-    <unitInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="20" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior" />
   </root>
   <root nodeId="1227085021513">
     <nodeInfo nodeId="1227085030989" fileName="ConstraintFunction_CanBeARoot_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -380,19 +380,19 @@
     <scopeInfo nodeId="8952337903384645665" fileName="ConceptConstraints_Behavior.java" startLine="77" startPosition="43" endLine="83" endPosition="9" />
     <scopeInfo nodeId="8952337903384645665" fileName="ConceptConstraints_Behavior.java" startLine="75" startPosition="7" endLine="84" endPosition="31" />
     <scopeInfo nodeId="4960272075650318143" fileName="ConceptConstraints_Behavior.java" startLine="52" startPosition="196" endLine="63" endPosition="5">
-      <varInfo nodeId="4960272075650318174" varName="method" />
       <varInfo nodeId="4960272075650318157" varName="computePredicate" />
+      <varInfo nodeId="4960272075650318174" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="8952337903384645665" fileName="ConceptConstraints_Behavior.java" startLine="74" startPosition="32" endLine="85" endPosition="7" />
     <scopeInfo nodeId="8952337903384645665" fileName="ConceptConstraints_Behavior.java" startLine="51" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="4960272075650318148" varName="constraintFunctionSpecifier" />
       <varInfo nodeId="4960272075650318145" varName="concept" />
+      <varInfo nodeId="4960272075650318148" varName="constraintFunctionSpecifier" />
     </scopeInfo>
     <scopeInfo nodeId="8952337903384645665" fileName="ConceptConstraints_Behavior.java" startLine="70" startPosition="31" endLine="86" endPosition="20" />
     <scopeInfo nodeId="8952337903384645665" fileName="ConceptConstraints_Behavior.java" startLine="69" startPosition="0" endLine="88" endPosition="0" />
+    <unitInfo nodeId="8952337903384645665" fileName="ConceptConstraints_Behavior.java" startLine="19" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_Behavior" />
     <unitInfo nodeId="4960272075650318161" fileName="ConceptConstraints_Behavior.java" startLine="53" startPosition="88" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_Behavior$1" />
     <unitInfo nodeId="8952337903384645665" fileName="ConceptConstraints_Behavior.java" startLine="66" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_Behavior$QuotationClass_wrxfmp_a0a0c0h" />
-    <unitInfo nodeId="8952337903384645665" fileName="ConceptConstraints_Behavior.java" startLine="19" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_Behavior" />
   </root>
 </debugInfo>
 

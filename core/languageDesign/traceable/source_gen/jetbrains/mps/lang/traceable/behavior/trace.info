@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="UnitConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="DumbConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.DumbConcept_BehaviorDescriptor" />
   <unitInfo fileName="ScopeConcept_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
   <unitInfo fileName="TraceableConcept_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor" />
-  <unitInfo fileName="DumbConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.DumbConcept_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="UnitConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor" />
   <root nodeId="5067982036266282556">
     <nodeInfo nodeId="5067982036266282564" fileName="DumbConcept_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5067982036266282556" fileName="DumbConcept_Behavior.java" startLine="7" startPosition="35" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />

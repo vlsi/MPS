@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DataFlow_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ProjectPlugin" />
   <unitInfo fileName="DataFlow_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ApplicationPlugin" />
+  <unitInfo fileName="DataFlow_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ProjectPlugin" />
   <root nodeId="1206459480619">
     <nodeInfo nodeId="1206459480619" fileName="PrintDFAResult_Action.java" startLine="17" startPosition="60" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1206459480619" fileName="PrintDFAResult_Action.java" startLine="18" startPosition="40" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -175,8 +175,8 @@
     <scopeInfo nodeId="1207219950955" fileName="PrintReachingDefinintionsInformation_Action.java" startLine="34" startPosition="27" endLine="36" endPosition="44" />
     <scopeInfo nodeId="1207219950955" fileName="PrintReachingDefinintionsInformation_Action.java" startLine="25" startPosition="56" endLine="28" endPosition="41" />
     <scopeInfo nodeId="1207219950955" fileName="PrintReachingDefinintionsInformation_Action.java" startLine="57" startPosition="9" endLine="60" endPosition="44">
-      <varInfo nodeId="1207220045710" varName="result" />
       <varInfo nodeId="1207220002438" varName="program" />
+      <varInfo nodeId="1207220045710" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1207219950955" fileName="PrintReachingDefinintionsInformation_Action.java" startLine="44" startPosition="5" endLine="48" endPosition="53" />
     <scopeInfo nodeId="1207219950955" fileName="PrintReachingDefinintionsInformation_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
@@ -229,8 +229,8 @@
     <scopeInfo nodeId="1211451948539" fileName="PrintInitializationInformation_Action.java" startLine="33" startPosition="27" endLine="35" endPosition="44" />
     <scopeInfo nodeId="1211451948539" fileName="PrintInitializationInformation_Action.java" startLine="24" startPosition="50" endLine="27" endPosition="41" />
     <scopeInfo nodeId="1211451948539" fileName="PrintInitializationInformation_Action.java" startLine="56" startPosition="9" endLine="59" endPosition="44">
-      <varInfo nodeId="1211451948555" varName="result" />
       <varInfo nodeId="1211451948546" varName="program" />
+      <varInfo nodeId="1211451948555" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1211451948539" fileName="PrintInitializationInformation_Action.java" startLine="43" startPosition="5" endLine="47" endPosition="53" />
     <scopeInfo nodeId="1211451948539" fileName="PrintInitializationInformation_Action.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />

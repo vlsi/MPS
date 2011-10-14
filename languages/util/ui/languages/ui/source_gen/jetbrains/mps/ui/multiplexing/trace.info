@@ -216,12 +216,12 @@
     <scopeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="207" startPosition="31" endLine="217" endPosition="20" />
     <scopeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="225" startPosition="31" endLine="235" endPosition="20" />
     <scopeInfo nodeId="8590671622326856496" fileName="VariantsUtil.java" startLine="80" startPosition="76" endLine="91" endPosition="155">
-      <varInfo nodeId="8590671622326856522" varName="val" />
       <varInfo nodeId="8590671622326856498" varName="ann" />
+      <varInfo nodeId="8590671622326856522" varName="val" />
     </scopeInfo>
     <scopeInfo nodeId="4063181131897049362" fileName="VariantsUtil.java" startLine="94" startPosition="57" endLine="105" endPosition="129">
-      <varInfo nodeId="4063181131897049388" varName="val" />
       <varInfo nodeId="4063181131897049364" varName="ann" />
+      <varInfo nodeId="4063181131897049388" varName="val" />
     </scopeInfo>
     <scopeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="116" startPosition="0" endLine="129" endPosition="0" />
     <scopeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="134" startPosition="0" endLine="147" endPosition="0" />
@@ -235,18 +235,21 @@
     </scopeInfo>
     <scopeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="93" startPosition="0" endLine="107" endPosition="0" />
     <scopeInfo nodeId="8590671622326856414" fileName="VariantsUtil.java" startLine="36" startPosition="85" endLine="51" endPosition="7">
-      <varInfo nodeId="8590671622326856437" varName="val" />
       <varInfo nodeId="8590671622326856416" varName="ann" />
+      <varInfo nodeId="8590671622326856437" varName="val" />
     </scopeInfo>
     <scopeInfo nodeId="3210848622155289931" fileName="VariantsUtil.java" startLine="54" startPosition="70" endLine="69" endPosition="7">
-      <varInfo nodeId="3210848622155289963" varName="val" />
       <varInfo nodeId="3210848622155289942" varName="ann" />
+      <varInfo nodeId="3210848622155289963" varName="val" />
     </scopeInfo>
     <scopeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="35" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="8590671622326856410" varName="variant" />
     </scopeInfo>
     <scopeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="53" startPosition="0" endLine="71" endPosition="0" />
+    <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="23" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil" />
     <unitInfo nodeId="8590671622326856389" fileName="VariantsUtil.java" startLine="28" startPosition="107" endLine="32" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$1" />
+    <unitInfo nodeId="4063181131897049374" fileName="VariantsUtil.java" startLine="95" startPosition="215" endLine="99" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$10" />
+    <unitInfo nodeId="4063181131897049396" fileName="VariantsUtil.java" startLine="100" startPosition="126" endLine="104" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$11" />
     <unitInfo nodeId="8590671622326856423" fileName="VariantsUtil.java" startLine="37" startPosition="107" endLine="41" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$2" />
     <unitInfo nodeId="8590671622326856445" fileName="VariantsUtil.java" startLine="42" startPosition="126" endLine="46" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$3" />
     <unitInfo nodeId="8590671622326856466" fileName="VariantsUtil.java" startLine="47" startPosition="161" endLine="51" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$4" />
@@ -255,16 +258,13 @@
     <unitInfo nodeId="3210848622155311360" fileName="VariantsUtil.java" startLine="65" startPosition="164" endLine="69" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$7" />
     <unitInfo nodeId="8590671622326856508" fileName="VariantsUtil.java" startLine="81" startPosition="215" endLine="85" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$8" />
     <unitInfo nodeId="8590671622326856530" fileName="VariantsUtil.java" startLine="86" startPosition="126" endLine="90" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$9" />
-    <unitInfo nodeId="4063181131897049374" fileName="VariantsUtil.java" startLine="95" startPosition="215" endLine="99" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$10" />
-    <unitInfo nodeId="4063181131897049396" fileName="VariantsUtil.java" startLine="100" startPosition="126" endLine="104" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$11" />
     <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="113" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$QuotationClass_hb8iy0_a0a0a0a0a0a0a" />
     <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="131" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$QuotationClass_hb8iy0_a0a0a0a0a0a0b" />
     <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="149" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$QuotationClass_hb8iy0_a0a0a0a0a0a0c" />
-    <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="167" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$QuotationClass_hb8iy0_a0a0a0d" />
-    <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="185" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$QuotationClass_hb8iy0_a0a0a0e" />
     <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="203" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$QuotationClass_hb8iy0_a0a0a0a0a0a0f" />
     <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="221" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$QuotationClass_hb8iy0_a0a0a0a0a0a0g" />
-    <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="23" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil" />
+    <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="167" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$QuotationClass_hb8iy0_a0a0a0d" />
+    <unitInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="185" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$QuotationClass_hb8iy0_a0a0a0e" />
   </root>
 </debugInfo>
 

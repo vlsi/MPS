@@ -543,8 +543,8 @@
     <scopeInfo nodeId="1197044909166" fileName="FinderDeclaration_Editor.java" startLine="219" startPosition="0" endLine="241" endPosition="0" />
     <scopeInfo nodeId="1197044909166" fileName="FinderDeclaration_Editor.java" startLine="364" startPosition="0" endLine="386" endPosition="0" />
     <scopeInfo nodeId="1197044909166" fileName="FinderDeclaration_Editor.java" startLine="386" startPosition="0" endLine="409" endPosition="0" />
-    <unitInfo nodeId="1197044909166" fileName="FinderDeclaration_Editor.java" startLine="418" startPosition="0" endLine="449" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_Editor$_Inline_m33ofg_a3a0a" />
     <unitInfo nodeId="1197044909166" fileName="FinderDeclaration_Editor.java" startLine="27" startPosition="0" endLine="450" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_Editor" />
+    <unitInfo nodeId="1197044909166" fileName="FinderDeclaration_Editor.java" startLine="418" startPosition="0" endLine="449" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_Editor$_Inline_m33ofg_a3a0a" />
   </root>
   <root nodeId="1200242474757">
     <nodeInfo nodeId="1200242474757" fileName="ResultStatement_Editor.java" startLine="60" startPosition="58" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -864,8 +864,8 @@
     <scopeInfo nodeId="1206197950998" fileName="ExecuteFinderExpression_Editor.java" startLine="109" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="1206197950998" fileName="ExecuteFinderExpression_Editor.java" startLine="73" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="1206197950998" fileName="ExecuteFinderExpression_Editor.java" startLine="139" startPosition="0" endLine="158" endPosition="0" />
-    <unitInfo nodeId="1206197950998" fileName="ExecuteFinderExpression_Editor.java" startLine="127" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.ExecuteFinderExpression_Editor$_Inline_ydcqpo_a1a" />
     <unitInfo nodeId="1206197950998" fileName="ExecuteFinderExpression_Editor.java" startLine="22" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.ExecuteFinderExpression_Editor" />
+    <unitInfo nodeId="1206197950998" fileName="ExecuteFinderExpression_Editor.java" startLine="127" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.ExecuteFinderExpression_Editor$_Inline_ydcqpo_a1a" />
   </root>
   <root nodeId="1207141875089">
     <nodeInfo nodeId="1207141875089" fileName="CheckCancelledStatusStatement_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -956,8 +956,8 @@
     <scopeInfo nodeId="2005690715325995362" fileName="FinderReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="2005690715325995362" fileName="FinderReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="2005690715325995362" fileName="FinderReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="2005690715325995362" fileName="FinderReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.FinderReference_Editor$_Inline_ng67cj_a0a" />
     <unitInfo nodeId="2005690715325995362" fileName="FinderReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.FinderReference_Editor" />
+    <unitInfo nodeId="2005690715325995362" fileName="FinderReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.FinderReference_Editor$_Inline_ng67cj_a0a" />
   </root>
   <root nodeId="6366407517031508179">
     <nodeInfo nodeId="6366407517031508179" fileName="MakeResultProvider_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1079,8 +1079,8 @@
     <scopeInfo nodeId="6366407517031508179" fileName="MakeResultProvider_Editor.java" startLine="106" startPosition="0" endLine="119" endPosition="0" />
     <scopeInfo nodeId="6366407517031508179" fileName="MakeResultProvider_Editor.java" startLine="66" startPosition="95" endLine="81" endPosition="22" />
     <scopeInfo nodeId="6366407517031508179" fileName="MakeResultProvider_Editor.java" startLine="65" startPosition="0" endLine="83" endPosition="0" />
-    <unitInfo nodeId="6366407517031508179" fileName="MakeResultProvider_Editor.java" startLine="84" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_Editor$finderListHandler_7d63hk_c0" />
     <unitInfo nodeId="6366407517031508179" fileName="MakeResultProvider_Editor.java" startLine="27" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_Editor" />
+    <unitInfo nodeId="6366407517031508179" fileName="MakeResultProvider_Editor.java" startLine="84" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_Editor$finderListHandler_7d63hk_c0" />
   </root>
   <root nodeId="8150507060913092854">
     <nodeInfo nodeId="8150507060913092854" fileName="ExecuteFindersGetSearchResults_Editor.java" startLine="97" startPosition="58" endLine="97" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1301,8 +1301,8 @@
     <scopeInfo nodeId="8150507060913092854" fileName="ExecuteFindersGetSearchResults_Editor.java" startLine="108" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="8150507060913092854" fileName="ExecuteFindersGetSearchResults_Editor.java" startLine="125" startPosition="0" endLine="142" endPosition="0" />
     <scopeInfo nodeId="8150507060913092854" fileName="ExecuteFindersGetSearchResults_Editor.java" startLine="142" startPosition="0" endLine="160" endPosition="0" />
-    <unitInfo nodeId="8150507060913092854" fileName="ExecuteFindersGetSearchResults_Editor.java" startLine="161" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.ExecuteFindersGetSearchResults_Editor$finderListHandler_yvubny_c0" />
     <unitInfo nodeId="8150507060913092854" fileName="ExecuteFindersGetSearchResults_Editor.java" startLine="26" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.ExecuteFindersGetSearchResults_Editor" />
+    <unitInfo nodeId="8150507060913092854" fileName="ExecuteFindersGetSearchResults_Editor.java" startLine="161" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.ExecuteFindersGetSearchResults_Editor$finderListHandler_yvubny_c0" />
   </root>
 </debugInfo>
 

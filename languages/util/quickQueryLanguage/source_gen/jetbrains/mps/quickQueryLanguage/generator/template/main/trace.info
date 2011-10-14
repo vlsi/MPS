@@ -22,9 +22,9 @@
     <scopeInfo nodeId="1220269250525" fileName="QueriesGenerated.java" startLine="34" startPosition="85" endLine="35" endPosition="119" />
     <scopeInfo nodeId="1219760682964" fileName="QueriesGenerated.java" startLine="26" startPosition="144" endLine="30" endPosition="104" />
     <scopeInfo nodeId="1220269203625" fileName="QueriesGenerated.java" startLine="33" startPosition="144" endLine="43" endPosition="25">
-      <varInfo nodeId="1220269325900" varName="statementList" />
       <varInfo nodeId="1220269325912" varName="defaultCondition" />
       <varInfo nodeId="1220269325906" varName="expressionStatement" />
+      <varInfo nodeId="1220269325900" varName="statementList" />
     </scopeInfo>
   </root>
 </debugInfo>

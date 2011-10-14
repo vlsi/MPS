@@ -128,8 +128,8 @@
       <varInfo nodeId="1198430917741" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="1198430852445" fileName="NodeAndDescendantsUsages_Finder.java" startLine="39" startPosition="9" endLine="51" endPosition="7">
-      <varInfo nodeId="1198431046406" varName="resRefs" />
       <varInfo nodeId="1198431665993" varName="nodes" />
+      <varInfo nodeId="1198431046406" varName="resRefs" />
     </scopeInfo>
     <scopeInfo nodeId="1198430852441" fileName="NodeAndDescendantsUsages_Finder.java" startLine="37" startPosition="98" endLine="54" endPosition="5" />
     <scopeInfo nodeId="1198430852441" fileName="NodeAndDescendantsUsages_Finder.java" startLine="36" startPosition="0" endLine="56" endPosition="0" />
@@ -200,10 +200,10 @@
     <scopeInfo nodeId="1236788630741" fileName="LinkInstances_Finder.java" startLine="59" startPosition="191" endLine="71" endPosition="9" />
     <scopeInfo nodeId="1236788630738" fileName="LinkInstances_Finder.java" startLine="58" startPosition="42" endLine="72" endPosition="7" />
     <scopeInfo nodeId="1201275992902" fileName="LinkInstances_Finder.java" startLine="44" startPosition="9" endLine="72" endPosition="7">
-      <varInfo nodeId="1236788367145" varName="curNode" />
       <varInfo nodeId="1201278326043" varName="conceptDeclaration" />
-      <varInfo nodeId="1236788118700" varName="roles" />
+      <varInfo nodeId="1236788367145" varName="curNode" />
       <varInfo nodeId="1236788640044" varName="isChild" />
+      <varInfo nodeId="1236788118700" varName="roles" />
     </scopeInfo>
     <scopeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="42" startPosition="98" endLine="75" endPosition="5" />
     <scopeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="41" startPosition="0" endLine="77" endPosition="0" />

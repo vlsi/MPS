@@ -188,8 +188,8 @@
     <scopeInfo nodeId="1206442125570" fileName="DataFlowBuilderDeclaration_Editor.java" startLine="115" startPosition="87" endLine="134" endPosition="22" />
     <scopeInfo nodeId="1206442125570" fileName="DataFlowBuilderDeclaration_Editor.java" startLine="149" startPosition="0" endLine="168" endPosition="0" />
     <scopeInfo nodeId="1206442125570" fileName="DataFlowBuilderDeclaration_Editor.java" startLine="114" startPosition="0" endLine="136" endPosition="0" />
-    <unitInfo nodeId="1206442125570" fileName="DataFlowBuilderDeclaration_Editor.java" startLine="137" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowBuilderDeclaration_Editor$_Inline_9xj3dm_a4a" />
     <unitInfo nodeId="1206442125570" fileName="DataFlowBuilderDeclaration_Editor.java" startLine="22" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowBuilderDeclaration_Editor" />
+    <unitInfo nodeId="1206442125570" fileName="DataFlowBuilderDeclaration_Editor.java" startLine="137" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowBuilderDeclaration_Editor$_Inline_9xj3dm_a4a" />
   </root>
   <root nodeId="1206443680940">
     <nodeInfo nodeId="1206443680940" fileName="EmitNopStatement_Editor.java" startLine="57" startPosition="58" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -966,8 +966,8 @@
     <scopeInfo nodeId="1207062713395" fileName="LabelPosition_Editor.java" startLine="70" startPosition="92" endLine="86" endPosition="24" />
     <scopeInfo nodeId="1207062713395" fileName="LabelPosition_Editor.java" startLine="38" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1207062713395" fileName="LabelPosition_Editor.java" startLine="69" startPosition="0" endLine="88" endPosition="0" />
-    <unitInfo nodeId="1207062713395" fileName="LabelPosition_Editor.java" startLine="57" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.LabelPosition_Editor$_Inline_xi88on_a1a" />
     <unitInfo nodeId="1207062713395" fileName="LabelPosition_Editor.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.LabelPosition_Editor" />
+    <unitInfo nodeId="1207062713395" fileName="LabelPosition_Editor.java" startLine="57" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.LabelPosition_Editor$_Inline_xi88on_a1a" />
   </root>
   <root nodeId="1207318139353">
     <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="14" startPosition="95" endLine="15" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -987,8 +987,8 @@
     <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="13" startPosition="58" endLine="17" endPosition="0" />
     <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable$DataFlowEditorAction_DeleteMayBeUnreachable_DELETE" />
     <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable" />
+    <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable$DataFlowEditorAction_DeleteMayBeUnreachable_DELETE" />
   </root>
   <root nodeId="1230468316202">
     <nodeInfo nodeId="1230468316202" fileName="EmitWriteStatement_Editor.java" startLine="44" startPosition="58" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1363,8 +1363,8 @@
     <scopeInfo nodeId="8486807419020643011" fileName="AddPosition.java" startLine="13" startPosition="26" endLine="17" endPosition="0" />
     <scopeInfo nodeId="8486807419020643011" fileName="AddPosition.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="8486807419020643011" fileName="AddPosition.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="8486807419020643011" fileName="AddPosition.java" startLine="18" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.AddPosition$AddPosition_RIGHT_TRANSFORM" />
     <unitInfo nodeId="8486807419020643011" fileName="AddPosition.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.AddPosition" />
+    <unitInfo nodeId="8486807419020643011" fileName="AddPosition.java" startLine="18" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.AddPosition$AddPosition_RIGHT_TRANSFORM" />
   </root>
 </debugInfo>
 

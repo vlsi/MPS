@@ -196,16 +196,16 @@
     <scopeInfo nodeId="1227886614590" fileName="CreateReferenceAntiquotation_Intention.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="1227886614590" fileName="CreateReferenceAntiquotation_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1227887445263" fileName="CreateReferenceAntiquotation_Intention.java" startLine="48" startPosition="90" endLine="62" endPosition="16">
-      <varInfo nodeId="1227887446123" varName="linkNode" />
       <varInfo nodeId="1227887446115" varName="contextNode" />
       <varInfo nodeId="1227887446143" varName="link" />
+      <varInfo nodeId="1227887446123" varName="linkNode" />
       <varInfo nodeId="1227887446109" varName="selectedCell" />
     </scopeInfo>
     <scopeInfo nodeId="1227886614590" fileName="CreateReferenceAntiquotation_Intention.java" startLine="47" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1227886614594" fileName="CreateReferenceAntiquotation_Intention.java" startLine="65" startPosition="76" endLine="93" endPosition="5">
-      <varInfo nodeId="1227886737980" varName="linkNode" />
       <varInfo nodeId="1227886737972" varName="contextNode" />
       <varInfo nodeId="1227886738000" varName="link" />
+      <varInfo nodeId="1227886737980" varName="linkNode" />
       <varInfo nodeId="1227886738015" varName="role" />
       <varInfo nodeId="1227886737966" varName="selectedCell" />
     </scopeInfo>
@@ -294,9 +294,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1227886844257" fileName="CreatePropertyAntiquotation_Intention.java" startLine="49" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="1227886844261" fileName="CreatePropertyAntiquotation_Intention.java" startLine="62" startPosition="76" endLine="87" endPosition="5">
-      <varInfo nodeId="1227886869162" varName="propertyName" />
-      <varInfo nodeId="1227886869156" varName="editorCell_Property" />
       <varInfo nodeId="1227886869135" varName="contextNode" />
+      <varInfo nodeId="1227886869156" varName="editorCell_Property" />
+      <varInfo nodeId="1227886869162" varName="propertyName" />
       <varInfo nodeId="1227886869129" varName="selectedCell" />
     </scopeInfo>
     <scopeInfo nodeId="1227886844257" fileName="CreatePropertyAntiquotation_Intention.java" startLine="61" startPosition="0" endLine="89" endPosition="0" />

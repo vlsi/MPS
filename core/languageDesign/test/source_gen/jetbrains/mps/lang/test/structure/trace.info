@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Test_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.structure.Test_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.test.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="Test_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.structure.Test_Language" />
   <root nodeId="1101347953350122484">
     <nodeInfo nodeId="1101347953350122484" fileName="ActionReference.java" startLine="11" startPosition="50" endLine="12" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1101347953350122484" fileName="ActionReference.java" startLine="14" startPosition="38" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -197,19 +197,19 @@
       <varInfo nodeId="1238589750909" varName="conceptDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1238589718397" fileName="QueriesGenerated.java" startLine="30" startPosition="139" endLine="147" endPosition="49">
-      <varInfo nodeId="1239817290614" varName="additionalConceptsToTargets" />
-      <varInfo nodeId="1239285193818" varName="actionsModel" />
-      <varInfo nodeId="1239198771610" varName="allConcepts" />
-      <varInfo nodeId="1238677443499" varName="conceptsToEditors" />
-      <varInfo nodeId="1239980841498" varName="constraintsModel" />
-      <varInfo nodeId="1238590226448" varName="structureModel" />
-      <varInfo nodeId="1239980686096" varName="conceptsToConstraints" />
-      <varInfo nodeId="1239715447307" varName="conceptContainer" />
-      <varInfo nodeId="1238590226432" varName="language" />
-      <varInfo nodeId="1238589779942" varName="conceptsToTargets" />
-      <varInfo nodeId="1238589888423" varName="partsToLinkDeclarations" />
-      <varInfo nodeId="1238625423515" varName="editorModel" />
       <varInfo nodeId="1239285243489" varName="actions" />
+      <varInfo nodeId="1239285193818" varName="actionsModel" />
+      <varInfo nodeId="1239817290614" varName="additionalConceptsToTargets" />
+      <varInfo nodeId="1239198771610" varName="allConcepts" />
+      <varInfo nodeId="1239715447307" varName="conceptContainer" />
+      <varInfo nodeId="1239980686096" varName="conceptsToConstraints" />
+      <varInfo nodeId="1238677443499" varName="conceptsToEditors" />
+      <varInfo nodeId="1238589779942" varName="conceptsToTargets" />
+      <varInfo nodeId="1239980841498" varName="constraintsModel" />
+      <varInfo nodeId="1238625423515" varName="editorModel" />
+      <varInfo nodeId="1238590226432" varName="language" />
+      <varInfo nodeId="1238589888423" varName="partsToLinkDeclarations" />
+      <varInfo nodeId="1238590226448" varName="structureModel" />
     </scopeInfo>
     <unitInfo nodeId="1239715297765" fileName="QueriesGenerated.java" startLine="47" startPosition="250" endLine="51" endPosition="9" unitName="jetbrains.mpslite.generator.template.main.QueriesGenerated$1" />
   </root>

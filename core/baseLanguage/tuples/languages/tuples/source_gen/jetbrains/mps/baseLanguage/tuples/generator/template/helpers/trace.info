@@ -12,8 +12,8 @@
     <scopeInfo nodeId="8911874220955530358" fileName="TupleDeclarationUtil.java" startLine="16" startPosition="47" endLine="17" endPosition="82" />
     <scopeInfo nodeId="1241010420897" fileName="TupleDeclarationUtil.java" startLine="9" startPosition="35" endLine="11" endPosition="3" />
     <scopeInfo nodeId="8911874220955530333" fileName="TupleDeclarationUtil.java" startLine="13" startPosition="63" endLine="19" endPosition="18">
-      <varInfo nodeId="8911874220955530347" varName="packageName" />
       <varInfo nodeId="8911874220955530339" varName="fqName" />
+      <varInfo nodeId="8911874220955530347" varName="packageName" />
     </scopeInfo>
     <scopeInfo nodeId="8911874220955530330" fileName="TupleDeclarationUtil.java" startLine="12" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="8911874220955530335" varName="tupleDeclaration" />

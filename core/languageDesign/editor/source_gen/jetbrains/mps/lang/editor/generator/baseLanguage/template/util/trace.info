@@ -122,22 +122,22 @@
       <varInfo nodeId="1189585802293" varName="keyMapDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1186773435542" fileName="QueriesUtil.java" startLine="36" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="1186773722859" varName="inputCellModel" />
       <varInfo nodeId="1216920687268" varName="genctx" />
+      <varInfo nodeId="1186773722859" varName="inputCellModel" />
     </scopeInfo>
     <scopeInfo nodeId="1189585733348" fileName="QueriesUtil.java" startLine="109" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="1189585755476" varName="keyMapItem" />
     </scopeInfo>
     <scopeInfo nodeId="1233319014844" fileName="QueriesUtil.java" startLine="122" startPosition="91" endLine="136" endPosition="18">
+      <varInfo nodeId="1233319855083" varName="bigCell" />
+      <varInfo nodeId="1233319014889" varName="index" />
       <varInfo nodeId="1233319014846" varName="namesSet" />
       <varInfo nodeId="1233319014876" varName="result" />
-      <varInfo nodeId="1233319014889" varName="index" />
-      <varInfo nodeId="1233319855083" varName="bigCell" />
     </scopeInfo>
     <scopeInfo nodeId="1233319014842" fileName="QueriesUtil.java" startLine="121" startPosition="0" endLine="138" endPosition="0">
-      <varInfo nodeId="1233319999736" varName="root" />
-      <varInfo nodeId="1233319014911" varName="name" />
       <varInfo nodeId="1233319014915" varName="context" />
+      <varInfo nodeId="1233319014911" varName="name" />
+      <varInfo nodeId="1233319999736" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="60" startPosition="20" endLine="98" endPosition="19" />
     <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="58" startPosition="46" endLine="100" endPosition="29" />
@@ -147,17 +147,17 @@
     <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="51" startPosition="56" endLine="104" endPosition="10" />
     <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="50" startPosition="113" endLine="106" endPosition="0" />
     <scopeInfo nodeId="1186775920906" fileName="QueriesUtil.java" startLine="48" startPosition="103" endLine="107" endPosition="56">
-      <varInfo nodeId="1186776253123" varName="outputClasses" />
       <varInfo nodeId="1186776238854" varName="ancestors" />
+      <varInfo nodeId="1186776253123" varName="outputClasses" />
     </scopeInfo>
     <scopeInfo nodeId="1186775920903" fileName="QueriesUtil.java" startLine="47" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="1216921955896" varName="genctx" />
       <varInfo nodeId="1186775920918" varName="inputNode" />
     </scopeInfo>
-    <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="54" startPosition="23" endLine="102" endPosition="13" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$3" />
-    <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="52" startPosition="19" endLine="104" endPosition="9" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$2" />
-    <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="50" startPosition="83" endLine="106" endPosition="5" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$1" />
     <unitInfo nodeId="1186771508849" fileName="QueriesUtil.java" startLine="23" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
+    <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="50" startPosition="83" endLine="106" endPosition="5" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$1" />
+    <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="52" startPosition="19" endLine="104" endPosition="9" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$2" />
+    <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="54" startPosition="23" endLine="102" endPosition="13" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$3" />
   </root>
 </debugInfo>
 

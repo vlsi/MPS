@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl" />
   <unitInfo fileName="QueriesGenerated.java" startLine="44" startPosition="0" endLine="355" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" />
+  <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl" />
   <root nodeId="1698302279987270980">
     <nodeInfo nodeId="1698302279987270980" fileName="TemplateGenerator.java" startLine="24" startPosition="63" endLine="25" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_g5r92k_a0a0" />
     <nodeInfo nodeId="1698302279987270980" fileName="TemplateGenerator.java" startLine="25" startPosition="200" endLine="26" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_g5r92k_a0a0a1a1" />
@@ -2026,9 +2026,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1250389701475432456" fileName="QueriesGenerated.java" startLine="319" startPosition="141" endLine="327" endPosition="0" />
     <scopeInfo nodeId="6236774123822302391" fileName="QueriesGenerated.java" startLine="295" startPosition="39" endLine="305" endPosition="268">
-      <varInfo nodeId="6236774123822302404" varName="ref" />
       <varInfo nodeId="6236774123822302529" varName="descriptor" />
       <varInfo nodeId="6236774123822302576" varName="m" />
+      <varInfo nodeId="6236774123822302404" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="1698302279987270980" fileName="TemplateGenerator.java" startLine="1498" startPosition="240" endLine="1509" endPosition="70" />
     <scopeInfo nodeId="1698302279987270980" fileName="TemplateGenerator.java" startLine="1510" startPosition="30" endLine="1521" endPosition="70" />
@@ -2238,11 +2238,11 @@
     <scopeInfo nodeId="1698302279987270980" fileName="TemplateGenerator.java" startLine="169" startPosition="158" endLine="2135" endPosition="46" />
     <scopeInfo nodeId="1698302279987270980" fileName="TemplateGenerator.java" startLine="168" startPosition="0" endLine="2137" endPosition="0" />
     <unitInfo nodeId="6236774123822284772" fileName="QueriesGenerated.java" startLine="290" startPosition="106" endLine="294" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$1" />
+    <unitInfo nodeId="6236774123822302390" fileName="QueriesGenerated.java" startLine="294" startPosition="17" endLine="307" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$2" />
     <unitInfo nodeId="4801122308416900200" fileName="QueriesGenerated.java" startLine="307" startPosition="16" endLine="311" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$3" />
+    <unitInfo nodeId="1250389701475432456" fileName="QueriesGenerated.java" startLine="319" startPosition="110" endLine="327" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$4" />
     <unitInfo nodeId="1250389701475432527" fileName="QueriesGenerated.java" startLine="327" startPosition="27" endLine="331" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$5" />
     <unitInfo nodeId="1250389701475432542" fileName="QueriesGenerated.java" startLine="331" startPosition="24" endLine="337" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$6" />
-    <unitInfo nodeId="1250389701475432456" fileName="QueriesGenerated.java" startLine="319" startPosition="110" endLine="327" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$4" />
-    <unitInfo nodeId="6236774123822302390" fileName="QueriesGenerated.java" startLine="294" startPosition="17" endLine="307" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$2" />
     <unitInfo nodeId="1698302279987270980" fileName="TemplateGenerator.java" startLine="24" startPosition="0" endLine="2138" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateGenerator" />
   </root>
   <root nodeId="1698302279987411125">
@@ -3111,16 +3111,16 @@
     <scopeInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="669" startPosition="0" endLine="725" endPosition="0" />
     <scopeInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="177" startPosition="143" endLine="391" endPosition="20" />
     <scopeInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="176" startPosition="0" endLine="393" endPosition="0" />
+    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="35" startPosition="0" endLine="812" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain" />
     <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="791" startPosition="0" endLine="811" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$CreateRootRule0" />
-    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="727" startPosition="0" endLine="756" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$RootMappingRule0" />
-    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="757" startPosition="0" endLine="790" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$RootMappingRule1" />
-    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="549" startPosition="0" endLine="594" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$ReductionRule3" />
-    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="595" startPosition="0" endLine="640" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$ReductionRule4" />
+    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="148" startPosition="0" endLine="394" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$ReductionRule0" />
     <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="395" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$ReductionRule1" />
     <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="471" startPosition="0" endLine="548" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$ReductionRule2" />
+    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="549" startPosition="0" endLine="594" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$ReductionRule3" />
+    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="595" startPosition="0" endLine="640" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$ReductionRule4" />
     <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="641" startPosition="0" endLine="726" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$ReductionRule5" />
-    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="148" startPosition="0" endLine="394" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$ReductionRule0" />
-    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="35" startPosition="0" endLine="812" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain" />
+    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="727" startPosition="0" endLine="756" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$RootMappingRule0" />
+    <unitInfo nodeId="8780540425167303785" fileName="Mappingmain.java" startLine="757" startPosition="0" endLine="790" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$RootMappingRule1" />
   </root>
   <root nodeId="9020561928507177266">
     <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="25" startPosition="62" endLine="26" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_gw04jt_a0a0" />
@@ -4077,14 +4077,14 @@
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="864" startPosition="41" endLine="878" endPosition="65" />
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="907" startPosition="27" endLine="921" endPosition="51" />
     <scopeInfo nodeId="5828571963818937567" fileName="QueriesGenerated.java" startLine="145" startPosition="136" endLine="160" endPosition="82">
-      <varInfo nodeId="5828571963818937574" varName="ts" />
       <varInfo nodeId="5828571963818937688" varName="l" />
       <varInfo nodeId="5828571963818938766" varName="m" />
+      <varInfo nodeId="5828571963818937574" varName="ts" />
     </scopeInfo>
     <scopeInfo nodeId="2838795720286867782" fileName="QueriesGenerated.java" startLine="163" startPosition="136" endLine="178" endPosition="137">
-      <varInfo nodeId="2838795720286867823" varName="ts" />
       <varInfo nodeId="2838795720286867790" varName="l" />
       <varInfo nodeId="2838795720286867837" varName="m" />
+      <varInfo nodeId="2838795720286867823" varName="ts" />
     </scopeInfo>
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="242" startPosition="17" endLine="260" endPosition="15" />
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="328" startPosition="21" endLine="347" endPosition="19" />
@@ -4147,8 +4147,8 @@
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="104" startPosition="9" endLine="976" endPosition="7" />
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="102" startPosition="158" endLine="981" endPosition="46" />
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="101" startPosition="0" endLine="983" endPosition="0" />
-    <unitInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="797" startPosition="68" endLine="809" endPosition="45" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateLanguage$1" />
     <unitInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="25" startPosition="0" endLine="984" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateLanguage" />
+    <unitInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="797" startPosition="68" endLine="809" endPosition="45" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateLanguage$1" />
   </root>
 </debugInfo>
 

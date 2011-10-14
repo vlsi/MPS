@@ -44,10 +44,10 @@
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="40" startPosition="84" endLine="44" endPosition="16" />
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="7658393498702987313" fileName="AddTestReferenceAnnotation_Intention.java" startLine="51" startPosition="76" endLine="55" endPosition="307">
-      <varInfo nodeId="7658393498703024685" varName="result" />
+      <varInfo nodeId="7658393498702987474" varName="cell" />
       <varInfo nodeId="7658393498702996086" varName="linkRole" />
       <varInfo nodeId="7658393498703022823" varName="referentNode" />
-      <varInfo nodeId="7658393498702987474" varName="cell" />
+      <varInfo nodeId="7658393498703024685" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="39" startPosition="0" endLine="46" endPosition="0" />

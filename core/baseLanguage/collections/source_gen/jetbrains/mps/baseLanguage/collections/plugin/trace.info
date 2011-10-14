@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Collections_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Collections_ProjectPlugin" />
   <unitInfo fileName="Collections_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Collections_ApplicationPlugin" />
+  <unitInfo fileName="Collections_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Collections_ProjectPlugin" />
   <unitInfo fileName="CustomViewersInitializer_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomViewersInitializer_CustomApplicationPlugin" />
   <root nodeId="5116701553466303326">
     <nodeInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -50,17 +50,17 @@
     <scopeInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="31" startPosition="58" endLine="39" endPosition="20" />
     <scopeInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="5116701553466303331" fileName="ListViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="67" endPosition="24">
-      <varInfo nodeId="6367352481823138412" varName="watchables" />
       <varInfo nodeId="6367352481823138404" varName="size" />
+      <varInfo nodeId="6367352481823138412" varName="watchables" />
     </scopeInfo>
     <scopeInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="30" startPosition="108" endLine="41" endPosition="0" />
     <scopeInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="29" startPosition="67" endLine="41" endPosition="14" />
     <scopeInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="56" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="27" startPosition="0" endLine="43" endPosition="0" />
+    <unitInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory" />
     <unitInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="50" startPosition="60" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory$1" />
     <unitInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="30" startPosition="58" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory$1" />
     <unitInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory$ListViewerWrapper" />
-    <unitInfo nodeId="5116701553466303326" fileName="ListViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory" />
   </root>
   <root nodeId="7785669630792406965">
     <nodeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -111,27 +111,27 @@
     <scopeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="49" startPosition="60" endLine="54" endPosition="55" />
     <scopeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="66" startPosition="42" endLine="71" endPosition="13" />
     <scopeInfo nodeId="7785669630792406968" fileName="MapEntryViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="63" endPosition="20">
-      <varInfo nodeId="7785669630792487827" varName="result" />
-      <varInfo nodeId="7785669630792487813" varName="key" />
       <varInfo nodeId="7785669630792487819" varName="entryValue" />
+      <varInfo nodeId="7785669630792487813" varName="key" />
+      <varInfo nodeId="7785669630792487827" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="31" startPosition="58" endLine="39" endPosition="20" />
     <scopeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="65" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="56" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="7785669630792426022" fileName="MapEntryViewer_WrapperFactory.java" startLine="74" startPosition="95" endLine="83" endPosition="9">
-      <varInfo nodeId="7785669630792487770" varName="key" />
       <varInfo nodeId="7785669630792487784" varName="entryValue" />
+      <varInfo nodeId="7785669630792487770" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="30" startPosition="108" endLine="41" endPosition="0" />
     <scopeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="29" startPosition="67" endLine="41" endPosition="14" />
     <scopeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="73" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="27" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="50" startPosition="60" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory$1" />
-    <unitInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="67" startPosition="60" endLine="71" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory$2" />
-    <unitInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="30" startPosition="58" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory$1" />
-    <unitInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory$MapEntryViewerWrapper" />
     <unitInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory" />
+    <unitInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="50" startPosition="60" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory$1" />
+    <unitInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="30" startPosition="58" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory$1" />
+    <unitInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="67" startPosition="60" endLine="71" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory$2" />
+    <unitInfo nodeId="7785669630792406965" fileName="MapEntryViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory$MapEntryViewerWrapper" />
   </root>
   <root nodeId="7785669630792592640">
     <nodeInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -182,17 +182,17 @@
     <scopeInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="30" startPosition="108" endLine="41" endPosition="0" />
     <scopeInfo nodeId="7785669630792592643" fileName="MapViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="68" endPosition="20">
-      <varInfo nodeId="7785669630792592661" varName="result" />
       <varInfo nodeId="7785669630792592676" varName="entries" />
+      <varInfo nodeId="7785669630792592661" varName="result" />
       <varInfo nodeId="7785669630792592653" varName="size" />
     </scopeInfo>
     <scopeInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="29" startPosition="67" endLine="41" endPosition="14" />
     <scopeInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="56" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="27" startPosition="0" endLine="43" endPosition="0" />
+    <unitInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory" />
     <unitInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="50" startPosition="60" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory$1" />
     <unitInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="30" startPosition="58" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory$1" />
     <unitInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory$MapViewerWrapper" />
-    <unitInfo nodeId="7785669630792592640" fileName="MapViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory" />
   </root>
   <root nodeId="7785669630792592730">
     <nodeInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -243,16 +243,16 @@
     <scopeInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="30" startPosition="108" endLine="41" endPosition="0" />
     <scopeInfo nodeId="7785669630792592733" fileName="SetViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="68" endPosition="24">
-      <varInfo nodeId="7785669630792592739" varName="watchables" />
       <varInfo nodeId="7785669630792592745" varName="size" />
+      <varInfo nodeId="7785669630792592739" varName="watchables" />
     </scopeInfo>
     <scopeInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="29" startPosition="67" endLine="41" endPosition="14" />
     <scopeInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="56" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="27" startPosition="0" endLine="43" endPosition="0" />
+    <unitInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory" />
     <unitInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="50" startPosition="60" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory$1" />
     <unitInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="30" startPosition="58" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory$1" />
     <unitInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory$SetViewerWrapper" />
-    <unitInfo nodeId="7785669630792592730" fileName="SetViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory" />
   </root>
   <root nodeId="8423890115754358686">
     <nodeInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="13" startPosition="71" endLine="14" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourCategory" />
@@ -303,12 +303,12 @@
     <scopeInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <unitInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables" />
     <unitInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_element" />
     <unitInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="25" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_entry" />
     <unitInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="37" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_key" />
-    <unitInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="49" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_value" />
     <unitInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="61" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_size" />
-    <unitInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables" />
+    <unitInfo nodeId="8423890115754358686" fileName="CollectionsWatchables.java" startLine="49" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_value" />
   </root>
   <root nodeId="8536718853245006659">
     <nodeInfo nodeId="8536718853245006666" fileName="CollectionsLanguage.java" startLine="10" startPosition="34" endLine="11" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -453,8 +453,8 @@
       <varInfo nodeId="8536718853245008456" varName="prov" />
     </scopeInfo>
     <scopeInfo nodeId="8536718853245008418" fileName="CustomContainersRegistry.java" startLine="30" startPosition="55" endLine="38" endPosition="15">
-      <varInfo nodeId="8536718853245024210" varName="res" />
       <varInfo nodeId="7602110602933085942" varName="allCustomContainers" />
+      <varInfo nodeId="8536718853245024210" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="7602110602933086796" fileName="CustomContainersRegistry.java" startLine="73" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="7602110602933086851" varName="model" />
@@ -465,22 +465,22 @@
     <scopeInfo nodeId="8536718853245008415" fileName="CustomContainersRegistry.java" startLine="29" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="7602110602933086006" fileName="CustomContainersRegistry.java" startLine="81" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="7602110602933086357" fileName="CustomContainersRegistry.java" startLine="44" startPosition="21" endLine="57" endPosition="10">
-      <varInfo nodeId="7602110602933086906" varName="allVisibleModules" />
-      <varInfo nodeId="7602110602933787603" varName="allUsedLanguages" />
       <varInfo nodeId="7602110602933086181" varName="allCustomContainers" />
+      <varInfo nodeId="7602110602933787603" varName="allUsedLanguages" />
+      <varInfo nodeId="7602110602933086906" varName="allVisibleModules" />
     </scopeInfo>
     <scopeInfo nodeId="7602110602933084134" fileName="CustomContainersRegistry.java" startLine="41" startPosition="78" endLine="59" endPosition="15">
-      <varInfo nodeId="7602110602933086188" varName="res" />
       <varInfo nodeId="7602110602933086886" varName="om" />
+      <varInfo nodeId="7602110602933086188" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="7602110602933084131" fileName="CustomContainersRegistry.java" startLine="40" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="7602110602933085887" varName="fromModel" />
     </scopeInfo>
+    <unitInfo nodeId="8536718853245008409" fileName="CustomContainersRegistry.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry" />
     <unitInfo nodeId="7602110602933085985" fileName="CustomContainersRegistry.java" startLine="33" startPosition="100" endLine="37" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$1" />
+    <unitInfo nodeId="7602110602933086295" fileName="CustomContainersRegistry.java" startLine="48" startPosition="98" endLine="53" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$2" />
     <unitInfo nodeId="7602110602933086200" fileName="CustomContainersRegistry.java" startLine="53" startPosition="23" endLine="57" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$3" />
     <unitInfo nodeId="7602110602933086036" fileName="CustomContainersRegistry.java" startLine="87" startPosition="62" endLine="91" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$4" />
-    <unitInfo nodeId="7602110602933086295" fileName="CustomContainersRegistry.java" startLine="48" startPosition="98" endLine="53" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$2" />
-    <unitInfo nodeId="8536718853245008409" fileName="CustomContainersRegistry.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry" />
   </root>
   <root nodeId="8536718853245025849">
     <nodeInfo nodeId="8536718853245025855" fileName="Collections_CustomApplicationPlugin.java" startLine="7" startPosition="86" endLine="8" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="language" />
@@ -526,19 +526,19 @@
     <scopeInfo nodeId="8536718853245029925" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="34" startPosition="89" endLine="38" endPosition="0" />
     <scopeInfo nodeId="8536718853245030570" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="39" startPosition="92" endLine="43" endPosition="0" />
     <scopeInfo nodeId="8536718853245030616" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="23" startPosition="35" endLine="31" endPosition="19">
-      <varInfo nodeId="8536718853245030618" varName="res" />
       <varInfo nodeId="8536718853245030625" varName="desc" />
       <varInfo nodeId="8536718853245030633" varName="mdl" />
+      <varInfo nodeId="8536718853245030618" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="8536718853245030615" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="22" startPosition="122" endLine="33" endPosition="0" />
     <scopeInfo nodeId="8536718853245029920" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="21" startPosition="24" endLine="43" endPosition="7">
       <varInfo nodeId="8536718853245030612" varName="provider" />
     </scopeInfo>
     <scopeInfo nodeId="8536718853245029918" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="20" startPosition="0" endLine="45" endPosition="0" />
+    <unitInfo nodeId="8536718853245029918" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.SampleCustomContainers_CustomApplicationPlugin" />
+    <unitInfo nodeId="8536718853245030615" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="22" startPosition="77" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.SampleCustomContainers_CustomApplicationPlugin$1" />
     <unitInfo nodeId="8536718853245029925" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="34" startPosition="38" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.SampleCustomContainers_CustomApplicationPlugin$2" />
     <unitInfo nodeId="8536718853245030570" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="39" startPosition="41" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.SampleCustomContainers_CustomApplicationPlugin$3" />
-    <unitInfo nodeId="8536718853245030615" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="22" startPosition="77" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.SampleCustomContainers_CustomApplicationPlugin$1" />
-    <unitInfo nodeId="8536718853245029918" fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.SampleCustomContainers_CustomApplicationPlugin" />
   </root>
 </debugInfo>
 

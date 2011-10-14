@@ -33,8 +33,8 @@
     <scopeInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="13" startPosition="80" endLine="38" endPosition="7" />
     <scopeInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="12" startPosition="76" endLine="39" endPosition="3" />
-    <unitInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="15" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript$1" />
     <unitInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript" />
+    <unitInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="15" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript$1" />
   </root>
 </debugInfo>
 

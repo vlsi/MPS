@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Ui_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.plugin.Ui_ProjectPlugin" />
   <unitInfo fileName="Ui_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.plugin.Ui_ApplicationPlugin" />
+  <unitInfo fileName="Ui_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.plugin.Ui_ProjectPlugin" />
   <root nodeId="8117382572454923102">
     <nodeInfo nodeId="8117382572454923263" fileName="Variants.java" startLine="16" startPosition="23" endLine="17" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGS" />
     <nodeInfo nodeId="8117382572454923274" fileName="Variants.java" startLine="17" startPosition="161" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -56,8 +56,8 @@
     <scopeInfo nodeId="8117382572454923151" fileName="Variants.java" startLine="39" startPosition="27" endLine="42" endPosition="5" />
     <scopeInfo nodeId="8117382572454923227" fileName="Variants.java" startLine="70" startPosition="35" endLine="73" endPosition="7" />
     <scopeInfo nodeId="8117382572454923114" fileName="Variants.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="8117382572454923115" varName="var" />
       <varInfo nodeId="8117382572454923117" varName="lang" />
+      <varInfo nodeId="8117382572454923115" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="8117382572454923160" fileName="Variants.java" startLine="45" startPosition="30" endLine="49" endPosition="5" />
     <scopeInfo nodeId="8117382572454923181" fileName="Variants.java" startLine="53" startPosition="126" endLine="57" endPosition="0" />
@@ -81,9 +81,9 @@
     <scopeInfo nodeId="8117382572454923216" fileName="Variants.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="8117382572454923238" varName="regBlock" />
     </scopeInfo>
+    <unitInfo nodeId="8117382572454923102" fileName="Variants.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ui.plugin.Variants" />
     <unitInfo nodeId="8117382572454923181" fileName="Variants.java" startLine="53" startPosition="76" endLine="57" endPosition="5" unitName="jetbrains.mps.ui.plugin.Variants$1" />
     <unitInfo nodeId="8117382572454923202" fileName="Variants.java" startLine="61" startPosition="79" endLine="65" endPosition="5" unitName="jetbrains.mps.ui.plugin.Variants$2" />
-    <unitInfo nodeId="8117382572454923102" fileName="Variants.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ui.plugin.Variants" />
   </root>
   <root nodeId="8117382572454923293">
     <nodeInfo nodeId="8117382572454923294" fileName="Variants_CustomApplicationPlugin.java" startLine="7" startPosition="83" endLine="8" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="variants" />

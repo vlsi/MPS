@@ -65,8 +65,8 @@
       <varInfo nodeId="1206112117242" varName="scpd" />
     </scopeInfo>
     <scopeInfo nodeId="1204071322906" fileName="SmartClosureParameterTypeUtil.java" startLine="36" startPosition="167" endLine="46" endPosition="7">
-      <varInfo nodeId="1210624684204" varName="pd" />
       <varInfo nodeId="1210624596774" varName="paramDecls" />
+      <varInfo nodeId="1210624684204" varName="pd" />
       <varInfo nodeId="1204071774617" varName="ptype" />
     </scopeInfo>
     <scopeInfo nodeId="1204071845487" fileName="SmartClosureParameterTypeUtil.java" startLine="58" startPosition="116" endLine="73" endPosition="5">
@@ -117,9 +117,9 @@
     <scopeInfo nodeId="1213104847098" fileName="ForEachVariableReference_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="1213104847098" fileName="ForEachVariableReference_Constraints.java" startLine="29" startPosition="83" endLine="55" endPosition="22" />
     <scopeInfo nodeId="1213104847098" fileName="ForEachVariableReference_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="1213104847098" fileName="ForEachVariableReference_Constraints.java" startLine="40" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.ForEachVariableReference_Constraints$2" />
-    <unitInfo nodeId="1213104847098" fileName="ForEachVariableReference_Constraints.java" startLine="31" startPosition="35" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.ForEachVariableReference_Constraints$1" />
     <unitInfo nodeId="1213104847098" fileName="ForEachVariableReference_Constraints.java" startLine="21" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.ForEachVariableReference_Constraints" />
+    <unitInfo nodeId="1213104847098" fileName="ForEachVariableReference_Constraints.java" startLine="31" startPosition="35" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.ForEachVariableReference_Constraints$1" />
+    <unitInfo nodeId="1213104847098" fileName="ForEachVariableReference_Constraints.java" startLine="40" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.ForEachVariableReference_Constraints$2" />
   </root>
   <root nodeId="1213107434871">
     <nodeInfo nodeId="1213107434871" fileName="MapOperation_Constraints.java" startLine="17" startPosition="73" endLine="18" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -235,10 +235,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1224668260162" fileName="SequenceOperation_Constraints.java" startLine="45" startPosition="121" endLine="73" endPosition="5" />
     <scopeInfo nodeId="1224668254828" fileName="SequenceOperation_Constraints.java" startLine="44" startPosition="0" endLine="75" endPosition="0" />
+    <unitInfo nodeId="1224668254828" fileName="SequenceOperation_Constraints.java" startLine="22" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints" />
     <unitInfo nodeId="6801639034384668239" fileName="SequenceOperation_Constraints.java" startLine="50" startPosition="238" endLine="54" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints$1" />
     <unitInfo nodeId="6801639034384669033" fileName="SequenceOperation_Constraints.java" startLine="55" startPosition="140" endLine="59" endPosition="11" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints$2" />
     <unitInfo nodeId="6801639034384669044" fileName="SequenceOperation_Constraints.java" startLine="59" startPosition="24" endLine="63" endPosition="11" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints$3" />
-    <unitInfo nodeId="1224668254828" fileName="SequenceOperation_Constraints.java" startLine="22" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints" />
   </root>
   <root nodeId="1226566892900">
     <nodeInfo nodeId="1226566892900" fileName="AbstractSetOperation_Constraints.java" startLine="17" startPosition="81" endLine="18" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -644,11 +644,11 @@
     <scopeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="63" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="56" startPosition="83" endLine="88" endPosition="22" />
     <scopeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="54" startPosition="0" endLine="90" endPosition="0" />
-    <unitInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_Constraints.java" startLine="72" startPosition="289" endLine="76" endPosition="15" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$4" />
-    <unitInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="40" startPosition="32" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$1" />
-    <unitInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="67" startPosition="19" endLine="85" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$3" />
-    <unitInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="58" startPosition="47" endLine="87" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$2" />
     <unitInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="30" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints" />
+    <unitInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="40" startPosition="32" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$1" />
+    <unitInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="58" startPosition="47" endLine="87" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$2" />
+    <unitInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="67" startPosition="19" endLine="85" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$3" />
+    <unitInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_Constraints.java" startLine="72" startPosition="289" endLine="76" endPosition="15" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$4" />
   </root>
   <root nodeId="1576845966386891452">
     <nodeInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="28" startPosition="77" endLine="29" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_rduypo_a0a1a0a0a1a0b0a1a1" />
@@ -698,10 +698,10 @@
     <scopeInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="61" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="54" startPosition="83" endLine="82" endPosition="22" />
     <scopeInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="52" startPosition="0" endLine="84" endPosition="0" />
-    <unitInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="38" startPosition="32" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints$1" />
-    <unitInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="65" startPosition="19" endLine="79" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints$3" />
-    <unitInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="56" startPosition="47" endLine="81" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints$2" />
     <unitInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="28" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints" />
+    <unitInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="38" startPosition="32" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints$1" />
+    <unitInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="56" startPosition="47" endLine="81" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints$2" />
+    <unitInfo nodeId="1576845966386891452" fileName="CustomMapCreator_Constraints.java" startLine="65" startPosition="19" endLine="79" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints$3" />
   </root>
   <root nodeId="2141797557973018639">
     <nodeInfo nodeId="2141797557973018639" fileName="IListOperation_Constraints.java" startLine="8" startPosition="39" endLine="9" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -779,8 +779,8 @@
     <scopeInfo nodeId="6099516049395208152" fileName="CustomContainerDeclaration_Constraints.java" startLine="27" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="6099516049395208152" fileName="CustomContainerDeclaration_Constraints.java" startLine="20" startPosition="82" endLine="40" endPosition="22" />
     <scopeInfo nodeId="6099516049395208152" fileName="CustomContainerDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="42" endPosition="0" />
-    <unitInfo nodeId="6099516049395208152" fileName="CustomContainerDeclaration_Constraints.java" startLine="22" startPosition="31" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerDeclaration_Constraints$1" />
     <unitInfo nodeId="6099516049395208152" fileName="CustomContainerDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerDeclaration_Constraints" />
+    <unitInfo nodeId="6099516049395208152" fileName="CustomContainerDeclaration_Constraints.java" startLine="22" startPosition="31" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerDeclaration_Constraints$1" />
   </root>
   <root nodeId="6356558317059569764">
     <nodeInfo nodeId="6356558317059569764" fileName="IContainerOperation_Constraints.java" startLine="8" startPosition="44" endLine="9" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -825,11 +825,11 @@
     <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="38" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="31" startPosition="83" endLine="63" endPosition="22" />
     <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="29" startPosition="0" endLine="65" endPosition="0" />
+    <unitInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints" />
+    <unitInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="33" startPosition="35" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints$1" />
+    <unitInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="42" startPosition="19" endLine="60" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints$2" />
     <unitInfo nodeId="8293956702609999752" fileName="MultiForEachVariableReference_Constraints.java" startLine="45" startPosition="194" endLine="49" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints$3" />
     <unitInfo nodeId="8293956702609999775" fileName="MultiForEachVariableReference_Constraints.java" startLine="49" startPosition="26" endLine="53" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints$3" />
-    <unitInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="42" startPosition="19" endLine="60" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints$2" />
-    <unitInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="33" startPosition="35" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints$1" />
-    <unitInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints" />
   </root>
 </debugInfo>
 
