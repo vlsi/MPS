@@ -23,6 +23,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
@@ -81,8 +82,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private ClassLoaderManager myClassLoaderManager;
 
-  public IntentionsManager() {
-    myClassLoaderManager = ClassLoaderManager.getInstance();
+  public IntentionsManager(MPSCoreComponents coreComponents) {
+    myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
 
   public synchronized Collection<Pair<Intention, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context) {

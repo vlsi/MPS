@@ -54,7 +54,8 @@ public class DebugInfoManager implements ApplicationComponent {
     return "Debug Info Manager";
   }
 
-  public DebugInfoManager() {
+  public DebugInfoManager(/* depends on MPSCoreComponents */) {
+    // TODO restore dependency on MPSCoreComponents
     myTraceInfoManager = TraceInfoManager.getInstance();
   }
 
