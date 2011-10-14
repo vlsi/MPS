@@ -191,10 +191,10 @@
     </scopeInfo>
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="103" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Editor.java" startLine="26" startPosition="0" endLine="42" endPosition="0" />
-    <unitInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_Factory" />
+    <unitInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="29" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration" />
     <unitInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="148" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration$MyState" />
     <unitInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Editor.java" startLine="15" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_Editor" />
-    <unitInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="29" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration" />
+    <unitInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_Factory" />
   </root>
   <root nodeId="3271576760503788622">
     <nodeInfo nodeId="3271576760503788623" fileName="MPS_Kind.java" startLine="17" startPosition="52" endLine="18" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -283,8 +283,8 @@
       <varInfo nodeId="7236226861153446602" varName="console" />
     </scopeInfo>
     <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="47" startPosition="0" endLine="64" endPosition="0" />
-    <unitInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="57" startPosition="118" endLine="61" endPosition="7" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_RunProfileState$1" />
     <unitInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="29" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_RunProfileState" />
+    <unitInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="57" startPosition="118" endLine="61" endPosition="7" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_RunProfileState$1" />
   </root>
   <root nodeId="7364083846322268554">
     <nodeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="29" startPosition="26" endLine="30" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualMachineParameters_String" />
@@ -428,11 +428,11 @@
       <varInfo nodeId="4505698065304913531" varName="currentClassPath" />
     </scopeInfo>
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="146" startPosition="0" endLine="167" endPosition="0" />
+    <unitInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="29" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.Mps_Command" />
+    <unitInfo nodeId="4505698065304913546" fileName="Mps_Command.java" startLine="148" startPosition="194" endLine="156" endPosition="5" unitName="jetbrains.mps.debugger.java.mps.Mps_Command$1" />
     <unitInfo nodeId="4820256314556385190" fileName="Mps_Command.java" startLine="157" startPosition="61" endLine="161" endPosition="5" unitName="jetbrains.mps.debugger.java.mps.Mps_Command$2" />
     <unitInfo nodeId="8234001627574046935" fileName="Mps_Command.java" startLine="161" startPosition="18" endLine="165" endPosition="5" unitName="jetbrains.mps.debugger.java.mps.Mps_Command$3" />
-    <unitInfo nodeId="4505698065304913546" fileName="Mps_Command.java" startLine="148" startPosition="194" endLine="156" endPosition="5" unitName="jetbrains.mps.debugger.java.mps.Mps_Command$1" />
     <unitInfo nodeId="6586232406240918737" fileName="Mps_Command.java" startLine="169" startPosition="15" endLine="178" endPosition="5" unitName="jetbrains.mps.debugger.java.mps.Mps_Command$4" />
-    <unitInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="29" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.Mps_Command" />
   </root>
 </debugInfo>
 
