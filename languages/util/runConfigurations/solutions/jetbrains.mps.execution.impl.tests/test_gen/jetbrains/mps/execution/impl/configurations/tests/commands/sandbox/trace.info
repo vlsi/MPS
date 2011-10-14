@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="7120092006645143730">
+    <nodeInfo nodeId="7120092006645143741" fileName="FailedBTestCase_Test.java" startLine="9" startPosition="44" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7120092006645143737" fileName="FailedBTestCase_Test.java" startLine="8" startPosition="52" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_fail#()V" />
+    <scopeInfo nodeId="7120092006645143740" fileName="FailedBTestCase_Test.java" startLine="9" startPosition="44" endLine="10" endPosition="25" />
+    <scopeInfo nodeId="7120092006645143737" fileName="FailedBTestCase_Test.java" startLine="8" startPosition="52" endLine="12" endPosition="0" />
+    <unitInfo nodeId="7120092006645143730" fileName="FailedBTestCase_Test.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.FailedBTestCase_Test" />
+  </root>
+  <root nodeId="8128243960970299078">
+    <nodeInfo nodeId="8128243960970299089" fileName="SimpleBTestCase_Test.java" startLine="9" startPosition="45" endLine="10" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960970299085" fileName="SimpleBTestCase_Test.java" startLine="8" startPosition="52" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_test1#()V" />
+    <scopeInfo nodeId="8128243960970299088" fileName="SimpleBTestCase_Test.java" startLine="9" startPosition="45" endLine="10" endPosition="30" />
+    <scopeInfo nodeId="8128243960970299085" fileName="SimpleBTestCase_Test.java" startLine="8" startPosition="52" endLine="12" endPosition="0" />
+    <unitInfo nodeId="8128243960970299078" fileName="SimpleBTestCase_Test.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.SimpleBTestCase_Test" />
+  </root>
+  <root nodeId="8128243960970299091">
+    <nodeInfo nodeId="8128243960970299109" fileName="Main.java" startLine="6" startPosition="19" endLine="7" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MESSAGE" />
+    <nodeInfo nodeId="8128243960970299104" fileName="Main.java" startLine="12" startPosition="42" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960970299093" fileName="Main.java" startLine="8" startPosition="0" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Main#()V" />
+    <nodeInfo nodeId="8128243960970299097" fileName="Main.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <scopeInfo nodeId="8128243960970299096" fileName="Main.java" startLine="9" startPosition="17" endLine="9" endPosition="17" />
+    <scopeInfo nodeId="8128243960970299103" fileName="Main.java" startLine="12" startPosition="42" endLine="13" endPosition="32" />
+    <scopeInfo nodeId="8128243960970299093" fileName="Main.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="8128243960970299097" fileName="Main.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="8128243960970299098" varName="args" />
+    </scopeInfo>
+    <unitInfo nodeId="8128243960970299091" fileName="Main.java" startLine="6" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main" />
+  </root>
+</debugInfo>
+

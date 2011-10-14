@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;

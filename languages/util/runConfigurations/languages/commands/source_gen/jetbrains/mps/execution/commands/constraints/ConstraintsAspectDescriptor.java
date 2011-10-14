@@ -7,29 +7,37 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.commands.structure.AbstractProcessBuilderPart", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandProcessType", "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.execution.commands.structure.ProcessType"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.commands.structure.AbstractProcessBuilderPart", "jetbrains.mps.execution.commands.structure.CommandBuilderExpression", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandPartLengthOperation", "jetbrains.mps.execution.commands.structure.CommandPartToListOperation", "jetbrains.mps.execution.commands.structure.CommandProcessType", "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.execution.commands.structure.ProcessType", "jetbrains.mps.execution.commands.structure.StartAndWaitOperation"};
 
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
-      case 3:
+      case 4:
         return new CommandParameterReference_Constraints();
-      case 2:
+      case 3:
         return new CommandParameterAssignment_Constraints();
-      case 1:
+      case 2:
         return new CommandDebuggerOperation_Constraints();
       case 0:
         return new AbstractProcessBuilderPart_Constraints();
-      case 5:
+      case 8:
         return new DebuggerSettingsCommandParameterDeclaration_Constraints();
-      case 6:
+      case 9:
         return new ExecuteCommandPart_Constraints();
-      case 7:
+      case 10:
         return new ProcessType_Constraints();
-      case 4:
+      case 7:
         return new CommandProcessType_Constraints();
+      case 5:
+        return new CommandPartLengthOperation_Constraints();
+      case 6:
+        return new CommandPartToListOperation_Constraints();
+      case 1:
+        return new CommandBuilderExpression_Constraints();
+      case 11:
+        return new StartAndWaitOperation_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);

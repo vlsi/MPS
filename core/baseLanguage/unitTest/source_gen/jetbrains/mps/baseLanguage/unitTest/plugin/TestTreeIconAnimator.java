@@ -6,6 +6,7 @@ import com.intellij.openapi.Disposable;
 import javax.swing.Icon;
 import com.intellij.execution.testframework.TestsUIUtil;
 import com.intellij.util.Alarm;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.ModelAccess;

@@ -31,6 +31,7 @@
   <property name="jetbrains.mps.baseLanguage.search.classes" value="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.tuples.classes" value="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.unitTest.classes" value="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+  <property name="jetbrains.mps.baseLanguage.unitTest.runtime.classes" value="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
   <property name="jetbrains.mps.baseLanguageInternal.classes" value="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
   <property name="jetbrains.mps.bash.classes" value="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
   <property name="jetbrains.mps.build.custommps.classes" value="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
@@ -84,6 +85,7 @@
   <property name="jetbrains.mps.lang.structure.classes" value="${base_dir}/core/languageDesign/structure/classes_gen" />
   <property name="jetbrains.mps.lang.stubs.classes" value="${base_dir}/core/languageDesign/stubs/classes_gen" />
   <property name="jetbrains.mps.lang.test.classes" value="${base_dir}/core/languageDesign/test/classes_gen" />
+  <property name="jetbrains.mps.lang.test.runtime.classes" value="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
   <property name="jetbrains.mps.lang.textGen.classes" value="${base_dir}/core/languageDesign/textGen/classes_gen" />
   <property name="jetbrains.mps.lang.traceable.classes" value="${base_dir}/core/languageDesign/traceable/classes_gen" />
   <property name="jetbrains.mps.lang.typesystem.classes" value="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -134,7 +136,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
@@ -143,7 +144,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/intentions-runtime/classes" />
     <path path="${base_dir}/core/kernel/classes" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -200,6 +200,8 @@
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/test_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/source_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/test_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/source_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/test_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/source_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/test_gen" />
     <path path="${base_dir}/core/debug-api/languages/api/source_gen" />
@@ -254,6 +256,8 @@
     <path path="${base_dir}/core/languageDesign/structure/test_gen" />
     <path path="${base_dir}/core/languageDesign/test/source_gen" />
     <path path="${base_dir}/core/languageDesign/test/test_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/test_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/source_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/test_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/source_gen" />
@@ -569,7 +573,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -599,8 +603,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -692,6 +696,7 @@
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
@@ -719,6 +724,7 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -758,7 +764,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -788,8 +794,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -902,7 +908,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -932,8 +938,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -1048,7 +1054,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -1078,8 +1084,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -1192,7 +1198,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -1222,8 +1228,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -1337,7 +1343,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -1367,8 +1373,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -1495,7 +1501,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -1525,8 +1531,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -1640,7 +1646,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -1670,8 +1676,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -1786,7 +1792,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -1816,8 +1822,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -1930,7 +1936,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -1960,8 +1966,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -2074,7 +2080,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -2104,8 +2110,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -2186,16 +2192,8 @@
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths">
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
-    <path path="${base_dir}/core/actions-runtime/classes" />
-    <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2204,45 +2202,14 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug/classes" />
-    <path path="${base_dir}/core/editor-runtime/classes" />
-    <path path="${base_dir}/core/findUsages-runtime/classes" />
-    <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
-    <path path="${base_dir}/core/intentions-runtime/classes" />
-    <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
-    <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
-    <path path="${base_dir}/core/refactoring-runtime/classes" />
-    <path path="${base_dir}/core/runtime/classes" />
-    <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/lib/annotations.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path path="${base_dir}/lib/ecj.jar" />
-    <path path="${base_dir}/lib/execution-api.jar" />
-    <path path="${base_dir}/lib/extensions.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
-    <path path="${base_dir}/lib/jdom.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
-    <path path="${base_dir}/lib/log4j.jar" />
-    <path path="${base_dir}/lib/picocontainer.jar" />
-    <path path="${base_dir}/lib/platform-api.jar" />
-    <path path="${base_dir}/lib/platform.jar" />
-    <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths">
@@ -2280,7 +2247,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -2310,8 +2277,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -2433,7 +2400,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -2463,8 +2430,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -2544,16 +2511,8 @@
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths">
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
-    <path path="${base_dir}/MPSPlugin/apiclasses" />
-    <path path="${base_dir}/classes" />
-    <path path="${base_dir}/core/actions-runtime/classes" />
-    <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2562,45 +2521,15 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="${base_dir}/core/debug-api/classes" />
-    <path path="${base_dir}/core/debug/classes" />
-    <path path="${base_dir}/core/editor-runtime/classes" />
-    <path path="${base_dir}/core/findUsages-runtime/classes" />
-    <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
-    <path path="${base_dir}/core/intentions-runtime/classes" />
-    <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
-    <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
-    <path path="${base_dir}/core/refactoring-runtime/classes" />
-    <path path="${base_dir}/core/runtime/classes" />
-    <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/lib/annotations.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path path="${base_dir}/lib/ecj.jar" />
-    <path path="${base_dir}/lib/execution-api.jar" />
-    <path path="${base_dir}/lib/extensions.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
-    <path path="${base_dir}/lib/jdom.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
-    <path path="${base_dir}/lib/log4j.jar" />
-    <path path="${base_dir}/lib/picocontainer.jar" />
-    <path path="${base_dir}/lib/platform-api.jar" />
-    <path path="${base_dir}/lib/platform.jar" />
-    <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc.classpaths">
@@ -2646,7 +2575,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -2676,8 +2605,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -2790,7 +2719,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -2820,8 +2749,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -2936,7 +2865,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -2966,8 +2895,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -3084,7 +3013,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -3114,8 +3043,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -3231,7 +3160,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -3261,8 +3190,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -3375,7 +3304,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -3405,8 +3334,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -3519,7 +3448,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -3549,8 +3478,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -3665,7 +3594,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -3698,8 +3627,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -3812,7 +3741,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -3844,8 +3773,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -3958,7 +3887,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -3989,8 +3918,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -4088,7 +4017,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
@@ -4097,7 +4025,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/intentions-runtime/classes" />
     <path path="${base_dir}/core/kernel/classes" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4160,7 +4087,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -4190,8 +4117,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -4313,7 +4240,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -4343,8 +4270,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -4457,7 +4384,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -4487,8 +4414,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -4609,7 +4536,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -4639,8 +4566,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -4754,7 +4681,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -4785,8 +4712,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -4899,7 +4826,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -4930,8 +4857,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -5044,7 +4971,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -5074,8 +5001,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -5188,7 +5115,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -5219,8 +5146,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -5333,7 +5260,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -5363,8 +5290,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -5477,7 +5404,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -5508,8 +5435,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/languages/smodelTests/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -5622,7 +5549,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -5652,8 +5579,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -5766,7 +5693,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -5796,8 +5723,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -5911,7 +5838,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -5941,8 +5868,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -6040,7 +5967,6 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
@@ -6049,7 +5975,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/intentions-runtime/classes" />
     <path path="${base_dir}/core/kernel/classes" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6111,7 +6036,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -6141,8 +6066,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -6257,7 +6182,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -6287,8 +6212,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -6404,7 +6329,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -6434,8 +6359,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -6552,7 +6477,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -6582,8 +6507,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -6697,7 +6622,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -6727,8 +6652,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -6855,7 +6780,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -6885,8 +6810,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -7016,7 +6941,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -7046,8 +6971,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -7161,7 +7086,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -7191,8 +7116,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -7305,7 +7230,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -7335,8 +7260,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -7449,7 +7374,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -7479,8 +7404,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -7595,7 +7520,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -7625,8 +7550,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -7739,7 +7664,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -7769,8 +7694,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -7906,7 +7831,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -7936,8 +7861,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -8051,7 +7976,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -8081,8 +8006,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -8196,7 +8121,7 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
@@ -8226,8 +8151,8 @@
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
@@ -8379,6 +8304,8 @@
     <mkdir dir="${base_dir}/core/baseLanguage/tuples/languages/tuples/test_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/unitTest/source_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/unitTest/test_gen" />
+    <mkdir dir="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/source_gen" />
+    <mkdir dir="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/test_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/baseLanguageInternal/source_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/baseLanguageInternal/test_gen" />
     <mkdir dir="${base_dir}/core/debug-api/languages/api/source_gen" />
@@ -8433,6 +8360,8 @@
     <mkdir dir="${base_dir}/core/languageDesign/structure/test_gen" />
     <mkdir dir="${base_dir}/core/languageDesign/test/source_gen" />
     <mkdir dir="${base_dir}/core/languageDesign/test/test_gen" />
+    <mkdir dir="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+    <mkdir dir="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/test_gen" />
     <mkdir dir="${base_dir}/core/languageDesign/textGen/source_gen" />
     <mkdir dir="${base_dir}/core/languageDesign/textGen/test_gen" />
     <mkdir dir="${base_dir}/core/languageDesign/traceable/source_gen" />
@@ -8458,6 +8387,7 @@
     <mkdir dir="${jetbrains.mps.baseLanguage.search.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.tuples.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
+    <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.runtime.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguageInternal.classes}" />
     <mkdir dir="${jetbrains.mps.debug.apiLang.classes}" />
     <mkdir dir="${jetbrains.mps.execution.commands.classes}" />
@@ -8485,6 +8415,7 @@
     <mkdir dir="${jetbrains.mps.lang.smodel.classes}" />
     <mkdir dir="${jetbrains.mps.lang.structure.classes}" />
     <mkdir dir="${jetbrains.mps.lang.test.classes}" />
+    <mkdir dir="${jetbrains.mps.lang.test.runtime.classes}" />
     <mkdir dir="${jetbrains.mps.lang.textGen.classes}" />
     <mkdir dir="${jetbrains.mps.lang.traceable.classes}" />
     <mkdir dir="${jetbrains.mps.lang.typesystem.classes}" />
@@ -8541,6 +8472,10 @@
     <copy todir="${jetbrains.mps.baseLanguage.unitTest.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/unitTest/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/unitTest/test_gen" />
+    </copy>
+    <copy todir="${jetbrains.mps.baseLanguage.unitTest.runtime.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguageInternal.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/baseLanguageInternal/source_gen" />
@@ -8650,6 +8585,10 @@
       <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/test/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/test/test_gen" />
     </copy>
+    <copy todir="${jetbrains.mps.lang.test.runtime.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/test_gen" />
+    </copy>
     <copy todir="${jetbrains.mps.lang.textGen.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/textGen/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/textGen/test_gen" />
@@ -8744,6 +8683,12 @@
       <src>
         <path path="${base_dir}/core/baseLanguage/unitTest/source_gen" />
         <path path="${base_dir}/core/baseLanguage/unitTest/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/source_gen" />
+        <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguageInternal.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
@@ -8906,6 +8851,12 @@
       <src>
         <path path="${base_dir}/core/languageDesign/test/source_gen" />
         <path path="${base_dir}/core/languageDesign/test/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.test.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+        <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.textGen.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
@@ -9557,7 +9508,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.execution.lib.startup_tjc" depends="compile.cycle.jetbrains.mps.debug.customViewers_tjc">
+  <target name="compile.cycle.jetbrains.mps.execution.lib.startup_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.execution.lib.startup.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/source_gen" />
@@ -9623,7 +9574,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gwt.client_tjc" depends="compile.cycle.jetbrains.mps.execution.lib.startup_tjc">
+  <target name="compile.cycle.jetbrains.mps.gwt.client_tjc" depends="compile.cycle.jetbrains.mps.debug.customViewers_tjc">
     <property name="classes.dump" value="${jetbrains.mps.gwt.client.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/gwtsupport/languages/client/source_gen" />
@@ -10265,7 +10216,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ypath.runtime_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc">
+  <target name="compile.cycle.jetbrains.mps.ypath.runtime_tjc" depends="compile.cycle.jetbrains.mps.execution.lib.startup_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ypath.runtime.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/source_gen" />
@@ -10368,6 +10319,7 @@
     <delete dir="${jetbrains.mps.baseLanguage.search.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.tuples.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
+    <delete dir="${jetbrains.mps.baseLanguage.unitTest.runtime.classes}" />
     <delete dir="${jetbrains.mps.baseLanguageInternal.classes}" />
     <delete dir="${jetbrains.mps.debug.apiLang.classes}" />
     <delete dir="${jetbrains.mps.execution.commands.classes}" />
@@ -10395,6 +10347,7 @@
     <delete dir="${jetbrains.mps.lang.smodel.classes}" />
     <delete dir="${jetbrains.mps.lang.structure.classes}" />
     <delete dir="${jetbrains.mps.lang.test.classes}" />
+    <delete dir="${jetbrains.mps.lang.test.runtime.classes}" />
     <delete dir="${jetbrains.mps.lang.textGen.classes}" />
     <delete dir="${jetbrains.mps.lang.traceable.classes}" />
     <delete dir="${jetbrains.mps.lang.typesystem.classes}" />

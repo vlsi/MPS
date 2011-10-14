@@ -15,14 +15,19 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import java.util.List;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.baseLanguage.unitTest.execution.Junit_Command;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.execution.lib.JavaStackTraceFilter;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
@@ -53,7 +58,7 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     Project project = myEnvironment.getProject();
     List<ITestNodeWrapper> nodeWrappers = ListSequence.fromList(myRunConfiguration.getTests()).toListSequence();
 
-    final ProcessHandler process = new Junit_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
+    final ProcessHandler process = new Junit_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
 
     TestRunState runState = new TestRunState(nodeWrappers);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);

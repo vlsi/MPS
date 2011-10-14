@@ -32,6 +32,7 @@ import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(BuildLanguageProject_Configuration.class);
@@ -164,8 +165,8 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
     return BuildLanguageProject_Configuration_RunProfileState.canExecute(executorId);
   }
 
-  public Object[] createMakeTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNode>(), this.getNode().getNode())};
+  public Object[] createMakeNodePointersTask() {
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodePointer>(), this.getNode().getNodePointer())};
   }
 
   public class MyState {

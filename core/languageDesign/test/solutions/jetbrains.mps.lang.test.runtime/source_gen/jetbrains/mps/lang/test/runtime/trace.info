@@ -97,12 +97,12 @@
     <scopeInfo nodeId="1215607026427" fileName="SubtreeChecker.java" startLine="65" startPosition="109" endLine="68" endPosition="27" />
     <scopeInfo nodeId="1215607026451" fileName="SubtreeChecker.java" startLine="70" startPosition="112" endLine="73" endPosition="27" />
     <scopeInfo nodeId="1215615153957" fileName="SubtreeChecker.java" startLine="117" startPosition="110" endLine="120" endPosition="128">
-      <varInfo nodeId="1215615758601" varName="vars" />
       <varInfo nodeId="1215615437102" varName="var" />
+      <varInfo nodeId="1215615758601" varName="vars" />
     </scopeInfo>
     <scopeInfo nodeId="1215617277217" fileName="SubtreeChecker.java" startLine="122" startPosition="105" endLine="125" endPosition="128">
-      <varInfo nodeId="1215617277219" varName="vars" />
       <varInfo nodeId="1215617277226" varName="var" />
+      <varInfo nodeId="1215617277219" varName="vars" />
     </scopeInfo>
     <scopeInfo nodeId="1215609104504" fileName="SubtreeChecker.java" startLine="135" startPosition="212" endLine="138" endPosition="11" />
     <scopeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="135" startPosition="212" endLine="138" endPosition="11">
@@ -120,8 +120,8 @@
     <scopeInfo nodeId="3996711022540418621" fileName="SubtreeChecker.java" startLine="79" startPosition="31" endLine="85" endPosition="11" />
     <scopeInfo nodeId="1215605336250" fileName="SubtreeChecker.java" startLine="133" startPosition="140" endLine="140" endPosition="7" />
     <scopeInfo nodeId="95706764259161998" fileName="SubtreeChecker.java" startLine="54" startPosition="112" endLine="63" endPosition="39">
-      <varInfo nodeId="95706764259162025" varName="type1" />
       <varInfo nodeId="95706764259162137" varName="hasType" />
+      <varInfo nodeId="95706764259162025" varName="type1" />
     </scopeInfo>
     <scopeInfo nodeId="1215610523462" fileName="SubtreeChecker.java" startLine="77" startPosition="23" endLine="86" endPosition="9">
       <varInfo nodeId="7938028138875678861" varName="reporter" />
@@ -135,8 +135,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1215607026400" fileName="SubtreeChecker.java" startLine="48" startPosition="90" endLine="74" endPosition="11" />
     <scopeInfo nodeId="1215611983721" fileName="SubtreeChecker.java" startLine="100" startPosition="90" endLine="126" endPosition="11">
-      <varInfo nodeId="1215615533527" varName="instructions" />
       <varInfo nodeId="1215615554564" varName="instruction" />
+      <varInfo nodeId="1215615533527" varName="instructions" />
     </scopeInfo>
     <scopeInfo nodeId="1215607026394" fileName="SubtreeChecker.java" startLine="47" startPosition="210" endLine="75" endPosition="9">
       <varInfo nodeId="1215607026398" varName="property" />
@@ -155,10 +155,10 @@
       <varInfo nodeId="1215611983699" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1215611932107" fileName="SubtreeChecker.java" startLine="92" startPosition="48" endLine="129" endPosition="5">
-      <varInfo nodeId="1215612669322" varName="unreachable" />
-      <varInfo nodeId="1215612199639" varName="program" />
       <varInfo nodeId="1215615074248" varName="initialized" />
       <varInfo nodeId="1215617240413" varName="live" />
+      <varInfo nodeId="1215612199639" varName="program" />
+      <varInfo nodeId="1215612669322" varName="unreachable" />
     </scopeInfo>
     <scopeInfo nodeId="1215611932104" fileName="SubtreeChecker.java" startLine="91" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="1215611999300" varName="node" />
@@ -173,9 +173,9 @@
       <varInfo nodeId="8042441407353529722" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="1215078294635" fileName="SubtreeChecker.java" startLine="39" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="1215078403182" varName="node" />
       <varInfo nodeId="852155438140970277" varName="allowErrors" />
       <varInfo nodeId="852155438141020164" varName="allowWarnings" />
+      <varInfo nodeId="1215078403182" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="1215078243118" fileName="SubtreeChecker.java" startLine="32" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.SubtreeChecker" />
   </root>
@@ -305,19 +305,19 @@
       <varInfo nodeId="1226945275279" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="1221573548365" fileName="BaseTransformationTest.java" startLine="127" startPosition="25" endLine="131" endPosition="128">
-      <varInfo nodeId="9011639092856261504" varName="module" />
       <varInfo nodeId="9011639092856261495" varName="classloader" />
+      <varInfo nodeId="9011639092856261504" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="3740450423773773624" fileName="BaseTransformationTest.java" startLine="141" startPosition="73" endLine="145" endPosition="0" />
     <scopeInfo nodeId="7189304461457241467" fileName="BaseTransformationTest.java" startLine="50" startPosition="0" endLine="55" endPosition="3">
-      <varInfo nodeId="7189304461457253868" varName="project" />
       <varInfo nodeId="7189304461457253870" varName="modelDescriptor" />
+      <varInfo nodeId="7189304461457253868" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="5036973107684677791" fileName="BaseTransformationTest.java" startLine="65" startPosition="43" endLine="70" endPosition="7" />
     <scopeInfo nodeId="1223217167467" fileName="BaseTransformationTest.java" startLine="79" startPosition="71" endLine="84" endPosition="0" />
     <scopeInfo nodeId="2379153299285136315" fileName="BaseTransformationTest.java" startLine="103" startPosition="51" endLine="108" endPosition="13">
-      <varInfo nodeId="2379153299285146829" varName="file" />
       <varInfo nodeId="2379153299285146815" varName="canonicalPath" />
+      <varInfo nodeId="2379153299285146829" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="3740450423773768938" fileName="BaseTransformationTest.java" startLine="140" startPosition="27" endLine="145" endPosition="13" />
     <scopeInfo nodeId="1223216130572" fileName="BaseTransformationTest.java" startLine="151" startPosition="58" endLine="156" endPosition="0" />
@@ -342,9 +342,9 @@
     <scopeInfo nodeId="2379153299285096981" fileName="BaseTransformationTest.java" startLine="98" startPosition="34" endLine="112" endPosition="5" />
     <scopeInfo nodeId="2379153299285135247" fileName="BaseTransformationTest.java" startLine="98" startPosition="34" endLine="112" endPosition="5" />
     <scopeInfo nodeId="1228143641847" fileName="BaseTransformationTest.java" startLine="161" startPosition="0" endLine="175" endPosition="0">
-      <varInfo nodeId="1228143641854" varName="obj" />
-      <varInfo nodeId="1228143641852" varName="methodName" />
       <varInfo nodeId="1228143641850" varName="clazz" />
+      <varInfo nodeId="1228143641852" varName="methodName" />
+      <varInfo nodeId="1228143641854" varName="obj" />
     </scopeInfo>
     <scopeInfo nodeId="2379153299285096978" fileName="BaseTransformationTest.java" startLine="97" startPosition="0" endLine="114" endPosition="0" />
     <scopeInfo nodeId="1217253486861" fileName="BaseTransformationTest.java" startLine="57" startPosition="90" endLine="87" endPosition="45" />
@@ -353,22 +353,22 @@
       <varInfo nodeId="1217253515487" varName="projectName" />
     </scopeInfo>
     <scopeInfo nodeId="1221572156039" fileName="BaseTransformationTest.java" startLine="124" startPosition="117" endLine="159" endPosition="5">
+      <varInfo nodeId="1221574097387" varName="clazz" />
       <varInfo nodeId="1225557807336" varName="exception" />
       <varInfo nodeId="1221574127235" varName="obj" />
-      <varInfo nodeId="1221574097387" varName="clazz" />
     </scopeInfo>
     <scopeInfo nodeId="1221572156036" fileName="BaseTransformationTest.java" startLine="123" startPosition="0" endLine="161" endPosition="0">
-      <varInfo nodeId="1228143548761" varName="runInCommand" />
       <varInfo nodeId="1221572178950" varName="className" />
       <varInfo nodeId="1221572185608" varName="methodName" />
+      <varInfo nodeId="1228143548761" varName="runInCommand" />
     </scopeInfo>
-    <unitInfo nodeId="3740450423773773624" fileName="BaseTransformationTest.java" startLine="141" startPosition="61" endLine="145" endPosition="11" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$4" />
+    <unitInfo nodeId="1215696484420" fileName="BaseTransformationTest.java" startLine="38" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <unitInfo nodeId="1223213850224" fileName="BaseTransformationTest.java" startLine="77" startPosition="37" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$1" />
     <unitInfo nodeId="1223217167467" fileName="BaseTransformationTest.java" startLine="79" startPosition="59" endLine="84" endPosition="9" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$2" />
-    <unitInfo nodeId="1223216130572" fileName="BaseTransformationTest.java" startLine="151" startPosition="46" endLine="156" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$4" />
     <unitInfo nodeId="1221573548364" fileName="BaseTransformationTest.java" startLine="126" startPosition="45" endLine="133" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$2" />
     <unitInfo nodeId="3740450423773768933" fileName="BaseTransformationTest.java" startLine="139" startPosition="39" endLine="147" endPosition="7" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$3" />
-    <unitInfo nodeId="1223213850224" fileName="BaseTransformationTest.java" startLine="77" startPosition="37" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$1" />
-    <unitInfo nodeId="1215696484420" fileName="BaseTransformationTest.java" startLine="38" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <unitInfo nodeId="3740450423773773624" fileName="BaseTransformationTest.java" startLine="141" startPosition="61" endLine="145" endPosition="11" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$4" />
+    <unitInfo nodeId="1223216130572" fileName="BaseTransformationTest.java" startLine="151" startPosition="46" endLine="156" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$4" />
   </root>
   <root nodeId="1216388077847">
     <nodeInfo nodeId="2725622238978073815" fileName="TransformationTestRunner.java" startLine="20" startPosition="88" endLine="21" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -426,9 +426,9 @@
     <scopeInfo nodeId="1216388444229" fileName="TransformationTestRunner.java" startLine="23" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1216388444260" varName="argv" />
     </scopeInfo>
+    <unitInfo nodeId="1216388077847" fileName="TransformationTestRunner.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
     <unitInfo nodeId="1216388915927" fileName="TransformationTestRunner.java" startLine="33" startPosition="39" endLine="37" endPosition="7" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$1" />
     <unitInfo nodeId="2725622238978074347" fileName="TransformationTestRunner.java" startLine="44" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$TransformationClassRequest" />
-    <unitInfo nodeId="1216388077847" fileName="TransformationTestRunner.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
   </root>
   <root nodeId="1221569991485">
     <nodeInfo nodeId="1221570095729" fileName="BaseTestBody.java" startLine="18" startPosition="27" endLine="19" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
@@ -464,16 +464,16 @@
       <varInfo nodeId="1221570218044" varName="id" />
     </scopeInfo>
     <scopeInfo nodeId="1228145365182" fileName="BaseTestBody.java" startLine="31" startPosition="25" endLine="38" endPosition="75">
-      <varInfo nodeId="1228145369641" varName="node" />
       <varInfo nodeId="1228145369652" varName="copy" />
+      <varInfo nodeId="1228145369641" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1228145365181" fileName="BaseTestBody.java" startLine="30" startPosition="67" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1221570069258" fileName="BaseTestBody.java" startLine="29" startPosition="61" endLine="40" endPosition="7" />
     <scopeInfo nodeId="1221570069256" fileName="BaseTestBody.java" startLine="28" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1221570069324" varName="id" />
     </scopeInfo>
-    <unitInfo nodeId="1228145365181" fileName="BaseTestBody.java" startLine="30" startPosition="55" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTestBody$1" />
     <unitInfo nodeId="1221569991485" fileName="BaseTestBody.java" startLine="18" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <unitInfo nodeId="1228145365181" fileName="BaseTestBody.java" startLine="30" startPosition="55" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTestBody$1" />
   </root>
   <root nodeId="1225981767950">
     <nodeInfo nodeId="5105622777403269101" fileName="BaseEditorTestBody.java" startLine="44" startPosition="54" endLine="45" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DATA_MANAGER" />
@@ -606,8 +606,8 @@
     <scopeInfo nodeId="4840161274939429354" fileName="BaseEditorTestBody.java" startLine="135" startPosition="0" endLine="138" endPosition="0" />
     <scopeInfo nodeId="7633582661619344943" fileName="BaseEditorTestBody.java" startLine="149" startPosition="88" endLine="152" endPosition="15" />
     <scopeInfo nodeId="1225983542397" fileName="BaseEditorTestBody.java" startLine="160" startPosition="89" endLine="163" endPosition="42">
-      <varInfo nodeId="1225983619992" varName="opener" />
       <varInfo nodeId="1225983619983" varName="context" />
+      <varInfo nodeId="1225983619992" varName="opener" />
     </scopeInfo>
     <scopeInfo nodeId="7633582661619267285" fileName="BaseEditorTestBody.java" startLine="177" startPosition="25" endLine="180" endPosition="9" />
     <scopeInfo nodeId="7633582661619267287" fileName="BaseEditorTestBody.java" startLine="177" startPosition="25" endLine="180" endPosition="9">
@@ -617,21 +617,21 @@
       <varInfo nodeId="7633582661619311621" varName="stroke" />
     </scopeInfo>
     <scopeInfo nodeId="5105622777403269066" fileName="BaseEditorTestBody.java" startLine="207" startPosition="25" endLine="210" endPosition="38">
-      <varInfo nodeId="5105622777403269091" varName="event" />
       <varInfo nodeId="5105622777403269071" varName="action" />
+      <varInfo nodeId="5105622777403269091" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="7689133206188671184" fileName="BaseEditorTestBody.java" startLine="128" startPosition="51" endLine="132" endPosition="0" />
     <scopeInfo nodeId="1227185232628" fileName="BaseEditorTestBody.java" startLine="170" startPosition="0" endLine="174" endPosition="0">
-      <varInfo nodeId="1227185232653" varName="text" />
       <varInfo nodeId="1227185232651" varName="editor" />
+      <varInfo nodeId="1227185232653" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1228935369323" fileName="BaseEditorTestBody.java" startLine="184" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="1228935383384" varName="editor" />
       <varInfo nodeId="1228935467065" varName="keyStrokes" />
     </scopeInfo>
     <scopeInfo nodeId="5105622777403219846" fileName="BaseEditorTestBody.java" startLine="200" startPosition="0" endLine="204" endPosition="0">
-      <varInfo nodeId="5105622777403219850" varName="editor" />
       <varInfo nodeId="5105622777403236132" varName="actionId" />
+      <varInfo nodeId="5105622777403219850" varName="editor" />
     </scopeInfo>
     <scopeInfo nodeId="5364632142688376240" fileName="BaseEditorTestBody.java" startLine="58" startPosition="25" endLine="63" endPosition="9" />
     <scopeInfo nodeId="1229267022353" fileName="BaseEditorTestBody.java" startLine="88" startPosition="55" endLine="93" endPosition="182">
@@ -640,8 +640,8 @@
     <scopeInfo nodeId="4840161274939429362" fileName="BaseEditorTestBody.java" startLine="127" startPosition="15" endLine="132" endPosition="9" />
     <scopeInfo nodeId="7633582661619344940" fileName="BaseEditorTestBody.java" startLine="148" startPosition="155" endLine="153" endPosition="13" />
     <scopeInfo nodeId="1225981799334" fileName="BaseEditorTestBody.java" startLine="165" startPosition="0" endLine="170" endPosition="0">
-      <varInfo nodeId="1225981812341" varName="project" />
       <varInfo nodeId="1225981862355" varName="node" />
+      <varInfo nodeId="1225981812341" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7633582661619311613" fileName="BaseEditorTestBody.java" startLine="191" startPosition="25" endLine="196" endPosition="9" />
     <scopeInfo nodeId="7633582661619311616" fileName="BaseEditorTestBody.java" startLine="191" startPosition="25" endLine="196" endPosition="9" />
@@ -650,9 +650,9 @@
       <varInfo nodeId="7633582661619655994" varName="map" />
     </scopeInfo>
     <scopeInfo nodeId="1225983542394" fileName="BaseEditorTestBody.java" startLine="159" startPosition="0" endLine="165" endPosition="0">
-      <varInfo nodeId="1225983587748" varName="project" />
-      <varInfo nodeId="1225983590734" varName="node" />
       <varInfo nodeId="1225983666861" varName="model" />
+      <varInfo nodeId="1225983590734" varName="node" />
+      <varInfo nodeId="1225983587748" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7633582661619267282" fileName="BaseEditorTestBody.java" startLine="176" startPosition="49" endLine="182" endPosition="0" />
     <scopeInfo nodeId="5105622777403269063" fileName="BaseEditorTestBody.java" startLine="206" startPosition="49" endLine="212" endPosition="0" />
@@ -669,12 +669,12 @@
     <scopeInfo nodeId="7633582661619655992" fileName="BaseEditorTestBody.java" startLine="102" startPosition="31" endLine="112" endPosition="15" />
     <scopeInfo nodeId="4840161274939429348" fileName="BaseEditorTestBody.java" startLine="123" startPosition="45" endLine="133" endPosition="5" />
     <scopeInfo nodeId="7633582661619344921" fileName="BaseEditorTestBody.java" startLine="143" startPosition="29" endLine="153" endPosition="13">
-      <varInfo nodeId="821424413675325737" varName="query" />
       <varInfo nodeId="821424413675025818" varName="intentions" />
+      <varInfo nodeId="821424413675325737" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="5898974437025037245" fileName="BaseEditorTestBody.java" startLine="174" startPosition="0" endLine="184" endPosition="0">
-      <varInfo nodeId="5898974437025037248" varName="text" />
       <varInfo nodeId="5898974437025037246" varName="editorComponent" />
+      <varInfo nodeId="5898974437025037248" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="5105622777403236135" fileName="BaseEditorTestBody.java" startLine="204" startPosition="0" endLine="214" endPosition="0">
       <varInfo nodeId="5105622777403236141" varName="actionId" />
@@ -682,8 +682,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5364632142688376142" fileName="BaseEditorTestBody.java" startLine="74" startPosition="57" endLine="85" endPosition="0" />
     <scopeInfo nodeId="5898974437025058150" fileName="BaseEditorTestBody.java" startLine="188" startPosition="0" endLine="200" endPosition="0">
-      <varInfo nodeId="5898974437025058155" varName="keyStrokes" />
       <varInfo nodeId="5898974437025058153" varName="editorComponent" />
+      <varInfo nodeId="5898974437025058155" varName="keyStrokes" />
     </scopeInfo>
     <scopeInfo nodeId="1229266577468" fileName="BaseEditorTestBody.java" startLine="55" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="1229266592709" varName="after" />
@@ -704,25 +704,25 @@
     </scopeInfo>
     <scopeInfo nodeId="7633582661619498262" fileName="BaseEditorTestBody.java" startLine="98" startPosition="49" endLine="117" endPosition="0" />
     <scopeInfo nodeId="1225991088737" fileName="BaseEditorTestBody.java" startLine="138" startPosition="0" endLine="159" endPosition="0">
-      <varInfo nodeId="1225991152924" varName="node" />
       <varInfo nodeId="1225991141859" varName="editor" />
       <varInfo nodeId="1225991140075" varName="name" />
+      <varInfo nodeId="1225991152924" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1229266873283" fileName="BaseEditorTestBody.java" startLine="96" startPosition="49" endLine="120" endPosition="5">
       <varInfo nodeId="5180312817676884728" varName="throwable" />
     </scopeInfo>
     <scopeInfo nodeId="1229266873280" fileName="BaseEditorTestBody.java" startLine="95" startPosition="0" endLine="122" endPosition="0" />
-    <unitInfo nodeId="7689133206188671182" fileName="BaseEditorTestBody.java" startLine="128" startPosition="39" endLine="132" endPosition="7" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$4" />
-    <unitInfo nodeId="7633582661619267280" fileName="BaseEditorTestBody.java" startLine="176" startPosition="37" endLine="182" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$6" />
-    <unitInfo nodeId="5105622777403269061" fileName="BaseEditorTestBody.java" startLine="206" startPosition="37" endLine="212" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$8" />
-    <unitInfo nodeId="5364632142688376235" fileName="BaseEditorTestBody.java" startLine="57" startPosition="37" endLine="65" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$1" />
-    <unitInfo nodeId="7633582661619311608" fileName="BaseEditorTestBody.java" startLine="190" startPosition="37" endLine="198" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$7" />
-    <unitInfo nodeId="5364632142688376142" fileName="BaseEditorTestBody.java" startLine="74" startPosition="45" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$2" />
-    <unitInfo nodeId="7633582661619655991" fileName="BaseEditorTestBody.java" startLine="101" startPosition="61" endLine="114" endPosition="11" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$4" />
-    <unitInfo nodeId="7633582661619344920" fileName="BaseEditorTestBody.java" startLine="142" startPosition="59" endLine="155" endPosition="9" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$6" />
-    <unitInfo nodeId="7633582661619344909" fileName="BaseEditorTestBody.java" startLine="140" startPosition="37" endLine="157" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$5" />
-    <unitInfo nodeId="7633582661619498260" fileName="BaseEditorTestBody.java" startLine="98" startPosition="37" endLine="117" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$3" />
     <unitInfo nodeId="1225981767950" fileName="BaseEditorTestBody.java" startLine="44" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <unitInfo nodeId="5364632142688376235" fileName="BaseEditorTestBody.java" startLine="57" startPosition="37" endLine="65" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$1" />
+    <unitInfo nodeId="5364632142688376142" fileName="BaseEditorTestBody.java" startLine="74" startPosition="45" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$2" />
+    <unitInfo nodeId="7633582661619498260" fileName="BaseEditorTestBody.java" startLine="98" startPosition="37" endLine="117" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$3" />
+    <unitInfo nodeId="7689133206188671182" fileName="BaseEditorTestBody.java" startLine="128" startPosition="39" endLine="132" endPosition="7" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$4" />
+    <unitInfo nodeId="7633582661619655991" fileName="BaseEditorTestBody.java" startLine="101" startPosition="61" endLine="114" endPosition="11" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$4" />
+    <unitInfo nodeId="7633582661619344909" fileName="BaseEditorTestBody.java" startLine="140" startPosition="37" endLine="157" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$5" />
+    <unitInfo nodeId="7633582661619267280" fileName="BaseEditorTestBody.java" startLine="176" startPosition="37" endLine="182" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$6" />
+    <unitInfo nodeId="7633582661619344920" fileName="BaseEditorTestBody.java" startLine="142" startPosition="59" endLine="155" endPosition="9" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$6" />
+    <unitInfo nodeId="7633582661619311608" fileName="BaseEditorTestBody.java" startLine="190" startPosition="37" endLine="198" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$7" />
+    <unitInfo nodeId="5105622777403269061" fileName="BaseEditorTestBody.java" startLine="206" startPosition="37" endLine="212" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$8" />
   </root>
   <root nodeId="1226949310940">
     <nodeInfo nodeId="1226951588600" fileName="CellReference.java" startLine="15" startPosition="28" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
@@ -755,13 +755,13 @@
     <scopeInfo nodeId="1227009788555" fileName="CellReference.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1228580945369" fileName="CellReference.java" startLine="32" startPosition="57" endLine="36" endPosition="0" />
     <scopeInfo nodeId="6268941039745719501" fileName="CellReference.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="1932269937152492149" varName="map" />
       <varInfo nodeId="6268941039745719506" varName="editorComponent" />
+      <varInfo nodeId="1932269937152492149" varName="map" />
     </scopeInfo>
     <scopeInfo nodeId="1226949310942" fileName="CellReference.java" startLine="19" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="1228589305145" varName="annotation" />
-      <varInfo nodeId="1226951564280" varName="node" />
       <varInfo nodeId="2209739309055569238" varName="map" />
+      <varInfo nodeId="1226951564280" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1228589548291" fileName="CellReference.java" startLine="39" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1229529333669" varName="editor" />
@@ -770,8 +770,8 @@
       <varInfo nodeId="1228580949967" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1228580480145" fileName="CellReference.java" startLine="29" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="1228580945369" fileName="CellReference.java" startLine="32" startPosition="45" endLine="36" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.CellReference$1" />
     <unitInfo nodeId="1226949310940" fileName="CellReference.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.CellReference" />
+    <unitInfo nodeId="1228580945369" fileName="CellReference.java" startLine="32" startPosition="45" endLine="36" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.CellReference$1" />
   </root>
   <root nodeId="7187651930234842193">
     <nodeInfo nodeId="7187651930234857569" fileName="TypeSystemCheckUtil.java" startLine="22" startPosition="54" endLine="23" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -814,20 +814,20 @@
       <varInfo nodeId="6852093964161556393" varName="toRevert" />
     </scopeInfo>
     <scopeInfo nodeId="7187651930234842202" fileName="TypeSystemCheckUtil.java" startLine="22" startPosition="54" endLine="30" endPosition="5">
-      <varInfo nodeId="8345254993476070724" varName="typeCheckingContext2" />
       <varInfo nodeId="7187651930234857570" varName="typeCheckingContext" />
+      <varInfo nodeId="8345254993476070724" varName="typeCheckingContext2" />
     </scopeInfo>
     <scopeInfo nodeId="7187651930234842199" fileName="TypeSystemCheckUtil.java" startLine="21" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="7187651930234842203" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7187651930234868249" fileName="TypeSystemCheckUtil.java" startLine="33" startPosition="49" endLine="50" endPosition="57">
-      <varInfo nodeId="6852093964161466465" varName="operation" />
-      <varInfo nodeId="573205947724998391" varName="state2" />
       <varInfo nodeId="6852093964161556424" varName="num" />
-      <varInfo nodeId="7187651930235281594" varName="state" />
-      <varInfo nodeId="7187651930234868251" varName="typeCheckingContext" />
+      <varInfo nodeId="6852093964161466465" varName="operation" />
       <varInfo nodeId="6852093964161466428" varName="operations" />
       <varInfo nodeId="6852093964161556382" varName="rootOperation" />
+      <varInfo nodeId="7187651930235281594" varName="state" />
+      <varInfo nodeId="573205947724998391" varName="state2" />
+      <varInfo nodeId="7187651930234868251" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="7187651930234868244" fileName="TypeSystemCheckUtil.java" startLine="32" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="7187651930234868245" varName="node" />

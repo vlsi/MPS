@@ -8,14 +8,18 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.io.File;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
-import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.IOException;
 import com.intellij.execution.process.ProcessNotCreatedException;
 import com.intellij.execution.configurations.GeneralCommandLine;
+import java.util.concurrent.CountDownLatch;
+import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.execution.process.ProcessEvent;
+import java.util.concurrent.TimeUnit;
 
 public class ProcessHandlerBuilder {
   private final List<String> myCommandLine = ListSequence.fromList(new ArrayList<String>());
@@ -26,6 +30,13 @@ public class ProcessHandlerBuilder {
   public ProcessHandlerBuilder append(@Nullable String command) {
     if (!(StringUtils.isEmpty(command))) {
       ListSequence.fromList(myCommandLine).addSequence(Sequence.fromIterable(splitCommandInParts(command)));
+    }
+    return this;
+  }
+
+  public ProcessHandlerBuilder append(@Nullable File file) {
+    if (file != null) {
+      ListSequence.fromList(myCommandLine).addElement(file.getAbsolutePath());
     }
     return this;
   }
@@ -44,13 +55,12 @@ public class ProcessHandlerBuilder {
     return this;
   }
 
+  @Deprecated
   public ProcessHandlerBuilder appendKey(@Nullable String key, @Nullable String parameter) {
-    if (StringUtils.isNotEmpty(key) && StringUtils.isNotEmpty(parameter)) {
-      return append("-" + key).append(parameter);
-    }
-    return this;
+    return append(new KeyValueCommandPart(key, parameter));
   }
 
+  @Deprecated
   public ProcessHandlerBuilder appendKey(@Nullable String key, String... parameter) {
     if (StringUtils.isNotEmpty(key) && parameter.length > 0) {
       return append("-" + key).append(parameter);
@@ -58,9 +68,17 @@ public class ProcessHandlerBuilder {
     return this;
   }
 
+  @Deprecated
   public ProcessHandlerBuilder appendKey(@Nullable String key, @NotNull List<String> parameters) {
     if (StringUtils.isNotEmpty(key) && ListSequence.fromList(parameters).isNotEmpty()) {
       return append("-" + key).append(parameters);
+    }
+    return this;
+  }
+
+  public ProcessHandlerBuilder append(@Nullable CommandPart commandPart) {
+    if (commandPart != null) {
+      ListSequence.fromList(myCommandLine).addSequence(ListSequence.fromList(commandPart.getCommandList()));
     }
     return this;
   }
@@ -133,5 +151,41 @@ public class ProcessHandlerBuilder {
       ListSequence.fromList(result).addElement(sb.toString());
     }
     return result;
+  }
+
+  private static CountDownLatch startCountDown(ProcessHandler process, final int[] exitCode) {
+    final CountDownLatch countDown = new CountDownLatch(1);
+    OutputRedirector.redirect(process, new ProcessAdapter() {
+      @Override
+      public void processTerminated(ProcessEvent event) {
+        exitCode[0] = event.getExitCode();
+        countDown.countDown();
+      }
+    });
+    process.startNotify();
+    return countDown;
+  }
+
+  public static int startAndWait(ProcessHandler process) {
+    final int[] exitCode = new int[]{-1};
+    try {
+      ProcessHandlerBuilder.startCountDown(process, exitCode).await();
+    } catch (InterruptedException e) {
+      process.destroyProcess();
+    }
+    return exitCode[0];
+  }
+
+  public static int startAndWait(ProcessHandler process, long timeout) {
+    final int[] exitCode = new int[]{-1};
+    try {
+      ProcessHandlerBuilder.startCountDown(process, exitCode).await(timeout, TimeUnit.MILLISECONDS);
+    } catch (InterruptedException e) {
+      process.destroyProcess();
+    }
+    if (exitCode[0] < 0) {
+      process.destroyProcess();
+    }
+    return exitCode[0];
   }
 }

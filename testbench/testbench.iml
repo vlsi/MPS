@@ -31,7 +31,6 @@
     <orderEntry type="module" module-name="distrib" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="resources" />
-    <orderEntry type="module" module-name="test" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="miscTests" />
@@ -52,6 +51,7 @@
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="baseLanguage-index" />
     <orderEntry type="module" module-name="baseLanguage-search" />
+    <orderEntry type="library" name="JMock" level="project" />
     <orderEntry type="module" module-name="typesystemEngine" />
   </component>
 </module>

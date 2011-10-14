@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
@@ -61,6 +62,25 @@ public class RunUtil {
       }
     });
     return makeModels(project, descriptors.value);
+  }
+
+  public static boolean makePointersBeforeRun(final Project project, List<SNodePointer> nodes) {
+    if (ThreadUtils.isEventDispatchThread()) {
+      throw new RuntimeException("Can't run make from the event dispatch thread");
+    }
+    return makeModels(project, ListSequence.fromList(nodes).where(new IWhereFilter<SNodePointer>() {
+      public boolean accept(SNodePointer it) {
+        return it != null;
+      }
+    }).select(new ISelector<SNodePointer, SModelDescriptor>() {
+      public SModelDescriptor select(SNodePointer it) {
+        return it.getModel();
+      }
+    }).distinct().where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor it) {
+        return ModelGenerationStatusManager.getInstance().generationRequired(it, new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
+      }
+    }).toListSequence());
   }
 
   private static boolean makeModels(Project project, List<SModelDescriptor> models) {

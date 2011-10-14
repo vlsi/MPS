@@ -4,39 +4,53 @@ package jetbrains.mps.nanoc.plugin;
 
 import java.io.File;
 import com.intellij.util.SystemProperties;
+import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 
 public class Exec_Command {
-  private File myWorkingDirectory = new File(SystemProperties.getUserHome());
-  private String myProgramParameters;
+  private File myWorkingDirectory_File = new File(SystemProperties.getUserHome());
+  private String myProgramParameters_String;
 
   public Exec_Command() {
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Exec_Command setWorkingDirectory(File workingDirectory) {
+    // this methods only exist to not make users regenerate their code 
     if (workingDirectory != null) {
-      myWorkingDirectory = workingDirectory;
+      myWorkingDirectory_File = workingDirectory;
     }
     return this;
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Exec_Command setProgramParameters(String programParameters) {
+    // this methods only exist to not make users regenerate their code 
     if (programParameters != null) {
-      myProgramParameters = programParameters;
+      myProgramParameters_String = programParameters;
+    }
+    return this;
+  }
+
+  public Exec_Command setWorkingDirectory_File(File workingDirectory) {
+    if (workingDirectory != null) {
+      myWorkingDirectory_File = workingDirectory;
+    }
+    return this;
+  }
+
+  public Exec_Command setProgramParameters_String(String programParameters) {
+    if (programParameters != null) {
+      myProgramParameters_String = programParameters;
     }
     return this;
   }
 
   public ProcessHandler createProcess(File executable) throws ExecutionException {
-    return new ProcessHandlerBuilder().append(Exec_Command.protect(executable.getAbsolutePath())).append(myProgramParameters).build(myWorkingDirectory);
-  }
-
-  private static String protect(String rawString) {
-    if (rawString.contains(" ")) {
-      return "\"" + rawString + "\"";
-    }
-    return rawString;
+    return new ProcessHandlerBuilder().append(executable).append(myProgramParameters_String).build(myWorkingDirectory_File);
   }
 }

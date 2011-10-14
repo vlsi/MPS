@@ -30,6 +30,7 @@ import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
@@ -126,8 +127,8 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
     return NanoCFile_Configuration_RunProfileState.canExecute(executorId);
   }
 
-  public Object[] createMakeTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNode>(), this.getNode().getNode())};
+  public Object[] createMakeNodePointersTask() {
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodePointer>(), this.getNode().getNodePointer())};
   }
 
   public Object[] createCompilewithgccTask() {

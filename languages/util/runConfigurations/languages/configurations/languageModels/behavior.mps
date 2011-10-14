@@ -816,8 +816,8 @@
                 <link role="link" roleId="tp25.1138056516764" targetNodeId="fb9u.946964771156066333" />
               </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4366236229294149012">
-              <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="259833884788780519">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i1mc.4366236229294148974" resolveInfo="getBaseName" />
             </node>
           </node>
         </node>
