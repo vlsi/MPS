@@ -1011,25 +1011,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           List<SNode> declarations = SLinkOperations.getTargets(instanceMethodDeclaration, "typeVariableDeclaration", true);
           Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
           if (ListSequence.fromList(declarations).isNotEmpty()) {
-            {
-              SNode param;
-              SNode arg;
-              Iterator<SNode> param_iterator = ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).iterator();
-              Iterator<SNode> arg_iterator = ListSequence.fromList(SLinkOperations.getTargets(targetNode, "actualArgument", true)).iterator();
-              while (true) {
-                if (!(param_iterator.hasNext())) {
-                  break;
-                }
-                if (!(arg_iterator.hasNext())) {
-                  break;
-                }
-                param = param_iterator.next();
-                arg = arg_iterator.next();
-                for (SNode tvr : SNodeOperations.getDescendants(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
-                  SNode variableDeclaration = SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false);
-                  if (ListSequence.fromList(declarations).contains(variableDeclaration)) {
-                    SetSequence.fromSet(result).addElement(arg);
-                  }
+            Iterator<SNode> param_it = ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).iterator();
+            Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getTargets(targetNode, "actualArgument", true)).iterator();
+            SNode param_var;
+            SNode arg_var;
+            while (param_it.hasNext() && arg_it.hasNext()) {
+              param_var = param_it.next();
+              arg_var = arg_it.next();
+              for (SNode tvr : SNodeOperations.getDescendants(SLinkOperations.getTarget(param_var, "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
+                SNode variableDeclaration = SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false);
+                if (ListSequence.fromList(declarations).contains(variableDeclaration)) {
+                  SetSequence.fromSet(result).addElement(arg_var);
                 }
               }
             }
