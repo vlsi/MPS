@@ -23,6 +23,24 @@
     <scopeInfo nodeId="2666542014890634003" fileName="TraceExample.java" startLine="8" startPosition="27" endLine="12" endPosition="3" />
     <unitInfo nodeId="2666542014890634001" fileName="TraceExample.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.TraceExample" />
   </root>
+  <root nodeId="4293892367838076750">
+    <nodeInfo nodeId="4293892367838076760" fileName="D.java" startLine="7" startPosition="43" endLine="8" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="f" />
+    <nodeInfo nodeId="4293892367838076774" fileName="D.java" startLine="10" startPosition="14" endLine="11" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4293892367838076791" fileName="D.java" startLine="14" startPosition="19" endLine="15" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="ft" />
+    <nodeInfo nodeId="4293892367838150105" fileName="D.java" startLine="17" startPosition="17" endLine="18" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4293892367838076752" fileName="D.java" startLine="9" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="D#()V" />
+    <nodeInfo nodeId="4293892367838076787" fileName="D.java" startLine="16" startPosition="0" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DD#()V" />
+    <scopeInfo nodeId="4293892367838076755" fileName="D.java" startLine="10" startPosition="14" endLine="11" endPosition="22">
+      <varInfo nodeId="4293892367838076775" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="4293892367838076790" fileName="D.java" startLine="17" startPosition="17" endLine="18" endPosition="31">
+      <varInfo nodeId="4293892367838150106" varName="compute" />
+    </scopeInfo>
+    <scopeInfo nodeId="4293892367838076752" fileName="D.java" startLine="9" startPosition="0" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="4293892367838076787" fileName="D.java" startLine="16" startPosition="0" endLine="19" endPosition="5" />
+    <unitInfo nodeId="4293892367838076785" fileName="D.java" startLine="14" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.D$DD" />
+    <unitInfo nodeId="4293892367838076750" fileName="D.java" startLine="7" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.D" />
+  </root>
   <root nodeId="761955517644210340">
     <nodeInfo nodeId="4256432518130457437" fileName="Example.java" startLine="11" startPosition="24" endLine="12" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="761955517644215148" fileName="Example.java" startLine="12" startPosition="13" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
