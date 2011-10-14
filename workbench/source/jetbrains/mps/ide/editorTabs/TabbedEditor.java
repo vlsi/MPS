@@ -89,18 +89,23 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     }
 
     myNextTabAction = new BaseNavigationAction(IdeActions.ACTION_NEXT_EDITOR_TAB, getComponent()) {
-      @Override
       public void actionPerformed(AnActionEvent e) {
-        myTabsComponent.nextTab();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            myTabsComponent.nextTab();
+          }
+        });
       }
     };
     myPrevTabAction = new BaseNavigationAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB, getComponent()) {
-      @Override
       public void actionPerformed(AnActionEvent e) {
-        myTabsComponent.prevTab();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            myTabsComponent.prevTab();
+          }
+        });
       }
     };
-
   }
 
   public void dispose() {
