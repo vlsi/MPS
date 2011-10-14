@@ -63,6 +63,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.vcs.Version" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -81,7 +82,6 @@
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.UnzipUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.VcsHelperUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.Version" />
     <classNode dependClassName="jetbrains.mps.vcs.integration.ModelDiffTool" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
@@ -185,7 +185,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.integration.ModelDiffTool" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.watching.ModelChangesWatcher" />
-    <classNode extendsClassName="jetbrains.mps.vcs.Version" />
+    <classNode extendsClassName="jetbrains.mps.ide.vcs.Version" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.VcsUtil" file="VcsUtil.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

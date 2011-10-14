@@ -54,6 +54,7 @@
   <import index="xick" modelUID="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)" version="-1" />
   <import index="80f9" modelUID="r:36539f52-7ec3-4937-98bf-1fbc1fbe99fc(jetbrains.mps.vcs.mergedriver)" version="-1" />
   <import index="f6g4" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.project(MPS.Classpath/jetbrains.mps.ide.project@java_stub)" version="-1" />
+  <import index="fwa9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.vcs(MPS.Classpath/jetbrains.mps.ide.vcs@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -3421,8 +3422,8 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3613324658897714035">
         <property name="name" nameId="tpck.1169194664001" value="versions" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="3613324658897714036">
-          <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3613324658897714037">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lxbp.~Version" resolveInfo="Version" />
+          <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9079279062627148719">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fwa9.~Version" resolveInfo="Version" />
           </node>
         </node>
       </node>
@@ -3492,8 +3493,8 @@
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3613324658897714110">
             <property name="name" nameId="tpck.1169194664001" value="v" />
             <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8429850548531139826">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lxbp.~Version" resolveInfo="Version" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9079279062627148714">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fwa9.~Version" resolveInfo="Version" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="3613324658897714112">
@@ -3553,7 +3554,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613324658897714110" resolveInfo="v" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8429850548531109970">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxbp.~Version%dgetSuffix()%cjava%dlang%dString" resolveInfo="getSuffix" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwa9.~Version%dgetSuffix()%cjava%dlang%dString" resolveInfo="getSuffix" />
                                   </node>
                                 </node>
                               </node>
@@ -4599,8 +4600,8 @@
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.EnumClass" typeId="tpee.1083245097125" id="3613324658897714669">
       <property name="name" nameId="tpck.1169194664001" value="FsMemoryMergeVersion" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3613324658897714670" />
-      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3613324658897714671">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lxbp.~Version" resolveInfo="Version" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9079279062627141345">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fwa9.~Version" resolveInfo="Version" />
       </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3613324658897714672">
         <property name="name" nameId="tpck.1169194664001" value="FILE_SYSTEM" />

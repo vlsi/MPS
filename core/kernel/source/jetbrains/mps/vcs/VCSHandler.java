@@ -24,15 +24,20 @@ import jetbrains.mps.vfs.IFile;
 public interface VCSHandler {
   //-----suspicious
 
+  // NEEDED IN CORE
   void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict);
 
+  // NEEDED IN CORE
   void addSuspiciousModel(DefaultSModelDescriptor modelDescriptor, boolean isInConflict);
 
   //-----misc
 
+  // NOT NEEDED IN CORE
   VcsRevisionNumber getRevisionNumber(IFile file);
 
+  // NOT NEEDED IN CORE
   boolean isInConflict(IFile iFile, boolean synchronously);
 
+  // NEEDED IN CORE
   boolean resolveDiskMemoryConflict(IFile modelFile, SModel model);
 }

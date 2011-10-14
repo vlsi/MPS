@@ -9,7 +9,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.diff.ActionButtonPresentation;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diff.SimpleContent;
-import jetbrains.mps.vcs.ModelMergeRequestConstants;
+import jetbrains.mps.ide.vcs.ModelMergeRequestConstants;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.vcs.ModelUtils;
 

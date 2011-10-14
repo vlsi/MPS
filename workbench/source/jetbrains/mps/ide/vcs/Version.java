@@ -13,21 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs;
+package jetbrains.mps.ide.vcs;
 
-
-public enum VcsMergeVersion implements Version {
-  MINE("mine"),
-  REPOSITORY("repository"),
-  BASE("base");
-
-  private final String mySuffix;
-
-  VcsMergeVersion(String suffix) {
-    mySuffix = suffix;
-  }
-
-  public String getSuffix() {
-    return mySuffix;
-  }
+public interface Version {
+  String getSuffix();
 }

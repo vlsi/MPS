@@ -8,7 +8,7 @@ import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffManager;
 import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.ModelMergeRequestConstants;
+import jetbrains.mps.ide.vcs.ModelMergeRequestConstants;
 import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.ModelUtils;

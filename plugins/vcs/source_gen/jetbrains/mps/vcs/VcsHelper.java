@@ -31,6 +31,7 @@ import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
 import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog;
+import jetbrains.mps.ide.vcs.Version;
 
 public class VcsHelper {
   private static final Logger LOG = Logger.getLogger(VcsHelper.class);

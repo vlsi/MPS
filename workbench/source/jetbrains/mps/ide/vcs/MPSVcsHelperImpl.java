@@ -28,6 +28,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+// This class is patching IDEA's class
+// Seems that it is needed to add backing up before merge and force checking
+// for conflicts on startup
+// TODO move backing up to ModelMergeTool
+// TODO review if force checking is necessary
 public class MPSVcsHelperImpl extends AbstractVcsHelperImpl {
   private Project myProject;
 
@@ -41,6 +46,7 @@ public class MPSVcsHelperImpl extends AbstractVcsHelperImpl {
     if (files.isEmpty()) return Collections.emptyList();
     MergeProvider providerDecorator = new MergeProviderDecorator(myProject, provider);
 
+    // TODO what for? to show merge on startup?
     // recheck files status
     List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
     List<VirtualFile> alreadyResolved = new ArrayList<VirtualFile>();

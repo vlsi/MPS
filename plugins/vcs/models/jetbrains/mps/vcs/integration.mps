@@ -44,6 +44,7 @@
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="8a0f" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(MPS.Classpath/com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="f6g4" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.project(MPS.Classpath/jetbrains.mps.ide.project@java_stub)" version="-1" />
+  <import index="fwa9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.vcs(MPS.Classpath/jetbrains.mps.ide.vcs@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -1336,8 +1337,8 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897258199" resolveInfo="contents" />
                     </node>
                     <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4124845871897258211">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="lxbp.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="lxbp.~ModelMergeRequestConstants%dORIGINAL" resolveInfo="ORIGINAL" />
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fwa9.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fwa9.~ModelMergeRequestConstants%dORIGINAL" resolveInfo="ORIGINAL" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4124845871897258212">
@@ -1371,8 +1372,8 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897258199" resolveInfo="contents" />
                     </node>
                     <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4124845871897258223">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="lxbp.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="lxbp.~ModelMergeRequestConstants%dCURRENT" resolveInfo="CURRENT" />
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fwa9.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fwa9.~ModelMergeRequestConstants%dCURRENT" resolveInfo="CURRENT" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4124845871897258224">
@@ -1406,8 +1407,8 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897258199" resolveInfo="contents" />
                     </node>
                     <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4124845871897258235">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="lxbp.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="lxbp.~ModelMergeRequestConstants%dLAST_REVISION" resolveInfo="LAST_REVISION" />
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fwa9.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fwa9.~ModelMergeRequestConstants%dLAST_REVISION" resolveInfo="LAST_REVISION" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4124845871897258236">
@@ -2229,8 +2230,8 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iyqm.~MergeRequestImpl%dgetContents()%ccom%dintellij%dopenapi%ddiff%dDiffContent[]" resolveInfo="getContents" />
                   </node>
                   <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4124845871897259364">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="lxbp.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="lxbp.~ModelMergeRequestConstants%dORIGINAL" resolveInfo="ORIGINAL" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fwa9.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fwa9.~ModelMergeRequestConstants%dORIGINAL" resolveInfo="ORIGINAL" />
                   </node>
                 </node>
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4124845871897259365">

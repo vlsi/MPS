@@ -20,6 +20,8 @@ import com.intellij.openapi.diff.DiffContent;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vcs.merge.MergeData;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vcs.ModelMergeRequestConstants;
+import jetbrains.mps.ide.vcs.VcsMergeVersion;
 import jetbrains.mps.util.FileUtil;
 
 import java.io.*;

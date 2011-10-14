@@ -21,7 +21,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.vcs.VcsMergeVersion;
+import jetbrains.mps.ide.vcs.VcsMergeVersion;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vcs.VcsHelper;

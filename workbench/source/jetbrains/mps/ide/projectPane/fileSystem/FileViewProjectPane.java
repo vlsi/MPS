@@ -58,7 +58,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vcs.ChangedListener;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -99,11 +98,6 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   private VcsListener myDirectoryMappingListener;
   private VirtualFileManagerListener myVirtualFileManagerListener;
   private JScrollPane myScrollPane;
-  private ChangedListener myChangedListener = new ChangedListener() {
-    public void changed() {
-      rebuildTreeLater();
-    }
-  };
 
   @Override
   public void addToolbarActions(DefaultActionGroup actionGroup) {
