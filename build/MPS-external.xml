@@ -472,10 +472,10 @@
     </antcall>
     <delete dir="${deploy.dir}/help-build.pack.mps.src" />
     <copy todir="${deploy.dir}/${build.number}-buildTools.zip.tmp/tools">
-      <fileset dir="${mps_home}/build/tools" excludes="**/SignCode.exe, **/sign.code.jar, " />
+      <fileset dir="${mps_home}/build/tools" excludes="**/SignCode.exe, **/sign.code.jar, **/signtool.exe, " />
     </copy>
     <copy todir="${deploy.dir}/${build.number}-buildTools.zip.tmp/resources">
-      <fileset dir="${mps_home}/build/resources" excludes="**/*.spc, **/*.pvk, **/*.pw, " />
+      <fileset dir="${mps_home}/build/resources" excludes="**/*.spc, **/*.pvk, **/*.pw, **/*.pfx, " />
     </copy>
     <zip destfile="${deploy.dir}/${build.number}-buildTools.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
