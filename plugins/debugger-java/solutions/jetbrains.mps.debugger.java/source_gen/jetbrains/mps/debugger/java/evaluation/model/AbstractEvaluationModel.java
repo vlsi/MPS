@@ -57,6 +57,7 @@ import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import java.util.Map;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.ide.generator.TransientModelsComponent;
 import com.intellij.openapi.util.Disposer;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
@@ -259,7 +260,7 @@ public abstract class AbstractEvaluationModel {
         public boolean isIncrementalEnabled() {
           return false;
         }
-      }).saveTransientModels(IS_DEVELOPER_MODE).rebuildAll(false).reporting(false, false, false, 0).create());
+      }).saveTransientModels(IS_DEVELOPER_MODE).rebuildAll(false).reporting(false, false, false, 0).create(), myContext.getProject().getComponent(TransientModelsComponent.class));
 
       Disposer.dispose(progressWindow);
 

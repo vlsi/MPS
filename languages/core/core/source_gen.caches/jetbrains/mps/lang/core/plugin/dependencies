@@ -180,10 +180,10 @@
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
     <classNode dependClassName="jetbrains.mps.generator.IGenerationTracer" />
     <classNode dependClassName="jetbrains.mps.generator.NullGenerationTracer" />
-    <classNode dependClassName="jetbrains.mps.generator.TransientModelsComponent" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorCacheComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.TransientModelsComponent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />

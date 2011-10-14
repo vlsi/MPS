@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.TransientModelsComponent.TransientSwapSpace;
+import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
@@ -36,7 +36,7 @@ public class TransientModelsModule extends AbstractModule {
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
 
   private final IModule myOriginalModule;
-  private final TransientModelsComponent myComponent;
+  private final TransientModelsProvider myComponent;
 
   private Set<String> myModelsToKeep = new ConcurrentHashSet<String>();
   private Map<SModelFqName, SModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
@@ -46,7 +46,7 @@ public class TransientModelsModule extends AbstractModule {
   //MPSProject must be disposed after TransientModelsModule for
   //the module's models to be disposed
 
-  public TransientModelsModule(IModule original, TransientModelsComponent component) {
+  public TransientModelsModule(IModule original, TransientModelsProvider component) {
     myComponent = component;
     myOriginalModule = original;
     ModuleReference reference = ModuleReference.fromString(original.getModuleFqName() + "@transient" + ourModuleCounter.getAndIncrement());
@@ -63,7 +63,7 @@ public class TransientModelsModule extends AbstractModule {
     MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
   }
 
-  public void releaseModule () {
+  public void releaseModule() {
     MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
   }
 
@@ -124,9 +124,8 @@ public class TransientModelsModule extends AbstractModule {
     for (SModelDescriptor model : models) {
       if (!myModelsToKeep.contains(model.getSModelReference().toString())) {
         removeModel(model);
-      }
-      else {
-        unloadModel (model);
+      } else {
+        unloadModel(model);
       }
     }
   }
@@ -169,7 +168,7 @@ public class TransientModelsModule extends AbstractModule {
         SModelRepository.getInstance().removeModelDescriptor(md);
       }
       if (md instanceof TransientSModelDescriptor) {
-        ((TransientSModelDescriptor)md).dropModel();
+        ((TransientSModelDescriptor) md).dropModel();
       }
     }
   }
@@ -177,7 +176,7 @@ public class TransientModelsModule extends AbstractModule {
   private void unloadModel(SModelDescriptor model) {
     if (myModels.containsKey(model.getSModelReference().getSModelFqName())) {
       if (model instanceof TransientSModelDescriptor) {
-        if (((TransientSModelDescriptor)model).unloadModel()) {
+        if (((TransientSModelDescriptor) model).unloadModel()) {
           if (myPublished.contains(model)) {
             SModelRepository.getInstance().removeModelDescriptor(model);
           }
@@ -249,15 +248,18 @@ public class TransientModelsModule extends AbstractModule {
     protected ModelLoadResult initialLoad() {
       TransientSModel model;
       if (wasUnloaded) {
-        LOG.debug("Re-loading "+getSModelReference());
+        LOG.debug("Re-loading " + getSModelReference());
 
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
-        if (swap == null) { throw new IllegalStateException("no swap space"); }
+        if (swap == null) {
+          throw new IllegalStateException("no swap space");
+        }
 
         model = swap.restoreFromSwap(getSModelReference());
-        if (model == null) { throw new IllegalStateException("lost swapped out model"); }
-      }
-      else{
+        if (model == null) {
+          throw new IllegalStateException("lost swapped out model");
+        }
+      } else {
         model = new TransientSModel(getSModelReference());
       }
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
@@ -265,10 +267,12 @@ public class TransientModelsModule extends AbstractModule {
 
     private boolean unloadModel() {
       if (!wasUnloaded) {
-        LOG.debug("Un-loading "+getSModelReference());
+        LOG.debug("Un-loading " + getSModelReference());
 
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
-        if (swap == null || !swap.swapOut((TransientSModel) mySModel)) { return false; }
+        if (swap == null || !swap.swapOut((TransientSModel) mySModel)) {
+          return false;
+        }
 
         dropModel();
 
@@ -279,7 +283,7 @@ public class TransientModelsModule extends AbstractModule {
 
     private void dropModel() {
       if (mySModel != null) {
-        LOG.debug("Dropped "+getSModelReference());
+        LOG.debug("Dropped " + getSModelReference());
 
         this.mySModel = null;
         fireModelReplaced();
@@ -303,10 +307,9 @@ public class TransientModelsModule extends AbstractModule {
       return super.resolveModel(reference);
     }
 
-    public void loadModel () {
+    public void loadModel() {
 
     }
 
   }
-
 }

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
-import jetbrains.mps.generator.TransientModelsComponent.TransientSwapOwner;
-import jetbrains.mps.generator.TransientModelsComponent.TransientSwapSpace;
+import jetbrains.mps.generator.TransientModelsProvider.TransientSwapOwner;
+import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.logging.Logger;
@@ -40,7 +40,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Time: 10:42 AM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class FileSwapOwner implements TransientSwapOwner{
+public abstract class FileSwapOwner implements TransientSwapOwner {
 
   private static Logger LOG = Logger.getLogger(FileSwapOwner.class);
 

@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.TransientModelsComponent;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
@@ -41,7 +38,7 @@ import java.util.List;
 public class GenerationController implements ITaskPoolProvider {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
-  private final TransientModelsComponent myTransientModelsComponent;
+  private final TransientModelsProvider myTransientModelsProvider;
   private List<SModelDescriptor> myInputModels;
   private final IOperationContext myOperationContext;
   protected final IGenerationHandler myGenerationHandler;
@@ -52,9 +49,9 @@ public class GenerationController implements ITaskPoolProvider {
 
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
 
-  public GenerationController(List<SModelDescriptor> _inputModels, TransientModelsComponent transientModelsComponent, GenerationOptions options,
+  public GenerationController(List<SModelDescriptor> _inputModels, TransientModelsProvider transientModelsProvider, GenerationOptions options,
                               IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext, ProgressMonitor cancellationMonitor) {
-    myTransientModelsComponent = transientModelsComponent;
+    myTransientModelsProvider = transientModelsProvider;
     myInputModels = _inputModels;
     myOperationContext = operationContext;
     myGenerationHandler = generationHandler;
@@ -181,7 +178,7 @@ public class GenerationController implements ITaskPoolProvider {
     TypeChecker.getInstance().generationStarted(traceTypes ? ttrace : null);
 
     final GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, this,
-      myCancellationMonitor, myLogger, myTransientModelsComponent.getModule(module), ttrace, myOptions);
+      myCancellationMonitor, myLogger, myTransientModelsProvider.getModule(module), ttrace, myOptions);
 
     monitor.start(inputModel.getLongName(), 10);
     try {

@@ -124,6 +124,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
@@ -4043,6 +4044,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
@@ -5972,6 +5974,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />

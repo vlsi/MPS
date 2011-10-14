@@ -7508,7 +7508,7 @@
                 <property name="value" nameId="tpee.1070475926801" value="com.intellij.ide.ClassloaderUtil" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1256248142479770905">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.generator.TransientModelsComponent" />
+                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.generator.TransientModelsComponent" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1256248142479772451">
                 <property name="value" nameId="tpee.1070475926801" value="org.apache.xmlrpc.XmlRpcServer" />

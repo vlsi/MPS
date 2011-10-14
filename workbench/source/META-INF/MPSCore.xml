@@ -144,13 +144,6 @@
   </application-components>
 
   <project-components>
-    <component>
-      <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.generator.TransientModelsComponent</implementation-class>
-    </component>
   </project-components>
 
 </components>

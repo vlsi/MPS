@@ -34,6 +34,7 @@ import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
@@ -654,7 +655,8 @@ public class TestMain {
                 generationHandler,
                 new EmptyProgressMonitor(),
                 handler,
-                GenerationOptions.getDefaults().create()
+                GenerationOptions.getDefaults().create(),
+                myProject.getComponent(TransientModelsComponent.class)
               );
 
               if (myIsRunnable) {

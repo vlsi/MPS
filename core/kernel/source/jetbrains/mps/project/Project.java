@@ -257,4 +257,11 @@ public abstract class Project implements MPSModuleOwner {
     }
   }
 
+  protected void projectOpened() {
+    ProjectManager.getInstance().projectOpened(this);
+  }
+
+  protected void projectClosed() {
+    ProjectManager.getInstance().projectClosed(this);
+  }
 }

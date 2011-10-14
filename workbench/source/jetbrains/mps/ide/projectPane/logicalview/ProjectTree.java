@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane.logicalview;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.TransientModelsComponent;
+import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;

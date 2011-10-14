@@ -36,9 +36,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
-/**
- * TODO move to workbench
- */
 @State(
   name = "MPSProject",
   storages = {
@@ -73,12 +70,14 @@ public class MPSProject extends Project implements ProjectComponent, PersistentS
     myProjectElement = state;
   }
 
+  @Override
   public void projectOpened() {
-
+    super.projectOpened();
   }
 
+  @Override
   public void projectClosed() {
-
+    super.projectClosed();
   }
 
   @NonNls

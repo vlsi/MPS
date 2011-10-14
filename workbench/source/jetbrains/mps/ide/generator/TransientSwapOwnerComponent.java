@@ -18,7 +18,7 @@ package jetbrains.mps.ide.generator;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.generator.TransientModelsComponent.TransientSwapOwner;
+import jetbrains.mps.generator.TransientModelsProvider.TransientSwapOwner;
 import jetbrains.mps.generator.impl.cache.FileSwapOwner;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,7 +31,7 @@ import java.io.File;
  * Time: 10:30 AM
  * To change this template use File | Settings | File Templates.
  */
-public class TransientSwapOwnerComponent extends FileSwapOwner implements ApplicationComponent, TransientSwapOwner{
+public class TransientSwapOwnerComponent extends FileSwapOwner implements ApplicationComponent, TransientSwapOwner {
 
   private File mySwapDir;
 

@@ -24,6 +24,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -83,7 +84,8 @@ public class GenerationTestBase {
     GenerationFacade.generateModels(p,
       Collections.singletonList(descr), ModuleContext.create(descr, p),
       generationHandler,
-      new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
+      new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+      p.getComponent(TransientModelsComponent.class));
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
 
@@ -97,7 +99,8 @@ public class GenerationTestBase {
     GenerationFacade.generateModels(p,
       Collections.singletonList(descr), ModuleContext.create(descr, p),
       generationHandler,
-      new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
+      new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+      p.getComponent(TransientModelsComponent.class));
     long singleThread = System.nanoTime() - start;
 
     // Stage 3. Regenerate in parallel
@@ -110,7 +113,8 @@ public class GenerationTestBase {
     GenerationFacade.generateModels(p,
       Collections.singletonList(descr), ModuleContext.create(descr, p),
       generationHandler,
-      new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
+      new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+      p.getComponent(TransientModelsComponent.class));
     long severalThreads = System.nanoTime() - start;
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
@@ -161,7 +165,8 @@ public class GenerationTestBase {
       GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
-        new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
+        new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+      p.getComponent(TransientModelsComponent.class));
 
       Map<String, String> generated = replaceInContent(generationHandler.getGeneratedContent(), new String[]{randomName, originalModel.getModule().getModuleFqName()}, new String[]{randomId, originalModel.getModule().getModuleReference().getModuleId().toString()});
       assertNoDiff(generationHandler.getExistingContent(), generated);
@@ -205,7 +210,8 @@ public class GenerationTestBase {
         GenerationFacade.generateModels(p,
           Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
-          new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
+          new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+      p.getComponent(TransientModelsComponent.class));
         time.add(System.nanoTime() - start);
 
         incrementalGenerationResults = generationHandler.getGeneratedContent();
@@ -222,7 +228,8 @@ public class GenerationTestBase {
       GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
-        new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
+        new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+      p.getComponent(TransientModelsComponent.class));
       time.add(System.nanoTime() - start);
 
       assertNoDiff(incrementalGenerationResults, generationHandler.getGeneratedContent());
