@@ -44,14 +44,7 @@ public class DeltaReconciler {
       }
     });
     final List<IFile> writtenFiles = ListSequence.fromList(new ArrayList<IFile>());
-    final List<IFile> deletedFiles = ListSequence.fromList(new ArrayList<IFile>());
     visitAll(new FilesDelta.Visitor() {
-      @Override
-      public boolean acceptDeleted(IFile file) {
-        ListSequence.fromList(deletedFiles).addElement(file);
-        return true;
-      }
-
       @Override
       public boolean acceptWritten(IFile file) {
         ListSequence.fromList(writtenFiles).addElement(file);
