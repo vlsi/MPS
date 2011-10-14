@@ -32,8 +32,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.*;
-import jetbrains.mps.vcs.SuspiciousModelHandler;
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;

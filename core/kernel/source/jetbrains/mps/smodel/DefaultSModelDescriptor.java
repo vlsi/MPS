@@ -28,8 +28,6 @@ import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vcs.DiskMemoryConflictResolver;
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 

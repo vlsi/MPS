@@ -20,6 +20,9 @@ import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
 import com.intellij.openapi.vcs.VcsListener;
+import jetbrains.mps.smodel.DiskMemoryConflictResolver;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
@@ -90,6 +93,11 @@ public class MPSVcsManager implements ProjectComponent {
       }
     };
     myMessageBusConnection.subscribe(ProjectLevelVcsManager.VCS_CONFIGURATION_CHANGED, vcsListener);
+    DiskMemoryConflictResolver.setResolver(new DiskMemoryConflictResolver() {
+      public boolean resolveDiskMemoryConflict(IFile file, SModel model) {
+        return VcsHelper.resolveDiskMemoryConflict(file, model);
+      }
+    });
   }
 
   public void projectClosed() {

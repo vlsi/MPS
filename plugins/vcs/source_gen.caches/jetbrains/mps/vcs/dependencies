@@ -26,7 +26,11 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.smodel.DiskMemoryConflictResolver" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.vcs.VcsHelper" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -96,7 +100,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="jetbrains.mps.vcs.VCSHandler" />
+    <classNode extendsClassName="jetbrains.mps.ide.vcs.VcsHandler" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.SuspiciousModelIndex" file="SuspiciousModelIndex.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -123,6 +127,7 @@
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SuspiciousModelHandler" />
     <classNode dependClassName="jetbrains.mps.vcs.VcsUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.conflictable.Conflictable" />
     <classNode dependClassName="jetbrains.mps.vcs.conflictable.ConflictableModelAdapter" />

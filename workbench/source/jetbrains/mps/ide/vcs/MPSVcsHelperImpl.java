@@ -21,7 +21,6 @@ import com.intellij.openapi.vcs.merge.MergeProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

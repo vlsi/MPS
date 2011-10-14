@@ -15,6 +15,7 @@ import jetbrains.mps.vcs.conflictable.ConflictableModuleAdapter;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.smodel.SuspiciousModelHandler;
 import java.util.List;
 import java.util.Collection;
 import com.intellij.openapi.application.ApplicationManager;
@@ -64,6 +65,15 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       return;
     }
     myTaskQueue = new SuspiciousModelIndex.MyTaskQueue(myProjectManager, myWatcher, myVirtualFileManager);
+    SuspiciousModelHandler.setHandler(new SuspiciousModelHandler() {
+      public void handleSuspiciousModel(DefaultSModelDescriptor model, boolean inConflict) {
+        addModel(model, inConflict);
+      }
+
+      public void handleSuspiciousModule(AbstractModule module, boolean inConflict) {
+        addModule(module, inConflict);
+      }
+    });
   }
 
   public void disposeComponent() {

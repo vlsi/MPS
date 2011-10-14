@@ -13,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs;
+package jetbrains.mps.ide.vcs;
 
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vfs.IFile;
 
-public class VoidVCSHandler implements VCSHandler {
-  public VcsRevisionNumber getRevisionNumber(IFile file) {
-    return null;
-  }
-
-  public boolean isInConflict(IFile iFile, boolean synchronously) {
-    return false;
-  }
+public interface VcsHandler {
+  VcsRevisionNumber getRevisionNumber(IFile file);
+  boolean isInConflict(IFile iFile, boolean synchronously);
 }

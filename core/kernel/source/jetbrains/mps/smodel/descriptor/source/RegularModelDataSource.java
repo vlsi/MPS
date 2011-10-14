@@ -29,8 +29,6 @@ import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.SuspiciousModelHandler;
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;

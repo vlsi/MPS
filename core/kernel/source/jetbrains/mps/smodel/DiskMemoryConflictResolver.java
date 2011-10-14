@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs;
+package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vfs.IFile;
 
 /**

@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs;
+package jetbrains.mps.ide.vcs;
 
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.components.ComponentManager;
 
-public interface VCSHandler {
-  VcsRevisionNumber getRevisionNumber(IFile file);
-  boolean isInConflict(IFile iFile, boolean synchronously);
+public class VcsMigrationUtil {
+  private static final VoidVcsHandler VOID_HANDLER = new VoidVcsHandler();
+
+  public static VcsHandler getHandler() {
+    VcsHandler handler = ComponentManager.getInstance().getComponent(VcsHandler.class);
+    return handler == null ? VOID_HANDLER : handler;
+  }
 }
