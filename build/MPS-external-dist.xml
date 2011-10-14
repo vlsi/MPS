@@ -166,7 +166,7 @@
       <arg file="${nsis.script.path.tmp}" />
     </exec>
     <exec executable="${mps_home}/build/sign/signtool.exe" osfamily="windows" failonerror="true" dir="${scripts.folder}">
-      <arg line="sing /f ${mps_home}/build/sign/cs_cert2011.pfx /p 123 ${installer}" />
+      <arg line="sign /f ${mps_home}/build/sign/cs_cert2011.pfx /p 123 ${installer}" />
     </exec>
     <delete file="${nsis.script.path.tmp}" />
     <delete file="${application.icon}" />

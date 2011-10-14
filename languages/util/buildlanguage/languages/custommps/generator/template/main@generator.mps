@@ -749,7 +749,7 @@
           </node>
         </node>
         <node role="commandLine" roleId="60oz.1231859334762" type="60oz.StringCommandLinePart" typeId="60oz.1231859958652" id="4474099190557436725">
-          <property name="text" nameId="60oz.1231861633100" value="sing " />
+          <property name="text" nameId="60oz.1231861633100" value="sign " />
         </node>
         <node role="commandLine" roleId="60oz.1231859334762" type="60oz.StringCommandLinePart" typeId="60oz.1231859958652" id="1238070302929">
           <property name="text" nameId="60oz.1231861633100" value="/f " />
