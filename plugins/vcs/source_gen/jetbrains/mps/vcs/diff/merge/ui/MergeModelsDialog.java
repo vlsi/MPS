@@ -38,10 +38,10 @@ import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.ArrayList;
 import jetbrains.mps.vcs.diff.ui.DiffModelTree;
 import jetbrains.mps.util.NameUtil;
@@ -147,45 +147,58 @@ public class MergeModelsDialog extends BaseDialog {
     assert ListSequence.fromList(allChanges).isNotEmpty();
     boolean allResolved = false;
     boolean conflictsOnly = false;
-    Iterable<ModelChange> interestingChanges;
+    final Wrappers._T<Iterable<ModelChange>> interestingChanges = new Wrappers._T<Iterable<ModelChange>>();
     if (ListSequence.fromList(allChanges).any(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return myMergeContext.isChangeResolved(ch);
       }
     })) {
+      // some or all changes are resolved 
+
       if (ListSequence.fromList(allChanges).all(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return myMergeContext.isChangeResolved(ch);
         }
       })) {
-        interestingChanges = myAppliedMetadataChanges;
+        // all are resolved 
+        interestingChanges.value = myAppliedMetadataChanges;
         allResolved = true;
       } else {
-        assert ListSequence.fromList(allChanges).any(new IWhereFilter<ModelChange>() {
+        // some are resolved, assert that only conflicting left 
+        assert ListSequence.fromList(allChanges).all(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
             return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
           }
         });
-        interestingChanges = ListSequence.fromList(allChanges).where(new IWhereFilter<ModelChange>() {
-          public boolean accept(ModelChange ch) {
-            return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
-          }
-        });
+        interestingChanges.value = allChanges;
         conflictsOnly = true;
       }
     } else {
-      interestingChanges = ListSequence.fromList(allChanges).where(new IWhereFilter<ModelChange>() {
+      // all changes are unresolved 
+
+      if (ListSequence.fromList(allChanges).all(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
-          return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isEmpty();
+          return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
         }
-      });
+      })) {
+        // all changes are conflicting 
+        interestingChanges.value = allChanges;
+        conflictsOnly = true;
+      } else {
+        // some or none are conflicting 
+        interestingChanges.value = ListSequence.fromList(allChanges).where(new IWhereFilter<ModelChange>() {
+          public boolean accept(ModelChange ch) {
+            return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isEmpty();
+          }
+        });
+      }
     }
-    Iterable<ModelChange> mine = Sequence.fromIterable(interestingChanges).where(new IWhereFilter<ModelChange>() {
+    Iterable<ModelChange> mine = Sequence.fromIterable(interestingChanges.value).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return myMergeContext.isMyChange(ch);
       }
     });
-    Iterable<ModelChange> repository = Sequence.fromIterable(interestingChanges).where(new IWhereFilter<ModelChange>() {
+    Iterable<ModelChange> repository = Sequence.fromIterable(interestingChanges.value).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return !(myMergeContext.isMyChange(ch));
       }
@@ -218,13 +231,13 @@ public class MergeModelsDialog extends BaseDialog {
       if (ans == Messages.YES) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            SetSequence.fromSet(myAppliedMetadataChanges).addSequence(ListSequence.fromList(myMergeContext.getMetadataChanges()));
-            myMergeContext.applyChanges(myMergeContext.getMetadataChanges());
+            SetSequence.fromSet(myAppliedMetadataChanges).addSequence(Sequence.fromIterable(interestingChanges.value));
+            myMergeContext.applyChanges(interestingChanges.value);
             rebuildLater();
           }
         });
       } else if (ans == Messages.NO) {
-        myMergeContext.excludeChanges(myMergeContext.getMetadataChanges());
+        myMergeContext.excludeChanges(interestingChanges.value);
         rebuildLater();
       }
     }
@@ -278,6 +291,10 @@ public class MergeModelsDialog extends BaseDialog {
         myMergeTree.rebuildNow();
       }
     });
+  }
+
+  /*package*/ void markMetadataChangesAsApplied(Iterable<ModelChange> changes) {
+    SetSequence.fromSet(myAppliedMetadataChanges).addSequence(Sequence.fromIterable(changes));
   }
 
   /*package*/ void rootsDialogClosed() {
