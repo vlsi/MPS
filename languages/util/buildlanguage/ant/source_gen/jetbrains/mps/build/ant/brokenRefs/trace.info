@@ -112,8 +112,8 @@
       <varInfo nodeId="4003657351907889551" varName="args" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889513" fileName="TestBrokenReferencesWorker.java" startLine="35" startPosition="0" endLine="41" endPosition="3">
-      <varInfo nodeId="4003657351907889516" varName="whatToDo" />
       <varInfo nodeId="4003657351907889518" varName="systemOutLogger" />
+      <varInfo nodeId="4003657351907889516" varName="whatToDo" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889747" fileName="TestBrokenReferencesWorker.java" startLine="97" startPosition="47" endLine="103" endPosition="7" />
     <scopeInfo nodeId="4003657351907889842" fileName="TestBrokenReferencesWorker.java" startLine="121" startPosition="0" endLine="128" endPosition="0" />
@@ -121,14 +121,14 @@
       <varInfo nodeId="4003657351907889745" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889582" fileName="TestBrokenReferencesWorker.java" startLine="43" startPosition="22" endLine="53" endPosition="14">
+      <varInfo nodeId="4003657351907889609" varName="go" />
+      <varInfo nodeId="4003657351907889586" varName="ideaProject" />
       <varInfo nodeId="4003657351907889596" varName="project" />
       <varInfo nodeId="4003657351907889592" varName="projectFile" />
-      <varInfo nodeId="4003657351907889586" varName="ideaProject" />
-      <varInfo nodeId="4003657351907889609" varName="go" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889881" fileName="TestBrokenReferencesWorker.java" startLine="65" startPosition="52" endLine="75" endPosition="72">
-      <varInfo nodeId="4003657351907889889" varName="testName" />
       <varInfo nodeId="4003657351907889903" varName="errorMessages" />
+      <varInfo nodeId="4003657351907889889" varName="testName" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889794" fileName="TestBrokenReferencesWorker.java" startLine="106" startPosition="51" endLine="116" endPosition="9" />
     <scopeInfo nodeId="4003657351907889874" fileName="TestBrokenReferencesWorker.java" startLine="64" startPosition="25" endLine="76" endPosition="9" />
@@ -146,20 +146,20 @@
     <scopeInfo nodeId="4003657351907889675" fileName="TestBrokenReferencesWorker.java" startLine="63" startPosition="57" endLine="78" endPosition="0" />
     <scopeInfo nodeId="4003657351907889641" fileName="TestBrokenReferencesWorker.java" startLine="56" startPosition="87" endLine="78" endPosition="7" />
     <scopeInfo nodeId="4003657351907889634" fileName="TestBrokenReferencesWorker.java" startLine="55" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="4003657351907889637" varName="project" />
       <varInfo nodeId="4003657351907889639" varName="go" />
+      <varInfo nodeId="4003657351907889637" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889694" fileName="TestBrokenReferencesWorker.java" startLine="85" startPosition="62" endLine="119" endPosition="72">
-      <varInfo nodeId="4003657351907889696" varName="scope" />
       <varInfo nodeId="4003657351907889704" varName="errorMessages" />
+      <varInfo nodeId="4003657351907889696" varName="scope" />
       <varInfo nodeId="4003657351907889709" varName="validationResult" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889689" fileName="TestBrokenReferencesWorker.java" startLine="84" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="4003657351907889692" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="4003657351907889717" fileName="TestBrokenReferencesWorker.java" startLine="88" startPosition="77" endLine="92" endPosition="5" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker$2" />
-    <unitInfo nodeId="4003657351907889674" fileName="TestBrokenReferencesWorker.java" startLine="63" startPosition="45" endLine="78" endPosition="5" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker$1" />
     <unitInfo nodeId="4003657351907888918" fileName="TestBrokenReferencesWorker.java" startLine="31" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker" />
+    <unitInfo nodeId="4003657351907889674" fileName="TestBrokenReferencesWorker.java" startLine="63" startPosition="45" endLine="78" endPosition="5" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker$1" />
+    <unitInfo nodeId="4003657351907889717" fileName="TestBrokenReferencesWorker.java" startLine="88" startPosition="77" endLine="92" endPosition="5" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker$2" />
   </root>
   <root nodeId="4003657351907888919">
     <nodeInfo nodeId="4003657351907888932" fileName="TestBrokenReferencesOnTeamcity.java" startLine="15" startPosition="57" endLine="16" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

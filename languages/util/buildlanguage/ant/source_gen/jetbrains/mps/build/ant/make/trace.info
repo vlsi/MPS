@@ -53,12 +53,12 @@
       <varInfo nodeId="4003657351907888957" varName="generator" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907888973" fileName="MakeWorker.java" startLine="22" startPosition="43" endLine="25" endPosition="3">
-      <varInfo nodeId="4003657351907888976" varName="whatToDo" />
       <varInfo nodeId="4003657351907888978" varName="component" />
+      <varInfo nodeId="4003657351907888976" varName="whatToDo" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907888984" fileName="MakeWorker.java" startLine="26" startPosition="0" endLine="29" endPosition="3">
-      <varInfo nodeId="4003657351907888987" varName="whatToDo" />
       <varInfo nodeId="4003657351907888989" varName="logger" />
+      <varInfo nodeId="4003657351907888987" varName="whatToDo" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889017" fileName="MakeWorker.java" startLine="34" startPosition="38" endLine="37" endPosition="5">
       <varInfo nodeId="4003657351907889021" varName="p" />
@@ -75,8 +75,8 @@
       <varInfo nodeId="4003657351907889165" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889167" fileName="MakeWorker.java" startLine="70" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="1637160376125512437" varName="work" />
       <varInfo nodeId="4003657351907889170" varName="taskName" />
+      <varInfo nodeId="1637160376125512437" varName="work" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889131" fileName="MakeWorker.java" startLine="80" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="4003657351907888949" fileName="MakeWorker.java" startLine="85" startPosition="0" endLine="90" endPosition="0">
@@ -91,20 +91,20 @@
     <scopeInfo nodeId="4003657351907889152" fileName="MakeWorker.java" startLine="64" startPosition="45" endLine="75" endPosition="11" />
     <scopeInfo nodeId="4003657351907889122" fileName="MakeWorker.java" startLine="63" startPosition="111" endLine="77" endPosition="0" />
     <scopeInfo nodeId="4003657351907889002" fileName="MakeWorker.java" startLine="32" startPosition="81" endLine="78" endPosition="28">
-      <varInfo nodeId="4003657351907889113" varName="result" />
-      <varInfo nodeId="4003657351907889004" varName="toCompile" />
-      <varInfo nodeId="4003657351907889081" varName="sb" />
       <varInfo nodeId="4003657351907889057" varName="finalToCompile" />
+      <varInfo nodeId="4003657351907889113" varName="result" />
+      <varInfo nodeId="4003657351907889081" varName="sb" />
+      <varInfo nodeId="4003657351907889004" varName="toCompile" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907888995" fileName="MakeWorker.java" startLine="30" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="4003657351907888998" varName="project" />
       <varInfo nodeId="4003657351907889000" varName="go" />
+      <varInfo nodeId="4003657351907888998" varName="project" />
     </scopeInfo>
+    <unitInfo nodeId="4003657351907888946" fileName="MakeWorker.java" startLine="22" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.build.ant.make.MakeWorker" />
     <unitInfo nodeId="4003657351907889046" fileName="MakeWorker.java" startLine="39" startPosition="70" endLine="43" endPosition="7" unitName="jetbrains.mps.build.ant.make.MakeWorker$1" />
     <unitInfo nodeId="4003657351907889064" fileName="MakeWorker.java" startLine="46" startPosition="77" endLine="51" endPosition="5" unitName="jetbrains.mps.build.ant.make.MakeWorker$2" />
-    <unitInfo nodeId="4003657351907889161" fileName="MakeWorker.java" startLine="65" startPosition="58" endLine="75" endPosition="9" unitName="jetbrains.mps.build.ant.make.MakeWorker$4" />
     <unitInfo nodeId="4003657351907889120" fileName="MakeWorker.java" startLine="63" startPosition="75" endLine="77" endPosition="5" unitName="jetbrains.mps.build.ant.make.MakeWorker$3" />
-    <unitInfo nodeId="4003657351907888946" fileName="MakeWorker.java" startLine="22" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.build.ant.make.MakeWorker" />
+    <unitInfo nodeId="4003657351907889161" fileName="MakeWorker.java" startLine="65" startPosition="58" endLine="75" endPosition="9" unitName="jetbrains.mps.build.ant.make.MakeWorker$4" />
   </root>
   <root nodeId="4003657351907889485">
     <nodeInfo nodeId="4003657351907889498" fileName="MakeTask.java" startLine="13" startPosition="57" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

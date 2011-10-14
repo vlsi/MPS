@@ -89,9 +89,9 @@
       <varInfo nodeId="4003657351907889990" varName="testName" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907889999" fileName="ConsoleMessageFormat.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="4003657351907890008" varName="details" />
       <varInfo nodeId="4003657351907890005" varName="message" />
       <varInfo nodeId="4003657351907890002" varName="testName" />
-      <varInfo nodeId="4003657351907890008" varName="details" />
     </scopeInfo>
     <scopeInfo nodeId="4003657351907890025" fileName="ConsoleMessageFormat.java" startLine="41" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="4003657351907890028" varName="message" />

@@ -191,12 +191,12 @@
       <varInfo nodeId="7795897115019498712" varName="whatToDo" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019498717" fileName="GeneratorWorker.java" startLine="55" startPosition="0" endLine="58" endPosition="3">
-      <varInfo nodeId="7795897115019498720" varName="whatToDo" />
       <varInfo nodeId="7795897115019498722" varName="component" />
+      <varInfo nodeId="7795897115019498720" varName="whatToDo" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019498728" fileName="GeneratorWorker.java" startLine="59" startPosition="0" endLine="62" endPosition="3">
-      <varInfo nodeId="7795897115019498731" varName="whatToDo" />
       <varInfo nodeId="7795897115019498733" varName="logger" />
+      <varInfo nodeId="7795897115019498731" varName="whatToDo" />
     </scopeInfo>
     <scopeInfo nodeId="550374019954923545" fileName="GeneratorWorker.java" startLine="116" startPosition="9" endLine="119" endPosition="7" />
     <scopeInfo nodeId="3129367036791946058" fileName="GeneratorWorker.java" startLine="126" startPosition="70" endLine="129" endPosition="0" />
@@ -249,8 +249,8 @@
       <varInfo nodeId="8486843261567504161" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019498739" fileName="GeneratorWorker.java" startLine="63" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="7795897115019498742" varName="project" />
       <varInfo nodeId="7795897115019498744" varName="go" />
+      <varInfo nodeId="7795897115019498742" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019499264" fileName="GeneratorWorker.java" startLine="195" startPosition="19" endLine="202" endPosition="16" />
     <scopeInfo nodeId="7655616008808081023" fileName="GeneratorWorker.java" startLine="270" startPosition="0" endLine="277" endPosition="0" />
@@ -282,8 +282,8 @@
     <scopeInfo nodeId="7655616008808081043" fileName="GeneratorWorker.java" startLine="278" startPosition="48" endLine="294" endPosition="8" />
     <scopeInfo nodeId="7795897115019499256" fileName="GeneratorWorker.java" startLine="193" startPosition="38" endLine="211" endPosition="7" />
     <scopeInfo nodeId="7655616008808080918" fileName="GeneratorWorker.java" startLine="246" startPosition="0" endLine="265" endPosition="0">
-      <varInfo nodeId="7655616008808080923" varName="to" />
       <varInfo nodeId="7655616008808080921" varName="from" />
+      <varInfo nodeId="7655616008808080923" varName="to" />
     </scopeInfo>
     <scopeInfo nodeId="7655616008808081039" fileName="GeneratorWorker.java" startLine="277" startPosition="0" endLine="296" endPosition="0" />
     <scopeInfo nodeId="7795897115019498623" fileName="GeneratorWorker.java" startLine="192" startPosition="0" endLine="213" endPosition="0">
@@ -297,27 +297,27 @@
       <varInfo nodeId="8486843261567504142" varName="go" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019498852" fileName="GeneratorWorker.java" startLine="91" startPosition="73" endLine="129" endPosition="45">
+      <varInfo nodeId="7874190907999487108" varName="ctx" />
       <varInfo nodeId="550374019954920844" varName="res" />
       <varInfo nodeId="4077655991498783033" varName="resources" />
       <varInfo nodeId="7795897115019498854" varName="s" />
-      <varInfo nodeId="7874190907999487108" varName="ctx" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019498845" fileName="GeneratorWorker.java" startLine="90" startPosition="0" endLine="131" endPosition="0">
-      <varInfo nodeId="7795897115019498848" varName="project" />
       <varInfo nodeId="7795897115019498850" varName="go" />
+      <varInfo nodeId="7795897115019498848" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="3129367036791946058" fileName="GeneratorWorker.java" startLine="126" startPosition="58" endLine="129" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$2" />
+    <unitInfo nodeId="7795897115019498548" fileName="GeneratorWorker.java" startLine="49" startPosition="0" endLine="298" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" />
     <unitInfo nodeId="7054305886486074608" fileName="GeneratorWorker.java" startLine="111" startPosition="41" endLine="115" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$1" />
+    <unitInfo nodeId="7655616008808081047" fileName="GeneratorWorker.java" startLine="279" startPosition="17" endLine="294" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$1" />
+    <unitInfo nodeId="3129367036791946058" fileName="GeneratorWorker.java" startLine="126" startPosition="58" endLine="129" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$2" />
     <unitInfo nodeId="3767231643656621729" fileName="GeneratorWorker.java" startLine="133" startPosition="90" endLine="137" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$3" />
     <unitInfo nodeId="3767231643656621738" fileName="GeneratorWorker.java" startLine="137" startPosition="21" endLine="141" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$4" />
     <unitInfo nodeId="3767231643656621779" fileName="GeneratorWorker.java" startLine="145" startPosition="104" endLine="149" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$5" />
+    <unitInfo nodeId="7874190907999511015" fileName="GeneratorWorker.java" startLine="154" startPosition="45" endLine="169" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$6" />
     <unitInfo nodeId="7874190907999511041" fileName="GeneratorWorker.java" startLine="170" startPosition="110" endLine="174" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$7" />
     <unitInfo nodeId="7655616008808086525" fileName="GeneratorWorker.java" startLine="174" startPosition="37" endLine="178" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$8" />
-    <unitInfo nodeId="7874190907999511015" fileName="GeneratorWorker.java" startLine="154" startPosition="45" endLine="169" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$6" />
-    <unitInfo nodeId="7655616008808081047" fileName="GeneratorWorker.java" startLine="279" startPosition="17" endLine="294" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$1" />
-    <unitInfo nodeId="7795897115019498611" fileName="GeneratorWorker.java" startLine="186" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$MyMessageHandler" />
     <unitInfo nodeId="7655616008808080917" fileName="GeneratorWorker.java" startLine="231" startPosition="0" endLine="297" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$Graph" />
-    <unitInfo nodeId="7795897115019498548" fileName="GeneratorWorker.java" startLine="49" startPosition="0" endLine="298" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" />
+    <unitInfo nodeId="7795897115019498611" fileName="GeneratorWorker.java" startLine="186" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$MyMessageHandler" />
   </root>
   <root nodeId="7795897115019499553">
     <nodeInfo nodeId="7874190907999511748" fileName="TestGenerationWorker.java" startLine="74" startPosition="53" endLine="75" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageHandler" />
@@ -818,14 +818,14 @@
     </scopeInfo>
     <scopeInfo nodeId="6359254648150121203" fileName="TestGenerationWorker.java" startLine="588" startPosition="27" endLine="592" endPosition="13" />
     <scopeInfo nodeId="6359254648150120735" fileName="TestGenerationWorker.java" startLine="611" startPosition="0" endLine="615" endPosition="0">
-      <varInfo nodeId="6359254648150120739" varName="testname" />
-      <varInfo nodeId="6359254648150120742" varName="msg" />
       <varInfo nodeId="6359254648150120745" varName="longmsg" />
+      <varInfo nodeId="6359254648150120742" varName="msg" />
+      <varInfo nodeId="6359254648150120739" varName="testname" />
     </scopeInfo>
     <scopeInfo nodeId="3705898146943221372" fileName="TestGenerationWorker.java" startLine="147" startPosition="131" endLine="152" endPosition="0">
-      <varInfo nodeId="3705898146943221379" varName="ofTotal" />
-      <varInfo nodeId="3705898146943221375" varName="name" />
       <varInfo nodeId="3705898146943221377" varName="estimate" />
+      <varInfo nodeId="3705898146943221375" varName="name" />
+      <varInfo nodeId="3705898146943221379" varName="ofTotal" />
     </scopeInfo>
     <scopeInfo nodeId="3705898146943221389" fileName="TestGenerationWorker.java" startLine="152" startPosition="0" endLine="157" endPosition="0">
       <varInfo nodeId="3705898146943221392" varName="name" />
@@ -853,23 +853,23 @@
     <scopeInfo nodeId="6359254648150120757" fileName="TestGenerationWorker.java" startLine="624" startPosition="40" endLine="629" endPosition="7" />
     <scopeInfo nodeId="4411339419981530026" fileName="TestGenerationWorker.java" startLine="207" startPosition="46" endLine="213" endPosition="60" />
     <scopeInfo nodeId="3705898146943256057" fileName="TestGenerationWorker.java" startLine="251" startPosition="0" endLine="257" endPosition="0">
-      <varInfo nodeId="3705898146943256065" varName="work" />
-      <varInfo nodeId="3705898146943256062" varName="prefix" />
       <varInfo nodeId="3705898146943256068" varName="format" />
+      <varInfo nodeId="3705898146943256062" varName="prefix" />
+      <varInfo nodeId="3705898146943256065" varName="work" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019500133" fileName="TestGenerationWorker.java" startLine="421" startPosition="54" endLine="427" endPosition="19">
-      <varInfo nodeId="7795897115019500155" varName="reports" />
       <varInfo nodeId="7795897115019500135" varName="reportType" />
+      <varInfo nodeId="7795897115019500155" varName="reports" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019499640" fileName="TestGenerationWorker.java" startLine="492" startPosition="0" endLine="498" endPosition="0">
-      <varInfo nodeId="7795897115019499645" varName="message" />
       <varInfo nodeId="7795897115019499647" varName="details" />
+      <varInfo nodeId="7795897115019499645" varName="message" />
       <varInfo nodeId="7795897115019499643" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="6359254648150121198" fileName="TestGenerationWorker.java" startLine="587" startPosition="19" endLine="593" endPosition="11" />
     <scopeInfo nodeId="7874190907999511079" fileName="TestGenerationWorker.java" startLine="95" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="7874190907999511082" varName="project" />
       <varInfo nodeId="7874190907999511084" varName="go" />
+      <varInfo nodeId="7874190907999511082" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="3705898146943256017" fileName="TestGenerationWorker.java" startLine="159" startPosition="70" endLine="166" endPosition="9" />
     <scopeInfo nodeId="7260781342054461758" fileName="TestGenerationWorker.java" startLine="233" startPosition="66" endLine="240" endPosition="46" />
@@ -914,9 +914,9 @@
       <varInfo nodeId="6078875650364604151" varName="tmpDir" />
     </scopeInfo>
     <scopeInfo nodeId="3705898146943256008" fileName="TestGenerationWorker.java" startLine="157" startPosition="0" endLine="168" endPosition="0">
+      <varInfo nodeId="3705898146943256013" varName="comment" />
       <varInfo nodeId="3705898146943256011" varName="done" />
       <varInfo nodeId="3705898146943256009" varName="name" />
-      <varInfo nodeId="3705898146943256013" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="7260781342054461753" fileName="TestGenerationWorker.java" startLine="231" startPosition="77" endLine="242" endPosition="0">
       <varInfo nodeId="7260781342054461756" varName="scriptBuilder" />
@@ -926,20 +926,20 @@
     </scopeInfo>
     <scopeInfo nodeId="2342584008145152301" fileName="TestGenerationWorker.java" startLine="540" startPosition="37" endLine="551" endPosition="11" />
     <scopeInfo nodeId="7795897115019499731" fileName="TestGenerationWorker.java" startLine="81" startPosition="0" endLine="94" endPosition="3">
-      <varInfo nodeId="7795897115019499734" varName="whatToDo" />
       <varInfo nodeId="7795897115019499736" varName="logger" />
+      <varInfo nodeId="7795897115019499734" varName="whatToDo" />
     </scopeInfo>
     <scopeInfo nodeId="7874190907999511559" fileName="TestGenerationWorker.java" startLine="103" startPosition="42" endLine="116" endPosition="5">
       <varInfo nodeId="1011890140273761501" varName="strictMode" />
     </scopeInfo>
     <scopeInfo nodeId="4128185861943385945" fileName="TestGenerationWorker.java" startLine="301" startPosition="26" endLine="314" endPosition="42" />
     <scopeInfo nodeId="1272816699443816046" fileName="TestGenerationWorker.java" startLine="393" startPosition="44" endLine="406" endPosition="72">
-      <varInfo nodeId="1272816699443828432" varName="prefix" />
       <varInfo nodeId="1272816699443816060" varName="p" />
+      <varInfo nodeId="1272816699443828432" varName="prefix" />
     </scopeInfo>
     <scopeInfo nodeId="9121742173815480873" fileName="TestGenerationWorker.java" startLine="229" startPosition="13" endLine="243" endPosition="133">
-      <varInfo nodeId="7260781342054461579" varName="ms" />
       <varInfo nodeId="7260781342054461565" varName="bms" />
+      <varInfo nodeId="7260781342054461579" varName="ms" />
     </scopeInfo>
     <scopeInfo nodeId="7260781342054461785" fileName="TestGenerationWorker.java" startLine="322" startPosition="41" endLine="336" endPosition="11" />
     <scopeInfo nodeId="7795897115019499767" fileName="TestGenerationWorker.java" startLine="263" startPosition="44" endLine="278" endPosition="16">
@@ -952,10 +952,10 @@
     <scopeInfo nodeId="7874190907999511556" fileName="TestGenerationWorker.java" startLine="102" startPosition="0" endLine="118" endPosition="0" />
     <scopeInfo nodeId="3705898146943252117" fileName="TestGenerationWorker.java" startLine="171" startPosition="61" endLine="187" endPosition="52">
       <varInfo nodeId="297656254802944108" varName="details" />
-      <varInfo nodeId="297656254802859335" varName="thr" />
-      <varInfo nodeId="2821774308986880429" varName="test" />
       <varInfo nodeId="297656254802944088" varName="eol" />
       <varInfo nodeId="297656254802944072" varName="msg" />
+      <varInfo nodeId="2821774308986880429" varName="test" />
+      <varInfo nodeId="297656254802859335" varName="thr" />
     </scopeInfo>
     <scopeInfo nodeId="4128185861943385942" fileName="TestGenerationWorker.java" startLine="300" startPosition="0" endLine="316" endPosition="0" />
     <scopeInfo nodeId="7260781342054461784" fileName="TestGenerationWorker.java" startLine="321" startPosition="25" endLine="337" endPosition="9">
@@ -992,65 +992,65 @@
     <scopeInfo nodeId="2342584008145151798" fileName="TestGenerationWorker.java" startLine="529" startPosition="25" endLine="557" endPosition="7" />
     <scopeInfo nodeId="6359254648150120606" fileName="TestGenerationWorker.java" startLine="570" startPosition="0" endLine="598" endPosition="0" />
     <scopeInfo nodeId="6359254648150120568" fileName="TestGenerationWorker.java" startLine="192" startPosition="114" endLine="221" endPosition="76">
-      <varInfo nodeId="5294074698114021971" varName="makeparams" />
       <varInfo nodeId="3705898146943254892" varName="dparams" />
+      <varInfo nodeId="5294074698114021971" varName="makeparams" />
       <varInfo nodeId="7216969004037112957" varName="tparams" />
     </scopeInfo>
     <scopeInfo nodeId="2342584008145151795" fileName="TestGenerationWorker.java" startLine="528" startPosition="0" endLine="559" endPosition="0" />
     <scopeInfo nodeId="6359254648150120556" fileName="TestGenerationWorker.java" startLine="190" startPosition="8" endLine="223" endPosition="0">
       <varInfo nodeId="6359254648150120564" varName="input" />
-      <varInfo nodeId="6359254648150120561" varName="toExecute" />
       <varInfo nodeId="6359254648150120559" varName="ppool" />
+      <varInfo nodeId="6359254648150120561" varName="toExecute" />
     </scopeInfo>
     <scopeInfo nodeId="3037398679707966654" fileName="TestGenerationWorker.java" startLine="321" startPosition="25" endLine="356" endPosition="97" />
     <scopeInfo nodeId="3037398679707966653" fileName="TestGenerationWorker.java" startLine="320" startPosition="57" endLine="358" endPosition="0" />
     <scopeInfo nodeId="7795897115019499749" fileName="TestGenerationWorker.java" startLine="258" startPosition="22" endLine="298" endPosition="20">
-      <varInfo nodeId="7795897115019499846" varName="models" />
-      <varInfo nodeId="7795897115019499753" varName="mpsProjects" />
-      <varInfo nodeId="7795897115019499839" varName="modules" />
       <varInfo nodeId="7795897115019499859" varName="go" />
+      <varInfo nodeId="7795897115019499846" varName="models" />
+      <varInfo nodeId="7795897115019499839" varName="modules" />
+      <varInfo nodeId="7795897115019499753" varName="mpsProjects" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019499746" fileName="TestGenerationWorker.java" startLine="257" startPosition="0" endLine="300" endPosition="0" />
     <scopeInfo nodeId="3037398679707959932" fileName="TestGenerationWorker.java" startLine="317" startPosition="180" endLine="363" endPosition="25">
       <varInfo nodeId="3037398679707966203" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3037398679707959929" fileName="TestGenerationWorker.java" startLine="316" startPosition="0" endLine="365" endPosition="0">
-      <varInfo nodeId="3705898146943199237" varName="models" />
-      <varInfo nodeId="3705898146943200910" varName="projects" />
       <varInfo nodeId="3037398679707992897" varName="context" />
+      <varInfo nodeId="3705898146943199237" varName="models" />
       <varInfo nodeId="3705898146943199232" varName="modules" />
+      <varInfo nodeId="3705898146943200910" varName="projects" />
     </scopeInfo>
     <scopeInfo nodeId="7874190907999511609" fileName="TestGenerationWorker.java" startLine="119" startPosition="88" endLine="249" endPosition="45">
-      <varInfo nodeId="5031229775986962291" varName="result" />
-      <varInfo nodeId="3705898146943256319" varName="finishTestFormat" />
       <varInfo nodeId="8194233576162607950" varName="count" />
-      <varInfo nodeId="7874190907999511611" varName="s" />
       <varInfo nodeId="9143630131837001679" varName="ctl" />
+      <varInfo nodeId="3705898146943256319" varName="finishTestFormat" />
+      <varInfo nodeId="5031229775986962291" varName="result" />
+      <varInfo nodeId="7874190907999511611" varName="s" />
       <varInfo nodeId="3705898146943256286" varName="startTestFormat" />
     </scopeInfo>
     <scopeInfo nodeId="7874190907999511602" fileName="TestGenerationWorker.java" startLine="118" startPosition="0" endLine="251" endPosition="0">
-      <varInfo nodeId="7874190907999511605" varName="project" />
       <varInfo nodeId="7874190907999511607" varName="go" />
+      <varInfo nodeId="7874190907999511605" varName="project" />
     </scopeInfo>
+    <unitInfo nodeId="7795897115019499553" fileName="TestGenerationWorker.java" startLine="74" startPosition="0" endLine="633" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" />
     <unitInfo nodeId="3705898146943256290" fileName="TestGenerationWorker.java" startLine="135" startPosition="75" endLine="139" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$1" />
     <unitInfo nodeId="3705898146943256323" fileName="TestGenerationWorker.java" startLine="140" startPosition="76" endLine="144" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$2" />
+    <unitInfo nodeId="9143630131837001683" fileName="TestGenerationWorker.java" startLine="147" startPosition="38" endLine="223" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$3" />
     <unitInfo nodeId="5294074698114022013" fileName="TestGenerationWorker.java" startLine="195" startPosition="26" endLine="199" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
     <unitInfo nodeId="1272816699443816038" fileName="TestGenerationWorker.java" startLine="208" startPosition="25" endLine="212" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
+    <unitInfo nodeId="2120492242099858651" fileName="TestGenerationWorker.java" startLine="226" startPosition="41" endLine="248" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
+    <unitInfo nodeId="3705898146943221347" fileName="TestGenerationWorker.java" startLine="147" startPosition="92" endLine="190" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
+    <unitInfo nodeId="7260781342054461750" fileName="TestGenerationWorker.java" startLine="231" startPosition="31" endLine="242" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$5" />
+    <unitInfo nodeId="3705898146943221369" fileName="TestGenerationWorker.java" startLine="147" startPosition="113" endLine="168" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$5" />
+    <unitInfo nodeId="3037398679707966653" fileName="TestGenerationWorker.java" startLine="320" startPosition="45" endLine="358" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$5" />
     <unitInfo nodeId="3705898146943200101" fileName="TestGenerationWorker.java" startLine="338" startPosition="118" endLine="342" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$6" />
     <unitInfo nodeId="5393911253307931303" fileName="TestGenerationWorker.java" startLine="343" startPosition="114" endLine="347" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$6" />
     <unitInfo nodeId="5393911253307931312" fileName="TestGenerationWorker.java" startLine="347" startPosition="25" endLine="351" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$6" />
     <unitInfo nodeId="5393911253307931326" fileName="TestGenerationWorker.java" startLine="351" startPosition="25" endLine="355" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$6" />
     <unitInfo nodeId="3037398679707992881" fileName="TestGenerationWorker.java" startLine="359" startPosition="88" endLine="363" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$6" />
-    <unitInfo nodeId="7260781342054461750" fileName="TestGenerationWorker.java" startLine="231" startPosition="31" endLine="242" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$5" />
-    <unitInfo nodeId="3705898146943221369" fileName="TestGenerationWorker.java" startLine="147" startPosition="113" endLine="168" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$5" />
-    <unitInfo nodeId="2120492242099858651" fileName="TestGenerationWorker.java" startLine="226" startPosition="41" endLine="248" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
     <unitInfo nodeId="7874190907999511758" fileName="TestGenerationWorker.java" startLine="458" startPosition="0" endLine="483" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyMessageHandler" />
-    <unitInfo nodeId="7795897115019499629" fileName="TestGenerationWorker.java" startLine="484" startPosition="0" endLine="520" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyUnitTestAdapter" />
-    <unitInfo nodeId="3037398679707966653" fileName="TestGenerationWorker.java" startLine="320" startPosition="45" endLine="358" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$5" />
-    <unitInfo nodeId="3705898146943221347" fileName="TestGenerationWorker.java" startLine="147" startPosition="92" endLine="190" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
-    <unitInfo nodeId="9143630131837001683" fileName="TestGenerationWorker.java" startLine="147" startPosition="38" endLine="223" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$3" />
     <unitInfo nodeId="6359254648150120585" fileName="TestGenerationWorker.java" startLine="521" startPosition="0" endLine="632" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyReporter" />
-    <unitInfo nodeId="7795897115019499553" fileName="TestGenerationWorker.java" startLine="74" startPosition="0" endLine="633" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" />
+    <unitInfo nodeId="7795897115019499629" fileName="TestGenerationWorker.java" startLine="484" startPosition="0" endLine="520" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyUnitTestAdapter" />
   </root>
   <root nodeId="7874190907999476498">
     <nodeInfo nodeId="4427136928946606713" fileName="BuildMakeService.java" startLine="44" startPosition="83" endLine="45" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1272,15 +1272,15 @@
       <varInfo nodeId="2821774308986817330" varName="cm" />
     </scopeInfo>
     <scopeInfo nodeId="8695426379435237791" fileName="BuildMakeService.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="8695426379435237794" varName="resources" />
-      <varInfo nodeId="8695426379435237792" varName="session" />
       <varInfo nodeId="8695426379435237801" varName="controller" />
+      <varInfo nodeId="8695426379435237794" varName="resources" />
       <varInfo nodeId="8695426379435237799" varName="script" />
+      <varInfo nodeId="8695426379435237792" varName="session" />
     </scopeInfo>
     <scopeInfo nodeId="8695426379435237808" fileName="BuildMakeService.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8695426379435237811" varName="resources" />
-      <varInfo nodeId="8695426379435237809" varName="session" />
       <varInfo nodeId="8695426379435237816" varName="script" />
+      <varInfo nodeId="8695426379435237809" varName="session" />
     </scopeInfo>
     <scopeInfo nodeId="8695426379435237823" fileName="BuildMakeService.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="8695426379435237826" varName="resources" />
@@ -1304,8 +1304,8 @@
       <varInfo nodeId="7874190907999476544" varName="script" />
     </scopeInfo>
     <scopeInfo nodeId="7874190907999476552" fileName="BuildMakeService.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
-      <varInfo nodeId="7874190907999476553" varName="resources" />
       <varInfo nodeId="7874190907999476561" varName="controller" />
+      <varInfo nodeId="7874190907999476553" varName="resources" />
       <varInfo nodeId="7874190907999476559" varName="script" />
     </scopeInfo>
     <scopeInfo nodeId="7260781342054461666" fileName="BuildMakeService.java" startLine="102" startPosition="45" endLine="106" endPosition="58" />
@@ -1316,13 +1316,13 @@
       <varInfo nodeId="5520723819347757843" varName="taskName" />
     </scopeInfo>
     <scopeInfo nodeId="5520723819347757719" fileName="BuildMakeService.java" startLine="164" startPosition="0" endLine="168" endPosition="0">
-      <varInfo nodeId="5520723819347757724" varName="defaultScript" />
       <varInfo nodeId="5520723819347757726" varName="controller" />
+      <varInfo nodeId="5520723819347757724" varName="defaultScript" />
       <varInfo nodeId="5520723819347757720" varName="inputRes" />
     </scopeInfo>
     <scopeInfo nodeId="2821774308986816131" fileName="BuildMakeService.java" startLine="219" startPosition="0" endLine="223" endPosition="5">
-      <varInfo nodeId="2821774308986878408" varName="mfs" />
       <varInfo nodeId="2821774308986817108" varName="delegate" />
+      <varInfo nodeId="2821774308986878408" varName="mfs" />
     </scopeInfo>
     <scopeInfo nodeId="2821774308986817169" fileName="BuildMakeService.java" startLine="228" startPosition="88" endLine="232" endPosition="0" />
     <scopeInfo nodeId="2821774308986878314" fileName="BuildMakeService.java" startLine="243" startPosition="84" endLine="247" endPosition="0" />
@@ -1333,8 +1333,8 @@
       <varInfo nodeId="2821774308986895334" varName="pind" />
     </scopeInfo>
     <scopeInfo nodeId="2821774308986846412" fileName="BuildMakeService.java" startLine="314" startPosition="0" endLine="318" endPosition="7">
-      <varInfo nodeId="2821774308986878388" varName="mfs" />
       <varInfo nodeId="2821774308986878164" varName="delegate" />
+      <varInfo nodeId="2821774308986878388" varName="mfs" />
     </scopeInfo>
     <scopeInfo nodeId="2821774308986878187" fileName="BuildMakeService.java" startLine="321" startPosition="42" endLine="325" endPosition="39" />
     <scopeInfo nodeId="2821774308986878261" fileName="BuildMakeService.java" startLine="329" startPosition="50" endLine="333" endPosition="33" />
@@ -1349,8 +1349,8 @@
     <scopeInfo nodeId="2821774308986878301" fileName="BuildMakeService.java" startLine="242" startPosition="31" endLine="247" endPosition="13" />
     <scopeInfo nodeId="8695426379435219084" fileName="BuildMakeService.java" startLine="142" startPosition="0" endLine="148" endPosition="0" />
     <scopeInfo nodeId="5520723819347757753" fileName="BuildMakeService.java" startLine="170" startPosition="160" endLine="176" endPosition="18">
-      <varInfo nodeId="5520723819347757764" varName="task" />
       <varInfo nodeId="5520723819347757809" varName="ctl" />
+      <varInfo nodeId="5520723819347757764" varName="task" />
     </scopeInfo>
     <scopeInfo nodeId="2821774308986895293" fileName="BuildMakeService.java" startLine="282" startPosition="106" endLine="288" endPosition="7" />
     <scopeInfo nodeId="7260781342054461663" fileName="BuildMakeService.java" startLine="101" startPosition="0" endLine="108" endPosition="0" />
@@ -1360,8 +1360,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2821774308986878682" fileName="BuildMakeService.java" startLine="265" startPosition="0" endLine="273" endPosition="0">
       <varInfo nodeId="2821774308986878690" varName="input" />
-      <varInfo nodeId="2821774308986878687" varName="toExecute" />
       <varInfo nodeId="2821774308986878685" varName="pp" />
+      <varInfo nodeId="2821774308986878687" varName="toExecute" />
     </scopeInfo>
     <scopeInfo nodeId="2821774308986817265" fileName="BuildMakeService.java" startLine="299" startPosition="64" endLine="307" endPosition="10">
       <varInfo nodeId="6828477339626436849" varName="opt" />
@@ -1380,13 +1380,13 @@
       <varInfo nodeId="2821774308986895306" varName="jm" />
     </scopeInfo>
     <scopeInfo nodeId="5520723819347757739" fileName="BuildMakeService.java" startLine="168" startPosition="0" endLine="178" endPosition="0">
-      <varInfo nodeId="5520723819347757745" varName="scripts" />
       <varInfo nodeId="5520723819347757740" varName="clustRes" />
       <varInfo nodeId="5520723819347757748" varName="controller" />
+      <varInfo nodeId="5520723819347757745" varName="scripts" />
     </scopeInfo>
     <scopeInfo nodeId="7874190907999476569" fileName="BuildMakeService.java" startLine="108" startPosition="0" endLine="120" endPosition="0">
-      <varInfo nodeId="7874190907999476576" varName="defaultScript" />
       <varInfo nodeId="7874190907999476578" varName="controller" />
+      <varInfo nodeId="7874190907999476576" varName="defaultScript" />
       <varInfo nodeId="7874190907999476570" varName="inputRes" />
       <varInfo nodeId="7260781342054461649" varName="makeSession" />
     </scopeInfo>
@@ -1407,8 +1407,8 @@
       <varInfo nodeId="2821774308986878455" varName="oldFlag" />
     </scopeInfo>
     <scopeInfo nodeId="7874190907999476696" fileName="BuildMakeService.java" startLine="120" startPosition="0" endLine="139" endPosition="0">
-      <varInfo nodeId="7260781342054461594" varName="msess" />
       <varInfo nodeId="7874190907999476698" varName="ctl" />
+      <varInfo nodeId="7260781342054461594" varName="msess" />
     </scopeInfo>
     <scopeInfo nodeId="7874190907999477593" fileName="BuildMakeService.java" startLine="192" startPosition="47" endLine="211" endPosition="30">
       <varInfo nodeId="7874190907999477632" varName="message" />
@@ -1420,16 +1420,16 @@
     <scopeInfo nodeId="7874190907999477590" fileName="BuildMakeService.java" startLine="191" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="7874190907999477659" varName="fdk" />
     </scopeInfo>
-    <unitInfo nodeId="2821774308986878648" fileName="BuildMakeService.java" startLine="130" startPosition="22" endLine="134" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$2" />
+    <unitInfo nodeId="7874190907999476498" fileName="BuildMakeService.java" startLine="44" startPosition="0" endLine="338" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
     <unitInfo nodeId="2821774308986817169" fileName="BuildMakeService.java" startLine="228" startPosition="42" endLine="232" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$1" />
-    <unitInfo nodeId="2821774308986878314" fileName="BuildMakeService.java" startLine="243" startPosition="41" endLine="247" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$2" />
     <unitInfo nodeId="2821774308986878488" fileName="BuildMakeService.java" startLine="122" startPosition="15" endLine="137" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$1" />
+    <unitInfo nodeId="2821774308986878648" fileName="BuildMakeService.java" startLine="130" startPosition="22" endLine="134" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$2" />
+    <unitInfo nodeId="2821774308986878314" fileName="BuildMakeService.java" startLine="243" startPosition="41" endLine="247" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$2" />
+    <unitInfo nodeId="2821774308986816129" fileName="BuildMakeService.java" startLine="215" startPosition="0" endLine="337" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$DelegatingScriptController" />
+    <unitInfo nodeId="7874190907999477589" fileName="BuildMakeService.java" startLine="185" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$MessageFeedbackStrategy" />
+    <unitInfo nodeId="5520723819347757702" fileName="BuildMakeService.java" startLine="156" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$TaskRunner" />
     <unitInfo nodeId="2821774308986817203" fileName="BuildMakeService.java" startLine="291" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService.DelegatingScriptController$DelegatingConfigMonitor" />
     <unitInfo nodeId="2821774308986846410" fileName="BuildMakeService.java" startLine="311" startPosition="0" endLine="336" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService.DelegatingScriptController$DelegatingJobMonitor" />
-    <unitInfo nodeId="5520723819347757702" fileName="BuildMakeService.java" startLine="156" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$TaskRunner" />
-    <unitInfo nodeId="7874190907999477589" fileName="BuildMakeService.java" startLine="185" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$MessageFeedbackStrategy" />
-    <unitInfo nodeId="2821774308986816129" fileName="BuildMakeService.java" startLine="215" startPosition="0" endLine="337" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$DelegatingScriptController" />
-    <unitInfo nodeId="7874190907999476498" fileName="BuildMakeService.java" startLine="44" startPosition="0" endLine="338" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
   </root>
 </debugInfo>
 
