@@ -16,7 +16,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
@@ -36,7 +35,7 @@ public class TransientModelsProvider {
   private final TransientSwapOwner myTransientSwapOwner;
   private String mySessionId;
 
-  public TransientModelsProvider(MPSProject project, TransientSwapOwner owner) {
+  public TransientModelsProvider(Project project, TransientSwapOwner owner) {
     myProject = project;
     myTransientSwapOwner = owner;
   }

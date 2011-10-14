@@ -29,20 +29,25 @@ public class ProjectManager {
     return INSTANCE;
   }
 
-  public Project[] getOpenProjects() {
-    // TODO rewrite, store opened projects in a field
+  private final List<Project> myOpenedProjects = new ArrayList<Project>();
 
-    // temporary code, begin
-    final com.intellij.openapi.project.Project[] openProjects = com.intellij.openapi.project.ProjectManager.getInstance().getOpenProjects();
-    List<Project> result = new ArrayList<Project>();
-    for(com.intellij.openapi.project.Project p : openProjects) {
-      final Project component = p.getComponent(MPSProject.class);
-      if(component != null) {
-        result.add(component);
-      }
+  public Project[] getOpenProjects() {
+    Project[] result;
+    synchronized (myOpenedProjects) {
+      result = myOpenedProjects.toArray(new Project[myOpenedProjects.size()]);
     }
-    return result.toArray(new Project[result.size()]);
-    // temporary code, end
+    return result;
   }
 
+  void projectOpened(Project p) {
+    synchronized (myOpenedProjects) {
+      myOpenedProjects.add(p);
+    }
+  }
+
+  void projectClosed(Project p) {
+    synchronized (myOpenedProjects) {
+      myOpenedProjects.remove(p);
+    }
+  }
 }
