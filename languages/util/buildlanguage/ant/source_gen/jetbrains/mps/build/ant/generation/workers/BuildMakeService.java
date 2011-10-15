@@ -271,20 +271,28 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
       }
     }
 
+    @Override
+    public void useMonitor(ProgressMonitor monitor) {
+      super.useMonitor(monitor);
+      if (delegate != null) {
+        delegate.useMonitor(monitor);
+      }
+    }
+
     protected ProgressMonitor getProgressMonitor() {
       return currentMonitor;
     }
 
-    private void setProgressIndicator(ProgressMonitor monitor) {
+    private void setProgressMonitor(ProgressMonitor monitor) {
       this.currentMonitor = monitor;
     }
 
     private void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code, IJobMonitor jm) {
-      setProgressIndicator(new JobProgressMonitorAdapter(jm));
+      setProgressMonitor(new JobProgressMonitorAdapter(jm));
       try {
         code.invoke(jm);
       } finally {
-        setProgressIndicator(null);
+        setProgressMonitor(null);
       }
     }
 

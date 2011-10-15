@@ -5,6 +5,7 @@ package jetbrains.mps.make.script;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.progress.ProgressMonitor;
 
 public interface IScriptController {
   public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code);
@@ -12,6 +13,7 @@ public interface IScriptController {
   @Deprecated
   public void setup(IPropertiesPool ppool);
   public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input);
+  public void useMonitor(ProgressMonitor monitor);
   public static class Stub implements IScriptController {
     private IConfigMonitor cmon;
     private IJobMonitor jmon;
@@ -39,6 +41,9 @@ public interface IScriptController {
 
     public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
       setup(pp);
+    }
+
+    public void useMonitor(ProgressMonitor monitor) {
     }
   }
 

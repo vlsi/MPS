@@ -36,10 +36,9 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
+import jetbrains.mps.internal.make.runtime.backports.ProgressMonitorProgressStrategy;
 import jetbrains.mps.make.service.MakeTask;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
-import com.intellij.openapi.progress.ProgressIndicator;
 import javax.swing.SwingUtilities;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
@@ -296,9 +295,9 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
     @Override
     protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
-      final ProgressIndicatorProgressStrategy pips = new ProgressIndicatorProgressStrategy();
+      final ProgressMonitorProgressStrategy pmps = new ProgressMonitorProgressStrategy();
       WorkbenchMakeService.this.getSession();
-      final MakeTask task = new MakeTask(ProjectHelper.toIdeaProject(WorkbenchMakeService.this.getSession().getContext().getProject()), taskName, scripts, taskName, clustRes, new WorkbenchMakeService.Controller(controller, mh, pips), mh, PerformInBackgroundOption.DEAF) {
+      final MakeTask task = new MakeTask(ProjectHelper.toIdeaProject(WorkbenchMakeService.this.getSession().getContext().getProject()), taskName, scripts, taskName, clustRes, new WorkbenchMakeService.Controller(controller, mh, pmps), mh, PerformInBackgroundOption.DEAF) {
         @Override
         protected void aboutToStart() {
           notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_ABOUT_TO_START));
@@ -314,11 +313,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         @Override
         protected void displayInfo(String info) {
           WorkbenchMakeService.this.displayInfo(info);
-        }
-
-        @Override
-        protected void useProgressIndicator(ProgressIndicator pi) {
-          pips.setProgressIndicator(pi);
         }
       };
 
@@ -359,18 +353,18 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   }
 
   private class Controller extends IScriptController.Stub {
-    private ProgressIndicatorProgressStrategy pips;
-    private IScriptController delegateScrCtr;
+    private final ProgressMonitorProgressStrategy pmps;
+    private final IScriptController delegateScrCtr;
     private IConfigMonitor delegateConfMon;
     private IConfigMonitor confMon;
     private IJobMonitor jobMon;
     private IMessageHandler mh;
     private IPropertiesPool predParamPool;
 
-    public Controller(IScriptController delegate, IMessageHandler mh, ProgressIndicatorProgressStrategy pips) {
+    public Controller(IScriptController delegate, IMessageHandler mh, ProgressMonitorProgressStrategy pmps) {
       this.delegateScrCtr = delegate;
+      this.pmps = pmps;
       this.mh = mh;
-      this.pips = pips;
       init();
     }
 
@@ -434,6 +428,11 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
     }
 
+    @Override
+    public void useMonitor(ProgressMonitor monitor) {
+      pmps.reset(monitor);
+    }
+
     private void init() {
       this.confMon = new IConfigMonitor.Stub() {
         @Override
@@ -451,8 +450,8 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       this.jobMon = new IJobMonitor.Stub() {
         @Override
         public boolean stopRequested() {
-          return (pips.getProgressIndicator() != null ?
-            pips.getProgressIndicator().isCanceled() :
+          return (pmps.getProgressMonitor() != null ?
+            pmps.getProgressMonitor().isCanceled() :
             false
           );
         }
@@ -464,7 +463,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
         @Override
         public IProgress currentProgress() {
-          return pips.currentProgress();
+          return pmps.currentProgress();
         }
       };
     }

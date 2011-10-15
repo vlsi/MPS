@@ -4,11 +4,12 @@ package jetbrains.mps.make.script;
 
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.progress.ProgressMonitor;
 
 public interface IScript {
   public boolean isValid();
   public ITarget startingTarget();
   public ITarget finalTarget();
   public Iterable<ITarget> allTargets();
-  public IResult execute(IScriptController monitors, Iterable<? extends IResource> input);
+  public IResult execute(IScriptController monitors, Iterable<? extends IResource> input, ProgressMonitor monitor);
 }

@@ -18,12 +18,13 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
 import java.util.Iterator;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -60,7 +61,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     if (myState.compareAndSet(MakeTask.TaskState.NOT_STARTED, MakeTask.TaskState.RUNNING)) {
       if (ThreadUtils.isEventDispatchThread()) {
         try {
-          doRun(pi);
+          doRun(new ProgressMonitorAdapter(pi));
         } finally {
           try {
             reconcile();
@@ -69,19 +70,19 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
           }
         }
       } else {
-        this.spawnMakeThreadThenDoRunRelayingLog(pi);
+        this.spawnMakeThreadThenDoRunRelayingLog(new ProgressMonitorAdapter(pi));
       }
     }
   }
 
-  private void spawnMakeThreadThenDoRunRelayingLog(final ProgressIndicator pi) {
+  private void spawnMakeThreadThenDoRunRelayingLog(final ProgressMonitor monitor) {
     ThreadGroup tg = new ThreadGroup("MPS Make Thread Group");
     Thread makeThread = new Thread(tg, new Runnable() {
       public void run() {
         MakeTask.RelayingLoggingHandler rlh = new MakeTask.RelayingLoggingHandler(myMessageHandler);
         try {
           rlh.startRelaying();
-          doRun(pi);
+          doRun(monitor);
         } finally {
           try {
             reconcile();
@@ -137,69 +138,57 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   protected void displayInfo(String info) {
   }
 
-  protected void useProgressIndicator(ProgressIndicator pi) {
-  }
-
   protected void aboutToStart() {
   }
 
   protected void done() {
   }
 
-  private void doRun(ProgressIndicator pi) {
+  private void doRun(ProgressMonitor monitor) {
     aboutToStart();
-    pi.pushState();
     final int clsize = Sequence.fromIterable(this.myClInput).count();
     if (clsize == 0) {
       return;
     }
-    final double clfrac = (1.0 / clsize);
-    final int[] idx = new int[]{0};
-    useProgressIndicator(new ProgressIndicatorDelegate(pi) {
-      @Override
-      public void setFraction(double d) {
-        getDelegate().setFraction((idx[0] + d) * clfrac);
-      }
+    monitor.start("", clsize);
+    try {
+      int idx = 0;
+      Iterator<IScript> scit = Sequence.fromIterable(myScripts).iterator();
+      Iterator<? extends Iterable<IResource>> clit = Sequence.fromIterable(myClInput).iterator();
+      while (scit.hasNext() && clit.hasNext()) {
+        Iterable<IResource> cl = clit.next();
+        IScript scr = scit.next();
 
-      @Override
-      public void setText2(String string) {
-      }
-    });
+        if (!(scr.isValid())) {
+          String msg = myScrName + " failed";
+          myMessageHandler.handle(new Message(MessageKind.ERROR, msg + ". Invalid script."));
+          displayInfo(msg);
+          this.myResult = new IResult.FAILURE(null);
+          break;
+        }
 
-    Iterator<IScript> scit = Sequence.fromIterable(myScripts).iterator();
-    Iterator<? extends Iterable<IResource>> clit = Sequence.fromIterable(myClInput).iterator();
-    while (scit.hasNext() && clit.hasNext()) {
-      Iterable<IResource> cl = clit.next();
-      IScript scr = scit.next();
+        if (InternalFlag.isInternalMode()) {
+          myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Modules cluster " + (idx + 1) + "/" + clsize + " [" + IterableUtils.join(Sequence.fromIterable(cl).select(new ISelector<IResource, String>() {
+            public String select(IResource r) {
+              return ((IResource) r).describe();
+            }
+          }), ", ") + "]"));
+        }
 
-      if (!(scr.isValid())) {
-        String msg = myScrName + " failed";
-        myMessageHandler.handle(new Message(MessageKind.ERROR, msg + ". Invalid script."));
-        displayInfo(msg);
-        this.myResult = new IResult.FAILURE(null);
-        break;
-      }
-
-      if (InternalFlag.isInternalMode()) {
-        myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Modules cluster " + (idx[0] + 1) + "/" + clsize + " [" + IterableUtils.join(Sequence.fromIterable(cl).select(new ISelector<IResource, String>() {
+        monitor.step((idx + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).select(new ISelector<IResource, String>() {
           public String select(IResource r) {
             return ((IResource) r).describe();
           }
-        }), ", ") + "]"));
-      }
-
-      pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).select(new ISelector<IResource, String>() {
-        public String select(IResource r) {
-          return ((IResource) r).describe();
+        }), ","));
+        this.myResult = scr.execute(this.myController, cl, monitor.subTask(1));
+        if (!(this.myResult.isSucessful()) || monitor.isCanceled()) {
+          break;
         }
-      }), ","));
-      this.myResult = scr.execute(this.myController, cl);
-      if (!(this.myResult.isSucessful()) || pi.isCanceled()) {
-        break;
+        idx++;
       }
-      idx[0]++;
+    } finally {
+      monitor.done();
     }
-    pi.popState();
     this.myState.set(MakeTask.TaskState.INDETERMINATE);
   }
 

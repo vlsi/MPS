@@ -10,6 +10,7 @@ import jetbrains.mps.internal.make.runtime.script.TargetRange;
 import jetbrains.mps.internal.make.runtime.script.Script;
 import junit.framework.Assert;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IResource;
 import org.jmock.Expectations;
@@ -41,7 +42,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult res = sc.execute(null, null);
+    IResult res = sc.execute(null, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertNotNull(res.output());
@@ -92,7 +93,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null);
+    IResult r = sc.execute(null, null, new EmptyProgressMonitor());
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -126,7 +127,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB));
+    IResult r = sc.execute(null, ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB), new EmptyProgressMonitor());
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -184,7 +185,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null);
+    IResult r = sc.execute(null, null, new EmptyProgressMonitor());
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -263,7 +264,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null);
+    IResult r = sc.execute(null, null, new EmptyProgressMonitor());
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -306,7 +307,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null);
+    IResult r = sc.execute(null, null, new EmptyProgressMonitor());
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(r.output())).isEmpty());
@@ -406,7 +407,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(mons, null);
+    IResult r = sc.execute(mons, null, new EmptyProgressMonitor());
     Assert.assertNotNull(r);
     Assert.assertFalse(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -458,7 +459,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult res = sc.execute(null, null);
+    IResult res = sc.execute(null, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());

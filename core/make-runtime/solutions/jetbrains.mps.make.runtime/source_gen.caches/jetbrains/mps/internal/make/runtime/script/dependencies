@@ -31,6 +31,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.script.IScript" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy" file="LoggingFeedbackStrategy.java">
@@ -89,6 +90,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.TimeOutRuntimeException" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode extendsClassName="jetbrains.mps.make.script.IPropertiesPool" />

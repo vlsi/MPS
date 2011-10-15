@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
@@ -121,95 +122,106 @@ public class Script implements IScript {
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
-  public IResult execute(IScriptController controller, Iterable<? extends IResource> scriptInput) {
-    validate();
-    if (!(isValid())) {
-      LOG.error("attempt to execute invalid script");
-      throw new IllegalStateException("invalid script");
-    }
-
-    final Wrappers._T<ITarget.Name> waitFor = new Wrappers._T<ITarget.Name>(startingTarget);
-    Iterable<ITarget> toExecute = Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).translate(new ITranslator2<ITarget, ITarget>() {
-      public Iterable<ITarget> translate(final ITarget tn) {
-        return new Iterable<ITarget>() {
-          public Iterator<ITarget> iterator() {
-            return new YieldingIterator<ITarget>() {
-              private int __CP__ = 0;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 2:
-                      if (waitFor.value != null) {
-                        this.__CP__ = 3;
-                        break;
-                      }
-                      this.__CP__ = 7;
-                      break;
-                    case 4:
-                      if (waitFor.value.equals(tn.getName())) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this.__CP__ = 1;
-                      break;
-                    case 8:
-                      this.__CP__ = 1;
-                      this.yield(tn);
-                      return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
-                    case 3:
-                      this.__CP__ = 4;
-                      break;
-                    case 5:
-                      waitFor.value = null;
-                      this.__CP__ = 1;
-                      break;
-                    case 7:
-                      this.__CP__ = 8;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while (true);
-                return false;
-              }
-            };
-          }
-        };
+  public IResult execute(IScriptController controller, Iterable<? extends IResource> scriptInput, ProgressMonitor monitor) {
+    monitor.start("", 20);
+    try {
+      validate();
+      if (!(isValid())) {
+        LOG.error("attempt to execute invalid script");
+        throw new IllegalStateException("invalid script");
       }
-    });
+      monitor.advance(1);
 
-    LOG.debug("Beginning to execute script");
-    CompositeResult results = new CompositeResult();
-    Script.ParametersPool pool = new Script.ParametersPool();
+      final Wrappers._T<ITarget.Name> waitFor = new Wrappers._T<ITarget.Name>(startingTarget);
+      Iterable<ITarget> toExecute = Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).translate(new ITranslator2<ITarget, ITarget>() {
+        public Iterable<ITarget> translate(final ITarget tn) {
+          return new Iterable<ITarget>() {
+            public Iterator<ITarget> iterator() {
+              return new YieldingIterator<ITarget>() {
+                private int __CP__ = 0;
 
-    LOG.debug("Initializing");
-    IScriptController ctl = (controller != null ?
-      controller :
-      new IScriptController.Stub()
-    );
-    ctl.setup(pool, toExecute, scriptInput);
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        if (waitFor.value != null) {
+                          this.__CP__ = 3;
+                          break;
+                        }
+                        this.__CP__ = 7;
+                        break;
+                      case 4:
+                        if (waitFor.value.equals(tn.getName())) {
+                          this.__CP__ = 5;
+                          break;
+                        }
+                        this.__CP__ = 1;
+                        break;
+                      case 8:
+                        this.__CP__ = 1;
+                        this.yield(tn);
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      case 3:
+                        this.__CP__ = 4;
+                        break;
+                      case 5:
+                        waitFor.value = null;
+                        this.__CP__ = 1;
+                        break;
+                      case 7:
+                        this.__CP__ = 8;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while (true);
+                  return false;
+                }
+              };
+            }
+          };
+        }
+      });
 
-    this.configureTargets(ctl, toExecute, pool, results);
-    if (!(results.isSucessful())) {
+      LOG.debug("Beginning to execute script");
+      CompositeResult results = new CompositeResult();
+      Script.ParametersPool pool = new Script.ParametersPool();
+
+      LOG.debug("Initializing");
+      IScriptController ctl = (controller != null ?
+        controller :
+        new IScriptController.Stub()
+      );
+      ctl.setup(pool, toExecute, scriptInput);
+      monitor.advance(1);
+
+      monitor.step("Configuring");
+      this.configureTargets(ctl, toExecute, pool, results);
+      if (!(results.isSucessful())) {
+        return results;
+      }
+      monitor.advance(1);
+
+      ctl.useMonitor(monitor.subTask(17));
+      this.executeTargets(ctl, toExecute, scriptInput, pool, results);
+      ctl.useMonitor(null);
+      if (!(results.isSucessful())) {
+        return results;
+      }
+
+      LOG.debug("Finished executing script");
       return results;
+    } finally {
+      monitor.done();
     }
-
-    this.executeTargets(ctl, toExecute, scriptInput, pool, results);
-    if (!(results.isSucessful())) {
-      return results;
-    }
-
-    LOG.debug("Finished executing script");
-    return results;
   }
 
   private void executeTargets(IScriptController ctl, final Iterable<ITarget> toExecute, final Iterable<? extends IResource> scriptInput, final Script.ParametersPool pool, final CompositeResult results) {

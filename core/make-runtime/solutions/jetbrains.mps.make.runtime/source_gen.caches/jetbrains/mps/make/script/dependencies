@@ -61,6 +61,7 @@
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IScriptController" file="IScriptController.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -71,6 +72,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.ScriptBuilder" file="ScriptBuilder.java">
     <classNode dependClassName="java.lang.Deprecated" />

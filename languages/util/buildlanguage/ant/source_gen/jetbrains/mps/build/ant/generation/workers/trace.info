@@ -1128,23 +1128,25 @@
     <nodeInfo nodeId="2821774308986878723" fileName="BuildMakeService.java" startLine="261" startPosition="29" endLine="262" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2821774308986892711" fileName="BuildMakeService.java" startLine="267" startPosition="109" endLine="268" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2821774308986878739" fileName="BuildMakeService.java" startLine="269" startPosition="29" endLine="270" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2821774308986895396" fileName="BuildMakeService.java" startLine="274" startPosition="52" endLine="275" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2821774308986895354" fileName="BuildMakeService.java" startLine="278" startPosition="64" endLine="279" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2821774308986895342" fileName="BuildMakeService.java" startLine="282" startPosition="106" endLine="283" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2821774308986895316" fileName="BuildMakeService.java" startLine="284" startPosition="11" endLine="285" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2821774308986895348" fileName="BuildMakeService.java" startLine="286" startPosition="17" endLine="287" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2821774308986817247" fileName="BuildMakeService.java" startLine="291" startPosition="78" endLine="292" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegateConfMon" />
-    <nodeInfo nodeId="2821774308986817340" fileName="BuildMakeService.java" startLine="294" startPosition="57" endLine="295" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6828477339626436848" fileName="BuildMakeService.java" startLine="299" startPosition="64" endLine="300" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6828477339626436854" fileName="BuildMakeService.java" startLine="301" startPosition="38" endLine="302" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2821774308986878174" fileName="BuildMakeService.java" startLine="311" startPosition="71" endLine="312" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegateJobMon" />
-    <nodeInfo nodeId="2821774308986878397" fileName="BuildMakeService.java" startLine="312" startPosition="41" endLine="313" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mfs" />
-    <nodeInfo nodeId="2821774308986878177" fileName="BuildMakeService.java" startLine="315" startPosition="103" endLine="316" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2821774308986878400" fileName="BuildMakeService.java" startLine="316" startPosition="39" endLine="317" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2821774308986878238" fileName="BuildMakeService.java" startLine="322" startPosition="37" endLine="323" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2821774308986878248" fileName="BuildMakeService.java" startLine="324" startPosition="9" endLine="325" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2821774308986878282" fileName="BuildMakeService.java" startLine="330" startPosition="37" endLine="331" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2821774308986878288" fileName="BuildMakeService.java" startLine="332" startPosition="9" endLine="333" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7480932071789567895" fileName="BuildMakeService.java" startLine="275" startPosition="53" endLine="276" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7480932071789567910" fileName="BuildMakeService.java" startLine="277" startPosition="29" endLine="278" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2821774308986895396" fileName="BuildMakeService.java" startLine="282" startPosition="52" endLine="283" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2821774308986895354" fileName="BuildMakeService.java" startLine="286" startPosition="62" endLine="287" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2821774308986895342" fileName="BuildMakeService.java" startLine="290" startPosition="106" endLine="291" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2821774308986895316" fileName="BuildMakeService.java" startLine="292" startPosition="11" endLine="293" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2821774308986895348" fileName="BuildMakeService.java" startLine="294" startPosition="17" endLine="295" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2821774308986817247" fileName="BuildMakeService.java" startLine="299" startPosition="78" endLine="300" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegateConfMon" />
+    <nodeInfo nodeId="2821774308986817340" fileName="BuildMakeService.java" startLine="302" startPosition="57" endLine="303" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6828477339626436848" fileName="BuildMakeService.java" startLine="307" startPosition="64" endLine="308" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6828477339626436854" fileName="BuildMakeService.java" startLine="309" startPosition="38" endLine="310" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2821774308986878174" fileName="BuildMakeService.java" startLine="319" startPosition="71" endLine="320" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegateJobMon" />
+    <nodeInfo nodeId="2821774308986878397" fileName="BuildMakeService.java" startLine="320" startPosition="41" endLine="321" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mfs" />
+    <nodeInfo nodeId="2821774308986878177" fileName="BuildMakeService.java" startLine="323" startPosition="103" endLine="324" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2821774308986878400" fileName="BuildMakeService.java" startLine="324" startPosition="39" endLine="325" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2821774308986878238" fileName="BuildMakeService.java" startLine="330" startPosition="37" endLine="331" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2821774308986878248" fileName="BuildMakeService.java" startLine="332" startPosition="9" endLine="333" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2821774308986878282" fileName="BuildMakeService.java" startLine="338" startPosition="37" endLine="339" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2821774308986878288" fileName="BuildMakeService.java" startLine="340" startPosition="9" endLine="341" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7260781342054461655" fileName="BuildMakeService.java" startLine="55" startPosition="0" endLine="57" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildMakeService#()V" />
     <nodeInfo nodeId="2821774308986846395" fileName="BuildMakeService.java" startLine="233" startPosition="12" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2821774308986878336" fileName="BuildMakeService.java" startLine="248" startPosition="14" endLine="250" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1155,10 +1157,11 @@
     <nodeInfo nodeId="7874190907999477662" fileName="BuildMakeService.java" startLine="187" startPosition="0" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MessageFeedbackStrategy#(Ljetbrains/mps/messages/IMessageHandler;)V" />
     <nodeInfo nodeId="2821774308986878715" fileName="BuildMakeService.java" startLine="260" startPosition="25" endLine="263" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2821774308986878731" fileName="BuildMakeService.java" startLine="268" startPosition="40" endLine="271" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2821774308986817205" fileName="BuildMakeService.java" startLine="293" startPosition="0" endLine="296" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DelegatingConfigMonitor#(Ljetbrains/mps/make/script/IConfigMonitor;)V" />
-    <nodeInfo nodeId="6828477339626436852" fileName="BuildMakeService.java" startLine="300" startPosition="21" endLine="303" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2821774308986878226" fileName="BuildMakeService.java" startLine="321" startPosition="42" endLine="324" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2821774308986878272" fileName="BuildMakeService.java" startLine="329" startPosition="50" endLine="332" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7480932071789567901" fileName="BuildMakeService.java" startLine="276" startPosition="32" endLine="279" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2821774308986817205" fileName="BuildMakeService.java" startLine="301" startPosition="0" endLine="304" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DelegatingConfigMonitor#(Ljetbrains/mps/make/script/IConfigMonitor;)V" />
+    <nodeInfo nodeId="6828477339626436852" fileName="BuildMakeService.java" startLine="308" startPosition="21" endLine="311" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2821774308986878226" fileName="BuildMakeService.java" startLine="329" startPosition="42" endLine="332" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2821774308986878272" fileName="BuildMakeService.java" startLine="337" startPosition="50" endLine="340" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8695426379435237791" fileName="BuildMakeService.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
     <nodeInfo nodeId="8695426379435237808" fileName="BuildMakeService.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;)Ljava/util/concurrent/Future;" />
     <nodeInfo nodeId="8695426379435237823" fileName="BuildMakeService.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;)Ljava/util/concurrent/Future;" />
@@ -1176,30 +1179,31 @@
     <nodeInfo nodeId="2821774308986816131" fileName="BuildMakeService.java" startLine="219" startPosition="0" endLine="223" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DelegatingScriptController#(Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/build/ant/generation/workers/BuildMakeService/MessageFeedbackStrategy;)V" />
     <nodeInfo nodeId="2821774308986817169" fileName="BuildMakeService.java" startLine="228" startPosition="88" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IConfigMonitor;)V" />
     <nodeInfo nodeId="2821774308986878314" fileName="BuildMakeService.java" startLine="243" startPosition="84" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IJobMonitor;)V" />
-    <nodeInfo nodeId="2821774308986895385" fileName="BuildMakeService.java" startLine="273" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProgressMonitor#()Ljetbrains/mps/progress/ProgressMonitor;" />
-    <nodeInfo nodeId="2821774308986895322" fileName="BuildMakeService.java" startLine="277" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setProgressIndicator#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
-    <nodeInfo nodeId="6828477339626436864" fileName="BuildMakeService.java" startLine="303" startPosition="9" endLine="307" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2821774308986846412" fileName="BuildMakeService.java" startLine="314" startPosition="0" endLine="318" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DelegatingJobMonitor#(Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/build/ant/generation/workers/BuildMakeService/MessageFeedbackStrategy;)V" />
+    <nodeInfo nodeId="2821774308986895385" fileName="BuildMakeService.java" startLine="281" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProgressMonitor#()Ljetbrains/mps/progress/ProgressMonitor;" />
+    <nodeInfo nodeId="2821774308986895322" fileName="BuildMakeService.java" startLine="285" startPosition="0" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setProgressMonitor#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <nodeInfo nodeId="6828477339626436864" fileName="BuildMakeService.java" startLine="311" startPosition="9" endLine="315" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2821774308986846412" fileName="BuildMakeService.java" startLine="322" startPosition="0" endLine="326" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DelegatingJobMonitor#(Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/build/ant/generation/workers/BuildMakeService/MessageFeedbackStrategy;)V" />
     <nodeInfo nodeId="7874190907999476500" fileName="BuildMakeService.java" startLine="49" startPosition="0" endLine="54" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildMakeService#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;)V" />
     <nodeInfo nodeId="7874190907999476586" fileName="BuildMakeService.java" startLine="111" startPosition="0" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2821774308986878646" fileName="BuildMakeService.java" startLine="129" startPosition="24" endLine="134" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3648686480793110704" fileName="BuildMakeService.java" startLine="178" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toScript#(Ljetbrains/mps/make/script/ScriptBuilder;)Ljetbrains/mps/make/script/IScript;" />
     <nodeInfo nodeId="2821774308986817162" fileName="BuildMakeService.java" startLine="227" startPosition="29" endLine="232" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2821774308986878307" fileName="BuildMakeService.java" startLine="242" startPosition="31" endLine="247" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2821774308986895337" fileName="BuildMakeService.java" startLine="283" startPosition="62" endLine="288" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="2821774308986895337" fileName="BuildMakeService.java" startLine="291" startPosition="60" endLine="296" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="8695426379435219084" fileName="BuildMakeService.java" startLine="142" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
     <nodeInfo nodeId="7260781342054461663" fileName="BuildMakeService.java" startLine="101" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="internalMakeSession#()Ljetbrains/mps/make/MakeSession;" />
     <nodeInfo nodeId="2821774308986878695" fileName="BuildMakeService.java" startLine="257" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
     <nodeInfo nodeId="2821774308986878682" fileName="BuildMakeService.java" startLine="265" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="2821774308986878184" fileName="BuildMakeService.java" startLine="319" startPosition="0" endLine="327" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" />
-    <nodeInfo nodeId="2821774308986878256" fileName="BuildMakeService.java" startLine="327" startPosition="0" endLine="335" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" />
+    <nodeInfo nodeId="7480932071789567882" fileName="BuildMakeService.java" startLine="273" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="useMonitor#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <nodeInfo nodeId="2821774308986878184" fileName="BuildMakeService.java" startLine="327" startPosition="0" endLine="335" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" />
+    <nodeInfo nodeId="2821774308986878256" fileName="BuildMakeService.java" startLine="335" startPosition="0" endLine="343" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" />
     <nodeInfo nodeId="2821774308986817154" fileName="BuildMakeService.java" startLine="226" startPosition="101" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2821774308986878299" fileName="BuildMakeService.java" startLine="241" startPosition="11" endLine="250" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2821774308986895290" fileName="BuildMakeService.java" startLine="281" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;Ljetbrains/mps/make/script/IJobMonitor;)V" />
+    <nodeInfo nodeId="2821774308986895290" fileName="BuildMakeService.java" startLine="289" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;Ljetbrains/mps/make/script/IJobMonitor;)V" />
     <nodeInfo nodeId="2821774308986878620" fileName="BuildMakeService.java" startLine="125" startPosition="325" endLine="135" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5520723819347757739" fileName="BuildMakeService.java" startLine="168" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClusteredInput#(Ljava/lang/Iterable;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
     <nodeInfo nodeId="7874190907999476569" fileName="BuildMakeService.java" startLine="108" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doMake#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="2821774308986817258" fileName="BuildMakeService.java" startLine="297" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
+    <nodeInfo nodeId="2821774308986817258" fileName="BuildMakeService.java" startLine="305" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
     <nodeInfo nodeId="2821774308986817136" fileName="BuildMakeService.java" startLine="224" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
     <nodeInfo nodeId="7874190907999477597" fileName="BuildMakeService.java" startLine="193" startPosition="30" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="2821774308986878592" fileName="BuildMakeService.java" startLine="122" startPosition="138" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
@@ -1240,14 +1244,15 @@
     <scopeInfo nodeId="2821774308986878475" fileName="BuildMakeService.java" startLine="253" startPosition="17" endLine="254" endPosition="72" />
     <scopeInfo nodeId="2821774308986878717" fileName="BuildMakeService.java" startLine="261" startPosition="29" endLine="262" endPosition="30" />
     <scopeInfo nodeId="2821774308986878733" fileName="BuildMakeService.java" startLine="269" startPosition="29" endLine="270" endPosition="45" />
-    <scopeInfo nodeId="2821774308986895388" fileName="BuildMakeService.java" startLine="274" startPosition="52" endLine="275" endPosition="28" />
-    <scopeInfo nodeId="2821774308986895325" fileName="BuildMakeService.java" startLine="278" startPosition="64" endLine="279" endPosition="36" />
-    <scopeInfo nodeId="2821774308986895338" fileName="BuildMakeService.java" startLine="284" startPosition="11" endLine="285" endPosition="24" />
-    <scopeInfo nodeId="2821774308986895340" fileName="BuildMakeService.java" startLine="286" startPosition="17" endLine="287" endPosition="35" />
-    <scopeInfo nodeId="2821774308986817208" fileName="BuildMakeService.java" startLine="294" startPosition="57" endLine="295" endPosition="34" />
-    <scopeInfo nodeId="6828477339626436853" fileName="BuildMakeService.java" startLine="301" startPosition="38" endLine="302" endPosition="50" />
-    <scopeInfo nodeId="2821774308986878228" fileName="BuildMakeService.java" startLine="322" startPosition="37" endLine="323" endPosition="50" />
-    <scopeInfo nodeId="2821774308986878276" fileName="BuildMakeService.java" startLine="330" startPosition="37" endLine="331" endPosition="46" />
+    <scopeInfo nodeId="7480932071789567902" fileName="BuildMakeService.java" startLine="277" startPosition="29" endLine="278" endPosition="37" />
+    <scopeInfo nodeId="2821774308986895388" fileName="BuildMakeService.java" startLine="282" startPosition="52" endLine="283" endPosition="28" />
+    <scopeInfo nodeId="2821774308986895325" fileName="BuildMakeService.java" startLine="286" startPosition="62" endLine="287" endPosition="36" />
+    <scopeInfo nodeId="2821774308986895338" fileName="BuildMakeService.java" startLine="292" startPosition="11" endLine="293" endPosition="24" />
+    <scopeInfo nodeId="2821774308986895340" fileName="BuildMakeService.java" startLine="294" startPosition="17" endLine="295" endPosition="33" />
+    <scopeInfo nodeId="2821774308986817208" fileName="BuildMakeService.java" startLine="302" startPosition="57" endLine="303" endPosition="34" />
+    <scopeInfo nodeId="6828477339626436853" fileName="BuildMakeService.java" startLine="309" startPosition="38" endLine="310" endPosition="50" />
+    <scopeInfo nodeId="2821774308986878228" fileName="BuildMakeService.java" startLine="330" startPosition="37" endLine="331" endPosition="50" />
+    <scopeInfo nodeId="2821774308986878276" fileName="BuildMakeService.java" startLine="338" startPosition="37" endLine="339" endPosition="46" />
     <scopeInfo nodeId="7874190907999476503" fileName="BuildMakeService.java" startLine="51" startPosition="91" endLine="53" endPosition="41" />
     <scopeInfo nodeId="7260781342054461655" fileName="BuildMakeService.java" startLine="55" startPosition="0" endLine="57" endPosition="3" />
     <scopeInfo nodeId="5520723819347757830" fileName="BuildMakeService.java" startLine="160" startPosition="66" endLine="162" endPosition="37" />
@@ -1256,7 +1261,7 @@
     <scopeInfo nodeId="7874190907999477616" fileName="BuildMakeService.java" startLine="201" startPosition="18" endLine="203" endPosition="16" />
     <scopeInfo nodeId="7874190907999477625" fileName="BuildMakeService.java" startLine="204" startPosition="16" endLine="206" endPosition="16" />
     <scopeInfo nodeId="2821774308986816134" fileName="BuildMakeService.java" startLine="220" startPosition="113" endLine="222" endPosition="21" />
-    <scopeInfo nodeId="2821774308986846415" fileName="BuildMakeService.java" startLine="315" startPosition="103" endLine="317" endPosition="23" />
+    <scopeInfo nodeId="2821774308986846415" fileName="BuildMakeService.java" startLine="323" startPosition="103" endLine="325" endPosition="23" />
     <scopeInfo nodeId="3180200298862818641" fileName="BuildMakeService.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="3180200298862818642" varName="session" />
     </scopeInfo>
@@ -1268,7 +1273,7 @@
     <scopeInfo nodeId="7874190907999477662" fileName="BuildMakeService.java" startLine="187" startPosition="0" endLine="190" endPosition="5">
       <varInfo nodeId="7874190907999477672" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="2821774308986817205" fileName="BuildMakeService.java" startLine="293" startPosition="0" endLine="296" endPosition="7">
+    <scopeInfo nodeId="2821774308986817205" fileName="BuildMakeService.java" startLine="301" startPosition="0" endLine="304" endPosition="7">
       <varInfo nodeId="2821774308986817330" varName="cm" />
     </scopeInfo>
     <scopeInfo nodeId="8695426379435237791" fileName="BuildMakeService.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
@@ -1328,16 +1333,17 @@
     <scopeInfo nodeId="2821774308986878314" fileName="BuildMakeService.java" startLine="243" startPosition="84" endLine="247" endPosition="0" />
     <scopeInfo nodeId="2821774308986878700" fileName="BuildMakeService.java" startLine="259" startPosition="46" endLine="263" endPosition="7" />
     <scopeInfo nodeId="2821774308986878694" fileName="BuildMakeService.java" startLine="267" startPosition="109" endLine="271" endPosition="7" />
-    <scopeInfo nodeId="2821774308986895385" fileName="BuildMakeService.java" startLine="273" startPosition="0" endLine="277" endPosition="0" />
-    <scopeInfo nodeId="2821774308986895322" fileName="BuildMakeService.java" startLine="277" startPosition="0" endLine="281" endPosition="0">
+    <scopeInfo nodeId="7480932071789567887" fileName="BuildMakeService.java" startLine="275" startPosition="53" endLine="279" endPosition="7" />
+    <scopeInfo nodeId="2821774308986895385" fileName="BuildMakeService.java" startLine="281" startPosition="0" endLine="285" endPosition="0" />
+    <scopeInfo nodeId="2821774308986895322" fileName="BuildMakeService.java" startLine="285" startPosition="0" endLine="289" endPosition="0">
       <varInfo nodeId="2821774308986895334" varName="monitor" />
     </scopeInfo>
-    <scopeInfo nodeId="2821774308986846412" fileName="BuildMakeService.java" startLine="314" startPosition="0" endLine="318" endPosition="7">
+    <scopeInfo nodeId="2821774308986846412" fileName="BuildMakeService.java" startLine="322" startPosition="0" endLine="326" endPosition="7">
       <varInfo nodeId="2821774308986878164" varName="delegate" />
       <varInfo nodeId="2821774308986878388" varName="mfs" />
     </scopeInfo>
-    <scopeInfo nodeId="2821774308986878187" fileName="BuildMakeService.java" startLine="321" startPosition="42" endLine="325" endPosition="39" />
-    <scopeInfo nodeId="2821774308986878261" fileName="BuildMakeService.java" startLine="329" startPosition="50" endLine="333" endPosition="33" />
+    <scopeInfo nodeId="2821774308986878187" fileName="BuildMakeService.java" startLine="329" startPosition="42" endLine="333" endPosition="39" />
+    <scopeInfo nodeId="2821774308986878261" fileName="BuildMakeService.java" startLine="337" startPosition="50" endLine="341" endPosition="33" />
     <scopeInfo nodeId="7874190907999476500" fileName="BuildMakeService.java" startLine="49" startPosition="0" endLine="54" endPosition="3">
       <varInfo nodeId="7874190907999476516" varName="context" />
       <varInfo nodeId="7874190907999476518" varName="messageHandler" />
@@ -1352,7 +1358,7 @@
       <varInfo nodeId="5520723819347757809" varName="ctl" />
       <varInfo nodeId="5520723819347757764" varName="task" />
     </scopeInfo>
-    <scopeInfo nodeId="2821774308986895293" fileName="BuildMakeService.java" startLine="282" startPosition="106" endLine="288" endPosition="7" />
+    <scopeInfo nodeId="2821774308986895293" fileName="BuildMakeService.java" startLine="290" startPosition="106" endLine="296" endPosition="7" />
     <scopeInfo nodeId="7260781342054461663" fileName="BuildMakeService.java" startLine="101" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="2821774308986878621" fileName="BuildMakeService.java" startLine="126" startPosition="27" endLine="134" endPosition="13" />
     <scopeInfo nodeId="2821774308986878695" fileName="BuildMakeService.java" startLine="257" startPosition="0" endLine="265" endPosition="0">
@@ -1363,11 +1369,14 @@
       <varInfo nodeId="2821774308986878685" varName="pp" />
       <varInfo nodeId="2821774308986878687" varName="toExecute" />
     </scopeInfo>
-    <scopeInfo nodeId="2821774308986817265" fileName="BuildMakeService.java" startLine="299" startPosition="64" endLine="307" endPosition="10">
+    <scopeInfo nodeId="7480932071789567882" fileName="BuildMakeService.java" startLine="273" startPosition="0" endLine="281" endPosition="0">
+      <varInfo nodeId="7480932071789567885" varName="monitor" />
+    </scopeInfo>
+    <scopeInfo nodeId="2821774308986817265" fileName="BuildMakeService.java" startLine="307" startPosition="64" endLine="315" endPosition="10">
       <varInfo nodeId="6828477339626436849" varName="opt" />
     </scopeInfo>
-    <scopeInfo nodeId="2821774308986878184" fileName="BuildMakeService.java" startLine="319" startPosition="0" endLine="327" endPosition="0" />
-    <scopeInfo nodeId="2821774308986878256" fileName="BuildMakeService.java" startLine="327" startPosition="0" endLine="335" endPosition="0">
+    <scopeInfo nodeId="2821774308986878184" fileName="BuildMakeService.java" startLine="327" startPosition="0" endLine="335" endPosition="0" />
+    <scopeInfo nodeId="2821774308986878256" fileName="BuildMakeService.java" startLine="335" startPosition="0" endLine="343" endPosition="0">
       <varInfo nodeId="2821774308986878257" varName="fdbk" />
     </scopeInfo>
     <scopeInfo nodeId="7874190907999476580" fileName="BuildMakeService.java" startLine="109" startPosition="152" endLine="118" endPosition="110">
@@ -1375,7 +1384,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2821774308986817143" fileName="BuildMakeService.java" startLine="226" startPosition="101" endLine="235" endPosition="7" />
     <scopeInfo nodeId="2821774308986878470" fileName="BuildMakeService.java" startLine="241" startPosition="11" endLine="250" endPosition="9" />
-    <scopeInfo nodeId="2821774308986895290" fileName="BuildMakeService.java" startLine="281" startPosition="0" endLine="290" endPosition="0">
+    <scopeInfo nodeId="2821774308986895290" fileName="BuildMakeService.java" startLine="289" startPosition="0" endLine="298" endPosition="0">
       <varInfo nodeId="2821774308986895309" varName="code" />
       <varInfo nodeId="2821774308986895306" varName="jm" />
     </scopeInfo>
@@ -1393,7 +1402,7 @@
     <scopeInfo nodeId="2821774308986878597" fileName="BuildMakeService.java" startLine="123" startPosition="47" endLine="135" endPosition="9">
       <varInfo nodeId="2821774308986878599" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="2821774308986817258" fileName="BuildMakeService.java" startLine="297" startPosition="0" endLine="309" endPosition="0">
+    <scopeInfo nodeId="2821774308986817258" fileName="BuildMakeService.java" startLine="305" startPosition="0" endLine="317" endPosition="0">
       <varInfo nodeId="2821774308986817259" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="2821774308986817136" fileName="BuildMakeService.java" startLine="224" startPosition="0" endLine="237" endPosition="0">
@@ -1420,16 +1429,16 @@
     <scopeInfo nodeId="7874190907999477590" fileName="BuildMakeService.java" startLine="191" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="7874190907999477659" varName="fdk" />
     </scopeInfo>
-    <unitInfo nodeId="7874190907999476498" fileName="BuildMakeService.java" startLine="44" startPosition="0" endLine="338" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
+    <unitInfo nodeId="7874190907999476498" fileName="BuildMakeService.java" startLine="44" startPosition="0" endLine="346" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
     <unitInfo nodeId="2821774308986817169" fileName="BuildMakeService.java" startLine="228" startPosition="42" endLine="232" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$1" />
     <unitInfo nodeId="2821774308986878488" fileName="BuildMakeService.java" startLine="122" startPosition="15" endLine="137" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$1" />
     <unitInfo nodeId="2821774308986878648" fileName="BuildMakeService.java" startLine="130" startPosition="22" endLine="134" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$2" />
     <unitInfo nodeId="2821774308986878314" fileName="BuildMakeService.java" startLine="243" startPosition="41" endLine="247" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$2" />
-    <unitInfo nodeId="2821774308986816129" fileName="BuildMakeService.java" startLine="215" startPosition="0" endLine="337" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$DelegatingScriptController" />
+    <unitInfo nodeId="2821774308986816129" fileName="BuildMakeService.java" startLine="215" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$DelegatingScriptController" />
     <unitInfo nodeId="7874190907999477589" fileName="BuildMakeService.java" startLine="185" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$MessageFeedbackStrategy" />
     <unitInfo nodeId="5520723819347757702" fileName="BuildMakeService.java" startLine="156" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$TaskRunner" />
-    <unitInfo nodeId="2821774308986817203" fileName="BuildMakeService.java" startLine="291" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService.DelegatingScriptController$DelegatingConfigMonitor" />
-    <unitInfo nodeId="2821774308986846410" fileName="BuildMakeService.java" startLine="311" startPosition="0" endLine="336" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService.DelegatingScriptController$DelegatingJobMonitor" />
+    <unitInfo nodeId="2821774308986817203" fileName="BuildMakeService.java" startLine="299" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService.DelegatingScriptController$DelegatingConfigMonitor" />
+    <unitInfo nodeId="2821774308986846410" fileName="BuildMakeService.java" startLine="319" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService.DelegatingScriptController$DelegatingJobMonitor" />
   </root>
 </debugInfo>
 

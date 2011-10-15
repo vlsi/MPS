@@ -7,6 +7,7 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.make.facet.ITarget;
 
 public class InvalidScript implements IScript {
@@ -24,7 +25,7 @@ public class InvalidScript implements IScript {
     throw new IllegalStateException("Invalid script");
   }
 
-  public IResult execute(IScriptController monitors, Iterable<? extends IResource> input) {
+  public IResult execute(IScriptController controller, Iterable<? extends IResource> input, ProgressMonitor monitor) {
     throw new IllegalStateException("Invalid script");
   }
 

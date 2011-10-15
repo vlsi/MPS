@@ -126,7 +126,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
       }
     };
 
-    final Wrappers._T<ProgressMonitor> monitor = new Wrappers._T<ProgressMonitor>(new EmptyProgressMonitor());
+    final ProgressMonitor emptyMonitor = new EmptyProgressMonitor();
     return new IScriptController.Stub() {
       public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
         if (ctl != null) {
@@ -146,7 +146,6 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
       }
 
       public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        monitor.value = new EmptyProgressMonitor();
         code.invoke(jmon);
       }
 
@@ -157,7 +156,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
         vars._2(true);
         vars._3(new _FunctionTypes._return_P0_E0<ProgressMonitor>() {
           public ProgressMonitor invoke() {
-            return monitor.value;
+            return emptyMonitor;
           }
         });
 

@@ -8,16 +8,10 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode extendsClassName="jetbrains.mps.progress.ProgressMonitorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate" file="ProgressIndicatorDelegate.java">
-    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
-    <classNode dependClassName="com.intellij.openapi.progress.ProcessCanceledException" />
+  <dependency className="jetbrains.mps.internal.make.runtime.backports.ProgressMonitorProgressStrategy" file="ProgressMonitorProgressStrategy.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.progress.ProgressIndicator" />
-  </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy" file="ProgressIndicatorProgressStrategy.java">
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.script.AbstractProgressStrategy" />
   </dependency>
 </dependenciesRoot>

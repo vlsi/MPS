@@ -18,6 +18,7 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.facet.IFacet;
 import junit.framework.Assert;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.unittest.Mockups;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -69,7 +70,7 @@ public class Generator_Test extends MockTestCase {
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
-    IResult res = scr.execute(mons, null);
+    IResult res = scr.execute(mons, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -132,7 +133,7 @@ public class Generator_Test extends MockTestCase {
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
-    IResult res = scr.execute(mons, null);
+    IResult res = scr.execute(mons, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -198,7 +199,7 @@ public class Generator_Test extends MockTestCase {
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
-    IResult res = scr.execute(mons, null);
+    IResult res = scr.execute(mons, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertFalse(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -248,7 +249,7 @@ public class Generator_Test extends MockTestCase {
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
-    IResult res = scr.execute(mons, null);
+    IResult res = scr.execute(mons, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -295,7 +296,7 @@ public class Generator_Test extends MockTestCase {
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
-    IResult res = scr.execute(mons, null);
+    IResult res = scr.execute(mons, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
