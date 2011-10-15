@@ -23,8 +23,8 @@ import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IFeedback;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -126,7 +126,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
       }
     };
 
-    final Wrappers._T<ProgressIndicator> pind = new Wrappers._T<ProgressIndicator>(new EmptyProgressIndicator());
+    final Wrappers._T<ProgressMonitor> monitor = new Wrappers._T<ProgressMonitor>(new EmptyProgressMonitor());
     return new IScriptController.Stub() {
       public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
         if (ctl != null) {
@@ -146,18 +146,18 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
       }
 
       public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        pind.value = new EmptyProgressIndicator();
+        monitor.value = new EmptyProgressMonitor();
         code.invoke(jmon);
       }
 
       public void setup(IPropertiesPool pool) {
-        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
+        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         vars._0(ProjectHelper.toIdeaProject(TestMakeService.this.context.getProject()));
         vars._1(TestMakeService.this.context);
         vars._2(true);
-        vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
-          public ProgressIndicator invoke() {
-            return pind.value;
+        vars._3(new _FunctionTypes._return_P0_E0<ProgressMonitor>() {
+          public ProgressMonitor invoke() {
+            return monitor.value;
           }
         });
 
