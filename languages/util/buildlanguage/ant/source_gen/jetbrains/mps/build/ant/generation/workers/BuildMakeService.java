@@ -22,7 +22,7 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NonNls;
@@ -36,7 +36,7 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import com.intellij.openapi.application.impl.ApplicationImpl;
-import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
+import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IProgress;
@@ -122,14 +122,14 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     return new BuildMakeService.DelegatingScriptController(ctl, new BuildMakeService.MessageFeedbackStrategy(msess.getMessageHandler())) {
       public void setup(IPropertiesPool pool) {
         super.setup(pool);
-        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
+        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         if (vars != null) {
           vars._0(ProjectHelper.toIdeaProject(msess.getContext().getProject()));
           vars._1(msess.getContext());
           vars._2(true);
-          vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
-            public ProgressIndicator invoke() {
-              return getProgressIndicator();
+          vars._3(new _FunctionTypes._return_P0_E0<ProgressMonitor>() {
+            public ProgressMonitor invoke() {
+              return getProgressMonitor();
             }
           });
         }
@@ -215,7 +215,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
   private static class DelegatingScriptController extends IScriptController.Stub {
     private IScriptController delegate;
     private BuildMakeService.MessageFeedbackStrategy mfs;
-    private ProgressIndicator currentPind;
+    private ProgressMonitor currentMonitor;
 
     public DelegatingScriptController(IScriptController delegate, BuildMakeService.MessageFeedbackStrategy mfs) {
       this.delegate = delegate;
@@ -271,16 +271,16 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
       }
     }
 
-    protected ProgressIndicator getProgressIndicator() {
-      return currentPind;
+    protected ProgressMonitor getProgressMonitor() {
+      return currentMonitor;
     }
 
-    private void setProgressIndicator(ProgressIndicator pind) {
-      this.currentPind = pind;
+    private void setProgressIndicator(ProgressMonitor monitor) {
+      this.currentMonitor = monitor;
     }
 
     private void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code, IJobMonitor jm) {
-      setProgressIndicator(new JobMonitorProgressIndicator(jm));
+      setProgressIndicator(new JobProgressMonitorAdapter(jm));
       try {
         code.invoke(jm);
       } finally {

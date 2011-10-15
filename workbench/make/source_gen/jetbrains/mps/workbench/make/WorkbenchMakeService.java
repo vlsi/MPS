@@ -49,7 +49,8 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.generator.GenerationSettings;
@@ -409,15 +410,15 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     public void setup(IPropertiesPool ppool, Iterable<ITarget> targets, Iterable<? extends IResource> input) {
       ppool.setPredecessor(predParamPool);
       predParamPool = ppool;
-      final ProgressIndicator pind = new JobMonitorProgressIndicator(jobMon);
-      Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
+      final ProgressMonitor monitor = new JobProgressMonitorAdapter(jobMon);
+      Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
       if (vars != null) {
         vars._0(ProjectHelper.toIdeaProject(getSession().getContext().getProject()));
         vars._1(getSession().getContext());
         vars._2(getSession().isCleanMake());
-        vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
-          public ProgressIndicator invoke() {
-            return pind;
+        vars._3(new _FunctionTypes._return_P0_E0<ProgressMonitor>() {
+          public ProgressMonitor invoke() {
+            return monitor;
           }
         });
       }

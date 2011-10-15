@@ -21,7 +21,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.generator.GenerationOptions;
@@ -50,7 +50,6 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.make.delta.IDelta;
@@ -180,13 +179,13 @@ public class Generate_Facet extends IFacet.Stub {
       return t;
     }
 
-    public static class Variables extends MultiTuple._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> {
+    public static class Variables extends MultiTuple._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> {
       public Variables() {
         super();
       }
 
-      public Variables(Project project, IOperationContext operationContext, Boolean cleanMake, _FunctionTypes._return_P0_E0<? extends ProgressIndicator> pindGet) {
-        super(project, operationContext, cleanMake, pindGet);
+      public Variables(Project project, IOperationContext operationContext, Boolean cleanMake, _FunctionTypes._return_P0_E0<? extends ProgressMonitor> monitorProvider) {
+        super(project, operationContext, cleanMake, monitorProvider);
       }
 
       public Project project(Project value) {
@@ -201,7 +200,7 @@ public class Generate_Facet extends IFacet.Stub {
         return super._2(value);
       }
 
-      public _FunctionTypes._return_P0_E0<? extends ProgressIndicator> pindGet(_FunctionTypes._return_P0_E0<? extends ProgressIndicator> value) {
+      public _FunctionTypes._return_P0_E0<? extends ProgressMonitor> monitorProvider(_FunctionTypes._return_P0_E0<? extends ProgressMonitor> value) {
         return super._3(value);
       }
 
@@ -217,12 +216,12 @@ public class Generate_Facet extends IFacet.Stub {
         return super._2();
       }
 
-      public _FunctionTypes._return_P0_E0<? extends ProgressIndicator> pindGet() {
+      public _FunctionTypes._return_P0_E0<? extends ProgressMonitor> monitorProvider() {
         return super._3();
       }
 
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_checkParameters.Variables assignFrom(Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> from) {
+      public Generate_Facet.Target_checkParameters.Variables assignFrom(Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> from) {
         return (Generate_Facet.Target_checkParameters.Variables) super.assign(from);
       }
     }
@@ -616,7 +615,7 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               }).toListSequence();
 
-              generationOk = GenerationFacade.generateModels(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(MPSProject.class), models, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, new ProgressMonitorAdapter(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).pindGet().invoke()), mh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(TransientModelsComponent.class));
+              generationOk = GenerationFacade.generateModels(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(MPSProject.class), models, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).monitorProvider().invoke(), mh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(TransientModelsComponent.class));
 
               monitor.currentProgress().finishWork("Generating");
               if (!(generationOk)) {
@@ -711,7 +710,7 @@ public class Generate_Facet extends IFacet.Stub {
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.project", null);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.operationContext", null);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake", String.valueOf(props.cleanMake()));
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.pindGet", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.monitorProvider", null);
         }
       }
       {
@@ -739,8 +738,8 @@ public class Generate_Facet extends IFacet.Stub {
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")) {
             props.cleanMake(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")));
           }
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.pindGet")) {
-            props.pindGet(null);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.monitorProvider")) {
+            props.monitorProvider(null);
           }
         }
         {
