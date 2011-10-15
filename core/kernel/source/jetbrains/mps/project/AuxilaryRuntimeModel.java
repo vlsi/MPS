@@ -56,7 +56,12 @@ public class AuxilaryRuntimeModel implements ModelOwner, CoreComponent {
 
   @Override
   public void dispose() {
-    SModelRepository.getInstance().unRegisterModelDescriptor(ourInstance, this);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        SModelRepository.getInstance().unRegisterModelDescriptor(ourInstance, AuxilaryRuntimeModel.this);
+      }
+    });
     INSTANCE = null;
   }
 
