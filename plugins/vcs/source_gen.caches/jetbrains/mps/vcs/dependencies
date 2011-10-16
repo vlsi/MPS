@@ -110,6 +110,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcsHelper" />
+    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
     <classNode dependClassName="java.lang.Override" />
@@ -138,6 +139,7 @@
     <classNode dependClassName="jetbrains.mps.watching.ModelChangesWatcher" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.vcs.queue.TaskQueue" />
   </dependency>
@@ -192,13 +194,10 @@
   <dependency className="jetbrains.mps.vcs.VcsUtil" file="VcsUtil.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
-    <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
-    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.MPSVcsManager" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
 </dependenciesRoot>
 

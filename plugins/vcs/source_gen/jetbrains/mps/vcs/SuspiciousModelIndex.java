@@ -33,6 +33,8 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.LinkedList;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 
 public class SuspiciousModelIndex implements ApplicationComponent {
   private final ProjectManager myProjectManager;
@@ -116,7 +118,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
         VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
         Conflictable prev = fileToConflictable.put(vfile, conflictable);
         if (prev == null) {
-          Project project = VcsUtil.getProjectForFile(vfile);
+          Project project = getProjectForFile(vfile);
           List<VirtualFile> files = toMerge.get(project);
           if (files == null) {
             files = new LinkedList<VirtualFile>();
@@ -149,6 +151,19 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
   public static SuspiciousModelIndex instance() {
     return ApplicationManager.getApplication().getComponent(SuspiciousModelIndex.class);
+  }
+
+  @Nullable
+  private static Project getProjectForFile(VirtualFile f) {
+    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+      if (project.isDisposed()) {
+        continue;
+      }
+      if (ProjectLevelVcsManager.getInstance(project).getVcsFor(f) != null) {
+        return project;
+      }
+    }
+    return null;
   }
 
   private class MyTaskQueue extends TaskQueue<Conflictable> {
