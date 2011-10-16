@@ -17,12 +17,12 @@ import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.ChangeProvider;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.vcs.VcsException;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
-import com.intellij.openapi.vcs.VcsListener;
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
+import com.intellij.openapi.vcs.VcsListener;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.vcs.SourceRevision;
 import jetbrains.mps.vcs.revision.MPSSourceRevision;
@@ -84,6 +84,11 @@ public class MPSVcsManager implements ProjectComponent {
   }
 
   public void projectOpened() {
+    DiskMemoryConflictResolver.setResolver(new DiskMemoryConflictResolver() {
+      public boolean resolveDiskMemoryConflict(IFile file, SModel model) {
+        return VcsHelper.resolveDiskMemoryConflict(file, model);
+      }
+    });
     if (ApplicationManager.getApplication().isUnitTestMode() || myProject.isDefault()) {
       return;
     }
@@ -96,11 +101,6 @@ public class MPSVcsManager implements ProjectComponent {
       }
     };
     myMessageBusConnection.subscribe(ProjectLevelVcsManager.VCS_CONFIGURATION_CHANGED, vcsListener);
-    DiskMemoryConflictResolver.setResolver(new DiskMemoryConflictResolver() {
-      public boolean resolveDiskMemoryConflict(IFile file, SModel model) {
-        return VcsHelper.resolveDiskMemoryConflict(file, model);
-      }
-    });
     if (InternalFlag.isInternalMode()) {
       SourceRevision.setProvider(new MPSSourceRevision());
     }
