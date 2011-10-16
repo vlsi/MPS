@@ -7,7 +7,7 @@ import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
 
-/*package*/ class PluginUtil {
+public class PluginUtil {
   private PluginUtil() {
   }
 
@@ -16,11 +16,11 @@ import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
     return p instanceof IdeaPluginDescriptorImpl && ((IdeaPluginDescriptorImpl) p).isEnabled();
   }
 
-  /*package*/ static boolean isSvnPluginEnabled() {
+  public static boolean isSvnPluginEnabled() {
     return isPluginEnabled("Subversion");
   }
 
-  /*package*/ static boolean isGitPluginEnabled() {
+  public static boolean isGitPluginEnabled() {
     return isPluginEnabled("Git4Idea");
   }
 }
