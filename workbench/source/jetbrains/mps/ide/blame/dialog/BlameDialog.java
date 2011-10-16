@@ -19,7 +19,6 @@ import com.intellij.ide.BrowserUtil;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
@@ -29,11 +28,8 @@ import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.vcs.VcsMigrationUtil;
+import jetbrains.mps.ide.vcs.SourceRevision;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
@@ -164,13 +160,8 @@ public class BlameDialog extends BaseDialog {
   }
 
   private String getRevisionNumber() {
-    IFile file = FileSystem.getInstance().getFileByPath(PathManager.getHomePath());
-    if (file == null) return "";
-    VcsRevisionNumber revisionNumber = VcsMigrationUtil.getHandler().getRevisionNumber(file);
-    if (revisionNumber == null) {
-      return "";
-    }
-    return "revision number: " + revisionNumber.asString() + "\n";
+    String r = SourceRevision.getSourceRevision();
+    return r == null ? "" : "revision: " + r;
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
