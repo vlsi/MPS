@@ -97,7 +97,6 @@
     <classNode dependClassName="org.xml.sax.InputSource" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.RealVcsHandler" file="RealVcsHandler.java">
-    <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vcs.VcsUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
@@ -195,8 +194,6 @@
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
-    <classNode dependClassName="com.intellij.openapi.vcs.diff.DiffProvider" />
-    <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.MPSVcsManager" />

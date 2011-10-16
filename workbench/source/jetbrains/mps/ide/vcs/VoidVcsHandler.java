@@ -15,13 +15,9 @@
  */
 package jetbrains.mps.ide.vcs;
 
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import jetbrains.mps.vfs.IFile;
 
 public class VoidVcsHandler implements VcsHandler {
-  public VcsRevisionNumber getRevisionNumber(IFile file) {
-    return null;
-  }
 
   public boolean isInConflict(IFile iFile, boolean synchronously) {
     return false;

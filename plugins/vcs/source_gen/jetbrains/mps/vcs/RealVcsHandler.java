@@ -4,16 +4,11 @@ package jetbrains.mps.vcs;
 
 import jetbrains.mps.ide.vcs.VcsHandler;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 public class RealVcsHandler implements VcsHandler, ApplicationComponent {
   public RealVcsHandler() {
-  }
-
-  public VcsRevisionNumber getRevisionNumber(IFile file) {
-    return VcsUtil.getRevisionNumber(file);
   }
 
   public boolean isInConflict(IFile iFile, boolean synchronously) {

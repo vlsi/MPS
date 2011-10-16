@@ -7,10 +7,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.vcs.diff.DiffProvider;
 import com.intellij.openapi.project.ProjectManager;
 
 public class VcsUtil {
@@ -45,20 +43,6 @@ public class VcsUtil {
       }
     }
     return null;
-  }
-
-  @Nullable
-  public static VcsRevisionNumber getRevisionNumber(IFile file) {
-    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(file);
-    AbstractVcs vcs = VcsUtil.getVcsForFile(virtualFile);
-    if (vcs == null) {
-      return null;
-    }
-    DiffProvider diffProvider = vcs.getDiffProvider();
-    if (diffProvider == null) {
-      return null;
-    }
-    return diffProvider.getCurrentRevision(virtualFile);
   }
 
   public static boolean isInConflict(IFile ifile, boolean synchronously) {
