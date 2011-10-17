@@ -47,8 +47,8 @@
     <scopeInfo nodeId="4707157387247635575" fileName="ConflictableModuleAdapter.java" startLine="29" startPosition="34" endLine="30" endPosition="36" />
     <scopeInfo nodeId="4707157387247635540" fileName="ConflictableModuleAdapter.java" startLine="12" startPosition="80" endLine="14" endPosition="46" />
     <scopeInfo nodeId="4707157387247635533" fileName="ConflictableModuleAdapter.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
-      <varInfo nodeId="4707157387247635536" varName="module" />
       <varInfo nodeId="4707157387247635538" varName="isConflictDetected" />
+      <varInfo nodeId="4707157387247635536" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247635549" fileName="ConflictableModuleAdapter.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="4707157387247635555" fileName="ConflictableModuleAdapter.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
@@ -76,8 +76,8 @@
     <scopeInfo nodeId="4707157387247635630" fileName="ConflictableModelAdapter.java" startLine="29" startPosition="34" endLine="30" endPosition="36" />
     <scopeInfo nodeId="4707157387247635596" fileName="ConflictableModelAdapter.java" startLine="12" startPosition="94" endLine="14" endPosition="46" />
     <scopeInfo nodeId="4707157387247635589" fileName="ConflictableModelAdapter.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
-      <varInfo nodeId="4707157387247635592" varName="model" />
       <varInfo nodeId="4707157387247635594" varName="isConflictDetected" />
+      <varInfo nodeId="4707157387247635592" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247635605" fileName="ConflictableModelAdapter.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="4707157387247635611" fileName="ConflictableModelAdapter.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />

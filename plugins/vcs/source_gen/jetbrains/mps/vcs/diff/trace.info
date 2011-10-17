@@ -9,13 +9,13 @@
     <nodeInfo nodeId="4707157387247628954" fileName="DiffBuilder.java" startLine="53" startPosition="56" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247628958" fileName="DiffBuilder.java" startLine="54" startPosition="26" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247628962" fileName="DiffBuilder.java" startLine="55" startPosition="26" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247628968" fileName="DiffBuilder.java" startLine="59" startPosition="33" endLine="60" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247628975" fileName="DiffBuilder.java" startLine="60" startPosition="52" endLine="61" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247628984" fileName="DiffBuilder.java" startLine="61" startPosition="64" endLine="62" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629000" fileName="DiffBuilder.java" startLine="63" startPosition="43" endLine="64" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247628968" fileName="DiffBuilder.java" startLine="59" startPosition="33" endLine="60" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="intersect" />
+    <nodeInfo nodeId="4707157387247628975" fileName="DiffBuilder.java" startLine="60" startPosition="52" endLine="61" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="onlyOld" />
+    <nodeInfo nodeId="4707157387247628984" fileName="DiffBuilder.java" startLine="61" startPosition="64" endLine="62" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="onlyNew" />
+    <nodeInfo nodeId="4707157387247629000" fileName="DiffBuilder.java" startLine="63" startPosition="43" endLine="64" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="id" />
     <nodeInfo nodeId="4707157387247629022" fileName="DiffBuilder.java" startLine="65" startPosition="47" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629015" fileName="DiffBuilder.java" startLine="67" startPosition="14" endLine="68" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629034" fileName="DiffBuilder.java" startLine="71" startPosition="43" endLine="72" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629034" fileName="DiffBuilder.java" startLine="71" startPosition="43" endLine="72" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="id" />
     <nodeInfo nodeId="4707157387247629048" fileName="DiffBuilder.java" startLine="73" startPosition="47" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629054" fileName="DiffBuilder.java" startLine="76" startPosition="5" endLine="77" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629056" fileName="DiffBuilder.java" startLine="77" startPosition="34" endLine="78" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -29,126 +29,126 @@
     <nodeInfo nodeId="4707157387247629075" fileName="DiffBuilder.java" startLine="85" startPosition="29" endLine="86" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629077" fileName="DiffBuilder.java" startLine="86" startPosition="30" endLine="87" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629080" fileName="DiffBuilder.java" startLine="87" startPosition="37" endLine="88" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629086" fileName="DiffBuilder.java" startLine="91" startPosition="35" endLine="92" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629086" fileName="DiffBuilder.java" startLine="91" startPosition="35" endLine="92" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="deletedNodes" />
     <nodeInfo nodeId="4707157387247629100" fileName="DiffBuilder.java" startLine="93" startPosition="94" endLine="94" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629114" fileName="DiffBuilder.java" startLine="96" startPosition="94" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629114" fileName="DiffBuilder.java" startLine="96" startPosition="94" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="deleted" />
     <nodeInfo nodeId="4707157387247629123" fileName="DiffBuilder.java" startLine="97" startPosition="73" endLine="98" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4707157387247629127" fileName="DiffBuilder.java" startLine="98" startPosition="29" endLine="99" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629127" fileName="DiffBuilder.java" startLine="98" startPosition="29" endLine="99" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="deleteRoot" />
     <nodeInfo nodeId="4707157387247629147" fileName="DiffBuilder.java" startLine="100" startPosition="108" endLine="101" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629153" fileName="DiffBuilder.java" startLine="102" startPosition="7" endLine="103" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629159" fileName="DiffBuilder.java" startLine="104" startPosition="5" endLine="105" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629159" fileName="DiffBuilder.java" startLine="104" startPosition="5" endLine="105" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="addedNodes" />
     <nodeInfo nodeId="4707157387247629173" fileName="DiffBuilder.java" startLine="106" startPosition="88" endLine="107" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629185" fileName="DiffBuilder.java" startLine="109" startPosition="40" endLine="110" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629185" fileName="DiffBuilder.java" startLine="109" startPosition="40" endLine="110" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="id" />
     <nodeInfo nodeId="4707157387247629196" fileName="DiffBuilder.java" startLine="111" startPosition="23" endLine="112" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4707157387247629197" fileName="DiffBuilder.java" startLine="113" startPosition="7" endLine="114" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629197" fileName="DiffBuilder.java" startLine="113" startPosition="7" endLine="114" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="added" />
     <nodeInfo nodeId="4707157387247629209" fileName="DiffBuilder.java" startLine="115" startPosition="26" endLine="116" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4707157387247629210" fileName="DiffBuilder.java" startLine="117" startPosition="7" endLine="118" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629210" fileName="DiffBuilder.java" startLine="117" startPosition="7" endLine="118" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="addRoot" />
     <nodeInfo nodeId="4707157387247629230" fileName="DiffBuilder.java" startLine="119" startPosition="100" endLine="120" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629236" fileName="DiffBuilder.java" startLine="121" startPosition="7" endLine="122" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629248" fileName="DiffBuilder.java" startLine="126" startPosition="50" endLine="127" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247629254" fileName="DiffBuilder.java" startLine="130" startPosition="42" endLine="131" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629260" fileName="DiffBuilder.java" startLine="131" startPosition="96" endLine="132" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629266" fileName="DiffBuilder.java" startLine="132" startPosition="96" endLine="133" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629273" fileName="DiffBuilder.java" startLine="133" startPosition="86" endLine="134" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629254" fileName="DiffBuilder.java" startLine="130" startPosition="42" endLine="131" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldImportElements" />
+    <nodeInfo nodeId="4707157387247629260" fileName="DiffBuilder.java" startLine="131" startPosition="96" endLine="132" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="newImportElements" />
+    <nodeInfo nodeId="4707157387247629266" fileName="DiffBuilder.java" startLine="132" startPosition="96" endLine="133" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="addedImports" />
+    <nodeInfo nodeId="4707157387247629273" fileName="DiffBuilder.java" startLine="133" startPosition="86" endLine="134" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="deletedImports" />
     <nodeInfo nodeId="4707157387247629285" fileName="DiffBuilder.java" startLine="135" startPosition="46" endLine="136" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629298" fileName="DiffBuilder.java" startLine="138" startPosition="48" endLine="139" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629310" fileName="DiffBuilder.java" startLine="143" startPosition="41" endLine="144" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629324" fileName="DiffBuilder.java" startLine="145" startPosition="88" endLine="146" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629310" fileName="DiffBuilder.java" startLine="143" startPosition="41" endLine="144" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldImportElements" />
+    <nodeInfo nodeId="4707157387247629324" fileName="DiffBuilder.java" startLine="145" startPosition="88" endLine="146" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="alreadyPresent" />
     <nodeInfo nodeId="4707157387247629351" fileName="DiffBuilder.java" startLine="148" startPosition="164" endLine="149" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629355" fileName="DiffBuilder.java" startLine="149" startPosition="32" endLine="150" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="4707157387247629360" fileName="DiffBuilder.java" startLine="153" startPosition="30" endLine="154" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629379" fileName="DiffBuilder.java" startLine="160" startPosition="36" endLine="161" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629386" fileName="DiffBuilder.java" startLine="161" startPosition="49" endLine="162" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629379" fileName="DiffBuilder.java" startLine="160" startPosition="36" endLine="161" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="newNode" />
+    <nodeInfo nodeId="4707157387247629386" fileName="DiffBuilder.java" startLine="161" startPosition="49" endLine="162" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldNode" />
     <nodeInfo nodeId="4707157387247629393" fileName="DiffBuilder.java" startLine="162" startPosition="49" endLine="163" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4707157387247629397" fileName="DiffBuilder.java" startLine="163" startPosition="29" endLine="164" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4707157387247629401" fileName="DiffBuilder.java" startLine="164" startPosition="29" endLine="165" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629407" fileName="DiffBuilder.java" startLine="165" startPosition="57" endLine="166" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629420" fileName="DiffBuilder.java" startLine="167" startPosition="53" endLine="168" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629426" fileName="DiffBuilder.java" startLine="168" startPosition="67" endLine="169" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629448" fileName="DiffBuilder.java" startLine="170" startPosition="96" endLine="171" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629454" fileName="DiffBuilder.java" startLine="171" startPosition="78" endLine="172" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629401" fileName="DiffBuilder.java" startLine="164" startPosition="29" endLine="165" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldConceptName" />
+    <nodeInfo nodeId="4707157387247629407" fileName="DiffBuilder.java" startLine="165" startPosition="57" endLine="166" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="newConceptName" />
+    <nodeInfo nodeId="4707157387247629420" fileName="DiffBuilder.java" startLine="167" startPosition="53" endLine="168" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldLanguage" />
+    <nodeInfo nodeId="4707157387247629426" fileName="DiffBuilder.java" startLine="168" startPosition="67" endLine="169" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="newLanguage" />
+    <nodeInfo nodeId="4707157387247629448" fileName="DiffBuilder.java" startLine="170" startPosition="96" endLine="171" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldVersion" />
+    <nodeInfo nodeId="4707157387247629454" fileName="DiffBuilder.java" startLine="171" startPosition="78" endLine="172" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="newVersion" />
     <nodeInfo nodeId="4707157387247629465" fileName="DiffBuilder.java" startLine="173" startPosition="41" endLine="174" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629494" fileName="DiffBuilder.java" startLine="174" startPosition="214" endLine="175" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="4707157387247629495" fileName="DiffBuilder.java" startLine="177" startPosition="9" endLine="178" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629533" fileName="DiffBuilder.java" startLine="185" startPosition="101" endLine="186" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247629537" fileName="DiffBuilder.java" startLine="188" startPosition="5" endLine="189" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247629544" fileName="DiffBuilder.java" startLine="192" startPosition="46" endLine="193" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629551" fileName="DiffBuilder.java" startLine="193" startPosition="72" endLine="194" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629558" fileName="DiffBuilder.java" startLine="194" startPosition="72" endLine="195" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629565" fileName="DiffBuilder.java" startLine="195" startPosition="76" endLine="196" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629544" fileName="DiffBuilder.java" startLine="192" startPosition="46" endLine="193" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldLanguages" />
+    <nodeInfo nodeId="4707157387247629551" fileName="DiffBuilder.java" startLine="193" startPosition="72" endLine="194" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="newLanguages" />
+    <nodeInfo nodeId="4707157387247629558" fileName="DiffBuilder.java" startLine="194" startPosition="72" endLine="195" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="addedImports" />
+    <nodeInfo nodeId="4707157387247629565" fileName="DiffBuilder.java" startLine="195" startPosition="76" endLine="196" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="deletedImports" />
     <nodeInfo nodeId="4707157387247629577" fileName="DiffBuilder.java" startLine="197" startPosition="46" endLine="198" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629590" fileName="DiffBuilder.java" startLine="200" startPosition="48" endLine="201" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629602" fileName="DiffBuilder.java" startLine="205" startPosition="44" endLine="206" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629609" fileName="DiffBuilder.java" startLine="206" startPosition="68" endLine="207" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629616" fileName="DiffBuilder.java" startLine="207" startPosition="68" endLine="208" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629623" fileName="DiffBuilder.java" startLine="208" startPosition="72" endLine="209" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629602" fileName="DiffBuilder.java" startLine="205" startPosition="44" endLine="206" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldDevkits" />
+    <nodeInfo nodeId="4707157387247629609" fileName="DiffBuilder.java" startLine="206" startPosition="68" endLine="207" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="newDevkits" />
+    <nodeInfo nodeId="4707157387247629616" fileName="DiffBuilder.java" startLine="207" startPosition="68" endLine="208" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="addedDevkits" />
+    <nodeInfo nodeId="4707157387247629623" fileName="DiffBuilder.java" startLine="208" startPosition="72" endLine="209" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="deletedDevkits" />
     <nodeInfo nodeId="4707157387247629635" fileName="DiffBuilder.java" startLine="210" startPosition="46" endLine="211" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629648" fileName="DiffBuilder.java" startLine="213" startPosition="48" endLine="214" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629660" fileName="DiffBuilder.java" startLine="218" startPosition="54" endLine="219" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629667" fileName="DiffBuilder.java" startLine="219" startPosition="83" endLine="220" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629674" fileName="DiffBuilder.java" startLine="220" startPosition="83" endLine="221" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629681" fileName="DiffBuilder.java" startLine="221" startPosition="76" endLine="222" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629660" fileName="DiffBuilder.java" startLine="218" startPosition="54" endLine="219" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldLanguages" />
+    <nodeInfo nodeId="4707157387247629667" fileName="DiffBuilder.java" startLine="219" startPosition="83" endLine="220" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="newLanguages" />
+    <nodeInfo nodeId="4707157387247629674" fileName="DiffBuilder.java" startLine="220" startPosition="83" endLine="221" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="addedImports" />
+    <nodeInfo nodeId="4707157387247629681" fileName="DiffBuilder.java" startLine="221" startPosition="76" endLine="222" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="deletedImports" />
     <nodeInfo nodeId="4707157387247629693" fileName="DiffBuilder.java" startLine="223" startPosition="46" endLine="224" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629706" fileName="DiffBuilder.java" startLine="226" startPosition="48" endLine="227" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629726" fileName="DiffBuilder.java" startLine="231" startPosition="64" endLine="232" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629726" fileName="DiffBuilder.java" startLine="231" startPosition="64" endLine="232" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="addedImports" />
     <nodeInfo nodeId="4707157387247629734" fileName="DiffBuilder.java" startLine="232" startPosition="56" endLine="233" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629739" fileName="DiffBuilder.java" startLine="233" startPosition="36" endLine="234" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247629758" fileName="DiffBuilder.java" startLine="238" startPosition="64" endLine="239" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629758" fileName="DiffBuilder.java" startLine="238" startPosition="64" endLine="239" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="childrenIds" />
     <nodeInfo nodeId="4707157387247629774" fileName="DiffBuilder.java" startLine="240" startPosition="58" endLine="241" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629781" fileName="DiffBuilder.java" startLine="242" startPosition="7" endLine="243" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629808" fileName="DiffBuilder.java" startLine="248" startPosition="64" endLine="249" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629814" fileName="DiffBuilder.java" startLine="249" startPosition="36" endLine="250" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629808" fileName="DiffBuilder.java" startLine="248" startPosition="64" endLine="249" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="node" />
+    <nodeInfo nodeId="4707157387247629814" fileName="DiffBuilder.java" startLine="249" startPosition="36" endLine="250" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="id" />
     <nodeInfo nodeId="4707157387247629820" fileName="DiffBuilder.java" startLine="250" startPosition="34" endLine="251" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4707157387247629824" fileName="DiffBuilder.java" startLine="251" startPosition="26" endLine="252" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629924" fileName="DiffBuilder.java" startLine="254" startPosition="82" endLine="255" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629932" fileName="DiffBuilder.java" startLine="255" startPosition="59" endLine="256" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629939" fileName="DiffBuilder.java" startLine="256" startPosition="61" endLine="257" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629824" fileName="DiffBuilder.java" startLine="251" startPosition="26" endLine="252" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="role" />
+    <nodeInfo nodeId="4707157387247629924" fileName="DiffBuilder.java" startLine="254" startPosition="82" endLine="255" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="parentId" />
+    <nodeInfo nodeId="4707157387247629932" fileName="DiffBuilder.java" startLine="255" startPosition="59" endLine="256" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldParent" />
+    <nodeInfo nodeId="4707157387247629939" fileName="DiffBuilder.java" startLine="256" startPosition="61" endLine="257" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldChildId" />
     <nodeInfo nodeId="4707157387247629956" fileName="DiffBuilder.java" startLine="259" startPosition="51" endLine="260" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629965" fileName="DiffBuilder.java" startLine="262" startPosition="11" endLine="263" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629969" fileName="DiffBuilder.java" startLine="263" startPosition="33" endLine="264" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629965" fileName="DiffBuilder.java" startLine="262" startPosition="11" endLine="263" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="prevRole" />
+    <nodeInfo nodeId="4707157387247629969" fileName="DiffBuilder.java" startLine="263" startPosition="33" endLine="264" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="prevSibling" />
     <nodeInfo nodeId="4707157387247629980" fileName="DiffBuilder.java" startLine="265" startPosition="36" endLine="266" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629986" fileName="DiffBuilder.java" startLine="267" startPosition="11" endLine="268" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629858" fileName="DiffBuilder.java" startLine="269" startPosition="16" endLine="270" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629867" fileName="DiffBuilder.java" startLine="270" startPosition="64" endLine="271" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247629871" fileName="DiffBuilder.java" startLine="271" startPosition="32" endLine="272" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629858" fileName="DiffBuilder.java" startLine="269" startPosition="16" endLine="270" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="prevChild" />
+    <nodeInfo nodeId="4707157387247629867" fileName="DiffBuilder.java" startLine="270" startPosition="64" endLine="271" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="prevId" />
+    <nodeInfo nodeId="4707157387247629871" fileName="DiffBuilder.java" startLine="271" startPosition="32" endLine="272" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="prevRole" />
     <nodeInfo nodeId="4707157387247629899" fileName="DiffBuilder.java" startLine="273" startPosition="34" endLine="274" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247629881" fileName="DiffBuilder.java" startLine="275" startPosition="18" endLine="276" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247629881" fileName="DiffBuilder.java" startLine="275" startPosition="18" endLine="276" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="prevSubling" />
     <nodeInfo nodeId="4707157387247629892" fileName="DiffBuilder.java" startLine="277" startPosition="38" endLine="278" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629905" fileName="DiffBuilder.java" startLine="280" startPosition="11" endLine="281" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247629836" fileName="DiffBuilder.java" startLine="283" startPosition="14" endLine="284" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247630012" fileName="DiffBuilder.java" startLine="290" startPosition="34" endLine="291" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247630019" fileName="DiffBuilder.java" startLine="291" startPosition="43" endLine="292" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247630012" fileName="DiffBuilder.java" startLine="290" startPosition="34" endLine="291" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="n" />
+    <nodeInfo nodeId="4707157387247630019" fileName="DiffBuilder.java" startLine="291" startPosition="43" endLine="292" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="o" />
     <nodeInfo nodeId="4707157387247630026" fileName="DiffBuilder.java" startLine="292" startPosition="43" endLine="293" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4707157387247630034" fileName="DiffBuilder.java" startLine="293" startPosition="36" endLine="294" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247630039" fileName="DiffBuilder.java" startLine="294" startPosition="35" endLine="295" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247630044" fileName="DiffBuilder.java" startLine="295" startPosition="35" endLine="296" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247630050" fileName="DiffBuilder.java" startLine="296" startPosition="43" endLine="297" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247630034" fileName="DiffBuilder.java" startLine="293" startPosition="36" endLine="294" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="nid" />
+    <nodeInfo nodeId="4707157387247630039" fileName="DiffBuilder.java" startLine="294" startPosition="35" endLine="295" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oid" />
+    <nodeInfo nodeId="4707157387247630044" fileName="DiffBuilder.java" startLine="295" startPosition="35" endLine="296" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="nPrevSibling" />
+    <nodeInfo nodeId="4707157387247630050" fileName="DiffBuilder.java" startLine="296" startPosition="43" endLine="297" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oPrevSibling" />
     <nodeInfo nodeId="4707157387247630066" fileName="DiffBuilder.java" startLine="299" startPosition="43" endLine="300" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="4707157387247630085" fileName="DiffBuilder.java" startLine="302" startPosition="112" endLine="303" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="4707157387247630100" fileName="DiffBuilder.java" startLine="305" startPosition="90" endLine="306" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="4707157387247630115" fileName="DiffBuilder.java" startLine="308" startPosition="90" endLine="309" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="4707157387247630135" fileName="DiffBuilder.java" startLine="312" startPosition="33" endLine="313" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630122" fileName="DiffBuilder.java" startLine="314" startPosition="14" endLine="315" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247630156" fileName="DiffBuilder.java" startLine="320" startPosition="58" endLine="321" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247630156" fileName="DiffBuilder.java" startLine="320" startPosition="58" endLine="321" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="result" />
     <nodeInfo nodeId="4707157387247630176" fileName="DiffBuilder.java" startLine="323" startPosition="55" endLine="324" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630181" fileName="DiffBuilder.java" startLine="326" startPosition="5" endLine="327" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630196" fileName="DiffBuilder.java" startLine="331" startPosition="32" endLine="332" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630198" fileName="DiffBuilder.java" startLine="333" startPosition="5" endLine="334" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247630215" fileName="DiffBuilder.java" startLine="338" startPosition="46" endLine="339" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247630221" fileName="DiffBuilder.java" startLine="339" startPosition="40" endLine="340" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247630215" fileName="DiffBuilder.java" startLine="338" startPosition="46" endLine="339" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="id" />
+    <nodeInfo nodeId="4707157387247630221" fileName="DiffBuilder.java" startLine="339" startPosition="40" endLine="340" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldNode" />
     <nodeInfo nodeId="4707157387247630320" fileName="DiffBuilder.java" startLine="342" startPosition="62" endLine="343" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247630234" fileName="DiffBuilder.java" startLine="345" startPosition="14" endLine="346" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247630241" fileName="DiffBuilder.java" startLine="346" startPosition="62" endLine="347" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247630248" fileName="DiffBuilder.java" startLine="347" startPosition="62" endLine="348" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247630234" fileName="DiffBuilder.java" startLine="345" startPosition="14" endLine="346" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="newNodeProps" />
+    <nodeInfo nodeId="4707157387247630241" fileName="DiffBuilder.java" startLine="346" startPosition="62" endLine="347" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldNodeProps" />
+    <nodeInfo nodeId="4707157387247630248" fileName="DiffBuilder.java" startLine="347" startPosition="62" endLine="348" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="deletedProps" />
     <nodeInfo nodeId="4707157387247630256" fileName="DiffBuilder.java" startLine="348" startPosition="69" endLine="349" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630266" fileName="DiffBuilder.java" startLine="350" startPosition="49" endLine="351" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630296" fileName="DiffBuilder.java" startLine="354" startPosition="90" endLine="355" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630347" fileName="DiffBuilder.java" startLine="363" startPosition="21" endLine="364" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630351" fileName="DiffBuilder.java" startLine="365" startPosition="5" endLine="366" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247630367" fileName="DiffBuilder.java" startLine="370" startPosition="46" endLine="371" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247630373" fileName="DiffBuilder.java" startLine="371" startPosition="40" endLine="372" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247630367" fileName="DiffBuilder.java" startLine="370" startPosition="46" endLine="371" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="id" />
+    <nodeInfo nodeId="4707157387247630373" fileName="DiffBuilder.java" startLine="371" startPosition="40" endLine="372" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="oldNode" />
     <nodeInfo nodeId="4707157387247630522" fileName="DiffBuilder.java" startLine="374" startPosition="56" endLine="375" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247630386" fileName="DiffBuilder.java" startLine="377" startPosition="14" endLine="378" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247630386" fileName="DiffBuilder.java" startLine="377" startPosition="14" endLine="378" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="roles" />
     <nodeInfo nodeId="4707157387247630396" fileName="DiffBuilder.java" startLine="378" startPosition="77" endLine="379" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630502" fileName="DiffBuilder.java" startLine="382" startPosition="91" endLine="383" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630485" fileName="DiffBuilder.java" startLine="385" startPosition="123" endLine="386" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -157,10 +157,10 @@
     <nodeInfo nodeId="4707157387247630437" fileName="DiffBuilder.java" startLine="391" startPosition="49" endLine="392" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630442" fileName="DiffBuilder.java" startLine="392" startPosition="49" endLine="393" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630545" fileName="DiffBuilder.java" startLine="401" startPosition="22" endLine="402" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247630547" fileName="DiffBuilder.java" startLine="403" startPosition="5" endLine="404" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247630547" fileName="DiffBuilder.java" startLine="403" startPosition="5" endLine="404" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="id" />
     <nodeInfo nodeId="4707157387247630558" fileName="DiffBuilder.java" startLine="405" startPosition="21" endLine="406" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630560" fileName="DiffBuilder.java" startLine="407" startPosition="5" endLine="408" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247630572" fileName="DiffBuilder.java" startLine="411" startPosition="69" endLine="412" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247630572" fileName="DiffBuilder.java" startLine="411" startPosition="69" endLine="412" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="ld" />
     <nodeInfo nodeId="4707157387247630585" fileName="DiffBuilder.java" startLine="413" startPosition="21" endLine="414" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630587" fileName="DiffBuilder.java" startLine="415" startPosition="5" endLine="416" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630604" fileName="DiffBuilder.java" startLine="419" startPosition="39" endLine="420" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -409,8 +409,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629510" fileName="DiffBuilder.java" startLine="183" startPosition="81" endLine="189" endPosition="14" />
     <scopeInfo nodeId="4707157387247629714" fileName="DiffBuilder.java" startLine="230" startPosition="0" endLine="236" endPosition="0">
-      <varInfo nodeId="4707157387247629719" varName="oldList" />
       <varInfo nodeId="4707157387247629722" varName="newList" />
+      <varInfo nodeId="4707157387247629719" varName="oldList" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629113" fileName="DiffBuilder.java" startLine="96" startPosition="94" endLine="103" endPosition="45">
       <varInfo nodeId="4707157387247629128" varName="deleteRoot" />
@@ -427,8 +427,8 @@
       <varInfo nodeId="4707157387247630186" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247630334" fileName="DiffBuilder.java" startLine="361" startPosition="0" endLine="368" endPosition="0">
-      <varInfo nodeId="4707157387247630339" varName="o2" />
       <varInfo nodeId="4707157387247630337" varName="o1" />
+      <varInfo nodeId="4707157387247630339" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247630448" fileName="DiffBuilder.java" startLine="381" startPosition="75" endLine="388" endPosition="13" />
     <scopeInfo nodeId="4707157387247628993" fileName="DiffBuilder.java" startLine="62" startPosition="64" endLine="70" endPosition="5">
@@ -438,42 +438,42 @@
       <varInfo nodeId="4707157387247630548" varName="id" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247630564" fileName="DiffBuilder.java" startLine="410" startPosition="0" endLine="418" endPosition="0">
-      <varInfo nodeId="4707157387247630569" varName="role" />
       <varInfo nodeId="4707157387247630567" varName="fqName" />
+      <varInfo nodeId="4707157387247630569" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629107" fileName="DiffBuilder.java" startLine="95" startPosition="5" endLine="104" endPosition="5">
       <varInfo nodeId="4707157387247629111" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629503" fileName="DiffBuilder.java" startLine="182" startPosition="0" endLine="191" endPosition="0">
-      <varInfo nodeId="4707157387247629506" varName="model" />
       <varInfo nodeId="4707157387247629508" varName="language" />
+      <varInfo nodeId="4707157387247629506" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629253" fileName="DiffBuilder.java" startLine="130" startPosition="42" endLine="140" endPosition="5">
-      <varInfo nodeId="4707157387247629261" varName="newImportElements" />
       <varInfo nodeId="4707157387247629267" varName="addedImports" />
-      <varInfo nodeId="4707157387247629255" varName="oldImportElements" />
       <varInfo nodeId="4707157387247629274" varName="deletedImports" />
+      <varInfo nodeId="4707157387247629261" varName="newImportElements" />
+      <varInfo nodeId="4707157387247629255" varName="oldImportElements" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629323" fileName="DiffBuilder.java" startLine="145" startPosition="88" endLine="155" endPosition="7">
       <varInfo nodeId="4707157387247629325" varName="alreadyPresent" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629543" fileName="DiffBuilder.java" startLine="192" startPosition="46" endLine="202" endPosition="5">
-      <varInfo nodeId="4707157387247629552" varName="newLanguages" />
       <varInfo nodeId="4707157387247629559" varName="addedImports" />
-      <varInfo nodeId="4707157387247629545" varName="oldLanguages" />
       <varInfo nodeId="4707157387247629566" varName="deletedImports" />
+      <varInfo nodeId="4707157387247629552" varName="newLanguages" />
+      <varInfo nodeId="4707157387247629545" varName="oldLanguages" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629601" fileName="DiffBuilder.java" startLine="205" startPosition="44" endLine="215" endPosition="5">
-      <varInfo nodeId="4707157387247629624" varName="deletedDevkits" />
-      <varInfo nodeId="4707157387247629603" varName="oldDevkits" />
       <varInfo nodeId="4707157387247629617" varName="addedDevkits" />
+      <varInfo nodeId="4707157387247629624" varName="deletedDevkits" />
       <varInfo nodeId="4707157387247629610" varName="newDevkits" />
+      <varInfo nodeId="4707157387247629603" varName="oldDevkits" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629659" fileName="DiffBuilder.java" startLine="218" startPosition="54" endLine="228" endPosition="5">
-      <varInfo nodeId="4707157387247629668" varName="newLanguages" />
       <varInfo nodeId="4707157387247629675" varName="addedImports" />
-      <varInfo nodeId="4707157387247629661" varName="oldLanguages" />
       <varInfo nodeId="4707157387247629682" varName="deletedImports" />
+      <varInfo nodeId="4707157387247629668" varName="newLanguages" />
+      <varInfo nodeId="4707157387247629661" varName="oldLanguages" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629741" fileName="DiffBuilder.java" startLine="236" startPosition="0" endLine="246" endPosition="0">
       <varInfo nodeId="4707157387247629744" varName="onlyOld" />
@@ -492,9 +492,9 @@
       <varInfo nodeId="4707157387247629321" varName="importElement" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629857" fileName="DiffBuilder.java" startLine="269" startPosition="16" endLine="281" endPosition="127">
-      <varInfo nodeId="4707157387247629872" varName="prevRole" />
       <varInfo nodeId="4707157387247629859" varName="prevChild" />
       <varInfo nodeId="4707157387247629868" varName="prevId" />
+      <varInfo nodeId="4707157387247629872" varName="prevRole" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247630060" fileName="DiffBuilder.java" startLine="298" startPosition="41" endLine="310" endPosition="9" />
     <scopeInfo nodeId="4707157387247630233" fileName="DiffBuilder.java" startLine="345" startPosition="14" endLine="357" endPosition="9">
@@ -503,9 +503,9 @@
       <varInfo nodeId="4707157387247630242" varName="oldNodeProps" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629184" fileName="DiffBuilder.java" startLine="109" startPosition="40" endLine="122" endPosition="42">
-      <varInfo nodeId="4707157387247629186" varName="id" />
       <varInfo nodeId="4707157387247629211" varName="addRoot" />
       <varInfo nodeId="4707157387247629198" varName="added" />
+      <varInfo nodeId="4707157387247629186" varName="id" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629250" fileName="DiffBuilder.java" startLine="129" startPosition="0" endLine="142" endPosition="0" />
     <scopeInfo nodeId="4707157387247629309" fileName="DiffBuilder.java" startLine="143" startPosition="41" endLine="156" endPosition="5">
@@ -515,11 +515,11 @@
     <scopeInfo nodeId="4707157387247629598" fileName="DiffBuilder.java" startLine="204" startPosition="0" endLine="217" endPosition="0" />
     <scopeInfo nodeId="4707157387247629656" fileName="DiffBuilder.java" startLine="217" startPosition="0" endLine="230" endPosition="0" />
     <scopeInfo nodeId="4707157387247629923" fileName="DiffBuilder.java" startLine="254" startPosition="82" endLine="268" endPosition="110">
+      <varInfo nodeId="4707157387247629940" varName="oldChildId" />
       <varInfo nodeId="4707157387247629933" varName="oldParent" />
       <varInfo nodeId="4707157387247629925" varName="parentId" />
-      <varInfo nodeId="4707157387247629970" varName="prevSibling" />
       <varInfo nodeId="4707157387247629966" varName="prevRole" />
-      <varInfo nodeId="4707157387247629940" varName="oldChildId" />
+      <varInfo nodeId="4707157387247629970" varName="prevSibling" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247630407" fileName="DiffBuilder.java" startLine="380" startPosition="35" endLine="394" endPosition="11" />
     <scopeInfo nodeId="4707157387247629180" fileName="DiffBuilder.java" startLine="108" startPosition="5" endLine="123" endPosition="5">
@@ -533,10 +533,10 @@
       <varInfo nodeId="4707157387247630387" varName="roles" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629378" fileName="DiffBuilder.java" startLine="160" startPosition="36" endLine="179" endPosition="7">
-      <varInfo nodeId="4707157387247629402" varName="oldConceptName" />
-      <varInfo nodeId="4707157387247629387" varName="oldNode" />
       <varInfo nodeId="4707157387247629408" varName="newConceptName" />
       <varInfo nodeId="4707157387247629380" varName="newNode" />
+      <varInfo nodeId="4707157387247629402" varName="oldConceptName" />
+      <varInfo nodeId="4707157387247629387" varName="oldNode" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247630214" fileName="DiffBuilder.java" startLine="338" startPosition="46" endLine="358" endPosition="7">
       <varInfo nodeId="4707157387247630216" varName="id" />
@@ -555,12 +555,12 @@
     </scopeInfo>
     <scopeInfo nodeId="4707157387247630204" fileName="DiffBuilder.java" startLine="336" startPosition="0" endLine="361" endPosition="0" />
     <scopeInfo nodeId="4707157387247630011" fileName="DiffBuilder.java" startLine="290" startPosition="34" endLine="316" endPosition="7">
+      <varInfo nodeId="4707157387247630013" varName="n" />
+      <varInfo nodeId="4707157387247630045" varName="nPrevSibling" />
+      <varInfo nodeId="4707157387247630035" varName="nid" />
+      <varInfo nodeId="4707157387247630020" varName="o" />
       <varInfo nodeId="4707157387247630051" varName="oPrevSibling" />
       <varInfo nodeId="4707157387247630040" varName="oid" />
-      <varInfo nodeId="4707157387247630035" varName="nid" />
-      <varInfo nodeId="4707157387247630013" varName="n" />
-      <varInfo nodeId="4707157387247630020" varName="o" />
-      <varInfo nodeId="4707157387247630045" varName="nPrevSibling" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247630366" fileName="DiffBuilder.java" startLine="370" startPosition="46" endLine="396" endPosition="7">
       <varInfo nodeId="4707157387247630368" varName="id" />
@@ -575,8 +575,8 @@
       <varInfo nodeId="4707157387247630364" varName="newNode" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247628967" fileName="DiffBuilder.java" startLine="59" startPosition="33" endLine="88" endPosition="23">
-      <varInfo nodeId="4707157387247628985" varName="onlyNew" />
       <varInfo nodeId="4707157387247628969" varName="intersect" />
+      <varInfo nodeId="4707157387247628985" varName="onlyNew" />
       <varInfo nodeId="4707157387247628976" varName="onlyOld" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629846" fileName="DiffBuilder.java" startLine="253" startPosition="25" endLine="282" endPosition="9" />
@@ -586,8 +586,8 @@
     <scopeInfo nodeId="4707157387247630356" fileName="DiffBuilder.java" startLine="368" startPosition="0" endLine="399" endPosition="0" />
     <scopeInfo nodeId="4707157387247628964" fileName="DiffBuilder.java" startLine="58" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="4707157387247629085" fileName="DiffBuilder.java" startLine="91" startPosition="35" endLine="123" endPosition="5">
-      <varInfo nodeId="4707157387247629087" varName="deletedNodes" />
       <varInfo nodeId="4707157387247629160" varName="addedNodes" />
+      <varInfo nodeId="4707157387247629087" varName="deletedNodes" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247629082" fileName="DiffBuilder.java" startLine="90" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="4707157387247629807" fileName="DiffBuilder.java" startLine="248" startPosition="64" endLine="285" endPosition="7">
@@ -621,17 +621,17 @@
     <nodeInfo nodeId="4707157387247630767" fileName="Merger.java" startLine="57" startPosition="56" endLine="58" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630775" fileName="Merger.java" startLine="58" startPosition="57" endLine="59" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630783" fileName="Merger.java" startLine="59" startPosition="57" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247632312" fileName="Merger.java" startLine="62" startPosition="25" endLine="63" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247632312" fileName="Merger.java" startLine="62" startPosition="25" endLine="63" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="mineDiffBuilder" />
     <nodeInfo nodeId="4707157387247632321" fileName="Merger.java" startLine="63" startPosition="104" endLine="64" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247632327" fileName="Merger.java" startLine="64" startPosition="57" endLine="65" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247632334" fileName="Merger.java" startLine="65" startPosition="65" endLine="66" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247632334" fileName="Merger.java" startLine="65" startPosition="65" endLine="66" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="repoDiffBuilder" />
     <nodeInfo nodeId="4707157387247632343" fileName="Merger.java" startLine="66" startPosition="104" endLine="67" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247632349" fileName="Merger.java" startLine="67" startPosition="57" endLine="68" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630805" fileName="Merger.java" startLine="73" startPosition="34" endLine="74" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630812" fileName="Merger.java" startLine="77" startPosition="46" endLine="78" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630820" fileName="Merger.java" startLine="81" startPosition="38" endLine="82" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630828" fileName="Merger.java" startLine="85" startPosition="40" endLine="86" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247630836" fileName="Merger.java" startLine="89" startPosition="50" endLine="90" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247630836" fileName="Merger.java" startLine="89" startPosition="50" endLine="90" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="result" />
     <nodeInfo nodeId="4707157387247630865" fileName="Merger.java" startLine="92" startPosition="127" endLine="93" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247630870" fileName="Merger.java" startLine="95" startPosition="5" endLine="96" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630878" fileName="Merger.java" startLine="99" startPosition="47" endLine="100" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -658,24 +658,24 @@
     <nodeInfo nodeId="4707157387247630997" fileName="Merger.java" startLine="148" startPosition="39" endLine="149" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631000" fileName="Merger.java" startLine="149" startPosition="50" endLine="150" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631011" fileName="Merger.java" startLine="151" startPosition="77" endLine="152" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247631024" fileName="Merger.java" startLine="156" startPosition="61" endLine="157" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247631039" fileName="Merger.java" startLine="158" startPosition="45" endLine="159" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631024" fileName="Merger.java" startLine="156" startPosition="61" endLine="157" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="result" />
+    <nodeInfo nodeId="4707157387247631039" fileName="Merger.java" startLine="158" startPosition="45" endLine="159" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="group" />
     <nodeInfo nodeId="4707157387247631063" fileName="Merger.java" startLine="161" startPosition="41" endLine="162" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631070" fileName="Merger.java" startLine="165" startPosition="5" endLine="166" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247631077" fileName="Merger.java" startLine="169" startPosition="49" endLine="170" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247631083" fileName="Merger.java" startLine="173" startPosition="34" endLine="174" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631098" fileName="Merger.java" startLine="176" startPosition="36" endLine="177" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631124" fileName="Merger.java" startLine="180" startPosition="74" endLine="181" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247631153" fileName="Merger.java" startLine="185" startPosition="84" endLine="186" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247631164" fileName="Merger.java" startLine="186" startPosition="69" endLine="187" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247631175" fileName="Merger.java" startLine="188" startPosition="30" endLine="189" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631153" fileName="Merger.java" startLine="185" startPosition="84" endLine="186" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="changesMap" />
+    <nodeInfo nodeId="4707157387247631164" fileName="Merger.java" startLine="186" startPosition="69" endLine="187" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="changes" />
+    <nodeInfo nodeId="4707157387247631175" fileName="Merger.java" startLine="188" startPosition="30" endLine="189" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="key" />
     <nodeInfo nodeId="4707157387247631189" fileName="Merger.java" startLine="190" startPosition="40" endLine="191" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631197" fileName="Merger.java" startLine="192" startPosition="7" endLine="193" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631212" fileName="Merger.java" startLine="195" startPosition="42" endLine="196" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631234" fileName="Merger.java" startLine="201" startPosition="34" endLine="202" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247631235" fileName="Merger.java" startLine="203" startPosition="5" endLine="204" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4707157387247631241" fileName="Merger.java" startLine="204" startPosition="35" endLine="205" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247631248" fileName="Merger.java" startLine="205" startPosition="33" endLine="206" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631241" fileName="Merger.java" startLine="204" startPosition="35" endLine="205" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="first" />
+    <nodeInfo nodeId="4707157387247631248" fileName="Merger.java" startLine="205" startPosition="33" endLine="206" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="second" />
     <nodeInfo nodeId="4707157387247631281" fileName="Merger.java" startLine="207" startPosition="37" endLine="208" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631286" fileName="Merger.java" startLine="208" startPosition="36" endLine="209" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631291" fileName="Merger.java" startLine="209" startPosition="37" endLine="210" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -683,19 +683,19 @@
     <nodeInfo nodeId="4707157387247631262" fileName="Merger.java" startLine="212" startPosition="12" endLine="213" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631270" fileName="Merger.java" startLine="213" startPosition="51" endLine="214" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631275" fileName="Merger.java" startLine="214" startPosition="38" endLine="215" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247631305" fileName="Merger.java" startLine="219" startPosition="42" endLine="220" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247631320" fileName="Merger.java" startLine="220" startPosition="120" endLine="221" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631305" fileName="Merger.java" startLine="219" startPosition="42" endLine="220" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="changes" />
+    <nodeInfo nodeId="4707157387247631320" fileName="Merger.java" startLine="220" startPosition="120" endLine="221" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="sets" />
     <nodeInfo nodeId="4707157387247631359" fileName="Merger.java" startLine="224" startPosition="101" endLine="225" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631376" fileName="Merger.java" startLine="226" startPosition="9" endLine="227" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247631399" fileName="Merger.java" startLine="230" startPosition="65" endLine="231" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247631442" fileName="Merger.java" startLine="234" startPosition="90" endLine="235" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631399" fileName="Merger.java" startLine="230" startPosition="65" endLine="231" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="newRole" />
+    <nodeInfo nodeId="4707157387247631442" fileName="Merger.java" startLine="234" startPosition="90" endLine="235" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="cs" />
     <nodeInfo nodeId="4707157387247631460" fileName="Merger.java" startLine="235" startPosition="133" endLine="236" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631471" fileName="Merger.java" startLine="236" startPosition="58" endLine="237" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631479" fileName="Merger.java" startLine="237" startPosition="48" endLine="238" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631484" fileName="Merger.java" startLine="239" startPosition="11" endLine="240" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631490" fileName="Merger.java" startLine="240" startPosition="41" endLine="241" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631505" fileName="Merger.java" startLine="245" startPosition="54" endLine="246" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247631541" fileName="Merger.java" startLine="257" startPosition="69" endLine="258" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631541" fileName="Merger.java" startLine="257" startPosition="69" endLine="258" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="ld" />
     <nodeInfo nodeId="4707157387247631556" fileName="Merger.java" startLine="259" startPosition="21" endLine="260" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247631558" fileName="Merger.java" startLine="261" startPosition="5" endLine="262" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247631574" fileName="Merger.java" startLine="265" startPosition="51" endLine="266" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -703,14 +703,14 @@
     <nodeInfo nodeId="4707157387247631627" fileName="Merger.java" startLine="274" startPosition="105" endLine="275" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631635" fileName="Merger.java" startLine="275" startPosition="48" endLine="276" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631640" fileName="Merger.java" startLine="276" startPosition="40" endLine="277" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247631655" fileName="Merger.java" startLine="284" startPosition="74" endLine="285" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631655" fileName="Merger.java" startLine="284" startPosition="74" endLine="285" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="result" />
     <nodeInfo nodeId="4707157387247631662" fileName="Merger.java" startLine="285" startPosition="40" endLine="286" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631669" fileName="Merger.java" startLine="286" startPosition="73" endLine="287" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631676" fileName="Merger.java" startLine="287" startPosition="73" endLine="288" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247631682" fileName="Merger.java" startLine="291" startPosition="35" endLine="292" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247631703" fileName="Merger.java" startLine="292" startPosition="64" endLine="293" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247631708" fileName="Merger.java" startLine="293" startPosition="89" endLine="294" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247631719" fileName="Merger.java" startLine="294" startPosition="142" endLine="295" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631703" fileName="Merger.java" startLine="292" startPosition="64" endLine="293" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="languageNamespace" />
+    <nodeInfo nodeId="4707157387247631708" fileName="Merger.java" startLine="293" startPosition="89" endLine="294" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="tmp" />
+    <nodeInfo nodeId="4707157387247631719" fileName="Merger.java" startLine="294" startPosition="142" endLine="295" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="notRemoveLanguage" />
     <nodeInfo nodeId="4707157387247631731" fileName="Merger.java" startLine="296" startPosition="72" endLine="297" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631735" fileName="Merger.java" startLine="298" startPosition="5" endLine="299" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631740" fileName="Merger.java" startLine="299" startPosition="31" endLine="300" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -730,22 +730,22 @@
     <nodeInfo nodeId="4707157387247631853" fileName="Merger.java" startLine="327" startPosition="45" endLine="328" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247631859" fileName="Merger.java" startLine="330" startPosition="37" endLine="331" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247631861" fileName="Merger.java" startLine="332" startPosition="5" endLine="333" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247631873" fileName="Merger.java" startLine="336" startPosition="84" endLine="337" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631873" fileName="Merger.java" startLine="336" startPosition="84" endLine="337" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="result" />
     <nodeInfo nodeId="4707157387247631890" fileName="Merger.java" startLine="339" startPosition="39" endLine="340" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631895" fileName="Merger.java" startLine="342" startPosition="5" endLine="343" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247631917" fileName="Merger.java" startLine="348" startPosition="40" endLine="349" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247631926" fileName="Merger.java" startLine="354" startPosition="41" endLine="355" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631926" fileName="Merger.java" startLine="354" startPosition="41" endLine="355" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="structuralChanges" />
     <nodeInfo nodeId="4707157387247631933" fileName="Merger.java" startLine="355" startPosition="67" endLine="356" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631939" fileName="Merger.java" startLine="356" startPosition="72" endLine="357" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247631945" fileName="Merger.java" startLine="357" startPosition="75" endLine="358" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247631951" fileName="Merger.java" startLine="358" startPosition="73" endLine="359" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247631965" fileName="Merger.java" startLine="360" startPosition="58" endLine="361" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247631971" fileName="Merger.java" startLine="361" startPosition="60" endLine="362" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247631951" fileName="Merger.java" startLine="358" startPosition="73" endLine="359" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="nodeIdToChangeMap" />
+    <nodeInfo nodeId="4707157387247631965" fileName="Merger.java" startLine="360" startPosition="58" endLine="361" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="nodeId" />
+    <nodeInfo nodeId="4707157387247631971" fileName="Merger.java" startLine="361" startPosition="60" endLine="362" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="sameChange" />
     <nodeInfo nodeId="4707157387247631993" fileName="Merger.java" startLine="365" startPosition="16" endLine="366" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4707157387247631996" fileName="Merger.java" startLine="368" startPosition="7" endLine="369" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247632002" fileName="Merger.java" startLine="370" startPosition="5" endLine="371" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247632002" fileName="Merger.java" startLine="370" startPosition="5" endLine="371" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="alreadyApplied" />
     <nodeInfo nodeId="4707157387247632014" fileName="Merger.java" startLine="372" startPosition="48" endLine="373" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247632041" fileName="Merger.java" startLine="378" startPosition="45" endLine="379" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247632041" fileName="Merger.java" startLine="378" startPosition="45" endLine="379" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="result" />
     <nodeInfo nodeId="4707157387247632063" fileName="Merger.java" startLine="381" startPosition="72" endLine="382" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247632068" fileName="Merger.java" startLine="384" startPosition="7" endLine="385" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247632036" fileName="Merger.java" startLine="386" startPosition="12" endLine="387" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -754,7 +754,7 @@
     <nodeInfo nodeId="4707157387247632111" fileName="Merger.java" startLine="398" startPosition="42" endLine="399" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247632127" fileName="Merger.java" startLine="402" startPosition="57" endLine="403" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="4707157387247632138" fileName="Merger.java" startLine="405" startPosition="108" endLine="406" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247632140" fileName="Merger.java" startLine="408" startPosition="5" endLine="409" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247632140" fileName="Merger.java" startLine="408" startPosition="5" endLine="409" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="applied" />
     <nodeInfo nodeId="4707157387247632150" fileName="Merger.java" startLine="410" startPosition="18" endLine="411" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247632155" fileName="Merger.java" startLine="412" startPosition="5" endLine="413" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247632183" fileName="Merger.java" startLine="417" startPosition="24" endLine="418" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -763,7 +763,7 @@
     <nodeInfo nodeId="4707157387247632207" fileName="Merger.java" startLine="428" startPosition="43" endLine="429" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247632218" fileName="Merger.java" startLine="432" startPosition="41" endLine="433" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247632227" fileName="Merger.java" startLine="436" startPosition="45" endLine="437" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247632236" fileName="Merger.java" startLine="440" startPosition="61" endLine="441" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247632236" fileName="Merger.java" startLine="440" startPosition="61" endLine="441" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="result" />
     <nodeInfo nodeId="4707157387247632250" fileName="Merger.java" startLine="442" startPosition="51" endLine="443" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247632264" fileName="Merger.java" startLine="446" startPosition="37" endLine="447" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247632271" fileName="Merger.java" startLine="447" startPosition="35" endLine="448" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1074,8 +1074,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4707157387247631428" fileName="Merger.java" startLine="233" startPosition="35" endLine="241" endPosition="44" />
     <scopeInfo nodeId="4707157387247631533" fileName="Merger.java" startLine="256" startPosition="0" endLine="264" endPosition="0">
-      <varInfo nodeId="4707157387247631538" varName="role" />
       <varInfo nodeId="4707157387247631536" varName="parent" />
+      <varInfo nodeId="4707157387247631538" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247631897" fileName="Merger.java" startLine="345" startPosition="0" endLine="353" endPosition="0">
       <varInfo nodeId="4707157387247631900" varName="changeClass" />
@@ -1119,8 +1119,8 @@
     <scopeInfo nodeId="4707157387247632029" fileName="Merger.java" startLine="377" startPosition="106" endLine="388" endPosition="5" />
     <scopeInfo nodeId="4707157387247631079" fileName="Merger.java" startLine="172" startPosition="0" endLine="184" endPosition="0" />
     <scopeInfo nodeId="4707157387247631152" fileName="Merger.java" startLine="185" startPosition="84" endLine="197" endPosition="5">
-      <varInfo nodeId="4707157387247631154" varName="changesMap" />
       <varInfo nodeId="4707157387247631165" varName="changes" />
+      <varInfo nodeId="4707157387247631154" varName="changesMap" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247631405" fileName="Merger.java" startLine="231" startPosition="40" endLine="243" endPosition="7">
       <varInfo nodeId="4707157387247631421" varName="newParent" />
@@ -1136,8 +1136,8 @@
       <varInfo nodeId="4707157387247631833" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247631582" fileName="Merger.java" startLine="269" startPosition="0" endLine="283" endPosition="0">
-      <varInfo nodeId="4707157387247631588" varName="list2" />
       <varInfo nodeId="4707157387247631585" varName="list1" />
+      <varInfo nodeId="4707157387247631588" varName="list2" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247632019" fileName="Merger.java" startLine="376" startPosition="0" endLine="390" endPosition="0">
       <varInfo nodeId="4707157387247632027" varName="change" />
@@ -1154,13 +1154,13 @@
       <varInfo nodeId="4707157387247632237" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247630757" fileName="Merger.java" startLine="55" startPosition="0" endLine="71" endPosition="3">
-      <varInfo nodeId="4707157387247630764" varName="repo" />
       <varInfo nodeId="4707157387247630760" varName="base" />
       <varInfo nodeId="4707157387247630762" varName="mine" />
+      <varInfo nodeId="4707157387247630764" varName="repo" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247631226" fileName="Merger.java" startLine="200" startPosition="92" endLine="216" endPosition="5">
-      <varInfo nodeId="4707157387247631249" varName="second" />
       <varInfo nodeId="4707157387247631242" varName="first" />
+      <varInfo nodeId="4707157387247631249" varName="second" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247630963" fileName="Merger.java" startLine="137" startPosition="0" endLine="155" endPosition="0" />
     <scopeInfo nodeId="4707157387247632229" fileName="Merger.java" startLine="439" startPosition="0" endLine="457" endPosition="0">
@@ -1170,22 +1170,22 @@
       <varInfo nodeId="4707157387247631223" varName="changesPair" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247631925" fileName="Merger.java" startLine="354" startPosition="41" endLine="374" endPosition="5">
-      <varInfo nodeId="4707157387247631927" varName="structuralChanges" />
-      <varInfo nodeId="4707157387247631952" varName="nodeIdToChangeMap" />
       <varInfo nodeId="4707157387247632003" varName="alreadyApplied" />
+      <varInfo nodeId="4707157387247631952" varName="nodeIdToChangeMap" />
+      <varInfo nodeId="4707157387247631927" varName="structuralChanges" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247632082" fileName="Merger.java" startLine="391" startPosition="134" endLine="413" endPosition="19">
       <varInfo nodeId="4707157387247632141" varName="applied" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247631922" fileName="Merger.java" startLine="353" startPosition="0" endLine="376" endPosition="0" />
     <scopeInfo nodeId="4707157387247632070" fileName="Merger.java" startLine="390" startPosition="0" endLine="415" endPosition="0">
+      <varInfo nodeId="4707157387247632077" varName="alreadyApplied" />
       <varInfo nodeId="4707157387247632080" varName="change" />
       <varInfo nodeId="4707157387247632073" varName="nodeIdToChangeMap" />
-      <varInfo nodeId="4707157387247632077" varName="alreadyApplied" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247631304" fileName="Merger.java" startLine="219" startPosition="42" endLine="247" endPosition="5">
-      <varInfo nodeId="4707157387247631321" varName="sets" />
       <varInfo nodeId="4707157387247631306" varName="changes" />
+      <varInfo nodeId="4707157387247631321" varName="sets" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247631681" fileName="Merger.java" startLine="291" startPosition="35" endLine="320" endPosition="5">
       <varInfo nodeId="4707157387247631704" varName="languageNamespace" />
@@ -1194,10 +1194,10 @@
     </scopeInfo>
     <scopeInfo nodeId="4707157387247631301" fileName="Merger.java" startLine="218" startPosition="0" endLine="249" endPosition="0" />
     <scopeInfo nodeId="4707157387247631678" fileName="Merger.java" startLine="290" startPosition="0" endLine="322" endPosition="0" />
+    <unitInfo nodeId="4707157387247630666" fileName="Merger.java" startLine="40" startPosition="0" endLine="471" endPosition="0" unitName="jetbrains.mps.vcs.diff.Merger" />
+    <unitInfo nodeId="4707157387247630797" fileName="Merger.java" startLine="61" startPosition="45" endLine="70" endPosition="5" unitName="jetbrains.mps.vcs.diff.Merger$1" />
     <unitInfo nodeId="983248792627961291" fileName="Merger.java" startLine="108" startPosition="45" endLine="115" endPosition="5" unitName="jetbrains.mps.vcs.diff.Merger$2" />
     <unitInfo nodeId="4707157387247630668" fileName="Merger.java" startLine="462" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.vcs.diff.Merger$Version" />
-    <unitInfo nodeId="4707157387247630797" fileName="Merger.java" startLine="61" startPosition="45" endLine="70" endPosition="5" unitName="jetbrains.mps.vcs.diff.Merger$1" />
-    <unitInfo nodeId="4707157387247630666" fileName="Merger.java" startLine="40" startPosition="0" endLine="471" endPosition="0" unitName="jetbrains.mps.vcs.diff.Merger" />
   </root>
   <root nodeId="4707157387247632367">
     <nodeInfo nodeId="4707157387247632369" fileName="Conflict.java" startLine="8" startPosition="23" endLine="9" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChange1" />
@@ -1240,8 +1240,8 @@
     <scopeInfo nodeId="4707157387247632433" fileName="Warning.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="4707157387247632439" fileName="Warning.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4707157387247632411" fileName="Warning.java" startLine="11" startPosition="0" endLine="16" endPosition="3">
-      <varInfo nodeId="4707157387247632416" varName="message" />
       <varInfo nodeId="4707157387247632414" varName="id" />
+      <varInfo nodeId="4707157387247632416" varName="message" />
     </scopeInfo>
     <unitInfo nodeId="4707157387247632403" fileName="Warning.java" startLine="7" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.vcs.diff.Warning" />
   </root>
