@@ -2613,7 +2613,7 @@
       <zipfileset dir="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" prefix="module" />
       <zipfileset dir="${base_dir}/core/baseLanguage/unitTest/solutions/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/classes" />
+      <zipfileset dir="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/classes_gen" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar.jtmp/module.xml" prefix="META-INF" />
