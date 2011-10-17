@@ -23,6 +23,7 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -82,12 +83,22 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
               {
                 MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(parent, "This condition is always false", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343690", null, errorTarget);
+                {
+                  BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ReplaceAlwaysTrueFalseWithLiteral_QuickFix", false);
+                  intentionProvider.putArgument("value", false);
+                  _reporter_2309309498.addIntentionProvider(intentionProvider);
+                }
               }
             }
             if (equals && isNull || !(equals) && isNotNull) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(parent, "This condition is always true", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343696", null, errorTarget);
+                {
+                  BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ReplaceAlwaysTrueFalseWithLiteral_QuickFix", false);
+                  intentionProvider.putArgument("value", false);
+                  _reporter_2309309498.addIntentionProvider(intentionProvider);
+                }
               }
             }
           }

@@ -965,6 +965,9 @@
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="576141512673850866">
       <property name="name" nameId="tpck.1169194664001" value="check_StaticFieldDuplication" />
     </node>
+    <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="4340499048742652656">
+      <property name="name" nameId="tpck.1169194664001" value="ReplaceAlwaysTrueFalseWithLiteral" />
+    </node>
   </roots>
   <root id="1175495245176">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1175495245177">
@@ -24359,6 +24362,13 @@
                             <node role="warningText" roleId="tpd4.1207055552304" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3451033204592343693">
                               <property name="value" nameId="tpee.1070475926801" value="This condition is always false" />
                             </node>
+                            <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="4340499048742652962">
+                              <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="4340499048742652656" resolveInfo="ReplaceAlwaysTrueFalseWithLiteral" />
+                              <node role="actualArgument" roleId="tpd4.1210784493590" type="tpd4.TypesystemIntentionArgument" typeId="tpd4.1210784384552" id="4340499048742652963">
+                                <link role="quickFixArgument" roleId="tpd4.1216386999476" targetNodeId="4340499048742652659" resolveInfo="value" />
+                                <node role="value" roleId="tpd4.1210784642750" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4340499048742652965" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                         <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="3791846458263577394">
@@ -24390,6 +24400,15 @@
                             </node>
                             <node role="warningText" roleId="tpd4.1207055552304" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3451033204592343699">
                               <property name="value" nameId="tpee.1070475926801" value="This condition is always true" />
+                            </node>
+                            <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="4340499048742652966">
+                              <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="4340499048742652656" resolveInfo="ReplaceAlwaysTrueFalseWithLiteral" />
+                              <node role="actualArgument" roleId="tpd4.1210784493590" type="tpd4.TypesystemIntentionArgument" typeId="tpd4.1210784384552" id="4340499048742652967">
+                                <link role="quickFixArgument" roleId="tpd4.1216386999476" targetNodeId="4340499048742652659" resolveInfo="value" />
+                                <node role="value" roleId="tpd4.1210784642750" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4340499048742652969">
+                                  <property name="value" nameId="tpee.1068580123138" value="false" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -29563,6 +29582,55 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="576141512673850868">
       <property name="name" nameId="tpck.1169194664001" value="decl" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
+    </node>
+  </root>
+  <root id="4340499048742652656">
+    <node role="executeBlock" roleId="tpd4.1216383424566" type="tpd4.QuickFixExecuteBlock" typeId="tpd4.1216383287005" id="4340499048742652657">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4340499048742652658">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4340499048742652925">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4340499048742652935">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ConceptFunctionParameter_node" typeId="tpd4.1216383337216" id="4340499048742652926" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="4340499048742652941">
+              <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4340499048742652943">
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4340499048742652945">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="4340499048742652949">
+                    <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
+                    <property name="label" nameId="tp3r.6489343236075007666" value="BooleanConstant" />
+                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4340499048742825667">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpd4.QuickFixArgumentReference" typeId="tpd4.1216390348809" id="4340499048742825666">
+                        <link role="quickFixArgument" roleId="tpd4.1216390348810" targetNodeId="4340499048742652659" resolveInfo="value" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4340499048742825671">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Boolean%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="quickFixArgument" roleId="tpd4.1216383476350" type="tpd4.QuickFixArgument" typeId="tpd4.1216383482742" id="4340499048742652659">
+      <property name="name" nameId="tpck.1169194664001" value="value" />
+      <node role="argumentType" roleId="tpd4.1216383511839" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4340499048742825664">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+      </node>
+    </node>
+    <node role="descriptionBlock" roleId="tpd4.1216391046856" type="tpd4.QuickFixDescriptionBlock" typeId="tpd4.1216390987552" id="4340499048742652927">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4340499048742652928">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4340499048742652929">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="4340499048742652931">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpd4.QuickFixArgumentReference" typeId="tpd4.1216390348809" id="4340499048742652934">
+              <link role="quickFixArgument" roleId="tpd4.1216390348810" targetNodeId="4340499048742652659" resolveInfo="value" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4340499048742652977">
+              <property name="value" nameId="tpee.1070475926801" value="Simplify expression to " />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>
