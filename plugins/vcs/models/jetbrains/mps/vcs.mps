@@ -40,7 +40,6 @@
   <import index="xuot" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jdom(MPS.Classpath/org.jdom@java_stub)" version="-1" />
   <import index="fy7j" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.persistence.def(MPS.Classpath/jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="lxbp" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.vcs(MPS.Classpath/jetbrains.mps.vcs@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
   <import index="q11f" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.wm(MPS.Classpath/com.intellij.openapi.wm@java_stub)" version="-1" />
   <import index="xpbq" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.dialogs(MPS.Classpath/jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
@@ -4218,9 +4217,9 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8630073244818191682">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8630073244818198056">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8630073244818198057">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lxbp.~VcsHelperUtil" resolveInfo="VcsHelperUtil" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxbp.~VcsHelperUtil%dgetMergeBackupDirPath()%cjava%dlang%dString" resolveInfo="getMergeBackupDirPath" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8977941161144988645">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwa9.~VcsHelperUtil%dgetMergeBackupDirPath()%cjava%dlang%dString" resolveInfo="getMergeBackupDirPath" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fwa9.~VcsHelperUtil" resolveInfo="VcsHelperUtil" />
                   </node>
                 </node>
               </node>
@@ -4980,33 +4979,33 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3613324658897714853">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3613324658897714854">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lxbp.~VcsHelperUtil" resolveInfo="VcsHelperUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxbp.~VcsHelperUtil%dwriteContentsToFile(byte[],java%dlang%dString,java%dio%dFile,java%dlang%dString)%cvoid" resolveInfo="writeContentsToFile" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3613324658897714855">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8977941161144987392">
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fwa9.~VcsHelperUtil" resolveInfo="VcsHelperUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwa9.~VcsHelperUtil%dwriteContentsToFile(byte[],java%dlang%dString,java%dio%dFile,java%dlang%dString)%cvoid" resolveInfo="writeContentsToFile" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8977941161144987393">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3613324658897713898" resolveInfo="ModelUtils" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3613324658897713913" resolveInfo="modelToBytes" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3613324658897714856">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8977941161144987394">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613324658897714846" resolveInfo="inMemory" />
               </node>
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3613324658897714857">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3613324658897714858">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8977941161144987395">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8977941161144987396">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613324658897714844" resolveInfo="modelFile" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3613324658897714859">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8977941161144987397">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
               </node>
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3613324658897714860">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8977941161144987398">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613324658897714850" resolveInfo="tmp" />
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3613324658897714861">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3613324658897714862">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8977941161144987399">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8977941161144987400">
                 <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3613324658897714669" resolveInfo="VcsHelper.FsMemoryMergeVersion" />
                 <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="3613324658897714673" resolveInfo="MEMORY" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3613324658897714863">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8977941161144987401">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3613324658897714682" resolveInfo="getSuffix" />
               </node>
             </node>
@@ -5083,14 +5082,14 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3613324658897714890">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3613324658897714891">
             <property name="name" nameId="tpck.1169194664001" value="zipfile" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8691295566906479753">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxbp.~VcsHelperUtil%dchooseZipFileForModelFile(java%dlang%dString)%cjava%dio%dFile" resolveInfo="chooseZipFileForModelFile" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lxbp.~VcsHelperUtil" resolveInfo="VcsHelperUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8691295566906479754">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8691295566906479755">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8977941161144987403">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwa9.~VcsHelperUtil%dchooseZipFileForModelFile(java%dlang%dString)%cjava%dio%dFile" resolveInfo="chooseZipFileForModelFile" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fwa9.~VcsHelperUtil" resolveInfo="VcsHelperUtil" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8977941161144987404">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8977941161144987405">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613324658897714844" resolveInfo="modelFile" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8691295566906479756">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8977941161144987406">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
                 </node>
               </node>

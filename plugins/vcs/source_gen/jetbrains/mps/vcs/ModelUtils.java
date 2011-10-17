@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
+import jetbrains.mps.ide.vcs.VcsHelperUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 

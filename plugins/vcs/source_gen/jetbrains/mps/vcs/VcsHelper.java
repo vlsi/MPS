@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.ide.vcs.VcsHelperUtil;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;

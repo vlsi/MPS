@@ -53,7 +53,7 @@
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
                     serviceImplementation="com.intellij.openapi.vcs.impl.ProjectExcludedFileIndex"/>
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
-                    serviceImplementation="jetbrains.mps.vcs.ExtendedDefaultVcsRootPolicy"/>
+                    serviceImplementation="jetbrains.mps.ide.vcs.ExtendedDefaultVcsRootPolicy"/>
     <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
                     serviceImplementation="com.intellij.psi.search.ProjectScopeBuilder"/>
 
