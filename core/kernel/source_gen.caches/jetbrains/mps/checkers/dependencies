@@ -64,7 +64,6 @@
     <classNode extendsClassName="jetbrains.mps.checkers.AbstractConstraintsChecker" />
   </dependency>
   <dependency className="jetbrains.mps.checkers.INodeChecker" file="INodeChecker.java">
-    <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPointName" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />

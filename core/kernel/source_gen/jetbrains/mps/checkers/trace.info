@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="135987422146913546">
-    <nodeInfo nodeId="135987422146913548" fileName="INodeChecker.java" startLine="11" startPosition="31" endLine="12" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHECKERS" />
-    <nodeInfo nodeId="135987422146913554" fileName="INodeChecker.java" startLine="13" startPosition="0" endLine="14" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrors#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/Set;" />
-    <nodeInfo nodeId="135987422146913563" fileName="INodeChecker.java" startLine="14" startPosition="87" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategory#()Ljava/lang/String;" />
-    <scopeInfo nodeId="135987422146913554" fileName="INodeChecker.java" startLine="13" startPosition="0" endLine="14" endPosition="87">
+    <nodeInfo nodeId="135987422146913554" fileName="INodeChecker.java" startLine="10" startPosition="31" endLine="11" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrors#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/Set;" />
+    <nodeInfo nodeId="135987422146913563" fileName="INodeChecker.java" startLine="11" startPosition="87" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategory#()Ljava/lang/String;" />
+    <scopeInfo nodeId="135987422146913554" fileName="INodeChecker.java" startLine="10" startPosition="31" endLine="11" endPosition="87">
       <varInfo nodeId="135987422146913558" varName="node" />
       <varInfo nodeId="135987422146913560" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="135987422146913563" fileName="INodeChecker.java" startLine="14" startPosition="87" endLine="15" endPosition="30" />
-    <unitInfo nodeId="135987422146913546" fileName="INodeChecker.java" startLine="11" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.checkers.INodeChecker" />
+    <scopeInfo nodeId="135987422146913563" fileName="INodeChecker.java" startLine="11" startPosition="87" endLine="12" endPosition="30" />
+    <unitInfo nodeId="135987422146913546" fileName="INodeChecker.java" startLine="10" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.checkers.INodeChecker" />
   </root>
   <root nodeId="3364928926666847271">
     <nodeInfo nodeId="1519428872448363207" fileName="CheckersComponent.java" startLine="12" startPosition="57" endLine="13" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
