@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.traceInfo.cache" uuid="31c5d39c-9bd1-452c-80a7-32ae1eb73c4d" compileInMPS="true">
+<solution name="jetbrains.mps.traceInfo.cache" uuid="31c5d39c-9bd1-452c-80a7-32ae1eb73c4d" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}/models" namespacePrefix="" />
   </models>
