@@ -29,6 +29,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   private static Logger LOG = Logger.getLogger(TraceInfoCache.class);
   public static final String TRACE_FILE_NAME = "trace.info";
   private static TraceInfoCache INSTANCE;
+  private static final Object INSTANCE_LOCK = new Object();
 
   public TraceInfoCache(SModelRepository modelRepository) {
     super(modelRepository);
@@ -36,10 +37,12 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Override
   public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
+    synchronized (INSTANCE_LOCK) {
+      if (INSTANCE != null) {
+        throw new IllegalStateException("double initialization");
+      }
+      INSTANCE = this;
     }
-    INSTANCE = this;
     super.init();
     CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
       public void performCleanup() {
@@ -50,7 +53,9 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   public void dispose() {
     super.dispose();
-    INSTANCE = null;
+    synchronized (INSTANCE_LOCK) {
+      INSTANCE = null;
+    }
   }
 
   @NotNull
@@ -172,7 +177,9 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   public static TraceInfoCache getInstance() {
-    return INSTANCE;
+    synchronized (INSTANCE_LOCK) {
+      return INSTANCE;
+    }
   }
 
   @Nullable
