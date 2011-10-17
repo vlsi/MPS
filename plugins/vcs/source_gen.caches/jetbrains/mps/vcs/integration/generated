@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5o7uq8wyni08i6pf81tw3ja0ym09rlu">
+<dependencies version="2" modelHash="-2j980mad2b3hpoc8gw3192jwrus3xmt">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.diff(MPS.Classpath/com.intellij.openapi.diff@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.diff.impl.mergeTool(MPS.Classpath/com.intellij.openapi.diff.impl.mergeTool@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.ui(MPS.Classpath/com.intellij.openapi.ui@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs(MPS.Classpath/com.intellij.openapi.vfs@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.project(MPS.Classpath/jetbrains.mps.ide.project@java_stub)" />
-  <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.vcs(MPS.Classpath/jetbrains.mps.ide.vcs@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -34,13 +33,12 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ModelDiffTool.java" />
   </source>
-  <source id="4124845871897258127" name="ModelMergeTool" hash="2nzbzau0x6wpamqfquiuuji4c2rxx0v">
+  <source id="4124845871897258127" name="ModelMergeTool" hash="3i9thdfswkc9tdjub675we0xmm273zz">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.diff(MPS.Classpath/com.intellij.openapi.diff@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.diff.impl.mergeTool(MPS.Classpath/com.intellij.openapi.diff.impl.mergeTool@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs(MPS.Classpath/com.intellij.openapi.vfs@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.project(MPS.Classpath/jetbrains.mps.ide.project@java_stub)" />
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.vcs(MPS.Classpath/jetbrains.mps.ide.vcs@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -67,7 +65,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MPSDiffRequestFactory.java" />
   </source>
-  <source id="4124845871897259305" name="ModelMergeRequest" hash="1f08s9bbh3vgp334asmotgn22j8tw0c">
+  <source id="4124845871897259305" name="ModelMergeRequest" hash="-7pqtvgffw3gbj9w6j58mxjlrgcw69hw">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.diff(MPS.Classpath/com.intellij.openapi.diff@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.diff.impl.mergeTool(MPS.Classpath/com.intellij.openapi.diff.impl.mergeTool@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.ui(MPS.Classpath/com.intellij.openapi.ui@java_stub)" />

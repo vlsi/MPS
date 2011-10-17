@@ -8,8 +8,11 @@
     <classNode dependClassName="com.intellij.openapi.vcs.changes.VcsGuess" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.platform.ProjectBaseDirectory" />
+    <classNode dependClassName="java.lang.AssertionError" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="com.intellij.openapi.vcs.impl.BasicDefaultVcsRootPolicy" />
   </dependency>
   <dependency className="jetbrains.mps.ide.vcs.MPSVcsHelperImpl" file="MPSVcsHelperImpl.java">
@@ -25,7 +28,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.vcs.ModelMergeRequestConstants" file="ModelMergeRequestConstants.java" />
   <dependency className="jetbrains.mps.ide.vcs.SourceRevision" file="SourceRevision.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

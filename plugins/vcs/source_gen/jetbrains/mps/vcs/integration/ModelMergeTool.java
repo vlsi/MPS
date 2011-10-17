@@ -10,7 +10,6 @@ import java.io.File;
 import jetbrains.mps.vcs.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.ide.vcs.ModelMergeRequestConstants;
 import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.ModelUtils;
@@ -25,6 +24,9 @@ import java.io.IOException;
 
 public class ModelMergeTool implements DiffTool {
   private static final Logger LOG = Logger.getLogger(ModelMergeTool.class);
+  public static final int CURRENT = 0;
+  public static final int ORIGINAL = 1;
+  public static final int LAST_REVISION = 2;
 
   public ModelMergeTool() {
   }
@@ -41,9 +43,9 @@ public class ModelMergeTool implements DiffTool {
     try {
       File backupFile = MergeBackupUtil.zipModel(request.getContents(), mrequest.getFile());
       DiffContent[] contents = mrequest.getContents();
-      final SModel baseModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.ORIGINAL], mrequest.getFile().getPath());
-      final SModel mineModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.CURRENT], mrequest.getFile().getPath());
-      final SModel newModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.LAST_REVISION], mrequest.getFile().getPath());
+      final SModel baseModel = ModelDiffTool.readModel(contents[ORIGINAL], mrequest.getFile().getPath());
+      final SModel mineModel = ModelDiffTool.readModel(contents[CURRENT], mrequest.getFile().getPath());
+      final SModel newModel = ModelDiffTool.readModel(contents[LAST_REVISION], mrequest.getFile().getPath());
 
       if (isNewMergeEnabled()) {
         final MergeModelsDialog dialog = new MergeModelsDialog(baseModel, mineModel, newModel, mrequest);

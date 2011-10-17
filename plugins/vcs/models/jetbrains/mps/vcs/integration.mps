@@ -1212,6 +1212,33 @@
         </node>
       </node>
     </node>
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5015601397718077947">
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="CURRENT" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5015601397718077948" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077949" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5015601397718077950">
+        <property name="value" nameId="tpee.1068580320021" value="0" />
+      </node>
+    </node>
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5015601397718077951">
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="ORIGINAL" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5015601397718077952" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077953" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5015601397718077954">
+        <property name="value" nameId="tpee.1068580320021" value="1" />
+      </node>
+    </node>
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5015601397718077955">
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="LAST_REVISION" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5015601397718077956" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077957" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5015601397718077958">
+        <property name="value" nameId="tpee.1068580320021" value="2" />
+      </node>
+    </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4124845871897258158">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4124845871897258159" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4124845871897258160" />
@@ -1364,9 +1391,8 @@
                     <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4124845871897258210">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897258199" resolveInfo="contents" />
                     </node>
-                    <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4124845871897258211">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fwa9.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fwa9.~ModelMergeRequestConstants%dORIGINAL" resolveInfo="ORIGINAL" />
+                    <node role="index" roleId="tpee.1173175577737" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="7184641355071740546">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5015601397718077951" resolveInfo="ORIGINAL" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4124845871897258212">
@@ -1399,9 +1425,8 @@
                     <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4124845871897258222">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897258199" resolveInfo="contents" />
                     </node>
-                    <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4124845871897258223">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fwa9.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fwa9.~ModelMergeRequestConstants%dCURRENT" resolveInfo="CURRENT" />
+                    <node role="index" roleId="tpee.1173175577737" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="7184641355071740548">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5015601397718077947" resolveInfo="CURRENT" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4124845871897258224">
@@ -1434,9 +1459,8 @@
                     <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4124845871897258234">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897258199" resolveInfo="contents" />
                     </node>
-                    <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4124845871897258235">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fwa9.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fwa9.~ModelMergeRequestConstants%dLAST_REVISION" resolveInfo="LAST_REVISION" />
+                    <node role="index" roleId="tpee.1173175577737" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="7184641355071740550">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5015601397718077955" resolveInfo="LAST_REVISION" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4124845871897258236">
@@ -2283,8 +2307,8 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iyqm.~MergeRequestImpl%dgetContents()%ccom%dintellij%dopenapi%ddiff%dDiffContent[]" resolveInfo="getContents" />
                   </node>
                   <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4124845871897259364">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fwa9.~ModelMergeRequestConstants" resolveInfo="ModelMergeRequestConstants" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fwa9.~ModelMergeRequestConstants%dORIGINAL" resolveInfo="ORIGINAL" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="4124845871897258127" resolveInfo="ModelMergeTool" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5015601397718077951" resolveInfo="ORIGINAL" />
                   </node>
                 </node>
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4124845871897259365">

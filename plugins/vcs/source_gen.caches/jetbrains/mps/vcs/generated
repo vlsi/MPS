@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3p15wrebsxwqsaljiorp5d415yvxult">
+<dependencies version="2" modelHash="-cura85trbxs7etrxfd27o2uuo3m2w5l">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij(MPS.Classpath/com.intellij@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(MPS.Classpath/com.intellij.openapi.application@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
@@ -42,8 +42,9 @@
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-e2ctrc4mz9pg097lenxn0rny4sknz3b" />
   <dep model="r:d64ba0fe-173d-44e2-ab7b-bde40d7e9b7e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.pre@generator)" hash="-9sws78inyzhrpf8g59jzetiydwjvsgq" />
   <dep model="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" hash="sct0tu7ai09hmfz5h3c3pacyuola1j" />
+  <dep model="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)" hash="-2j980mad2b3hpoc8gw3192jwrus3xmt" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <dep model="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)" hash="-ajc43w6fb7iircjuioc1emj11dtm70o" />
+  <dep model="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)" hash="kjigmirbn5lql35j67ypq5xi1nr5a7" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-2dkarhxef54yr8uu73su4eib7n2gtnz" />
   <common hash="c0iimx6obahlm80my8q5tbalq7y26vw">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
@@ -224,7 +225,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VcsGeneratedFilesPanel.java" />
   </source>
-  <source id="7184641355071650417" name="MergeBackupUtil" hash="2ah3nlume25teyr8scai478bnpj9mnt">
+  <source id="7184641355071650417" name="MergeBackupUtil" hash="2u7geermtfngfohuqve8fxj1axyj9uq">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.diff(MPS.Classpath/com.intellij.openapi.diff@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs(MPS.Classpath/com.intellij.openapi.vfs@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -242,6 +243,7 @@
     <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
+    <dep model="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)" />
     <file name="MergeBackupUtil.java" />

@@ -9,7 +9,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.ide.vcs.ModelMergeRequestConstants;
+import jetbrains.mps.vcs.integration.ModelMergeTool;
 import jetbrains.mps.ide.vcs.VcsMergeVersion;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
@@ -32,9 +32,9 @@ public class MergeBackupUtil {
 
   public static File zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
     File tmp = FileUtil.createTmpDir();
-    writeContentsToFile(contents[ModelMergeRequestConstants.ORIGINAL], file, tmp, VcsMergeVersion.BASE.getSuffix());
-    writeContentsToFile(contents[ModelMergeRequestConstants.CURRENT], file, tmp, VcsMergeVersion.MINE.getSuffix());
-    writeContentsToFile(contents[ModelMergeRequestConstants.LAST_REVISION], file, tmp, VcsMergeVersion.REPOSITORY.getSuffix());
+    writeContentsToFile(contents[ModelMergeTool.ORIGINAL], file, tmp, VcsMergeVersion.BASE.getSuffix());
+    writeContentsToFile(contents[ModelMergeTool.CURRENT], file, tmp, VcsMergeVersion.MINE.getSuffix());
+    writeContentsToFile(contents[ModelMergeTool.LAST_REVISION], file, tmp, VcsMergeVersion.REPOSITORY.getSuffix());
     File zipfile = chooseZipFileForModelFile(file.getName());
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);

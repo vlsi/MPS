@@ -6290,8 +6290,8 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7184641355071650451" resolveInfo="contents" />
               </node>
               <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7184641355071650465">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1iju.5015601397718077945" resolveInfo="ModelMergeRequestConstants" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1iju.5015601397718077951" resolveInfo="ORIGINAL" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gela.4124845871897258127" resolveInfo="ModelMergeTool" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gela.5015601397718077951" resolveInfo="ORIGINAL" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7184641355071650466">
@@ -6319,8 +6319,8 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7184641355071650451" resolveInfo="contents" />
               </node>
               <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7184641355071650475">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1iju.5015601397718077945" resolveInfo="ModelMergeRequestConstants" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1iju.5015601397718077947" resolveInfo="CURRENT" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gela.4124845871897258127" resolveInfo="ModelMergeTool" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gela.5015601397718077947" resolveInfo="CURRENT" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7184641355071650476">
@@ -6348,8 +6348,8 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7184641355071650451" resolveInfo="contents" />
               </node>
               <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7184641355071650485">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1iju.5015601397718077945" resolveInfo="ModelMergeRequestConstants" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1iju.5015601397718077955" resolveInfo="LAST_REVISION" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gela.4124845871897258127" resolveInfo="ModelMergeTool" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gela.5015601397718077955" resolveInfo="LAST_REVISION" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7184641355071650486">

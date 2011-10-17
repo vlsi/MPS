@@ -3,6 +3,7 @@
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)" />
+  <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <import index="3hsl" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vcs.impl(MPS.Classpath/com.intellij.openapi.vcs.impl@java_stub)" version="-1" />
   <import index="27v0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)" version="-1" />
@@ -21,6 +22,7 @@
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
+  <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5015601397718077770">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -39,11 +41,6 @@
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <property name="isFinal" nameId="tpee.1221565133444" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="SourceRevision" />
-    </node>
-    <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5015601397718077945">
-      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
-      <property name="isFinal" nameId="tpee.1221565133444" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="ModelMergeRequestConstants" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="5015601397718077963">
       <property name="name" nameId="tpck.1169194664001" value="Version" />
@@ -481,41 +478,6 @@
       </node>
     </node>
   </root>
-  <root id="5015601397718077945">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077946" />
-    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5015601397718077947">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="CURRENT" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5015601397718077948" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077949" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5015601397718077950">
-        <property name="value" nameId="tpee.1068580320021" value="0" />
-      </node>
-    </node>
-    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5015601397718077951">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="ORIGINAL" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5015601397718077952" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077953" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5015601397718077954">
-        <property name="value" nameId="tpee.1068580320021" value="1" />
-      </node>
-    </node>
-    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5015601397718077955">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="LAST_REVISION" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5015601397718077956" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077957" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5015601397718077958">
-        <property name="value" nameId="tpee.1068580320021" value="2" />
-      </node>
-    </node>
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5015601397718077959">
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077960" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5015601397718077961" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5015601397718077962" />
-    </node>
-  </root>
   <root id="5015601397718077963">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077964" />
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5015601397718077965">
@@ -739,6 +701,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7184641355071739581">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7184641355071739582">
+            <property name="text" nameId="tpee.6329021646629104958" value="TODO is it needed?" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5015601397718560633">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5015601397718560634">
             <property name="name" nameId="tpck.1169194664001" value="manager" />
@@ -844,6 +811,23 @@
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5015601397718560670" />
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5015601397718560671">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7184641355071698783">
+              <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7184641355071698784">
+                <property name="text" nameId="tpee.6329021646629104958" value="TODO is it needed?" />
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="7184641355071698753">
+              <property name="severity" nameId="tpib.1167245565795" value="error" />
+              <property name="hasException" nameId="tpib.1167228628751" value="true" />
+              <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7184641355071698754">
+                <property name="value" nameId="tpee.1070475926801" value="project base dir is null" />
+              </node>
+              <node role="exception" roleId="tpib.1167227561449" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7184641355071698756">
+                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7184641355071698758">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~AssertionError%d&lt;init&gt;()" resolveInfo="AssertionError" />
+                </node>
+              </node>
+            </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5015601397718560672">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5015601397718560673">
                 <property name="value" nameId="tpee.1068580123138" value="false" />

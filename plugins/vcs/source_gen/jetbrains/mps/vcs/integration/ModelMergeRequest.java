@@ -9,7 +9,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.diff.ActionButtonPresentation;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diff.SimpleContent;
-import jetbrains.mps.ide.vcs.ModelMergeRequestConstants;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.vcs.ModelUtils;
 
@@ -28,7 +27,7 @@ public class ModelMergeRequest extends MergeRequestImpl {
   }
 
   public void resolved(final byte[] result) {
-    ((SimpleContent) getContents()[ModelMergeRequestConstants.ORIGINAL]).setBOM(result);
+    ((SimpleContent) getContents()[ModelMergeTool.ORIGINAL]).setBOM(result);
     setResult(DialogWrapper.OK_EXIT_CODE);
     ModelUtils.replaceWithNewModelFromBytes(myFile, result);
   }
