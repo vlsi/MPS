@@ -13,18 +13,13 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.workbench.actions.imports.ImportHelper;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import org.apache.commons.lang.StringUtils;
 
 public class AddModelImportByRoot_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -74,55 +69,24 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
-      return false;
-    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final EditorCell_Label errorLabel = AddModelImportByRoot_Action.this.getErrorCell(_params);
-      final String initialText = (errorLabel == null ?
-        "" :
-        errorLabel.getRenderedText()
-      );
-      ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), initialText, new ImportHelper.ModelImportByRootCallback() {
-        public void importForRootAdded(String rootName) {
-          if (errorLabel == null) {
-            return;
-          }
-          String textToMatch = (rootName != null ?
-            rootName :
-            initialText
-          );
-          if (textToMatch.length() == 0) {
-            return;
-          }
-          NodeSubstituteInfo substituteInfo = errorLabel.getSubstituteInfo();
-          substituteInfo.invalidateActions();
-          List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(textToMatch, true);
-          if ((int) ListSequence.fromList(matchingActions).count() == 1) {
-            ListSequence.fromList(matchingActions).first().substitute(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), initialText);
-          }
+      EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
+      String initialText = "";
+      if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isErrorState()) {
+        EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
+        if (editorCellLabel.isErrorState() && !(StringUtils.isEmpty(editorCellLabel.getText()))) {
+          initialText = ((EditorCell_Label) selectedCell).getRenderedText();
         }
-      });
+      }
+      ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), initialText);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddModelImportByRoot", t);
       }
     }
-  }
-
-  private EditorCell_Label getErrorCell(final Map<String, Object> _params) {
-    EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
-    if (selectedCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
-      if (editorCellLabel.isErrorState() && !(StringUtils.isEmpty(editorCellLabel.getText()))) {
-        return editorCellLabel;
-      }
-    }
-    return null;
   }
 }

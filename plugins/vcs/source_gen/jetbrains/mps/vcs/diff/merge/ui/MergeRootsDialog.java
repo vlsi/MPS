@@ -85,7 +85,7 @@ public class MergeRootsDialog extends BaseDialog {
 
     myMergeContext.setChangesInvalidateHandler(new MergeContext.ChangesInvalidateHandler() {
       public void someChangesInvalidated() {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
             rehighlight();
           }

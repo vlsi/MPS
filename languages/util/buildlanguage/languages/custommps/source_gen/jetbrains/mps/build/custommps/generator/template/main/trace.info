@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="33" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.build.custommps.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="QueriesGenerated.java" startLine="290" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.build.custommps.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a94" />
   <unitInfo fileName="QueriesGenerated.java" startLine="309" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.build.custommps.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a2a0a94" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="33" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.build.custommps.generator.template.main.QueriesGenerated" />
   <root nodeId="1233155140772">
     <nodeInfo nodeId="1234891515249" fileName="QueriesGenerated.java" startLine="34" startPosition="146" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238405427011" fileName="QueriesGenerated.java" startLine="38" startPosition="146" endLine="39" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

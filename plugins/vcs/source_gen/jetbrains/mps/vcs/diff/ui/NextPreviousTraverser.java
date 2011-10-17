@@ -49,7 +49,7 @@ public class NextPreviousTraverser {
 
     final SelectionListener selectionListener = new SelectionListener() {
       public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
-        myLastEditor = editorComponent;
+        setLastEditor(editorComponent);
         updateToolbar();
       }
     };
@@ -105,13 +105,20 @@ public class NextPreviousTraverser {
     });
   }
 
-  private Bounds findNeighbourGroupAsLeftOrRight(final int currentY, boolean previous, final boolean left) {
-    assert ListSequence.fromList(myChangeGroupBuilders).any(new IWhereFilter<ChangeGroupBuilder>() {
+  private synchronized void setLastEditor(EditorComponent editor) {
+    myLastEditor = editor;
+    if (!(ListSequence.fromList(myChangeGroupBuilders).any(new IWhereFilter<ChangeGroupBuilder>() {
       public boolean accept(ChangeGroupBuilder b) {
         return b.getLeftComponent() == myLastEditor || b.getRightComponent() == myLastEditor;
       }
-    });
+    }))) {
+      if (log.isErrorEnabled()) {
+        log.error("last editor is uknown: " + myLastEditor, new AssertionError());
+      }
+    }
+  }
 
+  private Bounds findNeighbourGroupAsLeftOrRight(final int currentY, boolean previous, final boolean left) {
     ChangeGroupBuilder builder = (left ?
       getBuilderAsLeft() :
       getBuilderAsRight()
@@ -134,10 +141,10 @@ public class NextPreviousTraverser {
         }
       });
     }
-    return check_mf966z_a7a4(changeGroup, left);
+    return check_mf966z_a5a5(changeGroup, left);
   }
 
-  private Bounds getNeighbourGroupBounds(boolean previous) {
+  private synchronized Bounds getNeighbourGroupBounds(boolean previous) {
     // -1 means that group is not available 
 
     int currentY = myLastEditor.getViewport().getViewPosition().y;
@@ -151,28 +158,28 @@ public class NextPreviousTraverser {
     Bounds min;
     if (asLeft == null) {
       {
-        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0j0f = MultiTuple.<Bounds,Bounds>from(null, asRight);
-        min = _tmp_mf966z_a0j0f._0();
-        max = _tmp_mf966z_a0j0f._1();
+        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0j0g = MultiTuple.<Bounds,Bounds>from(null, asRight);
+        min = _tmp_mf966z_a0j0g._0();
+        max = _tmp_mf966z_a0j0g._1();
       }
     } else if (asRight == null) {
       {
-        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a9a5 = MultiTuple.<Bounds,Bounds>from(null, asLeft);
-        min = _tmp_mf966z_a0a9a5._0();
-        max = _tmp_mf966z_a0a9a5._1();
+        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a9a6 = MultiTuple.<Bounds,Bounds>from(null, asLeft);
+        min = _tmp_mf966z_a0a9a6._0();
+        max = _tmp_mf966z_a0a9a6._1();
       }
     } else {
       if ((int) asLeft.start() < (int) asRight.start()) {
         {
-          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a9a5 = MultiTuple.<Bounds,Bounds>from(asLeft, asRight);
-          min = _tmp_mf966z_a0a0a9a5._0();
-          max = _tmp_mf966z_a0a0a9a5._1();
+          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a9a6 = MultiTuple.<Bounds,Bounds>from(asLeft, asRight);
+          min = _tmp_mf966z_a0a0a9a6._0();
+          max = _tmp_mf966z_a0a0a9a6._1();
         }
       } else {
         {
-          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a0j0f = MultiTuple.<Bounds,Bounds>from(asRight, asLeft);
-          min = _tmp_mf966z_a0a0a0j0f._0();
-          max = _tmp_mf966z_a0a0a0j0f._1();
+          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a0j0g = MultiTuple.<Bounds,Bounds>from(asRight, asLeft);
+          min = _tmp_mf966z_a0a0a0j0g._0();
+          max = _tmp_mf966z_a0a0a0j0g._1();
         }
       }
     }
@@ -199,7 +206,7 @@ public class NextPreviousTraverser {
     goToY((int) bounds.start());
   }
 
-  private void goToY(int y) {
+  private synchronized void goToY(int y) {
     EditorCell editorCell = myLastEditor.findCellWeak(1, y + 1);
     if (editorCell != null) {
       myLastEditor.changeSelection(editorCell);
@@ -207,21 +214,21 @@ public class NextPreviousTraverser {
       if (log.isWarnEnabled()) {
         log.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
           public String compute() {
-            return check_mf966z_a0a0a2a0a0b0j(myLastEditor.getEditedNode());
+            return check_mf966z_a0a0a2a0a0b0k(myLastEditor.getEditedNode());
           }
         })));
       }
     }
   }
 
-  private static Bounds check_mf966z_a7a4(ChangeGroup checkedDotOperand, boolean left) {
+  private static Bounds check_mf966z_a5a5(ChangeGroup checkedDotOperand, boolean left) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getBounds(left);
     }
     return null;
   }
 
-  private static String check_mf966z_a0a0a2a0a0b0j(SNode checkedDotOperand) {
+  private static String check_mf966z_a0a0a2a0a0b0k(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getConceptFqName();
     }

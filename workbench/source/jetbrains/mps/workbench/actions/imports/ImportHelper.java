@@ -164,7 +164,7 @@ public class ImportHelper {
   }
 
   public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModelDescriptor model,
-                                          String initialText, final ModelImportByRootCallback callback) {
+                                          String initialText) {
     FakePsiElement fakePsiContext = new FakePsiElement() {
       public PsiElement getParent() {
         return null;
@@ -235,9 +235,7 @@ public class ImportHelper {
       public void elementChosen(final Object element) {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            NavigationItem navigationItem = (NavigationItem) element;
-            navigationItem.navigate(true);
-            callback.importForRootAdded(navigationItem.getPresentation().getPresentableText());
+            ((NavigationItem) element).navigate(true);
           }
         });
       }
@@ -295,9 +293,5 @@ public class ImportHelper {
         }
       });
     }
-  }
-
-  public static abstract class ModelImportByRootCallback {
-    public abstract void importForRootAdded(String rootName);
   }
 }

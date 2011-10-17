@@ -5,8 +5,10 @@ package jetbrains.mps.vcs.diff.merge.ui;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.vcs.diff.changes.MetadataChange;
 
 public class MergeNonConflictingRoots extends BaseAction {
   private MergeModelsDialog myDialog;
@@ -18,7 +20,13 @@ public class MergeNonConflictingRoots extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-    myDialog.getMergeContext().applyChanges(getChanges());
+    Iterable<ModelChange> changes = getChanges();
+    myDialog.getMergeContext().applyChanges(changes);
+    myDialog.markMetadataChangesAsApplied(Sequence.fromIterable(changes).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return ch instanceof MetadataChange;
+      }
+    }));
     myDialog.rebuildLater();
   }
 
