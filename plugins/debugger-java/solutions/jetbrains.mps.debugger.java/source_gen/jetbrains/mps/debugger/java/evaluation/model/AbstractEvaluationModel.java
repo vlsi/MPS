@@ -68,7 +68,7 @@ import jetbrains.mps.debug.evaluation.transform.Transformator;
 
 public abstract class AbstractEvaluationModel {
   private static final String EVALUATOR_NAME = "EvaluatorInstance";
-  private static final boolean IS_DEVELOPER_MODE = false;
+  public static final boolean IS_DEVELOPER_MODE = Boolean.getBoolean("evaluation.developer");
 
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;

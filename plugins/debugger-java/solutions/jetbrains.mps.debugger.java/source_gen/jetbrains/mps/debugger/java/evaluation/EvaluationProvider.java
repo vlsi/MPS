@@ -73,7 +73,7 @@ public class EvaluationProvider implements IEvaluationProvider {
       public void run() {
         JavaUiState state = myDebugSession.getUiState();
         if (state.isPausedOnBreakpoint()) {
-          final AbstractEvaluationModel model = createLowLevelEvaluationModel(false);
+          final AbstractEvaluationModel model = createLowLevelEvaluationModel(AbstractEvaluationModel.IS_DEVELOPER_MODE);
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             @Override
             public void run() {
