@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.integration;
 
 import com.intellij.openapi.diff.DiffTool;
 import jetbrains.mps.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffManager;
 import java.io.File;
@@ -21,12 +23,17 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog;
 import java.io.IOException;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
+import java.lang.reflect.Method;
 
 public class ModelMergeTool implements DiffTool {
   private static final Logger LOG = Logger.getLogger(ModelMergeTool.class);
   public static final int CURRENT = 0;
   public static final int ORIGINAL = 1;
   public static final int LAST_REVISION = 2;
+  protected static Log log = LogFactory.getLog(ModelMergeTool.class);
 
   public ModelMergeTool() {
   }
@@ -107,5 +114,28 @@ public class ModelMergeTool implements DiffTool {
 
   public static boolean isNewMergeEnabled() {
     return !("false".equals(System.getProperty("mps.newmerge")));
+  }
+
+  @Nullable
+  private static VirtualFile getFileFromMergeRequest(MergeRequestImpl mergeRequest) throws SecurityException {
+    // This is a hacky method which accesses private nested class MergeRequestImpl.MergeContent 
+    // using reflection. Alternative way would require patching IDEA platform. 
+    // TODO rewrite eature request filed: IDEA-75603 
+    DiffContent resultContent = mergeRequest.getResultContent();
+    try {
+      Class<?> mergeContentClass = Class.forName("com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl$MergeContent");
+      if (mergeContentClass.isInstance(resultContent)) {
+        Method getFileMethod = mergeContentClass.getMethod("getFile");
+        getFileMethod.setAccessible(true);
+        Object file = getFileMethod.invoke(resultContent);
+        assert file == null || file instanceof VirtualFile;
+        return ((VirtualFile) file);
+      }
+    } catch (Exception e) {
+      if (log.isErrorEnabled()) {
+        log.error("", e);
+      }
+    }
+    return null;
   }
 }
