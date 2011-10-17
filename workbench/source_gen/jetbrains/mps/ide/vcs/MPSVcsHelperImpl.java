@@ -14,11 +14,8 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.util.CollectionUtil;
 
 public class MPSVcsHelperImpl extends AbstractVcsHelperImpl {
-  private Project myProject;
-
   public MPSVcsHelperImpl(Project project) {
     super(project);
-    myProject = project;
   }
 
   @NotNull
@@ -26,7 +23,6 @@ public class MPSVcsHelperImpl extends AbstractVcsHelperImpl {
     if (files.isEmpty()) {
       return Collections.emptyList();
     }
-    MergeProvider providerDecorator = new MergeProviderDecorator(myProject, provider);
     // TODO what for? to show merge on startup? 
     // recheck files status 
     List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
@@ -41,7 +37,7 @@ public class MPSVcsHelperImpl extends AbstractVcsHelperImpl {
     if (toMerge.isEmpty()) {
       return alreadyResolved;
     }
-    List<VirtualFile> userResolved = super.showMergeDialog(files, providerDecorator);
+    List<VirtualFile> userResolved = super.showMergeDialog(files, provider);
     return CollectionUtil.union(userResolved, alreadyResolved);
   }
 }
