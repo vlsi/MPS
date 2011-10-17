@@ -27,6 +27,7 @@ import org.hamcrest.Description;
 import org.jmock.api.Action;
 import org.jmock.api.Invocation;
 import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.progress.ProgressMonitor;
 
 @RunWith(JMock.class)
 public class Execute_Test extends MockTestCase {
@@ -347,7 +348,7 @@ public class Execute_Test extends MockTestCase {
           }
         });
         exactly(1).of(mons).setup(with(aNonNull(IPropertiesPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
-
+        exactly(1).of(mons).useMonitor(with(aNonNull(ProgressMonitor.class)));
         exactly(1).of(jmon).reportFeedback(with(new BaseMatcher<IFeedback>() {
           public boolean matches(Object o) {
             if (o instanceof IFeedback.ERROR) {
@@ -360,6 +361,7 @@ public class Execute_Test extends MockTestCase {
           public void describeTo(Description p0) {
           }
         }));
+        exactly(1).of(mons).useMonitor(with(aNull(ProgressMonitor.class)));
 
         atLeast(1).of(res).before();
         will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));

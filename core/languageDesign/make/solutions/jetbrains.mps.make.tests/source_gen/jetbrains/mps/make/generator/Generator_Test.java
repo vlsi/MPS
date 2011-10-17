@@ -28,6 +28,7 @@ import org.jmock.api.Action;
 import org.jmock.api.Invocation;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
 import org.junit.Before;
@@ -125,6 +126,8 @@ public class Generator_Test extends MockTestCase {
           public void describeTo(Description description) {
           }
         });
+        exactly(1).of(mons).useMonitor(with(aNonNull(ProgressMonitor.class)));
+        exactly(1).of(mons).useMonitor(with(aNull(ProgressMonitor.class)));
       }
     });
     Mockups.allowing(context, mons);
