@@ -4,7 +4,8 @@ package jetbrains.mps.generator.traceInfo;
 
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.cleanup.CleanupListener;
@@ -26,10 +27,10 @@ import org.jdom.Element;
 import jetbrains.mps.vfs.FileSystem;
 
 public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
-  private static Logger LOG = Logger.getLogger(TraceInfoCache.class);
   public static final String TRACE_FILE_NAME = "trace.info";
   private static TraceInfoCache INSTANCE;
   private static final Object INSTANCE_LOCK = new Object();
+  protected static Log log = LogFactory.getLog(TraceInfoCache.class);
 
   public TraceInfoCache(SModelRepository modelRepository) {
     super(modelRepository);
@@ -85,7 +86,9 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Override
   protected DebugInfo readCache(SModelDescriptor sm) {
-    LOG.warning("Should not use readCache method since it may cause a deadlock.\nSee MPS-13899", new RuntimeException());
+    if (log.isWarnEnabled()) {
+      log.warn("Should not use readCache method since it may cause a deadlock.\nSee MPS-13899", new RuntimeException());
+    }
     return readCache(sm, sm.getModule());
   }
 
@@ -117,7 +120,9 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
           stream.close();
         }
       } catch (IOException e) {
-        LOG.error(e);
+        if (log.isErrorEnabled()) {
+          log.error("", e);
+        }
       }
     }
   }
