@@ -178,6 +178,12 @@
           <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="2235195415637076991">
             <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472723" resolveInfo="mps-core.jar" />
           </node>
+          <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="2280829395931071411">
+            <link role="block" roleId="tps4.701559220729212648" targetNodeId="5428983789737854768" resolveInfo="mps-editor.jar" />
+          </node>
+          <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="2280829395931071413">
+            <link role="block" roleId="tps4.701559220729212648" targetNodeId="5428983789737854526" resolveInfo="mps-workbench.jar" />
+          </node>
           <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="7715871110555971755">
             <link role="block" roleId="tps4.701559220729212648" targetNodeId="7715871110555971738" resolveInfo="mps-boot.jar" />
           </node>
