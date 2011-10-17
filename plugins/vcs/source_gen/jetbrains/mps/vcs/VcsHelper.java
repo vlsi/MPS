@@ -31,7 +31,6 @@ import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
 import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog;
-import jetbrains.mps.ide.vcs.Version;
 
 public class VcsHelper {
   private static final Logger LOG = Logger.getLogger(VcsHelper.class);
@@ -85,9 +84,9 @@ public class VcsHelper {
 
   private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
     File tmp = FileUtil.createTmpDir();
-    MergeBackupUtil.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, VcsHelper.FsMemoryMergeVersion.MEMORY.getSuffix());
+    MergeBackupUtil.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, VcsHelper.DiskMemoryConflictVersion.MEMORY.getSuffix());
     if (modelFile.exists()) {
-      com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + VcsHelper.FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
+      com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + VcsHelper.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
     }
     File zipfile = MergeBackupUtil.chooseZipFileForModelFile(modelFile.getName());
     zipfile.getParentFile().mkdirs();
@@ -165,13 +164,13 @@ public class VcsHelper {
     return true;
   }
 
-  public static   enum FsMemoryMergeVersion implements Version {
+  public static   enum DiskMemoryConflictVersion implements ModelVersion {
     FILE_SYSTEM("filesystem"),
     MEMORY("memory");
 
     private final String mySuffix;
 
-    FsMemoryMergeVersion(String suffix) {
+    DiskMemoryConflictVersion(String suffix) {
       mySuffix = suffix;
     }
 

@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.ModelLoadingState;
 import java.io.File;
-import jetbrains.mps.ide.vcs.Version;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.UnzipUtil;
 import java.io.FilenameFilter;
@@ -102,12 +101,12 @@ public class ModelUtils {
     }
   }
 
-  public static SModel[] loadZippedModels(File zipfile, Version[] versions) throws IOException {
+  public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException {
     File tmpdir = FileUtil.createTmpDir();
     UnzipUtil.unzip(zipfile, tmpdir);
     SModel[] models = new SModel[versions.length];
     int index = 0;
-    for (final Version v : versions) {
+    for (final ModelVersion v : versions) {
       File file;
       File[] files = tmpdir.listFiles(new FilenameFilter() {
         public boolean accept(File dir, String name) {

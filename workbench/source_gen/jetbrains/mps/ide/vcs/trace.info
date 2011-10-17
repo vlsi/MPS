@@ -24,25 +24,6 @@
     <unitInfo nodeId="5015601397718077769" fileName="SourceRevision.java" startLine="7" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.vcs.SourceRevision" />
     <unitInfo nodeId="5015601397718077904" fileName="SourceRevision.java" startLine="15" startPosition="50" endLine="20" endPosition="3" unitName="jetbrains.mps.ide.vcs.SourceRevision$1" />
   </root>
-  <root nodeId="5015601397718077963">
-    <nodeInfo nodeId="5015601397718077965" fileName="Version.java" startLine="6" startPosition="26" endLine="7" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
-    <scopeInfo nodeId="5015601397718077965" fileName="Version.java" startLine="6" startPosition="26" endLine="7" endPosition="28" />
-    <unitInfo nodeId="5015601397718077963" fileName="Version.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.ide.vcs.Version" />
-  </root>
-  <root nodeId="5015601397718077969">
-    <nodeInfo nodeId="5015601397718077978" fileName="VcsMergeVersion.java" startLine="10" startPosition="0" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuffix" />
-    <nodeInfo nodeId="5015601397718077987" fileName="VcsMergeVersion.java" startLine="13" startPosition="34" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5015601397718077995" fileName="VcsMergeVersion.java" startLine="17" startPosition="29" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5015601397718077981" fileName="VcsMergeVersion.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VcsMergeVersion#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5015601397718077991" fileName="VcsMergeVersion.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
-    <scopeInfo nodeId="5015601397718077986" fileName="VcsMergeVersion.java" startLine="13" startPosition="34" endLine="14" endPosition="22" />
-    <scopeInfo nodeId="5015601397718077994" fileName="VcsMergeVersion.java" startLine="17" startPosition="29" endLine="18" endPosition="20" />
-    <scopeInfo nodeId="5015601397718077981" fileName="VcsMergeVersion.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
-      <varInfo nodeId="5015601397718077984" varName="suffix" />
-    </scopeInfo>
-    <scopeInfo nodeId="5015601397718077991" fileName="VcsMergeVersion.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="5015601397718077969" fileName="VcsMergeVersion.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ide.vcs.VcsMergeVersion" />
-  </root>
   <root nodeId="5015601397718560603">
     <nodeInfo nodeId="5015601397718560603" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="16" startPosition="77" endLine="17" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5015601397718560606" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="18" startPosition="0" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />

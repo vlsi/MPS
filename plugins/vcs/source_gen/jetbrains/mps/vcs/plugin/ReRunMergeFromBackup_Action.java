@@ -21,7 +21,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.ide.vcs.VcsMergeVersion;
+import jetbrains.mps.vcs.MergeVersion;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vcs.VcsHelper;
@@ -86,8 +86,8 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     try {
       for (File backupFile : Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))) {
         try {
-          SModel[] models = ModelUtils.loadZippedModels(backupFile, VcsMergeVersion.values());
-          ReRunMergeFromBackup_Action.this.doMerge(models[VcsMergeVersion.MINE.ordinal()], models[VcsMergeVersion.BASE.ordinal()], models[VcsMergeVersion.REPOSITORY.ordinal()], _params);
+          SModel[] models = ModelUtils.loadZippedModels(backupFile, MergeVersion.values());
+          ReRunMergeFromBackup_Action.this.doMerge(models[MergeVersion.MINE.ordinal()], models[MergeVersion.BASE.ordinal()], models[MergeVersion.REPOSITORY.ordinal()], _params);
           return;
         } catch (IOException e) {
           if (log.isWarnEnabled()) {

@@ -21,12 +21,12 @@ import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.vcs.VcsMergeVersion;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vcs.MergeVersion;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
 import jetbrains.mps.vcs.integration.ModelDiffTool.ReadException;
@@ -61,7 +61,7 @@ public class TestMergeDialog {
     String resultFile;
     if (args.length == 2) {
       try {
-        final SModel[] zipped = ModelUtils.loadZippedModels(new File(args[0]), VcsMergeVersion.values());
+        final SModel[] zipped = ModelUtils.loadZippedModels(new File(args[0]), MergeVersion.values());
         models[0] = zipped[0];
         models[1] = zipped[1];
         models[2] = zipped[2];

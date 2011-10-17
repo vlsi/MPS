@@ -29,12 +29,6 @@
       <property name="isFinal" nameId="tpee.1221565133444" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="SourceRevision" />
     </node>
-    <node type="tpee.Interface" typeId="tpee.1107796713796" id="5015601397718077963">
-      <property name="name" nameId="tpck.1169194664001" value="Version" />
-    </node>
-    <node type="tpee.EnumClass" typeId="tpee.1083245097125" id="5015601397718077969">
-      <property name="name" nameId="tpck.1169194664001" value="VcsMergeVersion" />
-    </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5015601397718560603">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
       <property name="isFinal" nameId="tpee.1221565133444" value="false" />
@@ -153,86 +147,6 @@
       </node>
       <node role="since" roleId="m373.8465538089690331490" type="m373.SinceBlockDocTag" typeId="m373.8465538089690324397" id="5015601397718120513">
         <property name="text" nameId="m373.8465538089690324399" value="10/15/11" />
-      </node>
-    </node>
-  </root>
-  <root id="5015601397718077963">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077964" />
-    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5015601397718077965">
-      <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
-      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="getSuffix" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077966" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5015601397718110921" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5015601397718077968" />
-    </node>
-  </root>
-  <root id="5015601397718077969">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077970" />
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5015601397718077971">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5015601397718077963" resolveInfo="Version" />
-    </node>
-    <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="5015601397718077972">
-      <property name="name" nameId="tpck.1169194664001" value="MINE" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5015601397718077981" resolveInfo="VcsMergeVersion" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5015601397718077973">
-        <property name="value" nameId="tpee.1070475926801" value="mine" />
-      </node>
-    </node>
-    <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="5015601397718077974">
-      <property name="name" nameId="tpck.1169194664001" value="REPOSITORY" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5015601397718077981" resolveInfo="VcsMergeVersion" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5015601397718077975">
-        <property name="value" nameId="tpee.1070475926801" value="repository" />
-      </node>
-    </node>
-    <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="5015601397718077976">
-      <property name="name" nameId="tpck.1169194664001" value="BASE" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5015601397718077981" resolveInfo="VcsMergeVersion" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5015601397718077977">
-        <property name="value" nameId="tpee.1070475926801" value="base" />
-      </node>
-    </node>
-    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5015601397718077978">
-      <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="mySuffix" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5015601397718110924" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5015601397718077980" />
-    </node>
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5015601397718077981">
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5015601397718077982" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5015601397718077983" />
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5015601397718077984">
-        <property name="name" nameId="tpck.1169194664001" value="suffix" />
-        <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5015601397718110922" />
-      </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5015601397718077986">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5015601397718077987">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5015601397718077988">
-            <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5015601397718077989">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5015601397718077978" resolveInfo="mySuffix" />
-            </node>
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5015601397718077990">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5015601397718077984" resolveInfo="suffix" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5015601397718077991">
-      <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
-      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="getSuffix" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015601397718077992" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5015601397718110923" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5015601397718077994">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5015601397718077995">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5015601397718077996">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5015601397718077978" resolveInfo="mySuffix" />
-          </node>
-        </node>
       </node>
     </node>
   </root>

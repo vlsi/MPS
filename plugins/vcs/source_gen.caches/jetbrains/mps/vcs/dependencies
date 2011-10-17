@@ -67,11 +67,15 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.text.SimpleDateFormat" />
     <classNode dependClassName="java.util.Date" />
-    <classNode dependClassName="jetbrains.mps.ide.vcs.VcsMergeVersion" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.MergeVersion" />
     <classNode dependClassName="jetbrains.mps.vcs.integration.ModelMergeTool" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.MergeVersion" file="MergeVersion.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.vcs.ModelVersion" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.ModelUtils" file="ModelUtils.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -89,7 +93,6 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.vcs.Version" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -108,12 +111,16 @@
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.UnzipUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.MergeBackupUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.ModelVersion" />
     <classNode dependClassName="jetbrains.mps.vcs.integration.ModelDiffTool" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.xml.sax.InputSource" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.ModelVersion" file="ModelVersion.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.SuspiciousModelIndex" file="SuspiciousModelIndex.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -200,7 +207,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.integration.ModelDiffTool" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.watching.ModelChangesWatcher" />
-    <classNode extendsClassName="jetbrains.mps.ide.vcs.Version" />
+    <classNode extendsClassName="jetbrains.mps.vcs.ModelVersion" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.VcsUtil" file="VcsUtil.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

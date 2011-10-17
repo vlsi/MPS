@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.ide.vcs.Version;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcs.ModelUtils;
+import jetbrains.mps.vcs.ModelVersion;
 import jetbrains.mps.vfs.FileSystem;
 
 import java.io.File;
@@ -34,7 +34,7 @@ public class MergeTestUtil {
     ModelPersistence.saveModel(model, FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), model.getPersistenceVersion());
   }
 
-  public static enum TestVersion implements Version {
+  public static enum TestVersion implements ModelVersion {
     MINE("mine"),
     BASE("base"),
     REPO("repository"),

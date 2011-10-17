@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.integration.ModelMergeTool;
-import jetbrains.mps.ide.vcs.VcsMergeVersion;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
@@ -32,9 +31,9 @@ public class MergeBackupUtil {
 
   public static File zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
     File tmp = FileUtil.createTmpDir();
-    writeContentsToFile(contents[ModelMergeTool.ORIGINAL], file, tmp, VcsMergeVersion.BASE.getSuffix());
-    writeContentsToFile(contents[ModelMergeTool.CURRENT], file, tmp, VcsMergeVersion.MINE.getSuffix());
-    writeContentsToFile(contents[ModelMergeTool.LAST_REVISION], file, tmp, VcsMergeVersion.REPOSITORY.getSuffix());
+    writeContentsToFile(contents[ModelMergeTool.ORIGINAL], file, tmp, MergeVersion.BASE.getSuffix());
+    writeContentsToFile(contents[ModelMergeTool.CURRENT], file, tmp, MergeVersion.MINE.getSuffix());
+    writeContentsToFile(contents[ModelMergeTool.LAST_REVISION], file, tmp, MergeVersion.REPOSITORY.getSuffix());
     File zipfile = chooseZipFileForModelFile(file.getName());
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);

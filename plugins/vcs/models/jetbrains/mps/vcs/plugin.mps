@@ -49,7 +49,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" implicit="yes" />
-  <import index="fwa9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.vcs(MPS.Classpath/jetbrains.mps.ide.vcs@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6763225944573363022">
       <property name="name" nameId="tpck.1169194664001" value="ChangesStrip" />
@@ -963,14 +962,14 @@
                         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~SModel" resolveInfo="SModel" />
                       </node>
                     </node>
-                    <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2730898488679445285">
+                    <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4340499048742626625">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.3613324658897714029" resolveInfo="loadZippedModels" />
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="rtk5.3613324658897713898" resolveInfo="ModelUtils" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="2730898488679445286">
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="4340499048742626626">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="7545884443035896305" resolveInfo="backupFile" />
                       </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumValuesExpression" typeId="tpee.1224573963862" id="9079279062627148718">
-                        <link role="enumClass" roleId="tpee.1224573974191" targetNodeId="fwa9.~VcsMergeVersion" resolveInfo="VcsMergeVersion" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumValuesExpression" typeId="tpee.1224573963862" id="4340499048742627869">
+                        <link role="enumClass" roleId="tpee.1224573974191" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
                       </node>
                     </node>
                   </node>
@@ -982,9 +981,9 @@
                       <link role="member" roleId="tp4f.1205756909548" targetNodeId="7545884443035896134" resolveInfo="doMerge" />
                       <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="7545884443035896321">
                         <node role="index" roleId="tpee.1173175577737" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7545884443035896322">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9079279062627148853">
-                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fwa9.~VcsMergeVersion%dMINE" resolveInfo="MINE" />
-                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fwa9.~VcsMergeVersion" resolveInfo="VcsMergeVersion" />
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4340499048742627871">
+                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rtk5.4340499048742530939" resolveInfo="MINE" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7545884443035896324">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Enum%dordinal()%cint" resolveInfo="ordinal" />
@@ -996,9 +995,9 @@
                       </node>
                       <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="7545884443035896326">
                         <node role="index" roleId="tpee.1173175577737" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7545884443035896327">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9079279062627148852">
-                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fwa9.~VcsMergeVersion%dBASE" resolveInfo="BASE" />
-                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fwa9.~VcsMergeVersion" resolveInfo="VcsMergeVersion" />
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4340499048742627870">
+                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rtk5.4340499048742530943" resolveInfo="BASE" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7545884443035896329">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Enum%dordinal()%cint" resolveInfo="ordinal" />
@@ -1010,9 +1009,9 @@
                       </node>
                       <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="7545884443035896331">
                         <node role="index" roleId="tpee.1173175577737" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7545884443035896332">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9079279062627148854">
-                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fwa9.~VcsMergeVersion%dREPOSITORY" resolveInfo="REPOSITORY" />
-                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fwa9.~VcsMergeVersion" resolveInfo="VcsMergeVersion" />
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4340499048742627872">
+                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rtk5.4340499048742530941" resolveInfo="REPOSITORY" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7545884443035896334">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Enum%dordinal()%cint" resolveInfo="ordinal" />
