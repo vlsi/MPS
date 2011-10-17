@@ -143,7 +143,10 @@ public class CommonPaths {
       }
     }
 */
-    addIfExists(result, "/lib/mps.jar");
+    addIfExists(result, "/lib/mps-core.jar");
+    addIfExists(result, "/lib/mps-editor.jar");
+    addIfExists(result, "/lib/mps-workbench.jar");
+
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");
     addIfExists(result, "/lib/annotations.jar");
