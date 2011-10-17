@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class Queries {
   public Queries() {
@@ -44,6 +46,15 @@ public class Queries {
       SPropertyOperations.set(runtimeErrorType, "errorText", "incompatible types");
       return runtimeErrorType;
     }
-    return leastCommonSupertypes.iterator().next();
+    SNode type = leastCommonSupertypes.iterator().next();
+    {
+      IMatchingPattern pattern_j6k1pf_g0b = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.PrimitiveType");
+      SNode coercedNode_j6k1pf_g0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, pattern_j6k1pf_g0b);
+      if (coercedNode_j6k1pf_g0b != null) {
+        return coercedNode_j6k1pf_g0b;
+      } else {
+        return type;
+      }
+    }
   }
 }
