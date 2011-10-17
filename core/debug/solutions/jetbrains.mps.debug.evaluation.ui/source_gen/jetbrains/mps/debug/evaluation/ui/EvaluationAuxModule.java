@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class EvaluationAuxModule extends AbstractModule {
-  public static boolean JAVA_STUBS = false;
+  public static boolean JAVA_STUBS = true;
   @NotNull
   private static final ModelRootManager STUBS_MANAGER = (JAVA_STUBS ?
     new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs") :
