@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.vfs;
 
-import com.intellij.openapi.util.io.StreamUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.ReadUtil;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -34,7 +34,9 @@ public class IFileUtils {
     try {
       in = new BufferedInputStream(oldFile.openInputStream());
       out = newFile.openOutputStream();
-      StreamUtil.copyStreamContent(in, out);
+      byte[] bytes = new byte[(int) oldFile.length()];
+      ReadUtil.read(bytes, in);
+      out.write(bytes);
       return true;
     } catch (IOException e) {
       LOG.error(e);
