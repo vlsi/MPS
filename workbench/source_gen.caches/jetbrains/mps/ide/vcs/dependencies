@@ -15,42 +15,17 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="com.intellij.openapi.vcs.impl.BasicDefaultVcsRootPolicy" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.vcs.MPSVcsHelperImpl" file="MPSVcsHelperImpl.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.vcs.merge.MergeProvider" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.vcs.VcsMigrationUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
-    <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.vcs.SourceRevision" file="SourceRevision.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.vcs.VcsHandler" file="VcsHandler.java">
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.vcs.VcsMergeVersion" file="VcsMergeVersion.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.ide.vcs.Version" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.vcs.VcsMigrationUtil" file="VcsMigrationUtil.java">
-    <classNode dependClassName="jetbrains.mps.components.ComponentManager" />
-    <classNode dependClassName="jetbrains.mps.ide.vcs.VcsHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.vcs.VoidVcsHandler" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.vcs.Version" file="Version.java">
     <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.vcs.VoidVcsHandler" file="VoidVcsHandler.java">
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode extendsClassName="jetbrains.mps.ide.vcs.VcsHandler" />
   </dependency>
 </dependenciesRoot>
 
