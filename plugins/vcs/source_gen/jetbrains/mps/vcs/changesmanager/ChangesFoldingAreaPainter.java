@@ -360,7 +360,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
 
     public String getToolTipText() {
-      if (ListSequence.fromList(myMessages).count() == 1) {
+      if ((int) ListSequence.fromList(myMessages).count() == 1) {
         OldChange change = ListSequence.fromList(myMessages).first().getChange();
         if (change instanceof SetNodeChange && change.getChangeType() == OldChangeType.CHANGE || change instanceof SubstituteNodeChange) {
           return "Replaced node in '" + ((NewNodeChange) change).getNodeRole() + "' role";
@@ -404,7 +404,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
           return m.getY(editorComponent);
         }
       }));
-      assert SetSequence.fromSet(ys).count() == 1;
+      assert (int) SetSequence.fromSet(ys).count() == 1;
       myY = SetSequence.fromSet(ys).first() - ChangesFoldingAreaPainter.ARROW_HEIGHT / 2;
     }
 

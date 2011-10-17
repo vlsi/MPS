@@ -3309,7 +3309,7 @@
     <nodeInfo nodeId="3187554551048036381" fileName="ModelChangesManager.java" startLine="168" startPosition="76" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1041446044406865504" fileName="ModelChangesManager.java" startLine="343" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFileStatus#(Lcom/intellij/openapi/vcs/FileStatus;)V" />
     <nodeInfo nodeId="5045020112651939023" fileName="ModelChangesManager.java" startLine="579" startPosition="0" endLine="589" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillWithAddRootChange#()V" />
-    <nodeInfo nodeId="1998279847126788762" fileName="ModelChangesManager.java" startLine="789" startPosition="76" endLine="799" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1998279847126788762" fileName="ModelChangesManager.java" startLine="789" startPosition="82" endLine="799" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="977382291400364254" fileName="ModelChangesManager.java" startLine="847" startPosition="80" endLine="857" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3992381866776136520" fileName="ModelChangesManager.java" startLine="918" startPosition="14" endLine="928" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="977382291400365668" fileName="ModelChangesManager.java" startLine="935" startPosition="62" endLine="945" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3986,8 +3986,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5045020112651939023" fileName="ModelChangesManager.java" startLine="579" startPosition="0" endLine="589" endPosition="0" />
     <scopeInfo nodeId="1998279847126831926" fileName="ModelChangesManager.java" startLine="722" startPosition="49" endLine="732" endPosition="7" />
-    <scopeInfo nodeId="1998279847126788021" fileName="ModelChangesManager.java" startLine="789" startPosition="76" endLine="799" endPosition="9" />
-    <scopeInfo nodeId="1998279847126788762" fileName="ModelChangesManager.java" startLine="789" startPosition="76" endLine="799" endPosition="9" />
+    <scopeInfo nodeId="1998279847126788021" fileName="ModelChangesManager.java" startLine="789" startPosition="82" endLine="799" endPosition="9" />
+    <scopeInfo nodeId="1998279847126788762" fileName="ModelChangesManager.java" startLine="789" startPosition="82" endLine="799" endPosition="9" />
     <scopeInfo nodeId="977382291400364254" fileName="ModelChangesManager.java" startLine="847" startPosition="80" endLine="857" endPosition="5" />
     <scopeInfo nodeId="977382291400365624" fileName="ModelChangesManager.java" startLine="935" startPosition="62" endLine="945" endPosition="9" />
     <scopeInfo nodeId="4106098632826232573" fileName="ModelChangesManager.java" startLine="1131" startPosition="68" endLine="1141" endPosition="9" />
@@ -4481,7 +4481,7 @@
     <nodeInfo nodeId="3322868409858674659" fileName="ChangesFoldingAreaPainter.java" startLine="350" startPosition="11" endLine="351" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3322868409858674680" fileName="ChangesFoldingAreaPainter.java" startLine="352" startPosition="14" endLine="353" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3322868409858674684" fileName="ChangesFoldingAreaPainter.java" startLine="358" startPosition="29" endLine="359" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2331005757591015011" fileName="ChangesFoldingAreaPainter.java" startLine="363" startPosition="59" endLine="364" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2331005757591015011" fileName="ChangesFoldingAreaPainter.java" startLine="363" startPosition="65" endLine="364" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3322868409858689541" fileName="ChangesFoldingAreaPainter.java" startLine="365" startPosition="138" endLine="366" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3322868409858689530" fileName="ChangesFoldingAreaPainter.java" startLine="367" startPosition="53" endLine="368" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3322868409858689544" fileName="ChangesFoldingAreaPainter.java" startLine="369" startPosition="56" endLine="370" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4497,8 +4497,8 @@
     <nodeInfo nodeId="4434895596490172089" fileName="ChangesFoldingAreaPainter.java" startLine="395" startPosition="22" endLine="396" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4434895596490171979" fileName="ChangesFoldingAreaPainter.java" startLine="398" startPosition="87" endLine="399" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4434895596490172044" fileName="ChangesFoldingAreaPainter.java" startLine="403" startPosition="87" endLine="404" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4434895596490172096" fileName="ChangesFoldingAreaPainter.java" startLine="406" startPosition="10" endLine="407" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4434895596490172118" fileName="ChangesFoldingAreaPainter.java" startLine="407" startPosition="50" endLine="408" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4434895596490172096" fileName="ChangesFoldingAreaPainter.java" startLine="406" startPosition="10" endLine="407" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4434895596490172118" fileName="ChangesFoldingAreaPainter.java" startLine="407" startPosition="56" endLine="408" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4434895596490169006" fileName="ChangesFoldingAreaPainter.java" startLine="413" startPosition="29" endLine="414" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4434895596490172008" fileName="ChangesFoldingAreaPainter.java" startLine="418" startPosition="28" endLine="419" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4434895596490172134" fileName="ChangesFoldingAreaPainter.java" startLine="423" startPosition="23" endLine="424" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4796,7 +4796,7 @@
     <scopeInfo nodeId="2310110763987865522" fileName="ChangesFoldingAreaPainter.java" startLine="246" startPosition="0" endLine="259" endPosition="0">
       <varInfo nodeId="2310110763987865525" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2331005757591009628" fileName="ChangesFoldingAreaPainter.java" startLine="363" startPosition="59" endLine="376" endPosition="26">
+    <scopeInfo nodeId="2331005757591009628" fileName="ChangesFoldingAreaPainter.java" startLine="363" startPosition="65" endLine="376" endPosition="26">
       <varInfo nodeId="2331005757591015012" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="142" endLine="154" endPosition="0" />

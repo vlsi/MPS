@@ -110,12 +110,12 @@ public class NullListSequence<T> extends NullCollectionSequence<T> implements IL
 
   @Override
   public IListSequence<T> asSynchronized() {
-    return (IListSequence<T>) super.asSynchronized();
+    return this;
   }
 
   @Override
   public IListSequence<T> asUnmodifiable() {
-    return (IListSequence<T>) super.asUnmodifiable();
+    return this;
   }
 
   public List<T> toList() {

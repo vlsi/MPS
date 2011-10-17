@@ -156,7 +156,7 @@ public class NodeGroupChange extends ModelChange {
       newStuff = "another " + newStuff;
     }
     if (myEnd == myBegin) {
-      String addedOrInserted = (myResultEnd == ListSequence.fromList(newChildren).count() ?
+      String addedOrInserted = (myResultEnd == (int) ListSequence.fromList(newChildren).count() ?
         "Added" :
         "Inserted"
       );

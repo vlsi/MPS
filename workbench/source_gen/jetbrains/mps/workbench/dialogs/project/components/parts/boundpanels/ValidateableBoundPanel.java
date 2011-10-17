@@ -37,6 +37,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
   protected String myCaption;
   protected List<T> myList;
   protected Condition<T> myCanRemoveCondition = Condition.TRUE_CONDITION;
+  protected boolean myAllowRemoveAnyway = false;
   protected DefaultListCellRenderer myCellRenderer;
   protected TransferHandler myTransferHandler;
   private Validator myObjectValidator = null;
@@ -112,6 +113,11 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     );
   }
 
+  public void setAllowRemoveAnyway(boolean allowRemoveAnyway) {
+    assertNotInitialized();
+    myAllowRemoveAnyway = allowRemoveAnyway;
+  }
+
   public void init() {
     myInitialized = true;
     setBorder(new TitledBorder(myCaption));
@@ -161,6 +167,15 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
       myList.remove(indices[i]);
     }
     return errorMessage.toString();
+  }
+
+  protected void removeSelected() {
+    int[] indices = getSelectedIndices();
+    Arrays.sort(indices);
+    for (int i = indices.length - 1; i >= 0; i--) {
+      myList.remove(indices[i]);
+    }
+
   }
 
   private JComponent createActionsComponent() {

@@ -67,4 +67,8 @@ public class FileSystemImpl extends FileSystem {
       ((IFileEx) file).refresh();
     }
   }
+
+  public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
+    myFileSystemProvider.scheduleUpdateForWrittenFiles(writtenFiles);
+  }
 }

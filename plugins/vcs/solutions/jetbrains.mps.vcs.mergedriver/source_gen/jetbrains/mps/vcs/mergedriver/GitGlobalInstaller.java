@@ -94,7 +94,7 @@ import java.io.FileNotFoundException;
           return !(line.trim().isEmpty());
         }
       }).toListSequence();
-      boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
+      boolean equal = (int) ListSequence.fromList(section).count() == (int) ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
           if (neq_btx4zt_a0a0a0g0u0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {

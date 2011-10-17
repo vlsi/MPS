@@ -204,18 +204,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
             SetSequence.fromSet(myChangedModules).addElement(module);
           }
         }
-        Set<EditableSModelDescriptor> skip = SetSequence.fromSet(new HashSet<EditableSModelDescriptor>());
-        for (EditableSModelDescriptor modelDescriptor : myChangedModels) {
-          IModule module = modelDescriptor.getModule();
-
-          if (SetSequence.fromSet(myChangedModules).contains(module)) {
-            if (log.isDebugEnabled()) {
-              log.debug("Skip model " + modelDescriptor + " since we want to reload " + module);
-            }
-            SetSequence.fromSet(skip).addElement(modelDescriptor);
-            break;
-          }
-        }
         Iterable<Generator> generators = SetSequence.fromSet(myChangedModules).where(new IWhereFilter<IModule>() {
           public boolean accept(IModule m) {
             return m instanceof Generator;
@@ -233,7 +221,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
           SetSequence.fromSet(myChangedModules).addElement(gen.getSourceLanguage());
         }
         SetSequence.fromSet(myChangedModules).removeSequence(SetSequence.fromSet(myDeletedModules));
-        SetSequence.fromSet(myChangedModels).removeSequence(SetSequence.fromSet(skip));
       }
     });
   }

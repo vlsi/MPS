@@ -671,7 +671,7 @@
         </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="2235195415637077144">
-        <property name="excludes" nameId="tps4.1204107522064" value="**/SignCode.exe, **/sign.code.jar" />
+        <property name="excludes" nameId="tps4.1204107522064" value="**/SignCode.exe, **/sign.code.jar, **/signtool.exe" />
         <node role="sourcePath" roleId="tps4.1220982054961" type="tps4.Path" typeId="tps4.1220973916698" id="2235195415637077145">
           <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="2235195415637077146">
             <property name="name" nameId="tps4.1220976068141" value="mps_home" />
@@ -687,7 +687,7 @@
         </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="2235195415637077150">
-        <property name="excludes" nameId="tps4.1204107522064" value="**/*.spc, **/*.pvk, **/*.pw" />
+        <property name="excludes" nameId="tps4.1204107522064" value="**/*.spc, **/*.pvk, **/*.pw, **/*.pfx" />
         <node role="sourcePath" roleId="tps4.1220982054961" type="tps4.Path" typeId="tps4.1220973916698" id="2235195415637077151">
           <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="2235195415637077152">
             <property name="name" nameId="tps4.1220976068141" value="mps_home" />
@@ -2389,6 +2389,10 @@
       <property name="id" nameId="tps4.1222447189012" value="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.gentest" />
     </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="5704421609471302618">
+      <property name="id" nameId="tps4.1222447189012" value="77c9a130-703f-4530-bf21-6580757768d0" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.antsupport" />
+    </node>
   </root>
   <root id="8431776905956472981">
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472982">
@@ -2693,7 +2697,7 @@
       <node role="fullName" roleId="tps4.6108265972537372848" type="tps4.CompositeString" typeId="tps4.1205342812422" id="437343344535644754">
         <node role="right" roleId="tps4.1205342834160" type="tps4.CompositeString" typeId="tps4.1205342812422" id="437343344535644758">
           <node role="right" roleId="tps4.1205342834160" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3690850548079628667">
-            <property name="name" nameId="tps4.1223641503366" value="2.0.1" />
+            <property name="name" nameId="tps4.1223641503366" value="2.0.2" />
           </node>
           <node role="left" roleId="tps4.1205342829799" type="tps4.CompositeString" typeId="tps4.1205342812422" id="437343344535981773">
             <node role="right" roleId="tps4.1205342834160" type="tps4.Space" typeId="tps4.1234531699390" id="437343344535981776" />

@@ -86,7 +86,7 @@ public class BeanPropertyView_Constraints extends BaseConstraintsDescriptor {
         {
           String gn = BeanPropertyView_Behavior.call_setterName_8381258131358762400(node);
           for (SNode imd : SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(node, "getter", false)), "jetbrains.mps.baseLanguage.structure.Classifier"), "method", true)) {
-            if (SPropertyOperations.getString(imd, "name").equals(gn) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(imd, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).count() == 1) {
+            if (SPropertyOperations.getString(imd, "name").equals(gn) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(imd, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (int) ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).count() == 1) {
               return MatchingUtil.matchNodes(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getter", false), "returnType", true));
             }
           }

@@ -7,8 +7,9 @@ import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
-public abstract class NullCollectionSequence<T> extends NullSequence<T> implements ICollectionSequence<T>, Collection<T> {
+public class NullCollectionSequence<T> extends NullSequence<T> implements ICollectionSequence<T>, Collection<T> {
   protected static Object[] EMPTY_ARRAY = new Object[0];
+  private static final NullCollectionSequence<Object> INSTANCE = new NullCollectionSequence<Object>();
 
   protected NullCollectionSequence() {
   }
@@ -83,5 +84,10 @@ public abstract class NullCollectionSequence<T> extends NullSequence<T> implemen
   @SuppressWarnings(value = "unchecked")
   public <U> U[] toArray(U[] a) {
     return (U[]) EMPTY_ARRAY;
+  }
+
+  @SuppressWarnings(value = "unchecked")
+  public static <U> NullCollectionSequence<U> instance() {
+    return (NullCollectionSequence<U>) NullCollectionSequence.INSTANCE;
   }
 }

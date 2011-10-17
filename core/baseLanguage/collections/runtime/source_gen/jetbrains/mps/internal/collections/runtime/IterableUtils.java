@@ -35,6 +35,17 @@ public class IterableUtils {
     return -1;
   }
 
+  public static <E> int lastIndexOf(Iterable<E> seq, E e) {
+    int lastIndex = -1;
+    int index = 0;
+    for (Iterator<E> it = seq.iterator(); it.hasNext(); index++) {
+      if (IterableUtils.eq(it.next(), e)) {
+        lastIndex = index;
+      }
+    }
+    return lastIndex;
+  }
+
   public static <E> int count(Iterable<E> seq) {
     int count = 0;
     for (Iterator<E> it = seq.iterator(); it.hasNext(); it.next()) {

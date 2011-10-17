@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import java.util.Arrays;
 import jetbrains.mps.util.WeakSet;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class Set_Test extends Util_Test {
   public void test_initSize() throws Exception {
@@ -55,6 +58,14 @@ public class Set_Test extends Util_Test {
     Assert.assertEquals(5, SetSequence.fromSet(test).count());
   }
 
+  public void test_testAdd() throws Exception {
+    Set<String> sets = SetSequence.fromSetAndArray(new HashSet<String>(), "a", "b");
+    Assert.assertTrue(SetSequence.fromSet(sets).add("c"));
+    Assert.assertFalse(SetSequence.fromSet(sets).add("b"));
+    SetSequence.fromSet(sets).removeElement("b");
+    Assert.assertTrue(SetSequence.fromSet(sets).add("b"));
+  }
+
   public void test_addAll() throws Exception {
     Set<String> test = SetSequence.fromSetAndArray(new HashSet<String>(), "A", "B", "C");
     this.assertIterableEqualsIgnoreOrder(this.inputABC(), test);
@@ -77,6 +88,15 @@ public class Set_Test extends Util_Test {
     SetSequence.fromSet(test).removeElement("D");
     SetSequence.fromSet(test).removeElement("E");
     this.assertIterableEqualsIgnoreOrder(this.inputABC(), test);
+  }
+
+  public void test_testRemove() throws Exception {
+    Set<String> sets = SetSequence.fromSetAndArray(new HashSet<String>(), "a", "b");
+    Assert.assertTrue(SetSequence.fromSet(sets).remove("a"));
+    Assert.assertTrue(SetSequence.fromSet(sets).remove("b"));
+    Assert.assertFalse(SetSequence.fromSet(sets).remove("c"));
+    SetSequence.fromSet(sets).addElement("c");
+    Assert.assertTrue(SetSequence.fromSet(sets).remove("c"));
   }
 
   public void test_removeAll() throws Exception {
@@ -122,7 +142,7 @@ public class Set_Test extends Util_Test {
   public void test_eq() throws Exception {
     Set<Integer> seta = SetSequence.fromSetAndArray(new HashSet<Integer>(), 111, 222, 333);
     Set<Integer> setb = SetSequence.fromSetAndArray(new HashSet<Integer>(), 333, 222, 111);
-    Assert.assertTrue(eq_c8cpc7_a0a2a41(seta, setb));
+    Assert.assertTrue(eq_c8cpc7_a0a2a61(seta, setb));
   }
 
   public void test_mps6232() throws Exception {
@@ -148,7 +168,53 @@ public class Set_Test extends Util_Test {
     Assert.assertTrue(SetSequence.fromSet(ws).isEmpty());
   }
 
-  private static boolean eq_c8cpc7_a0a2a41(Object a, Object b) {
+  public void test_collection() throws Exception {
+    Set<String> hss = SetSequence.fromSetAndArray(new HashSet<String>(), "a", "b");
+    Collection<String> cs = hss;
+    Assert.assertEquals("a b", IterableUtils.join(Sequence.fromIterable(cs).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true), " "));
+    SetSequence.fromSet(hss).addElement("c");
+    Assert.assertEquals("a b c", IterableUtils.join(Sequence.fromIterable(cs).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true), " "));
+  }
+
+  public void test_unmodifiable() throws Exception {
+    Set<String> hss = SetSequence.fromSetAndArray(new HashSet<String>(), "a", "b", "c");
+    SetSequence.fromSet(hss).addElement("d");
+    SetSequence.fromSet(hss).removeElement("b");
+    Assert.assertEquals("a c d", IterableUtils.join(SetSequence.fromSet(hss).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true), " "));
+    Set<String> uhss = SetSequence.fromSet(hss).asUnmodifiable();
+    try {
+      SetSequence.fromSet(uhss).addElement("e");
+      Assert.fail();
+    } catch (UnsupportedOperationException e) {
+      // expected exception 
+    }
+    SetSequence.fromSet(hss).removeElement("a");
+    Assert.assertEquals("c d", IterableUtils.join(SetSequence.fromSet(uhss).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true), " "));
+    try {
+      SetSequence.fromSet(uhss).removeElement("c");
+      Assert.fail();
+    } catch (UnsupportedOperationException e) {
+      // expected exception 
+    }
+  }
+
+  private static boolean eq_c8cpc7_a0a2a61(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

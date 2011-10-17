@@ -15,11 +15,26 @@
  */
 package jetbrains.mps.ide.vfs;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.Ref;
+import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Evgeny Gerashchenko
@@ -27,12 +42,70 @@ import org.jetbrains.annotations.NotNull;
 public class IdeaFileSystemProvider implements FileSystemProvider {
   static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
 
+  // Workaround for IDEA-75359
+  private static final Set<VirtualFile> ourJarRootsAccessedAtLeastOnce = new HashSet<VirtualFile>();
+
   @Override
   public IFile getFile(@NotNull String path) {
     return new IdeaFile(path);
   }
 
+  @Override
+  public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
+    final List<IFile> newFiles = new ArrayList<IFile>();
+    final List<IFile> updatedFiles = new ArrayList<IFile>();
+    for (IFile file : writtenFiles) {
+      if (file.exists()) {
+        updatedFiles.add(file);
+      } else {
+        newFiles.add(file);
+      }
+    }
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        // Recreate files using VFS
+        for (IFile file : newFiles) {
+          OutputStream out = null;
+          try {
+            // No need to close InputStream: it will be closed by loadFromStream()
+            byte[] content = StreamUtil.loadFromStream(new FileInputStream(file.getPath()));
+
+            out = file.openOutputStream();
+            out.write(content);
+          } catch (IOException e) {
+            LOG.error(e);
+          } finally {
+            FileUtil.closeFileSafe(out);
+          }
+        }
+
+        // Refresh added files
+        for (IFile file : updatedFiles) {
+          FileSystem.getInstance().refresh(file);
+        }
+      }
+    });
+  }
+
+  @Deprecated
   public IFile getFile(@NotNull VirtualFile file) {
     return new IdeaFile(file);
+  }
+
+  // Workaround for IDEA-75359
+  static void jarRootAccessed(final VirtualFile jarRootFile) {
+    synchronized (ourJarRootsAccessedAtLeastOnce) {
+      if (!ourJarRootsAccessedAtLeastOnce.contains(jarRootFile)) {
+        ourJarRootsAccessedAtLeastOnce.add(jarRootFile);
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            ((NewVirtualFile) jarRootFile).markDirtyRecursively();
+            jarRootFile.refresh(false, true);
+          }
+        });
+      }
+    }
   }
 }

@@ -16,5 +16,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new CreateTypesystemIntention_Intention(), "3302086321380606109");
     add(new FlipInequality_Intention(), "6840209722389643031");
     add(new MakeInequalityCheckOnly_Intention(), "6840209722389750234");
+    add(new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention(), "8293956702610699517");
   }
 }

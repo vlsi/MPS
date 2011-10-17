@@ -743,13 +743,16 @@
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4350419540517973572">
               <property name="path" nameId="tps4.1220974398640" value="sign" />
             </node>
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8575681287653609730">
-              <property name="path" nameId="tps4.1220974398640" value="SignCode.exe" />
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4474099190557436723">
+              <property name="path" nameId="tps4.1220974398640" value="signtool.exe" />
             </node>
           </node>
         </node>
+        <node role="commandLine" roleId="60oz.1231859334762" type="60oz.StringCommandLinePart" typeId="60oz.1231859958652" id="4474099190557436725">
+          <property name="text" nameId="60oz.1231861633100" value="sign " />
+        </node>
         <node role="commandLine" roleId="60oz.1231859334762" type="60oz.StringCommandLinePart" typeId="60oz.1231859958652" id="1238070302929">
-          <property name="text" nameId="60oz.1231861633100" value="-spc " />
+          <property name="text" nameId="60oz.1231861633100" value="/f " />
         </node>
         <node role="commandLine" roleId="60oz.1231859334762" type="60oz.PathCommantLinePart" typeId="60oz.1238070714613" id="1238071102567">
           <node role="path" roleId="60oz.1238070735094" type="tps4.Path" typeId="tps4.1220973916698" id="1238071102568">
@@ -763,32 +766,14 @@
               <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1238071242589">
                 <property name="path" nameId="tps4.1220974398640" value="sign" />
               </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="2840917085334207164">
-                <property name="path" nameId="tps4.1220974398640" value="cert_2009_cs.spc" />
+              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4474099190557436726">
+                <property name="path" nameId="tps4.1220974398640" value="cs_cert2011.pfx" />
               </node>
             </node>
           </node>
         </node>
         <node role="commandLine" roleId="60oz.1231859334762" type="60oz.StringCommandLinePart" typeId="60oz.1231859958652" id="1238071154195">
-          <property name="text" nameId="60oz.1231861633100" value=" -v " />
-        </node>
-        <node role="commandLine" roleId="60oz.1231859334762" type="60oz.PathCommantLinePart" typeId="60oz.1238070714613" id="1238071194533">
-          <node role="path" roleId="60oz.1238070735094" type="tps4.Path" typeId="tps4.1220973916698" id="1238071194534">
-            <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="1238071194535">
-              <property name="name" nameId="tps4.1220976068141" value="mps_home" />
-            </node>
-            <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="1238071194536">
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4738159245302641931">
-                <property name="path" nameId="tps4.1220974398640" value="build" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1238071239067">
-                <property name="path" nameId="tps4.1220974398640" value="sign" />
-              </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8575681287653609731">
-                <property name="path" nameId="tps4.1220974398640" value="key_2009_cs_nocrypt.pvk" />
-              </node>
-            </node>
-          </node>
+          <property name="text" nameId="60oz.1231861633100" value=" /p 123" />
         </node>
         <node role="commandLine" roleId="60oz.1231859334762" type="60oz.StringCommandLinePart" typeId="60oz.1231859958652" id="8235068106207366717">
           <property name="text" nameId="60oz.1231861633100" value=" " />

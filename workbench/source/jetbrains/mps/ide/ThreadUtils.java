@@ -22,16 +22,23 @@ import javax.swing.SwingUtilities;
 public class ThreadUtils {
   private static final Logger LOG = Logger.getLogger(ThreadUtils.class);
 
-  public static void runInUIThreadAndWait(Runnable r) {
+  public static boolean runInUIThreadAndWait(Runnable r) {
     if (SwingUtilities.isEventDispatchThread()) {
-      r.run();
+      try {
+          r.run();
+      } catch (Exception e) {
+        LOG.error(e);
+        return false;
+      }
     } else {
       try {
         SwingUtilities.invokeAndWait(r);
       } catch (Exception e) {
         LOG.error(e);
+        return false;
       }
     }
+    return true;
   }
 
   public static void runInUIThreadNoWait(Runnable r) {

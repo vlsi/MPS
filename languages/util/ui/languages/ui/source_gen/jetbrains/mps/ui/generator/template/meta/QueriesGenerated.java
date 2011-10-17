@@ -100,7 +100,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8504596698668712497(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "auxObjectTemplate", false), "factory", true), "body", true), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "auxObjectTemplate", false), "factory", true), "body", true), "statement", true)).count() == 1;
   }
 
   public static SNode sourceNodeQuery_6927073291915224712(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

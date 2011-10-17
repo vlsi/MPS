@@ -56,7 +56,7 @@ with_ctParams:
         public SNode select(SNode ccd) {
           SNode ccc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", null);
           SLinkOperations.setTarget(ccc, "containerDeclaration", ccd, false);
-          if (ListSequence.fromList(SLinkOperations.getTargets(ccd, "typeVariableDeclaration", true)).count() == 1) {
+          if ((int) ListSequence.fromList(SLinkOperations.getTargets(ccd, "typeVariableDeclaration", true)).count() == 1) {
             SLinkOperations.setTarget(ccc, "elementType", SNodeOperations.as(ListSequence.fromList(SNodeOperations.getChildren(type)).first(), "jetbrains.mps.baseLanguage.structure.Type"), true);
           }
           return ccc;

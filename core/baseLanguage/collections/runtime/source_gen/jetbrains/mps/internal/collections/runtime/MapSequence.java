@@ -109,6 +109,16 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
     return getMap().remove(u);
   }
 
+  public V putValue(U key, V value) {
+    if (Sequence.IGNORE_NULL_VALUES) {
+      if (value == null) {
+        return null;
+      }
+    }
+    getMap().put(key, value);
+    return value;
+  }
+
   public Map<U, V> toMap() {
     return this;
   }
@@ -264,7 +274,7 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
   }
 
   @SuppressWarnings(value = "unchecked")
-  private class MappingsSetSequence extends Sequence implements ISetSequence, Set {
+  private class MappingsSetSequence extends CollectionSequence implements ISetSequence, Set {
     private MappingsSetSequence() {
     }
 
@@ -389,6 +399,20 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
         arr[size] = null;
       }
       return arr;
+    }
+
+    @Override
+    public ISetSequence<Object> asUnmodifiable() {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public ISetSequence<Object> asSynchronized() {
+      throw new UnsupportedOperationException();
+    }
+
+    protected Collection getCollection() {
+      return map.entrySet();
     }
   }
 }

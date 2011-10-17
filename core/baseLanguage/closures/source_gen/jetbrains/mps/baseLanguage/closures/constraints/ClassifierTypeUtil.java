@@ -127,7 +127,7 @@ public class ClassifierTypeUtil {
     SNode resType = type;
     while (!(ListSequence.fromList(concretes).isEmpty())) {
       SNode ct = SNodeOperations.as(ListSequence.fromList(concretes).removeElementAt(0), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      if (ListSequence.fromList(visitedClassifiers).contains(SLinkOperations.getTarget(ct, "classifier", false)) || ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).count() == 0) {
+      if (ListSequence.fromList(visitedClassifiers).contains(SLinkOperations.getTarget(ct, "classifier", false)) || (int) ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).count() == 0) {
         continue;
       }
       ListSequence.fromList(visitedClassifiers).addElement(SLinkOperations.getTarget(ct, "classifier", false));

@@ -25,6 +25,7 @@ import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
 import org.jetbrains.annotations.NotNull;
@@ -123,9 +124,9 @@ public class MergeContext {
   }
 
   public Iterable<ModelChange> getApplicableChangesInNonConflictingRoots() {
-    return SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).translate(new ITranslator2<SNodeId, ModelChange>() {
-      public Iterable<ModelChange> translate(SNodeId root) {
-        Iterable<ModelChange> unresolvedForRoot = ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(root)).where(new IWhereFilter<ModelChange>() {
+    return Sequence.fromIterable((Sequence.fromIterable(MapSequence.fromMap(myRootToChanges).values()).concat(ListSequence.fromList(Arrays.asList(myMetadataChanges))))).translate(new ITranslator2<List<ModelChange>, ModelChange>() {
+      public Iterable<ModelChange> translate(List<ModelChange> changes) {
+        Iterable<ModelChange> unresolvedForRoot = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
             return !(SetSequence.fromSet(myResolvedChanges).contains(ch));
           }
@@ -140,11 +141,7 @@ public class MergeContext {
           return Sequence.fromIterable(Collections.<ModelChange>emptyList());
         }
       }
-    }).concat(ListSequence.fromList(myMetadataChanges).where(new IWhereFilter<ModelChange>() {
-      public boolean accept(ModelChange ch) {
-        return !(SetSequence.fromSet(myResolvedChanges).contains(ch));
-      }
-    }));
+    });
   }
 
   public Iterable<ModelChange> getAllChanges() {

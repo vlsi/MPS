@@ -431,6 +431,7 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
+    <classNode dependClassName="java.lang.AssertionError" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

@@ -28,13 +28,13 @@ public class TupleIntefaceUtils {
     List<TupleIntefaceUtils.Property> mutators = ListSequence.fromList(new ArrayList<TupleIntefaceUtils.Property>());
     int ignored = 0;
     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(ifc, "method", true))) {
-      if (ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+      if ((int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         ListSequence.fromList(accessors).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
-      } else if (ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && MatchingUtil.matchNodes(SLinkOperations.getTarget(method, "returnType", true), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence().first())) {
+      } else if ((int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && MatchingUtil.matchNodes(SLinkOperations.getTarget(method, "returnType", true), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence().first())) {
         ListSequence.fromList(mutators).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
-      } else if ("equals".equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
+      } else if ("equals".equals(SPropertyOperations.getString(method, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
         ignored++;
-      } else if ("hashCode".equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
+      } else if ("hashCode".equals(SPropertyOperations.getString(method, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
         ignored++;
       }
     }

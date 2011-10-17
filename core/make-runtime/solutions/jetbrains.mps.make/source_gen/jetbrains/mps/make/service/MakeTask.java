@@ -17,6 +17,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.ide.ThreadUtils;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
@@ -29,6 +30,10 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.logging.LogEntry;
 
 public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   private static Logger LOG = Logger.getLogger(MakeTask.class);
@@ -51,18 +56,49 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     this.myMessageHandler = mh;
   }
 
-  public void run(@NotNull ProgressIndicator pi) {
+  public void run(@NotNull final ProgressIndicator pi) {
     if (myState.compareAndSet(MakeTask.TaskState.NOT_STARTED, MakeTask.TaskState.RUNNING)) {
-      try {
-        doRun(pi);
-      } finally {
+      if (ThreadUtils.isEventDispatchThread()) {
         try {
-          reconcile();
-        } catch (RuntimeException ex) {
-          LOG.debug("Unexpected exception", ex);
+          doRun(pi);
+        } finally {
+          try {
+            reconcile();
+          } catch (RuntimeException ex) {
+            LOG.debug("Unexpected exception", ex);
+          }
         }
+      } else {
+        this.spawnMakeThreadThenDoRunRelayingLog(pi);
       }
     }
+  }
+
+  private void spawnMakeThreadThenDoRunRelayingLog(final ProgressIndicator pi) {
+    ThreadGroup tg = new ThreadGroup("MPS Make Thread Group");
+    Thread makeThread = new Thread(tg, new Runnable() {
+      public void run() {
+        MakeTask.RelayingLoggingHandler rlh = new MakeTask.RelayingLoggingHandler(myMessageHandler);
+        try {
+          rlh.startRelaying();
+          doRun(pi);
+        } finally {
+          try {
+            reconcile();
+          } catch (RuntimeException ex) {
+            MakeTask.LOG.debug("Unexpected exception", ex);
+          }
+          rlh.stopRelaying();
+        }
+      }
+    }, "MPS Make Thread");
+    makeThread.start();
+    do {
+      try {
+        makeThread.join();
+      } catch (InterruptedException ie) {
+      }
+    } while (makeThread.isAlive());
   }
 
   @Override
@@ -197,6 +233,118 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     INDETERMINATE();
 
     TaskState() {
+    }
+
+    public static class RelayingLoggingHandler implements ILoggingHandler {
+      private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
+
+      private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
+        @Override
+        protected IMessageHandler initialValue() {
+          return (MakeTask.TaskState.RelayingLoggingHandler.GROUP_HANDLER._0() == Thread.currentThread().getThreadGroup() ?
+            MakeTask.TaskState.RelayingLoggingHandler.GROUP_HANDLER._1() :
+            null
+          );
+        }
+      };
+
+      public RelayingLoggingHandler(IMessageHandler mh) {
+        this.messageHandler.set(mh);
+        GROUP_HANDLER = MultiTuple.<ThreadGroup,IMessageHandler>from(Thread.currentThread().getThreadGroup(), mh);
+      }
+
+      public void startRelaying() {
+        Logger.addLoggingHandler(this);
+      }
+
+      public void stopRelaying() {
+        Logger.removeLoggingHandler(this);
+      }
+
+      public void fatal(LogEntry entry) {
+        handle(MessageKind.ERROR, entry);
+      }
+
+      public void error(LogEntry entry) {
+        handle(MessageKind.ERROR, entry);
+      }
+
+      public void debug(LogEntry entry) {
+        handle(MessageKind.INFORMATION, entry);
+      }
+
+      public void warning(LogEntry entry) {
+        handle(MessageKind.WARNING, entry);
+      }
+
+      public void info(LogEntry entry) {
+        handle(MessageKind.INFORMATION, entry);
+      }
+
+      private void handle(MessageKind kind, LogEntry e) {
+        IMessageHandler mh = messageHandler.get();
+        if (mh != null) {
+          Message message = new Message(kind, e.getSourceClass(), e.getMessage());
+          message.setHintObject(e.getHintObject());
+          mh.handle(message);
+        }
+      }
+    }
+  }
+
+  public static class RelayingLoggingHandler implements ILoggingHandler {
+    private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
+
+    private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
+      @Override
+      protected IMessageHandler initialValue() {
+        return (MakeTask.RelayingLoggingHandler.GROUP_HANDLER._0() == Thread.currentThread().getThreadGroup() ?
+          MakeTask.RelayingLoggingHandler.GROUP_HANDLER._1() :
+          null
+        );
+      }
+    };
+
+    public RelayingLoggingHandler(IMessageHandler mh) {
+      this.messageHandler.set(mh);
+      GROUP_HANDLER = MultiTuple.<ThreadGroup,IMessageHandler>from(Thread.currentThread().getThreadGroup(), mh);
+    }
+
+    public void startRelaying() {
+      Logger.addLoggingHandler(this);
+    }
+
+    public void stopRelaying() {
+      Logger.removeLoggingHandler(this);
+    }
+
+    public void fatal(LogEntry entry) {
+      handle(MessageKind.ERROR, entry);
+    }
+
+    public void error(LogEntry entry) {
+      handle(MessageKind.ERROR, entry);
+    }
+
+    public void debug(LogEntry entry) {
+      handle(MessageKind.INFORMATION, entry);
+    }
+
+    public void warning(LogEntry entry) {
+      handle(MessageKind.WARNING, entry);
+    }
+
+    public void info(LogEntry entry) {
+      handle(MessageKind.INFORMATION, entry);
+    }
+
+    private void handle(MessageKind kind, LogEntry e) {
+      IMessageHandler mh = messageHandler.get();
+      if (mh != null) {
+        Message message = new Message(kind, e.getSourceClass(), e.getMessage());
+        message.setHintObject(e.getHintObject());
+        mh.handle(message);
+      }
     }
   }
 }

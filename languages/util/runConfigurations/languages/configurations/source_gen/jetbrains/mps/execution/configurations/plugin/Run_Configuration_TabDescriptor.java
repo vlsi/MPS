@@ -22,7 +22,10 @@ public class Run_Configuration_TabDescriptor extends EditorTabDescriptor {
   }
 
   public SNode getBaseNode(SNode node) {
-    return node;
+    return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.RunConfiguration") ?
+      node :
+      null
+    );
   }
 
   public boolean isApplicable(SNode node) {

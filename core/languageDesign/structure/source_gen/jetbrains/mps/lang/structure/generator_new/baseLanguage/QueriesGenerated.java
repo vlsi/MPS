@@ -836,7 +836,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1173128500049(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "extends", true)).count() == 0;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "extends", true)).count() == 0;
   }
 
   public static SNode sourceNodeQuery_545838410333599568(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -880,7 +880,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_545838410333270312(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() == 0) {
+    if ((int) ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() == 0 && (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() == 0) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
 
@@ -959,7 +959,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_7544071561380125545(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() == 0) {
+    if ((int) ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() == 0 && (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() == 0) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
     return QueriesUtil.sortedLinks(ListSequence.fromList(QueriesUtil.conceptAndItsInterfaces(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
@@ -1044,7 +1044,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_7544071561380146747(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() == 0) {
+    if ((int) ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() == 0 && (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() == 0) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
     Iterable<SNode> res = ListSequence.fromList(QueriesUtil.conceptAndItsInterfaces(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {

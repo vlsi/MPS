@@ -375,6 +375,10 @@
           </node>
         </node>
       </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5652969333075991089">
+        <property name="name" nameId="tpck.1169194664001" value="removeAnyway" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="5652969333075991091" />
+      </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4060390951635972992">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7355563316698763847">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7355563316698763848">
@@ -386,6 +390,15 @@
                     <link role="declaration" roleId="pmg0.5389689214217404513" targetNodeId="1671234487373853434" resolveInfo="canRemoveCondition" />
                     <node role="value" roleId="pmg0.5389689214217404512" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7355563316698763854">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4060390951635972989" resolveInfo="canRemove" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="5652969333075991085">
+                  <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="5652969333075991086" />
+                  <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.SimpleBuilderPropertyBuilder" typeId="pmg0.5389689214217404511" id="5652969333075991087">
+                    <link role="declaration" roleId="pmg0.5389689214217404513" targetNodeId="5652969333075985991" resolveInfo="allowRemoveAnyway" />
+                    <node role="value" roleId="pmg0.5389689214217404512" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5652969333075991092">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5652969333075991089" resolveInfo="removeAnyway" />
                     </node>
                   </node>
                 </node>
@@ -4550,6 +4563,19 @@
           </node>
         </node>
       </node>
+      <node role="property" roleId="pmg0.5389689214217081351" type="pmg0.SimpleBuilderProperty" typeId="pmg0.5389689214216990954" id="5652969333075985991">
+        <property name="name" nameId="tpck.1169194664001" value="allowRemoveAnyway" />
+        <node role="type" roleId="pmg0.5389689214216997399" type="tpee.BooleanType" typeId="tpee.1070534644030" id="5652969333075988064" />
+        <node role="set" roleId="pmg0.5389689214217175694" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5652969333075988088">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5652969333075988090">
+            <node role="operand" roleId="tpee.1197027771414" type="pmg0.SimpleBuilderPropertyParent" typeId="pmg0.5389689214217248368" id="5652969333075988089" />
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5652969333075990995">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ulpw.5652969333075988072" resolveInfo="setAllowRemoveAnywhere" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="pmg0.SimpleBuilderPropertyValue" typeId="pmg0.5389689214217248394" id="5652969333075990996" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="property" roleId="pmg0.5389689214217081351" type="pmg0.SimpleBuilderProperty" typeId="pmg0.5389689214216990954" id="1671234487373853441">
         <property name="name" nameId="tpck.1169194664001" value="chooser" />
         <node role="type" roleId="pmg0.5389689214216997399" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1671234487373853442">
@@ -5071,6 +5097,9 @@
                                 </node>
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7879430306815368535" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5652969333075991094">
+                                <property name="value" nameId="tpee.1068580123138" value="false" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -7604,6 +7633,9 @@
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="901357770590751631">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5923576889075042175" resolveInfo="getImportedModelsRemoveCondition" />
                                 </node>
+                              </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5652969333075991096">
+                                <property name="value" nameId="tpee.1068580123138" value="true" />
                               </node>
                             </node>
                           </node>

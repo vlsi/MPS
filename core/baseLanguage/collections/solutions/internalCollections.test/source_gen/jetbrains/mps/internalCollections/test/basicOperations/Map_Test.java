@@ -92,7 +92,7 @@ public class Map_Test extends Util_Test {
     Assert.assertSame('1', MapSequence.fromMap(ascii).get(49));
     Iterable<Integer> keys = MapSequence.fromMap(ascii).keySet();
     for (int k : Sequence.fromIterable(keys)) {
-      Assert.assertEquals(Character.valueOf((char) k), MapSequence.fromMap(ascii).get(k));
+      Assert.assertEquals(Character.valueOf((char) (int) k), MapSequence.fromMap(ascii).get(k));
     }
   }
 
@@ -212,5 +212,22 @@ public class Map_Test extends Util_Test {
     System.gc();
     Assert.assertSame(0, MapSequence.fromMap(moi).count());
 
+  }
+
+  public void test_primitiveValues() throws Exception {
+    Map<String, Integer> msi = MapSequence.<String, Integer>fromMapAndKeysArray(new HashMap<String, Integer>(), "A", "B", "C").withValues(333, 444, 333);
+    Assert.assertTrue(444 == (int) MapSequence.fromMap(msi).get("B"));
+    Assert.assertTrue((int) MapSequence.fromMap(msi).get("B") == 444);
+    Assert.assertTrue((int) MapSequence.fromMap(msi).get("A") == (int) MapSequence.fromMap(msi).get("C"));
+  }
+
+  public void test_opAssign() throws Exception {
+    Map<String, Integer> mapsi = MapSequence.<String, Integer>fromMapAndKeysArray(new HashMap<String, Integer>(), "A", "B", "C").withValues(345, 543, 1111);
+    Assert.assertTrue(645 == (int) MapSequence.fromMap(mapsi).putValue("A", MapSequence.fromMap(mapsi).get("A") + (300)));
+    Assert.assertTrue(645 == (int) MapSequence.fromMap(mapsi).get("A"));
+    Assert.assertTrue((int) MapSequence.fromMap(mapsi).putValue("B", MapSequence.fromMap(mapsi).get("B") - (40)) == 503);
+    Assert.assertTrue((int) MapSequence.fromMap(mapsi).get("B") == 503);
+    Assert.assertTrue(9999 == (int) MapSequence.fromMap(mapsi).putValue("C", MapSequence.fromMap(mapsi).get("C") * (9)));
+    Assert.assertTrue(9999 == (int) MapSequence.fromMap(mapsi).get("C"));
   }
 }

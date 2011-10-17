@@ -74,8 +74,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
         onNodeChange(newNode);
       }
     }) {
-      protected SNode getCurrentAspect() {
-        return getLastNode().getNode();
+      protected EditorTabDescriptor getCurrentAspect() {
+        return getCurrentTabAspect();
       }
     };
 

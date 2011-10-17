@@ -77,8 +77,8 @@
     <scopeInfo nodeId="1198085953023" fileName="RenameConcept.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="1198085953023" fileName="RenameConcept.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
     <scopeInfo nodeId="1198086566334" fileName="RenameConcept.java" startLine="70" startPosition="102" endLine="76" endPosition="18">
-      <varInfo nodeId="1240394867798" varName="sourceLanguage" />
       <varInfo nodeId="1240394867787" varName="result" />
+      <varInfo nodeId="1240394867798" varName="sourceLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="1198085953023" fileName="RenameConcept.java" startLine="97" startPosition="5" endLine="104" endPosition="68" />
     <scopeInfo nodeId="1198085953023" fileName="RenameConcept.java" startLine="69" startPosition="0" endLine="78" endPosition="0" />
@@ -446,8 +446,8 @@
     <scopeInfo nodeId="1198587937318" fileName="RenameLink.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="1198587937318" fileName="RenameLink.java" startLine="65" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="1198588627633" fileName="RenameLink.java" startLine="71" startPosition="102" endLine="77" endPosition="18">
-      <varInfo nodeId="1240394909200" varName="sourceLanguage" />
       <varInfo nodeId="1240394909189" varName="result" />
+      <varInfo nodeId="1240394909200" varName="sourceLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="1198587937318" fileName="RenameLink.java" startLine="98" startPosition="5" endLine="105" endPosition="68" />
     <scopeInfo nodeId="1198587937318" fileName="RenameLink.java" startLine="70" startPosition="0" endLine="79" endPosition="0" />
@@ -558,8 +558,8 @@
     <scopeInfo nodeId="1198592945615" fileName="MoveLinkUp.java" startLine="55" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1198593761414" fileName="MoveLinkUp.java" startLine="77" startPosition="71" endLine="87" endPosition="366" />
     <scopeInfo nodeId="1198594002609" fileName="MoveLinkUp.java" startLine="90" startPosition="102" endLine="100" endPosition="18">
-      <varInfo nodeId="1240394761441" varName="sourceLanguage" />
       <varInfo nodeId="1240394761430" varName="result" />
+      <varInfo nodeId="1240394761441" varName="sourceLanguage" />
       <varInfo nodeId="1240394761459" varName="targetLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="1198592945615" fileName="MoveLinkUp.java" startLine="120" startPosition="98" endLine="130" endPosition="22" />
@@ -640,8 +640,8 @@
     <scopeInfo nodeId="1198764756152" fileName="RenameProperty.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
     <scopeInfo nodeId="1198764756152" fileName="RenameProperty.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1198764929783" fileName="RenameProperty.java" startLine="59" startPosition="102" endLine="65" endPosition="18">
-      <varInfo nodeId="1240394919876" varName="sourceLanguage" />
       <varInfo nodeId="1240394919865" varName="result" />
+      <varInfo nodeId="1240394919876" varName="sourceLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="1198764756152" fileName="RenameProperty.java" startLine="86" startPosition="5" endLine="93" endPosition="68" />
     <scopeInfo nodeId="1198764756152" fileName="RenameProperty.java" startLine="58" startPosition="0" endLine="67" endPosition="0" />
@@ -743,8 +743,8 @@
     <scopeInfo nodeId="1198776916667" fileName="MovePropertyUp.java" startLine="51" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="1198777110055" fileName="MovePropertyUp.java" startLine="64" startPosition="71" endLine="74" endPosition="366" />
     <scopeInfo nodeId="1198777287089" fileName="MovePropertyUp.java" startLine="77" startPosition="102" endLine="87" endPosition="18">
-      <varInfo nodeId="1240394844751" varName="sourceLanguage" />
       <varInfo nodeId="1240394844740" varName="result" />
+      <varInfo nodeId="1240394844751" varName="sourceLanguage" />
       <varInfo nodeId="1240394844774" varName="targetLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="1198776916667" fileName="MovePropertyUp.java" startLine="107" startPosition="98" endLine="117" endPosition="22" />
@@ -839,8 +839,8 @@
       <varInfo nodeId="7754459869734029456" varName="searchResult" />
     </scopeInfo>
     <scopeInfo nodeId="1201265985668" fileName="SafeDeleteConcept.java" startLine="95" startPosition="102" endLine="101" endPosition="18">
-      <varInfo nodeId="1240394932420" varName="sourceLanguage" />
       <varInfo nodeId="1240394932409" varName="result" />
+      <varInfo nodeId="1240394932420" varName="sourceLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="1201019507868" fileName="SafeDeleteConcept.java" startLine="87" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="1201019507868" fileName="SafeDeleteConcept.java" startLine="94" startPosition="0" endLine="103" endPosition="0" />
@@ -919,8 +919,8 @@
     <scopeInfo nodeId="1201283571431" fileName="SafeDeleteLink.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="1201283571431" fileName="SafeDeleteLink.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="1201283765828" fileName="SafeDeleteLink.java" startLine="70" startPosition="102" endLine="76" endPosition="18">
-      <varInfo nodeId="1240395196630" varName="sourceLanguage" />
       <varInfo nodeId="1240395196619" varName="result" />
+      <varInfo nodeId="1240395196630" varName="sourceLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="1201283571431" fileName="SafeDeleteLink.java" startLine="69" startPosition="0" endLine="78" endPosition="0" />
     <unitInfo nodeId="1201283571431" fileName="SafeDeleteLink.java" startLine="26" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.SafeDeleteLink" />

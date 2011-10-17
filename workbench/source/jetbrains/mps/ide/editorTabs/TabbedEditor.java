@@ -59,7 +59,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private BaseNavigationAction myNextTabAction;
   private BaseNavigationAction myPrevTabAction;
 
-  public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, IOperationContext context) {
+  public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, @NotNull IOperationContext context) {
     super(context);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
@@ -67,10 +67,10 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     myColorProvider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
 
     myTabsComponent = TabComponentFactory.createTabsComponent(baseNode, possibleTabs, getComponent(), new NodeChangeCallback() {
-      public void changeNode(SNode newNode) {
-        showNodeInternal(newNode, !newNode.isRoot(), true);
-      }
-    }, new CreateModeCallback() {
+        public void changeNode(SNode newNode) {
+          showNodeInternal(newNode, !newNode.isRoot(), true);
+        }
+      }, new CreateModeCallback() {
       public void exitCreateMode() {
         showEditor();
       }
@@ -78,7 +78,8 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       public void enterCreateMode(JComponent replace) {
         showComponent(replace);
       }
-    });
+    }
+    );
 
     showNode(baseNode.getNode(), false);
 
@@ -88,18 +89,23 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     }
 
     myNextTabAction = new BaseNavigationAction(IdeActions.ACTION_NEXT_EDITOR_TAB, getComponent()) {
-      @Override
       public void actionPerformed(AnActionEvent e) {
-        myTabsComponent.nextTab();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            myTabsComponent.nextTab();
+          }
+        });
       }
     };
     myPrevTabAction = new BaseNavigationAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB, getComponent()) {
-      @Override
       public void actionPerformed(AnActionEvent e) {
-        myTabsComponent.prevTab();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            myTabsComponent.prevTab();
+          }
+        });
       }
     };
-
   }
 
   public void dispose() {
@@ -136,6 +142,11 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
     SNodePointer currentlyEditedNode = getCurrentlyEditedNode();
     EditorComponent editor = getCurrentEditorComponent();
+    if (editor == null) {
+      showEditor();
+      editor = getCurrentEditorComponent();
+    }
+
     boolean rootChange = getCurrentlyEditedNode() == null || (containingRoot != currentlyEditedNode.getNode());
 
     if (!fromTabs) {
@@ -200,13 +211,14 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private AnAction getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
-    List<DefaultActionGroup> groups = CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, getCurrentEditorComponent().getEditedNode(), new NodeChangeCallback() {
+    List<DefaultActionGroup> groups = CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, myTabsComponent.getCurrentTabAspect(), new NodeChangeCallback() {
       public void changeNode(SNode node) {
         myTabsComponent.setLastNode(new SNodePointer(node));
         showNode(node, !node.isRoot());
       }
     });
     for (DefaultActionGroup group : groups) {
+      group.setPopup(false);
       result.add(group);
       result.add(new Separator());
     }

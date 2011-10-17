@@ -134,7 +134,7 @@ public abstract class DiffModelTree extends MPSTree implements DataProvider {
       index + 1 :
       index - 1
     );
-    if (index == -1 || index == ListSequence.fromList(myRootNodes).count()) {
+    if (index == -1 || index == (int) ListSequence.fromList(myRootNodes).count()) {
       return null;
     } else {
       return ListSequence.fromList(myRootNodes).getElement(index).myRootId;

@@ -25,18 +25,15 @@ public abstract class FileSystem {
   private static final FileSystem INSTANCE = new FileSystemImpl();
 
   public abstract void setFileSystemProvider(@NotNull FileSystemProvider fileSystemProvider);
-
   public abstract FileSystemProvider getFileSystemProvider();
 
   public abstract IFile getFileByPath(@NotNull String path);
-
   public abstract boolean isPackaged(IFile file);
-
   public abstract IFile getBundleHome(IFile file);
-
   public abstract boolean setTimeStamp(IFile file, long time);
 
   public abstract void refresh(IFile file);
+  public abstract void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
 
   public static FileSystem getInstance() {
     return INSTANCE;

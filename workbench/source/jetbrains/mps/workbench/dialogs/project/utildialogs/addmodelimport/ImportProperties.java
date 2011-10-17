@@ -21,6 +21,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -198,7 +199,7 @@ public class ImportProperties {
     }
   }
 
-  public void saveTo(IModule targetModule, SModel targetModel, boolean all) {
+  public void saveTo(@NotNull IModule targetModule, @NotNull SModel targetModel, boolean all) {
     for (SModelReference imported : getModelsToImport(all)) {
       targetModel.addModelImport(imported, false);
     }
@@ -210,22 +211,24 @@ public class ImportProperties {
     }
 
 
+    ModuleDescriptor moduleDescriptor = targetModule.getModuleDescriptor();
+    assert moduleDescriptor != null : targetModel.getSModelFqName();
+
     for (ModuleReference language : getLanguagesToImport(all)) {
-      targetModule.getModuleDescriptor().getUsedLanguages().add(language);
+      moduleDescriptor.getUsedLanguages().add(language);
     }
     for (ModuleReference devkit : getDevkitsToImport(all)) {
-      targetModule.getModuleDescriptor().getUsedDevkits().add(devkit);
+      moduleDescriptor.getUsedDevkits().add(devkit);
     }
 
     //if there are new module dependencies, class reloading is needed
     List<Dependency> deps = getNewModuleDependencies(all);
     if (!deps.isEmpty()) {
-      ModuleDescriptor descriptor = targetModule.getModuleDescriptor();
-      if (descriptor != null) {
+      if (moduleDescriptor != null) {
         for (Dependency dep : deps) {
-          descriptor.getDependencies().add(dep);
+          moduleDescriptor.getDependencies().add(dep);
         }
-        targetModule.setModuleDescriptor(descriptor, true);
+        targetModule.setModuleDescriptor(moduleDescriptor, true);
       } else {
         targetModule.invalidateCaches();
       }

@@ -149,7 +149,8 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
         return null;
       }
     }
-    return set(idx, t);
+    set(idx, t);
+    return t;
   }
 
   @Override
@@ -192,7 +193,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
 
   @Override
   public IListSequence<T> asSynchronized() {
-    return (IListSequence<T>) super.asSynchronized();
+    return new ListSequence<T>(Collections.synchronizedList(getList()));
   }
 
   @SuppressWarnings(value = "unchecked")

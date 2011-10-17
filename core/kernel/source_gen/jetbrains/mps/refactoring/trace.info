@@ -1052,7 +1052,7 @@
     <nodeInfo nodeId="9051163691968345412" fileName="StructureModificationLog.java" startLine="11" startPosition="39" endLine="12" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDataList" />
     <nodeInfo nodeId="9051163691968350258" fileName="StructureModificationLog.java" startLine="17" startPosition="51" endLine="18" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3294668569473090973" fileName="StructureModificationLog.java" startLine="21" startPosition="68" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3898791162642398728" fileName="StructureModificationLog.java" startLine="26" startPosition="57" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3898791162642398728" fileName="StructureModificationLog.java" startLine="26" startPosition="63" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3898791162642398757" fileName="StructureModificationLog.java" startLine="28" startPosition="5" endLine="29" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9051163691968345408" fileName="StructureModificationLog.java" startLine="13" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StructureModificationLog#()V" />
     <nodeInfo nodeId="3898791162642398714" fileName="StructureModificationLog.java" startLine="25" startPosition="57" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1062,7 +1062,7 @@
     <scopeInfo nodeId="9051163691968345411" fileName="StructureModificationLog.java" startLine="14" startPosition="37" endLine="14" endPosition="37" />
     <scopeInfo nodeId="9051163691968350254" fileName="StructureModificationLog.java" startLine="17" startPosition="51" endLine="18" endPosition="22" />
     <scopeInfo nodeId="3294668569473090970" fileName="StructureModificationLog.java" startLine="21" startPosition="68" endLine="22" endPosition="55" />
-    <scopeInfo nodeId="3898791162642398715" fileName="StructureModificationLog.java" startLine="26" startPosition="57" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="3898791162642398715" fileName="StructureModificationLog.java" startLine="26" startPosition="63" endLine="27" endPosition="16" />
     <scopeInfo nodeId="9051163691968345408" fileName="StructureModificationLog.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
     <scopeInfo nodeId="9051163691968350251" fileName="StructureModificationLog.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="3294668569473090967" fileName="StructureModificationLog.java" startLine="20" startPosition="0" endLine="24" endPosition="0">

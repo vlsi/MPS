@@ -127,6 +127,6 @@ __switch__:
   public void test__null() throws Exception {
     Iterable<Integer> source = null;
     source = Sequence.fromIterable(source).distinct();
-    Assert.assertTrue(Sequence.fromIterable(source).count() == 0);
+    Assert.assertTrue((int) Sequence.fromIterable(source).count() == 0);
   }
 }

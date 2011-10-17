@@ -142,12 +142,12 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
 
   @Override
   public IDequeSequence<T> asUnmodifiable() {
-    return (IDequeSequence<T>) super.asUnmodifiable();
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public IDequeSequence<T> asSynchronized() {
-    return (IDequeSequence<T>) super.asSynchronized();
+    throw new UnsupportedOperationException();
   }
 
   public Deque<T> toDeque() {

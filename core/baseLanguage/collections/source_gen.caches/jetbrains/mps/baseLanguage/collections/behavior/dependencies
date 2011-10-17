@@ -169,6 +169,28 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.AsSynchronizedOperation_BehaviorDescriptor" file="AsSynchronizedOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ICollectionOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.NoArgumentsSequenceOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.AsUnmodifiableOperation_BehaviorDescriptor" file="AsUnmodifiableOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ICollectionOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.NoArgumentsSequenceOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -183,8 +205,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.AlsoSortOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.AnyOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.AsSequenceOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.AsSynchronizedOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.AsUnmodifiableOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ClearAllElementsOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ClearSetOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.CollectionType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ComparatorSortOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ConcatOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ContainerIteratorType_BehaviorDescriptor" />
@@ -217,6 +242,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.GetIndexOfOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.GetIteratorOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.GetKeysOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.GetLastIndexOfOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.GetLastOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.GetNextOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.GetSizeOperation_BehaviorDescriptor" />
@@ -251,6 +277,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MappingType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MappingsSetOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MoveNextOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachPair_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachStatement_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachVariableReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachVariable_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.OfTypeOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.PageOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.PeekOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.PopOperation_BehaviorDescriptor" />
@@ -293,6 +324,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.TailOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.TailSetOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.TakeOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.TestAddElementOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.TestRemoveElementOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ToArrayOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ToIteratorOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ToListOperation_BehaviorDescriptor" />
@@ -335,6 +368,42 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.AbstractSetOperation_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.CollectionType_Behavior" file="CollectionType_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.CollectionType_BehaviorDescriptor" file="CollectionType_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerType_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.CollectionType_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.ComparatorSortOperation_BehaviorDescriptor" file="ComparatorSortOperation_BehaviorDescriptor.java">
@@ -634,6 +703,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MapOperation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.GetLastIndexOfOperation_BehaviorDescriptor" file="GetLastIndexOfOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.SingleArgumentSequenceOperation_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.GetLastOperation_BehaviorDescriptor" file="GetLastOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -710,6 +785,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.SortedSetOperation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.ICollectionOperation_BehaviorDescriptor" file="ICollectionOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_Behavior" file="IContainerOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -737,7 +816,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_BehaviorDescriptor" file="IListOperation_BehaviorDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.ICollectionOperation_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.IQueueOperation_BehaviorDescriptor" file="IQueueOperation_BehaviorDescriptor.java">
@@ -1034,7 +1113,43 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.AbstractEnumeratorOperation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachPair_BehaviorDescriptor" file="MultiForEachPair_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachStatement_BehaviorDescriptor" file="MultiForEachStatement_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachVariableReference_BehaviorDescriptor" file="MultiForEachVariableReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachVariable_BehaviorDescriptor" file="MultiForEachVariable_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IVariableDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.NoArgumentsSequenceOperation_BehaviorDescriptor" file="NoArgumentsSequenceOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.OfTypeOperation_BehaviorDescriptor" file="OfTypeOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_BehaviorDescriptor" />
@@ -1583,6 +1698,26 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.TestAddElementOperation_BehaviorDescriptor" file="TestAddElementOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.SingleArgumentSequenceOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.TestRemoveElementOperation_BehaviorDescriptor" file="TestRemoveElementOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.SingleArgumentSequenceOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.ToArrayOperation_BehaviorDescriptor" file="ToArrayOperation_BehaviorDescriptor.java">

@@ -195,11 +195,19 @@ public enum LanguageAspect {
   }
 
   public EditableSModelDescriptor get(Language l) {
+    return get_internal(l, false);
+  }
+
+  public EditableSModelDescriptor getOrCreate(Language l) {
+    return get_internal(l, true);
+  }
+
+  private EditableSModelDescriptor get_internal(Language l, boolean doCreate) {
     SModelFqName fqName = new SModelFqName(l.getModuleFqName() + "." + myName, null);
+
     EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(fqName);
-    if (md == null) return null;
-    if (SModelRepository.getInstance().getOwners(md).contains(l)) return md;
-    return null;
+    if (md != null && SModelRepository.getInstance().getOwners(md).contains(l))  return md;
+    return doCreate ? createNew(l) : null;
   }
 
   public SModelReference get(ModuleReference l) {
@@ -210,22 +218,21 @@ public enum LanguageAspect {
     return myName;
   }
 
-  public SModelDescriptor createNew(Language l) {
+  public EditableSModelDescriptor createNew(Language l) {
     return createNew(l, true);
   }
 
-  public SModelDescriptor createNew(final Language l, final boolean saveModel) {
+  public EditableSModelDescriptor createNew(final Language l, final boolean saveModel) {
     assert get(l) == null;
 
-    SModelRoot modelRoot;
     SModelDescriptor structureModel = l.getStructureModelDescriptor();
+    SModelRoot modelRoot;
     if (structureModel == null) {
       modelRoot = l.getSModelRoots().get(0);
     } else {
       modelRoot = ModelRootUtil.getSModelRoot(structureModel);
     }
-    final SModelDescriptor model = l.createModel(getModuleUID(l), modelRoot);
-    return model;
+    return l.createModel(getModuleUID(l), modelRoot);
   }
 
   public List<ModuleReference> getAllLanguagesToImport(Language l) {

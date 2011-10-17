@@ -22,4 +22,5 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface FileSystemProvider {
   public IFile getFile(@NotNull String path);
+  public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
 }

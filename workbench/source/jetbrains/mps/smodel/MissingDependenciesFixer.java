@@ -107,6 +107,7 @@ public class MissingDependenciesFixer {
 
         if (wereChanges[0]) {
           module[0].setModuleDescriptor(md[0], reload);
+          module[0].invalidateCaches();
           module[0].save();
         }
       }

@@ -42,7 +42,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1199882955496(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.WhileStatement") && "void".equals(SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.WhileStatement"), "label"));
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.WhileStatement") && "void".equals(SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.WhileStatement"), "label"));
   }
 
   public static boolean baseMappingRule_Condition_1196091747822(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

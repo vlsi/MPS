@@ -17,7 +17,7 @@ public class typeof_BaseCreatorTarget_InferenceRule extends AbstractInferenceRul
   }
 
   public void applyRule(final SNode target, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ListSequence.fromList(SLinkOperations.getConceptLinkTargets(target, "type")).count() == 1) {
+    if ((int) ListSequence.fromList(SLinkOperations.getConceptLinkTargets(target, "type")).count() == 1) {
       {
         SNode _nodeToCheck_1029348928467 = target;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "3856910426407530546", 0, null);

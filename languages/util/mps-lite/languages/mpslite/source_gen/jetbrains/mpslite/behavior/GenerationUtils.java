@@ -22,7 +22,7 @@ public class GenerationUtils {
 
   public static SNode generateEditorCellModel(SNode lineList, SNode concept, Map<SNode, SNode> partsToLinks) {
     List<SNode> lines = SLinkOperations.getTargets(lineList, "line", true);
-    if (ListSequence.fromList(lines).count() == 0) {
+    if ((int) ListSequence.fromList(lines).count() == 0) {
       if (SPropertyOperations.getBoolean(concept, "abstract")) {
         SNode errorCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Error", null);
         SPropertyOperations.set(errorCell, "text", "abstract " + SPropertyOperations.getString(concept, "name"));
@@ -30,9 +30,9 @@ public class GenerationUtils {
       } else {
         return null;
       }
-    } else if (ListSequence.fromList(lines).count() == 1) {
+    } else if ((int) ListSequence.fromList(lines).count() == 1) {
       List<SNode> lineParts = SLinkOperations.getTargets(ListSequence.fromList(lines).first(), "linePart", true);
-      if (ListSequence.fromList(lineParts).count() == 1) {
+      if ((int) ListSequence.fromList(lineParts).count() == 1) {
         return LinePart_Behavior.call_createCellModel_1238614099938(ListSequence.fromList(lineParts).first(), partsToLinks);
       } else {
         SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);

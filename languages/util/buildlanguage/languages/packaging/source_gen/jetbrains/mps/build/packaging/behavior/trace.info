@@ -1323,13 +1323,13 @@
     <nodeInfo nodeId="1220977682599" fileName="Path_Behavior.java" startLine="17" startPosition="28" endLine="18" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1221141245424" />
     <nodeInfo nodeId="1226495143110" fileName="Path_Behavior.java" startLine="20" startPosition="43" endLine="21" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226495133687" fileName="Path_Behavior.java" startLine="21" startPosition="113" endLine="22" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1226511530969" fileName="Path_Behavior.java" startLine="26" startPosition="246" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1226511530969" fileName="Path_Behavior.java" startLine="26" startPosition="252" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226511625879" fileName="Path_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226511632145" fileName="Path_Behavior.java" startLine="30" startPosition="171" endLine="31" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226511672372" fileName="Path_Behavior.java" startLine="31" startPosition="66" endLine="32" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2372113960322751411" fileName="Path_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226511686866" fileName="Path_Behavior.java" startLine="34" startPosition="37" endLine="35" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224006449016" fileName="Path_Behavior.java" startLine="39" startPosition="246" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224006449016" fileName="Path_Behavior.java" startLine="39" startPosition="252" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221141289799" fileName="Path_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233162765322" fileName="Path_Behavior.java" startLine="45" startPosition="68" endLine="46" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240253536719" fileName="Path_Behavior.java" startLine="49" startPosition="71" endLine="50" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1359,8 +1359,8 @@
     <nodeInfo nodeId="1220977682599" fileName="Path_Behavior.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getName_1221141245424#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1220977682599" fileName="Path_Behavior.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFullPathWithoutMacro_1226511495568#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1220977682599" fileName="Path_Behavior.java" startLine="56" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPathUntilCurrent_55204148067303513#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1226511530968" fileName="Path_Behavior.java" startLine="26" startPosition="246" endLine="27" endPosition="16" />
-    <scopeInfo nodeId="1224006416082" fileName="Path_Behavior.java" startLine="39" startPosition="246" endLine="40" endPosition="16" />
+    <scopeInfo nodeId="1226511530968" fileName="Path_Behavior.java" startLine="26" startPosition="252" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="1224006416082" fileName="Path_Behavior.java" startLine="39" startPosition="252" endLine="40" endPosition="16" />
     <scopeInfo nodeId="1233162038575" fileName="Path_Behavior.java" startLine="45" startPosition="68" endLine="46" endPosition="197" />
     <scopeInfo nodeId="1240253516910" fileName="Path_Behavior.java" startLine="49" startPosition="71" endLine="50" endPosition="189" />
     <scopeInfo nodeId="1240253504629" fileName="Path_Behavior.java" startLine="53" startPosition="77" endLine="54" endPosition="81" />
@@ -1409,7 +1409,7 @@
   </root>
   <root nodeId="1220983417227">
     <nodeInfo nodeId="1220983446550" fileName="CompositePathComponent_Behavior.java" startLine="14" startPosition="67" endLine="15" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224006579629" fileName="CompositePathComponent_Behavior.java" startLine="16" startPosition="106" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224006579629" fileName="CompositePathComponent_Behavior.java" startLine="16" startPosition="112" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220983452776" fileName="CompositePathComponent_Behavior.java" startLine="19" startPosition="104" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220983476461" fileName="CompositePathComponent_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220983417227" fileName="CompositePathComponent_Behavior.java" startLine="10" startPosition="46" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -1417,7 +1417,7 @@
     <nodeInfo nodeId="1220983426026" fileName="CompositePathComponent_Behavior.java" startLine="18" startPosition="5" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1220983417227" fileName="CompositePathComponent_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPath_1220983419344#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1220983417229" fileName="CompositePathComponent_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="1224006562647" fileName="CompositePathComponent_Behavior.java" startLine="16" startPosition="106" endLine="17" endPosition="18" />
+    <scopeInfo nodeId="1224006562647" fileName="CompositePathComponent_Behavior.java" startLine="16" startPosition="112" endLine="17" endPosition="18" />
     <scopeInfo nodeId="1220983426029" fileName="CompositePathComponent_Behavior.java" startLine="19" startPosition="104" endLine="20" endPosition="61" />
     <scopeInfo nodeId="1220983417227" fileName="CompositePathComponent_Behavior.java" startLine="10" startPosition="46" endLine="13" endPosition="0" />
     <scopeInfo nodeId="1220983426026" fileName="CompositePathComponent_Behavior.java" startLine="18" startPosition="5" endLine="21" endPosition="5" />
