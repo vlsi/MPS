@@ -20,6 +20,9 @@ public class PathItemsReloadableCache {
   }
 
   public PathItem getPathItem(String path) {
+    if (path.contains("!")) {
+      path = path.substring(0, path.indexOf("!"));
+    }
     synchronized (this) {
       if (cache == null) {
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
