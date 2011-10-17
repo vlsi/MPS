@@ -74,13 +74,13 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.vcs.ModelMergeRequestConstants" />
-    <classNode dependClassName="jetbrains.mps.ide.vcs.VcsHelperUtil" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.vcs.MergeBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.ModelUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog" />

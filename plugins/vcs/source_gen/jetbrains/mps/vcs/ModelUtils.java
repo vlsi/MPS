@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
-import jetbrains.mps.ide.vcs.VcsHelperUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -205,7 +204,7 @@ public class ModelUtils {
   }
 
   public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
-    File[] files = new File(VcsHelperUtil.getMergeBackupDirPath()).listFiles(new FilenameFilter() {
+    File[] files = new File(MergeBackupUtil.getMergeBackupDirPath()).listFiles(new FilenameFilter() {
       public boolean accept(File dir, String name) {
         return name.contains(modelFileName) && modelFileName.endsWith(".zip");
       }

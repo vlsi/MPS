@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffManager;
 import java.io.File;
-import jetbrains.mps.ide.vcs.VcsHelperUtil;
+import jetbrains.mps.vcs.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.vcs.ModelMergeRequestConstants;
@@ -39,7 +39,7 @@ public class ModelMergeTool implements DiffTool {
   public void show(final DiffRequest request) {
     ModelMergeRequest mrequest = (ModelMergeRequest) request;
     try {
-      File backupFile = VcsHelperUtil.zipModel(request.getContents(), mrequest.getFile());
+      File backupFile = MergeBackupUtil.zipModel(request.getContents(), mrequest.getFile());
       DiffContent[] contents = mrequest.getContents();
       final SModel baseModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.ORIGINAL], mrequest.getFile().getPath());
       final SModel mineModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.CURRENT], mrequest.getFile().getPath());
@@ -56,7 +56,7 @@ public class ModelMergeTool implements DiffTool {
         if (dialog.getResultModel() != null) {
           byte[] bytes = ModelUtils.modelToBytes(dialog.getResultModel());
           mrequest.resolved(bytes);
-          VcsHelperUtil.packMergeResult(backupFile, mrequest.getFile().getName(), bytes);
+          MergeBackupUtil.packMergeResult(backupFile, mrequest.getFile().getName(), bytes);
         }
       } else {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(baseModel.getSModelReference());

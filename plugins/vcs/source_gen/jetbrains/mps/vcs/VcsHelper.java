@@ -11,7 +11,6 @@ import java.io.File;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.ide.vcs.VcsHelperUtil;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -86,11 +85,11 @@ public class VcsHelper {
 
   private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
     File tmp = FileUtil.createTmpDir();
-    VcsHelperUtil.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, VcsHelper.FsMemoryMergeVersion.MEMORY.getSuffix());
+    MergeBackupUtil.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, VcsHelper.FsMemoryMergeVersion.MEMORY.getSuffix());
     if (modelFile.exists()) {
       com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + VcsHelper.FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
     }
-    File zipfile = VcsHelperUtil.chooseZipFileForModelFile(modelFile.getName());
+    File zipfile = MergeBackupUtil.chooseZipFileForModelFile(modelFile.getName());
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
     FileUtil.delete(tmp);
