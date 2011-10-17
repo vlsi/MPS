@@ -14,11 +14,6 @@ import java.io.ByteArrayOutputStream;
 import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import com.intellij.openapi.vfs.VirtualFile;
-import java.io.OutputStream;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.ModelLoadingState;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.UnzipUtil;
@@ -32,6 +27,7 @@ import java.io.StringReader;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -61,44 +57,18 @@ public class ModelUtils {
     return new byte[0];
   }
 
-  public static void replaceWithNewModelFromBytes(final VirtualFile modelFile, final byte[] bytesToReplaceWith) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+  public static void replaceModelWithBytes(final VirtualFile modelFile, final byte[] bytesToReplaceWith) {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
-        OutputStream outputStream = null;
         try {
-          outputStream = modelFile.getOutputStream(this);
-          outputStream.write(bytesToReplaceWith);
+          modelFile.setBinaryContent(bytesToReplaceWith);
         } catch (IOException e) {
           if (log.isErrorEnabled()) {
             log.error("", e);
           }
-        } finally {
-          if (outputStream != null) {
-            try {
-              outputStream.close();
-            } catch (IOException e) {
-            }
-          }
         }
-        ModelUtils.replaceModelWithBytes(modelFile, bytesToReplaceWith);
-        modelFile.refresh(true, false);
       }
     });
-  }
-
-  private static void replaceModelWithBytes(VirtualFile modelFile, byte[] bytesToReplaceWith) {
-    final DefaultSModelDescriptor modelDescriptor = ((DefaultSModelDescriptor) SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(modelFile)));
-    if (modelDescriptor == null) {
-      return;
-    }
-    try {
-      SModel model = ModelUtils.readModel(bytesToReplaceWith, modelFile.getPath());
-      modelDescriptor.replaceModel(model, ModelLoadingState.FULLY_LOADED);
-    } catch (IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error("", e);
-      }
-    }
   }
 
   public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException {

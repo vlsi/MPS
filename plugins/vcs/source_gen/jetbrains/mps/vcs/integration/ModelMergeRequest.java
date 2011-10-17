@@ -29,6 +29,6 @@ public class ModelMergeRequest extends MergeRequestImpl {
   public void resolved(final byte[] result) {
     ((SimpleContent) getContents()[ModelMergeTool.ORIGINAL]).setBOM(result);
     setResult(DialogWrapper.OK_EXIT_CODE);
-    ModelUtils.replaceWithNewModelFromBytes(myFile, result);
+    ModelUtils.replaceModelWithBytes(myFile, result);
   }
 }
