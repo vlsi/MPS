@@ -114,7 +114,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     Set<Conflictable> toReload = new HashSet<Conflictable>();
     for (Conflictable conflictable : conflictableList) {
       IFile ifile = conflictable.getFile();
-      if (VcsUtil.isInConflict(ifile, true)) {
+      if (isInConflict(ifile)) {
         VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
         Conflictable prev = fileToConflictable.put(vfile, conflictable);
         if (prev == null) {
@@ -164,6 +164,18 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       }
     }
     return null;
+  }
+
+  private static boolean isInConflict(IFile ifile) {
+    VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
+    if ((vfile != null) && (vfile.exists())) {
+      for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+        if (MPSVcsManager.getInstance(project).isInConflict(vfile)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   private class MyTaskQueue extends TaskQueue<Conflictable> {

@@ -10,7 +10,6 @@ import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeImpl;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
@@ -35,6 +34,7 @@ import com.intellij.openapi.vcs.changes.LocalChangeList;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import com.intellij.openapi.vcs.changes.Change;
+import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.changes.EmptyChangelistBuilder;
 import com.intellij.openapi.vcs.changes.ChangeList;
 import com.intellij.openapi.vcs.VcsKey;
@@ -60,10 +60,7 @@ public class MPSVcsManager implements ProjectComponent {
     myChangeListManager = clmanager;
   }
 
-  /*package*/ boolean isInConflict(final VirtualFile vfile, boolean synchronously) {
-    if (isChangeListManagerInitialized() && !(synchronously)) {
-      return ChangeListManager.getInstance(myProject).getStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS);
-    }
+  /*package*/ boolean isInConflict(final VirtualFile vfile) {
     AbstractVcs vcs = myManager.getVcsFor(vfile);
     if (vcs == null) {
       return false;
