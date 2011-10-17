@@ -40,7 +40,6 @@
       <modulePath path="${project}/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="usages" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="usages" />
-      <modulePath path="${mps_home}/core/generator/solutions/traceInfo/util/util.msd" folder="trace" />
     </projectModules>
     <genConfs>
       <genConfModule name="customViewers" moduleRef="jetbrains.mps.debug.customViewers" />

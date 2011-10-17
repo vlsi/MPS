@@ -8,7 +8,6 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/solutions/traceInfo/util/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LocalVariableDeclarationStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -13,10 +11,5 @@ public class LocalVariableDeclarationStatement_Behavior {
 
   public static SNode virtual_getLocalVariableDeclaration_1238803857389(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "localVariableDeclaration", true);
-  }
-
-  @Nullable
-  public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "localVariableDeclaration", true), "name");
   }
 }
