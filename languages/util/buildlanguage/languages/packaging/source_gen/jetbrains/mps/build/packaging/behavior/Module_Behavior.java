@@ -91,6 +91,11 @@ public class Module_Behavior {
         }
       }));
     }
+    paths = ListSequence.fromList(paths).where(new IWhereFilter<SModelRoot>() {
+      public boolean accept(SModelRoot it) {
+        return it.getModelRoot().getManager() == null;
+      }
+    }).toListSequence();
     return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<SModelRoot, String>() {
       public String select(SModelRoot it) {
         return it.getPath().replace(File.separator, Util.SEPARATOR);

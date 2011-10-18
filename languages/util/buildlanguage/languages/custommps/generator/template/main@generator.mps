@@ -881,7 +881,7 @@
         <property name="path" nameId="60oz.1230059161515" value="lib/branding.jar" />
       </node>
       <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="2357139218799320973">
-        <property name="path" nameId="60oz.1230059161515" value="lib/mpsboot.jar" />
+        <property name="path" nameId="60oz.1230059161515" value="lib/mps-boot.jar" />
       </node>
       <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786088">
         <property name="path" nameId="60oz.1230059161515" value="lib/boot.jar" />
