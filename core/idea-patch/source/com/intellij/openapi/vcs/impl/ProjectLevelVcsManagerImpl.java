@@ -60,21 +60,17 @@ import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.util.ui.EditorAdapter;
 import jetbrains.mps.util.annotation.Patch;
-import org.jdom.Attribute;
-import org.jdom.DataConversionException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
 import java.util.*;
-import java.util.List;
 
 public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx implements ProjectComponent, JDOMExternalizable {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl");
-  public static final String SETTINGS_EDITED_MANUALLY = "settingsEditedManually";
 
   private final ProjectLevelVcsManagerSerialization mySerialization;
   private final OptionsAndConfirmations myOptionsAndConfirmations;
@@ -89,12 +85,18 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
 
   private final VcsInitialization myInitialization;
 
-  @NonNls private static final String ELEMENT_MAPPING = "mapping";
-  @NonNls private static final String ATTRIBUTE_DIRECTORY = "directory";
-  @NonNls private static final String ATTRIBUTE_VCS = "vcs";
-  @NonNls private static final String ATTRIBUTE_DEFAULT_PROJECT = "defaultProject";
-  @NonNls private static final String ELEMENT_ROOT_SETTINGS = "rootSettings";
-  @NonNls private static final String ATTRIBUTE_CLASS = "class";
+  @NonNls
+  private static final String ELEMENT_MAPPING = "mapping";
+  @NonNls
+  private static final String ATTRIBUTE_DIRECTORY = "directory";
+  @NonNls
+  private static final String ATTRIBUTE_VCS = "vcs";
+  @NonNls
+  private static final String ATTRIBUTE_DEFAULT_PROJECT = "defaultProject";
+  @NonNls
+  private static final String ELEMENT_ROOT_SETTINGS = "rootSettings";
+  @NonNls
+  private static final String ATTRIBUTE_CLASS = "class";
 
   private final List<CheckinHandlerFactory> myRegisteredBeforeCheckinHandlers = new ArrayList<CheckinHandlerFactory>();
 
@@ -108,7 +110,6 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   private final Map<VcsBackgroundableActions, BackgroundableActionEnabledHandler> myBackgroundableActionHandlerMap;
 
   private final List<Pair<String, TextAttributes>> myPendingOutput = new ArrayList<Pair<String, TextAttributes>>();
-  private VcsEventsListenerManagerImpl myVcsEventListenerManager;
 
   public ProjectLevelVcsManagerImpl(Project project, final FileStatusManager manager, MessageBus messageBus) {
     myProject = project;
@@ -122,10 +123,6 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     myInitialization = new VcsInitialization(myProject);
     myMappings = new NewMappings(myProject, myMessageBus, this, manager);
     myMappingsToRoots = new MappingsToRoots(myMappings, myProject);
-
-    if (! myProject.isDefault()) {
-      myVcsEventListenerManager = new VcsEventsListenerManagerImpl();
-    }
   }
 
   public void initComponent() {
@@ -159,13 +156,13 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   public boolean haveVcses() {
-    return ! AllVcses.getInstance(myProject).isEmpty();
+    return !AllVcses.getInstance(myProject).isEmpty();
   }
 
   public void disposeComponent() {
     if (myEditorAdapter != null) {
       final Editor editor = myEditorAdapter.getEditor();
-      if (! editor.isDisposed()) {
+      if (!editor.isDisposed()) {
         EditorFactory.getInstance().releaseEditor(editor);
       }
     }
@@ -228,7 +225,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     return ApplicationManager.getApplication().runReadAction(new Computable<AbstractVcs>() {
       @Nullable
       public AbstractVcs compute() {
-        if (!ApplicationManager.getApplication().isUnitTestMode() && !myProject.isInitialized()) return null;
+        if ((!ApplicationManager.getApplication().isUnitTestMode()) && (!myProject.isInitialized())) return null;
         if (myProject.isDisposed()) throw new ProcessCanceledException();
         VirtualFile vFile = ChangesUtil.findValidParent(file);
         if (vFile != null) {
@@ -271,7 +268,6 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     return ApplicationManager.getApplication().runReadAction(new Computable<VirtualFile>() {
       @Nullable
       public VirtualFile compute() {
-        if (myProject.isDisposed()) return null;
         VirtualFile vFile = ChangesUtil.findValidParent(file);
         if (vFile != null) {
           return getVcsRootFor(vFile);
@@ -296,7 +292,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   public void unregisterVcs(AbstractVcs vcs) {
-    if (! ApplicationManager.getApplication().isUnitTestMode() && myMappings.haveActiveVcs(vcs.getName())) {
+    if ((!ApplicationManager.getApplication().isUnitTestMode()) && (myMappings.haveActiveVcs(vcs.getName()))) {
       // unlikely
       LOG.warn("Active vcs '" + vcs.getName() + "' is being unregistered. Remove from mappings first.");
     }
@@ -325,10 +321,10 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   public boolean hasAnyMappings() {
-    return ! myMappings.isEmpty();
+    return !myMappings.isEmpty();
   }
 
-public void addMessageToConsoleWindow(final String message, final TextAttributes attributes) {
+  public void addMessageToConsoleWindow(final String message, final TextAttributes attributes) {
     if (!Registry.is("vcs.showConsole")) return;
 
     ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -338,8 +334,7 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
         final ContentManager contentManager = getContentManager();
         if (contentManager == null) {
           myPendingOutput.add(new Pair<String, TextAttributes>(message, attributes));
-        }
-        else {
+        } else {
           getOrCreateConsoleContent(contentManager);
           myEditorAdapter.appendString(message, attributes);
         }
@@ -400,7 +395,7 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
   }
 
   public UpdateInfoTree showUpdateProjectInfo(UpdatedFiles updatedFiles, String displayActionName, ActionInfo actionInfo) {
-    if (! myProject.isOpen() || myProject.isDisposed()) return null;
+    if ((!myProject.isOpen()) || myProject.isDisposed()) return null;
     ContentManager contentManager = getContentManager();
     if (contentManager == null) {
       return null;  // content manager is made null during dispose; flag is set later
@@ -466,10 +461,6 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
   }
 
   public void setAutoDirectoryMapping(String path, String activeVcsName) {
-    final List<VirtualFile> defaultRoots = myMappings.getDefaultRoots();
-    if (defaultRoots.size() == 1 && "".equals(myMappings.haveDefaultMapping())) {
-      myMappings.removeDirectoryMapping(new VcsDirectoryMapping("", ""));
-    }
     myMappings.setMapping(path, activeVcsName);
   }
 
@@ -478,7 +469,6 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
   }
 
   public void setDirectoryMappings(final List<VcsDirectoryMapping> items) {
-    myHaveLegacyVcsConfiguration = true;
     myMappings.setDirectoryMappings(items);
   }
 
@@ -488,20 +478,10 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
 
   public void readExternal(Element element) throws InvalidDataException {
     mySerialization.readExternalUtil(element, myOptionsAndConfirmations);
-    final Attribute attribute = element.getAttribute(SETTINGS_EDITED_MANUALLY);
-    if (attribute != null) {
-      try {
-        myHaveLegacyVcsConfiguration = attribute.getBooleanValue();
-      }
-      catch (DataConversionException e) {
-        //
-      }
-    }
   }
 
   public void writeExternal(Element element) throws WriteExternalException {
     mySerialization.writeExternalUtil(element, myOptionsAndConfirmations);
-    element.setAttribute(SETTINGS_EDITED_MANUALLY, String.valueOf(myHaveLegacyVcsConfiguration));
   }
 
   @NotNull
@@ -558,7 +538,7 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
 
   public void stopBackgroundVcsOperation() {
     // in fact, the condition is "should not be called under ApplicationManager.invokeLater() and similiar"
-    assert ! ApplicationManager.getApplication().isDispatchThread();
+    assert !ApplicationManager.getApplication().isDispatchThread();
     LOG.assertTrue(myBackgroundOperationCounter > 0, "myBackgroundOperationCounter > 0");
     myBackgroundOperationCounter--;
   }
@@ -586,7 +566,7 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
     final AbstractVcs[] vcses = myMappings.getActiveVcses();
     for (AbstractVcs vcs : vcses) {
       final VirtualFile[] roots = getRootsUnderVcs(vcs);
-      for(VirtualFile root: roots) {
+      for (VirtualFile root : roots) {
         vcsRoots.add(new VcsRoot(vcs, root));
       }
     }
@@ -607,7 +587,7 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
     final List<VcsDirectoryMapping> mappingsList = new ArrayList<VcsDirectoryMapping>();
     final List list = element.getChildren(ELEMENT_MAPPING);
     boolean haveNonEmptyMappings = false;
-    for(Object childObj: list) {
+    for (Object childObj : list) {
       Element child = (Element) childObj;
       final String vcs = child.getAttributeValue(ATTRIBUTE_VCS);
       if (vcs != null && vcs.length() > 0) {
@@ -627,14 +607,14 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
               rootSettings.readExternal(rootSettingsElement);
               mapping.setRootSettings(rootSettings);
             } catch (InvalidDataException e) {
-              LOG.error("Failed to load VCS root settings class "+ className + " for VCS " + vcsInstance.getClass().getName(), e);
+              LOG.error("Failed to load VCS root settings class " + className + " for VCS " + vcsInstance.getClass().getName(), e);
             }
           }
         }
       }
     }
     boolean defaultProject = Boolean.TRUE.toString().equals(element.getAttributeValue(ATTRIBUTE_DEFAULT_PROJECT));
-    // run autodetection if there's no VCS in default project and 
+    // run autodetection if there's no VCS in default project and
     if (haveNonEmptyMappings || !defaultProject) {
       myMappingsLoaded = true;
     }
@@ -645,7 +625,7 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
     if (myProject.isDefault()) {
       element.setAttribute(ATTRIBUTE_DEFAULT_PROJECT, Boolean.TRUE.toString());
     }
-    for(VcsDirectoryMapping mapping: getDirectoryMappings()) {
+    for (VcsDirectoryMapping mapping : getDirectoryMappings()) {
       Element child = new Element(ELEMENT_MAPPING);
       child.setAttribute(ATTRIBUTE_DIRECTORY, mapping.getDirectory());
       child.setAttribute(ATTRIBUTE_VCS, mapping.getVcs());
@@ -656,8 +636,7 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
         try {
           rootSettings.writeExternal(rootSettingsElement);
           child.addContent(rootSettingsElement);
-        }
-        catch (WriteExternalException e) {
+        } catch (WriteExternalException e) {
           // don't add element
         }
       }
@@ -691,24 +670,14 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
     return new CompositeCheckoutListener(myProject);
   }
 
-  @Override
-  public VcsEventsListenerManager getVcsEventsListenerManager() {
-    return myVcsEventListenerManager;
-  }
-
   public void fireDirectoryMappingsChanged() {
-    if (myProject.isOpen() && ! myProject.isDisposed()) {
+    if (myProject.isOpen() && (!myProject.isDisposed())) {
       myMappings.mappingsChanged();
     }
   }
 
   public String haveDefaultMapping() {
     return myMappings.haveDefaultMapping();
-  }
-
-  @Override
-  protected VcsEnvironmentsProxyCreator getProxyCreator() {
-    return myVcsEventListenerManager;
   }
 
   public BackgroundableActionEnabledHandler getBackgroundableActionHandler(final VcsBackgroundableActions action) {
@@ -732,8 +701,8 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
 
   public boolean isFileInContent(final VirtualFile vf) {
     final ExcludedFileIndex excludedIndex = ExcludedFileIndex.getInstance(myProject);
-    return vf != null && (excludedIndex.isInContent(vf) || isFileInBaseDir(vf) || vf.equals(myProject.getBaseDir()) ||
-                            hasExplicitMapping(vf) || isInDirectoryBasedRoot(vf)) && ! excludedIndex.isExcludedFile(vf);
+    return (vf != null) && (excludedIndex.isInContent(vf) || isFileInBaseDir(vf) || vf.equals(myProject.getBaseDir()) ||
+      hasExplicitMapping(vf) || isInDirectoryBasedRoot(vf)) && (!excludedIndex.isExcludedFile(vf));
   }
 
   private boolean isInDirectoryBasedRoot(final VirtualFile file) {
@@ -743,7 +712,7 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
       final VirtualFile baseDir = myProject.getBaseDir();
       if (baseDir == null) return false;
       final VirtualFile ideaDir = baseDir.findChild(Project.DIRECTORY_STORE_FOLDER);
-      return ideaDir != null && ideaDir.isValid() && ideaDir.isDirectory() && VfsUtil.isAncestor(ideaDir, file, false);
+      return (ideaDir != null && ideaDir.isValid() && ideaDir.isDirectory() && VfsUtil.isAncestor(ideaDir, file, false));
     }
     return false;
   }
@@ -764,3 +733,4 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
     return result;
   }
 }
+
