@@ -120,7 +120,7 @@ public class VcsHelper {
 
   private static boolean openDiffDialog(IFile modelFile, final SModel inMemory) {
     try {
-      SModel onDisk = ModelUtils.readModel(com.intellij.openapi.util.io.FileUtil.loadFileBytes(new File(modelFile.getPath())), modelFile.getPath());
+      SModel onDisk = ModelUtils.readModel(new File(modelFile.getPath()));
       if (onDisk == null) {
         onDisk = new SModel(inMemory.getSModelReference());
       }
@@ -173,6 +173,7 @@ public class VcsHelper {
   }
 
   public static boolean showMergeDialog(final SModel base, final SModel mine, final SModel repo, IFile modelFile, final Project project) {
+    // TODO replace with request factory 
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
     if (file == null) {
       if (log.isErrorEnabled()) {

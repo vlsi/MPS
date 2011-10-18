@@ -635,7 +635,7 @@ __switch__:
       if (content == null) {
         return;
       }
-      myBaseVersionModel = ModelUtils.readModel(content, modelVFile.toString());
+      myBaseVersionModel = ModelUtils.readModel(content);
       // TODO base version model can be unreadable 
       assert myBaseVersionModel == null;
       final Wrappers._T<List<OldChange>> changeList = new Wrappers._T<List<OldChange>>();

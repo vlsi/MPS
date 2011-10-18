@@ -43,8 +43,8 @@ public class ModelDiffTool implements DiffTool {
   public void show(final DiffRequest request) {
     DiffContent[] contents = request.getContents();
     try {
-      final SModel oldModel = ModelDiffTool.readModel(contents[0], ModelDiffTool.getFilePath(request));
-      final SModel newModel = ModelDiffTool.readModel(contents[1], ModelDiffTool.getFilePath(request));
+      final SModel oldModel = ModelDiffTool.readModel(contents[0]);
+      final SModel newModel = ModelDiffTool.readModel(contents[1]);
       if (oldModel == null || newModel == null) {
         if (log.isErrorEnabled()) {
           log.error("Can't read models");
@@ -93,7 +93,7 @@ public class ModelDiffTool implements DiffTool {
 
   public boolean canShow(DiffRequest request) {
     DiffContent[] contents = request.getContents();
-    return (contents.length == 2) && isModelFile(contents[0]) && isModelFile(contents[1]);
+    return contents.length == 2 && isModelFile(contents[0]) && isModelFile(contents[1]);
   }
 
   private boolean isModelFile(@NotNull DiffContent contents) {
@@ -104,16 +104,7 @@ public class ModelDiffTool implements DiffTool {
     return type.equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
   }
 
-  public static String getFilePath(DiffRequest request) {
-    for (DiffContent c : request.getContents()) {
-      if (c.getFile() != null) {
-        return c.getFile().getPath();
-      }
-    }
-    return "";
-  }
-
-  public static SModel readModel(DiffContent content, String path) throws IOException {
+  public static SModel readModel(DiffContent content) throws IOException {
     if (content instanceof DocumentContent || content instanceof FileContent) {
       SModelRepository modelRepository = SModelRepository.getInstance();
       final SModelDescriptor modelDescriptor = modelRepository.findModel(VirtualFileUtils.toIFile(content.getFile()));
@@ -125,7 +116,7 @@ public class ModelDiffTool implements DiffTool {
         });
       }
     }
-    return ModelUtils.readModel(content.getBytes(), path);
+    return ModelUtils.readModel(content.getBytes());
   }
 
   public static boolean isNewDiffEnabled() {

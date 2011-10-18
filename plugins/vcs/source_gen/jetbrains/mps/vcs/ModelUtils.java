@@ -21,10 +21,10 @@ import jetbrains.mps.util.UnzipUtil;
 import java.io.FilenameFilter;
 import jetbrains.mps.project.MPSExtentions;
 import java.io.FileInputStream;
+import org.jetbrains.annotations.NotNull;
 import org.xml.sax.InputSource;
 import java.io.ByteArrayInputStream;
 import java.io.StringReader;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.ModelLoadingState;
@@ -35,7 +35,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class ModelUtils {
   protected static Log log = LogFactory.getLog(ModelUtils.class);
 
-  public ModelUtils() {
+  private ModelUtils() {
   }
 
   public static byte[] modelToBytes(final SModel result) {
@@ -99,7 +99,7 @@ public class ModelUtils {
         }
         baos.write(i);
       }
-      models[index] = ModelUtils.readModel(baos.toByteArray(), file.getAbsolutePath());
+      models[index] = ModelUtils.readModel(baos.toByteArray());
       if (models[index] == null) {
         return null;
       }
@@ -110,45 +110,37 @@ public class ModelUtils {
   }
 
   @Nullable
-  public static SModel readModel(final byte[] bytes, String path) throws IOException {
-    return readModel((bytes.length == 0 ?
+  public static SModel readModel(@NotNull final byte[] bytes) throws IOException {
+    return (bytes.length == 0 ?
       null :
-      new ModelUtils.InputSourceFactory() {
+      readModel(new ModelUtils.InputSourceFactory() {
         public InputSource create() throws IOException {
           return new InputSource(new ByteArrayInputStream(bytes));
         }
-      }
-    ), path);
+      })
+    );
   }
 
   @Nullable
-  public static SModel readModel(final String content, String path) throws IOException {
-    return readModel((content.isEmpty() ?
+  public static SModel readModel(@NotNull final String content) throws IOException {
+    return (content.isEmpty() ?
       null :
-      new ModelUtils.InputSourceFactory() {
+      readModel(new ModelUtils.InputSourceFactory() {
         public InputSource create() throws IOException {
           return new InputSource(new StringReader(content));
         }
-      }
-    ), path);
-  }
-
-  @Nullable
-  public static SModel readModel(final String path) throws IOException {
-    return readModel(new File(path));
+      })
+    );
   }
 
   @Nullable
   public static SModel readModel(final File file) throws IOException {
-    return readModel(com.intellij.openapi.util.io.FileUtil.loadFileBytes(file), file.getAbsolutePath());
+    return readModel(com.intellij.openapi.util.io.FileUtil.loadFileBytes(file));
   }
 
   @Nullable
-  private static SModel readModel(final ModelUtils.InputSourceFactory inputSourceFactory, String path) throws IOException {
+  private static SModel readModel(@NotNull final ModelUtils.InputSourceFactory inputSourceFactory) throws IOException {
     try {
-      if (inputSourceFactory == null) {
-        return new SModel(SModelReference.fromPath(path));
-      }
       final IOException[] ex = new IOException[1];
       final SModel[] model = new SModel[1];
       ModelAccess.instance().runReadAction(new Runnable() {

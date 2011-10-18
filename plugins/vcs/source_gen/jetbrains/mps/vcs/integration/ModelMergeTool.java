@@ -60,9 +60,9 @@ public class ModelMergeTool extends MergeTool {
       }
       File backupFile = MergeBackupUtil.zipModel(request.getContents(), file);
       DiffContent[] contents = mrequest.getContents();
-      final SModel baseModel = ModelUtils.readModel(contents[ORIGINAL].getDocument().getText(), file.getPath());
-      final SModel mineModel = ModelUtils.readModel(contents[CURRENT].getBytes(), file.getPath());
-      final SModel newModel = ModelUtils.readModel(contents[LAST_REVISION].getBytes(), file.getPath());
+      final SModel baseModel = ModelUtils.readModel(contents[ORIGINAL].getDocument().getText());
+      final SModel mineModel = ModelUtils.readModel(contents[CURRENT].getBytes());
+      final SModel newModel = ModelUtils.readModel(contents[LAST_REVISION].getBytes());
       if (baseModel == null || mineModel == null || newModel == null) {
         if (log.isErrorEnabled()) {
           log.error("Couldn't read model, invoking text merge");
