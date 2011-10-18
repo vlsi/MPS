@@ -30,6 +30,10 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public abstract class ExtractMethodRefactoring {
+  public static final int CANNOT_BE_STATIC = 0;
+  public static final int CAN_BE_STATIC = 1;
+  public static final int SHOULD_BE_STATIC = 2;
+
   protected ExtractMethodRefactoringParameters myParameters;
   protected ExtractMethodRefactoringAnalyzer myAnalyzer;
   private IStaticContainerProcessor myStaticContainer;
@@ -228,6 +232,10 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
+  public IStaticContainerProcessor getStaticContainer() {
+    return this.myStaticContainer;
+  }
+
   public Set<SNode> getOutputReferences() {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     List<SNode> outputVariables = myParameters.getAnalyzer().getOutputVariables();
@@ -253,12 +261,12 @@ public abstract class ExtractMethodRefactoring {
 
   public int canBeStatic() {
     if (!(this.myAnalyzer.canBeStatic())) {
-      return 0;
+      return CANNOT_BE_STATIC;
     } else {
       if (!(this.myAnalyzer.shouldBeStatic())) {
-        return 1;
+        return CAN_BE_STATIC;
       } else {
-        return 2;
+        return SHOULD_BE_STATIC;
       }
     }
   }

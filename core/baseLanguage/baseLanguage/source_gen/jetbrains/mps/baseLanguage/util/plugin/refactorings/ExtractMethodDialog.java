@@ -32,7 +32,6 @@ import javax.swing.border.EmptyBorder;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
@@ -146,6 +145,14 @@ public class ExtractMethodDialog extends BaseDialog {
 
     c.gridx = 0;
     c.gridy = 3;
+    c.weightx = 0;
+    c.weighty = 0;
+    c.gridwidth = 2;
+    this.myPanel.add(this.createChooseContainerPanel(), c);
+
+
+    c.gridx = 0;
+    c.gridy = 4;
     c.weightx = 1;
     c.weighty = 0;
     c.gridwidth = 2;
@@ -157,6 +164,12 @@ public class ExtractMethodDialog extends BaseDialog {
     this.myPreviewArea.setBackground(this.myPanel.getBackground());
     this.myPreviewArea.setBorder(this.createBorder("Signature Preview"));
     return this.myPreviewArea;
+  }
+
+  public JComponent createChooseContainerPanel() {
+    ChooseContainerPanel containerPanel = new ChooseContainerPanel(this.myParameters, this.myContext);
+    containerPanel.setBorder(this.createBorder("Choose container"));
+    return containerPanel;
   }
 
   private JComponent createMessagesComponent() {
@@ -235,13 +248,13 @@ public class ExtractMethodDialog extends BaseDialog {
   public JCheckBox createDeclareStaticCheckBox() {
     JCheckBox result = new JCheckBox("Declare static");
     int canBeStatic = myRefactoring.canBeStatic();
-    if (canBeStatic == 0) {
+    if (canBeStatic == ExtractMethodRefactoring.CANNOT_BE_STATIC) {
       result.setSelected(false);
       result.setEnabled(false);
-    } else if (canBeStatic == 1) {
+    } else if (canBeStatic == ExtractMethodRefactoring.CAN_BE_STATIC) {
       result.setSelected(false);
       result.setEnabled(true);
-    } else if (canBeStatic == 2) {
+    } else if (canBeStatic == ExtractMethodRefactoring.SHOULD_BE_STATIC) {
       result.setSelected(true);
       result.setEnabled(false);
     }
@@ -265,7 +278,7 @@ public class ExtractMethodDialog extends BaseDialog {
     } else {
       final Wrappers._T<SNode> staticTarget = new Wrappers._T<SNode>();
       final Wrappers._T<SModel> refactoringModel = new Wrappers._T<SModel>(null);
-      if (this.myParameters.getAnalyzer().getExtractMethodReafactoringProcessor().getClass() == AbstractExtractMethodRefactoringProcessor.class) {
+      if (this.myParameters.getAnalyzer().shouldChooseOuterContainer()) {
         final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {

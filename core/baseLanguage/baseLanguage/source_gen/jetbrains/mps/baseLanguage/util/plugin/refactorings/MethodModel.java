@@ -76,15 +76,16 @@ public class MethodModel {
 
   public String getMethodText() {
     final StringBuffer text = new StringBuffer();
+    if (this.isStatic) {
+      text.append("static ");
+    }
+
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         text.append(MethodModel.this.getReturnType());
       }
     });
-    text.append(" ");
-    if (this.isStatic) {
-      text.append("static ");
-    }
+    text.append("");
     text.append(this.getName());
     text.append("(");
     if (ListSequence.fromList(this.getParametersNames()).count() > 0) {

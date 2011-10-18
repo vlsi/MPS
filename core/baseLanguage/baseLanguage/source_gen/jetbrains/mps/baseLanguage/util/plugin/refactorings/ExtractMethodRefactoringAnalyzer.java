@@ -47,6 +47,7 @@ public class ExtractMethodRefactoringAnalyzer {
   private IExtractMethodRefactoringProcessor myProcessor;
   private boolean shouldBeStatic;
   private boolean canBeStatic;
+  private boolean shouldChooseOuterContainer;
 
   public ExtractMethodRefactoringAnalyzer(List<SNode> nodes) {
     this.myPartToExtract = nodes;
@@ -83,7 +84,14 @@ public class ExtractMethodRefactoringAnalyzer {
     return canBeStatic;
   }
 
+  public boolean shouldChooseOuterContainer() {
+    return shouldChooseOuterContainer;
+  }
+
   private boolean findIfShouldBeStatic() {
+    if (shouldChooseOuterContainer) {
+      return true;
+    }
     SNode containerMethod = this.myProcessor.getContainerMethod();
     if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       return true;
@@ -93,13 +101,8 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   private boolean findIfCanBeStatic() {
-    SNode first = ListSequence.fromList(this.myPartToExtract).first();
-    SNode classConcept = SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    if ((classConcept == null)) {
-      return false;
-    }
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
-      if (ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ThisExpression", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{})).isNotEmpty()) {
+      if (ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ThisExpression", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", false, new String[]{})).isNotEmpty()) {
         return false;
       }
     }
@@ -258,6 +261,7 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   private void findExtractMethodRefactoringProcessor() {
+    shouldChooseOuterContainer = false;
     SNode first = ListSequence.fromList(this.myPartToExtract).first();
     SNode classConcept = SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (classConcept != null) {
@@ -267,6 +271,7 @@ public class ExtractMethodRefactoringAnalyzer {
       this.myProcessor = IExtractMethodAvailable_Behavior.call_getExtractMethodRefactoringProcessor_1221393367929(extractable, this.myPartToExtract);
     } else {
       this.myProcessor = new AbstractExtractMethodRefactoringProcessor(null, this.myPartToExtract);
+      shouldChooseOuterContainer = true;
     }
   }
 
@@ -288,6 +293,7 @@ public class ExtractMethodRefactoringAnalyzer {
     })) {
       final ReadInstruction read = (ReadInstruction) instruction;
       Set<WriteInstruction> writes = reachability.get(read);
+
       if (SetSequence.fromSet(writes).where(new IWhereFilter<WriteInstruction>() {
         public boolean accept(WriteInstruction it) {
           return it.getVariable() == read.getVariable();
