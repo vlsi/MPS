@@ -80,10 +80,8 @@
                       serviceImplementation="com.intellij.ui.TreeUIHelperImpl"/>
   <applicationService serviceInterface="com.intellij.ui.ExpandableItemsHandlerFactory"
                       serviceImplementation="com.intellij.ui.ExpandTipHandlerFactoryImpl"/>
-  <!--MPS Patch: we have our own
   <applicationService serviceInterface="com.intellij.openapi.diff.DiffRequestFactory"
                       serviceImplementation="com.intellij.openapi.diff.impl.mergeTool.DiffRequestFactoryImpl"/>
-  -->
   <applicationService serviceInterface="com.intellij.ui.SystemNotifications"
                       serviceImplementation="com.intellij.ui.SystemNotificationsImpl"/>
   <applicationService serviceInterface="com.intellij.openapi.keymap.KeymapGroupFactory"

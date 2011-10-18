@@ -108,9 +108,6 @@
     <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
     <mps.projectPrefsPanel implementation="jetbrains.mps.vcs.VcsGeneratedFilesPanel"/>
 
-    <!--MPS Patch: our own diff request factory-->
-    <applicationService serviceInterface="com.intellij.openapi.diff.DiffRequestFactory"
-                        serviceImplementation="jetbrains.mps.vcs.integration.MPSDiffRequestFactory"/>
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
   </extensions>
 </idea-plugin>
