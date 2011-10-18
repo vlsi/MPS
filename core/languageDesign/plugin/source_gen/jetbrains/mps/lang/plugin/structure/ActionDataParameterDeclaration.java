@@ -21,6 +21,7 @@ public class ActionDataParameterDeclaration extends BaseConcept implements IMemb
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_OPTIONAL = "isOptional";
   public static final String KEY = "key";
+  public static final String CONDITION = "condition";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ActionDataParameterDeclaration(SNode node) {
@@ -73,6 +74,14 @@ public class ActionDataParameterDeclaration extends BaseConcept implements IMemb
 
   public void setKey(StaticFieldDeclaration node) {
     super.setReferent(ActionDataParameterDeclaration.KEY, node);
+  }
+
+  public ActionParameterCondition getCondition() {
+    return (ActionParameterCondition) this.getChild(ActionParameterCondition.class, ActionDataParameterDeclaration.CONDITION);
+  }
+
+  public void setCondition(ActionParameterCondition node) {
+    super.setChild(ActionDataParameterDeclaration.CONDITION, node);
   }
 
   public int getSmodelAttributesCount() {

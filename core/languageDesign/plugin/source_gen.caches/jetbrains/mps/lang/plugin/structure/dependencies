@@ -82,6 +82,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.ActionParameter" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.ActionParameterCondition" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -175,6 +176,11 @@
   <dependency className="jetbrains.mps.lang.plugin.structure.ActionParameter" file="ActionParameter.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.ActionParameterCondition" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.structure.ActionParameterCondition" file="ActionParameterCondition.java">
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" file="ActionParameterDeclaration.java">
@@ -185,6 +191,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.ActionParameter" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.ActionParameterCondition" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -859,6 +866,19 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.GetConceptsBlock" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.NewCreateBlock" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.structure.CustomCondition" file="CustomCondition.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.ActionParameterCondition" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -1725,6 +1745,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.structure.ParameterCondition_ConceptFunctionParameter" file="ParameterCondition_ConceptFunctionParameter.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.structure.Parameter_FunctionParameter" file="Parameter_FunctionParameter.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter" />
@@ -2059,6 +2088,14 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.structure.RequiredCondition" file="RequiredCondition.java">
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

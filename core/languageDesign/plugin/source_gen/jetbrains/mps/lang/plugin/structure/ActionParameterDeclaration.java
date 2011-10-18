@@ -19,6 +19,7 @@ public class ActionParameterDeclaration extends FieldDeclaration implements IMem
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_OPTIONAL = "isOptional";
+  public static final String CONDITION = "condition";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ActionParameterDeclaration(SNode node) {
@@ -63,6 +64,14 @@ public class ActionParameterDeclaration extends FieldDeclaration implements IMem
 
   public void setIsOptional(boolean value) {
     this.setBooleanProperty(ActionParameterDeclaration.IS_OPTIONAL, value);
+  }
+
+  public ActionParameterCondition getCondition() {
+    return (ActionParameterCondition) this.getChild(ActionParameterCondition.class, ActionParameterDeclaration.CONDITION);
+  }
+
+  public void setCondition(ActionParameterCondition node) {
+    super.setChild(ActionParameterDeclaration.CONDITION, node);
   }
 
   public int getSmodelAttributesCount() {

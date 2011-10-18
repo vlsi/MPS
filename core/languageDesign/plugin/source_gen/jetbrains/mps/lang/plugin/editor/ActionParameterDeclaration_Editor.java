@@ -41,18 +41,12 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_n7yf1e_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_n7yf1e_c0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_n7yf1e_d0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_n7yf1e_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_n7yf1e_e0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createComponent_n7yf1e_b0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ActionParameter_NameCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    return editorCell;
-  }
-
-  private EditorCell createComponent_n7yf1e_e0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ActionParameter_IsOptional(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
@@ -97,6 +91,23 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_n7yf1e_e0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("condition");
+    provider.setNoTargetText("optional");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
