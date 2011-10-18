@@ -11,7 +11,7 @@ public class RemoveExcessTypeCast_QuickFix extends QuickFix_Runtime {
   public RemoveExcessTypeCast_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Remove Excess Typecast";
   }
 

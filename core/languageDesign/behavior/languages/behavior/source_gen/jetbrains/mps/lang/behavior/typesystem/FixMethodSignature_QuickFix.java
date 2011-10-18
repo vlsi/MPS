@@ -12,7 +12,7 @@ public class FixMethodSignature_QuickFix extends QuickFix_Runtime {
   public FixMethodSignature_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Fix Method Signature";
   }
 

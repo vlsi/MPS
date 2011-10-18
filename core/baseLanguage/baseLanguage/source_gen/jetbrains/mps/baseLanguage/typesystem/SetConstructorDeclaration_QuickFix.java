@@ -10,7 +10,7 @@ public class SetConstructorDeclaration_QuickFix extends QuickFix_Runtime {
   public SetConstructorDeclaration_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "set constructor declaration";
   }
 

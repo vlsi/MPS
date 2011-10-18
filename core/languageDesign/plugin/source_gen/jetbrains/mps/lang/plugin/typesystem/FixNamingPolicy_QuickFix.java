@@ -13,7 +13,7 @@ public class FixNamingPolicy_QuickFix extends QuickFix_Runtime {
   public FixNamingPolicy_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Fix Naming Issues";
   }
 

@@ -11,7 +11,7 @@ public class FixNamingPolicy_property_once_QuickFix extends QuickFix_Runtime {
   public FixNamingPolicy_property_once_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return ((String) FixNamingPolicy_property_once_QuickFix.this.getField("caption")[0]);
   }
 

@@ -14,7 +14,7 @@ public class ReplaceAlwaysTrueFalseWithLiteral_QuickFix extends QuickFix_Runtime
   public ReplaceAlwaysTrueFalseWithLiteral_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Simplify expression to " + ((Boolean) ReplaceAlwaysTrueFalseWithLiteral_QuickFix.this.getField("value")[0]);
   }
 

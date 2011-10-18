@@ -11,7 +11,7 @@ public class ConvertString_QuickFix extends QuickFix_Runtime {
   public ConvertString_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Convert java.lang.String to string type";
   }
 

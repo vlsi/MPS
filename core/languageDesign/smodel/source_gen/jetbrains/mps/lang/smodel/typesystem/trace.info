@@ -7392,7 +7392,7 @@
     <unitInfo nodeId="1221172482918" fileName="typeof_SearchScope_ContainsOperation_InferenceRule.java" startLine="78" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SearchScope_ContainsOperation_InferenceRule$QuotationClass_gpl01q_a0a1a0" />
   </root>
   <root nodeId="1224686720631">
-    <nodeInfo nodeId="1224686740450" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="15" startPosition="34" endLine="16" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224686740450" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="15" startPosition="44" endLine="16" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224686938651" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1224686853255" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="20" startPosition="23" endLine="21" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1224686986340" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="21" startPosition="102" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -7402,10 +7402,10 @@
     <nodeInfo nodeId="1224686956848" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="25" startPosition="219" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1224686963560" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="26" startPosition="52" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1224686720631" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="11" startPosition="72" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertCastToSModelCast_QuickFix#()V" />
-    <nodeInfo nodeId="1224686720631" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1224686720631" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1224686720631" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="18" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1224686720631" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="12" startPosition="45" endLine="12" endPosition="45" />
-    <scopeInfo nodeId="1224686739199" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="15" startPosition="34" endLine="16" endPosition="36" />
+    <scopeInfo nodeId="1224686739199" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="15" startPosition="44" endLine="16" endPosition="36" />
     <scopeInfo nodeId="1224686720631" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="11" startPosition="72" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1224686720631" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1224686720633" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="19" startPosition="35" endLine="27" endPosition="66">

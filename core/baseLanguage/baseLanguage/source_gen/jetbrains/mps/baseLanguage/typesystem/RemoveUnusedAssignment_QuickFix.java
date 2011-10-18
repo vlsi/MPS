@@ -11,7 +11,7 @@ public class RemoveUnusedAssignment_QuickFix extends QuickFix_Runtime {
   public RemoveUnusedAssignment_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "remove unused assignment";
   }
 
