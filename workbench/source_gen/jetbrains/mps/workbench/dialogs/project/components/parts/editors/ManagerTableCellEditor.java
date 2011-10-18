@@ -35,7 +35,10 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
     myCombo.setRenderer(new DefaultListCellRenderer() {
       public Component getListCellRendererComponent(JList list, Object value, int index, boolean selected, boolean focus) {
         ModelRootManager manager = ((ModelRootManager) value);
-        String managerName = NameUtil.shortNameFromLongName(manager.getClassName());
+        String managerName = (manager == null ?
+          "" :
+          NameUtil.shortNameFromLongName(manager.getClassName())
+        );
         return super.getListCellRendererComponent(list, managerName, index, selected, focus);
       }
     });
