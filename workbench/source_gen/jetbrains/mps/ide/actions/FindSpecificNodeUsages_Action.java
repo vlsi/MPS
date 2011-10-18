@@ -11,8 +11,8 @@ import java.util.Map;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
@@ -54,15 +54,6 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    {
-      SNode node = event.getData(MPSDataKeys.NODE);
-      if (node != null) {
-      }
-      MapSequence.fromMap(_params).put("node", node);
-    }
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
@@ -80,6 +71,15 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
       return false;
     }
     MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    {
+      SNode node = event.getData(MPSDataKeys.NODE);
+      if (node != null) {
+      }
+      MapSequence.fromMap(_params).put("node", node);
+    }
+    if (MapSequence.fromMap(_params).get("node") == null) {
+      return false;
+    }
     return true;
   }
 

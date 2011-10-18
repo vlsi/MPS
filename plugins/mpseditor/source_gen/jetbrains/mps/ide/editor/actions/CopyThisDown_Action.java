@@ -51,6 +51,10 @@ public class CopyThisDown_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+      return false;
+    }
     {
       List<SNode> nodes = event.getData(MPSDataKeys.NODES);
       boolean error = false;
@@ -63,10 +67,6 @@ public class CopyThisDown_Action extends GeneratedAction {
       }
     }
     if (MapSequence.fromMap(_params).get("inputNodes") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;

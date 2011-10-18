@@ -56,6 +56,14 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
+      return false;
+    }
     {
       List<SNode> nodes = event.getData(MPSDataKeys.NODES);
       boolean error = false;
@@ -68,14 +76,6 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
       }
     }
     if (MapSequence.fromMap(_params).get("nodes") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;

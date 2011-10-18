@@ -8,10 +8,10 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.IModule;
@@ -39,6 +39,14 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("langModule", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("langModule") == null) {
+      return false;
+    }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
@@ -49,14 +57,6 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
       MapSequence.fromMap(_params).put("node", node);
     }
     if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("langModule", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("langModule") == null) {
       return false;
     }
     return true;

@@ -8,9 +8,9 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -43,6 +43,10 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+      return false;
+    }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
@@ -50,10 +54,6 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
       MapSequence.fromMap(_params).put("node", node);
     }
     if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
