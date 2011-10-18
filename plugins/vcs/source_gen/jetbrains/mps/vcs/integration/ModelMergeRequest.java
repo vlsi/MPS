@@ -15,8 +15,8 @@ import jetbrains.mps.vcs.ModelUtils;
 public class ModelMergeRequest extends MergeRequestImpl {
   private final VirtualFile myFile;
 
-  /*package*/ ModelMergeRequest(String leftText, String rightText, String originalContent, @NotNull VirtualFile file, Project project, ActionButtonPresentation okActionButtonPresentation, ActionButtonPresentation cancelActionButtonPresentation) {
-    super(leftText, originalContent, rightText, project, okActionButtonPresentation, cancelActionButtonPresentation);
+  /*package*/ ModelMergeRequest(String leftText, String rightText, String originalContent, @NotNull VirtualFile file, Project project, ActionButtonPresentation okActionButtonPresentation) {
+    super(leftText, originalContent, rightText, project, okActionButtonPresentation);
     ApplicationManager.getApplication().saveAll();
     myFile = file;
   }
