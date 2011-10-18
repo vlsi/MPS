@@ -13,8 +13,6 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
 public class CardinalitiesChecker extends AbstractConstraintsChecker {
@@ -44,7 +42,6 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
           }
         } else {
           if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
-            SetSequence.fromSet(new HashSet<SNode>());
             component.addError(node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", null, new ReferenceMessageTarget(SPropertyOperations.getString(link, "role")));
           }
         }

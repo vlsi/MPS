@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
@@ -21,7 +22,6 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.HashSet;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -88,6 +88,9 @@ public class LanguageErrorsComponent {
   }
 
   public void addError(SNode node, String errorString, SNode ruleNode) {
+    for (SNode anc : ListSequence.fromList(SNodeOperations.getAncestors(node, null, false))) {
+      addDependency(anc);
+    }
     addError(node, errorString, ruleNode, new NodeMessageTarget());
   }
 
@@ -219,7 +222,7 @@ public class LanguageErrorsComponent {
     if (!(myRoot.shouldHaveBeenDisposed()) && SNodeOperations.getModel(myRoot) == model) {
       return;
     }
-    for (SNode additional : new THashSet<SNode>(MapSequence.fromMap(myDependenciesToNodes).keySet())) {
+    for (SNode additional : new HashSet<SNode>(MapSequence.fromMap(myDependenciesToNodes).keySet())) {
       if (additional.shouldHaveBeenDisposed() || SNodeOperations.getModel(additional) == model) {
         processNodeChange(additional);
       }

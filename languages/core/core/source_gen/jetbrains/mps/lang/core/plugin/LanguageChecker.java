@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
+import jetbrains.mps.ide.resolve.AutoResolver;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -133,6 +134,9 @@ public class LanguageChecker extends BaseEditorChecker implements INodeChecker {
 
   public boolean isLaterThan(BaseEditorChecker checker) {
     if (checker instanceof TypesEditorChecker) {
+      return true;
+    }
+    if (checker instanceof AutoResolver) {
       return true;
     }
     return false;
