@@ -14,12 +14,20 @@ public class TryCatchStatement_BehaviorDescriptor extends Statement_BehaviorDesc
     return TryCatchStatement_Behavior.virtual_getCatchClauses_3718132079121388582(thisNode);
   }
 
+  public boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
+    return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
+  }
+
   public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
     return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);
   }
 
   public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return IContainsStatementList_Behavior.virtual_isStatementListCompactable_1237546012856(thisNode);
+  }
+
+  public boolean virtual_isClosure_3262277503800835439(SNode thisNode) {
+    return IStatementListContainer_Behavior.virtual_isClosure_3262277503800835439(thisNode);
   }
 
   public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {

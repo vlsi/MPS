@@ -3926,7 +3926,11 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1236693300889" resolveInfo="VarVariableDeclaration" />
     </node>
   </root>
-  <root id="1237545921771" />
+  <root id="1237545921771">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3294819741513895591">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1199653749349" resolveInfo="IStatementListContainer" />
+    </node>
+  </root>
   <root id="1238803202705" />
   <root id="1238805530342" />
   <root id="1239354281271" />

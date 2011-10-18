@@ -222,7 +222,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 102:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.IBLDeprecatable", null, true, new String[]{"jetbrains.mps.lang.core.structure.IDeprecatable"}, new String[]{"isDeprecated"}, new String[]{});
       case 103:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.IContainsStatementList", null, true, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.IContainsStatementList", null, true, new String[]{"jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, new String[]{}, new String[]{});
       case 104:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", null, true, new String[]{}, new String[]{}, new String[]{});
       case 105:
