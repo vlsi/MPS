@@ -11,7 +11,7 @@ public class DeleteMathContext_QuickFix extends QuickFix_Runtime {
   public DeleteMathContext_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Use default math context";
   }
 

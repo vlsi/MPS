@@ -232,7 +232,7 @@
     <unitInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.check_ConceptMethodDeclaration_NonTypesystemRule" />
   </root>
   <root nodeId="3834658221333152923">
-    <nodeInfo nodeId="3834658221333152931" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="34" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3834658221333152931" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="44" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3834658221333152937" fileName="FixMethodSignature_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3834658221333152950" fileName="FixMethodSignature_QuickFix.java" startLine="20" startPosition="323" endLine="21" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3834658221333152960" fileName="FixMethodSignature_QuickFix.java" startLine="21" startPosition="225" endLine="22" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -244,12 +244,12 @@
     <nodeInfo nodeId="3834658221333152970" fileName="FixMethodSignature_QuickFix.java" startLine="23" startPosition="71" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3834658221333153002" fileName="FixMethodSignature_QuickFix.java" startLine="26" startPosition="7" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3834658221333153025" fileName="FixMethodSignature_QuickFix.java" startLine="30" startPosition="28" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="3834658221333153023" fileName="FixMethodSignature_QuickFix.java" startLine="29" startPosition="7" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3834658221333152968" fileName="FixMethodSignature_QuickFix.java" startLine="22" startPosition="178" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="18" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="12" startPosition="40" endLine="12" endPosition="40" />
-    <scopeInfo nodeId="3834658221333152930" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="34" endLine="16" endPosition="34" />
+    <scopeInfo nodeId="3834658221333152930" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="44" endLine="16" endPosition="34" />
     <scopeInfo nodeId="3834658221333152978" fileName="FixMethodSignature_QuickFix.java" startLine="24" startPosition="52" endLine="25" endPosition="483" />
     <scopeInfo nodeId="3834658221333153003" fileName="FixMethodSignature_QuickFix.java" startLine="27" startPosition="35" endLine="28" endPosition="398" />
     <scopeInfo nodeId="3834658221333153029" fileName="FixMethodSignature_QuickFix.java" startLine="31" startPosition="66" endLine="32" endPosition="194" />

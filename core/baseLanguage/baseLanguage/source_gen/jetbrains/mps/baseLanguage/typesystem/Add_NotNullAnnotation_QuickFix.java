@@ -13,7 +13,7 @@ public class Add_NotNullAnnotation_QuickFix extends QuickFix_Runtime {
   public Add_NotNullAnnotation_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Add @NotNull annotation";
   }
 

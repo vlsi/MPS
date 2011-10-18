@@ -9,7 +9,7 @@ public class RemoveUndeclaredProperty_QuickFix extends QuickFix_Runtime {
   public RemoveUndeclaredProperty_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Remove undeclared property \"" + ((String) RemoveUndeclaredProperty_QuickFix.this.getField("propertyName")[0]) + "\"";
   }
 

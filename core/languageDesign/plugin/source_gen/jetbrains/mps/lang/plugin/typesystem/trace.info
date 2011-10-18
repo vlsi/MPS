@@ -1288,18 +1288,18 @@
     <unitInfo nodeId="162872405267677846" fileName="typeof_ConfigurationEditorDeclaration_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ConfigurationEditorDeclaration_InferenceRule$QuotationClass_7janal_a0a0a0" />
   </root>
   <root nodeId="1628770029971140613">
-    <nodeInfo nodeId="5003188907305524502" fileName="FixNamingPolicy_QuickFix.java" startLine="16" startPosition="34" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5003188907305524502" fileName="FixNamingPolicy_QuickFix.java" startLine="16" startPosition="44" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1628770029971140620" fileName="FixNamingPolicy_QuickFix.java" startLine="21" startPosition="162" endLine="22" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1628770029971140637" fileName="FixNamingPolicy_QuickFix.java" startLine="24" startPosition="173" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1628770029971140648" fileName="FixNamingPolicy_QuickFix.java" startLine="25" startPosition="62" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1628770029971140653" fileName="FixNamingPolicy_QuickFix.java" startLine="26" startPosition="64" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="12" startPosition="64" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FixNamingPolicy_QuickFix#()V" />
     <nodeInfo nodeId="1628770029971140618" fileName="FixNamingPolicy_QuickFix.java" startLine="20" startPosition="35" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1628770029971140635" fileName="FixNamingPolicy_QuickFix.java" startLine="23" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="19" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="13" startPosition="37" endLine="13" endPosition="37" />
-    <scopeInfo nodeId="1628770029971140669" fileName="FixNamingPolicy_QuickFix.java" startLine="16" startPosition="34" endLine="17" endPosition="31" />
+    <scopeInfo nodeId="1628770029971140669" fileName="FixNamingPolicy_QuickFix.java" startLine="16" startPosition="44" endLine="17" endPosition="31" />
     <scopeInfo nodeId="1628770029971140619" fileName="FixNamingPolicy_QuickFix.java" startLine="21" startPosition="162" endLine="22" endPosition="123" />
     <scopeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="12" startPosition="64" endLine="14" endPosition="3" />
     <scopeInfo nodeId="1628770029971140618" fileName="FixNamingPolicy_QuickFix.java" startLine="20" startPosition="35" endLine="23" endPosition="5">
@@ -1318,13 +1318,13 @@
     <unitInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix" />
   </root>
   <root nodeId="1628770029971140674">
-    <nodeInfo nodeId="1628770029971140693" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1628770029971140693" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1628770029971140681" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1628770029971140674" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="10" startPosition="77" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FixNamingPolicy_literal_once_QuickFix#()V" />
-    <nodeInfo nodeId="1628770029971140674" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1628770029971140674" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1628770029971140674" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1628770029971140674" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="11" startPosition="50" endLine="11" endPosition="50" />
-    <scopeInfo nodeId="1628770029971140692" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="88" />
+    <scopeInfo nodeId="1628770029971140692" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="88" />
     <scopeInfo nodeId="1628770029971140680" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="269" />
     <scopeInfo nodeId="1628770029971140674" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="10" startPosition="77" endLine="12" endPosition="3" />
     <scopeInfo nodeId="1628770029971140674" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
@@ -1332,13 +1332,13 @@
     <unitInfo nodeId="1628770029971140674" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_literal_once_QuickFix" />
   </root>
   <root nodeId="1628770029971140695">
-    <nodeInfo nodeId="1628770029971140712" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1628770029971140712" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1628770029971140702" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1628770029971140695" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="10" startPosition="78" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FixNamingPolicy_property_once_QuickFix#()V" />
-    <nodeInfo nodeId="1628770029971140695" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1628770029971140695" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1628770029971140695" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1628770029971140695" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="11" startPosition="51" endLine="11" endPosition="51" />
-    <scopeInfo nodeId="1628770029971140711" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="89" />
+    <scopeInfo nodeId="1628770029971140711" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="89" />
     <scopeInfo nodeId="1628770029971140701" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="239" />
     <scopeInfo nodeId="1628770029971140695" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="10" startPosition="78" endLine="12" endPosition="3" />
     <scopeInfo nodeId="1628770029971140695" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />

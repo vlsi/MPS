@@ -11,7 +11,7 @@ public class BinaryExpressionPriority_QuickFix extends QuickFix_Runtime {
   public BinaryExpressionPriority_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Fix syntax tree operation priorities.";
   }
 

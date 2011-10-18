@@ -14,7 +14,7 @@ public class ReplaceClassAntiquotationWithClassifierType_QuickFix extends QuickF
   public ReplaceClassAntiquotationWithClassifierType_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Replace antiquotation with classifier type with reference antiquotation";
   }
 

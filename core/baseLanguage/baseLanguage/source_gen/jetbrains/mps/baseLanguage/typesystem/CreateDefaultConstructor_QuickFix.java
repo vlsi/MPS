@@ -12,7 +12,7 @@ public class CreateDefaultConstructor_QuickFix extends QuickFix_Runtime {
   public CreateDefaultConstructor_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Create Default Constructor";
   }
 
