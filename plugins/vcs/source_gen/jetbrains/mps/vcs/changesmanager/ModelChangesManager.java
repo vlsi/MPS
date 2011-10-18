@@ -636,6 +636,8 @@ __switch__:
         return;
       }
       myBaseVersionModel = ModelUtils.readModel(content, modelVFile.toString());
+      // TODO base version model can be unreadable 
+      assert myBaseVersionModel == null;
       final Wrappers._T<List<OldChange>> changeList = new Wrappers._T<List<OldChange>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

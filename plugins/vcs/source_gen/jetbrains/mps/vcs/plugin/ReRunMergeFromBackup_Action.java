@@ -87,6 +87,9 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
       for (File backupFile : Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))) {
         try {
           SModel[] models = ModelUtils.loadZippedModels(backupFile, MergeVersion.values());
+          if (models == null) {
+            continue;
+          }
           ReRunMergeFromBackup_Action.this.doMerge(models[MergeVersion.MINE.ordinal()], models[MergeVersion.BASE.ordinal()], models[MergeVersion.REPOSITORY.ordinal()], _params);
           return;
         } catch (IOException e) {

@@ -120,7 +120,10 @@ public class VcsHelper {
 
   private static boolean openDiffDialog(IFile modelFile, final SModel inMemory) {
     try {
-      final SModel onDisk = ModelUtils.readModel(com.intellij.openapi.util.io.FileUtil.loadFileBytes(new File(modelFile.getPath())), modelFile.getPath());
+      SModel onDisk = ModelUtils.readModel(com.intellij.openapi.util.io.FileUtil.loadFileBytes(new File(modelFile.getPath())), modelFile.getPath());
+      if (onDisk == null) {
+        onDisk = new SModel(inMemory.getSModelReference());
+      }
       return VcsHelper.showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
     } catch (IOException e) {
       if (log.isErrorEnabled()) {

@@ -14,13 +14,13 @@ import java.io.ByteArrayOutputStream;
 import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.UnzipUtil;
 import java.io.FilenameFilter;
 import jetbrains.mps.project.MPSExtentions;
 import java.io.FileInputStream;
-import org.jetbrains.annotations.Nullable;
 import org.xml.sax.InputSource;
 import java.io.ByteArrayInputStream;
 import java.io.StringReader;
@@ -71,6 +71,7 @@ public class ModelUtils {
     });
   }
 
+  @Nullable
   public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException {
     File tmpdir = FileUtil.createTmpDir();
     UnzipUtil.unzip(zipfile, tmpdir);
@@ -99,6 +100,9 @@ public class ModelUtils {
         baos.write(i);
       }
       models[index] = ModelUtils.readModel(baos.toByteArray(), file.getAbsolutePath());
+      if (models[index] == null) {
+        return null;
+      }
       index++;
     }
     FileUtil.delete(tmpdir);
