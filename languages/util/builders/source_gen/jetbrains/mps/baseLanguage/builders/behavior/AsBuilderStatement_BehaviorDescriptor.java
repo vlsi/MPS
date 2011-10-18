@@ -5,15 +5,10 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
 
 public class AsBuilderStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContainsStatementList_BehaviorDescriptor, BuilderContainer_BehaviorDescriptor {
   public AsBuilderStatement_BehaviorDescriptor() {
-  }
-
-  public boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
-    return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
   }
 
   public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
@@ -26,10 +21,6 @@ public class AsBuilderStatement_BehaviorDescriptor extends Statement_BehaviorDes
 
   public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return IContainsStatementList_Behavior.virtual_isStatementListCompactable_1237546012856(thisNode);
-  }
-
-  public boolean virtual_isClosure_3262277503800835439(SNode thisNode) {
-    return IStatementListContainer_Behavior.virtual_isClosure_3262277503800835439(thisNode);
   }
 
   @Override
