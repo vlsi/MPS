@@ -122,10 +122,8 @@
         <group id="FileMainSettingsGroup">
           <action id="ShowSettings" class="com.intellij.ide.actions.ShowSettingsAction" icon="/general/ideOptions.png"/>
           <group id="FileOtherSettingsGroup" popup="true">
-             <action id="TemplateProjectProperties" class="com.intellij.ide.actions.TemplateProjectPropertiesAction"/>
-             <group id="FileSettingsGroup"/>
+              <group id="FileSettingsGroup"/>
           </group>
-          <action id="CreateLauncherScript" class="com.intellij.ide.actions.CreateLauncherScriptAction"/>
         </group>
         <separator/>
         <action id="SaveAll" class="com.intellij.ide.actions.SaveAllAction" icon="/actions/menu-saveall.png"/>
@@ -313,6 +311,8 @@
                 text="Default Keymap Reference"/>
 
         <separator/>
+        <action id="TechnicalSupport" class="com.intellij.ide.actions.TechnicalSupportAction"/>
+        <action id="SendFeedback" class="com.intellij.ide.actions.SendFeedbackAction"/>
 
         <action id="ShowUserGuide"
                 class="jetbrains.mps.workbench.actions.help.ShowUserGuideAction"
@@ -337,6 +337,7 @@
                 text="Community"/>
 
         <separator/>
+        <action id="CheckForUpdate" class="com.intellij.openapi.updateSettings.impl.CheckForUpdateAction"/>
 
         <action id="ShowTrackerAction"
                 class="jetbrains.mps.workbench.actions.help.ShowTrackerAction"
@@ -501,8 +502,6 @@
       <separator/>
       <action id="FocusDebugger" internal="true" class="com.intellij.internal.focus.FocusDebuggerAction" text="Start Focus Debugger"/>
       <action id="UiInspector" internal="true" class="com.intellij.internal.inspector.UiInspectorAction" text="UI Inspector"/>
-      <action id="ShowSplash" internal="true" class="com.intellij.ui.ShowSplashAction" text="Show Splash" />
-      <action id="ValidationTest" internal="true" class="com.intellij.internal.validation.TestDialogWithValidationAction" text="Validation Dialog Test" />
       <separator/>
       <reference ref="MaintenanceGroup"/>
 
