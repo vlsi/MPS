@@ -7023,20 +7023,68 @@
     <unitInfo nodeId="5538333046911348652" fileName="ActionParameterCondition.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionParameterCondition" />
   </root>
   <root nodeId="5538333046911348654">
-    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="11" startPosition="52" endLine="12" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="14" startPosition="40" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="18" startPosition="72" endLine="19" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="22" startPosition="58" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RequiredCondition#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/plugin/structure/RequiredCondition;" />
-    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/plugin/structure/RequiredCondition;" />
-    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="14" startPosition="40" endLine="15" endPosition="16" />
-    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="18" startPosition="72" endLine="19" endPosition="183" />
-    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="22" startPosition="58" endLine="23" endPosition="52" />
-    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RequiredCondition" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="14" startPosition="88" endLine="15" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="15" startPosition="95" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="16" startPosition="68" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="17" startPosition="45" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="18" startPosition="64" endLine="19" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="21" startPosition="40" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="25" startPosition="39" endLine="26" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="29" startPosition="49" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="33" startPosition="28" endLine="34" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="37" startPosition="38" endLine="38" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="41" startPosition="37" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="45" startPosition="47" endLine="46" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="49" startPosition="41" endLine="50" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="53" startPosition="49" endLine="54" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="57" startPosition="48" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="61" startPosition="50" endLine="62" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="65" startPosition="69" endLine="66" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="69" startPosition="72" endLine="70" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="73" startPosition="58" endLine="74" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="20" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RequiredCondition#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/plugin/structure/RequiredCondition;" />
+    <nodeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/plugin/structure/RequiredCondition;" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="21" startPosition="40" endLine="22" endPosition="16" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="25" startPosition="39" endLine="26" endPosition="65" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="29" startPosition="49" endLine="30" endPosition="65" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="33" startPosition="28" endLine="34" endPosition="53" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="37" startPosition="38" endLine="38" endPosition="53" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="41" startPosition="37" endLine="42" endPosition="63" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="45" startPosition="47" endLine="46" endPosition="63" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="49" startPosition="41" endLine="50" endPosition="66" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="53" startPosition="49" endLine="54" endPosition="78" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="57" startPosition="48" endLine="58" endPosition="81" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="61" startPosition="50" endLine="62" endPosition="60" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="65" startPosition="69" endLine="66" endPosition="69" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="69" startPosition="72" endLine="70" endPosition="183" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="73" startPosition="58" endLine="74" endPosition="52" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <unitInfo nodeId="5538333046911348654" fileName="RequiredCondition.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RequiredCondition" />
   </root>
   <root nodeId="5703381818025946290">
     <nodeInfo nodeId="5703381818025946290" fileName="AskBlock.java" startLine="11" startPosition="47" endLine="12" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
