@@ -5030,7 +5030,7 @@
   <root id="5538333046911298739">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5538333046911348646">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="5538333046911298739" resolveInfo="CustomCondition" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="5538333046911348647" resolveInfo="ParameterCondition_ConceptFunctionParameter" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="5538333046911348639">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
