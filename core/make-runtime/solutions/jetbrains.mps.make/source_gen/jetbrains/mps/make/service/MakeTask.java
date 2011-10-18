@@ -5,16 +5,15 @@ package jetbrains.mps.make.service;
 import com.intellij.openapi.progress.Task;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.logging.Logger;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.messages.IMessageHandler;
-import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.ThreadUtils;
@@ -24,51 +23,29 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Iterator;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.InternalFlag;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.LogEntry;
+import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.messages.Message;
 
 public class MakeTask extends Task.Backgroundable implements Future<IResult> {
-  private static Logger LOG = Logger.getLogger(MakeTask.class);
-
   private CountDownLatch myLatch = new CountDownLatch(1);
   private AtomicReference<MakeTask.TaskState> myState = new AtomicReference<MakeTask.TaskState>(MakeTask.TaskState.NOT_STARTED);
-  private final Iterable<IScript> myScripts;
-  private final String myScrName;
-  private final Iterable<? extends Iterable<IResource>> myClInput;
-  private IResult myResult = null;
-  private final IScriptController myController;
-  private final IMessageHandler myMessageHandler;
+  private CoreMakeTask coreTask;
+  private boolean isCanceled = false;
 
   public MakeTask(@Nullable Project project, @NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
     super(project, title, true, bgoption);
-    this.myScripts = scripts;
-    this.myScrName = scrName;
-    this.myClInput = clInput;
-    this.myController = ctl;
-    this.myMessageHandler = mh;
+    coreTask = new CoreMakeTask(title, scripts, scrName, clInput, ctl, mh);
   }
 
   public void run(@NotNull final ProgressIndicator pi) {
     if (myState.compareAndSet(MakeTask.TaskState.NOT_STARTED, MakeTask.TaskState.RUNNING)) {
       if (ThreadUtils.isEventDispatchThread()) {
-        try {
-          doRun(new ProgressMonitorAdapter(pi));
-        } finally {
-          try {
-            reconcile();
-          } catch (RuntimeException ex) {
-            LOG.debug("Unexpected exception", ex);
-          }
-        }
+        coreTask.run(new ProgressMonitorAdapter(pi));
       } else {
         this.spawnMakeThreadThenDoRunRelayingLog(new ProgressMonitorAdapter(pi));
       }
@@ -79,16 +56,11 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     ThreadGroup tg = new ThreadGroup("MPS Make Thread Group");
     Thread makeThread = new Thread(tg, new Runnable() {
       public void run() {
-        MakeTask.RelayingLoggingHandler rlh = new MakeTask.RelayingLoggingHandler(myMessageHandler);
+        CoreMakeTask.RelayingLoggingHandler rlh = new CoreMakeTask.RelayingLoggingHandler(coreTask.getMessageHandler());
         try {
           rlh.startRelaying();
-          doRun(monitor);
+          coreTask.run(monitor);
         } finally {
-          try {
-            reconcile();
-          } catch (RuntimeException ex) {
-            MakeTask.LOG.debug("Unexpected exception", ex);
-          }
           rlh.stopRelaying();
         }
       }
@@ -104,7 +76,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
 
   @Override
   public void onCancel() {
-    this.myResult = null;
+    isCanceled = true;
   }
 
   public boolean cancel(boolean b) {
@@ -124,7 +96,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     if (myState.get() == MakeTask.TaskState.CANCELLED) {
       throw new CancellationException();
     }
-    return myResult;
+    return coreTask.getResult();
   }
 
   public IResult get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
@@ -132,7 +104,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     if (myState.get() == MakeTask.TaskState.CANCELLED) {
       throw new CancellationException();
     }
-    return myResult;
+    return coreTask.getResult();
   }
 
   protected void displayInfo(String info) {
@@ -144,73 +116,39 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   protected void done() {
   }
 
-  private void doRun(ProgressMonitor monitor) {
-    aboutToStart();
-    final int clsize = Sequence.fromIterable(this.myClInput).count();
-    if (clsize == 0) {
-      return;
+  public class WorkbenchMakeTask extends CoreMakeTask {
+    public WorkbenchMakeTask(@NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh) {
+      super(title, scripts, scrName, clInput, ctl, mh);
     }
-    monitor.start("", clsize);
-    try {
-      int idx = 0;
-      Iterator<IScript> scit = Sequence.fromIterable(myScripts).iterator();
-      Iterator<? extends Iterable<IResource>> clit = Sequence.fromIterable(myClInput).iterator();
-      while (scit.hasNext() && clit.hasNext()) {
-        Iterable<IResource> cl = clit.next();
-        IScript scr = scit.next();
 
-        if (!(scr.isValid())) {
-          String msg = myScrName + " failed";
-          myMessageHandler.handle(new Message(MessageKind.ERROR, msg + ". Invalid script."));
-          displayInfo(msg);
-          this.myResult = new IResult.FAILURE(null);
-          break;
+    @Override
+    protected void reconcile() {
+      MakeTask.this.myState.set(MakeTask.TaskState.DONE);
+      try {
+        if (isCanceled || coreTask.getResult() == null) {
+          MakeTask.this.myState.set(MakeTask.TaskState.CANCELLED);
         }
-
-        if (InternalFlag.isInternalMode()) {
-          myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Modules cluster " + (idx + 1) + "/" + clsize + " [" + IterableUtils.join(Sequence.fromIterable(cl).select(new ISelector<IResource, String>() {
-            public String select(IResource r) {
-              return ((IResource) r).describe();
-            }
-          }), ", ") + "]"));
-        }
-
-        monitor.step((idx + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).select(new ISelector<IResource, String>() {
-          public String select(IResource r) {
-            return ((IResource) r).describe();
-          }
-        }), ","));
-        this.myResult = scr.execute(this.myController, cl, monitor.subTask(1));
-        if (!(this.myResult.isSucessful()) || monitor.isCanceled()) {
-          break;
-        }
-        idx++;
+        super.reconcile();
+      } finally {
+        myLatch.countDown();
+        done();
       }
-    } finally {
-      monitor.done();
     }
-    this.myState.set(MakeTask.TaskState.INDETERMINATE);
-  }
 
-  private void reconcile() {
-    this.myState.set(MakeTask.TaskState.DONE);
-    try {
-      if (this.myResult == null) {
-        this.myState.set(MakeTask.TaskState.CANCELLED);
-        String msg = this.myScrName + " aborted";
-        displayInfo(msg);
-      } else if (!(this.myResult.isSucessful())) {
-        String msg = this.myScrName + " failed";
-        myMessageHandler.handle(new Message(MessageKind.ERROR, msg + ". See previous messages for details."));
-        displayInfo(msg);
-      } else {
-        String msg = this.myScrName + " successful";
-        displayInfo(msg);
-      }
+    @Override
+    protected void doRun(ProgressMonitor monitor) {
+      super.doRun(monitor);
+      MakeTask.this.myState.set(MakeTask.TaskState.INDETERMINATE);
+    }
 
-    } finally {
-      myLatch.countDown();
-      done();
+    @Override
+    protected void displayInfo(String info) {
+      MakeTask.this.displayInfo(info);
+    }
+
+    @Override
+    protected void aboutToStart() {
+      MakeTask.this.aboutToStart();
     }
   }
 
@@ -277,62 +215,6 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
           message.setHintObject(e.getHintObject());
           mh.handle(message);
         }
-      }
-    }
-  }
-
-  public static class RelayingLoggingHandler implements ILoggingHandler {
-    private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
-
-    private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
-      @Override
-      protected IMessageHandler initialValue() {
-        return (MakeTask.RelayingLoggingHandler.GROUP_HANDLER._0() == Thread.currentThread().getThreadGroup() ?
-          MakeTask.RelayingLoggingHandler.GROUP_HANDLER._1() :
-          null
-        );
-      }
-    };
-
-    public RelayingLoggingHandler(IMessageHandler mh) {
-      this.messageHandler.set(mh);
-      GROUP_HANDLER = MultiTuple.<ThreadGroup,IMessageHandler>from(Thread.currentThread().getThreadGroup(), mh);
-    }
-
-    public void startRelaying() {
-      Logger.addLoggingHandler(this);
-    }
-
-    public void stopRelaying() {
-      Logger.removeLoggingHandler(this);
-    }
-
-    public void fatal(LogEntry entry) {
-      handle(MessageKind.ERROR, entry);
-    }
-
-    public void error(LogEntry entry) {
-      handle(MessageKind.ERROR, entry);
-    }
-
-    public void debug(LogEntry entry) {
-      handle(MessageKind.INFORMATION, entry);
-    }
-
-    public void warning(LogEntry entry) {
-      handle(MessageKind.WARNING, entry);
-    }
-
-    public void info(LogEntry entry) {
-      handle(MessageKind.INFORMATION, entry);
-    }
-
-    private void handle(MessageKind kind, LogEntry e) {
-      IMessageHandler mh = messageHandler.get();
-      if (mh != null) {
-        Message message = new Message(kind, e.getSourceClass(), e.getMessage());
-        message.setHintObject(e.getHintObject());
-        mh.handle(message);
       }
     }
   }
