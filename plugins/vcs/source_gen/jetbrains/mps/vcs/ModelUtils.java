@@ -24,7 +24,6 @@ import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.vcs.integration.ModelDiffTool;
 
 public class ModelUtils {
   protected static Log log = LogFactory.getLog(ModelUtils.class);
@@ -96,31 +95,27 @@ public class ModelUtils {
 
   @Nullable
   private static SModel readModel(@NotNull final ModelUtils.InputSourceFactory inputSourceFactory) throws IOException {
-    try {
-      final IOException[] ex = new IOException[1];
-      final SModel[] model = new SModel[1];
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          try {
-            DescriptorLoadResult loadResult = ModelPersistence.loadDescriptor(inputSourceFactory.create());
-            BaseSModelDescriptor.ModelLoadResult result = ModelPersistence.readModel(loadResult.getHeader(), inputSourceFactory.create(), ModelLoadingState.FULLY_LOADED);
-            if (result.getState() != ModelLoadingState.FULLY_LOADED) {
-              model[0] = null;
-            } else {
-              model[0] = result.getModel();
-            }
-          } catch (IOException e) {
-            ex[0] = e;
+    final IOException[] ioException = new IOException[1];
+    final SModel[] model = new SModel[1];
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        try {
+          DescriptorLoadResult loadResult = ModelPersistence.loadDescriptor(inputSourceFactory.create());
+          BaseSModelDescriptor.ModelLoadResult result = ModelPersistence.readModel(loadResult.getHeader(), inputSourceFactory.create(), ModelLoadingState.FULLY_LOADED);
+          if (result.getState() != ModelLoadingState.FULLY_LOADED) {
+            model[0] = null;
+          } else {
+            model[0] = result.getModel();
           }
+        } catch (IOException e) {
+          ioException[0] = e;
         }
-      });
-      if (ex[0] != null) {
-        throw ex[0];
-      } else {
-        return model[0];
       }
-    } catch (Exception t) {
-      throw new ModelDiffTool.ReadException(t);
+    });
+    if (ioException[0] != null) {
+      throw ioException[0];
+    } else {
+      return model[0];
     }
   }
 

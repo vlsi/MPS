@@ -10,7 +10,7 @@
     <classNode dependClassName="com.intellij.openapi.diff.FileContent" />
     <classNode dependClassName="com.intellij.openapi.fileTypes.FileType" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
-    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="javax.swing.JFrame" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
@@ -33,7 +33,6 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.diff.DiffTool" />
-    <classNode extendsClassName="java.io.IOException" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.integration.ModelMergeTool" file="ModelMergeTool.java">
     <classNode dependClassName="com.intellij.openapi.diff.DiffContent" />

@@ -122,10 +122,4 @@ public class ModelDiffTool implements DiffTool {
   public static boolean isNewDiffEnabled() {
     return !("false".equals(System.getProperty("mps.newdiff")));
   }
-
-  public static class ReadException extends IOException {
-    public ReadException(Exception t) {
-      super(t);
-    }
-  }
 }
