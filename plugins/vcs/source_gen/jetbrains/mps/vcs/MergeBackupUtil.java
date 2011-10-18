@@ -17,6 +17,14 @@ import java.util.Date;
 import com.intellij.util.io.ZipUtil;
 import com.intellij.openapi.application.PathManager;
 import java.io.FilenameFilter;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.UnzipUtil;
+import jetbrains.mps.project.MPSExtentions;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class MergeBackupUtil {
   protected static Log log = LogFactory.getLog(MergeBackupUtil.class);
@@ -90,5 +98,56 @@ public class MergeBackupUtil {
 
   public static String getMergeBackupDirPath() {
     return PathManager.getSystemPath() + File.separator + "merge-backup";
+  }
+
+  @Nullable
+  public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException {
+    File tmpdir = FileUtil.createTmpDir();
+    UnzipUtil.unzip(zipfile, tmpdir);
+    SModel[] models = new SModel[versions.length];
+    int index = 0;
+    for (final ModelVersion v : versions) {
+      File file;
+      File[] files = tmpdir.listFiles(new FilenameFilter() {
+        public boolean accept(File dir, String name) {
+          return name.endsWith(MPSExtentions.DOT_MODEL + "." + v.getSuffix());
+        }
+      });
+      if (files == null || files.length != 1) {
+        if (log.isErrorEnabled()) {
+          log.error("Wrong zip contents");
+        }
+      }
+      file = files[0];
+      ByteArrayOutputStream baos = new ByteArrayOutputStream();
+      FileInputStream fis = new FileInputStream(file);
+      while (true) {
+        int i = fis.read();
+        if (i == -1) {
+          break;
+        }
+        baos.write(i);
+      }
+      models[index] = ModelUtils.readModel(baos.toByteArray());
+      if (models[index] == null) {
+        return null;
+      }
+      index++;
+    }
+    FileUtil.delete(tmpdir);
+    return models;
+  }
+
+  public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
+    File[] files = new File(MergeBackupUtil.getMergeBackupDirPath()).listFiles(new FilenameFilter() {
+      public boolean accept(File dir, String name) {
+        return name.contains(modelFileName) && modelFileName.endsWith(".zip");
+      }
+    });
+    return Sequence.fromIterable(Sequence.fromArray(files)).sort(new ISelector<File, Comparable<?>>() {
+      public Comparable<?> select(File f) {
+        return f.getName();
+      }
+    }, false);
   }
 }

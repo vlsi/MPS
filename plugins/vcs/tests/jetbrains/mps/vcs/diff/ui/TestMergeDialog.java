@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vcs.MergeBackupUtil;
 import jetbrains.mps.vcs.MergeVersion;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
@@ -61,7 +62,7 @@ public class TestMergeDialog {
     String resultFile;
     if (args.length == 2) {
       try {
-        final SModel[] zipped = ModelUtils.loadZippedModels(new File(args[0]), MergeVersion.values());
+        final SModel[] zipped = MergeBackupUtil.loadZippedModels(new File(args[0]), MergeVersion.values());
         models[0] = zipped[0];
         models[1] = zipped[1];
         models[2] = zipped[2];

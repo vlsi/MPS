@@ -17,6 +17,7 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcs.MergeBackupUtil;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.ModelVersion;
 import jetbrains.mps.vfs.FileSystem;
@@ -27,7 +28,7 @@ import java.io.IOException;
 public class MergeTestUtil {
 
   public static SModel[] loadTestModels(File zipfile) throws IOException {
-    return ModelUtils.loadZippedModels(zipfile, TestVersion.values());
+    return MergeBackupUtil.loadZippedModels(zipfile, TestVersion.values());
   }
 
   public static void saveTestModel(final SModel model, final File file) {

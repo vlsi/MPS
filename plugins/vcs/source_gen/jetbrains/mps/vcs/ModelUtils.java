@@ -15,22 +15,16 @@ import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.Nullable;
-import java.io.File;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.UnzipUtil;
-import java.io.FilenameFilter;
-import jetbrains.mps.project.MPSExtentions;
-import java.io.FileInputStream;
 import org.jetbrains.annotations.NotNull;
 import org.xml.sax.InputSource;
 import java.io.ByteArrayInputStream;
 import java.io.StringReader;
+import java.io.File;
+import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ModelUtils {
   protected static Log log = LogFactory.getLog(ModelUtils.class);
@@ -72,44 +66,6 @@ public class ModelUtils {
   }
 
   @Nullable
-  public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException {
-    File tmpdir = FileUtil.createTmpDir();
-    UnzipUtil.unzip(zipfile, tmpdir);
-    SModel[] models = new SModel[versions.length];
-    int index = 0;
-    for (final ModelVersion v : versions) {
-      File file;
-      File[] files = tmpdir.listFiles(new FilenameFilter() {
-        public boolean accept(File dir, String name) {
-          return name.endsWith(MPSExtentions.DOT_MODEL + "." + v.getSuffix());
-        }
-      });
-      if (files == null || files.length != 1) {
-        if (log.isErrorEnabled()) {
-          log.error("Wrong zip contents");
-        }
-      }
-      file = files[0];
-      ByteArrayOutputStream baos = new ByteArrayOutputStream();
-      FileInputStream fis = new FileInputStream(file);
-      while (true) {
-        int i = fis.read();
-        if (i == -1) {
-          break;
-        }
-        baos.write(i);
-      }
-      models[index] = ModelUtils.readModel(baos.toByteArray());
-      if (models[index] == null) {
-        return null;
-      }
-      index++;
-    }
-    FileUtil.delete(tmpdir);
-    return models;
-  }
-
-  @Nullable
   public static SModel readModel(@NotNull final byte[] bytes) throws IOException {
     return (bytes.length == 0 ?
       null :
@@ -135,7 +91,7 @@ public class ModelUtils {
 
   @Nullable
   public static SModel readModel(final File file) throws IOException {
-    return readModel(com.intellij.openapi.util.io.FileUtil.loadFileBytes(file));
+    return readModel(FileUtil.loadFileBytes(file));
   }
 
   @Nullable
@@ -166,19 +122,6 @@ public class ModelUtils {
     } catch (Exception t) {
       throw new ModelDiffTool.ReadException(t);
     }
-  }
-
-  public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
-    File[] files = new File(MergeBackupUtil.getMergeBackupDirPath()).listFiles(new FilenameFilter() {
-      public boolean accept(File dir, String name) {
-        return name.contains(modelFileName) && modelFileName.endsWith(".zip");
-      }
-    });
-    return Sequence.fromIterable(Sequence.fromArray(files)).sort(new ISelector<File, Comparable<?>>() {
-      public Comparable<?> select(File f) {
-        return f.getName();
-      }
-    }, false);
   }
 
   private static interface InputSourceFactory {

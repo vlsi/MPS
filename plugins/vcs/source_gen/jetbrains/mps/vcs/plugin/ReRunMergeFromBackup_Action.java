@@ -20,12 +20,13 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.ModelUtils;
+import jetbrains.mps.vcs.MergeBackupUtil;
 import jetbrains.mps.vcs.MergeVersion;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vfs.IFile;
 
 public class ReRunMergeFromBackup_Action extends GeneratedAction {
@@ -86,7 +87,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     try {
       for (File backupFile : Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))) {
         try {
-          SModel[] models = ModelUtils.loadZippedModels(backupFile, MergeVersion.values());
+          SModel[] models = MergeBackupUtil.loadZippedModels(backupFile, MergeVersion.values());
           if (models == null) {
             continue;
           }
@@ -109,7 +110,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
   }
 
   private Iterable<File> getBackupFiles(final Map<String, Object> _params) {
-    return ModelUtils.findZipFilesForModelFile(ReRunMergeFromBackup_Action.this.getModelFile(_params).getName());
+    return MergeBackupUtil.findZipFilesForModelFile(ReRunMergeFromBackup_Action.this.getModelFile(_params).getName());
   }
 
   private void doMerge(SModel mine, SModel base, SModel repository, final Map<String, Object> _params) {
@@ -121,8 +122,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
   }
 
   private String getHash(SModel model, final Map<String, Object> _params) {
-    byte[] currentBytes = ModelUtils.modelToBytes(model);
-    return ModelDigestUtil.hash(currentBytes);
+    return ModelDigestUtil.hash(ModelUtils.modelToBytes(model));
   }
 
   private IFile getModelFile(final Map<String, Object> _params) {
