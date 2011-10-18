@@ -38,7 +38,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -1788,9 +1787,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescriptor" file="IContainsStatementList_BehaviorDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IControlFlowInterrupter_BehaviorDescriptor" file="IControlFlowInterrupter_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.behavior.IExtractMethodAvailable_Behavior" file="IExtractMethodAvailable_Behavior.java">
@@ -2124,7 +2121,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -3445,7 +3441,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ITryCatchStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TryCatchStatement_Behavior" />
@@ -3468,7 +3463,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ITryCatchStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TryStatement_Behavior" />

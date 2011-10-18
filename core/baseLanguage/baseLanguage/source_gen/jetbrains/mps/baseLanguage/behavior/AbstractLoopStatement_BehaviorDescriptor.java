@@ -9,20 +9,12 @@ public abstract class AbstractLoopStatement_BehaviorDescriptor extends Statement
   public AbstractLoopStatement_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
-    return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
-  }
-
   public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
     return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);
   }
 
   public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return IContainsStatementList_Behavior.virtual_isStatementListCompactable_1237546012856(thisNode);
-  }
-
-  public boolean virtual_isClosure_3262277503800835439(SNode thisNode) {
-    return IStatementListContainer_Behavior.virtual_isClosure_3262277503800835439(thisNode);
   }
 
   @Override

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 
-public interface IContainsStatementList_BehaviorDescriptor extends IStatementListContainer_BehaviorDescriptor {
+public interface IContainsStatementList_BehaviorDescriptor {
   public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode);
   public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode);
 }
