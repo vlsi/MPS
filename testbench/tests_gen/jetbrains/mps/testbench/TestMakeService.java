@@ -33,9 +33,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.make.service.MakeTask;
-import com.intellij.openapi.progress.PerformInBackgroundOption;
-import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.make.service.CoreMakeTask;
 
 public class TestMakeService extends AbstractMakeService implements IMakeService {
   private IOperationContext context;
@@ -196,10 +194,9 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
       IScriptController ctl = TestMakeService.this.completeController(controller);
 
-      MakeTask task = new MakeTask(ProjectHelper.toIdeaProject(context.getProject()), taskName, scripts, taskName, clustRes, ctl, mh, PerformInBackgroundOption.DEAF);
-      ProgressManager.getInstance().run(task);
-
-      return task;
+      CoreMakeTask task = new CoreMakeTask(taskName, scripts, taskName, clustRes, ctl, mh);
+      task.run(new EmptyProgressMonitor());
+      return new FutureValue(task.getResult());
     }
   }
 }

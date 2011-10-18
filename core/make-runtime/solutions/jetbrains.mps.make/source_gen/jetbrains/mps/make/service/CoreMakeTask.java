@@ -23,7 +23,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.logging.LogEntry;
 
 public class CoreMakeTask {
-  private static Logger LOG = Logger.getLogger(MakeTask.class);
+  private static Logger LOG = Logger.getLogger(CoreMakeTask.class);
 
   private IResult myResult = null;
   protected final Iterable<IScript> myScripts;

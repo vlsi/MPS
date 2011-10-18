@@ -327,7 +327,7 @@
     <unitInfo nodeId="2298333944697025522" fileName="AbstractMakeService.java" startLine="27" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.make.service.AbstractMakeService$AbstractInputProcessor" />
   </root>
   <root nodeId="7184932954667864779">
-    <nodeInfo nodeId="5278788114521227636" fileName="CoreMakeTask.java" startLine="25" startPosition="27" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5278788114521227636" fileName="CoreMakeTask.java" startLine="25" startPosition="27" endLine="26" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2298333944697014183" fileName="CoreMakeTask.java" startLine="27" startPosition="0" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
     <nodeInfo nodeId="2298333944697014170" fileName="CoreMakeTask.java" startLine="28" startPosition="34" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScripts" />
     <nodeInfo nodeId="2298333944697014174" fileName="CoreMakeTask.java" startLine="29" startPosition="46" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScrName" />

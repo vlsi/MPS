@@ -1977,8 +1977,8 @@
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5278788114521252376">
         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8bce.~Logger" resolveInfo="Logger" />
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8bce.~Logger%dgetLogger(java%dlang%dClass)%cjetbrains%dmps%dlogging%dLogger" resolveInfo="getLogger" />
-        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5278788114521258103">
-          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="2298333944697013633" resolveInfo="MakeTask" />
+        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5256025380477436689">
+          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="7184932954667864779" resolveInfo="CoreMakeTask" />
         </node>
       </node>
     </node>
