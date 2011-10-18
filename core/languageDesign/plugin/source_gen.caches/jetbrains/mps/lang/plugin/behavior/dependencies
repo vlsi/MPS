@@ -202,6 +202,7 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.behavior.ActionParameterCondition_BehaviorDescriptor" file="ActionParameterCondition_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.plugin.behavior.ActionParameterDeclaration_Behavior" file="ActionParameterDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.util.HashSet" />
@@ -559,6 +560,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.CreateRunConfigBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.CreateRunConfigStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.CreateTabBlock_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.CustomCondition_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.DebugInfoInitializer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.DebugSessionCreator_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.DebuggableNodeItem_BehaviorDescriptor" />
@@ -636,6 +638,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.OrderReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.Order_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.OverridesDefaultBlock_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.Parameter_FunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ParameterizedShortcutChange_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ParametrizedExecuteActions_BehaviorDescriptor" />
@@ -666,6 +669,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PropertyRefExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PropertyRefType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ReportErrorStatement_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.RequiredCondition_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ResetEditorBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.RunConfigExecutionParameterDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.RunConfigMainNodeStatement_BehaviorDescriptor" />
@@ -971,6 +975,14 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.behavior.CustomCondition_BehaviorDescriptor" file="CustomCondition_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionParameterCondition_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.DebugInfoInitializer_BehaviorDescriptor" file="DebugInfoInitializer_BehaviorDescriptor.java">
@@ -1722,6 +1734,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.behavior.ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor" file="ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.Parameter_FunctionParameter_BehaviorDescriptor" file="Parameter_FunctionParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -2028,6 +2046,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.behavior.RequiredCondition_BehaviorDescriptor" file="RequiredCondition_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.ResetEditorBlock_BehaviorDescriptor" file="ResetEditorBlock_BehaviorDescriptor.java">

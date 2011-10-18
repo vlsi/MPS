@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="etdwo7qjkyi2zb05bdnqirt34qkn0st">
+<dependencies version="2" modelHash="-7tnrvzpf3miowwkmjysapfrm21a7z32">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -25,7 +25,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6wcb0wku66kauzfch9knq1rbzi73svq" />
   <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" hash="-9c911l2npebuokgm8bbxtkc6sgq03nh" />
   <dep model="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" hash="-7a9xa7cgfzr4dql7kvdro2uphd72hps" />
-  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-3hrxq7asativunhfvcwwvfq7viqix7t" />
+  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="7w0z62xpau88kvuom924jepvb94knai" />
   <dep model="r:00000000-0000-4000-0000-011c8959036a(jetbrains.mps.lang.plugin.generator.baseLanguage.template.util)" hash="hkehunqefl9fvwvalmay8yp0jh5xz1" />
   <dep model="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)" hash="5qa6c3atmzb0g0bo8rswkw9ltphp0jd" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="e4jnjguecprk4l1dr6a49h3ppl18pp4" />
@@ -75,7 +75,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1203086899006" name="GeneratedAction_Template" hash="-4mo4b5hruqjr21tscge0jorsaiafih9">
+  <source id="1203086899006" name="GeneratedAction_Template" hash="-6fo6ot52n1v5jbdlr746zg9xswj8waq">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1203094364055" name="MainGeneratedGroup" hash="1ledpi5che24bhucv45wpbttbpa12hf">
@@ -90,7 +90,7 @@
   <source id="1204474182628" name="reduce_ToolInstanceExpression" hash="-7hygosqbl06xd0i8odk0wsw9qsriiy1">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1204478979997" name="Actions" hash="1r9y4tp01s4ne2d97cv5vln08smbhb8">
+  <source id="1204478979997" name="Actions" hash="7d1zw6e08v54s6f3x7ziet18s1x7lt5">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1204479048161" name="EditorTabs" hash="-adjuh3ao6gxficjznm9cfgape0fy9j9">
@@ -102,7 +102,7 @@
   <source id="1206093424362" name="reduce_ActionParameterReferenceOperation" hash="dnfi6q8jijpjgnxzxjjdan8gc848i96">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1206096668944" name="switch_ActionParameterType" hash="-bwdrwnaqdwgws5y9qe7dgg7jifyd8eg">
+  <source id="1206096668944" name="switch_ActionParameterType" hash="5nrmfcdyasmzv4rgmyewp3w7iixkoqy">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1206097575894" name="case_nodesParameter" hash="-389g6ei4hyyt5k0wbjxi4o72765x429">
@@ -319,6 +319,12 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="2983858627857066456" name="reduce_ButtonCreator" hash="2xv0q0deqkt4405cbuml7y1d42xvbol">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="7266073704221015703" name="switch_ParameterCondition" hash="-llyubjv4rqn22rnhyvw7gj2op2krhq">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="7266073704221023814" name="reduce_CustomCondition" hash="-26dm828h06g5agkthqru9lsua4a6n2r">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
