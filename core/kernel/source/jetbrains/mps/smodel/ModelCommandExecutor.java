@@ -88,11 +88,11 @@ public interface ModelCommandExecutor {
 
   <T> T runWriteActionInCommand(Computable<T> c, Project project);
 
-  <T> T runWriteActionInCommand(Computable<T> c, @Nullable String name, @Nullable Object groupId, UndoConfirmationPolicy policy, Project project);
+  <T> T runWriteActionInCommand(Computable<T> c, @Nullable String name, @Nullable Object groupId, boolean requestUndoConfirmation, Project project);
 
   void runWriteActionInCommand(Runnable r, Project project);
 
-  void runWriteActionInCommand(Runnable r, @Nullable String name, @Nullable Object groupId, UndoConfirmationPolicy policy, Project project);
+  void runWriteActionInCommand(Runnable r, @Nullable String name, @Nullable Object groupId, boolean requestUndoConfirmation, Project project);
 
   /**
    * use runCommandInEDT
