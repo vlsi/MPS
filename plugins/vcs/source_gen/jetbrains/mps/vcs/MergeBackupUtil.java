@@ -21,8 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.UnzipUtil;
 import jetbrains.mps.project.MPSExtentions;
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -119,16 +118,8 @@ public class MergeBackupUtil {
         }
       }
       file = files[0];
-      ByteArrayOutputStream baos = new ByteArrayOutputStream();
-      FileInputStream fis = new FileInputStream(file);
-      while (true) {
-        int i = fis.read();
-        if (i == -1) {
-          break;
-        }
-        baos.write(i);
-      }
-      models[index] = ModelUtils.readModel(baos.toByteArray());
+      char[] fileText = com.intellij.openapi.util.io.FileUtil.loadFileText(file);
+      models[index] = ModelPersistence.readModel(new String(fileText), false);
       if (models[index] == null) {
         return null;
       }

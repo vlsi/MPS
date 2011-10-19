@@ -15,6 +15,7 @@ import java.io.IOException;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -119,18 +120,11 @@ public class VcsHelper {
   }
 
   private static boolean openDiffDialog(IFile modelFile, final SModel inMemory) {
-    try {
-      SModel onDisk = ModelUtils.readModel(new File(modelFile.getPath()));
-      if (onDisk == null) {
-        onDisk = new SModel(inMemory.getSModelReference());
-      }
-      return VcsHelper.showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
-    } catch (IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error("", e);
-      }
+    SModel onDisk = ModelPersistence.readModel(modelFile, false);
+    if (onDisk == null) {
+      onDisk = new SModel(inMemory.getSModelReference());
     }
-    return true;
+    return VcsHelper.showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
   }
 
   private static boolean showDiffDialog(final SModel diskModel, final SModel memoryModel, IFile modelFile, final Project project) {

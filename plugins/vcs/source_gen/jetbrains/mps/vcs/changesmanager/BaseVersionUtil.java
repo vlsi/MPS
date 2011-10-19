@@ -16,17 +16,17 @@ import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.vcs.VcsException;
 
-public class VCSUtils {
-  protected static Log log = LogFactory.getLog(VCSUtils.class);
+public class BaseVersionUtil {
+  protected static Log log = LogFactory.getLog(BaseVersionUtil.class);
 
-  private VCSUtils() {
+  private BaseVersionUtil() {
   }
 
   @Nullable
   public static String getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
     if (ModelAccess.instance().canRead()) {
       if (log.isErrorEnabled()) {
-        log.error("VCSUtils.getBaseVersionContent() is invoked from read action: possible deadlock", new IllegalStateException());
+        log.error("BaseVersionUtil.getBaseVersionContent() is invoked from read action: possible deadlock", new IllegalStateException());
       }
     }
     try {

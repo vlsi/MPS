@@ -8,7 +8,8 @@ import java.io.File;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.ModelUtils;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vfs.FileSystem;
 import java.io.IOException;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.vcs.diff.merge.MergeContext;
@@ -17,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.ModelUtils;
 import java.io.OutputStream;
 import jetbrains.mps.util.FileUtil;
 
@@ -41,15 +43,15 @@ import jetbrains.mps.util.FileUtil;
         if (log.isInfoEnabled()) {
           log.info("Reading models...");
         }
-        baseModel = ModelUtils.readModel(baseFile);
+        baseModel = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(baseFile.getAbsolutePath()), false);
         if (baseModel == null) {
           throw new Exception("Could not read base model");
         }
-        localModel = ModelUtils.readModel(localFile);
+        localModel = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(localFile.getAbsolutePath()), false);
         if (localModel == null) {
           throw new Exception("Could not read local model");
         }
-        latestModel = ModelUtils.readModel(latestFile);
+        latestModel = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(latestFile.getAbsolutePath()), false);
         if (latestModel == null) {
           throw new Exception("Could not read latest model");
         }

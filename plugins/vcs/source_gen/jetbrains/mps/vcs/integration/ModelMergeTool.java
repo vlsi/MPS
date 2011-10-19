@@ -15,9 +15,10 @@ import java.io.File;
 import jetbrains.mps.vcs.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.ModelUtils;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.ui.Messages;
@@ -60,9 +61,9 @@ public class ModelMergeTool extends MergeTool {
       }
       File backupFile = MergeBackupUtil.zipModel(request.getContents(), file);
       DiffContent[] contents = mrequest.getContents();
-      final SModel baseModel = ModelUtils.readModel(contents[ORIGINAL].getDocument().getText());
-      final SModel mineModel = ModelUtils.readModel(contents[CURRENT].getBytes());
-      final SModel newModel = ModelUtils.readModel(contents[LAST_REVISION].getBytes());
+      final SModel baseModel = ModelPersistence.readModel(contents[ORIGINAL].getDocument().getText(), false);
+      final SModel mineModel = ModelPersistence.readModel(new String(contents[CURRENT].getBytes(), "UTF-8"), false);
+      final SModel newModel = ModelPersistence.readModel(new String(contents[LAST_REVISION].getBytes(), "UTF-8"), false);
       if (baseModel == null || mineModel == null || newModel == null) {
         if (log.isErrorEnabled()) {
           log.error("Couldn't read model, invoking text merge");

@@ -67,9 +67,9 @@ public class TestMergeDialog {
 
       resultFile = args[1];
     } else if (args.length == 4) {
-      models[0] = ModelUtils.readModel(new File(args[0]));
-      models[1] = ModelUtils.readModel(new File(args[1]));
-      models[2] = ModelUtils.readModel(new File(args[2]));
+      models[0] = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(args[0]), false);
+      models[1] = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(args[1]), false);
+      models[2] = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(args[2]), false);
 
       resultFile = args[3];
     } else {

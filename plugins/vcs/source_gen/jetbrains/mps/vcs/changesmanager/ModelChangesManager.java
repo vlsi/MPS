@@ -53,7 +53,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import jetbrains.mps.vcs.ModelUtils;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.diff.DiffBuilder;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.SNodePointer;
@@ -626,7 +626,7 @@ __switch__:
       return;
     }
     try {
-      String content = VCSUtils.getBaseVersionContent(modelVFile, myProject);
+      String content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
       if (content == null && status != FileStatus.NOT_CHANGED && status != FileStatus.UNKNOWN) {
         if (log.isErrorEnabled()) {
           log.error("Base version content is null while file status is " + status);
@@ -635,9 +635,10 @@ __switch__:
       if (content == null) {
         return;
       }
-      myBaseVersionModel = ModelUtils.readModel(content);
-      // TODO base version model can be unreadable 
-      assert myBaseVersionModel == null;
+      myBaseVersionModel = ModelPersistence.readModel(content, false);
+      if (myBaseVersionModel == null) {
+        return;
+      }
       final Wrappers._T<List<OldChange>> changeList = new Wrappers._T<List<OldChange>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

@@ -32,7 +32,7 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.diff.DocumentContent;
 import com.intellij.openapi.diff.FileContent;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.vcs.ModelUtils;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 
 public class ModelDiffTool implements DiffTool {
   protected static Log log = LogFactory.getLog(ModelDiffTool.class);
@@ -43,8 +43,8 @@ public class ModelDiffTool implements DiffTool {
   public void show(final DiffRequest request) {
     DiffContent[] contents = request.getContents();
     try {
-      final SModel oldModel = ModelDiffTool.readModel(contents[0]);
-      final SModel newModel = ModelDiffTool.readModel(contents[1]);
+      final SModel oldModel = readModel(contents[0]);
+      final SModel newModel = readModel(contents[1]);
       if (oldModel == null || newModel == null) {
         if (log.isErrorEnabled()) {
           log.error("Can't read models");
@@ -116,7 +116,7 @@ public class ModelDiffTool implements DiffTool {
         });
       }
     }
-    return ModelUtils.readModel(content.getBytes());
+    return ModelPersistence.readModel(new String(content.getBytes(), "UTF-8"), false);
   }
 
   public static boolean isNewDiffEnabled() {

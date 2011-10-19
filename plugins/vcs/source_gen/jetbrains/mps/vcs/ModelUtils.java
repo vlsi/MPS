@@ -14,16 +14,6 @@ import java.io.ByteArrayOutputStream;
 import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
-import org.xml.sax.InputSource;
-import java.io.ByteArrayInputStream;
-import java.io.StringReader;
-import java.io.File;
-import com.intellij.openapi.util.io.FileUtil;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
-import jetbrains.mps.smodel.ModelLoadingState;
 
 public class ModelUtils {
   protected static Log log = LogFactory.getLog(ModelUtils.class);
@@ -62,64 +52,5 @@ public class ModelUtils {
         }
       }
     });
-  }
-
-  @Nullable
-  public static SModel readModel(@NotNull final byte[] bytes) throws IOException {
-    return (bytes.length == 0 ?
-      null :
-      readModel(new ModelUtils.InputSourceFactory() {
-        public InputSource create() throws IOException {
-          return new InputSource(new ByteArrayInputStream(bytes));
-        }
-      })
-    );
-  }
-
-  @Nullable
-  public static SModel readModel(@NotNull final String content) throws IOException {
-    return (content.isEmpty() ?
-      null :
-      readModel(new ModelUtils.InputSourceFactory() {
-        public InputSource create() throws IOException {
-          return new InputSource(new StringReader(content));
-        }
-      })
-    );
-  }
-
-  @Nullable
-  public static SModel readModel(final File file) throws IOException {
-    return readModel(FileUtil.loadFileBytes(file));
-  }
-
-  @Nullable
-  private static SModel readModel(@NotNull final ModelUtils.InputSourceFactory inputSourceFactory) throws IOException {
-    final IOException[] ioException = new IOException[1];
-    final SModel[] model = new SModel[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        try {
-          DescriptorLoadResult loadResult = ModelPersistence.loadDescriptor(inputSourceFactory.create());
-          BaseSModelDescriptor.ModelLoadResult result = ModelPersistence.readModel(loadResult.getHeader(), inputSourceFactory.create(), ModelLoadingState.FULLY_LOADED);
-          if (result.getState() != ModelLoadingState.FULLY_LOADED) {
-            model[0] = null;
-          } else {
-            model[0] = result.getModel();
-          }
-        } catch (IOException e) {
-          ioException[0] = e;
-        }
-      }
-    });
-    if (ioException[0] != null) {
-      throw ioException[0];
-    } else {
-      return model[0];
-    }
-  }
-
-  private static interface InputSourceFactory {
-    public InputSource create() throws IOException;
   }
 }

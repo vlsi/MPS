@@ -64,6 +64,7 @@
   <import index="z8sa" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" version="-1" />
   <import index="ven7" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="lguk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.leftHighlighter(MPS.Classpath/jetbrains.mps.nodeEditor.leftHighlighter@java_stub)" version="-1" />
+  <import index="fy7j" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.persistence.def(MPS.Classpath/jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -117,7 +118,7 @@
       <property name="name" nameId="tpck.1169194664001" value="SModelUtils" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2253323551303625635">
-      <property name="name" nameId="tpck.1169194664001" value="VCSUtils" />
+      <property name="name" nameId="tpck.1169194664001" value="BaseVersionUtil" />
     </node>
   </roots>
   <root id="23553604208246606">
@@ -5940,7 +5941,7 @@
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1281598945698463545" />
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1281598945698463546">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3090835573635150394" resolveInfo="getBaseVersionContent" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="2253323551303625635" resolveInfo="VCSUtils" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="2253323551303625635" resolveInfo="BaseVersionUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1281598945698463547">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1281598945698463491" resolveInfo="modelVFile" />
                   </node>
@@ -6009,24 +6010,25 @@
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3531050000760639014">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1010818934104781335" resolveInfo="myBaseVersionModel" />
                 </node>
-                <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3613324658897909616">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="rtk5.3613324658897713898" resolveInfo="ModelUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.3613324658897714248" resolveInfo="readModel" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3613324658897909617">
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2445003365367298704">
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fy7j.~ModelPersistence" resolveInfo="ModelPersistence" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fy7j.~ModelPersistence%dreadModel(java%dlang%dString,boolean)%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="readModel" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2445003365367298706">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1281598945698463544" resolveInfo="content" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2445003365367298710">
+                    <property name="value" nameId="tpee.1068580123138" value="false" />
                   </node>
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="2445003365367122048">
-              <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="2445003365367122049">
-                <property name="text" nameId="tpee.6329021646629104958" value="TODO base version model can be unreadable" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="2445003365367298424">
+              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2445003365367298425">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2445003365367298433" />
               </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.AssertStatement" typeId="tpee.1160998861373" id="2445003365367122040">
-              <node role="condition" roleId="tpee.1160998896846" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="2445003365367122043">
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2445003365367122046" />
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2445003365367122042">
+              <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="2445003365367298429">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2445003365367298432" />
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2445003365367298428">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1010818934104781335" resolveInfo="myBaseVersionModel" />
                 </node>
               </node>
@@ -28909,7 +28911,7 @@
               <property name="severity" nameId="tpib.1167245565795" value="error" />
               <property name="hasException" nameId="tpib.1167228628751" value="true" />
               <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9197004340779183131">
-                <property name="value" nameId="tpee.1070475926801" value="VCSUtils.getBaseVersionContent() is invoked from read action: possible deadlock" />
+                <property name="value" nameId="tpee.1070475926801" value="BaseVersionUtil.getBaseVersionContent() is invoked from read action: possible deadlock" />
               </node>
               <node role="exception" roleId="tpib.1167227561449" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9197004340779183133">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9197004340779183135">
