@@ -58,7 +58,7 @@ public class MPSVcsManager implements ProjectComponent {
     myChangeListManager = clmanager;
   }
 
-  /*package*/ boolean isInConflict(final VirtualFile vfile) {
+  public boolean isInConflict(final VirtualFile vfile) {
     AbstractVcs vcs = myManager.getVcsFor(vfile);
     if (vcs == null) {
       return false;
