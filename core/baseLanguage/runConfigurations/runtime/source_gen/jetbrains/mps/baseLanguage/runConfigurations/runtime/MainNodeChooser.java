@@ -11,6 +11,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -46,7 +48,7 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
         module.value = SNodeOperations.getModel(targetConcept).getModelDescriptor().getModule();
       }
     });
-    myScope = new GlobalFilteredScope() {
+    myScope = new GlobalFilteredScope(MPSModuleRepository.getInstance(), SModelRepository.getInstance()) {
       @Nullable
       @Override
       protected Iterable<IModule> getRequiredModules() {

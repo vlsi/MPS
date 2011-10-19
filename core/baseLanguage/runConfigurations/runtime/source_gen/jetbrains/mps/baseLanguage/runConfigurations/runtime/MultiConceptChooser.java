@@ -18,6 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -62,7 +64,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
         return module.value;
       }
     });
-    myScope = new GlobalFilteredScope() {
+    myScope = new GlobalFilteredScope(MPSModuleRepository.getInstance(), SModelRepository.getInstance()) {
       @Nullable
       @Override
       protected Iterable<IModule> getRequiredModules() {

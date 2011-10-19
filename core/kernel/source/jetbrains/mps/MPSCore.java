@@ -24,6 +24,8 @@ import jetbrains.mps.findUsages.ProxyFindUsagesManager;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -66,6 +68,8 @@ public class MPSCore extends ComponentPlugin {
     myModuleRepository = init(new MPSModuleRepository());
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
 
+    init(new GlobalScope(myModuleRepository, myModelRepository));
+    init(new GlobalScopeMinusTransient(myModuleRepository, myModelRepository));
     init(new AuxilaryRuntimeModel(myModelRepository));
     init(new ImmatureReferences(myModelRepository));
     init(new CommandEventsManager(myModelRepository, myGlobalSModelEventsManager));
