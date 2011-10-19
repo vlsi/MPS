@@ -422,14 +422,28 @@ public class ModelPersistence {
     return result;
   }
 
+  // TODO replace nullable with ModelFileReadException
+  @Nullable
   public static SModel readModel(@NotNull IFile file, boolean onlyRoots) {
     SModelHeader header = loadDescriptor(file).getHeader();
-    return readModel(header, file, onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED).getModel();
+    if (header.getUID() == null) {
+      return null;
+    }
+    ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
+    ModelLoadResult result = readModel(header, file, state);
+    return result.getState() != state ? null : result.getModel();
   }
 
+  // TODO replace nullable with ModelFileReadException
+  @Nullable
   public static SModel readModel(@NotNull String content, boolean onlyRoots) {
     SModelHeader header = loadDescriptor(new InputSource(new StringReader(content))).getHeader();
-    return readModel(header, new InputSource(new StringReader(content)), onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED).getModel();
+    if (header.getUID() == null) {
+      return null;
+    }
+    ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
+    ModelLoadResult result = readModel(header, new InputSource(new StringReader(content)), state);
+    return result.getState() != state ? null : result.getModel();
   }
 
   // TODO deprecate metadata in MPS 3.0
