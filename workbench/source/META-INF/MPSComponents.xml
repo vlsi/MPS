@@ -69,6 +69,10 @@
 
   <application-components>
     <component>
+      <implementation-class>jetbrains.mps.ide.project.WorkbenchPathMacros</implementation-class>
+    </component>
+
+    <component>
       <interface-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</interface-class>
       <implementation-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</implementation-class>
     </component>
