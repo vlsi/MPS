@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.MergeBackupUtil;
 import jetbrains.mps.vcs.MergeVersion;
-import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;

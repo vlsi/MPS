@@ -21,7 +21,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
 import jetbrains.mps.vcs.MergeBackupUtil;
 import jetbrains.mps.vcs.MergeVersion;
-import jetbrains.mps.vcs.ModelUtils;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import com.intellij.openapi.diff.MergeRequest;
 import com.intellij.openapi.diff.DiffRequestFactory;
 import com.intellij.openapi.diff.DiffManager;
@@ -92,7 +92,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
           String mine = modelsAsText[MergeVersion.MINE.ordinal()];
           String base = modelsAsText[MergeVersion.BASE.ordinal()];
           String repository = modelsAsText[MergeVersion.REPOSITORY.ordinal()];
-          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelUtils.modelToString(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel()), mine, _params);
+          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel()), mine, _params);
           if (mine == null) {
             return;
           }

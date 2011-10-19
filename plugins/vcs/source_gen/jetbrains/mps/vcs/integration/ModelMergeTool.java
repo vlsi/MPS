@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.ui.Messages;
@@ -29,6 +28,8 @@ import jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog;
 import java.io.IOException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 import java.lang.reflect.Method;
 
@@ -81,9 +82,9 @@ public class ModelMergeTool extends MergeTool {
         });
         dialog.showDialog();
         if (dialog.getResultModel() != null) {
-          byte[] bytes = ModelUtils.modelToBytes(dialog.getResultModel());
-          resolved(mrequest, bytes);
-          MergeBackupUtil.packMergeResult(backupFile, file.getName(), bytes);
+          String asString = ModelPersistence.modelToString(dialog.getResultModel());
+          resolved(mrequest, asString);
+          MergeBackupUtil.packMergeResult(backupFile, file.getName(), asString);
         }
       } else {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(baseModel.getSModelReference());
@@ -114,7 +115,7 @@ public class ModelMergeTool extends MergeTool {
         });
         dialog.showDialog();
         if (dialog.getResultModel() != null) {
-          resolved(mrequest, ModelUtils.modelToBytes(dialog.getResultModel()));
+          resolved(mrequest, ModelPersistence.modelToString(dialog.getResultModel()));
         }
       }
     } catch (IOException e) {
@@ -130,9 +131,20 @@ public class ModelMergeTool extends MergeTool {
     return !("false".equals(System.getProperty("mps.newmerge")));
   }
 
-  private static void resolved(MergeRequestImpl req, byte[] result) {
+  private static void resolved(MergeRequestImpl req, final String result) {
     req.setResult(DialogWrapper.OK_EXIT_CODE);
-    ModelUtils.replaceModelWithBytes(getFileFromMergeRequest(req), result);
+    final VirtualFile modelFile = getFileFromMergeRequest(req);
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        try {
+          modelFile.setBinaryContent(result.getBytes(FileUtil.DEFAULT_CHARSET));
+        } catch (IOException e) {
+          if (log.isErrorEnabled()) {
+            log.error("", e);
+          }
+        }
+      }
+    });
   }
 
   @Nullable

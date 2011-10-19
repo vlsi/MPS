@@ -108,7 +108,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
 
   private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
     File tmp = FileUtil.createTmpDir();
-    MergeBackupUtil.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
+    MergeBackupUtil.writeContentsToFile(ModelPersistence.modelToString(inMemory), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
     if (modelFile.exists()) {
       com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
     }

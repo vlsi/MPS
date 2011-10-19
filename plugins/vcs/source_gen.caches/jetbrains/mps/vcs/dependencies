@@ -31,7 +31,6 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.MergeBackupUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.ModelUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.SimpleDiffRequest" />
@@ -101,10 +100,8 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.util.io.ZipUtil" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.io.FilenameFilter" />
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -127,23 +124,6 @@
   <dependency className="jetbrains.mps.vcs.MergeVersion" file="MergeVersion.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.vcs.ModelVersion" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.ModelUtils" file="ModelUtils.java">
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.UnsupportedEncodingException" />
-    <classNode dependClassName="java.lang.AssertionError" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="org.jdom.Document" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.ModelVersion" file="ModelVersion.java">
     <classNode dependClassName="java.lang.String" />

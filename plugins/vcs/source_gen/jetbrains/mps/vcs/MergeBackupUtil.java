@@ -10,8 +10,6 @@ import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.integration.ModelMergeTool;
-import java.io.OutputStream;
-import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.intellij.util.io.ZipUtil;
@@ -33,7 +31,7 @@ public class MergeBackupUtil {
   }
 
   public static void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {
-    writeContentsToFile(contents.getBytes(), file.getName(), tmpDir, suffix);
+    writeContentsToFile(new String(contents.getBytes(), FileUtil.DEFAULT_CHARSET), file.getName(), tmpDir, suffix);
   }
 
   public static File zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
@@ -48,12 +46,9 @@ public class MergeBackupUtil {
     return zipfile;
   }
 
-  public static void writeContentsToFile(byte[] contents, String name, File tmpDir, String suffix) throws IOException {
-    File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + name + "." + suffix);
-    baseFile.createNewFile();
-    OutputStream stream = new FileOutputStream(baseFile);
-    stream.write(contents);
-    stream.close();
+  public static void writeContentsToFile(String contents, String name, File tmpDir, String suffix) throws IOException {
+    File file = new File(tmpDir.getAbsolutePath() + File.separator + name + "." + suffix);
+    FileUtil.writeFile(file, contents);
   }
 
   public static File chooseZipFileForModelFile(String modelFileName) {
@@ -68,12 +63,12 @@ public class MergeBackupUtil {
     return zipfile;
   }
 
-  public static void packMergeResult(File file, String fileName, byte[] resultContent) {
+  public static void packMergeResult(File file, String fileName, String resultContent) {
     try {
       File tmp = FileUtil.createTmpDir();
       ZipUtil.extract(file, tmp, null);
       //  copy merge result 
-      FileUtil.write(new File(tmp + File.separator + fileName + ".result"), resultContent);
+      FileUtil.writeFile(new File(tmp + File.separator + fileName + ".result"), resultContent);
       //  copy logfiles 
       File logsDir = new File(PathManager.getLogPath());
       File[] logfiles = logsDir.listFiles(new FilenameFilter() {

@@ -18,8 +18,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vcs.ModelUtils;
-import java.io.OutputStream;
+import java.io.Writer;
+import java.io.OutputStreamWriter;
 import jetbrains.mps.util.FileUtil;
 
 /*package*/ class ModelMerger extends SimpleMerger {
@@ -108,14 +108,14 @@ import jetbrains.mps.util.FileUtil;
               log.info(String.format("%s: node id duplication detected, should merge in UI.", modelFqName));
             }
           } else {
-            byte[] bytes = ModelUtils.modelToBytes(mergeContext.getResultModel());
+            String resultString = ModelPersistence.modelToString(mergeContext.getResultModel());
             if (log.isInfoEnabled()) {
               log.info(String.format("%s: merged successfully.", modelFqName));
             }
-            OutputStream out = null;
+            Writer out = null;
             try {
-              out = getResultStream(localFile);
-              out.write(bytes);
+              out = new OutputStreamWriter(getResultStream(localFile), FileUtil.DEFAULT_CHARSET);
+              out.write(resultString);
               return MERGED;
             } catch (IOException e) {
               e.printStackTrace();
