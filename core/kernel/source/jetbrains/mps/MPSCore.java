@@ -47,6 +47,7 @@ public class MPSCore extends ComponentPlugin {
   private static MPSCore ourInstance = new MPSCore();
 
   private boolean testMode = false;
+  private boolean mergeDriverMode = false;
 
   private MPSCore() {
   }
@@ -126,6 +127,10 @@ public class MPSCore extends ComponentPlugin {
   }
 
   public boolean isMergeDriverMode() {
-    return SModelRepository.getInstance() == null;
+    return mergeDriverMode;
+  }
+
+  public void setMergeDriverMode(boolean mergeDriverMode) {
+    this.mergeDriverMode = mergeDriverMode;
   }
 }

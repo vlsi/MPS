@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.mergedriver;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.io.File;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelUtils;
@@ -28,6 +29,7 @@ import jetbrains.mps.util.FileUtil;
   @Override
   protected int mergeFiles(File baseFile, File localFile, File latestFile) {
     System.setProperty("mps.playRefactorings", "false");
+    MPSCore.getInstance().setMergeDriverMode(true);
     try {
       MergerRoleIdsHandler roleIdsHandler = new MergerRoleIdsHandler();
       RoleIdsComponent.setHandler(roleIdsHandler);
