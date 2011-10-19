@@ -56,7 +56,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     return mySourceTimestamp;
   }
 
-  protected void updateDiskTimestamp() {
+  public void updateDiskTimestamp() {
     mySourceTimestamp = mySource.getTimestamp();
   }
 

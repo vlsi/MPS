@@ -19,6 +19,7 @@ import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
 import com.intellij.openapi.vcs.VcsListener;
@@ -82,8 +83,8 @@ public class MPSVcsManager implements ProjectComponent {
 
   public void projectOpened() {
     DiskMemoryConflictResolver.setResolver(new DiskMemoryConflictResolver() {
-      public boolean resolveDiskMemoryConflict(IFile file, SModel model) {
-        return VcsHelper.resolveDiskMemoryConflict(file, model);
+      public void resolveDiskMemoryConflict(IFile file, SModel model, DefaultSModelDescriptor modelDescriptor) {
+        VcsHelper.resolveDiskMemoryConflict(file, model, modelDescriptor);
       }
     });
     if (ApplicationManager.getApplication().isUnitTestMode() || myProject.isDefault()) {

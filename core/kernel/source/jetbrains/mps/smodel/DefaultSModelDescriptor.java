@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
@@ -364,25 +362,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public void resolveDiskConflict() {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        final boolean needSave = DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getModelFile(), getSModel());
-        if (needSave) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              updateDiskTimestamp();
-              save();
-            }
-          });
-        } else {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              reloadFromDisk();
-            }
-          });
-        }
-      }
-    }, ModalityState.NON_MODAL);
+    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getModelFile(), getSModel(), this);
   }
 
   public String toString() {

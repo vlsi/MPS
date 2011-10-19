@@ -23,12 +23,11 @@ import jetbrains.mps.vfs.IFile;
  */
 public abstract class DiskMemoryConflictResolver {
   // TODO replace with extension point & interface
-  public abstract boolean resolveDiskMemoryConflict(IFile modelFile, SModel model);
+  public abstract void resolveDiskMemoryConflict(IFile modelFile, SModel model, DefaultSModelDescriptor modelDescriptor);
 
   private static DiskMemoryConflictResolver ourResolver = new DiskMemoryConflictResolver() {
     @Override
-    public boolean resolveDiskMemoryConflict(IFile modelFile, SModel model) {
-      return true;
+    public void resolveDiskMemoryConflict(IFile modelFile, SModel model, DefaultSModelDescriptor modelDescriptor) {
     }
   };
 
