@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.logging;
 
-import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Level;
 
@@ -239,7 +238,7 @@ public class Logger {
   }
 
   public void assertInCommand() {
-    assertLog(CommandProcessor.getInstance().getCurrentCommand() != null, "This action must be performed in command");
+    assertLog(ModelAccess.instance().isInsideCommand(), "This action must be performed in command");
   }
 }
 
