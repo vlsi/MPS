@@ -187,13 +187,8 @@ public class TestModule extends AbstractModule {
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
       SModel result;
-      try {
-        String modelContent = JDOMUtil.asString(document);
-        result = ModelPersistence.readModel(modelContent, false);
-      } catch(IOException e) {
-        LOG.error(e);
-        result = new StubModel(getSModelReference());
-      }
+      String modelContent = JDOMUtil.asString(document);
+      result = ModelPersistence.readModel(modelContent, false);
       return new ModelLoadResult(result, ModelLoadingState.FULLY_LOADED);
     }
 

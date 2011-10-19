@@ -106,10 +106,14 @@ public class JDOMUtil {
     return saxBuilder.build(reader);
   }
 
-  public static String asString(Document doc) throws IOException {
+  public static String asString(Document doc) {
     StringWriter writer = new StringWriter();
-
-    writeDocument(doc, writer);
+    try {
+      writeDocument(doc, writer);
+    } catch (IOException e) {
+      // This is hardly possible
+      LOG.error(e);
+    }
     return writer.toString();
   }
 
