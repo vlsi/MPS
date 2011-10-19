@@ -64,6 +64,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   public void setModule(IModule module) {
     myModule = module;
+    myViewer.setTraces(null);
   }
 
   public void setTransitive(boolean transitive) {

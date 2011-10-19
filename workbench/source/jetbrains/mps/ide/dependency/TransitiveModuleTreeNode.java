@@ -60,5 +60,6 @@ public class TransitiveModuleTreeNode extends ModuleTreeNode {
     for (IModule depends : dependenciesList) {
       add(new DependencyTreeNode(depends, getOperationContext()));
     }
+    myInitialized = true;
   }
 }
