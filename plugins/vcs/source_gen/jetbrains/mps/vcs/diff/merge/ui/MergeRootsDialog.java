@@ -282,7 +282,7 @@ public class MergeRootsDialog extends BaseDialog {
         myModelsDialog.restoreState(myStateToRestore);
       }
     };
-    if (project == null) {
+    if (project != null) {
       ModelAccess.instance().runCommandInEDT(r, project);
     } else {
       ModelAccess.instance().runWriteActionInCommand(r);
