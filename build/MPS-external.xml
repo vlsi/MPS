@@ -185,7 +185,7 @@
       <fileset dir="${mps_home}/core/baseLanguage/runConfigurations/runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/core/languageDesign/test/classes" />
+      <fileset dir="${mps_home}/core/languageDesign/test/classes_gen" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />

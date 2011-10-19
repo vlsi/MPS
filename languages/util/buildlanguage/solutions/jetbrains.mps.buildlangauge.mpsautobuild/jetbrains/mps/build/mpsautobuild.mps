@@ -2675,8 +2675,8 @@
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3215189890787254358">
               <property name="path" nameId="tps4.1220974398640" value="test" />
             </node>
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3215189890787254360">
-              <property name="path" nameId="tps4.1220974398640" value="classes" />
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1896512888271746912">
+              <property name="path" nameId="tps4.1220974398640" value="classes_gen" />
             </node>
           </node>
         </node>

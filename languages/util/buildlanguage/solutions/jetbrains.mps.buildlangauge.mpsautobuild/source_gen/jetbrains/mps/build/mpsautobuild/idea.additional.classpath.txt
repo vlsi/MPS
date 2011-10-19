@@ -22,7 +22,7 @@ core/typesystemIntegration/classes
 core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen
 core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen
 core/baseLanguage/runConfigurations/runtime/classes
-core/languageDesign/test/classes
+core/languageDesign/test/classes_gen
 workbench/classes
 languages/util/runConfigurations/classes
 workbench/typesystemUi/classes
