@@ -3986,6 +3986,7 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/intentions-runtime/classes" />
     <path path="${base_dir}/core/kernel/classes" />
+    <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5915,6 +5916,7 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/intentions-runtime/classes" />
     <path path="${base_dir}/core/kernel/classes" />
+    <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
