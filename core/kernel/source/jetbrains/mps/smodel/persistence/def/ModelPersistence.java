@@ -457,6 +457,15 @@ public class ModelPersistence {
     return result.getState() != state ? null : result.getModel();
   }
 
+  public static String modelToString(@NotNull final SModel model) {
+    return JDOMUtil.asString(ModelAccess.instance().runReadAction(new Computable<Document>() {
+      @Override
+      public Document compute() {
+        return saveModel(model);
+      }
+    }));
+  }
+
   // TODO deprecate metadata in MPS 3.0
 
   public static void saveMetadata(IFile modelFile, @NotNull Map<String, String> metadata) {
