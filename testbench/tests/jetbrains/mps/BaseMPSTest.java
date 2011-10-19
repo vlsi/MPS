@@ -15,7 +15,6 @@
  */
 package jetbrains.mps;
 
-import jetbrains.mps.project.TestResult;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.smodel.ModelAccess;
 import junit.framework.TestCase;
