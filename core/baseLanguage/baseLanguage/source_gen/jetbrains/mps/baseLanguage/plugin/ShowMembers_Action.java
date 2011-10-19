@@ -50,6 +50,10 @@ public class ShowMembers_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
+      return false;
+    }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
@@ -57,10 +61,6 @@ public class ShowMembers_Action extends GeneratedAction {
       MapSequence.fromMap(_params).put("node", node);
     }
     if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));

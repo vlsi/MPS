@@ -67,15 +67,6 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    {
-      SNode node = event.getData(MPSDataKeys.NODE);
-      if (node != null) {
-      }
-      MapSequence.fromMap(_params).put("node", node);
-    }
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
@@ -102,6 +93,15 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
     }
     MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
+      return false;
+    }
+    {
+      SNode node = event.getData(MPSDataKeys.NODE);
+      if (node != null) {
+      }
+      MapSequence.fromMap(_params).put("node", node);
+    }
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;

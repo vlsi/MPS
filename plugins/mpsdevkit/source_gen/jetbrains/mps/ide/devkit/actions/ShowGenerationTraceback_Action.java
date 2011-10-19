@@ -63,6 +63,10 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
+      return false;
+    }
     {
       List<SNode> nodes = event.getData(MPSDataKeys.NODES);
       boolean error = false;
@@ -75,10 +79,6 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
       }
     }
     if (MapSequence.fromMap(_params).get("nodes") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
