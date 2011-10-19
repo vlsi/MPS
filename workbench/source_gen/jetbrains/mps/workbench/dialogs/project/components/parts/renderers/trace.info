@@ -14,11 +14,11 @@
       <varInfo nodeId="1560298786499489438" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499489415" fileName="PathRenderer.java" startLine="13" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1560298786499489426" varName="cellHasFocus" />
       <varInfo nodeId="1560298786499489422" varName="index" />
       <varInfo nodeId="1560298786499489424" varName="isSelected" />
-      <varInfo nodeId="1560298786499489426" varName="cellHasFocus" />
-      <varInfo nodeId="1560298786499489420" varName="value" />
       <varInfo nodeId="1560298786499489418" varName="list" />
+      <varInfo nodeId="1560298786499489420" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499489409" fileName="PathRenderer.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer" />
   </root>
@@ -38,20 +38,20 @@
     <scopeInfo nodeId="1560298786499489483" fileName="RuleTypeRenderer.java" startLine="17" startPosition="29" endLine="17" endPosition="29" />
     <scopeInfo nodeId="1560298786499489481" fileName="RuleTypeRenderer.java" startLine="16" startPosition="64" endLine="18" endPosition="3" />
     <scopeInfo nodeId="1560298786499489499" fileName="RuleTypeRenderer.java" startLine="21" startPosition="137" endLine="24" endPosition="62">
-      <varInfo nodeId="1560298786499489510" varName="comp" />
       <varInfo nodeId="1560298786499489501" varName="caption" />
+      <varInfo nodeId="1560298786499489510" varName="comp" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499489530" fileName="RuleTypeRenderer.java" startLine="27" startPosition="73" endLine="33" endPosition="21">
       <varInfo nodeId="1560298786499489532" varName="compPanel" />
       <varInfo nodeId="1560298786499489539" varName="constraints" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499489484" fileName="RuleTypeRenderer.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="1560298786499489491" varName="isSelected" />
       <varInfo nodeId="1560298786499489497" varName="column" />
-      <varInfo nodeId="1560298786499489489" varName="value" />
-      <varInfo nodeId="1560298786499489487" varName="table" />
       <varInfo nodeId="1560298786499489493" varName="hasFocus" />
+      <varInfo nodeId="1560298786499489491" varName="isSelected" />
       <varInfo nodeId="1560298786499489495" varName="row" />
+      <varInfo nodeId="1560298786499489487" varName="table" />
+      <varInfo nodeId="1560298786499489489" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499489525" fileName="RuleTypeRenderer.java" startLine="26" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1560298786499489528" varName="comp" />
@@ -88,17 +88,17 @@
       <varInfo nodeId="1560298786499490159" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490128" fileName="ProjectPathRenderer.java" startLine="20" startPosition="134" endLine="37" endPosition="18">
-      <varInfo nodeId="1560298786499490150" varName="isContained" />
-      <varInfo nodeId="1560298786499490136" varName="result" />
       <varInfo nodeId="1560298786499490174" varName="file" />
+      <varInfo nodeId="1560298786499490150" varName="isContained" />
       <varInfo nodeId="1560298786499490130" varName="path" />
+      <varInfo nodeId="1560298786499490136" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490115" fileName="ProjectPathRenderer.java" startLine="19" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1560298786499490126" varName="cellHasFocus" />
       <varInfo nodeId="1560298786499490122" varName="index" />
       <varInfo nodeId="1560298786499490124" varName="isSelected" />
-      <varInfo nodeId="1560298786499490126" varName="cellHasFocus" />
-      <varInfo nodeId="1560298786499490120" varName="value" />
       <varInfo nodeId="1560298786499490118" varName="list" />
+      <varInfo nodeId="1560298786499490120" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499490098" fileName="ProjectPathRenderer.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectPathRenderer" />
   </root>
@@ -119,8 +119,8 @@
     <scopeInfo nodeId="1560298786499492780" fileName="ProjectLevelRenderer.java" startLine="28" startPosition="44" endLine="29" endPosition="28" />
     <scopeInfo nodeId="1560298786499492736" fileName="ProjectLevelRenderer.java" startLine="13" startPosition="72" endLine="15" endPosition="34" />
     <scopeInfo nodeId="1560298786499492730" fileName="ProjectLevelRenderer.java" startLine="12" startPosition="0" endLine="16" endPosition="3">
-      <varInfo nodeId="1560298786499492734" varName="projectScope" />
       <varInfo nodeId="1560298786499492732" varName="moduleScope" />
+      <varInfo nodeId="1560298786499492734" varName="projectScope" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499492775" fileName="ProjectLevelRenderer.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1560298786499492778" varName="value" />
@@ -147,15 +147,15 @@
     <scopeInfo nodeId="1560298786499492860" fileName="StringPathRenderer.java" startLine="24" startPosition="41" endLine="25" endPosition="31" />
     <scopeInfo nodeId="1560298786499492802" fileName="StringPathRenderer.java" startLine="11" startPosition="65" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1560298786499492818" fileName="StringPathRenderer.java" startLine="15" startPosition="134" endLine="27" endPosition="18">
-      <varInfo nodeId="1560298786499492826" varName="result" />
       <varInfo nodeId="1560298786499492820" varName="path" />
+      <varInfo nodeId="1560298786499492826" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499492805" fileName="StringPathRenderer.java" startLine="14" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1560298786499492816" varName="cellHasFocus" />
       <varInfo nodeId="1560298786499492812" varName="index" />
       <varInfo nodeId="1560298786499492814" varName="isSelected" />
-      <varInfo nodeId="1560298786499492816" varName="cellHasFocus" />
-      <varInfo nodeId="1560298786499492810" varName="value" />
       <varInfo nodeId="1560298786499492808" varName="list" />
+      <varInfo nodeId="1560298786499492810" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499492799" fileName="StringPathRenderer.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.StringPathRenderer" />
   </root>
@@ -182,8 +182,8 @@
     <scopeInfo nodeId="7189497640396694862" fileName="ModelRenderer.java" startLine="37" startPosition="53" endLine="38" endPosition="33" />
     <scopeInfo nodeId="7189497640396694867" fileName="ModelRenderer.java" startLine="39" startPosition="76" endLine="40" endPosition="46" />
     <scopeInfo nodeId="1560298786499492871" fileName="ModelRenderer.java" startLine="14" startPosition="57" endLine="17" endPosition="3">
-      <varInfo nodeId="1560298786499492875" varName="projectScope" />
       <varInfo nodeId="1560298786499492873" varName="moduleScope" />
+      <varInfo nodeId="1560298786499492875" varName="projectScope" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499492904" fileName="ModelRenderer.java" startLine="22" startPosition="24" endLine="27" endPosition="8">
       <varInfo nodeId="1560298786499492906" varName="longName" />
@@ -194,18 +194,18 @@
       <varInfo nodeId="1560298786499492888" varName="modelReference" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499492940" fileName="ModelRenderer.java" startLine="32" startPosition="134" endLine="43" endPosition="18">
-      <varInfo nodeId="1560298786499492942" varName="result" />
       <varInfo nodeId="1560298786499492951" varName="modelReference" />
+      <varInfo nodeId="1560298786499492942" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499492881" fileName="ModelRenderer.java" startLine="18" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1560298786499492884" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499492927" fileName="ModelRenderer.java" startLine="31" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1560298786499492938" varName="cellHasFocus" />
       <varInfo nodeId="1560298786499492934" varName="index" />
       <varInfo nodeId="1560298786499492936" varName="isSelected" />
-      <varInfo nodeId="1560298786499492938" varName="cellHasFocus" />
-      <varInfo nodeId="1560298786499492932" varName="value" />
       <varInfo nodeId="1560298786499492930" varName="list" />
+      <varInfo nodeId="1560298786499492932" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499492868" fileName="ModelRenderer.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer" />
   </root>
@@ -222,11 +222,11 @@
       <varInfo nodeId="1560298786499493063" varName="representation" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493042" fileName="ManagerRenderer.java" startLine="14" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="1560298786499493053" varName="cellHasFocus" />
       <varInfo nodeId="1560298786499493049" varName="index" />
       <varInfo nodeId="1560298786499493051" varName="isSelected" />
-      <varInfo nodeId="1560298786499493053" varName="cellHasFocus" />
-      <varInfo nodeId="1560298786499493047" varName="value" />
       <varInfo nodeId="1560298786499493045" varName="list" />
+      <varInfo nodeId="1560298786499493047" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499493036" fileName="ManagerRenderer.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ManagerRenderer" />
   </root>
@@ -240,16 +240,16 @@
     <scopeInfo nodeId="1560298786499493277" fileName="ModuleImportRenderer.java" startLine="11" startPosition="72" endLine="12" endPosition="37" />
     <scopeInfo nodeId="1560298786499493299" fileName="ModuleImportRenderer.java" startLine="17" startPosition="24" endLine="18" endPosition="126" />
     <scopeInfo nodeId="1560298786499493271" fileName="ModuleImportRenderer.java" startLine="10" startPosition="58" endLine="13" endPosition="3">
-      <varInfo nodeId="1560298786499493275" varName="projectScope" />
       <varInfo nodeId="1560298786499493273" varName="moduleScope" />
+      <varInfo nodeId="1560298786499493275" varName="projectScope" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493294" fileName="ModuleImportRenderer.java" startLine="16" startPosition="128" endLine="20" endPosition="92" />
     <scopeInfo nodeId="1560298786499493281" fileName="ModuleImportRenderer.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="1560298786499493292" varName="cellHasFocus" />
       <varInfo nodeId="1560298786499493288" varName="index" />
       <varInfo nodeId="1560298786499493290" varName="isSelected" />
-      <varInfo nodeId="1560298786499493292" varName="cellHasFocus" />
-      <varInfo nodeId="1560298786499493286" varName="value" />
       <varInfo nodeId="1560298786499493284" varName="list" />
+      <varInfo nodeId="1560298786499493286" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499493268" fileName="ModuleImportRenderer.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleImportRenderer" />
   </root>
@@ -265,12 +265,12 @@
       <varInfo nodeId="1560298786499494313" varName="cellRenderer" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494322" fileName="ListRendererAdapter.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1560298786499494329" varName="isSelected" />
       <varInfo nodeId="1560298786499494335" varName="column" />
-      <varInfo nodeId="1560298786499494327" varName="value" />
-      <varInfo nodeId="1560298786499494325" varName="table" />
       <varInfo nodeId="1560298786499494331" varName="hasFocus" />
+      <varInfo nodeId="1560298786499494329" varName="isSelected" />
       <varInfo nodeId="1560298786499494333" varName="row" />
+      <varInfo nodeId="1560298786499494325" varName="table" />
+      <varInfo nodeId="1560298786499494327" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499494305" fileName="ListRendererAdapter.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ListRendererAdapter" />
   </root>
@@ -302,28 +302,28 @@
     <scopeInfo nodeId="1560298786499494629" fileName="ModuleRenderer.java" startLine="31" startPosition="12" endLine="32" endPosition="47" />
     <scopeInfo nodeId="1560298786499494694" fileName="ModuleRenderer.java" startLine="42" startPosition="26" endLine="43" endPosition="33" />
     <scopeInfo nodeId="1560298786499494576" fileName="ModuleRenderer.java" startLine="14" startPosition="58" endLine="17" endPosition="3">
-      <varInfo nodeId="1560298786499494580" varName="projectScope" />
       <varInfo nodeId="1560298786499494578" varName="moduleScope" />
+      <varInfo nodeId="1560298786499494580" varName="projectScope" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494690" fileName="ModuleRenderer.java" startLine="41" startPosition="25" endLine="45" endPosition="20" />
     <scopeInfo nodeId="1560298786499494609" fileName="ModuleRenderer.java" startLine="22" startPosition="25" endLine="27" endPosition="8">
       <varInfo nodeId="1560298786499494611" varName="moduleName" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494655" fileName="ModuleRenderer.java" startLine="36" startPosition="134" endLine="47" endPosition="18">
-      <varInfo nodeId="1560298786499494663" varName="result" />
       <varInfo nodeId="1560298786499494680" varName="module" />
       <varInfo nodeId="1560298786499494657" varName="moduleReference" />
+      <varInfo nodeId="1560298786499494663" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494591" fileName="ModuleRenderer.java" startLine="19" startPosition="44" endLine="33" endPosition="5">
       <varInfo nodeId="1560298786499494599" varName="module" />
       <varInfo nodeId="1560298786499494593" varName="moduleReference" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494642" fileName="ModuleRenderer.java" startLine="35" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1560298786499494653" varName="cellHasFocus" />
       <varInfo nodeId="1560298786499494649" varName="index" />
       <varInfo nodeId="1560298786499494651" varName="isSelected" />
-      <varInfo nodeId="1560298786499494653" varName="cellHasFocus" />
-      <varInfo nodeId="1560298786499494647" varName="value" />
       <varInfo nodeId="1560298786499494645" varName="list" />
+      <varInfo nodeId="1560298786499494647" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494586" fileName="ModuleRenderer.java" startLine="18" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1560298786499494589" varName="value" />
@@ -439,31 +439,31 @@
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494953" fileName="RuleOperandRenderer.java" startLine="152" startPosition="101" endLine="155" endPosition="9" />
     <scopeInfo nodeId="7427129459900023597" fileName="RuleOperandRenderer.java" startLine="64" startPosition="57" endLine="69" endPosition="0">
+      <varInfo nodeId="7427129459900023606" varName="expanded" />
+      <varInfo nodeId="7427129459900023612" varName="hasFocus" />
+      <varInfo nodeId="7427129459900023608" varName="leaf" />
+      <varInfo nodeId="7427129459900023610" varName="row" />
       <varInfo nodeId="7427129459900023604" varName="selected" />
       <varInfo nodeId="7427129459900023600" varName="tree" />
       <varInfo nodeId="7427129459900023602" varName="value" />
-      <varInfo nodeId="7427129459900023608" varName="leaf" />
-      <varInfo nodeId="7427129459900023612" varName="hasFocus" />
-      <varInfo nodeId="7427129459900023606" varName="expanded" />
-      <varInfo nodeId="7427129459900023610" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494835" fileName="RuleOperandRenderer.java" startLine="76" startPosition="58" endLine="81" endPosition="0">
+      <varInfo nodeId="1560298786499494844" varName="expanded" />
+      <varInfo nodeId="1560298786499494850" varName="hasFocus" />
+      <varInfo nodeId="1560298786499494846" varName="leaf" />
+      <varInfo nodeId="1560298786499494848" varName="row" />
       <varInfo nodeId="1560298786499494842" varName="selected" />
       <varInfo nodeId="1560298786499494838" varName="tree" />
       <varInfo nodeId="1560298786499494840" varName="value" />
-      <varInfo nodeId="1560298786499494846" varName="leaf" />
-      <varInfo nodeId="1560298786499494850" varName="hasFocus" />
-      <varInfo nodeId="1560298786499494844" varName="expanded" />
-      <varInfo nodeId="1560298786499494848" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494944" fileName="RuleOperandRenderer.java" startLine="151" startPosition="30" endLine="156" endPosition="7">
       <varInfo nodeId="1560298786499494951" varName="mappingRef" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494786" fileName="RuleOperandRenderer.java" startLine="49" startPosition="34" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1560298786499495224" fileName="RuleOperandRenderer.java" startLine="113" startPosition="35" endLine="120" endPosition="52">
-      <varInfo nodeId="1560298786499495232" varName="node" />
       <varInfo nodeId="1560298786499495226" varName="model" />
       <varInfo nodeId="1417797419759367206" varName="modelName" />
+      <varInfo nodeId="1560298786499495232" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494939" fileName="RuleOperandRenderer.java" startLine="150" startPosition="46" endLine="157" endPosition="22">
       <varInfo nodeId="1560298786499494941" varName="complete" />
@@ -473,41 +473,41 @@
     <scopeInfo nodeId="1560298786499494808" fileName="RuleOperandRenderer.java" startLine="70" startPosition="12" endLine="82" endPosition="28" />
     <scopeInfo nodeId="1560298786499494968" fileName="RuleOperandRenderer.java" startLine="132" startPosition="51" endLine="148" endPosition="49">
       <varInfo nodeId="1560298786499495033" varName="child" />
-      <varInfo nodeId="1560298786499494970" varName="refC" />
+      <varInfo nodeId="1560298786499495001" varName="generator" />
       <varInfo nodeId="1560298786499494976" varName="generatorReference" />
       <varInfo nodeId="1560298786499494997" varName="moduleRef" />
-      <varInfo nodeId="1560298786499495001" varName="generator" />
+      <varInfo nodeId="1560298786499494970" varName="refC" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499495080" fileName="RuleOperandRenderer.java" startLine="110" startPosition="14" endLine="127" endPosition="9">
       <varInfo nodeId="1560298786499495082" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499495054" fileName="RuleOperandRenderer.java" startLine="104" startPosition="49" endLine="130" endPosition="18">
-      <varInfo nodeId="1560298786499495056" varName="refC" />
-      <varInfo nodeId="1560298786499495069" varName="nodeName" />
       <varInfo nodeId="1560298786499495062" varName="modelRef" />
+      <varInfo nodeId="1560298786499495069" varName="nodeName" />
+      <varInfo nodeId="1560298786499495056" varName="refC" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494771" fileName="RuleOperandRenderer.java" startLine="44" startPosition="143" endLine="89" endPosition="16">
-      <varInfo nodeId="1560298786499494781" varName="tree" />
       <varInfo nodeId="1560298786499494773" varName="incomplete" />
+      <varInfo nodeId="1560298786499494781" varName="tree" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494756" fileName="RuleOperandRenderer.java" startLine="43" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="1560298786499494763" varName="isSelected" />
       <varInfo nodeId="1560298786499494769" varName="column" />
-      <varInfo nodeId="1560298786499494761" varName="value" />
-      <varInfo nodeId="1560298786499494759" varName="table" />
       <varInfo nodeId="1560298786499494765" varName="hasFocus" />
+      <varInfo nodeId="1560298786499494763" varName="isSelected" />
       <varInfo nodeId="1560298786499494767" varName="row" />
+      <varInfo nodeId="1560298786499494759" varName="table" />
+      <varInfo nodeId="1560298786499494761" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494911" fileName="RuleOperandRenderer.java" startLine="92" startPosition="76" endLine="159" endPosition="17" />
     <scopeInfo nodeId="1560298786499494904" fileName="RuleOperandRenderer.java" startLine="91" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="1560298786499494909" varName="ref" />
       <varInfo nodeId="1560298786499494907" varName="root" />
     </scopeInfo>
-    <unitInfo nodeId="7427129459900018112" fileName="RuleOperandRenderer.java" startLine="64" startPosition="31" endLine="69" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$3" />
-    <unitInfo nodeId="1560298786499494834" fileName="RuleOperandRenderer.java" startLine="76" startPosition="31" endLine="81" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$2" />
-    <unitInfo nodeId="1560298786499494785" fileName="RuleOperandRenderer.java" startLine="49" startPosition="23" endLine="56" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$1" />
-    <unitInfo nodeId="1560298786499495100" fileName="RuleOperandRenderer.java" startLine="112" startPosition="60" endLine="122" endPosition="9" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$4" />
     <unitInfo nodeId="1560298786499494750" fileName="RuleOperandRenderer.java" startLine="38" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer" />
+    <unitInfo nodeId="1560298786499494785" fileName="RuleOperandRenderer.java" startLine="49" startPosition="23" endLine="56" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$1" />
+    <unitInfo nodeId="1560298786499494834" fileName="RuleOperandRenderer.java" startLine="76" startPosition="31" endLine="81" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$2" />
+    <unitInfo nodeId="7427129459900018112" fileName="RuleOperandRenderer.java" startLine="64" startPosition="31" endLine="69" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$3" />
+    <unitInfo nodeId="1560298786499495100" fileName="RuleOperandRenderer.java" startLine="112" startPosition="60" endLine="122" endPosition="9" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$4" />
   </root>
   <root nodeId="1560298786499495877">
     <nodeInfo nodeId="1560298786499495897" fileName="TestConfigListCellRenderer.java" startLine="14" startPosition="128" endLine="15" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -520,11 +520,11 @@
       <varInfo nodeId="1560298786499495898" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499495883" fileName="TestConfigListCellRenderer.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1560298786499495894" varName="cellHasFocus" />
       <varInfo nodeId="1560298786499495890" varName="index" />
       <varInfo nodeId="1560298786499495892" varName="isSelected" />
-      <varInfo nodeId="1560298786499495894" varName="cellHasFocus" />
-      <varInfo nodeId="1560298786499495888" varName="value" />
       <varInfo nodeId="1560298786499495886" varName="list" />
+      <varInfo nodeId="1560298786499495888" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499495877" fileName="TestConfigListCellRenderer.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.TestConfigListCellRenderer" />
   </root>
@@ -541,11 +541,11 @@
     <scopeInfo nodeId="1560298786499498127" fileName="BooleanRenderer.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
     <scopeInfo nodeId="1560298786499498150" fileName="BooleanRenderer.java" startLine="17" startPosition="134" endLine="30" endPosition="22" />
     <scopeInfo nodeId="1560298786499498137" fileName="BooleanRenderer.java" startLine="16" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1560298786499498148" varName="cellHasFocus" />
       <varInfo nodeId="1560298786499498144" varName="index" />
       <varInfo nodeId="1560298786499498146" varName="isSelected" />
-      <varInfo nodeId="1560298786499498148" varName="cellHasFocus" />
-      <varInfo nodeId="1560298786499498142" varName="value" />
       <varInfo nodeId="1560298786499498140" varName="list" />
+      <varInfo nodeId="1560298786499498142" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499498121" fileName="BooleanRenderer.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.BooleanRenderer" />
   </root>
@@ -554,8 +554,8 @@
     <nodeInfo nodeId="1560298786499498268" fileName="GeneratorRenderer.java" startLine="7" startPosition="55" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorRenderer#(Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IScope;)V" />
     <scopeInfo nodeId="1560298786499498274" fileName="GeneratorRenderer.java" startLine="8" startPosition="69" endLine="9" endPosition="37" />
     <scopeInfo nodeId="1560298786499498268" fileName="GeneratorRenderer.java" startLine="7" startPosition="55" endLine="10" endPosition="3">
-      <varInfo nodeId="1560298786499498272" varName="projectScope" />
       <varInfo nodeId="1560298786499498270" varName="moduleScope" />
+      <varInfo nodeId="1560298786499498272" varName="projectScope" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499498265" fileName="GeneratorRenderer.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.GeneratorRenderer" />
   </root>
