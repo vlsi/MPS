@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -424,25 +425,35 @@ public class ModelPersistence {
 
   // TODO replace nullable with ModelFileReadException
   @Nullable
-  public static SModel readModel(@NotNull IFile file, boolean onlyRoots) {
-    SModelHeader header = loadDescriptor(file).getHeader();
+  public static SModel readModel(@NotNull final IFile file, boolean onlyRoots) {
+    final SModelHeader header = loadDescriptor(file).getHeader();
     if (header.getUID() == null) {
       return null;
     }
-    ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
-    ModelLoadResult result = readModel(header, file, state);
+    final ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
+    ModelLoadResult result = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
+      @Override
+      public ModelLoadResult compute() {
+        return readModel(header, file, state);
+      }
+    });
     return result.getState() != state ? null : result.getModel();
   }
 
   // TODO replace nullable with ModelFileReadException
   @Nullable
-  public static SModel readModel(@NotNull String content, boolean onlyRoots) {
-    SModelHeader header = loadDescriptor(new InputSource(new StringReader(content))).getHeader();
+  public static SModel readModel(@NotNull final String content, boolean onlyRoots) {
+    final SModelHeader header = loadDescriptor(new InputSource(new StringReader(content))).getHeader();
     if (header.getUID() == null) {
       return null;
     }
-    ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
-    ModelLoadResult result = readModel(header, new InputSource(new StringReader(content)), state);
+    final ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
+    ModelLoadResult result = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
+      @Override
+      public ModelLoadResult compute() {
+        return readModel(header, new InputSource(new StringReader(content)), state);
+      }
+    });
     return result.getState() != state ? null : result.getModel();
   }
 
