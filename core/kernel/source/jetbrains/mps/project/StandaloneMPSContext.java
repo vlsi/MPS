@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.smodel.IOperationContext;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
@@ -26,7 +25,7 @@ public abstract class StandaloneMPSContext implements IOperationContext {
   }
 
   public <T> T getComponent(Class<T> clazz) {
-    return ComponentManager.getInstance().getComponent(clazz);
+    throw new UnsupportedOperationException("StandaloneContext.getComponent(" + clazz.getCanonicalName() + ".class) is not supported");
   }
 
   public boolean isValid() {
