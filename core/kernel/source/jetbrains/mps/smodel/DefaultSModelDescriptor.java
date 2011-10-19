@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -317,6 +318,23 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     reload();
     LOG.assertLog(!needsReloading());
+  }
+
+  public void reloadFromDiskSafe() {
+    ModelAccess.assertLegalWrite();
+    if (isChanged()) {
+      resolveDiskConflict();
+    } else {
+      reloadFromDisk();
+    }
+  }
+
+  protected void processChanged(ProgressMonitor monitor) {
+    if (!needsReloading()) return;
+
+    monitor.start("Reloading " + getLongName(), 1);
+    reloadFromDiskSafe();
+    monitor.done();
   }
 
   protected void reload() {
