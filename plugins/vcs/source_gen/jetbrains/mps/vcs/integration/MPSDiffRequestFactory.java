@@ -16,10 +16,10 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
   }
 
   @Override
-  public MergeRequest createMergeRequest(String leftText, String rightText, String originalContent, @NotNull VirtualFile file, Project project, @Nullable ActionButtonPresentation okActionButtonPresentation, @Nullable ActionButtonPresentation cancelActionButtonPresentation) {
+  public MergeRequest createMergeRequest(String leftText, String rightText, String originalContent, @NotNull VirtualFile file, Project project, @Nullable ActionButtonPresentation okActionButtonPresentation) {
     if (!(file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE))) {
-      return super.createMergeRequest(leftText, rightText, originalContent, file, project, okActionButtonPresentation, cancelActionButtonPresentation);
+      return super.createMergeRequest(leftText, rightText, originalContent, file, project, okActionButtonPresentation);
     }
-    return new ModelMergeRequest(leftText, rightText, originalContent, file, project, okActionButtonPresentation, cancelActionButtonPresentation);
+    return new ModelMergeRequest(leftText, rightText, originalContent, file, project, okActionButtonPresentation);
   }
 }

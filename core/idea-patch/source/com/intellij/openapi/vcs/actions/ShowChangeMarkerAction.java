@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ import jetbrains.mps.util.annotation.Patch;
  */
 public abstract class ShowChangeMarkerAction extends AbstractVcsAction {
   protected final ChangeMarkerContext myChangeMarkerContext;
-
+  
 
   protected abstract Range extractRange(LineStatusTracker lineStatusTracker, int line, Editor editor);
 
@@ -109,4 +109,3 @@ public abstract class ShowChangeMarkerAction extends AbstractVcsAction {
     Editor getEditor(VcsContext dataContext);
   }
 }
-

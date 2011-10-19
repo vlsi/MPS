@@ -77,8 +77,8 @@ public class EditorTextFieldProviderImpl implements EditorTextFieldProvider {
     return primGetEditorField(project);
   }
 
+
   @NotNull
-  @Override
   public EditorTextField getEditorField(@NotNull Language language,
                                         @NotNull Project project,
                                         @NotNull Iterable<Feature> enabledFeatures,

@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.ui.DialogWrapper;
 
 public class MergeConfirmation {
   public static final int RETURN = 0;
@@ -75,7 +76,7 @@ public class MergeConfirmation {
       ""
     ));
     int answer = Messages.showYesNoCancelDialog(dialog, message, title, Messages.getQuestionIcon());
-    if (answer == 0) {
+    if (answer == DialogWrapper.OK_EXIT_CODE) {
       return RESOLVE_AUTOMATICALLY;
     } else if (answer == 1) {
       // Do nothing, leave unresolved changes as is 

@@ -1714,8 +1714,9 @@
             </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5550698181361801315">
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5550698181361801316">
-              <property name="value" nameId="tpee.1068580320021" value="0" />
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="318859850171065577">
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="q0zl.~DialogWrapper" resolveInfo="DialogWrapper" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="q0zl.~DialogWrapper%dOK_EXIT_CODE" resolveInfo="OK_EXIT_CODE" />
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5550698181361801317">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5550698181361801298" resolveInfo="answer" />
@@ -4081,9 +4082,9 @@
                   </node>
                 </node>
                 <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="7764576515625109214">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7764576515625109215">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="q0zl.~Messages" resolveInfo="Messages" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="q0zl.~Messages%dYES" resolveInfo="YES" />
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="318859850171224156">
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="q0zl.~DialogWrapper" resolveInfo="DialogWrapper" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="q0zl.~DialogWrapper%dOK_EXIT_CODE" resolveInfo="OK_EXIT_CODE" />
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7764576515625109216">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7764576515625109185" resolveInfo="ans" />
@@ -4111,12 +4112,12 @@
                     </node>
                   </node>
                   <node role="condition" roleId="tpee.1206060619838" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="7764576515625109228">
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7764576515625109229">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="q0zl.~Messages" resolveInfo="Messages" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="q0zl.~Messages%dNO" resolveInfo="NO" />
-                    </node>
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7764576515625109230">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7764576515625109185" resolveInfo="ans" />
+                    </node>
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="318859850171224157">
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="q0zl.~DialogWrapper" resolveInfo="DialogWrapper" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="q0zl.~DialogWrapper%dCANCEL_EXIT_CODE" resolveInfo="CANCEL_EXIT_CODE" />
                     </node>
                   </node>
                 </node>
