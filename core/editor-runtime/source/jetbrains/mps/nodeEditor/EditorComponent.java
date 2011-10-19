@@ -822,10 +822,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         disposeTypeCheckingContext();
         myNode = node;
         //todo this is because of type system nodes, which are not registered in models. This code should be removed ASAP
-        if (node.isRegistered()){
+        if (myNode != null && myNode.isRegistered()) {
           myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
           myVirtualFile = myNode != null && !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
-        }else {
+        } else {
           myNodePointer = null;
           myVirtualFile = null;
         }
