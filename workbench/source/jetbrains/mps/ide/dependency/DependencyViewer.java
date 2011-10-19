@@ -74,10 +74,6 @@ public class DependencyViewer extends BaseProjectTool {
     myTree.rebuildLater();
   }
 
-  public void setTransitive(boolean transitive) {
-     myTree.setTransitive(transitive);
-  }
-
   public void projectOpened() {
     super.projectOpened();
     myAdditionalTree = new AdditionalTree();

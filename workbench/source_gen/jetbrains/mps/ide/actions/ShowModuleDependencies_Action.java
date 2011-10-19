@@ -55,7 +55,6 @@ public class ShowModuleDependencies_Action extends GeneratedAction {
     try {
       DependencyViewer viewer = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(DependencyViewer.class);
       viewer.setModule(((IModule) MapSequence.fromMap(_params).get("module")));
-      viewer.setTransitive(true);
       viewer.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

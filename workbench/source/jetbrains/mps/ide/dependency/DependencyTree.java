@@ -36,7 +36,6 @@ import java.util.Set;
 public class DependencyTree extends MPSTree implements DataProvider {
   private Project myProject;
   private IModule myModule = null;
-  private boolean myTransitive;
   private DependenciesTracer<IModule> myTracer;
   private DependencyViewer myViewer;
 
@@ -54,21 +53,15 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
     setRootVisible(true);
     myTracer = new DependenciesTracer<IModule>();
-    ModuleTreeNode root = myTransitive ? new TransitiveModuleTreeNode(myProject, myModule, myTracer) : new ModuleTreeNode(myProject, myModule);
+    ModuleTreeNode root = new ModuleTreeNode(myProject, myModule, myTracer);
     expandPath(new TreePath(root.getPath()));
-    if (myTransitive) {
-      expandAll();
-    }
+    expandAll();
     return root;
   }
 
   public void setModule(IModule module) {
     myModule = module;
     myViewer.setTraces(null);
-  }
-
-  public void setTransitive(boolean transitive) {
-     myTransitive = transitive;
   }
 
   @Override
