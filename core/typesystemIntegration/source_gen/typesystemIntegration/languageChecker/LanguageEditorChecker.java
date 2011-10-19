@@ -27,6 +27,7 @@ import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
+import jetbrains.mps.ide.resolve.AutoResolver;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -138,6 +139,9 @@ public class LanguageEditorChecker extends BaseEditorChecker {
 
   public boolean isLaterThan(BaseEditorChecker checker) {
     if (checker instanceof TypesEditorChecker) {
+      return true;
+    }
+    if (checker instanceof AutoResolver) {
       return true;
     }
     return false;
