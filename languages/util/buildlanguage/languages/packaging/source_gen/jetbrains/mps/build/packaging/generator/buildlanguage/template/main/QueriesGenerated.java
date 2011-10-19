@@ -43,13 +43,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Collections;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import java.util.Comparator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.Map;
@@ -1248,8 +1247,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1986682148700630636(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    // <node> 
-    return Sequence.fromIterable(Collections.<SNode>emptyList());
+    return Module_Behavior.call_getModelRootPaths_2739262311775052381(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1237395979883(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
