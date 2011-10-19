@@ -8146,7 +8146,7 @@
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7075224244487129542">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7075224244487129543">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rvk.7184932954667864781" resolveInfo="CoreMakeTask" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7075224244487129599" resolveInfo="MakeTask.WorkbenchMakeTask" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7075224244487129544">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7075224244487129555" resolveInfo="title" />
                 </node>

@@ -40,7 +40,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
 
   public MakeTask(@Nullable Project project, @NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
     super(project, title, true, bgoption);
-    coreTask = new CoreMakeTask(title, scripts, scrName, clInput, ctl, mh);
+    coreTask = new MakeTask.WorkbenchMakeTask(title, scripts, scrName, clInput, ctl, mh);
   }
 
   public void run(@NotNull final ProgressIndicator pi) {
