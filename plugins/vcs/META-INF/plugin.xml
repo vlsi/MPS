@@ -42,7 +42,7 @@
       <implementation-class>jetbrains.mps.watching.ModelCacheReloader</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.SuspiciousModelIndex</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.suspicious.SuspiciousModelIndex</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.integration.ToolsApplicationComponent</implementation-class>
@@ -105,7 +105,7 @@
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider"/>
     <checkoutListener implementation="jetbrains.mps.vcs.integration.ProjectCheckoutListener"/>
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
-    <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
+    <directoryIndexExcludePolicy implementation="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy"/>
     <mps.projectPrefsPanel implementation="jetbrains.mps.vcs.VcsGeneratedFilesPanel"/>
 
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
