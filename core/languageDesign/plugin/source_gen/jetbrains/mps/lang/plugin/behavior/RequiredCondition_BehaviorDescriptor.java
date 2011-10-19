@@ -4,7 +4,7 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class RequiredCondition_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public class RequiredCondition_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ActionParameterCondition_BehaviorDescriptor {
   public RequiredCondition_BehaviorDescriptor() {
   }
 
