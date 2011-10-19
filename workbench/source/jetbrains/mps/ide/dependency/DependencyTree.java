@@ -22,18 +22,28 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.dependency.DependenciesTracer;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NonNls;
 
 import javax.swing.JPopupMenu;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
+import java.util.List;
+import java.util.Set;
 
 public class DependencyTree extends MPSTree implements DataProvider {
   private Project myProject;
   private IModule myModule = null;
+  private boolean myTransitive;
+  private DependenciesTracer<IModule> myTracer;
+  private DependencyViewer myViewer;
 
-  public DependencyTree(Project project) {
+  public DependencyTree(Project project, DependencyViewer viewer) {
     myProject = project;
+    myViewer = viewer;
+    addTreeSelectionListener(new MyTreeSelectionListener());
   }
 
   protected MPSTreeNode rebuild() {
@@ -43,14 +53,21 @@ public class DependencyTree extends MPSTree implements DataProvider {
     }
 
     setRootVisible(true);
-
-    ModuleTreeNode root = new ModuleTreeNode(myProject, myModule);
+    myTracer = new DependenciesTracer<IModule>();
+    ModuleTreeNode root = myTransitive ? new TransitiveModuleTreeNode(myProject, myModule, myTracer) : new ModuleTreeNode(myProject, myModule);
     expandPath(new TreePath(root.getPath()));
+    if (myTransitive) {
+      expandAll();
+    }
     return root;
   }
 
   public void setModule(IModule module) {
     myModule = module;
+  }
+
+  public void setTransitive(boolean transitive) {
+     myTransitive = transitive;
   }
 
   @Override
@@ -72,5 +89,23 @@ public class DependencyTree extends MPSTree implements DataProvider {
       return node.getModule();
     }
     return null;
+  }
+
+   private class MyTreeSelectionListener implements TreeSelectionListener {
+    private MyTreeSelectionListener() {
+    }
+
+    @Override
+    public void valueChanged(TreeSelectionEvent e) {
+      TreePath path = e.getNewLeadSelectionPath();
+      if (path == null) {
+        return;
+      }
+      Object treeNode = path.getLastPathComponent();
+       if (!(treeNode instanceof DependencyTreeNode)) return;
+      Set<List<IModule>> traces = myTracer.getTraces(((DependencyTreeNode)treeNode).getModule());
+      if (traces == null) return;
+      myViewer.setTraces(traces);
+    }
   }
 }

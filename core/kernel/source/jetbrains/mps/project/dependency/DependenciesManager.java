@@ -17,6 +17,7 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
@@ -46,6 +47,8 @@ public interface DependenciesManager {
    *  Collects all visible modules (including current).
    */
   void collectVisibleModules(/* out */ Set<IModule> dependencies, boolean reexportOnly);
+
+  public void collectVisibleModules(Set<IModule> dependencies, boolean reexportOnly, @Nullable DependenciesTracer<IModule> tracer);
 
   /*
    *  Collects all modules required for compilation + languages with runtime stub paths

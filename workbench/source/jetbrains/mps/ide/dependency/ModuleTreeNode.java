@@ -32,8 +32,8 @@ import java.util.List;
 
 public class ModuleTreeNode extends MPSTreeNode {
   private Project myProject;
-  private IModule myModule;
-  private boolean myInitialized;
+  protected IModule myModule;
+  protected boolean myInitialized;
 
   public ModuleTreeNode(Project project, IModule module) {
     super(module, null);

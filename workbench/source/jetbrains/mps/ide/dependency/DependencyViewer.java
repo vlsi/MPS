@@ -31,16 +31,18 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.jetbrains.annotations.NonNls;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.LayoutManager;
+import java.util.List;
+import java.util.Set;
 
 public class DependencyViewer extends BaseProjectTool {
   private DependencyTree myTree;
-  private MyPanel myExternalComponent;
+  private JPanel myExternalComponent;
+  private JSplitPane mySplitPane;
+  private AdditionalTree myAdditionalTree;
 
   private ModuleRepositoryListener myListener = new ModuleRepositoryAdapter() {
     public void moduleAdded(IModule module) {
@@ -72,10 +74,14 @@ public class DependencyViewer extends BaseProjectTool {
     myTree.rebuildLater();
   }
 
+  public void setTransitive(boolean transitive) {
+     myTree.setTransitive(transitive);
+  }
+
   public void projectOpened() {
     super.projectOpened();
-
-    myTree = new DependencyTree(getProject());
+    myAdditionalTree = new AdditionalTree();
+    myTree = new DependencyTree(getProject(), this);
     JScrollPane scrollPane = new JBScrollPane(myTree) {
       public void addNotify() {
         super.addNotify();
@@ -92,10 +98,16 @@ public class DependencyViewer extends BaseProjectTool {
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
 
     myExternalComponent = new MyPanel(new BorderLayout());
-    myExternalComponent.add(scrollPane, BorderLayout.CENTER);
+    mySplitPane = new JSplitPane();
     myExternalComponent.add(toolbar, BorderLayout.WEST);
-
+    myExternalComponent.add(mySplitPane, BorderLayout.CENTER);
+    mySplitPane.setLeftComponent(scrollPane);
+    mySplitPane.setDividerLocation(0.5);
+    mySplitPane.setResizeWeight(0.5);
+    JScrollPane pane = new JBScrollPane(myAdditionalTree);
+    mySplitPane.setRightComponent(pane);
     myTree.rebuildLater();
+    mySplitPane.setVisible(true);
   }
 
   public Icon getIcon() {
@@ -104,6 +116,10 @@ public class DependencyViewer extends BaseProjectTool {
 
   public JComponent getComponent() {
     return myExternalComponent;
+  }
+
+  public void setTraces(Set<List<IModule>> traces) {
+    myAdditionalTree.setTraces(traces);
   }
 
   private void addListeners() {
