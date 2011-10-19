@@ -202,6 +202,7 @@ public class RootDifferenceDialog extends BaseDialog {
   @Override
   public void dispose() {
     if (!(myClosed)) {
+      myClosed = true;
       myModelDialog.rootDialogClosed();
       myOldEditor.dispose();
       myOldEditor = null;
