@@ -11028,7 +11028,7 @@
                   </node>
                 </node>
                 <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2235195415637076909">
-                  <property name="value" nameId="tpsk.1196861024475" value="${java.io.tmpdir}" />
+                  <property name="value" nameId="tpsk.1196861024475" value="${tmpdir}" />
                 </node>
               </node>
             </node>
