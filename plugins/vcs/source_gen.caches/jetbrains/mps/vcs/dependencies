@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.DiskMemoryConflictHelper" file="DiskMemoryConflictHelper.java">
+  <dependency className="jetbrains.mps.vcs.DiskMemoryConflictResolverImpl" file="DiskMemoryConflictResolverImpl.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
@@ -40,6 +40,7 @@
     <classNode dependClassName="jetbrains.mps.watching.ModelChangesWatcher" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode extendsClassName="jetbrains.mps.smodel.DiskMemoryConflictResolver" />
     <classNode extendsClassName="jetbrains.mps.vcs.ModelVersion" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.MPSVcsManager" file="MPSVcsManager.java">
@@ -70,13 +71,10 @@
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.ide.vcs.SourceRevision" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.DiskMemoryConflictResolver" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.vcs.DiskMemoryConflictHelper" />
+    <classNode dependClassName="jetbrains.mps.vcs.DiskMemoryConflictResolverImpl" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification" />
     <classNode dependClassName="jetbrains.mps.vcs.revision.MPSSourceRevision" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
