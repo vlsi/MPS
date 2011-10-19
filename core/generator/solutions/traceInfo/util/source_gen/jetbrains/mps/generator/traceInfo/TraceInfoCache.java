@@ -6,6 +6,8 @@ import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.traceInfo.DebugInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.cleanup.CleanupListener;
@@ -20,9 +22,6 @@ import java.io.InputStream;
 import java.io.IOException;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.InternalFlag;
-import com.intellij.ide.plugins.IdeaPluginDescriptor;
-import com.intellij.ide.plugins.PluginManager;
 import org.jdom.Element;
 import jetbrains.mps.vfs.FileSystem;
 
@@ -31,6 +30,8 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   private static TraceInfoCache INSTANCE;
   private static final Object INSTANCE_LOCK = new Object();
   protected static Log log = LogFactory.getLog(TraceInfoCache.class);
+
+  private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
 
   public TraceInfoCache(SModelRepository modelRepository) {
     super(modelRepository);
@@ -141,12 +142,10 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     String resourceName = traceInfoResourceName(sm);
     URL url = classPathItem.getResource(resourceName);
     if (url == null) {
-      if (InternalFlag.isInternalMode() && !((module.isCompileInMPS()))) {
-        for (IdeaPluginDescriptor plugin : PluginManager.getPlugins()) {
-          url = plugin.getPluginClassLoader().getResource(resourceName);
-          if (url != null) {
-            return url;
-          }
+      for (TraceInfoCache.TraceInfoResourceProvider provider : myProviders) {
+        url = provider.getResource(module, resourceName);
+        if (url != null) {
+          return url;
         }
       }
     }
@@ -182,6 +181,14 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     return DebugInfo.fromXml(e);
   }
 
+  public void addResourceProvider(TraceInfoCache.TraceInfoResourceProvider provider) {
+    myProviders.add(provider);
+  }
+
+  public void removeResourceProvider(TraceInfoCache.TraceInfoResourceProvider provider) {
+    myProviders.remove(provider);
+  }
+
   public static TraceInfoCache getInstance() {
     synchronized (INSTANCE_LOCK) {
       return INSTANCE;
@@ -200,5 +207,9 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
       file = file.substring(prefix.length());
     }
     return FileSystem.getInstance().getFileByPath(file);
+  }
+
+  public static interface TraceInfoResourceProvider {
+    public URL getResource(IModule module, String resourceName);
   }
 }

@@ -217,6 +217,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.generator.PluginsTraceInfoResourceProvider</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.workbench.make.GeneratedTextPreviewEditorProvider</implementation-class>
     </component>
 

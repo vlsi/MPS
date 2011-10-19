@@ -24,6 +24,7 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="workbench" scope="TEST" />
+    <orderEntry type="library" name="commons-logging" level="project" />
   </component>
 </module>
 
