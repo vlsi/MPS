@@ -18,12 +18,12 @@ import com.intellij.util.io.ZipUtil;
 import com.intellij.openapi.application.PathManager;
 import java.io.FilenameFilter;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.UnzipUtil;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 
 public class MergeBackupUtil {
   protected static Log log = LogFactory.getLog(MergeBackupUtil.class);
@@ -100,10 +100,10 @@ public class MergeBackupUtil {
   }
 
   @Nullable
-  public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException {
+  public static String[] loadZippedModelsAsText(File zipfile, ModelVersion[] versions) throws IOException {
     File tmpdir = FileUtil.createTmpDir();
     UnzipUtil.unzip(zipfile, tmpdir);
-    SModel[] models = new SModel[versions.length];
+    String[] models = new String[versions.length];
     int index = 0;
     for (final ModelVersion v : versions) {
       File file;
@@ -119,20 +119,30 @@ public class MergeBackupUtil {
       }
       file = files[0];
       char[] fileText = com.intellij.openapi.util.io.FileUtil.loadFileText(file);
-      models[index] = ModelPersistence.readModel(new String(fileText), false);
-      if (models[index] == null) {
-        return null;
-      }
+      models[index] = new String(fileText);
       index++;
     }
     FileUtil.delete(tmpdir);
     return models;
   }
 
+  @Nullable
+  public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException {
+    String[] loadZippedModelsAsText = loadZippedModelsAsText(zipfile, versions);
+    if (loadZippedModelsAsText == null) {
+      return null;
+    }
+    return Sequence.fromIterable(Sequence.fromArray(loadZippedModelsAsText)).select(new ISelector<String, SModel>() {
+      public SModel select(String s) {
+        return ModelPersistence.readModel(s, false);
+      }
+    }).toGenericArray(SModel.class);
+  }
+
   public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
     File[] files = new File(MergeBackupUtil.getMergeBackupDirPath()).listFiles(new FilenameFilter() {
       public boolean accept(File dir, String name) {
-        return name.contains(modelFileName) && modelFileName.endsWith(".zip");
+        return name.contains(modelFileName) && name.endsWith(".zip");
       }
     });
     return Sequence.fromIterable(Sequence.fromArray(files)).sort(new ISelector<File, Comparable<?>>() {

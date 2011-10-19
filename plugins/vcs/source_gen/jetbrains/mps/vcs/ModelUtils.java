@@ -5,13 +5,13 @@ package jetbrains.mps.vcs;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jdom.Document;
+import jetbrains.mps.util.FileUtil;
+import java.io.UnsupportedEncodingException;
+import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import org.jdom.Document;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import java.io.ByteArrayOutputStream;
-import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import com.intellij.openapi.vfs.VirtualFile;
 
@@ -22,22 +22,23 @@ public class ModelUtils {
   }
 
   public static byte[] modelToBytes(final SModel result) {
-    final Wrappers._T<Document> document = new Wrappers._T<Document>();
-    ModelAccess.instance().runReadAction(new Computable<Document>() {
-      public Document compute() {
-        return document.value = ModelPersistence.saveModel(result);
-      }
-    });
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
     try {
-      JDOMUtil.writeDocument(document.value, baos);
-      return baos.toByteArray();
-    } catch (IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error("", e);
-      }
+      return modelToString(result).getBytes(FileUtil.DEFAULT_CHARSET);
+    } catch (UnsupportedEncodingException e) {
+      return null;
     }
-    return new byte[0];
+  }
+
+  public static String modelToString(final SModel result) {
+    try {
+      return JDOMUtil.asString(ModelAccess.instance().runReadAction(new Computable<Document>() {
+        public Document compute() {
+          return ModelPersistence.saveModel(result);
+        }
+      }));
+    } catch (IOException e) {
+      throw new AssertionError(e);
+    }
   }
 
   public static void replaceModelWithBytes(final VirtualFile modelFile, final byte[] bytesToReplaceWith) {

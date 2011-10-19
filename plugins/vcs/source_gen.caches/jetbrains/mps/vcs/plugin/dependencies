@@ -151,6 +151,9 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" file="ReRunMergeFromBackup_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
+    <classNode dependClassName="com.intellij.openapi.diff.DiffRequestFactory" />
+    <classNode dependClassName="com.intellij.openapi.diff.MergeRequest" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
@@ -167,13 +170,11 @@
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.MergeBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.MergeVersion" />
     <classNode dependClassName="jetbrains.mps.vcs.ModelUtils" />
-    <classNode dependClassName="jetbrains.mps.vcs.VcsHelper" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />

@@ -34,12 +34,11 @@ import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
 import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog;
 
-public class VcsHelper {
-  protected static Log log = LogFactory.getLog(VcsHelper.class);
+public class DiskMemoryConflictHelper {
+  protected static Log log = LogFactory.getLog(DiskMemoryConflictHelper.class);
 
-  private VcsHelper() {
+  private DiskMemoryConflictHelper() {
   }
 
   public static void resolveDiskMemoryConflict(final IFile modelFile, final SModel inMemory, final DefaultSModelDescriptor modelDescriptor) {
@@ -102,15 +101,15 @@ public class VcsHelper {
     if (options[result].equals(memoryVersion)) {
       return true;
     } else {
-      return VcsHelper.openDiffDialog(modelFile, inMemory);
+      return DiskMemoryConflictHelper.openDiffDialog(modelFile, inMemory);
     }
   }
 
   private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
     File tmp = FileUtil.createTmpDir();
-    MergeBackupUtil.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, VcsHelper.DiskMemoryConflictVersion.MEMORY.getSuffix());
+    MergeBackupUtil.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, DiskMemoryConflictHelper.DiskMemoryConflictVersion.MEMORY.getSuffix());
     if (modelFile.exists()) {
-      com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + VcsHelper.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
+      com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + DiskMemoryConflictHelper.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
     }
     File zipfile = MergeBackupUtil.chooseZipFileForModelFile(modelFile.getName());
     zipfile.getParentFile().mkdirs();
@@ -124,7 +123,7 @@ public class VcsHelper {
     if (onDisk == null) {
       onDisk = new SModel(inMemory.getSModelReference());
     }
-    return VcsHelper.showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
+    return DiskMemoryConflictHelper.showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
   }
 
   private static boolean showDiffDialog(final SModel diskModel, final SModel memoryModel, IFile modelFile, final Project project) {
@@ -163,35 +162,6 @@ public class VcsHelper {
         dialog.toFront();
       }
     });
-    return true;
-  }
-
-  public static boolean showMergeDialog(final SModel base, final SModel mine, final SModel repo, IFile modelFile, final Project project) {
-    // TODO replace with request factory 
-    final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
-    if (file == null) {
-      if (log.isErrorEnabled()) {
-        log.error("", new AssertionError());
-      }
-    }
-    final OldMergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<OldMergeModelsDialog>() {
-      public OldMergeModelsDialog compute() {
-        IOperationContext context = new ModuleContext(base.getModelDescriptor().getModule(), ProjectHelper.toMPSProject(project));
-        return new OldMergeModelsDialog(context, base, mine, repo);
-      }
-    });
-    dialog.showDialog();
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        dialog.toFront();
-      }
-    });
-    if (dialog.getResultModel() != null) {
-      SModel result = dialog.getResultModel();
-      byte[] bytes = ModelUtils.modelToBytes(result);
-      ModelUtils.replaceModelWithBytes(file, bytes);
-      return false;
-    }
     return true;
   }
 

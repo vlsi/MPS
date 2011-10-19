@@ -84,7 +84,7 @@ public class MPSVcsManager implements ProjectComponent {
   public void projectOpened() {
     DiskMemoryConflictResolver.setResolver(new DiskMemoryConflictResolver() {
       public void resolveDiskMemoryConflict(IFile file, SModel model, DefaultSModelDescriptor modelDescriptor) {
-        VcsHelper.resolveDiskMemoryConflict(file, model, modelDescriptor);
+        DiskMemoryConflictHelper.resolveDiskMemoryConflict(file, model, modelDescriptor);
       }
     });
     if (ApplicationManager.getApplication().isUnitTestMode() || myProject.isDefault()) {
