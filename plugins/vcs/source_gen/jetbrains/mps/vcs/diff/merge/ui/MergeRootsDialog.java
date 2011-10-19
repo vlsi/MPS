@@ -40,6 +40,8 @@ import java.awt.Insets;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.GoToNeighbourRootActions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -274,11 +276,17 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   public void resetState() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    Project project = ProjectHelper.toMPSProject(myModelsDialog.getProject());
+    Runnable r = new Runnable() {
       public void run() {
         myModelsDialog.restoreState(myStateToRestore);
       }
-    });
+    };
+    if (project == null) {
+      ModelAccess.instance().runCommandInEDT(r, project);
+    } else {
+      ModelAccess.instance().runWriteActionInCommand(r);
+    }
   }
 
   @Override
