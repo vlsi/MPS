@@ -11,7 +11,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="java-diff-utils" level="project" />
-    <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
   </component>
 </module>

@@ -10,10 +10,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="library" name="annotations" level="project" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="library" name="commons-lang" level="project" />
     <orderEntry type="module" module-name="collections-runtime" />
   </component>
 </module>
