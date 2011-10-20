@@ -1,0 +1,15 @@
+<idea-plugin version="2">
+    <id>jetbrains.mps.core</id>
+    <name>MPS Core</name>
+    <category>Custom Languages</category>
+    <version>1.0.0</version>
+
+    <application-components>
+    </application-components>
+
+    <project-components>
+    </project-components>
+
+    <actions>
+    </actions>
+</idea-plugin>
