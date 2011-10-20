@@ -107,6 +107,8 @@ public class MergeRootsDialog extends BaseDialog {
     myContainer.add(splitPane, BorderLayout.CENTER);
     myContainer.add(this.myStatusBar, BorderLayout.SOUTH);
     highlightAllChanges();
+
+    neighbourTraverser.goToFirstChangeLater();
   }
 
   private ChangeGroupBuilder createChangeGroupBuilder(boolean mine, boolean inspector) {
