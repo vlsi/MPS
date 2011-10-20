@@ -30,20 +30,18 @@
     <orderEntry type="library" name="asm" level="project" />
     <orderEntry type="library" name="commons-lang" level="project" />
     <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="library" name="java-diff-utils" level="project" />
     <orderEntry type="module" module-name="runtime" exported="" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
-    <orderEntry type="library" name="java-diff-utils" level="project" />
     <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="testbench" scope="TEST" />
+    <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="workbench" scope="TEST" />
-    <orderEntry type="module" module-name="editor-runtime" />
-    <orderEntry type="module" module-name="typesystemIntegration" />
   </component>
 </module>
 
