@@ -29,6 +29,7 @@ public class DependenciesTracer<T> {
 
   public void track(T node) {
     myCurrentTrace.add(node);
+    if (myCurrentTrace.size() == 1) return;
     Set<List<T>> traces = myTraces.get(node);
     if (traces == null) {
       traces = new HashSet<List<T>>();

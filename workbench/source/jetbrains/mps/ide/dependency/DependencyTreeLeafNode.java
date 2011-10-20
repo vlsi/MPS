@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.ide.dependency;
 
+import com.intellij.ui.Colors;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
+
+import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,9 +30,24 @@ import jetbrains.mps.smodel.IOperationContext;
  */
 public class DependencyTreeLeafNode extends DependencyTreeNode{
 
+  private Color myColor;
+
   public DependencyTreeLeafNode(IModule module, IOperationContext operationContext) {
     super(module, operationContext);
   }
+
+  public DependencyTreeLeafNode(IModule module, IOperationContext operationContext, Color color) {
+    super(module, operationContext);
+    myColor = color;
+  }
+
+  public void doUpdatePresentation() {
+    super.doUpdatePresentation();
+    if (myColor != null) {
+      setColor(myColor);
+    }
+  }
+
 
   @Override
   public boolean isLeaf() {

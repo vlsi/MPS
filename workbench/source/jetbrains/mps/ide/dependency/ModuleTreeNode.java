@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.dependency;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.Colors;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -39,7 +40,7 @@ public class ModuleTreeNode extends MPSTreeNode {
   private Project myProject;
   protected IModule myModule;
   protected boolean myInitialized;
-    private DependenciesTracer<IModule> myTracer;
+  private DependenciesTracer<IModule> myTracer;
 
   public ModuleTreeNode(Project project, IModule module, DependenciesTracer<IModule> tracer) {
      super(module, null);
@@ -78,7 +79,13 @@ public class ModuleTreeNode extends MPSTreeNode {
     List<IModule> dependenciesList = new ArrayList<IModule>(dependencies);
     Collections.sort(dependenciesList, new ModulesComparator());
     for (IModule depends : dependenciesList) {
-      add(new DependencyTreeLeafNode(depends, getOperationContext()));
+      if (depends == myModule) {
+        if (myTracer.getTraces(depends) != null) {
+          add(new DependencyTreeLeafNode(depends, getOperationContext(), Colors.DARK_RED));
+        }
+      } else {
+        add(new DependencyTreeLeafNode(depends, getOperationContext()));
+      }
     }
     myInitialized = true;
   }
