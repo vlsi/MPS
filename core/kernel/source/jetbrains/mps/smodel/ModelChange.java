@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-public class ModelChange {
+class ModelChange {
   static void assertLegalNodeChange(SNode node) {
     if (node.getModelInternal().canFireEvent() && node.isRegistered() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
 
