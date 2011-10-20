@@ -18,20 +18,29 @@ package com.intellij.openapi.vcs.changes;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.vcs.AbstractVcs;
-import com.intellij.openapi.vcs.FilePath;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.VcsBundle;
+import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
+import jetbrains.mps.fileTypes.MPSFileType;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -147,11 +156,63 @@ public class ChangesUtil {
     return VfsUtil.toVirtualFileArray(files);
   }
 
+  @Patch
   public static Navigatable[] getNavigatableArray(final Project project, final VirtualFile[] selectedFiles) {
     List<Navigatable> result = new ArrayList<Navigatable>();
-    for (VirtualFile selectedFile : selectedFiles) {
+    for (final VirtualFile selectedFile : selectedFiles) {
       if (!selectedFile.isDirectory()) {
-        result.add(new OpenFileDescriptor(project, selectedFile));
+        // This patch is needed to make Changes view open model in project pane, not in text editor.
+        // There is no extension mechanism for this in IDEA platform.
+        // MPS patch start
+        if (MPSFileTypesManager.instance().isModelFile(selectedFile) || MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
+          result.add(new Navigatable() {
+            @Override
+            public void navigate(boolean requestFocus) {
+              ChangeListManager changes = ChangeListManager.getInstance(project);
+              Change change = changes.getChange(selectedFile);
+              AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(selectedFile);
+              if (vcs != null && change != null && change.getFileStatus() == FileStatus.MERGED_WITH_CONFLICTS) {
+                // perform merge
+                AbstractVcsHelper.getInstance(project).showMergeDialog(Arrays.asList(selectedFile), vcs.getMergeProvider());
+                return;
+              }
+
+              ProjectPane projectPane = ProjectPane.getInstance(project);
+              if (MPSFileTypesManager.instance().isModelFile(selectedFile)) {
+                SModelDescriptor model = ModelAccess.instance().runReadAction(new jetbrains.mps.util.Computable<SModelDescriptor>() {
+                  public SModelDescriptor compute() {
+                    return SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(selectedFile));
+                  }
+                });
+                if (model != null) {
+                  projectPane.selectModel(model, false);
+                }
+              } else if (MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
+                IModule module = ModelAccess.instance().runReadAction(new jetbrains.mps.util.Computable<IModule>() {
+                  public IModule compute() {
+                    return MPSModuleRepository.getInstance().getModuleByFile(VirtualFileUtils.toIFile(selectedFile));
+                  }
+                });
+                if (module != null) {
+                  projectPane.selectModule(module, true);
+                }
+              }
+            }
+
+            @Override
+            public boolean canNavigate() {
+              return true;
+            }
+
+            @Override
+            public boolean canNavigateToSource() {
+              return true;
+            }
+          });
+        } else {
+          result.add(new OpenFileDescriptor(project, selectedFile));
+        }
+        // MPS patch end
       }
     }
     return result.toArray(new Navigatable[result.size()]);
@@ -331,7 +392,7 @@ public class ChangesUtil {
 
   public static boolean isInternalOperation(VirtualFile file) {
     Boolean data = file.getUserData(INTERNAL_OPERATION_KEY);
-    return data != null && data.booleanValue();   
+    return data != null && data.booleanValue();
   }
 
   public static String getDefaultChangeListName() {
