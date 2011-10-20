@@ -140,18 +140,7 @@ public class ModelPersistence {
   }
 
   private static void loadDescriptor(DescriptorLoadResult result, InputSource source) throws ModelReadException {
-    try {
-      JDOMUtil.createSAXParser().parse(source, new MyDescriptorHandler(result));
-    } catch (BreakParseSAXException ex) {
-      /* used to break SAX parsing flow */
-    } catch (ParserConfigurationException e) {
-      LOG.error(e);
-      throw new ModelReadException("Couldn't read model descriptor: " + e.getMessage(), e);
-    } catch (SAXException e) {
-      throw new ModelReadException("Couldn't read model descriptor: " + e.getMessage(), e);
-    } catch (IOException e) {
-      throw new ModelReadException("Couldn't read model descriptor: " + e.getMessage(), e);
-    }
+    parseAndHandleExceptions(source, new MyDescriptorHandler(result), "model descriptor");
   }
 
   private static DescriptorLoadResult loadDescriptor(InputSource source) throws ModelReadException {
@@ -189,18 +178,7 @@ public class ModelPersistence {
       // first try to use SAX parser
       XMLSAXHandler<ModelLoadResult> handler = mp.getModelReaderHandler(state, header);
       if (handler != null) {
-        try {
-          JDOMUtil.createSAXParser().parse(source, handler);
-        } catch (BreakParseSAXException e) {
-          // Used to break SAX parser flow
-        } catch (SAXException e) {
-          throw new ModelReadException("Couldn't load model: " + e.getMessage(), e, header);
-        } catch (ParserConfigurationException e) {
-          LOG.error(e);
-          throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
-        } catch (IOException e) {
-          throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
-        }
+        parseAndHandleExceptions(source, handler, "model");
         return handler.getResult();
       }
       // then try to use DOM reader
@@ -229,7 +207,7 @@ public class ModelPersistence {
       LOG.error(e);
       throw new ModelReadException("UTF-8 is not supported", e, header);
     } catch (IOException e) {
-      throw new ModelReadException("Couldn't load model: " + e.getMessage(),  e, header);
+      throw new ModelReadException("Couldn't read model: " + e.getMessage(),  e, header);
     } finally {
       FileUtil.closeFileSafe(in);
     }
@@ -481,6 +459,21 @@ public class ModelPersistence {
     String modelPath = modelFile.getPath();
     String versionPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + ".metadata";
     return FileSystem.getInstance().getFileByPath(versionPath);
+  }
+
+  private static void parseAndHandleExceptions(InputSource source, DefaultHandler handler, String what) throws ModelReadException {
+    try {
+      JDOMUtil.createSAXParser().parse(source, handler);
+    } catch (BreakParseSAXException e) {
+      /* used to break SAX parsing flow */
+    } catch (ParserConfigurationException e) {
+      LOG.error(e);
+      throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
+    } catch (SAXException e) {
+      throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
+    } catch (IOException e) {
+      throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
+    }
   }
 
   private static class MyDescriptorHandler extends DefaultHandler {
