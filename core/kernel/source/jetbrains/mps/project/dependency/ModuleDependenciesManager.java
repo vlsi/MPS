@@ -21,6 +21,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -103,29 +104,42 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
   }
 
   public void collectVisibleModules(Set<IModule> dependencies, boolean reexportOnly) {
+    collectVisibleModules(dependencies, reexportOnly, null);
+  }
+
+  public void collectVisibleModules(Set<IModule> dependencies, boolean reexportOnly, @Nullable DependenciesTracer<IModule> tracer) {
+    if (tracer != null) {
+      tracer.track(myModule);
+    }
     dependencies.add(myModule);
+    try {
+      for (Dependency dependency : myModule.getDependencies()) {
+        if (reexportOnly && !dependency.isReexport()) continue;
 
-    for (Dependency dependency : myModule.getDependencies()) {
-      if (reexportOnly && !dependency.isReexport()) continue;
+        IModule m = MPSModuleRepository.getInstance().getModule(dependency.getModuleRef());
+        if (m == null) continue;
 
-      IModule m = MPSModuleRepository.getInstance().getModule(dependency.getModuleRef());
-      if (m == null) continue;
+        if (!dependencies.contains(m)) {
+          m.getDependenciesManager().collectVisibleModules(dependencies, true, tracer);
+        }
+      }
 
-      if (!dependencies.contains(m)) {
-        m.getDependenciesManager().collectVisibleModules(dependencies, true);
+      if (reexportOnly) return;
+
+      for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
+        DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
+        if (dk == null) continue;
+
+        for (Solution solution : dk.getAllExportedSolutions()) {
+          if (!dependencies.contains(solution)) {
+            solution.getDependenciesManager().collectVisibleModules(dependencies, true, tracer);
+          }
+        }
       }
     }
-
-    if (reexportOnly) return;
-
-    for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
-      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
-      if (dk == null) continue;
-
-      for (Solution solution : dk.getAllExportedSolutions()) {
-        if (!dependencies.contains(solution)) {
-          solution.getDependenciesManager().collectVisibleModules(dependencies, true);
-        }
+    finally {
+      if (tracer != null) {
+        tracer.unTrack();
       }
     }
   }
