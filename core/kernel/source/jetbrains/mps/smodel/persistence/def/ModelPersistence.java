@@ -40,7 +40,6 @@ import org.jetbrains.annotations.Nullable;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -183,6 +182,9 @@ public class ModelPersistence {
 
   private static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) throws ModelReadException {
     IModelPersistence mp = getModelPersistence(header);
+    if (header.getPersistenceVersion() < 0) {
+      throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
+    }
     if (mp != null) {
       // first try to use SAX parser
       XMLSAXHandler<ModelLoadResult> handler = mp.getModelReaderHandler(state, header);
@@ -208,8 +210,8 @@ public class ModelPersistence {
         return new ModelLoadResult(reader.readModel(document, header), ModelLoadingState.FULLY_LOADED);
       }
     }
-    // TODO handle unknown persistence version
-    return handleNullReaderForPersistence(header.getUID());
+    throw new PersistenceVersionNotFoundException("Can not find appropriate persistence version for model " + header.getUID() + "\n" +
+      " Use newer version of JetBrains MPS to load this model.");
   }
 
   private static SModelHeader getModelHeader(@NotNull InputSource inputSource) throws ModelReadException {
@@ -368,11 +370,6 @@ public class ModelPersistence {
 
   public static int getCurrentPersistenceVersion() {
     return ModelPersistence.LAST_VERSION;
-  }
-
-  private static ModelLoadResult handleNullReaderForPersistence(String modelTitle) {
-    throw new PersistenceVersionNotFoundException("Can not find appropriate persistence version for model " + modelTitle + "\n" +
-      " Use newer version of JetBrains MPS to load this model.");
   }
 
   public static Map<String, String> calculateHashes(byte[] modelBytes) throws ModelReadException {
