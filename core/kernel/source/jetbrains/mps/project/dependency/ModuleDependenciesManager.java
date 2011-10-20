@@ -111,29 +111,23 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     if (tracer != null) {
       tracer.track(myModule);
     }
-    dependencies.add(myModule);
     try {
+      if (dependencies.contains(myModule)) return;
+      dependencies.add(myModule);
       for (Dependency dependency : myModule.getDependencies()) {
         if (reexportOnly && !dependency.isReexport()) continue;
 
         IModule m = MPSModuleRepository.getInstance().getModule(dependency.getModuleRef());
         if (m == null) continue;
-
-        if (!dependencies.contains(m)) {
-          m.getDependenciesManager().collectVisibleModules(dependencies, true, tracer);
-        }
+        m.getDependenciesManager().collectVisibleModules(dependencies, true, tracer);
       }
-
       if (reexportOnly) return;
-
       for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
         DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
         if (dk == null) continue;
 
         for (Solution solution : dk.getAllExportedSolutions()) {
-          if (!dependencies.contains(solution)) {
-            solution.getDependenciesManager().collectVisibleModules(dependencies, true, tracer);
-          }
+          solution.getDependenciesManager().collectVisibleModules(dependencies, true, tracer);
         }
       }
     }
