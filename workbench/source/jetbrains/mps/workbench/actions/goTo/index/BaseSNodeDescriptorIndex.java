@@ -79,6 +79,9 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
       //todo only roots loading
       IFile file = VirtualFileUtils.toIFile(inputData.getFile());
       model = ModelPersistence.readModel(file, false);
+      if (model == null) {
+        model = new StubModel(SModelReference.fromPath(inputData.getFile().getPath()));
+      }
       inputData.putUserData(PARSED_MODEL, model);
     }
     return model;

@@ -161,8 +161,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.source.RegularModelDataSource" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.DescriptorLoadResult" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelFileReadException" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />

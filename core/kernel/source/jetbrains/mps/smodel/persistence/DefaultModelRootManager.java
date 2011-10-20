@@ -65,7 +65,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return new DefaultSModelDescriptor(module,modelSource, ref, new DescriptorLoadResult());
   }
 
-  private static SModelDescriptor getInstance(IModule module,RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+  private static SModelDescriptor getInstance(IModule module, RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
     LOG.debug("Getting model " + modelReference + " from " + source);
 
     SModelRepository modelRepository = SModelRepository.getInstance();

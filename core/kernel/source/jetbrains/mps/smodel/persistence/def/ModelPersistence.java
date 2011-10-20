@@ -21,13 +21,13 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -40,6 +40,7 @@ import org.jetbrains.annotations.Nullable;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -122,84 +123,45 @@ public class ModelPersistence {
   }
   //--------read--------
 
-  private static void loadDescriptor(final DescriptorLoadResult result, IFile file) {
+  private static void loadDescriptor(DescriptorLoadResult result, IFile file) throws ModelReadException {
     InputStream in = null;
     try {
       in = file.openInputStream();
-      InputSource source = new InputSource(new InputStreamReader(in, "UTF-8"));
+      InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
 
       loadDescriptor(result, source);
     } catch (UnsupportedEncodingException e) {
       LOG.error(e);
+      throw new ModelReadException("UTF-8 is unsupported", e);
     } catch (IOException e) {
-      LOG.error(e);
+      throw new ModelReadException("Couldn't read descriptor from " + file.getPath() + ": " + e.getMessage(), e);
     } finally {
-      if (in != null) {
-        try {
-          in.close();
-        } catch (IOException e) {
-          LOG.error(e);
-        }
-      }
+      FileUtil.closeFileSafe(in);
     }
   }
 
-  private static void loadDescriptor(final DescriptorLoadResult result, InputSource source) {
-    DefaultHandler handler = new DefaultHandler() {
-      public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        if (MODEL.equals(qName)) {
-          String uid = attributes.getValue(MODEL_UID);
-          if (uid != null) {
-            result.setUID(uid);
-          }
-          String version = attributes.getValue(SModelHeader.VERSION);
-          if (version != null) {
-            try {
-              result.setVersion(Integer.parseInt(version));
-            } catch (NumberFormatException ex) {
-            }
-          }
-          String doNotGenerate = attributes.getValue(SModelHeader.DO_NOT_GENERATE);
-          if (doNotGenerate != null) {
-            result.setDoNotGenerate(Boolean.parseBoolean(doNotGenerate));
-          }
-
-        } else if (PERSISTENCE.equals(qName)) {
-          String s = attributes.getValue(PERSISTENCE_VERSION);
-          if (s != null) {
-            try {
-              result.setPersistenceVersion(Integer.parseInt(s));
-            } catch (NumberFormatException ex) {
-            }
-          }
-        } else {
-          throw new BreakParseSAXException();
-        }
-      }
-
-      public void endElement(String uri, String localName, String qName) throws SAXException {
-        throw new BreakParseSAXException();
-      }
-    };
-
+  private static void loadDescriptor(DescriptorLoadResult result, InputSource source) throws ModelReadException {
     try {
-      SAXParser parser = JDOMUtil.createSAXParser();
-      parser.parse(source, handler);
+      JDOMUtil.createSAXParser().parse(source, new MyDescriptorHandler(result));
     } catch (BreakParseSAXException ex) {
       /* used to break SAX parsing flow */
     } catch (ParserConfigurationException e) {
-    } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(e);
+      throw new ModelReadException("Couldn't read model descriptor: " + e.getMessage(), e);
+    } catch (SAXException e) {
+      throw new ModelReadException("Couldn't read model descriptor: " + e.getMessage(), e);
+    } catch (IOException e) {
+      throw new ModelReadException("Couldn't read model descriptor: " + e.getMessage(), e);
     }
   }
 
-  public static DescriptorLoadResult loadDescriptor(InputSource source) {
-    final DescriptorLoadResult result = new DescriptorLoadResult();
+  private static DescriptorLoadResult loadDescriptor(InputSource source) throws ModelReadException {
+    DescriptorLoadResult result = new DescriptorLoadResult();
     loadDescriptor(result, source);
     return result;
   }
 
-  public static DescriptorLoadResult loadDescriptor(IFile file) {
+  public static DescriptorLoadResult loadDescriptor(IFile file) throws ModelReadException {
     final DescriptorLoadResult result = new DescriptorLoadResult();
     Map<String, String> metadata = loadMetadata(file);
     if (metadata != null) {
@@ -207,7 +169,7 @@ public class ModelPersistence {
       if (metadata.containsKey(SModelHeader.VERSION)) {
         try {
           result.setVersion(Integer.parseInt(metadata.remove(SModelHeader.VERSION)));
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException ignored) {
         }
       }
       if (metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
@@ -216,37 +178,10 @@ public class ModelPersistence {
     }
 
     loadDescriptor(result, file);
-
     return result;
   }
 
-  @NotNull
-  public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull IFile file, ModelLoadingState state) {
-    InputStream in = null;
-    try {
-      in = file.openInputStream();
-      InputSource source = new InputSource(new InputStreamReader(in, "UTF-8"));
-      return readModel(header, source, state);
-    } catch (Throwable t) {
-      SModelReference ref = header.getModelReference();
-      if (ref == null) {
-        ref = SModelReference.fromPath(file.getPath());
-      }
-      LOG.error("Error while loading model from file: " + file.getPath(), t);
-      StubModel model = new StubModel(ref);
-      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
-    } finally {
-      if (in != null) {
-        try {
-          in.close();
-        } catch (IOException e) {
-          LOG.error(e);
-        }
-      }
-    }
-  }
-
-  public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) {
+  private static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) throws ModelReadException {
     IModelPersistence mp = getModelPersistence(header);
     if (mp != null) {
       // first try to use SAX parser
@@ -255,11 +190,14 @@ public class ModelPersistence {
         try {
           JDOMUtil.createSAXParser().parse(source, handler);
         } catch (BreakParseSAXException e) {
-          //this is normal for ROOTS_LOADED
-        } catch (Throwable t) {
-          LOG.error(t);
-          t.printStackTrace();
-          return new ModelLoadResult(new StubModel(header.getModelReference()), ModelLoadingState.NOT_LOADED);
+          // Used to break SAX parser flow
+        } catch (SAXException e) {
+          throw new ModelReadException("Couldn't load model: " + e.getMessage(), e, header);
+        } catch (ParserConfigurationException e) {
+          LOG.error(e);
+          throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
+        } catch (IOException e) {
+          throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
         }
         return handler.getResult();
       }
@@ -270,16 +208,40 @@ public class ModelPersistence {
         return new ModelLoadResult(reader.readModel(document, header), ModelLoadingState.FULLY_LOADED);
       }
     }
+    // TODO handle unknown persistence version
     return handleNullReaderForPersistence(header.getUID());
   }
 
-  public static SModelHeader getModelHeader(@NotNull InputSource inputSource) {
+  private static SModelHeader getModelHeader(@NotNull InputSource inputSource) throws ModelReadException {
     return loadDescriptor(inputSource).getHeader();
   }
 
+  @NotNull
+  public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull IFile file, ModelLoadingState state) throws ModelReadException {
+    InputStream in = null;
+    try {
+      in = file.openInputStream();
+      InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
+      return readModel(header, source, state);
+    } catch (UnsupportedEncodingException e) {
+      LOG.error(e);
+      throw new ModelReadException("UTF-8 is not supported", e, header);
+    } catch (IOException e) {
+      throw new ModelReadException("Couldn't load model: " + e.getMessage(),  e, header);
+    } finally {
+      FileUtil.closeFileSafe(in);
+    }
+  }
+
+  // TODO maybe replace with throw?
   @Nullable
   public static List<LineContent> getLineToContentMap(String content) {
-    SModelHeader header = getModelHeader(new InputSource(new StringReader(content)));
+    SModelHeader header;
+    try {
+      header = getModelHeader(new InputSource(new StringReader(content)));
+    } catch (ModelReadException e) {
+      return null;
+    }
     IModelPersistence mp = getModelPersistence(header);
 
     if (mp != null) {
@@ -289,8 +251,13 @@ public class ModelPersistence {
           SAXParser parser = JDOMUtil.createSAXParser();
           parser.parse(new InputSource(new StringReader(content)), handler);
           return handler.getResult();
-        } catch (Throwable t) {
-          LOG.error(t);
+        } catch (SAXException e) {
+          return null;
+        } catch (ParserConfigurationException e) {
+          LOG.error(e);
+          return null;
+        } catch (IOException e) {
+          return null;
         }
       }
     }
@@ -389,13 +356,13 @@ public class ModelPersistence {
   //-------- --------
 
   @NotNull
-  private static Document loadModelDocument(@NotNull InputSource source) {
+  private static Document loadModelDocument(@NotNull InputSource source) throws ModelReadException {
     try {
       return JDOMUtil.loadDocument(source);
     } catch (JDOMException e) {
-      throw new ModelFileReadException("Exception in file " + source, e);
+      throw new ModelReadException("Exception on loading model from " + source, e);
     } catch (IOException e) {
-      throw new ModelFileReadException("Exception in file " + source, e);
+      throw new ModelReadException("Exception on loading model from " + source, e);
     }
   }
 
@@ -408,7 +375,7 @@ public class ModelPersistence {
       " Use newer version of JetBrains MPS to load this model.");
   }
 
-  public static Map<String, String> calculateHashes(byte[] modelBytes) {
+  public static Map<String, String> calculateHashes(byte[] modelBytes) throws ModelReadException {
     SModelHeader header = getModelHeader(new InputSource(new ByteArrayInputStream(modelBytes)));
     IModelPersistence mp = getModelPersistence(header);
     Map<String, String> result;
@@ -423,10 +390,15 @@ public class ModelPersistence {
     return result;
   }
 
-  // TODO replace nullable with ModelFileReadException
+  // TODO replace nullable with ModelReadException
   @Nullable
   public static SModel readModel(@NotNull final IFile file, boolean onlyRoots) {
-    final SModelHeader header = loadDescriptor(file).getHeader();
+    final SModelHeader header;
+    try {
+      header = loadDescriptor(file).getHeader();
+    } catch (ModelReadException e) {
+      return null;
+    }
     if (header.getUID() == null) {
       return null;
     }
@@ -434,16 +406,25 @@ public class ModelPersistence {
     ModelLoadResult result = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
       @Override
       public ModelLoadResult compute() {
-        return readModel(header, file, state);
+        try {
+          return readModel(header, file, state);
+        } catch (ModelReadException e) {
+          return null;
+        }
       }
     });
-    return result.getState() != state ? null : result.getModel();
+    return result == null || result.getState() != state ? null : result.getModel();
   }
 
-  // TODO replace nullable with ModelFileReadException
+  // TODO replace nullable with ModelReadException
   @Nullable
   public static SModel readModel(@NotNull final String content, boolean onlyRoots) {
-    final SModelHeader header = loadDescriptor(new InputSource(new StringReader(content))).getHeader();
+    final SModelHeader header;
+    try {
+      header = loadDescriptor(new InputSource(new StringReader(content))).getHeader();
+    } catch (ModelReadException e) {
+      return null;
+    }
     if (header.getUID() == null) {
       return null;
     }
@@ -451,10 +432,14 @@ public class ModelPersistence {
     ModelLoadResult result = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
       @Override
       public ModelLoadResult compute() {
-        return readModel(header, new InputSource(new StringReader(content)), state);
+        try {
+          return readModel(header, new InputSource(new StringReader(content)), state);
+        } catch (ModelReadException e) {
+          return null;
+        }
       }
     });
-    return result.getState() != state ? null : result.getModel();
+    return result == null || result.getState() != state ? null : result.getModel();
   }
 
   public static String modelToString(@NotNull final SModel model) {
@@ -499,5 +484,48 @@ public class ModelPersistence {
     String modelPath = modelFile.getPath();
     String versionPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + ".metadata";
     return FileSystem.getInstance().getFileByPath(versionPath);
+  }
+
+  private static class MyDescriptorHandler extends DefaultHandler {
+    private final DescriptorLoadResult myResult;
+
+    public MyDescriptorHandler(DescriptorLoadResult result) {
+      myResult = result;
+    }
+
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+      if (MODEL.equals(qName)) {
+        String uid = attributes.getValue(MODEL_UID);
+        if (uid != null) {
+          myResult.setUID(uid);
+        }
+        String version = attributes.getValue(SModelHeader.VERSION);
+        if (version != null) {
+          try {
+            myResult.setVersion(Integer.parseInt(version));
+          } catch (NumberFormatException ignored) {
+          }
+        }
+        String doNotGenerate = attributes.getValue(SModelHeader.DO_NOT_GENERATE);
+        if (doNotGenerate != null) {
+          myResult.setDoNotGenerate(Boolean.parseBoolean(doNotGenerate));
+        }
+
+      } else if (PERSISTENCE.equals(qName)) {
+        String s = attributes.getValue(PERSISTENCE_VERSION);
+        if (s != null) {
+          try {
+            myResult.setPersistenceVersion(Integer.parseInt(s));
+          } catch (NumberFormatException ignored) {
+          }
+        }
+      } else {
+        throw new BreakParseSAXException();
+      }
+    }
+
+    public void endElement(String uri, String localName, String qName) throws SAXException {
+      throw new BreakParseSAXException();
+    }
   }
 }

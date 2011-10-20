@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
@@ -41,22 +42,20 @@ public class ModelDigestUtil {
     } catch (IOException e) {
       /* ignore */
     } finally {
-      if (is != null) {
-        try {
-          is.close();
-        } catch (IOException e) {
-          /* ignore */
-        }
-      }
+      FileUtil.closeFileSafe(is);
     }
-    if(modelBytes == null) {
+    if (modelBytes == null) {
       return null;
     }
     return getDigestMap(modelBytes);
   }
 
   public static Map<String, String> getDigestMap(byte[] modelBytes) {
-    return ModelPersistence.calculateHashes(modelBytes);
+    try {
+      return ModelPersistence.calculateHashes(modelBytes);
+    } catch (ModelReadException e) {
+      return null;
+    }
   }
 
   public static String hash(IFile file) {

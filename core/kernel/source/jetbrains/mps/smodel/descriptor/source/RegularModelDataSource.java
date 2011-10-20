@@ -75,7 +75,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return myFile.lastModified();
   }
 
-  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) {
+  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) throws ModelReadException {
     return ModelPersistence.loadDescriptor(myFile);
   }
 
@@ -92,24 +92,10 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     ModelLoadResult result;
     try {
       result = ModelPersistence.readModel(dsm.getDescriptorSModelHeader(), dsm.getModelFile(), state);
-      if (result.getState() == ModelLoadingState.NOT_LOADED) {
-        // TODO this is a temporary fix to enable invoking merge dialog for model with wrong markup
-        if (state != ModelLoadingState.NOT_LOADED) {
-          SuspiciousModelHandler.getHandler().handleSuspiciousModel(dsm, false);
-        }
-
-        return result;
-      }
-    } catch (ModelFileReadException t) {
+    } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(dsm, false);
       SModel newModel = new StubModel(dsm.getSModelReference());
-      LOG.error(t.getMessage(), newModel);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
-    } catch (PersistenceVersionNotFoundException e) {
-      LOG.error("Trying to load model " + dsm.getLongName() + " from file " + dsm.getModelFile().toString(), e);
-      SuspiciousModelHandler.getHandler().handleSuspiciousModel(dsm, false);
-      StubModel model = new StubModel(dsmRef);
-      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
     }
 
     SModel model = result.getModel();

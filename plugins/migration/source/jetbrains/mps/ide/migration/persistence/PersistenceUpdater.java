@@ -22,6 +22,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
 
 import javax.swing.JFrame;
@@ -75,7 +76,11 @@ public class PersistenceUpdater {
         if (modelDescriptor instanceof EditableSModelDescriptor) {
           IFile file = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
           if (file != null) {
-            persistenceVersion = ModelPersistence.loadDescriptor(file).getHeader().getPersistenceVersion();
+            try {
+              persistenceVersion = ModelPersistence.loadDescriptor(file).getHeader().getPersistenceVersion();
+            } catch (ModelReadException e) {
+              // Can't upgrade persistence for bad model
+            }
           }
         }
       }
