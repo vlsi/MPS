@@ -8,6 +8,7 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.diff.DiffManager;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.smodel.ModelAccess;
@@ -25,7 +26,6 @@ import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.ide.projectPane.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import java.io.IOException;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.fileTypes.FileType;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
@@ -33,6 +33,7 @@ import com.intellij.openapi.diff.DocumentContent;
 import com.intellij.openapi.diff.FileContent;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import java.io.IOException;
 
 public class ModelDiffTool implements DiffTool {
   protected static Log log = LogFactory.getLog(ModelDiffTool.class);
@@ -42,53 +43,53 @@ public class ModelDiffTool implements DiffTool {
 
   public void show(final DiffRequest request) {
     DiffContent[] contents = request.getContents();
+    final SModel oldModel;
+    final SModel newModel;
     try {
-      final SModel oldModel = readModel(contents[0]);
-      final SModel newModel = readModel(contents[1]);
-      if (oldModel == null || newModel == null) {
-        if (log.isErrorEnabled()) {
-          log.error("Can't read models");
-        }
-        DiffManager.getInstance().getIdeaDiffTool().show(request);
+      oldModel = readModel(contents[0]);
+      newModel = readModel(contents[1]);
+    } catch (ModelReadException e) {
+      if (log.isErrorEnabled()) {
+        log.error("Can't read models", e);
       }
-      final BaseDialog d = ModelAccess.instance().runReadAction(new Computable<BaseDialog>() {
-        public BaseDialog compute() {
-          SModelDescriptor modelDescriptor = oldModel.getModelDescriptor();
+      DiffManager.getInstance().getIdeaDiffTool().show(request);
+      return;
+    }
+    final BaseDialog d = ModelAccess.instance().runReadAction(new Computable<BaseDialog>() {
+      public BaseDialog compute() {
+        SModelDescriptor modelDescriptor = oldModel.getModelDescriptor();
+        if (modelDescriptor == null) {
+          modelDescriptor = newModel.getModelDescriptor();
           if (modelDescriptor == null) {
-            modelDescriptor = newModel.getModelDescriptor();
-            if (modelDescriptor == null) {
-              modelDescriptor = SModelRepository.getInstance().getModelDescriptor(oldModel.getSModelFqName());
-            }
-          }
-          IOperationContext context;
-          if (modelDescriptor == null) {
-            context = new GlobalOperationContext();
-          } else {
-            context = new ModuleContext(modelDescriptor.getModule(), ProjectHelper.toMPSProject(request.getProject()));
-          }
-          boolean modal = !(request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
-          JFrame frame = WindowManager.getInstance().getFrame(request.getProject());
-          if (isNewDiffEnabled()) {
-            return new ModelDifferenceDialog(oldModel, newModel, request);
-          } else {
-            final OldModelDifferenceDialog d = new OldModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
-            d.addAction(new AnAction("View as Text", "View as Text", Icons.TEXT_ICON) {
-              public void actionPerformed(AnActionEvent e) {
-                DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
-                if (ideaDiffTool.canShow(request)) {
-                  d.dispose();
-                  ideaDiffTool.show(request);
-                }
-              }
-            });
-            return d;
+            modelDescriptor = SModelRepository.getInstance().getModelDescriptor(oldModel.getSModelFqName());
           }
         }
-      });
-      d.showDialog();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+        IOperationContext context;
+        if (modelDescriptor == null) {
+          context = new GlobalOperationContext();
+        } else {
+          context = new ModuleContext(modelDescriptor.getModule(), ProjectHelper.toMPSProject(request.getProject()));
+        }
+        boolean modal = !(request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
+        JFrame frame = WindowManager.getInstance().getFrame(request.getProject());
+        if (isNewDiffEnabled()) {
+          return new ModelDifferenceDialog(oldModel, newModel, request);
+        } else {
+          final OldModelDifferenceDialog d = new OldModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
+          d.addAction(new AnAction("View as Text", "View as Text", Icons.TEXT_ICON) {
+            public void actionPerformed(AnActionEvent e) {
+              DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
+              if (ideaDiffTool.canShow(request)) {
+                d.dispose();
+                ideaDiffTool.show(request);
+              }
+            }
+          });
+          return d;
+        }
+      }
+    });
+    d.showDialog();
   }
 
   public boolean canShow(DiffRequest request) {
@@ -104,7 +105,7 @@ public class ModelDiffTool implements DiffTool {
     return type.equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
   }
 
-  public static SModel readModel(DiffContent content) throws IOException {
+  private static SModel readModel(DiffContent content) throws ModelReadException {
     if (content instanceof DocumentContent || content instanceof FileContent) {
       SModelRepository modelRepository = SModelRepository.getInstance();
       final SModelDescriptor modelDescriptor = modelRepository.findModel(VirtualFileUtils.toIFile(content.getFile()));
@@ -116,7 +117,11 @@ public class ModelDiffTool implements DiffTool {
         });
       }
     }
-    return ModelPersistence.readModel(new String(content.getBytes(), "UTF-8"), false);
+    try {
+      return ModelPersistence.readModel(new String(content.getBytes(), "UTF-8"), false);
+    } catch (IOException ioe) {
+      throw new ModelReadException("Couldn't read content: " + ioe.getMessage(), ioe);
+    }
   }
 
   public static boolean isNewDiffEnabled() {

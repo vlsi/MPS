@@ -93,7 +93,6 @@ import com.intellij.openapi.vcs.changes.Change;
 import com.intellij.openapi.vcs.changes.ChangesUtil;
 import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
-import jetbrains.mps.vcs.plugin.VcsActionsHelper;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.project.ModuleContext;
@@ -708,7 +707,7 @@ __switch__:
                 if (before == null) {
                   beforeModel.value = new SModel(myModelDescriptor.getSModelReference());
                 } else {
-                  beforeModel.value = VcsActionsHelper.loadModel(before.getContent(), myModelDescriptor);
+                  beforeModel.value = ModelPersistence.readModel(before.getContent(), false);
                 }
 
                 if (pi.isCanceled()) {
@@ -717,7 +716,7 @@ __switch__:
 
                 pi.setText("Loading model after change");
                 assert after != null;
-                final SModel afterModel = VcsActionsHelper.loadModel(after.getContent(), myModelDescriptor);
+                final SModel afterModel = ModelPersistence.readModel(after.getContent(), false);
 
                 final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
@@ -786,6 +785,12 @@ __switch__:
               ApplicationManager.getApplication().invokeLater(new Runnable() {
                 public void run() {
                   VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot show diff: " + ve.getMessage(), MessageType.ERROR);
+                }
+              });
+            } catch (final ModelReadException e) {
+              ApplicationManager.getApplication().invokeLater(new Runnable() {
+                public void run() {
+                  VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot show diff: " + e.getMessage(), MessageType.ERROR);
                 }
               });
             }

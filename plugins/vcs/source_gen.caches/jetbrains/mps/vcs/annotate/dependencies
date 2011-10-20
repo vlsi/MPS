@@ -126,7 +126,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.SimpleDiffRequest" />
     <classNode dependClassName="jetbrains.mps.vcs.integration.ModelDiffTool" />
-    <classNode dependClassName="jetbrains.mps.vcs.plugin.VcsActionsHelper" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

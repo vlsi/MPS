@@ -349,58 +349,56 @@ public class ModelPersistence {
     return result;
   }
 
-  // TODO replace nullable with ModelReadException
-  @Nullable
-  public static SModel readModel(@NotNull final IFile file, boolean onlyRoots) {
-    final SModelHeader header;
-    try {
-      header = loadDescriptor(file).getHeader();
-    } catch (ModelReadException e) {
-      return null;
-    }
-    if (header.getUID() == null) {
-      return null;
-    }
+  // TODO why is read action needed?
+  @NotNull
+  public static SModel readModel(@NotNull final IFile file, boolean onlyRoots) throws ModelReadException {
+    final SModelHeader header = loadDescriptor(file).getHeader();
     final ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
+    final ModelReadException[] e = new ModelReadException[1];
     ModelLoadResult result = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
       @Override
       public ModelLoadResult compute() {
         try {
           return readModel(header, file, state);
-        } catch (ModelReadException e) {
+        } catch (ModelReadException ex) {
+          e[0] = ex;
           return null;
         }
       }
     });
-    return result == null || result.getState() != state ? null : result.getModel();
+    if (e[0] != null) {
+      throw e[0];
+    }
+    return result.getModel();
   }
 
-  // TODO replace nullable with ModelReadException
-  @Nullable
-  public static SModel readModel(@NotNull final String content, boolean onlyRoots) {
-    final SModelHeader header;
-    try {
-      header = loadDescriptor(new InputSource(new StringReader(content))).getHeader();
-    } catch (ModelReadException e) {
-      return null;
-    }
+  // TODO why is read action needed?
+  @NotNull
+  public static SModel readModel(@NotNull final String content, boolean onlyRoots) throws ModelReadException {
+    final SModelHeader header = loadDescriptor(new InputSource(new StringReader(content))).getHeader();
     if (header.getUID() == null) {
       return null;
     }
     final ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
-    ModelLoadResult result = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
+    final ModelReadException[] e = new ModelReadException[1];
+     ModelLoadResult result = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
       @Override
       public ModelLoadResult compute() {
         try {
           return readModel(header, new InputSource(new StringReader(content)), state);
-        } catch (ModelReadException e) {
+        } catch (ModelReadException ex) {
+          e[0] = ex;
           return null;
         }
       }
     });
-    return result == null || result.getState() != state ? null : result.getModel();
+    if (e[0] != null) {
+      throw e[0];
+    }
+    return result.getModel();
   }
 
+  @NotNull
   public static String modelToString(@NotNull final SModel model) {
     return JDOMUtil.asString(ModelAccess.instance().runReadAction(new Computable<Document>() {
       @Override
