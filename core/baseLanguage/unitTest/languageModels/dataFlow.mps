@@ -28,6 +28,9 @@
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="7080278351417106693">
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpe3.7080278351417106679" resolveInfo="AssertInNotNull" />
     </node>
+    <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1947329772147538398">
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpe3.1172069869612" resolveInfo="AssertThrows" />
+    </node>
   </roots>
   <root id="1207074074329">
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="1207074074330">
@@ -124,6 +127,20 @@
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="7080278351417106698" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7080278351417106703">
               <link role="link" roleId="tp25.1138056516764" targetNodeId="tpe3.7080278351417106681" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1947329772147538398">
+    <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="1947329772147538399">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947329772147538400">
+        <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="1947329772147538401">
+          <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1947329772147538404">
+            <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1947329772147538403" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1947329772147570553">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpe3.1172070029086" />
             </node>
           </node>
         </node>
