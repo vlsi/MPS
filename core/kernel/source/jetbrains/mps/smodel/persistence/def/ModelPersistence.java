@@ -213,32 +213,16 @@ public class ModelPersistence {
     }
   }
 
-  // TODO maybe replace with throw?
   @Nullable
-  public static List<LineContent> getLineToContentMap(String content) {
+  public static List<LineContent> getLineToContentMap(String content) throws ModelReadException {
     SModelHeader header;
-    try {
-      header = getModelHeader(new InputSource(new StringReader(content)));
-    } catch (ModelReadException e) {
-      return null;
-    }
+    header = getModelHeader(new InputSource(new StringReader(content)));
     IModelPersistence mp = getModelPersistence(header);
 
     if (mp != null) {
       XMLSAXHandler<List<LineContent>> handler = mp.getLineToContentMapReaderHandler();
       if (handler != null) {
-        try {
-          SAXParser parser = JDOMUtil.createSAXParser();
-          parser.parse(new InputSource(new StringReader(content)), handler);
-          return handler.getResult();
-        } catch (SAXException e) {
-          return null;
-        } catch (ParserConfigurationException e) {
-          LOG.error(e);
-          return null;
-        } catch (IOException e) {
-          return null;
-        }
+        parseAndHandleExceptions(new InputSource(new StringReader(content)), handler, "line to content map");
       }
     }
     return null;

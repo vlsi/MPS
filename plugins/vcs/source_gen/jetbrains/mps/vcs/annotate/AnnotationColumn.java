@@ -32,6 +32,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.actions.AnnotationColors;
@@ -143,7 +144,11 @@ public class AnnotationColumn extends AbstractLeftColumn {
     for (VcsFileRevision rev : ListSequence.fromList(fileAnnotation.getRevisions())) {
       MapSequence.fromMap(myRevisionNumberToRevision).put(rev.getRevisionNumber(), rev);
     }
-    myFileLineToContent = ModelPersistence.getLineToContentMap(myFileAnnotation.getAnnotatedContent());
+    try {
+      myFileLineToContent = ModelPersistence.getLineToContentMap(myFileAnnotation.getAnnotatedContent());
+    } catch (ModelReadException e) {
+      return;
+    }
     if (myFileLineToContent == null) {
       return;
     }
