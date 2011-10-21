@@ -1127,7 +1127,7 @@
                                 <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6516067852467206472">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xpbq.~BaseDialog%dsetErrorText(java%dlang%dString)%cvoid" resolveInfo="setErrorText" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6516067852467206473">
-                                    <property name="value" nameId="tpee.1070475926801" value="Model name should have \&quot;generated\&quot; or \&quot;dependencies\&quot; in its name" />
+                                    <property name="value" nameId="tpee.1070475926801" value="Model name should not have \&quot;generated\&quot; or \&quot;dependencies\&quot; in its name" />
                                   </node>
                                 </node>
                               </node>
