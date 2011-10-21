@@ -11,7 +11,6 @@ core/baseLanguage/closures/runtime/classes
 core/baseLanguage/collections/runtime/classes
 core/baseLanguage/collections/languages/trove/runtime/classes_gen
 core/baseLanguage/tuples/runtime/classes
-core/baseLanguage/closures/runtime/classes
 :editor
 core/editor-runtime/classes
 core/actions-runtime/classes
