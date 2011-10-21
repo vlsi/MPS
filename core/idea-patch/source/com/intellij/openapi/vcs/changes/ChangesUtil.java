@@ -18,7 +18,6 @@ package com.intellij.openapi.vcs.changes;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
-import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
@@ -30,8 +29,6 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
-import jetbrains.mps.fileTypes.MPSFileType;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -179,7 +176,7 @@ public class ChangesUtil {
 
               ProjectPane projectPane = ProjectPane.getInstance(project);
               if (MPSFileTypesManager.instance().isModelFile(selectedFile)) {
-                SModelDescriptor model = ModelAccess.instance().runReadAction(new jetbrains.mps.util.Computable<SModelDescriptor>() {
+                SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
                   public SModelDescriptor compute() {
                     return SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(selectedFile));
                   }
@@ -188,7 +185,7 @@ public class ChangesUtil {
                   projectPane.selectModel(model, false);
                 }
               } else if (MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
-                IModule module = ModelAccess.instance().runReadAction(new jetbrains.mps.util.Computable<IModule>() {
+                IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
                   public IModule compute() {
                     return MPSModuleRepository.getInstance().getModuleByFile(VirtualFileUtils.toIFile(selectedFile));
                   }
