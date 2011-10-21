@@ -87,26 +87,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.model.HighLevelEvaluationModel" file="HighLevelEvaluationModel.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.RuntimeException" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel" />
-  </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel" file="LowLevelEvaluationModel.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
