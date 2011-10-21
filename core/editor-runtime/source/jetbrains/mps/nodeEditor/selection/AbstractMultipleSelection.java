@@ -36,18 +36,12 @@ import java.util.List;
  * Time: 11:16 AM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractMultipleSelection implements MultipleSelection {
+public abstract class AbstractMultipleSelection extends AbstractSelection implements MultipleSelection {
   @NotNull
   private List<EditorCell> mySelectedCells;
-  private EditorComponent myEditorComponent;
 
   public AbstractMultipleSelection(@NotNull EditorComponent editorComponent) {
-    myEditorComponent = editorComponent;
-  }
-
-  @NotNull
-  protected EditorComponent getEditorComponent() {
-    return myEditorComponent;
+    super(editorComponent);
   }
 
   // this method should be called from the constructor of sub-classes
@@ -70,6 +64,7 @@ public abstract class AbstractMultipleSelection implements MultipleSelection {
 
   @Override
   public void executeAction(CellActionType type) {
+    getEditorComponent().assertModelNotDisposed();
     EditorCellAction action = getEditorComponent().getComponentAction(type);
     if (action != null && action.canExecute(getEditorComponent().getEditorContext())) {
       action.execute(getEditorComponent().getEditorContext());

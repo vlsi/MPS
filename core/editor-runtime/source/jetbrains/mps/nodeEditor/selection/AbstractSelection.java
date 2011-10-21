@@ -15,50 +15,26 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
-
-import java.awt.Graphics2D;
-import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Alexander Shatalin
- * Date: 1/13/11
- * Time: 6:40 PM
+ * Date: 10/21/11
+ * Time: 5:11 PM
  * To change this template use File | Settings | File Templates.
  */
-public interface Selection {
+public abstract class AbstractSelection implements Selection {
+  private EditorComponent myEditorComponent;
+
+  public AbstractSelection(@NotNull EditorComponent editorComponent) {
+    myEditorComponent = editorComponent;
+  }
+
   @NotNull
-  EditorComponent getEditorComponent();
-
-  void activate();
-
-  void deactivate();
-
-  SelectionInfo getSelectionInfo() throws SelectionStoreException;
-
-  boolean isSame(Selection another);
-
-  // TODO: add canExecuteAction() method
-  void executeAction(CellActionType type);
-
-  /**
-   * @return non-empty list of selected cells
-   */
-  @NotNull
-  List<EditorCell> getSelectedCells();
-
-  /**
-   * @return non-empty list of selected nodes
-   */
-  @NotNull
-  List<SNode> getSelectedNodes();
-
-  void ensureVisible();
-
-  void paintSelection(Graphics2D g);
+  @Override
+  public EditorComponent getEditorComponent() {
+    return myEditorComponent;
+  }
 }
