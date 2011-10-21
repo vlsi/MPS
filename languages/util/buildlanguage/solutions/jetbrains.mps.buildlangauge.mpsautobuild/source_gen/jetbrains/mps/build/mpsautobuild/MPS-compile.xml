@@ -28,7 +28,6 @@
   <property name="jetbrains.mps.baseLanguage.regexp.examples.classes" value="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.regexp.runtime.classes" value="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.runConfigurations.classes" value="${base_dir}/core/baseLanguage/runConfigurations/classes_gen" />
-  <property name="jetbrains.mps.baseLanguage.search.classes" value="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.tuples.classes" value="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.unitTest.classes" value="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.unitTest.runtime.classes" value="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
@@ -121,7 +120,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
@@ -186,8 +184,6 @@
     <path path="${base_dir}/core/baseLanguage/javadoc/test_gen" />
     <path path="${base_dir}/languages/util/regexp/source_gen" />
     <path path="${base_dir}/languages/util/regexp/test_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/test_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/source_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/test_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/source_gen" />
@@ -684,7 +680,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
@@ -8225,8 +8220,6 @@
     <mkdir dir="${base_dir}/core/baseLanguage/javadoc/test_gen" />
     <mkdir dir="${base_dir}/languages/util/regexp/source_gen" />
     <mkdir dir="${base_dir}/languages/util/regexp/test_gen" />
-    <mkdir dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" />
-    <mkdir dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/test_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/tuples/languages/tuples/source_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/tuples/languages/tuples/test_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/unitTest/source_gen" />
@@ -8311,7 +8304,6 @@
     <mkdir dir="${jetbrains.mps.baseLanguage.collections.trove.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.javadoc.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.regexp.classes}" />
-    <mkdir dir="${jetbrains.mps.baseLanguage.search.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.tuples.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.runtime.classes}" />
@@ -8387,10 +8379,6 @@
     <copy todir="${jetbrains.mps.baseLanguage.regexp.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/regexp/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/regexp/test_gen" />
-    </copy>
-    <copy todir="${jetbrains.mps.baseLanguage.search.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.tuples.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/tuples/languages/tuples/source_gen" />
@@ -8592,12 +8580,6 @@
       <src>
         <path path="${base_dir}/languages/util/regexp/source_gen" />
         <path path="${base_dir}/languages/util/regexp/test_gen" />
-      </src>
-    </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.search.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" />
-        <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.tuples.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
@@ -10243,7 +10225,6 @@
     <delete dir="${jetbrains.mps.baseLanguage.collections.trove.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.javadoc.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.regexp.classes}" />
-    <delete dir="${jetbrains.mps.baseLanguage.search.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.tuples.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.runtime.classes}" />
