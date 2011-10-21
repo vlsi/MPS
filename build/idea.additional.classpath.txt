@@ -17,7 +17,7 @@ core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/class
 core/editor-runtime/classes
 core/actions-runtime/classes
 core/intentions-runtime/classes
-core/typesystemIntegration/classes
+editor/typesystemIntegration/classes
 :workbench
 core/plugin-runtime/classes
 workbench/baseLanguageIndex/classes_gen

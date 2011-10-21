@@ -172,14 +172,14 @@
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/typesystemIntegration" />
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/typesystemIntegration">
-      <fileset file="${base_dir}/core/typesystemIntegration/typesystemIntegration.msd" />
-      <fileset dir="${base_dir}/core/typesystemIntegration" includes="icons/**, resources/**" />
+      <fileset file="${base_dir}/editor/typesystemIntegration/typesystemIntegration.msd" />
+      <fileset dir="${base_dir}/editor/typesystemIntegration" includes="icons/**, resources/**" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/typesystemIntegration">
-      <fileset dir="${base_dir}/core/typesystemIntegration" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${base_dir}/editor/typesystemIntegration" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules/typesystemIntegration/models">
-      <fileset dir="${base_dir}/core/typesystemIntegration/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${base_dir}/editor/typesystemIntegration/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.editor.runtime">

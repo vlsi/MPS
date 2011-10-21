@@ -43,7 +43,7 @@
       <module fileurl="file://$PROJECT_DIR$/startup/startup.iml" filepath="$PROJECT_DIR$/startup/startup.iml" />
       <module fileurl="file://$PROJECT_DIR$/testbench/testbench.iml" filepath="$PROJECT_DIR$/testbench/testbench.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/typesystemEngine/typesystemEngine.iml" filepath="$PROJECT_DIR$/core/typesystemEngine/typesystemEngine.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/core/typesystemIntegration/typesystemIntegration.iml" filepath="$PROJECT_DIR$/core/typesystemIntegration/typesystemIntegration.iml" group="workbench" />
+      <module fileurl="file://$PROJECT_DIR$/editor/typesystemIntegration/typesystemIntegration.iml" filepath="$PROJECT_DIR$/editor/typesystemIntegration/typesystemIntegration.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/workbench/typesystemUi/typesystemUi.iml" filepath="$PROJECT_DIR$/workbench/typesystemUi/typesystemUi.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/languages/util/uiLanguage/runtime/uiLanguage-runtime.iml" filepath="$PROJECT_DIR$/languages/util/uiLanguage/runtime/uiLanguage-runtime.iml" group="languages" />
       <module fileurl="file://$PROJECT_DIR$/workbench/uiTests/uiTests.iml" filepath="$PROJECT_DIR$/workbench/uiTests/uiTests.iml" />

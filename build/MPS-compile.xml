@@ -138,7 +138,6 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/lib/annotations.jar" />
@@ -599,7 +598,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -788,7 +787,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -931,7 +930,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -1076,7 +1075,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -1219,7 +1218,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -1363,7 +1362,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -1520,7 +1519,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -1664,7 +1663,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -1809,7 +1808,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -1952,7 +1951,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -2095,7 +2094,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -2261,7 +2260,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -2413,7 +2412,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -2587,7 +2586,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -2730,7 +2729,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -2875,7 +2874,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -3022,7 +3021,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -3168,7 +3167,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -3311,7 +3310,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -3454,7 +3453,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -3602,7 +3601,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -3747,7 +3746,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -3891,7 +3890,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -3986,7 +3985,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
@@ -4082,7 +4081,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -4234,7 +4233,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -4377,7 +4376,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -4528,7 +4527,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -4673,7 +4672,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -4817,7 +4816,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -4960,7 +4959,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -5104,7 +5103,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -5247,7 +5246,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -5391,7 +5390,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -5534,7 +5533,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -5677,7 +5676,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -5821,7 +5820,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -5916,7 +5915,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
@@ -6011,7 +6010,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -6156,7 +6155,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -6302,7 +6301,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -6449,7 +6448,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -6593,7 +6592,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -6750,7 +6749,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -6910,7 +6909,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -7054,7 +7053,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -7197,7 +7196,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -7340,7 +7339,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -7485,7 +7484,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -7628,7 +7627,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -7794,7 +7793,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -7938,7 +7937,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -8082,7 +8081,7 @@
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
-    <path path="${base_dir}/core/typesystemIntegration/classes" />
+    <path path="${base_dir}/editor/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />

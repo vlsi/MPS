@@ -189,7 +189,7 @@
       <fileset dir="${mps_home}/core/intentions-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/core/typesystemIntegration/classes" />
+      <fileset dir="${mps_home}/editor/typesystemIntegration/classes" />
     </copy>
     <antcall target="MPS-languages.pack.typesystemIntegration" />
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
