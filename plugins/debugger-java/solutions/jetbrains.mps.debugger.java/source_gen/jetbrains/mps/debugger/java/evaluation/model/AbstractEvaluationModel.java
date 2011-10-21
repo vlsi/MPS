@@ -26,15 +26,8 @@ import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.project.IModule;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import java.util.Set;
@@ -51,22 +44,24 @@ import java.util.Collections;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.ide.generator.TransientModelsComponent;
+import com.intellij.openapi.util.Disposer;
+import org.apache.commons.lang.StringUtils;
+import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import java.util.Map;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
-import com.intellij.openapi.util.Disposer;
-import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.debug.evaluation.transform.Transformator;
 
 public abstract class AbstractEvaluationModel {
-  private static final String EVALUATOR_NAME = "EvaluatorInstance";
+  /*package*/ static final String EVALUATOR_NAME = "EvaluatorInstance";
   public static final boolean IS_DEVELOPER_MODE = Boolean.getBoolean("evaluation.developer");
 
   protected JavaUiState myUiState;
@@ -151,6 +146,74 @@ public abstract class AbstractEvaluationModel {
     return myEvaluationContext;
   }
 
+  public abstract AbstractEvaluationModel copy(boolean isShowContext);
+
+  protected IModule getLocationModule() {
+    return getLocationModel().getModelDescriptor().getModule();
+  }
+
+  public IOperationContext getContext() {
+    return myContext;
+  }
+
+  @Nullable
+  public Evaluator evaluate() throws EvaluationException {
+    try {
+      final Set<IClassPathItem> classpaths = new HashSet<IClassPathItem>();
+      for (Language language : this.myLanguages) {
+        IClassPathItem item = language.getClassPathItem();
+        classpaths.add(item);
+      }
+      String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.") + "tools.jar";
+      classpaths.add(ClassPathFactory.getInstance().createFromPath(path, "AbstractEvaluationModel"));
+
+      final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
+      InMemoryJavaGenerationHandler handler = new MyInMemoryJavaGenerationHandler(false, true, classpaths, myGenerationListeners);
+      Project ideaProject = this.myAuxModule.getMPSProject().getProject();
+      DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
+      ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
+      boolean successful = GenerationFacade.generateModels(myContext.getProject(), Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new AbstractEvaluationModel.MyIncrementalGenerationStrategy()).saveTransientModels(IS_DEVELOPER_MODE).rebuildAll(false).reporting(false, false, false, 0).create(), myContext.getProject().getComponent(TransientModelsComponent.class));
+
+      Disposer.dispose(progressWindow);
+
+      String source = handler.getSources().get(fullClassName);
+
+      if (successful && StringUtils.isNotEmpty(source)) {
+        if (isDeveloperMode()) {
+          System.err.println(source);
+        }
+        ClassLoader parentClassLoader = this.myUiState.getClass().getClassLoader();
+        Class clazz = Class.forName(fullClassName, true, handler.getCompiler().getClassLoader(parentClassLoader));
+        Evaluator evaluator;
+        try {
+          evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
+        } catch (InvocationTargetException e) {
+          // try again 
+          myUiState = myDebugSession.refresh();
+          evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
+        }
+        return evaluator;
+      } else if (StringUtils.isNotEmpty(source) && !(successful)) {
+        throw new EvaluationException("Errors during compilation.");
+      } else {
+        throw new EvaluationException("Errors during generation.");
+      }
+    } catch (InvocationTargetException e) {
+      // invocation target exceptions from newInstance method call via reflection 
+      // second time, which means refresh did not help 
+      // this is bad 
+      // I personally think something should be done with all those exceptions 
+      // other then hiding them from user 
+      // but I do not know what 
+      // TODO think 
+      throw new InvocationTargetEvaluationException(e.getCause());
+    } catch (EvaluationException e) {
+      throw e;
+    } catch (Throwable t) {
+      throw new EvaluationException(t);
+    }
+  }
+
   public String getPresentation() {
     // todo better presentation 
     return ModelAccess.instance().runReadAction(new Computable<String>() {
@@ -217,133 +280,24 @@ public abstract class AbstractEvaluationModel {
     return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
   }
 
-  @Nullable
-  public Evaluator evaluate() throws EvaluationException {
-    try {
-      final Set<IClassPathItem> classpaths = new HashSet<IClassPathItem>();
-      for (Language language : this.myLanguages) {
-        IClassPathItem item = language.getClassPathItem();
-        classpaths.add(item);
-      }
-      String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.") + "tools.jar";
-      classpaths.add(ClassPathFactory.getInstance().createFromPath(path, "AbstractEvaluationModel"));
-
-      final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
-      InMemoryJavaGenerationHandler handler = new AbstractEvaluationModel.MyInMemoryJavaGenerationHandler(false, true, classpaths);
-      Project ideaProject = this.myAuxModule.getMPSProject().getProject();
-      DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
-      ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
-      boolean successful = GenerationFacade.generateModels(myContext.getProject(), Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
-        public Map<String, String> getModelHashes(SModelDescriptor p0, IOperationContext p1) {
-          return Collections.emptyMap();
-        }
-
-        public GenerationCacheContainer getContainer() {
-          return null;
-        }
-
-        public GenerationDependencies getDependencies(SModelDescriptor p0) {
-          return null;
-        }
-
-        public boolean isIncrementalEnabled() {
-          return false;
-        }
-      }).saveTransientModels(IS_DEVELOPER_MODE).rebuildAll(false).reporting(false, false, false, 0).create(), myContext.getProject().getComponent(TransientModelsComponent.class));
-
-      Disposer.dispose(progressWindow);
-
-      String source = handler.getSources().get(fullClassName);
-
-      if (successful && StringUtils.isNotEmpty(source)) {
-        if (isDeveloperMode()) {
-          System.err.println(source);
-        }
-        ClassLoader parentClassLoader = this.myUiState.getClass().getClassLoader();
-        Class clazz = Class.forName(fullClassName, true, handler.getCompiler().getClassLoader(parentClassLoader));
-        Evaluator evaluator;
-        try {
-          evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
-        } catch (InvocationTargetException e) {
-          // try again 
-          myUiState = myDebugSession.refresh();
-          evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
-        }
-        return evaluator;
-      } else if (StringUtils.isNotEmpty(source) && !(successful)) {
-        throw new EvaluationException("Errors during compilation.");
-      } else {
-        throw new EvaluationException("Errors during generation.");
-      }
-    } catch (InvocationTargetException e) {
-      // invocation target exceptions from newInstance method call via reflection 
-      // second time, which means refresh did not help 
-      // this is bad 
-      // I personally think something should be done with all those exceptions 
-      // other then hiding them from user 
-      // but I do not know what 
-      // TODO think 
-      throw new InvocationTargetEvaluationException(e.getCause());
-    } catch (EvaluationException e) {
-      throw e;
-    } catch (Throwable t) {
-      throw new EvaluationException(t);
-    }
-  }
-
-  public abstract AbstractEvaluationModel copy(boolean isShowContext);
-
-  protected IModule getLocationModule() {
-    return getLocationModel().getModelDescriptor().getModule();
-  }
-
-  public IOperationContext getContext() {
-    return myContext;
-  }
-
-  private class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {
-    private final Set<IClassPathItem> myClasspaths;
-
-    public MyInMemoryJavaGenerationHandler(boolean reloadClasses, boolean keepSources, Set<IClassPathItem> classpaths) {
-      super(reloadClasses, keepSources);
-      this.myClasspaths = classpaths;
+  private class MyIncrementalGenerationStrategy implements IncrementalGenerationStrategy {
+    public MyIncrementalGenerationStrategy() {
     }
 
-    @Override
-    public boolean canHandle(SModelDescriptor inputModel) {
-      return inputModel != null;
+    public Map<String, String> getModelHashes(SModelDescriptor p0, IOperationContext p1) {
+      return Collections.emptyMap();
     }
 
-    @Override
-    protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
-      CompositeClassPathItem result = super.getClassPath(contextModules);
-      for (IClassPathItem item : this.myClasspaths) {
-        result.add(item);
-      }
-      return result;
+    public GenerationCacheContainer getContainer() {
+      return null;
     }
 
-    @Override
-    public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ProgressMonitor monitor) {
-      SModel model = status.getOutputModel();
-      if (model != null) {
-        final SNode evaluator = SModelOperations.getRootByName(model, AbstractEvaluationModel.EVALUATOR_NAME);
+    public GenerationDependencies getDependencies(SModelDescriptor p0) {
+      return null;
+    }
 
-        if (evaluator != null) {
-          try {
-            new Transformator(evaluator, true).transformEvaluator();
-            if (AbstractEvaluationModel.IS_DEVELOPER_MODE) {
-              for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.fromList(myGenerationListeners)) {
-                listener.invoke(evaluator);
-              }
-            }
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-
-        }
-      }
-      return super.handleOutput(module, inputModel, status, context, monitor);
+    public boolean isIncrementalEnabled() {
+      return false;
     }
   }
 }
