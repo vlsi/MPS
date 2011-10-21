@@ -96,7 +96,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
           if (mine == null) {
             return;
           }
-          MergeRequest mergeRequest = DiffRequestFactory.getInstance().createMergeRequest(mine, repository, base, VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params)), ((Project) MapSequence.fromMap(_params).get("project")), null);
+          MergeRequest mergeRequest = DiffRequestFactory.getInstance().createMergeRequest(mine, repository, base, VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params)), ((Project) MapSequence.fromMap(_params).get("project")), null, null);
           mergeRequest.setVersionTitles(new String[]{"Mine", "Base version", "Repository"});
           DiffManager.getInstance().getDiffTool().show(mergeRequest);
           return;
