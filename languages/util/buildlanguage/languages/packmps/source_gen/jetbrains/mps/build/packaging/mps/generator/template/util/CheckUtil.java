@@ -64,6 +64,7 @@ public class CheckUtil {
     ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472723"));
     ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "5428983789737854768"));
     ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "5428983789737854526"));
+    ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "2901107368280525965"));
 
     Iterable<IModule> coreModules = ListSequence.fromList(coreBlocks).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
