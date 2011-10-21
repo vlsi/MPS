@@ -94,7 +94,7 @@ public class ModelRules {
         myReplacementRules.addRuleSetItem(typeSystemDescriptor.getEliminationRules());
         myDependenciesContainer.addDependencies(typeSystemDescriptor.getDependencies());
         myVariableConverters.addAll(typeSystemDescriptor.getVariableConverters());
-        myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typeSystemDescriptor.getOverloadedOperationsTypesProviders());
+//        myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typeSystemDescriptor.getOverloadedOperationsTypesProviders());
         Set<AbstractDependentComputation_Runtime> dependentComputations = typeSystemDescriptor.getDependentComputations();
         myDependentComputations.addRuleSetItem(dependentComputations);
         for (AbstractDependentComputation_Runtime dependentComputation : dependentComputations) {
@@ -106,6 +106,7 @@ public class ModelRules {
         myOverloadedOperationsManager.makeConsistent();
         return true;
       } catch (Throwable t) {
+        LOG.error(t);
         return false;
       } finally {
         myLoadedLanguages.add(languageNamespace);
