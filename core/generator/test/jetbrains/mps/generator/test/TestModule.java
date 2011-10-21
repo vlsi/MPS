@@ -192,7 +192,7 @@ public class TestModule extends AbstractModule {
       try {
         result = ModelPersistence.readModel(modelContent, false);
       } catch (ModelReadException e) {
-        result = new StubModel(SModelReference.fromString(myLongName));
+        result = new StubModel(SModelReference.fromString(myLongName), e);
       }
       return new ModelLoadResult(result, ModelLoadingState.FULLY_LOADED);
     }

@@ -82,7 +82,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
       try {
         model = ModelPersistence.readModel(file, false);
       } catch (ModelReadException e) {
-        model = new StubModel(SModelReference.fromPath(inputData.getFile().getPath()));
+        model = new StubModel(SModelReference.fromPath(inputData.getFile().getPath()), e);
       }
       inputData.putUserData(PARSED_MODEL, model);
     }

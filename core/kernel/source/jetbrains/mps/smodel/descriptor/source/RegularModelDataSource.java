@@ -94,7 +94,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
       result = ModelPersistence.readModel(dsm.getDescriptorSModelHeader(), dsm.getModelFile(), state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(dsm, false);
-      SModel newModel = new StubModel(dsm.getSModelReference());
+      SModel newModel = new StubModel(dsm.getSModelReference(), e);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 
