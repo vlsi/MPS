@@ -103,7 +103,7 @@ public class ModelRules {
         myComparisonRules.makeConsistent();
         myReplacementRules.makeConsistent();
         myDependenciesContainer.makeConsistent();
-        myOverloadedOperationsManager.makeConsistent();
+//        myOverloadedOperationsManager.makeConsistent();
         return true;
       } catch (Throwable t) {
         LOG.error(t);
