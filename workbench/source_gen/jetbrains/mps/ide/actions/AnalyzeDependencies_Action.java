@@ -11,9 +11,12 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 
 public class AnalyzeDependencies_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -40,21 +43,18 @@ public class AnalyzeDependencies_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
-    if (MapSequence.fromMap(_params).get("models") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
-    if (MapSequence.fromMap(_params).get("modules") == null) {
-      return false;
-    }
+    MapSequence.fromMap(_params).put("myModels", event.getData(MPSDataKeys.MODELS));
+    MapSequence.fromMap(_params).put("myModules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("myMPSProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    MapSequence.fromMap(_params).put("myProject", event.getData(MPSDataKeys.PROJECT));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      System.out.println(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
-      System.out.println(((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+      AnalyzeDependencies_Tool tool = ((Project) MapSequence.fromMap(_params).get("myProject")).getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
+      tool.setContent(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("myModels")), ((List<IModule>) MapSequence.fromMap(_params).get("myModules")), ((MPSProject) MapSequence.fromMap(_params).get("myMPSProject")));
+      tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AnalyzeDependencies", t);
