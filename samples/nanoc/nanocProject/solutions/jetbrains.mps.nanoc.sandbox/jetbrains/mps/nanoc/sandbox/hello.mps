@@ -2,7 +2,6 @@
 <model modelUID="r:f755780e-e164-47f9-b12c-a8188bed3abe(jetbrains.mps.nanoc.sandbox.hello)">
   <persistence version="7" />
   <language namespace="08ffecab-a1e5-4be9-bd87-e14140b1b0e0(jetbrains.mps.nanoc)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="i1tc" modelUID="r:d65f98fc-790c-41b3-9614-f2de26685b21(jetbrains.mps.nanoc.structure)" version="-1" implicit="yes" />
   <roots>
