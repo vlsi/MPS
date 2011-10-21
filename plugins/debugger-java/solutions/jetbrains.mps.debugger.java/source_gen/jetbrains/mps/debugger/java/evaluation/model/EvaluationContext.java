@@ -4,8 +4,9 @@ package jetbrains.mps.debugger.java.evaluation.model;
 
 import jetbrains.mps.debug.runtime.JavaUiState;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.CompositeClassPathItem;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
@@ -19,8 +20,8 @@ public abstract class EvaluationContext {
   }
 
   @NotNull
-  public IClassPathItem getClassPathItem() {
-    return new CompositeClassPathItem();
+  public List<String> getClassPath() {
+    return ListSequence.fromList(new ArrayList<String>());
   }
 
   @Nullable

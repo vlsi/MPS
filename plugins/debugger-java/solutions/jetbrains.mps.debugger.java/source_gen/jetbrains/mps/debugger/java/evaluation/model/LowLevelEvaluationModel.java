@@ -10,10 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.EachClassPathItemVisitor;
-import jetbrains.mps.reloading.JarFileClassPathItem;
-import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
@@ -37,13 +36,11 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.CopyUtil;
@@ -63,16 +60,9 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        IClassPathItem classPath = myEvaluationContext.getClassPathItem();
-        classPath.accept(new EachClassPathItemVisitor() {
-          @Override
-          public void visit(JarFileClassPathItem item) {
-            myAuxModule.addStubPath(item.getFile().getAbsolutePath());
-          }
-
-          @Override
-          public void visit(FileClassPathItem item) {
-            myAuxModule.addStubPath(item.getPath());
+        ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(CommonPaths.getJDKPath())).visitAll(new IVisitor<String>() {
+          public void visit(String it) {
+            myAuxModule.addStubPath(it);
           }
         });
         myAuxModule.loadNewModels();

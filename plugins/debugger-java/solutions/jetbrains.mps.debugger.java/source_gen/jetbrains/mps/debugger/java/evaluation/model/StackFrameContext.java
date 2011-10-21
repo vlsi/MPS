@@ -15,10 +15,8 @@ import com.sun.jdi.StackFrame;
 import com.sun.jdi.Location;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.project.AbstractModule;
-import java.util.Collections;
+import java.util.List;
+import jetbrains.mps.execution.lib.Java_Command;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -29,7 +27,6 @@ import com.sun.jdi.ClassNotLoadedException;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import com.sun.jdi.InvalidStackFrameException;
 import com.sun.jdi.AbsentInformationException;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.sun.jdi.ObjectReference;
 import com.sun.jdi.PrimitiveType;
@@ -95,13 +92,12 @@ public class StackFrameContext extends EvaluationContext {
   }
 
   @NotNull
-  public IClassPathItem getClassPathItem() {
+  public List<String> getClassPath() {
     IModule locationModule = getLocationModule();
-    // todo classpath should not be from location module but rather from run configuration 
     if (locationModule == null) {
-      return CommonPaths.getJDKClassPath();
+      return super.getClassPath();
     }
-    return AbstractModule.getDependenciesClasspath(Collections.singleton(locationModule), true);
+    return Java_Command.getClasspath(locationModule, true);
   }
 
   @NotNull
