@@ -121,6 +121,9 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
+      <fileset dir="${mps_home}/core/analyzers/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
       <fileset dir="${mps_home}/core/kernel/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
@@ -152,6 +155,9 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
       <fileset dir="${mps_home}/core/baseLanguage/tuples/runtime/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
+      <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.kernel" />
@@ -193,10 +199,7 @@
       <fileset dir="${mps_home}/core/typesystemIntegration/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+      <fileset dir="${mps_home}/workbench/baseLanguageIndex/classes_gen" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/core/baseLanguage/runConfigurations/runtime/classes" />
@@ -218,9 +221,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/MPSPlugin/apiclasses" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/core/analyzers/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/core/debug/classes" />

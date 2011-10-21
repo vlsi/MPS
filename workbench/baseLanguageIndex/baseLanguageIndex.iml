@@ -12,6 +12,7 @@
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="library" name="asm" level="project" />
     <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />

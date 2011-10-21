@@ -69,6 +69,10 @@
 
   <application-components>
     <component>
+      <implementation-class>jetbrains.mps.baseLanguage.index.ClassifierSuccessorsFinder</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.project.WorkbenchPathMacros</implementation-class>
     </component>
 

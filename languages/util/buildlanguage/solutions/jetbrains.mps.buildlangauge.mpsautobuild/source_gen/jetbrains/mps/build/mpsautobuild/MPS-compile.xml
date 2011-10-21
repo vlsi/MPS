@@ -119,8 +119,8 @@
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
@@ -155,6 +155,7 @@
     <path path="${base_dir}/lib/platform-api.jar" />
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
   </path>
@@ -535,7 +536,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -668,6 +668,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -725,7 +726,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -858,6 +858,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -868,7 +869,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -1002,6 +1002,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1012,7 +1013,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -1146,6 +1146,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1156,7 +1157,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -1290,6 +1290,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1300,7 +1301,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -1435,6 +1435,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1457,7 +1458,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -1591,6 +1591,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1601,7 +1602,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -1735,6 +1735,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1745,7 +1746,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -1879,6 +1879,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1889,7 +1890,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -2022,6 +2022,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2032,7 +2033,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -2166,6 +2166,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2198,7 +2199,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -2332,6 +2332,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2349,7 +2350,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -2483,6 +2483,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2523,7 +2524,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -2657,6 +2657,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2667,7 +2668,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -2801,6 +2801,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2812,7 +2813,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -2949,6 +2949,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2959,7 +2960,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -3093,6 +3093,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3105,7 +3106,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -3238,6 +3238,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3248,7 +3249,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -3381,6 +3381,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3391,7 +3392,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -3526,6 +3526,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3536,7 +3537,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -3672,6 +3672,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3682,7 +3683,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -3817,6 +3817,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3827,7 +3828,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -3961,6 +3961,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3970,7 +3971,6 @@
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
@@ -4009,6 +4009,7 @@
     <path path="${base_dir}/lib/platform-api.jar" />
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4019,7 +4020,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -4152,6 +4152,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4171,7 +4172,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -4304,6 +4304,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4314,7 +4315,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -4447,6 +4447,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/ideUiLanguage/classes_gen" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
@@ -4465,7 +4466,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -4599,6 +4599,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4609,7 +4610,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -4743,6 +4743,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4753,7 +4754,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -4887,6 +4887,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4897,7 +4898,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -5030,6 +5030,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5040,7 +5041,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -5174,6 +5174,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5184,7 +5185,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -5317,6 +5317,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5327,7 +5328,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -5461,6 +5461,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5471,7 +5472,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -5604,6 +5604,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5614,7 +5615,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -5748,6 +5748,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5758,7 +5759,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -5891,6 +5891,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5900,7 +5901,6 @@
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
@@ -5938,6 +5938,7 @@
     <path path="${base_dir}/lib/platform-api.jar" />
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5948,7 +5949,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -6082,6 +6082,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6093,7 +6094,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -6229,6 +6229,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6239,7 +6240,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -6376,6 +6376,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6386,7 +6387,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -6520,6 +6520,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6530,7 +6531,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -6668,6 +6668,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6687,7 +6688,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -6828,6 +6828,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6847,7 +6848,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -6980,6 +6980,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6991,7 +6992,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -7124,6 +7124,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7134,7 +7135,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -7267,6 +7267,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7277,7 +7278,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -7412,6 +7412,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7422,7 +7423,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -7555,6 +7555,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7565,7 +7566,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -7699,6 +7699,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7731,7 +7732,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -7865,6 +7865,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7875,7 +7876,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -8009,6 +8009,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -8019,7 +8020,6 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -8154,6 +8154,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
+    <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
