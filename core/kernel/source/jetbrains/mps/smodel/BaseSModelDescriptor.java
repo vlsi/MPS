@@ -31,6 +31,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
   protected volatile SModel mySModel = null;
+  private boolean myRegistered;
   private volatile ModelLoadingState myLoadingState = ModelLoadingState.NOT_LOADED;
   private final Object myLoadingLock = new Object();
 
@@ -129,6 +130,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected void setLoadingState(ModelLoadingState state) {
     myLoadingState = state;
+  }
+
+  public boolean isRegistered() {
+    return myRegistered;
+  }
+
+  void setRegistered(boolean registered) {
+    myRegistered = registered;
   }
 
   public SModelReference getSModelReference() {

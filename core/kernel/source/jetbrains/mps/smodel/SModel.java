@@ -219,10 +219,14 @@ public class SModel {
   //---------loading state--------
 
   protected boolean canFireEvent() {
-    return myModelDescriptor!=null && SModelRepository.getInstance().getModelDescriptor(getSModelReference()) != null;
+    return isRegistered();
   }
 
-  //---------listeners--------
+  boolean isRegistered() {
+    return myModelDescriptor != null && myModelDescriptor.isRegistered();
+  }
+
+//---------listeners--------
 
   private List<SModelListener> getModelListeners() {
     BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
