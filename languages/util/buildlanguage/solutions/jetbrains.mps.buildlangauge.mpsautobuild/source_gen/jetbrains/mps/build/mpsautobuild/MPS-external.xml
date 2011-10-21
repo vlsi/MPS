@@ -188,6 +188,10 @@
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
       <fileset dir="${mps_home}/core/intentions-runtime/classes" />
     </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
+      <fileset dir="${mps_home}/core/typesystemIntegration/classes" />
+    </copy>
+    <antcall target="MPS-languages.pack.typesystemIntegration" />
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-editor.jar" duplicate="preserve" filesonly="true">
@@ -196,9 +200,6 @@
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/core/plugin-runtime/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/core/typesystemIntegration/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/workbench/baseLanguageIndex/classes_gen" />
