@@ -6,12 +6,15 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.UUID;
 import jetbrains.mps.smodel.ModelAccess;
@@ -31,6 +34,9 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class EvaluationAuxModule extends AbstractModule {
   public static boolean JAVA_STUBS = true;
@@ -40,10 +46,13 @@ public class EvaluationAuxModule extends AbstractModule {
     new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs")
   );
   public static final String DEBUGGER_JAVA_ID = "debugger_java";
+  protected static Log log = LogFactory.getLog(EvaluationAuxModule.class);
 
   private Project myProject;
   private IModule myInvocationContext;
-  private final List<StubPath> myStubPaths = ListSequence.fromList(new ArrayList());
+  private final List<StubPath> myStubPaths = ListSequence.fromList(new ArrayList<StubPath>());
+  private final List<SModelRoot> myModelRoots = ListSequence.fromList(new ArrayList<SModelRoot>());
+  private final List<ModuleReference> myUsedLanguages = ListSequence.fromList(new ArrayList<ModuleReference>());
 
   public EvaluationAuxModule(Project project) {
     this.myProject = project;
@@ -63,6 +72,8 @@ public class EvaluationAuxModule extends AbstractModule {
         EvaluationAuxModule.this.clearAll();
         MPSModuleRepository.getInstance().removeModule(EvaluationAuxModule.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(EvaluationAuxModule.this);
+        ListSequence.fromList(myStubPaths).clear();
+        ListSequence.fromList(myModelRoots).clear();
         CleanupManager.getInstance().cleanup();
         // loaded stubs are removed from model repository 
       }
@@ -88,6 +99,7 @@ public class EvaluationAuxModule extends AbstractModule {
   @NotNull
   public IScope getScope() {
     if (JAVA_STUBS) {
+      // <node> 
       return GlobalScope.getInstance();
     } else {
       return new DefaultScope() {
@@ -127,20 +139,62 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   @Override
+  public void addUsedLanguage(ModuleReference reference) {
+    ListSequence.fromList(myUsedLanguages).addElement(reference);
+  }
+
+  @Override
+  public List<ModuleReference> getUsedLanguagesReferences() {
+    return myUsedLanguages;
+  }
+
+  @Override
   public List<StubPath> getStubPaths() {
     return myStubPaths;
   }
 
   public StubPath addStubPath(String stubPath) {
     StubPath path = new StubPath(stubPath, STUBS_MANAGER);
-    if (myStubPaths.contains(path)) {
+    if (ListSequence.fromList(myStubPaths).contains(path)) {
       path = null;
     } else {
-      myStubPaths.add(path);
+      ListSequence.fromList(myStubPaths).addElement(path);
     }
     invalidateClassPath();
     MPSModuleRepository.getInstance().fireModuleChanged(this);
     return path;
+  }
+
+  @Override
+  public List<SModelRoot> getSModelRoots() {
+    return myModelRoots;
+  }
+
+  @Override
+  public void loadNewModels() {
+    ListSequence.fromList(myModelRoots).clear();
+
+    for (StubPath stub : ListSequence.fromList(myStubPaths)) {
+      ModelRoot root = new ModelRoot();
+      root.setPath(stub.getPath());
+      root.setManager(stub.getManager());
+      try {
+        SModelRoot smodelRoot = new SModelRoot(root);
+        Collection<SModelDescriptor> loaded = smodelRoot.getManager().load(root, this);
+        for (SModelDescriptor descriptor : Sequence.fromIterable(loaded)) {
+          if (SModelRepository.getInstance().getModelDescriptor(descriptor.getSModelReference()) == null) {
+            SModelRepository.getInstance().registerModelDescriptor(descriptor, this);
+          }
+        }
+        ListSequence.fromList(myModelRoots).addElement(smodelRoot);
+      } catch (Exception e) {
+        if (log.isErrorEnabled()) {
+          log.error("", e);
+        }
+      }
+    }
+
+    fireModuleInitialized();
   }
 
   public void clearAll() {

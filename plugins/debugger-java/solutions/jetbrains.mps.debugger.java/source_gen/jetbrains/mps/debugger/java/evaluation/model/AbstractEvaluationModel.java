@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ProjectModels;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModel;
@@ -29,7 +30,6 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -92,8 +92,12 @@ public abstract class AbstractEvaluationModel {
     }
     myAuxModule = auxModule;
 
-    final EditableSModelDescriptor modelDescriptor = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(false));
-    modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+    final EditableSModelDescriptor modelDescriptor = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(true));
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+      }
+    });
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myAuxModule);
 
     myAuxModel = modelDescriptor;

@@ -11,13 +11,10 @@ import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.IClassPathItem;
-import java.util.Set;
-import jetbrains.mps.project.StubPath;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
@@ -42,6 +39,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.InvalidStackFrameException;
@@ -64,28 +64,27 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         IClassPathItem classPath = myEvaluationContext.getClassPathItem();
-        final Set<StubPath> pathsToAdd = SetSequence.fromSet(new HashSet<StubPath>());
         classPath.accept(new EachClassPathItemVisitor() {
           @Override
           public void visit(JarFileClassPathItem item) {
-            String path = item.getFile().getAbsolutePath();
-            StubPath stubPath = myAuxModule.addStubPath(path);
-            if (stubPath != null) {
-              SetSequence.fromSet(pathsToAdd).addElement(stubPath);
-            }
+            myAuxModule.addStubPath(item.getFile().getAbsolutePath());
           }
 
           @Override
           public void visit(FileClassPathItem item) {
-            String path = item.getPath();
-            StubPath stubPath = myAuxModule.addStubPath(path);
-            if (stubPath != null) {
-              SetSequence.fromSet(pathsToAdd).addElement(stubPath);
-            }
+            myAuxModule.addStubPath(item.getPath());
           }
         });
         myAuxModule.loadNewModels();
-        createNodesToShow(myAuxModel);
+      }
+    });
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            createNodesToShow(myAuxModel);
+          }
+        });
       }
     });
   }
@@ -132,7 +131,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   public void updateState() {
     super.updateState();
     if (myDebugSession.getEvaluationProvider().canEvaluate()) {
-      createVars();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          createVars();
+        }
+      });
     }
   }
 
