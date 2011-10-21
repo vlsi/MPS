@@ -71,6 +71,7 @@ public class DependencyViewer extends BaseProjectTool {
 
   public void setModule(IModule module) {
     myTree.setModule(module);
+    myAdditionalTree.setModule(module);
     myTree.rebuildLater();
   }
 
@@ -114,8 +115,8 @@ public class DependencyViewer extends BaseProjectTool {
     return myExternalComponent;
   }
 
-  public void setTraces(Set<List<IModule>> traces) {
-    myAdditionalTree.setTraces(traces);
+  public void setTraces(Set<List<IModule>> traces, IModule target) {
+    myAdditionalTree.setTraces(traces, target);
   }
 
   private void addListeners() {

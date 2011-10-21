@@ -38,6 +38,10 @@ public class DependenciesTracer<T> {
     traces.add(new ArrayList<T>(myCurrentTrace));
   }
 
+  public void trackRuntime(T node) {
+
+  }
+
   public void unTrack() {
     myCurrentTrace.remove(myCurrentTrace.size()-1);
   }

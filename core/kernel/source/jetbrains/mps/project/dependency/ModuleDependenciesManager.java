@@ -104,36 +104,24 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
   }
 
   public void collectVisibleModules(Set<IModule> dependencies, boolean reexportOnly) {
-    collectVisibleModules(dependencies, reexportOnly, null);
-  }
-
-  public void collectVisibleModules(Set<IModule> dependencies, boolean reexportOnly, @Nullable DependenciesTracer<IModule> tracer) {
-    if (tracer != null) {
-      tracer.track(myModule);
-    }
-    try {
-      if (dependencies.contains(myModule)) return;
-      dependencies.add(myModule);
-      for (Dependency dependency : myModule.getDependencies()) {
-        if (reexportOnly && !dependency.isReexport()) continue;
-
-        IModule m = MPSModuleRepository.getInstance().getModule(dependency.getModuleRef());
-        if (m == null) continue;
-        m.getDependenciesManager().collectVisibleModules(dependencies, true, tracer);
+    dependencies.add(myModule);
+    for (Dependency dependency : myModule.getDependencies()) {
+      if (reexportOnly && !dependency.isReexport()) continue;
+      IModule m = MPSModuleRepository.getInstance().getModule(dependency.getModuleRef());
+      if (m == null) continue;
+      if (!dependencies.contains(m)) {
+        m.getDependenciesManager().collectVisibleModules(dependencies, true);
       }
-      if (reexportOnly) return;
-      for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
-        DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
-        if (dk == null) continue;
+    }
+    if (reexportOnly) return;
+    for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
+      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
+      if (dk == null) continue;
 
-        for (Solution solution : dk.getAllExportedSolutions()) {
-          solution.getDependenciesManager().collectVisibleModules(dependencies, true, tracer);
+      for (Solution solution : dk.getAllExportedSolutions()) {
+        if (!dependencies.contains(solution)) {
+          solution.getDependenciesManager().collectVisibleModules(dependencies, true);
         }
-      }
-    }
-    finally {
-      if (tracer != null) {
-        tracer.unTrack();
       }
     }
   }

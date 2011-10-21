@@ -68,27 +68,27 @@ public class ModuleTreeNode extends MPSTreeNode {
   }
 
    @Override
-  public void init() {
-    if (myInitialized) {
-      return;
-    }
-    setIcon(IconManager.getIconFor(myModule));
-    ModuleDependenciesManager manager = new ModuleDependenciesManager<AbstractModule>((AbstractModule)myModule);
-    Set<IModule> dependencies = new LinkedHashSet<IModule>();
-    manager.collectVisibleModules(dependencies, false, myTracer);
-    List<IModule> dependenciesList = new ArrayList<IModule>(dependencies);
-    Collections.sort(dependenciesList, new ModulesComparator());
-    for (IModule depends : dependenciesList) {
-      if (depends == myModule) {
-        if (myTracer.getTraces(depends) != null) {
-          add(new DependencyTreeLeafNode(depends, getOperationContext(), Colors.DARK_RED));
-        }
-      } else {
-        add(new DependencyTreeLeafNode(depends, getOperationContext()));
-      }
-    }
-    myInitialized = true;
-  }
+   public void init() {
+     if (myInitialized) {
+       return;
+     }
+     setIcon(IconManager.getIconFor(myModule));
+     Set<IModule> dependencies = new LinkedHashSet<IModule>();
+     Set<Language> lang = new LinkedHashSet<Language>();
+     ModuleDependenciesUtil.collectAllCompileTimeDependencies(myModule, dependencies, lang, myTracer);
+     List<IModule> dependenciesList = new ArrayList<IModule>(dependencies);
+     Collections.sort(dependenciesList, new ModulesComparator());
+     for (IModule depends : dependenciesList) {
+       if (depends == myModule) {
+         if (myTracer.getTraces(depends) != null) {
+           add(new DependencyTreeLeafNode(depends, getOperationContext(), Colors.DARK_RED));
+         }
+       } else {
+         add(new DependencyTreeLeafNode(depends, getOperationContext()));
+       }
+     }
+     myInitialized = true;
+   }
 
   public IModule getModule() {
     return myModule;

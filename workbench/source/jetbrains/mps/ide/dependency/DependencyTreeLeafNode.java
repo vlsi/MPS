@@ -30,24 +30,13 @@ import java.awt.Color;
  */
 public class DependencyTreeLeafNode extends DependencyTreeNode{
 
-  private Color myColor;
-
   public DependencyTreeLeafNode(IModule module, IOperationContext operationContext) {
     super(module, operationContext);
   }
 
   public DependencyTreeLeafNode(IModule module, IOperationContext operationContext, Color color) {
-    super(module, operationContext);
-    myColor = color;
+    super(module, operationContext, color);
   }
-
-  public void doUpdatePresentation() {
-    super.doUpdatePresentation();
-    if (myColor != null) {
-      setColor(myColor);
-    }
-  }
-
 
   @Override
   public boolean isLeaf() {

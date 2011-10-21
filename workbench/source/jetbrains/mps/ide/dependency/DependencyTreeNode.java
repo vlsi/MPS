@@ -21,6 +21,8 @@ import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 
+import java.awt.Color;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -30,6 +32,8 @@ import jetbrains.mps.smodel.IOperationContext;
  */
 public class DependencyTreeNode extends MPSTreeNode {
   private IModule myModule;
+  private Color myColor;
+
 
   public IModule getModule() {
     return myModule;
@@ -40,5 +44,21 @@ public class DependencyTreeNode extends MPSTreeNode {
     myModule = module;
     setIcon(IconManager.getIconFor(myModule));
     setNodeIdentifier(module.getModuleFqName());
+  }
+
+  public DependencyTreeNode(IModule module, IOperationContext operationContext, Color color) {
+    super(module, operationContext);
+    myModule = module;
+    setIcon(IconManager.getIconFor(myModule));
+    setNodeIdentifier(module.getModuleFqName());
+    myColor = color;
+  }
+
+
+  public void doUpdatePresentation() {
+    super.doUpdatePresentation();
+    if (myColor != null) {
+      setColor(myColor);
+    }
   }
 }

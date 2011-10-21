@@ -18,11 +18,12 @@ package jetbrains.mps.ide.dependency;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 
-import java.util.List;
-import java.util.Set;
+import java.awt.Color;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,13 +34,23 @@ import java.util.Set;
  */
 public class AdditionalTree extends MPSTree {
 
-  private Set<List<IModule>> myTraces;
+  private List<List<IModule>> myTraces;
+  private IModule myTarget;
+  private IModule myModule;
 
-  public void setTraces(Set<List<IModule>> traces) {
-    myTraces = traces;
-    setVisible(myTraces != null);
+
+  public void setTraces(Set<List<IModule>> traces, IModule target) {
+    setVisible(traces != null);
+    if (traces != null) {
+      myTraces = new ArrayList<List<IModule>>(traces);
+      myTarget = target;
+    }
     rebuildNow();
     expandAll();
+  }
+
+  public void setModule(IModule module) {
+    myModule = module;
   }
 
   @Override
@@ -49,12 +60,38 @@ public class AdditionalTree extends MPSTree {
     if (myTraces == null) {
       return root;
     }
+    Collections.sort(myTraces, new Comparator<List<IModule>>() {
+      @Override
+      public int compare(List<IModule> o1, List<IModule> o2) {
+        return o1.size()-o2.size();
+      }
+    });
+
     for (List<IModule> trace : myTraces) {
       MPSTreeNode prev = root;
       for (IModule m : trace) {
-        DependencyTreeNode treeNode = new DependencyTreeNode(m, null);
-        prev.add(treeNode);
-        prev = treeNode;
+        Enumeration children = prev.children();
+        DependencyTreeNode found = null;
+        while (children.hasMoreElements()) {
+          DependencyTreeNode treeChild = (DependencyTreeNode) children.nextElement();
+          if (treeChild.getModule() == m) {
+            found = treeChild;
+          }
+        }
+        if (found == null) {
+          Color color = new Color(0);
+          if (myTarget == m) {
+            color = new Color(0, 170, 0);
+            if (myTarget == myModule) {
+              color = new Color(180, 0, 0);
+            }
+          }
+          DependencyTreeNode treeNode = new DependencyTreeNode(m, null, color);
+          prev.add(treeNode);
+          prev = treeNode;
+        } else {
+          prev = found;
+        }
       }
     }
     return root;

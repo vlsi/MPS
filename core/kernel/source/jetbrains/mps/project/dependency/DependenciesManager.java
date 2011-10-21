@@ -48,8 +48,6 @@ public interface DependenciesManager {
    */
   void collectVisibleModules(/* out */ Set<IModule> dependencies, boolean reexportOnly);
 
-  public void collectVisibleModules(Set<IModule> dependencies, boolean reexportOnly, @Nullable DependenciesTracer<IModule> tracer);
-
   /*
    *  Collects all modules required for compilation + languages with runtime stub paths
    */

@@ -29,6 +29,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddModuleToProject_Action());
     addAction(new AddToNewFavoritesList_Action());
     addAction(new AnalyzeClasspath_Action());
+    addAction(new AnalyzeDependencies_Action());
     addAction(new CloneModel_Action());
     addAction(new CloneRoot_Action());
     addAction(new CollapseAll_Action());

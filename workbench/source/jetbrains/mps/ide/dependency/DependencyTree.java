@@ -61,7 +61,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   public void setModule(IModule module) {
     myModule = module;
-    myViewer.setTraces(null);
+    myViewer.setTraces(null, myModule);
   }
 
   @Override
@@ -97,9 +97,10 @@ public class DependencyTree extends MPSTree implements DataProvider {
       }
       Object treeNode = path.getLastPathComponent();
        if (!(treeNode instanceof DependencyTreeNode)) return;
-      Set<List<IModule>> traces = myTracer.getTraces(((DependencyTreeNode)treeNode).getModule());
+      IModule target = ((DependencyTreeNode) treeNode).getModule();
+      Set<List<IModule>> traces = myTracer.getTraces(target);
       if (traces == null) return;
-      myViewer.setTraces(traces);
+      myViewer.setTraces(traces, target);
     }
   }
 }
