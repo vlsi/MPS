@@ -29,6 +29,7 @@
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ProcessType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.RedirectOutputExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ReportExecutionError_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.StartAndWaitOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
@@ -348,6 +349,16 @@
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ReportErrorStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ReportExecutionError_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.commands.behavior.StartAndWaitOperation_BehaviorDescriptor" file="StartAndWaitOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>

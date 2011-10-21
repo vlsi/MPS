@@ -519,68 +519,56 @@
     <nodeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="35" startPosition="112" endLine="36" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
     <nodeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="41" startPosition="42" endLine="42" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="42" startPosition="20" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5894693213360972566" fileName="CompileWithGcc_BeforeTask.java" startLine="47" startPosition="11" endLine="48" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8709806323640770377" fileName="CompileWithGcc_BeforeTask.java" startLine="48" startPosition="37" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="578690696022989810" fileName="CompileWithGcc_BeforeTask.java" startLine="52" startPosition="61" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5894693213360888059" fileName="CompileWithGcc_BeforeTask.java" startLine="58" startPosition="56" endLine="59" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5894693213360881754" fileName="CompileWithGcc_BeforeTask.java" startLine="60" startPosition="20" endLine="61" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5894693213360815017" fileName="CompileWithGcc_BeforeTask.java" startLine="64" startPosition="11" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5894693213360815886" fileName="CompileWithGcc_BeforeTask.java" startLine="65" startPosition="30" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8709806323640771993" fileName="CompileWithGcc_BeforeTask.java" startLine="66" startPosition="26" endLine="67" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8709806323640794887" fileName="CompileWithGcc_BeforeTask.java" startLine="68" startPosition="38" endLine="69" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8709806323640794882" fileName="CompileWithGcc_BeforeTask.java" startLine="69" startPosition="25" endLine="70" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8709806323640794895" fileName="CompileWithGcc_BeforeTask.java" startLine="71" startPosition="40" endLine="72" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8709806323640794899" fileName="CompileWithGcc_BeforeTask.java" startLine="72" startPosition="25" endLine="73" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5894693213360888059" fileName="CompileWithGcc_BeforeTask.java" startLine="51" startPosition="56" endLine="52" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5894693213360881754" fileName="CompileWithGcc_BeforeTask.java" startLine="53" startPosition="20" endLine="54" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960969856196" fileName="CompileWithGcc_BeforeTask.java" startLine="57" startPosition="11" endLine="58" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8128243960969864768" fileName="CompileWithGcc_BeforeTask.java" startLine="59" startPosition="28" endLine="60" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8709806323640771993" fileName="CompileWithGcc_BeforeTask.java" startLine="61" startPosition="9" endLine="62" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8128243960969985737" fileName="CompileWithGcc_BeforeTask.java" startLine="63" startPosition="38" endLine="64" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960969985741" fileName="CompileWithGcc_BeforeTask.java" startLine="64" startPosition="25" endLine="65" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="37" startPosition="0" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompileWithGcc_BeforeTask_RunTask#()V" />
-    <nodeInfo nodeId="5894693213360888067" fileName="CompileWithGcc_BeforeTask.java" startLine="60" startPosition="18" endLine="62" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5894693213360888067" fileName="CompileWithGcc_BeforeTask.java" startLine="53" startPosition="18" endLine="55" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompileWithGcc_BeforeTask#()V" />
+    <nodeInfo nodeId="8128243960969864758" fileName="CompileWithGcc_BeforeTask.java" startLine="58" startPosition="67" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTaskImpl#()Ljetbrains/mps/nanoc/plugin/CompileWithGcc_BeforeTask/CompileWithGcc_BeforeTask_RunTask;" />
     <nodeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/util/Key;" />
     <nodeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="configure#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="578690696022989804" fileName="CompileWithGcc_BeforeTask.java" startLine="50" startPosition="122" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTerminated#(Lcom/intellij/execution/process/ProcessEvent;)V" />
-    <nodeInfo nodeId="5894693213360888047" fileName="CompileWithGcc_BeforeTask.java" startLine="57" startPosition="68" endLine="62" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="578690696022989815" fileName="CompileWithGcc_BeforeTask.java" startLine="55" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTextAvailable#(Lcom/intellij/execution/process/ProcessEvent;Lcom/intellij/openapi/util/Key;)V" />
-    <nodeInfo nodeId="578690696022989796" fileName="CompileWithGcc_BeforeTask.java" startLine="49" startPosition="63" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8709806323640794874" fileName="CompileWithGcc_BeforeTask.java" startLine="46" startPosition="45" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="45" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lcom/intellij/openapi/project/Project;)Z" />
+    <nodeInfo nodeId="5894693213360888047" fileName="CompileWithGcc_BeforeTask.java" startLine="50" startPosition="68" endLine="55" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="578690696022989815" fileName="CompileWithGcc_BeforeTask.java" startLine="48" startPosition="122" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTextAvailable#(Lcom/intellij/execution/process/ProcessEvent;Lcom/intellij/openapi/util/Key;)V" />
+    <nodeInfo nodeId="578690696022989796" fileName="CompileWithGcc_BeforeTask.java" startLine="47" startPosition="11" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8128243960969985729" fileName="CompileWithGcc_BeforeTask.java" startLine="46" startPosition="45" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="45" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lcom/intellij/openapi/project/Project;)Z" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="38" startPosition="48" endLine="38" endPosition="48" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="23" startPosition="38" endLine="24" endPosition="30" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="27" startPosition="90" endLine="28" endPosition="77" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="31" startPosition="83" endLine="32" endPosition="15" />
-    <scopeInfo nodeId="578690696022989809" fileName="CompileWithGcc_BeforeTask.java" startLine="52" startPosition="61" endLine="53" endPosition="34" />
-    <scopeInfo nodeId="5894693213360888048" fileName="CompileWithGcc_BeforeTask.java" startLine="58" startPosition="56" endLine="59" endPosition="41" />
-    <scopeInfo nodeId="5894693213360888068" fileName="CompileWithGcc_BeforeTask.java" startLine="60" startPosition="20" endLine="61" endPosition="40" />
+    <scopeInfo nodeId="5894693213360888048" fileName="CompileWithGcc_BeforeTask.java" startLine="51" startPosition="56" endLine="52" endPosition="41" />
+    <scopeInfo nodeId="5894693213360888068" fileName="CompileWithGcc_BeforeTask.java" startLine="53" startPosition="20" endLine="54" endPosition="40" />
+    <scopeInfo nodeId="8128243960969864759" fileName="CompileWithGcc_BeforeTask.java" startLine="59" startPosition="28" endLine="60" endPosition="23" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="37" startPosition="0" endLine="39" endPosition="5" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="41" startPosition="42" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="8709806323640794877" fileName="CompileWithGcc_BeforeTask.java" startLine="68" startPosition="0" endLine="70" endPosition="21">
-      <varInfo nodeId="8709806323640794878" varName="e" />
+    <scopeInfo nodeId="8128243960969985732" fileName="CompileWithGcc_BeforeTask.java" startLine="63" startPosition="0" endLine="65" endPosition="21">
+      <varInfo nodeId="8128243960969985733" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8709806323640794880" fileName="CompileWithGcc_BeforeTask.java" startLine="68" startPosition="38" endLine="70" endPosition="21" />
-    <scopeInfo nodeId="8709806323640794890" fileName="CompileWithGcc_BeforeTask.java" startLine="71" startPosition="0" endLine="73" endPosition="21">
-      <varInfo nodeId="8709806323640794891" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="8709806323640794893" fileName="CompileWithGcc_BeforeTask.java" startLine="71" startPosition="40" endLine="73" endPosition="21" />
+    <scopeInfo nodeId="8128243960969985735" fileName="CompileWithGcc_BeforeTask.java" startLine="63" startPosition="38" endLine="65" endPosition="21" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="578690696022989804" fileName="CompileWithGcc_BeforeTask.java" startLine="50" startPosition="122" endLine="55" endPosition="0">
-      <varInfo nodeId="578690696022989807" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="578690696022989822" fileName="CompileWithGcc_BeforeTask.java" startLine="57" startPosition="68" endLine="62" endPosition="13" />
-    <scopeInfo nodeId="578690696022989815" fileName="CompileWithGcc_BeforeTask.java" startLine="55" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="578690696022989822" fileName="CompileWithGcc_BeforeTask.java" startLine="50" startPosition="68" endLine="55" endPosition="13" />
+    <scopeInfo nodeId="578690696022989815" fileName="CompileWithGcc_BeforeTask.java" startLine="48" startPosition="122" endLine="57" endPosition="0">
       <varInfo nodeId="578690696022989818" varName="event" />
       <varInfo nodeId="578690696022989820" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="8709806323640794875" fileName="CompileWithGcc_BeforeTask.java" startLine="47" startPosition="11" endLine="67" endPosition="90">
+    <scopeInfo nodeId="8128243960969985730" fileName="CompileWithGcc_BeforeTask.java" startLine="47" startPosition="11" endLine="62" endPosition="90">
       <varInfo nodeId="578690696022989797" varName="process" />
-      <varInfo nodeId="8709806323640770378" varName="countDown" />
+      <varInfo nodeId="8128243960969856197" varName="exitCode" />
     </scopeInfo>
-    <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="46" startPosition="45" endLine="74" endPosition="7" />
-    <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="45" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="578690696022989802" fileName="CompileWithGcc_BeforeTask.java" startLine="50" startPosition="104" endLine="64" endPosition="9" unitName="jetbrains.mps.nanoc.plugin.CompileWithGcc_BeforeTask$1" />
-    <unitInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="35" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.CompileWithGcc_BeforeTask$CompileWithGcc_BeforeTask_RunTask" />
-    <unitInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.CompileWithGcc_BeforeTask" />
+    <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="46" startPosition="45" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="45" startPosition="0" endLine="68" endPosition="0" />
+    <unitInfo nodeId="578690696022989802" fileName="CompileWithGcc_BeforeTask.java" startLine="48" startPosition="104" endLine="57" endPosition="9" unitName="jetbrains.mps.nanoc.plugin.CompileWithGcc_BeforeTask$1" />
+    <unitInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="35" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.CompileWithGcc_BeforeTask$CompileWithGcc_BeforeTask_RunTask" />
+    <unitInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.CompileWithGcc_BeforeTask" />
   </root>
   <root nodeId="8709806323640733467">
     <nodeInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="18" startPosition="26" endLine="19" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGccLocation" />
