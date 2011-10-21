@@ -7,12 +7,12 @@ import com.intellij.openapi.util.Key;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
-import java.util.concurrent.CountDownLatch;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.execution.process.ProcessOutputTypes;
+import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.File;
 import com.intellij.execution.ExecutionException;
 
@@ -45,14 +45,7 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
 
     public boolean execute(Project project) {
       try {
-        // todo show progress window 
-        final CountDownLatch countDown = new CountDownLatch(1);
         ProcessHandler process = OutputRedirector.redirect(new Gcc_Command().createProcess(myFile), new ProcessAdapter() {
-          @Override
-          public void processTerminated(ProcessEvent event) {
-            countDown.countDown();
-          }
-
           @Override
           public void onTextAvailable(ProcessEvent event, Key key) {
             if (ProcessOutputTypes.STDERR.equals(key)) {
@@ -62,13 +55,12 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
             }
           }
         });
-        process.startNotify();
-        countDown.await();
+        int exitCode = ProcessHandlerBuilder.startAndWait(process);
+        if (exitCode != 0) {
+          return false;
+        }
         return new File(Gcc_Command.getExecutableFile(myFile).getAbsolutePath()).exists();
       } catch (ExecutionException e) {
-        LOG.error("", e);
-        return false;
-      } catch (InterruptedException e) {
         LOG.error("", e);
         return false;
       }
