@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -153,6 +154,9 @@ public class SolutionStep extends BaseStep {
       }
       if (!(SourceVersion.isName(myNamespace.getText()))) {
         throw new CommitStepException("Solution namespace should be valid Java package");
+      }
+      if (NameUtil.isModelNameWithGeneratedOrDependencies(myNamespace.getText())) {
+        throw new CommitStepException("Model name should not have \"generated\" or \"dependencies\" in its name");
       }
       if (MPSModuleRepository.getInstance().getModuleByUID(myNamespace.getText()) != null) {
         throw new CommitStepException("Duplicate solution name");

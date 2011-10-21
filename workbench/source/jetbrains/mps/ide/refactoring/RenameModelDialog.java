@@ -27,6 +27,7 @@ import jetbrains.mps.refactoring.renameModel.ModelRenamer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.jetbrains.annotations.NotNull;
 
@@ -81,6 +82,11 @@ public class RenameModelDialog extends BaseDialog {
 
     if (!(SourceVersion.isName(fqName.getLongName()))) {
       setErrorText("Model name should be valid Java package");
+      return;
+    }
+
+    if (NameUtil.isModelNameWithGeneratedOrDependencies(fqName.getLongName())) {
+      setErrorText("Model name should not have \"generated\" or \"dependencies\" in its name");
       return;
     }
 

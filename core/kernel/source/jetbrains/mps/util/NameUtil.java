@@ -504,6 +504,11 @@ public class NameUtil {
     }
   }
 
+  public static boolean isModelNameWithGeneratedOrDependencies(String modelName) {
+    String wd = "." + modelName + ".";
+    return wd.contains(".generated.") || wd.contains(".dependencies.");
+  }
+
   private static String _compactNamespace(String namespace) {
     if (namespace.length() > 10) {
       String[] parts = namespace.split("\\.");

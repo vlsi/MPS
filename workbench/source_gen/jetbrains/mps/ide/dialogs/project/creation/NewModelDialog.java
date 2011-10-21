@@ -22,6 +22,7 @@ import java.awt.event.ItemEvent;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import javax.lang.model.SourceVersion;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.Language;
@@ -123,6 +124,10 @@ public class NewModelDialog extends BaseDialog {
         }
         if (!(SourceVersion.isName(modelName))) {
           setErrorText("Model name should be valid Java package");
+          return null;
+        }
+        if (NameUtil.isModelNameWithGeneratedOrDependencies(modelName)) {
+          setErrorText("Model name should not have \"generated\" or \"dependencies\" in its name");
           return null;
         }
         SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
