@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -120,9 +121,13 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   }
 
   private static boolean openDiffDialog(IFile modelFile, final SModel inMemory) {
-    SModel onDisk = ModelPersistence.readModel(modelFile, false);
-    if (onDisk == null) {
-      onDisk = new SModel(inMemory.getSModelReference());
+    SModel onDisk = new SModel(inMemory.getSModelReference());
+    try {
+      onDisk = ModelPersistence.readModel(modelFile, false);
+    } catch (ModelReadException e) {
+      if (log.isErrorEnabled()) {
+        log.error("Could not read model", e);
+      }
     }
     return showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
   }

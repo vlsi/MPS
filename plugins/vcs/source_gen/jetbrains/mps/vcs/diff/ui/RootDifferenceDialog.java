@@ -85,6 +85,8 @@ public class RootDifferenceDialog extends BaseDialog {
     myContainer.add(myStatusBar, BorderLayout.SOUTH);
 
     highlightAllChanges();
+
+    neighbourTraverser.goToFirstChangeLater();
   }
 
   @Override

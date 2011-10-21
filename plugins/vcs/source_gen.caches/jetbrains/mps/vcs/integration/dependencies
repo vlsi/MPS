@@ -44,6 +44,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog" />
@@ -82,6 +83,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.MergeBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog" />

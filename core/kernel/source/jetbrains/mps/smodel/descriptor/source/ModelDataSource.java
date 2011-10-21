@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.descriptor.source.changes.SourceChangeWatcher;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 
 public interface ModelDataSource {
   //------changes watching--------
@@ -32,7 +33,7 @@ public interface ModelDataSource {
 
   //------model loading------
 
-  DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName);
+  DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) throws ModelReadException;
 
   ModelLoadResult loadSModel(IModule contextModule, SModelDescriptor descriptor, ModelLoadingState targetState);
 

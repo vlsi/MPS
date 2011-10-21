@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.MergeBackupUtil;
 import jetbrains.mps.vcs.MergeVersion;
@@ -50,7 +51,7 @@ public class TestMergeDialog {
     }
   };
 
-  public static void main(final String[] args) throws JDOMException, IOException {
+  public static void main(final String[] args) throws JDOMException, IOException, ModelReadException {
     IdeMain.setTestMode(TestMode.NO_TEST);
     TestMain.configureMPS();
     IconLoader.activate();

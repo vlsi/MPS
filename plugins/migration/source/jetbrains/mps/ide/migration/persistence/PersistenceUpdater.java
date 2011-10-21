@@ -17,12 +17,15 @@ package jetbrains.mps.ide.migration.persistence;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
+import sun.rmi.runtime.Log;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -32,6 +35,8 @@ import java.util.List;
 import java.util.Set;
 
 public class PersistenceUpdater {
+  private static final Logger LOG = Logger.getLogger(PersistenceUpdater.class);
+
   public void upgradePersistence(final List<DefaultSModelDescriptor> modelDescriptors, final int toVersion) {
     for (final DefaultSModelDescriptor modelDescriptor : modelDescriptors) {
       assert ThreadUtils.isEventDispatchThread() : "you must be in EDT to write files";
@@ -48,9 +53,15 @@ public class PersistenceUpdater {
       if (fromVersion >= toVersion) continue;
 
       assert file != null;
-      SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(file, false);
-      ModelPersistence.saveModel(model, file, toVersion);
-      modelDescriptor.reloadFromDisk();
+
+      try {
+        SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(file, false);
+        ModelPersistence.saveModel(model, file, toVersion);
+        modelDescriptor.reloadFromDisk();
+      } catch (ModelReadException e) {
+        // This hardly can happend, unreadable model should be already filtered out
+        LOG.error(e);
+      }
     }
   }
 
@@ -75,7 +86,11 @@ public class PersistenceUpdater {
         if (modelDescriptor instanceof EditableSModelDescriptor) {
           IFile file = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
           if (file != null) {
-            persistenceVersion = ModelPersistence.loadDescriptor(file).getHeader().getPersistenceVersion();
+            try {
+              persistenceVersion = ModelPersistence.loadDescriptor(file).getHeader().getPersistenceVersion();
+            } catch (ModelReadException e) {
+              // Can't upgrade persistence for bad model
+            }
           }
         }
       }

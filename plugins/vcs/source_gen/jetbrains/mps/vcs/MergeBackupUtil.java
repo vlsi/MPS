@@ -19,9 +19,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.UnzipUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 
 public class MergeBackupUtil {
   protected static Log log = LogFactory.getLog(MergeBackupUtil.class);
@@ -122,16 +123,16 @@ public class MergeBackupUtil {
   }
 
   @Nullable
-  public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException {
-    String[] loadZippedModelsAsText = loadZippedModelsAsText(zipfile, versions);
-    if (loadZippedModelsAsText == null) {
+  public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException, ModelReadException {
+    String[] modelsAsText = loadZippedModelsAsText(zipfile, versions);
+    if (modelsAsText == null) {
       return null;
     }
-    return Sequence.fromIterable(Sequence.fromArray(loadZippedModelsAsText)).select(new ISelector<String, SModel>() {
-      public SModel select(String s) {
-        return ModelPersistence.readModel(s, false);
-      }
-    }).toGenericArray(SModel.class);
+    SModel[] models = new SModel[modelsAsText.length];
+    for (int i = 0; i < models.length; i++) {
+      models[i] = ModelPersistence.readModel(modelsAsText[i], false);
+    }
+    return models;
   }
 
   public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
