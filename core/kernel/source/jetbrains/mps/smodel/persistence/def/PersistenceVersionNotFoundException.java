@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-public class PersistenceVersionNotFoundException extends RuntimeException {
+public class PersistenceVersionNotFoundException extends ModelReadException {
   public PersistenceVersionNotFoundException(String message) {
-    super(message);
+    super(message, null);
   }
 }

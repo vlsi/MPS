@@ -23,17 +23,17 @@ public class ModelReadException extends Exception {
   @Nullable
   private SModelReference myModelReference;
 
-  public ModelReadException(String s, Throwable throwable, @Nullable SModelReference modelReference) {
+  public ModelReadException(String s, @Nullable Throwable throwable, @Nullable SModelReference modelReference) {
     super(s, throwable);
     myModelReference = modelReference;
   }
 
-  public ModelReadException(String s, Throwable throwable, @Nullable SModelHeader modelHeader) {
+  public ModelReadException(String s, @Nullable Throwable throwable, @Nullable SModelHeader modelHeader) {
     super(s, throwable);
     myModelReference = modelHeader == null ? null : modelHeader.getModelReference();
   }
 
-  public ModelReadException(String s, Throwable throwable) {
+  public ModelReadException(String s, @Nullable Throwable throwable) {
     this(s, throwable, (SModelReference) null);
   }
 
