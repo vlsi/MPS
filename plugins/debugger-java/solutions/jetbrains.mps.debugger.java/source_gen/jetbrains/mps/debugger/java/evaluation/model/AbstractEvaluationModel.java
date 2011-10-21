@@ -26,14 +26,11 @@ import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.project.IModule;
 import org.apache.commons.lang.StringUtils;
@@ -51,6 +48,7 @@ import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
@@ -64,6 +62,7 @@ import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debug.evaluation.transform.Transformator;
 
 public abstract class AbstractEvaluationModel {
@@ -134,20 +133,6 @@ public abstract class AbstractEvaluationModel {
 
   @NotNull
   public abstract SNode getNodeToShow();
-
-  public void createNodesToShow(final EditableSModelDescriptor model) {
-    // todo do we need a separate method for that now? 
-    // creating evaluator node 
-    myEvaluator = createEvaluator(model);
-    model.getSModel().addRoot(myEvaluator);
-    SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
-  }
-
-  protected SNode createEvaluator(SModelDescriptor model) {
-    SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", null);
-    SPropertyOperations.set(node, "isShowContext", "" + (myShowContext));
-    return node;
-  }
 
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
     ListSequence.fromList(myGenerationListeners).addElement(listener);

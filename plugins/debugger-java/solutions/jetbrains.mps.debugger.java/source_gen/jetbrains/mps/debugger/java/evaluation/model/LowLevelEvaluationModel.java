@@ -14,20 +14,23 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.application.ApplicationManager;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
@@ -36,7 +39,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -79,6 +81,48 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     });
   }
 
+  @NotNull
+  public SNode getNodeToShow() {
+    return myEvaluator;
+  }
+
+  @NotNull
+  public SNode getRootToShow() {
+    return myEvaluator;
+  }
+
+  @Override
+  public void updateState() {
+    super.updateState();
+    if (myDebugSession.getEvaluationProvider().canEvaluate()) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          createVars();
+        }
+      });
+    }
+  }
+
+  public void createNodesToShow(EditableSModelDescriptor auxilaryModel) {
+    myEvaluator = createEvaluator(auxilaryModel);
+    auxilaryModel.getSModel().addRoot(myEvaluator);
+    SModelOperations.validateLanguagesAndImports(auxilaryModel.getSModel(), false, true);
+
+    SModel locationModel = getLocationModel();
+    if (locationModel != null) {
+      LowLevelEvaluationModel.this.importStubForFqName(locationModel.getSModelFqName().toString());
+    }
+
+    createVars();
+  }
+
+  protected SNode createEvaluator(SModelDescriptor model) {
+    SNode evaluatorConcept = SNodeFactoryOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", null);
+    SPropertyOperations.set(myEvaluator, "isShowContext", "" + (myShowContext));
+    AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatements", true), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
+    return evaluatorConcept;
+  }
+
   @Nullable
   private SNode createClassifierType(final String unitFqName) {
     int lastDot = unitFqName.lastIndexOf(".");
@@ -105,47 +149,6 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.cast(classifiers.get(0), "jetbrains.mps.baseLanguage.structure.Classifier"), false);
     return classifierType;
-  }
-
-  @NotNull
-  public SNode getNodeToShow() {
-    return myEvaluator;
-  }
-
-  @NotNull
-  public SNode getRootToShow() {
-    return myEvaluator;
-  }
-
-  @Override
-  public void updateState() {
-    super.updateState();
-    if (myDebugSession.getEvaluationProvider().canEvaluate()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          createVars();
-        }
-      });
-    }
-  }
-
-  @Override
-  public void createNodesToShow(EditableSModelDescriptor model) {
-    super.createNodesToShow(model);
-
-    SModel locationModel = getLocationModel();
-    if (locationModel != null) {
-      LowLevelEvaluationModel.this.importStubForFqName(locationModel.getSModelFqName().toString());
-    }
-
-    createVars();
-  }
-
-  @Override
-  protected SNode createEvaluator(SModelDescriptor model) {
-    SNode evaluatorConcept = super.createEvaluator(model);
-    AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatements", true), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
-    return evaluatorConcept;
   }
 
   private void importStubForFqName(String fqName) {
