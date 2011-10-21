@@ -21,8 +21,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.Computable;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -146,7 +148,9 @@ public class TransientModelsProvider {
   }
 
   private String newSessionId() {
-    return myProject.getProjectFile().getAbsolutePath().hashCode() + Long.toHexString(System.currentTimeMillis());
+    File projectFile = myProject.getProjectFile();
+    return (projectFile != null ? projectFile.getAbsolutePath().hashCode() : System.identityHashCode(myProject)) +
+      Long.toHexString(System.currentTimeMillis());
   }
 
   public static interface TransientSwapSpace {

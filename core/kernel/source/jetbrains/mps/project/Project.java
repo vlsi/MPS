@@ -199,7 +199,7 @@ public abstract class Project implements MPSModuleOwner {
     return myErrors;
   }
 
-  @NotNull
+  @Nullable
   public File getProjectFile() {
     return myProjectFile;
   }
