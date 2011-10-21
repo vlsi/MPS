@@ -381,6 +381,9 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
           myUpdateException = null;
           composite.cleanAll();
         }
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("refresh procedure started, everything = " + wasEverythingDirty);
+        }
       }
       if (wasEverythingDirty) {
         changeListWorker.notifyStartProcessingChanges(null);
@@ -453,6 +456,9 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
         }
 
         if (takeChanges) {
+          if (LOG.isDebugEnabled()) {
+            LOG.debug("refresh procedure finished, size: " + composite.getVFHolder(FileHolder.HolderType.UNVERSIONED).getSize());
+          }
           final boolean statusChanged = ! myComposite.equals(composite);
           myComposite = composite;
           if (statusChanged) {
@@ -691,6 +697,12 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
               }
             }
             multicaster.changesRemoved(changes, lists.get(entry.getKey()));
+          }
+          for (String listName : map.keySet()) {
+            final LocalChangeList byName = myWorker.getCopyByName(listName);
+            if (byName != null && byName.getChanges().isEmpty() && ! byName.isDefault() && ! byName.isReadOnly()) {
+              myWorker.removeChangeList(listName);
+            }
           }
         }
       }
@@ -1187,7 +1199,7 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
               myRevisionsCache.minus(correctedPair);
             }
           });
-          myRevisionsCache.minus(correctedPair);
+          //myRevisionsCache.minus(correctedPair);
         }
       });
     }

@@ -43,7 +43,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.ui.DialogWrapper;
 import java.util.ArrayList;
 import jetbrains.mps.vcs.diff.ui.DiffModelTree;
 import jetbrains.mps.util.NameUtil;
@@ -231,7 +230,7 @@ public class MergeModelsDialog extends BaseDialog {
       }
     } else {
       int ans = Messages.showYesNoCancelDialog(this, "There are pending model properties changes:" + sb.toString() + "\n\nDo you want to apply them all?", "Merge Model Properties", Messages.getQuestionIcon());
-      if (ans == DialogWrapper.OK_EXIT_CODE) {
+      if (ans == Messages.YES) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             SetSequence.fromSet(myAppliedMetadataChanges).addSequence(Sequence.fromIterable(interestingChanges.value));
@@ -239,7 +238,7 @@ public class MergeModelsDialog extends BaseDialog {
             rebuildLater();
           }
         });
-      } else if (ans == DialogWrapper.CANCEL_EXIT_CODE) {
+      } else if (ans == Messages.NO) {
         myMergeContext.excludeChanges(interestingChanges.value);
         rebuildLater();
       }

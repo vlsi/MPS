@@ -52,7 +52,6 @@
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.FoldingAreaButton" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.merge.ui.MergeConfirmation" file="MergeConfirmation.java">
-    <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -77,7 +76,6 @@
     <classNode dependClassName="com.intellij.openapi.diff.DiffRequest" />
     <classNode dependClassName="com.intellij.openapi.diff.impl.mergeTool.MergeTool" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />

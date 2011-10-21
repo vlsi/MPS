@@ -476,7 +476,7 @@ public class TestMain {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
-        //IdeaTestApplication.getInstance(null).dispose();
+        IdeaTestApplication.getInstance(null).dispose();
       }
     });
   }
