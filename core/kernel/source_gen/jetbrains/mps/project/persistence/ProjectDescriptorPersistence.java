@@ -11,8 +11,10 @@ import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.project.Path;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
@@ -37,7 +39,11 @@ public class ProjectDescriptorPersistence {
       public Element invoke() {
         final Element result_jnk9az_a0a1a0 = new Element("project");
         final Element result_jnk9az_a0a0a1a0 = new Element("projectModules");
-        for (Path path : ListSequence.fromList(descriptor.getModules())) {
+        for (Path path : Sequence.fromIterable(((Iterable<Path>) descriptor.getModules())).sort(new ISelector<Path, Comparable<?>>() {
+          public Comparable<?> select(Path p) {
+            return macros.shrinkPath(p.getPath(), file);
+          }
+        }, true)) {
           final Element result_jnk9az_a0a0a0a0a1a0 = new Element("modulePath");
           if (path.getPath() != null) {
             final String result_jnk9az_a0a0a0a0a0a0a1a0 = macros.shrinkPath(path.getPath(), file);

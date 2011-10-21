@@ -218,9 +218,25 @@ public class ChangesUtil {
     return result.toArray(new Navigatable[result.size()]);
   }
 
-  @Nullable
-  public static boolean allChangesInOneList(@NotNull final Project project, @Nullable Change[] changes) {
-    return ChangeListManager.getInstance(project).getChangeListNameIfOnlyOne(changes) != null;
+  public static boolean allChangesInOneListOrWholeListsSelected(@NotNull final Project project, @Nullable Change[] changes) {
+    final ChangeListManager clManager = ChangeListManager.getInstance(project);
+    if (clManager.getChangeListNameIfOnlyOne(changes) != null) return true;
+    final List<LocalChangeList> list = clManager.getChangeListsCopy();
+
+    final HashSet<Change> checkSet = new HashSet<Change>();
+    checkSet.addAll(Arrays.asList(changes));
+    for (LocalChangeList localChangeList : list) {
+      final Collection<Change> listChanges = localChangeList.getChanges();
+      boolean first = true;
+      for (Change listChange : listChanges) {
+        if (! checkSet.contains(listChange)) {
+          if (! first) return false;
+          break;
+        }
+        first = false;
+      }
+    }
+    return true;
   }
 
   @Nullable
@@ -392,7 +408,7 @@ public class ChangesUtil {
 
   public static boolean isInternalOperation(VirtualFile file) {
     Boolean data = file.getUserData(INTERNAL_OPERATION_KEY);
-    return data != null && data.booleanValue();
+    return data != null && data.booleanValue();   
   }
 
   public static String getDefaultChangeListName() {
