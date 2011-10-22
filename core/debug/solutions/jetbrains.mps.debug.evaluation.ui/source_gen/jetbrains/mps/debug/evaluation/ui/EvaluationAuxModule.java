@@ -100,6 +100,7 @@ public class EvaluationAuxModule extends AbstractModule {
   public IScope getScope() {
     if (JAVA_STUBS) {
       // <node> 
+      // <node> 
       return GlobalScope.getInstance();
     } else {
       return new DefaultScope() {

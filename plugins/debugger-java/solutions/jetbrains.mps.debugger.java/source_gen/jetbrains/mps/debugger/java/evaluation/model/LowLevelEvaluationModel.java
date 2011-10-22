@@ -118,7 +118,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
   protected SNode createEvaluator(SModelDescriptor model) {
     SNode evaluatorConcept = SNodeFactoryOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", null);
-    SPropertyOperations.set(myEvaluator, "isShowContext", "" + (myShowContext));
+    SPropertyOperations.set(evaluatorConcept, "isShowContext", "" + (myShowContext));
     AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatements", true), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
     return evaluatorConcept;
   }
