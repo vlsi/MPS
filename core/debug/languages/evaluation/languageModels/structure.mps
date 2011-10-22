@@ -68,6 +68,9 @@
       <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
       <link role="target" roleId="tpce.1204741097161" targetNodeId="9146111288436274341" resolveInfo="DoNotTransformAnnotation" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="9172312269976647291">
+      <property name="name" nameId="tpck.1169194664001" value="IEvaluatorConcept" />
+    </node>
   </roots>
   <root id="6036237525966182693">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6036237525966243739">
@@ -98,6 +101,9 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5211667636169798153">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1239354281271" resolveInfo="IMethodLike" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9172312269976647301">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="9172312269976647291" resolveInfo="IEvaluatorConcept" />
     </node>
   </root>
   <root id="6036237525966182694">
@@ -182,5 +188,6 @@
     </node>
   </root>
   <root id="9146111288436274342" />
+  <root id="9172312269976647291" />
 </model>
 

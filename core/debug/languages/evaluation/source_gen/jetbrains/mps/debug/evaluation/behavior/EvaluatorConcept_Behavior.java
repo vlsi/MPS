@@ -6,10 +6,19 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.structure.BehaviorDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -36,6 +45,78 @@ public class EvaluatorConcept_Behavior {
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return new EvaluatorConcept_Behavior.QuotationClass_29c8r0_a0a0d().createNode();
+  }
+
+  public static String virtual_getEvaluatorPresentation_9172312269976647295(SNode thisNode) {
+    // todo better presentation 
+    List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "evaluatedStatements", true), "statement", true);
+    if (ListSequence.fromList(statements).isEmpty()) {
+      return "empty statement";
+    }
+
+    SNode lastStatement = ListSequence.fromList(statements).last();
+    String suffix = ((ListSequence.fromList(statements).count() > 1 ?
+      "..." :
+      ""
+    ));
+
+    if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+      return EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)) + suffix;
+    }
+
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(lastStatement, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class})) + suffix;
+  }
+
+  public static String call_getPresentation_9172312269976661829(SNode thisNode, @Nullable SNode expression) {
+    if (expression == null) {
+      return "????";
+    }
+
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+      return SPropertyOperations.getString(SNodeOperations.cast(expression, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+    }
+
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+      return EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)) + "." + EvaluatorConcept_Behavior.call_getOperationPresentation_9172312269976661942(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true));
+    }
+
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+      return EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true)) + SConceptPropertyOperations.getString(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "alias") + EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
+    }
+
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.StringLiteral")) {
+      return "\"" + SPropertyOperations.getString(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value") + "\"";
+    }
+
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")) {
+      return "new " + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
+    }
+
+    if (SConceptPropertyOperations.getBoolean(expression, "constant")) {
+      return ((Object) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.Expression"), "virtual_getCompileTimeConstantValue_1238860310638", new Class[]{SNode.class, IModule.class}, SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode)))) + "";
+    }
+
+    return BaseConcept_Behavior.call_getPresentation_1213877396640(expression);
+  }
+
+  public static String call_getOperationPresentation_9172312269976661942(final SNode thisNode, @Nullable SNode operation) {
+    if (operation == null) {
+      return "????";
+    }
+    if (StringUtils.isNotEmpty(SConceptPropertyOperations.getString(operation, "alias"))) {
+      return SConceptPropertyOperations.getString(operation, "alias");
+    }
+    if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name") + "(" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
+        public String combine(String s, SNode it) {
+          return ((StringUtils.isEmpty(s) ?
+            "" :
+            s + ","
+          )) + EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, it);
+        }
+      }) + ")";
+    }
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
   }
 
   public static List<SNode> call_getThrowableTypes_5211667636169798157(SNode thisNode) {

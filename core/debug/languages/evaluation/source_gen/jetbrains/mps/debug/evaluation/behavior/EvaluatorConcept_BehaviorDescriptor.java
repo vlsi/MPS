@@ -8,12 +8,16 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 
-public class EvaluatorConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IMethodLike_BehaviorDescriptor {
+public class EvaluatorConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IMethodLike_BehaviorDescriptor, IEvaluatorConcept_BehaviorDescriptor {
   public EvaluatorConcept_BehaviorDescriptor() {
   }
 
   public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return EvaluatorConcept_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
+  }
+
+  public String virtual_getEvaluatorPresentation_9172312269976647295(SNode thisNode) {
+    return EvaluatorConcept_Behavior.virtual_getEvaluatorPresentation_9172312269976647295(thisNode);
   }
 
   public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
