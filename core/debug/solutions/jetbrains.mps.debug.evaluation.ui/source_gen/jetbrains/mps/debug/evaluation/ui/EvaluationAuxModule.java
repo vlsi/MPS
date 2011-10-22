@@ -16,26 +16,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.IScope;
 import java.util.UUID;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.DefaultScope;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import java.util.Collection;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class EvaluationAuxModule extends AbstractModule {
@@ -53,6 +44,7 @@ public class EvaluationAuxModule extends AbstractModule {
   private final List<StubPath> myStubPaths = ListSequence.fromList(new ArrayList<StubPath>());
   private final List<SModelRoot> myModelRoots = ListSequence.fromList(new ArrayList<SModelRoot>());
   private final List<ModuleReference> myUsedLanguages = ListSequence.fromList(new ArrayList<ModuleReference>());
+  private volatile IScope myScope;
 
   public EvaluationAuxModule(Project project) {
     this.myProject = project;
@@ -98,26 +90,10 @@ public class EvaluationAuxModule extends AbstractModule {
 
   @NotNull
   public IScope getScope() {
-    if (JAVA_STUBS) {
-      // <node> 
-      // <node> 
-      return GlobalScope.getInstance();
-    } else {
-      return new DefaultScope() {
-        protected Set<IModule> getInitialModules() {
-          return SetSequence.fromSetAndArray(new HashSet<IModule>(), EvaluationAuxModule.this, MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("7da4580f-9d75-4603-8162-51a896d78375")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("80208897-4572-437d-b50e-8f050cba9566")));
-        }
-
-        @Override
-        public SModelDescriptor getModelDescriptor(@NotNull SModelReference reference) {
-          String stereotype = reference.getStereotype();
-          if (eq_md9kx6_a0b0b0a0a0a0a5(stereotype, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
-            return super.getModelDescriptor(new SModelReference(reference.getLongName(), SModelStereotype.getStubStereotypeForId(EvaluationAuxModule.DEBUGGER_JAVA_ID)));
-          }
-          return super.getModelDescriptor(reference);
-        }
-      };
+    if (myScope == null) {
+      myScope = new EvaluationAuxScope(this);
     }
+    return myScope;
   }
 
   public ModuleDescriptor getModuleDescriptor() {
@@ -207,12 +183,5 @@ public class EvaluationAuxModule extends AbstractModule {
   @NotNull
   public String toString() {
     return "Debug Evaluation Aux Module";
-  }
-
-  private static boolean eq_md9kx6_a0b0b0a0a0a0a5(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 }
