@@ -154,8 +154,12 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     ModelAccess.instance().doAssertLegalRead(node);
   }
 
+  protected static boolean isInRegisteredModel(SNode node) {
+    return node.getModelInternal().isRegistered();
+  }
+
   protected void doAssertLegalRead(SNode node) {
-    if (!canRead()) {
+    if (isInRegisteredModel(node) && !canRead()) {
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }

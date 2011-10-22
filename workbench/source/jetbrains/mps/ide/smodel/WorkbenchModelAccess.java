@@ -98,7 +98,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   protected void doAssertLegalRead(SNode node) {
-    if (!canRead() && !myIndexingThreads.contains(Thread.currentThread())) {
+    if (isInRegisteredModel(node) && !canRead() && !myIndexingThreads.contains(Thread.currentThread())) {
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
@@ -591,17 +591,17 @@ public class WorkbenchModelAccess extends ModelAccess {
     if (project == null) {
       project = CurrentProjectAccessUtil.getMPSProjectFromUI();
     }
-    return runWriteActionInCommand(c, null, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
+    return runWriteActionInCommand(c, null, null, false, project);
   }
 
   @Override
-  public <T> T runWriteActionInCommand(final Computable<T> c, String name, Object groupId, final UndoConfirmationPolicy policy, final Project project) {
+  public <T> T runWriteActionInCommand(final Computable<T> c, String name, Object groupId, final boolean requestUndoConfirmation, final Project project) {
     final Object[] result = new Object[1];
     CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new Runnable() {
       public void run() {
         result[0] = new CommandComputable(c, project).compute();
       }
-    }, name, null, policy);
+    }, name, null, requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
     return (T) result[0];
   }
 
@@ -613,12 +613,12 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void runWriteActionInCommand(Runnable r, Project project) {
-    runWriteActionInCommand(r, null, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
+    runWriteActionInCommand(r, null, null, false, project);
   }
 
   @Override
-  public void runWriteActionInCommand(Runnable r, String name, Object groupId, UndoConfirmationPolicy policy, Project project) {
-    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), name, groupId, policy);
+  public void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
+    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), name, groupId, requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   @Override

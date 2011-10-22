@@ -24,6 +24,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
@@ -187,12 +188,11 @@ public class TestModule extends AbstractModule {
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
       SModel result;
+      String modelContent = JDOMUtil.asString(document);
       try {
-        String modelContent = JDOMUtil.asString(document);
         result = ModelPersistence.readModel(modelContent, false);
-      } catch(IOException e) {
-        LOG.error(e);
-        result = new StubModel(getSModelReference());
+      } catch (ModelReadException e) {
+        result = new StubModel(SModelReference.fromString(myLongName), e);
       }
       return new ModelLoadResult(result, ModelLoadingState.FULLY_LOADED);
     }

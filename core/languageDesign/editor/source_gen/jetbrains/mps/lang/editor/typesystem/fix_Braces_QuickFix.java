@@ -10,7 +10,7 @@ public class fix_Braces_QuickFix extends QuickFix_Runtime {
   public fix_Braces_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Do Not Use Braces";
   }
 

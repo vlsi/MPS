@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.command.UndoConfirmationPolicy;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
@@ -260,7 +259,7 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public <T> T runWriteActionInCommand(Computable<T> c, String name, Object groupId, UndoConfirmationPolicy policy, Project project) {
+  public <T> T runWriteActionInCommand(Computable<T> c, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
     return runWriteAction(c);
   }
 
@@ -276,7 +275,7 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runWriteActionInCommand(Runnable r, String name, Object groupId, UndoConfirmationPolicy policy, Project project) {
+  public void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
     runWriteAction(r);
   }
 

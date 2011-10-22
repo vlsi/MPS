@@ -21,15 +21,15 @@ import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.vcs.VcsMergeVersion;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vcs.ModelUtils;
+import jetbrains.mps.vcs.MergeBackupUtil;
+import jetbrains.mps.vcs.MergeVersion;
 import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
-import jetbrains.mps.vcs.integration.ModelDiffTool.ReadException;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.JDOMException;
@@ -51,7 +51,7 @@ public class TestMergeDialog {
     }
   };
 
-  public static void main(final String[] args) throws JDOMException, IOException {
+  public static void main(final String[] args) throws JDOMException, IOException, ModelReadException {
     IdeMain.setTestMode(TestMode.NO_TEST);
     TestMain.configureMPS();
     IconLoader.activate();
@@ -60,20 +60,16 @@ public class TestMergeDialog {
 
     String resultFile;
     if (args.length == 2) {
-      try {
-        final SModel[] zipped = ModelUtils.loadZippedModels(new File(args[0]), VcsMergeVersion.values());
-        models[0] = zipped[0];
-        models[1] = zipped[1];
-        models[2] = zipped[2];
-      } catch (ReadException e) {
-        return;
-      }
+      final SModel[] zipped = MergeBackupUtil.loadZippedModels(new File(args[0]), MergeVersion.values());
+      models[0] = zipped[0];
+      models[1] = zipped[1];
+      models[2] = zipped[2];
 
       resultFile = args[1];
     } else if (args.length == 4) {
-      models[0] = ModelUtils.readModel(args[0]);
-      models[1] = ModelUtils.readModel(args[1]);
-      models[2] = ModelUtils.readModel(args[2]);
+      models[0] = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(args[0]), false);
+      models[1] = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(args[1]), false);
+      models[2] = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(args[2]), false);
 
       resultFile = args[3];
     } else {

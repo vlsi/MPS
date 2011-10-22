@@ -10,7 +10,6 @@ import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeImpl;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
@@ -18,8 +17,6 @@ import com.intellij.openapi.vcs.changes.ChangeProvider;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
 import com.intellij.openapi.vcs.VcsListener;
@@ -35,6 +32,7 @@ import com.intellij.openapi.vcs.changes.LocalChangeList;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import com.intellij.openapi.vcs.changes.Change;
+import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.changes.EmptyChangelistBuilder;
 import com.intellij.openapi.vcs.changes.ChangeList;
 import com.intellij.openapi.vcs.VcsKey;
@@ -60,10 +58,7 @@ public class MPSVcsManager implements ProjectComponent {
     myChangeListManager = clmanager;
   }
 
-  /*package*/ boolean isInConflict(final VirtualFile vfile, boolean synchronously) {
-    if (isChangeListManagerInitialized() && !(synchronously)) {
-      return ChangeListManager.getInstance(myProject).getStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS);
-    }
+  public boolean isInConflict(final VirtualFile vfile) {
     AbstractVcs vcs = myManager.getVcsFor(vfile);
     if (vcs == null) {
       return false;
@@ -84,11 +79,7 @@ public class MPSVcsManager implements ProjectComponent {
   }
 
   public void projectOpened() {
-    DiskMemoryConflictResolver.setResolver(new DiskMemoryConflictResolver() {
-      public boolean resolveDiskMemoryConflict(IFile file, SModel model) {
-        return VcsHelper.resolveDiskMemoryConflict(file, model);
-      }
-    });
+    DiskMemoryConflictResolver.setResolver(new DiskMemoryConflictResolverImpl());
     if (ApplicationManager.getApplication().isUnitTestMode() || myProject.isDefault()) {
       return;
     }

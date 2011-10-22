@@ -33,16 +33,15 @@
       <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" folder="evaluation" />
       <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.tests/jetbrains.mps.debug.tests.msd" folder="evaluation" />
       <modulePath path="${mps_home}/core/generator/solutions/traceInfo/tests/jetbrains.mps.traceInfo.test.msd" folder="trace" />
+      <modulePath path="${mps_home}/core/generator/solutions/traceInfo/util/cache.msd" folder="trace" />
       <modulePath path="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="trace" />
       <modulePath path="${mps_home}/core/languageDesign/textGen/textGen.mpl" folder="trace" />
       <modulePath path="${mps_home}/core/languageDesign/traceable/traceable.mpl" folder="trace" />
       <modulePath path="${mps_home}/plugins/debugger-api/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" folder="api" />
-      <modulePath path="${project}/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
-      <modulePath path="${project}/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" />
-      <modulePath path="${mps_home}/core/generator/solutions/traceInfo/util/cache.msd" folder="trace" />
-      <modulePath path="${mps_home}/core/generator/solutions/traceInfo/sampleLanguage/testLanguage.mpl" folder="trace" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="usages" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="usages" />
+      <modulePath path="${project}/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" />
     </projectModules>
     <genConfs>
       <genConfModule name="customViewers" moduleRef="jetbrains.mps.debug.customViewers" />

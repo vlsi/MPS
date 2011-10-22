@@ -29,9 +29,8 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.service.MakeTask;
-import com.intellij.openapi.progress.PerformInBackgroundOption;
-import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.make.service.CoreMakeTask;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -170,10 +169,9 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
       IScriptController ctl = BuildMakeService.this.completeController(makeSession, controller);
 
-      MakeTask task = new MakeTask(ProjectHelper.toIdeaProject(makeSession.getContext().getProject()), taskName, scripts, taskName, clustRes, ctl, makeSession.getMessageHandler(), PerformInBackgroundOption.DEAF);
-      ProgressManager.getInstance().run(task);
-
-      return task;
+      CoreMakeTask task = new CoreMakeTask(taskName, scripts, taskName, clustRes, ctl, makeSession.getMessageHandler());
+      task.run(new EmptyProgressMonitor());
+      return new FutureValue(task.getResult());
     }
 
     @Override

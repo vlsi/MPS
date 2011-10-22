@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.util.annotation.UseCarefully;
 
 public class SModelRoot {
   private ModelRoot myModelRoot;
@@ -60,6 +61,12 @@ public class SModelRoot {
     } catch (Throwable t) {
       throw new ManagerNotFoundException("Problems during instantiating manager " + className, t);
     }
+  }
+
+  //this method is temporary, just to fix MPS-14489 and should be replaced since custom persistence is implemented
+  @UseCarefully
+  public boolean isStubModels() {
+    return getModelRoot().getManager() != null;
   }
 
   public IModelRootManager getManager() {

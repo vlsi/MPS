@@ -1335,7 +1335,7 @@
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1560298786499493068" />
               </node>
               <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1560298786499493069">
-                <property name="value" nameId="tpee.1070475926801" value="" />
+                <property name="value" nameId="tpee.1070475926801" value="Default" />
               </node>
               <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1560298786499493070">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~NameUtil" resolveInfo="NameUtil" />

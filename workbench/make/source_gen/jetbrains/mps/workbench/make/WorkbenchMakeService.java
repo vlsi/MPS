@@ -4,6 +4,7 @@ package jetbrains.mps.workbench.make;
 
 import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.IMakeService;
+import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import jetbrains.mps.make.MakeSession;
@@ -37,7 +38,6 @@ import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.make.runtime.backports.ProgressMonitorProgressStrategy;
-import jetbrains.mps.make.service.MakeTask;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import javax.swing.SwingUtilities;
 import com.intellij.ide.IdeEventQueue;
@@ -59,7 +59,7 @@ import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.IMessage;
 
-public class WorkbenchMakeService extends AbstractMakeService implements IMakeService {
+public class WorkbenchMakeService extends AbstractMakeService implements IMakeService, ApplicationComponent {
   private static Logger LOG = Logger.getLogger(WorkbenchMakeService.class);
   private static WorkbenchMakeService INSTANCE = null;
 
@@ -79,11 +79,13 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   public void initComponent() {
     INSTANCE = this;
+    IMakeService.INSTANCE.set(this);
     pluginReloader.setMakeService(this);
   }
 
   public void disposeComponent() {
     pluginReloader.setMakeService(null);
+    IMakeService.INSTANCE.set(null);
     INSTANCE = null;
   }
 

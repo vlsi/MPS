@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
@@ -448,7 +447,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
             result[0] = true;
           }
         }
-      }, null, groupId, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, getOperationContext().getProject());
+      }, null, groupId, false, getOperationContext().getProject());
       getEditor().relayout();
       if (result[0]) {
         return true;

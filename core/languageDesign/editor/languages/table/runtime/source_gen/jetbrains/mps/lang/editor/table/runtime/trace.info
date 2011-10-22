@@ -14,9 +14,9 @@
     <scopeInfo nodeId="1106247515661683512" fileName="Utils.java" startLine="10" startPosition="20" endLine="12" endPosition="3" />
     <scopeInfo nodeId="1106247515661683521" fileName="Utils.java" startLine="14" startPosition="85" endLine="20" endPosition="5" />
     <scopeInfo nodeId="1106247515661683518" fileName="Utils.java" startLine="13" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="1106247515661683528" varName="newElement" />
       <varInfo nodeId="1106247515661683530" varName="index" />
       <varInfo nodeId="1106247515661683526" varName="list" />
+      <varInfo nodeId="1106247515661683528" varName="newElement" />
     </scopeInfo>
     <unitInfo nodeId="1106247515661683510" fileName="Utils.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.table.runtime.Utils" />
   </root>
@@ -123,15 +123,15 @@
     </scopeInfo>
     <scopeInfo nodeId="2410328448534410903" fileName="TableColumnSelection.java" startLine="52" startPosition="128" endLine="58" endPosition="24" />
     <scopeInfo nodeId="5051628863846689831" fileName="TableColumnSelection.java" startLine="116" startPosition="27" endLine="122" endPosition="75">
-      <varInfo nodeId="5051628863846689845" varName="selectionManager" />
       <varInfo nodeId="5051628863846689955" varName="cell" />
+      <varInfo nodeId="5051628863846689845" varName="selectionManager" />
     </scopeInfo>
     <scopeInfo nodeId="5051628863846689903" fileName="TableColumnSelection.java" startLine="126" startPosition="91" endLine="132" endPosition="7" />
     <scopeInfo nodeId="6365263270891632473" fileName="TableColumnSelection.java" startLine="78" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="2410328448534410900" fileName="TableColumnSelection.java" startLine="51" startPosition="0" endLine="59" endPosition="3">
-      <varInfo nodeId="2340513783146173828" varName="tableCell" />
-      <varInfo nodeId="6365263270891632484" varName="editorComponent" />
       <varInfo nodeId="2340513783146173830" varName="columnNumber" />
+      <varInfo nodeId="6365263270891632484" varName="editorComponent" />
+      <varInfo nodeId="2340513783146173828" varName="tableCell" />
     </scopeInfo>
     <scopeInfo nodeId="442641882176278442" fileName="TableColumnSelection.java" startLine="107" startPosition="0" endLine="115" endPosition="0" />
     <scopeInfo nodeId="5051628863846689902" fileName="TableColumnSelection.java" startLine="125" startPosition="42" endLine="133" endPosition="5">
@@ -155,8 +155,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2390677225378655485" fileName="TableColumnSelection.java" startLine="30" startPosition="0" endLine="50" endPosition="3">
       <varInfo nodeId="2390677225378655499" varName="cellInfo" />
-      <varInfo nodeId="2390677225378655489" varName="properties" />
       <varInfo nodeId="2390677225378655491" varName="editorComponent" />
+      <varInfo nodeId="2390677225378655489" varName="properties" />
     </scopeInfo>
     <unitInfo nodeId="2410328448534410898" fileName="TableColumnSelection.java" startLine="25" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.editor.table.runtime.TableColumnSelection" />
   </root>
@@ -409,14 +409,14 @@
       <varInfo nodeId="6610030841081075381" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="4057456417884478684" fileName="EditorCell_Table.java" startLine="265" startPosition="0" endLine="269" endPosition="0">
+      <varInfo nodeId="4057456417884532519" varName="editorContext" />
       <varInfo nodeId="4057456417884532529" varName="model" />
       <varInfo nodeId="4057456417884532521" varName="node" />
-      <varInfo nodeId="4057456417884532519" varName="editorContext" />
       <varInfo nodeId="3216977149571362758" varName="uniquePrefix" />
     </scopeInfo>
     <scopeInfo nodeId="9150287053027696872" fileName="EditorCell_Table.java" startLine="273" startPosition="0" endLine="277" endPosition="5">
-      <varInfo nodeId="9150287053027696921" varName="existingAction" />
       <varInfo nodeId="9150287053027696907" varName="columnNumber" />
+      <varInfo nodeId="9150287053027696921" varName="existingAction" />
     </scopeInfo>
     <scopeInfo nodeId="2390677225378626357" fileName="EditorCell_Table.java" startLine="189" startPosition="81" endLine="194" endPosition="5">
       <varInfo nodeId="2390677225378626360" varName="rowsIterator" />
@@ -451,9 +451,9 @@
     <scopeInfo nodeId="6610030841081056423" fileName="EditorCell_Table.java" startLine="247" startPosition="0" endLine="255" endPosition="0" />
     <scopeInfo nodeId="3031432740458868230" fileName="EditorCell_Table.java" startLine="32" startPosition="0" endLine="41" endPosition="3">
       <varInfo nodeId="3031432740458868244" varName="cellLayout" />
+      <varInfo nodeId="3031432740458868236" varName="editorContext" />
       <varInfo nodeId="3031432740458868248" varName="model" />
       <varInfo nodeId="3031432740458868240" varName="node" />
-      <varInfo nodeId="3031432740458868236" varName="editorContext" />
       <varInfo nodeId="3216977149571365636" varName="uniquePrefix" />
     </scopeInfo>
     <scopeInfo nodeId="6610030841081008756" fileName="EditorCell_Table.java" startLine="44" startPosition="37" endLine="53" endPosition="13">
@@ -494,8 +494,8 @@
       <varInfo nodeId="2533261537000422979" varName="nextRow" />
     </scopeInfo>
     <scopeInfo nodeId="5710834253138171994" fileName="EditorCell_Table.java" startLine="208" startPosition="0" endLine="231" endPosition="0">
-      <varInfo nodeId="5710834253138172028" varName="cellId" />
       <varInfo nodeId="9171208874409238259" varName="beggining" />
+      <varInfo nodeId="5710834253138172028" varName="cellId" />
       <varInfo nodeId="5710834253138172140" varName="rowNumber" />
     </scopeInfo>
     <scopeInfo nodeId="2533261537000422954" fileName="EditorCell_Table.java" startLine="142" startPosition="0" endLine="166" endPosition="5">
@@ -511,28 +511,31 @@
     </scopeInfo>
     <scopeInfo nodeId="899362601591216837" fileName="EditorCell_Table.java" startLine="80" startPosition="14" endLine="120" endPosition="9" />
     <scopeInfo nodeId="3031432740458869303" fileName="EditorCell_Table.java" startLine="134" startPosition="71" endLine="179" endPosition="5">
-      <varInfo nodeId="2533261537000423169" varName="firstY" />
       <varInfo nodeId="2533261537000423236" varName="firstX" />
-      <varInfo nodeId="4700713079889332471" varName="positionsX" />
-      <varInfo nodeId="2533261537000422920" varName="positionsY" />
+      <varInfo nodeId="2533261537000423169" varName="firstY" />
       <varInfo nodeId="2533261537000423242" varName="lastX" />
       <varInfo nodeId="2533261537000423179" varName="lastY" />
+      <varInfo nodeId="4700713079889332471" varName="positionsX" />
+      <varInfo nodeId="2533261537000422920" varName="positionsY" />
     </scopeInfo>
     <scopeInfo nodeId="3031432740458869298" fileName="EditorCell_Table.java" startLine="132" startPosition="0" endLine="181" endPosition="0">
-      <varInfo nodeId="2081217748296965416" varName="parentSettings" />
       <varInfo nodeId="3031432740458869301" varName="graphics" />
+      <varInfo nodeId="2081217748296965416" varName="parentSettings" />
     </scopeInfo>
     <scopeInfo nodeId="8514238689685500671" fileName="EditorCell_Table.java" startLine="55" startPosition="59" endLine="123" endPosition="34">
-      <varInfo nodeId="8514238689685500673" varName="rowCell" />
-      <varInfo nodeId="7541022036347910983" varName="selectRowAction" />
-      <varInfo nodeId="3216977149571365772" varName="rowId" />
       <varInfo nodeId="8514238689685500680" varName="finalRow" />
+      <varInfo nodeId="8514238689685500673" varName="rowCell" />
+      <varInfo nodeId="3216977149571365772" varName="rowId" />
+      <varInfo nodeId="7541022036347910983" varName="selectRowAction" />
     </scopeInfo>
     <scopeInfo nodeId="8514238689685500670" fileName="EditorCell_Table.java" startLine="54" startPosition="5" endLine="124" endPosition="5">
       <varInfo nodeId="8514238689685500814" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="8514238689685497054" fileName="EditorCell_Table.java" startLine="43" startPosition="37" endLine="124" endPosition="5" />
     <scopeInfo nodeId="8514238689685497051" fileName="EditorCell_Table.java" startLine="42" startPosition="0" endLine="126" endPosition="0" />
+    <unitInfo nodeId="3031432740458708321" fileName="EditorCell_Table.java" startLine="28" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table" />
+    <unitInfo nodeId="7541022036347910987" fileName="EditorCell_Table.java" startLine="60" startPosition="45" endLine="66" endPosition="7" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$1" />
+    <unitInfo nodeId="6610030841081075376" fileName="EditorCell_Table.java" startLine="257" startPosition="48" endLine="261" endPosition="5" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$10" />
     <unitInfo nodeId="8514238689685500716" fileName="EditorCell_Table.java" startLine="87" startPosition="60" endLine="91" endPosition="13" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$2" />
     <unitInfo nodeId="2450403718179320845" fileName="EditorCell_Table.java" startLine="92" startPosition="60" endLine="96" endPosition="13" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$3" />
     <unitInfo nodeId="9102817927790201475" fileName="EditorCell_Table.java" startLine="97" startPosition="67" endLine="101" endPosition="13" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$4" />
@@ -541,10 +544,7 @@
     <unitInfo nodeId="5710834253138172015" fileName="EditorCell_Table.java" startLine="214" startPosition="53" endLine="218" endPosition="7" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$7" />
     <unitInfo nodeId="2499295656179667783" fileName="EditorCell_Table.java" startLine="220" startPosition="58" endLine="224" endPosition="5" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$8" />
     <unitInfo nodeId="899362601591216909" fileName="EditorCell_Table.java" startLine="239" startPosition="49" endLine="243" endPosition="5" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$9" />
-    <unitInfo nodeId="6610030841081075376" fileName="EditorCell_Table.java" startLine="257" startPosition="48" endLine="261" endPosition="5" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$10" />
-    <unitInfo nodeId="7541022036347910987" fileName="EditorCell_Table.java" startLine="60" startPosition="45" endLine="66" endPosition="7" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$1" />
     <unitInfo nodeId="9150287053027696870" fileName="EditorCell_Table.java" startLine="270" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table$SelectColumnAction" />
-    <unitInfo nodeId="3031432740458708321" fileName="EditorCell_Table.java" startLine="28" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table" />
   </root>
   <root nodeId="4490468428501048480">
     <nodeInfo nodeId="4490468428501082183" fileName="TableModel.java" startLine="8" startPosition="29" endLine="9" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnCount#()I" />
@@ -693,8 +693,8 @@
     <scopeInfo nodeId="5076432847128339371" fileName="AbstractTableModel_optimized.java" startLine="28" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="5076432847128339374" varName="index" />
     </scopeInfo>
-    <unitInfo nodeId="5076432847128339388" fileName="AbstractTableModel_optimized.java" startLine="31" startPosition="52" endLine="35" endPosition="7" unitName="jetbrains.mps.lang.editor.table.runtime.AbstractTableModel_optimized$1" />
     <unitInfo nodeId="5076432847128249689" fileName="AbstractTableModel_optimized.java" startLine="8" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.table.runtime.AbstractTableModel_optimized" />
+    <unitInfo nodeId="5076432847128339388" fileName="AbstractTableModel_optimized.java" startLine="31" startPosition="52" endLine="35" endPosition="7" unitName="jetbrains.mps.lang.editor.table.runtime.AbstractTableModel_optimized$1" />
   </root>
   <root nodeId="5076432847128249975">
     <nodeInfo nodeId="5076432847128304957" fileName="ChildrenTableRow.java" startLine="16" startPosition="56" endLine="17" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChildLinkDeclaration" />
@@ -816,8 +816,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5076432847128338778" fileName="ChildrenTableModel.java" startLine="24" startPosition="0" endLine="29" endPosition="3">
       <varInfo nodeId="5076432847128338794" varName="childLinkDeclaration" />
-      <varInfo nodeId="5076432847128338791" varName="parentNode" />
       <varInfo nodeId="5076432847128339414" varName="keepSameSizeRows" />
+      <varInfo nodeId="5076432847128338791" varName="parentNode" />
     </scopeInfo>
     <scopeInfo nodeId="5076432847128339085" fileName="ChildrenTableModel.java" startLine="41" startPosition="69" endLine="46" endPosition="7" />
     <scopeInfo nodeId="5076432847128338912" fileName="ChildrenTableModel.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
@@ -945,9 +945,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6332812368705012674" fileName="HierarchycalTableModel.java" startLine="23" startPosition="132" endLine="33" endPosition="5" />
     <scopeInfo nodeId="6332812368705012671" fileName="HierarchycalTableModel.java" startLine="22" startPosition="0" endLine="34" endPosition="3">
+      <varInfo nodeId="6332812368705018857" varName="cellsLinkDeclaration" />
       <varInfo nodeId="6332812368705018847" varName="rowsLinkDeclaration" />
       <varInfo nodeId="6332812368705012677" varName="tableNode" />
-      <varInfo nodeId="6332812368705018857" varName="cellsLinkDeclaration" />
     </scopeInfo>
     <unitInfo nodeId="6332812368705012669" fileName="HierarchycalTableModel.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.editor.table.runtime.HierarchycalTableModel" />
   </root>
@@ -997,10 +997,10 @@
     <scopeInfo nodeId="832961390883561600" fileName="HierarchycalTableModelWithHeader.java" startLine="41" startPosition="40" endLine="46" endPosition="35" />
     <scopeInfo nodeId="832961390883561593" fileName="HierarchycalTableModelWithHeader.java" startLine="50" startPosition="40" endLine="55" endPosition="35" />
     <scopeInfo nodeId="6332812368705026200" fileName="HierarchycalTableModelWithHeader.java" startLine="17" startPosition="0" endLine="23" endPosition="3">
-      <varInfo nodeId="6332812368705026208" varName="rowsLinkDeclaration" />
-      <varInfo nodeId="6332812368705026205" varName="tableNode" />
       <varInfo nodeId="6332812368705026211" varName="cellsLinkDeclaration" />
       <varInfo nodeId="6332812368705026214" varName="headerCellsLinkDeclaration" />
+      <varInfo nodeId="6332812368705026208" varName="rowsLinkDeclaration" />
+      <varInfo nodeId="6332812368705026205" varName="tableNode" />
     </scopeInfo>
     <scopeInfo nodeId="4762511436389569854" fileName="HierarchycalTableModelWithHeader.java" startLine="26" startPosition="48" endLine="32" endPosition="45" />
     <scopeInfo nodeId="8214583449560973256" fileName="HierarchycalTableModelWithHeader.java" startLine="57" startPosition="0" endLine="63" endPosition="0">
@@ -1063,8 +1063,8 @@
   <root nodeId="8562016843455379013">
     <nodeInfo nodeId="8562016843455379015" fileName="TableModelCreator.java" startLine="8" startPosition="36" endLine="9" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/lang/editor/table/runtime/TableModel;" />
     <scopeInfo nodeId="8562016843455379015" fileName="TableModelCreator.java" startLine="8" startPosition="36" endLine="9" endPosition="70">
-      <varInfo nodeId="8562016843455379019" varName="node" />
       <varInfo nodeId="8562016843455379022" varName="editorContext" />
+      <varInfo nodeId="8562016843455379019" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="8562016843455379013" fileName="TableModelCreator.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.table.runtime.TableModelCreator" />
   </root>
@@ -1190,11 +1190,11 @@
     <scopeInfo nodeId="941853673534992779" fileName="XYCTableModel.java" startLine="66" startPosition="40" endLine="71" endPosition="5" />
     <scopeInfo nodeId="941853673534993033" fileName="XYCTableModel.java" startLine="120" startPosition="40" endLine="125" endPosition="5" />
     <scopeInfo nodeId="941853673534992554" fileName="XYCTableModel.java" startLine="22" startPosition="0" endLine="29" endPosition="3">
-      <varInfo nodeId="941853673534992588" varName="node" />
+      <varInfo nodeId="941853673534992594" varName="clink" />
       <varInfo nodeId="941853673534992596" varName="editorContext" />
+      <varInfo nodeId="941853673534992588" varName="node" />
       <varInfo nodeId="941853673534992590" varName="xlink" />
       <varInfo nodeId="941853673534992592" varName="ylink" />
-      <varInfo nodeId="941853673534992594" varName="clink" />
     </scopeInfo>
     <scopeInfo nodeId="941853673534992675" fileName="XYCTableModel.java" startLine="54" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="941853673534992678" varName="columnNumber" />

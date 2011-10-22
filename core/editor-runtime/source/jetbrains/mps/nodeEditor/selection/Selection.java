@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -31,6 +32,9 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface Selection {
+  @NotNull
+  EditorComponent getEditorComponent();
+
   void activate();
 
   void deactivate();

@@ -26,17 +26,28 @@ import jetbrains.mps.util.ConditionalIterable;
 import java.util.*;
 
 public class GlobalScopeMinusTransient extends GlobalScope {
-  private static GlobalScopeMinusTransient ourInstance;
+  private static GlobalScopeMinusTransient INSTANCE;
 
-  public static GlobalScopeMinusTransient getInstance() {
-    if (ourInstance == null) {
-      ourInstance = new GlobalScopeMinusTransient();
-    }
-    return ourInstance;
+  public GlobalScopeMinusTransient(MPSModuleRepository moduleRepository, SModelRepository repository) {
+    super(moduleRepository, repository);
   }
 
-  protected GlobalScopeMinusTransient() {
+  public static GlobalScopeMinusTransient getInstance() {
+    return INSTANCE;
+  }
 
+  @Override
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+  }
+
+  @Override
+  public void dispose() {
+    INSTANCE = null;
   }
 
   public Iterable<IModule> getVisibleModules() {

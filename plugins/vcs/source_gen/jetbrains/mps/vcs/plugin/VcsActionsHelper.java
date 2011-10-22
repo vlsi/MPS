@@ -16,6 +16,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
@@ -24,8 +25,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
 import jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Iterator;
@@ -52,7 +53,7 @@ public class VcsActionsHelper {
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
       final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
-      final SModel oldModel = VcsActionsHelper.loadModel(content.getContent(), model.getModelDescriptor());
+      final SModel oldModel = ModelPersistence.readModel(content.getContent(), false);
       if (ModelDiffTool.isNewDiffEnabled()) {
         final Wrappers._T<ModelDifferenceDialog> modelDialog = new Wrappers._T<ModelDifferenceDialog>();
         final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
@@ -74,25 +75,13 @@ public class VcsActionsHelper {
         dialog.showDialog();
       }
     } catch (VcsException e) {
-      if (log.isErrorEnabled()) {
-        log.error("", e);
+      if (log.isWarnEnabled()) {
+        log.warn("", e);
       }
+      Messages.showErrorDialog(project, "Can't show difference due to the following error: " + e.getMessage(), "Error");
+    } catch (ModelReadException e) {
+      Messages.showErrorDialog(project, "Can't load previous version: " + e.getMessage(), "Error");
     }
-  }
-
-  public static SModel loadModel(final String modelContent, SModelDescriptor model) {
-    try {
-      final Wrappers._T<SModel> sModel = new Wrappers._T<SModel>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          sModel.value = ModelPersistence.readModel(modelContent, false);
-        }
-      });
-      return sModel.value;
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return null;
   }
 
   private static Iterable<VirtualFile> collectUnversionedFiles(final VcsFileStatusProvider fileStatusProvider, final VirtualFile dir) {
@@ -104,8 +93,8 @@ public class VcsActionsHelper {
               private int __CP__ = 0;
               private VirtualFile _5_child;
               private Iterator<VirtualFile> _5_child_it;
-              private VirtualFile _8__yield_deu5rm_a0b0a0a0c;
-              private Iterator<VirtualFile> _8__yield_deu5rm_a0b0a0a0c_it;
+              private VirtualFile _8__yield_deu5rm_a0b0a0a0b;
+              private Iterator<VirtualFile> _8__yield_deu5rm_a0b0a0a0b_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -126,13 +115,13 @@ __switch__:
                       this.__CP__ = 7;
                       break;
                     case 8:
-                      this._8__yield_deu5rm_a0b0a0a0c_it = Sequence.fromIterable(collectUnversionedFiles(fileStatusProvider, _5_child)).iterator();
+                      this._8__yield_deu5rm_a0b0a0a0b_it = Sequence.fromIterable(collectUnversionedFiles(fileStatusProvider, _5_child)).iterator();
                     case 9:
-                      if (!(this._8__yield_deu5rm_a0b0a0a0c_it.hasNext())) {
+                      if (!(this._8__yield_deu5rm_a0b0a0a0b_it.hasNext())) {
                         this.__CP__ = 6;
                         break;
                       }
-                      this._8__yield_deu5rm_a0b0a0a0c = this._8__yield_deu5rm_a0b0a0a0c_it.next();
+                      this._8__yield_deu5rm_a0b0a0a0b = this._8__yield_deu5rm_a0b0a0a0b_it.next();
                       this.__CP__ = 10;
                       break;
                     case 2:
@@ -148,7 +137,7 @@ __switch__:
                       return true;
                     case 11:
                       this.__CP__ = 9;
-                      this.yield(_8__yield_deu5rm_a0b0a0a0c);
+                      this.yield(_8__yield_deu5rm_a0b0a0a0b);
                       return true;
                     case 0:
                       this.__CP__ = 2;

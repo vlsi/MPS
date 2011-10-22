@@ -20,7 +20,7 @@ public class ConceptEditorOpenHelper {
   public static SNode getBaseNode(SNode node) {
     SNode baseNode = null;
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-      return node;
+      return null;
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
       baseNode = IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.IConceptAspect"));

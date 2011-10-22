@@ -15,13 +15,9 @@
  */
 package jetbrains.mps.smodel.descriptor;
 
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * This kind of descriptor is proposed to use for regular MPS models.

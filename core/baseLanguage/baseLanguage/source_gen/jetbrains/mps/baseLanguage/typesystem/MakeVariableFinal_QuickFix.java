@@ -11,7 +11,7 @@ public class MakeVariableFinal_QuickFix extends QuickFix_Runtime {
   public MakeVariableFinal_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Make Variable Final";
   }
 

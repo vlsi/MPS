@@ -191,20 +191,12 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_7050292266500576940(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_7050292266500576960(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_7050292266500576972(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1237293521906(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7266073704221024068(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionParameter", false, false), "name") + "Condition";
   }
 
   public static Object propertyMacro_GetPropertyValue_1203086899089(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -265,6 +257,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7050292266500706798(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7266073704221015505(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_7050292266500577099(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -542,16 +538,24 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "isHorizontal");
   }
 
+  public static Object propertyMacro_GetPropertyValue_7266073704221023681(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionParameter", false, false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8713489730824201050(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionParameter", false, false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7266073704221024244(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionParameter", false, false), "name");
+  }
+
   public static Object referenceMacro_GetReferent_1227015434861(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ConstructorParameterParameter");
   }
 
   public static Object referenceMacro_GetReferent_1227015703875(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ConstructorParameterField");
-  }
-
-  public static Object referenceMacro_GetReferent_1220623961309(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "key", false);
   }
 
   public static Object referenceMacro_GetReferent_1239984869886(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -600,6 +604,10 @@ public class QueriesGenerated {
       return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "name");
     }
     return method;
+  }
+
+  public static Object referenceMacro_GetReferent_7266073704221015496(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "key", false);
   }
 
   public static Object referenceMacro_GetReferent_1207497639289(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -789,6 +797,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconContainerItem");
   }
 
+  public static Object referenceMacro_GetReferent_7266073704221023883(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ParameterCondition");
+  }
+
   public static boolean ifMacro_Condition_7554603306791643223(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "icon", true) != null;
   }
@@ -818,14 +830,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1206542319887(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "updateBlock", true) == null;
-  }
-
-  public static boolean ifMacro_Condition_1221670248126(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getNode(), "isOptional"));
-  }
-
-  public static boolean ifMacro_Condition_1221670311287(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getNode(), "isOptional"));
   }
 
   public static boolean ifMacro_Condition_1239982454718(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1102,12 +1106,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateBlock", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1220623961260(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_1239982454735(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_7266073704221024096(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_7266073704221024203(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionParameter", false, false)));
   }
 
   public static SNode sourceNodeQuery_1227023214029(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1284,21 +1292,21 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_8383992355238345812(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "titleExpression", true) == null) ?
-      new QueriesGenerated.QuotationClass_x583g4_a0a0a982().createNode() :
+      new QueriesGenerated.QuotationClass_x583g4_a0a0a192().createNode() :
       SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "titleExpression", true)
     );
   }
 
   public static SNode sourceNodeQuery_8383992355238345841(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "iconExpression", true) == null) ?
-      new QueriesGenerated.QuotationClass_x583g4_a0a0a092().createNode() :
+      new QueriesGenerated.QuotationClass_x583g4_a0a0a292().createNode() :
       SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "iconExpression", true)
     );
   }
 
   public static SNode sourceNodeQuery_8383992355238345866(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "disposeTabClosure", true) == null) ?
-      new QueriesGenerated.QuotationClass_x583g4_a0a0a192().createNode() :
+      new QueriesGenerated.QuotationClass_x583g4_a0a0a392().createNode() :
       SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "disposeTabClosure", true)
     );
   }
@@ -1309,9 +1317,9 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5508914264443135873(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ToolDeclaration")) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0hl().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0jl().createNode();
     } else if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration")) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a392().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a592().createNode();
     } else {
       return null;
     }
@@ -1319,9 +1327,9 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5508914264443135732(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ToolDeclaration")) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0il().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0kl().createNode();
     } else if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration")) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a492().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a692().createNode();
     } else {
       return null;
     }
@@ -1387,6 +1395,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "action", true);
   }
 
+  public static SNode sourceNodeQuery_7266073704221024258(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionParameter", false, false)));
+  }
+
   public static Iterable sourceNodesQuery_1227009624470(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "constructionParameter", true);
   }
@@ -1403,20 +1415,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "constructionParameter", true);
   }
 
-  public static Iterable sourceNodesQuery_1220623961282(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration");
-      }
-    }).toListSequence();
+  public static Iterable sourceNodesQuery_5678361901872096656(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "condition", true);
   }
 
-  public static Iterable sourceNodesQuery_1220623961344(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration");
-      }
-    }).toListSequence();
+  public static Iterable sourceNodesQuery_1220623961282(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 
   public static Iterable sourceNodesQuery_1213276678415(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1429,6 +1433,18 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_978049210868892741(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "methodDeclaration", true);
+  }
+
+  public static Iterable sourceNodesQuery_7266073704221024074(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "condition", true), "jetbrains.mps.lang.plugin.structure.CustomCondition");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(SLinkOperations.getTarget(it, "condition", true), "jetbrains.mps.lang.plugin.structure.CustomCondition");
+      }
+    });
   }
 
   public static Iterable sourceNodesQuery_1227034491252(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1698,7 +1714,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_3038738109029038605(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "tab", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a953().createNode(SPropertyOperations.getString(SLinkOperations.getTarget(it, "editorTab", false), "name"));
+        return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a363().createNode(SPropertyOperations.getString(SLinkOperations.getTarget(it, "editorTab", false), "name"));
 
       }
     });
@@ -1741,14 +1757,14 @@ public class QueriesGenerated {
         return SLinkOperations.getTargets(it, "methodDeclaration", true);
       }
     })) {
-      ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0co().createNode());
+      ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0go().createNode());
     }
     for (SNode method : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(it, "member", false)), "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
       }
     })) {
-      ListSequence.fromList(SLinkOperations.getTargets(method, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0a0b0co().createNode());
+      ListSequence.fromList(SLinkOperations.getTargets(method, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0a0b0go().createNode());
     }
   }
 
@@ -1821,42 +1837,6 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a982 {
-    public QuotationClass_x583g4_a0a0a982() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_x583g4_a0a0a092 {
-    public QuotationClass_x583g4_a0a0a092() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)"), SNodeId.fromString("~IconManager")));
-        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)"), SNodeId.fromString("~IconManager.EMPTY_ICON")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
   public static class QuotationClass_x583g4_a0a0a192 {
     public QuotationClass_x583g4_a0a0a192() {
     }
@@ -1874,8 +1854,44 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0hl {
-    public QuotationClass_x583g4_a0a0a0hl() {
+  public static class QuotationClass_x583g4_a0a0a292 {
+    public QuotationClass_x583g4_a0a0a292() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)"), SNodeId.fromString("~IconManager")));
+        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)"), SNodeId.fromString("~IconManager.EMPTY_ICON")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a0a392 {
+    public QuotationClass_x583g4_a0a0a392() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a0a0jl {
+    public QuotationClass_x583g4_a0a0a0jl() {
     }
 
     public SNode createNode() {
@@ -1891,8 +1907,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a392 {
-    public QuotationClass_x583g4_a0a0a0a392() {
+  public static class QuotationClass_x583g4_a0a0a0a592 {
+    public QuotationClass_x583g4_a0a0a0a592() {
     }
 
     public SNode createNode() {
@@ -1909,8 +1925,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0il {
-    public QuotationClass_x583g4_a0a0a0il() {
+  public static class QuotationClass_x583g4_a0a0a0kl {
+    public QuotationClass_x583g4_a0a0a0kl() {
     }
 
     public SNode createNode() {
@@ -1927,8 +1943,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a492 {
-    public QuotationClass_x583g4_a0a0a0a492() {
+  public static class QuotationClass_x583g4_a0a0a0a692 {
+    public QuotationClass_x583g4_a0a0a0a692() {
     }
 
     public SNode createNode() {
@@ -1945,8 +1961,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a953 {
-    public QuotationClass_x583g4_a0a0a0a0a953() {
+  public static class QuotationClass_x583g4_a0a0a0a0a363 {
+    public QuotationClass_x583g4_a0a0a0a0a363() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -1963,8 +1979,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0co {
-    public QuotationClass_x583g4_a0a0a0a0co() {
+  public static class QuotationClass_x583g4_a0a0a0a0go {
+    public QuotationClass_x583g4_a0a0a0a0go() {
     }
 
     public SNode createNode() {
@@ -2001,8 +2017,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0b0co {
-    public QuotationClass_x583g4_a0a0a0b0co() {
+  public static class QuotationClass_x583g4_a0a0a0b0go {
+    public QuotationClass_x583g4_a0a0a0b0go() {
     }
 
     public SNode createNode() {

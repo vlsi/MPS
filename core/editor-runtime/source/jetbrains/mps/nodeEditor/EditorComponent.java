@@ -144,6 +144,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myIsEditable = true;
 
   private boolean myDisposed = false;
+  private StackTraceElement[] myModelDisposedStackTrace = null;
   private Throwable myDisposedTrace = null;
 
   private Set<AdditionalPainter> myAdditionalPainters = new TreeSet<AdditionalPainter>(new Comparator<AdditionalPainter>() {
@@ -822,10 +823,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         disposeTypeCheckingContext();
         myNode = node;
         //todo this is because of type system nodes, which are not registered in models. This code should be removed ASAP
-        if (node.isRegistered()){
+        if (myNode != null && myNode.isRegistered()) {
           myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
           myVirtualFile = myNode != null && !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
-        }else {
+        } else {
           myNodePointer = null;
           myVirtualFile = null;
         }
@@ -1177,6 +1178,24 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public boolean isDisposed() {
     return myDisposed;
+  }
+
+  public void assertModelNotDisposed() {
+    assert myModelDisposedStackTrace == null : getModelDisposedMessage();
+    assert myNode == null || !myNode.isDisposed() : "editor is invalid";
+  }
+
+  private String getModelDisposedMessage() {
+    StringBuilder sb = new StringBuilder("Model was disposed through:");
+    for (int i = 0; i < myModelDisposedStackTrace.length; i++) {
+      sb.append("\n");
+      sb.append(myModelDisposedStackTrace[i]);
+    }
+    sb.append("\n");
+    sb.append("EditorComponent.myDisposed == ");
+    sb.append(myDisposed);
+    sb.append("\n");
+    return sb.toString();
   }
 
   /*
@@ -2904,6 +2923,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
       rebuildEditorContent();
+    }
+
+    @Override
+    public void beforeModelDisposed(SModel sm) {
+      myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
     }
   }
 

@@ -75,9 +75,6 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
       return false;
     }
     MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
-      return false;
-    }
     return true;
   }
 

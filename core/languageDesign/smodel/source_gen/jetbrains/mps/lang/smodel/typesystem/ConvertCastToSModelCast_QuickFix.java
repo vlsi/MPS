@@ -12,7 +12,7 @@ public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
   public ConvertCastToSModelCast_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Convert to smodel cast";
   }
 

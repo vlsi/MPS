@@ -27,7 +27,6 @@ import javax.swing.JProgressBar;
 import javax.swing.SwingUtilities;
 import java.awt.Rectangle;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import com.intellij.openapi.command.UndoConfirmationPolicy;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -143,7 +142,7 @@ public abstract class MigrationScriptsView {
             //  ---- 
             checkMigrationResults();
           }
-        }, "migration refactoring", null, UndoConfirmationPolicy.REQUEST_CONFIRMATION, (myProject != null ?
+        }, "migration refactoring", null, true, (myProject != null ?
           myProject.getComponent(MPSProject.class) :
           null
         ));

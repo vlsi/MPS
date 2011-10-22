@@ -9,10 +9,10 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.actions.nodes.GoToRulesHelper;
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -43,18 +43,6 @@ public class GoToRules_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    {
-      SNode node = event.getData(MPSDataKeys.NODE);
-      if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-          node = null;
-        }
-      }
-      MapSequence.fromMap(_params).put("node", node);
-    }
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
@@ -65,6 +53,18 @@ public class GoToRules_Action extends GeneratedAction {
     }
     MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
     if (MapSequence.fromMap(_params).get("cell") == null) {
+      return false;
+    }
+    {
+      SNode node = event.getData(MPSDataKeys.NODE);
+      if (node != null) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+          node = null;
+        }
+      }
+      MapSequence.fromMap(_params).put("node", node);
+    }
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;

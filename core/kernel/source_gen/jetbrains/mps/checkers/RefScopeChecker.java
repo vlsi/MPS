@@ -37,6 +37,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       }
       component.addDependency(target);
       component.addDependency(ld);
+      component.addDependency(SNodeOperations.getParent(node));
       String linkRole = SModelUtil.getGenuineLinkRole(ld);
       final SNode linkTarget = SLinkOperations.getTarget(ld, "target", false);
       final INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsUtil.getSearchScopeProvider(concept, linkRole);

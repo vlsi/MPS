@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.ide.vcs.Version;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.vcs.MergeBackupUtil;
+import jetbrains.mps.vcs.ModelVersion;
 import jetbrains.mps.vfs.FileSystem;
+import org.junit.Assert;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,14 +29,20 @@ import java.io.IOException;
 public class MergeTestUtil {
 
   public static SModel[] loadTestModels(File zipfile) throws IOException {
-    return ModelUtils.loadZippedModels(zipfile, TestVersion.values());
+    try {
+      return MergeBackupUtil.loadZippedModels(zipfile, TestVersion.values());
+    } catch (ModelReadException e) {
+      Assert.fail("Couldn't read model " + e.getMessage());
+      e.printStackTrace();
+      return null;
+    }
   }
 
   public static void saveTestModel(final SModel model, final File file) {
     ModelPersistence.saveModel(model, FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), model.getPersistenceVersion());
   }
 
-  public static enum TestVersion implements Version {
+  public static enum TestVersion implements ModelVersion {
     MINE("mine"),
     BASE("base"),
     REPO("repository"),

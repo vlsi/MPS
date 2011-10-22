@@ -149,6 +149,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
   @Override
   public void executeAction(CellActionType type) {
+    getEditorComponent().assertModelNotDisposed();
     if (type == CellActionType.BACKSPACE || type == CellActionType.DELETE) {
       performDeleteAction(type);
       return;

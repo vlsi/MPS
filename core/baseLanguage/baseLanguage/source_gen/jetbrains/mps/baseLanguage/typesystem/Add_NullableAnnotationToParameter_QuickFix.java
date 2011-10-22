@@ -13,7 +13,7 @@ public class Add_NullableAnnotationToParameter_QuickFix extends QuickFix_Runtime
   public Add_NullableAnnotationToParameter_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Add @Nullable annotation to parameter";
   }
 

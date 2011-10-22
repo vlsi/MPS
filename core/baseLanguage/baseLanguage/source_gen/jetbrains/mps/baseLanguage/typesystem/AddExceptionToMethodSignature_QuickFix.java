@@ -12,7 +12,7 @@ public class AddExceptionToMethodSignature_QuickFix extends QuickFix_Runtime {
   public AddExceptionToMethodSignature_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Add Exception To Method Signature";
   }
 

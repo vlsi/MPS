@@ -23,7 +23,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
   public ChooseAppropriateMethodDeclaration_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "choose appropriate method declaration";
   }
 

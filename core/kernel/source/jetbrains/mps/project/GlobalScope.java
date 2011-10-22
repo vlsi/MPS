@@ -15,31 +15,40 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 
 import java.util.Collections;
 import java.util.List;
 
-public class GlobalScope extends BaseScope {
-  private static GlobalScope ourInstance;
+public class GlobalScope extends BaseScope implements CoreComponent {
+  private static GlobalScope INSTANCE;
 
   public static GlobalScope getInstance() {
-    if (ourInstance == null) {
-      if (ApplicationManager.getApplication() != null) {
-        ourInstance = new GlobalScope();
-      }
-    }
-    return ourInstance;
+    return INSTANCE;
   }
 
-  private MPSModuleRepository myMPSModuleRepository;
-  private SModelRepository myModelRepository;
+  protected final MPSModuleRepository myMPSModuleRepository;
+  protected final SModelRepository myModelRepository;
 
-  protected GlobalScope() {
-    myMPSModuleRepository = MPSModuleRepository.getInstance();
-    myModelRepository = SModelRepository.getInstance();
+  public GlobalScope(MPSModuleRepository moduleRepository, SModelRepository repository) {
+    myMPSModuleRepository = moduleRepository;
+    myModelRepository = repository;
+  }
+
+  @Override
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+  }
+
+  @Override
+  public void dispose() {
+    INSTANCE = null;
   }
 
   public String toString() {

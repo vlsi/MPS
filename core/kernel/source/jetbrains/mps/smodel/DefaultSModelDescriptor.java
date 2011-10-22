@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -27,6 +26,7 @@ import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -319,8 +319,31 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     LOG.assertLog(!needsReloading());
   }
 
+  public void reloadFromDiskSafe() {
+    ModelAccess.assertLegalWrite();
+    if (isChanged()) {
+      resolveDiskConflict();
+    } else {
+      reloadFromDisk();
+    }
+  }
+
+  protected void processChanged(ProgressMonitor monitor) {
+    if (!needsReloading()) return;
+
+    monitor.start("Reloading " + getLongName(), 1);
+    reloadFromDiskSafe();
+    monitor.done();
+  }
+
   protected void reload() {
-    DescriptorLoadResult dr = getSource().loadDescriptor(getModule(), getSModelReference().getSModelFqName());
+    DescriptorLoadResult dr = null;
+    try {
+      dr = getSource().loadDescriptor(getModule(), getSModelReference().getSModelFqName());
+    } catch (ModelReadException e) {
+      SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
+      return;
+    }
     myHeader = dr.getHeader();
     myMetadata = dr.getMetadata();
 
@@ -346,25 +369,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public void resolveDiskConflict() {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        final boolean needSave = DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getModelFile(), getSModel());
-        if (needSave) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              updateDiskTimestamp();
-              save();
-            }
-          });
-        } else {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              reloadFromDisk();
-            }
-          });
-        }
-      }
-    }, ModalityState.NON_MODAL);
+    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getModelFile(), getSModel(), this);
   }
 
   public String toString() {

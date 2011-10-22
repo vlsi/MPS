@@ -54,6 +54,10 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
+      return false;
+    }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
@@ -61,10 +65,6 @@ public class InlineLocalVariable_Action extends GeneratedAction {
       MapSequence.fromMap(_params).put("node", node);
     }
     if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));

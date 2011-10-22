@@ -4616,27 +4616,8 @@
             <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4003657351907888219">
               <property name="name" nameId="tpck.1169194664001" value="e" />
               <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4003657351907888220">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fy7j.~ModelFileReadException" resolveInfo="ModelFileReadException" />
-              </node>
-            </node>
-          </node>
-          <node role="catchClause" roleId="tpee.1164903496223" type="tpee.CatchClause" typeId="tpee.1164903280175" id="4003657351907888221">
-            <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="4003657351907888222">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4003657351907888223">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="4003657351907888224">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4003657351907888378" resolveInfo="log" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4003657351907888225">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907888226" resolveInfo="e" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4003657351907888226">
-              <property name="name" nameId="tpck.1169194664001" value="e" />
-              <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4003657351907888227">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fy7j.~PersistenceVersionNotFoundException" resolveInfo="PersistenceVersionNotFoundException" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6803801018698078109">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fy7j.~ModelReadException" resolveInfo="ModelReadException" />
               </node>
             </node>
           </node>

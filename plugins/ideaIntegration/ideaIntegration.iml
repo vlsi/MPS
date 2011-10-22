@@ -20,8 +20,9 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="baseLanguage-index" />
+    <orderEntry type="module" module-name="baseLanguageIndex" />
     <orderEntry type="module" module-name="baseLanguage-search" />
+    <orderEntry type="module" module-name="idea-workbench" />
   </component>
 </module>
 

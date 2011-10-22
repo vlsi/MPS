@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.util;
 
-import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -65,7 +65,7 @@ public abstract class Macros {
   protected String expandPath_internal(String path, IFile anchorFile) {
     IFile result = null;
 
-    Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
+    Set<String> macroNames = PathMacros.getInstance().getNames();
     for (String macro : macroNames) {
       String prefix = "${" + macro + "}";
       if (path.startsWith(prefix)) {
@@ -102,7 +102,7 @@ public abstract class Macros {
       String relationalPath = shrink(absolutePath, PathManager.getHomePath());
       fileName = MPS_HOME + relationalPath;
     } else {
-      Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
+      Set<String> macroNames = PathMacros.getInstance().getNames();
       for (String macro : macroNames) {
         String path = PathMacros.getInstance().getValue(macro);
         if (path == null) continue;

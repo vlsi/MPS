@@ -19,14 +19,16 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.ide.vcs.VcsMergeVersion;
+import jetbrains.mps.vcs.MergeBackupUtil;
+import jetbrains.mps.vcs.MergeVersion;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import com.intellij.openapi.diff.MergeRequest;
+import com.intellij.openapi.diff.DiffRequestFactory;
+import com.intellij.openapi.diff.DiffManager;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.vcs.VcsHelper;
-import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.generator.ModelDigestUtil;
 
 public class ReRunMergeFromBackup_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -86,8 +88,17 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     try {
       for (File backupFile : Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))) {
         try {
-          SModel[] models = ModelUtils.loadZippedModels(backupFile, VcsMergeVersion.values());
-          ReRunMergeFromBackup_Action.this.doMerge(models[VcsMergeVersion.MINE.ordinal()], models[VcsMergeVersion.BASE.ordinal()], models[VcsMergeVersion.REPOSITORY.ordinal()], _params);
+          String[] modelsAsText = MergeBackupUtil.loadZippedModelsAsText(backupFile, MergeVersion.values());
+          String mine = modelsAsText[MergeVersion.MINE.ordinal()];
+          String base = modelsAsText[MergeVersion.BASE.ordinal()];
+          String repository = modelsAsText[MergeVersion.REPOSITORY.ordinal()];
+          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel()), mine, _params);
+          if (mine == null) {
+            return;
+          }
+          MergeRequest mergeRequest = DiffRequestFactory.getInstance().createMergeRequest(mine, repository, base, VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params)), ((Project) MapSequence.fromMap(_params).get("project")), null, null);
+          mergeRequest.setVersionTitles(new String[]{"Mine", "Base version", "Repository"});
+          DiffManager.getInstance().getDiffTool().show(mergeRequest);
           return;
         } catch (IOException e) {
           if (log.isWarnEnabled()) {
@@ -106,29 +117,16 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
   }
 
   private Iterable<File> getBackupFiles(final Map<String, Object> _params) {
-    return ModelUtils.findZipFilesForModelFile(ReRunMergeFromBackup_Action.this.getModelFile(_params).getName());
-  }
-
-  private void doMerge(SModel mine, SModel base, SModel repository, final Map<String, Object> _params) {
-    SModel mineModel = ReRunMergeFromBackup_Action.this.whichMineModel(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), mine, _params);
-    if (mineModel == null) {
-      return;
-    }
-    VcsHelper.showMergeDialog(base, mineModel, repository, ReRunMergeFromBackup_Action.this.getModelFile(_params), ((Project) MapSequence.fromMap(_params).get("project")));
-  }
-
-  private String getHash(SModel model, final Map<String, Object> _params) {
-    byte[] currentBytes = ModelUtils.modelToBytes(model);
-    return ModelDigestUtil.hash(currentBytes);
+    return MergeBackupUtil.findZipFilesForModelFile(ReRunMergeFromBackup_Action.this.getModelFile(_params).getName());
   }
 
   private IFile getModelFile(final Map<String, Object> _params) {
     return ((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getModelFile();
   }
 
-  private SModel whichMineModel(SModel currentModel, SModel backUpModel, final Map<String, Object> _params) {
-    if (ReRunMergeFromBackup_Action.this.getHash(currentModel, _params).equals(ReRunMergeFromBackup_Action.this.getHash(backUpModel, _params))) {
-      return currentModel;
+  private String selectMineModel(String currentModel, String backUpModel, final Map<String, Object> _params) {
+    if (ModelDigestUtil.hash(currentModel).equals(ModelDigestUtil.hash(backUpModel))) {
+      return backUpModel;
     } else {
       String current = "Currently Loaded Model";
       String backup = "Backed Up Model";

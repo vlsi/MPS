@@ -9,9 +9,9 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
@@ -46,15 +46,6 @@ public class HighlightInstances_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    {
-      SNode node = event.getData(MPSDataKeys.NODE);
-      if (node != null) {
-      }
-      MapSequence.fromMap(_params).put("node", node);
-    }
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
@@ -69,6 +60,15 @@ public class HighlightInstances_Action extends GeneratedAction {
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
     if (MapSequence.fromMap(_params).get("model") == null) {
+      return false;
+    }
+    {
+      SNode node = event.getData(MPSDataKeys.NODE);
+      if (node != null) {
+      }
+      MapSequence.fromMap(_params).put("node", node);
+    }
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;

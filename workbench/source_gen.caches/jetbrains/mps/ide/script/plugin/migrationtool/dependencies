@@ -85,7 +85,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.view.TabbedUsagesTool" />
   </dependency>
   <dependency className="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView" file="MigrationScriptsView.java">
-    <classNode dependClassName="com.intellij.openapi.command.UndoConfirmationPolicy" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />

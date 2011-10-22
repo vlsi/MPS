@@ -25,11 +25,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   private final ModelDataSource mySource;
   private ChangeListener mySourceListener = new ChangeListener() {
     public void changed(ProgressMonitor monitor) {
-      if (!needsReloading()) return;
-
-      monitor.start("Reloading " + getLongName(), 1);
-      reloadFromDisk();
-      monitor.done();
+      processChanged(monitor);
     }
   };
 
@@ -60,8 +56,16 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     return mySourceTimestamp;
   }
 
-  protected void updateDiskTimestamp() {
+  public void updateDiskTimestamp() {
     mySourceTimestamp = mySource.getTimestamp();
+  }
+
+  protected void processChanged(ProgressMonitor monitor) {
+    if (!needsReloading()) return;
+
+    monitor.start("Reloading " + getLongName(), 1);
+    reloadFromDisk();
+    monitor.done();
   }
 
   public boolean needsReloading() {

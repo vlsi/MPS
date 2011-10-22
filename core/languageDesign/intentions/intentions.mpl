@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.intentions" uuid="d7a92d38-f7db-40d0-8431-763b0c3c9f20" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.lang.intentions" uuid="d7a92d38-f7db-40d0-8431-763b0c3c9f20" compileInMPS="true" doNotGenerateAdapters="true">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.intentions" />
   </models>

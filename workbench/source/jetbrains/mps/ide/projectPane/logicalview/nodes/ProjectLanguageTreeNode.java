@@ -127,7 +127,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     TextTreeNode languageRuntime = new RuntimeModulesTreeNode();
     for (ModuleReference mr : myLanguage.getRuntimeModulesReferences()) {
       IModule m = MPSModuleRepository.getInstance().getModule(mr);
-      if (m == null) continue;
+      if (m == null || m == myLanguage) continue;
       languageRuntime.add(createFor(myProject, m));
     }
     add(languageRuntime);

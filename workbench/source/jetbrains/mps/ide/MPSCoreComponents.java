@@ -17,7 +17,7 @@ package jetbrains.mps.ide;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.findUsages.ProxyFindUsagesManager;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.ide.findusages.MPSFindUsages;
@@ -59,10 +59,16 @@ public class MPSCoreComponents implements ApplicationComponent {
     MPSTypesystem.getInstance().init();
     MPSGenerator.getInstance().init();
     MPSFindUsages.getInstance().init();
+
+    // setup BaseLanguage
+    MPSBaseLanguage.getInstance().init();
   }
 
   @Override
   public void disposeComponent() {
+    // dispose BaseLanguage
+    MPSBaseLanguage.getInstance().dispose();
+
     // dispose Core
     MPSFindUsages.getInstance().dispose();
     MPSGenerator.getInstance().dispose();

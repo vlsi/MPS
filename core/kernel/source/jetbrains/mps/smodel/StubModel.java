@@ -15,10 +15,19 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StubModel extends SModel {
-  public StubModel(@NotNull SModelReference modelReference) {
+  private ModelReadException myCause;
+
+  public StubModel(@NotNull SModelReference modelReference, @Nullable ModelReadException cause) {
     super(modelReference);
+    myCause = cause;
+  }
+
+  public ModelReadException getCause() {
+    return myCause;
   }
 }

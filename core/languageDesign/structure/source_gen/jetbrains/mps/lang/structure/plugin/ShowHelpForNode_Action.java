@@ -44,6 +44,8 @@ public class ShowHelpForNode_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
@@ -53,8 +55,6 @@ public class ShowHelpForNode_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
     return true;
   }
 

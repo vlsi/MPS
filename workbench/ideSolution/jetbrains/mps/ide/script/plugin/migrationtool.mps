@@ -27,7 +27,6 @@
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" implicit="yes" />
   <import index="1hff" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.findusages.model(MPS.Classpath/jetbrains.mps.ide.findusages.model@java_stub)" version="-1" implicit="yes" />
   <import index="zpm1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.ui(MPS.Classpath/jetbrains.mps.ide.ui@java_stub)" version="-1" implicit="yes" />
-  <import index="22ri" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.command(MPS.Classpath/com.intellij.openapi.command@java_stub)" version="-1" implicit="yes" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" implicit="yes" />
   <import index="xqpa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" version="-1" implicit="yes" />
   <import index="1o8e" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui.content(MPS.Classpath/com.intellij.ui.content@java_stub)" version="-1" implicit="yes" />
@@ -926,7 +925,7 @@
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lkfb.~ModelAccess" resolveInfo="ModelAccess" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7316415153790562990">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~ModelCommandExecutor%drunWriteActionInCommand(java%dlang%dRunnable,java%dlang%dString,java%dlang%dObject,com%dintellij%dopenapi%dcommand%dUndoConfirmationPolicy,jetbrains%dmps%dproject%dProject)%cvoid" resolveInfo="runWriteActionInCommand" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~ModelCommandExecutor%drunWriteActionInCommand(java%dlang%dRunnable,java%dlang%dString,java%dlang%dObject,boolean,jetbrains%dmps%dproject%dProject)%cvoid" resolveInfo="runWriteActionInCommand" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7316415153790562991">
                               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="7316415153790562992">
                                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="7316415153790562993">
@@ -1155,9 +1154,8 @@
                               <property name="value" nameId="tpee.1070475926801" value="migration refactoring" />
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7316415153790562998" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7316415153790562999">
-                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="22ri.~UndoConfirmationPolicy" resolveInfo="UndoConfirmationPolicy" />
-                              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="22ri.~UndoConfirmationPolicy%dREQUEST_CONFIRMATION" resolveInfo="REQUEST_CONFIRMATION" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4656591563715333402">
+                              <property name="value" nameId="tpee.1068580123138" value="true" />
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="7256720775815831920">
                               <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7256720775815831925">

@@ -9,7 +9,7 @@ public class RemoveUnknownReference_QuickFix extends QuickFix_Runtime {
   public RemoveUnknownReference_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Reference in undeclared role \"" + ((String) RemoveUnknownReference_QuickFix.this.getField("role")[0]) + "\"";
   }
 

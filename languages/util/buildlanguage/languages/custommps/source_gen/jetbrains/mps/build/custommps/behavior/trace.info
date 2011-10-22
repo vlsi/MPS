@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="LibraryFolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_BehaviorDescriptor" />
-  <unitInfo fileName="UndeclaredVariableReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="MPSDistribution_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_BehaviorDescriptor" />
+  <unitInfo fileName="LibraryFolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_BehaviorDescriptor" />
   <unitInfo fileName="MPSBuild_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_BehaviorDescriptor" />
+  <unitInfo fileName="MPSDistribution_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_BehaviorDescriptor" />
+  <unitInfo fileName="UndeclaredVariableReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_BehaviorDescriptor" />
   <root nodeId="1233155892819">
     <nodeInfo nodeId="8868408063538039041" fileName="MPSBuild_Behavior.java" startLine="35" startPosition="43" endLine="36" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1233155998228" fileName="MPSBuild_Behavior.java" startLine="39" startPosition="83" endLine="40" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -82,16 +82,16 @@
       <varInfo nodeId="1233680226707" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="1238403397948" fileName="MPSBuild_Behavior.java" startLine="62" startPosition="97" endLine="68" endPosition="72">
-      <varInfo nodeId="1238403427101" varName="moduleId" />
       <varInfo nodeId="7144889424322124879" varName="language" />
+      <varInfo nodeId="1238403427101" varName="moduleId" />
     </scopeInfo>
     <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="1233680076031" varName="folder" />
     </scopeInfo>
     <scopeInfo nodeId="1238504045862" fileName="MPSBuild_Behavior.java" startLine="77" startPosition="39" endLine="85" endPosition="12">
-      <varInfo nodeId="9164503229271367928" varName="list" />
       <varInfo nodeId="1238504045864" varName="language" />
+      <varInfo nodeId="9164503229271367928" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="1238504189346" fileName="MPSBuild_Behavior.java" startLine="93" startPosition="39" endLine="101" endPosition="9">
       <varInfo nodeId="1238504189348" varName="language" />
@@ -103,22 +103,22 @@
     <scopeInfo nodeId="1238504015488" fileName="MPSBuild_Behavior.java" startLine="76" startPosition="63" endLine="86" endPosition="7" />
     <scopeInfo nodeId="1238504015485" fileName="MPSBuild_Behavior.java" startLine="75" startPosition="82" endLine="87" endPosition="5" />
     <scopeInfo nodeId="1238502072995" fileName="MPSBuild_Behavior.java" startLine="88" startPosition="68" endLine="102" endPosition="7">
-      <varInfo nodeId="1238504189320" varName="path" />
       <varInfo nodeId="1238504189315" varName="moduleProperName" />
+      <varInfo nodeId="1238504189320" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="1238502072992" fileName="MPSBuild_Behavior.java" startLine="87" startPosition="5" endLine="103" endPosition="5" />
     <scopeInfo nodeId="1238502072963" fileName="MPSBuild_Behavior.java" startLine="71" startPosition="82" endLine="108" endPosition="13">
-      <varInfo nodeId="1238502072985" varName="modulesList" />
-      <varInfo nodeId="1238504082420" varName="modulesInClasspath" />
-      <varInfo nodeId="1238502072965" varName="paths" />
       <varInfo nodeId="1238502072971" varName="dir" />
+      <varInfo nodeId="1238504082420" varName="modulesInClasspath" />
+      <varInfo nodeId="1238502072985" varName="modulesList" />
+      <varInfo nodeId="1238502072965" varName="paths" />
     </scopeInfo>
     <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="70" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="1238502072961" varName="prefix" />
     </scopeInfo>
+    <unitInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="34" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
     <unitInfo nodeId="9164503229271367945" fileName="MPSBuild_Behavior.java" startLine="81" startPosition="99" endLine="85" endPosition="9" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior$1" />
     <unitInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="104" startPosition="49" endLine="108" endPosition="5" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior$2" />
-    <unitInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="34" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
   </root>
   <root nodeId="1238590347504">
     <nodeInfo nodeId="1238590354835" fileName="LibraryFolder_Behavior.java" startLine="12" startPosition="43" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

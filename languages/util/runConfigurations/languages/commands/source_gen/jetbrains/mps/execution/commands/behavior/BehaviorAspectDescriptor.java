@@ -54,22 +54,22 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ExecuteCommandPart_BehaviorDescriptor();
       case 10:
         return new CommandProcessType_BehaviorDescriptor();
-      case 18:
-        return new NewProcessBuilderExpression_BehaviorDescriptor();
-      case 16:
-        return new KeyValueCommandPart_BehaviorDescriptor();
       case 19:
         return new ProcessBuilderCommandPartType_BehaviorDescriptor();
-      case 17:
-        return new ListCommandPart_BehaviorDescriptor();
-      case 8:
-        return new CommandPartLengthOperation_BehaviorDescriptor();
-      case 9:
-        return new CommandPartToListOperation_BehaviorDescriptor();
-      case 24:
-        return new PropertyCommandPart_BehaviorDescriptor();
       case 27:
         return new StartAndWaitOperation_BehaviorDescriptor();
+      case 16:
+        return new KeyValueCommandPart_BehaviorDescriptor();
+      case 17:
+        return new ListCommandPart_BehaviorDescriptor();
+      case 24:
+        return new PropertyCommandPart_BehaviorDescriptor();
+      case 9:
+        return new CommandPartToListOperation_BehaviorDescriptor();
+      case 18:
+        return new NewProcessBuilderExpression_BehaviorDescriptor();
+      case 8:
+        return new CommandPartLengthOperation_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

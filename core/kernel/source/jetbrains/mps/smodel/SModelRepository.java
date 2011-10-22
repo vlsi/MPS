@@ -162,6 +162,9 @@ public class SModelRepository implements CoreComponent {
 
       if (modelReference.getSModelId() != null) {
         myIdToModelDescriptorMap.put(modelReference.getSModelId(), modelDescriptor);
+        if (modelDescriptor instanceof BaseSModelDescriptor) {
+          ((BaseSModelDescriptor) modelDescriptor).setRegistered(true);
+        }
       }
       if (modelReference.getSModelFqName() != null) {
         myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
@@ -202,6 +205,9 @@ public class SModelRepository implements CoreComponent {
       myModelsWithOwners.remove(md);
       if (md.getSModelReference().getSModelId() != null) {
         myIdToModelDescriptorMap.remove(md.getSModelReference().getSModelId());
+        if (md instanceof BaseSModelDescriptor) {
+          ((BaseSModelDescriptor) md).setRegistered(false);
+        }
       }
       myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
       if (md instanceof EditableSModelDescriptor) {

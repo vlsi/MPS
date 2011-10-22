@@ -30,14 +30,14 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ProcessType_Constraints();
       case 7:
         return new CommandProcessType_Constraints();
-      case 5:
-        return new CommandPartLengthOperation_Constraints();
-      case 6:
-        return new CommandPartToListOperation_Constraints();
-      case 1:
-        return new CommandBuilderExpression_Constraints();
       case 11:
         return new StartAndWaitOperation_Constraints();
+      case 6:
+        return new CommandPartToListOperation_Constraints();
+      case 5:
+        return new CommandPartLengthOperation_Constraints();
+      case 1:
+        return new CommandBuilderExpression_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);

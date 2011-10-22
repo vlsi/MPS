@@ -11,7 +11,7 @@ public class RemoveUnknownChildren_QuickFix extends QuickFix_Runtime {
   public RemoveUnknownChildren_QuickFix() {
   }
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     return "Child in undeclared role \"" + ((String) RemoveUnknownChildren_QuickFix.this.getField("role")[0]) + "\"";
   }
 

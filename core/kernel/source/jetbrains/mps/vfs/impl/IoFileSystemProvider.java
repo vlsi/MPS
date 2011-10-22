@@ -48,4 +48,9 @@ public class IoFileSystemProvider implements FileSystemProvider {
     // TODO ??
     return false;
   }
+
+  @Override
+  public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
+    // do nothing
+  }
 }

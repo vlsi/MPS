@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -35,7 +35,10 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
     myCombo.setRenderer(new DefaultListCellRenderer() {
       public Component getListCellRendererComponent(JList list, Object value, int index, boolean selected, boolean focus) {
         ModelRootManager manager = ((ModelRootManager) value);
-        String managerName = NameUtil.shortNameFromLongName(manager.getClassName());
+        String managerName = (manager == null ?
+          "Default" :
+          NameUtil.shortNameFromLongName(manager.getClassName())
+        );
         return super.getListCellRendererComponent(list, managerName, index, selected, focus);
       }
     });
@@ -46,12 +49,16 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SNode node : ListSequence.fromList(getManagerNodes(context))) {
-          Language language = Language.getLanguageFor(node.getModel().getModelDescriptor());
-          ModelRootManager manager = new ModelRootManager(language.getModuleReference().getModuleId().toString(), ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.stubs.structure.AbstractModelCreator"), "jetbrains.mps.lang.stubs.structure.AbstractModelCreator"), "call_getGeneratedClassFQName_5553449326502826666", new Class[]{SNode.class})));
+          Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
+          ModelRootManager manager = new ModelRootManager(language.getModuleReference().getModuleId().toString(), SNodeOperations.getModel(node).getLongName() + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
           ListSequence.fromList(result).addElement(manager);
         }
       }
     });
+
+    // default 
+    ListSequence.fromList(result).addElement(null);
+
     return result;
   }
 
@@ -65,7 +72,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
             continue;
           }
           SModel model = stubsAspect.getSModel();
-          result.addAll(SModelOperations.getRoots(model, "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"));
+          result.addAll(SModelOperations.getRoots(model, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"));
         }
       }
     });
