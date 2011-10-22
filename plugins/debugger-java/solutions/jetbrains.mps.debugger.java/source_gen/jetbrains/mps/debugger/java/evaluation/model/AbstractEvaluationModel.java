@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
@@ -66,7 +66,6 @@ public abstract class AbstractEvaluationModel {
   protected final EditableSModelDescriptor myAuxModel;
   protected final EvaluationAuxModule myAuxModule;
   private final List<Language> myLanguages = ListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.privateMembers"));
-  protected SNode myEvaluator;
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
   protected final EvaluationContext myEvaluationContext;
   protected final boolean myShowContext;
@@ -210,7 +209,7 @@ public abstract class AbstractEvaluationModel {
   public String getPresentation() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(myEvaluator, "jetbrains.mps.debug.evaluation.structure.IEvaluatorConcept"), "virtual_getEvaluatorPresentation_9172312269976647295", new Class[]{SNode.class}));
+        return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(getNodeToShow(), "jetbrains.mps.debug.evaluation.structure.IEvaluatorConcept"), "virtual_getEvaluatorPresentation_9172312269976647295", new Class[]{SNode.class}));
       }
     });
   }

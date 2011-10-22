@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.java.evaluation.model;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
+import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.runtime.DebugSession;
@@ -14,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModel;
@@ -52,6 +52,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
   private AbstractClassifiersScope myScope;
   private boolean myVariablesInitialized = false;
+  protected SNode myEvaluator;
 
   public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, boolean isShowContext) {
     this(project, session, module, new StackFrameContext(session.getUiState()), isShowContext);
