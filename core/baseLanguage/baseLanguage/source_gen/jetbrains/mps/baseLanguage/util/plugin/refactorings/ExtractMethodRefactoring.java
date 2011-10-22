@@ -211,6 +211,7 @@ public abstract class ExtractMethodRefactoring {
   protected SNode createMethodCall(SNode methodDeclaration, List<SNode> parameters) {
     if (this.myStaticContainer == null) {
       IExtractMethodRefactoringProcessor processor = this.myAnalyzer.getExtractMethodReafactoringProcessor();
+      processor.setStatic(this.myParameters.isStatic());
       return processor.createMethodCall(methodDeclaration, parameters);
     } else {
       return this.myStaticContainer.createMethodCall(methodDeclaration, parameters);
@@ -268,14 +269,6 @@ public abstract class ExtractMethodRefactoring {
       } else {
         return SHOULD_BE_STATIC;
       }
-    }
-  }
-
-  public boolean getStatic() {
-    if (this.myAnalyzer.canBeStatic() && this.myAnalyzer.shouldBeStatic()) {
-      return true;
-    } else {
-      return false;
     }
   }
 

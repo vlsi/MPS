@@ -19,7 +19,7 @@ public class MethodModel {
   private List<ChangeListener> myListeners = ListSequence.fromList(new ArrayList<ChangeListener>());
   private Map<String, SNode> myTypesMap = MapSequence.fromMap(new HashMap<String, SNode>());
   private List<String> myExceptions = ListSequence.fromList(new ArrayList<String>());
-  private boolean isStatic = false;
+  protected boolean isStatic = false;
 
   public MethodModel() {
   }
@@ -85,7 +85,7 @@ public class MethodModel {
         text.append(MethodModel.this.getReturnType());
       }
     });
-    text.append("");
+    text.append(" ");
     text.append(this.getName());
     text.append("(");
     if (ListSequence.fromList(this.getParametersNames()).count() > 0) {

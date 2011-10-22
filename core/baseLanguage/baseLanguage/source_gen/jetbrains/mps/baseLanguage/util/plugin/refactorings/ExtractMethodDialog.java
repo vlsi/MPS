@@ -6,10 +6,11 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 import java.awt.Frame;
 import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.awt.GridBagLayout;
@@ -31,11 +32,15 @@ import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ExtractMethodDialog extends BaseDialog {
   private JPanel myPanel;
@@ -43,9 +48,13 @@ public class ExtractMethodDialog extends BaseDialog {
   private JTextArea myPreviewArea = new JTextArea();
   private JTextArea myMessagesArea = new JTextArea();
   private VisibilityPanel myVisibilityPanel;
+  private ExtractMethodDialog.ChooseContainerPanel myChooseContainerPanel;
   private ExtractMethodRefactoringParameters myParameters;
   private EditorContext myContext;
   private ExtractMethodRefactoring myRefactoring;
+  private SNode myStaticTarget;
+  private SModel myRefactoringModel;
+  private boolean myExtractIntoCurrentContainer;
 
   public ExtractMethodDialog(Frame frame, EditorContext context, ExtractMethodRefactoringParameters params, ExtractMethodRefactoring refactoring) {
     super(frame, "Extract Method");
@@ -53,6 +62,7 @@ public class ExtractMethodDialog extends BaseDialog {
     this.myContext = context;
     this.myParameters = params;
     this.myRefactoring = refactoring;
+    this.myExtractIntoCurrentContainer = true;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ExtractMethodDialog.this.initPanel();
@@ -116,9 +126,19 @@ public class ExtractMethodDialog extends BaseDialog {
     c.gridx = 0;
     c.gridy = 0;
     c.weightx = 1;
-    c.weighty = 0;
-    c.gridwidth = 2;
+    c.weighty = 1;
+    c.gridwidth = 1;
     this.myPanel.add(this.createMethodPanel(), c);
+
+    c.gridx = 1;
+    c.gridy = 0;
+    c.weightx = 0;
+    c.weighty = 1;
+    c.gridwidth = 1;
+    this.myChooseContainerPanel = new ExtractMethodDialog.ChooseContainerPanel();
+    myChooseContainerPanel.setBorder(this.createBorder("Choose container"));
+    this.myPanel.add(this.myChooseContainerPanel, c);
+
 
     c.gridx = 0;
     c.gridy = 1;
@@ -138,17 +158,11 @@ public class ExtractMethodDialog extends BaseDialog {
 
     c.gridx = 0;
     c.gridy = 2;
-    c.weightx = 0;
+    c.weightx = 1;
     c.weighty = 0;
     c.gridwidth = 2;
     this.myPanel.add(this.createPreviewPanel(), c);
 
-    c.gridx = 0;
-    c.gridy = 3;
-    c.weightx = 0;
-    c.weighty = 0;
-    c.gridwidth = 2;
-    this.myPanel.add(this.createChooseContainerPanel(), c);
 
 
     c.gridx = 0;
@@ -156,6 +170,7 @@ public class ExtractMethodDialog extends BaseDialog {
     c.weightx = 1;
     c.weighty = 0;
     c.gridwidth = 2;
+
     this.myPanel.add(this.createMessagesComponent(), c);
   }
 
@@ -164,12 +179,6 @@ public class ExtractMethodDialog extends BaseDialog {
     this.myPreviewArea.setBackground(this.myPanel.getBackground());
     this.myPreviewArea.setBorder(this.createBorder("Signature Preview"));
     return this.myPreviewArea;
-  }
-
-  public JComponent createChooseContainerPanel() {
-    ChooseContainerPanel containerPanel = new ChooseContainerPanel(this.myParameters, this.myContext);
-    containerPanel.setBorder(this.createBorder("Choose container"));
-    return containerPanel;
   }
 
   private JComponent createMessagesComponent() {
@@ -276,33 +285,18 @@ public class ExtractMethodDialog extends BaseDialog {
     if (!(this.myCanRefactor)) {
       JOptionPane.showMessageDialog(this, "Can't refactor. See errors.", "Can't perform refactoring", JOptionPane.ERROR_MESSAGE);
     } else {
-      final Wrappers._T<SNode> staticTarget = new Wrappers._T<SNode>();
-      final Wrappers._T<SModel> refactoringModel = new Wrappers._T<SModel>(null);
-      if (this.myParameters.getAnalyzer().shouldChooseOuterContainer()) {
-        final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            refactoringModel.value = SNodeOperations.getModel(ListSequence.fromList(ExtractMethodDialog.this.myParameters.getNodesToRefactor()).first());
-            model.value = refactoringModel.value.getModelDescriptor();
-          }
-        });
-        staticTarget.value = BLDialogs.showStaticContainerChooser(this.myContext.getOperationContext(), model.value);
-        if (staticTarget.value == null) {
-          return;
-        }
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            ExtractMethodDialog.this.myRefactoring.setStaticContainer(staticTarget.value);
-          }
-        });
+      if ((this.myStaticTarget != null) && !(this.myExtractIntoCurrentContainer)) {
+        this.setStaticContainer();
+      } else if (this.myParameters.getAnalyzer().shouldChooseOuterContainer()) {
+        chooseStaticContainer();
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           result.value = ExtractMethodDialog.this.myRefactoring.doRefactor();
           ExtractMethodDialog.this.myContext.select(result.value);
-          if (refactoringModel.value != null) {
-            SModelReference ref = SNodeOperations.getModel(staticTarget.value).getSModelReference();
-            refactoringModel.value.addModelImport(ref, false);
+          if ((myRefactoringModel != null) && !(ExtractMethodDialog.this.myExtractIntoCurrentContainer)) {
+            SModelReference ref = SNodeOperations.getModel(myStaticTarget).getSModelReference();
+            myRefactoringModel.addModelImport(ref, false);
           }
         }
       });
@@ -311,6 +305,14 @@ public class ExtractMethodDialog extends BaseDialog {
     if ((result.value != null)) {
       new ExtractMethodDialog.MyMethodDuplicatesProcessor(this.myContext, result.value).process(this.myRefactoring.getMatches());
     }
+  }
+
+  private void setStaticContainer() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ExtractMethodDialog.this.myRefactoring.setStaticContainer(ExtractMethodDialog.this.myStaticTarget);
+      }
+    });
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
@@ -327,6 +329,23 @@ public class ExtractMethodDialog extends BaseDialog {
     this.pack();
   }
 
+  public void chooseStaticContainer() {
+    final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myRefactoringModel = SNodeOperations.getModel(ListSequence.fromList(ExtractMethodDialog.this.myParameters.getNodesToRefactor()).first());
+        model.value = myRefactoringModel.getModelDescriptor();
+      }
+    });
+    myStaticTarget = BLDialogs.showStaticContainerChooser(this.myContext.getOperationContext(), model.value);
+    if (myStaticTarget == null) {
+      myRefactoringModel = null;
+      return;
+    }
+    setStaticContainer();
+
+  }
+
   public class MyMethodDuplicatesProcessor extends MethodDuplicatesProcessor {
     private SNode myMethod;
 
@@ -337,6 +356,116 @@ public class ExtractMethodDialog extends BaseDialog {
 
     public void substitute(MethodMatch duplicate) {
       duplicate.getRefactoring().replaceMatch(duplicate, this.myMethod);
+    }
+  }
+
+  private class ChooseContainerPanel extends JPanel {
+    {
+      myOuterContainerCheckBox = new JCheckBox("Extract into" + "\n" + "outer container");
+      myCurrentContainerLabel = new JLabel("Extract into:");
+      myChooseContainerButton = new JButton("Choose Container");
+      myAnotherContainerRadioButton = new JRadioButton("another container");
+      myCurrentContainerRadioButton = new JRadioButton("current container");
+      myOuterContanerLabel = new JLabel("<no container is chosen>");
+      myGroup = new ButtonGroup();
+    }
+
+    private JButton myChooseContainerButton;
+    private JCheckBox myOuterContainerCheckBox;
+    private JLabel myCurrentContainerLabel;
+    private JRadioButton myCurrentContainerRadioButton;
+    private JRadioButton myAnotherContainerRadioButton;
+    private JLabel myOuterContanerLabel;
+    private ButtonGroup myGroup;
+
+    public ChooseContainerPanel() {
+      super(new GridBagLayout());
+
+
+      myOuterContainerCheckBox.setSelected(false);
+      myOuterContainerCheckBox.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent p0) {
+          myChooseContainerButton.setEnabled(myOuterContainerCheckBox.isSelected());
+          ExtractMethodDialog.this.myExtractIntoCurrentContainer = false;
+        }
+      });
+
+      myChooseContainerButton.setEnabled(false);
+      myChooseContainerButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent p0) {
+          chooseStaticContainer();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              if (ExtractMethodDialog.this.myStaticTarget != null) {
+                if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+                  myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "name"));
+                  myChooseContainerButton.setIcon(IconContainer.ICON_a0a1a0a0a0b0a0a0a0h0a1);
+                } else if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
+                  myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), "name"));
+                  myChooseContainerButton.setIcon(IconContainer.ICON_a0a1a0a0a0a1a0a0a0a7a0b);
+                } else if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+                  myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.core.structure.INamedConcept")), "name"));
+                }
+
+              }
+            }
+          });
+        }
+      });
+      myCurrentContainerRadioButton.setSelected(true);
+      myCurrentContainerRadioButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent p0) {
+          myChooseContainerButton.setEnabled(false);
+          ExtractMethodDialog.this.myExtractIntoCurrentContainer = true;
+        }
+      });
+
+      myAnotherContainerRadioButton.setSelected(false);
+      myAnotherContainerRadioButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent p0) {
+          myChooseContainerButton.setEnabled(true);
+          ExtractMethodDialog.this.myExtractIntoCurrentContainer = false;
+        }
+      });
+
+      myGroup.add(myCurrentContainerRadioButton);
+      myGroup.add(myAnotherContainerRadioButton);
+
+      GridBagConstraints c = new GridBagConstraints();
+      c.gridx = 0;
+      c.gridy = 0;
+      c.weightx = 2;
+      c.anchor = GridBagConstraints.FIRST_LINE_START;
+      add(myOuterContainerCheckBox, c);
+
+      c.gridx = 0;
+      c.gridy = 1;
+      c.anchor = GridBagConstraints.FIRST_LINE_START;
+      add(myChooseContainerButton, c);
+
+
+      c.gridx = 1;
+      c.gridy = 0;
+      c.anchor = GridBagConstraints.FIRST_LINE_START;
+      // <node> 
+
+
+      c.gridx = 2;
+      c.gridy = 0;
+      c.anchor = GridBagConstraints.FIRST_LINE_START;
+      // <node> 
+
+      c.gridx = 3;
+      c.gridy = 0;
+      c.anchor = GridBagConstraints.FIRST_LINE_START;
+      // <node> 
+
+
+      c.gridx = 4;
+      c.gridy = 0;
+      c.weightx = 1;
+      c.anchor = GridBagConstraints.FIRST_LINE_END;
+      // <node> 
     }
   }
 }
