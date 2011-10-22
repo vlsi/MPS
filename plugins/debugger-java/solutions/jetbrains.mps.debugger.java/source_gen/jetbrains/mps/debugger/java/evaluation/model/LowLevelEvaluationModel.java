@@ -86,11 +86,6 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     return myEvaluator;
   }
 
-  @NotNull
-  public SNode getRootToShow() {
-    return myEvaluator;
-  }
-
   @Override
   public void updateState() {
     super.updateState();

@@ -46,7 +46,7 @@ public class EvaluationPanel extends EvaluationUi {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        myEditor = new EmbeddableEditor(new ModuleContext(myEvaluationModel.getModule(), myEvaluationModel.getModule().getMPSProject()), myEvaluationModel.getModel(), myEvaluationModel.getRootToShow(), myEvaluationModel.getNodeToShow(), true);
+        myEditor = new EmbeddableEditor(new ModuleContext(myEvaluationModel.getModule(), myEvaluationModel.getModule().getMPSProject()), myEvaluationModel.getModel(), myEvaluationModel.getNodeToShow(), true);
 
         for (Language language : myEvaluationModel.getRequiredLanguages()) {
           myEditor.addLanguage(language);
@@ -105,7 +105,7 @@ public class EvaluationPanel extends EvaluationUi {
         if (EvaluationPanel.this.myResultEditor == null) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              EvaluationPanel.this.myResultEditor = new EmbeddableEditor(new ModuleContext(myEvaluationModel.getModule(), myEvaluationModel.getModule().getMPSProject()), myEvaluationModel.getModule(), generatedResult, generatedResult, false);
+              EvaluationPanel.this.myResultEditor = new EmbeddableEditor(new ModuleContext(myEvaluationModel.getModule(), myEvaluationModel.getModule().getMPSProject()), myEvaluationModel.getModule(), generatedResult, false);
             }
           });
           EvaluationPanel.this.myTabbedPane.add("Generated Result", EvaluationPanel.this.myResultEditor.getComponenet());

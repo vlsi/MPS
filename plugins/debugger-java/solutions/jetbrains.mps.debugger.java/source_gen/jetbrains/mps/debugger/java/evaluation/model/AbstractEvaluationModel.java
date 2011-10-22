@@ -124,9 +124,6 @@ public abstract class AbstractEvaluationModel {
   }
 
   @NotNull
-  public abstract SNode getRootToShow();
-
-  @NotNull
   public abstract SNode getNodeToShow();
 
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
