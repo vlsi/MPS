@@ -15,9 +15,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,7 +29,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelReference;
@@ -85,6 +85,10 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   @NotNull
   public SNode getNodeToShow() {
     return myEvaluator;
+  }
+
+  private SModel getLocationModel() {
+    return SNodeOperations.getModel(myEvaluationContext.getLocationNode());
   }
 
   @Override

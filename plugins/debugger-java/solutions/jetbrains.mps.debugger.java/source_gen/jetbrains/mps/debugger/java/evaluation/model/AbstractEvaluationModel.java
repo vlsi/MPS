@@ -24,9 +24,6 @@ import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
@@ -51,6 +48,7 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import java.util.Map;
 import jetbrains.mps.generator.GenerationCacheContainer;
@@ -94,14 +92,6 @@ public abstract class AbstractEvaluationModel {
     myShowContext = isShowContext;
   }
 
-  protected SModel getLocationModel() {
-    return SNodeOperations.getModel(myEvaluationContext.getLocationNode());
-  }
-
-  public JavaUiState getUiState() {
-    return this.myUiState;
-  }
-
   public DebugSession getDebugSession() {
     return this.myDebugSession;
   }
@@ -134,19 +124,7 @@ public abstract class AbstractEvaluationModel {
     myEvaluationContext.setUiState(myUiState);
   }
 
-  public EvaluationContext getEvaluationContext() {
-    return myEvaluationContext;
-  }
-
   public abstract AbstractEvaluationModel copy(boolean isShowContext);
-
-  protected IModule getLocationModule() {
-    return getLocationModel().getModelDescriptor().getModule();
-  }
-
-  public IOperationContext getContext() {
-    return myContext;
-  }
 
   @Nullable
   public Evaluator evaluate() throws EvaluationException {
