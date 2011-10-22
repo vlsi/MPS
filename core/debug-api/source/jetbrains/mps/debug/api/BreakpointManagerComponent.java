@@ -26,7 +26,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -224,25 +223,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     synchronized (myBreakpoints) {
       return new HashSet<IBreakpoint>(myBreakpoints);
     }
-  }
-
-  // TODO legacy method so the users code would compile -- remove after MPS2.0
-  @Deprecated
-  @ToRemove(version = 2.0)
-  public static void notifyDebuggableConceptsAdded() {
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.0)
-  public Set<AbstractMPSBreakpoint> getAllBreakpoints() {
-    Set<AbstractMPSBreakpoint> result = new HashSet<AbstractMPSBreakpoint>();
-    Set<IBreakpoint> allIBreakpoints = getAllIBreakpoints();
-    for (IBreakpoint bp : allIBreakpoints) {
-      if (bp instanceof AbstractMPSBreakpoint) {
-        result.add((AbstractMPSBreakpoint) bp);
-      }
-    }
-    return result;
   }
 
   public void addChangeListener(IBreakpointManagerListener listener) {

@@ -25,12 +25,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,8 +37,6 @@ import java.util.Map;
 
 public class DebugInfoManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(DebugInfoManager.class);
-
-  private final TraceInfoManager myTraceInfoManager;
 
   public static DebugInfoManager getInstance() {
     return ApplicationManager.getApplication().getComponent(DebugInfoManager.class);
@@ -54,60 +49,12 @@ public class DebugInfoManager implements ApplicationComponent {
     return "Debug Info Manager";
   }
 
-  public DebugInfoManager(/* depends on MPSCoreComponents */) {
-    // TODO restore dependency on MPSCoreComponents
-    myTraceInfoManager = TraceInfoManager.getInstance();
-  }
-
-  @Deprecated
-  public void addDebuggableConcept(String fqName) {
-    addDebuggableConcept(fqName, null);
-  }
-
   public void addConceptBreakpointCreator(String fqName, Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
     myDebuggableConcepts.put(fqName, breakpointCreator);
   }
 
-  @Deprecated
-  @ToRemove(version = 2.0)
-  public void addDebuggableConcept(String fqName, final Mapper2<SNode, Project, AbstractMPSBreakpoint> breakpointCreator) {
-    // legacy
-    myDebuggableConcepts.put(fqName, new Mapper2<SNode, Project, ILocationBreakpoint>() {
-      @Override
-      public ILocationBreakpoint value(SNode key1, Project key2) {
-        return (ILocationBreakpoint) breakpointCreator.value(key1, key2);
-      }
-    });
-  }
-
   public void removeConceptBreakpointCreator(String fqName) {
     myDebuggableConcepts.remove(fqName);
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.0)
-  public void removeDebuggableConcept(String fqName) {
-    removeConceptBreakpointCreator(fqName);
-  }
-
-  @Deprecated
-  public void addScopeConcept(String fqName, Mapper<SNode, List<SNode>> varsGetter) {
-    myTraceInfoManager.addScopeConcept(fqName, varsGetter);
-  }
-
-  @Deprecated
-  public void removeScopeConcept(String fqName) {
-    myTraceInfoManager.removeScopeConcept(fqName);
-  }
-
-  @Deprecated
-  public void addUnitConcept(String fqName, Mapper<SNode, String> nameGetter) {
-    myTraceInfoManager.addUnitConcept(fqName, nameGetter);
-  }
-
-  @Deprecated
-  public void removeUnitConcept(String fqName) {
-    myTraceInfoManager.removeUnitConcept(fqName);
   }
 
   public boolean isDebuggableNode(@Nullable SNode node) {
