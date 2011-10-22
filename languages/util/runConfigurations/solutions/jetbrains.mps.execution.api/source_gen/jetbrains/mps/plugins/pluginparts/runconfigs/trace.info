@@ -146,15 +146,15 @@
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726112" fileName="MPSPsiElement.java" startLine="34" startPosition="43" endLine="40" endPosition="7" />
     <scopeInfo nodeId="5628633142282726224" fileName="MPSPsiElement.java" startLine="73" startPosition="44" endLine="79" endPosition="36">
-      <varInfo nodeId="5628633142282726226" varName="ref" />
       <varInfo nodeId="5628633142282726232" varName="descriptor" />
+      <varInfo nodeId="5628633142282726226" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726106" fileName="MPSPsiElement.java" startLine="33" startPosition="0" endLine="41" endPosition="3">
       <varInfo nodeId="5628633142282726109" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726462" fileName="MPSPsiElement.java" startLine="112" startPosition="0" endLine="120" endPosition="0">
-      <varInfo nodeId="5628633142282726471" varName="mapper" />
       <varInfo nodeId="5628633142282726468" varName="list" />
+      <varInfo nodeId="5628633142282726471" varName="mapper" />
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726433" fileName="MPSPsiElement.java" startLine="153" startPosition="55" endLine="162" endPosition="16" />
     <scopeInfo nodeId="5628633142282726508" fileName="MPSPsiElement.java" startLine="98" startPosition="35" endLine="108" endPosition="59">
@@ -175,10 +175,10 @@
     <scopeInfo nodeId="5628633142282726311" fileName="MPSPsiElement.java" startLine="120" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="5628633142282726314" varName="o" />
     </scopeInfo>
+    <unitInfo nodeId="5628633142282726004" fileName="MPSPsiElement.java" startLine="24" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
     <unitInfo nodeId="5628633142282726124" fileName="MPSPsiElement.java" startLine="36" startPosition="28" endLine="40" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement$1" />
     <unitInfo nodeId="5628633142282726258" fileName="MPSPsiElement.java" startLine="67" startPosition="50" endLine="71" endPosition="7" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement$2" />
     <unitInfo nodeId="5628633142282726306" fileName="MPSPsiElement.java" startLine="97" startPosition="52" endLine="110" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement$3" />
-    <unitInfo nodeId="5628633142282726004" fileName="MPSPsiElement.java" startLine="24" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
   </root>
   <root nodeId="5628633142282726006">
     <nodeInfo nodeId="5628633142282726006" fileName="BaseConfigCreator.java" startLine="25" startPosition="81" endLine="26" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -269,7 +269,9 @@
     <scopeInfo nodeId="5628633142282726976" fileName="BaseConfigCreator.java" startLine="96" startPosition="37" endLine="101" endPosition="216">
       <varInfo nodeId="5628633142282726991" varName="configCreator" />
     </scopeInfo>
-    <scopeInfo nodeId="4013739085301555637" fileName="BaseConfigCreator.java" startLine="105" startPosition="136" endLine="110" endPosition="5" />
+    <scopeInfo nodeId="4013739085301555637" fileName="BaseConfigCreator.java" startLine="105" startPosition="136" endLine="110" endPosition="5">
+      <varInfo nodeId="4013739085301555637" varName="factory" />
+    </scopeInfo>
     <scopeInfo nodeId="5628633142282726940" fileName="BaseConfigCreator.java" startLine="86" startPosition="25" endLine="93" endPosition="46" />
     <scopeInfo nodeId="5628633142282727018" fileName="BaseConfigCreator.java" startLine="61" startPosition="41" endLine="69" endPosition="66">
       <varInfo nodeId="5628633142282727020" varName="mpsItem" />
@@ -281,8 +283,8 @@
     <scopeInfo nodeId="5628633142282726937" fileName="BaseConfigCreator.java" startLine="85" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="5628633142282726898" fileName="BaseConfigCreator.java" startLine="60" startPosition="103" endLine="71" endPosition="0" />
     <scopeInfo nodeId="4013739085301555630" fileName="BaseConfigCreator.java" startLine="103" startPosition="0" endLine="116" endPosition="0">
-      <varInfo nodeId="4013739085301555631" varName="configurationType" />
       <varInfo nodeId="4013739085301555633" varName="configurationFactoryClassName" />
+      <varInfo nodeId="4013739085301555631" varName="configurationType" />
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726862" fileName="BaseConfigCreator.java" startLine="53" startPosition="122" endLine="75" endPosition="120">
       <varInfo nodeId="5628633142282726889" varName="config" />
@@ -290,11 +292,11 @@
       <varInfo nodeId="5628633142282726883" varName="psiElement" />
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726855" fileName="BaseConfigCreator.java" startLine="52" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="5628633142282726858" varName="location" />
       <varInfo nodeId="5628633142282726860" varName="context" />
+      <varInfo nodeId="5628633142282726858" varName="location" />
     </scopeInfo>
-    <unitInfo nodeId="5628633142282726896" fileName="BaseConfigCreator.java" startLine="60" startPosition="71" endLine="71" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator$1" />
     <unitInfo nodeId="5628633142282726006" fileName="BaseConfigCreator.java" startLine="25" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
+    <unitInfo nodeId="5628633142282726896" fileName="BaseConfigCreator.java" startLine="60" startPosition="71" endLine="71" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator$1" />
   </root>
   <root nodeId="5628633142282726007">
     <nodeInfo nodeId="5628633142282726010" fileName="MPSLocation.java" startLine="14" startPosition="43" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -327,11 +329,11 @@
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726023" fileName="MPSLocation.java" startLine="18" startPosition="58" endLine="24" endPosition="7" />
     <scopeInfo nodeId="5628633142282726016" fileName="MPSLocation.java" startLine="17" startPosition="0" endLine="25" endPosition="3">
-      <varInfo nodeId="5628633142282726019" varName="project" />
       <varInfo nodeId="5628633142282726021" varName="item" />
+      <varInfo nodeId="5628633142282726019" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="5628633142282726036" fileName="MPSLocation.java" startLine="20" startPosition="60" endLine="24" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation$1" />
     <unitInfo nodeId="5628633142282726007" fileName="MPSLocation.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation" />
+    <unitInfo nodeId="5628633142282726036" fileName="MPSLocation.java" startLine="20" startPosition="60" endLine="24" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation$1" />
   </root>
   <root nodeId="5628633142282726547">
     <nodeInfo nodeId="5628633142282732652" fileName="BaseRunConfig.java" startLine="16" startPosition="87" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -350,9 +352,9 @@
     <scopeInfo nodeId="5628633142282726580" fileName="BaseRunConfig.java" startLine="28" startPosition="33" endLine="29" endPosition="17" />
     <scopeInfo nodeId="5628633142282726588" fileName="BaseRunConfig.java" startLine="33" startPosition="48" endLine="34" endPosition="79" />
     <scopeInfo nodeId="5628633142282726551" fileName="BaseRunConfig.java" startLine="14" startPosition="103" endLine="18" endPosition="3">
-      <varInfo nodeId="5628633142282726554" varName="project" />
-      <varInfo nodeId="5628633142282726558" varName="name" />
       <varInfo nodeId="5628633142282726556" varName="factory" />
+      <varInfo nodeId="5628633142282726558" varName="name" />
+      <varInfo nodeId="5628633142282726554" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726565" fileName="BaseRunConfig.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="5628633142282726571" fileName="BaseRunConfig.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
@@ -370,33 +372,31 @@
     <nodeInfo nodeId="5628633142282726745" fileName="BaseRunProfileState.java" startLine="50" startPosition="43" endLine="51" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5628633142282726747" fileName="BaseRunProfileState.java" startLine="51" startPosition="35" endLine="52" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5628633142282726776" fileName="BaseRunProfileState.java" startLine="60" startPosition="57" endLine="61" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726793" fileName="BaseRunProfileState.java" startLine="69" startPosition="98" endLine="70" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726782" fileName="BaseRunProfileState.java" startLine="65" startPosition="38" endLine="66" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5628633142282726685" fileName="BaseRunProfileState.java" startLine="27" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseRunProfileState#()V" />
     <nodeInfo nodeId="5628633142282726722" fileName="BaseRunProfileState.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebugSessionCreator#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSessionCreator;" />
     <nodeInfo nodeId="5628633142282726689" fileName="BaseRunProfileState.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putUserData#(Lcom/intellij/openapi/util/Key;null)V" />
     <nodeInfo nodeId="5628633142282726706" fileName="BaseRunProfileState.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserData#(Lcom/intellij/openapi/util/Key;)null" />
     <nodeInfo nodeId="5628633142282726729" fileName="BaseRunProfileState.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="prepare#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Ljava/lang/Object;" />
     <nodeInfo nodeId="5628633142282726763" fileName="BaseRunProfileState.java" startLine="58" startPosition="41" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
+    <nodeInfo nodeId="5628633142282726766" fileName="BaseRunProfileState.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
     <nodeInfo nodeId="5628633142282726741" fileName="BaseRunProfileState.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateDebuggerSettings#()V" />
-    <nodeInfo nodeId="5628633142282726786" fileName="BaseRunProfileState.java" startLine="66" startPosition="38" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebugSessionCreator#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSessionCreator;" />
-    <nodeInfo nodeId="5628633142282726782" fileName="BaseRunProfileState.java" startLine="65" startPosition="38" endLine="72" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726766" fileName="BaseRunProfileState.java" startLine="63" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
-    <nodeInfo nodeId="5628633142282726759" fileName="BaseRunProfileState.java" startLine="57" startPosition="60" endLine="74" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726755" fileName="BaseRunProfileState.java" startLine="54" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
+    <nodeInfo nodeId="5628633142282726759" fileName="BaseRunProfileState.java" startLine="57" startPosition="60" endLine="68" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726755" fileName="BaseRunProfileState.java" startLine="54" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
     <scopeInfo nodeId="5628633142282726688" fileName="BaseRunProfileState.java" startLine="29" startPosition="32" endLine="29" endPosition="32" />
     <scopeInfo nodeId="5628633142282726699" fileName="BaseRunProfileState.java" startLine="32" startPosition="61" endLine="33" endPosition="31" />
     <scopeInfo nodeId="5628633142282726713" fileName="BaseRunProfileState.java" startLine="37" startPosition="40" endLine="38" endPosition="35" />
     <scopeInfo nodeId="5628633142282726737" fileName="BaseRunProfileState.java" startLine="45" startPosition="81" endLine="46" endPosition="16" />
     <scopeInfo nodeId="5628633142282726775" fileName="BaseRunProfileState.java" startLine="60" startPosition="57" endLine="61" endPosition="49" />
-    <scopeInfo nodeId="5628633142282726792" fileName="BaseRunProfileState.java" startLine="69" startPosition="98" endLine="70" endPosition="79" />
+    <scopeInfo nodeId="5628633142282726781" fileName="BaseRunProfileState.java" startLine="65" startPosition="38" endLine="66" endPosition="65" />
     <scopeInfo nodeId="5628633142282726744" fileName="BaseRunProfileState.java" startLine="50" startPosition="43" endLine="52" endPosition="91" />
     <scopeInfo nodeId="5628633142282726685" fileName="BaseRunProfileState.java" startLine="27" startPosition="0" endLine="30" endPosition="3" />
     <scopeInfo nodeId="5628633142282726722" fileName="BaseRunProfileState.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="5628633142282726725" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726689" fileName="BaseRunProfileState.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="5628633142282726697" varName="value" />
       <varInfo nodeId="5628633142282726693" varName="key" />
+      <varInfo nodeId="5628633142282726697" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726706" fileName="BaseRunProfileState.java" startLine="35" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="5628633142282726710" varName="key" />
@@ -406,17 +406,12 @@
       <varInfo nodeId="5628633142282726734" varName="runner" />
     </scopeInfo>
     <scopeInfo nodeId="5628633142282726763" fileName="BaseRunProfileState.java" startLine="58" startPosition="41" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="5628633142282726766" fileName="BaseRunProfileState.java" startLine="63" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="5628633142282726741" fileName="BaseRunProfileState.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="5628633142282726786" fileName="BaseRunProfileState.java" startLine="66" startPosition="38" endLine="72" endPosition="0">
-      <varInfo nodeId="5628633142282726789" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="5628633142282726781" fileName="BaseRunProfileState.java" startLine="65" startPosition="38" endLine="72" endPosition="10" />
-    <scopeInfo nodeId="5628633142282726766" fileName="BaseRunProfileState.java" startLine="63" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="5628633142282726758" fileName="BaseRunProfileState.java" startLine="57" startPosition="60" endLine="74" endPosition="6" />
-    <scopeInfo nodeId="5628633142282726755" fileName="BaseRunProfileState.java" startLine="54" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="5628633142282726785" fileName="BaseRunProfileState.java" startLine="66" startPosition="19" endLine="72" endPosition="9" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState$2" />
-    <unitInfo nodeId="5628633142282726762" fileName="BaseRunProfileState.java" startLine="58" startPosition="15" endLine="74" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState$1" />
-    <unitInfo nodeId="5628633142282726673" fileName="BaseRunProfileState.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState" />
+    <scopeInfo nodeId="5628633142282726758" fileName="BaseRunProfileState.java" startLine="57" startPosition="60" endLine="68" endPosition="6" />
+    <scopeInfo nodeId="5628633142282726755" fileName="BaseRunProfileState.java" startLine="54" startPosition="0" endLine="70" endPosition="0" />
+    <unitInfo nodeId="5628633142282726673" fileName="BaseRunProfileState.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState" />
+    <unitInfo nodeId="5628633142282726762" fileName="BaseRunProfileState.java" startLine="58" startPosition="15" endLine="68" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState$1" />
   </root>
 </debugInfo>
 
