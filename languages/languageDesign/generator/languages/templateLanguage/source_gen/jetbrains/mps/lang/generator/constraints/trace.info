@@ -75,7 +75,7 @@
     <nodeInfo nodeId="4035562641222622456" fileName="ITemplateCall_Constraints.java" startLine="33" startPosition="5" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4035562641222622456" fileName="ITemplateCall_Constraints.java" startLine="34" startPosition="0" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4035562641222637893" fileName="ITemplateCall_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="954" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4035562641222637881" fileName="ITemplateCall_Constraints.java" startLine="41" startPosition="5" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4035562641222637881" fileName="ITemplateCall_Constraints.java" startLine="41" startPosition="5" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4035562641222622456" fileName="ITemplateCall_Constraints.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ITemplateCall_Constraints#()V" />
     <nodeInfo nodeId="4035562641222622456" fileName="ITemplateCall_Constraints.java" startLine="30" startPosition="0" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4035562641222637872" fileName="ITemplateCall_Constraints.java" startLine="38" startPosition="123" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -87,7 +87,7 @@
     <scopeInfo nodeId="4035562641222622456" fileName="ITemplateCall_Constraints.java" startLine="31" startPosition="51" endLine="32" endPosition="68" />
     <scopeInfo nodeId="4035562641222637874" fileName="ITemplateCall_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="954" />
     <scopeInfo nodeId="4035562641222622456" fileName="ITemplateCall_Constraints.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="4035562641222637871" fileName="ITemplateCall_Constraints.java" startLine="38" startPosition="123" endLine="42" endPosition="17" />
+    <scopeInfo nodeId="4035562641222637871" fileName="ITemplateCall_Constraints.java" startLine="38" startPosition="123" endLine="42" endPosition="16" />
     <scopeInfo nodeId="4035562641222622456" fileName="ITemplateCall_Constraints.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="4035562641222622456" fileName="ITemplateCall_Constraints.java" startLine="28" startPosition="155" endLine="35" endPosition="18" />
     <scopeInfo nodeId="4035562641222622456" fileName="ITemplateCall_Constraints.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
