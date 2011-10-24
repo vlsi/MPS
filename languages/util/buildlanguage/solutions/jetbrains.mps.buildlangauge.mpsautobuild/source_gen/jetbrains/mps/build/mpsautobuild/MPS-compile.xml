@@ -3707,6 +3707,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3854,6 +3856,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4051,6 +4055,7 @@
     <path path="${base_dir}/lib/picocontainer.jar" />
     <path path="${base_dir}/lib/platform-api.jar" />
     <path path="${base_dir}/lib/platform.jar" />
+    <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
@@ -6008,6 +6013,7 @@
     <path path="${base_dir}/lib/picocontainer.jar" />
     <path path="${base_dir}/lib/platform-api.jar" />
     <path path="${base_dir}/lib/platform.jar" />
+    <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
