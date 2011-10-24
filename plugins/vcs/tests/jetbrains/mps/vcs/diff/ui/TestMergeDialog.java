@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
+import com.intellij.idea.IdeaTestApplication;
 import com.intellij.mock.MockProject;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.IconLoader;
@@ -22,6 +23,8 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -38,6 +41,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();
@@ -47,9 +51,16 @@ public class TestMergeDialog {
       if (interfaceClass == EditorManager.class) {
         return (T) ourEditorManager;
       }
+      if (interfaceClass == MPSProject.class) {
+        return (T) ourMPSProject;
+      }
+      if (interfaceClass == BookmarkManager.class) {
+        return (T) new BookmarkManager(ourProject, null);
+      }
       return null;
     }
   };
+  private static MPSProject ourMPSProject = new MPSProject(ourProject);
 
   public static void main(final String[] args) throws JDOMException, IOException, ModelReadException {
     IdeMain.setTestMode(TestMode.NO_TEST);
@@ -59,32 +70,47 @@ public class TestMergeDialog {
     final SModel models[] = new SModel[3];
 
     String resultFile;
-    if (args.length == 2) {
+    if (args.length == 2 || args.length == 1) {
       final SModel[] zipped = MergeBackupUtil.loadZippedModels(new File(args[0]), MergeVersion.values());
       models[0] = zipped[0];
       models[1] = zipped[1];
       models[2] = zipped[2];
 
-      resultFile = args[1];
-    } else if (args.length == 4) {
+      if (args.length == 1) {
+        resultFile = File.createTempFile("mpstmd", "").getAbsolutePath();
+      } else {
+        resultFile = args[1];
+      }
+    } else if (args.length == 4 || args.length == 3) {
       models[0] = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(args[0]), false);
       models[1] = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(args[1]), false);
       models[2] = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(args[2]), false);
 
-      resultFile = args[3];
+      if (args.length == 3) {
+        resultFile = File.createTempFile("", "").getAbsolutePath();
+      } else {
+        resultFile = args[3];
+      }
     } else {
-      System.err.println("There must be 2 or 4 parameters");
+      System.err.println("There must be 1-4 parameters");
       return;
     }
     final String finalResultFile = resultFile;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
+        MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
             return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(ourProject, "Local Version", "Merge Result", "Remote Version"));
             // Local Version, Merge Result, Remote Version
           }
         });
+        try {
+          Field field = dialog.getClass().getDeclaredField("myMergeTree");
+          field.setAccessible(true);
+          IdeaTestApplication.getInstance(null).setDataProvider((DiffModelTree) field.get(dialog));
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         dialog.showDialog();
 
