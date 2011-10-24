@@ -10,11 +10,9 @@ import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
-import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
@@ -27,12 +25,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
-import java.util.Set;
-import jetbrains.mps.reloading.IClassPathItem;
-import java.util.HashSet;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
@@ -63,7 +55,7 @@ public abstract class AbstractEvaluationModel {
   protected final IOperationContext myContext;
   protected final EditableSModelDescriptor myAuxModel;
   protected final EvaluationAuxModule myAuxModule;
-  private final List<Language> myLanguages = ListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.privateMembers"));
+  protected final List<Language> myLanguages = ListSequence.fromList(new ArrayList<Language>());
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
   protected final EvaluationContext myEvaluationContext;
   protected final boolean myShowContext;
@@ -129,16 +121,9 @@ public abstract class AbstractEvaluationModel {
   @Nullable
   public Evaluator evaluate() throws EvaluationException {
     try {
-      final Set<IClassPathItem> classpaths = new HashSet<IClassPathItem>();
-      for (Language language : this.myLanguages) {
-        IClassPathItem item = language.getClassPathItem();
-        classpaths.add(item);
-      }
-      String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.") + "tools.jar";
-      classpaths.add(ClassPathFactory.getInstance().createFromPath(path, "AbstractEvaluationModel"));
 
       final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
-      InMemoryJavaGenerationHandler handler = new MyInMemoryJavaGenerationHandler(false, true, classpaths, myGenerationListeners);
+      InMemoryJavaGenerationHandler handler = new MyInMemoryJavaGenerationHandler(false, true, myGenerationListeners);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);

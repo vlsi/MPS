@@ -10,8 +10,12 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.application.ApplicationManager;
@@ -44,7 +48,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.CopyUtil;
 
 public class LowLevelEvaluationModel extends AbstractEvaluationModel {
@@ -60,6 +63,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
   public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context, boolean isShowContext) {
     super(project, session, module, context, isShowContext);
+    ListSequence.fromList(myLanguages).addSequence(LinkedListSequence.fromLinkedList(LinkedListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.privateMembers"))));
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -71,6 +75,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         myAuxModule.loadNewModels();
       }
     });
+
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
