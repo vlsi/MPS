@@ -99,7 +99,9 @@ public class LibraryInitializer {
 
   public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
     List<M> result = new ArrayList<M>();
-    result.addAll(myRepo.getModules(myLibsToOwners.get(PathManager.getBootstrapPath()), cls));
+    for (String path: PathManager.getBootstrapPaths()) {
+      result.addAll(myRepo.getModules(myLibsToOwners.get(path), cls));
+    }
     result.addAll(myRepo.getModules(myLibsToOwners.get(PathManager.getLanguagesPath()), cls));
 
     addGenerators(cls, result);
