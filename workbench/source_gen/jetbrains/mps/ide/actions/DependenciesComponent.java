@@ -30,7 +30,6 @@ public class DependenciesComponent extends JComponent {
   }
 
   public void setContent(Scope scope, MPSProject project) {
-    ReferencesUtil.clearCaches();
     myInitTree = new DependencyTree(this);
     myTargetsView = new TargetsView(myProject, this);
     myReferencesView = new UsagesView(myProject, new ViewOptions(false, false, false, true, false)) {
@@ -47,15 +46,20 @@ public class DependenciesComponent extends JComponent {
     setLayout(new BorderLayout());
     JBScrollPane leftPane = new JBScrollPane(myInitTree);
     splitPane.setLeftComponent(leftPane);
-    JBScrollPane centralPane = new JBScrollPane(myTargetsView.getComponent());
-    JBScrollPane rightPane = new JBScrollPane(myReferencesView.getComponent());
     splitPane.setRightComponent(rightSplitPane);
-    rightSplitPane.setLeftComponent(centralPane);
-    rightSplitPane.setRightComponent(rightPane);
+    splitPane.setDividerLocation(0.25);
+    splitPane.setResizeWeight(0.25);
+    rightSplitPane.setLeftComponent(myTargetsView.getComponent());
+    rightSplitPane.setRightComponent(myReferencesView.getComponent());
+    rightSplitPane.setDividerLocation(0.5);
+    rightSplitPane.setResizeWeight(0.5);
+    this.removeAll();
     this.add(splitPane);
+
     setVisible(true);
     myInitTree.setContent(scope.getModels(), scope.getModules(), project);
     updateTargetsView(scope);
+    repaint();
   }
 
   public void setProject(Project project) {

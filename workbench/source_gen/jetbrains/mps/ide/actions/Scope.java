@@ -21,6 +21,9 @@ public class Scope {
   }
 
   public boolean contains(SNode node) {
+    if (node == null) {
+      return false;
+    }
     SNode root = node.getContainingRoot();
     if (ListSequence.fromList(myRoots).contains(root)) {
       return true;

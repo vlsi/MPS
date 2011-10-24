@@ -31,6 +31,7 @@ public class AnalyzeDependencies_Tool extends GeneratedTool {
 
   public void setContent(Scope scope, MPSProject project) {
     AnalyzeDependencies_Tool.this.myDependenciesComponent.setContent(scope, project);
+    AnalyzeDependencies_Tool.this.myDependenciesComponent.revalidate();
   }
 
   public JComponent getComponent() {
