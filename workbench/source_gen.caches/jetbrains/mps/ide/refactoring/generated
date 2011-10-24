@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6qaab087kd90td49qvohhe20da1noyl">
+<dependencies version="2" modelHash="4lu19zrhqso3nqqoqbfu00xganvw9ni">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3lxfcg9w0sl635r6n0c4d5sryip3kpx" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="7c5ssk9ukgkps0ad18aex01o7lv119u" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="akfobdt43q9rrlj8pszut5gr07xi91o" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="1qpl4dcq87orqyeop7drkzps9naovu7" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <common hash="-32kb0o7uegpyi71gh5tmohxiubns6aj" />
+  <common hash="dekf6lk9nm4s52wnsvvskzx89x48qu1" />
   <source id="2482360940803570305" name="RefactoringViewAction" hash="-ca6c5ldagdm62afc0ui4qen6gmdl1rc">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="RefactoringViewAction.java" />
   </source>
-  <source id="2482360940803570313" name="GenericRefactoringAction" hash="-dmsu9awvowdbeg11hvgwzkpb64dcf5o">
+  <source id="2482360940803570313" name="GenericRefactoringAction" hash="-a8bxptj6fx52fhkgru0aqhx46lmuzza">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -18,7 +18,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenericRefactoringAction.java" />
   </source>
-  <source id="2482360940803570809" name="RefactoringView" hash="-7w29xmlq5pvpxiuwinwnog8bd2dgjps">
+  <source id="2482360940803570809" name="RefactoringView" hash="-319pg8tsff0w3zcdvspbzjh7hax2d6w">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -26,7 +26,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RefactoringView.java" />
   </source>
-  <source id="2482360940803571011" name="RenameLanguageDialog" hash="20w8ai5ty2gyscc1c104peefmje1rfu">
+  <source id="2482360940803571011" name="RenameLanguageDialog" hash="-5962pn0aw4durg1ecqy9us897y3lu22">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -34,7 +34,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RenameLanguageDialog.java" />
   </source>
-  <source id="2482360940803571464" name="RefactoringViewItem" hash="1qbtl8ujt8pkwmkb3l04j0ecfy03zmf">
+  <source id="2482360940803571464" name="RefactoringViewItem" hash="btnfku6vaplb6lhr0duwaciytsq5u5d">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -50,7 +50,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RenameModelDialog.java" />
   </source>
-  <source id="2482360940803572337" name="RefactoringFacade" hash="76k3zm680381rpaz2pmzwn7spejkmsv">
+  <source id="2482360940803572337" name="RefactoringFacade" hash="1vyoneyuak5xzdhhz5tvaqiol84ml0s">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
