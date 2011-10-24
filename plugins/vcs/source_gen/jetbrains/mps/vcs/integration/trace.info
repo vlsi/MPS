@@ -200,374 +200,399 @@
     <unitInfo nodeId="3521790172251226878" fileName="ModuleVcsPathPresenter.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModuleVcsPathPresenter" />
     <unitInfo nodeId="3521790172251226922" fileName="ModuleVcsPathPresenter.java" startLine="30" startPosition="65" endLine="45" endPosition="5" unitName="jetbrains.mps.vcs.integration.ModuleVcsPathPresenter$1" />
   </root>
-  <root nodeId="4124845871897257719">
-    <nodeInfo nodeId="4124845871897257733" fileName="ModelDiffTool.java" startLine="36" startPosition="48" endLine="37" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4124845871897257748" fileName="ModelDiffTool.java" startLine="42" startPosition="47" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257792" fileName="ModelDiffTool.java" startLine="44" startPosition="9" endLine="45" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257801" fileName="ModelDiffTool.java" startLine="45" startPosition="103" endLine="46" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257824" fileName="ModelDiffTool.java" startLine="48" startPosition="37" endLine="49" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257835" fileName="ModelDiffTool.java" startLine="50" startPosition="40" endLine="51" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897257846" fileName="ModelDiffTool.java" startLine="52" startPosition="42" endLine="53" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897257855" fileName="ModelDiffTool.java" startLine="55" startPosition="11" endLine="56" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257876" fileName="ModelDiffTool.java" startLine="57" startPosition="40" endLine="58" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897257864" fileName="ModelDiffTool.java" startLine="59" startPosition="18" endLine="60" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897257881" fileName="ModelDiffTool.java" startLine="61" startPosition="11" endLine="62" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257891" fileName="ModelDiffTool.java" startLine="62" startPosition="83" endLine="63" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257902" fileName="ModelDiffTool.java" startLine="64" startPosition="35" endLine="65" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897257917" fileName="ModelDiffTool.java" startLine="66" startPosition="18" endLine="67" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257946" fileName="ModelDiffTool.java" startLine="69" startPosition="60" endLine="70" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257958" fileName="ModelDiffTool.java" startLine="71" startPosition="52" endLine="72" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897257962" fileName="ModelDiffTool.java" startLine="72" startPosition="30" endLine="73" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897257970" fileName="ModelDiffTool.java" startLine="76" startPosition="15" endLine="77" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897257972" fileName="ModelDiffTool.java" startLine="80" startPosition="9" endLine="81" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897257758" fileName="ModelDiffTool.java" startLine="82" startPosition="45" endLine="83" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897257764" fileName="ModelDiffTool.java" startLine="83" startPosition="69" endLine="84" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257776" fileName="ModelDiffTool.java" startLine="85" startPosition="42" endLine="86" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897257785" fileName="ModelDiffTool.java" startLine="88" startPosition="29" endLine="89" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258078" fileName="ModelDiffTool.java" startLine="93" startPosition="47" endLine="94" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258085" fileName="ModelDiffTool.java" startLine="94" startPosition="51" endLine="95" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897258109" fileName="ModelDiffTool.java" startLine="98" startPosition="62" endLine="99" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258120" fileName="ModelDiffTool.java" startLine="100" startPosition="23" endLine="101" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897258122" fileName="ModelDiffTool.java" startLine="102" startPosition="5" endLine="103" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897257996" fileName="ModelDiffTool.java" startLine="108" startPosition="32" endLine="109" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897258002" fileName="ModelDiffTool.java" startLine="111" startPosition="5" endLine="112" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897258021" fileName="ModelDiffTool.java" startLine="116" startPosition="79" endLine="117" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258025" fileName="ModelDiffTool.java" startLine="117" startPosition="72" endLine="118" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258052" fileName="ModelDiffTool.java" startLine="121" startPosition="35" endLine="122" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897258056" fileName="ModelDiffTool.java" startLine="126" startPosition="5" endLine="127" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1547210892702467205" fileName="ModelDiffTool.java" startLine="130" startPosition="44" endLine="131" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897257731" fileName="ModelDiffTool.java" startLine="135" startPosition="39" endLine="136" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4124845871897257738" fileName="ModelDiffTool.java" startLine="38" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDiffTool#()V" />
-    <nodeInfo nodeId="4124845871897257862" fileName="ModelDiffTool.java" startLine="59" startPosition="16" endLine="61" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4124845871897257841" fileName="ModelDiffTool.java" startLine="51" startPosition="60" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897257770" fileName="ModelDiffTool.java" startLine="84" startPosition="74" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258115" fileName="ModelDiffTool.java" startLine="99" startPosition="46" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897257989" fileName="ModelDiffTool.java" startLine="107" startPosition="49" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897257725" fileName="ModelDiffTool.java" startLine="134" startPosition="57" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReadException#(Ljava/lang/Exception;)V" />
-    <nodeInfo nodeId="4124845871897257952" fileName="ModelDiffTool.java" startLine="70" startPosition="84" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258048" fileName="ModelDiffTool.java" startLine="120" startPosition="78" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="1547210892702467201" fileName="ModelDiffTool.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNewDiffEnabled#()Z" />
-    <nodeInfo nodeId="4124845871897257858" fileName="ModelDiffTool.java" startLine="56" startPosition="36" endLine="61" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258063" fileName="ModelDiffTool.java" startLine="92" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
-    <nodeInfo nodeId="4124845871897257982" fileName="ModelDiffTool.java" startLine="106" startPosition="57" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4124845871897258040" fileName="ModelDiffTool.java" startLine="119" startPosition="36" endLine="124" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897257830" fileName="ModelDiffTool.java" startLine="49" startPosition="75" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258035" fileName="ModelDiffTool.java" startLine="118" startPosition="118" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897257940" fileName="ModelDiffTool.java" startLine="68" startPosition="87" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="4124845871897258102" fileName="ModelDiffTool.java" startLine="97" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModelFile#(Lcom/intellij/openapi/diff/DiffContent;)Z" />
-    <nodeInfo nodeId="4124845871897257933" fileName="ModelDiffTool.java" startLine="67" startPosition="173" endLine="76" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897257976" fileName="ModelDiffTool.java" startLine="105" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFilePath#(Lcom/intellij/openapi/diff/DiffRequest;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4124845871897258012" fileName="ModelDiffTool.java" startLine="115" startPosition="87" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897257915" fileName="ModelDiffTool.java" startLine="66" startPosition="16" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4124845871897257900" fileName="ModelDiffTool.java" startLine="63" startPosition="84" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258004" fileName="ModelDiffTool.java" startLine="114" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readModel#(Lcom/intellij/openapi/diff/DiffContent;Ljava/lang/String;)Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="4124845871897257820" fileName="ModelDiffTool.java" startLine="47" startPosition="94" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/ide/dialogs/BaseDialog;" />
-    <nodeInfo nodeId="4124845871897257810" fileName="ModelDiffTool.java" startLine="46" startPosition="103" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897257755" fileName="ModelDiffTool.java" startLine="43" startPosition="51" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4124845871897257742" fileName="ModelDiffTool.java" startLine="41" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
-    <scopeInfo nodeId="4124845871897257741" fileName="ModelDiffTool.java" startLine="39" startPosition="26" endLine="39" endPosition="26" />
-    <scopeInfo nodeId="4124845871897257845" fileName="ModelDiffTool.java" startLine="52" startPosition="42" endLine="53" endPosition="110" />
-    <scopeInfo nodeId="4124845871897257875" fileName="ModelDiffTool.java" startLine="57" startPosition="40" endLine="58" endPosition="51" />
-    <scopeInfo nodeId="4124845871897257863" fileName="ModelDiffTool.java" startLine="59" startPosition="18" endLine="60" endPosition="119" />
-    <scopeInfo nodeId="4124845871897257901" fileName="ModelDiffTool.java" startLine="64" startPosition="35" endLine="65" endPosition="74" />
-    <scopeInfo nodeId="4124845871897257775" fileName="ModelDiffTool.java" startLine="85" startPosition="42" endLine="86" endPosition="35" />
-    <scopeInfo nodeId="4124845871897257783" fileName="ModelDiffTool.java" startLine="88" startPosition="0" endLine="89" endPosition="26">
-      <varInfo nodeId="4124845871897257789" varName="e" />
+  <root nodeId="4093906047203397429">
+    <nodeInfo nodeId="4093906047203397439" fileName="GeneratedFilesExcludePolicy.java" startLine="20" startPosition="67" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4093906047203397453" fileName="GeneratedFilesExcludePolicy.java" startLine="27" startPosition="91" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203397455" fileName="GeneratedFilesExcludePolicy.java" startLine="29" startPosition="5" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203397469" fileName="GeneratedFilesExcludePolicy.java" startLine="31" startPosition="99" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203397480" fileName="GeneratedFilesExcludePolicy.java" startLine="33" startPosition="27" endLine="34" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203397492" fileName="GeneratedFilesExcludePolicy.java" startLine="35" startPosition="33" endLine="36" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203397499" fileName="GeneratedFilesExcludePolicy.java" startLine="36" startPosition="91" endLine="37" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203397514" fileName="GeneratedFilesExcludePolicy.java" startLine="38" startPosition="34" endLine="39" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203397511" fileName="GeneratedFilesExcludePolicy.java" startLine="40" startPosition="16" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4093906047203397526" fileName="GeneratedFilesExcludePolicy.java" startLine="42" startPosition="34" endLine="43" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203397523" fileName="GeneratedFilesExcludePolicy.java" startLine="44" startPosition="16" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4093906047203397531" fileName="GeneratedFilesExcludePolicy.java" startLine="48" startPosition="5" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203397432" fileName="GeneratedFilesExcludePolicy.java" startLine="19" startPosition="82" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedFilesExcludePolicy#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="4093906047203397446" fileName="GeneratedFilesExcludePolicy.java" startLine="26" startPosition="51" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203397507" fileName="GeneratedFilesExcludePolicy.java" startLine="37" startPosition="125" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203397519" fileName="GeneratedFilesExcludePolicy.java" startLine="41" startPosition="11" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203397487" fileName="GeneratedFilesExcludePolicy.java" startLine="34" startPosition="65" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203397475" fileName="GeneratedFilesExcludePolicy.java" startLine="32" startPosition="51" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203397462" fileName="GeneratedFilesExcludePolicy.java" startLine="30" startPosition="56" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4093906047203397441" fileName="GeneratedFilesExcludePolicy.java" startLine="23" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllExcludeRoots#()Ljava/util/Set;" />
+    <scopeInfo nodeId="4093906047203397512" fileName="GeneratedFilesExcludePolicy.java" startLine="40" startPosition="18" endLine="40" endPosition="18" />
+    <scopeInfo nodeId="4093906047203397524" fileName="GeneratedFilesExcludePolicy.java" startLine="44" startPosition="18" endLine="44" endPosition="18" />
+    <scopeInfo nodeId="4093906047203397438" fileName="GeneratedFilesExcludePolicy.java" startLine="20" startPosition="67" endLine="21" endPosition="19" />
+    <scopeInfo nodeId="4093906047203397452" fileName="GeneratedFilesExcludePolicy.java" startLine="27" startPosition="91" endLine="28" endPosition="35" />
+    <scopeInfo nodeId="4093906047203397513" fileName="GeneratedFilesExcludePolicy.java" startLine="38" startPosition="34" endLine="39" endPosition="33" />
+    <scopeInfo nodeId="4093906047203397525" fileName="GeneratedFilesExcludePolicy.java" startLine="42" startPosition="34" endLine="43" endPosition="33" />
+    <scopeInfo nodeId="4093906047203397432" fileName="GeneratedFilesExcludePolicy.java" startLine="19" startPosition="82" endLine="22" endPosition="3">
+      <varInfo nodeId="4093906047203397435" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897257784" fileName="ModelDiffTool.java" startLine="88" startPosition="29" endLine="89" endPosition="26" />
-    <scopeInfo nodeId="4124845871897258119" fileName="ModelDiffTool.java" startLine="100" startPosition="23" endLine="101" endPosition="18" />
-    <scopeInfo nodeId="4124845871897257995" fileName="ModelDiffTool.java" startLine="108" startPosition="32" endLine="109" endPosition="37" />
-    <scopeInfo nodeId="4124845871897258051" fileName="ModelDiffTool.java" startLine="121" startPosition="35" endLine="122" endPosition="47" />
-    <scopeInfo nodeId="1547210892702467204" fileName="ModelDiffTool.java" startLine="130" startPosition="44" endLine="131" endPosition="64" />
-    <scopeInfo nodeId="4124845871897257730" fileName="ModelDiffTool.java" startLine="135" startPosition="39" endLine="136" endPosition="15" />
-    <scopeInfo nodeId="4124845871897257738" fileName="ModelDiffTool.java" startLine="38" startPosition="0" endLine="40" endPosition="3" />
-    <scopeInfo nodeId="4124845871897257957" fileName="ModelDiffTool.java" startLine="71" startPosition="52" endLine="73" endPosition="45" />
-    <scopeInfo nodeId="4124845871897258068" fileName="ModelDiffTool.java" startLine="93" startPosition="47" endLine="95" endPosition="90">
+    <scopeInfo nodeId="4093906047203397491" fileName="GeneratedFilesExcludePolicy.java" startLine="35" startPosition="33" endLine="45" endPosition="11">
+      <varInfo nodeId="4093906047203397500" varName="cachesDir" />
+      <varInfo nodeId="4093906047203397493" varName="outputDir" />
+    </scopeInfo>
+    <scopeInfo nodeId="4093906047203397479" fileName="GeneratedFilesExcludePolicy.java" startLine="33" startPosition="27" endLine="46" endPosition="9">
+      <varInfo nodeId="4093906047203397481" varName="outputPath" />
+    </scopeInfo>
+    <scopeInfo nodeId="4093906047203397468" fileName="GeneratedFilesExcludePolicy.java" startLine="31" startPosition="99" endLine="47" endPosition="7">
+      <varInfo nodeId="4093906047203397470" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="4093906047203397462" fileName="GeneratedFilesExcludePolicy.java" startLine="30" startPosition="56" endLine="48" endPosition="5">
+      <varInfo nodeId="4093906047203397466" varName="modelDescriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="4093906047203397445" fileName="GeneratedFilesExcludePolicy.java" startLine="26" startPosition="51" endLine="49" endPosition="17">
+      <varInfo nodeId="4093906047203397456" varName="roots" />
+    </scopeInfo>
+    <scopeInfo nodeId="4093906047203397441" fileName="GeneratedFilesExcludePolicy.java" startLine="23" startPosition="0" endLine="51" endPosition="0" />
+    <unitInfo nodeId="4093906047203397429" fileName="GeneratedFilesExcludePolicy.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy" />
+  </root>
+  <root nodeId="4124845871897257719">
+    <nodeInfo nodeId="4124845871897257719" fileName="ModelDiffTool.java" startLine="38" startPosition="48" endLine="39" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="4124845871897257748" fileName="ModelDiffTool.java" startLine="44" startPosition="47" endLine="45" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897257792" fileName="ModelDiffTool.java" startLine="45" startPosition="51" endLine="46" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897257801" fileName="ModelDiffTool.java" startLine="46" startPosition="26" endLine="47" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6803801018698248511" fileName="ModelDiffTool.java" startLine="48" startPosition="9" endLine="49" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6803801018698248514" fileName="ModelDiffTool.java" startLine="49" startPosition="40" endLine="50" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2445003365367122075" fileName="ModelDiffTool.java" startLine="52" startPosition="33" endLine="53" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2445003365367122083" fileName="ModelDiffTool.java" startLine="54" startPosition="7" endLine="55" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6803801018698248364" fileName="ModelDiffTool.java" startLine="55" startPosition="64" endLine="56" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4124845871897257824" fileName="ModelDiffTool.java" startLine="59" startPosition="35" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897257835" fileName="ModelDiffTool.java" startLine="61" startPosition="38" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897257846" fileName="ModelDiffTool.java" startLine="63" startPosition="40" endLine="64" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897257855" fileName="ModelDiffTool.java" startLine="66" startPosition="9" endLine="67" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897257876" fileName="ModelDiffTool.java" startLine="68" startPosition="38" endLine="69" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897257864" fileName="ModelDiffTool.java" startLine="70" startPosition="16" endLine="71" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897257881" fileName="ModelDiffTool.java" startLine="72" startPosition="9" endLine="73" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897257891" fileName="ModelDiffTool.java" startLine="73" startPosition="81" endLine="74" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897257902" fileName="ModelDiffTool.java" startLine="75" startPosition="33" endLine="76" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4124845871897257917" fileName="ModelDiffTool.java" startLine="77" startPosition="16" endLine="78" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897257946" fileName="ModelDiffTool.java" startLine="80" startPosition="58" endLine="81" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897257958" fileName="ModelDiffTool.java" startLine="82" startPosition="50" endLine="83" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897257962" fileName="ModelDiffTool.java" startLine="83" startPosition="28" endLine="84" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897257970" fileName="ModelDiffTool.java" startLine="87" startPosition="13" endLine="88" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4124845871897257972" fileName="ModelDiffTool.java" startLine="91" startPosition="7" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258078" fileName="ModelDiffTool.java" startLine="95" startPosition="47" endLine="96" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258085" fileName="ModelDiffTool.java" startLine="96" startPosition="51" endLine="97" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4124845871897258109" fileName="ModelDiffTool.java" startLine="100" startPosition="62" endLine="101" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258120" fileName="ModelDiffTool.java" startLine="102" startPosition="23" endLine="103" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4124845871897258122" fileName="ModelDiffTool.java" startLine="104" startPosition="5" endLine="105" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4124845871897258021" fileName="ModelDiffTool.java" startLine="109" startPosition="79" endLine="110" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258025" fileName="ModelDiffTool.java" startLine="110" startPosition="72" endLine="111" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258052" fileName="ModelDiffTool.java" startLine="114" startPosition="35" endLine="115" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4124845871897258056" fileName="ModelDiffTool.java" startLine="120" startPosition="9" endLine="121" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6803801018698248334" fileName="ModelDiffTool.java" startLine="122" startPosition="31" endLine="123" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1547210892702467205" fileName="ModelDiffTool.java" startLine="127" startPosition="44" endLine="128" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4124845871897257738" fileName="ModelDiffTool.java" startLine="40" startPosition="0" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDiffTool#()V" />
+    <nodeInfo nodeId="4124845871897257862" fileName="ModelDiffTool.java" startLine="70" startPosition="14" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2445003365367122075" fileName="ModelDiffTool.java" startLine="51" startPosition="36" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2445003365367122075" fileName="ModelDiffTool.java" startLine="51" startPosition="36" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897257841" fileName="ModelDiffTool.java" startLine="62" startPosition="58" endLine="65" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258115" fileName="ModelDiffTool.java" startLine="101" startPosition="46" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897257952" fileName="ModelDiffTool.java" startLine="81" startPosition="82" endLine="85" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258048" fileName="ModelDiffTool.java" startLine="113" startPosition="78" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="1547210892702467201" fileName="ModelDiffTool.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNewDiffEnabled#()Z" />
+    <nodeInfo nodeId="4124845871897257858" fileName="ModelDiffTool.java" startLine="67" startPosition="34" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258063" fileName="ModelDiffTool.java" startLine="94" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
+    <nodeInfo nodeId="4124845871897258040" fileName="ModelDiffTool.java" startLine="112" startPosition="36" endLine="117" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6803801018698248310" fileName="ModelDiffTool.java" startLine="119" startPosition="5" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4124845871897257830" fileName="ModelDiffTool.java" startLine="60" startPosition="73" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258035" fileName="ModelDiffTool.java" startLine="111" startPosition="118" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897257940" fileName="ModelDiffTool.java" startLine="79" startPosition="85" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="4124845871897258102" fileName="ModelDiffTool.java" startLine="99" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModelFile#(Lcom/intellij/openapi/diff/DiffContent;)Z" />
+    <nodeInfo nodeId="4124845871897257933" fileName="ModelDiffTool.java" startLine="78" startPosition="171" endLine="87" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6803801018698248356" fileName="ModelDiffTool.java" startLine="47" startPosition="26" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4124845871897258012" fileName="ModelDiffTool.java" startLine="108" startPosition="82" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897257915" fileName="ModelDiffTool.java" startLine="77" startPosition="14" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4124845871897257900" fileName="ModelDiffTool.java" startLine="74" startPosition="82" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258004" fileName="ModelDiffTool.java" startLine="107" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readModel#(Lcom/intellij/openapi/diff/DiffContent;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="4124845871897257820" fileName="ModelDiffTool.java" startLine="58" startPosition="92" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/ide/dialogs/BaseDialog;" />
+    <nodeInfo nodeId="4124845871897257810" fileName="ModelDiffTool.java" startLine="57" startPosition="5" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897257742" fileName="ModelDiffTool.java" startLine="43" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <scopeInfo nodeId="4124845871897257741" fileName="ModelDiffTool.java" startLine="41" startPosition="26" endLine="41" endPosition="26" />
+    <scopeInfo nodeId="2445003365367122075" fileName="ModelDiffTool.java" startLine="52" startPosition="33" endLine="53" endPosition="42" />
+    <scopeInfo nodeId="4124845871897257845" fileName="ModelDiffTool.java" startLine="63" startPosition="40" endLine="64" endPosition="108" />
+    <scopeInfo nodeId="4124845871897257875" fileName="ModelDiffTool.java" startLine="68" startPosition="38" endLine="69" endPosition="49" />
+    <scopeInfo nodeId="4124845871897257863" fileName="ModelDiffTool.java" startLine="70" startPosition="16" endLine="71" endPosition="117" />
+    <scopeInfo nodeId="4124845871897257901" fileName="ModelDiffTool.java" startLine="75" startPosition="33" endLine="76" endPosition="72" />
+    <scopeInfo nodeId="4124845871897258119" fileName="ModelDiffTool.java" startLine="102" startPosition="23" endLine="103" endPosition="18" />
+    <scopeInfo nodeId="4124845871897258051" fileName="ModelDiffTool.java" startLine="114" startPosition="35" endLine="115" endPosition="47" />
+    <scopeInfo nodeId="6803801018698248311" fileName="ModelDiffTool.java" startLine="120" startPosition="9" endLine="121" endPosition="88" />
+    <scopeInfo nodeId="6803801018698248329" fileName="ModelDiffTool.java" startLine="122" startPosition="0" endLine="123" endPosition="86">
+      <varInfo nodeId="6803801018698248330" varName="ioe" />
+    </scopeInfo>
+    <scopeInfo nodeId="6803801018698248332" fileName="ModelDiffTool.java" startLine="122" startPosition="31" endLine="123" endPosition="86" />
+    <scopeInfo nodeId="1547210892702467204" fileName="ModelDiffTool.java" startLine="127" startPosition="44" endLine="128" endPosition="64" />
+    <scopeInfo nodeId="4124845871897257738" fileName="ModelDiffTool.java" startLine="40" startPosition="0" endLine="42" endPosition="3" />
+    <scopeInfo nodeId="6803801018698248357" fileName="ModelDiffTool.java" startLine="48" startPosition="9" endLine="50" endPosition="40" />
+    <scopeInfo nodeId="4124845871897257957" fileName="ModelDiffTool.java" startLine="82" startPosition="50" endLine="84" endPosition="43" />
+    <scopeInfo nodeId="4124845871897258068" fileName="ModelDiffTool.java" startLine="95" startPosition="47" endLine="97" endPosition="88">
       <varInfo nodeId="4124845871897258079" varName="contents" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897257988" fileName="ModelDiffTool.java" startLine="107" startPosition="49" endLine="110" endPosition="7" />
-    <scopeInfo nodeId="4124845871897257725" fileName="ModelDiffTool.java" startLine="134" startPosition="57" endLine="137" endPosition="5">
-      <varInfo nodeId="4124845871897257728" varName="t" />
+    <scopeInfo nodeId="2445003365367122075" fileName="ModelDiffTool.java" startLine="51" startPosition="36" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="4124845871897257834" fileName="ModelDiffTool.java" startLine="61" startPosition="38" endLine="65" endPosition="11" />
+    <scopeInfo nodeId="4124845871897258048" fileName="ModelDiffTool.java" startLine="113" startPosition="78" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1547210892702467201" fileName="ModelDiffTool.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="6803801018698248358" fileName="ModelDiffTool.java" startLine="51" startPosition="0" endLine="56" endPosition="13">
+      <varInfo nodeId="6803801018698248359" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897257834" fileName="ModelDiffTool.java" startLine="50" startPosition="40" endLine="54" endPosition="13" />
-    <scopeInfo nodeId="4124845871897258048" fileName="ModelDiffTool.java" startLine="120" startPosition="78" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="1547210892702467201" fileName="ModelDiffTool.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="4124845871897257945" fileName="ModelDiffTool.java" startLine="69" startPosition="60" endLine="74" endPosition="17">
+    <scopeInfo nodeId="6803801018698248361" fileName="ModelDiffTool.java" startLine="51" startPosition="36" endLine="56" endPosition="13" />
+    <scopeInfo nodeId="4124845871897257945" fileName="ModelDiffTool.java" startLine="80" startPosition="58" endLine="85" endPosition="15">
       <varInfo nodeId="4124845871897257947" varName="ideaDiffTool" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897257756" fileName="ModelDiffTool.java" startLine="82" startPosition="0" endLine="87" endPosition="7">
-      <varInfo nodeId="4124845871897257781" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4124845871897257757" fileName="ModelDiffTool.java" startLine="82" startPosition="45" endLine="87" endPosition="7">
-      <varInfo nodeId="4124845871897257765" varName="ideaDiffTool" />
-    </scopeInfo>
-    <scopeInfo nodeId="4124845871897258063" fileName="ModelDiffTool.java" startLine="92" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="4124845871897258063" fileName="ModelDiffTool.java" startLine="94" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="4124845871897258066" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258108" fileName="ModelDiffTool.java" startLine="98" startPosition="62" endLine="103" endPosition="59">
+    <scopeInfo nodeId="4124845871897258108" fileName="ModelDiffTool.java" startLine="100" startPosition="62" endLine="105" endPosition="59">
       <varInfo nodeId="4124845871897258110" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897257982" fileName="ModelDiffTool.java" startLine="106" startPosition="57" endLine="111" endPosition="5">
-      <varInfo nodeId="4124845871897257986" varName="c" />
-    </scopeInfo>
-    <scopeInfo nodeId="4124845871897258039" fileName="ModelDiffTool.java" startLine="119" startPosition="36" endLine="124" endPosition="11" />
-    <scopeInfo nodeId="4124845871897257981" fileName="ModelDiffTool.java" startLine="106" startPosition="57" endLine="112" endPosition="14" />
-    <scopeInfo nodeId="4124845871897257940" fileName="ModelDiffTool.java" startLine="68" startPosition="87" endLine="76" endPosition="0">
+    <scopeInfo nodeId="4124845871897258039" fileName="ModelDiffTool.java" startLine="112" startPosition="36" endLine="117" endPosition="11" />
+    <scopeInfo nodeId="4124845871897257940" fileName="ModelDiffTool.java" startLine="79" startPosition="85" endLine="87" endPosition="0">
       <varInfo nodeId="4124845871897257943" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258102" fileName="ModelDiffTool.java" startLine="97" startPosition="0" endLine="105" endPosition="0">
+    <scopeInfo nodeId="4124845871897258102" fileName="ModelDiffTool.java" startLine="99" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="4124845871897258105" varName="contents" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897257976" fileName="ModelDiffTool.java" startLine="105" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="4124845871897257979" varName="request" />
-    </scopeInfo>
-    <scopeInfo nodeId="4124845871897258020" fileName="ModelDiffTool.java" startLine="116" startPosition="79" endLine="125" endPosition="7">
+    <scopeInfo nodeId="4124845871897258020" fileName="ModelDiffTool.java" startLine="109" startPosition="79" endLine="118" endPosition="7">
       <varInfo nodeId="4124845871897258026" varName="modelDescriptor" />
       <varInfo nodeId="4124845871897258022" varName="modelRepository" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897257916" fileName="ModelDiffTool.java" startLine="66" startPosition="18" endLine="77" endPosition="21">
+    <scopeInfo nodeId="4124845871897257916" fileName="ModelDiffTool.java" startLine="77" startPosition="16" endLine="88" endPosition="19">
       <varInfo nodeId="4124845871897257918" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258011" fileName="ModelDiffTool.java" startLine="115" startPosition="87" endLine="127" endPosition="58" />
-    <scopeInfo nodeId="4124845871897258004" fileName="ModelDiffTool.java" startLine="114" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="4124845871897258011" fileName="ModelDiffTool.java" startLine="108" startPosition="82" endLine="124" endPosition="5" />
+    <scopeInfo nodeId="4124845871897258004" fileName="ModelDiffTool.java" startLine="107" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="4124845871897258007" varName="content" />
-      <varInfo nodeId="4124845871897258009" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897257823" fileName="ModelDiffTool.java" startLine="48" startPosition="37" endLine="78" endPosition="11">
+    <scopeInfo nodeId="4124845871897257823" fileName="ModelDiffTool.java" startLine="59" startPosition="35" endLine="89" endPosition="9">
       <varInfo nodeId="4124845871897257856" varName="context" />
       <varInfo nodeId="4124845871897257892" varName="frame" />
       <varInfo nodeId="4124845871897257882" varName="modal" />
       <varInfo nodeId="4124845871897257825" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897257820" fileName="ModelDiffTool.java" startLine="47" startPosition="94" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="4124845871897257791" fileName="ModelDiffTool.java" startLine="44" startPosition="9" endLine="81" endPosition="21">
+    <scopeInfo nodeId="4124845871897257820" fileName="ModelDiffTool.java" startLine="58" startPosition="92" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="4124845871897257747" fileName="ModelDiffTool.java" startLine="44" startPosition="47" endLine="92" endPosition="19">
+      <varInfo nodeId="4124845871897257749" varName="contents" />
       <varInfo nodeId="4124845871897257811" varName="d" />
       <varInfo nodeId="4124845871897257802" varName="newModel" />
       <varInfo nodeId="4124845871897257793" varName="oldModel" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897257747" fileName="ModelDiffTool.java" startLine="42" startPosition="47" endLine="90" endPosition="5">
-      <varInfo nodeId="4124845871897257749" varName="contents" />
-    </scopeInfo>
-    <scopeInfo nodeId="4124845871897257742" fileName="ModelDiffTool.java" startLine="41" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="4124845871897257742" fileName="ModelDiffTool.java" startLine="43" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="4124845871897257745" varName="request" />
     </scopeInfo>
-    <unitInfo nodeId="4124845871897257719" fileName="ModelDiffTool.java" startLine="36" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModelDiffTool" />
-    <unitInfo nodeId="4124845871897257818" fileName="ModelDiffTool.java" startLine="47" startPosition="68" endLine="80" endPosition="7" unitName="jetbrains.mps.vcs.integration.ModelDiffTool$1" />
-    <unitInfo nodeId="4124845871897258046" fileName="ModelDiffTool.java" startLine="120" startPosition="56" endLine="124" endPosition="9" unitName="jetbrains.mps.vcs.integration.ModelDiffTool$2" />
-    <unitInfo nodeId="4124845871897257939" fileName="ModelDiffTool.java" startLine="68" startPosition="28" endLine="76" endPosition="13" unitName="jetbrains.mps.vcs.integration.ModelDiffTool$2" />
-    <unitInfo nodeId="4124845871897257722" fileName="ModelDiffTool.java" startLine="134" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModelDiffTool$ReadException" />
+    <unitInfo nodeId="4124845871897257719" fileName="ModelDiffTool.java" startLine="38" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModelDiffTool" />
+    <unitInfo nodeId="4124845871897257818" fileName="ModelDiffTool.java" startLine="58" startPosition="66" endLine="91" endPosition="5" unitName="jetbrains.mps.vcs.integration.ModelDiffTool$1" />
+    <unitInfo nodeId="4124845871897258046" fileName="ModelDiffTool.java" startLine="113" startPosition="56" endLine="117" endPosition="9" unitName="jetbrains.mps.vcs.integration.ModelDiffTool$2" />
+    <unitInfo nodeId="4124845871897257939" fileName="ModelDiffTool.java" startLine="79" startPosition="26" endLine="87" endPosition="11" unitName="jetbrains.mps.vcs.integration.ModelDiffTool$2" />
   </root>
   <root nodeId="4124845871897258127">
-    <nodeInfo nodeId="4124845871897258153" fileName="ModelMergeTool.java" startLine="31" startPosition="49" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="5015601397718077947" fileName="ModelMergeTool.java" startLine="32" startPosition="75" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CURRENT" />
-    <nodeInfo nodeId="5015601397718077951" fileName="ModelMergeTool.java" startLine="33" startPosition="38" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ORIGINAL" />
-    <nodeInfo nodeId="5015601397718077955" fileName="ModelMergeTool.java" startLine="34" startPosition="39" endLine="35" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LAST_REVISION" />
-    <nodeInfo nodeId="4124845871897258127" fileName="ModelMergeTool.java" startLine="35" startPosition="44" endLine="36" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="4124845871897258134" fileName="ModelMergeTool.java" startLine="41" startPosition="51" endLine="42" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258146" fileName="ModelMergeTool.java" startLine="43" startPosition="40" endLine="44" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258168" fileName="ModelMergeTool.java" startLine="48" startPosition="47" endLine="49" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8977941161145008664" fileName="ModelMergeTool.java" startLine="50" startPosition="9" endLine="51" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258198" fileName="ModelMergeTool.java" startLine="51" startPosition="92" endLine="52" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258205" fileName="ModelMergeTool.java" startLine="52" startPosition="54" endLine="53" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258217" fileName="ModelMergeTool.java" startLine="53" startPosition="105" endLine="54" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258229" fileName="ModelMergeTool.java" startLine="54" startPosition="104" endLine="55" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258241" fileName="ModelMergeTool.java" startLine="55" startPosition="109" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4124845871897258346" fileName="ModelMergeTool.java" startLine="57" startPosition="32" endLine="58" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258365" fileName="ModelMergeTool.java" startLine="60" startPosition="29" endLine="61" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258369" fileName="ModelMergeTool.java" startLine="63" startPosition="11" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258375" fileName="ModelMergeTool.java" startLine="65" startPosition="46" endLine="66" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258383" fileName="ModelMergeTool.java" startLine="66" startPosition="74" endLine="67" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8977941161145008805" fileName="ModelMergeTool.java" startLine="67" startPosition="35" endLine="68" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258242" fileName="ModelMergeTool.java" startLine="70" startPosition="14" endLine="71" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258256" fileName="ModelMergeTool.java" startLine="72" startPosition="38" endLine="73" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258265" fileName="ModelMergeTool.java" startLine="74" startPosition="9" endLine="75" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258271" fileName="ModelMergeTool.java" startLine="76" startPosition="38" endLine="77" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258291" fileName="ModelMergeTool.java" startLine="78" startPosition="57" endLine="79" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258303" fileName="ModelMergeTool.java" startLine="81" startPosition="31" endLine="82" endPosition="364" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258323" fileName="ModelMergeTool.java" startLine="83" startPosition="28" endLine="84" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258329" fileName="ModelMergeTool.java" startLine="85" startPosition="11" endLine="86" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8507913872068585576" fileName="ModelMergeTool.java" startLine="87" startPosition="9" endLine="88" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4124845871897258333" fileName="ModelMergeTool.java" startLine="88" startPosition="39" endLine="89" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258396" fileName="ModelMergeTool.java" startLine="89" startPosition="133" endLine="90" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258405" fileName="ModelMergeTool.java" startLine="90" startPosition="110" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4124845871897258410" fileName="ModelMergeTool.java" startLine="93" startPosition="29" endLine="94" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258414" fileName="ModelMergeTool.java" startLine="96" startPosition="11" endLine="97" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258425" fileName="ModelMergeTool.java" startLine="98" startPosition="46" endLine="99" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258433" fileName="ModelMergeTool.java" startLine="99" startPosition="74" endLine="100" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258177" fileName="ModelMergeTool.java" startLine="103" startPosition="45" endLine="104" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258183" fileName="ModelMergeTool.java" startLine="104" startPosition="68" endLine="105" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258190" fileName="ModelMergeTool.java" startLine="106" startPosition="29" endLine="107" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258453" fileName="ModelMergeTool.java" startLine="111" startPosition="47" endLine="112" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1547210892702467216" fileName="ModelMergeTool.java" startLine="115" startPosition="45" endLine="116" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6497103072506992156" fileName="ModelMergeTool.java" startLine="120" startPosition="110" endLine="121" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6497103072506992160" fileName="ModelMergeTool.java" startLine="121" startPosition="96" endLine="122" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6497103072506992171" fileName="ModelMergeTool.java" startLine="122" startPosition="79" endLine="123" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6497103072506991617" fileName="ModelMergeTool.java" startLine="123" startPosition="53" endLine="124" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6497103072506991600" fileName="ModelMergeTool.java" startLine="125" startPosition="9" endLine="126" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6497103072506991653" fileName="ModelMergeTool.java" startLine="127" startPosition="56" endLine="128" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6497103072506992146" fileName="ModelMergeTool.java" startLine="128" startPosition="70" endLine="129" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6497103072506992173" fileName="ModelMergeTool.java" startLine="129" startPosition="42" endLine="130" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6497103072506992187" fileName="ModelMergeTool.java" startLine="130" startPosition="58" endLine="131" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="6497103072506992215" fileName="ModelMergeTool.java" startLine="131" startPosition="59" endLine="132" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6497103072507243351" fileName="ModelMergeTool.java" startLine="135" startPosition="33" endLine="136" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6497103072506992223" fileName="ModelMergeTool.java" startLine="138" startPosition="5" endLine="139" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897258158" fileName="ModelMergeTool.java" startLine="37" startPosition="0" endLine="39" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeTool#()V" />
-    <nodeInfo nodeId="4124845871897258140" fileName="ModelMergeTool.java" startLine="42" startPosition="72" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258251" fileName="ModelMergeTool.java" startLine="71" startPosition="125" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258321" fileName="ModelMergeTool.java" startLine="82" startPosition="364" endLine="85" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6497103072507243351" fileName="ModelMergeTool.java" startLine="134" startPosition="27" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6497103072507243351" fileName="ModelMergeTool.java" startLine="134" startPosition="27" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="59" startPosition="51" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="92" startPosition="51" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4124845871897258418" fileName="ModelMergeTool.java" startLine="97" startPosition="28" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258438" fileName="ModelMergeTool.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
-    <nodeInfo nodeId="1547210892702467212" fileName="ModelMergeTool.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNewMergeEnabled#()Z" />
-    <nodeInfo nodeId="4124845871897258361" fileName="ModelMergeTool.java" startLine="58" startPosition="105" endLine="63" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258373" fileName="ModelMergeTool.java" startLine="64" startPosition="28" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258269" fileName="ModelMergeTool.java" startLine="75" startPosition="31" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258406" fileName="ModelMergeTool.java" startLine="91" startPosition="0" endLine="96" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258128" fileName="ModelMergeTool.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showTextMerge#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
-    <nodeInfo nodeId="4124845871897258301" fileName="ModelMergeTool.java" startLine="80" startPosition="9" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6497103072506991627" fileName="ModelMergeTool.java" startLine="126" startPosition="123" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6497103072506991590" fileName="ModelMergeTool.java" startLine="124" startPosition="64" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6497103072506977397" fileName="ModelMergeTool.java" startLine="118" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFileFromMergeRequest#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="4124845871897258394" fileName="ModelMergeTool.java" startLine="70" startPosition="12" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4124845871897258344" fileName="ModelMergeTool.java" startLine="56" startPosition="0" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258174" fileName="ModelMergeTool.java" startLine="49" startPosition="61" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4124845871897258162" fileName="ModelMergeTool.java" startLine="47" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
-    <scopeInfo nodeId="4124845871897258161" fileName="ModelMergeTool.java" startLine="38" startPosition="27" endLine="38" endPosition="27" />
-    <scopeInfo nodeId="4124845871897258145" fileName="ModelMergeTool.java" startLine="43" startPosition="40" endLine="44" endPosition="33" />
-    <scopeInfo nodeId="4124845871897258364" fileName="ModelMergeTool.java" startLine="60" startPosition="29" endLine="61" endPosition="29" />
-    <scopeInfo nodeId="4124845871897258255" fileName="ModelMergeTool.java" startLine="72" startPosition="38" endLine="73" endPosition="107" />
-    <scopeInfo nodeId="4124845871897258270" fileName="ModelMergeTool.java" startLine="76" startPosition="38" endLine="77" endPosition="89" />
-    <scopeInfo nodeId="4124845871897258290" fileName="ModelMergeTool.java" startLine="78" startPosition="57" endLine="79" endPosition="89" />
-    <scopeInfo nodeId="4124845871897258322" fileName="ModelMergeTool.java" startLine="83" startPosition="28" endLine="84" endPosition="35" />
-    <scopeInfo nodeId="4124845871897258409" fileName="ModelMergeTool.java" startLine="93" startPosition="29" endLine="94" endPosition="29" />
-    <scopeInfo nodeId="4124845871897258188" fileName="ModelMergeTool.java" startLine="106" startPosition="0" endLine="107" endPosition="19">
+    <nodeInfo nodeId="4124845871897258153" fileName="ModelMergeTool.java" startLine="37" startPosition="47" endLine="38" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5015601397718077947" fileName="ModelMergeTool.java" startLine="38" startPosition="75" endLine="39" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CURRENT" />
+    <nodeInfo nodeId="5015601397718077951" fileName="ModelMergeTool.java" startLine="39" startPosition="38" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ORIGINAL" />
+    <nodeInfo nodeId="5015601397718077955" fileName="ModelMergeTool.java" startLine="40" startPosition="39" endLine="41" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LAST_REVISION" />
+    <nodeInfo nodeId="4124845871897258127" fileName="ModelMergeTool.java" startLine="41" startPosition="44" endLine="42" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="4124845871897258134" fileName="ModelMergeTool.java" startLine="47" startPosition="51" endLine="48" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258146" fileName="ModelMergeTool.java" startLine="49" startPosition="41" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258168" fileName="ModelMergeTool.java" startLine="54" startPosition="47" endLine="55" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6491216264984904852" fileName="ModelMergeTool.java" startLine="56" startPosition="9" endLine="57" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2445003365367024614" fileName="ModelMergeTool.java" startLine="59" startPosition="35" endLine="60" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6491216264984904893" fileName="ModelMergeTool.java" startLine="61" startPosition="9" endLine="62" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8977941161145008664" fileName="ModelMergeTool.java" startLine="63" startPosition="7" endLine="64" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258198" fileName="ModelMergeTool.java" startLine="64" startPosition="78" endLine="65" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258205" fileName="ModelMergeTool.java" startLine="65" startPosition="54" endLine="66" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258217" fileName="ModelMergeTool.java" startLine="66" startPosition="29" endLine="67" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258229" fileName="ModelMergeTool.java" startLine="67" startPosition="29" endLine="68" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6803801018698240232" fileName="ModelMergeTool.java" startLine="69" startPosition="11" endLine="70" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6803801018698240235" fileName="ModelMergeTool.java" startLine="70" startPosition="98" endLine="71" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6803801018698240238" fileName="ModelMergeTool.java" startLine="71" startPosition="105" endLine="72" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2445003365367024139" fileName="ModelMergeTool.java" startLine="74" startPosition="34" endLine="75" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2445003365367024622" fileName="ModelMergeTool.java" startLine="76" startPosition="9" endLine="77" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2445003365367024625" fileName="ModelMergeTool.java" startLine="77" startPosition="28" endLine="78" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8242449523292124886" fileName="ModelMergeTool.java" startLine="79" startPosition="7" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4124845871897258346" fileName="ModelMergeTool.java" startLine="81" startPosition="32" endLine="82" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258365" fileName="ModelMergeTool.java" startLine="84" startPosition="29" endLine="85" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258369" fileName="ModelMergeTool.java" startLine="87" startPosition="11" endLine="88" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1487682804699708897" fileName="ModelMergeTool.java" startLine="89" startPosition="46" endLine="90" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6491216264984934075" fileName="ModelMergeTool.java" startLine="90" startPosition="84" endLine="91" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8977941161145008805" fileName="ModelMergeTool.java" startLine="91" startPosition="39" endLine="92" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258242" fileName="ModelMergeTool.java" startLine="94" startPosition="14" endLine="95" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258256" fileName="ModelMergeTool.java" startLine="96" startPosition="38" endLine="97" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258265" fileName="ModelMergeTool.java" startLine="98" startPosition="9" endLine="99" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258271" fileName="ModelMergeTool.java" startLine="100" startPosition="38" endLine="101" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258291" fileName="ModelMergeTool.java" startLine="102" startPosition="57" endLine="103" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258303" fileName="ModelMergeTool.java" startLine="105" startPosition="31" endLine="106" endPosition="364" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258323" fileName="ModelMergeTool.java" startLine="107" startPosition="28" endLine="108" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258329" fileName="ModelMergeTool.java" startLine="109" startPosition="11" endLine="110" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8507913872068585576" fileName="ModelMergeTool.java" startLine="111" startPosition="9" endLine="112" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4124845871897258333" fileName="ModelMergeTool.java" startLine="112" startPosition="39" endLine="113" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258396" fileName="ModelMergeTool.java" startLine="113" startPosition="133" endLine="114" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258405" fileName="ModelMergeTool.java" startLine="114" startPosition="110" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4124845871897258410" fileName="ModelMergeTool.java" startLine="117" startPosition="29" endLine="118" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258414" fileName="ModelMergeTool.java" startLine="120" startPosition="11" endLine="121" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1487682804699708907" fileName="ModelMergeTool.java" startLine="122" startPosition="46" endLine="123" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258190" fileName="ModelMergeTool.java" startLine="126" startPosition="29" endLine="127" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2445003365367024145" fileName="ModelMergeTool.java" startLine="131" startPosition="47" endLine="132" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1547210892702467216" fileName="ModelMergeTool.java" startLine="135" startPosition="45" endLine="136" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6491216264984934062" fileName="ModelMergeTool.java" startLine="139" startPosition="75" endLine="140" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1487682804699686486" fileName="ModelMergeTool.java" startLine="140" startPosition="46" endLine="141" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1487682804699686497" fileName="ModelMergeTool.java" startLine="144" startPosition="13" endLine="145" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1487682804699686506" fileName="ModelMergeTool.java" startLine="147" startPosition="37" endLine="148" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6497103072506992156" fileName="ModelMergeTool.java" startLine="156" startPosition="110" endLine="157" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6497103072506992160" fileName="ModelMergeTool.java" startLine="157" startPosition="96" endLine="158" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6497103072506992171" fileName="ModelMergeTool.java" startLine="158" startPosition="79" endLine="159" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6497103072506991617" fileName="ModelMergeTool.java" startLine="159" startPosition="53" endLine="160" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6497103072506991600" fileName="ModelMergeTool.java" startLine="161" startPosition="9" endLine="162" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6497103072506991653" fileName="ModelMergeTool.java" startLine="163" startPosition="56" endLine="164" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6497103072506992146" fileName="ModelMergeTool.java" startLine="164" startPosition="70" endLine="165" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6497103072506992173" fileName="ModelMergeTool.java" startLine="165" startPosition="42" endLine="166" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6497103072506992187" fileName="ModelMergeTool.java" startLine="166" startPosition="58" endLine="167" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="6497103072506992215" fileName="ModelMergeTool.java" startLine="167" startPosition="59" endLine="168" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6497103072507243351" fileName="ModelMergeTool.java" startLine="171" startPosition="33" endLine="172" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6497103072506992223" fileName="ModelMergeTool.java" startLine="174" startPosition="5" endLine="175" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4124845871897258158" fileName="ModelMergeTool.java" startLine="43" startPosition="0" endLine="45" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeTool#()V" />
+    <nodeInfo nodeId="4124845871897258140" fileName="ModelMergeTool.java" startLine="48" startPosition="45" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2445003365367024614" fileName="ModelMergeTool.java" startLine="58" startPosition="25" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2445003365367024614" fileName="ModelMergeTool.java" startLine="58" startPosition="25" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2445003365367024139" fileName="ModelMergeTool.java" startLine="73" startPosition="38" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2445003365367024139" fileName="ModelMergeTool.java" startLine="73" startPosition="38" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258251" fileName="ModelMergeTool.java" startLine="95" startPosition="125" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258321" fileName="ModelMergeTool.java" startLine="106" startPosition="364" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258418" fileName="ModelMergeTool.java" startLine="121" startPosition="28" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1487682804699686506" fileName="ModelMergeTool.java" startLine="146" startPosition="33" endLine="149" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1487682804699686506" fileName="ModelMergeTool.java" startLine="146" startPosition="33" endLine="149" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6497103072507243351" fileName="ModelMergeTool.java" startLine="170" startPosition="27" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6497103072507243351" fileName="ModelMergeTool.java" startLine="170" startPosition="27" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="83" startPosition="51" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="116" startPosition="51" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4124845871897258438" fileName="ModelMergeTool.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
+    <nodeInfo nodeId="1547210892702467212" fileName="ModelMergeTool.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNewMergeEnabled#()Z" />
+    <nodeInfo nodeId="4124845871897258361" fileName="ModelMergeTool.java" startLine="82" startPosition="105" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258373" fileName="ModelMergeTool.java" startLine="88" startPosition="28" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258269" fileName="ModelMergeTool.java" startLine="99" startPosition="31" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258406" fileName="ModelMergeTool.java" startLine="115" startPosition="0" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6491216264984904884" fileName="ModelMergeTool.java" startLine="57" startPosition="59" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258128" fileName="ModelMergeTool.java" startLine="46" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showTextMerge#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <nodeInfo nodeId="4124845871897258301" fileName="ModelMergeTool.java" startLine="104" startPosition="9" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1487682804699686495" fileName="ModelMergeTool.java" startLine="143" startPosition="25" endLine="150" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6497103072506991627" fileName="ModelMergeTool.java" startLine="162" startPosition="123" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1487682804699686493" fileName="ModelMergeTool.java" startLine="142" startPosition="57" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6803801018698240241" fileName="ModelMergeTool.java" startLine="68" startPosition="28" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1487682804699686489" fileName="ModelMergeTool.java" startLine="141" startPosition="63" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6497103072506991590" fileName="ModelMergeTool.java" startLine="160" startPosition="64" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6491216264984934007" fileName="ModelMergeTool.java" startLine="138" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolved#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6497103072506977397" fileName="ModelMergeTool.java" startLine="154" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFileFromMergeRequest#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="4124845871897258394" fileName="ModelMergeTool.java" startLine="94" startPosition="12" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4124845871897258344" fileName="ModelMergeTool.java" startLine="80" startPosition="0" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258174" fileName="ModelMergeTool.java" startLine="55" startPosition="59" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4124845871897258162" fileName="ModelMergeTool.java" startLine="53" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <scopeInfo nodeId="4124845871897258161" fileName="ModelMergeTool.java" startLine="44" startPosition="27" endLine="44" endPosition="27" />
+    <scopeInfo nodeId="4124845871897258145" fileName="ModelMergeTool.java" startLine="49" startPosition="41" endLine="50" endPosition="34" />
+    <scopeInfo nodeId="2445003365367024614" fileName="ModelMergeTool.java" startLine="59" startPosition="35" endLine="60" endPosition="31" />
+    <scopeInfo nodeId="2445003365367024139" fileName="ModelMergeTool.java" startLine="74" startPosition="34" endLine="75" endPosition="66" />
+    <scopeInfo nodeId="4124845871897258364" fileName="ModelMergeTool.java" startLine="84" startPosition="29" endLine="85" endPosition="29" />
+    <scopeInfo nodeId="4124845871897258255" fileName="ModelMergeTool.java" startLine="96" startPosition="38" endLine="97" endPosition="107" />
+    <scopeInfo nodeId="4124845871897258270" fileName="ModelMergeTool.java" startLine="100" startPosition="38" endLine="101" endPosition="89" />
+    <scopeInfo nodeId="4124845871897258290" fileName="ModelMergeTool.java" startLine="102" startPosition="57" endLine="103" endPosition="89" />
+    <scopeInfo nodeId="4124845871897258322" fileName="ModelMergeTool.java" startLine="107" startPosition="28" endLine="108" endPosition="35" />
+    <scopeInfo nodeId="4124845871897258409" fileName="ModelMergeTool.java" startLine="117" startPosition="29" endLine="118" endPosition="29" />
+    <scopeInfo nodeId="4124845871897258424" fileName="ModelMergeTool.java" startLine="122" startPosition="46" endLine="123" endPosition="86" />
+    <scopeInfo nodeId="4124845871897258188" fileName="ModelMergeTool.java" startLine="126" startPosition="0" endLine="127" endPosition="19">
       <varInfo nodeId="4124845871897258195" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258189" fileName="ModelMergeTool.java" startLine="106" startPosition="29" endLine="107" endPosition="19" />
-    <scopeInfo nodeId="4124845871897258443" fileName="ModelMergeTool.java" startLine="111" startPosition="47" endLine="112" endPosition="48" />
-    <scopeInfo nodeId="1547210892702467215" fileName="ModelMergeTool.java" startLine="115" startPosition="45" endLine="116" endPosition="65" />
-    <scopeInfo nodeId="6497103072507243351" fileName="ModelMergeTool.java" startLine="135" startPosition="33" endLine="136" endPosition="25" />
-    <scopeInfo nodeId="4124845871897258158" fileName="ModelMergeTool.java" startLine="37" startPosition="0" endLine="39" endPosition="3" />
-    <scopeInfo nodeId="4124845871897258424" fileName="ModelMergeTool.java" startLine="98" startPosition="46" endLine="100" endPosition="35">
-      <varInfo nodeId="4124845871897258426" varName="bytes" />
+    <scopeInfo nodeId="4124845871897258189" fileName="ModelMergeTool.java" startLine="126" startPosition="29" endLine="127" endPosition="19" />
+    <scopeInfo nodeId="4124845871897258443" fileName="ModelMergeTool.java" startLine="131" startPosition="47" endLine="132" endPosition="124" />
+    <scopeInfo nodeId="1547210892702467215" fileName="ModelMergeTool.java" startLine="135" startPosition="45" endLine="136" endPosition="65" />
+    <scopeInfo nodeId="1487682804699686496" fileName="ModelMergeTool.java" startLine="144" startPosition="13" endLine="145" endPosition="80" />
+    <scopeInfo nodeId="1487682804699686506" fileName="ModelMergeTool.java" startLine="147" startPosition="37" endLine="148" endPosition="29" />
+    <scopeInfo nodeId="6497103072507243351" fileName="ModelMergeTool.java" startLine="171" startPosition="33" endLine="172" endPosition="25" />
+    <scopeInfo nodeId="4124845871897258158" fileName="ModelMergeTool.java" startLine="43" startPosition="0" endLine="45" endPosition="3" />
+    <scopeInfo nodeId="2445003365367024614" fileName="ModelMergeTool.java" startLine="58" startPosition="25" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="6803801018698240242" fileName="ModelMergeTool.java" startLine="69" startPosition="11" endLine="72" endPosition="110" />
+    <scopeInfo nodeId="2445003365367024139" fileName="ModelMergeTool.java" startLine="73" startPosition="38" endLine="76" endPosition="9" />
+    <scopeInfo nodeId="4124845871897258374" fileName="ModelMergeTool.java" startLine="89" startPosition="46" endLine="92" endPosition="80">
+      <varInfo nodeId="1487682804699708898" varName="asString" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258175" fileName="ModelMergeTool.java" startLine="103" startPosition="0" endLine="105" endPosition="29">
-      <varInfo nodeId="4124845871897258186" varName="e" />
+    <scopeInfo nodeId="1487682804699686502" fileName="ModelMergeTool.java" startLine="146" startPosition="0" endLine="149" endPosition="11">
+      <varInfo nodeId="1487682804699686503" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258176" fileName="ModelMergeTool.java" startLine="103" startPosition="45" endLine="105" endPosition="29" />
-    <scopeInfo nodeId="4124845871897258374" fileName="ModelMergeTool.java" startLine="65" startPosition="46" endLine="68" endPosition="91">
-      <varInfo nodeId="4124845871897258376" varName="bytes" />
-    </scopeInfo>
-    <scopeInfo nodeId="6497103072506991592" fileName="ModelMergeTool.java" startLine="134" startPosition="0" endLine="137" endPosition="7">
+    <scopeInfo nodeId="1487682804699686505" fileName="ModelMergeTool.java" startLine="146" startPosition="33" endLine="149" endPosition="11" />
+    <scopeInfo nodeId="1487682804699686506" fileName="ModelMergeTool.java" startLine="146" startPosition="33" endLine="149" endPosition="11" />
+    <scopeInfo nodeId="6497103072506991592" fileName="ModelMergeTool.java" startLine="170" startPosition="0" endLine="173" endPosition="7">
       <varInfo nodeId="6497103072506991593" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6497103072506991595" fileName="ModelMergeTool.java" startLine="134" startPosition="27" endLine="137" endPosition="7" />
-    <scopeInfo nodeId="6497103072507243351" fileName="ModelMergeTool.java" startLine="134" startPosition="27" endLine="137" endPosition="7" />
-    <scopeInfo nodeId="4124845871897258133" fileName="ModelMergeTool.java" startLine="41" startPosition="51" endLine="45" endPosition="5">
-      <varInfo nodeId="4124845871897258135" varName="ideaDiffTool" />
+    <scopeInfo nodeId="6497103072506991595" fileName="ModelMergeTool.java" startLine="170" startPosition="27" endLine="173" endPosition="7" />
+    <scopeInfo nodeId="6497103072507243351" fileName="ModelMergeTool.java" startLine="170" startPosition="27" endLine="173" endPosition="7" />
+    <scopeInfo nodeId="4124845871897258133" fileName="ModelMergeTool.java" startLine="47" startPosition="51" endLine="51" endPosition="5">
+      <varInfo nodeId="4124845871897258135" varName="ideaMergeTool" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="59" startPosition="51" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="92" startPosition="51" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="4124845871897258438" fileName="ModelMergeTool.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="6491216264984904885" fileName="ModelMergeTool.java" startLine="58" startPosition="25" endLine="62" endPosition="65" />
+    <scopeInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="83" startPosition="51" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="116" startPosition="51" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="4124845871897258438" fileName="ModelMergeTool.java" startLine="130" startPosition="0" endLine="134" endPosition="0">
       <varInfo nodeId="4124845871897258441" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="1547210892702467212" fileName="ModelMergeTool.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="4124845871897258302" fileName="ModelMergeTool.java" startLine="81" startPosition="31" endLine="86" endPosition="17">
+    <scopeInfo nodeId="1547210892702467212" fileName="ModelMergeTool.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="6803801018698240243" fileName="ModelMergeTool.java" startLine="73" startPosition="0" endLine="78" endPosition="15">
+      <varInfo nodeId="6803801018698240244" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="6803801018698240246" fileName="ModelMergeTool.java" startLine="73" startPosition="38" endLine="78" endPosition="15" />
+    <scopeInfo nodeId="4124845871897258302" fileName="ModelMergeTool.java" startLine="105" startPosition="31" endLine="110" endPosition="17">
       <varInfo nodeId="4124845871897258304" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6497103072506991628" fileName="ModelMergeTool.java" startLine="127" startPosition="56" endLine="132" endPosition="36">
+    <scopeInfo nodeId="6497103072506991628" fileName="ModelMergeTool.java" startLine="163" startPosition="56" endLine="168" endPosition="36">
       <varInfo nodeId="6497103072506992174" varName="file" />
       <varInfo nodeId="6497103072506991654" varName="getFileMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258128" fileName="ModelMergeTool.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="4124845871897258128" fileName="ModelMergeTool.java" startLine="46" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="4124845871897258129" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="6497103072506991591" fileName="ModelMergeTool.java" startLine="125" startPosition="9" endLine="133" endPosition="7">
+    <scopeInfo nodeId="1487682804699686494" fileName="ModelMergeTool.java" startLine="143" startPosition="25" endLine="150" endPosition="9" />
+    <scopeInfo nodeId="6497103072506991591" fileName="ModelMergeTool.java" startLine="161" startPosition="9" endLine="169" endPosition="7">
       <varInfo nodeId="6497103072506991601" varName="mergeContentClass" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258345" fileName="ModelMergeTool.java" startLine="57" startPosition="32" endLine="69" endPosition="9">
+    <scopeInfo nodeId="1487682804699686493" fileName="ModelMergeTool.java" startLine="142" startPosition="57" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="4124845871897258345" fileName="ModelMergeTool.java" startLine="81" startPosition="32" endLine="93" endPosition="9">
       <varInfo nodeId="4124845871897258347" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="6497103072506977400" fileName="ModelMergeTool.java" startLine="120" startPosition="110" endLine="139" endPosition="16">
+    <scopeInfo nodeId="6491216264984934010" fileName="ModelMergeTool.java" startLine="139" startPosition="75" endLine="152" endPosition="7">
+      <varInfo nodeId="1487682804699686487" varName="modelFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="6491216264984934007" fileName="ModelMergeTool.java" startLine="138" startPosition="0" endLine="154" endPosition="0">
+      <varInfo nodeId="6491216264984934012" varName="req" />
+      <varInfo nodeId="6491216264984934046" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6497103072506977400" fileName="ModelMergeTool.java" startLine="156" startPosition="110" endLine="175" endPosition="16">
       <varInfo nodeId="6497103072506991618" varName="resultContent" />
     </scopeInfo>
-    <scopeInfo nodeId="6497103072506977397" fileName="ModelMergeTool.java" startLine="118" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="6497103072506977397" fileName="ModelMergeTool.java" startLine="154" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="6497103072506977403" varName="mergeRequest" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258395" fileName="ModelMergeTool.java" startLine="70" startPosition="14" endLine="101" endPosition="9">
+    <scopeInfo nodeId="4124845871897258395" fileName="ModelMergeTool.java" startLine="94" startPosition="14" endLine="124" endPosition="9">
       <varInfo nodeId="4124845871897258334" varName="context" />
       <varInfo nodeId="4124845871897258397" varName="dialog" />
       <varInfo nodeId="4124845871897258266" varName="errorMsg" />
       <varInfo nodeId="4124845871897258243" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258197" fileName="ModelMergeTool.java" startLine="50" startPosition="9" endLine="102" endPosition="7">
+    <scopeInfo nodeId="4124845871897258197" fileName="ModelMergeTool.java" startLine="56" startPosition="9" endLine="125" endPosition="7">
       <varInfo nodeId="8977941161145008665" varName="backupFile" />
       <varInfo nodeId="4124845871897258206" varName="baseModel" />
       <varInfo nodeId="4124845871897258199" varName="contents" />
+      <varInfo nodeId="6491216264984904853" varName="file" />
       <varInfo nodeId="4124845871897258218" varName="mineModel" />
       <varInfo nodeId="4124845871897258230" varName="newModel" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258167" fileName="ModelMergeTool.java" startLine="48" startPosition="47" endLine="108" endPosition="5">
+    <scopeInfo nodeId="4124845871897258167" fileName="ModelMergeTool.java" startLine="54" startPosition="47" endLine="128" endPosition="5">
       <varInfo nodeId="4124845871897258169" varName="mrequest" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258162" fileName="ModelMergeTool.java" startLine="47" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="4124845871897258162" fileName="ModelMergeTool.java" startLine="53" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="4124845871897258165" varName="request" />
     </scopeInfo>
-    <unitInfo nodeId="4124845871897258127" fileName="ModelMergeTool.java" startLine="31" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModelMergeTool" />
-    <unitInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="59" startPosition="39" endLine="63" endPosition="9" unitName="jetbrains.mps.vcs.integration.ModelMergeTool$1" />
-    <unitInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="92" startPosition="39" endLine="96" endPosition="9" unitName="jetbrains.mps.vcs.integration.ModelMergeTool$2" />
-  </root>
-  <root nodeId="4124845871897259248">
-    <nodeInfo nodeId="4124845871897259285" fileName="MPSDiffRequestFactory.java" startLine="20" startPosition="75" endLine="21" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897259294" fileName="MPSDiffRequestFactory.java" startLine="22" startPosition="5" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897259251" fileName="MPSDiffRequestFactory.java" startLine="14" startPosition="67" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSDiffRequestFactory#()V" />
-    <nodeInfo nodeId="4124845871897259276" fileName="MPSDiffRequestFactory.java" startLine="19" startPosition="208" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="896232627162846357" fileName="MPSDiffRequestFactory.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMergeRequest#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/diff/ActionButtonPresentation;)Lcom/intellij/openapi/diff/MergeRequest;" />
-    <scopeInfo nodeId="4124845871897259254" fileName="MPSDiffRequestFactory.java" startLine="15" startPosition="34" endLine="15" endPosition="34" />
-    <scopeInfo nodeId="4124845871897259284" fileName="MPSDiffRequestFactory.java" startLine="20" startPosition="75" endLine="21" endPosition="119" />
-    <scopeInfo nodeId="4124845871897259251" fileName="MPSDiffRequestFactory.java" startLine="14" startPosition="67" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="896232627162846374" fileName="MPSDiffRequestFactory.java" startLine="19" startPosition="208" endLine="23" endPosition="114" />
-    <scopeInfo nodeId="896232627162846357" fileName="MPSDiffRequestFactory.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="318859850171256264" varName="file" />
-      <varInfo nodeId="318859850171256258" varName="leftText" />
-      <varInfo nodeId="318859850171256269" varName="okActionButtonPresentation" />
-      <varInfo nodeId="318859850171256262" varName="originalContent" />
-      <varInfo nodeId="318859850171256267" varName="project" />
-      <varInfo nodeId="318859850171256260" varName="rightText" />
-    </scopeInfo>
-    <unitInfo nodeId="4124845871897259248" fileName="MPSDiffRequestFactory.java" startLine="14" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.vcs.integration.MPSDiffRequestFactory" />
-  </root>
-  <root nodeId="4124845871897259305">
-    <nodeInfo nodeId="4124845871897259308" fileName="ModelMergeRequest.java" startLine="15" startPosition="57" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
-    <nodeInfo nodeId="896232627162843158" fileName="ModelMergeRequest.java" startLine="18" startPosition="189" endLine="19" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4124845871897259336" fileName="ModelMergeRequest.java" startLine="19" startPosition="85" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897259340" fileName="ModelMergeRequest.java" startLine="20" startPosition="50" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897259348" fileName="ModelMergeRequest.java" startLine="25" startPosition="32" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897259358" fileName="ModelMergeRequest.java" startLine="29" startPosition="45" endLine="30" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897259368" fileName="ModelMergeRequest.java" startLine="30" startPosition="76" endLine="31" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897259371" fileName="ModelMergeRequest.java" startLine="31" startPosition="42" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897259311" fileName="ModelMergeRequest.java" startLine="17" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeRequest#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/diff/ActionButtonPresentation;)V" />
-    <nodeInfo nodeId="4124845871897259344" fileName="ModelMergeRequest.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#()Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="4124845871897259351" fileName="ModelMergeRequest.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolved#([B)V" />
-    <scopeInfo nodeId="4124845871897259347" fileName="ModelMergeRequest.java" startLine="25" startPosition="32" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="4124845871897259328" fileName="ModelMergeRequest.java" startLine="18" startPosition="189" endLine="21" endPosition="18" />
-    <scopeInfo nodeId="4124845871897259357" fileName="ModelMergeRequest.java" startLine="29" startPosition="45" endLine="32" endPosition="53" />
-    <scopeInfo nodeId="4124845871897259311" fileName="ModelMergeRequest.java" startLine="17" startPosition="0" endLine="22" endPosition="3">
-      <varInfo nodeId="4124845871897259319" varName="file" />
-      <varInfo nodeId="4124845871897259313" varName="leftText" />
-      <varInfo nodeId="4124845871897259324" varName="okActionButtonPresentation" />
-      <varInfo nodeId="4124845871897259317" varName="originalContent" />
-      <varInfo nodeId="4124845871897259322" varName="project" />
-      <varInfo nodeId="4124845871897259315" varName="rightText" />
-    </scopeInfo>
-    <scopeInfo nodeId="4124845871897259344" fileName="ModelMergeRequest.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="4124845871897259351" fileName="ModelMergeRequest.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="4124845871897259354" varName="result" />
-    </scopeInfo>
-    <unitInfo nodeId="4124845871897259305" fileName="ModelMergeRequest.java" startLine="15" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModelMergeRequest" />
+    <unitInfo nodeId="4124845871897258127" fileName="ModelMergeTool.java" startLine="37" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModelMergeTool" />
+    <unitInfo nodeId="1487682804699686493" fileName="ModelMergeTool.java" startLine="142" startPosition="45" endLine="152" endPosition="5" unitName="jetbrains.mps.vcs.integration.ModelMergeTool$1" />
+    <unitInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="83" startPosition="39" endLine="87" endPosition="9" unitName="jetbrains.mps.vcs.integration.ModelMergeTool$2" />
+    <unitInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="116" startPosition="39" endLine="120" endPosition="9" unitName="jetbrains.mps.vcs.integration.ModelMergeTool$3" />
   </root>
   <root nodeId="4124845871897264090">
     <nodeInfo nodeId="4124845871897264093" fileName="ToolsApplicationComponent.java" startLine="9" startPosition="72" endLine="10" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDiffTool" />

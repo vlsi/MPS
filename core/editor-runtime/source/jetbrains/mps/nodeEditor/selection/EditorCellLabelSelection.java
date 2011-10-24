@@ -151,6 +151,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
 
   @Override
   public void executeAction(CellActionType type) {
+    getEditorComponent().assertModelNotDisposed();
     if (type == CellActionType.DELETE || type == CellActionType.BACKSPACE) {
       performDeleteAction(type);
       return;

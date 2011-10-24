@@ -60,8 +60,7 @@ import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
-import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
-import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.idea.IdeaTestApplication;
 import java.io.StringWriter;
@@ -449,9 +448,7 @@ public abstract class MpsWorker {
       } else {
         modelDescriptors.add(existingDescr);
       }
-    } catch (ModelFileReadException e) {
-      log(e);
-    } catch (PersistenceVersionNotFoundException e) {
+    } catch (ModelReadException e) {
       log(e);
     }
   }

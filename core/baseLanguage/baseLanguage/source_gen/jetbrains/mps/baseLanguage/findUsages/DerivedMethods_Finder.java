@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.index.ClassifierSuccessorsFinder;
+import jetbrains.mps.baseLanguage.search.ClassifierSuccessors;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
@@ -43,7 +43,7 @@ public class DerivedMethods_Finder extends GeneratedFinder {
     try {
       SNode classifier = (SNode) SNodeOperations.getParent(node);
       final SNode instanceMethod = node;
-      for (SNode derivedClassifier : ListSequence.fromList(ClassifierSuccessorsFinder.getDerivedClassifiers(classifier, scope))) {
+      for (SNode derivedClassifier : ListSequence.fromList(ClassifierSuccessors.getInstance().getDerivedClassifiers(classifier, scope))) {
         ListSequence.fromList(SLinkOperations.getTargets(derivedClassifier, "method", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(instanceMethod, it);

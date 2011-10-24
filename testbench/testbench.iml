@@ -49,7 +49,7 @@
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="module" module-name="baseLanguage-index" />
+    <orderEntry type="module" module-name="baseLanguageIndex" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="library" name="JMock" level="project" />
     <orderEntry type="module" module-name="typesystemEngine" />

@@ -24,6 +24,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
@@ -67,7 +68,12 @@ public class PersistenceTest extends BaseMPSTest {
                   } finally {
                     filter.stop();
                   }
-                  ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(i), file, ModelLoadingState.FULLY_LOADED);
+                  ModelLoadResult result = null;
+                  try {
+                    result = ModelPersistence.readModel(SModelHeader.create(i), file, ModelLoadingState.FULLY_LOADED);
+                  } catch (ModelReadException e) {
+                    fail();
+                  }
                   assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                   ModelAssert.assertDeepModelEquals(model, result.getModel());
                   result.getModel().dispose();
@@ -96,7 +102,7 @@ public class PersistenceTest extends BaseMPSTest {
           new ProjectRunnable() {
             public boolean execute(final Project project) {
 
-              final DefaultSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<DefaultSModelDescriptor>() {
+              final DefaultSModelDescriptor testModel = ModelAccess.instance().runWriteAction(new Computable<DefaultSModelDescriptor>() {
                 public DefaultSModelDescriptor compute() {
                   DefaultSModelDescriptor modelDescr = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                   modelDescr.reloadFromDisk();   // no way to remove model from repository, so reloading
@@ -121,11 +127,16 @@ public class PersistenceTest extends BaseMPSTest {
 
               final ModelLoadResult resultFrom = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                 public ModelLoadResult compute() {
-                  ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
-                  assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
-                  return result;
+                  try {
+                    ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                    assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
+                    return result;
+                  } catch (ModelReadException e) {
+                    return null;
+                  }
                 }
               });
+              assertNotNull(resultFrom);
 
               ModelAccess.instance().runWriteInEDT(new Runnable() {
                 public void run() {
@@ -138,12 +149,17 @@ public class PersistenceTest extends BaseMPSTest {
 
               final ModelLoadResult resultTo = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                 public ModelLoadResult compute() {
-                  ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
-                  assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
-                  ModelAssert.assertDeepModelEquals(resultFrom.getModel(), result.getModel());
-                  return result;
+                  try {
+                    ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                    assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
+                    ModelAssert.assertDeepModelEquals(resultFrom.getModel(), result.getModel());
+                    return result;
+                  } catch (ModelReadException e) {
+                    return null;
+                  }
                 }
               });
+              assertNotNull(resultTo);
 
               ModelAccess.instance().runWriteAction(new Runnable() {
                 public void run() {

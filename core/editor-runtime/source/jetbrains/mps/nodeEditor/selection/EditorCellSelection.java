@@ -34,7 +34,7 @@ import java.util.Map;
  * Time: 7:11 PM
  * To change this template use File | Settings | File Templates.
  */
-public class EditorCellSelection implements SingularSelection {
+public class EditorCellSelection extends AbstractSelection implements SingularSelection {
   private static final String CARET_X_PROPERTY_NAME = "caretX";
   private static final String SIDE_SELECT_DIRECTION_PROPERTY_NAME = "sideSelectDirection";
 
@@ -44,6 +44,7 @@ public class EditorCellSelection implements SingularSelection {
   private SideSelectDirection mySideSelectDirection = SideSelectDirection.NONE;
 
   public EditorCellSelection(EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
+    super(editorComponent);
     if (cellInfo == null) {
       throw new SelectionStoreException("Requred CellInfo parameter is null");
     }
@@ -57,6 +58,7 @@ public class EditorCellSelection implements SingularSelection {
   }
 
   public EditorCellSelection(@NotNull EditorCell editorCell) {
+    super(editorCell.getEditor());
     myEditorCell = editorCell;
     myCaretX = editorCell.getCaretX();
   }
@@ -138,6 +140,7 @@ public class EditorCellSelection implements SingularSelection {
 
   @Override
   public void executeAction(CellActionType type) {
+    getEditorComponent().assertModelNotDisposed();
     // TODO: add separate handler for Backspace action.
     if (type == CellActionType.BACKSPACE) {
       type = CellActionType.DELETE;

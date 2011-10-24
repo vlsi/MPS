@@ -249,6 +249,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.make.UIQueryRelayStrategy" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.make.IMakeService" />
     <classNode extendsClassName="jetbrains.mps.make.script.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.service.AbstractInputProcessor" />

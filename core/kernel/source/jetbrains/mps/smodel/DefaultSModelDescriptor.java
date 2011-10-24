@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -336,7 +337,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   protected void reload() {
-    DescriptorLoadResult dr = getSource().loadDescriptor(getModule(), getSModelReference().getSModelFqName());
+    DescriptorLoadResult dr = null;
+    try {
+      dr = getSource().loadDescriptor(getModule(), getSModelReference().getSModelFqName());
+    } catch (ModelReadException e) {
+      SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
+      return;
+    }
     myHeader = dr.getHeader();
     myMetadata = dr.getMetadata();
 

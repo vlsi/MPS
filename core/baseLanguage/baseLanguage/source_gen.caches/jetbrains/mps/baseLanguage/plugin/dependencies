@@ -795,11 +795,11 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsFinder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverridenMethodEditorMessage" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverridingMethodEditorMessage" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverridingMethodsFinder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

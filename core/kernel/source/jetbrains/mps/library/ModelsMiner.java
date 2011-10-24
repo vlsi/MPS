@@ -17,10 +17,12 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -45,7 +47,12 @@ public class ModelsMiner {
       boolean isMPSModel = fileName.endsWith(MPSExtentions.DOT_MODEL);
       if (!(isMPSModel)) continue;
 
-      DescriptorLoadResult dr = ModelPersistence.loadDescriptor(file);
+      DescriptorLoadResult dr;
+      try {
+        dr = ModelPersistence.loadDescriptor(file);
+      } catch (ModelReadException ignored) {
+        dr = new DescriptorLoadResult();
+      }
 
       SModelReference modelReference;
       if (dr.getUID() != null) {

@@ -17,8 +17,13 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.Nullable;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +38,11 @@ public class ModelValidator {
     ModelAccess.assertLegalRead();
 
     List<String> errors = new ArrayList<String>();
+
+    if (myModel instanceof StubModel) {
+      errors.add(messageFromModelReadException(((StubModel) myModel).getCause()));
+      return errors;
+    }
 
     for (SModelReference reference : SModelOperations.getImportedModelUIDs(myModel)) {
       if (scope.getModelDescriptor(reference) == null) {
@@ -56,5 +66,23 @@ public class ModelValidator {
     }
 
     return errors;
+  }
+
+  private static String messageFromModelReadException(@Nullable ModelReadException e) {
+    if (e == null) {
+      return "Couldn't read model";
+    }
+    Throwable cause = e.getCause();
+    if (cause instanceof IOException) {
+      return "Couldn't read model because of I/O error.\n" + cause.getMessage();
+    } else if (cause instanceof SAXParseException) {
+      return "Couldn't read model because of invalid XML markup.\n" + cause.getMessage();
+    } else if (cause instanceof SAXException) {
+      return "Couldn't read model because of invalid SAX error.\n" + cause.getMessage();
+    } else if (cause != null) {
+      return "Couldn't read model.\n" + cause.getMessage();
+    } else {
+      return e.getMessage();
+    }
   }
 }

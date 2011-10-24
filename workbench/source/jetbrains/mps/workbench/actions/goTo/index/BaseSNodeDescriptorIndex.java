@@ -28,6 +28,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
@@ -78,7 +79,11 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
     if (model == null) {
       //todo only roots loading
       IFile file = VirtualFileUtils.toIFile(inputData.getFile());
-      model = ModelPersistence.readModel(file, false);
+      try {
+        model = ModelPersistence.readModel(file, false);
+      } catch (ModelReadException e) {
+        model = new StubModel(SModelReference.fromPath(inputData.getFile().getPath()), e);
+      }
       inputData.putUserData(PARSED_MODEL, model);
     }
     return model;

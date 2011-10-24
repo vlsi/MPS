@@ -50,6 +50,8 @@ public interface SModelDescriptor {
 
   ModelLoadingState getLoadingState();
 
+  boolean isRegistered();
+
   void dispose();
 
   void refresh();

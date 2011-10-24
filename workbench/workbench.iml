@@ -41,9 +41,11 @@
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="mpsmake" />
     <orderEntry type="module" module-name="migration" />
-    <orderEntry type="module" module-name="baseLanguage-index" />
+    <orderEntry type="module" module-name="baseLanguageIndex" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-workbench" />
   </component>
 </module>
 

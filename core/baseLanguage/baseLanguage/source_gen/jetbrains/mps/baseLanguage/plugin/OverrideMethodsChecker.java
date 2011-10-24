@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.index.ClassifierSuccessorsFinder;
+import jetbrains.mps.baseLanguage.search.ClassifierSuccessors;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -52,7 +52,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface");
       }
     });
-    this.myIndexWasNotReady = !(ClassifierSuccessorsFinder.isIndexReady(editorContext.getOperationContext().getProject()));
+    this.myIndexWasNotReady = !(ClassifierSuccessors.getInstance().isIndexReady(editorContext.getOperationContext().getProject()));
     if (Sequence.fromIterable(classifiers).isEmpty() || this.myIndexWasNotReady) {
       return Collections.<EditorMessage>emptySet();
     }
@@ -104,7 +104,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
   }
 
   private void collectOverridenMethods(SNode container, Set<EditorMessage> messages) {
-    List<SNode> derivedClassifiers = ClassifierSuccessorsFinder.getDerivedClassifiers(container, GlobalScope.getInstance());
+    List<SNode> derivedClassifiers = ClassifierSuccessors.getInstance().getDerivedClassifiers(container, GlobalScope.getInstance());
     if (ListSequence.fromList(derivedClassifiers).isEmpty()) {
       return;
     }

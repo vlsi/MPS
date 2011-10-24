@@ -10,13 +10,19 @@ import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.integration.ModelMergeTool;
-import java.io.OutputStream;
-import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.intellij.util.io.ZipUtil;
 import com.intellij.openapi.application.PathManager;
 import java.io.FilenameFilter;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.UnzipUtil;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class MergeBackupUtil {
   protected static Log log = LogFactory.getLog(MergeBackupUtil.class);
@@ -26,7 +32,7 @@ public class MergeBackupUtil {
   }
 
   public static void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {
-    writeContentsToFile(contents.getBytes(), file.getName(), tmpDir, suffix);
+    writeContentsToFile(new String(contents.getBytes(), FileUtil.DEFAULT_CHARSET), file.getName(), tmpDir, suffix);
   }
 
   public static File zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
@@ -41,12 +47,9 @@ public class MergeBackupUtil {
     return zipfile;
   }
 
-  public static void writeContentsToFile(byte[] contents, String name, File tmpDir, String suffix) throws IOException {
-    File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + name + "." + suffix);
-    baseFile.createNewFile();
-    OutputStream stream = new FileOutputStream(baseFile);
-    stream.write(contents);
-    stream.close();
+  public static void writeContentsToFile(String contents, String name, File tmpDir, String suffix) throws IOException {
+    File file = new File(tmpDir.getAbsolutePath() + File.separator + name + "." + suffix);
+    FileUtil.writeFile(file, contents);
   }
 
   public static File chooseZipFileForModelFile(String modelFileName) {
@@ -61,12 +64,12 @@ public class MergeBackupUtil {
     return zipfile;
   }
 
-  public static void packMergeResult(File file, String fileName, byte[] resultContent) {
+  public static void packMergeResult(File file, String fileName, String resultContent) {
     try {
       File tmp = FileUtil.createTmpDir();
       ZipUtil.extract(file, tmp, null);
       //  copy merge result 
-      FileUtil.write(new File(tmp + File.separator + fileName + ".result"), resultContent);
+      FileUtil.writeFile(new File(tmp + File.separator + fileName + ".result"), resultContent);
       //  copy logfiles 
       File logsDir = new File(PathManager.getLogPath());
       File[] logfiles = logsDir.listFiles(new FilenameFilter() {
@@ -90,5 +93,58 @@ public class MergeBackupUtil {
 
   public static String getMergeBackupDirPath() {
     return PathManager.getSystemPath() + File.separator + "merge-backup";
+  }
+
+  @Nullable
+  public static String[] loadZippedModelsAsText(File zipfile, ModelVersion[] versions) throws IOException {
+    File tmpdir = FileUtil.createTmpDir();
+    UnzipUtil.unzip(zipfile, tmpdir);
+    String[] models = new String[versions.length];
+    int index = 0;
+    for (final ModelVersion v : versions) {
+      File file;
+      File[] files = tmpdir.listFiles(new FilenameFilter() {
+        public boolean accept(File dir, String name) {
+          return name.endsWith(MPSExtentions.DOT_MODEL + "." + v.getSuffix());
+        }
+      });
+      if (files == null || files.length != 1) {
+        if (log.isErrorEnabled()) {
+          log.error("Wrong zip contents");
+        }
+      }
+      file = files[0];
+      char[] fileText = com.intellij.openapi.util.io.FileUtil.loadFileText(file);
+      models[index] = new String(fileText);
+      index++;
+    }
+    FileUtil.delete(tmpdir);
+    return models;
+  }
+
+  @Nullable
+  public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException, ModelReadException {
+    String[] modelsAsText = loadZippedModelsAsText(zipfile, versions);
+    if (modelsAsText == null) {
+      return null;
+    }
+    SModel[] models = new SModel[modelsAsText.length];
+    for (int i = 0; i < models.length; i++) {
+      models[i] = ModelPersistence.readModel(modelsAsText[i], false);
+    }
+    return models;
+  }
+
+  public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
+    File[] files = new File(MergeBackupUtil.getMergeBackupDirPath()).listFiles(new FilenameFilter() {
+      public boolean accept(File dir, String name) {
+        return name.contains(modelFileName) && name.endsWith(".zip");
+      }
+    });
+    return Sequence.fromIterable(Sequence.fromArray(files)).sort(new ISelector<File, Comparable<?>>() {
+      public Comparable<?> select(File f) {
+        return f.getName();
+      }
+    }, false);
   }
 }

@@ -39,6 +39,6 @@ public class ITemplateCall_Constraints extends BaseConstraintsDescriptor {
     if (_context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.ITemplateCall", "actualArgument")) {
       return SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef") || SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression") || _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression") || _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant") || _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant") || _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral") || _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral");
     }
-    return false;
+    return true;
   }
 }

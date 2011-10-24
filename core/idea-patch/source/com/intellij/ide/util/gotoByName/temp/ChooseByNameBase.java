@@ -1,5 +1,5 @@
 /*
- * Copyright 2000-2009 JetBrains s.r.o.
+ * Copyright 2003-2011 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.intellij.ide.util.gotoByName.temp;
 
 import com.intellij.Patches;
@@ -22,12 +21,10 @@ import com.intellij.ide.actions.CopyReferenceAction;
 import com.intellij.ide.ui.UISettings;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import com.intellij.ide.util.gotoByName.temp.ItemProvider;
 import com.intellij.openapi.MnemonicHelper;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.colors.EditorColorsScheme;
 import com.intellij.openapi.keymap.KeymapManager;
@@ -35,19 +32,14 @@ import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.*;
 import com.intellij.openapi.util.ActionCallback;
-import com.intellij.openapi.util.Comparing;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.registry.Registry;
-import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.codeStyle.NameUtil;
 import com.intellij.psi.statistics.StatisticsInfo;
 import com.intellij.psi.statistics.StatisticsManager;
-import com.intellij.psi.util.proximity.PsiProximityComparator;
 import com.intellij.ui.DocumentAdapter;
 import com.intellij.ui.ListScrollingUtil;
 import com.intellij.ui.ScrollPaneFactory;
@@ -55,11 +47,9 @@ import com.intellij.ui.components.JBList;
 import com.intellij.ui.popup.PopupOwner;
 import com.intellij.ui.popup.PopupUpdateProcessor;
 import com.intellij.util.Alarm;
-import com.intellij.util.Function;
-import com.intellij.util.SmartList;
-import com.intellij.util.containers.ContainerUtil;
 import com.intellij.util.diff.Diff;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
@@ -115,10 +105,14 @@ public abstract class ChooseByNameBase {
   private static int VISIBLE_LIST_SIZE_LIMIT = 10;
   private static final int MAXIMUM_LIST_SIZE_LIMIT = 30;
   private int myMaximumListSizeLimit = MAXIMUM_LIST_SIZE_LIMIT;
-  @NonNls private static final String NOT_FOUND_IN_PROJECT_CARD = "syslib";
-  @NonNls private static final String NOT_FOUND_CARD = "nfound";
-  @NonNls private static final String CHECK_BOX_CARD = "chkbox";
-  @NonNls private static final String SEARCHING_CARD = "searching";
+  @NonNls
+  private static final String NOT_FOUND_IN_PROJECT_CARD = "syslib";
+  @NonNls
+  private static final String NOT_FOUND_CARD = "nfound";
+  @NonNls
+  private static final String CHECK_BOX_CARD = "chkbox";
+  @NonNls
+  private static final String SEARCHING_CARD = "searching";
   private static final int REBUILD_DELAY = 300;
 
   private final Alarm myHideAlarm = new Alarm();
@@ -201,22 +195,20 @@ public abstract class ChooseByNameBase {
         }
 
         if (element instanceof DataProvider) {
-          return ((DataProvider)element).getData(dataId);
+          return ((DataProvider) element).getData(dataId);
         }
-      }
-      else if (LangDataKeys.PSI_ELEMENT_ARRAY.is(dataId)) {
+      } else if (LangDataKeys.PSI_ELEMENT_ARRAY.is(dataId)) {
         final List<Object> chosenElements = getChosenElements();
         if (chosenElements != null) {
           List<PsiElement> result = new ArrayList<PsiElement>();
           for (Object element : chosenElements) {
             if (element instanceof PsiElement) {
-              result.add((PsiElement)element);
+              result.add((PsiElement) element);
             }
           }
           return result.toArray(new PsiElement[result.size()]);
         }
-      }
-      else if (PlatformDataKeys.DOMINANT_HINT_AREA_RECTANGLE.is(dataId)) {
+      } else if (PlatformDataKeys.DOMINANT_HINT_AREA_RECTANGLE.is(dataId)) {
         return getBounds();
       }
       return null;
@@ -308,8 +300,7 @@ public abstract class ChooseByNameBase {
     if (myModel.getPromptText() != null) {
       checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.X_AXIS));
       checkBoxPanel.add(myCheckBox);
-    }
-    else {
+    } else {
       checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.LINE_AXIS));
       checkBoxPanel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
       checkBoxPanel.add(myCheckBox);
@@ -353,7 +344,7 @@ public abstract class ChooseByNameBase {
         }
         final Object chosenElement = getChosenElement();
         if (chosenElement instanceof PsiElement) {
-          CopyReferenceAction.doCopy((PsiElement)chosenElement, myProject);
+          CopyReferenceAction.doCopy((PsiElement) chosenElement, myProject);
         }
       }
     });
@@ -379,8 +370,7 @@ public abstract class ChooseByNameBase {
                     }
                   }
                 });
-              }
-              else {
+              } else {
                 hideHint();
               }
             }
@@ -443,7 +433,7 @@ public abstract class ChooseByNameBase {
     myList = new JBList(myListModel);
     myList.setFocusable(false);
     myList.setSelectionMode(allowMultipleSelection ? ListSelectionModel.MULTIPLE_INTERVAL_SELECTION :
-                            ListSelectionModel.SINGLE_SELECTION);
+      ListSelectionModel.SINGLE_SELECTION);
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (!myTextField.hasFocus()) {
@@ -455,8 +445,7 @@ public abstract class ChooseByNameBase {
             myMaximumListSizeLimit += MAXIMUM_LIST_SIZE_LIMIT;
             rebuildList(myList.getSelectedIndex(), REBUILD_DELAY, null, ModalityState.current(), e);
             e.consume();
-          }
-          else {
+          } else {
             doClose(true);
           }
         }
@@ -504,12 +493,11 @@ public abstract class ChooseByNameBase {
     final Object element = getChosenElement();
     if (hint != null) {
       if (element instanceof PsiElement) {
-        myTextFieldPanel.updateHint((PsiElement)element);
-      }
-      else if (element instanceof DataProvider) {
-        final Object o = ((DataProvider)element).getData(LangDataKeys.PSI_ELEMENT.getName());
+        myTextFieldPanel.updateHint((PsiElement) element);
+      } else if (element instanceof DataProvider) {
+        final Object o = ((DataProvider) element).getData(LangDataKeys.PSI_ELEMENT.getName());
         if (o instanceof PsiElement) {
-          myTextFieldPanel.updateHint((PsiElement)o);
+          myTextFieldPanel.updateHint((PsiElement) o);
         }
       }
     }
@@ -555,7 +543,7 @@ public abstract class ChooseByNameBase {
     int index = checkboxState ? 1 : 0;
     if (myNames[index] != null) return;
 
-    Window window = (Window)SwingUtilities.getAncestorOfClass(Window.class, myTextField);
+    Window window = (Window) SwingUtilities.getAncestorOfClass(Window.class, myTextField);
     //LOG.assertTrue (myTextField != null);
     //LOG.assertTrue (window != null);
     Window ownerWindow = null;
@@ -597,7 +585,7 @@ public abstract class ChooseByNameBase {
       (10, (paneHeight - (y + preferredTextFieldPanelSize.height)) / (preferredTextFieldPanelSize.height / 2) - 1);
 
     ComponentPopupBuilder builder = JBPopupFactory.getInstance().createComponentPopupBuilder(myTextFieldPanel, myTextField);
-    builder.setCancelCallback(new Computable<Boolean>() {
+    builder.setCancelCallback(new com.intellij.openapi.util.Computable<Boolean>() {
       @Override
       public Boolean compute() {
         myTextPopup = null;
@@ -624,15 +612,13 @@ public abstract class ChooseByNameBase {
     Component parent = UIUtil.findUltimateParent(window);
 
     if (parent instanceof JFrame) {
-      layeredPane = ((JFrame)parent).getLayeredPane();
-    }
-    else if (parent instanceof JDialog) {
-      layeredPane = ((JDialog)parent).getLayeredPane();
-    }
-    else {
+      layeredPane = ((JFrame) parent).getLayeredPane();
+    } else if (parent instanceof JDialog) {
+      layeredPane = ((JDialog) parent).getLayeredPane();
+    } else {
       throw new IllegalStateException("cannot find parent window: project=" + myProject +
-                                      (myProject != null ? "; open=" + myProject.isOpen() : "") +
-                                      "; window=" + window);
+        (myProject != null ? "; open=" + myProject.isOpen() : "") +
+        "; window=" + window);
     }
     return layeredPane;
   }
@@ -654,7 +640,7 @@ public abstract class ChooseByNameBase {
       public void run() {
         final String text = myTextField.getText();
         if (!canShowListForEmptyPattern() &&
-            (text == null || text.trim().length() == 0)) {
+          (text == null || text.trim().length() == 0)) {
           myListModel.clear();
           hideList();
           myCard.show(myCardContainer, CHECK_BOX_CARD);
@@ -691,8 +677,7 @@ public abstract class ChooseByNameBase {
 
         if (delay > 0) {
           myAlarm.addRequest(request, delay, ModalityState.stateForComponent(myTextField));
-        }
-        else {
+        } else {
           request.run();
         }
       }
@@ -756,8 +741,7 @@ public abstract class ChooseByNameBase {
     if (!commands.isEmpty()) {
       showList();
       myListUpdater.appendToModel(commands, pos);
-    }
-    else {
+    } else {
       if (pos == 0) {
         pos = detectBestStatisticalPosition();
       }
@@ -825,8 +809,7 @@ public abstract class ChooseByNameBase {
     public void apply() {
       if (idx < myListModel.size()) {
         myListModel.add(idx, element);
-      }
-      else {
+      } else {
         myListModel.addElement(element);
       }
     }
@@ -867,8 +850,7 @@ public abstract class ChooseByNameBase {
 
           if (!myCommands.isEmpty()) {
             myAlarm.addRequest(this, DELAY);
-          }
-          else {
+          } else {
             doPostponedOkIfNeeded();
           }
           if (!myDisposedFlag) {
@@ -892,8 +874,7 @@ public abstract class ChooseByNameBase {
     if (myPosponedOkAction != null) {
       if (success) {
         myPosponedOkAction.setDone();
-      }
-      else {
+      } else {
         myPosponedOkAction.setRejected();
       }
     }
@@ -963,7 +944,7 @@ public abstract class ChooseByNameBase {
       final Shortcut[] shortcuts = KeymapManager.getInstance().getActiveKeymap().getShortcuts(actionCodeCompletion);
       for (final Shortcut shortcut : shortcuts) {
         if (shortcut instanceof KeyboardShortcut) {
-          return ((KeyboardShortcut)shortcut).getFirstKeyStroke();
+          return ((KeyboardShortcut) shortcut).getFirstKeyStroke();
         }
       }
       return null;
@@ -971,7 +952,7 @@ public abstract class ChooseByNameBase {
 
     protected void processKeyEvent(KeyEvent e) {
       final KeyStroke keyStroke = KeyStroke.getKeyStrokeForEvent(e);
-      
+
       if (myCompletionKeyStroke != null && keyStroke.equals(myCompletionKeyStroke)) {
         completionKeyStrokeHappened = true;
         e.consume();
@@ -1013,8 +994,7 @@ public abstract class ChooseByNameBase {
       }
       try {
         super.processKeyEvent(e);
-      }
-      catch (NullPointerException e1) {
+      } catch (NullPointerException e1) {
         if (!Patches.SUN_BUG_6322854) {
           throw e1;
         }
@@ -1034,8 +1014,7 @@ public abstract class ChooseByNameBase {
           final String string = name.toLowerCase();
           if (commonPrefix == null) {
             commonPrefix = string;
-          }
-          else {
+          } else {
             while (commonPrefix.length() > 0) {
               if (string.startsWith(commonPrefix)) {
                 break;
@@ -1123,7 +1102,7 @@ public abstract class ChooseByNameBase {
         public void run() {
           try {
             ensureNamesLoaded(myCheckboxState);
-            elements.addAll(myProvider.filterElements(myPattern, myCheckboxState, new jetbrains.mps.util.Computable<Boolean>() {
+            elements.addAll(myProvider.filterElements(myPattern, myCheckboxState, new Computable<Boolean>() {
               public Boolean compute() {
                 return myCancelled;
               }
@@ -1133,12 +1112,11 @@ public abstract class ChooseByNameBase {
                 break;
               }
               if (elem instanceof PsiElement) {
-                final PsiElement psiElement = (PsiElement)elem;
+                final PsiElement psiElement = (PsiElement) elem;
                 psiElement.isWritable(); // That will cache writable flag in VirtualFile. Taking the action here makes it canceleable.
               }
             }
-          }
-          catch (ProcessCanceledException e) {
+          } catch (ProcessCanceledException e) {
             //OK
           }
         }
@@ -1155,8 +1133,7 @@ public abstract class ChooseByNameBase {
         myCheckboxState = true;
         ApplicationManager.getApplication().runReadAction(action);
         cardToShow = elements.isEmpty() ? NOT_FOUND_CARD : NOT_FOUND_IN_PROJECT_CARD;
-      }
-      else {
+      } else {
         cardToShow = elements.isEmpty() ? NOT_FOUND_CARD : CHECK_BOX_CARD;
       }
       showCard(cardToShow, 0);
@@ -1191,7 +1168,7 @@ public abstract class ChooseByNameBase {
   }
 
   protected boolean lastKeyStrokeIsCompletion() {
-     return myTextField.isCompletionKeyStroke();
+    return myTextField.isCompletionKeyStroke();
   }
 
   private interface CalcElementsCallback {

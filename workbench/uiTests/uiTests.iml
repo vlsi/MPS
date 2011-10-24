@@ -23,6 +23,7 @@
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="library" name="commons-lang" level="project" />
+    <orderEntry type="module" module-name="idea-workbench" />
   </component>
 </module>
 

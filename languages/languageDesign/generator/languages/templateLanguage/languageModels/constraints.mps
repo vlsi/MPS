@@ -175,7 +175,9 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4035562641222637881">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4035562641222637882" />
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4035562641222637882">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
+          </node>
         </node>
       </node>
     </node>

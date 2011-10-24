@@ -1130,7 +1130,7 @@
     <nodeInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="43" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="58" startPosition="125" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="62" startPosition="47" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4151347580001030746" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="130" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4151347580001030746" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="138" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4717960406884169447" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="201" endLine="66" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4717960406884169435" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="112" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4717960406884169423" fileName="DerivedMethods_Finder.java" startLine="55" startPosition="11" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1159,7 +1159,7 @@
     <scopeInfo nodeId="4717960406884169438" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="201" endLine="66" endPosition="15" />
     <scopeInfo nodeId="4717960406884169424" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="112" endLine="67" endPosition="11" />
     <scopeInfo nodeId="4717960406884169435" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="112" endLine="67" endPosition="11" />
-    <scopeInfo nodeId="4151347580001030694" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="130" endLine="68" endPosition="9" />
+    <scopeInfo nodeId="4151347580001030694" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="138" endLine="68" endPosition="9" />
     <scopeInfo nodeId="4151347580001030692" fileName="DerivedMethods_Finder.java" startLine="45" startPosition="40" endLine="69" endPosition="7" />
     <scopeInfo nodeId="4151347580001021183" fileName="DerivedMethods_Finder.java" startLine="43" startPosition="9" endLine="69" endPosition="7">
       <varInfo nodeId="4151347580001030664" varName="classifier" />
