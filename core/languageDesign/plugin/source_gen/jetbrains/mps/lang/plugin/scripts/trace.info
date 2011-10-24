@@ -842,6 +842,122 @@
     <unitInfo nodeId="5538333046911349083" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="19" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.ConvertActionParameterCondition_MigrationScript$1" />
     <unitInfo nodeId="5538333046911349083" fileName="ConvertActionParameterCondition_MigrationScript.java" startLine="46" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.ConvertActionParameterCondition_MigrationScript$QuotationClass_pi1x0q_a2a0a4a0a0a1a0" />
   </root>
+  <root nodeId="5606420294479385927">
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="24" startPosition="80" endLine="25" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="27" startPosition="31" endLine="28" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="31" startPosition="41" endLine="32" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="35" startPosition="59" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479419083" fileName="SplitMPSClasspath_MigrationScript.java" startLine="41" startPosition="48" endLine="42" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5289122290568089035" fileName="SplitMPSClasspath_MigrationScript.java" startLine="47" startPosition="52" endLine="48" endPosition="359" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5289122290568101772" fileName="SplitMPSClasspath_MigrationScript.java" startLine="48" startPosition="359" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5289122290568086014" fileName="SplitMPSClasspath_MigrationScript.java" startLine="49" startPosition="0" endLine="50" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5289122290568091239" fileName="SplitMPSClasspath_MigrationScript.java" startLine="50" startPosition="54" endLine="51" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5289122290568086116" fileName="SplitMPSClasspath_MigrationScript.java" startLine="51" startPosition="73" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5289122290568086123" fileName="SplitMPSClasspath_MigrationScript.java" startLine="53" startPosition="91" endLine="54" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5289122290568086317" fileName="SplitMPSClasspath_MigrationScript.java" startLine="55" startPosition="45" endLine="56" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5289122290568086333" fileName="SplitMPSClasspath_MigrationScript.java" startLine="58" startPosition="58" endLine="59" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5289122290568104090" fileName="SplitMPSClasspath_MigrationScript.java" startLine="62" startPosition="35" endLine="63" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5289122290568086364" fileName="SplitMPSClasspath_MigrationScript.java" startLine="64" startPosition="13" endLine="65" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5289122290568086357" fileName="SplitMPSClasspath_MigrationScript.java" startLine="65" startPosition="68" endLine="66" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5289122290568086342" fileName="SplitMPSClasspath_MigrationScript.java" startLine="66" startPosition="50" endLine="67" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1019434169182451593" fileName="SplitMPSClasspath_MigrationScript.java" startLine="67" startPosition="51" endLine="68" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5289122290568086347" fileName="SplitMPSClasspath_MigrationScript.java" startLine="69" startPosition="33" endLine="70" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5289122290568099624" fileName="SplitMPSClasspath_MigrationScript.java" startLine="70" startPosition="66" endLine="71" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5289122290568104094" fileName="SplitMPSClasspath_MigrationScript.java" startLine="72" startPosition="13" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="78" startPosition="42" endLine="79" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="85" startPosition="36" endLine="86" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="87" startPosition="5" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="92" startPosition="36" endLine="93" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="94" startPosition="5" endLine="95" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="99" startPosition="36" endLine="100" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="101" startPosition="5" endLine="102" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="106" startPosition="36" endLine="107" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="108" startPosition="5" endLine="109" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="113" startPosition="36" endLine="114" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="115" startPosition="5" endLine="116" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5289122290568104077" fileName="SplitMPSClasspath_MigrationScript.java" startLine="61" startPosition="16" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="84" startPosition="88" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="91" startPosition="88" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="98" startPosition="82" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="105" startPosition="82" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="112" startPosition="94" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="26" startPosition="76" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5606420294479419079" fileName="SplitMPSClasspath_MigrationScript.java" startLine="40" startPosition="112" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SReference;)Z" />
+    <nodeInfo nodeId="5289122290568086331" fileName="SplitMPSClasspath_MigrationScript.java" startLine="57" startPosition="141" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="5289122290568099615" fileName="SplitMPSClasspath_MigrationScript.java" startLine="68" startPosition="62" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="119" startPosition="84" endLine="123" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5606420294479419067" fileName="SplitMPSClasspath_MigrationScript.java" startLine="39" startPosition="59" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5289122290568086324" fileName="SplitMPSClasspath_MigrationScript.java" startLine="56" startPosition="79" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ylpn3n_a0a0a0a0a0a0#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="90" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ylpn3n_a0a0a0a0a0a0a#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="97" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ylpn3n_a0d0a0#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="104" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ylpn3n_a0a0f0a0#(Ljetbrains/mps/smodel/SModelReference;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="111" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ylpn3n_a0b0b0f0a0#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="118" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_e5sso0_a0a0a0a0a0a0b0b0f0e0a0a0b0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5289122290568086311" fileName="SplitMPSClasspath_MigrationScript.java" startLine="54" startPosition="86" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5289122290568086396" fileName="SplitMPSClasspath_MigrationScript.java" startLine="52" startPosition="0" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="46" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="25" startPosition="39" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="23" startPosition="76" endLine="82" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SplitMPSClasspath_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="27" startPosition="31" endLine="28" endPosition="66" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="31" startPosition="41" endLine="32" endPosition="66" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="35" startPosition="59" endLine="36" endPosition="63" />
+    <scopeInfo nodeId="5606420294479419080" fileName="SplitMPSClasspath_MigrationScript.java" startLine="41" startPosition="48" endLine="42" endPosition="246" />
+    <scopeInfo nodeId="5289122290568086332" fileName="SplitMPSClasspath_MigrationScript.java" startLine="58" startPosition="58" endLine="59" endPosition="87" />
+    <scopeInfo nodeId="5289122290568104078" fileName="SplitMPSClasspath_MigrationScript.java" startLine="62" startPosition="35" endLine="63" endPosition="23" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="78" startPosition="42" endLine="79" endPosition="21" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="85" startPosition="36" endLine="86" endPosition="43" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="92" startPosition="36" endLine="93" endPosition="52" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="99" startPosition="36" endLine="100" endPosition="43" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="106" startPosition="36" endLine="107" endPosition="45" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="113" startPosition="36" endLine="114" endPosition="52" />
+    <scopeInfo nodeId="5289122290568099616" fileName="SplitMPSClasspath_MigrationScript.java" startLine="69" startPosition="33" endLine="71" endPosition="74" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="26" startPosition="76" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="5606420294479419079" fileName="SplitMPSClasspath_MigrationScript.java" startLine="40" startPosition="112" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5289122290568086331" fileName="SplitMPSClasspath_MigrationScript.java" startLine="57" startPosition="141" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="84" startPosition="88" endLine="88" endPosition="16" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="91" startPosition="88" endLine="95" endPosition="16" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="98" startPosition="82" endLine="102" endPosition="16" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="105" startPosition="82" endLine="109" endPosition="16" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="112" startPosition="94" endLine="116" endPosition="16" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="119" startPosition="84" endLine="123" endPosition="6" />
+    <scopeInfo nodeId="5606420294479419066" fileName="SplitMPSClasspath_MigrationScript.java" startLine="39" startPosition="59" endLine="44" endPosition="24" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="83" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="90" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="97" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="104" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="111" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="118" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="5289122290568086314" fileName="SplitMPSClasspath_MigrationScript.java" startLine="55" startPosition="45" endLine="73" endPosition="18">
+      <varInfo nodeId="5289122290568086325" varName="modelRef" />
+      <varInfo nodeId="5289122290568086318" varName="models" />
+    </scopeInfo>
+    <scopeInfo nodeId="5289122290568086311" fileName="SplitMPSClasspath_MigrationScript.java" startLine="54" startPosition="86" endLine="74" endPosition="11" />
+    <scopeInfo nodeId="5289122290568086399" fileName="SplitMPSClasspath_MigrationScript.java" startLine="53" startPosition="91" endLine="74" endPosition="11">
+      <varInfo nodeId="5289122290568086124" varName="fqname" />
+    </scopeInfo>
+    <scopeInfo nodeId="5289122290568086396" fileName="SplitMPSClasspath_MigrationScript.java" startLine="52" startPosition="0" endLine="75" endPosition="9" />
+    <scopeInfo nodeId="5606420294479385930" fileName="SplitMPSClasspath_MigrationScript.java" startLine="47" startPosition="52" endLine="75" endPosition="9">
+      <varInfo nodeId="5289122290568086015" varName="model" />
+      <varInfo nodeId="5289122290568091240" varName="module" />
+      <varInfo nodeId="5289122290568089036" varName="modules" />
+    </scopeInfo>
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="46" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="24" startPosition="80" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="23" startPosition="76" endLine="82" endPosition="3" />
+    <unitInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="23" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitMPSClasspath_MigrationScript" />
+    <unitInfo nodeId="5606420294479385927" fileName="SplitMPSClasspath_MigrationScript.java" startLine="26" startPosition="28" endLine="81" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.SplitMPSClasspath_MigrationScript$1" />
+    <unitInfo nodeId="5606420294479419079" fileName="SplitMPSClasspath_MigrationScript.java" startLine="40" startPosition="84" endLine="44" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.SplitMPSClasspath_MigrationScript$2" />
+    <unitInfo nodeId="5289122290568086331" fileName="SplitMPSClasspath_MigrationScript.java" startLine="57" startPosition="107" endLine="61" endPosition="13" unitName="jetbrains.mps.lang.plugin.scripts.SplitMPSClasspath_MigrationScript$2" />
+  </root>
   <root nodeId="5866603471302721315">
     <nodeInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="29" startPosition="81" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="32" startPosition="31" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
