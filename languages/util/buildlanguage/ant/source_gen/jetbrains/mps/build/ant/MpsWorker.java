@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import org.apache.tools.ant.ProjectComponent;
-import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.ThreadUtils;
@@ -107,7 +107,7 @@ public abstract class MpsWorker {
 
   public void work() {
     setupEnvironment();
-    final MPSProject project = createDummyProject();
+    final Project project = createDummyProject();
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess();
     collectModelsToGenerate(go);
     if (go.hasAnythingToGenerate()) {
@@ -127,10 +127,10 @@ public abstract class MpsWorker {
     showStatistic();
   }
 
-  protected MPSProject createDummyProject() {
-    Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+  protected Project createDummyProject() {
+    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
-    final MPSProject project = new MPSProject(ideaProject);
+    final Project project = new MPSProject(ideaProject);
     project.init(projectFile, new ProjectDescriptor());
     projectFile.deleteOnExit();
     return project;
@@ -151,10 +151,10 @@ public abstract class MpsWorker {
     jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
   }
 
-  protected void disposeProject(final MPSProject p) {
+  protected void disposeProject(final Project p) {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        p.dispose(false);
+        p.dispose();
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
       }
@@ -240,7 +240,7 @@ public abstract class MpsWorker {
     }
   }
 
-  protected abstract void executeTask(MPSProject project, MpsWorker.ObjectsToProcess go);
+  protected abstract void executeTask(Project project, MpsWorker.ObjectsToProcess go);
 
   protected abstract void showStatistic();
 
@@ -264,9 +264,9 @@ public abstract class MpsWorker {
     }
   }
 
-  protected void disposeProjects(Set<MPSProject> projects) {
+  protected void disposeProjects(Set<Project> projects) {
     ModelAccess.instance().flushEventQueue();
-    for (final MPSProject project : projects) {
+    for (final Project project : projects) {
       disposeProject(project);
     }
   }
@@ -324,14 +324,14 @@ public abstract class MpsWorker {
     collectFromModelFiles(go.getModels());
   }
 
-  private void collectFromProjects(Set<MPSProject> projects) {
+  private void collectFromProjects(Set<Project> projects) {
     for (File projectFile : myWhatToDo.getMPSProjectFiles().keySet()) {
       if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
-        MPSProject project;
+        Project project;
         try {
           Class<?> cls = Class.forName("jetbrains.mps.TestMain");
           Method meth = cls.getMethod("loadProject", File.class);
-          project = (MPSProject) meth.invoke(null, projectFile);
+          project = (Project) meth.invoke(null, projectFile);
         } catch (Exception ex) {
           throw new RuntimeException(ex);
         }
@@ -341,7 +341,7 @@ public abstract class MpsWorker {
     }
   }
 
-  protected void extractModels(Set<SModelDescriptor> modelDescriptors, MPSProject project) {
+  protected void extractModels(Set<SModelDescriptor> modelDescriptors, Project project) {
     List<SModelDescriptor> models = project.getProjectModels();
     for (Language language : project.getProjectModules(Language.class)) {
       models.addAll(language.getOwnModelDescriptors());
@@ -615,20 +615,20 @@ public abstract class MpsWorker {
   }
 
   protected class ObjectsToProcess {
-    private final Set<MPSProject> myProjects = new LinkedHashSet<MPSProject>();
+    private final Set<Project> myProjects = new LinkedHashSet<Project>();
     private final Set<IModule> myModules = new LinkedHashSet<IModule>();
     private final Set<SModelDescriptor> myModels = new LinkedHashSet<SModelDescriptor>();
 
     public ObjectsToProcess() {
     }
 
-    public ObjectsToProcess(Set<MPSProject> mpsProjects, Set<IModule> modules, Set<SModelDescriptor> models) {
+    public ObjectsToProcess(Set<Project> mpsProjects, Set<IModule> modules, Set<SModelDescriptor> models) {
       myProjects.addAll(mpsProjects);
       myModules.addAll(modules);
       myModels.addAll(models);
     }
 
-    public Set<MPSProject> getProjects() {
+    public Set<Project> getProjects() {
       return myProjects;
     }
 

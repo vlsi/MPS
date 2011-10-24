@@ -51,7 +51,7 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
@@ -409,7 +409,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       final ProgressMonitor monitor = new JobProgressMonitorAdapter(jobMon);
       Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
       if (vars != null) {
-        vars._0(ProjectHelper.toIdeaProject(getSession().getContext().getProject()));
+        vars._0(getSession().getContext().getProject());
         vars._1(getSession().getContext());
         vars._2(getSession().isCleanMake());
         vars._3(new _FunctionTypes._return_P0_E0<ProgressMonitor>() {
