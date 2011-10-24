@@ -123,6 +123,10 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration, SearchResults results) {
     setRunOptions(resultProvider, searchQuery, buttonConfiguration);
+    setContents(results);
+  }
+
+  public void setContents(SearchResults results) {
     myTreeComponent.setContents(results);
   }
 
@@ -134,7 +138,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     assert myIsInitialized;
     myLastResults = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), mySearchQuery, myResultProvider);
     myLastResults.removeDuplicates();
-    myTreeComponent.setContents(myLastResults);
+    setContents(myLastResults);
   }
 
   private void regenerate() {
@@ -201,6 +205,10 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   public SearchResults getSearchResults() {
     return myLastResults;
+  }
+
+  public UsagesTreeComponent getTreeComponent() {
+    return myTreeComponent;
   }
 
   //----SAVE/LOAD STUFF----

@@ -7,9 +7,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.JComponent;
 
@@ -32,8 +29,8 @@ public class AnalyzeDependencies_Tool extends GeneratedTool {
     super.dispose();
   }
 
-  public void setContent(List<SModelDescriptor> models, List<IModule> modules, MPSProject project) {
-    AnalyzeDependencies_Tool.this.myDependenciesComponent.setContent(models, modules, project);
+  public void setContent(Scope scope, MPSProject project) {
+    AnalyzeDependencies_Tool.this.myDependenciesComponent.setContent(scope, project);
   }
 
   public JComponent getComponent() {

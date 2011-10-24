@@ -12,15 +12,19 @@ import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.ModuleOperationContext;
-import jetbrains.mps.ide.icons.IconManager;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.tree.TreePath;
 
 public class DependencyTree extends MPSTree {
   private List<SModelDescriptor> myModels;
   private List<IModule> myModules;
   private MPSProject myProject;
+  private DependenciesComponent myParent;
 
-  public DependencyTree() {
+  public DependencyTree(DependenciesComponent parent) {
+    myParent = parent;
+    addTreeSelectionListener(new DependencyTree.MyTreeSelectionListener());
   }
 
   protected MPSTreeNode rebuild() {
@@ -43,18 +47,26 @@ public class DependencyTree extends MPSTree {
     rebuildLater();
   }
 
-  public class ModuleTreeNode extends MPSTreeNode {
-    private IModule myModule;
-
-    public ModuleTreeNode(IModule module) {
-      super(new ModuleOperationContext(module));
-      myModule = module;
-      setIcon(IconManager.getIconFor(module));
-      setNodeIdentifier(module.getModuleFqName());
+  public class MyTreeSelectionListener implements TreeSelectionListener {
+    public MyTreeSelectionListener() {
     }
 
-    public IModule getModule() {
-      return myModule;
+    public void valueChanged(TreeSelectionEvent event) {
+      TreePath[] paths = getSelectionPaths();
+      if (paths == null || paths.length == 0) {
+        return;
+      }
+      Scope scope = new Scope();
+      for (TreePath path : paths) {
+        MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+        if (node instanceof SModelTreeNode) {
+          scope.add(((SModelTreeNode) node).getSModelDescriptor());
+        }
+        if (node instanceof ProjectModuleTreeNode) {
+          scope.add(((ProjectModuleTreeNode) node).getModule());
+        }
+      }
+      myParent.updateTargetsView(scope);
     }
   }
 }

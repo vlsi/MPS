@@ -38,6 +38,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.TreeSelectionListener;
 import java.awt.BorderLayout;
 import java.util.*;
 
@@ -209,6 +210,10 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
   public JComponent getViewToolbar() {
     return myViewToolbar;
+  }
+
+  public UsagesTree getTree() {
+    return myTree;
   }
 
   public abstract com.intellij.openapi.project.Project getProject();

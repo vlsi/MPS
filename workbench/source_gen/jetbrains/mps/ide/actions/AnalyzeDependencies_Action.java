@@ -13,8 +13,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 
@@ -53,7 +53,14 @@ public class AnalyzeDependencies_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       AnalyzeDependencies_Tool tool = ((Project) MapSequence.fromMap(_params).get("myProject")).getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
-      tool.setContent(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("myModels")), ((List<IModule>) MapSequence.fromMap(_params).get("myModules")), ((MPSProject) MapSequence.fromMap(_params).get("myMPSProject")));
+      Scope scope = new Scope();
+      for (SModelDescriptor model : ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("myModels"))) {
+        scope.add(model);
+      }
+      for (IModule module : ((List<IModule>) MapSequence.fromMap(_params).get("myModules"))) {
+        scope.add(module);
+      }
+      tool.setContent(scope, ((MPSProject) MapSequence.fromMap(_params).get("myMPSProject")));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

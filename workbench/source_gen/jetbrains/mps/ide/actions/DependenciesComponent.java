@@ -5,50 +5,89 @@ package jetbrains.mps.ide.actions;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import com.intellij.openapi.project.Project;
-import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import javax.swing.JSplitPane;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
+import java.util.List;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import java.util.LinkedList;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class DependenciesComponent extends JComponent {
   private DependencyTree myInitTree;
-  private UsagesView myUsagesView;
+  private UsagesView myTargetsView;
+  private UsagesView myReferencesView;
   private Project myProject;
-  private List<SModelDescriptor> myModels;
+  private Scope myScope;
 
   public DependenciesComponent() {
-    myInitTree = new DependencyTree();
-    myUsagesView = new UsagesView(myProject, new ViewOptions(false, false, true, true, false)) {
+  }
+
+  public void setContent(Scope scope, MPSProject project) {
+    ReferencesUtil.clearCaches();
+    myInitTree = new DependencyTree(this);
+    myTargetsView = new TargetsView(myProject, this);
+    myReferencesView = new UsagesView(myProject, new ViewOptions(false, false, false, true, false)) {
       public void close() {
       }
+
+      @Override
+      public void setRunOptions(IResultProvider provider, SearchQuery query, UsagesView.ButtonConfiguration configuration) {
+      }
     };
+
     JSplitPane splitPane = new JSplitPane();
+    JSplitPane rightSplitPane = new JSplitPane();
     setLayout(new BorderLayout());
     JBScrollPane leftPane = new JBScrollPane(myInitTree);
     splitPane.setLeftComponent(leftPane);
-    JBScrollPane rightPane = new JBScrollPane(myUsagesView.getComponent());
-    splitPane.setRightComponent(rightPane);
+    JBScrollPane centralPane = new JBScrollPane(myTargetsView.getComponent());
+    JBScrollPane rightPane = new JBScrollPane(myReferencesView.getComponent());
+    splitPane.setRightComponent(rightSplitPane);
+    rightSplitPane.setLeftComponent(centralPane);
+    rightSplitPane.setRightComponent(rightPane);
+    this.add(splitPane);
     setVisible(true);
-  }
-
-  public void setContent(List<SModelDescriptor> models, List<IModule> modules, MPSProject project) {
-    myInitTree.setContent(models, modules, project);
-    myModels = models;
-    update();
+    myInitTree.setContent(scope.getModels(), scope.getModules(), project);
+    updateTargetsView(scope);
   }
 
   public void setProject(Project project) {
     myProject = project;
   }
 
-  public void update() {
-    SearchResults results = ReferencesUtil.findReferences(myModels, new LinkedList<IModule>());
-    myUsagesView.setRunOptions(null, null, new UsagesView.ButtonConfiguration(false), results);
+  public void updateTargetsView(Scope scope) {
+    myScope = scope;
+    final List<SReference> references = ReferencesUtil.getReferences(scope);
+    final SearchResults<SNode> results = new SearchResults();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SReference ref : references) {
+          results.getSearchResults().add(new SearchResult(ref.getTargetNode(), "target"));
+        }
+      }
+    });
+    myTargetsView.setContents(results);
+  }
+
+  public void updateReferencesView(final Scope scope) {
+    final List<SReference> references = ReferencesUtil.getReferences(myScope);
+    final SearchResults<SNode> results = new SearchResults();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SReference ref : references) {
+          if (scope.contains(ref.getTargetNode())) {
+            results.getSearchResults().add(new SearchResult(ref.getSourceNode(), "reference"));
+          }
+        }
+      }
+    });
+    myReferencesView.setContents(results);
   }
 }
