@@ -10,6 +10,8 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
+import java.util.List;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -30,8 +32,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.annotations.Nullable;
-import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.apache.commons.lang.StringUtils;
@@ -48,7 +53,11 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   protected static Log log = LogFactory.getLog(LowLevelEvaluationModel.class);
@@ -57,11 +66,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   private boolean myVariablesInitialized = false;
   protected SNode myEvaluator;
 
-  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, boolean isShowContext) {
-    this(project, session, module, new StackFrameContext(session.getUiState()), isShowContext);
+  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, boolean isShowContext, List<SNodePointer> nodesToImport) {
+    this(project, session, module, new StackFrameContext(session.getUiState()), isShowContext, nodesToImport);
   }
 
-  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context, boolean isShowContext) {
+  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context, boolean isShowContext, final List<SNodePointer> nodesToImport) {
     super(project, session, module, context, isShowContext);
     ListSequence.fromList(myLanguages).addSequence(LinkedListSequence.fromLinkedList(LinkedListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.privateMembers"))));
 
@@ -80,7 +89,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            createNodesToShow(myAuxModel);
+            createNodesToShow(myAuxModel, nodesToImport);
           }
         });
       }
@@ -108,7 +117,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     }
   }
 
-  public void createNodesToShow(EditableSModelDescriptor auxilaryModel) {
+  public void createNodesToShow(EditableSModelDescriptor auxilaryModel, List<SNodePointer> nodesToImport) {
     myEvaluator = createEvaluator(auxilaryModel);
     auxilaryModel.getSModel().addRoot(myEvaluator);
     SModelOperations.validateLanguagesAndImports(auxilaryModel.getSModel(), false, true);
@@ -119,6 +128,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     }
 
     createVars();
+    tryToImport(nodesToImport);
   }
 
   protected SNode createEvaluator(SModelDescriptor model) {
@@ -126,6 +136,70 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     SPropertyOperations.set(evaluatorConcept, "isShowContext", "" + (myShowContext));
     AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatements", true), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
     return evaluatorConcept;
+  }
+
+  private void tryToImport(List<SNodePointer> nodesToImport) {
+    for (SNode node : ListSequence.fromList(nodesToImport).select(new ISelector<SNodePointer, SNode>() {
+      public SNode select(SNodePointer it) {
+        return (SNode) it.getNode();
+      }
+    })) {
+      if (node == null) {
+        continue;
+      }
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression")) {
+        SNode clone = new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0a1a0a5().createNode(SNodeOperations.copyNode(node));
+        transformNode(clone);
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myEvaluator, "evaluatedStatements", true), "statement", true)).addElement(clone);
+      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement")) {
+        SNode clone = SNodeOperations.copyNode(node);
+        transformNode(clone);
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myEvaluator, "evaluatedStatements", true), "statement", true)).addElement(clone);
+      }
+    }
+  }
+
+  private void transformNode(SNode node) {
+    // all links to subs -> to debugger stubs 
+    replaceStubReferences(node);
+    // all links to external models -> to vars; they won't resolve anyway 
+    ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return ListSequence.fromList(SNodeOperations.getChildren(it)).isEmpty();
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        transformNodeToProperVariableReference(it);
+      }
+    });
+  }
+
+  private void replaceStubReferences(SNode node) {
+    for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
+      SModel targetModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(reference));
+      if (neq_qkk2f2_a0b0a0h(targetModel, myAuxModel.getSModel())) {
+        SModelDescriptor scopeModel = myAuxModule.getScope().getModelDescriptor(targetModel.getSModelReference());
+        if (scopeModel != null && neq_qkk2f2_a0a1a1a0a7(scopeModel.getSModel(), targetModel)) {
+          node.replaceReference(reference, new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getSModelReference(), SLinkOperations.getResolveInfo(reference)));
+        }
+      }
+    }
+  }
+
+  private void transformNodeToProperVariableReference(SNode node) {
+    if ((int) ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1) {
+      final SReference reference = ListSequence.fromList(SNodeOperations.getReferences(node)).first();
+      if (neq_qkk2f2_a0a1a0a8(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), myAuxModel.getSModel()) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept")) {
+        SNode matchingVar = ListSequence.fromList(SLinkOperations.getTargets(myEvaluator, "variables", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode variable) {
+            return eq_qkk2f2_a0a0a0a0a0a0a1a0a8(SPropertyOperations.getString(variable, "name"), SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
+          }
+        });
+        SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", null);
+        SLinkOperations.setTarget(newVariableReference, "baseVariableDeclaration", matchingVar, false);
+        SNodeOperations.replaceWithAnother(node, newVariableReference);
+      }
+    }
   }
 
   @Nullable
@@ -263,7 +337,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   public LowLevelEvaluationModel copy(final boolean isShowConetxt) {
     LowLevelEvaluationModel evaluationModel;
     final SNode evaluator = myEvaluator;
-    evaluationModel = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, isShowConetxt) {
+    evaluationModel = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, isShowConetxt, ListSequence.fromList(new ArrayList<SNodePointer>())) {
       @Override
       protected SNode createEvaluator(SModelDescriptor model) {
         SNode newEvaluator = (SNode) CopyUtil.copyAndPreserveId(evaluator, true);
@@ -273,5 +347,64 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     };
 
     return evaluationModel;
+  }
+
+  private static boolean neq_qkk2f2_a0b0a0h(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static boolean neq_qkk2f2_a0a1a1a0a7(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static boolean eq_qkk2f2_a0a0a0a0a0a0a1a0a8(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean neq_qkk2f2_a0a1a0a8(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  public static class QuotationClass_qkk2f2_a0a0a1a0a5 {
+    public QuotationClass_qkk2f2_a0a0a1a0a5() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("expression", HUtil.copyIfNecessary(quotedNode1_4));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

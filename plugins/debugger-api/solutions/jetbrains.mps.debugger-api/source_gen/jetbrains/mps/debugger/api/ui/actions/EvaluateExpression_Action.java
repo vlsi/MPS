@@ -13,6 +13,16 @@ import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.List;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
@@ -50,6 +60,7 @@ public class EvaluateExpression_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("selectedNodes", event.getData(MPSDataKeys.NODES));
     return true;
   }
 
@@ -57,7 +68,24 @@ public class EvaluateExpression_Action extends GeneratedAction {
     try {
       IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
       if (evaluationProvider != null) {
-        evaluationProvider.showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
+        final Wrappers._T<List<SNodePointer>> nodePointers = new Wrappers._T<List<SNodePointer>>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            nodePointers.value = (((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")) == null ?
+              ListSequence.fromList(new ArrayList<SNodePointer>()) :
+              Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {
+                public Iterable<SNode> iterable() {
+                  return ((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes"));
+                }
+              })).select(new ISelector<SNode, SNodePointer>() {
+                public SNodePointer select(SNode it) {
+                  return new SNodePointer(it);
+                }
+              }).toListSequence()
+            );
+          }
+        });
+        evaluationProvider.showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), nodePointers.value);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

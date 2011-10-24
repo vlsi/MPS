@@ -16,13 +16,17 @@
 package jetbrains.mps.debug.api.evaluation;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
+import java.util.List;
 
 public interface IEvaluationProvider {
 
   void showEvaluationDialog(IOperationContext context);
+
+  void showEvaluationDialog(IOperationContext context, List<SNodePointer> selectedNodes);
 
   @Nullable
   JComponent createWatchesPanel();
