@@ -73,8 +73,8 @@
     <scopeInfo nodeId="4727801710070560852" fileName="IterableProxy.java" startLine="41" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="4727801710070560855" fileName="IterableProxy.java" startLine="50" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="4727801710070560871" fileName="IterableProxy.java" startLine="15" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="4727801710070560837" fileName="IterableProxy.java" startLine="26" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.debug.evaluation.proxies.IterableProxy$MyIterator" />
     <unitInfo nodeId="4727801710070560831" fileName="IterableProxy.java" startLine="9" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.debug.evaluation.proxies.IterableProxy" />
+    <unitInfo nodeId="4727801710070560837" fileName="IterableProxy.java" startLine="26" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.debug.evaluation.proxies.IterableProxy$MyIterator" />
   </root>
   <root nodeId="4727801710070560969">
     <nodeInfo nodeId="4727801710070560994" fileName="IterableArrayProxy.java" startLine="7" startPosition="79" endLine="8" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValueProxy" />
@@ -104,8 +104,8 @@
     <scopeInfo nodeId="4727801710070560985" fileName="IterableArrayProxy.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4727801710070560988" fileName="IterableArrayProxy.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="4727801710070560991" fileName="IterableArrayProxy.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="4727801710070560975" fileName="IterableArrayProxy.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debug.evaluation.proxies.IterableArrayProxy$MyIterator" />
     <unitInfo nodeId="4727801710070560969" fileName="IterableArrayProxy.java" startLine="7" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debug.evaluation.proxies.IterableArrayProxy" />
+    <unitInfo nodeId="4727801710070560975" fileName="IterableArrayProxy.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debug.evaluation.proxies.IterableArrayProxy$MyIterator" />
   </root>
   <root nodeId="4727801710070561042">
     <nodeInfo nodeId="4727801710070561062" fileName="MirrorUtil.java" startLine="33" startPosition="24" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -227,8 +227,8 @@
       <varInfo nodeId="4727801710070561231" varName="typename" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561406" fileName="MirrorUtil.java" startLine="109" startPosition="0" endLine="115" endPosition="0">
-      <varInfo nodeId="4727801710070561412" varName="threadReference" />
       <varInfo nodeId="4727801710070561409" varName="javaValue" />
+      <varInfo nodeId="4727801710070561412" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561519" fileName="MirrorUtil.java" startLine="140" startPosition="29" endLine="147" endPosition="23">
       <varInfo nodeId="4727801710070561521" varName="v" />
@@ -240,8 +240,8 @@
       <varInfo nodeId="4727801710070561509" varName="argValues" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561498" fileName="MirrorUtil.java" startLine="136" startPosition="0" endLine="151" endPosition="0">
-      <varInfo nodeId="4727801710070561502" varName="threadReference" />
       <varInfo nodeId="4727801710070561504" varName="args" />
+      <varInfo nodeId="4727801710070561502" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561437" fileName="MirrorUtil.java" startLine="117" startPosition="108" endLine="134" endPosition="5" />
     <scopeInfo nodeId="4727801710070561428" fileName="MirrorUtil.java" startLine="115" startPosition="0" endLine="136" endPosition="0">
@@ -253,8 +253,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561056" fileName="MirrorUtil.java" startLine="32" startPosition="85" endLine="64" endPosition="5" />
     <scopeInfo nodeId="4727801710070561048" fileName="MirrorUtil.java" startLine="30" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="4727801710070561054" varName="vm" />
       <varInfo nodeId="4727801710070561051" varName="value" />
+      <varInfo nodeId="4727801710070561054" varName="vm" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561208" fileName="MirrorUtil.java" startLine="68" startPosition="62" endLine="107" endPosition="46" />
     <scopeInfo nodeId="4727801710070561202" fileName="MirrorUtil.java" startLine="66" startPosition="0" endLine="109" endPosition="0">
@@ -361,8 +361,8 @@
     <scopeInfo nodeId="4727801710070563041" fileName="ArrayValueProxy.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="4727801710070563097" fileName="ArrayValueProxy.java" startLine="71" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="4727801710070563104" varName="args" />
-      <varInfo nodeId="4727801710070563100" varName="name" />
       <varInfo nodeId="4727801710070563102" varName="jniSignature" />
+      <varInfo nodeId="4727801710070563100" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563113" fileName="ArrayValueProxy.java" startLine="76" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="4727801710070563116" varName="typename" />
@@ -389,11 +389,11 @@
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563050" fileName="ArrayValueProxy.java" startLine="56" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="4727801710070563057" varName="args" />
-      <varInfo nodeId="4727801710070563053" varName="name" />
       <varInfo nodeId="4727801710070563055" varName="jniSignature" />
+      <varInfo nodeId="4727801710070563053" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="4727801710070563089" fileName="ArrayValueProxy.java" startLine="63" startPosition="58" endLine="69" endPosition="5" unitName="jetbrains.mps.debug.evaluation.proxies.ArrayValueProxy$1" />
     <unitInfo nodeId="4727801710070562951" fileName="ArrayValueProxy.java" startLine="19" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.debug.evaluation.proxies.ArrayValueProxy" />
+    <unitInfo nodeId="4727801710070563089" fileName="ArrayValueProxy.java" startLine="63" startPosition="58" endLine="69" endPosition="5" unitName="jetbrains.mps.debug.evaluation.proxies.ArrayValueProxy$1" />
   </root>
   <root nodeId="4727801710070563282">
     <nodeInfo nodeId="4727801710070563285" fileName="ObjectValueProxy.java" startLine="22" startPosition="84" endLine="23" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReferenceType" />
@@ -408,8 +408,8 @@
     <nodeInfo nodeId="4727801710070563356" fileName="ObjectValueProxy.java" startLine="44" startPosition="69" endLine="45" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4727801710070563368" fileName="ObjectValueProxy.java" startLine="46" startPosition="32" endLine="47" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4727801710070563378" fileName="ObjectValueProxy.java" startLine="48" startPosition="5" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4727801710070563391" fileName="ObjectValueProxy.java" startLine="53" startPosition="112" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4727801710070563397" fileName="ObjectValueProxy.java" startLine="54" startPosition="54" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4727801710070563391" fileName="ObjectValueProxy.java" startLine="53" startPosition="112" endLine="54" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4727801710070563397" fileName="ObjectValueProxy.java" startLine="54" startPosition="42" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4727801710070563401" fileName="ObjectValueProxy.java" startLine="55" startPosition="20" endLine="56" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4727801710070563421" fileName="ObjectValueProxy.java" startLine="60" startPosition="117" endLine="61" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4727801710070563425" fileName="ObjectValueProxy.java" startLine="61" startPosition="42" endLine="62" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -456,8 +456,8 @@
       <varInfo nodeId="4727801710070563398" varName="options" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563288" fileName="ObjectValueProxy.java" startLine="24" startPosition="0" endLine="28" endPosition="3">
-      <varInfo nodeId="4727801710070563291" varName="v" />
       <varInfo nodeId="4727801710070563293" varName="threadReference" />
+      <varInfo nodeId="4727801710070563291" varName="v" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563321" fileName="ObjectValueProxy.java" startLine="36" startPosition="97" endLine="40" endPosition="63">
       <varInfo nodeId="4727801710070563327" varName="f" />
@@ -478,13 +478,13 @@
     <scopeInfo nodeId="4727801710070563531" fileName="ObjectValueProxy.java" startLine="82" startPosition="125" endLine="88" endPosition="0" />
     <scopeInfo nodeId="4727801710070563380" fileName="ObjectValueProxy.java" startLine="51" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="4727801710070563387" varName="args" />
-      <varInfo nodeId="4727801710070563383" varName="name" />
       <varInfo nodeId="4727801710070563385" varName="jniSignature" />
+      <varInfo nodeId="4727801710070563383" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563420" fileName="ObjectValueProxy.java" startLine="60" startPosition="117" endLine="67" endPosition="65">
-      <varInfo nodeId="4727801710070563426" varName="superclass" />
       <varInfo nodeId="4727801710070563422" varName="classType" />
       <varInfo nodeId="4727801710070563447" varName="options" />
+      <varInfo nodeId="4727801710070563426" varName="superclass" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563316" fileName="ObjectValueProxy.java" startLine="34" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="4727801710070563319" varName="fieldName" />
@@ -492,8 +492,8 @@
     <scopeInfo nodeId="4727801710070563345" fileName="ObjectValueProxy.java" startLine="42" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="4727801710070563410" fileName="ObjectValueProxy.java" startLine="58" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="4727801710070563417" varName="args" />
-      <varInfo nodeId="4727801710070563413" varName="name" />
       <varInfo nodeId="4727801710070563415" varName="jniSignature" />
+      <varInfo nodeId="4727801710070563413" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563488" fileName="ObjectValueProxy.java" startLine="75" startPosition="148" endLine="88" endPosition="7">
       <varInfo nodeId="4727801710070563519" varName="argValues" />
@@ -501,13 +501,13 @@
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563474" fileName="ObjectValueProxy.java" startLine="74" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="4727801710070563485" varName="args" />
-      <varInfo nodeId="4727801710070563477" varName="name" />
-      <varInfo nodeId="4727801710070563479" varName="jniSignature" />
       <varInfo nodeId="4727801710070563481" varName="classType" />
+      <varInfo nodeId="4727801710070563479" varName="jniSignature" />
+      <varInfo nodeId="4727801710070563477" varName="name" />
       <varInfo nodeId="4727801710070563483" varName="options" />
     </scopeInfo>
-    <unitInfo nodeId="4727801710070563529" fileName="ObjectValueProxy.java" startLine="82" startPosition="58" endLine="88" endPosition="5" unitName="jetbrains.mps.debug.evaluation.proxies.ObjectValueProxy$1" />
     <unitInfo nodeId="4727801710070563282" fileName="ObjectValueProxy.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debug.evaluation.proxies.ObjectValueProxy" />
+    <unitInfo nodeId="4727801710070563529" fileName="ObjectValueProxy.java" startLine="82" startPosition="58" endLine="88" endPosition="5" unitName="jetbrains.mps.debug.evaluation.proxies.ObjectValueProxy$1" />
   </root>
   <root nodeId="4727801710070563570">
     <nodeInfo nodeId="4727801710070563581" fileName="IObjectValueProxy.java" startLine="11" startPosition="96" endLine="12" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMethod#(Ljava/lang/String;Ljava/lang/String;null)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
@@ -516,13 +516,13 @@
     <nodeInfo nodeId="4727801710070563573" fileName="IObjectValueProxy.java" startLine="9" startPosition="56" endLine="11" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
     <scopeInfo nodeId="4727801710070563581" fileName="IObjectValueProxy.java" startLine="11" startPosition="96" endLine="12" endPosition="111">
       <varInfo nodeId="4727801710070563588" varName="args" />
-      <varInfo nodeId="4727801710070563584" varName="name" />
       <varInfo nodeId="4727801710070563586" varName="jniSignature" />
+      <varInfo nodeId="4727801710070563584" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563593" fileName="IObjectValueProxy.java" startLine="12" startPosition="111" endLine="13" endPosition="116">
       <varInfo nodeId="4727801710070563600" varName="args" />
-      <varInfo nodeId="4727801710070563596" varName="name" />
       <varInfo nodeId="4727801710070563598" varName="jniSignature" />
+      <varInfo nodeId="4727801710070563596" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563605" fileName="IObjectValueProxy.java" startLine="13" startPosition="116" endLine="14" endPosition="74">
       <varInfo nodeId="4727801710070563608" varName="typename" />
@@ -547,8 +547,8 @@
     <scopeInfo nodeId="4727801710070563651" fileName="ValueProxy.java" startLine="30" startPosition="32" endLine="31" endPosition="44" />
     <scopeInfo nodeId="4727801710070563631" fileName="ValueProxy.java" startLine="16" startPosition="81" endLine="19" endPosition="54" />
     <scopeInfo nodeId="4727801710070563622" fileName="ValueProxy.java" startLine="15" startPosition="0" endLine="20" endPosition="3">
-      <varInfo nodeId="4727801710070563625" varName="v" />
       <varInfo nodeId="4727801710070563628" varName="threadReference" />
+      <varInfo nodeId="4727801710070563625" varName="v" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563640" fileName="ValueProxy.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="4727801710070563648" fileName="ValueProxy.java" startLine="27" startPosition="0" endLine="33" endPosition="0" />
@@ -593,13 +593,13 @@
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563712" fileName="NullValueProxy.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="4727801710070563719" varName="args" />
-      <varInfo nodeId="4727801710070563715" varName="name" />
       <varInfo nodeId="4727801710070563717" varName="jniSignature" />
+      <varInfo nodeId="4727801710070563715" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563736" fileName="NullValueProxy.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="4727801710070563743" varName="args" />
-      <varInfo nodeId="4727801710070563739" varName="name" />
       <varInfo nodeId="4727801710070563741" varName="jniSignature" />
+      <varInfo nodeId="4727801710070563739" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563760" fileName="NullValueProxy.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="4727801710070563763" varName="typename" />
@@ -630,8 +630,8 @@
     <scopeInfo nodeId="4727801710070563881" fileName="VoidValueProxy.java" startLine="10" startPosition="85" endLine="11" endPosition="30" />
     <scopeInfo nodeId="4727801710070563890" fileName="VoidValueProxy.java" startLine="15" startPosition="48" endLine="16" endPosition="17" />
     <scopeInfo nodeId="4727801710070563872" fileName="VoidValueProxy.java" startLine="9" startPosition="71" endLine="12" endPosition="3">
-      <varInfo nodeId="4727801710070563875" varName="v" />
       <varInfo nodeId="4727801710070563878" varName="threadReference" />
+      <varInfo nodeId="4727801710070563875" varName="v" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563885" fileName="VoidValueProxy.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="4727801710070563888" varName="proxy" />
@@ -651,8 +651,8 @@
     <scopeInfo nodeId="4727801710070563947" fileName="PrimitiveValueProxy.java" startLine="13" startPosition="45" endLine="14" endPosition="36" />
     <scopeInfo nodeId="4727801710070563966" fileName="PrimitiveValueProxy.java" startLine="19" startPosition="70" endLine="20" endPosition="19" />
     <scopeInfo nodeId="4727801710070563933" fileName="PrimitiveValueProxy.java" startLine="8" startPosition="76" endLine="11" endPosition="3">
-      <varInfo nodeId="4727801710070563936" varName="v" />
       <varInfo nodeId="4727801710070563938" varName="threadReference" />
+      <varInfo nodeId="4727801710070563936" varName="v" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563944" fileName="PrimitiveValueProxy.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="4727801710070563957" fileName="PrimitiveValueProxy.java" startLine="18" startPosition="53" endLine="22" endPosition="52" />

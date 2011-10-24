@@ -133,15 +133,15 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
   }
 
   @Test
-  public void test_instanceof() throws Throwable {
+  public void test_instanceoff() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
-    this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_instanceof", true);
+    this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_instanceoff", true);
   }
 
   @Test
-  public void test_super() throws Throwable {
+  public void test_superr() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
-    this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_super", true);
+    this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_superr", true);
   }
 
   @Test
@@ -1245,7 +1245,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653679948"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653680038"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
     }
 
-    public void test_instanceof() throws Exception {
+    public void test_instanceoff() throws Exception {
       this.addNodeById("5543996881668550169");
       this.addNodeById("5543996881668550178");
       this.addNodeById("1454920206667908421");
@@ -1302,7 +1302,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699707955"), "jetbrains.mps.baseLanguage.structure.StatementList")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699710927"), "jetbrains.mps.baseLanguage.structure.StatementList"))));
     }
 
-    public void test_super() throws Exception {
+    public void test_superr() throws Exception {
       this.addNodeById("5543996881668550169");
       this.addNodeById("5543996881668550178");
       this.addNodeById("1454920206667908421");

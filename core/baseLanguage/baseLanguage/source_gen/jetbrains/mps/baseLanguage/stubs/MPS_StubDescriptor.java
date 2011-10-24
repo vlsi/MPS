@@ -22,6 +22,7 @@ public class MPS_StubDescriptor extends BaseLibStubDescriptor {
 
   public void init(SolutionDescriptor solution) {
     solution.getDependencies().add(new Dependency(new ModuleReference("JDK", "6354ebe7-c22a-4a0f-ac54-50b52ab9b065"), true));
+    solution.getDependencies().add(new Dependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fdb93da0-59ed-4001-b2aa-4fad79ec058e")).getModuleReference(), true));
     solution.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference());
   }
 

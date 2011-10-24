@@ -289,8 +289,8 @@
       <varInfo nodeId="4727801710070562285" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562310" fileName="EvaluationUtils.java" startLine="260" startPosition="137" endLine="263" endPosition="66">
-      <varInfo nodeId="4727801710070562312" varName="referenceType" />
       <varInfo nodeId="4727801710070562322" varName="classObject" />
+      <varInfo nodeId="4727801710070562312" varName="referenceType" />
     </scopeInfo>
     <scopeInfo nodeId="4963955491753976920" fileName="EvaluationUtils.java" startLine="368" startPosition="0" endLine="371" endPosition="7">
       <varInfo nodeId="4963955491753976921" varName="e" />
@@ -317,8 +317,8 @@
       <varInfo nodeId="4727801710070561572" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561581" fileName="EvaluationUtils.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="4727801710070561586" varName="index" />
       <varInfo nodeId="4727801710070561584" varName="array" />
+      <varInfo nodeId="4727801710070561586" varName="index" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561655" fileName="EvaluationUtils.java" startLine="68" startPosition="179" endLine="72" endPosition="41">
       <varInfo nodeId="4727801710070561667" varName="field" />
@@ -358,22 +358,22 @@
       <varInfo nodeId="4727801710070562090" varName="valueProxy" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562099" fileName="EvaluationUtils.java" startLine="215" startPosition="0" endLine="220" endPosition="0">
-      <varInfo nodeId="4727801710070562108" varName="threadReference" />
       <varInfo nodeId="4727801710070562110" varName="args" />
-      <varInfo nodeId="4727801710070562104" varName="name" />
-      <varInfo nodeId="4727801710070562106" varName="jniSignature" />
       <varInfo nodeId="4727801710070562102" varName="className" />
+      <varInfo nodeId="4727801710070562106" varName="jniSignature" />
+      <varInfo nodeId="4727801710070562104" varName="name" />
+      <varInfo nodeId="4727801710070562108" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562125" fileName="EvaluationUtils.java" startLine="220" startPosition="0" endLine="225" endPosition="0">
-      <varInfo nodeId="4727801710070562132" varName="threadReference" />
       <varInfo nodeId="4727801710070562128" varName="className" />
       <varInfo nodeId="4727801710070562130" varName="fieldName" />
+      <varInfo nodeId="4727801710070562132" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562144" fileName="EvaluationUtils.java" startLine="225" startPosition="0" endLine="230" endPosition="0">
-      <varInfo nodeId="4727801710070562151" varName="threadReference" />
       <varInfo nodeId="4727801710070562153" varName="args" />
-      <varInfo nodeId="4727801710070562149" varName="jniSignature" />
       <varInfo nodeId="4727801710070562147" varName="className" />
+      <varInfo nodeId="4727801710070562149" varName="jniSignature" />
+      <varInfo nodeId="4727801710070562151" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562673" fileName="EvaluationUtils.java" startLine="336" startPosition="0" endLine="341" endPosition="7">
       <varInfo nodeId="4727801710070562696" varName="e" />
@@ -386,96 +386,96 @@
       <varInfo nodeId="4727801710070562210" varName="referenceType" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562262" fileName="EvaluationUtils.java" startLine="250" startPosition="150" endLine="256" endPosition="17">
-      <varInfo nodeId="4727801710070562273" varName="values" />
       <varInfo nodeId="4727801710070562264" varName="array" />
+      <varInfo nodeId="4727801710070562273" varName="values" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561645" fileName="EvaluationUtils.java" startLine="67" startPosition="0" endLine="74" endPosition="0">
-      <varInfo nodeId="4727801710070561652" varName="threadReference" />
       <varInfo nodeId="4727801710070561648" varName="className" />
       <varInfo nodeId="4727801710070561650" varName="fieldName" />
+      <varInfo nodeId="4727801710070561652" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561948" fileName="EvaluationUtils.java" startLine="139" startPosition="145" endLine="146" endPosition="26">
       <varInfo nodeId="4727801710070561950" varName="classes" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562303" fileName="EvaluationUtils.java" startLine="258" startPosition="0" endLine="265" endPosition="0">
-      <varInfo nodeId="4727801710070562308" varName="threadReference" />
       <varInfo nodeId="4727801710070562306" varName="className" />
+      <varInfo nodeId="4727801710070562308" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561609" fileName="EvaluationUtils.java" startLine="56" startPosition="194" endLine="65" endPosition="7">
       <varInfo nodeId="4727801710070561628" varName="argValues" />
-      <varInfo nodeId="4727801710070561611" varName="referenceType" />
       <varInfo nodeId="4727801710070561621" varName="method" />
+      <varInfo nodeId="4727801710070561611" varName="referenceType" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561730" fileName="EvaluationUtils.java" startLine="87" startPosition="0" endLine="96" endPosition="0">
-      <varInfo nodeId="4727801710070561733" varName="referenceType" />
       <varInfo nodeId="4727801710070561735" varName="fieldName" />
+      <varInfo nodeId="4727801710070561733" varName="referenceType" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561859" fileName="EvaluationUtils.java" startLine="119" startPosition="0" endLine="128" endPosition="0">
-      <varInfo nodeId="4727801710070561862" varName="referenceType" />
-      <varInfo nodeId="4727801710070561864" varName="methodsName" />
       <varInfo nodeId="4727801710070561866" varName="jniSignature" />
+      <varInfo nodeId="4727801710070561864" varName="methodsName" />
+      <varInfo nodeId="4727801710070561862" varName="referenceType" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561910" fileName="EvaluationUtils.java" startLine="128" startPosition="0" endLine="137" endPosition="0">
-      <varInfo nodeId="4727801710070561915" varName="virtualMachine" />
       <varInfo nodeId="4727801710070561913" varName="className" />
+      <varInfo nodeId="4727801710070561915" varName="virtualMachine" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562252" fileName="EvaluationUtils.java" startLine="249" startPosition="0" endLine="258" endPosition="0">
-      <varInfo nodeId="4727801710070562257" varName="threadReference" />
       <varInfo nodeId="4727801710070562259" varName="args" />
       <varInfo nodeId="4727801710070562255" varName="className" />
+      <varInfo nodeId="4727801710070562257" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561695" fileName="EvaluationUtils.java" startLine="75" startPosition="180" endLine="85" endPosition="7">
       <varInfo nodeId="4727801710070561713" varName="argValues" />
-      <varInfo nodeId="4727801710070561697" varName="referenceType" />
       <varInfo nodeId="4727801710070561707" varName="constructor" />
+      <varInfo nodeId="4727801710070561697" varName="referenceType" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561941" fileName="EvaluationUtils.java" startLine="137" startPosition="0" endLine="148" endPosition="0">
-      <varInfo nodeId="4727801710070561946" varName="virtualMachine" />
       <varInfo nodeId="4727801710070561944" varName="className" />
+      <varInfo nodeId="4727801710070561946" varName="virtualMachine" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561594" fileName="EvaluationUtils.java" startLine="55" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="4727801710070561603" varName="threadReference" />
       <varInfo nodeId="4727801710070561606" varName="args" />
-      <varInfo nodeId="4727801710070561601" varName="jniSignature" />
       <varInfo nodeId="4727801710070561597" varName="className" />
+      <varInfo nodeId="4727801710070561601" varName="jniSignature" />
       <varInfo nodeId="4727801710070561599" varName="methodName" />
+      <varInfo nodeId="4727801710070561603" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562020" fileName="EvaluationUtils.java" startLine="191" startPosition="131" endLine="203" endPosition="50">
-      <varInfo nodeId="4727801710070562057" varName="v" />
       <varInfo nodeId="4727801710070562026" varName="localVariable" />
+      <varInfo nodeId="4727801710070562057" varName="v" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561682" fileName="EvaluationUtils.java" startLine="74" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="4727801710070561689" varName="threadReference" />
       <varInfo nodeId="4727801710070561692" varName="args" />
-      <varInfo nodeId="4727801710070561687" varName="jniSignature" />
       <varInfo nodeId="4727801710070561685" varName="className" />
+      <varInfo nodeId="4727801710070561687" varName="jniSignature" />
+      <varInfo nodeId="4727801710070561689" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561786" fileName="EvaluationUtils.java" startLine="102" startPosition="129" endLine="117" endPosition="23">
-      <varInfo nodeId="4727801710070561788" varName="methods" />
       <varInfo nodeId="4727801710070561818" varName="constructor" />
+      <varInfo nodeId="4727801710070561788" varName="methods" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562011" fileName="EvaluationUtils.java" startLine="189" startPosition="0" endLine="205" endPosition="0">
-      <varInfo nodeId="4727801710070562014" varName="varName" />
-      <varInfo nodeId="4727801710070562016" varName="stackFrame" />
       <varInfo nodeId="4727801710070562018" varName="reference" />
+      <varInfo nodeId="4727801710070562016" varName="stackFrame" />
+      <varInfo nodeId="4727801710070562014" varName="varName" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562178" fileName="EvaluationUtils.java" startLine="231" startPosition="134" endLine="247" endPosition="88">
-      <varInfo nodeId="4727801710070562205" varName="arrayType" />
       <varInfo nodeId="4727801710070562239" varName="arrayReference" />
+      <varInfo nodeId="4727801710070562205" varName="arrayType" />
       <varInfo nodeId="4727801710070562180" varName="referenceTypes" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562781" fileName="EvaluationUtils.java" startLine="165" startPosition="43" endLine="183" endPosition="23">
-      <varInfo nodeId="4727801710070562813" varName="whatClassType" />
       <varInfo nodeId="4727801710070562792" varName="type" />
+      <varInfo nodeId="4727801710070562813" varName="whatClassType" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561779" fileName="EvaluationUtils.java" startLine="100" startPosition="0" endLine="119" endPosition="0">
-      <varInfo nodeId="4727801710070561782" varName="referenceType" />
       <varInfo nodeId="4727801710070561784" varName="jniSignature" />
+      <varInfo nodeId="4727801710070561782" varName="referenceType" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562169" fileName="EvaluationUtils.java" startLine="230" startPosition="0" endLine="249" endPosition="0">
-      <varInfo nodeId="4727801710070562174" varName="threadReference" />
       <varInfo nodeId="4727801710070562172" varName="className" />
       <varInfo nodeId="4727801710070562176" varName="size" />
+      <varInfo nodeId="4727801710070562174" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562671" fileName="EvaluationUtils.java" startLine="333" startPosition="121" endLine="353" endPosition="5" />
     <scopeInfo nodeId="4963955491753976911" fileName="EvaluationUtils.java" startLine="365" startPosition="115" endLine="390" endPosition="19" />
@@ -490,8 +490,8 @@
       <varInfo nodeId="4727801710070562502" varName="valueProxy" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562333" fileName="EvaluationUtils.java" startLine="265" startPosition="0" endLine="295" endPosition="0">
-      <varInfo nodeId="4727801710070562338" varName="threadReference" />
       <varInfo nodeId="4727801710070562336" varName="primitiveValueProxy" />
+      <varInfo nodeId="4727801710070562338" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562007" fileName="EvaluationUtils.java" startLine="156" startPosition="98" endLine="187" endPosition="0" />
     <scopeInfo nodeId="4727801710070562664" fileName="EvaluationUtils.java" startLine="324" startPosition="0" endLine="355" endPosition="0">
@@ -503,17 +503,17 @@
     </scopeInfo>
     <scopeInfo nodeId="4727801710070561982" fileName="EvaluationUtils.java" startLine="149" startPosition="139" endLine="187" endPosition="7" />
     <scopeInfo nodeId="4727801710070561973" fileName="EvaluationUtils.java" startLine="148" startPosition="0" endLine="189" endPosition="0">
-      <varInfo nodeId="4727801710070561976" varName="what" />
       <varInfo nodeId="4727801710070561978" varName="jniSignature" />
       <varInfo nodeId="4727801710070561980" varName="machine" />
+      <varInfo nodeId="4727801710070561976" varName="what" />
     </scopeInfo>
+    <unitInfo nodeId="4727801710070561555" fileName="EvaluationUtils.java" startLine="46" startPosition="0" endLine="431" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
     <unitInfo nodeId="4727801710070561638" fileName="EvaluationUtils.java" startLine="60" startPosition="58" endLine="65" endPosition="5" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$1" />
     <unitInfo nodeId="4727801710070561723" fileName="EvaluationUtils.java" startLine="80" startPosition="58" endLine="85" endPosition="5" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$2" />
-    <unitInfo nodeId="4727801710070560806" fileName="EvaluationUtils.java" startLine="393" startPosition="0" endLine="402" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$Invocatable" />
-    <unitInfo nodeId="4963955491753976889" fileName="EvaluationUtils.java" startLine="403" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$EvaluationInvocatable" />
-    <unitInfo nodeId="4727801710070560807" fileName="EvaluationUtils.java" startLine="413" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$ThreadInvocatable" />
     <unitInfo nodeId="4727801710070562005" fileName="EvaluationUtils.java" startLine="156" startPosition="58" endLine="187" endPosition="5" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$3" />
-    <unitInfo nodeId="4727801710070561555" fileName="EvaluationUtils.java" startLine="46" startPosition="0" endLine="431" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
+    <unitInfo nodeId="4963955491753976889" fileName="EvaluationUtils.java" startLine="403" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$EvaluationInvocatable" />
+    <unitInfo nodeId="4727801710070560806" fileName="EvaluationUtils.java" startLine="393" startPosition="0" endLine="402" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$Invocatable" />
+    <unitInfo nodeId="4727801710070560807" fileName="EvaluationUtils.java" startLine="413" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$ThreadInvocatable" />
   </root>
   <root nodeId="4727801710070563175">
     <nodeInfo nodeId="4727801710070563177" fileName="Evaluator.java" startLine="16" startPosition="33" endLine="17" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUiState" />
@@ -575,8 +575,8 @@
       <varInfo nodeId="4727801710070563668" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563673" fileName="InvocationTargetEvaluationException.java" startLine="19" startPosition="0" endLine="22" endPosition="3">
-      <varInfo nodeId="4727801710070563676" varName="message" />
       <varInfo nodeId="4727801710070563678" varName="cause" />
+      <varInfo nodeId="4727801710070563676" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563684" fileName="InvocationTargetEvaluationException.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="4727801710070563687" varName="cause" />
@@ -601,8 +601,8 @@
       <varInfo nodeId="4727801710070563840" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563845" fileName="EvaluationRuntimeException.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
-      <varInfo nodeId="4727801710070563848" varName="message" />
       <varInfo nodeId="4727801710070563850" varName="cause" />
+      <varInfo nodeId="4727801710070563848" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563856" fileName="EvaluationRuntimeException.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
       <varInfo nodeId="4727801710070563859" varName="cause" />
@@ -627,8 +627,8 @@
       <varInfo nodeId="4727801710070563905" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563910" fileName="EvaluationException.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
-      <varInfo nodeId="4727801710070563913" varName="message" />
       <varInfo nodeId="4727801710070563915" varName="cause" />
+      <varInfo nodeId="4727801710070563913" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070563921" fileName="EvaluationException.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
       <varInfo nodeId="4727801710070563924" varName="cause" />
@@ -681,8 +681,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4727801710070564004" fileName="TargetVMEvaluationException.java" startLine="26" startPosition="113" endLine="45" endPosition="5" />
     <scopeInfo nodeId="4727801710070563995" fileName="TargetVMEvaluationException.java" startLine="25" startPosition="0" endLine="46" endPosition="3">
-      <varInfo nodeId="4727801710070564001" varName="threadReference" />
       <varInfo nodeId="4727801710070563998" varName="e" />
+      <varInfo nodeId="4727801710070564001" varName="threadReference" />
     </scopeInfo>
     <unitInfo nodeId="4727801710070563977" fileName="TargetVMEvaluationException.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.debug.evaluation.TargetVMEvaluationException" />
   </root>
@@ -704,8 +704,8 @@
       <varInfo nodeId="4727801710070564152" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070564157" fileName="InvalidEvaluatedExpressionException.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
-      <varInfo nodeId="4727801710070564160" varName="message" />
       <varInfo nodeId="4727801710070564162" varName="cause" />
+      <varInfo nodeId="4727801710070564160" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070564168" fileName="InvalidEvaluatedExpressionException.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="4727801710070564171" varName="cause" />
@@ -729,8 +729,8 @@
       <varInfo nodeId="4963955491753979778" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4963955491753979782" fileName="JdiRuntimeExceptionEvaluationException.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
-      <varInfo nodeId="4963955491753979788" varName="message" />
       <varInfo nodeId="4963955491753979792" varName="cause" />
+      <varInfo nodeId="4963955491753979788" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4963955491753979796" fileName="JdiRuntimeExceptionEvaluationException.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="4963955491753979802" varName="cause" />

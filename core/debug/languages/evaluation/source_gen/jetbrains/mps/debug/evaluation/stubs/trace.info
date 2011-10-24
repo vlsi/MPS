@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="7179902291390800197">
+    <nodeInfo nodeId="7179902291390800197" fileName="Tools_StubDescriptor.java" startLine="18" startPosition="33" endLine="19" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6193049216304261379" fileName="Tools_StubDescriptor.java" startLine="22" startPosition="49" endLine="23" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7179902291390916768" fileName="Tools_StubDescriptor.java" startLine="26" startPosition="34" endLine="27" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7179902291390800197" fileName="Tools_StubDescriptor.java" startLine="17" startPosition="65" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Tools_StubDescriptor#()V" />
+    <nodeInfo nodeId="7179902291390800197" fileName="Tools_StubDescriptor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/project/structure/modules/SolutionDescriptor;)V" />
+    <nodeInfo nodeId="7179902291390800197" fileName="Tools_StubDescriptor.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPaths#()Ljava/util/List;" />
+    <scopeInfo nodeId="7179902291390800197" fileName="Tools_StubDescriptor.java" startLine="18" startPosition="33" endLine="19" endPosition="171" />
+    <scopeInfo nodeId="6193049216304261378" fileName="Tools_StubDescriptor.java" startLine="22" startPosition="49" endLine="23" endPosition="188" />
+    <scopeInfo nodeId="7179902291390800199" fileName="Tools_StubDescriptor.java" startLine="26" startPosition="34" endLine="27" endPosition="145" />
+    <scopeInfo nodeId="7179902291390800197" fileName="Tools_StubDescriptor.java" startLine="17" startPosition="65" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="7179902291390800197" fileName="Tools_StubDescriptor.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="7179902291390800197" varName="solution" />
+    </scopeInfo>
+    <scopeInfo nodeId="7179902291390800197" fileName="Tools_StubDescriptor.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <unitInfo nodeId="7179902291390800197" fileName="Tools_StubDescriptor.java" startLine="17" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.debug.evaluation.stubs.Tools_StubDescriptor" />
+  </root>
+</debugInfo>
+
