@@ -13,9 +13,16 @@
     <scopeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="14" startPosition="44" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="18" startPosition="76" endLine="19" endPosition="199" />
     <scopeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="22" startPosition="62" endLine="23" endPosition="56" />
-    <scopeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1842653058274900914" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1842653058274900914" varName="init" />
+      <varInfo nodeId="1842653058274900914" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1842653058274900914" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.WatchablesListCreator" />
   </root>
   <root nodeId="1842653058274900915">
@@ -29,9 +36,16 @@
     <scopeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="14" startPosition="40" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="18" startPosition="72" endLine="19" endPosition="191" />
     <scopeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="22" startPosition="58" endLine="23" endPosition="52" />
-    <scopeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1842653058274900915" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1842653058274900915" varName="init" />
+      <varInfo nodeId="1842653058274900915" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1842653058274900915" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.WatchableListType" />
   </root>
   <root nodeId="1843851250586690702">
@@ -82,20 +96,38 @@
     <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="70" />
     <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="70" startPosition="73" endLine="71" endPosition="193" />
     <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="74" startPosition="59" endLine="75" endPosition="53" />
-    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="1843851250586690702" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1843851250586690702" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1843851250586690702" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1843851250586690702" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1843851250586690702" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1843851250586690702" varName="node" />
+      <varInfo nodeId="1843851250586690702" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1843851250586690702" varName="init" />
+      <varInfo nodeId="1843851250586690702" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1843851250586690702" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ClassNameOperation" />
   </root>
   <root nodeId="1843851250586694536">
@@ -146,20 +178,38 @@
     <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="72" />
     <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="70" startPosition="75" endLine="71" endPosition="197" />
     <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="74" startPosition="61" endLine="75" endPosition="55" />
-    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="1843851250586694536" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1843851250586694536" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1843851250586694536" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1843851250586694536" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1843851250586694536" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1843851250586694536" varName="node" />
+      <varInfo nodeId="1843851250586694536" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1843851250586694536" varName="init" />
+      <varInfo nodeId="1843851250586694536" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1843851250586694536" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ClassFqNameOperation" />
   </root>
   <root nodeId="1843851250586694559">
@@ -210,20 +260,38 @@
     <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="65" />
     <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="70" startPosition="68" endLine="71" endPosition="183" />
     <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="74" startPosition="54" endLine="75" endPosition="48" />
-    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="1843851250586694559" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1843851250586694559" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1843851250586694559" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1843851250586694559" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1843851250586694559" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1843851250586694559" varName="node" />
+      <varInfo nodeId="1843851250586694559" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1843851250586694559" varName="init" />
+      <varInfo nodeId="1843851250586694559" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1843851250586694559" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.SizeOperation" />
   </root>
   <root nodeId="1843851250586697538">
@@ -274,20 +342,38 @@
     <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="72" />
     <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="70" startPosition="75" endLine="71" endPosition="197" />
     <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="74" startPosition="61" endLine="75" endPosition="55" />
-    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="1843851250586697538" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1843851250586697538" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1843851250586697538" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1843851250586697538" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1843851250586697538" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1843851250586697538" varName="node" />
+      <varInfo nodeId="1843851250586697538" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1843851250586697538" varName="init" />
+      <varInfo nodeId="1843851250586697538" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1843851250586697538" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.AllElementsOperation" />
   </root>
   <root nodeId="1843851250586697564">
@@ -352,24 +438,46 @@
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="85" startPosition="69" endLine="86" endPosition="74" />
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="89" startPosition="77" endLine="90" endPosition="201" />
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="93" startPosition="63" endLine="94" endPosition="57" />
-    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="1843851250586697564" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1843851250586697564" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1843851250586697564" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1843851250586697564" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1843851250586697564" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1843851250586697564" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="1843851250586697564" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1843851250586697564" varName="node" />
+      <varInfo nodeId="1843851250586697564" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1843851250586697564" varName="init" />
+      <varInfo nodeId="1843851250586697564" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1843851250586697564" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ElementsRangeOperation" />
   </root>
   <root nodeId="2488554353950280317">
@@ -420,20 +528,38 @@
     <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="71" />
     <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="70" startPosition="74" endLine="71" endPosition="195" />
     <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="74" startPosition="60" endLine="75" endPosition="54" />
-    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="2488554353950280317" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="2488554353950280317" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="2488554353950280317" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="2488554353950280317" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="2488554353950280317" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="2488554353950280317" varName="node" />
+      <varInfo nodeId="2488554353950280317" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="2488554353950280317" varName="init" />
+      <varInfo nodeId="2488554353950280317" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="2488554353950280317" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.FieldsListOperation" />
   </root>
   <root nodeId="2488554353950312668">
@@ -491,22 +617,42 @@
     <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="76" startPosition="69" endLine="77" endPosition="66" />
     <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="80" startPosition="69" endLine="81" endPosition="185" />
     <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="84" startPosition="55" endLine="85" endPosition="49" />
-    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="2488554353950312668" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="2488554353950312668" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="2488554353950312668" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2488554353950312668" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="2488554353950312668" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="2488554353950312668" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="2488554353950312668" varName="node" />
+      <varInfo nodeId="2488554353950312668" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="2488554353950312668" varName="init" />
+      <varInfo nodeId="2488554353950312668" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="2488554353950312668" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.FieldOperation" />
   </root>
   <root nodeId="2488554353950312745">
@@ -564,22 +710,42 @@
     <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="76" startPosition="69" endLine="77" endPosition="68" />
     <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="80" startPosition="71" endLine="81" endPosition="189" />
     <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="84" startPosition="57" endLine="85" endPosition="51" />
-    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="2488554353950312745" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="2488554353950312745" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="2488554353950312745" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2488554353950312745" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="2488554353950312745" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="2488554353950312745" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="2488554353950312745" varName="node" />
+      <varInfo nodeId="2488554353950312745" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="2488554353950312745" varName="init" />
+      <varInfo nodeId="2488554353950312745" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="2488554353950312745" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ElementOperation" />
   </root>
   <root nodeId="4089989733346803658">
@@ -593,9 +759,16 @@
     <scopeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="14" startPosition="59" endLine="15" endPosition="16" />
     <scopeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="18" startPosition="91" endLine="19" endPosition="229" />
     <scopeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="22" startPosition="77" endLine="23" endPosition="71" />
-    <scopeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="4089989733346803658" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="4089989733346803658" varName="init" />
+      <varInfo nodeId="4089989733346803658" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4089989733346803658" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.GetValuePresentation_ConceptFunction" />
   </root>
   <root nodeId="4089989733346839773">
@@ -609,9 +782,16 @@
     <scopeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="14" startPosition="51" endLine="15" endPosition="16" />
     <scopeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="18" startPosition="83" endLine="19" endPosition="213" />
     <scopeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="22" startPosition="69" endLine="23" endPosition="63" />
-    <scopeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="4089989733346839773" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="4089989733346839773" varName="init" />
+      <varInfo nodeId="4089989733346839773" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4089989733346839773" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CanWrapValue_ConceptFunction" />
   </root>
   <root nodeId="43370322128194514">
@@ -625,9 +805,16 @@
     <scopeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="14" startPosition="68" endLine="15" endPosition="16" />
     <scopeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="18" startPosition="100" endLine="19" endPosition="247" />
     <scopeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="22" startPosition="86" endLine="23" endPosition="80" />
-    <scopeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="43370322128194514" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="43370322128194514" varName="init" />
+      <varInfo nodeId="43370322128194514" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="43370322128194514" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction" />
   </root>
   <root nodeId="43370322128194518">
@@ -641,9 +828,16 @@
     <scopeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="14" startPosition="66" endLine="15" endPosition="16" />
     <scopeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="18" startPosition="98" endLine="19" endPosition="243" />
     <scopeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="22" startPosition="84" endLine="23" endPosition="78" />
-    <scopeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="43370322128194518" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="43370322128194518" varName="init" />
+      <varInfo nodeId="43370322128194518" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="43370322128194518" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction" />
   </root>
   <root nodeId="43370322128194523">
@@ -657,9 +851,16 @@
     <scopeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="14" startPosition="60" endLine="15" endPosition="16" />
     <scopeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="18" startPosition="92" endLine="19" endPosition="231" />
     <scopeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="22" startPosition="78" endLine="23" endPosition="72" />
-    <scopeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="43370322128194523" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="43370322128194523" varName="init" />
+      <varInfo nodeId="43370322128194523" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="43370322128194523" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CanWrapHighLevelValue_ConceptFunction" />
   </root>
   <root nodeId="43370322128272301">
@@ -680,11 +881,20 @@
     <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="24" startPosition="44" endLine="25" endPosition="83" />
     <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="28" startPosition="94" endLine="29" endPosition="235" />
     <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="32" startPosition="80" endLine="33" endPosition="74" />
-    <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="43370322128272301" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="43370322128272301" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="43370322128272301" varName="init" />
+      <varInfo nodeId="43370322128272301" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="43370322128272301" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter" />
   </root>
   <root nodeId="43370322128285902">
@@ -712,13 +922,24 @@
     <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="33" startPosition="41" endLine="34" endPosition="58" />
     <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="37" startPosition="80" endLine="38" endPosition="207" />
     <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="41" startPosition="66" endLine="42" endPosition="60" />
-    <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="43370322128285902" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="43370322128285902" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="43370322128285902" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="43370322128285902" varName="init" />
+      <varInfo nodeId="43370322128285902" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="43370322128285902" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.HighLevelWatchableCreator" />
   </root>
   <root nodeId="5117350825036234462">
@@ -732,9 +953,16 @@
     <scopeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="14" startPosition="32" endLine="15" endPosition="16" />
     <scopeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="18" startPosition="64" endLine="19" endPosition="175" />
     <scopeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="22" startPosition="50" endLine="23" endPosition="44" />
-    <scopeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5117350825036234462" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5117350825036234462" varName="init" />
+      <varInfo nodeId="5117350825036234462" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5117350825036234462" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ValueType" />
   </root>
   <root nodeId="5117350825036234467">
@@ -748,9 +976,16 @@
     <scopeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="14" startPosition="37" endLine="15" endPosition="16" />
     <scopeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="18" startPosition="69" endLine="19" endPosition="185" />
     <scopeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="22" startPosition="55" endLine="23" endPosition="49" />
-    <scopeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5117350825036234467" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5117350825036234467" varName="init" />
+      <varInfo nodeId="5117350825036234467" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5117350825036234467" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ArrayValueType" />
   </root>
   <root nodeId="5117350825036234473">
@@ -764,9 +999,16 @@
     <scopeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="14" startPosition="38" endLine="15" endPosition="16" />
     <scopeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="18" startPosition="70" endLine="19" endPosition="187" />
     <scopeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="22" startPosition="56" endLine="23" endPosition="50" />
-    <scopeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5117350825036234473" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5117350825036234473" varName="init" />
+      <varInfo nodeId="5117350825036234473" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5117350825036234473" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ObjectValueType" />
   </root>
   <root nodeId="5117350825036234478">
@@ -780,9 +1022,16 @@
     <scopeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="14" startPosition="41" endLine="15" endPosition="16" />
     <scopeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="18" startPosition="73" endLine="19" endPosition="193" />
     <scopeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="22" startPosition="59" endLine="23" endPosition="53" />
-    <scopeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5117350825036234478" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5117350825036234478" varName="init" />
+      <varInfo nodeId="5117350825036234478" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5117350825036234478" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.PrimitiveValueType" />
   </root>
   <root nodeId="5117350825036234483">
@@ -847,24 +1096,46 @@
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="84" startPosition="69" endLine="85" endPosition="67" />
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="88" startPosition="70" endLine="89" endPosition="187" />
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="92" startPosition="56" endLine="93" endPosition="50" />
-    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="5117350825036234483" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="5117350825036234483" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5117350825036234483" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="5117350825036234483" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="5117350825036234483" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="5117350825036234483" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="5117350825036234483" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="5117350825036234483" varName="node" />
+      <varInfo nodeId="5117350825036234483" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="5117350825036234483" varName="init" />
+      <varInfo nodeId="5117350825036234483" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="5117350825036234483" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CustomWatchable" />
   </root>
   <root nodeId="5117350825036256317">
@@ -938,27 +1209,52 @@
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="96" startPosition="69" endLine="97" endPosition="77" />
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="100" startPosition="80" endLine="101" endPosition="207" />
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="104" startPosition="66" endLine="105" endPosition="60" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="5117350825036256317" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="5117350825036256317" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5117350825036256317" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="5117350825036256317" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="5117350825036256317" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="5117350825036256317" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="5117350825036256317" varName="node" />
+      <varInfo nodeId="5117350825036256317" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="5117350825036256317" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="5117350825036256317" varName="node" />
+      <varInfo nodeId="5117350825036256317" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="5117350825036256317" varName="init" />
+      <varInfo nodeId="5117350825036256317" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="5117350825036256317" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer" />
   </root>
   <root nodeId="5117350825036256331">
@@ -1037,28 +1333,54 @@
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="102" startPosition="69" endLine="103" endPosition="64" />
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="106" startPosition="67" endLine="107" endPosition="181" />
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="110" startPosition="53" endLine="111" endPosition="47" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
+      <varInfo nodeId="5117350825036256331" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="101" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="node" />
+      <varInfo nodeId="5117350825036256331" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="init" />
+      <varInfo nodeId="5117350825036256331" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="5117350825036256331" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CustomViewer" />
   </root>
   <root nodeId="5117350825036256333">
@@ -1072,9 +1394,16 @@
     <scopeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="14" startPosition="36" endLine="15" endPosition="16" />
     <scopeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="18" startPosition="68" endLine="19" endPosition="183" />
     <scopeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="22" startPosition="54" endLine="23" endPosition="48" />
-    <scopeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5117350825036256333" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5117350825036256333" varName="init" />
+      <varInfo nodeId="5117350825036256333" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5117350825036256333" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.WatchableType" />
   </root>
   <root nodeId="5117350825036256338">
@@ -1102,13 +1431,24 @@
     <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="33" startPosition="41" endLine="34" endPosition="49" />
     <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="37" startPosition="71" endLine="38" endPosition="189" />
     <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="41" startPosition="57" endLine="42" endPosition="51" />
-    <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="5117350825036256338" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="5117350825036256338" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5117350825036256338" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="5117350825036256338" varName="init" />
+      <varInfo nodeId="5117350825036256338" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="5117350825036256338" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.WatchableCreator" />
   </root>
   <root nodeId="5264817233616806004">
@@ -1122,9 +1462,16 @@
     <scopeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="14" startPosition="57" endLine="15" endPosition="16" />
     <scopeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="18" startPosition="89" endLine="19" endPosition="225" />
     <scopeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="22" startPosition="75" endLine="23" endPosition="69" />
-    <scopeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5264817233616806004" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5264817233616806004" varName="init" />
+      <varInfo nodeId="5264817233616806004" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5264817233616806004" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.GetWatchablesBlock_ConceptFunction" />
   </root>
   <root nodeId="5264817233616809557">
@@ -1138,9 +1485,16 @@
     <scopeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="14" startPosition="61" endLine="15" endPosition="16" />
     <scopeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="18" startPosition="93" endLine="19" endPosition="233" />
     <scopeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="22" startPosition="79" endLine="23" endPosition="73" />
-    <scopeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5264817233616809557" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5264817233616809557" varName="init" />
+      <varInfo nodeId="5264817233616809557" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5264817233616809557" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter" />
   </root>
   <root nodeId="680105146889009728">
@@ -1226,30 +1580,58 @@
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="112" startPosition="69" endLine="113" endPosition="73" />
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="116" startPosition="76" endLine="117" endPosition="199" />
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="120" startPosition="62" endLine="121" endPosition="56" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="27" startPosition="0" endLine="30" endPosition="3" />
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="27" startPosition="0" endLine="30" endPosition="3">
+      <varInfo nodeId="680105146889009728" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
     <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="node" />
+      <varInfo nodeId="680105146889009728" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="init" />
+      <varInfo nodeId="680105146889009728" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="680105146889009728" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="16" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer" />
   </root>
   <root nodeId="721063219978402831">
@@ -1260,8 +1642,13 @@
     <nodeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getToProcessMethod#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
     <scopeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="10" startPosition="85" endLine="11" endPosition="82" />
     <scopeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="14" startPosition="72" endLine="15" endPosition="99" />
-    <scopeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="721063219978402831" varName="source" />
+      <varInfo nodeId="721063219978402831" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="721063219978402831" varName="source" />
+    </scopeInfo>
     <unitInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ToProcessMethod_AnnotationLink" />
   </root>
   <root nodeId="721063219978402832">
@@ -1275,9 +1662,16 @@
     <scopeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="14" startPosition="38" endLine="15" endPosition="16" />
     <scopeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="18" startPosition="70" endLine="19" endPosition="187" />
     <scopeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="22" startPosition="56" endLine="23" endPosition="50" />
-    <scopeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="721063219978402832" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="721063219978402832" varName="init" />
+      <varInfo nodeId="721063219978402832" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="721063219978402832" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ToProcessMethod" />
   </root>
   <root nodeId="7430908097350531683">
@@ -1291,9 +1685,16 @@
     <scopeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="14" startPosition="38" endLine="15" endPosition="16" />
     <scopeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="18" startPosition="70" endLine="19" endPosition="187" />
     <scopeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="22" startPosition="56" endLine="23" endPosition="50" />
-    <scopeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="7430908097350531683" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="7430908097350531683" varName="init" />
+      <varInfo nodeId="7430908097350531683" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="7430908097350531683" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.StringValueType" />
   </root>
   <root nodeId="7471356136625957315">
@@ -1344,20 +1745,38 @@
     <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="72" />
     <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="70" startPosition="75" endLine="71" endPosition="197" />
     <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="74" startPosition="61" endLine="75" endPosition="55" />
-    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="7471356136625957315" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="7471356136625957315" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="7471356136625957315" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="7471356136625957315" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="7471356136625957315" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="7471356136625957315" varName="node" />
+      <varInfo nodeId="7471356136625957315" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="7471356136625957315" varName="init" />
+      <varInfo nodeId="7471356136625957315" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="7471356136625957315" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.StringValueOperation" />
   </root>
   <root nodeId="7744028807303021417">
@@ -1438,29 +1857,56 @@
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="106" startPosition="69" endLine="107" endPosition="71" />
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="110" startPosition="74" endLine="111" endPosition="195" />
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="114" startPosition="60" endLine="115" endPosition="54" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
+      <varInfo nodeId="7744028807303021417" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="node" />
+      <varInfo nodeId="7744028807303021417" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="101" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="node" />
+      <varInfo nodeId="7744028807303021417" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="init" />
+      <varInfo nodeId="7744028807303021417" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="7744028807303021417" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CallMethodOperation" />
   </root>
   <root nodeId="7744028807303050605">
@@ -1511,20 +1957,38 @@
     <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="70" />
     <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="70" startPosition="73" endLine="71" endPosition="193" />
     <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="74" startPosition="59" endLine="75" endPosition="53" />
-    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="7744028807303050605" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="7744028807303050605" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="7744028807303050605" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="7744028807303050605" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="7744028807303050605" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="7744028807303050605" varName="node" />
+      <varInfo nodeId="7744028807303050605" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="7744028807303050605" varName="init" />
+      <varInfo nodeId="7744028807303050605" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="7744028807303050605" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.JavaValueOperation" />
   </root>
   <root nodeId="929171734855789933">
@@ -1582,22 +2046,42 @@
     <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="76" startPosition="69" endLine="77" endPosition="73" />
     <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="80" startPosition="76" endLine="81" endPosition="199" />
     <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="84" startPosition="62" endLine="85" endPosition="56" />
-    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="929171734855789933" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="929171734855789933" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="929171734855789933" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="929171734855789933" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="929171734855789933" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="929171734855789933" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="929171734855789933" varName="node" />
+      <varInfo nodeId="929171734855789933" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="929171734855789933" varName="init" />
+      <varInfo nodeId="929171734855789933" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="929171734855789933" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.IsInstanceOfOperation" />
   </root>
 </debugInfo>
