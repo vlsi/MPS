@@ -112,6 +112,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     Object key = keyProducer.createKey(topClassifierNode);
     return (ClassifierAndSuperClassifiersCache) CachesManager.getInstance().getCache(key, topClassifierNode, new CachesManager.CacheCreator<SNode>() {
       public AbstractCache create(Object key, SNode element) {
+        assert SNodeOperations.getModel(element).getModelDescriptor() != null : "Classifier cache root node has no model descriptor";
         return new ClassifierAndSuperClassifiersCache(key, element);
       }
     });
