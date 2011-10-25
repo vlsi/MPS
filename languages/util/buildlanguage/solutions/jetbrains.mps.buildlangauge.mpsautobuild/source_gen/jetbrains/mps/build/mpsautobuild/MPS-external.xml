@@ -350,7 +350,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.lib" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.libs" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations.runtime" />

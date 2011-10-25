@@ -21,7 +21,7 @@
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" version="-1" />
   <import index="4gsk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.junit.runner.notification(org.junit.runner.notification@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
-  <import index="fel2" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.jmock.api(jetbrains.mps.baseLanguage.unitTest.lib/org.jmock.api@java_stub)" version="-1" />
+  <import index="fel2" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.jmock.api(jetbrains.mps.baseLanguage.unitTest.libs/org.jmock.api@java_stub)" version="-1" />
   <import index="js8" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.hamcrest(MPS.Classpath/org.hamcrest@java_stub)" version="-1" />
   <import index="k6pq" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.progress(MPS.Classpath/jetbrains.mps.progress@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
