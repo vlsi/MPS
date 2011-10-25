@@ -35,11 +35,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
@@ -160,9 +160,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   private void transformNode(SNode node) {
-    // all links to subs -> to debugger stubs 
-    replaceStubReferences(node);
-    // all links to external models -> to vars; they won't resolve anyway 
+    // try to resolve variables 
     ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return ListSequence.fromList(SNodeOperations.getChildren(it)).isEmpty();
@@ -172,6 +170,10 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         transformNodeToProperVariableReference(it);
       }
     });
+    // all links to subs -> to debugger stubs 
+    for (SNode d : ListSequence.fromList(SNodeOperations.getDescendants(node, null, true, new String[]{}))) {
+      replaceStubReferences(d);
+    }
   }
 
   private void replaceStubReferences(SNode node) {
@@ -180,7 +182,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       if (neq_qkk2f2_a0b0a0h(targetModel, myAuxModel.getSModel())) {
         SModelDescriptor scopeModel = myAuxModule.getScope().getModelDescriptor(targetModel.getSModelReference());
         if (scopeModel != null && neq_qkk2f2_a0a1a1a0a7(scopeModel.getSModel(), targetModel)) {
-          node.replaceReference(reference, new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getSModelReference(), SLinkOperations.getResolveInfo(reference)));
+          String resolveInfo = SLinkOperations.getResolveInfo(reference);
+          if (StringUtils.isEmpty(resolveInfo)) {
+            resolveInfo = SLinkOperations.getTargetNode(reference).getResolveInfo();
+          }
+          node.replaceReference(reference, new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getSModelReference(), resolveInfo));
         }
       }
     }
@@ -195,9 +201,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
             return eq_qkk2f2_a0a0a0a0a0a0a1a0a8(SPropertyOperations.getString(variable, "name"), SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
           }
         });
-        SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", null);
-        SLinkOperations.setTarget(newVariableReference, "baseVariableDeclaration", matchingVar, false);
-        SNodeOperations.replaceWithAnother(node, newVariableReference);
+        if (matchingVar != null) {
+          SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", null);
+          SLinkOperations.setTarget(newVariableReference, "baseVariableDeclaration", matchingVar, false);
+          SNodeOperations.replaceWithAnother(node, newVariableReference);
+        }
       }
     }
   }
