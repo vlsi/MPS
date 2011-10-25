@@ -113,6 +113,16 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           breakpointsForRoot = new HashSet<ILocationBreakpoint>();
           myRootsToBreakpointsMap.put(rootPointer, breakpointsForRoot);
         }
+
+
+        // check the following assumption: one breakpoint for one node
+        for (ILocationBreakpoint breakpointForRoot : breakpointsForRoot) {
+          if (breakpointForRoot.getLocation().getNodePointer().equals(breakpoint.getLocation().getNodePointer())){
+            LOG.error("Trying to add a second breakpoint for node", breakpointForRoot.getLocation().getSNode());
+            break;
+          }
+        }
+
         breakpointsForRoot.add(breakpoint);
       }
     }
