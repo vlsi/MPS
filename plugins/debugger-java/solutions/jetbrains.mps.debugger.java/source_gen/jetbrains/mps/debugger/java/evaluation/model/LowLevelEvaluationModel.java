@@ -46,6 +46,7 @@ import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import java.util.Set;
@@ -198,9 +199,16 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       if (neq_qkk2f2_a0a1a0a8(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), myAuxModel.getSModel()) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept")) {
         SNode matchingVar = ListSequence.fromList(SLinkOperations.getTargets(myEvaluator, "variables", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode variable) {
-            return eq_qkk2f2_a0a0a0a0a0a0a1a0a8(SPropertyOperations.getString(variable, "name"), SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
+            return eq_qkk2f2_a0a0a0a0a0a0a1a0a8(SPropertyOperations.getString(variable, "highLevelNodeId"), SLinkOperations.getTargetNode(reference).getSNodeId().toString());
           }
         });
+        if (matchingVar == null) {
+          matchingVar = ListSequence.fromList(SLinkOperations.getTargets(myEvaluator, "variables", true)).findFirst(new IWhereFilter<SNode>() {
+            public boolean accept(SNode variable) {
+              return eq_qkk2f2_a0a0a0a0a0a0a1a1a0a8(SPropertyOperations.getString(variable, "name"), SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
+            }
+          });
+        }
         if (matchingVar != null) {
           SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", null);
           SLinkOperations.setTarget(newVariableReference, "baseVariableDeclaration", matchingVar, false);
@@ -276,7 +284,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           return createClassifierType(name);
         }
       };
-      Map<String, SNode> contextVariables = myEvaluationContext.getVariables(createClassifierType);
+      Map<String, Tuples._3<SNode, SNode, String>> contextVariables = myEvaluationContext.getVariables(createClassifierType);
 
       Map<String, SNode> declaredVariables = MapSequence.fromMap(new LinkedHashMap<String, SNode>(16, (float) 0.75, false));
       for (SNode var : ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true))) {
@@ -297,14 +305,23 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
             ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true)).addElement(lowLevelVarNode);
             MapSequence.fromMap(declaredVariables).put(name, lowLevelVarNode);
           }
-          SNode deducedType = MapSequence.fromMap(contextVariables).get(name);
-          if (deducedType == null) {
+          SNode deducedType = MapSequence.fromMap(contextVariables).get(name)._0();
+          SNode lowLevelType = MapSequence.fromMap(contextVariables).get(name)._1();
+          String nodeId = MapSequence.fromMap(contextVariables).get(name)._2();
+          if (deducedType == null && lowLevelType == null) {
             if (log.isErrorEnabled()) {
               log.error("Could not deduce type for variable " + name);
             }
             continue;
           }
-          SLinkOperations.setTarget(lowLevelVarNode, "type", deducedType, true);
+          SLinkOperations.setTarget(lowLevelVarNode, "type", ((deducedType != null) ?
+            deducedType :
+            lowLevelType
+          ), true);
+          SLinkOperations.setTarget(lowLevelVarNode, "lowLevelType", lowLevelType, true);
+          if (StringUtils.isNotEmpty(nodeId)) {
+            SPropertyOperations.set(lowLevelVarNode, "highLevelNodeId", nodeId);
+          }
         }
 
         SetSequence.fromSet(foundVars).addElement(lowLevelVarNode);
@@ -372,6 +389,13 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   private static boolean eq_qkk2f2_a0a0a0a0a0a0a1a0a8(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_qkk2f2_a0a0a0a0a0a0a1a1a0a8(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

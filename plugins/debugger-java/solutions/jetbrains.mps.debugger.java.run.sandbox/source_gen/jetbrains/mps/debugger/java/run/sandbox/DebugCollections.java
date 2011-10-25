@@ -37,6 +37,7 @@ public class DebugCollections {
     MapSequence.fromMap(strings).put("one", "1");
     MapSequence.fromMap(strings).put("two", "2");
     MapSequence.fromMap(strings).put("three", "3");
+    // <node> 
     System.out.println(strings);
   }
 

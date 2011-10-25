@@ -259,47 +259,69 @@
   </root>
   <root nodeId="6036237525966182694">
     <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="12" startPosition="63" endLine="13" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="13" startPosition="99" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IS_OUT_OF_SCOPE" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="16" startPosition="39" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="20" startPosition="36" endLine="21" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="24" startPosition="46" endLine="25" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="28" startPosition="32" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="32" startPosition="41" endLine="33" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="36" startPosition="71" endLine="37" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="40" startPosition="57" endLine="41" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LowLevelVariable#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIsOutOfScope#()Z" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIsOutOfScope#(Z)V" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDeducedType#()Ljetbrains/mps/smodel/INodeAdapter;" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDeducedType#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/debug/evaluation/structure/LowLevelVariable;" />
-    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/debug/evaluation/structure/LowLevelVariable;" />
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="16" startPosition="39" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="20" startPosition="36" endLine="21" endPosition="69" />
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="24" startPosition="46" endLine="25" endPosition="69" />
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="28" startPosition="32" endLine="29" endPosition="66" />
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="32" startPosition="41" endLine="33" endPosition="23" />
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="36" startPosition="71" endLine="37" endPosition="186" />
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="40" startPosition="57" endLine="41" endPosition="51" />
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="13" startPosition="99" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HIGH_LEVEL_NODE_ID" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="14" startPosition="68" endLine="15" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IS_OUT_OF_SCOPE" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="15" startPosition="62" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOW_LEVEL_TYPE" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="18" startPosition="39" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="22" startPosition="38" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="26" startPosition="48" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="30" startPosition="36" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="34" startPosition="46" endLine="35" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="38" startPosition="33" endLine="39" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="42" startPosition="42" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="46" startPosition="32" endLine="47" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="50" startPosition="41" endLine="51" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="54" startPosition="71" endLine="55" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="58" startPosition="57" endLine="59" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LowLevelVariable#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHighLevelNodeId#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setHighLevelNodeId#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIsOutOfScope#()Z" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIsOutOfScope#(Z)V" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLowLevelType#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLowLevelType#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDeducedType#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDeducedType#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/debug/evaluation/structure/LowLevelVariable;" />
+    <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/debug/evaluation/structure/LowLevelVariable;" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="18" startPosition="39" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="22" startPosition="38" endLine="23" endPosition="65" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="26" startPosition="48" endLine="27" endPosition="65" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="30" startPosition="36" endLine="31" endPosition="69" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="34" startPosition="46" endLine="35" endPosition="69" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="38" startPosition="33" endLine="39" endPosition="77" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="42" startPosition="42" endLine="43" endPosition="58" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="46" startPosition="32" endLine="47" endPosition="66" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="50" startPosition="41" endLine="51" endPosition="23" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="54" startPosition="71" endLine="55" endPosition="186" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="58" startPosition="57" endLine="59" endPosition="51" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
       <varInfo nodeId="6036237525966182694" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="6036237525966182694" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="6036237525966182694" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="6036237525966182694" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="6036237525966182694" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="6036237525966182694" varName="init" />
       <varInfo nodeId="6036237525966182694" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="6036237525966182694" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.LowLevelVariable" />
+    <unitInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="12" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.LowLevelVariable" />
   </root>
   <root nodeId="6036237525966315974">
     <nodeInfo nodeId="6036237525966315974" fileName="EvaluatorsThisExpression.java" startLine="11" startPosition="58" endLine="12" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

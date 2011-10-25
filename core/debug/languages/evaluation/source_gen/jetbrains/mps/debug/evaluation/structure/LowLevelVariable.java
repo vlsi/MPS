@@ -11,10 +11,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LowLevelVariable extends BaseVariableDeclaration {
   public static final String concept = "jetbrains.mps.debug.evaluation.structure.LowLevelVariable";
+  public static final String HIGH_LEVEL_NODE_ID = "highLevelNodeId";
   public static final String IS_OUT_OF_SCOPE = "isOutOfScope";
+  public static final String LOW_LEVEL_TYPE = "lowLevelType";
 
   public LowLevelVariable(SNode node) {
     super(node);
+  }
+
+  public String getHighLevelNodeId() {
+    return this.getProperty(LowLevelVariable.HIGH_LEVEL_NODE_ID);
+  }
+
+  public void setHighLevelNodeId(String value) {
+    this.setProperty(LowLevelVariable.HIGH_LEVEL_NODE_ID, value);
   }
 
   public boolean getIsOutOfScope() {
@@ -23,6 +33,14 @@ public class LowLevelVariable extends BaseVariableDeclaration {
 
   public void setIsOutOfScope(boolean value) {
     this.setBooleanProperty(LowLevelVariable.IS_OUT_OF_SCOPE, value);
+  }
+
+  public Type getLowLevelType() {
+    return (Type) this.getChild(Type.class, LowLevelVariable.LOW_LEVEL_TYPE);
+  }
+
+  public void setLowLevelType(Type node) {
+    super.setChild(LowLevelVariable.LOW_LEVEL_TYPE, node);
   }
 
   public Type getDeducedType() {
