@@ -5,10 +5,9 @@ package jetbrains.mps.build.ant.generation.workers;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
 import org.apache.tools.ant.ProjectComponent;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.build.ant.generation.GenerateTask;
 import jetbrains.mps.ide.generator.GenerationSettings;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -61,7 +60,8 @@ public class GeneratorWorker extends MpsWorker {
     super(whatToDo, logger);
   }
 
-  protected void executeTask(final MPSProject project, MpsWorker.ObjectsToProcess go) {
+  @Override
+  protected void executeTask(final Project project, MpsWorker.ObjectsToProcess go) {
     setGenerationProperties();
     if (go.hasAnythingToGenerate()) {
       generate(project, go);
@@ -90,7 +90,7 @@ public class GeneratorWorker extends MpsWorker {
 
   private void generate(Project project, MpsWorker.ObjectsToProcess go) {
     StringBuffer s = new StringBuffer("Generating:");
-    for (MPSProject p : go.getProjects()) {
+    for (Project p : go.getProjects()) {
       s.append("\n    ");
       s.append(p);
     }
@@ -153,7 +153,7 @@ public class GeneratorWorker extends MpsWorker {
     final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (MPSProject p : go.getProjects()) {
+        for (Project p : go.getProjects()) {
           for (IModule mod : withGenerators(p.getModules())) {
             models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable((getModelsToGenerate(mod))));
 

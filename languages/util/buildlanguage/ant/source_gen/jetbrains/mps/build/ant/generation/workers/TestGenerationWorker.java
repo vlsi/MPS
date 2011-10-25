@@ -10,7 +10,7 @@ import java.util.HashMap;
 import jetbrains.mps.build.ant.WhatToDo;
 import java.io.File;
 import java.io.IOException;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.build.ant.generation.GenerateTask;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.project.IModule;
@@ -43,6 +43,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
 import java.lang.reflect.Method;
+import jetbrains.mps.project.MPSProject;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -93,7 +94,8 @@ public class TestGenerationWorker extends MpsWorker {
     this.tmpPath = tmpDir.getAbsolutePath();
   }
 
-  protected void executeTask(final MPSProject project, MpsWorker.ObjectsToProcess go) {
+  @Override
+  protected void executeTask(final Project project, MpsWorker.ObjectsToProcess go) {
     setGenerationProperties();
     if (go.hasAnythingToGenerate()) {
       generate(project, go);
@@ -116,9 +118,9 @@ public class TestGenerationWorker extends MpsWorker {
     }
   }
 
-  private void generate(final MPSProject project, final MpsWorker.ObjectsToProcess go) {
+  private void generate(final Project project, final MpsWorker.ObjectsToProcess go) {
     StringBuffer s = new StringBuffer("Generating:");
-    for (MPSProject p : go.getProjects()) {
+    for (Project p : go.getProjects()) {
       s.append("\n    ");
       s.append(p);
     }
@@ -264,7 +266,7 @@ public class TestGenerationWorker extends MpsWorker {
       if (!(file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
         continue;
       }
-      MPSProject p;
+      Project p;
       try {
         Class<?> cls = Class.forName("jetbrains.mps.TestMain");
         Method meth = cls.getMethod("loadProject", File.class);
@@ -285,7 +287,7 @@ public class TestGenerationWorker extends MpsWorker {
     collectFromModelFiles(models);
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, models);
     if (go.hasAnythingToGenerate()) {
-      MPSProject project = createDummyProject();
+      Project project = createDummyProject();
       executeTask(project, go);
     } else {
       error("Could not find anything to generate.");
@@ -314,12 +316,12 @@ public class TestGenerationWorker extends MpsWorker {
     MapSequence.fromMap(path2tmp).clear();
   }
 
-  private Iterable<IResource> collectResources(IOperationContext context, final Iterable<MPSProject> projects, Iterable<IModule> modules, final Iterable<SModelDescriptor> models) {
+  private Iterable<IResource> collectResources(IOperationContext context, final Iterable<Project> projects, Iterable<IModule> modules, final Iterable<SModelDescriptor> models) {
     final Wrappers._T<Iterable<IModule>> _modules = new Wrappers._T<Iterable<IModule>>(modules);
     final Wrappers._T<Iterable<SModelDescriptor>> result = new Wrappers._T<Iterable<SModelDescriptor>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (MPSProject prj : projects) {
+        for (Project prj : projects) {
           if (isWholeProject(prj)) {
             _modules.value = Sequence.fromIterable(_modules.value).concat(ListSequence.fromList(prj.getModules()));
           } else
@@ -328,7 +330,7 @@ public class TestGenerationWorker extends MpsWorker {
               try {
                 result.value = Sequence.fromIterable(result.value).concat(ListSequence.fromList(tconf.getGenParams(prj, true).getModelDescriptors()));
               } catch (IllegalGeneratorConfigurationException e) {
-                log("Error while reading configuration of project " + prj.getProject().getName(), e);
+                log("Error while reading configuration of project " + prj.getName(), e);
               }
             }
           } else {
@@ -363,7 +365,7 @@ public class TestGenerationWorker extends MpsWorker {
     })).resources(false);
   }
 
-  private boolean isWholeProject(MPSProject prj) {
+  private boolean isWholeProject(Project prj) {
     return Sequence.fromIterable(((Iterable<String>) myWhatToDo.getMPSProjectFiles().get(prj.getProjectFile()))).contains(TestGenerationOnTeamcity.WHOLE_PROJECT);
   }
 

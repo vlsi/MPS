@@ -28,9 +28,8 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.service.CoreMakeTask;
@@ -149,7 +148,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
 
       public void setup(IPropertiesPool pool) {
         Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
-        vars._0(ProjectHelper.toIdeaProject(TestMakeService.this.context.getProject()));
+        vars._0(TestMakeService.this.context.getProject());
         vars._1(TestMakeService.this.context);
         vars._2(true);
         vars._3(new _FunctionTypes._return_P0_E0<ProgressMonitor>() {
