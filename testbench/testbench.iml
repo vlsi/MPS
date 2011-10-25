@@ -53,6 +53,7 @@
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="library" name="JMock" level="project" />
     <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="trove.runtime" />
   </component>
 </module>
 
