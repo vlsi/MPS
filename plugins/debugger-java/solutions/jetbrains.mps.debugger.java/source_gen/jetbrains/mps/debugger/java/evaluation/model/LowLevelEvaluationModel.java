@@ -32,6 +32,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
@@ -54,7 +55,6 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -139,22 +139,26 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   private void tryToImport(List<SNodePointer> nodesToImport) {
-    for (SNode node : ListSequence.fromList(nodesToImport).select(new ISelector<SNodePointer, SNode>() {
+    List<SNode> nodes = CopyUtil.copy(ListSequence.fromList(nodesToImport).select(new ISelector<SNodePointer, SNode>() {
       public SNode select(SNodePointer it) {
         return (SNode) it.getNode();
       }
-    })) {
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
+    }).toListSequence());
+    for (SNode node : ListSequence.fromList(nodes)) {
       if (node == null) {
         continue;
       }
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression")) {
-        SNode clone = new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0a1a0a5().createNode(SNodeOperations.copyNode(node));
+        SNode clone = new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0a1a1a5().createNode(node);
         transformNode(clone);
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myEvaluator, "evaluatedStatements", true), "statement", true)).addElement(clone);
       } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement")) {
-        SNode clone = SNodeOperations.copyNode(node);
-        transformNode(clone);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myEvaluator, "evaluatedStatements", true), "statement", true)).addElement(clone);
+        transformNode(node);
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myEvaluator, "evaluatedStatements", true), "statement", true)).addElement(node);
       }
     }
   }
@@ -391,8 +395,8 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     ));
   }
 
-  public static class QuotationClass_qkk2f2_a0a0a1a0a5 {
-    public QuotationClass_qkk2f2_a0a0a1a0a5() {
+  public static class QuotationClass_qkk2f2_a0a0a1a1a5 {
+    public QuotationClass_qkk2f2_a0a0a1a1a5() {
     }
 
     public SNode createNode(Object parameter_5) {

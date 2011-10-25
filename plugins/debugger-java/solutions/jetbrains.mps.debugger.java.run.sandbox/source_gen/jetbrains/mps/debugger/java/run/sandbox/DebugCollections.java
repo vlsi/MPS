@@ -45,7 +45,8 @@ public class DebugCollections {
     Map<String, String> strings = SortedMapSequence.fromMap(new TreeMap<String, String>());
     MapSequence.fromMap(strings).put("one", "1");
     MapSequence.fromMap(strings).put("two", "2");
-    MapSequence.fromMap(strings).put("three", "3");
+    String string = "three";
+    MapSequence.fromMap(strings).put(string, "3");
     System.out.println(strings);
   }
 
