@@ -86,8 +86,12 @@
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
     </group>
 
-    <group id="BuildMenu" popup="true" text="Build">
+    <group id="AnalyzeMenu" popup="true" text="Analy_ze">
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="CodeMenu"/>
+    </group>
+
+    <group id="BuildMenu" popup="true" text="Build">
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="AnalyzeMenu"/>
     </group>
 
     <group id="MPSWelcomeDocumentationMenu">
