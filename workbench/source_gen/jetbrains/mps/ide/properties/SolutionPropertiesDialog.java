@@ -9,6 +9,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JPanel;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import com.intellij.openapi.util.Disposer;
@@ -31,6 +34,15 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
     List<StandardComponents.CheckboxDescriptor> list = new ArrayList<StandardComponents.CheckboxDescriptor>();
     list.add(new StandardComponents.CheckboxDescriptor(myProperties, ModuleProperties.COMPILE_IN_MPS, "Compile in MPS"));
     return StandardComponents.createCheckboxPanel(this, list);
+  }
+
+  public JPanel createSolutionKindPanel() {
+    List<String> values = Sequence.fromIterable(Sequence.fromArray(SolutionKind.values())).select(new ISelector<SolutionKind, String>() {
+      public String select(SolutionKind it) {
+        return it.name();
+      }
+    }).toListSequence();
+    return StandardComponents.createComboSelection(this, "Solution Kind", values, myProperties, SolutionProperties.KIND);
   }
 
   private void collectSolutionProperties() {
