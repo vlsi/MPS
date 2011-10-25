@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LowLevelVariable_Editor extends DefaultNodeEditor {
@@ -29,33 +30,42 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_f5bzsg_a");
     editorCell.addEditorCell(this.createRefNode_f5bzsg_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_f5bzsg_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_f5bzsg_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_f5bzsg_d0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_f5bzsg_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_f5bzsg_f0(editorContext, node));
-    if (renderingCondition_f5bzsg_a6a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_f5bzsg_g0(editorContext, node));
+    if (renderingCondition_f5bzsg_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_f5bzsg_c0(editorContext, node));
+    }
+    if (renderingCondition_f5bzsg_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_f5bzsg_d0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_f5bzsg_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_f5bzsg_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_f5bzsg_c0");
+    editorCell.addEditorCell(this.createConstant_f5bzsg_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_f5bzsg_b2a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_f5bzsg_c2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_f5bzsg_d2a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_f5bzsg_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_f5bzsg_c0");
+    editorCell.setCellId("Constant_f5bzsg_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_f5bzsg_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_f5bzsg_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_f5bzsg_f0");
+    editorCell.setCellId("Constant_f5bzsg_d2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_f5bzsg_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_f5bzsg_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(out of scope)");
-    editorCell.setCellId("Constant_f5bzsg_g0");
+    editorCell.setCellId("Constant_f5bzsg_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
@@ -81,7 +91,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_f5bzsg_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_f5bzsg_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("lowLevelType");
     provider.setNoTargetText("<no lowLevelType>");
@@ -116,7 +126,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_f5bzsg_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_f5bzsg_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("lowLevelName");
     provider.setNoTargetText("<no lowLevelName>");
@@ -134,7 +144,11 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_f5bzsg_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_f5bzsg_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "highLevelNodeId"));
+  }
+
+  private static boolean renderingCondition_f5bzsg_a3a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isOutOfScope");
   }
 }
