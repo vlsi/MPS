@@ -5,6 +5,10 @@ package jetbrains.mps.ide.actions;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import com.intellij.openapi.project.Project;
+import java.util.List;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -12,8 +16,6 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import javax.swing.JSplitPane;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
-import java.util.List;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
@@ -25,6 +27,8 @@ public class DependenciesComponent extends JComponent {
   private UsagesView myReferencesView;
   private Project myProject;
   private Scope myScope;
+  private List<SReference> myReferences = ListSequence.fromList(new ArrayList<SReference>());
+  private ReferencesFinder myReferencesFinder = null;
 
   public DependenciesComponent() {
   }
@@ -55,7 +59,7 @@ public class DependenciesComponent extends JComponent {
     rightSplitPane.setResizeWeight(0.5);
     this.removeAll();
     this.add(splitPane);
-
+    myReferencesFinder = new ReferencesFinder();
     setVisible(true);
     myInitTree.setContent(scope.getModels(), scope.getModules(), project);
     updateTargetsView(scope);
@@ -68,7 +72,8 @@ public class DependenciesComponent extends JComponent {
 
   public void updateTargetsView(Scope scope) {
     myScope = scope;
-    final List<SReference> references = ReferencesUtil.getReferences(scope);
+    final List<SReference> references = myReferencesFinder.getReferences(scope);
+    myReferences = references;
     final SearchResults<SNode> results = new SearchResults();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -81,11 +86,10 @@ public class DependenciesComponent extends JComponent {
   }
 
   public void updateReferencesView(final Scope scope) {
-    final List<SReference> references = ReferencesUtil.getReferences(myScope);
     final SearchResults<SNode> results = new SearchResults();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SReference ref : references) {
+        for (SReference ref : myReferences) {
           if (scope.contains(ref.getTargetNode())) {
             results.getSearchResults().add(new SearchResult(ref.getSourceNode(), "reference"));
           }

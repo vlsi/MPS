@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModel;
 
 public class Scope {
   private List<IModule> myModules;
@@ -18,6 +20,10 @@ public class Scope {
     myModules = ListSequence.fromList(new ArrayList<IModule>());
     myModels = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     myRoots = ListSequence.fromList(new ArrayList<SNode>());
+  }
+
+  private int getNumRoots(SModelDescriptor model) {
+    return ListSequence.fromList(SModelOperations.getRoots(((SModel) model.getSModel()), null)).count();
   }
 
   public boolean contains(SNode node) {
@@ -56,5 +62,24 @@ public class Scope {
 
   public List<IModule> getModules() {
     return myModules;
+  }
+
+  public int getNumRoots() {
+    int result = 0;
+    for (IModule module : myModules) {
+      result += getNumRoots(module);
+    }
+    for (SModelDescriptor model : myModels) {
+      result += getNumRoots(model);
+    }
+    return result;
+  }
+
+  private int getNumRoots(IModule module) {
+    int result = 0;
+    for (SModelDescriptor model : module.getOwnModelDescriptors()) {
+      result += getNumRoots(model);
+    }
+    return result;
   }
 }
