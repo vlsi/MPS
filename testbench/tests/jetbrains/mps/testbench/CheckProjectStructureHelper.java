@@ -46,6 +46,7 @@ import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class CheckProjectStructureHelper {
 
@@ -348,7 +349,13 @@ public class CheckProjectStructureHelper {
           if (SModelStereotype.isGeneratorModel(sm)) continue;
           ModuleOperationContext operationContext = new ModuleOperationContext(sm.getModule());
           for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sm.getSModel(), null)) {
-            for (IErrorReporter reporter : checker.getErrors(root, operationContext)) {
+            Set<IErrorReporter> errorReporters = null;
+            try {
+              errorReporters = checker.getErrors(root, operationContext);
+            }  catch (IllegalStateException e) {
+              errors.add(e.getMessage());
+            }
+            for (IErrorReporter reporter : errorReporters) {
               if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
                 SNode node = reporter.getSNode();
                 myErrors++;
