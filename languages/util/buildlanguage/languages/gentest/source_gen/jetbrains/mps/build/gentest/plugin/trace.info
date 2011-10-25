@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Gentest_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Gentest_ProjectPlugin" />
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.FacetAspectDescriptor$1" />
+  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.FacetManifest" />
   <unitInfo fileName="FacetManifest.java" startLine="25" startPosition="55" endLine="29" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.FacetManifest$1" />
   <unitInfo fileName="Gentest_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Gentest_ApplicationPlugin" />
-  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.FacetAspectDescriptor" />
-  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.FacetManifest" />
+  <unitInfo fileName="Gentest_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Gentest_ProjectPlugin" />
   <root nodeId="3705898146943254769">
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="36" startPosition="45" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="37" startPosition="82" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
@@ -208,13 +208,13 @@
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="228" startPosition="83" endLine="241" endPosition="7" />
     <scopeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="227" startPosition="0" endLine="243" endPosition="0" />
     <scopeInfo nodeId="3705898146943255929" fileName="Diff_Facet.java" startLine="85" startPosition="50" endLine="118" endPosition="76">
-      <varInfo nodeId="3705898146943255998" varName="fqn" />
       <varInfo nodeId="8491193474825069428" varName="differ" />
-      <varInfo nodeId="2007210557414378217" varName="outRootPath" />
-      <varInfo nodeId="297656254802945039" varName="errors" />
-      <varInfo nodeId="8491193474825069382" varName="tgres" />
-      <varInfo nodeId="7226636334567097819" varName="retainedPaths" />
       <varInfo nodeId="7226636334567080100" varName="dr" />
+      <varInfo nodeId="297656254802945039" varName="errors" />
+      <varInfo nodeId="3705898146943255998" varName="fqn" />
+      <varInfo nodeId="2007210557414378217" varName="outRootPath" />
+      <varInfo nodeId="7226636334567097819" varName="retainedPaths" />
+      <varInfo nodeId="8491193474825069382" varName="tgres" />
     </scopeInfo>
     <scopeInfo nodeId="3705898146943255928" fileName="Diff_Facet.java" startLine="84" startPosition="145" endLine="119" endPosition="17">
       <varInfo nodeId="3705898146943255930" varName="resource" />
@@ -225,13 +225,13 @@
     <scopeInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="78" startPosition="30" endLine="126" endPosition="0" />
     <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="77" startPosition="29" endLine="126" endPosition="8" />
     <scopeInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="76" startPosition="0" endLine="128" endPosition="0" />
+    <unitInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="36" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet" />
+    <unitInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="78" startPosition="17" endLine="126" endPosition="7" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet$1" />
     <unitInfo nodeId="7226636334567097805" fileName="Diff_Facet.java" startLine="91" startPosition="34" endLine="97" endPosition="19" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet$2" />
     <unitInfo nodeId="8491193474825069415" fileName="Diff_Facet.java" startLine="102" startPosition="34" endLine="114" endPosition="19" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet$2" />
-    <unitInfo nodeId="3705898146943254947" fileName="Diff_Facet.java" startLine="181" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet.Target_diff$Parameters" />
     <unitInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="213" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet$TargetProperties" />
-    <unitInfo nodeId="3705898146943254776" fileName="Diff_Facet.java" startLine="78" startPosition="17" endLine="126" endPosition="7" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet$1" />
     <unitInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="68" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet$Target_diff" />
-    <unitInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="36" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet" />
+    <unitInfo nodeId="3705898146943254947" fileName="Diff_Facet.java" startLine="181" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet.Target_diff$Parameters" />
   </root>
   <root nodeId="3705898146943254799">
     <nodeInfo nodeId="8612501826244562970" fileName="Differ.java" startLine="23" startPosition="26" endLine="24" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SLASH_CHAR" />
@@ -378,8 +378,8 @@
     </scopeInfo>
     <scopeInfo nodeId="86783001230300436" fileName="Differ.java" startLine="166" startPosition="37" endLine="170" endPosition="6" />
     <scopeInfo nodeId="1923248643617919220" fileName="Differ.java" startLine="172" startPosition="0" endLine="176" endPosition="0">
-      <varInfo nodeId="1923248643617919226" varName="prefix" />
       <varInfo nodeId="1923248643617919228" varName="path" />
+      <varInfo nodeId="1923248643617919226" varName="prefix" />
     </scopeInfo>
     <scopeInfo nodeId="3416062119153941755" fileName="Differ.java" startLine="133" startPosition="9" endLine="138" endPosition="7">
       <varInfo nodeId="5378512516364166405" varName="line" />
@@ -395,8 +395,8 @@
       <varInfo nodeId="86783001230300442" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="3416062119153995067" fileName="Differ.java" startLine="104" startPosition="37" endLine="112" endPosition="11">
-      <varInfo nodeId="5178714907363538037" varName="rlines" />
       <varInfo nodeId="5378512516364166441" varName="olines" />
+      <varInfo nodeId="5178714907363538037" varName="rlines" />
     </scopeInfo>
     <scopeInfo nodeId="3416062119153994971" fileName="Differ.java" startLine="76" startPosition="109" endLine="85" endPosition="0" />
     <scopeInfo nodeId="3224166544242245820" fileName="Differ.java" startLine="31" startPosition="73" endLine="41" endPosition="39" />
@@ -404,8 +404,8 @@
       <varInfo nodeId="1272816699443698386" varName="dir" />
     </scopeInfo>
     <scopeInfo nodeId="3224166544242245818" fileName="Differ.java" startLine="30" startPosition="0" endLine="42" endPosition="3">
-      <varInfo nodeId="1202495231125251780" varName="retainedFilePaths" />
       <varInfo nodeId="6502665912900579244" varName="excludedFiles" />
+      <varInfo nodeId="1202495231125251780" varName="retainedFilePaths" />
     </scopeInfo>
     <scopeInfo nodeId="3416062119153995065" fileName="Differ.java" startLine="103" startPosition="55" endLine="115" endPosition="9" />
     <scopeInfo nodeId="3224166544242245675" fileName="Differ.java" startLine="46" startPosition="47" endLine="61" endPosition="7">
@@ -414,15 +414,15 @@
     </scopeInfo>
     <scopeInfo nodeId="3416062119153994948" fileName="Differ.java" startLine="75" startPosition="96" endLine="92" endPosition="9" />
     <scopeInfo nodeId="3416062119153933710" fileName="Differ.java" startLine="130" startPosition="46" endLine="149" endPosition="18">
-      <varInfo nodeId="3416062119153994302" varName="result" />
       <varInfo nodeId="3416062119153941741" varName="in" />
+      <varInfo nodeId="3416062119153994302" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3416062119153933708" fileName="Differ.java" startLine="129" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="3416062119153933715" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="3416062119153995039" fileName="Differ.java" startLine="94" startPosition="96" endLine="118" endPosition="7">
-      <varInfo nodeId="3416062119153995057" varName="rnext" />
       <varInfo nodeId="3416062119153995051" varName="onext" />
+      <varInfo nodeId="3416062119153995057" varName="rnext" />
     </scopeInfo>
     <scopeInfo nodeId="8491193474825069450" fileName="Differ.java" startLine="44" startPosition="62" endLine="69" endPosition="17">
       <varInfo nodeId="8491193474825069495" varName="diffs" />
@@ -435,19 +435,19 @@
       <varInfo nodeId="8491193474825069456" varName="revdPath" />
     </scopeInfo>
     <scopeInfo nodeId="3416062119153932838" fileName="Differ.java" startLine="72" startPosition="79" endLine="119" endPosition="5">
-      <varInfo nodeId="3416062119153994912" varName="rnames" />
       <varInfo nodeId="3416062119153994870" varName="onames" />
+      <varInfo nodeId="3416062119153994912" varName="rnames" />
     </scopeInfo>
     <scopeInfo nodeId="3416062119153932835" fileName="Differ.java" startLine="71" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="3416062119153933053" varName="diffs" />
       <varInfo nodeId="3416062119153932839" varName="orig" />
       <varInfo nodeId="3416062119153932841" varName="revd" />
     </scopeInfo>
+    <unitInfo nodeId="3705898146943254799" fileName="Differ.java" startLine="23" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Differ" />
+    <unitInfo nodeId="3416062119153994971" fileName="Differ.java" startLine="76" startPosition="89" endLine="85" endPosition="7" unitName="jetbrains.mps.build.gentest.plugin.Differ$1" />
+    <unitInfo nodeId="3416062119153995013" fileName="Differ.java" startLine="86" startPosition="89" endLine="92" endPosition="7" unitName="jetbrains.mps.build.gentest.plugin.Differ$2" />
     <unitInfo nodeId="1272816699443698364" fileName="Differ.java" startLine="32" startPosition="75" endLine="36" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.Differ$3" />
     <unitInfo nodeId="1272816699443698372" fileName="Differ.java" startLine="36" startPosition="16" endLine="40" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.Differ$4" />
-    <unitInfo nodeId="3416062119153995013" fileName="Differ.java" startLine="86" startPosition="89" endLine="92" endPosition="7" unitName="jetbrains.mps.build.gentest.plugin.Differ$2" />
-    <unitInfo nodeId="3416062119153994971" fileName="Differ.java" startLine="76" startPosition="89" endLine="85" endPosition="7" unitName="jetbrains.mps.build.gentest.plugin.Differ$1" />
-    <unitInfo nodeId="3705898146943254799" fileName="Differ.java" startLine="23" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Differ" />
   </root>
   <root nodeId="7260781342054500362">
     <nodeInfo nodeId="8852346936509535693" fileName="TestCollector.java" startLine="30" startPosition="33" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="models" />
@@ -585,8 +585,8 @@
       <varInfo nodeId="7260781342054500368" varName="models" />
     </scopeInfo>
     <scopeInfo nodeId="7260781342054500382" fileName="TestCollector.java" startLine="53" startPosition="50" endLine="56" endPosition="67">
-      <varInfo nodeId="37832563414387309" varName="isdesc" />
       <varInfo nodeId="37832563414395790" varName="hasann" />
+      <varInfo nodeId="37832563414387309" varName="isdesc" />
     </scopeInfo>
     <scopeInfo nodeId="3638565609602523739" fileName="TestCollector.java" startLine="38" startPosition="86" endLine="42" endPosition="0" />
     <scopeInfo nodeId="3638565609602523748" fileName="TestCollector.java" startLine="42" startPosition="40" endLine="46" endPosition="0" />
@@ -669,24 +669,24 @@
     <scopeInfo nodeId="7260781342054500362" fileName="TestCollector.java" startLine="182" startPosition="0" endLine="195" endPosition="0" />
     <scopeInfo nodeId="7260781342054500362" fileName="TestCollector.java" startLine="200" startPosition="0" endLine="213" endPosition="0" />
     <scopeInfo nodeId="8852346936509535683" fileName="TestCollector.java" startLine="36" startPosition="0" endLine="52" endPosition="0" />
+    <unitInfo nodeId="7260781342054500362" fileName="TestCollector.java" startLine="30" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.TestCollector" />
     <unitInfo nodeId="3638565609602523739" fileName="TestCollector.java" startLine="38" startPosition="55" endLine="42" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$1" />
+    <unitInfo nodeId="3846212791553232198" fileName="TestCollector.java" startLine="110" startPosition="77" endLine="114" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$10" />
+    <unitInfo nodeId="3846212791553232215" fileName="TestCollector.java" startLine="119" startPosition="77" endLine="123" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$11" />
+    <unitInfo nodeId="4198336123622829654" fileName="TestCollector.java" startLine="128" startPosition="77" endLine="132" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$12" />
     <unitInfo nodeId="3638565609602523748" fileName="TestCollector.java" startLine="42" startPosition="17" endLine="46" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$2" />
     <unitInfo nodeId="3638565609602523759" fileName="TestCollector.java" startLine="46" startPosition="18" endLine="50" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$3" />
     <unitInfo nodeId="3846212791553232116" fileName="TestCollector.java" startLine="60" startPosition="98" endLine="64" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$4" />
     <unitInfo nodeId="3846212791553232137" fileName="TestCollector.java" startLine="64" startPosition="15" endLine="68" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$5" />
     <unitInfo nodeId="7260781342054520158" fileName="TestCollector.java" startLine="76" startPosition="98" endLine="80" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$6" />
     <unitInfo nodeId="7260781342054520176" fileName="TestCollector.java" startLine="80" startPosition="15" endLine="84" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$7" />
+    <unitInfo nodeId="3846212791553232154" fileName="TestCollector.java" startLine="88" startPosition="73" endLine="96" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$8" />
     <unitInfo nodeId="3846212791553232162" fileName="TestCollector.java" startLine="90" startPosition="101" endLine="94" endPosition="9" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$9" />
     <unitInfo nodeId="3846212791553232181" fileName="TestCollector.java" startLine="101" startPosition="98" endLine="105" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$9" />
-    <unitInfo nodeId="3846212791553232198" fileName="TestCollector.java" startLine="110" startPosition="77" endLine="114" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$10" />
-    <unitInfo nodeId="3846212791553232215" fileName="TestCollector.java" startLine="119" startPosition="77" endLine="123" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$11" />
-    <unitInfo nodeId="4198336123622829654" fileName="TestCollector.java" startLine="128" startPosition="77" endLine="132" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$12" />
-    <unitInfo nodeId="3846212791553232154" fileName="TestCollector.java" startLine="88" startPosition="73" endLine="96" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$8" />
     <unitInfo nodeId="7260781342054500362" fileName="TestCollector.java" startLine="143" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$QuotationClass_rpw6il_a0a0a0a6" />
     <unitInfo nodeId="7260781342054500362" fileName="TestCollector.java" startLine="161" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$QuotationClass_rpw6il_a0a0a0a7" />
     <unitInfo nodeId="7260781342054500362" fileName="TestCollector.java" startLine="179" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$QuotationClass_rpw6il_a0a0a0a8" />
     <unitInfo nodeId="7260781342054500362" fileName="TestCollector.java" startLine="197" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$QuotationClass_rpw6il_a0a0a0a9" />
-    <unitInfo nodeId="7260781342054500362" fileName="TestCollector.java" startLine="30" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.TestCollector" />
   </root>
   <root nodeId="8852346936509564326">
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="33" startPosition="45" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
@@ -922,9 +922,9 @@
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="272" startPosition="7" endLine="277" endPosition="9" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="283" startPosition="9" endLine="288" endPosition="11" />
     <scopeInfo nodeId="8852346936509691293" fileName="Test_Facet.java" startLine="171" startPosition="21" endLine="177" endPosition="19">
+      <varInfo nodeId="8852346936509691363" varName="exitCode" />
       <varInfo nodeId="8852346936509691307" varName="process" />
       <varInfo nodeId="8852346936509691316" varName="reader" />
-      <varInfo nodeId="8852346936509691363" varName="exitCode" />
     </scopeInfo>
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="271" startPosition="84" endLine="278" endPosition="7" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="282" startPosition="11" endLine="289" endPosition="9" />
@@ -932,8 +932,8 @@
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="270" startPosition="0" endLine="280" endPosition="0" />
     <scopeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="281" startPosition="83" endLine="291" endPosition="7" />
     <scopeInfo nodeId="8852346936509659288" fileName="Test_Facet.java" startLine="81" startPosition="48" endLine="92" endPosition="17">
-      <varInfo nodeId="3638565609602523642" varName="tests" />
       <varInfo nodeId="8852346936509681512" varName="gr" />
+      <varInfo nodeId="3638565609602523642" varName="tests" />
     </scopeInfo>
     <scopeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="80" startPosition="19" endLine="93" endPosition="15" />
     <scopeInfo nodeId="8852346936509659287" fileName="Test_Facet.java" startLine="80" startPosition="19" endLine="93" endPosition="15">
@@ -956,14 +956,14 @@
     <scopeInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="161" startPosition="30" endLine="188" endPosition="0" />
     <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="160" startPosition="29" endLine="188" endPosition="8" />
     <scopeInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="159" startPosition="0" endLine="190" endPosition="0" />
-    <unitInfo nodeId="3638565609602523666" fileName="Test_Facet.java" startLine="84" startPosition="57" endLine="89" endPosition="17" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$2" />
+    <unitInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="33" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet" />
     <unitInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="76" startPosition="17" endLine="98" endPosition="7" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$1" />
-    <unitInfo nodeId="8852346936509691323" fileName="Test_Facet.java" startLine="243" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet.Target_runTests$Parameters" />
     <unitInfo nodeId="8852346936509659265" fileName="Test_Facet.java" startLine="161" startPosition="17" endLine="188" endPosition="7" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$1" />
+    <unitInfo nodeId="3638565609602523666" fileName="Test_Facet.java" startLine="84" startPosition="57" endLine="89" endPosition="17" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$2" />
     <unitInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="267" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$TargetProperties" />
     <unitInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="66" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$Target_collectTest" />
     <unitInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="151" startPosition="0" endLine="266" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$Target_runTests" />
-    <unitInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="33" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet" />
+    <unitInfo nodeId="8852346936509691323" fileName="Test_Facet.java" startLine="243" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet.Target_runTests$Parameters" />
   </root>
   <root nodeId="8852346936509601871">
     <nodeInfo nodeId="8852346936509657047" fileName="Tester.java" startLine="22" startPosition="46" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" />
@@ -1011,8 +1011,8 @@
     <scopeInfo nodeId="8852346936509601876" fileName="Tester.java" startLine="26" startPosition="63" endLine="28" endPosition="35" />
     <scopeInfo nodeId="8852346936509657069" fileName="Tester.java" startLine="45" startPosition="35" endLine="47" endPosition="52" />
     <scopeInfo nodeId="8852346936509601873" fileName="Tester.java" startLine="25" startPosition="0" endLine="29" endPosition="3">
-      <varInfo nodeId="8852346936509601880" varName="testClasses" />
       <varInfo nodeId="8852346936509601877" varName="module" />
+      <varInfo nodeId="8852346936509601880" varName="testClasses" />
     </scopeInfo>
     <scopeInfo nodeId="8852346936509657068" fileName="Tester.java" startLine="44" startPosition="52" endLine="48" endPosition="5">
       <varInfo nodeId="8852346936509657070" varName="tc" />
@@ -1029,13 +1029,13 @@
     </scopeInfo>
     <scopeInfo nodeId="8852346936509657159" fileName="Tester.java" startLine="55" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="8852346936509601888" fileName="Tester.java" startLine="31" startPosition="42" endLine="49" endPosition="19">
-      <varInfo nodeId="8852346936509659218" varName="prependClasspath" />
       <varInfo nodeId="8852346936509601893" varName="cmdline" />
+      <varInfo nodeId="8852346936509659218" varName="prependClasspath" />
     </scopeInfo>
     <scopeInfo nodeId="8852346936509601885" fileName="Tester.java" startLine="30" startPosition="0" endLine="51" endPosition="0" />
+    <unitInfo nodeId="8852346936509601871" fileName="Tester.java" startLine="22" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Tester" />
     <unitInfo nodeId="8852346936509658143" fileName="Tester.java" startLine="58" startPosition="45" endLine="62" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.Tester$1" />
     <unitInfo nodeId="8852346936509658184" fileName="Tester.java" startLine="63" startPosition="56" endLine="67" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.Tester$2" />
-    <unitInfo nodeId="8852346936509601871" fileName="Tester.java" startLine="22" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Tester" />
   </root>
   <root nodeId="8852346936509659274">
     <nodeInfo nodeId="8852346936509691269" fileName="ITestResource.java" startLine="9" startPosition="50" endLine="10" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildCommandLine#()Ljava/util/List;" />
