@@ -28,7 +28,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.IEvaluatorConcept", null, true, new String[]{}, new String[]{}, new String[]{});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"}, new String[]{"isOutOfScope", "highLevelNodeId"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"}, new String[]{"isOutOfScope", "highLevelNodeId", "lowLevelName"}, new String[]{});
       case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"}, new String[]{}, new String[]{"variableDeclaration"});
       case 8:

@@ -46,7 +46,6 @@ import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import java.util.Set;
@@ -284,11 +283,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           return createClassifierType(name);
         }
       };
-      Map<String, Tuples._3<SNode, SNode, String>> contextVariables = myEvaluationContext.getVariables(createClassifierType);
+      Map<String, VariableDescription> contextVariables = myEvaluationContext.getVariables(createClassifierType);
 
       Map<String, SNode> declaredVariables = MapSequence.fromMap(new LinkedHashMap<String, SNode>(16, (float) 0.75, false));
       for (SNode var : ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true))) {
-        MapSequence.fromMap(declaredVariables).put(SPropertyOperations.getString(var, "name"), var);
+        MapSequence.fromMap(declaredVariables).put(SPropertyOperations.getString(var, "lowLevelName"), var);
       }
 
       final Set<SNode> foundVars = SetSequence.fromSet(new HashSet<SNode>());
@@ -301,27 +300,10 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           // we should update variables if we are first time here or if we do not show context (i.e. in evaluation) 
           if (lowLevelVarNode == null) {
             lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
-            SPropertyOperations.set(lowLevelVarNode, "name", name);
             ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true)).addElement(lowLevelVarNode);
             MapSequence.fromMap(declaredVariables).put(name, lowLevelVarNode);
           }
-          SNode deducedType = MapSequence.fromMap(contextVariables).get(name)._0();
-          SNode lowLevelType = MapSequence.fromMap(contextVariables).get(name)._1();
-          String nodeId = MapSequence.fromMap(contextVariables).get(name)._2();
-          if (deducedType == null && lowLevelType == null) {
-            if (log.isErrorEnabled()) {
-              log.error("Could not deduce type for variable " + name);
-            }
-            continue;
-          }
-          SLinkOperations.setTarget(lowLevelVarNode, "type", ((deducedType != null) ?
-            deducedType :
-            lowLevelType
-          ), true);
-          SLinkOperations.setTarget(lowLevelVarNode, "lowLevelType", lowLevelType, true);
-          if (StringUtils.isNotEmpty(nodeId)) {
-            SPropertyOperations.set(lowLevelVarNode, "highLevelNodeId", nodeId);
-          }
+          MapSequence.fromMap(contextVariables).get(variable).updateLowLevelVariable(lowLevelVarNode);
         }
 
         SetSequence.fromSet(foundVars).addElement(lowLevelVarNode);

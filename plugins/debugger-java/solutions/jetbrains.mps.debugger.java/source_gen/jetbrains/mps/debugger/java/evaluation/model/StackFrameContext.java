@@ -18,15 +18,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.execution.lib.Java_Command;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import com.sun.jdi.LocalVariable;
 import com.sun.jdi.Type;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.sun.jdi.ClassNotLoadedException;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import com.sun.jdi.InvalidStackFrameException;
 import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -103,8 +100,8 @@ public class StackFrameContext extends EvaluationContext {
   }
 
   @NotNull
-  public Map<String, Tuples._3<SNode, SNode, String>> getVariables(final _FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
-    final Map<String, Tuples._3<SNode, SNode, String>> result = MapSequence.fromMap(new LinkedHashMap<String, Tuples._3<SNode, SNode, String>>(16, (float) 0.75, false));
+  public Map<String, VariableDescription> getVariables(final _FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
+    final Map<String, VariableDescription> result = MapSequence.fromMap(new LinkedHashMap<String, VariableDescription>(16, (float) 0.75, false));
 
     foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, LocalVariable>() {
       public Boolean invoke(LocalVariable variable) {
@@ -118,12 +115,9 @@ public class StackFrameContext extends EvaluationContext {
               log.warn("Could not deduce type for a variable " + name);
             }
           } else {
-            Tuples._2<SNode, String> highLevelType = getHighLevelTypeForVariable(name);
-            if ((highLevelType._0() != null)) {
-              MapSequence.fromMap(result).put(name, MultiTuple.<SNode,SNode,String>from(highLevelType._0(), type, highLevelType._1()));
-            } else {
-              MapSequence.fromMap(result).put(name, MultiTuple.<SNode,SNode,String>from(type, type, highLevelType._1()));
-            }
+            VariableDescription variableDescription = new VariableDescription(name, type);
+            fillVariableDescription(name, variableDescription);
+            MapSequence.fromMap(result).put(name, variableDescription);
           }
         } catch (ClassNotLoadedException cne) {
           if (jdiType == null) {
@@ -133,7 +127,9 @@ public class StackFrameContext extends EvaluationContext {
                 log.warn("Could not deduce type for a variable " + name);
               }
             } else {
-              MapSequence.fromMap(result).put(name, MultiTuple.<SNode,SNode,String>from(classifierType, classifierType, ""));
+              VariableDescription variableDescription = new VariableDescription(name, classifierType);
+              fillVariableDescription(name, variableDescription);
+              MapSequence.fromMap(result).put(name, variableDescription);
             }
           } else {
             if (log.isWarnEnabled()) {
@@ -148,8 +144,7 @@ public class StackFrameContext extends EvaluationContext {
     return result;
   }
 
-  @Nullable
-  public Tuples._2<SNode, String> getHighLevelTypeForVariable(String varName) {
+  public void fillVariableDescription(String varName, VariableDescription description) {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
     if (javaStackFrame != null) {
       Location location = javaStackFrame.getLocation().getLocation();
@@ -157,7 +152,7 @@ public class StackFrameContext extends EvaluationContext {
         try {
           SNode node = TraceInfoUtil.getVar(getStaticContextTypeName(), location.sourceName(), location.lineNumber(), varName);
           if ((node != null)) {
-            return MultiTuple.<SNode,String>from(SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")), node.getSNodeId().toString());
+            description.setHighLevelNode(node);
           }
         } catch (InvalidStackFrameException e) {
           if (log.isWarnEnabled()) {
@@ -170,7 +165,6 @@ public class StackFrameContext extends EvaluationContext {
         }
       }
     }
-    return MultiTuple.<SNode,String>from((SNode) null, "");
   }
 
   private void foreachVariable(_FunctionTypes._return_P1_E0<? extends Boolean, ? super LocalVariable> action) {

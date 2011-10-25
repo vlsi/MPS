@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public abstract class EvaluationContext {
@@ -37,7 +36,7 @@ public abstract class EvaluationContext {
   }
 
   @NotNull
-  public abstract Map<String, Tuples._3<SNode, SNode, String>> getVariables(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType);
+  public abstract Map<String, VariableDescription> getVariables(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType);
 
   @Nullable
   public abstract SNode getStaticContextType(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType);

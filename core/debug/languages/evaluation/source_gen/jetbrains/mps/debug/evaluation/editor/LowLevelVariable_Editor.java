@@ -29,15 +29,33 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_f5bzsg_a");
     editorCell.addEditorCell(this.createRefNode_f5bzsg_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_f5bzsg_b0(editorContext, node));
-    if (renderingCondition_f5bzsg_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_f5bzsg_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_f5bzsg_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_f5bzsg_d0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_f5bzsg_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_f5bzsg_f0(editorContext, node));
+    if (renderingCondition_f5bzsg_a6a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_f5bzsg_g0(editorContext, node));
     }
     return editorCell;
   }
 
   private EditorCell createConstant_f5bzsg_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(out of scope)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_f5bzsg_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_f5bzsg_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_f5bzsg_f0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_f5bzsg_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(out of scope)");
+    editorCell.setCellId("Constant_f5bzsg_g0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
@@ -50,6 +68,23 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("deducedType");
     provider.setNoTargetText("<no deducedType>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_f5bzsg_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("lowLevelType");
+    provider.setNoTargetText("<no lowLevelType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -81,7 +116,25 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_f5bzsg_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private EditorCell createProperty_f5bzsg_e0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("lowLevelName");
+    provider.setNoTargetText("<no lowLevelName>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_lowLevelName");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_f5bzsg_a6a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isOutOfScope");
   }
 }
