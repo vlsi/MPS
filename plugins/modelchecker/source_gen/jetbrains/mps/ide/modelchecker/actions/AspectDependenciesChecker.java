@@ -71,7 +71,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         SModel targetModel = SNodeOperations.getModel(targetNode);
         int targetKind = getModelKind(targetModel, ref);
         if (targetKind > modelKind) {
-          addIssue(results, node, "Wrong reference: " + SLinkOperations.getResolveInfo(ref) + ", reference from " + kindToString(modelKind) + " to " + kindToString(targetKind), ModelChecker.SEVERITY_ERROR, "wrong aspect dependency", null);
+          addIssue(results, node, "Wrong reference: " + SLinkOperations.getResolveInfo(ref) + ", reference from " + kindToString(modelKind) + " to " + kindToString(targetKind), ModelChecker.SEVERITY_ERROR, "wrong aspect dependency (" + kindToString(modelKind) + ")", null);
         }
       }
     }
@@ -139,6 +139,9 @@ public class AspectDependenciesChecker extends SpecificChecker {
         SNode refTargetRoot = reference.getTargetNode().getTopmostAncestor();
         if (SNodeOperations.isInstanceOf(refTargetRoot, "jetbrains.mps.baseLanguage.structure.Classifier")) {
           String cName = SPropertyOperations.getString(SNodeOperations.cast(refTargetRoot, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
+          if ("org.jetbrains.annotations".equals(model.getLongName())) {
+            return CORE;
+          }
           if (findInModule(coreModule, model.getLongName(), cName)) {
             return CORE;
           }
