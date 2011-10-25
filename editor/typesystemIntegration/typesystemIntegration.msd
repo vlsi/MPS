@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="typesystemIntegration" uuid="a47a7608-84cc-4f1d-800f-301c16bc1595" compileInMPS="false">
+<solution name="typesystemIntegration" uuid="a47a7608-84cc-4f1d-800f-301c16bc1595" pluginKind="PLUGIN_EDITOR" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
     <modelRoot path="${solution_descriptor}/models" namespacePrefix="typesystemIntegration" />
@@ -8,8 +8,8 @@
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
-    <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
+    <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

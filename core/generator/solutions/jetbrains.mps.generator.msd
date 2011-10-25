@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.generator" uuid="5fa23c0a-216d-4571-a163-e286643e6f5f" compileInMPS="false" generatorOutputPath="${mps_home}/core/generator/source_gen">
+<solution name="jetbrains.mps.generator" uuid="5fa23c0a-216d-4571-a163-e286643e6f5f" pluginKind="PLUGIN_CORE" compileInMPS="false" generatorOutputPath="${mps_home}/core/generator/source_gen">
   <models>
     <modelRoot path="${solution_descriptor}/generator" namespacePrefix="jetbrains.mps" />
   </models>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
