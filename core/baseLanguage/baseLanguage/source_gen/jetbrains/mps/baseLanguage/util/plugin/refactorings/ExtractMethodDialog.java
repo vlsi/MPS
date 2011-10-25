@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JCheckBox;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
@@ -23,7 +24,6 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import com.intellij.ui.DocumentAdapter;
 import javax.swing.event.DocumentEvent;
-import javax.swing.JCheckBox;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import javax.swing.border.Border;
@@ -37,8 +37,6 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JButton;
-import javax.swing.JRadioButton;
-import javax.swing.ButtonGroup;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -47,6 +45,7 @@ public class ExtractMethodDialog extends BaseDialog {
   private boolean myCanRefactor;
   private JTextArea myPreviewArea = new JTextArea();
   private JTextArea myMessagesArea = new JTextArea();
+  private JCheckBox myDeclareStaticCheckBox;
   private VisibilityPanel myVisibilityPanel;
   private ExtractMethodDialog.ChooseContainerPanel myChooseContainerPanel;
   private ExtractMethodRefactoringParameters myParameters;
@@ -54,7 +53,9 @@ public class ExtractMethodDialog extends BaseDialog {
   private ExtractMethodRefactoring myRefactoring;
   private SNode myStaticTarget;
   private SModel myRefactoringModel;
-  private boolean myExtractIntoCurrentContainer;
+  private boolean myExtractIntoOuterContainer;
+  private boolean myStaticChoosedByUser;
+  private String myErrors;
 
   public ExtractMethodDialog(Frame frame, EditorContext context, ExtractMethodRefactoringParameters params, ExtractMethodRefactoring refactoring) {
     super(frame, "Extract Method");
@@ -62,13 +63,14 @@ public class ExtractMethodDialog extends BaseDialog {
     this.myContext = context;
     this.myParameters = params;
     this.myRefactoring = refactoring;
-    this.myExtractIntoCurrentContainer = true;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        myErrors = ExtractMethodFactory.getErrors(ExtractMethodDialog.this.myParameters.getNodesToRefactor());
         ExtractMethodDialog.this.initPanel();
       }
     });
     this.update();
+
   }
 
   private void update() {
@@ -82,25 +84,25 @@ public class ExtractMethodDialog extends BaseDialog {
   }
 
   private String getMessagesText() {
+    this.myCanRefactor = true;
     StringBuffer buff = new StringBuffer();
     String methodName = this.myParameters.getName();
     if (methodName.length() == 0) {
       buff.append("Method name is empty.\n");
+      this.myCanRefactor = false;
     } else {
       boolean nameIsGood = Character.isJavaIdentifierStart(methodName.charAt(0));
       for (int i = 1; i < methodName.length(); i++) {
-        nameIsGood = nameIsGood && Character.isJavaIdentifierPart(methodName.charAt(0));
+        nameIsGood = nameIsGood && Character.isJavaIdentifierPart(methodName.charAt(i));
       }
       if (!(nameIsGood)) {
         buff.append("Method name is incorrect.");
+        this.myCanRefactor = false;
       }
     }
-    String errors = ExtractMethodFactory.getErrors(this.myParameters.getNodesToRefactor());
-    if (errors != null) {
-      buff.append(errors);
+    if (this.myErrors != null) {
+      buff.append(this.myErrors);
       this.myCanRefactor = false;
-    } else {
-      this.myCanRefactor = true;
     }
     SNode overrides = this.myParameters.getOverridingMethodClass();
     if (overrides != null) {
@@ -126,18 +128,10 @@ public class ExtractMethodDialog extends BaseDialog {
     c.gridx = 0;
     c.gridy = 0;
     c.weightx = 1;
-    c.weighty = 1;
-    c.gridwidth = 1;
+    c.weighty = 0;
+    c.gridwidth = 2;
     this.myPanel.add(this.createMethodPanel(), c);
 
-    c.gridx = 1;
-    c.gridy = 0;
-    c.weightx = 0;
-    c.weighty = 1;
-    c.gridwidth = 1;
-    this.myChooseContainerPanel = new ExtractMethodDialog.ChooseContainerPanel();
-    myChooseContainerPanel.setBorder(this.createBorder("Choose container"));
-    this.myPanel.add(this.myChooseContainerPanel, c);
 
 
     c.gridx = 0;
@@ -163,6 +157,15 @@ public class ExtractMethodDialog extends BaseDialog {
     c.gridwidth = 2;
     this.myPanel.add(this.createPreviewPanel(), c);
 
+    c.gridx = 0;
+    c.gridy = 3;
+    c.weightx = 1;
+    c.weighty = 0;
+    c.gridwidth = 2;
+
+    this.myChooseContainerPanel = new ExtractMethodDialog.ChooseContainerPanel();
+    myChooseContainerPanel.setBorder(this.createBorder("Choose container"));
+    this.myPanel.add(this.myChooseContainerPanel, c);
 
 
     c.gridx = 0;
@@ -233,15 +236,13 @@ public class ExtractMethodDialog extends BaseDialog {
     c.weightx = 1;
     c.weighty = 1;
     c.anchor = GridBagConstraints.FIRST_LINE_START;
-    final JCheckBox declareStatic = createDeclareStaticCheckBox();
-    methodPanel.add(declareStatic, c);
-    declareStatic.addItemListener(new ItemListener() {
+    myDeclareStaticCheckBox = createDeclareStaticCheckBox();
+    methodPanel.add(this.myDeclareStaticCheckBox, c);
+    this.myDeclareStaticCheckBox.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent p0) {
-        if (declareStatic.isSelected()) {
-          ExtractMethodDialog.this.myParameters.setStatic(true);
-        } else {
-          ExtractMethodDialog.this.myParameters.setStatic(false);
-        }
+        myStaticChoosedByUser = ExtractMethodDialog.this.myDeclareStaticCheckBox.isSelected();
+        ExtractMethodDialog.this.myParameters.setStatic(myStaticChoosedByUser);
+
         ExtractMethodDialog.this.update();
       }
     });
@@ -257,6 +258,11 @@ public class ExtractMethodDialog extends BaseDialog {
   public JCheckBox createDeclareStaticCheckBox() {
     JCheckBox result = new JCheckBox("Declare static");
     int canBeStatic = myRefactoring.canBeStatic();
+    this.setDeclareStaticCheckBox(canBeStatic, result);
+    return result;
+  }
+
+  private void setDeclareStaticCheckBox(int canBeStatic, JCheckBox result) {
     if (canBeStatic == ExtractMethodRefactoring.CANNOT_BE_STATIC) {
       result.setSelected(false);
       result.setEnabled(false);
@@ -267,7 +273,6 @@ public class ExtractMethodDialog extends BaseDialog {
       result.setSelected(true);
       result.setEnabled(false);
     }
-    return result;
   }
 
   private Border createBorder(String title) {
@@ -285,7 +290,7 @@ public class ExtractMethodDialog extends BaseDialog {
     if (!(this.myCanRefactor)) {
       JOptionPane.showMessageDialog(this, "Can't refactor. See errors.", "Can't perform refactoring", JOptionPane.ERROR_MESSAGE);
     } else {
-      if ((this.myStaticTarget != null) && !(this.myExtractIntoCurrentContainer)) {
+      if ((this.myStaticTarget != null) && this.myExtractIntoOuterContainer) {
         this.setStaticContainer();
       } else if (this.myParameters.getAnalyzer().shouldChooseOuterContainer()) {
         chooseStaticContainer();
@@ -294,7 +299,7 @@ public class ExtractMethodDialog extends BaseDialog {
         public void run() {
           result.value = ExtractMethodDialog.this.myRefactoring.doRefactor();
           ExtractMethodDialog.this.myContext.select(result.value);
-          if ((myRefactoringModel != null) && !(ExtractMethodDialog.this.myExtractIntoCurrentContainer)) {
+          if ((myRefactoringModel != null) && ExtractMethodDialog.this.myExtractIntoOuterContainer) {
             SModelReference ref = SNodeOperations.getModel(myStaticTarget).getSModelReference();
             myRefactoringModel.addModelImport(ref, false);
           }
@@ -361,32 +366,32 @@ public class ExtractMethodDialog extends BaseDialog {
 
   private class ChooseContainerPanel extends JPanel {
     {
-      myOuterContainerCheckBox = new JCheckBox("Extract into" + "\n" + "outer container");
-      myCurrentContainerLabel = new JLabel("Extract into:");
+      myOuterContainerCheckBox = new JCheckBox("Extract into outer container");
       myChooseContainerButton = new JButton("Choose Container");
-      myAnotherContainerRadioButton = new JRadioButton("another container");
-      myCurrentContainerRadioButton = new JRadioButton("current container");
-      myOuterContanerLabel = new JLabel("<no container is chosen>");
-      myGroup = new ButtonGroup();
     }
 
     private JButton myChooseContainerButton;
     private JCheckBox myOuterContainerCheckBox;
-    private JLabel myCurrentContainerLabel;
-    private JRadioButton myCurrentContainerRadioButton;
-    private JRadioButton myAnotherContainerRadioButton;
-    private JLabel myOuterContanerLabel;
-    private ButtonGroup myGroup;
 
     public ChooseContainerPanel() {
       super(new GridBagLayout());
+      this.initPanel();
+    }
 
-
+    private void initPanel() {
       myOuterContainerCheckBox.setSelected(false);
       myOuterContainerCheckBox.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent p0) {
-          myChooseContainerButton.setEnabled(myOuterContainerCheckBox.isSelected());
-          ExtractMethodDialog.this.myExtractIntoCurrentContainer = false;
+          ExtractMethodDialog.this.myExtractIntoOuterContainer = myOuterContainerCheckBox.isSelected();
+          myChooseContainerButton.setEnabled(ExtractMethodDialog.this.myExtractIntoOuterContainer);
+
+          int canBeStatic;
+          if (ExtractMethodDialog.this.myExtractIntoOuterContainer) {
+            canBeStatic = ExtractMethodRefactoring.SHOULD_BE_STATIC;
+          } else {
+            canBeStatic = myRefactoring.canBeStatic();
+          }
+          setDeclareStaticCheckBox(canBeStatic, ExtractMethodDialog.this.myDeclareStaticCheckBox);
         }
       });
 
@@ -399,10 +404,10 @@ public class ExtractMethodDialog extends BaseDialog {
               if (ExtractMethodDialog.this.myStaticTarget != null) {
                 if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
                   myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "name"));
-                  myChooseContainerButton.setIcon(IconContainer.ICON_a0a1a0a0a0b0a0a0a0h0a1);
+                  myChooseContainerButton.setIcon(IconContainer.ICON_a0a1a0a0a0b0a0a0a0e0a1);
                 } else if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
                   myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), "name"));
-                  myChooseContainerButton.setIcon(IconContainer.ICON_a0a1a0a0a0a1a0a0a0a7a0b);
+                  myChooseContainerButton.setIcon(IconContainer.ICON_a0a1a0a0a0a1a0a0a0a4a0b);
                 } else if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.core.structure.INamedConcept")) {
                   myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.core.structure.INamedConcept")), "name"));
                 }
@@ -412,60 +417,20 @@ public class ExtractMethodDialog extends BaseDialog {
           });
         }
       });
-      myCurrentContainerRadioButton.setSelected(true);
-      myCurrentContainerRadioButton.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent p0) {
-          myChooseContainerButton.setEnabled(false);
-          ExtractMethodDialog.this.myExtractIntoCurrentContainer = true;
-        }
-      });
-
-      myAnotherContainerRadioButton.setSelected(false);
-      myAnotherContainerRadioButton.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent p0) {
-          myChooseContainerButton.setEnabled(true);
-          ExtractMethodDialog.this.myExtractIntoCurrentContainer = false;
-        }
-      });
-
-      myGroup.add(myCurrentContainerRadioButton);
-      myGroup.add(myAnotherContainerRadioButton);
 
       GridBagConstraints c = new GridBagConstraints();
       c.gridx = 0;
       c.gridy = 0;
-      c.weightx = 2;
+      c.weightx = 3;
       c.anchor = GridBagConstraints.FIRST_LINE_START;
       add(myOuterContainerCheckBox, c);
 
-      c.gridx = 0;
-      c.gridy = 1;
-      c.anchor = GridBagConstraints.FIRST_LINE_START;
-      add(myChooseContainerButton, c);
-
-
       c.gridx = 1;
-      c.gridy = 0;
-      c.anchor = GridBagConstraints.FIRST_LINE_START;
-      // <node> 
-
-
-      c.gridx = 2;
-      c.gridy = 0;
-      c.anchor = GridBagConstraints.FIRST_LINE_START;
-      // <node> 
-
-      c.gridx = 3;
-      c.gridy = 0;
-      c.anchor = GridBagConstraints.FIRST_LINE_START;
-      // <node> 
-
-
-      c.gridx = 4;
       c.gridy = 0;
       c.weightx = 1;
       c.anchor = GridBagConstraints.FIRST_LINE_END;
-      // <node> 
+      add(myChooseContainerButton, c);
+
     }
   }
 }

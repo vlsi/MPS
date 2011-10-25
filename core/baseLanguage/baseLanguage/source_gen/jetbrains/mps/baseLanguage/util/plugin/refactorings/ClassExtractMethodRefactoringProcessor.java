@@ -37,8 +37,6 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
   }
 
   public SNode createNewMethod() {
-    SNode containerMethod = this.getContainerMethod();
-    // <node> 
     if (isStatic) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
     } else {

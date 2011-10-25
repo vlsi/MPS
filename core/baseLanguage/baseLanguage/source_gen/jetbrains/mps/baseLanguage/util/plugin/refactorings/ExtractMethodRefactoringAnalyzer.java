@@ -102,7 +102,7 @@ public class ExtractMethodRefactoringAnalyzer {
 
   private boolean findIfCanBeStatic() {
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
-      if (ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ThisExpression", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", false, new String[]{})).isNotEmpty()) {
+      if (ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IThisExpression", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.SuperMethodCall", false, new String[]{})).isNotEmpty()) {
         return false;
       }
     }
