@@ -2830,12 +2830,12 @@
                   </node>
                 </node>
               </node>
-              <node role="condition" roleId="tpee.1068580123160" type="tpd4.IsStrongSubtypeExpression" typeId="tpd4.1177406296561" id="1186067204005">
-                <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1226075048015">
+              <node role="condition" roleId="tpee.1068580123160" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="2028378892635204261">
+                <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2028378892635204262">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1226075028894" resolveInfo="LeftType" />
                 </node>
-                <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1196933487531">
-                  <node role="quotedNode" roleId="tp3r.1196350785114" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1196933487532" />
+                <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2028378892635204263">
+                  <node role="quotedNode" roleId="tp3r.1196350785114" type="tp25.SConceptType" typeId="tp25.1172420572800" id="2028378892635204264" />
                 </node>
               </node>
             </node>

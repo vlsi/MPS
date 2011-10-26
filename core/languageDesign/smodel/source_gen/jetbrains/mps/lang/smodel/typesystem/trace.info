@@ -10,7 +10,7 @@
     <nodeInfo nodeId="1226075028893" fileName="RulesUtil.java" startLine="45" startPosition="98" endLine="46" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1186067103528" fileName="RulesUtil.java" startLine="46" startPosition="73" endLine="47" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1186067189221" fileName="RulesUtil.java" startLine="49" startPosition="168" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1186067217245" fileName="RulesUtil.java" startLine="54" startPosition="168" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1186067217245" fileName="RulesUtil.java" startLine="54" startPosition="161" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1186067260451" fileName="RulesUtil.java" startLine="59" startPosition="168" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7376433222636453117" fileName="RulesUtil.java" startLine="62" startPosition="5" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8118065306182512822" fileName="RulesUtil.java" startLine="64" startPosition="72" endLine="65" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -424,7 +424,7 @@
     <scopeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="563" startPosition="43" endLine="563" endPosition="43" />
     <scopeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="594" startPosition="47" endLine="594" endPosition="47" />
     <scopeInfo nodeId="1186067154867" fileName="RulesUtil.java" startLine="49" startPosition="168" endLine="50" endPosition="22" />
-    <scopeInfo nodeId="1186067200431" fileName="RulesUtil.java" startLine="54" startPosition="168" endLine="55" endPosition="22" />
+    <scopeInfo nodeId="1186067200431" fileName="RulesUtil.java" startLine="54" startPosition="161" endLine="55" endPosition="22" />
     <scopeInfo nodeId="1186067241050" fileName="RulesUtil.java" startLine="59" startPosition="168" endLine="60" endPosition="22" />
     <scopeInfo nodeId="1207679453388" fileName="RulesUtil.java" startLine="70" startPosition="149" endLine="71" endPosition="177" />
     <scopeInfo nodeId="1205265993574" fileName="RulesUtil.java" startLine="78" startPosition="31" endLine="79" endPosition="100" />
