@@ -8,6 +8,7 @@
   <import index="emsw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.findusages.view.optionseditor(MPS.Classpath/jetbrains.mps.ide.findusages.view.optionseditor@java_stub)" version="-1" />
   <import index="tpci" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <import index="be6b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.make(MPS.Classpath/jetbrains.mps.ide.make@java_stub)" version="-1" />
+  <import index="up6l" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps(MPS.Classpath/jetbrains.mps@java_stub)" version="-1" />
   <import index="4exs" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.findusages.view.optionseditor.options(MPS.Classpath/jetbrains.mps.ide.findusages.view.optionseditor.options@java_stub)" version="-1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -203,9 +204,19 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4127611697116334199">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4127611697116334200">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4exs.~ScopeOptions%d&lt;init&gt;(java%dlang%dString,java%dlang%dString,java%dlang%dString)" resolveInfo="ScopeOptions" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4127611697116334201">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="4exs.~ScopeOptions" resolveInfo="ScopeOptions" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4exs.~ScopeOptions%dPROJECT_SCOPE" resolveInfo="PROJECT_SCOPE" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="7079648121458743956">
+                  <node role="condition" roleId="tpee.1163668914799" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7079648121458743955">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="up6l.~InternalFlag%disInternalMode()%cboolean" resolveInfo="isInternalMode" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="up6l.~InternalFlag" resolveInfo="InternalFlag" />
+                  </node>
+                  <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4127611697116334201">
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="4exs.~ScopeOptions" resolveInfo="ScopeOptions" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4exs.~ScopeOptions%dGLOBAL_SCOPE" resolveInfo="GLOBAL_SCOPE" />
+                  </node>
+                  <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7079648121458743960">
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="4exs.~ScopeOptions" resolveInfo="ScopeOptions" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4exs.~ScopeOptions%dPROJECT_SCOPE" resolveInfo="PROJECT_SCOPE" />
+                  </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4127611697116334202">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="4exs.~ScopeOptions" resolveInfo="ScopeOptions" />

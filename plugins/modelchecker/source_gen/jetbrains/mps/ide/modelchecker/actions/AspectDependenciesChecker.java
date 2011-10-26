@@ -4,6 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.PathManager;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SModel;
@@ -22,6 +23,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.resolve.Resolver;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
@@ -36,10 +39,12 @@ public class AspectDependenciesChecker extends SpecificChecker {
 
   private IModule coreModule;
   private IModule editorModule;
+  private String languagesUtilPath;
 
   public AspectDependenciesChecker() {
     this.coreModule = MPSModuleRepository.getInstance().getModuleByUID("MPS.Core");
     this.editorModule = MPSModuleRepository.getInstance().getModuleByUID("MPS.Editor");
+    this.languagesUtilPath = PathManager.getHomePath() + "/languages/util/";
   }
 
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
@@ -48,6 +53,10 @@ public class AspectDependenciesChecker extends SpecificChecker {
     monitor.start(title, 1);
 
     int modelKind = getModelKind(model, null);
+    if (modelKind == OTHER) {
+      monitor.done();
+      return results;
+    }
 
     for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
       if (monitor.isCanceled()) {
@@ -80,6 +89,17 @@ public class AspectDependenciesChecker extends SpecificChecker {
   }
 
   public int getModelKind(SModel model, @Nullable SReference reference) {
+    IFile modelFile = ((model.getModelDescriptor() instanceof EditableSModelDescriptor ?
+      ((EditableSModelDescriptor) model.getModelDescriptor()).getModelFile() :
+      null
+    ));
+    if (modelFile != null) {
+      String filePath = modelFile.getAbsolutePath().replace('\\', '/');
+      if (filePath.startsWith(languagesUtilPath)) {
+        return OTHER;
+      }
+    }
+
     IModule module = model.getModelDescriptor().getModule();
     if (module instanceof Language) {
       LanguageAspect aspect = Language.getModelAspect(model.getModelDescriptor());
@@ -139,9 +159,6 @@ public class AspectDependenciesChecker extends SpecificChecker {
         SNode refTargetRoot = reference.getTargetNode().getTopmostAncestor();
         if (SNodeOperations.isInstanceOf(refTargetRoot, "jetbrains.mps.baseLanguage.structure.Classifier")) {
           String cName = SPropertyOperations.getString(SNodeOperations.cast(refTargetRoot, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
-          if ("org.jetbrains.annotations".equals(model.getLongName())) {
-            return CORE;
-          }
           if (findInModule(coreModule, model.getLongName(), cName)) {
             return CORE;
           }
