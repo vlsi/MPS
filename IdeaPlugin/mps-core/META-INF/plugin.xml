@@ -12,4 +12,10 @@
 
     <actions>
     </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <facetType implementation="jetbrains.mps.idea.core.facet.MPSFacetType"/>
+        <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFacetTypeFrameworkSupportProvider"/>
+        <fileTypeFactory implementation="jetbrains.mps.idea.core.file.MPSFileTypeFactory"/>
+    </extensions>
 </idea-plugin>
