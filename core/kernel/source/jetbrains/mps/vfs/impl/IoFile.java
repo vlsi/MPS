@@ -99,6 +99,25 @@ public class IoFile implements IFileEx {
     return myFile.delete();
   }
 
+  private boolean renameOrMove(File newIoFile) {
+    if (myFile.renameTo(newIoFile)) {
+      myFile = newIoFile;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  @Override
+  public boolean rename(String newName) {
+    return renameOrMove(new File(myFile.getParentFile(), newName));
+  }
+
+  @Override
+  public boolean move(IFile newParent) {
+    return renameOrMove(new File(new File(newParent.getPath()), myFile.getName()));
+  }
+
   public List<IFile> getChildren() {
     File[] files = myFile.listFiles();
     if (files == null) {

@@ -21,6 +21,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
+import com.sun.corba.se.spi.ior.IdentifiableFactory;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.commons.lang.ObjectUtils;
@@ -193,6 +194,32 @@ class IdeaFile implements IFileEx {
       }
     } else {
       return true;
+    }
+  }
+
+  @Override
+  public boolean rename(String newName) {
+    try {
+      myVirtualFile.rename(IdeaFileSystemProvider.class, newName);
+      return true;
+    } catch (IOException e) {
+      IdeaFileSystemProvider.LOG.warning("Could not rename file: ", e);
+      return false;
+    }
+  }
+
+  @Override
+  public boolean move(IFile newParent) {
+    if (newParent instanceof IdeaFile && ((IdeaFile) newParent).findVirtualFile()) {
+      try {
+        myVirtualFile.move(IdeaFileSystemProvider.class, ((IdeaFile) newParent).myVirtualFile);
+        return true;
+      } catch (IOException e) {
+        IdeaFileSystemProvider.LOG.warning("Could not rename file: ", e);
+        return false;
+      }
+    } else {
+      return false;
     }
   }
 
