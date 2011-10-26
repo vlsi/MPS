@@ -24,7 +24,7 @@ public class typeof_AnalyzerFunParameterProgramState_InferenceRule extends Abstr
     {
       SNode _nodeToCheck_1029348928467 = programState;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.analyzers.typesystem)", "9177062368042322944", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.analyzers.typesystem)", "9177062368042319985", true), (SNode) new typeof_AnalyzerFunParameterProgramState_InferenceRule.QuotationClass_hgy1cg_a0a0a0().createNode(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.analyzers.typesystem)", "9177062368042319985", true), (SNode) new typeof_AnalyzerFunParameterProgramState_InferenceRule.QuotationClass_hgy1cg_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -45,6 +45,19 @@ public class typeof_AnalyzerFunParameterProgramState_InferenceRule extends Abstr
 
   public static class QuotationClass_hgy1cg_a0a0a0 {
     public QuotationClass_hgy1cg_a0a0a0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework(MPS.Core/jetbrains.mps.lang.dataFlow.framework@java_stub)"), SNodeId.fromString("~ProgramState")));
+        result = quotedNode1_2;
+      }
+      return result;
     }
 
     public SNode createNode() {

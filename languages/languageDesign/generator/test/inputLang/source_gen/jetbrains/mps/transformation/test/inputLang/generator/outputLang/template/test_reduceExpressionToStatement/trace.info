@@ -163,9 +163,9 @@
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="126" startPosition="11" endLine="145" endPosition="9" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="123" startPosition="143" endLine="150" endPosition="48" />
     <scopeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="122" startPosition="0" endLine="152" endPosition="0" />
-    <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="154" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$RootMappingRule0" />
-    <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="91" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$ReductionRule0" />
     <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="25" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain" />
+    <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="91" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$ReductionRule0" />
+    <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="154" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$RootMappingRule0" />
   </root>
   <root nodeId="1209150125542">
     <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="16" startPosition="64" endLine="17" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_lohefm_a0a0" />

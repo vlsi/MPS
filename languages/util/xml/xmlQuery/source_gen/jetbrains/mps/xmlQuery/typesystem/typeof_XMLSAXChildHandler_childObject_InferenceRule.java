@@ -29,7 +29,7 @@ public class typeof_XMLSAXChildHandler_childObject_InferenceRule extends Abstrac
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "8640335038346843251", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "8640335038346843248", true), (SNode) ((rule != null) && (SLinkOperations.getTarget(rule, "rule", false) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) != null) ?
         SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) :
-        new typeof_XMLSAXChildHandler_childObject_InferenceRule.QuotationClass_4xzpao_a0a0b0a().createNode()
+        new typeof_XMLSAXChildHandler_childObject_InferenceRule.QuotationClass_4xzpao_a0a0b0a().createNode(typeCheckingContext)
       ), _info_12389875345);
     }
   }
@@ -51,6 +51,19 @@ public class typeof_XMLSAXChildHandler_childObject_InferenceRule extends Abstrac
 
   public static class QuotationClass_4xzpao_a0a0b0a {
     public QuotationClass_4xzpao_a0a0b0a() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_2;
+      }
+      return result;
     }
 
     public SNode createNode() {

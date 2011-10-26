@@ -24,7 +24,7 @@ public class typeof_GeneratorFunctionParam_InferenceRule extends AbstractInferen
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595225", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595230", true), (SNode) new typeof_GeneratorFunctionParam_InferenceRule.QuotationClass_gty3tf_a0a0a0().createNode(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595230", true), (SNode) new typeof_GeneratorFunctionParam_InferenceRule.QuotationClass_gty3tf_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -45,6 +45,19 @@ public class typeof_GeneratorFunctionParam_InferenceRule extends AbstractInferen
 
   public static class QuotationClass_gty3tf_a0a0a0 {
     public QuotationClass_gty3tf_a0a0a0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)"), SNodeId.fromString("~ITemplateGenerator")));
+        result = quotedNode1_2;
+      }
+      return result;
     }
 
     public SNode createNode() {

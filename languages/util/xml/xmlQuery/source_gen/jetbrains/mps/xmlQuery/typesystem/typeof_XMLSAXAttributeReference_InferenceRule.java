@@ -21,7 +21,7 @@ public class typeof_XMLSAXAttributeReference_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = xmlsaxAttributeReference;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "2286463592495273282", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "2286463592495273279", true), (SNode) new typeof_XMLSAXAttributeReference_InferenceRule.QuotationClass_b8goj7_a0a0a0().createNode(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "2286463592495273279", true), (SNode) new typeof_XMLSAXAttributeReference_InferenceRule.QuotationClass_b8goj7_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -42,6 +42,18 @@ public class typeof_XMLSAXAttributeReference_InferenceRule extends AbstractInfer
 
   public static class QuotationClass_b8goj7_a0a0a0 {
     public QuotationClass_b8goj7_a0a0a0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
     }
 
     public SNode createNode() {

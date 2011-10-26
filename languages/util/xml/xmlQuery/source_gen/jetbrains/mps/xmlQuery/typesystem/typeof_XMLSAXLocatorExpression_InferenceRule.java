@@ -24,7 +24,7 @@ public class typeof_XMLSAXLocatorExpression_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = locatorExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "7459083455229529848", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "7459083455229529845", true), (SNode) new typeof_XMLSAXLocatorExpression_InferenceRule.QuotationClass_kp63mp_a0a0a0().createNode(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "7459083455229529845", true), (SNode) new typeof_XMLSAXLocatorExpression_InferenceRule.QuotationClass_kp63mp_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -45,6 +45,19 @@ public class typeof_XMLSAXLocatorExpression_InferenceRule extends AbstractInfere
 
   public static class QuotationClass_kp63mp_a0a0a0 {
     public QuotationClass_kp63mp_a0a0a0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.xml.sax(org.xml.sax@java_stub)"), SNodeId.fromString("~Locator")));
+        result = quotedNode1_2;
+      }
+      return result;
     }
 
     public SNode createNode() {
