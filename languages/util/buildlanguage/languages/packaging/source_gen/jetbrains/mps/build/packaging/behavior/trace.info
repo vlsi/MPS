@@ -1622,8 +1622,8 @@
     <nodeInfo nodeId="1234973000390" fileName="IMacroHolder_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234975567392" fileName="IMacroHolder_Behavior.java" startLine="35" startPosition="105" endLine="36" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1234975567402" fileName="IMacroHolder_Behavior.java" startLine="37" startPosition="21" endLine="38" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234975567408" fileName="IMacroHolder_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234975567415" fileName="IMacroHolder_Behavior.java" startLine="40" startPosition="112" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234975567408" fileName="IMacroHolder_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234975567415" fileName="IMacroHolder_Behavior.java" startLine="40" startPosition="107" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9161637758940143660" fileName="IMacroHolder_Behavior.java" startLine="45" startPosition="28" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234975968000" fileName="IMacroHolder_Behavior.java" startLine="48" startPosition="75" endLine="49" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234975968006" fileName="IMacroHolder_Behavior.java" startLine="51" startPosition="75" endLine="52" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

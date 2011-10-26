@@ -74,6 +74,26 @@ public class PathMacros implements PathMacrosProvider, CoreComponent {
   }
 
   @Override
+  public Set<String> getUserNames() {
+    Set<String> result = null;
+    boolean modifiable = false;
+    for (PathMacrosProvider p : myMacrosProviders) {
+      Set<String> pnames = p.getUserNames();
+      if (pnames == null || pnames.isEmpty()) continue;
+      if (result == null) {
+        result = pnames;
+        continue;
+      }
+      if (!modifiable) {
+        result = new HashSet<String>(result);
+        modifiable = true;
+      }
+      result.addAll(pnames);
+    }
+    return result != null ? result : Collections.<String>emptySet();
+  }
+
+  @Override
   public String getValue(String name) {
     for (PathMacrosProvider p : myMacrosProviders) {
       final String value = p.getValue(name);

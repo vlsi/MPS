@@ -24,5 +24,7 @@ public interface PathMacrosProvider {
 
   Set<String> getNames();
 
+  Set<String> getUserNames();
+
   String getValue(String name);
 }
