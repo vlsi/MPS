@@ -2018,6 +2018,8 @@
       <varInfo nodeId="4707157387247575120" varName="revertedChanges" />
     </scopeInfo>
     <unitInfo nodeId="4707157387247574986" fileName="OldDiffEditorComponent.java" startLine="41" startPosition="43" endLine="38" endPosition="0" />
+    <unitInfo nodeId="4707157387247567122" fileName="OldDiffEditorComponent.java" startLine="38" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.OldDiffEditorComponent" />
+    <unitInfo nodeId="4707157387247575167" fileName="OldDiffEditorComponent.java" startLine="86" startPosition="45" endLine="124" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.OldDiffEditorComponent$2" />
     <unitInfo nodeId="4707157387247575445" fileName="OldDiffEditorComponent.java" startLine="189" startPosition="47" endLine="193" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.OldDiffEditorComponent$3" />
     <unitInfo nodeId="4707157387247575577" fileName="OldDiffEditorComponent.java" startLine="229" startPosition="57" endLine="233" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.OldDiffEditorComponent$4" />
     <unitInfo nodeId="4707157387247575719" fileName="OldDiffEditorComponent.java" startLine="278" startPosition="45" endLine="300" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.OldDiffEditorComponent$5" />

@@ -91,8 +91,8 @@
     <scopeInfo nodeId="6877931680625740345" fileName="AbstractEvent.java" startLine="35" startPosition="25" endLine="36" endPosition="27" />
     <scopeInfo nodeId="6877931680625740275" fileName="AbstractEvent.java" startLine="10" startPosition="50" endLine="12" endPosition="21" />
     <scopeInfo nodeId="6877931680625740268" fileName="AbstractEvent.java" startLine="9" startPosition="0" endLine="13" endPosition="3">
-      <varInfo nodeId="6877931680625740271" varName="name" />
       <varInfo nodeId="6877931680625740273" varName="code" />
+      <varInfo nodeId="6877931680625740271" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625740288" fileName="AbstractEvent.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="6877931680625740294" fileName="AbstractEvent.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
@@ -111,8 +111,8 @@
     <nodeInfo nodeId="6877931680625740353" fileName="Event.java" startLine="6" startPosition="42" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Event#(Ljava/lang/String;Ljava/lang/String;)V" />
     <scopeInfo nodeId="6877931680625740360" fileName="Event.java" startLine="7" startPosition="42" endLine="8" endPosition="22" />
     <scopeInfo nodeId="6877931680625740353" fileName="Event.java" startLine="6" startPosition="42" endLine="9" endPosition="3">
-      <varInfo nodeId="6877931680625740356" varName="name" />
       <varInfo nodeId="6877931680625740358" varName="code" />
+      <varInfo nodeId="6877931680625740356" varName="name" />
     </scopeInfo>
     <unitInfo nodeId="6877931680625740350" fileName="Event.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.Event" />
   </root>
@@ -249,12 +249,12 @@
       <varInfo nodeId="6877931680625740495" varName="commandsChannel" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625740603" fileName="State.java" startLine="68" startPosition="0" endLine="74" endPosition="0">
-      <varInfo nodeId="6877931680625740605" varName="other" />
       <varInfo nodeId="6877931680625740607" varName="note" />
+      <varInfo nodeId="6877931680625740605" varName="other" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625740625" fileName="State.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="6877931680625740628" varName="other" />
       <varInfo nodeId="6877931680625740630" varName="note" />
+      <varInfo nodeId="6877931680625740628" varName="other" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625740654" fileName="State.java" startLine="81" startPosition="71" endLine="89" endPosition="5" />
     <scopeInfo nodeId="6877931680625740715" fileName="State.java" startLine="92" startPosition="106" endLine="100" endPosition="5" />
@@ -262,14 +262,14 @@
       <varInfo nodeId="6877931680625740515" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625740648" fileName="State.java" startLine="80" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="6877931680625740650" varName="other" />
       <varInfo nodeId="6877931680625740652" varName="note" />
+      <varInfo nodeId="6877931680625740650" varName="other" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625740705" fileName="State.java" startLine="91" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="6877931680625740711" varName="otherState" />
       <varInfo nodeId="6877931680625740707" varName="myEvent" />
-      <varInfo nodeId="6877931680625740713" varName="note" />
       <varInfo nodeId="6877931680625740709" varName="myTarget" />
+      <varInfo nodeId="6877931680625740713" varName="note" />
+      <varInfo nodeId="6877931680625740711" varName="otherState" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625740510" fileName="State.java" startLine="40" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="6877931680625740770" fileName="State.java" startLine="103" startPosition="43" endLine="115" endPosition="5">
@@ -420,15 +420,15 @@
       <varInfo nodeId="6877931680625740985" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625741063" fileName="StateMachine.java" startLine="88" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="6877931680625741070" varName="note" />
       <varInfo nodeId="6877931680625741068" varName="otherMachine" />
       <varInfo nodeId="6877931680625741066" varName="state" />
-      <varInfo nodeId="6877931680625741070" varName="note" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625741103" fileName="StateMachine.java" startLine="97" startPosition="0" endLine="107" endPosition="0" />
     <scopeInfo nodeId="6877931680625740953" fileName="StateMachine.java" startLine="51" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="6877931680625741022" fileName="StateMachine.java" startLine="77" startPosition="0" endLine="88" endPosition="0">
-      <varInfo nodeId="6877931680625741025" varName="other" />
       <varInfo nodeId="6877931680625741027" varName="note" />
+      <varInfo nodeId="6877931680625741025" varName="other" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625740877" fileName="StateMachine.java" startLine="25" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="6877931680625740880" varName="result" />
@@ -441,8 +441,8 @@
     <nodeInfo nodeId="6877931680625741139" fileName="Command.java" startLine="6" startPosition="44" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Command#(Ljava/lang/String;Ljava/lang/String;)V" />
     <scopeInfo nodeId="6877931680625741146" fileName="Command.java" startLine="7" startPosition="44" endLine="8" endPosition="22" />
     <scopeInfo nodeId="6877931680625741139" fileName="Command.java" startLine="6" startPosition="44" endLine="9" endPosition="3">
-      <varInfo nodeId="6877931680625741142" varName="name" />
       <varInfo nodeId="6877931680625741144" varName="code" />
+      <varInfo nodeId="6877931680625741142" varName="name" />
     </scopeInfo>
     <unitInfo nodeId="6877931680625741136" fileName="Command.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.Command" />
   </root>
@@ -498,8 +498,8 @@
       <varInfo nodeId="6877931680625741201" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625741209" fileName="Notification.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="6877931680625741211" varName="s" />
       <varInfo nodeId="6877931680625741213" varName="args" />
+      <varInfo nodeId="6877931680625741211" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625741222" fileName="Notification.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="6877931680625741256" fileName="Notification.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />

@@ -255,8 +255,8 @@
       <varInfo nodeId="4145682539058277895" varName="stream" />
     </scopeInfo>
     <scopeInfo nodeId="798733910009222242" fileName="FileProcessor.java" startLine="122" startPosition="45" endLine="142" endPosition="7">
-      <varInfo nodeId="798733910009230594" varName="res" />
       <varInfo nodeId="798733910009222270" varName="reader" />
+      <varInfo nodeId="798733910009230594" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="4328738523548225927" fileName="FileProcessor.java" startLine="100" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="4328738523548225930" varName="file" />
@@ -268,19 +268,19 @@
       <varInfo nodeId="798733910009222251" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="798733910009264654" fileName="FileProcessor.java" startLine="174" startPosition="45" endLine="198" endPosition="7">
+      <varInfo nodeId="798733910009264677" varName="len" />
       <varInfo nodeId="798733910009264711" varName="res" />
       <varInfo nodeId="798733910009264728" varName="stream" />
-      <varInfo nodeId="798733910009264677" varName="len" />
     </scopeInfo>
     <scopeInfo nodeId="798733910009264651" fileName="FileProcessor.java" startLine="173" startPosition="0" endLine="200" endPosition="0">
       <varInfo nodeId="798733910009264656" varName="file" />
     </scopeInfo>
-    <unitInfo nodeId="4328738523548225909" fileName="FileProcessor.java" startLine="90" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileContent" />
-    <unitInfo nodeId="4328738523548225932" fileName="FileProcessor.java" startLine="202" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$XMLFileContent" />
-    <unitInfo nodeId="4328738523548225888" fileName="FileProcessor.java" startLine="71" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileAndContent" />
-    <unitInfo nodeId="4328738523548225916" fileName="FileProcessor.java" startLine="94" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$StringFileContent" />
-    <unitInfo nodeId="4145682539058277870" fileName="FileProcessor.java" startLine="146" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$BinaryFileContent" />
     <unitInfo nodeId="4328738523548225887" fileName="FileProcessor.java" startLine="24" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
+    <unitInfo nodeId="4145682539058277870" fileName="FileProcessor.java" startLine="146" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$BinaryFileContent" />
+    <unitInfo nodeId="4328738523548225888" fileName="FileProcessor.java" startLine="71" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileAndContent" />
+    <unitInfo nodeId="4328738523548225909" fileName="FileProcessor.java" startLine="90" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileContent" />
+    <unitInfo nodeId="4328738523548225916" fileName="FileProcessor.java" startLine="94" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$StringFileContent" />
+    <unitInfo nodeId="4328738523548225932" fileName="FileProcessor.java" startLine="202" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$XMLFileContent" />
   </root>
   <root nodeId="4328738523548226177">
     <nodeInfo nodeId="4328738523548226179" fileName="JavaStreamHandler.java" startLine="18" startPosition="57" endLine="19" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDescriptor" />
@@ -358,25 +358,25 @@
     <scopeInfo nodeId="8437684059768953381" fileName="JavaStreamHandler.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="4328738523548226206" fileName="JavaStreamHandler.java" startLine="27" startPosition="102" endLine="33" endPosition="122" />
     <scopeInfo nodeId="4328738523548226198" fileName="JavaStreamHandler.java" startLine="26" startPosition="0" endLine="34" endPosition="3">
-      <varInfo nodeId="4328738523548226202" varName="outputDir" />
-      <varInfo nodeId="4328738523548226200" varName="modelDescriptor" />
       <varInfo nodeId="8437684059768953310" varName="cachesOutputDir" />
+      <varInfo nodeId="4328738523548226200" varName="modelDescriptor" />
+      <varInfo nodeId="4328738523548226202" varName="outputDir" />
     </scopeInfo>
     <scopeInfo nodeId="4328738523548226233" fileName="JavaStreamHandler.java" startLine="36" startPosition="72" endLine="47" endPosition="21">
-      <varInfo nodeId="4328738523548226235" varName="outputRootDir" />
       <varInfo nodeId="4328738523548226242" varName="file" />
+      <varInfo nodeId="4328738523548226235" varName="outputRootDir" />
     </scopeInfo>
     <scopeInfo nodeId="4328738523548226271" fileName="JavaStreamHandler.java" startLine="50" startPosition="73" endLine="61" endPosition="21">
-      <varInfo nodeId="4328738523548226273" varName="outputRootDir" />
       <varInfo nodeId="4328738523548226280" varName="file" />
+      <varInfo nodeId="4328738523548226273" varName="outputRootDir" />
     </scopeInfo>
     <scopeInfo nodeId="4145682539058277950" fileName="JavaStreamHandler.java" startLine="64" startPosition="72" endLine="75" endPosition="21">
-      <varInfo nodeId="4145682539058277952" varName="outputRootDir" />
       <varInfo nodeId="4145682539058277959" varName="file" />
+      <varInfo nodeId="4145682539058277952" varName="outputRootDir" />
     </scopeInfo>
     <scopeInfo nodeId="4328738523548226307" fileName="JavaStreamHandler.java" startLine="78" startPosition="54" endLine="89" endPosition="25">
-      <varInfo nodeId="4328738523548226309" varName="outputRootDir" />
       <varInfo nodeId="4328738523548226316" varName="file" />
+      <varInfo nodeId="4328738523548226309" varName="outputRootDir" />
     </scopeInfo>
     <scopeInfo nodeId="4328738523548226385" fileName="JavaStreamHandler.java" startLine="110" startPosition="61" endLine="121" endPosition="49" />
     <scopeInfo nodeId="4328738523548226378" fileName="JavaStreamHandler.java" startLine="109" startPosition="37" endLine="122" endPosition="9" />

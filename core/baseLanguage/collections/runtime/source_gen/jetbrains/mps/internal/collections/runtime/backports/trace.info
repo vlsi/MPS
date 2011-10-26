@@ -151,8 +151,8 @@
     <scopeInfo nodeId="617707180879468931" fileName="LinkedList.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="617707180879468934" varName="o" />
     </scopeInfo>
-    <unitInfo nodeId="617707180879468793" fileName="LinkedList.java" startLine="77" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList$DescendingIterator" />
     <unitInfo nodeId="617707180879468785" fileName="LinkedList.java" startLine="9" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+    <unitInfo nodeId="617707180879468793" fileName="LinkedList.java" startLine="77" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList$DescendingIterator" />
   </root>
   <root nodeId="6543581031674027297">
     <nodeInfo nodeId="6543581031674027302" fileName="Deque.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addFirst#(null)V" />
@@ -301,14 +301,14 @@
     <scopeInfo nodeId="6543581031674032171" fileName="LinkedList.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="6543581031674032223" fileName="LinkedList.java" startLine="63" startPosition="49" endLine="70" endPosition="17" />
     <scopeInfo nodeId="6543581031674032248" fileName="LinkedList.java" startLine="72" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="6543581031674032253" varName="b" />
       <varInfo nodeId="6543581031674032251" varName="a" />
+      <varInfo nodeId="6543581031674032253" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674032218" fileName="LinkedList.java" startLine="62" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="6543581031674032221" varName="o" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674032094" fileName="LinkedList.java" startLine="80" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList$DescendingIterator" />
     <unitInfo nodeId="6543581031674032086" fileName="LinkedList.java" startLine="9" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+    <unitInfo nodeId="6543581031674032094" fileName="LinkedList.java" startLine="80" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList$DescendingIterator" />
   </root>
 </debugInfo>
 

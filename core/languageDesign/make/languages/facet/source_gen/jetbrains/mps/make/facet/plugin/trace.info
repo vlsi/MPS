@@ -48,8 +48,8 @@
       <varInfo nodeId="2712361142287713221" varName="modelFile" />
     </scopeInfo>
     <scopeInfo nodeId="2340850238541857266" fileName="MakeGenerationStrategy.java" startLine="36" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="2340850238541857271" varName="sm" />
       <varInfo nodeId="2340850238541857273" varName="context" />
+      <varInfo nodeId="2340850238541857271" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="2340850238541857249" fileName="MakeGenerationStrategy.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeGenerationStrategy" />
   </root>
@@ -74,18 +74,18 @@
       <varInfo nodeId="2383991756720270401" varName="resourceHandler" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270170" fileName="MakeGenerationHandler.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="2383991756720270183" varName="helper" />
       <varInfo nodeId="2383991756720270181" varName="b" />
       <varInfo nodeId="2383991756720270173" varName="context" />
+      <varInfo nodeId="2383991756720270183" varName="helper" />
       <varInfo nodeId="2383991756720270175" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270188" fileName="MakeGenerationHandler.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="2383991756720270198" fileName="MakeGenerationHandler.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="2383991756720270201" varName="module" />
-      <varInfo nodeId="2383991756720270209" varName="helper" />
-      <varInfo nodeId="2383991756720270205" varName="status" />
-      <varInfo nodeId="2383991756720270203" varName="descriptor" />
       <varInfo nodeId="2383991756720270207" varName="context" />
+      <varInfo nodeId="2383991756720270203" varName="descriptor" />
+      <varInfo nodeId="2383991756720270209" varName="helper" />
+      <varInfo nodeId="2383991756720270201" varName="module" />
+      <varInfo nodeId="2383991756720270205" varName="status" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270225" fileName="MakeGenerationHandler.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="2383991756720270228" varName="descriptor" />

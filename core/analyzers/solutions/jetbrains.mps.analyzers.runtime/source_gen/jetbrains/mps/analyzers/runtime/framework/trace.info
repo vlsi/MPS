@@ -12,8 +12,8 @@
     <scopeInfo nodeId="178770917832664362" fileName="CustomAnalyzerRunner.java" startLine="17" startPosition="33" endLine="18" endPosition="22" />
     <scopeInfo nodeId="1535655005093792792" fileName="CustomAnalyzerRunner.java" startLine="21" startPosition="31" endLine="22" endPosition="21" />
     <scopeInfo nodeId="178770917832659570" fileName="CustomAnalyzerRunner.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
-      <varInfo nodeId="178770917832659577" varName="program" />
       <varInfo nodeId="178770917832659579" varName="analyzer" />
+      <varInfo nodeId="178770917832659577" varName="program" />
     </scopeInfo>
     <scopeInfo nodeId="178770917832664359" fileName="CustomAnalyzerRunner.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
     <scopeInfo nodeId="1535655005093792789" fileName="CustomAnalyzerRunner.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />

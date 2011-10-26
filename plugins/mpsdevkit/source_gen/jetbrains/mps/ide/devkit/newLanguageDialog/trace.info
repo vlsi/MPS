@@ -243,9 +243,9 @@
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="61" startPosition="0" endLine="77" endPosition="3" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="93" startPosition="23" endLine="111" endPosition="5" />
     <scopeInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="92" startPosition="0" endLine="113" endPosition="0" />
-    <unitInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="54" startPosition="32" endLine="60" endPosition="3" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane$1" />
     <unitInfo nodeId="1203684597238" fileName="NewLanguageDialog.java" startLine="12" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialog" />
     <unitInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="40" startPosition="0" endLine="306" endPosition="0" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane" />
+    <unitInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="54" startPosition="32" endLine="60" endPosition="3" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane$1" />
   </root>
   <root nodeId="1203685087824">
     <nodeInfo nodeId="1203686051499" fileName="NewLanguageDialogContentPane.java" startLine="72" startPosition="31" endLine="73" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -339,13 +339,13 @@
     <scopeInfo nodeId="4543209876460447519" fileName="NewLanguageDialogContentPane.java" startLine="268" startPosition="227" endLine="272" endPosition="0" />
     <scopeInfo nodeId="5890305283801251540" fileName="NewLanguageDialogContentPane.java" startLine="281" startPosition="48" endLine="285" endPosition="20">
       <varInfo nodeId="4543209876460447662" varName="basePath" />
-      <varInfo nodeId="5890305283801272027" varName="solution" />
       <varInfo nodeId="4543209876460447673" varName="namespace" />
+      <varInfo nodeId="5890305283801272027" varName="solution" />
     </scopeInfo>
     <scopeInfo nodeId="5890305283801260430" fileName="NewLanguageDialogContentPane.java" startLine="288" startPosition="48" endLine="292" endPosition="20">
       <varInfo nodeId="4543209876460447692" varName="basePath" />
-      <varInfo nodeId="5890305283801272204" varName="solution" />
       <varInfo nodeId="4543209876460447703" varName="namespace" />
+      <varInfo nodeId="5890305283801272204" varName="solution" />
     </scopeInfo>
     <scopeInfo nodeId="7584055057088180709" fileName="NewLanguageDialogContentPane.java" startLine="231" startPosition="59" endLine="236" endPosition="69" />
     <scopeInfo nodeId="3365295161442854971" fileName="NewLanguageDialogContentPane.java" startLine="248" startPosition="11" endLine="253" endPosition="11">
@@ -355,8 +355,8 @@
     <scopeInfo nodeId="5890305283801251538" fileName="NewLanguageDialogContentPane.java" startLine="280" startPosition="0" endLine="287" endPosition="0" />
     <scopeInfo nodeId="5890305283801260428" fileName="NewLanguageDialogContentPane.java" startLine="287" startPosition="0" endLine="294" endPosition="0" />
     <scopeInfo nodeId="1203685811267" fileName="NewLanguageDialogContentPane.java" startLine="295" startPosition="41" endLine="303" endPosition="5">
-      <varInfo nodeId="1203685951551" varName="prefix" />
       <varInfo nodeId="1203685855621" varName="path" />
+      <varInfo nodeId="1203685951551" varName="prefix" />
     </scopeInfo>
     <scopeInfo nodeId="5154621356648634255" fileName="NewLanguageDialogContentPane.java" startLine="242" startPosition="51" endLine="253" endPosition="11">
       <varInfo nodeId="3365295161441049324" varName="createdModel" />
@@ -368,15 +368,15 @@
     <scopeInfo nodeId="5154621356648268595" fileName="NewLanguageDialogContentPane.java" startLine="230" startPosition="25" endLine="254" endPosition="9" />
     <scopeInfo nodeId="5154621356648268594" fileName="NewLanguageDialogContentPane.java" startLine="229" startPosition="72" endLine="256" endPosition="0" />
     <scopeInfo nodeId="1203685139551" fileName="NewLanguageDialogContentPane.java" startLine="214" startPosition="27" endLine="256" endPosition="16">
+      <varInfo nodeId="9169089614590054674" varName="language" />
       <varInfo nodeId="4543209876460446054" varName="message" />
       <varInfo nodeId="5154621356648268576" varName="project" />
-      <varInfo nodeId="9169089614590054674" varName="language" />
     </scopeInfo>
     <scopeInfo nodeId="1203685139549" fileName="NewLanguageDialogContentPane.java" startLine="213" startPosition="0" endLine="258" endPosition="0" />
     <unitInfo nodeId="8115509433044633823" fileName="NewLanguageDialogContentPane.java" startLine="224" startPosition="71" endLine="228" endPosition="5" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane$2" />
+    <unitInfo nodeId="5154621356648268594" fileName="NewLanguageDialogContentPane.java" startLine="229" startPosition="60" endLine="256" endPosition="5" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane$3" />
     <unitInfo nodeId="4543209876460447519" fileName="NewLanguageDialogContentPane.java" startLine="268" startPosition="158" endLine="272" endPosition="5" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane$4" />
     <unitInfo nodeId="4543209876460447532" fileName="NewLanguageDialogContentPane.java" startLine="272" startPosition="11" endLine="277" endPosition="5" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane$5" />
-    <unitInfo nodeId="5154621356648268594" fileName="NewLanguageDialogContentPane.java" startLine="229" startPosition="60" endLine="256" endPosition="5" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane$3" />
   </root>
 </debugInfo>
 

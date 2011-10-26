@@ -34,10 +34,10 @@
     <scopeInfo nodeId="866755926374575217" fileName="BlockTreeNode.java" startLine="23" startPosition="119" endLine="29" endPosition="120" />
     <scopeInfo nodeId="866755926374575173" fileName="BlockTreeNode.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="866755926374575206" fileName="BlockTreeNode.java" startLine="22" startPosition="0" endLine="30" endPosition="3">
-      <varInfo nodeId="866755926374575211" varName="operationContext" />
-      <varInfo nodeId="866755926374575213" varName="state" />
       <varInfo nodeId="866755926374575209" varName="block" />
       <varInfo nodeId="866755926374575215" varName="editorComponent" />
+      <varInfo nodeId="866755926374575211" varName="operationContext" />
+      <varInfo nodeId="866755926374575213" varName="state" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575253" fileName="BlockTreeNode.java" startLine="31" startPosition="0" endLine="40" endPosition="0" />
     <unitInfo nodeId="866755926374575161" fileName="BlockTreeNode.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.BlockTreeNode" />
@@ -68,10 +68,10 @@
       <varInfo nodeId="866755926374575330" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575312" fileName="EquationTreeNode.java" startLine="16" startPosition="0" endLine="30" endPosition="3">
-      <varInfo nodeId="866755926374575315" varName="representative" />
-      <varInfo nodeId="866755926374575313" varName="operationContext" />
-      <varInfo nodeId="866755926374575320" varName="state" />
       <varInfo nodeId="866755926374575322" varName="editorComponent" />
+      <varInfo nodeId="866755926374575313" varName="operationContext" />
+      <varInfo nodeId="866755926374575315" varName="representative" />
+      <varInfo nodeId="866755926374575320" varName="state" />
       <varInfo nodeId="866755926374575317" varName="variables" />
     </scopeInfo>
     <unitInfo nodeId="866755926374575296" fileName="EquationTreeNode.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.EquationTreeNode" />
@@ -146,15 +146,15 @@
     <scopeInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="68" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="75" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="866755926374575380" fileName="PresentationUtil.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="866755926374575395" varName="node" />
       <varInfo nodeId="866755926374575393" varName="editorComponent" />
+      <varInfo nodeId="866755926374575395" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575420" fileName="PresentationUtil.java" startLine="30" startPosition="40" endLine="39" endPosition="5">
       <varInfo nodeId="866755926374575456" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575473" fileName="PresentationUtil.java" startLine="43" startPosition="89" endLine="52" endPosition="18">
-      <varInfo nodeId="866755926374575481" varName="result" />
       <varInfo nodeId="866755926374575475" varName="maps" />
+      <varInfo nodeId="866755926374575481" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575408" fileName="PresentationUtil.java" startLine="28" startPosition="140" endLine="40" endPosition="25">
       <varInfo nodeId="866755926374575415" varName="maps" />
@@ -165,8 +165,8 @@
       <varInfo nodeId="866755926374575464" varName="variables" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575397" fileName="PresentationUtil.java" startLine="27" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="866755926374575404" varName="state" />
       <varInfo nodeId="866755926374575398" varName="editorComponent" />
+      <varInfo nodeId="866755926374575404" varName="state" />
       <varInfo nodeId="866755926374575400" varName="variables" />
     </scopeInfo>
     <unitInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.PresentationUtil" />
@@ -383,12 +383,12 @@
       <varInfo nodeId="866755926374575993" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374576024" fileName="TypeSystemStateTree.java" startLine="137" startPosition="59" endLine="141" endPosition="0">
-      <varInfo nodeId="866755926374576029" varName="o2" />
       <varInfo nodeId="866755926374576027" varName="o1" />
+      <varInfo nodeId="866755926374576029" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374576220" fileName="TypeSystemStateTree.java" startLine="171" startPosition="69" endLine="175" endPosition="0">
-      <varInfo nodeId="866755926374576223" varName="e" />
       <varInfo nodeId="866755926374576225" varName="_params" />
+      <varInfo nodeId="866755926374576223" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575616" fileName="TypeSystemStateTree.java" startLine="200" startPosition="92" endLine="204" endPosition="16" />
     <scopeInfo nodeId="866755926374575637" fileName="TypeSystemStateTree.java" startLine="43" startPosition="112" endLine="48" endPosition="16" />
@@ -408,13 +408,13 @@
       <varInfo nodeId="1760285298529541587" varName="presentation" />
     </scopeInfo>
     <scopeInfo nodeId="1699702947845371568" fileName="TypeSystemStateTree.java" startLine="189" startPosition="61" endLine="195" endPosition="57">
-      <varInfo nodeId="1699702947845371617" varName="ruleModel" />
       <varInfo nodeId="1699702947845371624" varName="ruleId" />
+      <varInfo nodeId="1699702947845371617" varName="ruleModel" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575628" fileName="TypeSystemStateTree.java" startLine="42" startPosition="0" endLine="49" endPosition="3">
+      <varInfo nodeId="866755926374575635" varName="editorComponent" />
       <varInfo nodeId="866755926374575631" varName="operationContext" />
       <varInfo nodeId="866755926374575633" varName="state" />
-      <varInfo nodeId="866755926374575635" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575616" fileName="TypeSystemStateTree.java" startLine="199" startPosition="0" endLine="206" endPosition="0" />
     <scopeInfo nodeId="866755926374575789" fileName="TypeSystemStateTree.java" startLine="80" startPosition="98" endLine="88" endPosition="18">
@@ -447,17 +447,17 @@
       <varInfo nodeId="1699702947845371517" varName="currentNode" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575683" fileName="TypeSystemStateTree.java" startLine="62" startPosition="48" endLine="77" endPosition="18">
-      <varInfo nodeId="866755926374575685" varName="result" />
       <varInfo nodeId="1126182407269074043" varName="nodes" />
+      <varInfo nodeId="866755926374575685" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374576175" fileName="TypeSystemStateTree.java" startLine="162" startPosition="25" endLine="177" endPosition="9">
-      <varInfo nodeId="866755926374576183" varName="vars" />
       <varInfo nodeId="866755926374576177" varName="maps" />
+      <varInfo nodeId="866755926374576183" varName="vars" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575968" fileName="TypeSystemStateTree.java" startLine="129" startPosition="53" endLine="145" endPosition="18">
-      <varInfo nodeId="866755926374575970" varName="result" />
       <varInfo nodeId="866755926374575977" varName="list" />
       <varInfo nodeId="866755926374575984" varName="nodeMaps" />
+      <varInfo nodeId="866755926374575970" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1699702947845371502" fileName="TypeSystemStateTree.java" startLine="182" startPosition="0" endLine="199" endPosition="0">
       <varInfo nodeId="1699702947845371505" varName="id" />
@@ -474,21 +474,21 @@
     </scopeInfo>
     <scopeInfo nodeId="866755926374576099" fileName="TypeSystemStateTree.java" startLine="157" startPosition="68" endLine="180" endPosition="105">
       <varInfo nodeId="866755926374576105" varName="goToNode" />
-      <varInfo nodeId="866755926374576109" varName="stateNode" />
       <varInfo nodeId="866755926374576159" varName="group" />
+      <varInfo nodeId="866755926374576109" varName="stateNode" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575878" fileName="TypeSystemStateTree.java" startLine="102" startPosition="60" endLine="126" endPosition="18">
-      <varInfo nodeId="866755926374575880" varName="result" />
       <varInfo nodeId="1760285298529546954" varName="nodePresentations" />
+      <varInfo nodeId="866755926374575880" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374575875" fileName="TypeSystemStateTree.java" startLine="101" startPosition="0" endLine="128" endPosition="0" />
     <scopeInfo nodeId="866755926374576094" fileName="TypeSystemStateTree.java" startLine="155" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="866755926374576097" varName="treeNode" />
     </scopeInfo>
-    <unitInfo nodeId="866755926374576022" fileName="TypeSystemStateTree.java" startLine="137" startPosition="31" endLine="141" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$1" />
-    <unitInfo nodeId="866755926374576219" fileName="TypeSystemStateTree.java" startLine="171" startPosition="26" endLine="175" endPosition="13" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$3" />
-    <unitInfo nodeId="866755926374576170" fileName="TypeSystemStateTree.java" startLine="161" startPosition="45" endLine="179" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$2" />
     <unitInfo nodeId="866755926374575616" fileName="TypeSystemStateTree.java" startLine="38" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree" />
+    <unitInfo nodeId="866755926374576022" fileName="TypeSystemStateTree.java" startLine="137" startPosition="31" endLine="141" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$1" />
+    <unitInfo nodeId="866755926374576170" fileName="TypeSystemStateTree.java" startLine="161" startPosition="45" endLine="179" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$2" />
+    <unitInfo nodeId="866755926374576219" fileName="TypeSystemStateTree.java" startLine="171" startPosition="26" endLine="175" endPosition="13" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$3" />
   </root>
   <root nodeId="866755926374576254">
     <nodeInfo nodeId="866755926374576257" fileName="TypeSystemStateTreeNode.java" startLine="15" startPosition="58" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
@@ -534,8 +534,8 @@
     <scopeInfo nodeId="866755926374576358" fileName="TypeSystemStateTreeNode.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="866755926374576364" fileName="TypeSystemStateTreeNode.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="866755926374576277" fileName="TypeSystemStateTreeNode.java" startLine="24" startPosition="0" endLine="30" endPosition="3">
-      <varInfo nodeId="866755926374576280" varName="presentation" />
       <varInfo nodeId="866755926374576282" varName="operationContext" />
+      <varInfo nodeId="866755926374576280" varName="presentation" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374576301" fileName="TypeSystemStateTreeNode.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="866755926374576323" fileName="TypeSystemStateTreeNode.java" startLine="37" startPosition="0" endLine="43" endPosition="0" />
@@ -683,12 +683,12 @@
     </scopeInfo>
     <scopeInfo nodeId="866755926374576726" fileName="TypeSystemTracePanel.java" startLine="141" startPosition="63" endLine="145" endPosition="32" />
     <scopeInfo nodeId="866755926374576752" fileName="TypeSystemTracePanel.java" startLine="149" startPosition="84" endLine="153" endPosition="0">
-      <varInfo nodeId="866755926374576755" varName="e" />
       <varInfo nodeId="866755926374576757" varName="_params" />
+      <varInfo nodeId="866755926374576755" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374576773" fileName="TypeSystemTracePanel.java" startLine="154" startPosition="111" endLine="158" endPosition="0">
-      <varInfo nodeId="866755926374576776" varName="e" />
       <varInfo nodeId="866755926374576778" varName="_params" />
+      <varInfo nodeId="866755926374576776" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="7048426415039108384" fileName="TypeSystemTracePanel.java" startLine="171" startPosition="57" endLine="175" endPosition="0" />
     <scopeInfo nodeId="866755926374576407" fileName="TypeSystemTracePanel.java" startLine="39" startPosition="47" endLine="44" endPosition="0" />
@@ -726,32 +726,32 @@
       <varInfo nodeId="866755926374576485" varName="traceScrollPane" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374576435" fileName="TypeSystemTracePanel.java" startLine="51" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="866755926374576442" varName="editorComponent" />
       <varInfo nodeId="866755926374576440" varName="node" />
-      <varInfo nodeId="866755926374576436" varName="t" />
       <varInfo nodeId="866755926374576438" varName="operationContext" />
       <varInfo nodeId="866755926374576444" varName="rebuild" />
-      <varInfo nodeId="866755926374576442" varName="editorComponent" />
+      <varInfo nodeId="866755926374576436" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374576568" fileName="TypeSystemTracePanel.java" startLine="78" startPosition="53" endLine="160" endPosition="188">
+      <varInfo nodeId="866755926374576768" varName="nextErrorAction" />
       <varInfo nodeId="866755926374576747" varName="refreshAction" />
       <varInfo nodeId="866755926374576570" varName="showApplyRuleAction" />
-      <varInfo nodeId="5373792471289412505" varName="showTypesExpansion" />
-      <varInfo nodeId="866755926374576658" varName="showTraceForSelectedNode" />
       <varInfo nodeId="866755926374576702" varName="showBlockDependencies" />
       <varInfo nodeId="866755926374576614" varName="showGenerationModeAction" />
-      <varInfo nodeId="866755926374576768" varName="nextErrorAction" />
+      <varInfo nodeId="866755926374576658" varName="showTraceForSelectedNode" />
+      <varInfo nodeId="5373792471289412505" varName="showTypesExpansion" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374576565" fileName="TypeSystemTracePanel.java" startLine="77" startPosition="0" endLine="162" endPosition="0" />
-    <unitInfo nodeId="866755926374576751" fileName="TypeSystemTracePanel.java" startLine="149" startPosition="35" endLine="153" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$7" />
-    <unitInfo nodeId="866755926374576772" fileName="TypeSystemTracePanel.java" startLine="154" startPosition="37" endLine="158" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$8" />
-    <unitInfo nodeId="7048426415039108382" fileName="TypeSystemTracePanel.java" startLine="171" startPosition="45" endLine="175" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$9" />
+    <unitInfo nodeId="866755926374576370" fileName="TypeSystemTracePanel.java" startLine="29" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel" />
     <unitInfo nodeId="866755926374576406" fileName="TypeSystemTracePanel.java" startLine="39" startPosition="35" endLine="44" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$1" />
-    <unitInfo nodeId="866755926374576662" fileName="TypeSystemTracePanel.java" startLine="121" startPosition="48" endLine="133" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$5" />
     <unitInfo nodeId="866755926374576574" fileName="TypeSystemTracePanel.java" startLine="79" startPosition="43" endLine="92" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$2" />
     <unitInfo nodeId="866755926374576618" fileName="TypeSystemTracePanel.java" startLine="93" startPosition="48" endLine="106" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$3" />
     <unitInfo nodeId="5373792471289412509" fileName="TypeSystemTracePanel.java" startLine="107" startPosition="42" endLine="120" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$4" />
+    <unitInfo nodeId="866755926374576662" fileName="TypeSystemTracePanel.java" startLine="121" startPosition="48" endLine="133" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$5" />
     <unitInfo nodeId="866755926374576706" fileName="TypeSystemTracePanel.java" startLine="134" startPosition="45" endLine="147" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$6" />
-    <unitInfo nodeId="866755926374576370" fileName="TypeSystemTracePanel.java" startLine="29" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel" />
+    <unitInfo nodeId="866755926374576751" fileName="TypeSystemTracePanel.java" startLine="149" startPosition="35" endLine="153" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$7" />
+    <unitInfo nodeId="866755926374576772" fileName="TypeSystemTracePanel.java" startLine="154" startPosition="37" endLine="158" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$8" />
+    <unitInfo nodeId="7048426415039108382" fileName="TypeSystemTracePanel.java" startLine="171" startPosition="45" endLine="175" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel$9" />
   </root>
   <root nodeId="866755926374576838">
     <nodeInfo nodeId="866755926374576878" fileName="TypeSystemTraceTree.java" startLine="46" startPosition="74" endLine="47" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
@@ -1009,8 +1009,8 @@
       <varInfo nodeId="866755926374577646" varName="treeNode" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374576853" fileName="TypeSystemTraceTree.java" startLine="298" startPosition="52" endLine="304" endPosition="40">
-      <varInfo nodeId="866755926374576867" varName="treeNode" />
       <varInfo nodeId="866755926374576855" varName="path" />
+      <varInfo nodeId="866755926374576867" varName="treeNode" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577397" fileName="TypeSystemTraceTree.java" startLine="200" startPosition="17" endLine="207" endPosition="5">
       <varInfo nodeId="866755926374577421" varName="errorNode" />
@@ -1021,8 +1021,8 @@
     </scopeInfo>
     <scopeInfo nodeId="866755926374577456" fileName="TypeSystemTraceTree.java" startLine="218" startPosition="47" endLine="227" endPosition="7">
       <varInfo nodeId="866755926374577464" varName="child" />
-      <varInfo nodeId="866755926374577470" varName="parent" />
       <varInfo nodeId="866755926374577458" varName="eq" />
+      <varInfo nodeId="866755926374577470" varName="parent" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577296" fileName="TypeSystemTraceTree.java" startLine="172" startPosition="63" endLine="182" endPosition="16" />
     <scopeInfo nodeId="866755926374577337" fileName="TypeSystemTraceTree.java" startLine="185" startPosition="31" endLine="195" endPosition="5">
@@ -1044,8 +1044,8 @@
     </scopeInfo>
     <scopeInfo nodeId="866755926374577334" fileName="TypeSystemTraceTree.java" startLine="184" startPosition="0" endLine="197" endPosition="0" />
     <scopeInfo nodeId="866755926374577390" fileName="TypeSystemTraceTree.java" startLine="198" startPosition="49" endLine="211" endPosition="16">
-      <varInfo nodeId="866755926374577395" varName="errorRow" />
       <varInfo nodeId="866755926374577392" varName="errorPath" />
+      <varInfo nodeId="866755926374577395" varName="errorRow" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577681" fileName="TypeSystemTraceTree.java" startLine="270" startPosition="57" endLine="283" endPosition="0" />
     <scopeInfo nodeId="866755926374577673" fileName="TypeSystemTraceTree.java" startLine="269" startPosition="53" endLine="283" endPosition="7" />
@@ -1060,41 +1060,41 @@
       <varInfo nodeId="866755926374577671" varName="newNode" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577004" fileName="TypeSystemTraceTree.java" startLine="60" startPosition="0" endLine="78" endPosition="3">
+      <varInfo nodeId="866755926374577015" varName="editorComponent" />
       <varInfo nodeId="866755926374577011" varName="node" />
       <varInfo nodeId="866755926374577007" varName="operationContext" />
       <varInfo nodeId="866755926374577013" varName="parent" />
-      <varInfo nodeId="866755926374577015" varName="editorComponent" />
       <varInfo nodeId="866755926374577009" varName="tcc" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577554" fileName="TypeSystemTraceTree.java" startLine="241" startPosition="44" endLine="260" endPosition="16">
-      <varInfo nodeId="866755926374577562" varName="operation" />
-      <varInfo nodeId="866755926374577583" varName="source" />
-      <varInfo nodeId="866755926374577577" varName="rule" />
       <varInfo nodeId="866755926374577556" varName="currentNode" />
+      <varInfo nodeId="866755926374577562" varName="operation" />
+      <varInfo nodeId="866755926374577577" varName="rule" />
+      <varInfo nodeId="866755926374577583" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577445" fileName="TypeSystemTraceTree.java" startLine="214" startPosition="53" endLine="237" endPosition="5" />
     <scopeInfo nodeId="866755926374577547" fileName="TypeSystemTraceTree.java" startLine="239" startPosition="0" endLine="262" endPosition="0">
       <varInfo nodeId="866755926374577550" varName="id" />
     </scopeInfo>
     <scopeInfo nodeId="7469000189634294747" fileName="TypeSystemTraceTree.java" startLine="118" startPosition="90" endLine="142" endPosition="18">
-      <varInfo nodeId="7274810114828382100" varName="showNode" />
-      <varInfo nodeId="7469000189634347598" varName="result" />
       <varInfo nodeId="7469000189634351540" varName="children" />
+      <varInfo nodeId="7469000189634347598" varName="result" />
+      <varInfo nodeId="7274810114828382100" varName="showNode" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577212" fileName="TypeSystemTraceTree.java" startLine="145" startPosition="52" endLine="169" endPosition="17" />
     <scopeInfo nodeId="866755926374577440" fileName="TypeSystemTraceTree.java" startLine="213" startPosition="0" endLine="239" endPosition="0">
       <varInfo nodeId="866755926374577443" varName="diff" />
     </scopeInfo>
     <scopeInfo nodeId="7469000189634294744" fileName="TypeSystemTraceTree.java" startLine="117" startPosition="0" endLine="144" endPosition="0">
-      <varInfo nodeId="7274810114828382104" varName="showParent" />
       <varInfo nodeId="7469000189634294748" varName="operation" />
+      <varInfo nodeId="7274810114828382104" varName="showParent" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577207" fileName="TypeSystemTraceTree.java" startLine="144" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="866755926374577210" varName="diff" />
     </scopeInfo>
+    <unitInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="46" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree" />
     <unitInfo nodeId="866755926374577680" fileName="TypeSystemTraceTree.java" startLine="270" startPosition="45" endLine="283" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$1" />
     <unitInfo nodeId="866755926374576841" fileName="TypeSystemTraceTree.java" startLine="293" startPosition="0" endLine="307" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$MyTreeSelectionListener" />
-    <unitInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="46" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree" />
   </root>
   <root nodeId="866755926374577735">
     <nodeInfo nodeId="866755926374577738" fileName="TypeSystemTraceTreeNode.java" startLine="18" startPosition="58" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COLOR_MAP" />
@@ -1157,8 +1157,8 @@
       <varInfo nodeId="866755926374577946" varName="colorId" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577891" fileName="TypeSystemTraceTreeNode.java" startLine="40" startPosition="0" endLine="47" endPosition="3">
-      <varInfo nodeId="866755926374577892" varName="userObject" />
       <varInfo nodeId="866755926374577894" varName="operationContext" />
+      <varInfo nodeId="866755926374577892" varName="userObject" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577939" fileName="TypeSystemTraceTreeNode.java" startLine="54" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="866755926374577942" varName="difference" />
@@ -1167,17 +1167,17 @@
       <varInfo nodeId="866755926374577751" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577848" fileName="TypeSystemTraceTreeNode.java" startLine="21" startPosition="135" endLine="38" endPosition="41">
-      <varInfo nodeId="866755926374577853" varName="operation" />
       <varInfo nodeId="7731054303349505983" varName="nodeId" />
+      <varInfo nodeId="866755926374577853" varName="operation" />
       <varInfo nodeId="7731054303349505975" varName="source" />
       <varInfo nodeId="866755926374577874" varName="variables" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374577744" fileName="TypeSystemTraceTreeNode.java" startLine="63" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="866755926374577837" fileName="TypeSystemTraceTreeNode.java" startLine="20" startPosition="0" endLine="39" endPosition="3">
-      <varInfo nodeId="866755926374577840" varName="userObject" />
+      <varInfo nodeId="866755926374577846" varName="editorComponent" />
       <varInfo nodeId="866755926374577842" varName="operationContext" />
       <varInfo nodeId="866755926374577844" varName="state" />
-      <varInfo nodeId="866755926374577846" varName="editorComponent" />
+      <varInfo nodeId="866755926374577840" varName="userObject" />
     </scopeInfo>
     <unitInfo nodeId="866755926374577735" fileName="TypeSystemTraceTreeNode.java" startLine="18" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTreeNode" />
   </root>
@@ -1194,10 +1194,10 @@
     <scopeInfo nodeId="866755926374577987" fileName="TypeTreeNode.java" startLine="14" startPosition="136" endLine="18" endPosition="32" />
     <scopeInfo nodeId="866755926374578006" fileName="TypeTreeNode.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="866755926374577974" fileName="TypeTreeNode.java" startLine="13" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="866755926374577985" varName="editorComponent" />
+      <varInfo nodeId="866755926374577983" varName="expandedType" />
       <varInfo nodeId="866755926374577979" varName="node" />
       <varInfo nodeId="866755926374577977" varName="operationContext" />
-      <varInfo nodeId="866755926374577983" varName="expandedType" />
-      <varInfo nodeId="866755926374577985" varName="editorComponent" />
       <varInfo nodeId="866755926374577981" varName="type" />
     </scopeInfo>
     <unitInfo nodeId="866755926374577965" fileName="TypeTreeNode.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeTreeNode" />

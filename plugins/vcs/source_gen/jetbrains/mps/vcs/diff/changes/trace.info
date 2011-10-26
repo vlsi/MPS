@@ -63,22 +63,23 @@
     <scopeInfo nodeId="5505786199853653294" fileName="ModuleDependencyChange.java" startLine="72" startPosition="66" endLine="76" endPosition="0" />
     <scopeInfo nodeId="5505786199853653313" fileName="ModuleDependencyChange.java" startLine="13" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="5505786199853653319" varName="changeSet" />
-      <varInfo nodeId="5505786199853653327" varName="moduleReference" />
       <varInfo nodeId="5505786199853653323" varName="delete" />
+      <varInfo nodeId="5505786199853653327" varName="moduleReference" />
       <varInfo nodeId="5505786199853653336" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="5505786199853653513" fileName="ModuleDependencyChange.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="5505786199853653527" fileName="ModuleDependencyChange.java" startLine="33" startPosition="76" endLine="38" endPosition="5" />
     <scopeInfo nodeId="5505786199853651835" fileName="ModuleDependencyChange.java" startLine="81" startPosition="0" endLine="86" endPosition="5">
+      <varInfo nodeId="5505786199853651849" varName="addTask" />
       <varInfo nodeId="5505786199853651861" varName="deleteTask" />
       <varInfo nodeId="5505786199853651840" varName="name" />
-      <varInfo nodeId="5505786199853651849" varName="addTask" />
     </scopeInfo>
     <scopeInfo nodeId="5505786199853653508" fileName="ModuleDependencyChange.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="5505786199853653518" fileName="ModuleDependencyChange.java" startLine="32" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="5505786199853653524" varName="nodeCopier" />
       <varInfo nodeId="5505786199853653521" varName="model" />
+      <varInfo nodeId="5505786199853653524" varName="nodeCopier" />
     </scopeInfo>
+    <unitInfo nodeId="2241895627641426680" fileName="ModuleDependencyChange.java" startLine="10" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
     <unitInfo nodeId="5505786199853651874" fileName="ModuleDependencyChange.java" startLine="50" startPosition="35" endLine="54" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$1" />
     <unitInfo nodeId="5505786199853653244" fileName="ModuleDependencyChange.java" startLine="54" startPosition="11" endLine="58" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$2" />
     <unitInfo nodeId="5505786199853653260" fileName="ModuleDependencyChange.java" startLine="59" startPosition="35" endLine="63" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$3" />
@@ -86,7 +87,6 @@
     <unitInfo nodeId="5505786199853653283" fileName="ModuleDependencyChange.java" startLine="68" startPosition="69" endLine="72" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$5" />
     <unitInfo nodeId="5505786199853653294" fileName="ModuleDependencyChange.java" startLine="72" startPosition="11" endLine="76" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$6" />
     <unitInfo nodeId="5505786199853651271" fileName="ModuleDependencyChange.java" startLine="49" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$DependencyType" />
-    <unitInfo nodeId="2241895627641426680" fileName="ModuleDependencyChange.java" startLine="10" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
   </root>
   <root nodeId="2729259761016168456">
     <nodeInfo nodeId="2732852465125548113" fileName="SetPropertyChange.java" startLine="10" startPosition="51" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertyName" />
@@ -125,16 +125,16 @@
     <scopeInfo nodeId="2732852465125672509" fileName="SetPropertyChange.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="5786223774279741729" fileName="SetPropertyChange.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="2732852465125548120" fileName="SetPropertyChange.java" startLine="13" startPosition="0" endLine="18" endPosition="3">
-      <varInfo nodeId="2732852465125548139" varName="propertyName" />
+      <varInfo nodeId="2732852465125548126" varName="changeSet" />
       <varInfo nodeId="2732852465125548148" varName="newValue" />
       <varInfo nodeId="2732852465125548130" varName="nodeId" />
-      <varInfo nodeId="2732852465125548126" varName="changeSet" />
+      <varInfo nodeId="2732852465125548139" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="2732852465125672503" fileName="SetPropertyChange.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="5651973002132666978" fileName="SetPropertyChange.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="3396946986144282981" fileName="SetPropertyChange.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="5746253950163662114" varName="nodeCopier" />
       <varInfo nodeId="3396946986144282984" varName="model" />
+      <varInfo nodeId="5746253950163662114" varName="nodeCopier" />
     </scopeInfo>
     <scopeInfo nodeId="3395217057974219931" fileName="SetPropertyChange.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
     <unitInfo nodeId="2729259761016168456" fileName="SetPropertyChange.java" startLine="10" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
@@ -280,42 +280,42 @@
     <scopeInfo nodeId="2732852465125672459" fileName="SetReferenceChange.java" startLine="170" startPosition="0" endLine="177" endPosition="0" />
     <scopeInfo nodeId="2732852465125672459" fileName="SetReferenceChange.java" startLine="177" startPosition="0" endLine="184" endPosition="0" />
     <scopeInfo nodeId="2732852465125674155" fileName="SetReferenceChange.java" startLine="21" startPosition="0" endLine="29" endPosition="3">
-      <varInfo nodeId="2732852465125674201" varName="resolveInfo" />
-      <varInfo nodeId="2732852465125674183" varName="targetModelReference" />
       <varInfo nodeId="2732852465125674161" varName="changeSet" />
-      <varInfo nodeId="2732852465125674165" varName="sourceNodeId" />
+      <varInfo nodeId="2732852465125674201" varName="resolveInfo" />
       <varInfo nodeId="2732852465125674174" varName="role" />
+      <varInfo nodeId="2732852465125674165" varName="sourceNodeId" />
+      <varInfo nodeId="2732852465125674183" varName="targetModelReference" />
       <varInfo nodeId="2732852465125674192" varName="targetNodeId" />
     </scopeInfo>
     <scopeInfo nodeId="5651973002132667026" fileName="SetReferenceChange.java" startLine="71" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="3395217057974222498" fileName="SetReferenceChange.java" startLine="123" startPosition="48" endLine="133" endPosition="170">
-      <varInfo nodeId="3395217057974222542" varName="ref" />
       <varInfo nodeId="3395217057974222500" varName="node" />
+      <varInfo nodeId="3395217057974222542" varName="ref" />
       <varInfo nodeId="3395217057974222557" varName="targetModel" />
     </scopeInfo>
     <scopeInfo nodeId="3396946986144283167" fileName="SetReferenceChange.java" startLine="56" startPosition="12" endLine="68" endPosition="35">
-      <varInfo nodeId="3396946986144283198" varName="targetModelReference" />
       <varInfo nodeId="3396946986144283213" varName="reference" />
+      <varInfo nodeId="3396946986144283198" varName="targetModelReference" />
     </scopeInfo>
     <scopeInfo nodeId="3395217057974222495" fileName="SetReferenceChange.java" startLine="121" startPosition="0" endLine="135" endPosition="0" />
     <scopeInfo nodeId="3396946986144283067" fileName="SetReferenceChange.java" startLine="51" startPosition="76" endLine="69" endPosition="5">
       <varInfo nodeId="3396946986144283093" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3396946986144283061" fileName="SetReferenceChange.java" startLine="50" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="5746253950163662117" varName="nodeCopier" />
       <varInfo nodeId="3396946986144283064" varName="model" />
+      <varInfo nodeId="5746253950163662117" varName="nodeCopier" />
     </scopeInfo>
     <scopeInfo nodeId="5786223774279741771" fileName="SetReferenceChange.java" startLine="81" startPosition="34" endLine="119" endPosition="5">
       <varInfo nodeId="5786223774279747074" varName="formatRef" />
-      <varInfo nodeId="5786223774279747063" varName="what" />
       <varInfo nodeId="5786223774279741826" varName="newRef" />
       <varInfo nodeId="5786223774279741812" varName="oldRef" />
+      <varInfo nodeId="5786223774279747063" varName="what" />
     </scopeInfo>
     <scopeInfo nodeId="5786223774279741768" fileName="SetReferenceChange.java" startLine="80" startPosition="0" endLine="121" endPosition="0" />
+    <unitInfo nodeId="2732852465125672459" fileName="SetReferenceChange.java" startLine="16" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
     <unitInfo nodeId="5786223774279747180" fileName="SetReferenceChange.java" startLine="94" startPosition="22" endLine="98" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.SetReferenceChange$1" />
     <unitInfo nodeId="5786223774279747159" fileName="SetReferenceChange.java" startLine="101" startPosition="22" endLine="105" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.SetReferenceChange$2" />
     <unitInfo nodeId="5786223774279747115" fileName="SetReferenceChange.java" startLine="109" startPosition="22" endLine="113" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.SetReferenceChange$3" />
-    <unitInfo nodeId="2732852465125672459" fileName="SetReferenceChange.java" startLine="16" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
   </root>
   <root nodeId="4209733725028893042">
     <nodeInfo nodeId="4209733725028893049" fileName="ModelVersionChange.java" startLine="10" startPosition="59" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -347,8 +347,8 @@
     <scopeInfo nodeId="4209733725028893095" fileName="ModelVersionChange.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="4209733725028893102" fileName="ModelVersionChange.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="4209733725028893054" fileName="ModelVersionChange.java" startLine="13" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="4209733725028893060" varName="nodeCopier" />
       <varInfo nodeId="4209733725028893057" varName="model" />
+      <varInfo nodeId="4209733725028893060" varName="nodeCopier" />
     </scopeInfo>
     <unitInfo nodeId="4209733725028893042" fileName="ModelVersionChange.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModelVersionChange" />
   </root>
@@ -496,19 +496,19 @@
     <scopeInfo nodeId="959738663751366451" fileName="NodeGroupChange.java" startLine="116" startPosition="31" endLine="123" endPosition="29" />
     <scopeInfo nodeId="959738663751379534" fileName="NodeGroupChange.java" startLine="127" startPosition="28" endLine="134" endPosition="165" />
     <scopeInfo nodeId="8272111966352338796" fileName="NodeGroupChange.java" startLine="175" startPosition="0" endLine="182" endPosition="0">
-      <varInfo nodeId="8272111966352338804" varName="end" />
       <varInfo nodeId="8272111966352338802" varName="begin" />
+      <varInfo nodeId="8272111966352338804" varName="end" />
     </scopeInfo>
     <scopeInfo nodeId="4972886494893223485" fileName="NodeGroupChange.java" startLine="182" startPosition="0" endLine="189" endPosition="0" />
     <scopeInfo nodeId="4972886494893223485" fileName="NodeGroupChange.java" startLine="189" startPosition="0" endLine="196" endPosition="0" />
     <scopeInfo nodeId="4972886494893364937" fileName="NodeGroupChange.java" startLine="27" startPosition="0" endLine="36" endPosition="3">
-      <varInfo nodeId="959738663751379669" varName="resultEnd" />
-      <varInfo nodeId="959738663751379667" varName="resultBegin" />
-      <varInfo nodeId="4972886494893364947" varName="parentNodeId" />
-      <varInfo nodeId="4972886494893364943" varName="changeSet" />
-      <varInfo nodeId="4972886494893364956" varName="role" />
-      <varInfo nodeId="959738663751379665" varName="end" />
       <varInfo nodeId="959738663751379663" varName="begin" />
+      <varInfo nodeId="4972886494893364943" varName="changeSet" />
+      <varInfo nodeId="959738663751379665" varName="end" />
+      <varInfo nodeId="4972886494893364947" varName="parentNodeId" />
+      <varInfo nodeId="959738663751379667" varName="resultBegin" />
+      <varInfo nodeId="959738663751379669" varName="resultEnd" />
+      <varInfo nodeId="4972886494893364956" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="959738663751366448" fileName="NodeGroupChange.java" startLine="114" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="959738663751379531" fileName="NodeGroupChange.java" startLine="125" startPosition="0" endLine="136" endPosition="0" />
@@ -519,25 +519,25 @@
     <scopeInfo nodeId="959738663751510260" fileName="NodeGroupChange.java" startLine="64" startPosition="25" endLine="78" endPosition="5" />
     <scopeInfo nodeId="959738663751510258" fileName="NodeGroupChange.java" startLine="63" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="3396946986144293798" fileName="NodeGroupChange.java" startLine="81" startPosition="82" endLine="106" endPosition="5">
+      <varInfo nodeId="3396946986144293803" varName="anchor" />
       <varInfo nodeId="3396946986144293967" varName="newChildren" />
       <varInfo nodeId="3396946986144293915" varName="nodesToAdd" />
       <varInfo nodeId="3396946986144293809" varName="parent" />
-      <varInfo nodeId="3396946986144293803" varName="anchor" />
     </scopeInfo>
     <scopeInfo nodeId="3396946986144293792" fileName="NodeGroupChange.java" startLine="80" startPosition="0" endLine="108" endPosition="0">
-      <varInfo nodeId="5746253950163662095" varName="nodeCopier" />
       <varInfo nodeId="3396946986144293795" varName="model" />
+      <varInfo nodeId="5746253950163662095" varName="nodeCopier" />
     </scopeInfo>
     <scopeInfo nodeId="5786223774279741793" fileName="NodeGroupChange.java" startLine="137" startPosition="34" endLine="168" endPosition="80">
-      <varInfo nodeId="2953552065802972449" varName="oldStuff" />
       <varInfo nodeId="5786223774279747250" varName="newChildren" />
       <varInfo nodeId="5786223774279747240" varName="newIds" />
       <varInfo nodeId="2953552065802972476" varName="newStuff" />
+      <varInfo nodeId="2953552065802972449" varName="oldStuff" />
     </scopeInfo>
     <scopeInfo nodeId="5786223774279741790" fileName="NodeGroupChange.java" startLine="136" startPosition="0" endLine="170" endPosition="0" />
+    <unitInfo nodeId="4972886494893223485" fileName="NodeGroupChange.java" startLine="18" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <unitInfo nodeId="959738663751511227" fileName="NodeGroupChange.java" startLine="84" startPosition="62" endLine="88" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange$1" />
     <unitInfo nodeId="5786223774279751821" fileName="NodeGroupChange.java" startLine="139" startPosition="118" endLine="143" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange$2" />
-    <unitInfo nodeId="4972886494893223485" fileName="NodeGroupChange.java" startLine="18" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
   </root>
   <root nodeId="5505786199853653616">
     <nodeInfo nodeId="5505786199853656967" fileName="DoNotGenerateOptionChange.java" startLine="10" startPosition="66" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -567,8 +567,8 @@
     <scopeInfo nodeId="5505786199853656990" fileName="DoNotGenerateOptionChange.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="5505786199853656997" fileName="DoNotGenerateOptionChange.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="5505786199853656973" fileName="DoNotGenerateOptionChange.java" startLine="13" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="5505786199853656979" varName="nodeCopier" />
       <varInfo nodeId="5505786199853656976" varName="model" />
+      <varInfo nodeId="5505786199853656979" varName="nodeCopier" />
     </scopeInfo>
     <unitInfo nodeId="5505786199853653616" fileName="DoNotGenerateOptionChange.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange" />
   </root>
@@ -724,10 +724,10 @@
       <varInfo nodeId="5743590290451629937" varName="id" />
       <varInfo nodeId="5743590290451629935" varName="node" />
     </scopeInfo>
+    <unitInfo nodeId="5743590290451629831" fileName="NodeCopier.java" startLine="21" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <unitInfo nodeId="5743590290451629923" fileName="NodeCopier.java" startLine="53" startPosition="95" endLine="57" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier$1" />
     <unitInfo nodeId="5743590290451630086" fileName="NodeCopier.java" startLine="97" startPosition="59" endLine="101" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier$2" />
     <unitInfo nodeId="5635826768687966573" fileName="NodeCopier.java" startLine="111" startPosition="93" endLine="115" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier$3" />
-    <unitInfo nodeId="5743590290451629831" fileName="NodeCopier.java" startLine="21" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
   </root>
   <root nodeId="6359197607515881703">
     <nodeInfo nodeId="6359197607515881781" fileName="AddRootChange.java" startLine="11" startPosition="48" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeId" />
@@ -757,13 +757,13 @@
       <varInfo nodeId="3396946986144281896" varName="newNode" />
     </scopeInfo>
     <scopeInfo nodeId="6359197607515881765" fileName="AddRootChange.java" startLine="13" startPosition="0" endLine="17" endPosition="3">
-      <varInfo nodeId="6359197607515881775" varName="nodeId" />
       <varInfo nodeId="6359197607515881771" varName="changeSet" />
+      <varInfo nodeId="6359197607515881775" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="5786223774279741710" fileName="AddRootChange.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="3396946986144280526" fileName="AddRootChange.java" startLine="24" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="5746253950163662079" varName="nodeCopier" />
       <varInfo nodeId="3396946986144280529" varName="model" />
+      <varInfo nodeId="5746253950163662079" varName="nodeCopier" />
     </scopeInfo>
     <scopeInfo nodeId="3395217057974219620" fileName="AddRootChange.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="8401260027345476543" fileName="AddRootChange.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
@@ -797,13 +797,13 @@
     <scopeInfo nodeId="6359197607515894922" fileName="DeleteRootChange.java" startLine="12" startPosition="64" endLine="14" endPosition="22" />
     <scopeInfo nodeId="3396946986144281925" fileName="DeleteRootChange.java" startLine="23" startPosition="76" endLine="25" endPosition="41" />
     <scopeInfo nodeId="6359197607515894919" fileName="DeleteRootChange.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
-      <varInfo nodeId="6359197607515894931" varName="nodeId" />
       <varInfo nodeId="6359197607515894929" varName="changeSet" />
+      <varInfo nodeId="6359197607515894931" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="5786223774279741721" fileName="DeleteRootChange.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="3396946986144281919" fileName="DeleteRootChange.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="5746253950163662092" varName="nodeCopier" />
       <varInfo nodeId="3396946986144281922" varName="model" />
+      <varInfo nodeId="5746253950163662092" varName="nodeCopier" />
     </scopeInfo>
     <scopeInfo nodeId="3395217057974219639" fileName="DeleteRootChange.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="8401260027345476553" fileName="DeleteRootChange.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
@@ -880,8 +880,8 @@
     <scopeInfo nodeId="6562343564267124299" fileName="ImportedModelChange.java" startLine="34" startPosition="76" endLine="39" endPosition="5" />
     <scopeInfo nodeId="6562343564267124280" fileName="ImportedModelChange.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="6562343564267124290" fileName="ImportedModelChange.java" startLine="33" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="6562343564267124296" varName="nodeCopier" />
       <varInfo nodeId="6562343564267124293" varName="model" />
+      <varInfo nodeId="6562343564267124296" varName="nodeCopier" />
     </scopeInfo>
     <unitInfo nodeId="6562343564267124230" fileName="ImportedModelChange.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ImportedModelChange" />
   </root>
@@ -914,8 +914,8 @@
     <scopeInfo nodeId="6359197607515881761" fileName="ModelChange.java" startLine="19" startPosition="41" endLine="20" endPosition="23" />
     <scopeInfo nodeId="4453118635377434920" fileName="ModelChange.java" startLine="24" startPosition="30" endLine="25" endPosition="16" />
     <scopeInfo nodeId="3396946986144259446" fileName="ModelChange.java" startLine="27" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="5746253950163662042" varName="nodeCopier" />
       <varInfo nodeId="3396946986144261369" varName="model" />
+      <varInfo nodeId="5746253950163662042" varName="nodeCopier" />
     </scopeInfo>
     <scopeInfo nodeId="3395217057974209365" fileName="ModelChange.java" startLine="31" startPosition="29" endLine="33" endPosition="35" />
     <scopeInfo nodeId="5786223774279694540" fileName="ModelChange.java" startLine="46" startPosition="0" endLine="48" endPosition="0" />
@@ -1009,10 +1009,10 @@
       <varInfo nodeId="5694687812506992552" varName="changeClass" />
     </scopeInfo>
     <scopeInfo nodeId="3395217057974222667" fileName="ChangeSet.java" startLine="66" startPosition="0" endLine="81" endPosition="0" />
+    <unitInfo nodeId="8813828754313712698" fileName="ChangeSet.java" startLine="15" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
     <unitInfo nodeId="5694687812507003760" fileName="ChangeSet.java" startLine="33" startPosition="59" endLine="37" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSet$1" />
     <unitInfo nodeId="5694687812507003875" fileName="ChangeSet.java" startLine="37" startPosition="18" endLine="41" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSet$2" />
     <unitInfo nodeId="3395217057974222701" fileName="ChangeSet.java" startLine="74" startPosition="82" endLine="78" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.ChangeSet$3" />
-    <unitInfo nodeId="8813828754313712698" fileName="ChangeSet.java" startLine="15" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
   </root>
   <root nodeId="8813828754313730792">
     <nodeInfo nodeId="6359197607515881838" fileName="ChangeSetBuilder.java" startLine="36" startPosition="31" endLine="37" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldModel" />
@@ -1279,8 +1279,8 @@
     <scopeInfo nodeId="5505786199853674011" fileName="ChangeSetBuilder.java" startLine="160" startPosition="5" endLine="163" endPosition="37" />
     <scopeInfo nodeId="4972886494893365765" fileName="ChangeSetBuilder.java" startLine="261" startPosition="60" endLine="264" endPosition="5" />
     <scopeInfo nodeId="5505786199853665063" fileName="ChangeSetBuilder.java" startLine="273" startPosition="114" endLine="276" endPosition="186">
-      <varInfo nodeId="5505786199853665170" varName="oldSet" />
       <varInfo nodeId="5505786199853665178" varName="newSet" />
+      <varInfo nodeId="5505786199853665170" varName="oldSet" />
     </scopeInfo>
     <scopeInfo nodeId="3395217057974222607" fileName="ChangeSetBuilder.java" startLine="287" startPosition="98" endLine="290" endPosition="31">
       <varInfo nodeId="3395217057974222609" varName="builder" />
@@ -1342,8 +1342,8 @@
       <varInfo nodeId="5505786199853674343" varName="changeCreator" />
     </scopeInfo>
     <scopeInfo nodeId="5505786199853665060" fileName="ChangeSetBuilder.java" startLine="272" startPosition="0" endLine="278" endPosition="0">
-      <varInfo nodeId="5505786199853665146" varName="oldItems" />
       <varInfo nodeId="5505786199853665154" varName="newItems" />
+      <varInfo nodeId="5505786199853665146" varName="oldItems" />
     </scopeInfo>
     <scopeInfo nodeId="3395217057974222604" fileName="ChangeSetBuilder.java" startLine="286" startPosition="0" endLine="292" endPosition="0">
       <varInfo nodeId="3395217057974222625" varName="newModel" />
@@ -1368,16 +1368,16 @@
     <scopeInfo nodeId="5505786199853674261" fileName="ChangeSetBuilder.java" startLine="178" startPosition="184" endLine="186" endPosition="0" />
     <scopeInfo nodeId="5505786199853676530" fileName="ChangeSetBuilder.java" startLine="234" startPosition="150" endLine="242" endPosition="0" />
     <scopeInfo nodeId="5505786199853674305" fileName="ChangeSetBuilder.java" startLine="194" startPosition="0" endLine="203" endPosition="0">
-      <varInfo nodeId="5505786199853674382" varName="referencesExtractor" />
       <varInfo nodeId="5505786199853674388" varName="dependencyType" />
+      <varInfo nodeId="5505786199853674382" varName="referencesExtractor" />
     </scopeInfo>
     <scopeInfo nodeId="6359197607515881945" fileName="ChangeSetBuilder.java" startLine="260" startPosition="51" endLine="270" endPosition="5">
       <varInfo nodeId="5505786199853676623" varName="commonRootIds" />
     </scopeInfo>
     <scopeInfo nodeId="2732852465125684151" fileName="ChangeSetBuilder.java" startLine="54" startPosition="162" endLine="67" endPosition="7">
-      <varInfo nodeId="2732852465125728813" varName="propertySupport" />
-      <varInfo nodeId="2732852465125741117" varName="oldPresentableValue" />
       <varInfo nodeId="2732852465125741785" varName="newPresentableValue" />
+      <varInfo nodeId="2732852465125741117" varName="oldPresentableValue" />
+      <varInfo nodeId="2732852465125728813" varName="propertySupport" />
     </scopeInfo>
     <scopeInfo nodeId="6359197607515881942" fileName="ChangeSetBuilder.java" startLine="259" startPosition="0" endLine="272" endPosition="0">
       <varInfo nodeId="3223323963577859849" varName="withOpposite" />
@@ -1388,8 +1388,8 @@
       <varInfo nodeId="5505786199853674256" varName="importedModelsExtractor" />
     </scopeInfo>
     <scopeInfo nodeId="2732852465125679233" fileName="ChangeSetBuilder.java" startLine="51" startPosition="67" endLine="68" endPosition="5">
-      <varInfo nodeId="2732852465125684234" varName="oldProperties" />
       <varInfo nodeId="2732852465125684248" varName="newProperties" />
+      <varInfo nodeId="2732852465125684234" varName="oldProperties" />
     </scopeInfo>
     <scopeInfo nodeId="5505786199853673890" fileName="ChangeSetBuilder.java" startLine="157" startPosition="243" endLine="174" endPosition="8">
       <varInfo nodeId="5505786199853674002" varName="added" />
@@ -1397,14 +1397,14 @@
     </scopeInfo>
     <scopeInfo nodeId="5505786199853665257" fileName="ChangeSetBuilder.java" startLine="176" startPosition="0" endLine="194" endPosition="0" />
     <scopeInfo nodeId="2732852465125679230" fileName="ChangeSetBuilder.java" startLine="50" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="2732852465125679235" varName="oldNode" />
       <varInfo nodeId="2732852465125679237" varName="newNode" />
+      <varInfo nodeId="2732852465125679235" varName="oldNode" />
     </scopeInfo>
     <scopeInfo nodeId="2732852465125741850" fileName="ChangeSetBuilder.java" startLine="84" startPosition="162" endLine="104" endPosition="7">
-      <varInfo nodeId="2758936786077058748" varName="oldTargetId" />
-      <varInfo nodeId="2732852465125742221" varName="oldReference" />
       <varInfo nodeId="2732852465125742227" varName="newReference" />
       <varInfo nodeId="2758936786077058740" varName="newTargetId" />
+      <varInfo nodeId="2732852465125742221" varName="oldReference" />
+      <varInfo nodeId="2758936786077058748" varName="oldTargetId" />
     </scopeInfo>
     <scopeInfo nodeId="5505786199853673887" fileName="ChangeSetBuilder.java" startLine="156" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="5505786199853673913" varName="changeCreator" />
@@ -1413,8 +1413,8 @@
     <scopeInfo nodeId="2732852465125741840" fileName="ChangeSetBuilder.java" startLine="83" startPosition="7" endLine="105" endPosition="5" />
     <scopeInfo nodeId="5505786199853665054" fileName="ChangeSetBuilder.java" startLine="204" startPosition="39" endLine="228" endPosition="5" />
     <scopeInfo nodeId="5505786199853676512" fileName="ChangeSetBuilder.java" startLine="231" startPosition="51" endLine="257" endPosition="86">
-      <varInfo nodeId="5505786199853676553" varName="oldRootIds" />
       <varInfo nodeId="5505786199853676560" varName="newRootIds" />
+      <varInfo nodeId="5505786199853676553" varName="oldRootIds" />
       <varInfo nodeId="5505786199853676525" varName="rootIds" />
     </scopeInfo>
     <scopeInfo nodeId="5505786199853665051" fileName="ChangeSetBuilder.java" startLine="203" startPosition="0" endLine="230" endPosition="0" />
@@ -1422,11 +1422,11 @@
     <scopeInfo nodeId="4972886494893394229" fileName="ChangeSetBuilder.java" startLine="120" startPosition="52" endLine="153" endPosition="9">
       <varInfo nodeId="2729259761015898453" varName="commonIndices" />
       <varInfo nodeId="3056334993733464205" varName="differentIndices" />
+      <varInfo nodeId="4972886494893415493" varName="finder" />
       <varInfo nodeId="4972886494893399569" varName="newChildren" />
       <varInfo nodeId="4972886494893401387" varName="newIds" />
-      <varInfo nodeId="4972886494893401371" varName="oldIds" />
-      <varInfo nodeId="4972886494893415493" varName="finder" />
       <varInfo nodeId="4972886494893399553" varName="oldChildren" />
+      <varInfo nodeId="4972886494893401371" varName="oldIds" />
     </scopeInfo>
     <scopeInfo nodeId="2732852465125741811" fileName="ChangeSetBuilder.java" startLine="71" startPosition="68" endLine="105" endPosition="5">
       <varInfo nodeId="2732852465125742117" varName="newReferences" />
@@ -1434,18 +1434,30 @@
     </scopeInfo>
     <scopeInfo nodeId="4972886494893394226" fileName="ChangeSetBuilder.java" startLine="119" startPosition="8" endLine="154" endPosition="5" />
     <scopeInfo nodeId="2732852465125741808" fileName="ChangeSetBuilder.java" startLine="70" startPosition="0" endLine="107" endPosition="0">
-      <varInfo nodeId="2732852465125741914" varName="oldNode" />
       <varInfo nodeId="2732852465125741916" varName="newNode" />
+      <varInfo nodeId="2732852465125741914" varName="oldNode" />
     </scopeInfo>
     <scopeInfo nodeId="4972886494893367127" fileName="ChangeSetBuilder.java" startLine="108" startPosition="48" endLine="154" endPosition="5">
+      <varInfo nodeId="4972886494893394080" varName="newNode" />
       <varInfo nodeId="4972886494893415591" varName="nodeId" />
       <varInfo nodeId="4972886494893394201" varName="roles" />
-      <varInfo nodeId="4972886494893394080" varName="newNode" />
     </scopeInfo>
     <scopeInfo nodeId="4972886494893367124" fileName="ChangeSetBuilder.java" startLine="107" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="4972886494893367133" varName="oldNode" />
     </scopeInfo>
+    <unitInfo nodeId="8813828754313730792" fileName="ChangeSetBuilder.java" startLine="36" startPosition="0" endLine="392" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder" />
     <unitInfo nodeId="2732852465125742138" fileName="ChangeSetBuilder.java" startLine="74" startPosition="79" endLine="78" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$1" />
+    <unitInfo nodeId="5505786199853674261" fileName="ChangeSetBuilder.java" startLine="178" startPosition="116" endLine="186" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$10" />
+    <unitInfo nodeId="5505786199853674276" fileName="ChangeSetBuilder.java" startLine="180" startPosition="103" endLine="184" endPosition="9" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$11" />
+    <unitInfo nodeId="5505786199853674292" fileName="ChangeSetBuilder.java" startLine="187" startPosition="126" endLine="191" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$11" />
+    <unitInfo nodeId="5505786199853674348" fileName="ChangeSetBuilder.java" startLine="196" startPosition="129" endLine="200" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$12" />
+    <unitInfo nodeId="5505786199853674411" fileName="ChangeSetBuilder.java" startLine="207" startPosition="81" endLine="211" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$13" />
+    <unitInfo nodeId="5505786199853674431" fileName="ChangeSetBuilder.java" startLine="212" startPosition="83" endLine="216" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$14" />
+    <unitInfo nodeId="5505786199853674444" fileName="ChangeSetBuilder.java" startLine="217" startPosition="98" endLine="221" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$15" />
+    <unitInfo nodeId="5505786199853676530" fileName="ChangeSetBuilder.java" startLine="234" startPosition="87" endLine="242" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$16" />
+    <unitInfo nodeId="5505786199853676540" fileName="ChangeSetBuilder.java" startLine="236" startPosition="138" endLine="240" endPosition="9" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$17" />
+    <unitInfo nodeId="5505786199853676577" fileName="ChangeSetBuilder.java" startLine="246" startPosition="108" endLine="250" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$17" />
+    <unitInfo nodeId="5505786199853676596" fileName="ChangeSetBuilder.java" startLine="251" startPosition="108" endLine="255" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$18" />
     <unitInfo nodeId="2732852465125742167" fileName="ChangeSetBuilder.java" startLine="79" startPosition="79" endLine="83" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$2" />
     <unitInfo nodeId="4972886494893394217" fileName="ChangeSetBuilder.java" startLine="115" startPosition="216" endLine="119" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$3" />
     <unitInfo nodeId="4972886494893401377" fileName="ChangeSetBuilder.java" startLine="123" startPosition="75" endLine="127" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$4" />
@@ -1454,19 +1466,7 @@
     <unitInfo nodeId="4972886494893418373" fileName="ChangeSetBuilder.java" startLine="149" startPosition="22" endLine="153" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$7" />
     <unitInfo nodeId="5505786199853673967" fileName="ChangeSetBuilder.java" startLine="165" startPosition="63" endLine="169" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$8" />
     <unitInfo nodeId="5505786199853673986" fileName="ChangeSetBuilder.java" startLine="170" startPosition="65" endLine="174" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$9" />
-    <unitInfo nodeId="5505786199853674276" fileName="ChangeSetBuilder.java" startLine="180" startPosition="103" endLine="184" endPosition="9" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$11" />
-    <unitInfo nodeId="5505786199853674292" fileName="ChangeSetBuilder.java" startLine="187" startPosition="126" endLine="191" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$11" />
-    <unitInfo nodeId="5505786199853674348" fileName="ChangeSetBuilder.java" startLine="196" startPosition="129" endLine="200" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$12" />
-    <unitInfo nodeId="5505786199853674411" fileName="ChangeSetBuilder.java" startLine="207" startPosition="81" endLine="211" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$13" />
-    <unitInfo nodeId="5505786199853674431" fileName="ChangeSetBuilder.java" startLine="212" startPosition="83" endLine="216" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$14" />
-    <unitInfo nodeId="5505786199853674444" fileName="ChangeSetBuilder.java" startLine="217" startPosition="98" endLine="221" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$15" />
-    <unitInfo nodeId="5505786199853676540" fileName="ChangeSetBuilder.java" startLine="236" startPosition="138" endLine="240" endPosition="9" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$17" />
-    <unitInfo nodeId="5505786199853676577" fileName="ChangeSetBuilder.java" startLine="246" startPosition="108" endLine="250" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$17" />
-    <unitInfo nodeId="5505786199853676596" fileName="ChangeSetBuilder.java" startLine="251" startPosition="108" endLine="255" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$18" />
-    <unitInfo nodeId="5505786199853674261" fileName="ChangeSetBuilder.java" startLine="178" startPosition="116" endLine="186" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$10" />
-    <unitInfo nodeId="5505786199853676530" fileName="ChangeSetBuilder.java" startLine="234" startPosition="87" endLine="242" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$16" />
     <unitInfo nodeId="2732852465125741204" fileName="ChangeSetBuilder.java" startLine="383" startPosition="0" endLine="391" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder$DefaultPropertySupport" />
-    <unitInfo nodeId="8813828754313730792" fileName="ChangeSetBuilder.java" startLine="36" startPosition="0" endLine="392" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder" />
   </root>
 </debugInfo>
 

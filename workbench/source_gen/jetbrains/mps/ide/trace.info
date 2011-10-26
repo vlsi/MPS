@@ -42,38 +42,38 @@
     <scopeInfo nodeId="5431388913640422868" fileName="EditorUtil.java" startLine="69" startPosition="29" endLine="70" endPosition="61" />
     <scopeInfo nodeId="5431388913640422671" fileName="EditorUtil.java" startLine="23" startPosition="25" endLine="25" endPosition="3" />
     <scopeInfo nodeId="5431388913640422675" fileName="EditorUtil.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="5431388913640422678" varName="sourceNode" />
       <varInfo nodeId="5431388913640422680" varName="context" />
+      <varInfo nodeId="5431388913640422678" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="5431388913640422865" fileName="EditorUtil.java" startLine="68" startPosition="71" endLine="72" endPosition="0" />
     <scopeInfo nodeId="5431388913640422767" fileName="EditorUtil.java" startLine="46" startPosition="50" endLine="72" endPosition="11">
-      <varInfo nodeId="5431388913640422816" varName="result" />
-      <varInfo nodeId="5431388913640422774" varName="frame" />
-      <varInfo nodeId="5431388913640422769" varName="root" />
-      <varInfo nodeId="5431388913640422835" varName="pathToShow" />
-      <varInfo nodeId="5431388913640422829" varName="selectedPath" />
       <varInfo nodeId="5431388913640422785" varName="chooser" />
+      <varInfo nodeId="5431388913640422774" varName="frame" />
+      <varInfo nodeId="5431388913640422835" varName="pathToShow" />
+      <varInfo nodeId="5431388913640422816" varName="result" />
+      <varInfo nodeId="5431388913640422769" varName="root" />
+      <varInfo nodeId="5431388913640422829" varName="selectedPath" />
     </scopeInfo>
     <scopeInfo nodeId="5431388913640422762" fileName="EditorUtil.java" startLine="45" startPosition="48" endLine="74" endPosition="0">
       <varInfo nodeId="5431388913640422765" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="5431388913640422697" fileName="EditorUtil.java" startLine="31" startPosition="131" endLine="75" endPosition="18">
+      <varInfo nodeId="5431388913640422740" varName="baseFile" />
+      <varInfo nodeId="5431388913640422751" varName="button" />
+      <varInfo nodeId="5431388913640422725" varName="filename" />
       <varInfo nodeId="5431388913640422721" varName="finalModule" />
       <varInfo nodeId="5431388913640422709" varName="macros" />
       <varInfo nodeId="5431388913640422699" varName="module" />
-      <varInfo nodeId="5431388913640422751" varName="button" />
       <varInfo nodeId="5431388913640422714" varName="path" />
-      <varInfo nodeId="5431388913640422725" varName="filename" />
-      <varInfo nodeId="5431388913640422740" varName="baseFile" />
     </scopeInfo>
     <scopeInfo nodeId="5431388913640422688" fileName="EditorUtil.java" startLine="30" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="5431388913640422695" varName="context" />
       <varInfo nodeId="5431388913640422693" varName="propertyName" />
       <varInfo nodeId="5431388913640422691" varName="sourceNode" />
-      <varInfo nodeId="5431388913640422695" varName="context" />
     </scopeInfo>
-    <unitInfo nodeId="5431388913640422864" fileName="EditorUtil.java" startLine="68" startPosition="59" endLine="72" endPosition="9" unitName="jetbrains.mps.ide.EditorUtil$2" />
-    <unitInfo nodeId="5431388913640422761" fileName="EditorUtil.java" startLine="45" startPosition="25" endLine="74" endPosition="5" unitName="jetbrains.mps.ide.EditorUtil$1" />
     <unitInfo nodeId="5431388913640420462" fileName="EditorUtil.java" startLine="23" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.EditorUtil" />
+    <unitInfo nodeId="5431388913640422761" fileName="EditorUtil.java" startLine="45" startPosition="25" endLine="74" endPosition="5" unitName="jetbrains.mps.ide.EditorUtil$1" />
+    <unitInfo nodeId="5431388913640422864" fileName="EditorUtil.java" startLine="68" startPosition="59" endLine="72" endPosition="9" unitName="jetbrains.mps.ide.EditorUtil$2" />
   </root>
 </debugInfo>
 

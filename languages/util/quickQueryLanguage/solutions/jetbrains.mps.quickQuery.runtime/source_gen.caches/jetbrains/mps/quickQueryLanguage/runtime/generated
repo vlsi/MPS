@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4bm6aj9cydmpmr1o9kvjl38w4mprrnk">
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="7c5ssk9ukgkps0ad18aex01o7lv119u" />
-  <common hash="8ao13kr3w7qmx4wub2a1qpzflzhox4v" />
-  <source id="3882421039144497491" name="Query" hash="-4cam56gs3ccdqosoztaa4jq8x1r6epo">
+<dependencies version="2" modelHash="57m4c7l1t5u51fruo9o5lgxs33f6gbq">
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
+  <common hash="17m5c8inyasb2lg0v0pdgz1mskfpr0j" />
+  <source id="3882421039144497491" name="Query" hash="1qocoxdnp7rr11za2q88fxgujdvosvm">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="Query.java" />
   </source>

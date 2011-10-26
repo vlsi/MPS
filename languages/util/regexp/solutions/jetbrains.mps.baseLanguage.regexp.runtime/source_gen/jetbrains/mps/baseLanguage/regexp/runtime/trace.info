@@ -30,14 +30,14 @@
       <varInfo nodeId="8235206972880844270" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="8235206972880844204" fileName="RegexpOperations.java" startLine="14" startPosition="80" endLine="24" endPosition="30">
-      <varInfo nodeId="8235206972880844213" varName="newText" />
       <varInfo nodeId="8235206972880844218" varName="current" />
       <varInfo nodeId="8235206972880844206" varName="m" />
+      <varInfo nodeId="8235206972880844213" varName="newText" />
     </scopeInfo>
     <scopeInfo nodeId="8235206972880844195" fileName="RegexpOperations.java" startLine="13" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="8235206972880844200" varName="regexp" />
       <varInfo nodeId="8235206972880844202" varName="replacer" />
       <varInfo nodeId="8235206972880844198" varName="text" />
-      <varInfo nodeId="8235206972880844200" varName="regexp" />
     </scopeInfo>
     <unitInfo nodeId="8235206972880844189" fileName="RegexpOperations.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations" />
   </root>

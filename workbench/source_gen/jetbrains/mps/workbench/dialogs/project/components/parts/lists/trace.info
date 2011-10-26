@@ -87,8 +87,8 @@
     <scopeInfo nodeId="1560298786499489815" fileName="SortedList.java" startLine="75" startPosition="45" endLine="79" endPosition="7" />
     <scopeInfo nodeId="1560298786499489877" fileName="SortedList.java" startLine="90" startPosition="52" endLine="94" endPosition="16" />
     <scopeInfo nodeId="1560298786499489890" fileName="SortedList.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
-      <varInfo nodeId="1560298786499489893" varName="index" />
       <varInfo nodeId="1560298786499489895" varName="c" />
+      <varInfo nodeId="1560298786499489893" varName="index" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499489675" fileName="SortedList.java" startLine="29" startPosition="20" endLine="34" endPosition="7" />
     <scopeInfo nodeId="1560298786499489652" fileName="SortedList.java" startLine="35" startPosition="12" endLine="40" endPosition="7" />
@@ -283,38 +283,38 @@
     <scopeInfo nodeId="1560298786499493732" fileName="ListsFactory.java" startLine="176" startPosition="0" endLine="178" endPosition="3" />
     <scopeInfo nodeId="1560298786499493504" fileName="ListsFactory.java" startLine="235" startPosition="75" endLine="237" endPosition="5" />
     <scopeInfo nodeId="1560298786499493543" fileName="ListsFactory.java" startLine="44" startPosition="143" endLine="48" endPosition="0">
-      <varInfo nodeId="1560298786499493548" varName="o2" />
       <varInfo nodeId="1560298786499493546" varName="o1" />
+      <varInfo nodeId="1560298786499493548" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="7567158975345112880" fileName="ListsFactory.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="7567158975345112885" varName="o2" />
       <varInfo nodeId="7567158975345112883" varName="o1" />
+      <varInfo nodeId="7567158975345112885" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493587" fileName="ListsFactory.java" startLine="99" startPosition="133" endLine="103" endPosition="0">
-      <varInfo nodeId="1560298786499493592" varName="o2" />
       <varInfo nodeId="1560298786499493590" varName="o1" />
+      <varInfo nodeId="1560298786499493592" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493609" fileName="ListsFactory.java" startLine="113" startPosition="146" endLine="117" endPosition="0">
-      <varInfo nodeId="1560298786499493614" varName="o2" />
       <varInfo nodeId="1560298786499493612" varName="o1" />
+      <varInfo nodeId="1560298786499493614" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493938" fileName="ListsFactory.java" startLine="118" startPosition="66" endLine="122" endPosition="58" />
     <scopeInfo nodeId="1560298786499493631" fileName="ListsFactory.java" startLine="125" startPosition="147" endLine="129" endPosition="0">
-      <varInfo nodeId="1560298786499493636" varName="o2" />
       <varInfo nodeId="1560298786499493634" varName="o1" />
+      <varInfo nodeId="1560298786499493636" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493638" fileName="ListsFactory.java" startLine="129" startPosition="0" endLine="133" endPosition="0">
-      <varInfo nodeId="1560298786499493643" varName="o2" />
       <varInfo nodeId="1560298786499493641" varName="o1" />
+      <varInfo nodeId="1560298786499493643" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494015" fileName="ListsFactory.java" startLine="135" startPosition="45" endLine="139" endPosition="8" />
     <scopeInfo nodeId="1560298786499493695" fileName="ListsFactory.java" startLine="160" startPosition="153" endLine="164" endPosition="0">
-      <varInfo nodeId="1560298786499493700" varName="o2" />
       <varInfo nodeId="1560298786499493698" varName="o1" />
+      <varInfo nodeId="1560298786499493700" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493710" fileName="ListsFactory.java" startLine="165" startPosition="133" endLine="169" endPosition="0">
-      <varInfo nodeId="1560298786499493715" varName="o2" />
       <varInfo nodeId="1560298786499493713" varName="o1" />
+      <varInfo nodeId="1560298786499493715" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493735" fileName="ListsFactory.java" startLine="179" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="1560298786499493740" varName="comparator" />
@@ -323,16 +323,16 @@
       <varInfo nodeId="1560298786499493754" varName="comparator" />
     </scopeInfo>
     <scopeInfo nodeId="7567158975344817815" fileName="ListsFactory.java" startLine="200" startPosition="0" endLine="204" endPosition="0">
-      <varInfo nodeId="7567158975344817820" varName="o2" />
       <varInfo nodeId="7567158975344817818" varName="o1" />
+      <varInfo nodeId="7567158975344817820" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="207" startPosition="84" endLine="211" endPosition="16" />
     <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="214" startPosition="84" endLine="218" endPosition="16" />
     <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="221" startPosition="84" endLine="225" endPosition="16" />
     <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="228" startPosition="84" endLine="232" endPosition="16" />
     <scopeInfo nodeId="1560298786499493506" fileName="ListsFactory.java" startLine="238" startPosition="0" endLine="242" endPosition="0">
-      <varInfo nodeId="1560298786499493511" varName="o2" />
       <varInfo nodeId="1560298786499493509" varName="o1" />
+      <varInfo nodeId="1560298786499493511" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493768" fileName="ListsFactory.java" startLine="27" startPosition="64" endLine="32" endPosition="58">
       <varInfo nodeId="1560298786499493770" varName="compareStereotypes" />
@@ -344,8 +344,8 @@
       <varInfo nodeId="59624520828741912" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493725" fileName="ListsFactory.java" startLine="170" startPosition="123" endLine="175" endPosition="0">
-      <varInfo nodeId="1560298786499493730" varName="o2" />
       <varInfo nodeId="1560298786499493728" varName="o1" />
+      <varInfo nodeId="1560298786499493730" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493796" fileName="ListsFactory.java" startLine="35" startPosition="68" endLine="41" endPosition="38">
       <varInfo nodeId="1560298786499493805" varName="m1" />
@@ -364,12 +364,12 @@
       <varInfo nodeId="1560298786499493916" varName="m2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494032" fileName="ListsFactory.java" startLine="142" startPosition="42" endLine="148" endPosition="40">
-      <varInfo nodeId="1560298786499494048" varName="string2" />
       <varInfo nodeId="1560298786499494041" varName="string1" />
+      <varInfo nodeId="1560298786499494048" varName="string2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493616" fileName="ListsFactory.java" startLine="117" startPosition="0" endLine="124" endPosition="0">
-      <varInfo nodeId="1560298786499493621" varName="o2" />
       <varInfo nodeId="1560298786499493619" varName="o1" />
+      <varInfo nodeId="1560298786499493621" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493675" fileName="ListsFactory.java" startLine="134" startPosition="115" endLine="141" endPosition="0">
       <varInfo nodeId="1560298786499493678" varName="path" />
@@ -379,72 +379,72 @@
     <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="220" startPosition="0" endLine="227" endPosition="0" />
     <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="227" startPosition="0" endLine="234" endPosition="0" />
     <scopeInfo nodeId="1560298786499493521" fileName="ListsFactory.java" startLine="26" startPosition="142" endLine="34" endPosition="0">
-      <varInfo nodeId="1560298786499493526" varName="o2" />
       <varInfo nodeId="1560298786499493524" varName="o1" />
+      <varInfo nodeId="1560298786499493526" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="7567158975345112863" fileName="ListsFactory.java" startLine="58" startPosition="149" endLine="66" endPosition="0">
-      <varInfo nodeId="7567158975345112868" varName="o2" />
       <varInfo nodeId="7567158975345112866" varName="o1" />
+      <varInfo nodeId="7567158975345112868" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="59624520828736561" fileName="ListsFactory.java" startLine="151" startPosition="121" endLine="159" endPosition="0">
-      <varInfo nodeId="59624520828736566" varName="o2" />
       <varInfo nodeId="59624520828736564" varName="o1" />
+      <varInfo nodeId="59624520828736566" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="7567158975344817785" fileName="ListsFactory.java" startLine="190" startPosition="66" endLine="198" endPosition="65">
       <varInfo nodeId="7567158975344817787" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493528" fileName="ListsFactory.java" startLine="34" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1560298786499493533" varName="o2" />
       <varInfo nodeId="1560298786499493531" varName="o1" />
+      <varInfo nodeId="1560298786499493533" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493550" fileName="ListsFactory.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="1560298786499493555" varName="o2" />
       <varInfo nodeId="1560298786499493553" varName="o1" />
+      <varInfo nodeId="1560298786499493555" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493572" fileName="ListsFactory.java" startLine="89" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="1560298786499493577" varName="o2" />
       <varInfo nodeId="1560298786499493575" varName="o1" />
+      <varInfo nodeId="1560298786499493577" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493594" fileName="ListsFactory.java" startLine="103" startPosition="0" endLine="112" endPosition="0">
-      <varInfo nodeId="1560298786499493599" varName="o2" />
       <varInfo nodeId="1560298786499493597" varName="o1" />
+      <varInfo nodeId="1560298786499493599" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493680" fileName="ListsFactory.java" startLine="141" startPosition="0" endLine="150" endPosition="0">
-      <varInfo nodeId="1560298786499493685" varName="o2" />
       <varInfo nodeId="1560298786499493683" varName="o1" />
+      <varInfo nodeId="1560298786499493685" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="7567158975344817778" fileName="ListsFactory.java" startLine="189" startPosition="63" endLine="200" endPosition="0">
-      <varInfo nodeId="7567158975344817783" varName="o2" />
       <varInfo nodeId="7567158975344817781" varName="o1" />
+      <varInfo nodeId="7567158975344817783" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493858" fileName="ListsFactory.java" startLine="72" startPosition="52" endLine="87" endPosition="20">
-      <varInfo nodeId="5021135903237623813" varName="result" />
       <varInfo nodeId="5021135903237623851" varName="o1cl" />
       <varInfo nodeId="5021135903237623875" varName="o2cl" />
+      <varInfo nodeId="5021135903237623813" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7567158975344817767" fileName="ListsFactory.java" startLine="188" startPosition="107" endLine="204" endPosition="6" />
     <scopeInfo nodeId="1560298786499493565" fileName="ListsFactory.java" startLine="71" startPosition="131" endLine="89" endPosition="0">
-      <varInfo nodeId="1560298786499493570" varName="o2" />
       <varInfo nodeId="1560298786499493568" varName="o1" />
+      <varInfo nodeId="1560298786499493570" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="7567158975344817764" fileName="ListsFactory.java" startLine="187" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="7567158975344817832" varName="scope" />
     </scopeInfo>
+    <unitInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="25" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory" />
+    <unitInfo nodeId="1560298786499493519" fileName="ListsFactory.java" startLine="26" startPosition="94" endLine="43" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$1" />
     <unitInfo nodeId="1560298786499493693" fileName="ListsFactory.java" startLine="160" startPosition="99" endLine="164" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$10" />
     <unitInfo nodeId="1560298786499493708" fileName="ListsFactory.java" startLine="165" startPosition="90" endLine="169" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$11" />
     <unitInfo nodeId="1560298786499493723" fileName="ListsFactory.java" startLine="170" startPosition="84" endLine="175" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$12" />
+    <unitInfo nodeId="7567158975344817776" fileName="ListsFactory.java" startLine="189" startPosition="15" endLine="204" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$13" />
+    <unitInfo nodeId="1560298786499493541" fileName="ListsFactory.java" startLine="44" startPosition="95" endLine="57" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$2" />
+    <unitInfo nodeId="7567158975345112861" fileName="ListsFactory.java" startLine="58" startPosition="101" endLine="70" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$3" />
+    <unitInfo nodeId="1560298786499493563" fileName="ListsFactory.java" startLine="71" startPosition="89" endLine="98" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$4" />
+    <unitInfo nodeId="1560298786499493585" fileName="ListsFactory.java" startLine="99" startPosition="90" endLine="112" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$5" />
+    <unitInfo nodeId="1560298786499493607" fileName="ListsFactory.java" startLine="113" startPosition="99" endLine="124" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$6" />
     <unitInfo nodeId="1560298786499493629" fileName="ListsFactory.java" startLine="125" startPosition="102" endLine="133" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$7" />
+    <unitInfo nodeId="1560298786499493673" fileName="ListsFactory.java" startLine="134" startPosition="78" endLine="150" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$8" />
     <unitInfo nodeId="59624520828736537" fileName="ListsFactory.java" startLine="151" startPosition="84" endLine="159" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$9" />
     <unitInfo nodeId="1560298786499486566" fileName="ListsFactory.java" startLine="235" startPosition="0" endLine="243" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$ListComparator" />
-    <unitInfo nodeId="1560298786499493607" fileName="ListsFactory.java" startLine="113" startPosition="99" endLine="124" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$6" />
-    <unitInfo nodeId="7567158975345112861" fileName="ListsFactory.java" startLine="58" startPosition="101" endLine="70" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$3" />
-    <unitInfo nodeId="1560298786499493541" fileName="ListsFactory.java" startLine="44" startPosition="95" endLine="57" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$2" />
-    <unitInfo nodeId="1560298786499493585" fileName="ListsFactory.java" startLine="99" startPosition="90" endLine="112" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$5" />
-    <unitInfo nodeId="7567158975344817776" fileName="ListsFactory.java" startLine="189" startPosition="15" endLine="204" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$13" />
-    <unitInfo nodeId="1560298786499493673" fileName="ListsFactory.java" startLine="134" startPosition="78" endLine="150" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$8" />
-    <unitInfo nodeId="1560298786499493519" fileName="ListsFactory.java" startLine="26" startPosition="94" endLine="43" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$1" />
-    <unitInfo nodeId="1560298786499493563" fileName="ListsFactory.java" startLine="71" startPosition="89" endLine="98" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$4" />
-    <unitInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="25" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory" />
   </root>
 </debugInfo>
 

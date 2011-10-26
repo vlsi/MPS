@@ -16,8 +16,8 @@
       <varInfo nodeId="8382013213872090911" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213872090899" fileName="ConfStubs.java" startLine="24" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="2906282062545455187" fileName="ConfStubs.java" startLine="27" startPosition="177" endLine="31" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs$1" />
     <unitInfo nodeId="8382013213872090899" fileName="ConfStubs.java" startLine="21" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    <unitInfo nodeId="2906282062545455187" fileName="ConfStubs.java" startLine="27" startPosition="177" endLine="31" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs$1" />
   </root>
 </debugInfo>
 

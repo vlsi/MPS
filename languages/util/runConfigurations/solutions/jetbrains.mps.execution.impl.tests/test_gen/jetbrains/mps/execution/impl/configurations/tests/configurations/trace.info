@@ -43,16 +43,16 @@
     </scopeInfo>
     <scopeInfo nodeId="8128243960970298624" fileName="TestConfigurationsMigration_Test.java" startLine="50" startPosition="0" endLine="59" endPosition="7" />
     <scopeInfo nodeId="8128243960970298563" fileName="TestConfigurationsMigration_Test.java" startLine="43" startPosition="78" endLine="59" endPosition="7">
-      <varInfo nodeId="8128243960970298614" varName="runManagerImpl" />
-      <varInfo nodeId="8128243960970298606" varName="project" />
       <varInfo nodeId="8128243960970298591" varName="element" />
+      <varInfo nodeId="8128243960970298606" varName="project" />
+      <varInfo nodeId="8128243960970298614" varName="runManagerImpl" />
     </scopeInfo>
     <scopeInfo nodeId="8128243960970298563" fileName="TestConfigurationsMigration_Test.java" startLine="42" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="8128243960970298585" varName="configFile" />
       <varInfo nodeId="8128243960970298587" varName="xslFile" />
     </scopeInfo>
-    <unitInfo nodeId="8128243960970298563" fileName="TestConfigurationsMigration_Test.java" startLine="33" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.configurations.TestConfigurationsMigration_Test$TestBody" />
     <unitInfo nodeId="8128243960970298563" fileName="TestConfigurationsMigration_Test.java" startLine="19" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.configurations.TestConfigurationsMigration_Test" />
+    <unitInfo nodeId="8128243960970298563" fileName="TestConfigurationsMigration_Test.java" startLine="33" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.configurations.TestConfigurationsMigration_Test$TestBody" />
   </root>
   <root nodeId="8128243960970298662">
     <nodeInfo nodeId="8128243960970298662" fileName="XslTest.java" startLine="21" startPosition="22" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -121,10 +121,10 @@
       <varInfo nodeId="8128243960970298676" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="8128243960970298733" fileName="XslTest.java" startLine="41" startPosition="9" endLine="52" endPosition="18">
-      <varInfo nodeId="8128243960970298750" varName="result" />
       <varInfo nodeId="8128243960970298735" varName="document" />
-      <varInfo nodeId="8128243960970298744" varName="source" />
+      <varInfo nodeId="8128243960970298750" varName="result" />
       <varInfo nodeId="8128243960970298775" varName="root" />
+      <varInfo nodeId="8128243960970298744" varName="source" />
       <varInfo nodeId="8128243960970298756" varName="transformer" />
     </scopeInfo>
     <scopeInfo nodeId="8128243960970298668" fileName="XslTest.java" startLine="26" startPosition="0" endLine="39" endPosition="0">

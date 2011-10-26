@@ -32,8 +32,8 @@
       <varInfo nodeId="1220369573364065743" varName="lang" />
     </scopeInfo>
     <scopeInfo nodeId="1220369573364040171" fileName="QueriesGenerated.java" startLine="116" startPosition="155" endLine="129" endPosition="18">
-      <varInfo nodeId="1220369573364040173" varName="result" />
       <varInfo nodeId="6148642440041937708" varName="langs" />
+      <varInfo nodeId="1220369573364040173" varName="result" />
     </scopeInfo>
   </root>
   <root nodeId="1220369573364066229">

@@ -42,17 +42,17 @@
     <scopeInfo nodeId="6877931680625741283" fileName="HStateMachineFactory.java" startLine="11" startPosition="33" endLine="11" endPosition="33" />
     <scopeInfo nodeId="6877931680625741280" fileName="HStateMachineFactory.java" startLine="10" startPosition="69" endLine="12" endPosition="3" />
     <scopeInfo nodeId="6877931680625741287" fileName="HStateMachineFactory.java" startLine="14" startPosition="41" endLine="33" endPosition="19">
-      <varInfo nodeId="6877931680625741348" varName="unlockedPanelState" />
-      <varInfo nodeId="6877931680625741324" varName="idle" />
-      <varInfo nodeId="6877931680625741289" varName="doorClosed" />
-      <varInfo nodeId="6877931680625741336" varName="waitingForLightState" />
-      <varInfo nodeId="6877931680625741296" varName="drawOpened" />
-      <varInfo nodeId="6877931680625741354" varName="machine" />
       <varInfo nodeId="6877931680625741330" varName="activeState" />
-      <varInfo nodeId="6877931680625741303" varName="lightOn" />
-      <varInfo nodeId="6877931680625741342" varName="waitingForDrawState" />
-      <varInfo nodeId="6877931680625741317" varName="panelClosed" />
+      <varInfo nodeId="6877931680625741289" varName="doorClosed" />
       <varInfo nodeId="6877931680625741310" varName="doorOpened" />
+      <varInfo nodeId="6877931680625741296" varName="drawOpened" />
+      <varInfo nodeId="6877931680625741324" varName="idle" />
+      <varInfo nodeId="6877931680625741303" varName="lightOn" />
+      <varInfo nodeId="6877931680625741354" varName="machine" />
+      <varInfo nodeId="6877931680625741317" varName="panelClosed" />
+      <varInfo nodeId="6877931680625741348" varName="unlockedPanelState" />
+      <varInfo nodeId="6877931680625741342" varName="waitingForDrawState" />
+      <varInfo nodeId="6877931680625741336" varName="waitingForLightState" />
     </scopeInfo>
     <scopeInfo nodeId="6877931680625741284" fileName="HStateMachineFactory.java" startLine="13" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="6877931680625741277" fileName="HStateMachineFactory.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.HStateMachineFactory" />

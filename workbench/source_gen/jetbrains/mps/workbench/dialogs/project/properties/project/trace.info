@@ -66,8 +66,8 @@
     <scopeInfo nodeId="3201642974933580585" fileName="ProjectProperties.java" startLine="56" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="3201642974933580588" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="4543209876460383282" fileName="ProjectProperties.java" startLine="58" startPosition="129" endLine="62" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties$1" />
     <unitInfo nodeId="3201642974933580312" fileName="ProjectProperties.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" />
+    <unitInfo nodeId="4543209876460383282" fileName="ProjectProperties.java" startLine="58" startPosition="129" endLine="62" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties$1" />
   </root>
   <root nodeId="3201642974933583134">
     <nodeInfo nodeId="3201642974933583137" fileName="ProjectPropertiesComponent.java" startLine="16" startPosition="56" endLine="17" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -138,9 +138,9 @@
     <scopeInfo nodeId="3201642974933583259" fileName="ProjectPropertiesComponent.java" startLine="65" startPosition="23" endLine="73" endPosition="5" />
     <scopeInfo nodeId="3201642974933583241" fileName="ProjectPropertiesComponent.java" startLine="53" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="3201642974933583256" fileName="ProjectPropertiesComponent.java" startLine="64" startPosition="0" endLine="75" endPosition="0" />
+    <unitInfo nodeId="3201642974933583134" fileName="ProjectPropertiesComponent.java" startLine="16" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" />
     <unitInfo nodeId="2505864428223727657" fileName="ProjectPropertiesComponent.java" startLine="47" startPosition="150" endLine="51" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent$1" />
     <unitInfo nodeId="3201642974933583251" fileName="ProjectPropertiesComponent.java" startLine="55" startPosition="46" endLine="59" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent$2" />
-    <unitInfo nodeId="3201642974933583134" fileName="ProjectPropertiesComponent.java" startLine="16" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" />
   </root>
   <root nodeId="3201642974933584605">
     <nodeInfo nodeId="3201642974933584645" fileName="TestConfigurationDialog.java" startLine="71" startPosition="57" endLine="72" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODELS_PROPERTY" />
@@ -448,8 +448,8 @@
       <varInfo nodeId="3201642974933585497" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585686" fileName="TestConfigurationDialog.java" startLine="365" startPosition="58" endLine="368" endPosition="36">
-      <varInfo nodeId="3201642974933585693" varName="toolbar" />
       <varInfo nodeId="3201642974933585688" varName="group" />
+      <varInfo nodeId="3201642974933585693" varName="toolbar" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585741" fileName="TestConfigurationDialog.java" startLine="377" startPosition="161" endLine="380" endPosition="7">
       <varInfo nodeId="3201642974933585743" varName="b" />
@@ -495,8 +495,8 @@
       <varInfo nodeId="3201642974933584715" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584769" fileName="TestConfigurationDialog.java" startLine="88" startPosition="0" endLine="94" endPosition="3">
-      <varInfo nodeId="3201642974933584771" varName="mpsProject" />
       <varInfo nodeId="3201642974933584773" varName="config" />
+      <varInfo nodeId="3201642974933584771" varName="mpsProject" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585147" fileName="TestConfigurationDialog.java" startLine="143" startPosition="0" endLine="149" endPosition="0" />
     <scopeInfo nodeId="3201642974933585180" fileName="TestConfigurationDialog.java" startLine="151" startPosition="81" endLine="157" endPosition="0">
@@ -521,10 +521,10 @@
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584704" fileName="TestConfigurationDialog.java" startLine="412" startPosition="0" endLine="418" endPosition="5" />
     <scopeInfo nodeId="3201642974933585238" fileName="TestConfigurationDialog.java" startLine="172" startPosition="93" endLine="179" endPosition="17">
-      <varInfo nodeId="3201642974933585255" varName="outerBorder" />
+      <varInfo nodeId="3201642974933585260" varName="border" />
       <varInfo nodeId="3201642974933585247" varName="innerBorder" />
       <varInfo nodeId="3201642974933585240" varName="outer" />
-      <varInfo nodeId="3201642974933585260" varName="border" />
+      <varInfo nodeId="3201642974933585255" varName="outerBorder" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584676" fileName="TestConfigurationDialog.java" startLine="382" startPosition="0" endLine="389" endPosition="0">
       <varInfo nodeId="3201642974933584679" varName="action" />
@@ -534,8 +534,8 @@
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584673" fileName="TestConfigurationDialog.java" startLine="374" startPosition="0" endLine="382" endPosition="0" />
     <scopeInfo nodeId="3201642974933585231" fileName="TestConfigurationDialog.java" startLine="171" startPosition="0" endLine="181" endPosition="0">
-      <varInfo nodeId="3201642974933585236" varName="panel" />
       <varInfo nodeId="3201642974933585234" varName="caption" />
+      <varInfo nodeId="3201642974933585236" varName="panel" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585074" fileName="TestConfigurationDialog.java" startLine="127" startPosition="27" endLine="138" endPosition="7" />
     <scopeInfo nodeId="3201642974933585857" fileName="TestConfigurationDialog.java" startLine="304" startPosition="31" endLine="319" endPosition="15">
@@ -548,9 +548,9 @@
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585286" fileName="TestConfigurationDialog.java" startLine="185" startPosition="0" endLine="205" endPosition="0" />
     <scopeInfo nodeId="3201642974933585916" fileName="TestConfigurationDialog.java" startLine="329" startPosition="46" endLine="349" endPosition="44">
-      <varInfo nodeId="3201642974933585918" varName="models" />
-      <varInfo nodeId="3201642974933585927" varName="modelRef" />
       <varInfo nodeId="8715098193949534165" varName="descrs" />
+      <varInfo nodeId="3201642974933585927" varName="modelRef" />
+      <varInfo nodeId="3201642974933585918" varName="models" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585166" fileName="TestConfigurationDialog.java" startLine="149" startPosition="0" endLine="171" endPosition="0" />
     <scopeInfo nodeId="3201642974933585650" fileName="TestConfigurationDialog.java" startLine="327" startPosition="65" endLine="351" endPosition="0">
@@ -558,69 +558,69 @@
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585514" fileName="TestConfigurationDialog.java" startLine="234" startPosition="52" endLine="262" endPosition="11">
       <varInfo nodeId="3201642974933585532" varName="module" />
-      <varInfo nodeId="1918923653324395727" varName="projectModules" />
       <varInfo nodeId="3201642974933585550" varName="moduleName" />
       <varInfo nodeId="1918923653324395794" varName="moduleRefs" />
-      <varInfo nodeId="1918923653324395776" varName="projectModuleRefs" />
       <varInfo nodeId="1918923653324395723" varName="modules" />
+      <varInfo nodeId="1918923653324395776" varName="projectModuleRefs" />
+      <varInfo nodeId="1918923653324395727" varName="projectModules" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585809" fileName="TestConfigurationDialog.java" startLine="292" startPosition="134" endLine="322" endPosition="24">
-      <varInfo nodeId="3201642974933585832" varName="result" />
       <varInfo nodeId="3201642974933585811" varName="model" />
       <varInfo nodeId="3201642974933585817" varName="modelName" />
       <varInfo nodeId="3201642974934313038" varName="ren" />
+      <varInfo nodeId="3201642974933585832" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585450" fileName="TestConfigurationDialog.java" startLine="233" startPosition="65" endLine="264" endPosition="0">
       <varInfo nodeId="3201642974933585453" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585617" fileName="TestConfigurationDialog.java" startLine="291" startPosition="66" endLine="324" endPosition="0">
+      <varInfo nodeId="3201642974933585628" varName="cellHasFocus" />
       <varInfo nodeId="3201642974933585624" varName="index" />
       <varInfo nodeId="3201642974933585626" varName="isSelected" />
-      <varInfo nodeId="3201642974933585628" varName="cellHasFocus" />
-      <varInfo nodeId="3201642974933585622" varName="value" />
       <varInfo nodeId="3201642974933585620" varName="list" />
+      <varInfo nodeId="3201642974933585622" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584825" fileName="TestConfigurationDialog.java" startLine="105" startPosition="25" endLine="141" endPosition="5">
       <varInfo nodeId="3201642974933584834" varName="bagLayout" />
       <varInfo nodeId="3201642974933584884" varName="cCheck" />
-      <varInfo nodeId="3201642974933584915" varName="cRadio" />
       <varInfo nodeId="3201642974933584946" varName="cConfig" />
       <varInfo nodeId="3201642974933584846" varName="cName" />
+      <varInfo nodeId="3201642974933584915" varName="cRadio" />
       <varInfo nodeId="3201642974933585042" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584822" fileName="TestConfigurationDialog.java" startLine="104" startPosition="0" endLine="143" endPosition="0" />
     <scopeInfo nodeId="3201642974933585422" fileName="TestConfigurationDialog.java" startLine="229" startPosition="41" endLine="268" endPosition="37">
-      <varInfo nodeId="3201642974933585457" varName="panel" />
       <varInfo nodeId="3201642974933585443" varName="button" />
+      <varInfo nodeId="3201642974933585457" varName="panel" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584630" fileName="TestConfigurationDialog.java" startLine="228" startPosition="0" endLine="269" endPosition="5">
       <varInfo nodeId="3201642974933584632" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585588" fileName="TestConfigurationDialog.java" startLine="287" startPosition="41" endLine="362" endPosition="13">
-      <varInfo nodeId="3201642974933585631" varName="scroller" />
       <varInfo nodeId="3201642974933585645" varName="addAction" />
       <varInfo nodeId="3201642974933585659" varName="removeAction" />
+      <varInfo nodeId="3201642974933585631" varName="scroller" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584658" fileName="TestConfigurationDialog.java" startLine="286" startPosition="0" endLine="363" endPosition="5">
       <varInfo nodeId="3201642974933584660" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="1918923653324395783" fileName="TestConfigurationDialog.java" startLine="243" startPosition="107" endLine="247" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
-    <unitInfo nodeId="1918923653324395801" fileName="TestConfigurationDialog.java" startLine="248" startPosition="93" endLine="252" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
-    <unitInfo nodeId="8715098193949534418" fileName="TestConfigurationDialog.java" startLine="332" startPosition="134" endLine="336" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$3" />
-    <unitInfo nodeId="8715098193949534440" fileName="TestConfigurationDialog.java" startLine="336" startPosition="72" endLine="340" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$3" />
-    <unitInfo nodeId="1918923653324395672" fileName="TestConfigurationDialog.java" startLine="237" startPosition="51" endLine="242" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
+    <unitInfo nodeId="3201642974933584605" fileName="TestConfigurationDialog.java" startLine="71" startPosition="0" endLine="438" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog" />
     <unitInfo nodeId="3201642974933585179" fileName="TestConfigurationDialog.java" startLine="151" startPosition="41" endLine="157" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$1" />
-    <unitInfo nodeId="3201642974933585195" fileName="TestConfigurationDialog.java" startLine="158" startPosition="41" endLine="164" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
-    <unitInfo nodeId="3201642974933585663" fileName="TestConfigurationDialog.java" startLine="352" startPosition="42" endLine="360" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$3" />
-    <unitInfo nodeId="3201642974933584608" fileName="TestConfigurationDialog.java" startLine="212" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$BasePanel" />
-    <unitInfo nodeId="3201642974933585851" fileName="TestConfigurationDialog.java" startLine="303" startPosition="51" endLine="321" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
-    <unitInfo nodeId="3201642974933585649" fileName="TestConfigurationDialog.java" startLine="327" startPosition="36" endLine="351" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
-    <unitInfo nodeId="3201642974933584698" fileName="TestConfigurationDialog.java" startLine="410" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$NamePanel" />
     <unitInfo nodeId="3201642974933585449" fileName="TestConfigurationDialog.java" startLine="233" startPosition="39" endLine="264" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$1" />
     <unitInfo nodeId="3201642974933585616" fileName="TestConfigurationDialog.java" startLine="291" startPosition="39" endLine="324" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$1" />
-    <unitInfo nodeId="3201642974933584621" fileName="TestConfigurationDialog.java" startLine="225" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$ModulePanel" />
+    <unitInfo nodeId="1918923653324395783" fileName="TestConfigurationDialog.java" startLine="243" startPosition="107" endLine="247" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
+    <unitInfo nodeId="1918923653324395801" fileName="TestConfigurationDialog.java" startLine="248" startPosition="93" endLine="252" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
+    <unitInfo nodeId="1918923653324395672" fileName="TestConfigurationDialog.java" startLine="237" startPosition="51" endLine="242" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
+    <unitInfo nodeId="3201642974933585195" fileName="TestConfigurationDialog.java" startLine="158" startPosition="41" endLine="164" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
+    <unitInfo nodeId="3201642974933585851" fileName="TestConfigurationDialog.java" startLine="303" startPosition="51" endLine="321" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
+    <unitInfo nodeId="3201642974933585649" fileName="TestConfigurationDialog.java" startLine="327" startPosition="36" endLine="351" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
+    <unitInfo nodeId="8715098193949534418" fileName="TestConfigurationDialog.java" startLine="332" startPosition="134" endLine="336" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$3" />
+    <unitInfo nodeId="8715098193949534440" fileName="TestConfigurationDialog.java" startLine="336" startPosition="72" endLine="340" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$3" />
+    <unitInfo nodeId="3201642974933585663" fileName="TestConfigurationDialog.java" startLine="352" startPosition="42" endLine="360" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$3" />
+    <unitInfo nodeId="3201642974933584608" fileName="TestConfigurationDialog.java" startLine="212" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$BasePanel" />
     <unitInfo nodeId="3201642974933584642" fileName="TestConfigurationDialog.java" startLine="282" startPosition="0" endLine="409" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$ModelsPanel" />
-    <unitInfo nodeId="3201642974933584605" fileName="TestConfigurationDialog.java" startLine="71" startPosition="0" endLine="438" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog" />
+    <unitInfo nodeId="3201642974933584621" fileName="TestConfigurationDialog.java" startLine="225" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$ModulePanel" />
+    <unitInfo nodeId="3201642974933584698" fileName="TestConfigurationDialog.java" startLine="410" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$NamePanel" />
   </root>
   <root nodeId="3201642974933586123">
     <nodeInfo nodeId="3201642974933586128" fileName="ProjectPropertiesPrefsPage.java" startLine="16" startPosition="130" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -764,16 +764,16 @@
       <varInfo nodeId="3201642974933587335" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933587366" fileName="ProjectPropertiesDialog.java" startLine="28" startPosition="0" endLine="35" endPosition="3">
-      <varInfo nodeId="3201642974933587368" varName="project" />
       <varInfo nodeId="2505864428223727591" varName="extraPanels" />
+      <varInfo nodeId="3201642974933587368" varName="project" />
       <varInfo nodeId="3201642974933587370" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933587498" fileName="ProjectPropertiesDialog.java" startLine="54" startPosition="37" endLine="61" endPosition="16" />
     <scopeInfo nodeId="3201642974933587403" fileName="ProjectPropertiesDialog.java" startLine="36" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="3201642974933587534" fileName="ProjectPropertiesDialog.java" startLine="75" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="3201642974933587495" fileName="ProjectPropertiesDialog.java" startLine="53" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="3201642974933587505" fileName="ProjectPropertiesDialog.java" startLine="55" startPosition="55" endLine="60" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog$1" />
     <unitInfo nodeId="3201642974933587319" fileName="ProjectPropertiesDialog.java" startLine="17" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" />
+    <unitInfo nodeId="3201642974933587505" fileName="ProjectPropertiesDialog.java" startLine="55" startPosition="55" endLine="60" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog$1" />
   </root>
   <root nodeId="7767836446863523822">
     <nodeInfo nodeId="7767836446863523839" fileName="ProjectPrefsExtraPanel.java" startLine="8" startPosition="41" endLine="9" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EP_NAME" />

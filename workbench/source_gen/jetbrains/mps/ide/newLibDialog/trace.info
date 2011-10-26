@@ -225,9 +225,9 @@
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="49" startPosition="0" endLine="63" endPosition="3" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="79" startPosition="23" endLine="97" endPosition="5" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="78" startPosition="0" endLine="99" endPosition="0" />
-    <unitInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="42" startPosition="32" endLine="48" endPosition="3" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane$1" />
     <unitInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="12" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialog" />
     <unitInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="30" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane" />
+    <unitInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="42" startPosition="32" endLine="48" endPosition="3" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane$1" />
   </root>
   <root nodeId="7619659760484896661">
     <nodeInfo nodeId="7619659760484896804" fileName="NewLibDialogContentPane.java" startLine="58" startPosition="31" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -268,8 +268,8 @@
     <scopeInfo nodeId="7619659760484896713" fileName="NewLibDialogContentPane.java" startLine="196" startPosition="222" endLine="200" endPosition="0" />
     <scopeInfo nodeId="7619659760484896739" fileName="NewLibDialogContentPane.java" startLine="208" startPosition="0" endLine="212" endPosition="0" />
     <scopeInfo nodeId="7619659760484896745" fileName="NewLibDialogContentPane.java" startLine="213" startPosition="40" endLine="221" endPosition="5">
-      <varInfo nodeId="7619659760484896767" varName="prefix" />
       <varInfo nodeId="7619659760484896755" varName="path" />
+      <varInfo nodeId="7619659760484896767" varName="prefix" />
     </scopeInfo>
     <scopeInfo nodeId="7619659760484896691" fileName="NewLibDialogContentPane.java" startLine="195" startPosition="48" endLine="204" endPosition="27" />
     <scopeInfo nodeId="7619659760484896743" fileName="NewLibDialogContentPane.java" startLine="212" startPosition="0" endLine="223" endPosition="0" />
@@ -278,9 +278,9 @@
       <varInfo nodeId="7619659760484896666" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="7619659760484896662" fileName="NewLibDialogContentPane.java" startLine="185" startPosition="0" endLine="208" endPosition="0" />
+    <unitInfo nodeId="7619659760484896690" fileName="NewLibDialogContentPane.java" startLine="194" startPosition="71" endLine="206" endPosition="5" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane$2" />
     <unitInfo nodeId="7619659760484896726" fileName="NewLibDialogContentPane.java" startLine="200" startPosition="15" endLine="203" endPosition="9" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane$3" />
     <unitInfo nodeId="7619659760484896713" fileName="NewLibDialogContentPane.java" startLine="196" startPosition="154" endLine="200" endPosition="9" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane$3" />
-    <unitInfo nodeId="7619659760484896690" fileName="NewLibDialogContentPane.java" startLine="194" startPosition="71" endLine="206" endPosition="5" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane$2" />
   </root>
 </debugInfo>
 

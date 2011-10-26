@@ -68,23 +68,23 @@
       <varInfo nodeId="1560298786499494376" varName="popup" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494421" fileName="CopySupport.java" startLine="49" startPosition="109" endLine="69" endPosition="7">
+      <varInfo nodeId="1560298786499494423" varName="clipboardAction" />
       <varInfo nodeId="1560298786499494444" varName="selected" />
       <varInfo nodeId="1560298786499494498" varName="t" />
       <varInfo nodeId="1560298786499494454" varName="textPresentation" />
-      <varInfo nodeId="1560298786499494423" varName="clipboardAction" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494369" fileName="CopySupport.java" startLine="23" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1560298786499494372" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494357" fileName="CopySupport.java" startLine="48" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1560298786499494364" varName="action" />
       <varInfo nodeId="1560298786499494362" varName="clip" />
       <varInfo nodeId="1560298786499494360" varName="comp" />
-      <varInfo nodeId="1560298786499494364" varName="action" />
     </scopeInfo>
+    <unitInfo nodeId="1560298786499494350" fileName="CopySupport.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" />
     <unitInfo nodeId="1560298786499494392" fileName="CopySupport.java" startLine="27" startPosition="35" endLine="32" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$1" />
     <unitInfo nodeId="1560298786499494414" fileName="CopySupport.java" startLine="35" startPosition="35" endLine="42" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$2" />
     <unitInfo nodeId="1560298786499494352" fileName="CopySupport.java" startLine="45" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$ModelReferenceTransferHandler" />
-    <unitInfo nodeId="1560298786499494350" fileName="CopySupport.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" />
   </root>
   <root nodeId="4972790448884483620">
     <nodeInfo nodeId="4972790448884504767" fileName="StateUtil.java" startLine="16" startPosition="24" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="normal" />
@@ -144,8 +144,8 @@
       <varInfo nodeId="7567158975345113447" varName="moduleRef2" />
     </scopeInfo>
     <scopeInfo nodeId="59624520828737228" fileName="StateUtil.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="59624520828741897" varName="path2" />
       <varInfo nodeId="59624520828741895" varName="path1" />
+      <varInfo nodeId="59624520828741897" varName="path2" />
     </scopeInfo>
     <scopeInfo nodeId="1866989091100461281" fileName="StateUtil.java" startLine="30" startPosition="50" endLine="35" endPosition="16">
       <varInfo nodeId="1866989091100461817" varName="file" />
@@ -159,23 +159,23 @@
       <varInfo nodeId="1866989091100461793" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="7189497640396775552" fileName="StateUtil.java" startLine="60" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="7189497640396775627" varName="scope" />
-      <varInfo nodeId="7189497640396775561" varName="ref2" />
       <varInfo nodeId="7189497640396775557" varName="ref1" />
+      <varInfo nodeId="7189497640396775561" varName="ref2" />
+      <varInfo nodeId="7189497640396775627" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="7189497640396633136" fileName="StateUtil.java" startLine="38" startPosition="93" endLine="48" endPosition="16">
       <varInfo nodeId="7189497640396657103" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="59624520828736607" fileName="StateUtil.java" startLine="50" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="59624520828737131" varName="isOk2" />
       <varInfo nodeId="59624520828737129" varName="isOk1" />
+      <varInfo nodeId="59624520828737131" varName="isOk2" />
     </scopeInfo>
     <scopeInfo nodeId="7189497640396633133" fileName="StateUtil.java" startLine="37" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="7189497640396657017" varName="scope" />
       <varInfo nodeId="7189497640396657021" varName="modelReference" />
+      <varInfo nodeId="7189497640396657017" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="7189497640396657058" fileName="StateUtil.java" startLine="41" startPosition="55" endLine="45" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil$1" />
     <unitInfo nodeId="4972790448884483620" fileName="StateUtil.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil" />
+    <unitInfo nodeId="7189497640396657058" fileName="StateUtil.java" startLine="41" startPosition="55" endLine="45" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil$1" />
   </root>
 </debugInfo>
 

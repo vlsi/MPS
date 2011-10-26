@@ -80,8 +80,8 @@
       <varInfo nodeId="4067778876497063099" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="4067778876497063195" fileName="ModuleGraph.java" startLine="41" startPosition="0" endLine="45" endPosition="3">
-      <varInfo nodeId="4067778876497063208" varName="module" />
       <varInfo nodeId="4067778876497063210" varName="getNextFunction" />
+      <varInfo nodeId="4067778876497063208" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="4067778876497062991" fileName="ModuleGraph.java" startLine="72" startPosition="98" endLine="76" endPosition="0" />
     <scopeInfo nodeId="4067778876497063103" fileName="ModuleGraph.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
@@ -113,27 +113,27 @@
       <varInfo nodeId="4067778876497062922" varName="vertex" />
     </scopeInfo>
     <scopeInfo nodeId="4067778876497062932" fileName="ModuleGraph.java" startLine="61" startPosition="76" endLine="76" endPosition="24">
-      <varInfo nodeId="4067778876497062970" varName="visited" />
       <varInfo nodeId="4067778876497062940" varName="finish" />
-      <varInfo nodeId="4067778876497062934" varName="start" />
       <varInfo nodeId="4067778876497062959" varName="path" />
+      <varInfo nodeId="4067778876497062934" varName="start" />
+      <varInfo nodeId="4067778876497062970" varName="visited" />
     </scopeInfo>
     <scopeInfo nodeId="4067778876497063002" fileName="ModuleGraph.java" startLine="79" startPosition="137" endLine="94" endPosition="17">
       <varInfo nodeId="4067778876497063004" varName="last" />
     </scopeInfo>
     <scopeInfo nodeId="4067778876497062924" fileName="ModuleGraph.java" startLine="60" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="4067778876497062925" varName="startModule" />
       <varInfo nodeId="4067778876497062927" varName="finishModule" />
+      <varInfo nodeId="4067778876497062925" varName="startModule" />
     </scopeInfo>
     <scopeInfo nodeId="4067778876497063000" fileName="ModuleGraph.java" startLine="78" startPosition="0" endLine="96" endPosition="0">
-      <varInfo nodeId="4067778876497063059" varName="visited" />
       <varInfo nodeId="4067778876497063057" varName="finish" />
       <varInfo nodeId="4067778876497063054" varName="path" />
+      <varInfo nodeId="4067778876497063059" varName="visited" />
     </scopeInfo>
+    <unitInfo nodeId="4067778876497062867" fileName="ModuleGraph.java" startLine="25" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.dependencies.util.ModuleGraph" />
     <unitInfo nodeId="4067778876497062991" fileName="ModuleGraph.java" startLine="72" startPosition="50" endLine="76" endPosition="5" unitName="jetbrains.mps.dependencies.util.ModuleGraph$1" />
     <unitInfo nodeId="4067778876497063158" fileName="ModuleGraph.java" startLine="30" startPosition="21" endLine="38" endPosition="5" unitName="jetbrains.mps.dependencies.util.ModuleGraph$2" />
     <unitInfo nodeId="4067778876497063078" fileName="ModuleGraph.java" startLine="97" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.dependencies.util.ModuleGraph$ModuleVertex" />
-    <unitInfo nodeId="4067778876497062867" fileName="ModuleGraph.java" startLine="25" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.dependencies.util.ModuleGraph" />
   </root>
   <root nodeId="4067778876497063217">
     <nodeInfo nodeId="559557797393016800" fileName="DependencyUtil.java" startLine="38" startPosition="61" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -204,8 +204,8 @@
       <varInfo nodeId="4067778876497063256" varName="path" />
       <varInfo nodeId="4067778876497063254" varName="rootModule" />
     </scopeInfo>
-    <unitInfo nodeId="4067778876497063279" fileName="DependencyUtil.java" startLine="69" startPosition="51" endLine="73" endPosition="5" unitName="jetbrains.mps.dependencies.util.DependencyUtil$1" />
     <unitInfo nodeId="4067778876497063217" fileName="DependencyUtil.java" startLine="24" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.dependencies.util.DependencyUtil" />
+    <unitInfo nodeId="4067778876497063279" fileName="DependencyUtil.java" startLine="69" startPosition="51" endLine="73" endPosition="5" unitName="jetbrains.mps.dependencies.util.DependencyUtil$1" />
   </root>
 </debugInfo>
 

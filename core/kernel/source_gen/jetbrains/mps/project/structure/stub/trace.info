@@ -193,8 +193,8 @@
     <scopeInfo nodeId="2643213347103748223" fileName="ProjectStructureBuilder.java" startLine="216" startPosition="26" endLine="218" endPosition="14" />
     <scopeInfo nodeId="2643213347103785936" fileName="ProjectStructureBuilder.java" startLine="219" startPosition="29" endLine="221" endPosition="14" />
     <scopeInfo nodeId="4243809718336271600" fileName="ProjectStructureBuilder.java" startLine="267" startPosition="0" endLine="269" endPosition="0">
-      <varInfo nodeId="4243809718336273383" varName="module" />
       <varInfo nodeId="2864381551719928032" varName="descriptor" />
+      <varInfo nodeId="4243809718336273383" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="4198951972171372753" fileName="ProjectStructureBuilder.java" startLine="41" startPosition="89" endLine="44" endPosition="20" />
     <scopeInfo nodeId="269654322145296949" fileName="ProjectStructureBuilder.java" startLine="65" startPosition="70" endLine="68" endPosition="5">
@@ -272,9 +272,9 @@
       <varInfo nodeId="2721285250110587074" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4198951972171372750" fileName="ProjectStructureBuilder.java" startLine="40" startPosition="0" endLine="45" endPosition="3">
-      <varInfo nodeId="2721285250110589678" varName="model" />
       <varInfo nodeId="4198951972171373406" varName="descriptor" />
       <varInfo nodeId="2721285250110487898" varName="file" />
+      <varInfo nodeId="2721285250110589678" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="269654322145296964" fileName="ProjectStructureBuilder.java" startLine="124" startPosition="49" endLine="129" endPosition="18">
       <varInfo nodeId="269654322145296972" varName="result" />
@@ -289,8 +289,8 @@
       <varInfo nodeId="269654322145291635" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="4243809718336239951" fileName="ProjectStructureBuilder.java" startLine="261" startPosition="0" endLine="267" endPosition="0">
-      <varInfo nodeId="4243809718336239960" varName="module" />
       <varInfo nodeId="2864381551719928037" varName="descriptor" />
+      <varInfo nodeId="4243809718336239960" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="269654322145298934" fileName="ProjectStructureBuilder.java" startLine="116" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="269654322145298942" varName="source" />

@@ -97,9 +97,9 @@
     <scopeInfo nodeId="8980950851470048124" fileName="NewProcessHandlerBuilder_MigrationScript.java" startLine="19" startPosition="83" endLine="57" endPosition="3" />
     <scopeInfo nodeId="8980950851470048124" fileName="NewProcessHandlerBuilder_MigrationScript.java" startLine="63" startPosition="69" endLine="101" endPosition="20" />
     <scopeInfo nodeId="8980950851470048124" fileName="NewProcessHandlerBuilder_MigrationScript.java" startLine="62" startPosition="0" endLine="103" endPosition="0" />
+    <unitInfo nodeId="8980950851470048124" fileName="NewProcessHandlerBuilder_MigrationScript.java" startLine="19" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.execution.commands.scripts.NewProcessHandlerBuilder_MigrationScript" />
     <unitInfo nodeId="8980950851470048124" fileName="NewProcessHandlerBuilder_MigrationScript.java" startLine="22" startPosition="28" endLine="56" endPosition="5" unitName="jetbrains.mps.execution.commands.scripts.NewProcessHandlerBuilder_MigrationScript$1" />
     <unitInfo nodeId="8980950851470048124" fileName="NewProcessHandlerBuilder_MigrationScript.java" startLine="59" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.execution.commands.scripts.NewProcessHandlerBuilder_MigrationScript$QuotationClass_n2pakd_a0a0a0a0b0e0a0a0b0a" />
-    <unitInfo nodeId="8980950851470048124" fileName="NewProcessHandlerBuilder_MigrationScript.java" startLine="19" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.execution.commands.scripts.NewProcessHandlerBuilder_MigrationScript" />
   </root>
 </debugInfo>
 

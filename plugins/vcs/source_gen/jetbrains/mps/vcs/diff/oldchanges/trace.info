@@ -132,15 +132,15 @@
     <scopeInfo nodeId="4707157387247556412" fileName="MoveNodeChange.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="4707157387247556422" fileName="MoveNodeChange.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="4707157387247556238" fileName="MoveNodeChange.java" startLine="17" startPosition="0" endLine="24" endPosition="3">
-      <varInfo nodeId="4707157387247556241" varName="node" />
-      <varInfo nodeId="4707157387247556245" varName="prevSibling" />
       <varInfo nodeId="4707157387247556243" varName="newParent" />
       <varInfo nodeId="4707157387247556247" varName="newRole" />
+      <varInfo nodeId="4707157387247556241" varName="node" />
+      <varInfo nodeId="4707157387247556245" varName="prevSibling" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247556434" fileName="MoveNodeChange.java" startLine="89" startPosition="34" endLine="104" endPosition="16">
       <varInfo nodeId="4707157387247556436" varName="node" />
-      <varInfo nodeId="4707157387247556471" varName="prevSibling" />
       <varInfo nodeId="4707157387247556450" varName="parent" />
+      <varInfo nodeId="4707157387247556471" varName="prevSibling" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247556429" fileName="MoveNodeChange.java" startLine="88" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="4707157387247556432" varName="m" />
@@ -167,8 +167,8 @@
     <scopeInfo nodeId="4707157387247556496" fileName="OldAddRootChange.java" startLine="14" startPosition="65" endLine="15" endPosition="45" />
     <scopeInfo nodeId="4707157387247556505" fileName="OldAddRootChange.java" startLine="18" startPosition="28" endLine="19" endPosition="45" />
     <scopeInfo nodeId="4707157387247556489" fileName="OldAddRootChange.java" startLine="12" startPosition="53" endLine="16" endPosition="3">
-      <varInfo nodeId="4707157387247556494" varName="nodeId" />
       <varInfo nodeId="4707157387247556492" varName="conceptFqName" />
+      <varInfo nodeId="4707157387247556494" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247556502" fileName="OldAddRootChange.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="4707157387247556515" fileName="OldAddRootChange.java" startLine="22" startPosition="34" endLine="27" endPosition="16">
@@ -344,10 +344,10 @@
     <scopeInfo nodeId="4707157387247556854" fileName="NewNodeChange.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="4707157387247556959" fileName="NewNodeChange.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="4707157387247556795" fileName="NewNodeChange.java" startLine="15" startPosition="0" endLine="22" endPosition="3">
-      <varInfo nodeId="4707157387247556800" varName="nodeId" />
       <varInfo nodeId="4707157387247556798" varName="conceptFqName" />
-      <varInfo nodeId="4707157387247556802" varName="nodeRole" />
+      <varInfo nodeId="4707157387247556800" varName="nodeId" />
       <varInfo nodeId="4707157387247556804" varName="nodeParent" />
+      <varInfo nodeId="4707157387247556802" varName="nodeRole" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247556867" fileName="NewNodeChange.java" startLine="51" startPosition="44" endLine="77" endPosition="16">
       <varInfo nodeId="4707157387247556889" varName="that" />
@@ -588,8 +588,8 @@
     <scopeInfo nodeId="4707157387247557554" fileName="DeleteNodeChange.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
     <scopeInfo nodeId="4707157387247557560" fileName="DeleteNodeChange.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="4707157387247557415" fileName="DeleteNodeChange.java" startLine="20" startPosition="0" endLine="25" endPosition="3">
-      <varInfo nodeId="4707157387247557418" varName="nodeId" />
       <varInfo nodeId="4707157387247557420" varName="childrenIds" />
+      <varInfo nodeId="4707157387247557418" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247557446" fileName="DeleteNodeChange.java" startLine="28" startPosition="118" endLine="33" endPosition="38" />
     <scopeInfo nodeId="4707157387247557470" fileName="DeleteNodeChange.java" startLine="60" startPosition="28" endLine="65" endPosition="5" />
@@ -601,11 +601,11 @@
     <scopeInfo nodeId="4707157387247557569" fileName="DeleteNodeChange.java" startLine="107" startPosition="43" endLine="112" endPosition="5" />
     <scopeInfo nodeId="4707157387247557586" fileName="DeleteNodeChange.java" startLine="114" startPosition="0" endLine="119" endPosition="0" />
     <scopeInfo nodeId="4707157387247557432" fileName="DeleteNodeChange.java" startLine="26" startPosition="0" endLine="34" endPosition="3">
-      <varInfo nodeId="4707157387247557440" varName="parentId" />
-      <varInfo nodeId="4707157387247557435" varName="nodeId" />
-      <varInfo nodeId="4707157387247557442" varName="role" />
       <varInfo nodeId="4707157387247557437" varName="children" />
       <varInfo nodeId="4707157387247557444" varName="nextChildIndex" />
+      <varInfo nodeId="4707157387247557435" varName="nodeId" />
+      <varInfo nodeId="4707157387247557440" varName="parentId" />
+      <varInfo nodeId="4707157387247557442" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247557467" fileName="DeleteNodeChange.java" startLine="59" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="4707157387247557502" fileName="DeleteNodeChange.java" startLine="71" startPosition="0" endLine="79" endPosition="0">
@@ -669,12 +669,12 @@
     <scopeInfo nodeId="4707157387247557752" fileName="AddNodeChange.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="4707157387247557762" fileName="AddNodeChange.java" startLine="61" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="4707157387247557602" fileName="AddNodeChange.java" startLine="17" startPosition="0" endLine="23" endPosition="3">
-      <varInfo nodeId="4707157387247557611" varName="parentId" />
-      <varInfo nodeId="4707157387247557607" varName="nodeId" />
       <varInfo nodeId="4707157387247557605" varName="conceptFqName" />
+      <varInfo nodeId="4707157387247557607" varName="nodeId" />
+      <varInfo nodeId="4707157387247557611" varName="parentId" />
+      <varInfo nodeId="4707157387247557613" varName="prevNode" />
       <varInfo nodeId="4707157387247557615" varName="prevRole" />
       <varInfo nodeId="4707157387247557609" varName="role" />
-      <varInfo nodeId="4707157387247557613" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247557686" fileName="AddNodeChange.java" startLine="42" startPosition="12" endLine="48" endPosition="7" />
     <scopeInfo nodeId="4707157387247557658" fileName="AddNodeChange.java" startLine="33" startPosition="34" endLine="54" endPosition="16">
@@ -752,12 +752,12 @@
     <scopeInfo nodeId="4707157387247557942" fileName="SetNodeChange.java" startLine="61" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="4707157387247557958" fileName="SetNodeChange.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="4707157387247557777" fileName="SetNodeChange.java" startLine="18" startPosition="0" endLine="24" endPosition="3">
-      <varInfo nodeId="4707157387247557786" varName="parentId" />
-      <varInfo nodeId="4707157387247557782" varName="nodeId" />
       <varInfo nodeId="4707157387247557780" varName="conceptFqName" />
+      <varInfo nodeId="4707157387247557782" varName="nodeId" />
+      <varInfo nodeId="4707157387247557788" varName="oldChildId" />
+      <varInfo nodeId="4707157387247557786" varName="parentId" />
       <varInfo nodeId="4707157387247557790" varName="prevRole" />
       <varInfo nodeId="4707157387247557784" varName="role" />
-      <varInfo nodeId="4707157387247557788" varName="oldChildId" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247557970" fileName="SetNodeChange.java" startLine="75" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="4707157387247557904" fileName="SetNodeChange.java" startLine="49" startPosition="37" endLine="59" endPosition="5">
@@ -846,8 +846,8 @@
       <varInfo nodeId="4707157387247558143" varName="that" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247558057" fileName="ModelImportChange.java" startLine="13" startPosition="0" endLine="18" endPosition="3">
-      <varInfo nodeId="4707157387247558060" varName="sModelReference" />
       <varInfo nodeId="4707157387247558062" varName="isDeleted" />
+      <varInfo nodeId="4707157387247558060" varName="sModelReference" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247558084" fileName="ModelImportChange.java" startLine="24" startPosition="34" endLine="30" endPosition="17" />
     <scopeInfo nodeId="4707157387247558106" fileName="ModelImportChange.java" startLine="34" startPosition="28" endLine="41" endPosition="63">
@@ -877,13 +877,13 @@
     <scopeInfo nodeId="4707157387247558186" fileName="SubstituteNodeChange.java" startLine="12" startPosition="155" endLine="14" endPosition="30" />
     <scopeInfo nodeId="4707157387247558198" fileName="SubstituteNodeChange.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="4707157387247558169" fileName="SubstituteNodeChange.java" startLine="10" startPosition="0" endLine="15" endPosition="3">
-      <varInfo nodeId="4707157387247558178" varName="parentId" />
-      <varInfo nodeId="4707157387247558174" varName="nodeId" />
       <varInfo nodeId="4707157387247558172" varName="conceptFqName" />
+      <varInfo nodeId="4707157387247558174" varName="nodeId" />
+      <varInfo nodeId="4707157387247558184" varName="oldChildId" />
+      <varInfo nodeId="4707157387247558178" varName="parentId" />
+      <varInfo nodeId="4707157387247558180" varName="prevNode" />
       <varInfo nodeId="4707157387247558182" varName="prevRole" />
       <varInfo nodeId="4707157387247558176" varName="role" />
-      <varInfo nodeId="4707157387247558184" varName="oldChildId" />
-      <varInfo nodeId="4707157387247558180" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247558204" fileName="SubstituteNodeChange.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="4707157387247558225" fileName="SubstituteNodeChange.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
@@ -1126,8 +1126,8 @@
     <scopeInfo nodeId="4707157387247558500" fileName="OldSetReferenceChange.java" startLine="28" startPosition="0" endLine="44" endPosition="3">
       <varInfo nodeId="4707157387247558503" varName="id" />
       <varInfo nodeId="4707157387247558505" varName="model" />
-      <varInfo nodeId="4707157387247558509" varName="target" />
       <varInfo nodeId="4707157387247558507" varName="reference" />
+      <varInfo nodeId="4707157387247558509" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247558680" fileName="OldSetReferenceChange.java" startLine="77" startPosition="34" endLine="95" endPosition="16">
       <varInfo nodeId="4707157387247558682" varName="node" />

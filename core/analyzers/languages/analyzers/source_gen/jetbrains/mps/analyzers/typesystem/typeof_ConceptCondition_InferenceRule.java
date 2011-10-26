@@ -23,7 +23,7 @@ public class typeof_ConceptCondition_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = conceptReference;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.analyzers.typesystem)", "4943044633101742745", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.analyzers.typesystem)", "4943044633101742747", true), (SNode) new typeof_ConceptCondition_InferenceRule.QuotationClass_uj83zv_a0a1a0().createNode(SLinkOperations.getTarget(conceptReference, "concept", false), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.analyzers.typesystem)", "4943044633101742747", true), (SNode) new typeof_ConceptCondition_InferenceRule.QuotationClass_uj83zv_a0a1a0().createNode(SLinkOperations.getTarget(conceptReference, "concept", false)), _info_12389875345);
     }
   }
 
@@ -44,19 +44,6 @@ public class typeof_ConceptCondition_InferenceRule extends AbstractInferenceRule
 
   public static class QuotationClass_uj83zv_a0a1a0 {
     public QuotationClass_uj83zv_a0a1a0() {
-    }
-
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
     }
 
     public SNode createNode(Object parameter_3) {

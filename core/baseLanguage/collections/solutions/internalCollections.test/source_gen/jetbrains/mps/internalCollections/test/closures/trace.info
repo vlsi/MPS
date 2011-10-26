@@ -68,20 +68,20 @@
       <varInfo nodeId="5746517363044260118" varName="idx" />
     </scopeInfo>
     <scopeInfo nodeId="1203883087692" fileName="Where_Test.java" startLine="19" startPosition="51" endLine="26" endPosition="68">
-      <varInfo nodeId="1203883107833" varName="test" />
       <varInfo nodeId="1203883107825" varName="seq" />
+      <varInfo nodeId="1203883107833" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1204735206256" fileName="Where_Test.java" startLine="29" startPosition="54" endLine="37" endPosition="68">
-      <varInfo nodeId="1204735219229" varName="test" />
-      <varInfo nodeId="1204735219222" varName="seq" />
       <varInfo nodeId="1204735229829" varName="filter" />
+      <varInfo nodeId="1204735219222" varName="seq" />
+      <varInfo nodeId="1204735219229" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1682545549094440467" fileName="Where_Test.java" startLine="81" startPosition="41" endLine="89" endPosition="0" />
     <scopeInfo nodeId="1203883087690" fileName="Where_Test.java" startLine="18" startPosition="43" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1204735206254" fileName="Where_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1204735541063" fileName="Where_Test.java" startLine="40" startPosition="54" endLine="53" endPosition="78">
-      <varInfo nodeId="1204735619643" varName="expected" />
       <varInfo nodeId="3343985444902960504" varName="cl" />
+      <varInfo nodeId="1204735619643" varName="expected" />
       <varInfo nodeId="1204735571102" varName="seq" />
     </scopeInfo>
     <scopeInfo nodeId="1241360711233" fileName="Where_Test.java" startLine="56" startPosition="58" endLine="71" endPosition="5">
@@ -89,11 +89,12 @@
     </scopeInfo>
     <scopeInfo nodeId="1204735541061" fileName="Where_Test.java" startLine="39" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1682545549094440429" fileName="Where_Test.java" startLine="74" startPosition="61" endLine="90" endPosition="101">
-      <varInfo nodeId="1682545549094440431" varName="test" />
       <varInfo nodeId="1682545549094440447" varName="odd" />
+      <varInfo nodeId="1682545549094440431" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1241360711231" fileName="Where_Test.java" startLine="55" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1682545549094440426" fileName="Where_Test.java" startLine="73" startPosition="0" endLine="92" endPosition="0" />
+    <unitInfo nodeId="1203180268870" fileName="Where_Test.java" startLine="18" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Where_Test" />
     <unitInfo nodeId="1203883107838" fileName="Where_Test.java" startLine="21" startPosition="44" endLine="25" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Where_Test$1" />
     <unitInfo nodeId="1204735229833" fileName="Where_Test.java" startLine="31" startPosition="39" endLine="35" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Where_Test$2" />
     <unitInfo nodeId="3343985444902960473" fileName="Where_Test.java" startLine="43" startPosition="77" endLine="47" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Where_Test$3" />
@@ -101,7 +102,6 @@
     <unitInfo nodeId="1241360757812" fileName="Where_Test.java" startLine="57" startPosition="134" endLine="61" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Where_Test$5" />
     <unitInfo nodeId="1682545549094440458" fileName="Where_Test.java" startLine="77" startPosition="42" endLine="81" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Where_Test$6" />
     <unitInfo nodeId="1682545549094440467" fileName="Where_Test.java" startLine="81" startPosition="20" endLine="89" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Where_Test$7" />
-    <unitInfo nodeId="1203180268870" fileName="Where_Test.java" startLine="18" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Where_Test" />
   </root>
   <root nodeId="1203687532018">
     <nodeInfo nodeId="1203687746946" fileName="Runtime_Test.java" startLine="9" startPosition="52" endLine="10" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -736,14 +736,14 @@
     </scopeInfo>
     <scopeInfo nodeId="1203688725370" fileName="Mapper_Test.java" startLine="22" startPosition="49" endLine="62" endPosition="59">
       <varInfo nodeId="1203689005470" varName="expected" />
-      <varInfo nodeId="1203688904915" varName="test" />
       <varInfo nodeId="1203688764225" varName="seq" />
+      <varInfo nodeId="1203688904915" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1241363003131" fileName="Mapper_Test.java" startLine="595" startPosition="0" endLine="635" endPosition="0" />
     <scopeInfo nodeId="1203688847798" fileName="Mapper_Test.java" startLine="65" startPosition="49" endLine="106" endPosition="75">
       <varInfo nodeId="1203689087222" varName="expected" />
-      <varInfo nodeId="1203688860709" varName="trans" />
       <varInfo nodeId="1203689079730" varName="seq" />
+      <varInfo nodeId="1203688860709" varName="trans" />
     </scopeInfo>
     <scopeInfo nodeId="1204739052456" fileName="Mapper_Test.java" startLine="108" startPosition="0" endLine="149" endPosition="0" />
     <scopeInfo nodeId="1205777978509" fileName="Mapper_Test.java" startLine="149" startPosition="0" endLine="190" endPosition="0" />
@@ -760,16 +760,16 @@
     <scopeInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="439" startPosition="0" endLine="483" endPosition="0" />
     <scopeInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="495" startPosition="0" endLine="539" endPosition="0" />
     <scopeInfo nodeId="7797065405157468513" fileName="Mapper_Test.java" startLine="636" startPosition="66" endLine="680" endPosition="126">
-      <varInfo nodeId="7797065405157468531" varName="plusten" />
       <varInfo nodeId="1287283910541710576" varName="idx" />
+      <varInfo nodeId="7797065405157468531" varName="plusten" />
       <varInfo nodeId="7797065405157468515" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1226309858981" fileName="Mapper_Test.java" startLine="547" startPosition="50" endLine="593" endPosition="45">
-      <varInfo nodeId="3343985444902959833" varName="cl" />
-      <varInfo nodeId="3343985444902959867" varName="cl3" />
       <varInfo nodeId="1226309880746" varName="bs" />
-      <varInfo nodeId="3343985444902959884" varName="cl4" />
+      <varInfo nodeId="3343985444902959833" varName="cl" />
       <varInfo nodeId="3343985444902959850" varName="cl2" />
+      <varInfo nodeId="3343985444902959867" varName="cl3" />
+      <varInfo nodeId="3343985444902959884" varName="cl4" />
     </scopeInfo>
     <scopeInfo nodeId="1224754206523" fileName="Mapper_Test.java" startLine="324" startPosition="47" endLine="371" endPosition="14" />
     <scopeInfo nodeId="1224754206604" fileName="Mapper_Test.java" startLine="380" startPosition="47" endLine="427" endPosition="14" />
@@ -808,57 +808,57 @@
     <scopeInfo nodeId="1205838970896" fileName="Mapper_Test.java" startLine="190" startPosition="0" endLine="319" endPosition="0" />
     <scopeInfo nodeId="1208606526820" fileName="Mapper_Test.java" startLine="320" startPosition="47" endLine="544" endPosition="62">
       <varInfo nodeId="1208606673685" varName="test" />
-      <varInfo nodeId="1224497053871" varName="test4" />
       <varInfo nodeId="1208608142525" varName="test2" />
       <varInfo nodeId="1224497002898" varName="test3" />
+      <varInfo nodeId="1224497053871" varName="test4" />
     </scopeInfo>
     <scopeInfo nodeId="1208606526818" fileName="Mapper_Test.java" startLine="319" startPosition="0" endLine="546" endPosition="0" />
+    <unitInfo nodeId="1203688720943" fileName="Mapper_Test.java" startLine="21" startPosition="0" endLine="683" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test" />
+    <unitInfo nodeId="1203688904920" fileName="Mapper_Test.java" startLine="24" startPosition="48" endLine="60" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$1" />
+    <unitInfo nodeId="1224754206604" fileName="Mapper_Test.java" startLine="381" startPosition="23" endLine="427" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10" />
+    <unitInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="435" startPosition="19" endLine="485" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10" />
+    <unitInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="489" startPosition="81" endLine="543" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10" />
     <unitInfo nodeId="1226320143392" fileName="Mapper_Test.java" startLine="550" startPosition="44" endLine="554" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$11" />
+    <unitInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="437" startPosition="23" endLine="483" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$11" />
+    <unitInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="491" startPosition="19" endLine="541" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$11" />
     <unitInfo nodeId="3343985444902959838" fileName="Mapper_Test.java" startLine="555" startPosition="72" endLine="559" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$12" />
+    <unitInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="493" startPosition="23" endLine="539" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$12" />
     <unitInfo nodeId="1226320152838" fileName="Mapper_Test.java" startLine="561" startPosition="44" endLine="565" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$13" />
     <unitInfo nodeId="3343985444902959855" fileName="Mapper_Test.java" startLine="566" startPosition="73" endLine="570" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$14" />
     <unitInfo nodeId="1226320169399" fileName="Mapper_Test.java" startLine="572" startPosition="44" endLine="576" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$15" />
     <unitInfo nodeId="3343985444902959872" fileName="Mapper_Test.java" startLine="577" startPosition="77" endLine="581" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$16" />
     <unitInfo nodeId="1226320183950" fileName="Mapper_Test.java" startLine="583" startPosition="44" endLine="587" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$17" />
     <unitInfo nodeId="3343985444902959889" fileName="Mapper_Test.java" startLine="588" startPosition="77" endLine="592" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$18" />
-    <unitInfo nodeId="7797065405157468549" fileName="Mapper_Test.java" startLine="672" startPosition="20" endLine="679" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$21" />
-    <unitInfo nodeId="7797065405157468600" fileName="Mapper_Test.java" startLine="644" startPosition="23" endLine="668" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$22" />
-    <unitInfo nodeId="1203688904920" fileName="Mapper_Test.java" startLine="28" startPosition="23" endLine="56" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$3" />
-    <unitInfo nodeId="1203688860713" fileName="Mapper_Test.java" startLine="71" startPosition="23" endLine="99" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$4" />
-    <unitInfo nodeId="1204739142390" fileName="Mapper_Test.java" startLine="114" startPosition="23" endLine="142" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$5" />
-    <unitInfo nodeId="1224754206491" fileName="Mapper_Test.java" startLine="155" startPosition="23" endLine="183" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$6" />
-    <unitInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="601" startPosition="23" endLine="629" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$21" />
-    <unitInfo nodeId="7797065405157468600" fileName="Mapper_Test.java" startLine="642" startPosition="19" endLine="670" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$21" />
+    <unitInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="597" startPosition="129" endLine="633" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$19" />
     <unitInfo nodeId="1203688904920" fileName="Mapper_Test.java" startLine="26" startPosition="19" endLine="58" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$2" />
-    <unitInfo nodeId="1203688860713" fileName="Mapper_Test.java" startLine="69" startPosition="19" endLine="101" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$3" />
-    <unitInfo nodeId="1204739142390" fileName="Mapper_Test.java" startLine="112" startPosition="19" endLine="144" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$4" />
-    <unitInfo nodeId="1224754206491" fileName="Mapper_Test.java" startLine="153" startPosition="19" endLine="185" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$5" />
+    <unitInfo nodeId="1203688860713" fileName="Mapper_Test.java" startLine="67" startPosition="47" endLine="103" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$2" />
     <unitInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="599" startPosition="19" endLine="631" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$20" />
     <unitInfo nodeId="7797065405157468600" fileName="Mapper_Test.java" startLine="640" startPosition="46" endLine="672" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$20" />
-    <unitInfo nodeId="1203688904920" fileName="Mapper_Test.java" startLine="24" startPosition="48" endLine="60" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$1" />
-    <unitInfo nodeId="1203688860713" fileName="Mapper_Test.java" startLine="67" startPosition="47" endLine="103" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$2" />
+    <unitInfo nodeId="7797065405157468549" fileName="Mapper_Test.java" startLine="672" startPosition="20" endLine="679" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$21" />
+    <unitInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="601" startPosition="23" endLine="629" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$21" />
+    <unitInfo nodeId="7797065405157468600" fileName="Mapper_Test.java" startLine="642" startPosition="19" endLine="670" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$21" />
+    <unitInfo nodeId="7797065405157468600" fileName="Mapper_Test.java" startLine="644" startPosition="23" endLine="668" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$22" />
+    <unitInfo nodeId="1203688904920" fileName="Mapper_Test.java" startLine="28" startPosition="23" endLine="56" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$3" />
+    <unitInfo nodeId="1203688860713" fileName="Mapper_Test.java" startLine="69" startPosition="19" endLine="101" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$3" />
     <unitInfo nodeId="1204739142390" fileName="Mapper_Test.java" startLine="110" startPosition="80" endLine="146" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$3" />
+    <unitInfo nodeId="1203688860713" fileName="Mapper_Test.java" startLine="71" startPosition="23" endLine="99" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$4" />
+    <unitInfo nodeId="1204739142390" fileName="Mapper_Test.java" startLine="112" startPosition="19" endLine="144" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$4" />
     <unitInfo nodeId="1224754206491" fileName="Mapper_Test.java" startLine="151" startPosition="80" endLine="187" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$4" />
-    <unitInfo nodeId="1241363026344" fileName="Mapper_Test.java" startLine="597" startPosition="129" endLine="633" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$19" />
-    <unitInfo nodeId="1224754206523" fileName="Mapper_Test.java" startLine="325" startPosition="23" endLine="371" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9" />
-    <unitInfo nodeId="1224754206604" fileName="Mapper_Test.java" startLine="381" startPosition="23" endLine="427" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10" />
-    <unitInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="437" startPosition="23" endLine="483" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$11" />
-    <unitInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="493" startPosition="23" endLine="539" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$12" />
-    <unitInfo nodeId="1224754206523" fileName="Mapper_Test.java" startLine="323" startPosition="19" endLine="373" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8" />
-    <unitInfo nodeId="1224754206604" fileName="Mapper_Test.java" startLine="379" startPosition="19" endLine="429" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9" />
-    <unitInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="435" startPosition="19" endLine="485" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10" />
-    <unitInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="491" startPosition="19" endLine="541" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$11" />
-    <unitInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="196" startPosition="23" endLine="249" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7" />
-    <unitInfo nodeId="1224451389695" fileName="Mapper_Test.java" startLine="259" startPosition="23" endLine="312" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8" />
-    <unitInfo nodeId="1224754206523" fileName="Mapper_Test.java" startLine="321" startPosition="80" endLine="375" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7" />
-    <unitInfo nodeId="1224754206604" fileName="Mapper_Test.java" startLine="377" startPosition="81" endLine="431" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8" />
-    <unitInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="433" startPosition="81" endLine="487" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9" />
-    <unitInfo nodeId="1224497117765" fileName="Mapper_Test.java" startLine="489" startPosition="81" endLine="543" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10" />
-    <unitInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="194" startPosition="19" endLine="251" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$6" />
-    <unitInfo nodeId="1224451389695" fileName="Mapper_Test.java" startLine="257" startPosition="19" endLine="314" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7" />
+    <unitInfo nodeId="1204739142390" fileName="Mapper_Test.java" startLine="114" startPosition="23" endLine="142" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$5" />
+    <unitInfo nodeId="1224754206491" fileName="Mapper_Test.java" startLine="153" startPosition="19" endLine="185" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$5" />
     <unitInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="192" startPosition="81" endLine="253" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$5" />
+    <unitInfo nodeId="1224754206491" fileName="Mapper_Test.java" startLine="155" startPosition="23" endLine="183" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$6" />
+    <unitInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="194" startPosition="19" endLine="251" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$6" />
     <unitInfo nodeId="1224451389695" fileName="Mapper_Test.java" startLine="255" startPosition="82" endLine="316" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$6" />
-    <unitInfo nodeId="1203688720943" fileName="Mapper_Test.java" startLine="21" startPosition="0" endLine="683" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test" />
+    <unitInfo nodeId="1224754206559" fileName="Mapper_Test.java" startLine="196" startPosition="23" endLine="249" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7" />
+    <unitInfo nodeId="1224754206523" fileName="Mapper_Test.java" startLine="321" startPosition="80" endLine="375" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7" />
+    <unitInfo nodeId="1224451389695" fileName="Mapper_Test.java" startLine="257" startPosition="19" endLine="314" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7" />
+    <unitInfo nodeId="1224754206523" fileName="Mapper_Test.java" startLine="323" startPosition="19" endLine="373" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8" />
+    <unitInfo nodeId="1224451389695" fileName="Mapper_Test.java" startLine="259" startPosition="23" endLine="312" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8" />
+    <unitInfo nodeId="1224754206604" fileName="Mapper_Test.java" startLine="377" startPosition="81" endLine="431" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8" />
+    <unitInfo nodeId="1224754206523" fileName="Mapper_Test.java" startLine="325" startPosition="23" endLine="371" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9" />
+    <unitInfo nodeId="1224754206604" fileName="Mapper_Test.java" startLine="379" startPosition="19" endLine="429" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9" />
+    <unitInfo nodeId="1224497017169" fileName="Mapper_Test.java" startLine="433" startPosition="81" endLine="487" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9" />
   </root>
   <root nodeId="1204111028494">
     <nodeInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="39" startPosition="27" endLine="39" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -951,17 +951,17 @@
     </scopeInfo>
     <scopeInfo nodeId="1204111038459" fileName="ChainedOperations_Test.java" startLine="14" startPosition="55" endLine="59" endPosition="0" />
     <scopeInfo nodeId="1204797491110" fileName="ChainedOperations_Test.java" startLine="59" startPosition="0" endLine="104" endPosition="0" />
-    <unitInfo nodeId="1222270427660" fileName="ChainedOperations_Test.java" startLine="16" startPosition="77" endLine="20" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$1" />
-    <unitInfo nodeId="1204129169614" fileName="ChainedOperations_Test.java" startLine="52" startPosition="17" endLine="56" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$3" />
-    <unitInfo nodeId="1204797574898" fileName="ChainedOperations_Test.java" startLine="61" startPosition="76" endLine="65" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$4" />
-    <unitInfo nodeId="1204797574875" fileName="ChainedOperations_Test.java" startLine="97" startPosition="17" endLine="101" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$6" />
-    <unitInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="24" startPosition="23" endLine="48" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$4" />
-    <unitInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="69" startPosition="23" endLine="93" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$7" />
-    <unitInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="22" startPosition="19" endLine="50" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$3" />
-    <unitInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="67" startPosition="19" endLine="95" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$6" />
-    <unitInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="20" startPosition="21" endLine="52" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$2" />
-    <unitInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="65" startPosition="21" endLine="97" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$5" />
     <unitInfo nodeId="1204111028494" fileName="ChainedOperations_Test.java" startLine="14" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test" />
+    <unitInfo nodeId="1222270427660" fileName="ChainedOperations_Test.java" startLine="16" startPosition="77" endLine="20" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$1" />
+    <unitInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="20" startPosition="21" endLine="52" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$2" />
+    <unitInfo nodeId="1204129169614" fileName="ChainedOperations_Test.java" startLine="52" startPosition="17" endLine="56" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$3" />
+    <unitInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="22" startPosition="19" endLine="50" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$3" />
+    <unitInfo nodeId="1204797574898" fileName="ChainedOperations_Test.java" startLine="61" startPosition="76" endLine="65" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$4" />
+    <unitInfo nodeId="1204129169626" fileName="ChainedOperations_Test.java" startLine="24" startPosition="23" endLine="48" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$4" />
+    <unitInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="65" startPosition="21" endLine="97" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$5" />
+    <unitInfo nodeId="1204797574875" fileName="ChainedOperations_Test.java" startLine="97" startPosition="17" endLine="101" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$6" />
+    <unitInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="67" startPosition="19" endLine="95" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$6" />
+    <unitInfo nodeId="1204797574888" fileName="ChainedOperations_Test.java" startLine="69" startPosition="23" endLine="93" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$7" />
   </root>
   <root nodeId="1204129267857">
     <nodeInfo nodeId="1204129289583" fileName="Util_Test.java" startLine="20" startPosition="65" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1061,8 +1061,8 @@
       <varInfo nodeId="1205510749495" varName="card" />
     </scopeInfo>
     <scopeInfo nodeId="1205510696485" fileName="Util_Test.java" startLine="53" startPosition="30" endLine="59" endPosition="7">
-      <varInfo nodeId="1205510825326" varName="next" />
       <varInfo nodeId="1205510816914" varName="card" />
+      <varInfo nodeId="1205510825326" varName="next" />
     </scopeInfo>
     <scopeInfo nodeId="1204129289582" fileName="Util_Test.java" startLine="20" startPosition="65" endLine="27" endPosition="41">
       <varInfo nodeId="1204129289584" varName="expIt" />
@@ -1076,8 +1076,8 @@
       <varInfo nodeId="1204129289616" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1205510239185" fileName="Util_Test.java" startLine="30" startPosition="70" endLine="40" endPosition="41">
-      <varInfo nodeId="1205510415091" varName="testIt" />
       <varInfo nodeId="1205510293182" varName="expSet" />
+      <varInfo nodeId="1205510415091" varName="testIt" />
     </scopeInfo>
     <scopeInfo nodeId="1241362803922" fileName="Util_Test.java" startLine="105" startPosition="67" endLine="115" endPosition="5" />
     <scopeInfo nodeId="1205510239182" fileName="Util_Test.java" startLine="29" startPosition="0" endLine="42" endPosition="0">
@@ -1085,12 +1085,12 @@
       <varInfo nodeId="1205510273505" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1241362803913" fileName="Util_Test.java" startLine="104" startPosition="0" endLine="117" endPosition="0">
-      <varInfo nodeId="1241362803917" varName="values" />
       <varInfo nodeId="1241362803914" varName="it" />
+      <varInfo nodeId="1241362803917" varName="values" />
     </scopeInfo>
     <scopeInfo nodeId="1205510696458" fileName="Util_Test.java" startLine="43" startPosition="76" endLine="62" endPosition="41">
-      <varInfo nodeId="1205510696476" varName="testIt" />
       <varInfo nodeId="1205510696460" varName="cardMap" />
+      <varInfo nodeId="1205510696476" varName="testIt" />
     </scopeInfo>
     <scopeInfo nodeId="1205510696455" fileName="Util_Test.java" startLine="42" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="1205510696501" varName="exp" />
@@ -1222,26 +1222,26 @@
     <scopeInfo nodeId="7797065405157460986" fileName="SelectTest_Test.java" startLine="148" startPosition="41" endLine="155" endPosition="0" />
     <scopeInfo nodeId="1241362817131" fileName="SelectTest_Test.java" startLine="131" startPosition="0" endLine="139" endPosition="0" />
     <scopeInfo nodeId="1204567341456" fileName="SelectTest_Test.java" startLine="35" startPosition="53" endLine="44" endPosition="89">
-      <varInfo nodeId="1204567357171" varName="input" />
-      <varInfo nodeId="1204567448645" varName="test" />
       <varInfo nodeId="1204567390245" varName="a" />
+      <varInfo nodeId="1204567357171" varName="input" />
       <varInfo nodeId="1204567602774" varName="seq" />
+      <varInfo nodeId="1204567448645" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1205840763856" fileName="SelectTest_Test.java" startLine="74" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1204285386957" fileName="SelectTest_Test.java" startLine="22" startPosition="52" endLine="32" endPosition="81">
-      <varInfo nodeId="1204286012437" varName="test" />
       <varInfo nodeId="1204285480049" varName="seq" />
+      <varInfo nodeId="1204286012437" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="4611582986551848648" fileName="SelectTest_Test.java" startLine="159" startPosition="46" endLine="169" endPosition="79">
-      <varInfo nodeId="4611582986551848727" varName="seql" />
       <varInfo nodeId="4611582986551848650" varName="lo" />
-      <varInfo nodeId="4611582986551848683" varName="seqs" />
+      <varInfo nodeId="4611582986551848727" varName="seql" />
       <varInfo nodeId="4611582986551848783" varName="seqlist" />
+      <varInfo nodeId="4611582986551848683" varName="seqs" />
     </scopeInfo>
     <scopeInfo nodeId="1204566267280" fileName="SelectTest_Test.java" startLine="47" startPosition="51" endLine="58" endPosition="81">
       <varInfo nodeId="1204566288175" varName="selector" />
-      <varInfo nodeId="1204566280521" varName="test" />
       <varInfo nodeId="1204566280513" varName="seq" />
+      <varInfo nodeId="1204566280521" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1205840781088" fileName="SelectTest_Test.java" startLine="61" startPosition="55" endLine="72" endPosition="100">
       <varInfo nodeId="3343985444902960232" varName="cl" />
@@ -1253,8 +1253,8 @@
     <scopeInfo nodeId="1205840781086" fileName="SelectTest_Test.java" startLine="60" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="95" startPosition="20" endLine="110" endPosition="19" />
     <scopeInfo nodeId="7797065405157460948" fileName="SelectTest_Test.java" startLine="140" startPosition="62" endLine="156" endPosition="126">
-      <varInfo nodeId="7797065405157460966" varName="plusten" />
       <varInfo nodeId="5746517363044260126" varName="idx" />
+      <varInfo nodeId="7797065405157460966" varName="plusten" />
       <varInfo nodeId="7797065405157460950" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="93" startPosition="46" endLine="112" endPosition="29" />
@@ -1265,26 +1265,26 @@
     <scopeInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="87" startPosition="43" endLine="116" endPosition="10" />
     <scopeInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="86" startPosition="83" endLine="118" endPosition="0" />
     <scopeInfo nodeId="1225715141323" fileName="SelectTest_Test.java" startLine="84" startPosition="50" endLine="129" endPosition="69">
+      <varInfo nodeId="1225715160597" varName="list" />
       <varInfo nodeId="1225716405426" varName="result" />
       <varInfo nodeId="1225715172513" varName="test" />
-      <varInfo nodeId="1225715160597" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="1225715141321" fileName="SelectTest_Test.java" startLine="83" startPosition="0" endLine="131" endPosition="0" />
+    <unitInfo nodeId="1204285379459" fileName="SelectTest_Test.java" startLine="21" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test" />
+    <unitInfo nodeId="1204286012443" fileName="SelectTest_Test.java" startLine="24" startPosition="45" endLine="31" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$1" />
+    <unitInfo nodeId="1241362847983" fileName="SelectTest_Test.java" startLine="133" startPosition="129" endLine="137" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$10" />
+    <unitInfo nodeId="7797065405157461030" fileName="SelectTest_Test.java" startLine="144" startPosition="43" endLine="148" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$11" />
+    <unitInfo nodeId="7797065405157460986" fileName="SelectTest_Test.java" startLine="148" startPosition="20" endLine="155" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$12" />
     <unitInfo nodeId="1204567471859" fileName="SelectTest_Test.java" startLine="39" startPosition="44" endLine="43" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$2" />
+    <unitInfo nodeId="1204566288179" fileName="SelectTest_Test.java" startLine="49" startPosition="47" endLine="56" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$3" />
     <unitInfo nodeId="3343985444902960201" fileName="SelectTest_Test.java" startLine="62" startPosition="99" endLine="66" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$4" />
     <unitInfo nodeId="3343985444902960236" fileName="SelectTest_Test.java" startLine="67" startPosition="78" endLine="71" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$5" />
     <unitInfo nodeId="1224754206637" fileName="SelectTest_Test.java" startLine="76" startPosition="77" endLine="80" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$6" />
-    <unitInfo nodeId="1225715193739" fileName="SelectTest_Test.java" startLine="119" startPosition="43" endLine="123" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$8" />
-    <unitInfo nodeId="1225716422692" fileName="SelectTest_Test.java" startLine="124" startPosition="76" endLine="128" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$9" />
-    <unitInfo nodeId="1241362847983" fileName="SelectTest_Test.java" startLine="133" startPosition="129" endLine="137" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$10" />
-    <unitInfo nodeId="7797065405157461030" fileName="SelectTest_Test.java" startLine="144" startPosition="43" endLine="148" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$11" />
-    <unitInfo nodeId="1204286012443" fileName="SelectTest_Test.java" startLine="24" startPosition="45" endLine="31" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$1" />
-    <unitInfo nodeId="1204566288179" fileName="SelectTest_Test.java" startLine="49" startPosition="47" endLine="56" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$3" />
-    <unitInfo nodeId="7797065405157460986" fileName="SelectTest_Test.java" startLine="148" startPosition="20" endLine="155" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$12" />
-    <unitInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="90" startPosition="23" endLine="114" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$9" />
-    <unitInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="88" startPosition="19" endLine="116" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$8" />
     <unitInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="86" startPosition="54" endLine="118" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$7" />
-    <unitInfo nodeId="1204285379459" fileName="SelectTest_Test.java" startLine="21" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test" />
+    <unitInfo nodeId="1225715193739" fileName="SelectTest_Test.java" startLine="119" startPosition="43" endLine="123" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$8" />
+    <unitInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="88" startPosition="19" endLine="116" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$8" />
+    <unitInfo nodeId="1225716422692" fileName="SelectTest_Test.java" startLine="124" startPosition="76" endLine="128" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$9" />
+    <unitInfo nodeId="1225716463484" fileName="SelectTest_Test.java" startLine="90" startPosition="23" endLine="114" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$9" />
   </root>
   <root nodeId="1204981070050">
     <nodeInfo nodeId="1204981149253" fileName="VisitAll_Test.java" startLine="18" startPosition="54" endLine="19" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1394,16 +1394,16 @@
       <varInfo nodeId="1204981149254" varName="seq" />
     </scopeInfo>
     <scopeInfo nodeId="3343985444902960360" fileName="VisitAll_Test.java" startLine="51" startPosition="59" endLine="59" endPosition="56">
-      <varInfo nodeId="3343985444902960362" varName="res" />
       <varInfo nodeId="3343985444902960394" varName="cl" />
+      <varInfo nodeId="3343985444902960362" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="1226336502966" fileName="VisitAll_Test.java" startLine="107" startPosition="63" endLine="115" endPosition="39">
-      <varInfo nodeId="1226336541689" varName="ls" />
       <varInfo nodeId="1226336687966" varName="len" />
+      <varInfo nodeId="1226336541689" varName="ls" />
     </scopeInfo>
     <scopeInfo nodeId="3229004455031219527" fileName="VisitAll_Test.java" startLine="118" startPosition="46" endLine="126" endPosition="54">
-      <varInfo nodeId="3229004455031219529" varName="test" />
       <varInfo nodeId="7569794070509684629" varName="out" />
+      <varInfo nodeId="3229004455031219529" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1204981444173" fileName="VisitAll_Test.java" startLine="29" startPosition="50" endLine="38" endPosition="56">
       <varInfo nodeId="1204981460751" varName="res" />
@@ -1425,16 +1425,16 @@
       <varInfo nodeId="1205847939751" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="1205847859850" fileName="VisitAll_Test.java" startLine="71" startPosition="0" endLine="106" endPosition="0" />
+    <unitInfo nodeId="1204981070050" fileName="VisitAll_Test.java" startLine="17" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test" />
     <unitInfo nodeId="1204981231857" fileName="VisitAll_Test.java" startLine="21" startPosition="21" endLine="25" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$1" />
     <unitInfo nodeId="1204981468137" fileName="VisitAll_Test.java" startLine="32" startPosition="36" endLine="36" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$2" />
     <unitInfo nodeId="1205842213970" fileName="VisitAll_Test.java" startLine="43" startPosition="54" endLine="47" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$3" />
     <unitInfo nodeId="3343985444902960398" fileName="VisitAll_Test.java" startLine="53" startPosition="57" endLine="57" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$4" />
     <unitInfo nodeId="1224754206455" fileName="VisitAll_Test.java" startLine="64" startPosition="54" endLine="68" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$5" />
-    <unitInfo nodeId="1226336653015" fileName="VisitAll_Test.java" startLine="110" startPosition="25" endLine="114" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$8" />
-    <unitInfo nodeId="3229004455031219553" fileName="VisitAll_Test.java" startLine="121" startPosition="45" endLine="125" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$9" />
     <unitInfo nodeId="1224754206405" fileName="VisitAll_Test.java" startLine="74" startPosition="55" endLine="87" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$6" />
     <unitInfo nodeId="1224497514095" fileName="VisitAll_Test.java" startLine="90" startPosition="55" endLine="103" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$7" />
-    <unitInfo nodeId="1204981070050" fileName="VisitAll_Test.java" startLine="17" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test" />
+    <unitInfo nodeId="1226336653015" fileName="VisitAll_Test.java" startLine="110" startPosition="25" endLine="114" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$8" />
+    <unitInfo nodeId="3229004455031219553" fileName="VisitAll_Test.java" startLine="121" startPosition="45" endLine="125" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test$9" />
   </root>
   <root nodeId="1205686908852">
     <nodeInfo nodeId="1205686939428" fileName="Sort_Test.java" startLine="16" startPosition="50" endLine="17" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1546,25 +1546,30 @@
     <scopeInfo nodeId="1205841031395" fileName="Sort_Test.java" startLine="88" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="1205693972828" fileName="Sort_Test.java" startLine="26" startPosition="55" endLine="42" endPosition="83">
       <varInfo nodeId="1205693992438" varName="input" />
-      <varInfo nodeId="1205693992448" varName="test" />
-      <varInfo nodeId="1205694004151" varName="length" />
-      <varInfo nodeId="1205751784982" varName="test2" />
       <varInfo nodeId="1205751769124" varName="itself" />
+      <varInfo nodeId="1205694004151" varName="length" />
+      <varInfo nodeId="1205693992448" varName="test" />
+      <varInfo nodeId="1205751784982" varName="test2" />
     </scopeInfo>
     <scopeInfo nodeId="599357942184268168" fileName="Sort_Test.java" startLine="99" startPosition="48" endLine="116" endPosition="103">
-      <varInfo nodeId="599357942184268170" varName="test" />
-      <varInfo nodeId="599357942184353381" varName="l2" />
       <varInfo nodeId="599357942184268670" varName="l1" />
+      <varInfo nodeId="599357942184353381" varName="l2" />
+      <varInfo nodeId="599357942184268170" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1205693972826" fileName="Sort_Test.java" startLine="25" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="599357942184268166" fileName="Sort_Test.java" startLine="98" startPosition="0" endLine="118" endPosition="0" />
     <scopeInfo nodeId="1205737327891" fileName="Sort_Test.java" startLine="45" startPosition="61" endLine="68" endPosition="15">
+      <varInfo nodeId="3343985444902960340" varName="cl" />
       <varInfo nodeId="1205737356798" varName="input" />
       <varInfo nodeId="1205737614815" varName="test" />
-      <varInfo nodeId="3343985444902960340" varName="cl" />
     </scopeInfo>
     <scopeInfo nodeId="1205737327889" fileName="Sort_Test.java" startLine="44" startPosition="0" endLine="70" endPosition="0" />
+    <unitInfo nodeId="1205686908852" fileName="Sort_Test.java" startLine="15" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test" />
     <unitInfo nodeId="1205687027624" fileName="Sort_Test.java" startLine="18" startPosition="44" endLine="22" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$1" />
+    <unitInfo nodeId="1224754206672" fileName="Sort_Test.java" startLine="91" startPosition="66" endLine="95" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$10" />
+    <unitInfo nodeId="599357942184268676" fileName="Sort_Test.java" startLine="101" startPosition="63" endLine="105" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$11" />
+    <unitInfo nodeId="599357942184353388" fileName="Sort_Test.java" startLine="106" startPosition="63" endLine="110" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$12" />
+    <unitInfo nodeId="599357942184353398" fileName="Sort_Test.java" startLine="110" startPosition="27" endLine="114" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$13" />
     <unitInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="28" startPosition="50" endLine="32" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$2" />
     <unitInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="34" startPosition="50" endLine="38" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$3" />
     <unitInfo nodeId="1205737614820" fileName="Sort_Test.java" startLine="47" startPosition="66" endLine="51" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$4" />
@@ -1573,11 +1578,6 @@
     <unitInfo nodeId="3343985444902960250" fileName="Sort_Test.java" startLine="64" startPosition="109" endLine="68" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$7" />
     <unitInfo nodeId="1239112469489" fileName="Sort_Test.java" startLine="73" startPosition="134" endLine="77" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$8" />
     <unitInfo nodeId="1239112752053" fileName="Sort_Test.java" startLine="82" startPosition="73" endLine="86" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$9" />
-    <unitInfo nodeId="1224754206672" fileName="Sort_Test.java" startLine="91" startPosition="66" endLine="95" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$10" />
-    <unitInfo nodeId="599357942184268676" fileName="Sort_Test.java" startLine="101" startPosition="63" endLine="105" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$11" />
-    <unitInfo nodeId="599357942184353388" fileName="Sort_Test.java" startLine="106" startPosition="63" endLine="110" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$12" />
-    <unitInfo nodeId="599357942184353398" fileName="Sort_Test.java" startLine="110" startPosition="27" endLine="114" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$13" />
-    <unitInfo nodeId="1205686908852" fileName="Sort_Test.java" startLine="15" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test" />
   </root>
   <root nodeId="1205849838286">
     <nodeInfo nodeId="1205849871565" fileName="ForEach_Test.java" startLine="14" startPosition="53" endLine="15" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1657,22 +1657,22 @@
     </scopeInfo>
     <scopeInfo nodeId="4272335308992149328" fileName="ForEach_Test.java" startLine="55" startPosition="53" endLine="60" endPosition="9" />
     <scopeInfo nodeId="1228853104820" fileName="ForEach_Test.java" startLine="43" startPosition="57" endLine="49" endPosition="5">
-      <varInfo nodeId="1228853121973" varName="exp" />
       <varInfo nodeId="1228853127708" varName="arr" />
+      <varInfo nodeId="1228853121973" varName="exp" />
     </scopeInfo>
     <scopeInfo nodeId="4272335308992149325" fileName="ForEach_Test.java" startLine="54" startPosition="16" endLine="61" endPosition="5" />
     <scopeInfo nodeId="1205849849011" fileName="ForEach_Test.java" startLine="13" startPosition="45" endLine="21" endPosition="0" />
     <scopeInfo nodeId="1228851995510" fileName="ForEach_Test.java" startLine="34" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="1228853104818" fileName="ForEach_Test.java" startLine="42" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1228851820332" fileName="ForEach_Test.java" startLine="22" startPosition="52" endLine="32" endPosition="5">
-      <varInfo nodeId="1228851880403" varName="exp" />
       <varInfo nodeId="1228851820334" varName="arr" />
       <varInfo nodeId="1228851820393" varName="arr2" />
+      <varInfo nodeId="1228851880403" varName="exp" />
       <varInfo nodeId="1228851937600" varName="exp2" />
     </scopeInfo>
     <scopeInfo nodeId="4272335308992149285" fileName="ForEach_Test.java" startLine="52" startPosition="48" endLine="62" endPosition="35">
-      <varInfo nodeId="4272335308992149332" varName="sum" />
       <varInfo nodeId="4272335308992149287" varName="lints" />
+      <varInfo nodeId="4272335308992149332" varName="sum" />
     </scopeInfo>
     <scopeInfo nodeId="796360049988301891" fileName="ForEach_Test.java" startLine="65" startPosition="48" endLine="75" endPosition="5">
       <varInfo nodeId="796360049988307331" varName="foo" />
@@ -1680,9 +1680,9 @@
     <scopeInfo nodeId="1228851820330" fileName="ForEach_Test.java" startLine="21" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="4272335308992149282" fileName="ForEach_Test.java" startLine="51" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="796360049988301888" fileName="ForEach_Test.java" startLine="64" startPosition="0" endLine="77" endPosition="0" />
+    <unitInfo nodeId="1205849838286" fileName="ForEach_Test.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.ForEach_Test" />
     <unitInfo nodeId="4272335308992149360" fileName="ForEach_Test.java" startLine="56" startPosition="85" endLine="60" endPosition="7" unitName="jetbrains.mps.internalCollections.test.closures.ForEach_Test$1" />
     <unitInfo nodeId="796360049988318276" fileName="ForEach_Test.java" startLine="67" startPosition="19" endLine="71" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ForEach_Test$2" />
-    <unitInfo nodeId="1205849838286" fileName="ForEach_Test.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.ForEach_Test" />
   </root>
   <root nodeId="1225728681796">
     <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="49" startPosition="27" endLine="49" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1906,44 +1906,44 @@
     <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="16" startPosition="83" endLine="65" endPosition="0" />
     <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="99" startPosition="83" endLine="148" endPosition="0" />
     <scopeInfo nodeId="1225728698108" fileName="Find_Test.java" startLine="15" startPosition="53" endLine="87" endPosition="69">
-      <varInfo nodeId="1225728703471" varName="test" />
       <varInfo nodeId="3343985444902959416" varName="cl" />
       <varInfo nodeId="3343985444902959694" varName="cl2" />
+      <varInfo nodeId="1225728703471" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1225728698106" fileName="Find_Test.java" startLine="14" startPosition="42" endLine="89" endPosition="0" />
     <scopeInfo nodeId="1235567183549" fileName="Find_Test.java" startLine="98" startPosition="46" endLine="234" endPosition="8">
-      <varInfo nodeId="1235567193954" varName="test" />
       <varInfo nodeId="3343985444902959728" varName="cl" />
+      <varInfo nodeId="3343985444902959762" varName="cl2" />
+      <varInfo nodeId="1235567193954" varName="test" />
       <varInfo nodeId="1235567630250" varName="test2" />
       <varInfo nodeId="1235567735646" varName="test3" />
-      <varInfo nodeId="3343985444902959762" varName="cl2" />
     </scopeInfo>
     <scopeInfo nodeId="1235567183547" fileName="Find_Test.java" startLine="97" startPosition="0" endLine="236" endPosition="0" />
-    <unitInfo nodeId="3343985444902967802" fileName="Find_Test.java" startLine="66" startPosition="67" endLine="70" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$2" />
-    <unitInfo nodeId="3343985444902959420" fileName="Find_Test.java" startLine="71" startPosition="78" endLine="75" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$3" />
-    <unitInfo nodeId="3343985444902967830" fileName="Find_Test.java" startLine="77" startPosition="67" endLine="81" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$4" />
-    <unitInfo nodeId="3343985444902959698" fileName="Find_Test.java" startLine="82" startPosition="79" endLine="86" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$5" />
-    <unitInfo nodeId="7973341469126548366" fileName="Find_Test.java" startLine="91" startPosition="77" endLine="95" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$6" />
-    <unitInfo nodeId="1235567599361" fileName="Find_Test.java" startLine="149" startPosition="58" endLine="153" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$8" />
-    <unitInfo nodeId="3343985444902959732" fileName="Find_Test.java" startLine="154" startPosition="78" endLine="158" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$9" />
+    <unitInfo nodeId="1225728681796" fileName="Find_Test.java" startLine="14" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test" />
+    <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="16" startPosition="54" endLine="65" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$1" />
     <unitInfo nodeId="1235567612812" fileName="Find_Test.java" startLine="160" startPosition="59" endLine="164" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$10" />
     <unitInfo nodeId="3343985444902959766" fileName="Find_Test.java" startLine="165" startPosition="79" endLine="169" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$11" />
     <unitInfo nodeId="1235567723178" fileName="Find_Test.java" startLine="171" startPosition="58" endLine="175" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$12" />
+    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="176" startPosition="55" endLine="208" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$13" />
     <unitInfo nodeId="1235567704231" fileName="Find_Test.java" startLine="209" startPosition="59" endLine="213" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$14" />
+    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="178" startPosition="19" endLine="206" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$14" />
     <unitInfo nodeId="1235568122646" fileName="Find_Test.java" startLine="214" startPosition="60" endLine="218" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$15" />
+    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="180" startPosition="23" endLine="204" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$15" />
     <unitInfo nodeId="1235567714048" fileName="Find_Test.java" startLine="219" startPosition="59" endLine="223" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$16" />
     <unitInfo nodeId="1235567749451" fileName="Find_Test.java" startLine="225" startPosition="60" endLine="229" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$17" />
     <unitInfo nodeId="1235567758243" fileName="Find_Test.java" startLine="230" startPosition="59" endLine="234" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$18" />
-    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="180" startPosition="23" endLine="204" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$15" />
-    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="178" startPosition="19" endLine="206" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$14" />
-    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="176" startPosition="55" endLine="208" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$13" />
-    <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="20" startPosition="23" endLine="61" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$3" />
-    <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="103" startPosition="23" endLine="144" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$9" />
+    <unitInfo nodeId="3343985444902967802" fileName="Find_Test.java" startLine="66" startPosition="67" endLine="70" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$2" />
     <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="18" startPosition="19" endLine="63" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$2" />
-    <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="101" startPosition="19" endLine="146" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$8" />
-    <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="16" startPosition="54" endLine="65" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$1" />
+    <unitInfo nodeId="3343985444902959420" fileName="Find_Test.java" startLine="71" startPosition="78" endLine="75" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$3" />
+    <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="20" startPosition="23" endLine="61" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$3" />
+    <unitInfo nodeId="3343985444902967830" fileName="Find_Test.java" startLine="77" startPosition="67" endLine="81" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$4" />
+    <unitInfo nodeId="3343985444902959698" fileName="Find_Test.java" startLine="82" startPosition="79" endLine="86" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$5" />
+    <unitInfo nodeId="7973341469126548366" fileName="Find_Test.java" startLine="91" startPosition="77" endLine="95" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$6" />
     <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="99" startPosition="54" endLine="148" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$7" />
-    <unitInfo nodeId="1225728681796" fileName="Find_Test.java" startLine="14" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test" />
+    <unitInfo nodeId="1235567599361" fileName="Find_Test.java" startLine="149" startPosition="58" endLine="153" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$8" />
+    <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="101" startPosition="19" endLine="146" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$8" />
+    <unitInfo nodeId="3343985444902959732" fileName="Find_Test.java" startLine="154" startPosition="78" endLine="158" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$9" />
+    <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="103" startPosition="23" endLine="144" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$9" />
   </root>
   <root nodeId="1226309819704">
     <nodeInfo nodeId="1226309819706" fileName="A.java" startLine="6" startPosition="16" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="A#()V" />
@@ -2109,59 +2109,59 @@
     <scopeInfo nodeId="5428628206778274769" fileName="ReduceFold_Test.java" startLine="109" startPosition="116" endLine="117" endPosition="0" />
     <scopeInfo nodeId="5428628206778311088" fileName="ReduceFold_Test.java" startLine="140" startPosition="118" endLine="148" endPosition="0" />
     <scopeInfo nodeId="5037332032045095736" fileName="ReduceFold_Test.java" startLine="151" startPosition="48" endLine="162" endPosition="30">
-      <varInfo nodeId="5037332032045096463" varName="res" />
       <varInfo nodeId="5037332032045096409" varName="input" />
+      <varInfo nodeId="5037332032045096463" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="5037332032045095733" fileName="ReduceFold_Test.java" startLine="150" startPosition="0" endLine="164" endPosition="0" />
     <scopeInfo nodeId="1522217801069692755" fileName="ReduceFold_Test.java" startLine="89" startPosition="48" endLine="117" endPosition="8">
-      <varInfo nodeId="1522217801069692817" varName="single" />
       <varInfo nodeId="3343985444902960107" varName="cl" />
       <varInfo nodeId="1522217801069692854" varName="empty" />
       <varInfo nodeId="1522217801069692759" varName="in" />
+      <varInfo nodeId="1522217801069692817" varName="single" />
     </scopeInfo>
     <scopeInfo nodeId="5428628206778310961" fileName="ReduceFold_Test.java" startLine="120" startPosition="49" endLine="148" endPosition="8">
-      <varInfo nodeId="5428628206778311000" varName="single" />
       <varInfo nodeId="3343985444902960166" varName="cl" />
       <varInfo nodeId="5428628206778311026" varName="empty" />
       <varInfo nodeId="5428628206778310971" varName="in" />
+      <varInfo nodeId="5428628206778311000" varName="single" />
     </scopeInfo>
     <scopeInfo nodeId="1522217801069692752" fileName="ReduceFold_Test.java" startLine="88" startPosition="0" endLine="119" endPosition="0" />
     <scopeInfo nodeId="5428628206778310958" fileName="ReduceFold_Test.java" startLine="119" startPosition="0" endLine="150" endPosition="0" />
     <scopeInfo nodeId="1522217801069636093" fileName="ReduceFold_Test.java" startLine="17" startPosition="50" endLine="50" endPosition="8">
-      <varInfo nodeId="1522217801069642508" varName="single" />
       <varInfo nodeId="3343985444902959962" varName="cl" />
       <varInfo nodeId="1522217801069642473" varName="empty" />
       <varInfo nodeId="1522217801069642377" varName="in" />
+      <varInfo nodeId="1522217801069642508" varName="single" />
     </scopeInfo>
     <scopeInfo nodeId="1522217801069655168" fileName="ReduceFold_Test.java" startLine="53" startPosition="51" endLine="86" endPosition="8">
-      <varInfo nodeId="1522217801069655251" varName="single" />
       <varInfo nodeId="3343985444902960048" varName="cl" />
       <varInfo nodeId="1522217801069655274" varName="empty" />
       <varInfo nodeId="1522217801069655170" varName="in" />
+      <varInfo nodeId="1522217801069655251" varName="single" />
     </scopeInfo>
     <scopeInfo nodeId="1522217801069636090" fileName="ReduceFold_Test.java" startLine="16" startPosition="48" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1522217801069655165" fileName="ReduceFold_Test.java" startLine="52" startPosition="0" endLine="88" endPosition="0" />
+    <unitInfo nodeId="1522217801069635840" fileName="ReduceFold_Test.java" startLine="16" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test" />
     <unitInfo nodeId="3343985444902959903" fileName="ReduceFold_Test.java" startLine="19" startPosition="103" endLine="23" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$1" />
+    <unitInfo nodeId="1522217801069655366" fileName="ReduceFold_Test.java" startLine="78" startPosition="67" endLine="86" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$10" />
+    <unitInfo nodeId="3343985444902960072" fileName="ReduceFold_Test.java" startLine="91" startPosition="82" endLine="95" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$11" />
+    <unitInfo nodeId="3343985444902960112" fileName="ReduceFold_Test.java" startLine="96" startPosition="93" endLine="100" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$12" />
+    <unitInfo nodeId="1522217801069692838" fileName="ReduceFold_Test.java" startLine="103" startPosition="83" endLine="107" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$13" />
+    <unitInfo nodeId="5428628206778274769" fileName="ReduceFold_Test.java" startLine="109" startPosition="80" endLine="117" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$14" />
+    <unitInfo nodeId="3343985444902960131" fileName="ReduceFold_Test.java" startLine="122" startPosition="83" endLine="126" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$15" />
+    <unitInfo nodeId="3343985444902960171" fileName="ReduceFold_Test.java" startLine="127" startPosition="93" endLine="131" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$16" />
+    <unitInfo nodeId="5428628206778311072" fileName="ReduceFold_Test.java" startLine="134" startPosition="84" endLine="138" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$17" />
+    <unitInfo nodeId="5428628206778311088" fileName="ReduceFold_Test.java" startLine="140" startPosition="81" endLine="148" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$18" />
+    <unitInfo nodeId="5037332032045096471" fileName="ReduceFold_Test.java" startLine="153" startPosition="54" endLine="157" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$19" />
     <unitInfo nodeId="3343985444902959967" fileName="ReduceFold_Test.java" startLine="24" startPosition="95" endLine="28" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$2" />
+    <unitInfo nodeId="5037332032045096480" fileName="ReduceFold_Test.java" startLine="157" startPosition="22" endLine="161" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$20" />
     <unitInfo nodeId="3343985444902959916" fileName="ReduceFold_Test.java" startLine="30" startPosition="103" endLine="34" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$3" />
     <unitInfo nodeId="1522217801069642529" fileName="ReduceFold_Test.java" startLine="36" startPosition="71" endLine="40" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$4" />
+    <unitInfo nodeId="1522217801069650852" fileName="ReduceFold_Test.java" startLine="42" startPosition="66" endLine="50" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$5" />
     <unitInfo nodeId="3343985444902959988" fileName="ReduceFold_Test.java" startLine="55" startPosition="104" endLine="59" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$6" />
     <unitInfo nodeId="3343985444902960053" fileName="ReduceFold_Test.java" startLine="60" startPosition="95" endLine="64" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$7" />
     <unitInfo nodeId="3343985444902960001" fileName="ReduceFold_Test.java" startLine="66" startPosition="120" endLine="70" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$8" />
     <unitInfo nodeId="1522217801069655353" fileName="ReduceFold_Test.java" startLine="72" startPosition="72" endLine="76" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$9" />
-    <unitInfo nodeId="3343985444902960072" fileName="ReduceFold_Test.java" startLine="91" startPosition="82" endLine="95" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$11" />
-    <unitInfo nodeId="3343985444902960112" fileName="ReduceFold_Test.java" startLine="96" startPosition="93" endLine="100" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$12" />
-    <unitInfo nodeId="1522217801069692838" fileName="ReduceFold_Test.java" startLine="103" startPosition="83" endLine="107" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$13" />
-    <unitInfo nodeId="3343985444902960131" fileName="ReduceFold_Test.java" startLine="122" startPosition="83" endLine="126" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$15" />
-    <unitInfo nodeId="3343985444902960171" fileName="ReduceFold_Test.java" startLine="127" startPosition="93" endLine="131" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$16" />
-    <unitInfo nodeId="5428628206778311072" fileName="ReduceFold_Test.java" startLine="134" startPosition="84" endLine="138" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$17" />
-    <unitInfo nodeId="5037332032045096471" fileName="ReduceFold_Test.java" startLine="153" startPosition="54" endLine="157" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$19" />
-    <unitInfo nodeId="5037332032045096480" fileName="ReduceFold_Test.java" startLine="157" startPosition="22" endLine="161" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$20" />
-    <unitInfo nodeId="1522217801069650852" fileName="ReduceFold_Test.java" startLine="42" startPosition="66" endLine="50" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$5" />
-    <unitInfo nodeId="1522217801069655366" fileName="ReduceFold_Test.java" startLine="78" startPosition="67" endLine="86" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$10" />
-    <unitInfo nodeId="5428628206778274769" fileName="ReduceFold_Test.java" startLine="109" startPosition="80" endLine="117" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$14" />
-    <unitInfo nodeId="5428628206778311088" fileName="ReduceFold_Test.java" startLine="140" startPosition="81" endLine="148" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test$18" />
-    <unitInfo nodeId="1522217801069635840" fileName="ReduceFold_Test.java" startLine="16" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test" />
   </root>
   <root nodeId="3055999550620993840">
     <nodeInfo nodeId="3055999550620993915" fileName="RemoveWhereTest_Test.java" startLine="15" startPosition="55" endLine="16" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2187,14 +2187,14 @@
       <varInfo nodeId="3055999550620993916" varName="l1" />
     </scopeInfo>
     <scopeInfo nodeId="3055999550621124059" fileName="RemoveWhereTest_Test.java" startLine="26" startPosition="56" endLine="35" endPosition="60">
-      <varInfo nodeId="3055999550621124148" varName="q" />
       <varInfo nodeId="3055999550621124061" varName="pq" />
+      <varInfo nodeId="3055999550621124148" varName="q" />
     </scopeInfo>
     <scopeInfo nodeId="3055999550620993912" fileName="RemoveWhereTest_Test.java" startLine="14" startPosition="53" endLine="25" endPosition="0" />
     <scopeInfo nodeId="3055999550621124057" fileName="RemoveWhereTest_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="3055999550620993840" fileName="RemoveWhereTest_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.RemoveWhereTest_Test" />
     <unitInfo nodeId="3055999550621094373" fileName="RemoveWhereTest_Test.java" startLine="17" startPosition="46" endLine="21" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.RemoveWhereTest_Test$1" />
     <unitInfo nodeId="3055999550621124154" fileName="RemoveWhereTest_Test.java" startLine="28" startPosition="66" endLine="32" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.RemoveWhereTest_Test$2" />
-    <unitInfo nodeId="3055999550620993840" fileName="RemoveWhereTest_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.RemoveWhereTest_Test" />
   </root>
   <root nodeId="31512844700222138">
     <nodeInfo nodeId="31512844700222139" fileName="MPS10313.java" startLine="13" startPosition="26" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValues" />
@@ -2261,10 +2261,10 @@
     <scopeInfo nodeId="31512844700222144" fileName="MPS10313.java" startLine="18" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="31512844700222195" varName="values" />
     </scopeInfo>
-    <unitInfo nodeId="5562883592575009923" fileName="MPS10313.java" startLine="32" startPosition="64" endLine="36" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.MPS10313$1" />
-    <unitInfo nodeId="3031165383882147746" fileName="MPS10313.java" startLine="60" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.MPS10313$Foo" />
-    <unitInfo nodeId="3031165383882147754" fileName="MPS10313.java" startLine="65" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.MPS10313$Bar" />
     <unitInfo nodeId="31512844700222138" fileName="MPS10313.java" startLine="13" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.MPS10313" />
+    <unitInfo nodeId="5562883592575009923" fileName="MPS10313.java" startLine="32" startPosition="64" endLine="36" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.MPS10313$1" />
+    <unitInfo nodeId="3031165383882147754" fileName="MPS10313.java" startLine="65" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.MPS10313$Bar" />
+    <unitInfo nodeId="3031165383882147746" fileName="MPS10313.java" startLine="60" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.MPS10313$Foo" />
   </root>
   <root nodeId="5037332032045096364">
     <nodeInfo nodeId="5037332032045096373" fileName="IntHolder.java" startLine="6" startPosition="24" endLine="7" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="i" />
@@ -2381,13 +2381,13 @@
       <varInfo nodeId="5192201647735776401" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="5192201647735776246" fileName="Advanced_Test.java" startLine="10" startPosition="46" endLine="108" endPosition="0" />
-    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="35" startPosition="41" endLine="71" endPosition="31" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$6" />
-    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="33" startPosition="37" endLine="73" endPosition="27" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$5" />
-    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="31" startPosition="62" endLine="75" endPosition="23" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$4" />
-    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="16" startPosition="23" endLine="101" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$3" />
-    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="14" startPosition="19" endLine="103" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$2" />
-    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="12" startPosition="53" endLine="105" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1" />
     <unitInfo nodeId="5192201647735776239" fileName="Advanced_Test.java" startLine="10" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test" />
+    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="12" startPosition="53" endLine="105" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1" />
+    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="14" startPosition="19" endLine="103" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$2" />
+    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="16" startPosition="23" endLine="101" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$3" />
+    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="31" startPosition="62" endLine="75" endPosition="23" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$4" />
+    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="33" startPosition="37" endLine="73" endPosition="27" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$5" />
+    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="35" startPosition="41" endLine="71" endPosition="31" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$6" />
   </root>
   <root nodeId="796360049988301892">
     <nodeInfo nodeId="796360049988302520" fileName="IFoo.java" startLine="6" startPosition="23" endLine="7" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/Iterable;" />
@@ -2399,15 +2399,15 @@
     <scopeInfo nodeId="796360049988326069" fileName="IFoo.java" startLine="12" startPosition="37" endLine="13" endPosition="18" />
     <scopeInfo nodeId="796360049988326059" fileName="IFoo.java" startLine="8" startPosition="43" endLine="10" endPosition="5" />
     <scopeInfo nodeId="796360049988326064" fileName="IFoo.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
-    <unitInfo nodeId="796360049988326057" fileName="IFoo.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.IFoo$Foo" />
     <unitInfo nodeId="796360049988301892" fileName="IFoo.java" startLine="6" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.IFoo" />
+    <unitInfo nodeId="796360049988326057" fileName="IFoo.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.IFoo$Foo" />
   </root>
   <root nodeId="796360049988302518">
     <nodeInfo nodeId="796360049988326050" fileName="IBar.java" startLine="7" startPosition="43" endLine="9" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Bar#()V" />
     <scopeInfo nodeId="796360049988326053" fileName="IBar.java" startLine="8" startPosition="18" endLine="8" endPosition="18" />
     <scopeInfo nodeId="796360049988326050" fileName="IBar.java" startLine="7" startPosition="43" endLine="9" endPosition="5" />
-    <unitInfo nodeId="796360049988326048" fileName="IBar.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.IBar$Bar" />
     <unitInfo nodeId="796360049988302518" fileName="IBar.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.IBar" />
+    <unitInfo nodeId="796360049988326048" fileName="IBar.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.IBar$Bar" />
   </root>
   <root nodeId="7973341469126540874">
     <unitInfo nodeId="7973341469126540874" fileName="IInterface.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.IInterface" />

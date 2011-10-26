@@ -223,9 +223,9 @@
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="50" startPosition="0" endLine="64" endPosition="3" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="80" startPosition="23" endLine="98" endPosition="5" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="79" startPosition="0" endLine="100" endPosition="0" />
-    <unitInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="43" startPosition="32" endLine="49" endPosition="3" unitName="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialogContentPane$1" />
     <unitInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="12" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog" />
     <unitInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="31" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialogContentPane" />
+    <unitInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="43" startPosition="32" endLine="49" endPosition="3" unitName="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialogContentPane$1" />
   </root>
   <root nodeId="1204026656767">
     <nodeInfo nodeId="1204027371638" fileName="NewDevKitDialogContentPane.java" startLine="59" startPosition="31" endLine="60" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -267,19 +267,19 @@
     <scopeInfo nodeId="1204027087626" fileName="NewDevKitDialogContentPane.java" startLine="209" startPosition="0" endLine="213" endPosition="0" />
     <scopeInfo nodeId="8115509433044634447" fileName="NewDevKitDialogContentPane.java" startLine="197" startPosition="50" endLine="205" endPosition="12" />
     <scopeInfo nodeId="1204027179201" fileName="NewDevKitDialogContentPane.java" startLine="214" startPosition="41" endLine="222" endPosition="5">
-      <varInfo nodeId="1204027260588" varName="prefix" />
       <varInfo nodeId="1204027187689" varName="path" />
+      <varInfo nodeId="1204027260588" varName="prefix" />
     </scopeInfo>
     <scopeInfo nodeId="8115509433044634446" fileName="NewDevKitDialogContentPane.java" startLine="196" startPosition="116" endLine="207" endPosition="0" />
     <scopeInfo nodeId="1204027179199" fileName="NewDevKitDialogContentPane.java" startLine="213" startPosition="0" endLine="224" endPosition="0" />
     <scopeInfo nodeId="1204027050089" fileName="NewDevKitDialogContentPane.java" startLine="187" startPosition="27" endLine="207" endPosition="70">
-      <varInfo nodeId="4015801747712977595" varName="message" />
       <varInfo nodeId="1217961860099" varName="ideaProject" />
+      <varInfo nodeId="4015801747712977595" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="1204027050087" fileName="NewDevKitDialogContentPane.java" startLine="186" startPosition="0" endLine="209" endPosition="0" />
+    <unitInfo nodeId="8115509433044634446" fileName="NewDevKitDialogContentPane.java" startLine="196" startPosition="71" endLine="207" endPosition="5" unitName="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialogContentPane$2" />
     <unitInfo nodeId="4543209876460447836" fileName="NewDevKitDialogContentPane.java" startLine="202" startPosition="15" endLine="205" endPosition="9" unitName="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialogContentPane$3" />
     <unitInfo nodeId="4543209876460447823" fileName="NewDevKitDialogContentPane.java" startLine="198" startPosition="150" endLine="202" endPosition="9" unitName="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialogContentPane$3" />
-    <unitInfo nodeId="8115509433044634446" fileName="NewDevKitDialogContentPane.java" startLine="196" startPosition="71" endLine="207" endPosition="5" unitName="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialogContentPane$2" />
   </root>
 </debugInfo>
 

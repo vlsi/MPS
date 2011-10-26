@@ -22,8 +22,8 @@
     <scopeInfo nodeId="7757449281563189197" fileName="EvaluationContext.java" startLine="29" startPosition="35" endLine="30" endPosition="21" />
     <scopeInfo nodeId="7757449281563189203" fileName="EvaluationContext.java" startLine="33" startPosition="47" endLine="34" endPosition="24" />
     <scopeInfo nodeId="2416198621220138441" fileName="EvaluationContext.java" startLine="45" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="2416198621220152656" varName="variableType" />
       <varInfo nodeId="2416198621220152653" varName="variableName" />
+      <varInfo nodeId="2416198621220152656" varName="variableType" />
     </scopeInfo>
     <scopeInfo nodeId="2416198621220152659" fileName="EvaluationContext.java" startLine="47" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="2416198621220200367" varName="thisType" />
@@ -320,8 +320,8 @@
       <varInfo nodeId="7757449281563189667" varName="language" />
     </scopeInfo>
     <scopeInfo nodeId="650256487570793934" fileName="AbstractEvaluationModel.java" startLine="247" startPosition="302" endLine="251" endPosition="0">
-      <varInfo nodeId="650256487570793941" varName="p1" />
       <varInfo nodeId="650256487570793939" varName="p0" />
+      <varInfo nodeId="650256487570793941" varName="p1" />
     </scopeInfo>
     <scopeInfo nodeId="650256487570793944" fileName="AbstractEvaluationModel.java" startLine="251" startPosition="0" endLine="255" endPosition="0" />
     <scopeInfo nodeId="650256487570793948" fileName="AbstractEvaluationModel.java" startLine="255" startPosition="0" endLine="259" endPosition="0">
@@ -331,9 +331,9 @@
     <scopeInfo nodeId="7757449281563189911" fileName="AbstractEvaluationModel.java" startLine="306" startPosition="0" endLine="310" endPosition="0" />
     <scopeInfo nodeId="7757449281563189922" fileName="AbstractEvaluationModel.java" startLine="310" startPosition="0" endLine="314" endPosition="0" />
     <scopeInfo nodeId="7757449281563189241" fileName="AbstractEvaluationModel.java" startLine="317" startPosition="0" endLine="321" endPosition="5">
+      <varInfo nodeId="7757449281563189258" varName="classpaths" />
       <varInfo nodeId="7757449281563189256" varName="keepSources" />
       <varInfo nodeId="7757449281563189254" varName="reloadClasses" />
-      <varInfo nodeId="7757449281563189258" varName="classpaths" />
     </scopeInfo>
     <scopeInfo nodeId="276193728322520123" fileName="AbstractEvaluationModel.java" startLine="134" startPosition="71" endLine="139" endPosition="81" />
     <scopeInfo nodeId="7757449281563189597" fileName="AbstractEvaluationModel.java" startLine="155" startPosition="0" endLine="160" endPosition="0" />
@@ -361,13 +361,13 @@
     </scopeInfo>
     <scopeInfo nodeId="7757449281563189333" fileName="AbstractEvaluationModel.java" startLine="343" startPosition="32" endLine="354" endPosition="0" />
     <scopeInfo nodeId="1400711440828853597" fileName="AbstractEvaluationModel.java" startLine="168" startPosition="31" endLine="181" endPosition="239">
+      <varInfo nodeId="1400711440828889730" varName="lastStatement" />
       <varInfo nodeId="1400711440828853614" varName="statements" />
       <varInfo nodeId="864648422614490931" varName="suffix" />
-      <varInfo nodeId="1400711440828889730" varName="lastStatement" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563189786" fileName="AbstractEvaluationModel.java" startLine="269" startPosition="57" endLine="283" endPosition="25">
-      <varInfo nodeId="7757449281563189818" varName="evaluator" />
       <varInfo nodeId="7757449281563189806" varName="clazz" />
+      <varInfo nodeId="7757449281563189818" varName="evaluator" />
       <varInfo nodeId="7757449281563189796" varName="parentClassLoader" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563189324" fileName="AbstractEvaluationModel.java" startLine="340" startPosition="26" endLine="355" endPosition="9">
@@ -380,11 +380,11 @@
     <scopeInfo nodeId="5439191097839081449" fileName="AbstractEvaluationModel.java" startLine="211" startPosition="70" endLine="228" endPosition="222" />
     <scopeInfo nodeId="3988550529129685728" fileName="AbstractEvaluationModel.java" startLine="165" startPosition="35" endLine="183" endPosition="7" />
     <scopeInfo nodeId="7757449281563189450" fileName="AbstractEvaluationModel.java" startLine="83" startPosition="0" endLine="102" endPosition="3">
-      <varInfo nodeId="7757449281563189451" varName="project" />
-      <varInfo nodeId="7757449281563189453" varName="session" />
       <varInfo nodeId="7757449281563189456" varName="auxModule" />
       <varInfo nodeId="7757449281563189459" varName="context" />
       <varInfo nodeId="1488682280965841491" varName="isShowContext" />
+      <varInfo nodeId="7757449281563189451" varName="project" />
+      <varInfo nodeId="7757449281563189453" varName="session" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563189313" fileName="AbstractEvaluationModel.java" startLine="338" startPosition="155" endLine="357" endPosition="78">
       <varInfo nodeId="7757449281563189315" varName="model" />
@@ -395,33 +395,33 @@
     <scopeInfo nodeId="3988550529129685725" fileName="AbstractEvaluationModel.java" startLine="164" startPosition="0" endLine="185" endPosition="0" />
     <scopeInfo nodeId="864648422614435066" fileName="AbstractEvaluationModel.java" startLine="186" startPosition="62" endLine="208" endPosition="223" />
     <scopeInfo nodeId="7757449281563189300" fileName="AbstractEvaluationModel.java" startLine="336" startPosition="0" endLine="359" endPosition="0">
+      <varInfo nodeId="7757449281563189307" varName="context" />
+      <varInfo nodeId="7757449281563189303" varName="inputModel" />
       <varInfo nodeId="7757449281563189301" varName="module" />
       <varInfo nodeId="7757449281563189309" varName="monitor" />
       <varInfo nodeId="7757449281563189305" varName="status" />
-      <varInfo nodeId="7757449281563189307" varName="context" />
-      <varInfo nodeId="7757449281563189303" varName="inputModel" />
     </scopeInfo>
     <scopeInfo nodeId="864648422614435063" fileName="AbstractEvaluationModel.java" startLine="185" startPosition="0" endLine="210" endPosition="0">
       <varInfo nodeId="864648422614446818" varName="expression" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563189655" fileName="AbstractEvaluationModel.java" startLine="233" startPosition="9" endLine="288" endPosition="7">
+      <varInfo nodeId="7757449281563189657" varName="classpaths" />
+      <varInfo nodeId="7757449281563189706" varName="fullClassName" />
+      <varInfo nodeId="7757449281563189718" varName="handler" />
+      <varInfo nodeId="7757449281563189727" varName="ideaProject" />
+      <varInfo nodeId="7757449281563189737" varName="messageHandler" />
+      <varInfo nodeId="7757449281563189682" varName="path" />
       <varInfo nodeId="7757449281563189743" varName="progressWindow" />
       <varInfo nodeId="7757449281563189776" varName="source" />
-      <varInfo nodeId="7757449281563189682" varName="path" />
-      <varInfo nodeId="7757449281563189706" varName="fullClassName" />
       <varInfo nodeId="7757449281563189757" varName="successful" />
-      <varInfo nodeId="7757449281563189737" varName="messageHandler" />
-      <varInfo nodeId="7757449281563189727" varName="ideaProject" />
-      <varInfo nodeId="7757449281563189657" varName="classpaths" />
-      <varInfo nodeId="7757449281563189718" varName="handler" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563189615" fileName="AbstractEvaluationModel.java" startLine="232" startPosition="58" endLine="302" endPosition="5" />
     <scopeInfo nodeId="7757449281563189612" fileName="AbstractEvaluationModel.java" startLine="230" startPosition="0" endLine="304" endPosition="0" />
-    <unitInfo nodeId="5439191097839093342" fileName="AbstractEvaluationModel.java" startLine="219" startPosition="379" endLine="226" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel$2" />
+    <unitInfo nodeId="7757449281563189239" fileName="AbstractEvaluationModel.java" startLine="69" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel" />
     <unitInfo nodeId="1400711440828853592" fileName="AbstractEvaluationModel.java" startLine="167" startPosition="52" endLine="183" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel$1" />
+    <unitInfo nodeId="5439191097839093342" fileName="AbstractEvaluationModel.java" startLine="219" startPosition="379" endLine="226" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel$2" />
     <unitInfo nodeId="650256487570793932" fileName="AbstractEvaluationModel.java" startLine="247" startPosition="269" endLine="263" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel$3" />
     <unitInfo nodeId="7757449281563189240" fileName="AbstractEvaluationModel.java" startLine="315" startPosition="0" endLine="360" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel$MyInMemoryJavaGenerationHandler" />
-    <unitInfo nodeId="7757449281563189239" fileName="AbstractEvaluationModel.java" startLine="69" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel" />
   </root>
   <root nodeId="7757449281563189928">
     <nodeInfo nodeId="7757449281563190031" fileName="HighLevelEvaluationModel.java" startLine="19" startPosition="71" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocationRootCopy" />
@@ -487,9 +487,9 @@
       <varInfo nodeId="7757449281563189970" varName="parentsCopy" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190062" fileName="HighLevelEvaluationModel.java" startLine="27" startPosition="25" endLine="37" endPosition="79">
-      <varInfo nodeId="7757449281563190086" varName="locationRoot" />
-      <varInfo nodeId="7757449281563190098" varName="locationNodeCopy" />
       <varInfo nodeId="7757449281563190080" varName="locationNode" />
+      <varInfo nodeId="7757449281563190098" varName="locationNodeCopy" />
+      <varInfo nodeId="7757449281563190086" varName="locationRoot" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563189952" fileName="HighLevelEvaluationModel.java" startLine="50" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="7757449281563189957" varName="originalNodeToFind" />
@@ -499,14 +499,14 @@
     <scopeInfo nodeId="7757449281563190061" fileName="HighLevelEvaluationModel.java" startLine="26" startPosition="67" endLine="39" endPosition="0" />
     <scopeInfo nodeId="7757449281563190049" fileName="HighLevelEvaluationModel.java" startLine="23" startPosition="141" endLine="39" endPosition="7" />
     <scopeInfo nodeId="7757449281563190038" fileName="HighLevelEvaluationModel.java" startLine="22" startPosition="0" endLine="40" endPosition="3">
-      <varInfo nodeId="7757449281563190039" varName="project" />
-      <varInfo nodeId="7757449281563190044" varName="module" />
-      <varInfo nodeId="7757449281563190041" varName="session" />
       <varInfo nodeId="1488682280965852224" varName="isInContext" />
+      <varInfo nodeId="7757449281563190044" varName="module" />
+      <varInfo nodeId="7757449281563190039" varName="project" />
+      <varInfo nodeId="7757449281563190041" varName="session" />
     </scopeInfo>
+    <unitInfo nodeId="7757449281563189928" fileName="HighLevelEvaluationModel.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.HighLevelEvaluationModel" />
     <unitInfo nodeId="7757449281563189988" fileName="HighLevelEvaluationModel.java" startLine="56" startPosition="85" endLine="60" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.HighLevelEvaluationModel$1" />
     <unitInfo nodeId="7757449281563190061" fileName="HighLevelEvaluationModel.java" startLine="26" startPosition="55" endLine="39" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.HighLevelEvaluationModel$2" />
-    <unitInfo nodeId="7757449281563189928" fileName="HighLevelEvaluationModel.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.HighLevelEvaluationModel" />
   </root>
   <root nodeId="7757449281563190134">
     <nodeInfo nodeId="7757449281563190134" fileName="LowLevelEvaluationModel.java" startLine="50" startPosition="70" endLine="51" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -675,10 +675,10 @@
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190338" fileName="LowLevelEvaluationModel.java" startLine="174" startPosition="27" endLine="176" endPosition="135" />
     <scopeInfo nodeId="9031758500691519180" fileName="LowLevelEvaluationModel.java" startLine="55" startPosition="0" endLine="58" endPosition="3">
-      <varInfo nodeId="9031758500691519194" varName="project" />
-      <varInfo nodeId="9031758500691519201" varName="module" />
-      <varInfo nodeId="9031758500691519198" varName="session" />
       <varInfo nodeId="1488682280965902407" varName="isShowContext" />
+      <varInfo nodeId="9031758500691519201" varName="module" />
+      <varInfo nodeId="9031758500691519194" varName="project" />
+      <varInfo nodeId="9031758500691519198" varName="session" />
     </scopeInfo>
     <scopeInfo nodeId="3008679287531804386" fileName="LowLevelEvaluationModel.java" startLine="151" startPosition="59" endLine="154" endPosition="28">
       <varInfo nodeId="3008679287531804396" varName="evaluatorConcept" />
@@ -704,12 +704,12 @@
     <scopeInfo nodeId="8527137208266038821" fileName="LowLevelEvaluationModel.java" startLine="236" startPosition="34" endLine="240" endPosition="135" />
     <scopeInfo nodeId="8527137208266038799" fileName="LowLevelEvaluationModel.java" startLine="250" startPosition="0" endLine="254" endPosition="0" />
     <scopeInfo nodeId="7757449281563190456" fileName="LowLevelEvaluationModel.java" startLine="69" startPosition="56" endLine="74" endPosition="13">
-      <varInfo nodeId="7757449281563190466" varName="stubPath" />
       <varInfo nodeId="7757449281563190458" varName="path" />
+      <varInfo nodeId="7757449281563190466" varName="stubPath" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190488" fileName="LowLevelEvaluationModel.java" startLine="78" startPosition="53" endLine="83" endPosition="13">
-      <varInfo nodeId="7757449281563190496" varName="stubPath" />
       <varInfo nodeId="7757449281563190490" varName="path" />
+      <varInfo nodeId="7757449281563190496" varName="stubPath" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190247" fileName="LowLevelEvaluationModel.java" startLine="119" startPosition="0" endLine="124" endPosition="0" />
     <scopeInfo nodeId="7757449281563190254" fileName="LowLevelEvaluationModel.java" startLine="124" startPosition="0" endLine="129" endPosition="0" />
@@ -759,12 +759,12 @@
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190330" fileName="LowLevelEvaluationModel.java" startLine="170" startPosition="0" endLine="186" endPosition="0" />
     <scopeInfo nodeId="7757449281563190429" fileName="LowLevelEvaluationModel.java" startLine="64" startPosition="25" endLine="87" endPosition="38">
-      <varInfo nodeId="7757449281563190437" varName="pathsToAdd" />
       <varInfo nodeId="7757449281563190431" varName="classPath" />
+      <varInfo nodeId="7757449281563190437" varName="pathsToAdd" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190563" fileName="LowLevelEvaluationModel.java" startLine="203" startPosition="99" endLine="226" endPosition="67">
-      <varInfo nodeId="8527137208266038712" varName="name" />
       <varInfo nodeId="8527137208266038716" varName="lowLevelVarNode" />
+      <varInfo nodeId="8527137208266038712" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190140" fileName="LowLevelEvaluationModel.java" startLine="93" startPosition="63" endLine="117" endPosition="26">
       <varInfo nodeId="7757449281563190228" varName="classifierType" />
@@ -778,31 +778,31 @@
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190391" fileName="LowLevelEvaluationModel.java" startLine="60" startPosition="169" endLine="89" endPosition="7" />
     <scopeInfo nodeId="7757449281563190380" fileName="LowLevelEvaluationModel.java" startLine="59" startPosition="0" endLine="90" endPosition="3">
-      <varInfo nodeId="7757449281563190381" varName="project" />
-      <varInfo nodeId="7757449281563190386" varName="module" />
-      <varInfo nodeId="7757449281563190383" varName="session" />
       <varInfo nodeId="9031758500691519175" varName="context" />
       <varInfo nodeId="1488682280965852208" varName="isShowContext" />
+      <varInfo nodeId="7757449281563190386" varName="module" />
+      <varInfo nodeId="7757449281563190381" varName="project" />
+      <varInfo nodeId="7757449281563190383" varName="session" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190529" fileName="LowLevelEvaluationModel.java" startLine="189" startPosition="9" endLine="242" endPosition="74">
       <varInfo nodeId="7757449281563190543" varName="contextVariables" />
       <varInfo nodeId="7757449281563190531" varName="createClassifierType" />
-      <varInfo nodeId="7757449281563190552" varName="foundVars" />
       <varInfo nodeId="8738666552765516328" varName="declaredVariables" />
+      <varInfo nodeId="7757449281563190552" varName="foundVars" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190523" fileName="LowLevelEvaluationModel.java" startLine="187" startPosition="32" endLine="248" endPosition="34">
       <varInfo nodeId="7757449281563190525" varName="evaluatorConcept" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190520" fileName="LowLevelEvaluationModel.java" startLine="186" startPosition="0" endLine="250" endPosition="0" />
-    <unitInfo nodeId="7518693026194964351" fileName="LowLevelEvaluationModel.java" startLine="180" startPosition="45" endLine="184" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$3" />
-    <unitInfo nodeId="7757449281563190535" fileName="LowLevelEvaluationModel.java" startLine="190" startPosition="95" endLine="194" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$5" />
-    <unitInfo nodeId="7757449281563190652" fileName="LowLevelEvaluationModel.java" startLine="230" startPosition="90" endLine="234" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$6" />
-    <unitInfo nodeId="7757449281563190337" fileName="LowLevelEvaluationModel.java" startLine="173" startPosition="47" endLine="178" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$2" />
-    <unitInfo nodeId="7328148232284256038" fileName="LowLevelEvaluationModel.java" startLine="258" startPosition="26" endLine="265" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$7" />
-    <unitInfo nodeId="7757449281563190181" fileName="LowLevelEvaluationModel.java" startLine="99" startPosition="51" endLine="111" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$1" />
-    <unitInfo nodeId="7757449281563190449" fileName="LowLevelEvaluationModel.java" startLine="67" startPosition="29" endLine="85" endPosition="9" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$5" />
-    <unitInfo nodeId="7757449281563190428" fileName="LowLevelEvaluationModel.java" startLine="63" startPosition="46" endLine="89" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$4" />
     <unitInfo nodeId="7757449281563190134" fileName="LowLevelEvaluationModel.java" startLine="50" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel" />
+    <unitInfo nodeId="7757449281563190181" fileName="LowLevelEvaluationModel.java" startLine="99" startPosition="51" endLine="111" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$1" />
+    <unitInfo nodeId="7757449281563190337" fileName="LowLevelEvaluationModel.java" startLine="173" startPosition="47" endLine="178" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$2" />
+    <unitInfo nodeId="7518693026194964351" fileName="LowLevelEvaluationModel.java" startLine="180" startPosition="45" endLine="184" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$3" />
+    <unitInfo nodeId="7757449281563190428" fileName="LowLevelEvaluationModel.java" startLine="63" startPosition="46" endLine="89" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$4" />
+    <unitInfo nodeId="7757449281563190535" fileName="LowLevelEvaluationModel.java" startLine="190" startPosition="95" endLine="194" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$5" />
+    <unitInfo nodeId="7757449281563190449" fileName="LowLevelEvaluationModel.java" startLine="67" startPosition="29" endLine="85" endPosition="9" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$5" />
+    <unitInfo nodeId="7757449281563190652" fileName="LowLevelEvaluationModel.java" startLine="230" startPosition="90" endLine="234" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$6" />
+    <unitInfo nodeId="7328148232284256038" fileName="LowLevelEvaluationModel.java" startLine="258" startPosition="26" endLine="265" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel$7" />
   </root>
   <root nodeId="7757449281563190727">
     <nodeInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="55" startPosition="58" endLine="56" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -1262,8 +1262,8 @@
     <scopeInfo nodeId="2416198621220213049" fileName="StackFrameContext.java" startLine="244" startPosition="53" endLine="258" endPosition="21" />
     <scopeInfo nodeId="2416198621220213883" fileName="StackFrameContext.java" startLine="181" startPosition="0" endLine="196" endPosition="0" />
     <scopeInfo nodeId="7757449281563190755" fileName="StackFrameContext.java" startLine="77" startPosition="34" endLine="93" endPosition="24">
-      <varInfo nodeId="7757449281563190763" varName="locationNode" />
       <varInfo nodeId="7757449281563190757" varName="javaStackFrame" />
+      <varInfo nodeId="7757449281563190763" varName="locationNode" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="449" startPosition="7" endLine="465" endPosition="31" />
     <scopeInfo nodeId="2416198621220205722" fileName="StackFrameContext.java" startLine="151" startPosition="31" endLine="168" endPosition="0" />
@@ -1280,8 +1280,8 @@
       <varInfo nodeId="2416198621220205708" varName="javaStackFrame" />
     </scopeInfo>
     <scopeInfo nodeId="2416198621220205662" fileName="StackFrameContext.java" startLine="240" startPosition="0" endLine="263" endPosition="0">
-      <varInfo nodeId="2416198621220205665" varName="variableType" />
       <varInfo nodeId="2416198621220205663" varName="variableName" />
+      <varInfo nodeId="2416198621220205665" varName="variableType" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="444" startPosition="49" endLine="467" endPosition="20" />
     <scopeInfo nodeId="7757449281563191078" fileName="StackFrameContext.java" startLine="210" startPosition="40" endLine="234" endPosition="7" />
@@ -1305,7 +1305,11 @@
     <scopeInfo nodeId="7757449281563190843" fileName="StackFrameContext.java" startLine="105" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="7757449281563190964" varName="createClassifierType" />
     </scopeInfo>
+    <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="55" startPosition="0" endLine="471" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext" />
+    <unitInfo nodeId="2416198621220205840" fileName="StackFrameContext.java" startLine="110" startPosition="24" endLine="142" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$1" />
+    <unitInfo nodeId="2416198621220213048" fileName="StackFrameContext.java" startLine="243" startPosition="24" endLine="260" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$2" />
     <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="304" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$QuotationClass_4zsmpx_a0a0a0b0j" />
+    <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="440" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$QuotationClass_4zsmpx_a0a0a1a9" />
     <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="321" startPosition="0" endLine="337" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$QuotationClass_4zsmpx_a0a0b0b0j" />
     <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="338" startPosition="0" endLine="354" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$QuotationClass_4zsmpx_a0a0c0b0j" />
     <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="355" startPosition="0" endLine="371" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$QuotationClass_4zsmpx_a0a0d0b0j" />
@@ -1313,10 +1317,6 @@
     <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="389" startPosition="0" endLine="405" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$QuotationClass_4zsmpx_a0a0f0b0j" />
     <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="406" startPosition="0" endLine="422" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$QuotationClass_4zsmpx_a0a0g0b0j" />
     <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="423" startPosition="0" endLine="439" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$QuotationClass_4zsmpx_a0a0h0b0j" />
-    <unitInfo nodeId="2416198621220213048" fileName="StackFrameContext.java" startLine="243" startPosition="24" endLine="260" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$2" />
-    <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="440" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$QuotationClass_4zsmpx_a0a0a1a9" />
-    <unitInfo nodeId="2416198621220205840" fileName="StackFrameContext.java" startLine="110" startPosition="24" endLine="142" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext$1" />
-    <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="55" startPosition="0" endLine="471" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext" />
   </root>
 </debugInfo>
 

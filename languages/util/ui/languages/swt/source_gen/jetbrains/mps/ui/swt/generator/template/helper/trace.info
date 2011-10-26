@@ -24,13 +24,13 @@
     <scopeInfo nodeId="873604604380664470" fileName="SWTTransientValues.java" startLine="25" startPosition="65" endLine="29" endPosition="75" />
     <scopeInfo nodeId="873604604380664498" fileName="SWTTransientValues.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="873604604380664440" fileName="SWTTransientValues.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="873604604380664463" varName="genContext" />
       <varInfo nodeId="873604604380664465" varName="node" />
       <varInfo nodeId="873604604380664467" varName="value" />
-      <varInfo nodeId="873604604380664463" varName="genContext" />
     </scopeInfo>
     <scopeInfo nodeId="873604604380664469" fileName="SWTTransientValues.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="873604604380664496" varName="node" />
       <varInfo nodeId="873604604380664494" varName="genContext" />
+      <varInfo nodeId="873604604380664496" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="873604604380664433" fileName="SWTTransientValues.java" startLine="8" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.swt.generator.template.helper.SWTTransientValues" />
   </root>

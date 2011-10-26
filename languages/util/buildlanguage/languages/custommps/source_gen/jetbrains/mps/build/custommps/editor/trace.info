@@ -530,8 +530,8 @@
     <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="17" startPosition="78" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="14" startPosition="68" endLine="28" endPosition="17" />
     <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="41" endLine="30" endPosition="0" />
-    <unitInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="17" startPosition="46" endLine="27" endPosition="5" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet$1" />
     <unitInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet" />
+    <unitInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="17" startPosition="46" endLine="27" endPosition="5" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet$1" />
   </root>
   <root nodeId="2235195415637073420">
     <nodeInfo nodeId="2235195415637073420" fileName="MPSDistribution_Editor.java" startLine="118" startPosition="69" endLine="118" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

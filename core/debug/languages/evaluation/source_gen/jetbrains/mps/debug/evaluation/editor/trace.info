@@ -557,8 +557,8 @@
     <scopeInfo nodeId="6036237525966243740" fileName="EvaluatorConcept_Editor.java" startLine="270" startPosition="0" endLine="288" endPosition="0" />
     <scopeInfo nodeId="6036237525966243740" fileName="EvaluatorConcept_Editor.java" startLine="245" startPosition="87" endLine="268" endPosition="22" />
     <scopeInfo nodeId="6036237525966243740" fileName="EvaluatorConcept_Editor.java" startLine="244" startPosition="0" endLine="270" endPosition="0" />
-    <unitInfo nodeId="6036237525966243740" fileName="EvaluatorConcept_Editor.java" startLine="293" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.debug.evaluation.editor.EvaluatorConcept_Editor$variablesListHandler_6rl195_a2c1a0" />
     <unitInfo nodeId="6036237525966243740" fileName="EvaluatorConcept_Editor.java" startLine="31" startPosition="0" endLine="329" endPosition="0" unitName="jetbrains.mps.debug.evaluation.editor.EvaluatorConcept_Editor" />
+    <unitInfo nodeId="6036237525966243740" fileName="EvaluatorConcept_Editor.java" startLine="293" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.debug.evaluation.editor.EvaluatorConcept_Editor$variablesListHandler_6rl195_a2c1a0" />
   </root>
   <root nodeId="6036237525966315976">
     <nodeInfo nodeId="6036237525966315976" fileName="EvaluatorsThisExpression_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -822,9 +822,9 @@
     <scopeInfo nodeId="6036237525966316033" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="111" startPosition="87" endLine="130" endPosition="22" />
     <scopeInfo nodeId="6036237525966316033" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="152" startPosition="0" endLine="171" endPosition="0" />
     <scopeInfo nodeId="6036237525966316033" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="110" startPosition="0" endLine="132" endPosition="0" />
+    <unitInfo nodeId="6036237525966316033" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="36" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.debug.evaluation.editor.EvaluatorsSuperMethodCall_Editor" />
     <unitInfo nodeId="6036237525966316033" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="140" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.debug.evaluation.editor.EvaluatorsSuperMethodCall_Editor$_Inline_2iixvv_a3a" />
     <unitInfo nodeId="6036237525966316033" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="173" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.debug.evaluation.editor.EvaluatorsSuperMethodCall_Editor$actualArgumentListHandler_2iixvv_f0" />
-    <unitInfo nodeId="6036237525966316033" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="36" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.debug.evaluation.editor.EvaluatorsSuperMethodCall_Editor" />
   </root>
   <root nodeId="8865717792178019930">
     <nodeInfo nodeId="8865717792178019930" fileName="LowLevelVariableReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -899,8 +899,8 @@
     <scopeInfo nodeId="8865717792178019930" fileName="LowLevelVariableReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="8865717792178019930" fileName="LowLevelVariableReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="8865717792178019930" fileName="LowLevelVariableReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="8865717792178019930" fileName="LowLevelVariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debug.evaluation.editor.LowLevelVariableReference_Editor$_Inline_gezuba_a0a" />
     <unitInfo nodeId="8865717792178019930" fileName="LowLevelVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debug.evaluation.editor.LowLevelVariableReference_Editor" />
+    <unitInfo nodeId="8865717792178019930" fileName="LowLevelVariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debug.evaluation.editor.LowLevelVariableReference_Editor$_Inline_gezuba_a0a" />
   </root>
 </debugInfo>
 

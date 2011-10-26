@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3fxcjnm8bj5bh3dgqbwxqe98wdk6p2w" parametersHash="bd2md4kisf64tmz12qeimkxk3so7ywz">
+<dependencies version="2" modelHash="38l5w1uj66ge3bp2a5mggypb0km57j4">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3lxfcg9w0sl635r6n0c4d5sryip3kpx" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="7c5ssk9ukgkps0ad18aex01o7lv119u" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="akfobdt43q9rrlj8pszut5gr07xi91o" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="1qpl4dcq87orqyeop7drkzps9naovu7" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="4592mc0c92ee86m4hdnk27h6ntxlxqu" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <common hash="8rjylx9w5k9jodrc7ki7do5p7rf5f9d" />
-  <source id="4727801710070560812" name="IValueProxy" hash="1zf71s5iqhphl3xja2jxw2epx0qm3d2">
+  <common hash="-a4fra0hh5x4w9kkfmv195waxse9axub" />
+  <source id="4727801710070560812" name="IValueProxy" hash="4l4a67hqvni0snngfyk8q4r6rws9xk2">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IValueProxy.java" />
   </source>
-  <source id="4727801710070560831" name="IterableProxy" hash="3hr5ajikov3c6dcxi4gi63dd6kruvm8">
+  <source id="4727801710070560831" name="IterableProxy" hash="-bngpb607gnew6djluersnrpfylnsr87">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -18,7 +18,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IterableProxy.java" />
   </source>
-  <source id="4727801710070560969" name="IterableArrayProxy" hash="1o18kikyfcw04pmv7tkjdhtrba37t20">
+  <source id="4727801710070560969" name="IterableArrayProxy" hash="-b3udh0hhiiw9glb1j3sewneo58lcxqa">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -26,7 +26,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IterableArrayProxy.java" />
   </source>
-  <source id="4727801710070561042" name="MirrorUtil" hash="-1jgt578318n16n92exe4ey0v965e0l3">
+  <source id="4727801710070561042" name="MirrorUtil" hash="9p2h1dbxlrob1uvsnsrxzt4c12d8yga">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -34,7 +34,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MirrorUtil.java" />
   </source>
-  <source id="4727801710070562884" name="IArrayValueProxy" hash="-5myjnngifw0w1ky82qqn96sva08kbc8">
+  <source id="4727801710070562884" name="IArrayValueProxy" hash="cz2e6jjluwuhbuyq2oiuvdkc2idfrj0">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IArrayValueProxy.java" />
   </source>
@@ -46,7 +46,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ProxyEqualsUtil.java" />
   </source>
-  <source id="4727801710070562951" name="ArrayValueProxy" hash="9vk8yzszfxx5kq4lsvfjfej2mmoe4gm">
+  <source id="4727801710070562951" name="ArrayValueProxy" hash="6jmgoy1zp40d8af6n4zooa1npsg1rn1">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -54,7 +54,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ArrayValueProxy.java" />
   </source>
-  <source id="4727801710070563282" name="ObjectValueProxy" hash="-8knl02aatvd9gioe0cu0i1s33ale1od">
+  <source id="4727801710070563282" name="ObjectValueProxy" hash="-1gl2ymx0c7zarxi61ribbici1rohb91">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -62,17 +62,17 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ObjectValueProxy.java" />
   </source>
-  <source id="4727801710070563570" name="IObjectValueProxy" hash="-5wmayb0j4zfrixdw91c2w9wd8dejfgv">
+  <source id="4727801710070563570" name="IObjectValueProxy" hash="-1rp4j3xoiouekna93y0lkz9k0506zvh">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IObjectValueProxy.java" />
   </source>
-  <source id="4727801710070563612" name="ValueProxy" hash="-dkg50knbjzgs6rtk2vid8mgl6rm5f5v">
+  <source id="4727801710070563612" name="ValueProxy" hash="-680bix0kztkzayo1g8s9amrjb5bazhc">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ValueProxy.java" />
   </source>
-  <source id="4727801710070563692" name="NullValueProxy" hash="qya8mbkz10vgf256rcldci1fydwgoz">
+  <source id="4727801710070563692" name="NullValueProxy" hash="2fhajrszz2l5ql7bb9z3e86swa2fcur">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NullValueProxy.java" />
@@ -80,12 +80,12 @@
   <source id="4727801710070563864" name="INullValueProxy" hash="-b859nxiq3jy4rejqydt4zothts3967v">
     <file name="INullValueProxy.java" />
   </source>
-  <source id="4727801710070563868" name="VoidValueProxy" hash="-ryva60pjxx1ron6tsyorwlgf89q4kv">
+  <source id="4727801710070563868" name="VoidValueProxy" hash="54fo9hm2w7k1cbfjj2n1wa3fuspof49">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VoidValueProxy.java" />
   </source>
-  <source id="4727801710070563929" name="PrimitiveValueProxy" hash="-cyvzu34gzlva673lw9jmska6gif3xdn">
+  <source id="4727801710070563929" name="PrimitiveValueProxy" hash="-6s6sliqv81bcdfzb3z9545xs40mso4a">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

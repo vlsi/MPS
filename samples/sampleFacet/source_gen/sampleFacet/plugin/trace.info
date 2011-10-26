@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="sampleFacet.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="sampleFacet.plugin.FacetManifest$1" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="sampleFacet.plugin.FacetAspectDescriptor" />
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="sampleFacet.plugin.FacetAspectDescriptor$1" />
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="sampleFacet.plugin.FacetManifest" />
+  <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="sampleFacet.plugin.FacetManifest$1" />
   <root nodeId="5590401931537536727">
     <nodeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="34" startPosition="47" endLine="35" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="35" startPosition="82" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
@@ -271,10 +271,10 @@
     <scopeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="285" startPosition="0" endLine="297" endPosition="0" />
     <scopeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="299" startPosition="11" endLine="312" endPosition="9" />
     <scopeInfo nodeId="5590401931537536734" fileName="Sample_Facet.java" startLine="82" startPosition="48" endLine="97" endPosition="17">
-      <varInfo nodeId="5590401931537536742" varName="paramVal" />
       <varInfo nodeId="1345172589086003935" varName="countVal" />
-      <varInfo nodeId="8014813979421756110" varName="sarch" />
       <varInfo nodeId="5590401931537536736" varName="mres" />
+      <varInfo nodeId="5590401931537536742" varName="paramVal" />
+      <varInfo nodeId="8014813979421756110" varName="sarch" />
     </scopeInfo>
     <scopeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="298" startPosition="83" endLine="314" endPosition="7" />
     <scopeInfo nodeId="5590401931537536733" fileName="Sample_Facet.java" startLine="81" startPosition="19" endLine="98" endPosition="15">
@@ -290,14 +290,14 @@
     <scopeInfo nodeId="5590401931537536731" fileName="Sample_Facet.java" startLine="77" startPosition="30" endLine="104" endPosition="0" />
     <scopeInfo nodeId="5590401931537536729" fileName="Sample_Facet.java" startLine="76" startPosition="29" endLine="104" endPosition="8" />
     <scopeInfo nodeId="5590401931537536729" fileName="Sample_Facet.java" startLine="75" startPosition="0" endLine="106" endPosition="0" />
-    <unitInfo nodeId="1670948443106485492" fileName="Sample_Facet.java" startLine="216" startPosition="63" endLine="222" endPosition="17" unitName="sampleFacet.plugin.Sample_Facet$2" />
+    <unitInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="34" startPosition="0" endLine="318" endPosition="0" unitName="sampleFacet.plugin.Sample_Facet" />
     <unitInfo nodeId="1670948443106462371" fileName="Sample_Facet.java" startLine="209" startPosition="17" endLine="229" endPosition="7" unitName="sampleFacet.plugin.Sample_Facet$1" />
     <unitInfo nodeId="5590401931537536731" fileName="Sample_Facet.java" startLine="77" startPosition="17" endLine="104" endPosition="7" unitName="sampleFacet.plugin.Sample_Facet$1" />
+    <unitInfo nodeId="1670948443106485492" fileName="Sample_Facet.java" startLine="216" startPosition="63" endLine="222" endPosition="17" unitName="sampleFacet.plugin.Sample_Facet$2" />
     <unitInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="282" startPosition="0" endLine="317" endPosition="0" unitName="sampleFacet.plugin.Sample_Facet$TargetProperties" />
-    <unitInfo nodeId="5590401931537536771" fileName="Sample_Facet.java" startLine="159" startPosition="0" endLine="197" endPosition="0" unitName="sampleFacet.plugin.Sample_Facet.Target_readParams$Parameters" />
-    <unitInfo nodeId="1670948443106462369" fileName="Sample_Facet.java" startLine="199" startPosition="0" endLine="281" endPosition="0" unitName="sampleFacet.plugin.Sample_Facet$Target_reportFiles" />
     <unitInfo nodeId="5590401931537536729" fileName="Sample_Facet.java" startLine="67" startPosition="0" endLine="198" endPosition="0" unitName="sampleFacet.plugin.Sample_Facet$Target_readParams" />
-    <unitInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="34" startPosition="0" endLine="318" endPosition="0" unitName="sampleFacet.plugin.Sample_Facet" />
+    <unitInfo nodeId="1670948443106462369" fileName="Sample_Facet.java" startLine="199" startPosition="0" endLine="281" endPosition="0" unitName="sampleFacet.plugin.Sample_Facet$Target_reportFiles" />
+    <unitInfo nodeId="5590401931537536771" fileName="Sample_Facet.java" startLine="159" startPosition="0" endLine="197" endPosition="0" unitName="sampleFacet.plugin.Sample_Facet.Target_readParams$Parameters" />
   </root>
 </debugInfo>
 

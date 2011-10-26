@@ -194,16 +194,16 @@
       <varInfo nodeId="1883223317721340769" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="6007597446559172594" fileName="LatticeUtil.java" startLine="117" startPosition="51" endLine="131" endPosition="29">
-      <varInfo nodeId="6007597446559177586" varName="result" />
       <varInfo nodeId="6007597446559177567" varName="iterator" />
       <varInfo nodeId="6007597446559177574" varName="node1" />
       <varInfo nodeId="6007597446559177580" varName="node2" />
+      <varInfo nodeId="6007597446559177586" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6007597446559193328" fileName="LatticeUtil.java" startLine="134" startPosition="51" endLine="148" endPosition="29">
-      <varInfo nodeId="6007597446559193369" varName="result" />
       <varInfo nodeId="6007597446559193350" varName="iterator" />
       <varInfo nodeId="6007597446559193357" varName="node1" />
       <varInfo nodeId="6007597446559193363" varName="node2" />
+      <varInfo nodeId="6007597446559193369" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1883223317721339522" fileName="LatticeUtil.java" startLine="21" startPosition="5" endLine="37" endPosition="7" />
     <scopeInfo nodeId="1883223317721340762" fileName="LatticeUtil.java" startLine="39" startPosition="5" endLine="55" endPosition="7" />

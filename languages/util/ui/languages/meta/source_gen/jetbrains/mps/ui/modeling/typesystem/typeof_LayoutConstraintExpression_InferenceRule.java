@@ -23,7 +23,7 @@ public class typeof_LayoutConstraintExpression_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = lce;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "2663453265345937597", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "2663453265345937594", true), (SNode) new typeof_LayoutConstraintExpression_InferenceRule.QuotationClass_vm1bpd_a0a0a0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(lce, "constraint", true)), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "2663453265345937594", true), (SNode) new typeof_LayoutConstraintExpression_InferenceRule.QuotationClass_vm1bpd_a0a0a0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(lce, "constraint", true))), _info_12389875345);
     }
   }
 
@@ -44,19 +44,6 @@ public class typeof_LayoutConstraintExpression_InferenceRule extends AbstractInf
 
   public static class QuotationClass_vm1bpd_a0a0a0 {
     public QuotationClass_vm1bpd_a0a0a0() {
-    }
-
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.modeling.structure.LayoutConstraintType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("constraintConcept", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
     }
 
     public SNode createNode(Object parameter_3) {

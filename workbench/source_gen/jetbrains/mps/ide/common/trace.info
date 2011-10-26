@@ -95,9 +95,9 @@
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="89" startPosition="40" endLine="98" endPosition="21" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="61" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="88" startPosition="0" endLine="100" endPosition="0" />
-    <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="93" startPosition="36" endLine="97" endPosition="5" unitName="jetbrains.mps.ide.common.PathField$2" />
-    <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="30" startPosition="32" endLine="36" endPosition="3" unitName="jetbrains.mps.ide.common.PathField$1" />
     <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="23" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ide.common.PathField" />
+    <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="30" startPosition="32" endLine="36" endPosition="3" unitName="jetbrains.mps.ide.common.PathField$1" />
+    <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="93" startPosition="36" endLine="97" endPosition="5" unitName="jetbrains.mps.ide.common.PathField$2" />
   </root>
   <root nodeId="1203601659817">
     <nodeInfo nodeId="1203605616825" fileName="PathField.java" startLine="44" startPosition="31" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -121,9 +121,9 @@
       <varInfo nodeId="1222792951550" varName="enabled" />
     </scopeInfo>
     <scopeInfo nodeId="1203605506363" fileName="PathField.java" startLine="121" startPosition="40" endLine="131" endPosition="5">
-      <varInfo nodeId="1203605716178" varName="result" />
       <varInfo nodeId="1203605648065" varName="chooser" />
       <varInfo nodeId="1203605544102" varName="oldPath" />
+      <varInfo nodeId="1203605716178" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1203605506361" fileName="PathField.java" startLine="120" startPosition="0" endLine="133" endPosition="0" />
   </root>
@@ -163,8 +163,8 @@
     <scopeInfo nodeId="4251154893541678694" fileName="ReadComboBoxEditor.java" startLine="11" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="4251154893541678697" varName="anObject" />
     </scopeInfo>
-    <unitInfo nodeId="4251154893541678723" fileName="ReadComboBoxEditor.java" startLine="14" startPosition="45" endLine="18" endPosition="5" unitName="jetbrains.mps.ide.common.ReadComboBoxEditor$1" />
     <unitInfo nodeId="4251154893541678687" fileName="ReadComboBoxEditor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.common.ReadComboBoxEditor" />
+    <unitInfo nodeId="4251154893541678723" fileName="ReadComboBoxEditor.java" startLine="14" startPosition="45" endLine="18" endPosition="5" unitName="jetbrains.mps.ide.common.ReadComboBoxEditor$1" />
   </root>
   <root nodeId="4251154893541691639">
     <nodeInfo nodeId="4251154893541691682" fileName="ReadComboBoxRenderrer.java" startLine="15" startPosition="158" endLine="16" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -182,24 +182,24 @@
     <scopeInfo nodeId="4251154893541691642" fileName="ReadComboBoxRenderrer.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
     <scopeInfo nodeId="4251154893541691688" fileName="ReadComboBoxRenderrer.java" startLine="17" startPosition="57" endLine="21" endPosition="0" />
     <scopeInfo nodeId="4251154893541691728" fileName="ReadComboBoxRenderrer.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="4251154893541691761" varName="cellHasFocus" />
       <varInfo nodeId="4251154893541691755" varName="index" />
       <varInfo nodeId="4251154893541691758" varName="isSelected" />
-      <varInfo nodeId="4251154893541691761" varName="cellHasFocus" />
-      <varInfo nodeId="4251154893541691737" varName="value" />
       <varInfo nodeId="4251154893541691733" varName="list" />
+      <varInfo nodeId="4251154893541691737" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="4251154893541691659" fileName="ReadComboBoxRenderrer.java" startLine="15" startPosition="158" endLine="22" endPosition="24">
       <varInfo nodeId="4251154893541691683" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4251154893541691646" fileName="ReadComboBoxRenderrer.java" startLine="14" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="4251154893541691657" varName="cellHasFocus" />
       <varInfo nodeId="4251154893541691653" varName="index" />
       <varInfo nodeId="4251154893541691655" varName="isSelected" />
-      <varInfo nodeId="4251154893541691657" varName="cellHasFocus" />
-      <varInfo nodeId="4251154893541691651" varName="value" />
       <varInfo nodeId="4251154893541691649" varName="list" />
+      <varInfo nodeId="4251154893541691651" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="4251154893541691688" fileName="ReadComboBoxRenderrer.java" startLine="17" startPosition="45" endLine="21" endPosition="5" unitName="jetbrains.mps.ide.common.ReadComboBoxRenderrer$1" />
     <unitInfo nodeId="4251154893541691639" fileName="ReadComboBoxRenderrer.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.common.ReadComboBoxRenderrer" />
+    <unitInfo nodeId="4251154893541691688" fileName="ReadComboBoxRenderrer.java" startLine="17" startPosition="45" endLine="21" endPosition="5" unitName="jetbrains.mps.ide.common.ReadComboBoxRenderrer$1" />
   </root>
   <root nodeId="8606486054003576517">
     <nodeInfo nodeId="8606486054003576522" fileName="LayoutUtil.java" startLine="12" startPosition="66" endLine="13" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
