@@ -6,7 +6,7 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.plugins.MacrosUtil;
+import jetbrains.mps.util.MacrosUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.ide.icons.IconManager;
 

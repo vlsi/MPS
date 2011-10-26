@@ -5,7 +5,7 @@ package jetbrains.mps.execution.demo.plugin;
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import jetbrains.mps.util.MacrosUtil;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
