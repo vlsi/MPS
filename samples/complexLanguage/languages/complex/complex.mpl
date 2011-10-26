@@ -19,6 +19,7 @@
   </generators>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
     <dependency reexport="true">b8bf2110-d2b5-478f-87dd-306abe7416fe(jetbrains.mps.samples.complex.runtime)</dependency>
   </dependencies>
   <usedDevKits>
