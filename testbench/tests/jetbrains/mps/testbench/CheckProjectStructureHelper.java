@@ -18,6 +18,7 @@ package jetbrains.mps.testbench;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.checkers.CheckersComponent;
 import jetbrains.mps.checkers.LanguageChecker;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
@@ -358,6 +359,7 @@ public class CheckProjectStructureHelper {
             for (IErrorReporter reporter : errorReporters) {
               if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
                 SNode node = reporter.getSNode();
+                if (!CheckersComponent.filterIssue(node)) continue;
                 myErrors++;
                 errors.add("Error message: " + reporter.reportError() + "   model: " + node.getModel().getLongName() + " root: " + node.getContainingRoot() + " node: " + node);
               }

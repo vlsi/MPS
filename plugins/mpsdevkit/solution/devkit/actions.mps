@@ -2906,7 +2906,7 @@
   </root>
   <root id="1936689137035777973">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1936689137035777975">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.8033185057371911844" resolveInfo="Analyze" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.8033185057371911844" resolveInfo="AnalyzeModule" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1936689137035777976">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1936689137035777977">
