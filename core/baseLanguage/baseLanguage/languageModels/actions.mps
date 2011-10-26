@@ -41,13 +41,13 @@
   <import index="supv" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="hp43" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui(MPS.Classpath/com.intellij.ui@java_stub)" version="-1" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
+  <import index="inbo" modelUID="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" version="-1" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpfo" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" implicit="yes" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
-  <import index="inbo" modelUID="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" version="-1" implicit="yes" />
   <roots>
     <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="1138168268784">
       <property name="name" nameId="tpck.1169194664001" value="binaryOperations" />
@@ -386,8 +386,8 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5391504215793252219">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5391504215793252220">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpec.155142699038773182" resolveInfo="ParenthesisUtil" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.155142699038773694" resolveInfo="checkOperationWRTPriority" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpek.4830579082340999665" resolveInfo="ParenthesisUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.4830579082341000181" resolveInfo="checkOperationWRTPriority" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpdg.ConceptFunctionParameter_result" typeId="tpdg.1177526535706" id="5391504215793252221" />
               </node>
             </node>
@@ -628,8 +628,8 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="710337334808847908">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="710337334808847909">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpec.155142699038773182" resolveInfo="ParenthesisUtil" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.155142699038773694" resolveInfo="checkOperationWRTPriority" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpek.4830579082340999665" resolveInfo="ParenthesisUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.4830579082341000181" resolveInfo="checkOperationWRTPriority" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpdg.ConceptFunctionParameter_result" typeId="tpdg.1177526535706" id="710337334808847910" />
               </node>
             </node>
@@ -12246,8 +12246,8 @@
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1235993978261">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1235993987445">
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1240230390793">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpec.155142699038773182" resolveInfo="ParenthesisUtil" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.155142699038773206" resolveInfo="createParenthesis" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpek.4830579082340999665" resolveInfo="ParenthesisUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.4830579082340999689" resolveInfo="createParenthesis" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="1240230390794" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1240230390795">
                     <property name="value" nameId="tpee.1068580123138" value="false" />
@@ -12275,8 +12275,8 @@
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1235991384134">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="507504898151670600">
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="507504898151670603">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.155142699038773206" resolveInfo="createParenthesis" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpec.155142699038773182" resolveInfo="ParenthesisUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.4830579082340999689" resolveInfo="createParenthesis" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpek.4830579082340999665" resolveInfo="ParenthesisUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="507504898151670604" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="507504898151670606">
                     <property name="value" nameId="tpee.1068580123138" value="true" />

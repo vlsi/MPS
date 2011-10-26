@@ -94,11 +94,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ParenthesisUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ParenthesisUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibleClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibleThrowablesScope" />

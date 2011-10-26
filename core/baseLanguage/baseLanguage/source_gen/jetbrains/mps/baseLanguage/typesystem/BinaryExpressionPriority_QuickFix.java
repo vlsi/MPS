@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
+import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 
 public class BinaryExpressionPriority_QuickFix extends QuickFix_Runtime {
   public BinaryExpressionPriority_QuickFix() {

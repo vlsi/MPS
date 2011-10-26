@@ -42,10 +42,10 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <import index="5h2r" modelUID="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" version="-1" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
+  <import index="inbo" modelUID="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" version="-1" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <import index="bj1v" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
-  <import index="inbo" modelUID="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" version="-1" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1175495245176">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_andExpression" />
@@ -17541,8 +17541,8 @@
               </node>
             </node>
             <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2299339187686542314">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.155142699038774033" resolveInfo="isBadPriority" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpec.155142699038773182" resolveInfo="ParenthesisUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.4830579082341000554" resolveInfo="isBadPriority" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpek.4830579082340999665" resolveInfo="ParenthesisUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2299339187686542315">
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6778605776626937117" resolveInfo="binaryOperation" />
               </node>
@@ -17615,8 +17615,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6778605776626487881">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6778605776626489838">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2299339187686612636">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.155142699038773979" resolveInfo="rotateTree" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpec.155142699038773182" resolveInfo="ParenthesisUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.4830579082341000500" resolveInfo="rotateTree" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpek.4830579082340999665" resolveInfo="ParenthesisUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.QuickFixArgumentReference" typeId="tpd4.1216390348809" id="2299339187686612637">
                   <link role="quickFixArgument" roleId="tpd4.1216390348810" targetNodeId="6778605776626487876" resolveInfo="child" />
                 </node>
@@ -17633,8 +17633,8 @@
             <node role="statementList" roleId="tpee.1206060644605" type="tpee.StatementList" typeId="tpee.1068580123136" id="6778605776626489850">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6778605776626489857">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2299339187686612640">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.155142699038773979" resolveInfo="rotateTree" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpec.155142699038773182" resolveInfo="ParenthesisUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.4830579082341000500" resolveInfo="rotateTree" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpek.4830579082340999665" resolveInfo="ParenthesisUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.QuickFixArgumentReference" typeId="tpd4.1216390348809" id="2299339187686612641">
                     <link role="quickFixArgument" roleId="tpd4.1216390348810" targetNodeId="6778605776626487876" resolveInfo="child" />
                   </node>
