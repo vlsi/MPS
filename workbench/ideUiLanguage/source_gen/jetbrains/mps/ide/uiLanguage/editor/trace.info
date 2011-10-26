@@ -343,8 +343,8 @@
     <scopeInfo nodeId="1203592631206" fileName="IDEDialog_Editor.java" startLine="57" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1203592631206" fileName="IDEDialog_Editor.java" startLine="219" startPosition="0" endLine="237" endPosition="0" />
     <scopeInfo nodeId="1203592631206" fileName="IDEDialog_Editor.java" startLine="237" startPosition="0" endLine="255" endPosition="0" />
-    <unitInfo nodeId="1203592631206" fileName="IDEDialog_Editor.java" startLine="256" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.IDEDialog_Editor$buttonListHandler_8w6pz1_h1b0" />
     <unitInfo nodeId="1203592631206" fileName="IDEDialog_Editor.java" startLine="29" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.IDEDialog_Editor" />
+    <unitInfo nodeId="1203592631206" fileName="IDEDialog_Editor.java" startLine="256" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.IDEDialog_Editor$buttonListHandler_8w6pz1_h1b0" />
   </root>
   <root nodeId="1203592668804">
     <nodeInfo nodeId="1203592668804" fileName="IDEDialogButton_Editor.java" startLine="111" startPosition="58" endLine="111" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

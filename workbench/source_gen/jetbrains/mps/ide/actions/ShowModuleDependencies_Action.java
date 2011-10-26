@@ -20,7 +20,7 @@ public class ShowModuleDependencies_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(ShowModuleDependencies_Action.class);
 
   public ShowModuleDependencies_Action() {
-    super("Show Dependencies", "", ICON);
+    super("Show Module Dependencies", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
