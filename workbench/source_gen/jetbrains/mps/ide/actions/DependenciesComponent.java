@@ -16,9 +16,16 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import javax.swing.JSplitPane;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class DependenciesComponent extends JComponent {
@@ -70,30 +77,49 @@ public class DependenciesComponent extends JComponent {
     myProject = project;
   }
 
-  public void updateTargetsView(Scope scope) {
+  public void updateTargetsView(final Scope scope) {
     myScope = scope;
-    final List<SReference> references = myReferencesFinder.getReferences(scope);
-    myReferences = references;
-    final SearchResults<SNode> results = new SearchResults();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (SReference ref : references) {
-          results.getSearchResults().add(new SearchResult(ref.getTargetNode(), "target"));
-        }
+    final Wrappers._T<SearchResults<SNode>> results = new Wrappers._T<SearchResults<SNode>>(new SearchResults());
+    ProgressManager.getInstance().run(new Task.Modal(myProject, "Targets search", true) {
+      public void run(@NotNull final ProgressIndicator indicator) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+            try {
+              monitor.start("Searching references", 100);
+              List<SReference> references = myReferencesFinder.getReferences(scope, monitor.subTask(50));
+              myReferences = references;
+              results.value = myReferencesFinder.getTargetSearchResults(references, monitor.subTask(50));
+            } finally {
+              monitor.done();
+            }
+          }
+        });
       }
     });
-    myTargetsView.setContents(results);
+    myTargetsView.setContents(results.value);
   }
 
   public void updateReferencesView(final Scope scope) {
     final SearchResults<SNode> results = new SearchResults();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (SReference ref : myReferences) {
-          if (scope.contains(ref.getTargetNode())) {
-            results.getSearchResults().add(new SearchResult(ref.getSourceNode(), "reference"));
+    ProgressManager.getInstance().run(new Task.Modal(myProject, "References search", true) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            try {
+              monitor.start("filtering references", ListSequence.fromList(myReferences).count());
+              for (SReference ref : myReferences) {
+                if (scope.contains(ref.getTargetNode())) {
+                  results.getSearchResults().add(new SearchResult(ref.getSourceNode(), "reference"));
+                }
+                monitor.advance(1);
+              }
+            } finally {
+              monitor.done();
+            }
           }
-        }
+        });
       }
     });
     myReferencesView.setContents(results);

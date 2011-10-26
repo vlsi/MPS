@@ -25,7 +25,7 @@ public class AnalyzeDependencies_Action extends GeneratedAction {
   public AnalyzeDependencies_Action() {
     super("Analyze Dependencies", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

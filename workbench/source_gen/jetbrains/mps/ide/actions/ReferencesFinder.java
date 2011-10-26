@@ -7,7 +7,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SReference;
 import java.util.HashMap;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.ArrayList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
@@ -15,40 +18,73 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ReferencesFinder {
-  private Map<SModelDescriptor, List<SReference>> myModelsCache = new HashMap<SModelDescriptor, List<SReference>>();
+  private Map<SModelDescriptor, List<SReference>> myModelsRefsCache = new HashMap<SModelDescriptor, List<SReference>>();
 
   public ReferencesFinder() {
   }
 
-  public List<SReference> getReferences(Scope scope) {
-    List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
-    for (SModelDescriptor element : scope.getModels()) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(element, scope)));
+  public SearchResults getTargetSearchResults(List<SReference> references, ProgressMonitor monitor) {
+    SearchResults results = new SearchResults();
+    try {
+      monitor.start("Computing targets", ListSequence.fromList(references).count());
+      for (SReference ref : references) {
+        results.getSearchResults().add(new SearchResult(ref.getTargetNode(), "target"));
+        monitor.advance(1);
+      }
+    } finally {
+      monitor.done();
     }
-    for (IModule element : scope.getModules()) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(element, scope)));
+    return results;
+  }
+
+  public List<SReference> getReferences(Scope scope, ProgressMonitor monitor) {
+    List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
+    try {
+      monitor.start("Search references", scope.getNumRoots());
+      for (SModelDescriptor element : scope.getModels()) {
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(element, scope, monitor)));
+        if (monitor.isCanceled()) {
+          return result;
+        }
+      }
+      for (IModule element : scope.getModules()) {
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(element, scope, monitor)));
+        if (monitor.isCanceled()) {
+          return result;
+        }
+      }
+    } finally {
+      monitor.done();
     }
     return result;
   }
 
-  public List<SReference> getReferences(IModule module, Scope scope) {
+  public List<SReference> getReferences(IModule module, Scope scope, ProgressMonitor monitor) {
     List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
     for (SModelDescriptor element : module.getOwnModelDescriptors()) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(element, scope)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(element, scope, monitor)));
+      if (monitor.isCanceled()) {
+        return result;
+      }
     }
     return result;
   }
 
-  public List<SReference> getReferences(SModelDescriptor model, Scope scope) {
-    List<SReference> result = myModelsCache.get(model);
+  public List<SReference> getReferences(SModelDescriptor model, Scope scope, ProgressMonitor monitor) {
+    List<SReference> result = myModelsRefsCache.get(model);
+    monitor.step(model.getLongName());
     if (result != null) {
       return result;
     }
     result = ListSequence.fromList(new ArrayList<SReference>());
     for (SNode root : model.getSModel().roots()) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(root, scope)));
+      monitor.advance(1);
+      if (monitor.isCanceled()) {
+        return result;
+      }
     }
-    myModelsCache.put(model, result);
+    myModelsRefsCache.put(model, result);
     return result;
   }
 
