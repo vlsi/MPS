@@ -6,6 +6,8 @@ import jetbrains.mps.util.Pair;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.codeStyle.CodeStyleSettings;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -39,7 +41,11 @@ public class GenerateGettersAndSettersUtil {
   }
 
   public static String getFieldGetterName(SNode fieldDeclaration, Project project) {
-    return "get" + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration, project));
+    String get = "get";
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
+      get = "is";
+    }
+    return get + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration, project));
   }
 
   public static String getFieldSetterName(SNode fieldDeclaration, Project project) {
