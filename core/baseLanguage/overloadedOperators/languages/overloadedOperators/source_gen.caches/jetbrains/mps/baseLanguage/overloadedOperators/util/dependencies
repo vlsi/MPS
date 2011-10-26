@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.generator.template.util.BinaryOperationUtil" file="BinaryOperationUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil" file="BinaryOperationUtil.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
