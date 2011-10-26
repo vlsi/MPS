@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
-import jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util;
+import jetbrains.mps.build.packaging.behavior.Util;
 import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import java.io.File;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;

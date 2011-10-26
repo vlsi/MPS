@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.File;
-import jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.AbstractModule;
