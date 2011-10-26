@@ -59,11 +59,10 @@ public class DiffEditorsGroup {
             EditorCell otherCell = otherEditor.findNodeCell(otherModel.getNodeById(id));
             Point position = thisEditor.getViewport().getViewPosition();
             if (otherCell != null) {
-              otherEditor.getViewport().setViewPosition(new Point((int) position.getX(), newRelativePos + otherCell.getY()));
               Rectangle viewRect = otherEditor.getViewport().getViewRect();
-              if (viewRect.y + viewRect.height > otherEditor.getHeight()) {
-                otherEditor.getViewport().setViewPosition(new Point(viewRect.x, otherEditor.getHeight() - viewRect.height));
-              }
+              int newX = Math.min((int) position.getX(), otherEditor.getWidth() - viewRect.width);
+              int newY = Math.min(newRelativePos + otherCell.getY(), otherEditor.getHeight() - viewRect.height);
+              otherEditor.getViewport().setViewPosition(new Point(newX, newY));
               return;
             }
           }

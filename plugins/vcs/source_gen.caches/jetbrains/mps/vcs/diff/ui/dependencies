@@ -231,6 +231,7 @@
   <dependency className="jetbrains.mps.vcs.diff.ui.DiffEditorsGroup" file="DiffEditorsGroup.java">
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.Rectangle" />
+    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
