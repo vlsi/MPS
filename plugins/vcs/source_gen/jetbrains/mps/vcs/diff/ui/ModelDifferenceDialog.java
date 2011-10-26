@@ -32,6 +32,12 @@ import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.vcs.diff.changes.NodeCopier;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -122,6 +128,35 @@ public class ModelDifferenceDialog extends BaseDialog {
     myGoingToNeighbour = true;
   }
 
+  /*package*/ void rollbackChanges(final Iterable<ModelChange> changes, @Nullable final _FunctionTypes._void_P0_E0 after) {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        assert Sequence.fromIterable(changes).isNotEmpty();
+        final SModel model = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
+        final NodeCopier nc = new NodeCopier(model);
+        Iterable<ModelChange> oppositeChanges = Sequence.fromIterable(changes).select(new ISelector<ModelChange, ModelChange>() {
+          public ModelChange select(ModelChange ch) {
+            return ch.getOppositeChange();
+          }
+        });
+        for (ModelChange ch : Sequence.fromIterable(oppositeChanges)) {
+          if (ch instanceof NodeGroupChange) {
+            ((NodeGroupChange) ch).prepare();
+          }
+        }
+        Sequence.fromIterable(oppositeChanges).visitAll(new IVisitor<ModelChange>() {
+          public void visit(ModelChange ch) {
+            ch.apply(model, nc);
+          }
+        });
+        nc.restoreIds(true);
+        if (after != null) {
+          after.invoke();
+        }
+      }
+    });
+  }
+
   public void invokeRootDifference(final SNodeId rootId) {
     if (rootId == null) {
       StringBuilder sb = new StringBuilder();
@@ -175,7 +210,19 @@ public class ModelDifferenceDialog extends BaseDialog {
     }
 
     protected Iterable<BaseAction> getRootActions() {
-      return Arrays.<BaseAction>asList(new InvokeRootDifferenceAction(ModelDifferenceDialog.this));
+      return Arrays.<BaseAction>asList(new InvokeRootDifferenceAction(ModelDifferenceDialog.this), new RevertRootsAction(ModelDifferenceDialog.this) {
+        protected SNodeId[] getRoots() {
+          return Sequence.fromIterable(Sequence.fromArray(getSelectedNodes(DiffModelTree.RootTreeNode.class, null))).select(new ISelector<DiffModelTree.RootTreeNode, SNodeId>() {
+            public SNodeId select(DiffModelTree.RootTreeNode rtn) {
+              return rtn.getRootId();
+            }
+          }).toGenericArray(SNodeId.class);
+        }
+
+        protected void after() {
+          ModelDifferenceDialog.this.rebuildChangeSet();
+        }
+      });
     }
 
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
