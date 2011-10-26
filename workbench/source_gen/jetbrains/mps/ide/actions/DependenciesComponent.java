@@ -26,7 +26,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class DependenciesComponent extends JComponent {
   private DependencyTree myInitTree;
@@ -86,7 +85,7 @@ public class DependenciesComponent extends JComponent {
           public void run() {
             ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
             try {
-              monitor.start("Searching references", 100);
+              monitor.start(null, 100);
               List<SReference> references = myReferencesFinder.getReferences(scope, monitor.subTask(50));
               myReferences = references;
               results.value = myReferencesFinder.getTargetSearchResults(references, monitor.subTask(50));
@@ -101,27 +100,12 @@ public class DependenciesComponent extends JComponent {
   }
 
   public void updateReferencesView(final Scope scope) {
-    final SearchResults<SNode> results = new SearchResults();
     ProgressManager.getInstance().run(new Task.Modal(myProject, "References search", true) {
       public void run(@NotNull ProgressIndicator indicator) {
-        final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            try {
-              monitor.start("filtering references", ListSequence.fromList(myReferences).count());
-              for (SReference ref : myReferences) {
-                if (scope.contains(ref.getTargetNode())) {
-                  results.getSearchResults().add(new SearchResult(ref.getSourceNode(), "reference"));
-                }
-                monitor.advance(1);
-              }
-            } finally {
-              monitor.done();
-            }
-          }
-        });
+        ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+        myReferencesView.setContents(myReferencesFinder.getRefSearchResults(myReferences, scope, monitor));
+
       }
     });
-    myReferencesView.setContents(results);
   }
 }

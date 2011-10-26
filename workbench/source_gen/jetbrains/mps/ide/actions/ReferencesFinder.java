@@ -11,10 +11,10 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ReferencesFinder {
@@ -26,9 +26,35 @@ public class ReferencesFinder {
   public SearchResults getTargetSearchResults(List<SReference> references, ProgressMonitor monitor) {
     SearchResults results = new SearchResults();
     try {
-      monitor.start("Computing targets", ListSequence.fromList(references).count());
+      monitor.start("computing targets", ListSequence.fromList(references).count());
       for (SReference ref : references) {
         results.getSearchResults().add(new SearchResult(ref.getTargetNode(), "target"));
+        monitor.advance(1);
+        if (monitor.isCanceled()) {
+          return results;
+        }
+      }
+    } finally {
+      monitor.done();
+    }
+    return results;
+  }
+
+  public SearchResults getRefSearchResults(List<SReference> references, final Scope scope, ProgressMonitor monitor) {
+    final SearchResults results = new SearchResults();
+    try {
+      monitor.start("filtering references", ListSequence.fromList(references).count());
+      for (final SReference ref : references) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (scope.contains(ref.getTargetNode())) {
+              results.getSearchResults().add(new SearchResult(ref.getSourceNode(), "reference"));
+            }
+          }
+        });
+        if (monitor.isCanceled()) {
+          return results;
+        }
         monitor.advance(1);
       }
     } finally {
@@ -40,7 +66,7 @@ public class ReferencesFinder {
   public List<SReference> getReferences(Scope scope, ProgressMonitor monitor) {
     List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
     try {
-      monitor.start("Search references", scope.getNumRoots());
+      monitor.start("searching references", scope.getNumRoots());
       for (SModelDescriptor element : scope.getModels()) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(element, scope, monitor)));
         if (monitor.isCanceled()) {
