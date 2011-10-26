@@ -7,7 +7,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.GeneratorUtil;
+import jetbrains.mps.baseLanguage.regexp.constraints.RegexUtil;
 import jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.Flags;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
@@ -47,7 +47,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_4276824325038550474(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return GeneratorUtil.getRegexpIfContainer(_context.getNode()) != null;
+    return RegexUtil.getRegexpIfContainer(_context.getNode()) != null;
   }
 
   public static boolean baseMappingRule_Condition_7048923897763033470(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -92,7 +92,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1174659618559(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
-    SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
+    SNode c = RegexUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<SNode> parensList = new ArrayList<SNode>();
     Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(c, "regexp", true), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), "regexp", true), parensList);
     return 1 + ListSequence.fromList(parensList).indexOf(parens);
@@ -120,7 +120,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1175170026397(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
-    SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
+    SNode c = RegexUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<SNode> parensList = new ArrayList<SNode>();
     Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(c, "regexp", true), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), "regexp", true), parensList);
     return 1 + ListSequence.fromList(parensList).indexOf(parens);
@@ -158,7 +158,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1175170026388(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode()), "matcher");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(RegexUtil.findRegexpUsingConstructionFor(_context.getNode()), "matcher");
   }
 
   public static Object referenceMacro_GetReferent_2512254891788090401(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -308,7 +308,7 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_7048923897762709815(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode expr : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression")) {
-      SNode container = GeneratorUtil.getRegexpIfContainer(expr);
+      SNode container = RegexUtil.getRegexpIfContainer(expr);
       if (container != null) {
         Flags.ADD_VARS.flag(SNodeOperations.getParent(container));
         Flags.REGEXP_NEED_VAR.flag(expr);
