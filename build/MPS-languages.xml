@@ -14906,7 +14906,6 @@
           <module ref="c4f367dc-30c0-4376-9d05-1d1797bb8599(jetbrains.mps.lang.pattern.runtime)" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
           <module ref="cab85f8b-9525-42cb-8e6d-258ca6e56432(jetbrains.mps.baseLanguage.index)" />
-          <module ref="cb490d2e-5c25-4e4e-8701-ba03dee6dbd8(jetbrains.mps.baseLanguage.overloadedOperators#6677452554239623057)" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
           <module ref="ceb47609-02c2-4927-bb6d-d58368388a62(jetbrains.mps.ide.uiLanguage.runtime)" />
           <module ref="d05c4356-e6a8-4dcf-a81a-3adf36be3c35(jetbrains.mps.execution.settings#946964771156035778)" />
