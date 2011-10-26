@@ -41,6 +41,41 @@
     <scopeInfo nodeId="1543650586506860265" fileName="MPS11114.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="1543650586506860264" fileName="MPS11114.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.MPS11114" />
   </root>
+  <root nodeId="2682363017137668870">
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="9" startPosition="26" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="13" startPosition="57" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="17" startPosition="40" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="21" startPosition="40" endLine="22" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="25" startPosition="28" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="29" startPosition="27" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="34" startPosition="68" endLine="35" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2682363017137673906" fileName="Questionnable.java" startLine="38" startPosition="21" endLine="39" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="8" startPosition="87" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Questionnable#()V" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Questionnable#(Ljava/lang/String;Ljava/lang/Integer;)V" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="question#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="answer#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="question#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="answer#()Ljava/lang/Integer;" />
+    <nodeInfo nodeId="2682363017137673901" fileName="Questionnable.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/util/Questionnable;" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="9" startPosition="26" endLine="10" endPosition="12" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="13" startPosition="57" endLine="14" endPosition="28" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="17" startPosition="40" endLine="18" endPosition="27" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="21" startPosition="40" endLine="22" endPosition="27" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="25" startPosition="28" endLine="26" endPosition="22" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="29" startPosition="27" endLine="30" endPosition="22" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="34" startPosition="68" endLine="35" endPosition="46" />
+    <scopeInfo nodeId="2682363017137673904" fileName="Questionnable.java" startLine="38" startPosition="21" endLine="39" endPosition="33" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="8" startPosition="87" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="2682363017137673901" fileName="Questionnable.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="2682363017137668870" fileName="Questionnable.java" startLine="8" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.Questionnable" />
+  </root>
   <root nodeId="429408675341322626">
     <nodeInfo nodeId="429408675341322632" fileName="Sum.java" startLine="11" startPosition="18" endLine="12" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="map" />
     <nodeInfo nodeId="429408675341322652" fileName="Sum.java" startLine="14" startPosition="16" endLine="15" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

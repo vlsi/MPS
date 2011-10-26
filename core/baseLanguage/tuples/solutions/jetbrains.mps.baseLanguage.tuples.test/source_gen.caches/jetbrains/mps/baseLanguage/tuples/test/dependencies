@@ -76,6 +76,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.test.MPS14511_Test" file="MPS14511_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.util.Questionnable" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode extendsClassName="junit.framework.TestCase" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.test.MPS7408" file="MPS7408.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.util.ArrayList" />

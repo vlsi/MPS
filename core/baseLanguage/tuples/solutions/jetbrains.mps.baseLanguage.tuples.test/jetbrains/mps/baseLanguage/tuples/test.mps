@@ -58,6 +58,9 @@
     <node type="cx9y.NamedTupleDeclaration" typeId="cx9y.1239360506533" id="6562295948842315074">
       <property name="name" nameId="tpck.1169194664001" value="Sample" />
     </node>
+    <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="2682363017137682662">
+      <property name="testCaseName" nameId="tpe3.1171931851045" value="MPS14511" />
+    </node>
   </roots>
   <root id="1238952260515">
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1238953768403">
@@ -904,7 +907,7 @@
             </node>
             <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8084779556530425221">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8084779556530425214">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8084779556530420808" resolveInfo="arr" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8084779556530420808" resolveInfo="arr1" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.ArrayLengthOperation" typeId="tpee.1208890769693" id="8084779556530425228" />
             </node>
@@ -922,7 +925,7 @@
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
                 <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8084779556530425234">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8084779556530420808" resolveInfo="arr" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8084779556530420808" resolveInfo="arr1" />
                 </node>
               </node>
             </node>
@@ -937,7 +940,7 @@
                   <property name="value" nameId="tpee.1068580320021" value="1" />
                 </node>
                 <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1604260043160283867">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8084779556530420808" resolveInfo="arr" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8084779556530420808" resolveInfo="arr1" />
                 </node>
               </node>
             </node>
@@ -955,7 +958,7 @@
                   <property name="value" nameId="tpee.1068580320021" value="2" />
                 </node>
                 <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1604260043160283922">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8084779556530420808" resolveInfo="arr" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8084779556530420808" resolveInfo="arr1" />
                 </node>
               </node>
             </node>
@@ -973,7 +976,7 @@
                   <property name="value" nameId="tpee.1068580320021" value="2" />
                 </node>
                 <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8755343252889981013">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8084779556530420808" resolveInfo="arr" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8084779556530420808" resolveInfo="arr1" />
                 </node>
               </node>
             </node>
@@ -1010,7 +1013,7 @@
             </node>
             <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1604260043160284006">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1604260043160284005">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1604260043160283987" resolveInfo="pairs" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1604260043160283987" resolveInfo="arr2" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.ArrayLengthOperation" typeId="tpee.1208890769693" id="1604260043160284010" />
             </node>
@@ -1512,7 +1515,7 @@
                 <node role="map" roleId="tp2q.1197932505799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="429408675341322693">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="429408675341322694">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="429408675341322695">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="digr.429408675341322628" resolveInfo="What" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="digr.429408675341322628" resolveInfo="Sum" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="429408675341322696">
@@ -2253,7 +2256,7 @@
             </node>
             <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1239720033499">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1239720033501">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1239720006877" resolveInfo="tpl" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1239720006877" resolveInfo="data" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="1239720033502">
                 <link role="component" roleId="cx9y.1239576542472" targetNodeId="1239718410851" resolveInfo="foo" />
@@ -2266,7 +2269,7 @@
             </node>
             <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1239720033505">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1239720033506">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1239720006877" resolveInfo="tpl" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1239720006877" resolveInfo="data" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="1239720033507">
                 <link role="component" roleId="cx9y.1239576542472" targetNodeId="1239718417158" resolveInfo="bar" />
@@ -2585,7 +2588,7 @@
               <node role="initializer" roleId="tpee.1068431790190" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="1240574574363">
                 <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1240574537739" resolveInfo="Bool" />
                 <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="1240574574364">
-                  <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="1240574543210" resolveInfo="value" />
+                  <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="1240574543210" resolveInfo="isTrue" />
                   <node role="value" roleId="cx9y.1239560837729" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1240574576406">
                     <property name="value" nameId="tpee.1068580123138" value="true" />
                   </node>
@@ -2596,10 +2599,10 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertTrue" typeId="tpe3.1171981022339" id="1240577891572">
             <node role="condition" roleId="tpe3.1171981057159" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240577895075">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1240577892567">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240574562854" resolveInfo="foo" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240574562854" resolveInfo="truth" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="1240577895760">
-                <link role="component" roleId="cx9y.1239576542472" targetNodeId="1240574543210" resolveInfo="value" />
+                <link role="component" roleId="cx9y.1239576542472" targetNodeId="1240574543210" resolveInfo="isTrue" />
               </node>
             </node>
           </node>
@@ -2959,13 +2962,13 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="1241009797617">
                     <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="xz5j.1241009437488" resolveInfo="GlobalSharedPair" />
                     <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="1241009797618">
-                      <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="xz5j.1241009495081" resolveInfo="left" />
+                      <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="xz5j.1241009495081" resolveInfo="first" />
                       <node role="value" roleId="cx9y.1239560837729" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1241009797619">
                         <property name="value" nameId="tpee.1070475926801" value="a" />
                       </node>
                     </node>
                     <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="1241009797620">
-                      <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="xz5j.1241009497930" resolveInfo="right" />
+                      <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="xz5j.1241009497930" resolveInfo="second" />
                       <node role="value" roleId="cx9y.1239560837729" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1241009797621">
                         <property name="value" nameId="tpee.1070475926801" value="A" />
                       </node>
@@ -3025,7 +3028,7 @@
               <property name="name" nameId="tpck.1169194664001" value="lot" />
               <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="4817470067537861739">
                 <node role="elementType" roleId="tp2q.1151688676805" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="4817470067537861741">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="Pair" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="4817470067537861743" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.LongType" typeId="tpee.1068581242867" id="4817470067537861745" />
                 </node>
@@ -3033,7 +3036,7 @@
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4817470067537861747">
                 <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="4817470067537861748">
                   <node role="elementType" roleId="tp2q.1237721435807" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="4817470067537861749">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="Pair" />
                     <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="4817470067537861750" />
                     <node role="parameter" roleId="tpee.1109201940907" type="tpee.LongType" typeId="tpee.1068581242867" id="4817470067537861751" />
                   </node>
@@ -3048,7 +3051,7 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="4817470067537861759">
                 <node role="argument" roleId="tp2q.1160612519549" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="4817470067537861763">
-                  <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                  <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1239977036413" resolveInfo="Pair" />
                   <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="4817470067537861764">
                     <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="1239977053138" resolveInfo="first" />
                     <node role="value" roleId="cx9y.1239560837729" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4817470067537861772">
@@ -3072,7 +3075,7 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="4817470067537861798">
                 <node role="argument" roleId="tp2q.1160612519549" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="4817470067537861802">
-                  <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                  <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1239977036413" resolveInfo="Pair" />
                   <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="4817470067537861803">
                     <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="1239977053138" resolveInfo="first" />
                     <node role="value" roleId="cx9y.1239560837729" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4817470067537861811">
@@ -3130,7 +3133,7 @@
               <property name="name" nameId="tpck.1169194664001" value="arr1" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="8755343252890002882">
                 <node role="componentType" roleId="tpee.1070534760952" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="8755343252890002883">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="Pair" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="8755343252890002884" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.LongType" typeId="tpee.1068581242867" id="8755343252890002885" />
                 </node>
@@ -3168,7 +3171,7 @@
                     </node>
                   </node>
                   <node role="componentType" roleId="tpee.1154542793668" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="8755343252890002890">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="Pair" />
                     <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="8755343252890002891" />
                     <node role="parameter" roleId="tpee.1109201940907" type="tpee.LongType" typeId="tpee.1068581242867" id="8755343252890002892" />
                   </node>
@@ -3189,7 +3192,7 @@
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8755343252890002921">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreator" typeId="tpee.1184950988562" id="8755343252890007311">
                   <node role="componentType" roleId="tpee.1184951007469" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="8755343252890010271">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="Pair" />
                     <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="8755343252890010275" />
                     <node role="parameter" roleId="tpee.1109201940907" type="tpee.LongType" typeId="tpee.1068581242867" id="8755343252890010277" />
                   </node>
@@ -3314,7 +3317,7 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4817470067537861883">
               <property name="name" nameId="tpck.1169194664001" value="pair" />
               <node role="type" roleId="tpee.5680397130376446158" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="4817470067537861884">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1239977036413" resolveInfo="Pair" />
                 <node role="parameter" roleId="tpee.1109201940907" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4817470067537861886" />
                 <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="4817470067537861888" />
               </node>
@@ -3323,7 +3326,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4817470067537861890">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="4817470067537861892">
               <node role="rValue" roleId="tpee.1068498886297" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="4817470067537861895">
-                <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1239977036413" resolveInfo="Pair" />
                 <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="4817470067537861896">
                   <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="1239977053138" resolveInfo="first" />
                   <node role="value" roleId="cx9y.1239560837729" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4817470067537861910">
@@ -4055,7 +4058,7 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7367153454745440809" />
       <node role="extended" roleId="cx9y.322547369016009796" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="322547369016118907">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3142843783245432642" resolveInfo="(num, str) ExtendedNamedTuples.Foo" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3142843783245432642" resolveInfo="ExtendedNamedTuples.Foo" />
       </node>
     </node>
   </root>
@@ -4076,10 +4079,10 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2912004279740772133">
               <property name="name" nameId="tpck.1169194664001" value="foo" />
               <node role="type" roleId="tpee.5680397130376446158" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="2912004279740772134">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3142843783245432642" resolveInfo="(num, str) ExtendedNamedTuples.Foo" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3142843783245432642" resolveInfo="ExtendedNamedTuples.Foo" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="2912004279740772135">
-                <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="3142843783245432642" resolveInfo="(num, str) ExtendedNamedTuples.Foo" />
+                <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="3142843783245432642" resolveInfo="ExtendedNamedTuples.Foo" />
                 <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="2912004279740772136">
                   <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="3142843783245432644" resolveInfo="num" />
                   <node role="value" roleId="cx9y.1239560837729" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2912004279740772137">
@@ -4119,10 +4122,10 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2912004279740772159">
               <property name="name" nameId="tpck.1169194664001" value="bar" />
               <node role="type" roleId="tpee.5680397130376446158" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="2912004279740772160">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7367153454745440808" resolveInfo="(num, str, id, size) ExtendedNamedTuples.Bar" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7367153454745440808" resolveInfo="ExtendedNamedTuples.Bar" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="2912004279740772161">
-                <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="7367153454745440808" resolveInfo="(num, str, id, size) ExtendedNamedTuples.Bar" />
+                <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="7367153454745440808" resolveInfo="ExtendedNamedTuples.Bar" />
                 <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="2912004279740772162">
                   <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="3142843783245432644" resolveInfo="num" />
                   <node role="value" roleId="cx9y.1239560837729" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2912004279740772163">
@@ -4162,7 +4165,7 @@
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertEquals" typeId="tpe3.1171978097730" id="2912004279740815602">
             <node role="expected" roleId="tpe3.8427750732757990724" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="2912004279740815605">
-              <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="3142843783245432642" resolveInfo="(num, str) ExtendedNamedTuples.Foo" />
+              <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="3142843783245432642" resolveInfo="ExtendedNamedTuples.Foo" />
               <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="2912004279740815606">
                 <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="3142843783245432644" resolveInfo="num" />
                 <node role="value" roleId="cx9y.1239560837729" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2912004279740815610">
@@ -4356,6 +4359,72 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6562295948842315075" />
     <node role="implements" roleId="cx9y.2423993921025641700" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6562295948842607128">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6562295948842314981" resolveInfo="ISample" />
+    </node>
+  </root>
+  <root id="2682363017137682662">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2682363017137682663" />
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2682363017137682664">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2682363017137682665" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2682363017137682666" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2682363017137682667" />
+    </node>
+    <node role="testMethodList" roleId="tpe3.1171931851044" type="tpe3.TestMethodList" typeId="tpe3.1171931858461" id="2682363017137682668">
+      <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="2682363017137682669">
+        <property name="methodName" nameId="tpe3.1171931690128" value="accessNamedTupleInOtherPkg" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2682363017137682670" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2682363017137682671" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2682363017137682672">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2682363017137682673">
+            <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2682363017137682674">
+              <property name="name" nameId="tpck.1169194664001" value="fb" />
+              <node role="type" roleId="tpee.5680397130376446158" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="2682363017137682675">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="digr.2682363017137668870" resolveInfo="Answerable" />
+              </node>
+              <node role="initializer" roleId="tpee.1068431790190" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="2682363017137682677">
+                <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="digr.2682363017137668870" resolveInfo="Answerable" />
+                <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="2682363017137682678">
+                  <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="digr.2682363017137668872" resolveInfo="question" />
+                  <node role="value" roleId="cx9y.1239560837729" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2682363017137684857" />
+                </node>
+                <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="2682363017137682680">
+                  <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="digr.2682363017137668875" resolveInfo="answer" />
+                  <node role="value" roleId="cx9y.1239560837729" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2682363017137682683">
+                    <property name="value" nameId="tpee.1068580320021" value="42" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertSame" typeId="tpe3.1171985735491" id="2682363017137682692">
+            <node role="expected" roleId="tpe3.8427750732757990724" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2682363017137682695">
+              <property name="value" nameId="tpee.1068580320021" value="42" />
+            </node>
+            <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2682363017137682703">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2682363017137682702">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2682363017137682674" resolveInfo="fb" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="2682363017137682707">
+                <link role="component" roleId="cx9y.1239576542472" targetNodeId="digr.2682363017137668875" resolveInfo="answer" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertThrows" typeId="tpe3.1172069869612" id="2682363017137682709">
+            <node role="statement" roleId="tpe3.1172070029086" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2682363017137682713">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2682363017137682715">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2682363017137682714">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2682363017137682674" resolveInfo="fb" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2682363017137682719">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="digr.2682363017137673901" resolveInfo="run" />
+                </node>
+              </node>
+            </node>
+            <node role="exceptionType" roleId="tpe3.1172070532815" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2682363017137682712">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~RuntimeException" resolveInfo="RuntimeException" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>
