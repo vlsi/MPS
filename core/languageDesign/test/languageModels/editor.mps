@@ -9,7 +9,7 @@
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="4zw2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" version="-1" />
+  <import index="1qcs" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem(MPS.Workbench/com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -30,11 +30,11 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215076060697">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="asserts" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215075719096" resolveInfo="NodeCheckForErrors" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215075719096" resolveInfo="CheckNodeForErrors" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215507692910">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215507671101" resolveInfo="NodeErrorPropeties" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215507671101" resolveInfo="NodeErrorPropety" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215507929232">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
@@ -61,7 +61,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215607090776">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215607067978" resolveInfo="NodeErrorCheck" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215607067978" resolveInfo="TypesCheckOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215611856135">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
@@ -69,11 +69,11 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215612962552">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215612918969" resolveInfo="NodeUnreacable" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215612918969" resolveInfo="NodeUnreachable" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215614451933">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215614394933" resolveInfo="VaribaleInialized" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215614394933" resolveInfo="VariableInialized" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215617027617">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
@@ -106,11 +106,11 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1225989927048">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1225989773458" resolveInfo="RunIntentionStatement" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1225989773458" resolveInfo="InvokeIntentionStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1227182106173">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1227182079811" resolveInfo="TypeKeyOperation" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1227182079811" resolveInfo="TypeKeyStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1228934535921">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
@@ -122,7 +122,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1229194997584">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1229194968594" resolveInfo="TestCellAnnotation2" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1229194968594" resolveInfo="AnonymousCellAnnotation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1230224860032">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="mock" />
@@ -141,7 +141,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5773579205429866752">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.5773579205429866751" resolveInfo="EditorComponent" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.5773579205429866751" resolveInfo="EditorComponentExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5097124989038916364">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.5097124989038916362" resolveInfo="TestInfo" />
@@ -746,7 +746,7 @@
       <property name="vertical" nameId="tpc2.1073389446425" value="false" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1227182962482">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1227190782920" resolveInfo="EditorOpration" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1227190782920" resolveInfo="EditorOperation" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1228828287051">
         <property name="text" nameId="tpc2.1073389577007" value="&quot;" />
@@ -910,7 +910,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1229432452223">
                 <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="1229432451222" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1229432456913">
-                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tp5g.1229432188737" resolveInfo="isLast" />
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tp5g.1229432188737" resolveInfo="isLastPosition" />
                 </node>
               </node>
             </node>
@@ -1081,11 +1081,11 @@
                         <node role="elementType" roleId="tp2q.1237721435807" type="tpee.StringType" typeId="tpee.1225271177708" id="1101347953350240471" />
                         <node role="copyFrom" roleId="tp2q.1237731803878" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1101347953350241944">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1101347953350241945">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4zw2.~ActionManager" resolveInfo="ActionManager" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4zw2.~ActionManager%dgetInstance()%ccom%dintellij%dopenapi%dactionSystem%dActionManager" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1qcs.~ActionManager" resolveInfo="ActionManager" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1qcs.~ActionManager%dgetInstance()%ccom%dintellij%dopenapi%dactionSystem%dActionManager" resolveInfo="getInstance" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1101347953350241946">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4zw2.~ActionManager%dgetActionIds(java%dlang%dString)%cjava%dlang%dString[]" resolveInfo="getActionIds" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1qcs.~ActionManager%dgetActionIds(java%dlang%dString)%cjava%dlang%dString[]" resolveInfo="getActionIds" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1101347953350241947">
                               <property name="value" nameId="tpee.1070475926801" value="" />
                             </node>

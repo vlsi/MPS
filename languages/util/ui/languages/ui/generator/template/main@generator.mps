@@ -26,8 +26,8 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
-  <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -198,7 +198,7 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5725024602606579723">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb0y.8381258131358446225" resolveInfo="UIObjectStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="8131995307948940047">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="8131995307948939665" resolveInfo="reduce_UIObjectStatement2" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="8131995307948939665" resolveInfo="reduce_UIObjectStatement" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="3302932283760798759">
@@ -2009,11 +2009,11 @@
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4981225789809336317">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4981225789809336318" />
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4981225789809336319">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258524082" resolveInfo="getCompartmentProvider" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258524082" resolveInfo="getContextProvider" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4981225789809336320">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getOwnerExpression" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getContextExpression" />
                           </node>
                         </node>
                       </node>
@@ -2036,7 +2036,7 @@
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4981225789809336327">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4981225789809336328" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4981225789809336329">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258876765" resolveInfo="getOwner" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258876765" resolveInfo="getContext" />
                       </node>
                     </node>
                   </node>
@@ -2493,11 +2493,11 @@
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1576918603588706068">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1576918603588706069" />
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1576918603588706070">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258524082" resolveInfo="getCompartmentProvider" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258524082" resolveInfo="getContextProvider" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1576918603588706071">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getOwnerExpression" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getContextExpression" />
                           </node>
                         </node>
                       </node>
@@ -2520,7 +2520,7 @@
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1576918603588706078">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1576918603588706079" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1576918603588706080">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258876765" resolveInfo="getOwner" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258876765" resolveInfo="getContext" />
                       </node>
                     </node>
                   </node>
@@ -2665,11 +2665,11 @@
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3091159734392477158">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3091159734392477159" />
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3091159734392477160">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258524082" resolveInfo="getCompartmentProvider" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258524082" resolveInfo="getContextProvider" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3091159734392477161">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getOwnerExpression" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getContextExpression" />
                           </node>
                         </node>
                       </node>
@@ -2692,7 +2692,7 @@
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3091159734392477168">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3091159734392477169" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3091159734392477170">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258876765" resolveInfo="getOwner" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258876765" resolveInfo="getContext" />
                       </node>
                     </node>
                   </node>
@@ -3182,13 +3182,13 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="2459884175399461997">
                         <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="2459884175399461998">
                           <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="2459884175399461999">
-                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                           </node>
                         </node>
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2459884175399462000">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getOwnerExpression" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getContextExpression" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="2459884175399462001" />
@@ -3219,13 +3219,13 @@
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="2459884175399462016">
                                   <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="2459884175399462017">
                                     <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="2459884175399462018">
-                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                                     </node>
                                   </node>
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2459884175399462019">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345451" resolveInfo="getOwner" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345451" resolveInfo="getContext" />
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2459884175399462020" />
@@ -3250,13 +3250,13 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="2459884175399461988">
                       <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="2459884175399461989">
                         <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="2459884175399461990">
-                          <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                          <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2459884175399461991">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getOwnerExpression" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getContextExpression" />
                   </node>
                 </node>
               </node>
@@ -3397,13 +3397,13 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="413330188017221978">
                         <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="413330188017221979">
                           <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="413330188017221980">
-                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                           </node>
                         </node>
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="413330188017221981">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getOwnerExpression" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getContextExpression" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="413330188017221982" />
@@ -3434,13 +3434,13 @@
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="413330188017221997">
                                   <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="413330188017221998">
                                     <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="413330188017221999">
-                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                                     </node>
                                   </node>
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="413330188017222000">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345451" resolveInfo="getOwner" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345451" resolveInfo="getContext" />
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="413330188017222001" />
@@ -3465,13 +3465,13 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="413330188017222010">
                       <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="413330188017222011">
                         <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="413330188017222012">
-                          <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                          <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="413330188017222013">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getOwnerExpression" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getContextExpression" />
                   </node>
                 </node>
               </node>
@@ -3490,7 +3490,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="413330188017223428">
                     <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="413330188017223429">
                       <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="413330188017223430">
-                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                       </node>
                     </node>
                   </node>
@@ -3556,13 +3556,13 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="6653319296676633372">
                         <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="6653319296676633373">
                           <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6653319296676633374">
-                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                           </node>
                         </node>
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6653319296676633375">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getOwnerExpression" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getContextExpression" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="6653319296676633376" />
@@ -3593,13 +3593,13 @@
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="6653319296676633391">
                                   <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="6653319296676633392">
                                     <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6653319296676633393">
-                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                                     </node>
                                   </node>
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6653319296676633394">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345451" resolveInfo="getOwner" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345451" resolveInfo="getContext" />
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6653319296676633395" />
@@ -3624,13 +3624,13 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="6653319296676633404">
                       <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="6653319296676633405">
                         <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6653319296676633406">
-                          <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                          <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6653319296676633407">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getOwnerExpression" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="czqe.8923564134258345446" resolveInfo="getContextExpression" />
                   </node>
                 </node>
               </node>
@@ -3649,7 +3649,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="6653319296676633416">
                     <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="6653319296676633417">
                       <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6653319296676633418">
-                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="ICompartmentProvider" />
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="fb0y.8923564134258173965" resolveInfo="IUIObjectContextProvider" />
                       </node>
                     </node>
                   </node>
@@ -4031,7 +4031,7 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1251509410704218394">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1251509410704218395">
                             <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1251509410704218396">
                               <property name="asCast" nameId="tp25.1238684351431" value="true" />
@@ -4106,7 +4106,7 @@
                                       </node>
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1251509410704218428">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1251509410704218429">
                                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1251509410704218430">
                                           <property name="asCast" nameId="tp25.1238684351431" value="true" />
@@ -4198,7 +4198,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1251509410704218466">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1251509410704218467">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1251509410704218468">
                           <property name="asCast" nameId="tp25.1238684351431" value="true" />
@@ -4262,7 +4262,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1251509410704218485">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1251509410704218486">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1251509410704218487">
                           <property name="asCast" nameId="tp25.1238684351431" value="true" />
@@ -4326,7 +4326,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1251509410704218514">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1251509410704218515">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1251509410704218516">
                           <property name="asCast" nameId="tp25.1238684351431" value="true" />
@@ -4390,7 +4390,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1251509410704218543">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1251509410704218544">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1251509410704218545">
                           <property name="asCast" nameId="tp25.1238684351431" value="true" />
@@ -4454,7 +4454,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1251509410704218572">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetChild(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getChild" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1251509410704218573">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1251509410704218574">
                           <property name="asCast" nameId="tp25.1238684351431" value="true" />
@@ -4881,8 +4881,8 @@
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetModelOperation" typeId="tp25.1143234257716" id="1251509410704218055" />
                                   </node>
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1251509410704218056">
-                                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="afxk.~GlobalScope" resolveInfo="GlobalScope" />
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~GlobalScope%dgetInstance()%cjetbrains%dmps%dproject%dGlobalScope" resolveInfo="getInstance" />
+                                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vsqj.~GlobalScope" resolveInfo="GlobalScope" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~GlobalScope%dgetInstance()%cjetbrains%dmps%dproject%dGlobalScope" resolveInfo="getInstance" />
                                   </node>
                                 </node>
                               </node>

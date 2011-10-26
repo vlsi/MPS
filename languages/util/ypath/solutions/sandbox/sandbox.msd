@@ -11,6 +11,7 @@
     <dependency reexport="true">084f8779-0bb0-44bf-8a8b-1214d7acfbc5(ypath.main)</dependency>
     <dependency reexport="true">c13beb70-150a-461e-b6de-05489d7b1dd3(ypath.sandbox)</dependency>
     <dependency reexport="false">7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</dependency>
+    <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</usedLanguage>
