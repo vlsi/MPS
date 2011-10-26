@@ -44,12 +44,14 @@ public class PrimMap_Test extends Util_Test {
     Map<Double, Double> mdd = MapSequence.fromMap(new TDoubleDoubleHashMapDecorator(new TDoubleDoubleHashMap()));
     Map<Double, Double> mdd2 = MapSequence.fromMap(new TObjectDoubleHashMapDecorator(new TObjectDoubleHashMap<Double>()));
     Map<Double, Double> mdd3 = MapSequence.fromMap(new TDoubleObjectHashMapDecorator(new TDoubleObjectHashMap<Double>()));
-    MapSequence.fromMap(mdd).put(3.1415, 2.71828);
+    double pi = 3.1415;
+    double e = 2.71828;
+    MapSequence.fromMap(mdd).put(pi, e);
     Assert.assertSame(1, MapSequence.fromMap(mdd).count());
     MapSequence.fromMap(mdd2).putAll(mdd);
     Assert.assertEquals(mdd2, mdd);
     MapSequence.fromMap(mdd3).put(SetSequence.fromSet(MapSequence.fromMap(mdd).keySet()).first(), Sequence.fromIterable(MapSequence.fromMap(mdd).values()).first());
-    Assert.assertEquals(mdd3, mdd);
+    Assert.assertEquals(MapSequence.fromMap(mdd3).get(pi), MapSequence.fromMap(mdd).get(pi));
   }
 
   public void test_floatFloat() throws Exception {
@@ -73,8 +75,10 @@ public class PrimMap_Test extends Util_Test {
 
   public void test_longLong() throws Exception {
     Map<Long, Long> mll = MapSequence.fromMap(new TLongLongHashMapDecorator(new TLongLongHashMap()));
-    MapSequence.fromMap(mll).put(1L, 2L);
-    Assert.assertSame(2L, MapSequence.fromMap(mll).get(1L));
+    long bln = 1000000000L;
+    long trln = 1000000000000L;
+    MapSequence.fromMap(mll).put(bln, trln);
+    Assert.assertEquals((Long) mll.get(bln), (Long) trln);
   }
 
   public void test_shortShort() throws Exception {
