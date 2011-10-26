@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil" file="ClosureLiteralUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralUtil" file="ClosureLiteralUtil.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
@@ -9,8 +9,8 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.Values" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -27,14 +27,14 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.Flags" file="Flags.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.Flags" file="Flags.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil" file="FunctionTypeUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil" file="FunctionTypeUtil.java">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -48,9 +48,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.Keys" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.Values" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Keys" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.util.Constants" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
@@ -73,17 +73,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.Keys" file="Keys.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.Keys" file="Keys.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.PrepStatementUtil" file="PrepStatementUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.PrepStatementUtil" file="PrepStatementUtil.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.StatementListUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.Values" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.StatementListUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.StatementListUtil" file="StatementListUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.StatementListUtil" file="StatementListUtil.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -100,13 +100,13 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.Values" file="Values.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.Values" file="Values.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.WrappersUtils" file="WrappersUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.WrappersUtils" file="WrappersUtils.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
