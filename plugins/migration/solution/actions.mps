@@ -10,7 +10,6 @@
   <import index="x3c6" modelUID="f:java_stub#f79b80ff-2fee-4243-9291-a156ab1cfc01#jetbrains.mps.ide.migration.persistence(jetbrains.mps.ide.migration/jetbrains.mps.ide.migration.persistence@java_stub)" version="-1" />
   <import index="afa5" modelUID="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
-  <import index="i82i" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(MPS.Classpath/com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="3zxz" modelUID="f:java_stub#f79b80ff-2fee-4243-9291-a156ab1cfc01#jetbrains.mps.migration20(jetbrains.mps.ide.migration/jetbrains.mps.migration20@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="ig5o" modelUID="f:java_stub#f79b80ff-2fee-4243-9291-a156ab1cfc01#jetbrains.mps.migration20.stages(jetbrains.mps.ide.migration/jetbrains.mps.migration20.stages@java_stub)" version="-1" />

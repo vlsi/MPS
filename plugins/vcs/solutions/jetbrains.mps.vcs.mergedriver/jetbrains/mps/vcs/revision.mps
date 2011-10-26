@@ -8,7 +8,6 @@
   <import index="80f9" modelUID="r:36539f52-7ec3-4937-98bf-1fbc1fbe99fc(jetbrains.mps.vcs.mergedriver)" version="-1" />
   <import index="wsru" modelUID="f:java_stub#edc02585-9f0c-4060-aa1a-e0b2b8ed17f8#git4idea(jetbrains.mps.vcs.mergedriver/git4idea@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="wyzd" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.vcsUtil(MPS.Classpath/com.intellij.vcsUtil@java_stub)" version="-1" />
   <import index="yibw" modelUID="f:java_stub#edc02585-9f0c-4060-aa1a-e0b2b8ed17f8#git4idea.commands(jetbrains.mps.vcs.mergedriver/git4idea.commands@java_stub)" version="-1" />
   <import index="vehe" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.project(MPS.Workbench/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="zfwc" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.vfs(MPS.Workbench/com.intellij.openapi.vfs@java_stub)" version="-1" />
