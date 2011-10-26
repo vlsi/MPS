@@ -150,9 +150,6 @@
       <fileset dir="${mps_home}/core/baseLanguage/collections/runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
-      <fileset dir="${mps_home}/core/baseLanguage/collections/languages/trove/runtime/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
       <fileset dir="${mps_home}/core/baseLanguage/tuples/runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
@@ -174,7 +171,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.smodel.resources" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.search" />
     <antcall target="MPS-languages.pack.collections.runtime" />
-    <antcall target="MPS-languages.pack.collections_trove.runtime" />
     <antcall target="MPS-languages.pack.closures.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules" />
@@ -465,6 +461,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.platform.conf" />
     <antcall target="MPS-languages.pack.jetbrains.mpslite" />
     <antcall target="MPS-languages.pack.jetbrains.mps.nanoj" />
+    <antcall target="MPS-languages.pack.collections_trove.runtime" />
     <mkdir dir="${deploy.dir}/MPS/languages/util" />
     <copy todir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp">
       <fileset dir="${mps_home}/languages/util/buildlanguage/ant/classes" includes="**/*.class, **/*.xml, " />
