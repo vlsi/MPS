@@ -6,6 +6,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class IconContainer {
-  protected static Icon ICON_a0a1a0a0a0b0a0a0a0h0a1 = new ImageIcon(IconContainer.class.getResource("classType.png"));
-  protected static Icon ICON_a0a1a0a0a0a1a0a0a0a7a0b = new ImageIcon(IconContainer.class.getResource("behavior.png"));
+  protected static Icon ICON_a0a1a0a0a0b0a0a0a0e0a1 = new ImageIcon(IconContainer.class.getResource("classType.png"));
+  protected static Icon ICON_a0a1a0a0a0a1a0a0a0a4a0b = new ImageIcon(IconContainer.class.getResource("behavior.png"));
 }
