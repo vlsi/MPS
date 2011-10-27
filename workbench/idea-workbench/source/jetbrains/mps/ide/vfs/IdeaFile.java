@@ -21,7 +21,6 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
-import com.sun.corba.se.spi.ior.IdentifiableFactory;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.commons.lang.ObjectUtils;

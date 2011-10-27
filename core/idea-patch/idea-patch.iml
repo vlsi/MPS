@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="library" name="Trove" level="project" />
+    <orderEntry type="module" module-name="idea-workbench" />
   </component>
 </module>
 
