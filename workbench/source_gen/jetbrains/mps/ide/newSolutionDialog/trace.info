@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5890305283801268194">
-    <nodeInfo nodeId="8720557803585317712" fileName="NewModuleUtil.java" startLine="23" startPosition="45" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8720557803585317712" fileName="NewModuleUtil.java" startLine="23" startPosition="93" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460447244" fileName="NewModuleUtil.java" startLine="26" startPosition="33" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4543209876460425560" fileName="NewModuleUtil.java" startLine="28" startPosition="5" endLine="29" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4543209876460425560" fileName="NewModuleUtil.java" startLine="28" startPosition="5" endLine="29" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4543209876460425571" fileName="NewModuleUtil.java" startLine="30" startPosition="26" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460425650" fileName="NewModuleUtil.java" startLine="33" startPosition="34" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460425653" fileName="NewModuleUtil.java" startLine="36" startPosition="78" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -29,7 +29,7 @@
     <nodeInfo nodeId="4543209876460447616" fileName="NewModuleUtil.java" startLine="74" startPosition="0" endLine="75" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8720557803585309179" fileName="NewModuleUtil.java" startLine="22" startPosition="83" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4543209876460447230" fileName="NewModuleUtil.java" startLine="25" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4543209876460425567" fileName="NewModuleUtil.java" startLine="29" startPosition="119" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4543209876460425567" fileName="NewModuleUtil.java" startLine="29" startPosition="102" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4543209876460425575" fileName="NewModuleUtil.java" startLine="32" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4543209876460425587" fileName="NewModuleUtil.java" startLine="35" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4543209876460425600" fileName="NewModuleUtil.java" startLine="38" startPosition="5" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -41,7 +41,7 @@
     <nodeInfo nodeId="4543209876460423580" fileName="NewModuleUtil.java" startLine="45" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModule#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P3_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)null" />
     <nodeInfo nodeId="4543209876460447554" fileName="NewModuleUtil.java" startLine="62" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSolution#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/project/MPSProject;)Ljetbrains/mps/project/Solution;" />
     <nodeInfo nodeId="4543209876460424807" fileName="NewModuleUtil.java" startLine="21" startPosition="28" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="8720557803585309180" fileName="NewModuleUtil.java" startLine="23" startPosition="45" endLine="24" endPosition="61" />
+    <scopeInfo nodeId="8720557803585309180" fileName="NewModuleUtil.java" startLine="23" startPosition="93" endLine="24" endPosition="63" />
     <scopeInfo nodeId="4543209876460447231" fileName="NewModuleUtil.java" startLine="26" startPosition="33" endLine="27" endPosition="40" />
     <scopeInfo nodeId="4543209876460425568" fileName="NewModuleUtil.java" startLine="30" startPosition="26" endLine="31" endPosition="21" />
     <scopeInfo nodeId="4543209876460425576" fileName="NewModuleUtil.java" startLine="33" startPosition="34" endLine="34" endPosition="45" />

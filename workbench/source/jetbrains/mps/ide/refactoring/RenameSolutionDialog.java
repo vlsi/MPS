@@ -73,11 +73,6 @@ public class RenameSolutionDialog extends BaseDialog {
           return false;
         }
 
-        if (!(SourceVersion.isName(fqName))) {
-          setErrorText("Solution namespace should be valid Java package");
-          return false;
-        }
-
         new SolutionRenamer(mySolution, fqName).rename();
         return true;
       }
