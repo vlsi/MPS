@@ -23,6 +23,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+// TODO get rid of
 public class MPSFileTypesManager implements ApplicationComponent {
   public static MPSFileTypesManager instance() {
     return ApplicationManager.getApplication().getComponent(MPSFileTypesManager.class);
@@ -31,7 +32,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "VCS Application Component";
+    return "MPS File Types Component";
   }
 
   public void initComponent() {

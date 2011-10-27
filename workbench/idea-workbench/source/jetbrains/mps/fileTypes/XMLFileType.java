@@ -17,7 +17,6 @@ package jetbrains.mps.fileTypes;
 
 import com.intellij.lang.xml.XMLLanguage;
 import com.intellij.openapi.fileTypes.LanguageFileType;
-import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -34,10 +33,6 @@ public class XMLFileType extends LanguageFileType {
     myDescription = description;
     myDefaultExt = extension;
     myIcon = icon;
-  }
-
-  public XMLFileType() {
-    this("XML", "XML File", "xml", FileIcons.XML_ICON);
   }
 
   @NotNull

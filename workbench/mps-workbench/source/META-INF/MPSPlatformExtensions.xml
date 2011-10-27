@@ -210,7 +210,7 @@
 
   <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.PlatformFileTypeFactory"/>
   <!--MPS Patch: file factory for MPS file types-->
-  <fileTypeFactory implementation="jetbrains.mps.fileTypes.MPSFileTypeFactory"/>
+  <fileTypeFactory implementation="jetbrains.mps.ide.projectPane.fileSystem.MPSWorkbenchFileTypeFactory"/>
   <applicationService serviceInterface="com.intellij.openapi.options.colors.ColorSettingsPages"
                       serviceImplementation="com.intellij.openapi.options.colors.pages.ColorSettingsPagesImpl"/>
 

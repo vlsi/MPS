@@ -11,5 +11,13 @@
     <component>
       <implementation-class>jetbrains.mps.ide.undo.OnReloadingUndoCleaner</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.fileTypes.MPSFileTypesManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.FastFindUsagesManager</implementation-class>
+    </component>
   </application-components>
 </components>

@@ -20,6 +20,7 @@
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
+    <xi:include href="/META-INF/MPSCorePlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
     <xi:include href="/META-INF/MPSPlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
     <xi:include href="/META-INF/MPSVcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
 

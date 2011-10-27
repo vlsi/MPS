@@ -17,6 +17,7 @@ package jetbrains.mps.ide.java;
 
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -29,8 +30,6 @@ import javax.swing.ImageIcon;
 * evgeny, 10/27/11
 */
 public class ClassFileType implements FileType {
-
-  public static final Icon ICON = new ImageIcon(ClassFileType.class.getResource("icons/javaClass.png"));
 
   @NotNull
   @NonNls
@@ -51,7 +50,7 @@ public class ClassFileType implements FileType {
 
   @Nullable
   public Icon getIcon() {
-    return ICON;
+    return FileIcons.CLASS_ICON;
   }
 
   public boolean isBinary() {

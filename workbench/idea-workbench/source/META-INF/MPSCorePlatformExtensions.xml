@@ -1,0 +1,3 @@
+<extensions>
+  <fileTypeFactory implementation="jetbrains.mps.fileTypes.MPSFileTypeFactory"/>
+</extensions>

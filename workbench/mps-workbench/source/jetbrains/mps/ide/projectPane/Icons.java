@@ -15,21 +15,27 @@
  */
 package jetbrains.mps.ide.projectPane;
 
+import jetbrains.mps.fileTypes.FileIcons;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class Icons {
+
+  // nodes: modelStub.png, libraryModels.png, moduleSkeleton.png, mps.png, projectProperties.png, script1.png, script2.png, script3.png, view.png
+  // other: addFavoritesList.png, closedFolder.png, closedFolder_glamour.png, menu-replace.png, openedFolder.png, openedFolder_glamour.png
+
   public static final Icon DEFAULT_ICON = new ImageIcon(Icons.class.getResource("nodes/default.png"));
   public static final Icon DEFAULT_ROOT_ICON = new ImageIcon(Icons.class.getResource("nodes/defaultRootNode.png"));
   public static final Icon UNKNOWN_ICON = new ImageIcon(Icons.class.getResource("nodes/unknown.png"));
   public static final Icon DEFAULT_NODE_ICON = new ImageIcon(Icons.class.getResource("nodes/defaultNode.png"));
-  public static final Icon MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/model.png"));
+  public static final Icon MODEL_ICON = FileIcons.MODEL_ICON;
   public static final Icon LANGUAGE_ICON = new ImageIcon(Icons.class.getResource("nodes/language.png"));
-  public static final Icon PROJECT_LANGUAGE_ICON = new ImageIcon(Icons.class.getResource("nodes/projectLanguage.png"));
+  public static final Icon PROJECT_LANGUAGE_ICON = FileIcons.PROJECT_LANGUAGE_ICON;
   public static final Icon JAVA_ICON = new ImageIcon(Icons.class.getResource("nodes/java.png"));
   public static final Icon TEXT_ICON = new ImageIcon(Icons.class.getResource("nodes/text.png"));
   public static final Icon LIB_ICON = new ImageIcon(Icons.class.getResource("nodes/ppLib.png"));
-  public static final Icon PROJECT_ICON = new ImageIcon(Icons.class.getResource("nodes/project.png"));
+  public static final Icon PROJECT_ICON = FileIcons.PROJECT_ICON;
   public static final Icon LOGICAL_VIEW_ICON = new ImageIcon(Icons.class.getResource("other/logical_view.png"));
   public static final Icon PROJECT_LANGUAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/projectLanguages.png"));
   public static final Icon PROJECT_MODELS_ICON = new ImageIcon(Icons.class.getResource("nodes/projectModels.png"));
@@ -105,9 +111,9 @@ public class Icons {
   public static final Icon DISCARD_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/discardAll.png"));
   public static final Icon SELECT_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/selectAll.png"));
 
-  public static final Icon SOLUTION_ICON = new ImageIcon(Icons.class.getResource("nodes/solution.png"));
+  public static final Icon SOLUTION_ICON = FileIcons.SOLUTION_ICON;
 
-  public static final Icon DEVKIT_ICON = new ImageIcon(Icons.class.getResource("nodes/devkit.png"));
+  public static final Icon DEVKIT_ICON = FileIcons.DEVKIT_ICON;
 
   public static final Icon CFG_END_ICON = new ImageIcon(Icons.class.getResource("nodes/cfgEnd.png"));
 

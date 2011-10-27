@@ -25,6 +25,7 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-workbench" />
   </component>
 </module>
 
