@@ -47,8 +47,8 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.resources.CResource;
 import jetbrains.mps.compiler.IClassesData;
+import jetbrains.mps.smodel.resources.CResource;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
@@ -453,11 +453,12 @@ public class JavaCompile_Facet extends IFacet.Stub {
               if ((boolean) pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors()) {
                 return new IResult.FAILURE(_output_wf1ya0_a0c);
               }
-              _output_wf1ya0_a0c = Sequence.fromIterable(_output_wf1ya0_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CResource(new IClassesData() {
+              IClassesData function = new IClassesData() {
                 public ClassLoader getClassLoader(ClassLoader parent) {
                   return jc.getClassLoader(parent);
                 }
-              }))));
+              };
+              _output_wf1ya0_a0c = Sequence.fromIterable(_output_wf1ya0_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CResource(function))));
             default:
               return new IResult.SUCCESS(_output_wf1ya0_a0c);
           }
