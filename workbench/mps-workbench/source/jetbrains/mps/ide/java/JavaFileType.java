@@ -16,12 +16,15 @@
 package jetbrains.mps.ide.java;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
-import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 public class JavaFileType extends LanguageFileType {
+
+  public static final Icon ICON = new ImageIcon(JavaFileType.class.getResource("icons/java.png"));
+
   public JavaFileType() {
     super(new JavaLanguage());
   }
@@ -42,6 +45,6 @@ public class JavaFileType extends LanguageFileType {
   }
 
   public Icon getIcon() {
-    return FileIcons.JAVA_ICON;
+    return ICON;
   }
 }
