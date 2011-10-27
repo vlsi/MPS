@@ -137,9 +137,9 @@
       <varInfo nodeId="3256924578580312279" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420336553" fileName="JavaPaster.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="5646944109420336558" varName="operationContext" />
-      <varInfo nodeId="5646944109420336560" varName="featureKind" />
       <varInfo nodeId="5646944109420336556" varName="anchor" />
+      <varInfo nodeId="5646944109420336560" varName="featureKind" />
+      <varInfo nodeId="5646944109420336558" varName="operationContext" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420336582" fileName="JavaPaster.java" startLine="45" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="5646944109420336585" varName="model" />
@@ -149,9 +149,9 @@
       <varInfo nodeId="5662895729668301266" varName="trf" />
     </scopeInfo>
     <scopeInfo nodeId="3256924578580258449" fileName="JavaPaster.java" startLine="139" startPosition="0" endLine="148" endPosition="0">
-      <varInfo nodeId="3256924578580258456" varName="model" />
-      <varInfo nodeId="3256924578580258454" varName="javaCode" />
       <varInfo nodeId="3256924578580258459" varName="context" />
+      <varInfo nodeId="3256924578580258454" varName="javaCode" />
+      <varInfo nodeId="3256924578580258456" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420336649" fileName="JavaPaster.java" startLine="65" startPosition="66" endLine="75" endPosition="7" />
     <scopeInfo nodeId="1418985936284183535" fileName="JavaPaster.java" startLine="126" startPosition="105" endLine="137" endPosition="16">
@@ -160,10 +160,10 @@
     <scopeInfo nodeId="5662895729668271035" fileName="JavaPaster.java" startLine="148" startPosition="0" endLine="159" endPosition="0" />
     <scopeInfo nodeId="5611348363757640819" fileName="JavaPaster.java" startLine="98" startPosition="59" endLine="111" endPosition="13" />
     <scopeInfo nodeId="1418985936284183532" fileName="JavaPaster.java" startLine="125" startPosition="0" endLine="139" endPosition="0">
-      <varInfo nodeId="1418985936284183852" varName="node" />
-      <varInfo nodeId="1418985936284183541" varName="role" />
-      <varInfo nodeId="1418985936284183544" varName="parentConcept" />
       <varInfo nodeId="1418985936284183536" varName="anchor" />
+      <varInfo nodeId="1418985936284183852" varName="node" />
+      <varInfo nodeId="1418985936284183544" varName="parentConcept" />
+      <varInfo nodeId="1418985936284183541" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="5611348363757640816" fileName="JavaPaster.java" startLine="97" startPosition="27" endLine="112" endPosition="11" />
     <scopeInfo nodeId="5611348363757634389" fileName="JavaPaster.java" startLine="97" startPosition="27" endLine="113" endPosition="16" />
@@ -179,14 +179,14 @@
       <varInfo nodeId="5646944109420336700" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420336685" fileName="JavaPaster.java" startLine="79" startPosition="0" endLine="125" endPosition="0">
-      <varInfo nodeId="5646944109420336690" varName="model" />
-      <varInfo nodeId="5646944109420336692" varName="javaCode" />
-      <varInfo nodeId="5646944109420336694" varName="operationContext" />
-      <varInfo nodeId="5646944109420336696" varName="featureKind" />
       <varInfo nodeId="5646944109420336688" varName="anchor" />
+      <varInfo nodeId="5646944109420336696" varName="featureKind" />
+      <varInfo nodeId="5646944109420336692" varName="javaCode" />
+      <varInfo nodeId="5646944109420336690" varName="model" />
+      <varInfo nodeId="5646944109420336694" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="1418985936284183497" fileName="JavaPaster.java" startLine="91" startPosition="52" endLine="95" endPosition="11" unitName="jetbrains.mps.ide.java.util.JavaPaster$1" />
     <unitInfo nodeId="5646944109420335310" fileName="JavaPaster.java" startLine="32" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.ide.java.util.JavaPaster" />
+    <unitInfo nodeId="1418985936284183497" fileName="JavaPaster.java" startLine="91" startPosition="52" endLine="95" endPosition="11" unitName="jetbrains.mps.ide.java.util.JavaPaster$1" />
   </root>
   <root nodeId="5778265495851109956">
     <nodeInfo nodeId="5778265495851109972" fileName="StubResolver.java" startLine="43" startPosition="27" endLine="44" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="JAVA_STUB" />
@@ -313,8 +313,8 @@
     <scopeInfo nodeId="9164503229271486526" fileName="StubResolver.java" startLine="162" startPosition="7" endLine="167" endPosition="7" />
     <scopeInfo nodeId="9073603541474867553" fileName="StubResolver.java" startLine="54" startPosition="48" endLine="60" endPosition="8" />
     <scopeInfo nodeId="9073603541474871832" fileName="StubResolver.java" startLine="151" startPosition="0" endLine="157" endPosition="0">
-      <varInfo nodeId="2082194532791126329" varName="models" />
       <varInfo nodeId="2082194532791127529" varName="context" />
+      <varInfo nodeId="2082194532791126329" varName="models" />
     </scopeInfo>
     <scopeInfo nodeId="5778265495851109956" fileName="StubResolver.java" startLine="170" startPosition="0" endLine="177" endPosition="0" />
     <scopeInfo nodeId="9073603541474867550" fileName="StubResolver.java" startLine="53" startPosition="0" endLine="61" endPosition="3">
@@ -325,8 +325,8 @@
     <scopeInfo nodeId="4326588611400152020" fileName="StubResolver.java" startLine="158" startPosition="79" endLine="168" endPosition="5" />
     <scopeInfo nodeId="9164503229271455504" fileName="StubResolver.java" startLine="158" startPosition="79" endLine="168" endPosition="5" />
     <scopeInfo nodeId="9073603541474871836" fileName="StubResolver.java" startLine="157" startPosition="0" endLine="170" endPosition="0">
-      <varInfo nodeId="4326588611400153914" varName="project" />
       <varInfo nodeId="4326588611400153916" varName="context" />
+      <varInfo nodeId="4326588611400153914" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="9073603541474867705" fileName="StubResolver.java" startLine="67" startPosition="89" endLine="81" endPosition="9">
       <varInfo nodeId="9073603541474867728" varName="modelName" />
@@ -344,31 +344,31 @@
       <varInfo nodeId="9073603541474867672" varName="sourceModel" />
     </scopeInfo>
     <scopeInfo nodeId="5397868107582795340" fileName="StubResolver.java" startLine="112" startPosition="96" endLine="142" endPosition="9">
-      <varInfo nodeId="5397868107582795343" varName="resolveInfo" />
-      <varInfo nodeId="5397868107582795531" varName="node" />
-      <varInfo nodeId="5397868107582795355" varName="scope" />
-      <varInfo nodeId="5397868107582795372" varName="resolved" />
       <varInfo nodeId="5397868107582795482" varName="modelRef" />
+      <varInfo nodeId="5397868107582795531" varName="node" />
+      <varInfo nodeId="5397868107582795343" varName="resolveInfo" />
+      <varInfo nodeId="5397868107582795372" varName="resolved" />
+      <varInfo nodeId="5397868107582795355" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5397868107582795337" fileName="StubResolver.java" startLine="111" startPosition="20" endLine="143" endPosition="7" />
     <scopeInfo nodeId="5397868107582795328" fileName="StubResolver.java" startLine="110" startPosition="8" endLine="143" endPosition="7" />
     <scopeInfo nodeId="5778265495851109965" fileName="StubResolver.java" startLine="87" startPosition="77" endLine="149" endPosition="5">
-      <varInfo nodeId="5397868107582790869" varName="models" />
       <varInfo nodeId="5397868107582795311" varName="cnt" />
-      <varInfo nodeId="9073603541474871864" varName="toResolve" />
-      <varInfo nodeId="2354139374978876816" varName="modelsToAdd" />
       <varInfo nodeId="8883975518329335516" varName="found" />
+      <varInfo nodeId="5397868107582790869" varName="models" />
+      <varInfo nodeId="2354139374978876816" varName="modelsToAdd" />
+      <varInfo nodeId="9073603541474871864" varName="toResolve" />
     </scopeInfo>
     <scopeInfo nodeId="9073603541474871828" fileName="StubResolver.java" startLine="86" startPosition="0" endLine="151" endPosition="0">
-      <varInfo nodeId="5778265495851109980" varName="model" />
       <varInfo nodeId="5778265495851109982" varName="context" />
+      <varInfo nodeId="5778265495851109980" varName="model" />
     </scopeInfo>
+    <unitInfo nodeId="5778265495851109956" fileName="StubResolver.java" startLine="43" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ide.java.util.StubResolver" />
     <unitInfo nodeId="9073603541474867580" fileName="StubResolver.java" startLine="56" startPosition="122" endLine="60" endPosition="5" unitName="jetbrains.mps.ide.java.util.StubResolver$1" />
     <unitInfo nodeId="2354139374978876832" fileName="StubResolver.java" startLine="94" startPosition="114" endLine="98" endPosition="5" unitName="jetbrains.mps.ide.java.util.StubResolver$2" />
     <unitInfo nodeId="2354139374978876859" fileName="StubResolver.java" startLine="99" startPosition="52" endLine="103" endPosition="5" unitName="jetbrains.mps.ide.java.util.StubResolver$3" />
-    <unitInfo nodeId="5397868107582795383" fileName="StubResolver.java" startLine="125" startPosition="38" endLine="129" endPosition="13" unitName="jetbrains.mps.ide.java.util.StubResolver$5" />
     <unitInfo nodeId="5397868107582795377" fileName="StubResolver.java" startLine="123" startPosition="85" endLine="131" endPosition="9" unitName="jetbrains.mps.ide.java.util.StubResolver$4" />
-    <unitInfo nodeId="5778265495851109956" fileName="StubResolver.java" startLine="43" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ide.java.util.StubResolver" />
+    <unitInfo nodeId="5397868107582795383" fileName="StubResolver.java" startLine="125" startPosition="38" endLine="129" endPosition="13" unitName="jetbrains.mps.ide.java.util.StubResolver$5" />
   </root>
 </debugInfo>
 

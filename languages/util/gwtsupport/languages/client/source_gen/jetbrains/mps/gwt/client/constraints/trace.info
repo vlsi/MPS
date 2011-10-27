@@ -41,12 +41,12 @@
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="42" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="35" startPosition="83" endLine="74" endPosition="22" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="33" startPosition="0" endLine="76" endPosition="0" />
+    <unitInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="27" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints" />
+    <unitInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="37" startPosition="33" endLine="73" endPosition="5" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$1" />
+    <unitInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="46" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$2" />
     <unitInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="126" endLine="53" endPosition="13" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$3" />
     <unitInfo nodeId="6017889698595854367" fileName="Inherits_Constraints.java" startLine="60" startPosition="29" endLine="64" endPosition="13" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$3" />
     <unitInfo nodeId="6017889698595854314" fileName="Inherits_Constraints.java" startLine="53" startPosition="25" endLine="60" endPosition="13" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$3" />
-    <unitInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="46" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$2" />
-    <unitInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="37" startPosition="33" endLine="73" endPosition="5" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$1" />
-    <unitInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="27" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints" />
   </root>
   <root nodeId="2968360207537893572">
     <nodeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="17" startPosition="74" endLine="18" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeParentBreakingPoint" />
@@ -232,8 +232,8 @@
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="46" startPosition="82" endLine="60" endPosition="22" />
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="44" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="48" startPosition="38" endLine="59" endPosition="5" unitName="jetbrains.mps.gwt.client.constraints.GWTModule_Constraints$1" />
     <unitInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.GWTModule_Constraints" />
+    <unitInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="48" startPosition="38" endLine="59" endPosition="5" unitName="jetbrains.mps.gwt.client.constraints.GWTModule_Constraints$1" />
   </root>
 </debugInfo>
 

@@ -31,8 +31,6 @@ public class AskDialog extends BaseDialog {
   private JPanel myInnerPanel;
   private boolean myIsCancelled = true;
   private ArrayList<IChooser> myChoosers;
-  private IChooseComponent myFirstChooser = null;
-  private IChooseComponent myLastChooser = null;
 
   public AskDialog(final RefactoringContext refactoringContext, IChooser... choosers) throws HeadlessException {
     super(ProjectHelper.toMainFrame(refactoringContext.getCurrentOperationContext().getProject()), refactoringContext.getRefactoring().getUserFriendlyName());
@@ -74,39 +72,6 @@ public class AskDialog extends BaseDialog {
 
   public boolean isCancelled() {
     return myIsCancelled;
-  }
-
-  protected void prepareDialog() {
-    super.prepareDialog();
-  
-    if (myFirstChooser != null) {
-      final FocusTraversalPolicy policy = this.getFocusTraversalPolicy();
-      this.setFocusTraversalPolicy(new FocusTraversalPolicy() {
-        public Component getComponentAfter(Container aContainer, Component aComponent) {
-          return policy.getComponentAfter(aContainer, aComponent);
-        }
-
-        public Component getComponentBefore(Container aContainer, Component aComponent) {
-          return policy.getComponentBefore(aContainer, aComponent);
-        }
-
-        public Component getFirstComponent(Container aContainer) {
-          return myFirstChooser.getComponentToFocus();
-        }
-
-        public Component getLastComponent(Container aContainer) {
-          return myLastChooser.getComponentToFocus();
-        }
-
-        public Component getDefaultComponent(Container aContainer) {
-          return myFirstChooser.getComponentToFocus();
-        }
-
-        public Component getInitialComponent(Window window) {
-          return myFirstChooser.getComponentToFocus();
-        }
-      });
-    }
   }
 
   @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)

@@ -719,7 +719,7 @@ public class QueriesGenerated {
           {
             quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_11 = quotedNode_6;
-            quotedNode1_11.addReference(SReference.create("classifier", quotedNode1_11, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.commands(MPS.Classpath/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder")));
+            quotedNode1_11.addReference(SReference.create("classifier", quotedNode1_11, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.commands(MPS.Workbench/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder")));
             quotedNode_3.addChild("returnType", quotedNode1_11);
           }
           quotedNode_1.addChild("operation", quotedNode1_9);
@@ -747,7 +747,7 @@ public class QueriesGenerated {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api(MPS.Classpath/jetbrains.mps.debug.api@java_stub)"), SNodeId.fromString("~IDebugger")));
+          quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.api(MPS.Workbench/jetbrains.mps.debug.api@java_stub)"), SNodeId.fromString("~IDebugger")));
           quotedNode_1.addChild("returnType", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -811,7 +811,7 @@ public class QueriesGenerated {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.addReference(SReference.create("baseMethodDeclaration", quotedNode1_4, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.commands(MPS.Classpath/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.<init>()")));
+          quotedNode1_4.addReference(SReference.create("baseMethodDeclaration", quotedNode1_4, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.commands(MPS.Workbench/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.<init>()")));
           quotedNode_1.addChild("creator", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -869,7 +869,7 @@ public class QueriesGenerated {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_3;
-          quotedNode1_8.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.commands(MPS.Classpath/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.append(java.lang.String...):jetbrains.mps.execution.api.commands.ProcessHandlerBuilder")));
+          quotedNode1_8.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.commands(MPS.Workbench/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.append(java.lang.String...):jetbrains.mps.execution.api.commands.ProcessHandlerBuilder")));
           {
             quotedNode_5 = (SNode) parameter_11;
             SNode quotedNode1_9;
@@ -959,7 +959,7 @@ public class QueriesGenerated {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_3;
-          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.commands(MPS.Classpath/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.appendKey(java.lang.String,java.lang.String...):jetbrains.mps.execution.api.commands.ProcessHandlerBuilder")));
+          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.commands(MPS.Workbench/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.appendKey(java.lang.String,java.lang.String...):jetbrains.mps.execution.api.commands.ProcessHandlerBuilder")));
           {
             quotedNode_5 = (SNode) parameter_13;
             SNode quotedNode1_10;
@@ -1009,7 +1009,7 @@ public class QueriesGenerated {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.addReference(SReference.create("baseMethodDeclaration", quotedNode1_4, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.commands(MPS.Classpath/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.<init>()")));
+          quotedNode1_4.addReference(SReference.create("baseMethodDeclaration", quotedNode1_4, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.commands(MPS.Workbench/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.<init>()")));
           quotedNode_1.addChild("creator", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -1067,7 +1067,7 @@ public class QueriesGenerated {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_3;
-          quotedNode1_8.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.commands(MPS.Classpath/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.append(java.lang.String...):jetbrains.mps.execution.api.commands.ProcessHandlerBuilder")));
+          quotedNode1_8.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.commands(MPS.Workbench/jetbrains.mps.execution.api.commands@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.append(java.lang.String...):jetbrains.mps.execution.api.commands.ProcessHandlerBuilder")));
           {
             quotedNode_5 = (SNode) parameter_11;
             SNode quotedNode1_9;

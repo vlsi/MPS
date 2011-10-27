@@ -33,8 +33,8 @@
       <varInfo nodeId="6531435794299649951" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299649962" fileName="NamedObject.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="6531435794299649967" varName="message" />
       <varInfo nodeId="6531435794299649965" varName="arg" />
+      <varInfo nodeId="6531435794299649967" varName="message" />
     </scopeInfo>
     <unitInfo nodeId="6531435794299649916" fileName="NamedObject.java" startLine="6" startPosition="0" endLine="36" endPosition="0" unitName="mf.NamedObject" />
   </root>
@@ -69,31 +69,31 @@
     <scopeInfo nodeId="6531435794299650030" fileName="Registry.java" startLine="18" startPosition="32" endLine="20" endPosition="55" />
     <scopeInfo nodeId="6531435794299650057" fileName="Registry.java" startLine="25" startPosition="58" endLine="28" endPosition="5" />
     <scopeInfo nodeId="6531435794299649995" fileName="Registry.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="6531435794299650000" varName="newObject" />
       <varInfo nodeId="6531435794299649998" varName="entryPoint" />
+      <varInfo nodeId="6531435794299650000" varName="newObject" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650067" fileName="Registry.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="6531435794299650072" varName="objectName" />
       <varInfo nodeId="6531435794299650070" varName="entryPointName" />
+      <varInfo nodeId="6531435794299650072" varName="objectName" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650088" fileName="Registry.java" startLine="31" startPosition="72" endLine="36" endPosition="18">
-      <varInfo nodeId="6531435794299650090" varName="theEntryPoint" />
       <varInfo nodeId="6531435794299650105" varName="answer" />
+      <varInfo nodeId="6531435794299650090" varName="theEntryPoint" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650016" fileName="Registry.java" startLine="16" startPosition="69" endLine="22" endPosition="51">
       <varInfo nodeId="6531435794299650018" varName="theEntryPoint" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650050" fileName="Registry.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="6531435794299650055" varName="message" />
       <varInfo nodeId="6531435794299650053" varName="arg" />
+      <varInfo nodeId="6531435794299650055" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650081" fileName="Registry.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="6531435794299650086" varName="objectName" />
       <varInfo nodeId="6531435794299650084" varName="entryPointName" />
+      <varInfo nodeId="6531435794299650086" varName="objectName" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650009" fileName="Registry.java" startLine="15" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="6531435794299650014" varName="newObject" />
       <varInfo nodeId="6531435794299650012" varName="entryPointName" />
+      <varInfo nodeId="6531435794299650014" varName="newObject" />
     </scopeInfo>
     <unitInfo nodeId="6531435794299649979" fileName="Registry.java" startLine="8" startPosition="0" endLine="47" endPosition="0" unitName="mf.Registry" />
   </root>
@@ -255,9 +255,9 @@
       <varInfo nodeId="6531435794299650351" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650508" fileName="Money.java" startLine="112" startPosition="42" endLine="123" endPosition="18">
+      <varInfo nodeId="6531435794299650510" varName="bigDenominator" />
       <varInfo nodeId="6531435794299650550" varName="remainder" />
       <varInfo nodeId="6531435794299650515" varName="result" />
-      <varInfo nodeId="6531435794299650510" varName="bigDenominator" />
       <varInfo nodeId="6531435794299650524" varName="simpleResult" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650502" fileName="Money.java" startLine="111" startPosition="0" endLine="125" endPosition="0">
@@ -348,21 +348,21 @@
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650731" fileName="DoubleRangeTester.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="6531435794299650935" fileName="DoubleRangeTester.java" startLine="76" startPosition="35" endLine="84" endPosition="45">
+      <varInfo nodeId="6531435794299650944" varName="r1_10" />
       <varInfo nodeId="6531435794299650951" varName="r4_6" />
       <varInfo nodeId="6531435794299650937" varName="r5_10" />
-      <varInfo nodeId="6531435794299650944" varName="r1_10" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650599" fileName="DoubleRangeTester.java" startLine="12" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="6531435794299650766" fileName="DoubleRangeTester.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="6531435794299650645" fileName="DoubleRangeTester.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="6531435794299650932" fileName="DoubleRangeTester.java" startLine="75" startPosition="0" endLine="86" endPosition="0" />
     <scopeInfo nodeId="6531435794299650811" fileName="DoubleRangeTester.java" startLine="55" startPosition="30" endLine="73" endPosition="49">
-      <varInfo nodeId="6531435794299650827" varName="r4_6" />
-      <varInfo nodeId="6531435794299650834" varName="r5_15" />
       <varInfo nodeId="6531435794299650841" varName="r12_16" />
-      <varInfo nodeId="6531435794299650848" varName="x10_12" />
-      <varInfo nodeId="6531435794299650813" varName="r5_10" />
       <varInfo nodeId="6531435794299650820" varName="r1_10" />
+      <varInfo nodeId="6531435794299650827" varName="r4_6" />
+      <varInfo nodeId="6531435794299650813" varName="r5_10" />
+      <varInfo nodeId="6531435794299650834" varName="r5_15" />
+      <varInfo nodeId="6531435794299650848" varName="x10_12" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299650808" fileName="DoubleRangeTester.java" startLine="54" startPosition="0" endLine="75" endPosition="0" />
     <unitInfo nodeId="6531435794299650588" fileName="DoubleRangeTester.java" startLine="8" startPosition="0" endLine="87" endPosition="0" unitName="mf.DoubleRangeTester" />
@@ -504,17 +504,17 @@
     <scopeInfo nodeId="6531435794299651712" fileName="SingleTemporalCollection.java" startLine="33" startPosition="29" endLine="37" endPosition="28" />
     <scopeInfo nodeId="6531435794299651745" fileName="SingleTemporalCollection.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="6531435794299651753" fileName="SingleTemporalCollection.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="6531435794299651760" varName="date" />
       <varInfo nodeId="6531435794299651758" varName="month" />
       <varInfo nodeId="6531435794299651756" varName="year" />
-      <varInfo nodeId="6531435794299651760" varName="date" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299651770" fileName="SingleTemporalCollection.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="6531435794299651777" fileName="SingleTemporalCollection.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="6531435794299651780" varName="item" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299651693" fileName="SingleTemporalCollection.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="6531435794299651698" varName="item" />
       <varInfo nodeId="6531435794299651696" varName="at" />
+      <varInfo nodeId="6531435794299651698" varName="item" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299651662" fileName="SingleTemporalCollection.java" startLine="18" startPosition="34" endLine="24" endPosition="5">
       <varInfo nodeId="6531435794299651664" varName="o" />
@@ -641,8 +641,8 @@
     </scopeInfo>
     <scopeInfo nodeId="6531435794299651927" fileName="MoneyTester.java" startLine="34" startPosition="23" endLine="37" endPosition="44" />
     <scopeInfo nodeId="6531435794299651977" fileName="MoneyTester.java" startLine="52" startPosition="42" endLine="55" endPosition="48">
-      <varInfo nodeId="6531435794299651984" varName="d2_51b" />
       <varInfo nodeId="6531435794299651979" varName="d2_51a" />
+      <varInfo nodeId="6531435794299651984" varName="d2_51b" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299651945" fileName="MoneyTester.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="6531435794299652039" fileName="MoneyTester.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
@@ -650,8 +650,8 @@
     <scopeInfo nodeId="6531435794299652162" fileName="MoneyTester.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="6531435794299652186" fileName="MoneyTester.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
     <scopeInfo nodeId="6531435794299651846" fileName="MoneyTester.java" startLine="18" startPosition="29" endLine="23" endPosition="5">
-      <varInfo nodeId="6531435794299651857" varName="expected" />
       <varInfo nodeId="6531435794299651848" varName="actual" />
+      <varInfo nodeId="6531435794299651857" varName="expected" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299651890" fileName="MoneyTester.java" startLine="26" startPosition="37" endLine="31" endPosition="57">
       <varInfo nodeId="6531435794299651892" varName="expected" />
@@ -781,9 +781,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6531435794299652268" fileName="MfDate.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
     <scopeInfo nodeId="6531435794299652275" fileName="MfDate.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="6531435794299652282" varName="day" />
       <varInfo nodeId="6531435794299652280" varName="month" />
       <varInfo nodeId="6531435794299652278" varName="year" />
-      <varInfo nodeId="6531435794299652282" varName="day" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299652342" fileName="MfDate.java" startLine="27" startPosition="27" endLine="30" endPosition="19">
       <varInfo nodeId="6531435794299652344" varName="gc" />
@@ -816,9 +816,9 @@
     <scopeInfo nodeId="6531435794299652567" fileName="MfDate.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
     <scopeInfo nodeId="6531435794299652617" fileName="MfDate.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
     <scopeInfo nodeId="6531435794299652577" fileName="MfDate.java" startLine="128" startPosition="0" endLine="132" endPosition="0">
+      <varInfo nodeId="6531435794299652584" varName="day" />
       <varInfo nodeId="6531435794299652582" varName="month" />
       <varInfo nodeId="6531435794299652580" varName="year" />
-      <varInfo nodeId="6531435794299652584" varName="day" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299652594" fileName="MfDate.java" startLine="132" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="6531435794299652597" varName="arg" />
@@ -878,8 +878,8 @@
     </scopeInfo>
     <scopeInfo nodeId="6531435794299652701" fileName="Currency.java" startLine="30" startPosition="62" endLine="33" endPosition="22" />
     <scopeInfo nodeId="6531435794299652664" fileName="Currency.java" startLine="19" startPosition="0" endLine="23" endPosition="3">
-      <varInfo nodeId="6531435794299652669" varName="symbol" />
       <varInfo nodeId="6531435794299652667" varName="name" />
+      <varInfo nodeId="6531435794299652669" varName="symbol" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299652678" fileName="Currency.java" startLine="24" startPosition="0" endLine="28" endPosition="3">
       <varInfo nodeId="6531435794299652683" varName="locale" />
@@ -890,9 +890,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6531435794299652723" fileName="Currency.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="6531435794299652692" fileName="Currency.java" startLine="29" startPosition="0" endLine="34" endPosition="3">
-      <varInfo nodeId="6531435794299652699" varName="symbol" />
       <varInfo nodeId="6531435794299652697" varName="locale" />
       <varInfo nodeId="6531435794299652695" varName="name" />
+      <varInfo nodeId="6531435794299652699" varName="symbol" />
     </scopeInfo>
     <unitInfo nodeId="6531435794299652623" fileName="Currency.java" startLine="8" startPosition="0" endLine="44" endPosition="0" unitName="mf.Currency" />
   </root>
@@ -1064,13 +1064,13 @@
       <varInfo nodeId="6531435794299653365" varName="when" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299653368" fileName="TemporalCollection.java" startLine="7" startPosition="33" endLine="8" endPosition="42">
-      <varInfo nodeId="6531435794299653373" varName="item" />
       <varInfo nodeId="6531435794299653371" varName="at" />
+      <varInfo nodeId="6531435794299653373" varName="item" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299653376" fileName="TemporalCollection.java" startLine="8" startPosition="42" endLine="9" endPosition="51">
+      <varInfo nodeId="6531435794299653383" varName="date" />
       <varInfo nodeId="6531435794299653381" varName="month" />
       <varInfo nodeId="6531435794299653379" varName="year" />
-      <varInfo nodeId="6531435794299653383" varName="date" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299653386" fileName="TemporalCollection.java" startLine="9" startPosition="51" endLine="10" endPosition="22" />
     <scopeInfo nodeId="6531435794299653390" fileName="TemporalCollection.java" startLine="10" startPosition="22" endLine="11" endPosition="31">
@@ -1170,13 +1170,13 @@
     <scopeInfo nodeId="6531435794299654155" fileName="DateRange.java" startLine="72" startPosition="34" endLine="74" endPosition="19" />
     <scopeInfo nodeId="6531435794299654146" fileName="DateRange.java" startLine="75" startPosition="12" endLine="77" endPosition="20" />
     <scopeInfo nodeId="6531435794299653919" fileName="DateRange.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
-      <varInfo nodeId="6531435794299653922" varName="start" />
       <varInfo nodeId="6531435794299653924" varName="end" />
+      <varInfo nodeId="6531435794299653922" varName="start" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299654313" fileName="DateRange.java" startLine="119" startPosition="47" endLine="122" endPosition="7" />
     <scopeInfo nodeId="6531435794299653934" fileName="DateRange.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
-      <varInfo nodeId="6531435794299653937" varName="start" />
       <varInfo nodeId="6531435794299653939" varName="end" />
+      <varInfo nodeId="6531435794299653937" varName="start" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299653976" fileName="DateRange.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6531435794299653982" fileName="DateRange.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
@@ -1230,8 +1230,8 @@
       <varInfo nodeId="6531435794299654293" varName="args" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299654123" fileName="DateRange.java" startLine="66" startPosition="39" endLine="79" endPosition="77">
-      <varInfo nodeId="6531435794299654133" varName="lower" />
       <varInfo nodeId="6531435794299654136" varName="higher" />
+      <varInfo nodeId="6531435794299654133" varName="lower" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299654118" fileName="DateRange.java" startLine="65" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="6531435794299654121" varName="arg" />
@@ -1376,9 +1376,9 @@
     <scopeInfo nodeId="6531435794299654733" fileName="DateRangeTester.java" startLine="86" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="6531435794299654785" fileName="DateRangeTester.java" startLine="95" startPosition="0" endLine="104" endPosition="0" />
     <scopeInfo nodeId="6531435794299654894" fileName="DateRangeTester.java" startLine="122" startPosition="31" endLine="131" endPosition="60">
-      <varInfo nodeId="6531435794299654916" varName="off_end" />
-      <varInfo nodeId="6531435794299654931" varName="missingStart" />
       <varInfo nodeId="6531435794299654946" varName="missingEnd" />
+      <varInfo nodeId="6531435794299654931" varName="missingStart" />
+      <varInfo nodeId="6531435794299654916" varName="off_end" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299654624" fileName="DateRangeTester.java" startLine="62" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="6531435794299654891" fileName="DateRangeTester.java" startLine="121" startPosition="0" endLine="133" endPosition="0" />
@@ -1420,8 +1420,8 @@
     </scopeInfo>
     <scopeInfo nodeId="6531435794299655450" fileName="BitemporalCollection.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="6531435794299655460" fileName="BitemporalCollection.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="6531435794299655463" varName="validDate" />
       <varInfo nodeId="6531435794299655465" varName="transactionDate" />
+      <varInfo nodeId="6531435794299655463" varName="validDate" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299655474" fileName="BitemporalCollection.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="6531435794299655477" varName="transactionDate" />
@@ -1431,9 +1431,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6531435794299655519" fileName="BitemporalCollection.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="6531435794299655526" fileName="BitemporalCollection.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="6531435794299655533" varName="date" />
       <varInfo nodeId="6531435794299655531" varName="month" />
       <varInfo nodeId="6531435794299655529" varName="year" />
-      <varInfo nodeId="6531435794299655533" varName="date" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299655487" fileName="BitemporalCollection.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="6531435794299655492" varName="item" />
@@ -1540,8 +1540,8 @@
       <varInfo nodeId="6531435794299655626" varName="unit" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299655634" fileName="Quantity.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
-      <varInfo nodeId="6531435794299655639" varName="unit" />
       <varInfo nodeId="6531435794299655637" varName="amountString" />
+      <varInfo nodeId="6531435794299655639" varName="unit" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299655884" fileName="Quantity.java" startLine="117" startPosition="45" endLine="120" endPosition="5" />
     <scopeInfo nodeId="6531435794299655901" fileName="Quantity.java" startLine="123" startPosition="51" endLine="126" endPosition="5" />
@@ -1756,8 +1756,8 @@
     <scopeInfo nodeId="6531435794299656475" fileName="DoubleRange.java" startLine="66" startPosition="46" endLine="67" endPosition="58" />
     <scopeInfo nodeId="6531435794299656486" fileName="DoubleRange.java" startLine="70" startPosition="51" endLine="71" endPosition="60" />
     <scopeInfo nodeId="6531435794299656354" fileName="DoubleRange.java" startLine="11" startPosition="0" endLine="14" endPosition="3">
-      <varInfo nodeId="6531435794299656357" varName="start" />
       <varInfo nodeId="6531435794299656359" varName="end" />
+      <varInfo nodeId="6531435794299656357" varName="start" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299656378" fileName="DoubleRange.java" startLine="16" startPosition="96" endLine="20" endPosition="39" />
     <scopeInfo nodeId="6531435794299656403" fileName="DoubleRange.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -1773,10 +1773,10 @@
       <varInfo nodeId="6531435794299656484" varName="start" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299656367" fileName="DoubleRange.java" startLine="15" startPosition="0" endLine="21" endPosition="3">
-      <varInfo nodeId="6531435794299656370" varName="start" />
-      <varInfo nodeId="6531435794299656372" varName="isStartIncluded" />
-      <varInfo nodeId="6531435794299656376" varName="isEndIncluded" />
       <varInfo nodeId="6531435794299656374" varName="end" />
+      <varInfo nodeId="6531435794299656376" varName="isEndIncluded" />
+      <varInfo nodeId="6531435794299656372" varName="isStartIncluded" />
+      <varInfo nodeId="6531435794299656370" varName="start" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299656497" fileName="DoubleRange.java" startLine="52" startPosition="44" endLine="59" endPosition="80" />
     <scopeInfo nodeId="6531435794299656492" fileName="DoubleRange.java" startLine="51" startPosition="0" endLine="61" endPosition="0">

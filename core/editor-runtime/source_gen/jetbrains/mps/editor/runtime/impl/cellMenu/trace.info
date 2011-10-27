@@ -35,9 +35,9 @@
     <scopeInfo nodeId="659731673107302987" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="44" startPosition="240" endLine="45" endPosition="124" />
     <scopeInfo nodeId="2479108860610978830" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="52" startPosition="36" endLine="53" endPosition="37" />
     <scopeInfo nodeId="2479108860610978881" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="58" startPosition="358" endLine="62" endPosition="209">
-      <varInfo nodeId="2479108860611089130" varName="roleLink" />
-      <varInfo nodeId="2479108860611060453" varName="role" />
       <varInfo nodeId="2479108860611060387" varName="parent" />
+      <varInfo nodeId="2479108860611060453" varName="role" />
+      <varInfo nodeId="2479108860611089130" varName="roleLink" />
     </scopeInfo>
     <scopeInfo nodeId="1503962097793510731" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="51" startPosition="54" endLine="64" endPosition="148">
       <varInfo nodeId="2479108860610978834" varName="editor" />
@@ -47,9 +47,9 @@
       <varInfo nodeId="3368017140643690489" varName="genuineLinkDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="3368017140643570614" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="33" startPosition="0" endLine="49" endPosition="3">
-      <varInfo nodeId="2479108860611089562" varName="substituteInfo" />
       <varInfo nodeId="3368017140643570619" varName="linkDeclaration" />
       <varInfo nodeId="3368017140643570617" varName="sourceNode" />
+      <varInfo nodeId="2479108860611089562" varName="substituteInfo" />
     </scopeInfo>
     <scopeInfo nodeId="1503962097793510727" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="50" startPosition="0" endLine="66" endPosition="0" />
     <unitInfo nodeId="3368017140643570595" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory" />
@@ -81,8 +81,8 @@
       <varInfo nodeId="4391314372875510405" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="4391314372875337329" fileName="EnumPropertySubstituteInfo.java" startLine="19" startPosition="0" endLine="24" endPosition="3">
-      <varInfo nodeId="4391314372875347588" varName="node" />
       <varInfo nodeId="4391314372875347594" varName="editorContext" />
+      <varInfo nodeId="4391314372875347588" varName="node" />
       <varInfo nodeId="4391314372875347591" varName="propertyDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="4391314372875510233" fileName="EnumPropertySubstituteInfo.java" startLine="30" startPosition="119" endLine="35" endPosition="0">
@@ -96,12 +96,12 @@
       <varInfo nodeId="4391314372875516052" varName="enumMemberDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="4391314372875424935" fileName="EnumPropertySubstituteInfo.java" startLine="26" startPosition="57" endLine="45" endPosition="19">
-      <varInfo nodeId="4391314372875430618" varName="enumDataType" />
       <varInfo nodeId="4391314372875424943" varName="actions" />
+      <varInfo nodeId="4391314372875430618" varName="enumDataType" />
     </scopeInfo>
     <scopeInfo nodeId="4391314372875424931" fileName="EnumPropertySubstituteInfo.java" startLine="25" startPosition="0" endLine="47" endPosition="0" />
-    <unitInfo nodeId="4391314372875510220" fileName="EnumPropertySubstituteInfo.java" startLine="30" startPosition="52" endLine="42" endPosition="7" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo$1" />
     <unitInfo nodeId="4391314372875337327" fileName="EnumPropertySubstituteInfo.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo" />
+    <unitInfo nodeId="4391314372875510220" fileName="EnumPropertySubstituteInfo.java" startLine="30" startPosition="52" endLine="42" endPosition="7" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo$1" />
   </root>
 </debugInfo>
 

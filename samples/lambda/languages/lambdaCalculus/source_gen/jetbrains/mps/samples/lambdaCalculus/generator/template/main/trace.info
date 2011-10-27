@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="364" startPosition="0" endLine="381" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0b0vb" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="382" startPosition="0" endLine="399" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0b0zb" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="29" startPosition="0" endLine="472" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="QueriesGenerated.java" startLine="400" startPosition="0" endLine="417" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0b0bc" />
   <unitInfo fileName="QueriesGenerated.java" startLine="418" startPosition="0" endLine="435" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0b0cc" />
   <unitInfo fileName="QueriesGenerated.java" startLine="436" startPosition="0" endLine="453" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0b0dc" />
   <unitInfo fileName="QueriesGenerated.java" startLine="454" startPosition="0" endLine="471" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0b0ec" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="29" startPosition="0" endLine="472" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.generator.template.main.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="364" startPosition="0" endLine="381" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0b0vb" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="382" startPosition="0" endLine="399" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0b0zb" />
   <root nodeId="1745225562807890265">
     <nodeInfo nodeId="5142899583592522509" fileName="QueriesGenerated.java" startLine="150" startPosition="151" endLine="151" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5142899583592522508" fileName="QueriesGenerated.java" startLine="150" startPosition="151" endLine="151" endPosition="259" />

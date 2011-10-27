@@ -13,18 +13,18 @@
     <nodeInfo nodeId="1145576838801" fileName="SemanticDowncast.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke_getID_method_2#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1145576838829" fileName="SemanticDowncast.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="countChildren#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1145576838783" fileName="SemanticDowncast.java" startLine="11" startPosition="56" endLine="13" endPosition="44">
-      <varInfo nodeId="1145576838788" varName="id_verbose" />
       <varInfo nodeId="1145576838796" varName="id_briefly" />
+      <varInfo nodeId="1145576838788" varName="id_verbose" />
     </scopeInfo>
     <scopeInfo nodeId="1145576838803" fileName="SemanticDowncast.java" startLine="16" startPosition="56" endLine="18" endPosition="89">
-      <varInfo nodeId="1145576838808" varName="id_verbose" />
       <varInfo nodeId="1171482174426" varName="id_better" />
+      <varInfo nodeId="1145576838808" varName="id_verbose" />
     </scopeInfo>
     <scopeInfo nodeId="1145576838831" fileName="SemanticDowncast.java" startLine="21" startPosition="47" endLine="25" endPosition="115">
       <varInfo nodeId="1145576838854" varName="count_best" />
-      <varInfo nodeId="1145576838836" varName="count_verbose_not_efficient" />
-      <varInfo nodeId="1145576838846" varName="count_not_efficient2" />
       <varInfo nodeId="1206064836922" varName="count_not_efficient" />
+      <varInfo nodeId="1145576838846" varName="count_not_efficient2" />
+      <varInfo nodeId="1145576838836" varName="count_verbose_not_efficient" />
     </scopeInfo>
     <scopeInfo nodeId="1145576838781" fileName="SemanticDowncast.java" startLine="10" startPosition="31" endLine="15" endPosition="0">
       <varInfo nodeId="1145583429470" varName="ifStatement" />
@@ -115,20 +115,20 @@
       <varInfo nodeId="1145577814153" varName="condition" />
     </scopeInfo>
     <scopeInfo nodeId="1145577972934" fileName="Child_Referent_Parent.java" startLine="31" startPosition="54" endLine="34" endPosition="131">
-      <varInfo nodeId="1145578074916" varName="newCondition2" />
       <varInfo nodeId="1145578426520" varName="newCondition1" />
+      <varInfo nodeId="1145578074916" varName="newCondition2" />
       <varInfo nodeId="1145579167457" varName="newCondition3" />
     </scopeInfo>
     <scopeInfo nodeId="1206556966508" fileName="Child_Referent_Parent.java" startLine="37" startPosition="54" endLine="40" endPosition="44">
       <varInfo nodeId="1228342379960" varName="detachedExpression" />
     </scopeInfo>
     <scopeInfo nodeId="1145580908121" fileName="Child_Referent_Parent.java" startLine="43" startPosition="70" endLine="47" endPosition="82">
-      <varInfo nodeId="1145580908129" varName="oldMethopdName" />
       <varInfo nodeId="1145580908123" varName="oldMethod" />
+      <varInfo nodeId="1145580908129" varName="oldMethopdName" />
     </scopeInfo>
     <scopeInfo nodeId="1206559463496" fileName="Child_Referent_Parent.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="1206559463532" varName="methodCall" />
       <varInfo nodeId="1206559463534" varName="method" />
+      <varInfo nodeId="1206559463532" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="1171242667791" fileName="Child_Referent_Parent.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1171242727248" varName="methodCall" />
@@ -153,8 +153,8 @@
       <varInfo nodeId="1145577408546" varName="ifStatement" />
     </scopeInfo>
     <scopeInfo nodeId="1145577584165" fileName="Child_Referent_Parent.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="1145577623217" varName="newCondition" />
       <varInfo nodeId="1145577584184" varName="ifStatement" />
+      <varInfo nodeId="1145577623217" varName="newCondition" />
     </scopeInfo>
     <scopeInfo nodeId="1145577814142" fileName="Child_Referent_Parent.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1145577814163" varName="ifStatement1" />
@@ -167,8 +167,8 @@
       <varInfo nodeId="1206556966531" varName="ifStatement" />
     </scopeInfo>
     <scopeInfo nodeId="1145580908119" fileName="Child_Referent_Parent.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="1145580908149" varName="methodCall" />
       <varInfo nodeId="1145580908151" varName="method" />
+      <varInfo nodeId="1145580908149" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="1145578543181" fileName="Child_Referent_Parent.java" startLine="54" startPosition="54" endLine="63" endPosition="5">
       <varInfo nodeId="1145578626413" varName="mayBe_IfStatement" />
@@ -208,22 +208,22 @@
       <varInfo nodeId="1145579796827" varName="node2" />
     </scopeInfo>
     <scopeInfo nodeId="1145579883108" fileName="TypeCast.java" startLine="23" startPosition="41" endLine="25" endPosition="105">
-      <varInfo nodeId="1145579947995" varName="ifStatement1" />
       <varInfo nodeId="1145579911191" varName="ifStatement" />
+      <varInfo nodeId="1145579947995" varName="ifStatement1" />
     </scopeInfo>
     <scopeInfo nodeId="1145584542700" fileName="TypeCast.java" startLine="32" startPosition="58" endLine="34" endPosition="35">
-      <varInfo nodeId="1145584668914" varName="list2" />
       <varInfo nodeId="1145584644471" varName="list1" />
+      <varInfo nodeId="1145584668914" varName="list2" />
     </scopeInfo>
     <scopeInfo nodeId="1145584704466" fileName="TypeCast.java" startLine="37" startPosition="55" endLine="40" endPosition="96">
+      <varInfo nodeId="1145584704468" varName="list1" />
       <varInfo nodeId="1145584704472" varName="list2" />
       <varInfo nodeId="1145585042266" varName="list3" />
-      <varInfo nodeId="1145584704468" varName="list1" />
     </scopeInfo>
     <scopeInfo nodeId="1145579400033" fileName="TypeCast.java" startLine="11" startPosition="53" endLine="15" endPosition="108">
       <varInfo nodeId="1206555397013" varName="expression" />
-      <varInfo nodeId="1145579514622" varName="nodeObject2" />
       <varInfo nodeId="1145579487694" varName="nodeObject1" />
+      <varInfo nodeId="1145579514622" varName="nodeObject2" />
       <varInfo nodeId="1145579716250" varName="nodeObject3" />
     </scopeInfo>
     <scopeInfo nodeId="1145584821369" fileName="TypeCast.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
@@ -290,8 +290,8 @@
     <scopeInfo nodeId="1206054637455" fileName="Children.java" startLine="39" startPosition="114" endLine="40" endPosition="196" />
     <scopeInfo nodeId="1227876804730" fileName="Children.java" startLine="49" startPosition="39" endLine="50" endPosition="67" />
     <scopeInfo nodeId="1173117814220" fileName="Children.java" startLine="63" startPosition="51" endLine="65" endPosition="283">
-      <varInfo nodeId="1176946755124" varName="children2" />
       <varInfo nodeId="1173117814222" varName="children1" />
+      <varInfo nodeId="1176946755124" varName="children2" />
     </scopeInfo>
     <scopeInfo nodeId="1145583145456" fileName="Children.java" startLine="29" startPosition="117" endLine="32" endPosition="5">
       <varInfo nodeId="1145583145458" varName="statement" />
@@ -308,10 +308,10 @@
       <varInfo nodeId="1173117814255" varName="statement" />
     </scopeInfo>
     <scopeInfo nodeId="1145580957389" fileName="Children.java" startLine="17" startPosition="55" endLine="23" endPosition="96">
-      <varInfo nodeId="1145581102187" varName="statements" />
-      <varInfo nodeId="1171504714291" varName="count2" />
       <varInfo nodeId="1145581051478" varName="count1" />
+      <varInfo nodeId="1171504714291" varName="count2" />
       <varInfo nodeId="1171504740788" varName="count3" />
+      <varInfo nodeId="1145581102187" varName="statements" />
     </scopeInfo>
     <scopeInfo nodeId="1145580957387" fileName="Children.java" startLine="16" startPosition="23" endLine="25" endPosition="0">
       <varInfo nodeId="1145580983579" varName="statementList" />
@@ -319,21 +319,21 @@
     <scopeInfo nodeId="1145581213891" fileName="Children.java" startLine="26" startPosition="78" endLine="41" endPosition="5" />
     <scopeInfo nodeId="1171306154584" fileName="Children.java" startLine="44" startPosition="51" endLine="60" endPosition="100">
       <varInfo nodeId="1210625417016" varName="aConcept" />
-      <varInfo nodeId="1171307602593" varName="children4" />
       <varInfo nodeId="1197895037503" varName="abcdef" />
-      <varInfo nodeId="1176946648841" varName="children3" />
-      <varInfo nodeId="1171307456039" varName="children2" />
       <varInfo nodeId="1171307443925" varName="children1" />
+      <varInfo nodeId="1171307456039" varName="children2" />
+      <varInfo nodeId="1176946648841" varName="children3" />
+      <varInfo nodeId="1171307602593" varName="children4" />
     </scopeInfo>
     <scopeInfo nodeId="1145581213889" fileName="Children.java" startLine="25" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1145581220850" varName="statementList2" />
       <varInfo nodeId="1145581213911" varName="statementList1" />
+      <varInfo nodeId="1145581220850" varName="statementList2" />
     </scopeInfo>
     <scopeInfo nodeId="1171306154582" fileName="Children.java" startLine="43" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1171306220390" varName="statement" />
     </scopeInfo>
-    <unitInfo nodeId="1227876804727" fileName="Children.java" startLine="48" startPosition="186" endLine="52" endPosition="5" unitName="smodelLanguage.samples.Children$1" />
     <unitInfo nodeId="1145580307798" fileName="Children.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="smodelLanguage.samples.Children" />
+    <unitInfo nodeId="1227876804727" fileName="Children.java" startLine="48" startPosition="186" endLine="52" endPosition="5" unitName="smodelLanguage.samples.Children$1" />
   </root>
   <root nodeId="1145583629132">
     <nodeInfo nodeId="1145583711846" fileName="Siblings.java" startLine="10" startPosition="44" endLine="11" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -423,10 +423,10 @@
       <varInfo nodeId="1208196934516" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1146073487581" fileName="ConceptProperties.java" startLine="10" startPosition="49" endLine="16" endPosition="63">
-      <varInfo nodeId="1146073487597" varName="text" />
       <varInfo nodeId="1146073487591" varName="alias" />
       <varInfo nodeId="1146073487583" varName="hasAlias" />
       <varInfo nodeId="1146073487605" varName="length" />
+      <varInfo nodeId="1146073487597" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1146073487616" fileName="ConceptProperties.java" startLine="19" startPosition="50" endLine="26" endPosition="67">
       <varInfo nodeId="1146073487618" varName="isAbstract" />
@@ -517,9 +517,9 @@
     <scopeInfo nodeId="1214429595785" fileName="Properties.java" startLine="80" startPosition="62" endLine="83" endPosition="116" />
     <scopeInfo nodeId="1206551695847" fileName="Properties.java" startLine="56" startPosition="44" endLine="60" endPosition="102" />
     <scopeInfo nodeId="1146086375056" fileName="Properties.java" startLine="63" startPosition="47" endLine="67" endPosition="90">
-      <varInfo nodeId="1146086546632" varName="s" />
       <varInfo nodeId="1146251209146" varName="ok1" />
       <varInfo nodeId="1146251243329" varName="ok2" />
+      <varInfo nodeId="1146086546632" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1146854597221" fileName="Properties.java" startLine="86" startPosition="53" endLine="90" endPosition="5">
       <varInfo nodeId="1170458748585" varName="i" />
@@ -530,29 +530,29 @@
       <varInfo nodeId="1206551650568" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1146081100027" fileName="Properties.java" startLine="48" startPosition="47" endLine="53" endPosition="5">
-      <varInfo nodeId="1146081158852" varName="i2" />
       <varInfo nodeId="1146081139985" varName="i" />
+      <varInfo nodeId="1146081158852" varName="i2" />
     </scopeInfo>
     <scopeInfo nodeId="1146255828848" fileName="Properties.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="1146255864561" varName="clazz2" />
       <varInfo nodeId="1146255845133" varName="clazz1" />
+      <varInfo nodeId="1146255864561" varName="clazz2" />
     </scopeInfo>
     <scopeInfo nodeId="1214429595783" fileName="Properties.java" startLine="79" startPosition="0" endLine="85" endPosition="0">
-      <varInfo nodeId="1214429595833" varName="link2" />
       <varInfo nodeId="1214429595831" varName="link1" />
+      <varInfo nodeId="1214429595833" varName="link2" />
     </scopeInfo>
     <scopeInfo nodeId="1146073718688" fileName="Properties.java" startLine="9" startPosition="43" endLine="16" endPosition="82">
       <varInfo nodeId="1146073804865" varName="hasName" />
-      <varInfo nodeId="1146255412022" varName="ok_safely" />
-      <varInfo nodeId="1146073951454" varName="ok_not_safely" />
-      <varInfo nodeId="1146073864306" varName="text" />
-      <varInfo nodeId="1146255570635" varName="ok_in_java" />
       <varInfo nodeId="1146073845877" varName="name" />
+      <varInfo nodeId="1146255570635" varName="ok_in_java" />
+      <varInfo nodeId="1146073951454" varName="ok_not_safely" />
+      <varInfo nodeId="1146255412022" varName="ok_safely" />
+      <varInfo nodeId="1146073864306" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1146080703112" fileName="Properties.java" startLine="33" startPosition="48" endLine="40" endPosition="110">
       <varInfo nodeId="1146080832046" varName="isTrue" />
-      <varInfo nodeId="1146080941407" varName="isTrue3" />
       <varInfo nodeId="1146080764695" varName="isTrue2" />
+      <varInfo nodeId="1146080941407" varName="isTrue3" />
     </scopeInfo>
     <scopeInfo nodeId="1206551695844" fileName="Properties.java" startLine="55" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1206551707880" varName="node" />
@@ -582,8 +582,8 @@
       <varInfo nodeId="1146080718317" varName="boolConst" />
     </scopeInfo>
     <scopeInfo nodeId="1146250911625" fileName="Properties.java" startLine="69" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="1146250941022" varName="link2" />
       <varInfo nodeId="1146250930364" varName="link1" />
+      <varInfo nodeId="1146250941022" varName="link2" />
     </scopeInfo>
     <unitInfo nodeId="1146073640825" fileName="Properties.java" startLine="8" startPosition="0" endLine="100" endPosition="0" unitName="smodelLanguage.samples.Properties" />
   </root>
@@ -606,16 +606,16 @@
       <varInfo nodeId="1166649349906" varName="newClass" />
     </scopeInfo>
     <scopeInfo nodeId="1166649120555" fileName="NewNode.java" startLine="21" startPosition="36" endLine="25" endPosition="181">
-      <varInfo nodeId="1166649120573" varName="newCondition2" />
       <varInfo nodeId="1166649120565" varName="newCondition" />
-      <varInfo nodeId="1166649120579" varName="newStatement" />
+      <varInfo nodeId="1166649120573" varName="newCondition2" />
       <varInfo nodeId="1166649120557" varName="newIfStatement" />
+      <varInfo nodeId="1166649120579" varName="newStatement" />
     </scopeInfo>
     <scopeInfo nodeId="1180648407744" fileName="NewNode.java" startLine="28" startPosition="38" endLine="32" endPosition="186">
+      <varInfo nodeId="1180648478077" varName="ifStatement" />
       <varInfo nodeId="1181945517588" varName="ifStatement1" />
       <varInfo nodeId="1181950351649" varName="ifStatement2" />
       <varInfo nodeId="1181950717272" varName="ifStatement3" />
-      <varInfo nodeId="1180648478077" varName="ifStatement" />
     </scopeInfo>
     <scopeInfo nodeId="1146260830963" fileName="NewNode.java" startLine="14" startPosition="22" endLine="20" endPosition="0">
       <varInfo nodeId="1146260830964" varName="model" />
@@ -651,8 +651,8 @@
     <scopeInfo nodeId="1169585406422" fileName="ListOfNodes.java" startLine="17" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1169585427175" varName="sl" />
     </scopeInfo>
-    <unitInfo nodeId="1227876796836" fileName="ListOfNodes.java" startLine="20" startPosition="111" endLine="24" endPosition="5" unitName="smodelLanguage.samples.ListOfNodes$1" />
     <unitInfo nodeId="1169584463554" fileName="ListOfNodes.java" startLine="13" startPosition="0" endLine="27" endPosition="0" unitName="smodelLanguage.samples.ListOfNodes" />
+    <unitInfo nodeId="1227876796836" fileName="ListOfNodes.java" startLine="20" startPosition="111" endLine="24" endPosition="5" unitName="smodelLanguage.samples.ListOfNodes$1" />
   </root>
   <root nodeId="1171313827134">
     <nodeInfo nodeId="1212009674217" fileName="Model.java" startLine="17" startPosition="45" endLine="18" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -709,14 +709,14 @@
       <varInfo nodeId="1171315527256" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="1171324257152" fileName="Model.java" startLine="48" startPosition="44" endLine="55" endPosition="7">
-      <varInfo nodeId="1171324366904" varName="nodes3" />
-      <varInfo nodeId="1171324311011" varName="nodes2" />
       <varInfo nodeId="1171324292578" varName="nodes1" />
+      <varInfo nodeId="1171324311011" varName="nodes2" />
+      <varInfo nodeId="1171324366904" varName="nodes3" />
     </scopeInfo>
     <scopeInfo nodeId="1171315698440" fileName="Model.java" startLine="33" startPosition="58" endLine="41" endPosition="7">
-      <varInfo nodeId="1171321871374" varName="roots3" />
-      <varInfo nodeId="1171321797075" varName="roots2" />
       <varInfo nodeId="1171321770454" varName="roots1" />
+      <varInfo nodeId="1171321797075" varName="roots2" />
+      <varInfo nodeId="1171321871374" varName="roots3" />
     </scopeInfo>
     <scopeInfo nodeId="1171324257150" fileName="Model.java" startLine="47" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1171324273193" varName="model" />
@@ -725,9 +725,9 @@
       <varInfo nodeId="1171315708426" varName="model" />
       <varInfo nodeId="1225936311254" varName="scope" />
     </scopeInfo>
+    <unitInfo nodeId="1171313827134" fileName="Model.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="smodelLanguage.samples.Model" />
     <unitInfo nodeId="1227876795415" fileName="Model.java" startLine="37" startPosition="148" endLine="41" endPosition="5" unitName="smodelLanguage.samples.Model$1" />
     <unitInfo nodeId="1227876795715" fileName="Model.java" startLine="51" startPosition="148" endLine="55" endPosition="5" unitName="smodelLanguage.samples.Model$2" />
-    <unitInfo nodeId="1171313827134" fileName="Model.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="smodelLanguage.samples.Model" />
   </root>
   <root nodeId="1173133339986">
     <nodeInfo nodeId="1173133388684" fileName="ConceptRef.java" startLine="16" startPosition="41" endLine="17" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -798,14 +798,14 @@
       <varInfo nodeId="1180543578598" varName="applicableParams" />
     </scopeInfo>
     <scopeInfo nodeId="1181953387740" fileName="ConceptRef.java" startLine="81" startPosition="62" endLine="84" endPosition="124">
+      <varInfo nodeId="1181953582964" varName="n" />
       <varInfo nodeId="1181953543594" varName="subConcepts" />
       <varInfo nodeId="1181953605569" varName="subConcepts1" />
-      <varInfo nodeId="1181953582964" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1182280228038" fileName="ConceptRef.java" startLine="87" startPosition="47" endLine="90" endPosition="85">
       <varInfo nodeId="1182280588606" varName="concept" />
-      <varInfo nodeId="1182280646352" varName="instances2" />
       <varInfo nodeId="1182280576927" varName="instances" />
+      <varInfo nodeId="1182280646352" varName="instances2" />
     </scopeInfo>
     <scopeInfo nodeId="1180482960664" fileName="ConceptRef.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1180482998701" varName="exprConcept" />
@@ -814,10 +814,10 @@
       <varInfo nodeId="1180542937630" varName="conceptFunctionConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1173133347098" fileName="ConceptRef.java" startLine="16" startPosition="41" endLine="22" endPosition="87">
+      <varInfo nodeId="1206734902873" varName="b2" />
+      <varInfo nodeId="1206735456924" varName="b3" />
       <varInfo nodeId="1173133388685" varName="concept1" />
       <varInfo nodeId="1173133418441" varName="concept2" />
-      <varInfo nodeId="1206735456924" varName="b3" />
-      <varInfo nodeId="1206734902873" varName="b2" />
     </scopeInfo>
     <scopeInfo nodeId="1177011565491" fileName="ConceptRef.java" startLine="25" startPosition="72" endLine="31" endPosition="70" />
     <scopeInfo nodeId="1181953387737" fileName="ConceptRef.java" startLine="80" startPosition="0" endLine="86" endPosition="0">
@@ -832,29 +832,29 @@
     </scopeInfo>
     <scopeInfo nodeId="1177011565489" fileName="ConceptRef.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1177034171012" varName="concept1" />
-      <varInfo nodeId="1177011766342" varName="node" />
       <varInfo nodeId="1177034215996" varName="concept2" />
+      <varInfo nodeId="1177011766342" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1180456939143" fileName="ConceptRef.java" startLine="63" startPosition="49" endLine="78" endPosition="79">
+      <varInfo nodeId="1180459854660" varName="hierarchy" />
       <varInfo nodeId="1180458007463" varName="supers_all" />
+      <varInfo nodeId="1206992723519" varName="supers_all_inclusive" />
+      <varInfo nodeId="1180457401012" varName="supers_direct" />
+      <varInfo nodeId="1206993017955" varName="supers_direct_inclusive" />
       <varInfo nodeId="1180546843525" varName="yes1" />
       <varInfo nodeId="1206655034855" varName="yes2" />
-      <varInfo nodeId="1206993017955" varName="supers_direct_inclusive" />
-      <varInfo nodeId="1180459854660" varName="hierarchy" />
-      <varInfo nodeId="1180457401012" varName="supers_direct" />
-      <varInfo nodeId="1206992723519" varName="supers_all_inclusive" />
       <varInfo nodeId="1180546895944" varName="yes3" />
       <varInfo nodeId="1206654587117" varName="yes4" />
     </scopeInfo>
     <scopeInfo nodeId="1180543684773" fileName="ConceptRef.java" startLine="42" startPosition="31" endLine="60" endPosition="25">
-      <varInfo nodeId="1180544203372" varName="n1" />
-      <varInfo nodeId="1180547775139" varName="exprConc" />
+      <varInfo nodeId="1180547809422" varName="bExprConc" />
       <varInfo nodeId="1180543735908" varName="c1" />
       <varInfo nodeId="1180543816746" varName="c2" />
-      <varInfo nodeId="1180546206473" varName="n3" />
-      <varInfo nodeId="1180546113372" varName="n2" />
-      <varInfo nodeId="1180547809422" varName="bExprConc" />
+      <varInfo nodeId="1180547775139" varName="exprConc" />
       <varInfo nodeId="1180544050717" varName="exprConcept" />
+      <varInfo nodeId="1180544203372" varName="n1" />
+      <varInfo nodeId="1180546113372" varName="n2" />
+      <varInfo nodeId="1180546206473" varName="n3" />
     </scopeInfo>
     <scopeInfo nodeId="1180456939140" fileName="ConceptRef.java" startLine="62" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1180457006292" varName="concept" />
@@ -888,21 +888,21 @@
     <nodeInfo nodeId="1206563707607" fileName="Attributes.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accessToPropertyAttribute_2#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1206570457529" fileName="Attributes.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accessToReferenceAttribute_2#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1206559706547" fileName="Attributes.java" startLine="14" startPosition="51" endLine="16" endPosition="232">
-      <varInfo nodeId="1206561988995" varName="macros" />
       <varInfo nodeId="1206563162229" varName="firstMacro" />
+      <varInfo nodeId="1206561988995" varName="macros" />
     </scopeInfo>
     <scopeInfo nodeId="1206570258845" fileName="Attributes.java" startLine="32" startPosition="56" endLine="34" endPosition="235">
-      <varInfo nodeId="1206570389105" varName="referenceMacro1" />
       <varInfo nodeId="1206570365612" varName="referenceMacro" />
+      <varInfo nodeId="1206570389105" varName="referenceMacro1" />
     </scopeInfo>
     <scopeInfo nodeId="1206563178415" fileName="Attributes.java" startLine="19" startPosition="55" endLine="22" endPosition="217">
       <varInfo nodeId="1206563216226" varName="concept" />
-      <varInfo nodeId="1206563679660" varName="propertyMacro1" />
       <varInfo nodeId="1206563216218" varName="propertyMacro" />
+      <varInfo nodeId="1206563679660" varName="propertyMacro1" />
     </scopeInfo>
     <scopeInfo nodeId="1206559755613" fileName="Attributes.java" startLine="44" startPosition="33" endLine="47" endPosition="138">
-      <varInfo nodeId="1206561566987" varName="nodes" />
       <varInfo nodeId="1206561566994" varName="firstNode" />
+      <varInfo nodeId="1206561566987" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="1206563707610" fileName="Attributes.java" startLine="25" startPosition="55" endLine="29" endPosition="205">
       <varInfo nodeId="1206570050581" varName="propMacro" />
@@ -938,9 +938,9 @@
     <nodeInfo nodeId="1219355713021" fileName="NodeRef.java" startLine="12" startPosition="22" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="node_ref_1#()V" />
     <scopeInfo nodeId="1219355713024" fileName="NodeRef.java" startLine="13" startPosition="28" endLine="17" endPosition="116">
       <varInfo nodeId="1219355954168" varName="internalValue" />
-      <varInfo nodeId="1219355848323" varName="presentation" />
       <varInfo nodeId="1219355967200" varName="javaIdentifier" />
       <varInfo nodeId="1219355842613" varName="members" />
+      <varInfo nodeId="1219355848323" varName="presentation" />
     </scopeInfo>
     <scopeInfo nodeId="1219355713021" fileName="NodeRef.java" startLine="12" startPosition="22" endLine="19" endPosition="0" />
     <unitInfo nodeId="1219355636115" fileName="NodeRef.java" startLine="12" startPosition="0" endLine="20" endPosition="0" unitName="smodelLanguage.samples.NodeRef" />
@@ -959,12 +959,12 @@
       <varInfo nodeId="1221171408331" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="1221164930762" fileName="SearchScope.java" startLine="11" startPosition="26" endLine="16" endPosition="0">
-      <varInfo nodeId="1221165056653" varName="methodCall" />
       <varInfo nodeId="1221166109617" varName="context" />
+      <varInfo nodeId="1221165056653" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="1221171286994" fileName="SearchScope.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1221171328904" varName="methodCall" />
       <varInfo nodeId="1221171328906" varName="context" />
+      <varInfo nodeId="1221171328904" varName="methodCall" />
       <varInfo nodeId="1221171333642" varName="methodDeclaration" />
     </scopeInfo>
     <unitInfo nodeId="1221164914075" fileName="SearchScope.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="smodelLanguage.samples.SearchScope" />
@@ -988,10 +988,10 @@
     <nodeInfo nodeId="1241018438639" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1241018421130" fileName="StructureLanguageEnums.java" startLine="9" startPosition="37" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iteration#()V" />
     <scopeInfo nodeId="1241018438642" fileName="StructureLanguageEnums.java" startLine="11" startPosition="202" endLine="15" endPosition="191">
+      <varInfo nodeId="1241018719428" varName="cardinality" />
+      <varInfo nodeId="1241018727184" varName="cardinality2" />
       <varInfo nodeId="1241018693383" varName="name" />
       <varInfo nodeId="1241018645360" varName="value" />
-      <varInfo nodeId="1241018727184" varName="cardinality2" />
-      <varInfo nodeId="1241018719428" varName="cardinality" />
     </scopeInfo>
     <scopeInfo nodeId="1241018421133" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5" />
     <scopeInfo nodeId="1241018438639" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5" />

@@ -57,46 +57,46 @@
     <scopeInfo nodeId="8520793874416538151" fileName="ParametersInformation.java" startLine="80" startPosition="47" endLine="82" endPosition="43" />
     <scopeInfo nodeId="8520793874416511746" fileName="ParametersInformation.java" startLine="74" startPosition="47" endLine="77" endPosition="5" />
     <scopeInfo nodeId="6090996390710375686" fileName="ParametersInformation.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="6090996390710375692" varName="node" />
       <varInfo nodeId="6090996390710375694" varName="editorContext" />
+      <varInfo nodeId="6090996390710375692" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6090996390710375696" fileName="ParametersInformation.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="6090996390710375702" varName="node" />
       <varInfo nodeId="6090996390710375704" varName="editorContext" />
       <varInfo nodeId="6090996390710375706" varName="method" />
+      <varInfo nodeId="6090996390710375702" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6090996390710375708" fileName="ParametersInformation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="6090996390710375714" varName="node" />
       <varInfo nodeId="6090996390710375716" varName="editorContext" />
       <varInfo nodeId="6090996390710375718" varName="method" />
+      <varInfo nodeId="6090996390710375714" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4471457983392177650" fileName="ParametersInformation.java" startLine="64" startPosition="60" endLine="68" endPosition="65" />
     <scopeInfo nodeId="8394433674396748094" fileName="ParametersInformation.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="8394433674396748100" varName="node" />
       <varInfo nodeId="8394433674396748102" varName="editorContext" />
       <varInfo nodeId="8394433674396748104" varName="method" />
+      <varInfo nodeId="8394433674396748100" varName="node" />
       <varInfo nodeId="8394433674396748113" varName="printer" />
     </scopeInfo>
     <scopeInfo nodeId="8520793874416538146" fileName="ParametersInformation.java" startLine="78" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="8520793874416538149" varName="g" />
     </scopeInfo>
     <scopeInfo nodeId="6090996390710375745" fileName="ParametersInformation.java" startLine="48" startPosition="53" endLine="69" endPosition="7">
-      <varInfo nodeId="6090996390710375747" varName="textPane" />
       <varInfo nodeId="6090996390710375800" varName="constraints" />
       <varInfo nodeId="8394433674396748132" varName="printer" />
+      <varInfo nodeId="6090996390710375747" varName="textPane" />
     </scopeInfo>
     <scopeInfo nodeId="6090996390710375743" fileName="ParametersInformation.java" startLine="47" startPosition="49" endLine="70" endPosition="5" />
     <scopeInfo nodeId="6090996390710375723" fileName="ParametersInformation.java" startLine="42" startPosition="74" endLine="71" endPosition="17">
-      <varInfo nodeId="6090996390710375737" varName="panel" />
-      <varInfo nodeId="6090996390710375725" varName="methods" />
       <varInfo nodeId="6090996390710375733" varName="lineNumber" />
+      <varInfo nodeId="6090996390710375725" varName="methods" />
+      <varInfo nodeId="6090996390710375737" varName="panel" />
     </scopeInfo>
     <scopeInfo nodeId="6090996390710375720" fileName="ParametersInformation.java" startLine="41" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="6090996390710375826" varName="node" />
       <varInfo nodeId="6090996390710375828" varName="editorContext" />
+      <varInfo nodeId="6090996390710375826" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8520793874416511744" fileName="ParametersInformation.java" startLine="74" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.editor.runtime.ParametersInformation$Line" />
     <unitInfo nodeId="6090996390710375685" fileName="ParametersInformation.java" startLine="21" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.editor.runtime.ParametersInformation" />
+    <unitInfo nodeId="8520793874416511744" fileName="ParametersInformation.java" startLine="74" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.editor.runtime.ParametersInformation$Line" />
   </root>
   <root nodeId="6774261846361407465">
     <nodeInfo nodeId="6774261846361407470" fileName="ExtractComponentUtil.java" startLine="26" startPosition="86" endLine="27" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -119,8 +119,8 @@
     <scopeInfo nodeId="6774261846361407488" fileName="ExtractComponentUtil.java" startLine="29" startPosition="32" endLine="30" endPosition="13" />
     <scopeInfo nodeId="6774261846361407556" fileName="ExtractComponentUtil.java" startLine="22" startPosition="35" endLine="24" endPosition="3" />
     <scopeInfo nodeId="6774261846361407495" fileName="ExtractComponentUtil.java" startLine="33" startPosition="25" endLine="41" endPosition="60">
-      <varInfo nodeId="6774261846361407497" varName="model" />
       <varInfo nodeId="6774261846361407503" varName="component" />
+      <varInfo nodeId="6774261846361407497" varName="model" />
       <varInfo nodeId="6774261846361407534" varName="toReplace" />
     </scopeInfo>
     <scopeInfo nodeId="6774261846361407494" fileName="ExtractComponentUtil.java" startLine="32" startPosition="67" endLine="43" endPosition="0" />
@@ -129,11 +129,11 @@
       <varInfo nodeId="6774261846361407471" varName="container" />
     </scopeInfo>
     <scopeInfo nodeId="6774261846361407466" fileName="ExtractComponentUtil.java" startLine="25" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="6774261846361407551" varName="node" />
       <varInfo nodeId="6774261846361407553" varName="editorContext" />
+      <varInfo nodeId="6774261846361407551" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6774261846361407494" fileName="ExtractComponentUtil.java" startLine="32" startPosition="55" endLine="43" endPosition="5" unitName="jetbrains.mps.editor.runtime.ExtractComponentUtil$1" />
     <unitInfo nodeId="6774261846361407465" fileName="ExtractComponentUtil.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.editor.runtime.ExtractComponentUtil" />
+    <unitInfo nodeId="6774261846361407494" fileName="ExtractComponentUtil.java" startLine="32" startPosition="55" endLine="43" endPosition="5" unitName="jetbrains.mps.editor.runtime.ExtractComponentUtil$1" />
   </root>
   <root nodeId="8313721352726362528">
     <nodeInfo nodeId="8313721352726362529" fileName="EditorCell_Empty.java" startLine="21" startPosition="56" endLine="22" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCaretVisible" />
@@ -222,8 +222,8 @@
     <scopeInfo nodeId="8313721352726362568" fileName="EditorCell_Empty.java" startLine="31" startPosition="71" endLine="33" endPosition="66" />
     <scopeInfo nodeId="8313721352726362654" fileName="EditorCell_Empty.java" startLine="58" startPosition="37" endLine="60" endPosition="75" />
     <scopeInfo nodeId="8313721352726362543" fileName="EditorCell_Empty.java" startLine="24" startPosition="0" endLine="28" endPosition="3">
-      <varInfo nodeId="8313721352726362546" varName="node" />
       <varInfo nodeId="8313721352726362544" varName="c" />
+      <varInfo nodeId="8313721352726362546" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="8313721352726362824" fileName="EditorCell_Empty.java" startLine="100" startPosition="44" endLine="104" endPosition="68" />
     <scopeInfo nodeId="8313721352726362853" fileName="EditorCell_Empty.java" startLine="107" startPosition="43" endLine="111" endPosition="69" />
@@ -249,29 +249,29 @@
     <scopeInfo nodeId="8313721352726362821" fileName="EditorCell_Empty.java" startLine="99" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="8313721352726362850" fileName="EditorCell_Empty.java" startLine="106" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="8313721352726362879" fileName="EditorCell_Empty.java" startLine="113" startPosition="0" endLine="121" endPosition="0">
-      <varInfo nodeId="8313721352726362884" varName="text" />
-      <varInfo nodeId="8313721352726362880" varName="editorContext" />
       <varInfo nodeId="8313721352726362882" varName="cellForNewNode" />
+      <varInfo nodeId="8313721352726362880" varName="editorContext" />
+      <varInfo nodeId="8313721352726362884" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="8313721352726362916" fileName="EditorCell_Empty.java" startLine="121" startPosition="0" endLine="129" endPosition="0">
-      <varInfo nodeId="8313721352726362921" varName="text" />
-      <varInfo nodeId="8313721352726362917" varName="editorContext" />
       <varInfo nodeId="8313721352726362919" varName="cellForNewNode" />
+      <varInfo nodeId="8313721352726362917" varName="editorContext" />
+      <varInfo nodeId="8313721352726362921" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="8313721352726362780" fileName="EditorCell_Empty.java" startLine="82" startPosition="67" endLine="92" endPosition="0" />
     <scopeInfo nodeId="8313721352726362649" fileName="EditorCell_Empty.java" startLine="55" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="8313721352726362712" fileName="EditorCell_Empty.java" startLine="68" startPosition="64" endLine="92" endPosition="7">
-      <varInfo nodeId="8313721352726362769" varName="fside" />
-      <varInfo nodeId="8313721352726362743" varName="symbol" />
       <varInfo nodeId="8313721352726362714" varName="editorContext" />
+      <varInfo nodeId="8313721352726362769" varName="fside" />
       <varInfo nodeId="8313721352726362720" varName="side" />
+      <varInfo nodeId="8313721352726362743" varName="symbol" />
     </scopeInfo>
     <scopeInfo nodeId="8313721352726362705" fileName="EditorCell_Empty.java" startLine="66" startPosition="0" endLine="94" endPosition="0">
-      <varInfo nodeId="8313721352726362710" varName="p1" />
       <varInfo nodeId="8313721352726362708" varName="p0" />
+      <varInfo nodeId="8313721352726362710" varName="p1" />
     </scopeInfo>
-    <unitInfo nodeId="8313721352726362778" fileName="EditorCell_Empty.java" startLine="82" startPosition="44" endLine="92" endPosition="5" unitName="jetbrains.mps.editor.runtime.EditorCell_Empty$1" />
     <unitInfo nodeId="8313721352726362528" fileName="EditorCell_Empty.java" startLine="21" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.editor.runtime.EditorCell_Empty" />
+    <unitInfo nodeId="8313721352726362778" fileName="EditorCell_Empty.java" startLine="82" startPosition="44" endLine="92" endPosition="5" unitName="jetbrains.mps.editor.runtime.EditorCell_Empty$1" />
   </root>
   <root nodeId="8394433674396727873">
     <nodeInfo nodeId="8394433674396727879" fileName="StyledTextPrinter.java" startLine="11" startPosition="32" endLine="12" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDocument" />

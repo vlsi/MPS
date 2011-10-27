@@ -133,9 +133,9 @@
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="148" startPosition="0" endLine="154" endPosition="0" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="108" startPosition="0" endLine="115" endPosition="0" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="137" startPosition="0" endLine="144" endPosition="0" />
+    <unitInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="25" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain" />
     <unitInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="89" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain$RootMappingRule0" />
     <unitInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="122" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain$WeavingRule0" />
-    <unitInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="25" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain" />
   </root>
   <root nodeId="1218738789586">
     <nodeInfo nodeId="1218738789586" fileName="Templatemap__outputNode.java" startLine="15" startPosition="69" endLine="16" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_wi2k8y_a0a0" />

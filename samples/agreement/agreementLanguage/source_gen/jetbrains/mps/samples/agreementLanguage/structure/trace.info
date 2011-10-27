@@ -493,8 +493,8 @@
     <scopeInfo nodeId="1111792867434" fileName="ValueType.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1111792867434" fileName="ValueType_PropertySupport.java" startLine="9" startPosition="64" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1111792867434" fileName="ValueType_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="1111792867434" fileName="ValueType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.ValueType_PropertySupport" />
     <unitInfo nodeId="1111792867434" fileName="ValueType.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.ValueType" />
+    <unitInfo nodeId="1111792867434" fileName="ValueType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.ValueType_PropertySupport" />
   </root>
   <root nodeId="1111793238658">
     <nodeInfo nodeId="1111793238658" fileName="Unit_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -580,8 +580,8 @@
     <scopeInfo nodeId="1111793238658" fileName="Unit_PropertySupport.java" startLine="9" startPosition="59" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1111793238658" fileName="Unit_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1111793238658" fileName="Unit.java" startLine="45" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="1111793238658" fileName="Unit_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Unit_PropertySupport" />
     <unitInfo nodeId="1111793238658" fileName="Unit.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Unit" />
+    <unitInfo nodeId="1111793238658" fileName="Unit_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Unit_PropertySupport" />
   </root>
   <root nodeId="1111793698243">
     <nodeInfo nodeId="1111793698243" fileName="EventType.java" startLine="15" startPosition="69" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -1070,8 +1070,8 @@
     <scopeInfo nodeId="1116367977407" fileName="Taxable.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1116367977407" fileName="Taxable_PropertySupport.java" startLine="9" startPosition="62" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1116367977407" fileName="Taxable_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="1116367977407" fileName="Taxable_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Taxable_PropertySupport" />
     <unitInfo nodeId="1116367977407" fileName="Taxable.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Taxable" />
+    <unitInfo nodeId="1116367977407" fileName="Taxable_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Taxable_PropertySupport" />
   </root>
   <root nodeId="1116445695828">
     <nodeInfo nodeId="1116445695828" fileName="Date_Past.java" startLine="10" startPosition="37" endLine="11" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

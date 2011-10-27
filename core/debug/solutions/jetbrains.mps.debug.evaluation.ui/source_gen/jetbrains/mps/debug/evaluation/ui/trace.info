@@ -93,8 +93,8 @@
     <scopeInfo nodeId="6234804889558738700" fileName="EvaluationAuxModule.java" startLine="89" startPosition="33" endLine="93" endPosition="0" />
     <scopeInfo nodeId="9071178110302103672" fileName="EvaluationAuxModule.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="9071178110302103678" fileName="EvaluationAuxModule.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
-      <varInfo nodeId="9071178110302103683" varName="reloadClasses" />
       <varInfo nodeId="9071178110302103681" varName="moduleDescriptor" />
+      <varInfo nodeId="9071178110302103683" varName="reloadClasses" />
     </scopeInfo>
     <scopeInfo nodeId="9071178110302103689" fileName="EvaluationAuxModule.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="9071178110302103695" fileName="EvaluationAuxModule.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
@@ -120,9 +120,9 @@
     </scopeInfo>
     <scopeInfo nodeId="9071178110302103603" fileName="EvaluationAuxModule.java" startLine="53" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="9071178110302103665" fileName="EvaluationAuxModule.java" startLine="82" startPosition="0" endLine="96" endPosition="0" />
-    <unitInfo nodeId="6234804889558738698" fileName="EvaluationAuxModule.java" startLine="89" startPosition="17" endLine="93" endPosition="7" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule$2" />
-    <unitInfo nodeId="4576417129640276586" fileName="EvaluationAuxModule.java" startLine="56" startPosition="46" endLine="64" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule$1" />
     <unitInfo nodeId="9071178110302103533" fileName="EvaluationAuxModule.java" startLine="31" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule" />
+    <unitInfo nodeId="4576417129640276586" fileName="EvaluationAuxModule.java" startLine="56" startPosition="46" endLine="64" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule$1" />
+    <unitInfo nodeId="6234804889558738698" fileName="EvaluationAuxModule.java" startLine="89" startPosition="17" endLine="93" endPosition="7" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule$2" />
   </root>
 </debugInfo>
 

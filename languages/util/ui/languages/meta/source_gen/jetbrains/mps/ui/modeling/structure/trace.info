@@ -90,8 +90,8 @@
     <scopeInfo nodeId="1275214627099785401" fileName="VAlignment_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1275214627099785401" fileName="VAlignment.java" startLine="48" startPosition="53" endLine="64" endPosition="35" />
     <scopeInfo nodeId="1275214627099785401" fileName="VAlignment.java" startLine="47" startPosition="0" endLine="66" endPosition="0" />
-    <unitInfo nodeId="1275214627099785401" fileName="VAlignment_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VAlignment_PropertySupport" />
     <unitInfo nodeId="1275214627099785401" fileName="VAlignment.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VAlignment" />
+    <unitInfo nodeId="1275214627099785401" fileName="VAlignment_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VAlignment_PropertySupport" />
   </root>
   <root nodeId="1275214627099785407">
     <nodeInfo nodeId="1275214627099785407" fileName="HAlignment_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -181,8 +181,8 @@
     <scopeInfo nodeId="1275214627099785407" fileName="HAlignment_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1275214627099785407" fileName="HAlignment.java" startLine="48" startPosition="53" endLine="64" endPosition="35" />
     <scopeInfo nodeId="1275214627099785407" fileName="HAlignment.java" startLine="47" startPosition="0" endLine="66" endPosition="0" />
-    <unitInfo nodeId="1275214627099785407" fileName="HAlignment_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.HAlignment_PropertySupport" />
     <unitInfo nodeId="1275214627099785407" fileName="HAlignment.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.HAlignment" />
+    <unitInfo nodeId="1275214627099785407" fileName="HAlignment_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.HAlignment_PropertySupport" />
   </root>
   <root nodeId="1412244996130857074">
     <nodeInfo nodeId="1412244996130857074" fileName="AuxObjectTemplate.java" startLine="16" startPosition="77" endLine="17" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -801,8 +801,8 @@
     <scopeInfo nodeId="2663453265347399636" fileName="Unit.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="2663453265347399636" fileName="Unit_PropertySupport.java" startLine="9" startPosition="59" endLine="23" endPosition="0" />
     <scopeInfo nodeId="2663453265347399636" fileName="Unit_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="2663453265347399636" fileName="Unit_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Unit_PropertySupport" />
     <unitInfo nodeId="2663453265347399636" fileName="Unit.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Unit" />
+    <unitInfo nodeId="2663453265347399636" fileName="Unit_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Unit_PropertySupport" />
   </root>
   <root nodeId="3619322115897256358">
     <nodeInfo nodeId="3619322115897256358" fileName="AlignmentLayoutConstraint.java" startLine="10" startPosition="65" endLine="11" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

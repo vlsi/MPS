@@ -341,6 +341,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     try {
       dr = getSource().loadDescriptor(getModule(), getSModelReference().getSModelFqName());
     } catch (ModelReadException e) {
+      updateDiskTimestamp();
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       return;
     }

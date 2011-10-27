@@ -115,6 +115,16 @@ public class JarEntryFile implements IFileEx {
     return false;
   }
 
+  @Override
+  public boolean rename(String newName) {
+    return false;
+  }
+
+  @Override
+  public boolean move(IFile newParent) {
+    return false;
+  }
+
   public InputStream openInputStream() throws IOException {
     if (myJarFileData == null) {
       throw new IOException("File is not found " + getPath());

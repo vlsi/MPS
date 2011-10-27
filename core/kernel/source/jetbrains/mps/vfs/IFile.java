@@ -49,6 +49,9 @@ public interface IFile {
   boolean exists();
   boolean delete();
 
+  boolean rename(String newName);
+  boolean move(IFile newParent);
+
   InputStream openInputStream() throws IOException;
   OutputStream openOutputStream() throws IOException;
 }

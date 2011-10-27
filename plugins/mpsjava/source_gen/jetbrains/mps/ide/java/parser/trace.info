@@ -10,13 +10,13 @@
     <scopeInfo nodeId="4223086795208731587" fileName="CommentRecorderScanner.java" startLine="9" startPosition="222" endLine="10" endPosition="144" />
     <scopeInfo nodeId="4223086795208731609" fileName="CommentRecorderScanner.java" startLine="15" startPosition="56" endLine="16" endPosition="81" />
     <scopeInfo nodeId="4223086795208731566" fileName="CommentRecorderScanner.java" startLine="8" startPosition="53" endLine="11" endPosition="3">
-      <varInfo nodeId="4223086795208731581" varName="taskPriorities" />
-      <varInfo nodeId="4223086795208731575" varName="sourceLevel" />
-      <varInfo nodeId="4223086795208731569" varName="tokenizeComments" />
-      <varInfo nodeId="4223086795208731585" varName="isTaskCaseSensitive" />
-      <varInfo nodeId="4223086795208731571" varName="tokenizeWhiteSpace" />
-      <varInfo nodeId="4223086795208731577" varName="taskTags" />
       <varInfo nodeId="4223086795208731573" varName="checkNonExternalizedStringLiterals" />
+      <varInfo nodeId="4223086795208731585" varName="isTaskCaseSensitive" />
+      <varInfo nodeId="4223086795208731575" varName="sourceLevel" />
+      <varInfo nodeId="4223086795208731581" varName="taskPriorities" />
+      <varInfo nodeId="4223086795208731577" varName="taskTags" />
+      <varInfo nodeId="4223086795208731569" varName="tokenizeComments" />
+      <varInfo nodeId="4223086795208731571" varName="tokenizeWhiteSpace" />
     </scopeInfo>
     <scopeInfo nodeId="4223086795208731601" fileName="CommentRecorderScanner.java" startLine="13" startPosition="40" endLine="17" endPosition="5" />
     <scopeInfo nodeId="4223086795208731596" fileName="CommentRecorderScanner.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
@@ -151,8 +151,8 @@
     <scopeInfo nodeId="4223086795208732618" fileName="CommentRecorderParser.java" startLine="161" startPosition="47" endLine="163" endPosition="126" />
     <scopeInfo nodeId="4223086795208732692" fileName="CommentRecorderParser.java" startLine="171" startPosition="35" endLine="173" endPosition="27" />
     <scopeInfo nodeId="4223086795208731654" fileName="CommentRecorderParser.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
-      <varInfo nodeId="4223086795208731657" varName="problemReporter" />
       <varInfo nodeId="4223086795208731659" varName="optimizeStringLiterals" />
+      <varInfo nodeId="4223086795208731657" varName="problemReporter" />
     </scopeInfo>
     <scopeInfo nodeId="4223086795208732139" fileName="CommentRecorderParser.java" startLine="114" startPosition="14" endLine="117" endPosition="113" />
     <scopeInfo nodeId="4223086795208732309" fileName="CommentRecorderParser.java" startLine="109" startPosition="13" endLine="113" endPosition="14" />
@@ -209,12 +209,12 @@
       <varInfo nodeId="4223086795208732518" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="4223086795208732509" fileName="CommentRecorderParser.java" startLine="145" startPosition="0" endLine="170" endPosition="0">
-      <varInfo nodeId="4223086795208732512" varName="start" />
       <varInfo nodeId="4223086795208732514" varName="end" />
+      <varInfo nodeId="4223086795208732512" varName="start" />
     </scopeInfo>
     <scopeInfo nodeId="4223086795208732006" fileName="CommentRecorderParser.java" startLine="64" startPosition="56" endLine="120" endPosition="20">
-      <varInfo nodeId="4223086795208732008" varName="lastCommentIndex" />
       <varInfo nodeId="4223086795208732023" varName="index" />
+      <varInfo nodeId="4223086795208732008" varName="lastCommentIndex" />
       <varInfo nodeId="4223086795208732027" varName="validCount" />
     </scopeInfo>
     <scopeInfo nodeId="4223086795208732001" fileName="CommentRecorderParser.java" startLine="63" startPosition="0" endLine="122" endPosition="0">
@@ -306,9 +306,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4312510064178913665" fileName="CommentHelper.java" startLine="15" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="4312510064178913831" varName="content" />
-      <varInfo nodeId="4312510064178913837" varName="start" />
-      <varInfo nodeId="4312510064178913834" varName="lineends" />
       <varInfo nodeId="4312510064178913839" varName="end" />
+      <varInfo nodeId="4312510064178913834" varName="lineends" />
+      <varInfo nodeId="4312510064178913837" varName="start" />
     </scopeInfo>
     <scopeInfo nodeId="5141400498198648713" fileName="CommentHelper.java" startLine="42" startPosition="52" endLine="61" endPosition="7">
       <varInfo nodeId="4312510064178919742" varName="mintrim" />
@@ -319,9 +319,9 @@
       <varInfo nodeId="4312510064178913974" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4312510064178913875" fileName="CommentHelper.java" startLine="27" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="4312510064178913888" varName="start" />
-      <varInfo nodeId="4312510064178913884" varName="lines" />
       <varInfo nodeId="4312510064178913891" varName="end" />
+      <varInfo nodeId="4312510064178913884" varName="lines" />
+      <varInfo nodeId="4312510064178913888" varName="start" />
     </scopeInfo>
     <unitInfo nodeId="4312510064178913419" fileName="CommentHelper.java" startLine="12" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ide.java.parser.CommentHelper" />
   </root>
@@ -456,12 +456,12 @@
     <scopeInfo nodeId="5646944109420298830" fileName="ClasspathSelectionTree.java" startLine="135" startPosition="33" endLine="138" endPosition="9" />
     <scopeInfo nodeId="5646944109420298988" fileName="ClasspathSelectionTree.java" startLine="61" startPosition="87" endLine="65" endPosition="24">
       <varInfo nodeId="5646944109420298996" varName="node" />
-      <varInfo nodeId="5646944109420299002" varName="treeNode" />
       <varInfo nodeId="5646944109420298990" varName="path" />
+      <varInfo nodeId="5646944109420299002" varName="treeNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420291042" fileName="ClasspathSelectionTree.java" startLine="82" startPosition="0" endLine="86" endPosition="5">
-      <varInfo nodeId="5646944109420291047" varName="tree" />
       <varInfo nodeId="5646944109420291045" varName="file" />
+      <varInfo nodeId="5646944109420291047" varName="tree" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420291049" fileName="ClasspathSelectionTree.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="5646944109420291052" fileName="ClasspathSelectionTree.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
@@ -470,8 +470,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420291060" fileName="ClasspathSelectionTree.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
     <scopeInfo nodeId="5646944109420291086" fileName="ClasspathSelectionTree.java" startLine="150" startPosition="0" endLine="154" endPosition="5">
-      <varInfo nodeId="5646944109420291091" varName="tree" />
       <varInfo nodeId="5646944109420291089" varName="file" />
+      <varInfo nodeId="5646944109420291091" varName="tree" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420291093" fileName="ClasspathSelectionTree.java" startLine="155" startPosition="0" endLine="159" endPosition="0" />
     <scopeInfo nodeId="5646944109420298901" fileName="ClasspathSelectionTree.java" startLine="169" startPosition="51" endLine="173" endPosition="13" />
@@ -503,13 +503,13 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420298871" fileName="ClasspathSelectionTree.java" startLine="164" startPosition="11" endLine="178" endPosition="9">
       <varInfo nodeId="5646944109420298877" varName="file" />
-      <varInfo nodeId="5646944109420298883" varName="somethingAdded" />
       <varInfo nodeId="5646944109420298873" varName="fileData" />
+      <varInfo nodeId="5646944109420298883" varName="somethingAdded" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420291164" fileName="ClasspathSelectionTree.java" startLine="58" startPosition="129" endLine="75" endPosition="16">
-      <varInfo nodeId="5646944109420291166" varName="tree" />
-      <varInfo nodeId="5646944109420291193" varName="root" />
       <varInfo nodeId="5646944109420291189" varName="mpsHomePath" />
+      <varInfo nodeId="5646944109420291193" varName="root" />
+      <varInfo nodeId="5646944109420291166" varName="tree" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420291157" fileName="ClasspathSelectionTree.java" startLine="57" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="5646944109420291160" varName="classpathObserver" />
@@ -521,11 +521,11 @@
       <varInfo nodeId="5646944109420291122" varName="classpathObserver" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420291096" fileName="ClasspathSelectionTree.java" startLine="159" startPosition="0" endLine="183" endPosition="0" />
-    <unitInfo nodeId="5646944109420291177" fileName="ClasspathSelectionTree.java" startLine="60" startPosition="39" endLine="70" endPosition="5" unitName="jetbrains.mps.ide.java.parser.ClasspathSelectionTree$2" />
+    <unitInfo nodeId="5646944109420291028" fileName="ClasspathSelectionTree.java" startLine="27" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ClasspathSelectionTree" />
     <unitInfo nodeId="5646944109420291138" fileName="ClasspathSelectionTree.java" startLine="37" startPosition="22" endLine="51" endPosition="5" unitName="jetbrains.mps.ide.java.parser.ClasspathSelectionTree$1" />
+    <unitInfo nodeId="5646944109420291177" fileName="ClasspathSelectionTree.java" startLine="60" startPosition="39" endLine="70" endPosition="5" unitName="jetbrains.mps.ide.java.parser.ClasspathSelectionTree$2" />
     <unitInfo nodeId="5646944109420291077" fileName="ClasspathSelectionTree.java" startLine="147" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ClasspathSelectionTree$ClasspathTreeNode" />
     <unitInfo nodeId="5646944109420273442" fileName="ClasspathSelectionTree.java" startLine="78" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ClasspathSelectionTree$FileData" />
-    <unitInfo nodeId="5646944109420291028" fileName="ClasspathSelectionTree.java" startLine="27" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ClasspathSelectionTree" />
   </root>
   <root nodeId="5646944109420299014">
     <nodeInfo nodeId="5646944109420308244" fileName="ReferentsCreator.java" startLine="53" startPosition="31" endLine="54" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1025,8 +1025,8 @@
       <varInfo nodeId="5646944109420309279" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420309075" fileName="ReferentsCreator.java" startLine="312" startPosition="114" endLine="315" endPosition="88">
-      <varInfo nodeId="5646944109420309083" varName="superClass" />
       <varInfo nodeId="5646944109420309077" varName="classConcept" />
+      <varInfo nodeId="5646944109420309083" varName="superClass" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420309327" fileName="ReferentsCreator.java" startLine="344" startPosition="59" endLine="347" endPosition="58">
       <varInfo nodeId="5646944109420309329" varName="typeParameter" />
@@ -1084,8 +1084,8 @@
       <varInfo nodeId="5646944109420317505" varName="arrayTypeReference" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308066" fileName="ReferentsCreator.java" startLine="156" startPosition="0" endLine="161" endPosition="0">
-      <varInfo nodeId="5646944109420308071" varName="scope" />
       <varInfo nodeId="5646944109420308069" varName="memberTypeDeclaration" />
+      <varInfo nodeId="5646944109420308071" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="410420136398430318" fileName="ReferentsCreator.java" startLine="168" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="410420136398430324" varName="scope" />
@@ -1100,20 +1100,20 @@
       <varInfo nodeId="5646944109420308106" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308108" fileName="ReferentsCreator.java" startLine="255" startPosition="0" endLine="260" endPosition="0">
-      <varInfo nodeId="5646944109420308113" varName="scope" />
       <varInfo nodeId="5646944109420308111" varName="memberTypeDeclaration" />
+      <varInfo nodeId="5646944109420308113" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420309070" fileName="ReferentsCreator.java" startLine="311" startPosition="20" endLine="316" endPosition="15" />
     <scopeInfo nodeId="5646944109420309316" fileName="ReferentsCreator.java" startLine="343" startPosition="139" endLine="348" endPosition="11">
       <varInfo nodeId="5646944109420309322" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308134" fileName="ReferentsCreator.java" startLine="371" startPosition="0" endLine="376" endPosition="0">
-      <varInfo nodeId="5646944109420308139" varName="scope" />
       <varInfo nodeId="5646944109420308137" varName="methodDeclaration" />
+      <varInfo nodeId="5646944109420308139" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308176" fileName="ReferentsCreator.java" startLine="443" startPosition="0" endLine="448" endPosition="0">
-      <varInfo nodeId="5646944109420308181" varName="scope" />
       <varInfo nodeId="5646944109420308179" varName="localDeclaration" />
+      <varInfo nodeId="5646944109420308181" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308384" fileName="ReferentsCreator.java" startLine="85" startPosition="95" endLine="91" endPosition="5">
       <varInfo nodeId="5646944109420308386" varName="unitDecl" />
@@ -1126,9 +1126,9 @@
       <varInfo nodeId="5646944109420308064" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420309156" fileName="ReferentsCreator.java" startLine="332" startPosition="53" endLine="338" endPosition="138">
-      <varInfo nodeId="5646944109420309162" varName="memberTypeBinding" />
-      <varInfo nodeId="5646944109420309174" varName="enclosingClassifier" />
       <varInfo nodeId="5646944109420309168" varName="enclosingClass" />
+      <varInfo nodeId="5646944109420309174" varName="enclosingClassifier" />
+      <varInfo nodeId="5646944109420309162" varName="memberTypeBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420309299" fileName="ReferentsCreator.java" startLine="342" startPosition="37" endLine="348" endPosition="11">
       <varInfo nodeId="5646944109420309301" varName="tvds" />
@@ -1157,9 +1157,9 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308766" fileName="ReferentsCreator.java" startLine="183" startPosition="30" endLine="191" endPosition="9" />
     <scopeInfo nodeId="5646944109420316857" fileName="ReferentsCreator.java" startLine="400" startPosition="84" endLine="408" endPosition="26">
+      <varInfo nodeId="5646944109420316870" varName="enumClass" />
       <varInfo nodeId="5646944109420316876" varName="enumConstant" />
       <varInfo nodeId="5646944109420316864" varName="model" />
-      <varInfo nodeId="5646944109420316870" varName="enumClass" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308807" fileName="ReferentsCreator.java" startLine="204" startPosition="37" endLine="213" endPosition="63">
       <varInfo nodeId="5646944109420308821" varName="dollarIndex" />
@@ -1167,12 +1167,12 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420309260" fileName="ReferentsCreator.java" startLine="293" startPosition="42" endLine="302" endPosition="13">
       <varInfo nodeId="3607376594018000403" varName="classifierRef" />
-      <varInfo nodeId="5646944109420309262" varName="superClass" />
       <varInfo nodeId="3607376594018031441" varName="newRef" />
+      <varInfo nodeId="5646944109420309262" varName="superClass" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420309363" fileName="ReferentsCreator.java" startLine="360" startPosition="84" endLine="369" endPosition="66">
-      <varInfo nodeId="5646944109420316712" varName="typeVariableBinding" />
       <varInfo nodeId="5646944109420316748" varName="isExtends" />
+      <varInfo nodeId="5646944109420316712" varName="typeVariableBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420316811" fileName="ReferentsCreator.java" startLine="388" startPosition="80" endLine="397" endPosition="18">
       <varInfo nodeId="5646944109420316813" varName="b" />
@@ -1180,9 +1180,9 @@
       <varInfo nodeId="5646944109420316832" varName="isEnumConstant" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420317204" fileName="ReferentsCreator.java" startLine="488" startPosition="81" endLine="497" endPosition="18">
-      <varInfo nodeId="5646944109420317225" varName="newMethod" />
       <varInfo nodeId="5646944109420317206" varName="b" />
       <varInfo nodeId="5646944109420317212" varName="enclosingClassifier" />
+      <varInfo nodeId="5646944109420317225" varName="newMethod" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420309107" fileName="ReferentsCreator.java" startLine="320" startPosition="74" endLine="330" endPosition="13">
       <varInfo nodeId="5646944109420309114" varName="superInterface" />
@@ -1199,19 +1199,19 @@
       <varInfo nodeId="5646944109420317385" varName="typeParameters" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308377" fileName="ReferentsCreator.java" startLine="84" startPosition="60" endLine="95" endPosition="5">
-      <varInfo nodeId="5646944109420308412" varName="declsCreator" />
       <varInfo nodeId="5646944109420308379" varName="classesCreator" />
+      <varInfo nodeId="5646944109420308412" varName="declsCreator" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420309042" fileName="ReferentsCreator.java" startLine="306" startPosition="42" endLine="317" endPosition="13" />
     <scopeInfo nodeId="5646944109420308155" fileName="ReferentsCreator.java" startLine="399" startPosition="0" endLine="410" endPosition="0">
-      <varInfo nodeId="5646944109420308160" varName="enclosingClassifier" />
       <varInfo nodeId="5646944109420308158" varName="binding" />
+      <varInfo nodeId="5646944109420308160" varName="enclosingClassifier" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420317042" fileName="ReferentsCreator.java" startLine="449" startPosition="78" endLine="460" endPosition="18">
-      <varInfo nodeId="5646944109420317044" varName="model" />
       <varInfo nodeId="5646944109420317050" varName="b" />
-      <varInfo nodeId="5646944109420317065" varName="newLocal" />
       <varInfo nodeId="5646944109420317056" varName="localType" />
+      <varInfo nodeId="5646944109420317044" varName="model" />
+      <varInfo nodeId="5646944109420317065" varName="newLocal" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308909" fileName="ReferentsCreator.java" startLine="228" startPosition="58" endLine="240" endPosition="7">
       <varInfo nodeId="5646944109420308911" varName="model" />
@@ -1230,23 +1230,23 @@
       <varInfo nodeId="5646944109420317620" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308148" fileName="ReferentsCreator.java" startLine="386" startPosition="0" endLine="399" endPosition="0">
-      <varInfo nodeId="5646944109420308153" varName="scope" />
       <varInfo nodeId="5646944109420308151" varName="fieldDeclaration" />
+      <varInfo nodeId="5646944109420308153" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308195" fileName="ReferentsCreator.java" startLine="486" startPosition="0" endLine="499" endPosition="0">
-      <varInfo nodeId="5646944109420308200" varName="scope" />
       <varInfo nodeId="5646944109420308198" varName="methodDeclaration" />
+      <varInfo nodeId="5646944109420308200" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308213" fileName="ReferentsCreator.java" startLine="530" startPosition="0" endLine="543" endPosition="0">
-      <varInfo nodeId="5646944109420308218" varName="newMethod" />
       <varInfo nodeId="5646944109420308216" varName="methodDeclaration" />
+      <varInfo nodeId="5646944109420308218" varName="newMethod" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308371" fileName="ReferentsCreator.java" startLine="83" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="5646944109420308374" varName="unitDecls" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308459" fileName="ReferentsCreator.java" startLine="101" startPosition="65" endLine="115" endPosition="11">
-      <varInfo nodeId="5646944109420308461" varName="syntheticTypeDeclaration" />
       <varInfo nodeId="5646944109420308469" varName="methodScope" />
+      <varInfo nodeId="5646944109420308461" varName="syntheticTypeDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308183" fileName="ReferentsCreator.java" startLine="448" startPosition="0" endLine="462" endPosition="0">
       <varInfo nodeId="5646944109420308186" varName="localDeclaration" />
@@ -1260,8 +1260,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420317490" fileName="ReferentsCreator.java" startLine="561" startPosition="88" endLine="576" endPosition="20">
       <varInfo nodeId="5646944109420317541" varName="result" />
-      <varInfo nodeId="5646944109420317492" varName="varArg" />
       <varInfo nodeId="5646944109420317529" varName="type" />
+      <varInfo nodeId="5646944109420317492" varName="varArg" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308234" fileName="ReferentsCreator.java" startLine="578" startPosition="0" endLine="593" endPosition="0">
       <varInfo nodeId="5646944109420308237" varName="b" />
@@ -1270,12 +1270,12 @@
       <varInfo nodeId="5646944109420308242" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420317115" fileName="ReferentsCreator.java" startLine="465" startPosition="11" endLine="481" endPosition="20">
-      <varInfo nodeId="5646944109420317123" varName="model" />
-      <varInfo nodeId="5646944109420317153" varName="constructorDeclaration" />
       <varInfo nodeId="5646944109420317117" varName="b" />
-      <varInfo nodeId="5646944109420317158" varName="visibility" />
-      <varInfo nodeId="5646944109420317129" varName="enclosingType" />
       <varInfo nodeId="5646944109420317147" varName="classConcept" />
+      <varInfo nodeId="5646944109420317153" varName="constructorDeclaration" />
+      <varInfo nodeId="5646944109420317129" varName="enclosingType" />
+      <varInfo nodeId="5646944109420317123" varName="model" />
+      <varInfo nodeId="5646944109420317158" varName="visibility" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308220" fileName="ReferentsCreator.java" startLine="543" startPosition="0" endLine="560" endPosition="0">
       <varInfo nodeId="5646944109420308223" varName="method" />
@@ -1291,27 +1291,27 @@
       <varInfo nodeId="5646944109420309221" varName="superClassBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308188" fileName="ReferentsCreator.java" startLine="462" startPosition="0" endLine="486" endPosition="0">
-      <varInfo nodeId="5646944109420308193" varName="scope" />
       <varInfo nodeId="5646944109420308191" varName="ctorDecl" />
+      <varInfo nodeId="5646944109420308193" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420316904" fileName="ReferentsCreator.java" startLine="411" startPosition="93" endLine="437" endPosition="19">
       <varInfo nodeId="5646944109420316922" varName="field" />
       <varInfo nodeId="5646944109420316906" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420317262" fileName="ReferentsCreator.java" startLine="500" startPosition="119" endLine="528" endPosition="20">
-      <varInfo nodeId="5646944109420317270" varName="result" />
       <varInfo nodeId="5646944109420317264" varName="model" />
+      <varInfo nodeId="5646944109420317270" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308162" fileName="ReferentsCreator.java" startLine="410" startPosition="0" endLine="439" endPosition="0">
-      <varInfo nodeId="5646944109420308169" varName="name" />
-      <varInfo nodeId="5646944109420308167" varName="enclosingClassifier" />
       <varInfo nodeId="5646944109420308165" varName="binding" />
+      <varInfo nodeId="5646944109420308167" varName="enclosingClassifier" />
+      <varInfo nodeId="5646944109420308169" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308448" fileName="ReferentsCreator.java" startLine="100" startPosition="52" endLine="131" endPosition="9" />
     <scopeInfo nodeId="5646944109420308202" fileName="ReferentsCreator.java" startLine="499" startPosition="0" endLine="530" endPosition="0">
-      <varInfo nodeId="5646944109420308211" varName="isAnnotation" />
       <varInfo nodeId="5646944109420308205" varName="b" />
       <varInfo nodeId="5646944109420308209" varName="enclosingClassifier" />
+      <varInfo nodeId="5646944109420308211" varName="isAnnotation" />
       <varInfo nodeId="5646944109420308207" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308439" fileName="ReferentsCreator.java" startLine="99" startPosition="9" endLine="133" endPosition="49" />
@@ -1325,30 +1325,30 @@
       <varInfo nodeId="5646944109420308429" varName="visitor" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308692" fileName="ReferentsCreator.java" startLine="174" startPosition="62" endLine="225" endPosition="18">
+      <varInfo nodeId="5646944109420308704" varName="binding" />
+      <varInfo nodeId="5646944109420308716" varName="classifier" />
       <varInfo nodeId="5646944109420308710" varName="model" />
+      <varInfo nodeId="5646944109420308694" varName="name" />
       <varInfo nodeId="5646944109420308872" varName="typeParameters" />
       <varInfo nodeId="5646944109420308719" varName="visibility" />
-      <varInfo nodeId="5646944109420308694" varName="name" />
-      <varInfo nodeId="5646944109420308716" varName="classifier" />
-      <varInfo nodeId="5646944109420308704" varName="binding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308080" fileName="ReferentsCreator.java" startLine="173" startPosition="0" endLine="227" endPosition="0">
       <varInfo nodeId="5646944109420308083" varName="typeDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420309021" fileName="ReferentsCreator.java" startLine="278" startPosition="11" endLine="354" endPosition="20">
-      <varInfo nodeId="5646944109420309289" varName="typeParameters" />
       <varInfo nodeId="5646944109420309023" varName="isTopLevel" />
+      <varInfo nodeId="5646944109420309289" varName="typeParameters" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308994" fileName="ReferentsCreator.java" startLine="272" startPosition="62" endLine="357" endPosition="7">
-      <varInfo nodeId="5646944109420309002" varName="classifier" />
       <varInfo nodeId="5646944109420308996" varName="binding" />
+      <varInfo nodeId="5646944109420309002" varName="classifier" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420308122" fileName="ReferentsCreator.java" startLine="271" startPosition="0" endLine="359" endPosition="0">
       <varInfo nodeId="5646944109420308125" varName="typeDeclaration" />
     </scopeInfo>
+    <unitInfo nodeId="5646944109420299014" fileName="ReferentsCreator.java" startLine="53" startPosition="0" endLine="610" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ReferentsCreator" />
     <unitInfo nodeId="5646944109420308048" fileName="ReferentsCreator.java" startLine="144" startPosition="0" endLine="243" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ReferentsCreator$ClassesCreator" />
     <unitInfo nodeId="5646944109420308090" fileName="ReferentsCreator.java" startLine="244" startPosition="0" endLine="609" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ReferentsCreator$DeclsCreator" />
-    <unitInfo nodeId="5646944109420299014" fileName="ReferentsCreator.java" startLine="53" startPosition="0" endLine="610" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ReferentsCreator" />
   </root>
   <root nodeId="5646944109420308657">
     <nodeInfo nodeId="5646944109420331658" fileName="JavaCompiler.java" startLine="64" startPosition="27" endLine="65" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1747,23 +1747,23 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333165" fileName="JavaCompiler.java" startLine="536" startPosition="57" endLine="538" endPosition="45" />
     <scopeInfo nodeId="5646944109420331730" fileName="JavaCompiler.java" startLine="80" startPosition="0" endLine="83" endPosition="3">
-      <varInfo nodeId="5646944109420331737" varName="sourceDir" />
+      <varInfo nodeId="5646944109420331733" varName="context" />
       <varInfo nodeId="5646944109420331735" varName="module" />
       <varInfo nodeId="5646944109420331739" varName="setOutputPath" />
-      <varInfo nodeId="5646944109420331733" varName="context" />
+      <varInfo nodeId="5646944109420331737" varName="sourceDir" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420331748" fileName="JavaCompiler.java" startLine="84" startPosition="0" endLine="87" endPosition="3">
-      <varInfo nodeId="5646944109420331755" varName="sourceDir" />
+      <varInfo nodeId="5646944109420331751" varName="context" />
       <varInfo nodeId="5646944109420331759" varName="model" />
       <varInfo nodeId="5646944109420331753" varName="module" />
       <varInfo nodeId="5646944109420331757" varName="setOutputPath" />
-      <varInfo nodeId="5646944109420331751" varName="context" />
+      <varInfo nodeId="5646944109420331755" varName="sourceDir" />
     </scopeInfo>
     <scopeInfo nodeId="8250409733214729343" fileName="JavaCompiler.java" startLine="88" startPosition="0" endLine="91" endPosition="3">
-      <varInfo nodeId="8250409733214729372" varName="module" />
-      <varInfo nodeId="8250409733214729374" varName="sourceDirs" />
-      <varInfo nodeId="8250409733214729377" varName="setOutputPath" />
       <varInfo nodeId="8250409733214729370" varName="context" />
+      <varInfo nodeId="8250409733214729372" varName="module" />
+      <varInfo nodeId="8250409733214729377" varName="setOutputPath" />
+      <varInfo nodeId="8250409733214729374" varName="sourceDirs" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332886" fileName="JavaCompiler.java" startLine="374" startPosition="0" endLine="377" endPosition="0" />
     <scopeInfo nodeId="5646944109420333110" fileName="JavaCompiler.java" startLine="520" startPosition="245" endLine="523" endPosition="21">
@@ -1815,19 +1815,19 @@
       <varInfo nodeId="5646944109420332332" varName="modelFqName" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332352" fileName="JavaCompiler.java" startLine="221" startPosition="0" endLine="226" endPosition="0">
-      <varInfo nodeId="5646944109420332357" varName="text" />
       <varInfo nodeId="5646944109420332355" varName="classFqName" />
+      <varInfo nodeId="5646944109420332357" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332500" fileName="JavaCompiler.java" startLine="270" startPosition="0" endLine="275" endPosition="0" />
     <scopeInfo nodeId="5646944109420332563" fileName="JavaCompiler.java" startLine="282" startPosition="102" endLine="287" endPosition="0" />
     <scopeInfo nodeId="5646944109420332890" fileName="JavaCompiler.java" startLine="377" startPosition="0" endLine="382" endPosition="0" />
     <scopeInfo nodeId="7054300446842357321" fileName="JavaCompiler.java" startLine="423" startPosition="162" endLine="428" endPosition="122">
-      <varInfo nodeId="7054300446842357375" varName="commentText" />
       <varInfo nodeId="7054300446842357340" varName="commentLine" />
+      <varInfo nodeId="7054300446842357375" varName="commentText" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420331782" fileName="JavaCompiler.java" startLine="443" startPosition="0" endLine="448" endPosition="0">
-      <varInfo nodeId="5646944109420331787" varName="sourceDir" />
       <varInfo nodeId="5646944109420331785" varName="model" />
+      <varInfo nodeId="5646944109420331787" varName="sourceDir" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332971" fileName="JavaCompiler.java" startLine="451" startPosition="47" endLine="456" endPosition="7">
       <varInfo nodeId="5646944109420332973" varName="namePart" />
@@ -1836,14 +1836,14 @@
       <varInfo nodeId="5646944109420333028" varName="namePart" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420331595" fileName="JavaCompiler.java" startLine="514" startPosition="0" endLine="519" endPosition="0">
+      <varInfo nodeId="5646944109420331617" varName="columnNumber" />
+      <varInfo nodeId="5646944109420331613" varName="endPosition" />
+      <varInfo nodeId="5646944109420331615" varName="lineNumber" />
+      <varInfo nodeId="5646944109420331606" varName="messageArguments" />
       <varInfo nodeId="5646944109420331598" varName="originatingFileName" />
       <varInfo nodeId="5646944109420331603" varName="problemArguments" />
       <varInfo nodeId="5646944109420331601" varName="problemId" />
-      <varInfo nodeId="5646944109420331615" varName="lineNumber" />
       <varInfo nodeId="5646944109420331609" varName="severity" />
-      <varInfo nodeId="5646944109420331606" varName="messageArguments" />
-      <varInfo nodeId="5646944109420331613" varName="endPosition" />
-      <varInfo nodeId="5646944109420331617" varName="columnNumber" />
       <varInfo nodeId="5646944109420331611" varName="startPosition" />
     </scopeInfo>
     <scopeInfo nodeId="7989252335493362498" fileName="JavaCompiler.java" startLine="541" startPosition="0" endLine="546" endPosition="0" />
@@ -1856,26 +1856,26 @@
     <scopeInfo nodeId="5646944109420332832" fileName="JavaCompiler.java" startLine="344" startPosition="30" endLine="350" endPosition="17" />
     <scopeInfo nodeId="7731963821318721595" fileName="JavaCompiler.java" startLine="410" startPosition="27" endLine="416" endPosition="9" />
     <scopeInfo nodeId="5646944109420331619" fileName="JavaCompiler.java" startLine="519" startPosition="0" endLine="525" endPosition="0">
+      <varInfo nodeId="5646944109420331643" varName="columnNumber" />
+      <varInfo nodeId="5646944109420331630" varName="elaborationId" />
+      <varInfo nodeId="5646944109420331639" varName="endPosition" />
+      <varInfo nodeId="5646944109420331641" varName="lineNumber" />
+      <varInfo nodeId="5646944109420331632" varName="messageArguments" />
       <varInfo nodeId="5646944109420331622" varName="originatingFileName" />
       <varInfo nodeId="5646944109420331627" varName="problemArguments" />
       <varInfo nodeId="5646944109420331625" varName="problemId" />
-      <varInfo nodeId="5646944109420331641" varName="lineNumber" />
       <varInfo nodeId="5646944109420331635" varName="severity" />
-      <varInfo nodeId="5646944109420331632" varName="messageArguments" />
-      <varInfo nodeId="5646944109420331630" varName="elaborationId" />
-      <varInfo nodeId="5646944109420331639" varName="endPosition" />
-      <varInfo nodeId="5646944109420331643" varName="columnNumber" />
       <varInfo nodeId="5646944109420331637" varName="startPosition" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333146" fileName="JavaCompiler.java" startLine="533" startPosition="64" endLine="539" endPosition="7">
       <varInfo nodeId="5646944109420333152" varName="icu" />
     </scopeInfo>
     <scopeInfo nodeId="8753353829093752553" fileName="JavaCompiler.java" startLine="92" startPosition="0" endLine="99" endPosition="3">
+      <varInfo nodeId="8753353829093752558" varName="context" />
       <varInfo nodeId="8753353829093752572" varName="model" />
       <varInfo nodeId="8753353829093752560" varName="module" />
-      <varInfo nodeId="8753353829093752563" varName="sourceDirs" />
       <varInfo nodeId="8753353829093752566" varName="setOutputPath" />
-      <varInfo nodeId="8753353829093752558" varName="context" />
+      <varInfo nodeId="8753353829093752563" varName="sourceDirs" />
     </scopeInfo>
     <scopeInfo nodeId="2229106483906299059" fileName="JavaCompiler.java" startLine="133" startPosition="54" endLine="140" endPosition="7">
       <varInfo nodeId="2229106483906299062" varName="i" />
@@ -1931,10 +1931,10 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332478" fileName="JavaCompiler.java" startLine="259" startPosition="0" endLine="270" endPosition="0" />
     <scopeInfo nodeId="5646944109420331807" fileName="JavaCompiler.java" startLine="101" startPosition="44" endLine="113" endPosition="39">
-      <varInfo nodeId="5646944109420331860" varName="index" />
       <varInfo nodeId="5646944109420331870" varName="generalSourcePath" />
-      <varInfo nodeId="5646944109420331821" varName="sourcePath" />
+      <varInfo nodeId="5646944109420331860" varName="index" />
       <varInfo nodeId="5646944109420331816" varName="prefixPath" />
+      <varInfo nodeId="5646944109420331821" varName="sourcePath" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332662" fileName="JavaCompiler.java" startLine="311" startPosition="75" endLine="323" endPosition="7" />
     <scopeInfo nodeId="3671703302989070996" fileName="JavaCompiler.java" startLine="417" startPosition="30" endLine="429" endPosition="11">
@@ -1967,23 +1967,23 @@
       <varInfo nodeId="5646944109420332777" varName="classpath" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332414" fileName="JavaCompiler.java" startLine="236" startPosition="25" endLine="257" endPosition="5">
-      <varInfo nodeId="5646944109420332466" varName="needsRecompilation" />
       <varInfo nodeId="5646944109420332450" varName="generalSourceDirectory" />
+      <varInfo nodeId="5646944109420332466" varName="needsRecompilation" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332774" fileName="JavaCompiler.java" startLine="332" startPosition="32" endLine="353" endPosition="22" />
     <scopeInfo nodeId="5646944109420332516" fileName="JavaCompiler.java" startLine="276" startPosition="78" endLine="298" endPosition="21">
+      <varInfo nodeId="5646944109420332552" varName="classifierList" />
       <varInfo nodeId="5646944109420332577" varName="sNodeList" />
       <varInfo nodeId="5646944109420332521" varName="wrapper" />
-      <varInfo nodeId="5646944109420332552" varName="classifierList" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332411" fileName="JavaCompiler.java" startLine="235" startPosition="0" endLine="259" endPosition="0" />
     <scopeInfo nodeId="5646944109420332508" fileName="JavaCompiler.java" startLine="275" startPosition="0" endLine="300" endPosition="0">
-      <varInfo nodeId="5646944109420332512" varName="source" />
       <varInfo nodeId="5646944109420332514" varName="featureKind" />
+      <varInfo nodeId="5646944109420332512" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332746" fileName="JavaCompiler.java" startLine="328" startPosition="45" endLine="354" endPosition="9">
-      <varInfo nodeId="5646944109420332763" varName="list" />
       <varInfo nodeId="5646944109420332748" varName="dialog" />
+      <varInfo nodeId="5646944109420332763" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="3671703302989070796" fileName="JavaCompiler.java" startLine="403" startPosition="38" endLine="430" endPosition="9">
       <varInfo nodeId="3671703302989070985" varName="block" />
@@ -1994,27 +1994,27 @@
     </scopeInfo>
     <scopeInfo nodeId="3671703302989070793" fileName="JavaCompiler.java" startLine="402" startPosition="15" endLine="431" endPosition="7" />
     <scopeInfo nodeId="3671703302989070750" fileName="JavaCompiler.java" startLine="389" startPosition="103" endLine="431" endPosition="7">
-      <varInfo nodeId="3671703302989070764" varName="content" />
-      <varInfo nodeId="3671703302989071306" varName="positions" />
       <varInfo nodeId="3908372348891050598" varName="blocks" />
-      <varInfo nodeId="3671703302989070783" varName="lineends" />
       <varInfo nodeId="3671703302989070775" varName="comments" />
+      <varInfo nodeId="3671703302989070764" varName="content" />
+      <varInfo nodeId="3671703302989070783" varName="lineends" />
+      <varInfo nodeId="3671703302989071306" varName="positions" />
     </scopeInfo>
     <scopeInfo nodeId="3671703302989070747" fileName="JavaCompiler.java" startLine="388" startPosition="50" endLine="432" endPosition="5" />
     <scopeInfo nodeId="5646944109420331915" fileName="JavaCompiler.java" startLine="130" startPosition="9" endLine="176" endPosition="54">
-      <varInfo nodeId="5646944109420331922" varName="str" />
-      <varInfo nodeId="5646944109420332098" varName="nameAndExtension" />
-      <varInfo nodeId="5646944109420332095" varName="fileName" />
+      <varInfo nodeId="5646944109420331941" varName="classFQName" />
       <varInfo nodeId="5646944109420331917" varName="fileContents" />
+      <varInfo nodeId="5646944109420332095" varName="fileName" />
+      <varInfo nodeId="5646944109420332098" varName="nameAndExtension" />
       <varInfo nodeId="5646944109420332104" varName="offset" />
       <varInfo nodeId="5646944109420331977" varName="packageNameFromFile" />
-      <varInfo nodeId="5646944109420331941" varName="classFQName" />
+      <varInfo nodeId="5646944109420331922" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420331904" fileName="JavaCompiler.java" startLine="129" startPosition="77" endLine="179" endPosition="5" />
     <scopeInfo nodeId="5646944109420332905" fileName="JavaCompiler.java" startLine="383" startPosition="50" endLine="433" endPosition="18">
-      <varInfo nodeId="3671703302989070719" varName="treeBuilder" />
-      <varInfo nodeId="3671703302989070727" varName="result" />
       <varInfo nodeId="5646944109420332907" varName="referentsCreator" />
+      <varInfo nodeId="3671703302989070727" varName="result" />
+      <varInfo nodeId="3671703302989070719" varName="treeBuilder" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420331897" fileName="JavaCompiler.java" startLine="128" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="5646944109420331900" varName="file" />
@@ -2025,23 +2025,23 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332646" fileName="JavaCompiler.java" startLine="308" startPosition="46" endLine="372" endPosition="17">
       <varInfo nodeId="5646944109420332727" varName="buildAstNow" />
-      <varInfo nodeId="5646944109420332648" varName="hasErrors" />
       <varInfo nodeId="5646944109420332652" varName="fqNames" />
+      <varInfo nodeId="5646944109420332648" varName="hasErrors" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332643" fileName="JavaCompiler.java" startLine="307" startPosition="0" endLine="374" endPosition="0" />
+    <unitInfo nodeId="5646944109420308657" fileName="JavaCompiler.java" startLine="64" startPosition="0" endLine="548" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaCompiler" />
+    <unitInfo nodeId="5646944109420331893" fileName="JavaCompiler.java" startLine="117" startPosition="45" endLine="126" endPosition="5" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$1" />
+    <unitInfo nodeId="5646944109420332560" fileName="JavaCompiler.java" startLine="282" startPosition="75" endLine="287" endPosition="5" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$2" />
     <unitInfo nodeId="4743311727819997069" fileName="JavaCompiler.java" startLine="346" startPosition="55" endLine="350" endPosition="15" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$3" />
     <unitInfo nodeId="5646944109420332876" fileName="JavaCompiler.java" startLine="364" startPosition="57" endLine="368" endPosition="7" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$4" />
     <unitInfo nodeId="3908372348891050620" fileName="JavaCompiler.java" startLine="394" startPosition="142" endLine="398" endPosition="7" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$5" />
     <unitInfo nodeId="3908372348891050631" fileName="JavaCompiler.java" startLine="398" startPosition="18" endLine="402" endPosition="7" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$6" />
     <unitInfo nodeId="3671703302989071279" fileName="JavaCompiler.java" startLine="418" startPosition="106" endLine="422" endPosition="11" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$7" />
-    <unitInfo nodeId="5646944109420332560" fileName="JavaCompiler.java" startLine="282" startPosition="75" endLine="287" endPosition="5" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$2" />
+    <unitInfo nodeId="5646944109420331645" fileName="JavaCompiler.java" startLine="527" startPosition="0" endLine="547" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$CompilerImpl" />
     <unitInfo nodeId="5646944109420331578" fileName="JavaCompiler.java" startLine="502" startPosition="0" endLine="510" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$MyCompilerRequestor" />
-    <unitInfo nodeId="5646944109420331893" fileName="JavaCompiler.java" startLine="117" startPosition="45" endLine="126" endPosition="5" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$1" />
     <unitInfo nodeId="5646944109420331566" fileName="JavaCompiler.java" startLine="489" startPosition="0" endLine="501" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$MyErrorHandlingPolicy" />
     <unitInfo nodeId="5646944109420331552" fileName="JavaCompiler.java" startLine="473" startPosition="0" endLine="488" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$MyNameEnvironment" />
     <unitInfo nodeId="5646944109420331589" fileName="JavaCompiler.java" startLine="511" startPosition="0" endLine="526" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$MyProblemFactory" />
-    <unitInfo nodeId="5646944109420331645" fileName="JavaCompiler.java" startLine="527" startPosition="0" endLine="547" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaCompiler$CompilerImpl" />
-    <unitInfo nodeId="5646944109420308657" fileName="JavaCompiler.java" startLine="64" startPosition="0" endLine="548" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaCompiler" />
   </root>
   <root nodeId="5646944109420317653">
     <nodeInfo nodeId="5646944109420319087" fileName="JavaConverterTreeBuilder.java" startLine="128" startPosition="39" endLine="129" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -3560,8 +3560,8 @@
       <varInfo nodeId="5646944109420320788" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320820" fileName="JavaConverterTreeBuilder.java" startLine="634" startPosition="65" endLine="638" endPosition="19">
-      <varInfo nodeId="5646944109420320827" varName="typeBinding" />
       <varInfo nodeId="5646944109420320822" varName="thisRef" />
+      <varInfo nodeId="5646944109420320827" varName="typeBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321095" fileName="JavaConverterTreeBuilder.java" startLine="676" startPosition="75" endLine="680" endPosition="22">
       <varInfo nodeId="5646944109420321101" varName="lsfr" />
@@ -3571,8 +3571,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321277" fileName="JavaConverterTreeBuilder.java" startLine="746" startPosition="71" endLine="750" endPosition="7" />
     <scopeInfo nodeId="5646944109420321315" fileName="JavaConverterTreeBuilder.java" startLine="756" startPosition="77" endLine="760" endPosition="22">
-      <varInfo nodeId="5646944109420321317" varName="expression" />
       <varInfo nodeId="5646944109420321322" varName="classifierReference" />
+      <varInfo nodeId="5646944109420321317" varName="expression" />
     </scopeInfo>
     <scopeInfo nodeId="1418985936284107697" fileName="JavaConverterTreeBuilder.java" startLine="866" startPosition="111" endLine="870" endPosition="49">
       <varInfo nodeId="5646944109420321868" varName="methodReference" />
@@ -3605,8 +3605,8 @@
       <varInfo nodeId="5646944109420322659" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322669" fileName="JavaConverterTreeBuilder.java" startLine="1084" startPosition="58" endLine="1088" endPosition="18">
-      <varInfo nodeId="5646944109420322676" varName="result" />
       <varInfo nodeId="5646944109420322671" varName="localVariableDeclaration" />
+      <varInfo nodeId="5646944109420322676" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323264" fileName="JavaConverterTreeBuilder.java" startLine="1238" startPosition="56" endLine="1242" endPosition="26">
       <varInfo nodeId="5646944109420323273" varName="throwStatement" />
@@ -3635,9 +3635,9 @@
     <scopeInfo nodeId="5646944109420324592" fileName="JavaConverterTreeBuilder.java" startLine="1637" startPosition="58" endLine="1641" endPosition="33" />
     <scopeInfo nodeId="4440765914720670827" fileName="JavaConverterTreeBuilder.java" startLine="1648" startPosition="0" endLine="1652" endPosition="0" />
     <scopeInfo nodeId="3908372348891069246" fileName="JavaConverterTreeBuilder.java" startLine="1652" startPosition="0" endLine="1656" endPosition="0">
+      <varInfo nodeId="3908372348891069256" varName="end" />
       <varInfo nodeId="3908372348891069251" varName="node" />
       <varInfo nodeId="3908372348891069253" varName="start" />
-      <varInfo nodeId="3908372348891069256" varName="end" />
     </scopeInfo>
     <scopeInfo nodeId="5986358097126617673" fileName="JavaConverterTreeBuilder.java" startLine="1658" startPosition="137" endLine="1662" endPosition="0" />
     <scopeInfo nodeId="5646944109420317653" fileName="JavaConverterTreeBuilder.java" startLine="1707" startPosition="9" endLine="1711" endPosition="62" />
@@ -3660,8 +3660,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320875" fileName="JavaConverterTreeBuilder.java" startLine="646" startPosition="79" endLine="651" endPosition="5" />
     <scopeInfo nodeId="5646944109420320905" fileName="JavaConverterTreeBuilder.java" startLine="654" startPosition="104" endLine="659" endPosition="15">
-      <varInfo nodeId="5646944109420320912" varName="sourceNode" />
       <varInfo nodeId="5646944109420320907" varName="sfr" />
+      <varInfo nodeId="5646944109420320912" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321115" fileName="JavaConverterTreeBuilder.java" startLine="669" startPosition="49" endLine="674" endPosition="39">
       <varInfo nodeId="5646944109420321117" varName="enumConstantReference" />
@@ -3744,9 +3744,9 @@
       <varInfo nodeId="5646944109420319540" varName="right" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320359" fileName="JavaConverterTreeBuilder.java" startLine="504" startPosition="63" endLine="510" endPosition="32">
+      <varInfo nodeId="5646944109420320361" varName="expr" />
       <varInfo nodeId="5646944109420320377" varName="instanceOfExpression" />
       <varInfo nodeId="5646944109420320368" varName="testType" />
-      <varInfo nodeId="5646944109420320361" varName="expr" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322144" fileName="JavaConverterTreeBuilder.java" startLine="941" startPosition="62" endLine="947" endPosition="5">
       <varInfo nodeId="5646944109420322146" varName="binding" />
@@ -3756,9 +3756,9 @@
       <varInfo nodeId="5646944109420322432" varName="stmt" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322456" fileName="JavaConverterTreeBuilder.java" startLine="1022" startPosition="57" endLine="1028" endPosition="18">
-      <varInfo nodeId="5646944109420322472" varName="result" />
       <varInfo nodeId="5646944109420322465" varName="arg" />
       <varInfo nodeId="5646944109420322458" varName="expr" />
+      <varInfo nodeId="5646944109420322472" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322562" fileName="JavaConverterTreeBuilder.java" startLine="1053" startPosition="59" endLine="1059" endPosition="22">
       <varInfo nodeId="5646944109420322564" varName="expression" />
@@ -3768,9 +3768,9 @@
       <varInfo nodeId="5646944109420322731" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323227" fileName="JavaConverterTreeBuilder.java" startLine="1229" startPosition="63" endLine="1235" endPosition="18">
-      <varInfo nodeId="5646944109420323229" varName="result" />
       <varInfo nodeId="5646944109420323234" varName="block" />
       <varInfo nodeId="5646944109420323241" varName="expr" />
+      <varInfo nodeId="5646944109420323229" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323469" fileName="JavaConverterTreeBuilder.java" startLine="1261" startPosition="52" endLine="1267" endPosition="71">
       <varInfo nodeId="5646944109420323471" varName="catchBlock" />
@@ -3783,9 +3783,9 @@
       <varInfo nodeId="5646944109420323417" varName="lvd" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323523" fileName="JavaConverterTreeBuilder.java" startLine="1287" startPosition="56" endLine="1293" endPosition="18">
+      <varInfo nodeId="5646944109420323532" varName="loopBody" />
       <varInfo nodeId="5646944109420323525" varName="loopTest" />
       <varInfo nodeId="5646944109420323539" varName="result" />
-      <varInfo nodeId="5646944109420323532" varName="loopBody" />
     </scopeInfo>
     <scopeInfo nodeId="320030840062107479" fileName="JavaConverterTreeBuilder.java" startLine="1295" startPosition="0" endLine="1301" endPosition="0">
       <varInfo nodeId="320030840062107484" varName="x" />
@@ -3797,8 +3797,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420317653" fileName="JavaConverterTreeBuilder.java" startLine="1706" startPosition="43" endLine="1712" endPosition="9" />
     <scopeInfo nodeId="5646944109420319211" fileName="JavaConverterTreeBuilder.java" startLine="168" startPosition="34" endLine="175" endPosition="38">
-      <varInfo nodeId="5646944109420319227" varName="expressionStatement" />
       <varInfo nodeId="5646944109420319213" varName="expr" />
+      <varInfo nodeId="5646944109420319227" varName="expressionStatement" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420319391" fileName="JavaConverterTreeBuilder.java" startLine="222" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="5646944109420319393" varName="x" />
@@ -3822,23 +3822,23 @@
       <varInfo nodeId="5646944109420321313" varName="binding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321349" fileName="JavaConverterTreeBuilder.java" startLine="763" startPosition="93" endLine="770" endPosition="22">
-      <varInfo nodeId="5646944109420321351" varName="expression" />
       <varInfo nodeId="5646944109420321356" varName="classifierReference" />
+      <varInfo nodeId="5646944109420321351" varName="expression" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321405" fileName="JavaConverterTreeBuilder.java" startLine="774" startPosition="54" endLine="781" endPosition="7">
       <varInfo nodeId="5646944109420321407" varName="syntheticMethodBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321736" fileName="JavaConverterTreeBuilder.java" startLine="843" startPosition="61" endLine="850" endPosition="7">
-      <varInfo nodeId="5646944109420321746" varName="typeArguments" />
       <varInfo nodeId="5646944109420321738" varName="ptb" />
+      <varInfo nodeId="5646944109420321746" varName="typeArguments" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321916" fileName="JavaConverterTreeBuilder.java" startLine="883" startPosition="72" endLine="890" endPosition="5" />
     <scopeInfo nodeId="5646944109420321951" fileName="JavaConverterTreeBuilder.java" startLine="893" startPosition="59" endLine="900" endPosition="5" />
     <scopeInfo nodeId="5646944109420322620" fileName="JavaConverterTreeBuilder.java" startLine="1070" startPosition="53" endLine="1077" endPosition="28">
-      <varInfo nodeId="5646944109420322622" varName="loopTest" />
       <varInfo nodeId="5646944109420322646" varName="body" />
-      <varInfo nodeId="5646944109420322629" varName="loopBody" />
       <varInfo nodeId="5646944109420322636" varName="doWhileStatement" />
+      <varInfo nodeId="5646944109420322629" varName="loopBody" />
+      <varInfo nodeId="5646944109420322622" varName="loopTest" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322665" fileName="JavaConverterTreeBuilder.java" startLine="1083" startPosition="0" endLine="1090" endPosition="0">
       <varInfo nodeId="5646944109420322667" varName="x" />
@@ -3855,18 +3855,18 @@
       <varInfo nodeId="5646944109420324583" varName="classifier" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320206" fileName="JavaConverterTreeBuilder.java" startLine="462" startPosition="64" endLine="470" endPosition="15">
-      <varInfo nodeId="5646944109420320215" varName="thenExpr" />
-      <varInfo nodeId="5646944109420320229" varName="tOp" />
-      <varInfo nodeId="5646944109420320208" varName="ifTest" />
       <varInfo nodeId="5646944109420320222" varName="elseExpr" />
+      <varInfo nodeId="5646944109420320208" varName="ifTest" />
+      <varInfo nodeId="5646944109420320229" varName="tOp" />
+      <varInfo nodeId="5646944109420320215" varName="thenExpr" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320870" fileName="JavaConverterTreeBuilder.java" startLine="645" startPosition="0" endLine="653" endPosition="0">
       <varInfo nodeId="5646944109420320873" varName="fieldBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320896" fileName="JavaConverterTreeBuilder.java" startLine="653" startPosition="0" endLine="661" endPosition="0">
-      <varInfo nodeId="5646944109420320903" varName="secondName" />
       <varInfo nodeId="5646944109420320899" varName="binding" />
       <varInfo nodeId="5646944109420320901" varName="firstName" />
+      <varInfo nodeId="5646944109420320903" varName="secondName" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321481" fileName="JavaConverterTreeBuilder.java" startLine="801" startPosition="14" endLine="809" endPosition="31">
       <varInfo nodeId="5646944109420321502" varName="dotExpression" />
@@ -3881,8 +3881,8 @@
       <varInfo nodeId="5646944109420322590" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322692" fileName="JavaConverterTreeBuilder.java" startLine="1091" startPosition="65" endLine="1099" endPosition="17">
-      <varInfo nodeId="5646944109420322694" varName="local" />
       <varInfo nodeId="5646944109420322712" varName="initializer" />
+      <varInfo nodeId="5646944109420322694" varName="local" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323185" fileName="JavaConverterTreeBuilder.java" startLine="1210" startPosition="18" endLine="1218" endPosition="14">
       <varInfo nodeId="5646944109420323187" varName="switchCase" />
@@ -3898,12 +3898,12 @@
       <varInfo nodeId="5646944109420323630" varName="fieldDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324393" fileName="JavaConverterTreeBuilder.java" startLine="1539" startPosition="0" endLine="1547" endPosition="0">
-      <varInfo nodeId="5646944109420324396" varName="variableDeclaration" />
       <varInfo nodeId="5646944109420324398" varName="var" />
+      <varInfo nodeId="5646944109420324396" varName="variableDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324419" fileName="JavaConverterTreeBuilder.java" startLine="1547" startPosition="0" endLine="1555" endPosition="0">
-      <varInfo nodeId="5646944109420324424" varName="field" />
       <varInfo nodeId="5646944109420324422" varName="enumConst" />
+      <varInfo nodeId="5646944109420324424" varName="field" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324445" fileName="JavaConverterTreeBuilder.java" startLine="1555" startPosition="0" endLine="1563" endPosition="0">
       <varInfo nodeId="5646944109420324450" varName="method" />
@@ -3914,12 +3914,12 @@
       <varInfo nodeId="5646944109420324476" varName="typeDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="262096212398016515" fileName="JavaConverterTreeBuilder.java" startLine="1576" startPosition="0" endLine="1584" endPosition="0">
-      <varInfo nodeId="262096212398059665" varName="node" />
       <varInfo nodeId="262096212398059667" varName="javadoc" />
+      <varInfo nodeId="262096212398059665" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5970785221771745709" fileName="JavaConverterTreeBuilder.java" startLine="1597" startPosition="0" endLine="1605" endPosition="0">
-      <varInfo nodeId="5970785221771745713" varName="node" />
       <varInfo nodeId="5970785221771745717" varName="javadoc" />
+      <varInfo nodeId="5970785221771745713" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5986358097126617650" fileName="JavaConverterTreeBuilder.java" startLine="1656" startPosition="0" endLine="1664" endPosition="0">
       <varInfo nodeId="5986358097126617664" varName="node" />
@@ -3928,12 +3928,12 @@
       <varInfo nodeId="5646944109420320357" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320585" fileName="JavaConverterTreeBuilder.java" startLine="578" startPosition="42" endLine="587" endPosition="111">
-      <varInfo nodeId="5646944109420320600" varName="valueNode" />
       <varInfo nodeId="5646944109420320587" varName="value" />
+      <varInfo nodeId="5646944109420320600" varName="valueNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320681" fileName="JavaConverterTreeBuilder.java" startLine="601" startPosition="24" endLine="610" endPosition="109">
-      <varInfo nodeId="5646944109420320697" varName="valueNode" />
       <varInfo nodeId="5646944109420320683" varName="pair" />
+      <varInfo nodeId="5646944109420320697" varName="valueNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322140" fileName="JavaConverterTreeBuilder.java" startLine="940" startPosition="0" endLine="949" endPosition="0">
       <varInfo nodeId="5646944109420322142" varName="x" />
@@ -3945,11 +3945,11 @@
       <varInfo nodeId="5646944109420322560" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322753" fileName="JavaConverterTreeBuilder.java" startLine="1108" startPosition="58" endLine="1117" endPosition="18">
-      <varInfo nodeId="5646944109420322767" varName="body" />
-      <varInfo nodeId="5646944109420322755" varName="result" />
       <varInfo nodeId="5646944109420322760" varName="action" />
+      <varInfo nodeId="5646944109420322767" varName="body" />
       <varInfo nodeId="5646944109420322772" varName="elementVar" />
       <varInfo nodeId="5646944109420322785" varName="iterable" />
+      <varInfo nodeId="5646944109420322755" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322878" fileName="JavaConverterTreeBuilder.java" startLine="1133" startPosition="18" endLine="1142" endPosition="137">
       <varInfo nodeId="5646944109420322880" varName="additionalForLoopVariable" />
@@ -3992,8 +3992,8 @@
       <varInfo nodeId="5646944109420321911" varName="typeArgs" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321943" fileName="JavaConverterTreeBuilder.java" startLine="892" startPosition="0" endLine="902" endPosition="0">
-      <varInfo nodeId="5646944109420321949" varName="call" />
       <varInfo nodeId="5646944109420321946" varName="args" />
+      <varInfo nodeId="5646944109420321949" varName="call" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322417" fileName="JavaConverterTreeBuilder.java" startLine="1009" startPosition="69" endLine="1019" endPosition="18">
       <varInfo nodeId="5646944109420322419" varName="result" />
@@ -4004,8 +4004,8 @@
     <scopeInfo nodeId="5646944109420323579" fileName="JavaConverterTreeBuilder.java" startLine="1308" startPosition="39" endLine="1318" endPosition="24" />
     <scopeInfo nodeId="5970785221771744758" fileName="JavaConverterTreeBuilder.java" startLine="1585" startPosition="61" endLine="1595" endPosition="5" />
     <scopeInfo nodeId="5646944109420319805" fileName="JavaConverterTreeBuilder.java" startLine="331" startPosition="59" endLine="342" endPosition="24">
-      <varInfo nodeId="5646944109420319807" varName="initializers" />
       <varInfo nodeId="5646944109420319834" varName="arrayLiteral" />
+      <varInfo nodeId="5646944109420319807" varName="initializers" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320202" fileName="JavaConverterTreeBuilder.java" startLine="461" startPosition="0" endLine="472" endPosition="0">
       <varInfo nodeId="5646944109420320204" varName="x" />
@@ -4019,8 +4019,8 @@
       <varInfo nodeId="5646944109420322372" varName="operand" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322492" fileName="JavaConverterTreeBuilder.java" startLine="1031" startPosition="47" endLine="1042" endPosition="26">
-      <varInfo nodeId="5646944109420322506" varName="statementList" />
       <varInfo nodeId="5646944109420322501" varName="blockStatement" />
+      <varInfo nodeId="5646944109420322506" varName="statementList" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322687" fileName="JavaConverterTreeBuilder.java" startLine="1090" startPosition="0" endLine="1101" endPosition="0">
       <varInfo nodeId="5646944109420322690" varName="x" />
@@ -4050,8 +4050,8 @@
       <varInfo nodeId="5646944109420323724" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324620" fileName="JavaConverterTreeBuilder.java" startLine="1665" startPosition="74" endLine="1677" endPosition="18">
-      <varInfo nodeId="5646944109420324653" varName="sModel" />
       <varInfo nodeId="5646944109420324646" varName="packageName" />
+      <varInfo nodeId="5646944109420324653" varName="sModel" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324686" fileName="JavaConverterTreeBuilder.java" startLine="1680" startPosition="81" endLine="1692" endPosition="18">
       <varInfo nodeId="5646944109420324688" varName="result" />
@@ -4060,8 +4060,8 @@
       <varInfo nodeId="5646944109420319302" varName="statements" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320303" fileName="JavaConverterTreeBuilder.java" startLine="488" startPosition="66" endLine="501" endPosition="18">
-      <varInfo nodeId="5646944109420320312" varName="result" />
       <varInfo nodeId="5646944109420320329" varName="methodReference" />
+      <varInfo nodeId="5646944109420320312" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320408" fileName="JavaConverterTreeBuilder.java" startLine="517" startPosition="60" endLine="530" endPosition="14">
       <varInfo nodeId="5646944109420320410" varName="op" />
@@ -4077,11 +4077,11 @@
       <varInfo nodeId="5646944109420322414" varName="statements" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322995" fileName="JavaConverterTreeBuilder.java" startLine="1163" startPosition="53" endLine="1176" endPosition="18">
+      <varInfo nodeId="5646944109420323011" varName="elseStmt" />
+      <varInfo nodeId="5646944109420322997" varName="expr" />
       <varInfo nodeId="5646944109420323038" varName="ifTrue" />
       <varInfo nodeId="5646944109420323018" varName="result" />
-      <varInfo nodeId="5646944109420323011" varName="elseStmt" />
       <varInfo nodeId="5646944109420323004" varName="thenStmt" />
-      <varInfo nodeId="5646944109420322997" varName="expr" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323053" fileName="JavaConverterTreeBuilder.java" startLine="1179" startPosition="58" endLine="1192" endPosition="21">
       <varInfo nodeId="5646944109420323055" varName="statement" />
@@ -4099,16 +4099,16 @@
       <varInfo nodeId="5646944109420324307" varName="enumClassConstantBody" />
     </scopeInfo>
     <scopeInfo nodeId="5970785221771744755" fileName="JavaConverterTreeBuilder.java" startLine="1584" startPosition="0" endLine="1597" endPosition="0">
-      <varInfo nodeId="5970785221771744759" varName="node" />
       <varInfo nodeId="5970785221771744761" varName="javadoc" />
+      <varInfo nodeId="5970785221771744759" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324563" fileName="JavaConverterTreeBuilder.java" startLine="1632" startPosition="26" endLine="1645" endPosition="5">
       <varInfo nodeId="5646944109420324567" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420319734" fileName="JavaConverterTreeBuilder.java" startLine="288" startPosition="32" endLine="302" endPosition="34">
-      <varInfo nodeId="5646944109420319736" varName="initializers" />
-      <varInfo nodeId="5646944109420319790" varName="genericNewExpression" />
       <varInfo nodeId="5646944109420319767" varName="arrayCreator" />
+      <varInfo nodeId="5646944109420319790" varName="genericNewExpression" />
+      <varInfo nodeId="5646944109420319736" varName="initializers" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420319801" fileName="JavaConverterTreeBuilder.java" startLine="330" startPosition="0" endLine="344" endPosition="0">
       <varInfo nodeId="5646944109420319803" varName="x" />
@@ -4128,9 +4128,9 @@
       <varInfo nodeId="5646944109420320252" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320659" fileName="JavaConverterTreeBuilder.java" startLine="597" startPosition="65" endLine="612" endPosition="30">
+      <varInfo nodeId="5646944109420320661" varName="annotationInstance" />
       <varInfo nodeId="5646944109420320671" varName="pairs" />
       <varInfo nodeId="5646944109420320666" varName="value" />
-      <varInfo nodeId="5646944109420320661" varName="annotationInstance" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323662" fileName="JavaConverterTreeBuilder.java" startLine="1333" startPosition="30" endLine="1348" endPosition="9" />
     <scopeInfo nodeId="5646944109420323663" fileName="JavaConverterTreeBuilder.java" startLine="1333" startPosition="30" endLine="1348" endPosition="9">
@@ -4156,14 +4156,14 @@
       <varInfo nodeId="5646944109420320451" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320563" fileName="JavaConverterTreeBuilder.java" startLine="574" startPosition="59" endLine="590" endPosition="30">
-      <varInfo nodeId="5646944109420320570" varName="pairs" />
       <varInfo nodeId="5646944109420320565" varName="annotationInstance" />
+      <varInfo nodeId="5646944109420320570" varName="pairs" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320748" fileName="JavaConverterTreeBuilder.java" startLine="615" startPosition="70" endLine="631" endPosition="30">
-      <varInfo nodeId="5646944109420320755" varName="sourceNode" />
       <varInfo nodeId="5646944109420320761" varName="annotationBinding" />
-      <varInfo nodeId="5646944109420320767" varName="classifierReference" />
       <varInfo nodeId="5646944109420320750" varName="annotationInstance" />
+      <varInfo nodeId="5646944109420320767" varName="classifierReference" />
+      <varInfo nodeId="5646944109420320755" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321980" fileName="JavaConverterTreeBuilder.java" startLine="902" startPosition="0" endLine="918" endPosition="0">
       <varInfo nodeId="5646944109420321982" varName="x" />
@@ -4178,10 +4178,10 @@
       <varInfo nodeId="5646944109420323805" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="247131684935902313" fileName="JavaConverterTreeBuilder.java" startLine="1606" startPosition="60" endLine="1622" endPosition="5">
-      <varInfo nodeId="247131684935904534" varName="content" />
-      <varInfo nodeId="247131684935904567" varName="lineends" />
-      <varInfo nodeId="247131684935907074" varName="cud" />
       <varInfo nodeId="247131684935904555" varName="comments" />
+      <varInfo nodeId="247131684935904534" varName="content" />
+      <varInfo nodeId="247131684935907074" varName="cud" />
+      <varInfo nodeId="247131684935904567" varName="lineends" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420317653" fileName="JavaConverterTreeBuilder.java" startLine="1699" startPosition="49" endLine="1715" endPosition="20" />
     <scopeInfo nodeId="5646944109420319193" fileName="JavaConverterTreeBuilder.java" startLine="163" startPosition="50" endLine="180" endPosition="21">
@@ -4189,16 +4189,16 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321236" fileName="JavaConverterTreeBuilder.java" startLine="736" startPosition="82" endLine="753" endPosition="26">
       <varInfo nodeId="5646944109420321244" varName="currentClass" />
-      <varInfo nodeId="5646944109420321250" varName="thisExpression" />
       <varInfo nodeId="5646944109420321238" varName="methodDeclaringClass" />
+      <varInfo nodeId="5646944109420321250" varName="thisExpression" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322276" fileName="JavaConverterTreeBuilder.java" startLine="978" startPosition="65" endLine="995" endPosition="18">
-      <varInfo nodeId="5646944109420322284" varName="result" />
       <varInfo nodeId="5646944109420322278" varName="binding" />
+      <varInfo nodeId="5646944109420322284" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322857" fileName="JavaConverterTreeBuilder.java" startLine="1126" startPosition="128" endLine="1143" endPosition="11">
-      <varInfo nodeId="5646944109420322865" varName="variableDeclaration" />
       <varInfo nodeId="5646944109420322859" varName="lvds" />
+      <varInfo nodeId="5646944109420322865" varName="variableDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323895" fileName="JavaConverterTreeBuilder.java" startLine="1403" startPosition="9" endLine="1420" endPosition="29">
       <varInfo nodeId="5646944109420323910" varName="methodBody" />
@@ -4234,8 +4234,8 @@
       <varInfo nodeId="5646944109420321045" varName="classifierPointer" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321229" fileName="JavaConverterTreeBuilder.java" startLine="735" startPosition="0" endLine="755" endPosition="0">
-      <varInfo nodeId="5646944109420321234" varName="receiver" />
       <varInfo nodeId="5646944109420321232" varName="binding" />
+      <varInfo nodeId="5646944109420321234" varName="receiver" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322272" fileName="JavaConverterTreeBuilder.java" startLine="977" startPosition="0" endLine="997" endPosition="0">
       <varInfo nodeId="5646944109420322274" varName="x" />
@@ -4247,9 +4247,9 @@
       <varInfo nodeId="5646944109420324067" varName="body" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321796" fileName="JavaConverterTreeBuilder.java" startLine="859" startPosition="72" endLine="880" endPosition="18">
-      <varInfo nodeId="5646944109420321897" varName="result" />
       <varInfo nodeId="5646944109420321798" varName="b" />
       <varInfo nodeId="5646944109420321804" varName="creator" />
+      <varInfo nodeId="5646944109420321897" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322848" fileName="JavaConverterTreeBuilder.java" startLine="1124" startPosition="27" endLine="1145" endPosition="7">
       <varInfo nodeId="5646944109420322850" varName="statement" />
@@ -4272,26 +4272,26 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323979" fileName="JavaConverterTreeBuilder.java" startLine="1428" startPosition="9" endLine="1450" endPosition="29">
       <varInfo nodeId="5646944109420324005" varName="body" />
-      <varInfo nodeId="5646944109420323985" varName="superOrThisCall" />
       <varInfo nodeId="5646944109420323989" varName="ctorCall" />
+      <varInfo nodeId="5646944109420323985" varName="superOrThisCall" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324059" fileName="JavaConverterTreeBuilder.java" startLine="1455" startPosition="0" endLine="1478" endPosition="0">
       <varInfo nodeId="5646944109420324063" varName="classConcept" />
       <varInfo nodeId="5646944109420324061" varName="initializer" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420319633" fileName="JavaConverterTreeBuilder.java" startLine="303" startPosition="12" endLine="327" endPosition="34">
-      <varInfo nodeId="5646944109420319635" varName="dims" />
-      <varInfo nodeId="5646944109420319697" varName="deepestComponentType" />
-      <varInfo nodeId="5646944109420319723" varName="genericNewExpression" />
       <varInfo nodeId="5646944109420319667" varName="arrayCreator" />
+      <varInfo nodeId="5646944109420319697" varName="deepestComponentType" />
+      <varInfo nodeId="5646944109420319635" varName="dims" />
+      <varInfo nodeId="5646944109420319723" varName="genericNewExpression" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321792" fileName="JavaConverterTreeBuilder.java" startLine="858" startPosition="0" endLine="882" endPosition="0">
       <varInfo nodeId="5646944109420321794" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324517" fileName="JavaConverterTreeBuilder.java" startLine="1624" startPosition="0" endLine="1648" endPosition="0">
       <varInfo nodeId="5646944109420324527" varName="isolated" />
-      <varInfo nodeId="5646944109420324521" varName="referentsCreator" />
       <varInfo nodeId="5646944109420324523" varName="modelMap" />
+      <varInfo nodeId="5646944109420324521" varName="referentsCreator" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322172" fileName="JavaConverterTreeBuilder.java" startLine="950" startPosition="57" endLine="975" endPosition="18">
       <varInfo nodeId="5646944109420322220" varName="result" />
@@ -4299,10 +4299,10 @@
       <varInfo nodeId="5646944109420322214" varName="variable" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321684" fileName="JavaConverterTreeBuilder.java" startLine="830" startPosition="63" endLine="856" endPosition="18">
-      <varInfo nodeId="5646944109420321781" varName="result" />
       <varInfo nodeId="5646944109420321686" varName="b" />
-      <varInfo nodeId="5646944109420321697" varName="methodReference" />
       <varInfo nodeId="5646944109420321692" varName="classCreator" />
+      <varInfo nodeId="5646944109420321697" varName="methodReference" />
+      <varInfo nodeId="5646944109420321781" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323864" fileName="JavaConverterTreeBuilder.java" startLine="1397" startPosition="63" endLine="1423" endPosition="5">
       <varInfo nodeId="5646944109420323866" varName="b" />
@@ -4329,10 +4329,10 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323618" fileName="JavaConverterTreeBuilder.java" startLine="1322" startPosition="9" endLine="1353" endPosition="38" />
     <scopeInfo nodeId="5646944109420324246" fileName="JavaConverterTreeBuilder.java" startLine="1502" startPosition="11" endLine="1533" endPosition="59">
-      <varInfo nodeId="5646944109420324248" varName="enumConstant" />
       <varInfo nodeId="5646944109420324367" varName="arguments" />
-      <varInfo nodeId="5646944109420324267" varName="constructorBinding" />
       <varInfo nodeId="5646944109420324351" varName="constructor" />
+      <varInfo nodeId="5646944109420324267" varName="constructorBinding" />
+      <varInfo nodeId="5646944109420324248" varName="enumConstant" />
       <varInfo nodeId="5646944109420324259" varName="initializer" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323110" fileName="JavaConverterTreeBuilder.java" startLine="1194" startPosition="0" endLine="1228" endPosition="0">
@@ -4341,17 +4341,17 @@
     <scopeInfo nodeId="5646944109420324236" fileName="JavaConverterTreeBuilder.java" startLine="1501" startPosition="112" endLine="1536" endPosition="7" />
     <scopeInfo nodeId="5646944109420323288" fileName="JavaConverterTreeBuilder.java" startLine="1245" startPosition="54" endLine="1284" endPosition="5">
       <varInfo nodeId="5646944109420323297" varName="catchArgs" />
-      <varInfo nodeId="5646944109420323290" varName="tryBlock" />
-      <varInfo nodeId="5646944109420323311" varName="finallyBlock" />
       <varInfo nodeId="5646944109420323304" varName="catchBlocks" />
+      <varInfo nodeId="5646944109420323311" varName="finallyBlock" />
+      <varInfo nodeId="5646944109420323290" varName="tryBlock" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420322812" fileName="JavaConverterTreeBuilder.java" startLine="1120" startPosition="54" endLine="1160" endPosition="24">
       <varInfo nodeId="5646944109420322980" varName="body" />
-      <varInfo nodeId="5646944109420322973" varName="loopBody" />
-      <varInfo nodeId="5646944109420322829" varName="forStatement" />
-      <varInfo nodeId="5646944109420322814" varName="init" />
       <varInfo nodeId="5646944109420322822" varName="expr" />
+      <varInfo nodeId="5646944109420322829" varName="forStatement" />
       <varInfo nodeId="5646944109420322936" varName="incr" />
+      <varInfo nodeId="5646944109420322814" varName="init" />
+      <varInfo nodeId="5646944109420322973" varName="loopBody" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320081" fileName="JavaConverterTreeBuilder.java" startLine="418" startPosition="61" endLine="459" endPosition="14">
       <varInfo nodeId="5646944109420320083" varName="op" />
@@ -4373,11 +4373,11 @@
       <varInfo nodeId="5646944109420319599" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420320946" fileName="JavaConverterTreeBuilder.java" startLine="662" startPosition="97" endLine="711" endPosition="18">
-      <varInfo nodeId="5646944109420320954" varName="result" />
-      <varInfo nodeId="5646944109420320951" varName="sourceNode" />
-      <varInfo nodeId="5646944109420320948" varName="role" />
-      <varInfo nodeId="5646944109420321146" varName="fieldReference" />
       <varInfo nodeId="5646944109420320957" varName="declaredClassBinding" />
+      <varInfo nodeId="5646944109420321146" varName="fieldReference" />
+      <varInfo nodeId="5646944109420320954" varName="result" />
+      <varInfo nodeId="5646944109420320948" varName="role" />
+      <varInfo nodeId="5646944109420320951" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323561" fileName="JavaConverterTreeBuilder.java" startLine="1306" startPosition="47" endLine="1357" endPosition="22">
       <varInfo nodeId="5646944109420323563" varName="classifier" />
@@ -4391,9 +4391,9 @@
       <varInfo nodeId="5646944109420320944" varName="instanceExpression" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321398" fileName="JavaConverterTreeBuilder.java" startLine="773" startPosition="54" endLine="827" endPosition="18">
-      <varInfo nodeId="5646944109420321440" varName="result" />
-      <varInfo nodeId="5646944109420321585" varName="methodReference" />
       <varInfo nodeId="5646944109420321436" varName="methodCall" />
+      <varInfo nodeId="5646944109420321585" varName="methodReference" />
+      <varInfo nodeId="5646944109420321440" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420323556" fileName="JavaConverterTreeBuilder.java" startLine="1305" startPosition="0" endLine="1359" endPosition="0">
       <varInfo nodeId="5646944109420323559" varName="x" />
@@ -4410,9 +4410,9 @@
     <scopeInfo nodeId="5646944109420324155" fileName="JavaConverterTreeBuilder.java" startLine="1478" startPosition="0" endLine="1539" endPosition="0">
       <varInfo nodeId="5646944109420324157" varName="declaration" />
     </scopeInfo>
+    <unitInfo nodeId="5646944109420317653" fileName="JavaConverterTreeBuilder.java" startLine="128" startPosition="0" endLine="1719" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaConverterTreeBuilder" />
     <unitInfo nodeId="5986358097126617673" fileName="JavaConverterTreeBuilder.java" startLine="1658" startPosition="57" endLine="1662" endPosition="5" unitName="jetbrains.mps.ide.java.parser.JavaConverterTreeBuilder$1" />
     <unitInfo nodeId="5646944109420317653" fileName="JavaConverterTreeBuilder.java" startLine="1695" startPosition="0" endLine="1718" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaConverterTreeBuilder$QuotationClass_m30mvz_a0a0bd" />
-    <unitInfo nodeId="5646944109420317653" fileName="JavaConverterTreeBuilder.java" startLine="128" startPosition="0" endLine="1719" endPosition="0" unitName="jetbrains.mps.ide.java.parser.JavaConverterTreeBuilder" />
   </root>
   <root nodeId="5646944109420324728">
     <nodeInfo nodeId="5646944109420324812" fileName="UIComponents.java" startLine="38" startPosition="144" endLine="39" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4496,8 +4496,8 @@
     <scopeInfo nodeId="5646944109420325038" fileName="UIComponents.java" startLine="99" startPosition="82" endLine="102" endPosition="9" />
     <scopeInfo nodeId="5646944109420324801" fileName="UIComponents.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5646944109420324808" varName="classFqNames" />
-      <varInfo nodeId="5646944109420324806" varName="sourceDir" />
       <varInfo nodeId="5646944109420324804" varName="context" />
+      <varInfo nodeId="5646944109420324806" varName="sourceDir" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324928" fileName="UIComponents.java" startLine="62" startPosition="61" endLine="66" endPosition="0">
       <varInfo nodeId="5646944109420324931" varName="e" />
@@ -4515,8 +4515,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324770" fileName="UIComponents.java" startLine="83" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="5646944109420324761" fileName="UIComponents.java" startLine="76" startPosition="0" endLine="83" endPosition="0">
-      <varInfo nodeId="5646944109420324766" varName="list" />
       <varInfo nodeId="5646944109420324764" varName="caption" />
+      <varInfo nodeId="5646944109420324766" varName="list" />
       <varInfo nodeId="5646944109420324768" varName="renderer" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325069" fileName="UIComponents.java" startLine="106" startPosition="79" endLine="113" endPosition="41">
@@ -4527,8 +4527,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325019" fileName="UIComponents.java" startLine="94" startPosition="58" endLine="103" endPosition="7" />
     <scopeInfo nodeId="5646944109420324781" fileName="UIComponents.java" startLine="105" startPosition="0" endLine="115" endPosition="0">
-      <varInfo nodeId="5646944109420324786" varName="fqName" />
       <varInfo nodeId="5646944109420324784" varName="classPath" />
+      <varInfo nodeId="5646944109420324786" varName="fqName" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324788" fileName="UIComponents.java" startLine="115" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="5646944109420324791" varName="classPath" />
@@ -4537,23 +4537,23 @@
       <varInfo nodeId="5646944109420324779" varName="classPath" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324827" fileName="UIComponents.java" startLine="47" startPosition="141" endLine="74" endPosition="26">
-      <varInfo nodeId="5646944109420324844" varName="panel" />
-      <varInfo nodeId="5646944109420324884" varName="splitPane" />
-      <varInfo nodeId="5646944109420324857" varName="classPathPanel" />
       <varInfo nodeId="5646944109420324909" varName="buttonsPanel" />
-      <varInfo nodeId="5646944109420324852" varName="renderer" />
-      <varInfo nodeId="5646944109420324871" varName="innerSplitPane" />
+      <varInfo nodeId="5646944109420324857" varName="classPathPanel" />
       <varInfo nodeId="5646944109420324864" varName="classesList" />
+      <varInfo nodeId="5646944109420324871" varName="innerSplitPane" />
+      <varInfo nodeId="5646944109420324844" varName="panel" />
+      <varInfo nodeId="5646944109420324852" varName="renderer" />
+      <varInfo nodeId="5646944109420324884" varName="splitPane" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324751" fileName="UIComponents.java" startLine="46" startPosition="0" endLine="75" endPosition="5">
       <varInfo nodeId="5646944109420324758" varName="classFqNames" />
-      <varInfo nodeId="5646944109420324756" varName="sourceDirs" />
       <varInfo nodeId="5646944109420324754" varName="operationContext" />
+      <varInfo nodeId="5646944109420324756" varName="sourceDirs" />
     </scopeInfo>
+    <unitInfo nodeId="5646944109420324728" fileName="UIComponents.java" startLine="34" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.ide.java.parser.UIComponents" />
     <unitInfo nodeId="5646944109420324927" fileName="UIComponents.java" startLine="62" startPosition="39" endLine="66" endPosition="7" unitName="jetbrains.mps.ide.java.parser.UIComponents$1" />
     <unitInfo nodeId="5646944109420324943" fileName="UIComponents.java" startLine="67" startPosition="39" endLine="72" endPosition="7" unitName="jetbrains.mps.ide.java.parser.UIComponents$2" />
     <unitInfo nodeId="5646944109420324730" fileName="UIComponents.java" startLine="42" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.ide.java.parser.UIComponents$MyDialog" />
-    <unitInfo nodeId="5646944109420324728" fileName="UIComponents.java" startLine="34" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.ide.java.parser.UIComponents" />
   </root>
   <root nodeId="5646944109420325155">
     <nodeInfo nodeId="5646944109420325189" fileName="ForeignReferencesConvertor.java" startLine="25" startPosition="41" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourAllowedClassifierConcepts" />
@@ -4738,8 +4738,8 @@
       <varInfo nodeId="5646944109420325292" varName="foreingModelReference" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325367" fileName="ForeignReferencesConvertor.java" startLine="77" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="5646944109420325372" varName="nodeId" />
       <varInfo nodeId="5646944109420325370" varName="model" />
+      <varInfo nodeId="5646944109420325372" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325418" fileName="ForeignReferencesConvertor.java" startLine="89" startPosition="64" endLine="94" endPosition="5">
       <varInfo nodeId="5646944109420325422" varName="field" />
@@ -4768,24 +4768,24 @@
       <varInfo nodeId="5646944109420325626" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325677" fileName="ForeignReferencesConvertor.java" startLine="155" startPosition="100" endLine="166" endPosition="27">
-      <varInfo nodeId="5646944109420325684" varName="classifierType" />
-      <varInfo nodeId="5646944109420325713" varName="typeParameters" />
-      <varInfo nodeId="5646944109420325679" varName="sb" />
       <varInfo nodeId="5646944109420325690" varName="classifier" />
+      <varInfo nodeId="5646944109420325684" varName="classifierType" />
+      <varInfo nodeId="5646944109420325679" varName="sb" />
+      <varInfo nodeId="5646944109420325713" varName="typeParameters" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325569" fileName="ForeignReferencesConvertor.java" startLine="124" startPosition="104" endLine="136" endPosition="7">
       <varInfo nodeId="5646944109420325571" varName="classConcept" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325316" fileName="ForeignReferencesConvertor.java" startLine="62" startPosition="70" endLine="75" endPosition="5">
-      <varInfo nodeId="5646944109420325337" varName="node" />
       <varInfo nodeId="5646944109420325333" varName="className" />
+      <varInfo nodeId="5646944109420325337" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325613" fileName="ForeignReferencesConvertor.java" startLine="137" startPosition="5" endLine="150" endPosition="5">
       <varInfo nodeId="5646944109420325615" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325309" fileName="ForeignReferencesConvertor.java" startLine="61" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="5646944109420325312" varName="model" />
       <varInfo nodeId="5646944109420325314" varName="idString" />
+      <varInfo nodeId="5646944109420325312" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325392" fileName="ForeignReferencesConvertor.java" startLine="83" startPosition="63" endLine="102" endPosition="16">
       <varInfo nodeId="5646944109420325400" varName="classifier" />
@@ -4793,38 +4793,38 @@
       <varInfo nodeId="5646944109420325394" varName="idString" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325385" fileName="ForeignReferencesConvertor.java" startLine="82" startPosition="0" endLine="104" endPosition="0">
-      <varInfo nodeId="5646944109420325390" varName="nodeId" />
       <varInfo nodeId="5646944109420325388" varName="model" />
+      <varInfo nodeId="5646944109420325390" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325206" fileName="ForeignReferencesConvertor.java" startLine="31" startPosition="115" endLine="54" endPosition="36">
       <varInfo nodeId="5646944109420325223" varName="model" />
-      <varInfo nodeId="5646944109420325220" varName="target" />
       <varInfo nodeId="5646944109420325208" varName="regularModel" />
+      <varInfo nodeId="5646944109420325220" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325197" fileName="ForeignReferencesConvertor.java" startLine="30" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="5646944109420325200" varName="modelReference" />
       <varInfo nodeId="5646944109420325202" varName="nodeId" />
       <varInfo nodeId="5646944109420325204" varName="targetKind" />
-      <varInfo nodeId="5646944109420325200" varName="modelReference" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325672" fileName="ForeignReferencesConvertor.java" startLine="154" startPosition="45" endLine="189" endPosition="16" />
     <scopeInfo nodeId="5646944109420325667" fileName="ForeignReferencesConvertor.java" startLine="153" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="5646944109420325670" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325469" fileName="ForeignReferencesConvertor.java" startLine="105" startPosition="64" endLine="151" endPosition="16">
-      <varInfo nodeId="5646944109420325484" varName="methodAndClassName" />
-      <varInfo nodeId="5646944109420325515" varName="offset2" />
-      <varInfo nodeId="5646944109420325539" varName="goodMethods" />
-      <varInfo nodeId="5646944109420325477" varName="offset1" />
-      <varInfo nodeId="5646944109420325497" varName="classifier" />
       <varInfo nodeId="5646944109420325492" varName="className" />
-      <varInfo nodeId="5646944109420325510" varName="methodName" />
-      <varInfo nodeId="5646944109420325471" varName="idString" />
-      <varInfo nodeId="5646944109420325522" varName="signature" />
+      <varInfo nodeId="5646944109420325497" varName="classifier" />
       <varInfo nodeId="5646944109420325532" varName="constructor" />
+      <varInfo nodeId="5646944109420325539" varName="goodMethods" />
+      <varInfo nodeId="5646944109420325471" varName="idString" />
+      <varInfo nodeId="5646944109420325484" varName="methodAndClassName" />
+      <varInfo nodeId="5646944109420325510" varName="methodName" />
+      <varInfo nodeId="5646944109420325477" varName="offset1" />
+      <varInfo nodeId="5646944109420325515" varName="offset2" />
+      <varInfo nodeId="5646944109420325522" varName="signature" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420325462" fileName="ForeignReferencesConvertor.java" startLine="104" startPosition="0" endLine="153" endPosition="0">
-      <varInfo nodeId="5646944109420325467" varName="nodeId" />
       <varInfo nodeId="5646944109420325465" varName="model" />
+      <varInfo nodeId="5646944109420325467" varName="nodeId" />
     </scopeInfo>
     <unitInfo nodeId="5646944109420325155" fileName="ForeignReferencesConvertor.java" startLine="25" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ForeignReferencesConvertor" />
   </root>
@@ -5027,8 +5027,8 @@
       <varInfo nodeId="5646944109420333439" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333656" fileName="SourceWrapper.java" startLine="128" startPosition="68" endLine="135" endPosition="20">
-      <varInfo nodeId="5646944109420333665" varName="result" />
       <varInfo nodeId="1855439628317341310" varName="classs" />
+      <varInfo nodeId="5646944109420333665" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333305" fileName="SourceWrapper.java" startLine="181" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="5646944109420333309" varName="classifier" />
@@ -5045,26 +5045,26 @@
       <varInfo nodeId="5646944109420333536" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333430" fileName="SourceWrapper.java" startLine="40" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="5646944109420333433" varName="source" />
       <varInfo nodeId="5646944109420333435" varName="shortClassName" />
+      <varInfo nodeId="5646944109420333433" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333353" fileName="SourceWrapper.java" startLine="94" startPosition="96" endLine="104" endPosition="5" />
     <scopeInfo nodeId="5646944109420333391" fileName="SourceWrapper.java" startLine="29" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="5646944109420333394" varName="source" />
       <varInfo nodeId="5646944109420333396" varName="shortClassName" />
+      <varInfo nodeId="5646944109420333394" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333289" fileName="SourceWrapper.java" startLine="126" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="5646944109420333293" varName="classifier" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333344" fileName="SourceWrapper.java" startLine="93" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="5646944109420333351" varName="featureKind" />
       <varInfo nodeId="5646944109420333349" varName="model" />
       <varInfo nodeId="5646944109420333347" varName="source" />
-      <varInfo nodeId="5646944109420333351" varName="featureKind" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333703" fileName="SourceWrapper.java" startLine="152" startPosition="14" endLine="178" endPosition="9">
+      <varInfo nodeId="5646944109420333705" varName="i" />
       <varInfo nodeId="6717730078865281320" varName="iPackage" />
       <varInfo nodeId="5646944109420333723" varName="sb" />
-      <varInfo nodeId="5646944109420333705" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333686" fileName="SourceWrapper.java" startLine="142" startPosition="54" endLine="179" endPosition="7">
       <varInfo nodeId="5646944109420333691" varName="index" />
@@ -5074,10 +5074,10 @@
       <varInfo nodeId="5646944109420333303" varName="model" />
       <varInfo nodeId="5646944109420333301" varName="source" />
     </scopeInfo>
-    <unitInfo nodeId="5646944109420333263" fileName="SourceWrapper.java" startLine="107" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.java.parser.SourceWrapper$StatementsWrapper" />
-    <unitInfo nodeId="5646944109420333279" fileName="SourceWrapper.java" startLine="120" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.ide.java.parser.SourceWrapper$MethodsWrapper" />
-    <unitInfo nodeId="5646944109420333295" fileName="SourceWrapper.java" startLine="139" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.ide.java.parser.SourceWrapper$ClassWrapper" />
     <unitInfo nodeId="5646944109420327431" fileName="SourceWrapper.java" startLine="17" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ide.java.parser.SourceWrapper" />
+    <unitInfo nodeId="5646944109420333295" fileName="SourceWrapper.java" startLine="139" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.ide.java.parser.SourceWrapper$ClassWrapper" />
+    <unitInfo nodeId="5646944109420333279" fileName="SourceWrapper.java" startLine="120" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.ide.java.parser.SourceWrapper$MethodsWrapper" />
+    <unitInfo nodeId="5646944109420333263" fileName="SourceWrapper.java" startLine="107" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.java.parser.SourceWrapper$StatementsWrapper" />
   </root>
   <root nodeId="5646944109420333213">
     <nodeInfo nodeId="5646944109420333226" fileName="JavaConverterException.java" startLine="10" startPosition="49" endLine="11" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -5425,8 +5425,8 @@
       <varInfo nodeId="5646944109420334192" varName="typeBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420335079" fileName="TypesProvider.java" startLine="284" startPosition="46" endLine="287" endPosition="94">
-      <varInfo nodeId="5646944109420335088" varName="nodeId" />
       <varInfo nodeId="5646944109420335081" varName="modelReference" />
+      <varInfo nodeId="5646944109420335088" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334783" fileName="TypesProvider.java" startLine="362" startPosition="51" endLine="365" endPosition="27">
       <varInfo nodeId="5646944109420334785" varName="sb" />
@@ -5449,27 +5449,27 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334377" fileName="TypesProvider.java" startLine="184" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="5646944109420334382" varName="resolveInfo" />
-      <varInfo nodeId="5646944109420334384" varName="sourceNode" />
       <varInfo nodeId="5646944109420334380" varName="role" />
+      <varInfo nodeId="5646944109420334384" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334417" fileName="TypesProvider.java" startLine="190" startPosition="46" endLine="194" endPosition="70">
-      <varInfo nodeId="5646944109420334419" varName="referenceBinding" />
-      <varInfo nodeId="5646944109420334433" varName="name" />
       <varInfo nodeId="5646944109420334425" varName="chars" />
+      <varInfo nodeId="5646944109420334433" varName="name" />
+      <varInfo nodeId="5646944109420334419" varName="referenceBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334611" fileName="TypesProvider.java" startLine="238" startPosition="101" endLine="242" endPosition="26">
-      <varInfo nodeId="5646944109420334618" varName="packageName" />
-      <varInfo nodeId="5646944109420334623" varName="modelReference" />
       <varInfo nodeId="5646944109420334613" varName="classFQName" />
+      <varInfo nodeId="5646944109420334623" varName="modelReference" />
+      <varInfo nodeId="5646944109420334618" varName="packageName" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334629" fileName="TypesProvider.java" startLine="244" startPosition="0" endLine="248" endPosition="0">
+      <varInfo nodeId="5646944109420334632" varName="modelReference" />
       <varInfo nodeId="5646944109420334634" varName="nodeId" />
       <varInfo nodeId="5646944109420334636" varName="targetKind" />
-      <varInfo nodeId="5646944109420334632" varName="modelReference" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334737" fileName="TypesProvider.java" startLine="267" startPosition="0" endLine="271" endPosition="0">
-      <varInfo nodeId="5646944109420334740" varName="field" />
       <varInfo nodeId="5646944109420334742" varName="classBinding" />
+      <varInfo nodeId="5646944109420334740" varName="field" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420335103" fileName="TypesProvider.java" startLine="289" startPosition="46" endLine="293" endPosition="7">
       <varInfo nodeId="5646944109420335105" varName="adapter" />
@@ -5487,15 +5487,15 @@
       <varInfo nodeId="5646944109420334764" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334265" fileName="TypesProvider.java" startLine="158" startPosition="49" endLine="163" endPosition="30">
-      <varInfo nodeId="5646944109420334267" varName="classifierType" />
       <varInfo nodeId="5646944109420334272" varName="binaryTypeBinding" />
+      <varInfo nodeId="5646944109420334267" varName="classifierType" />
       <varInfo nodeId="5646944109420334278" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420335205" fileName="TypesProvider.java" startLine="314" startPosition="62" endLine="319" endPosition="84">
-      <varInfo nodeId="5646944109420335215" varName="nodeId" />
-      <varInfo nodeId="5646944109420335226" varName="pointer" />
       <varInfo nodeId="5646944109420335207" varName="binaryTypeBinding" />
       <varInfo nodeId="5646944109420335221" varName="modelReference" />
+      <varInfo nodeId="5646944109420335215" varName="nodeId" />
+      <varInfo nodeId="5646944109420335226" varName="pointer" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333836" fileName="TypesProvider.java" startLine="343" startPosition="51" endLine="348" endPosition="7">
       <varInfo nodeId="5646944109420333838" varName="namePart" />
@@ -5512,8 +5512,8 @@
       <varInfo nodeId="5646944109420335281" varName="binding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334896" fileName="TypesProvider.java" startLine="383" startPosition="46" endLine="389" endPosition="48">
-      <varInfo nodeId="5646944109420334898" varName="typeVariableBinding" />
       <varInfo nodeId="5646944109420334904" varName="superclass" />
+      <varInfo nodeId="5646944109420334898" varName="typeVariableBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334606" fileName="TypesProvider.java" startLine="237" startPosition="0" endLine="244" endPosition="0">
       <varInfo nodeId="5646944109420334609" varName="binaryTypeBinding" />
@@ -5527,16 +5527,16 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334408" fileName="TypesProvider.java" startLine="189" startPosition="104" endLine="197" endPosition="5" />
     <scopeInfo nodeId="5646944109420334508" fileName="TypesProvider.java" startLine="211" startPosition="62" endLine="219" endPosition="10">
-      <varInfo nodeId="5646944109420334518" varName="nodeId" />
-      <varInfo nodeId="5646944109420334529" varName="pointer" />
       <varInfo nodeId="5646944109420334510" varName="binaryTypeBinding" />
       <varInfo nodeId="5646944109420334524" varName="modelReference" />
+      <varInfo nodeId="5646944109420334518" varName="nodeId" />
+      <varInfo nodeId="5646944109420334529" varName="pointer" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334561" fileName="TypesProvider.java" startLine="223" startPosition="80" endLine="231" endPosition="12">
-      <varInfo nodeId="5646944109420334571" varName="nodeId" />
-      <varInfo nodeId="5646944109420334582" varName="pointer" />
       <varInfo nodeId="5646944109420334563" varName="binaryTypeBinding" />
       <varInfo nodeId="5646944109420334577" varName="modelReference" />
+      <varInfo nodeId="5646944109420334571" varName="nodeId" />
+      <varInfo nodeId="5646944109420334582" varName="pointer" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420335058" fileName="TypesProvider.java" startLine="272" startPosition="103" endLine="280" endPosition="8">
       <varInfo nodeId="5646944109420335060" varName="classifierPointer" />
@@ -5550,51 +5550,51 @@
       <varInfo nodeId="5646944109420333821" varName="builder" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334299" fileName="TypesProvider.java" startLine="166" startPosition="49" endLine="176" endPosition="17">
-      <varInfo nodeId="5646944109420334301" varName="typeVariableBinding" />
       <varInfo nodeId="5646944109420334312" varName="declaringGeneric" />
       <varInfo nodeId="5646944109420334307" varName="tvr" />
+      <varInfo nodeId="5646944109420334301" varName="typeVariableBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420335259" fileName="TypesProvider.java" startLine="328" startPosition="65" endLine="338" endPosition="5">
       <varInfo nodeId="5646944109420335267" varName="map" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334999" fileName="TypesProvider.java" startLine="402" startPosition="0" endLine="412" endPosition="0">
-      <varInfo nodeId="5646944109420335002" varName="sb" />
       <varInfo nodeId="5646944109420335007" varName="context" />
+      <varInfo nodeId="5646944109420335002" varName="sb" />
       <varInfo nodeId="5646944109420335004" varName="types" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334399" fileName="TypesProvider.java" startLine="188" startPosition="0" endLine="199" endPosition="0">
-      <varInfo nodeId="5646944109420334406" varName="sourceNode" />
       <varInfo nodeId="5646944109420334404" varName="binding" />
       <varInfo nodeId="5646944109420334402" varName="role" />
+      <varInfo nodeId="5646944109420334406" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334546" fileName="TypesProvider.java" startLine="221" startPosition="69" endLine="232" endPosition="7">
       <varInfo nodeId="5646944109420334548" varName="parameterizedTypeBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420335049" fileName="TypesProvider.java" startLine="271" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="5646944109420335052" varName="aClass" />
-      <varInfo nodeId="5646944109420335056" varName="sourceNode" />
       <varInfo nodeId="5646944109420335054" varName="role" />
+      <varInfo nodeId="5646944109420335056" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333812" fileName="TypesProvider.java" startLine="340" startPosition="0" endLine="352" endPosition="0">
       <varInfo nodeId="5646944109420333815" varName="compoundName" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334141" fileName="TypesProvider.java" startLine="131" startPosition="56" endLine="144" endPosition="22">
-      <varInfo nodeId="5646944109420334155" varName="result" />
-      <varInfo nodeId="5646944109420334143" varName="parameterizedTypeBinding" />
       <varInfo nodeId="5646944109420334149" varName="originalType" />
+      <varInfo nodeId="5646944109420334143" varName="parameterizedTypeBinding" />
+      <varInfo nodeId="5646944109420334155" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420335252" fileName="TypesProvider.java" startLine="327" startPosition="0" endLine="340" endPosition="0">
-      <varInfo nodeId="5646944109420335255" varName="oldAdapter" />
       <varInfo nodeId="5646944109420335257" varName="newAdapter" />
+      <varInfo nodeId="5646944109420335255" varName="oldAdapter" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334081" fileName="TypesProvider.java" startLine="115" startPosition="47" endLine="129" endPosition="9">
       <varInfo nodeId="5646944109420334083" varName="wildcardBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334012" fileName="TypesProvider.java" startLine="96" startPosition="42" endLine="112" endPosition="23">
-      <varInfo nodeId="5646944109420334020" varName="componentTypeBinding" />
-      <varInfo nodeId="5646944109420334032" varName="outerType" />
       <varInfo nodeId="5646944109420334014" varName="arrayBinding" />
+      <varInfo nodeId="5646944109420334020" varName="componentTypeBinding" />
       <varInfo nodeId="5646944109420334026" varName="dimensions" />
+      <varInfo nodeId="5646944109420334032" varName="outerType" />
       <varInfo nodeId="5646944109420334041" varName="smallestVectorType" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334651" fileName="TypesProvider.java" startLine="249" startPosition="88" endLine="265" endPosition="74">
@@ -5609,9 +5609,9 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420335074" fileName="TypesProvider.java" startLine="283" startPosition="72" endLine="302" endPosition="8" />
     <scopeInfo nodeId="5646944109420335150" fileName="TypesProvider.java" startLine="304" startPosition="0" endLine="323" endPosition="0">
-      <varInfo nodeId="5646944109420335157" varName="sourceNode" />
-      <varInfo nodeId="5646944109420335155" varName="role" />
       <varInfo nodeId="5646944109420335153" varName="binding" />
+      <varInfo nodeId="5646944109420335155" varName="role" />
+      <varInfo nodeId="5646944109420335157" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420335069" fileName="TypesProvider.java" startLine="282" startPosition="0" endLine="304" endPosition="0">
       <varInfo nodeId="5646944109420335072" varName="aClass" />
@@ -5621,9 +5621,9 @@
       <varInfo nodeId="5646944109420334482" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334450" fileName="TypesProvider.java" startLine="199" startPosition="0" endLine="237" endPosition="0">
-      <varInfo nodeId="5646944109420334457" varName="sourceNode" />
-      <varInfo nodeId="5646944109420334455" varName="role" />
       <varInfo nodeId="5646944109420334453" varName="binding" />
+      <varInfo nodeId="5646944109420334455" varName="role" />
+      <varInfo nodeId="5646944109420334457" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334778" fileName="TypesProvider.java" startLine="361" startPosition="75" endLine="400" endPosition="59" />
     <scopeInfo nodeId="5646944109420334771" fileName="TypesProvider.java" startLine="360" startPosition="0" endLine="402" endPosition="0">
@@ -5635,8 +5635,8 @@
       <varInfo nodeId="5646944109420333920" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333911" fileName="TypesProvider.java" startLine="63" startPosition="0" endLine="180" endPosition="0">
-      <varInfo nodeId="5646944109420333916" varName="varArg" />
       <varInfo nodeId="5646944109420333914" varName="binding" />
+      <varInfo nodeId="5646944109420333916" varName="varArg" />
     </scopeInfo>
     <unitInfo nodeId="5646944109420333793" fileName="TypesProvider.java" startLine="42" startPosition="0" endLine="413" endPosition="0" unitName="jetbrains.mps.ide.java.parser.TypesProvider" />
   </root>

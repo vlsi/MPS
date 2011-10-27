@@ -17,17 +17,17 @@
       <varInfo nodeId="4991696182217157628" varName="testFQname" />
     </scopeInfo>
     <scopeInfo nodeId="4991696182217157631" fileName="ITestReporter.java" startLine="9" startPosition="46" endLine="10" endPosition="72">
-      <varInfo nodeId="4991696182217157634" varName="testFQname" />
       <varInfo nodeId="4991696182217157638" varName="longMsg" />
       <varInfo nodeId="4991696182217157636" varName="msg" />
+      <varInfo nodeId="4991696182217157634" varName="testFQname" />
     </scopeInfo>
     <scopeInfo nodeId="4991696182217157641" fileName="ITestReporter.java" startLine="10" startPosition="72" endLine="11" endPosition="60">
-      <varInfo nodeId="4991696182217157644" varName="testFQname" />
       <varInfo nodeId="4991696182217157646" varName="msg" />
+      <varInfo nodeId="4991696182217157644" varName="testFQname" />
     </scopeInfo>
     <scopeInfo nodeId="4991696182217157649" fileName="ITestReporter.java" startLine="11" startPosition="60" endLine="12" endPosition="59">
-      <varInfo nodeId="4991696182217157652" varName="testFQname" />
       <varInfo nodeId="4991696182217157654" varName="msg" />
+      <varInfo nodeId="4991696182217157652" varName="testFQname" />
     </scopeInfo>
     <scopeInfo nodeId="4991696182217157657" fileName="ITestReporter.java" startLine="12" startPosition="59" endLine="13" endPosition="37">
       <varInfo nodeId="4991696182217157660" varName="msg" />
@@ -74,12 +74,12 @@
       <varInfo nodeId="4991696182217168615" varName="msg" />
     </scopeInfo>
     <scopeInfo nodeId="4991696182217168618" fileName="ConsoleTestReporter.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="4991696182217168621" varName="testFQname" />
       <varInfo nodeId="4991696182217168623" varName="msg" />
+      <varInfo nodeId="4991696182217168621" varName="testFQname" />
     </scopeInfo>
     <scopeInfo nodeId="4991696182217168626" fileName="ConsoleTestReporter.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="4991696182217168629" varName="testFQname" />
       <varInfo nodeId="4991696182217168631" varName="msg" />
+      <varInfo nodeId="4991696182217168629" varName="testFQname" />
     </scopeInfo>
     <scopeInfo nodeId="4991696182217168643" fileName="ConsoleTestReporter.java" startLine="26" startPosition="73" endLine="30" endPosition="5" />
     <scopeInfo nodeId="4991696182217168644" fileName="ConsoleTestReporter.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
@@ -90,9 +90,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4991696182217168656" fileName="ConsoleTestReporter.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="4991696182217168634" fileName="ConsoleTestReporter.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="4991696182217168637" varName="testFQname" />
       <varInfo nodeId="4991696182217168641" varName="longMsg" />
       <varInfo nodeId="4991696182217168639" varName="msg" />
+      <varInfo nodeId="4991696182217168637" varName="testFQname" />
     </scopeInfo>
     <unitInfo nodeId="4991696182217168599" fileName="ConsoleTestReporter.java" startLine="6" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.ant.generation.unittest.ConsoleTestReporter" />
   </root>
@@ -298,17 +298,17 @@
       <varInfo nodeId="6359254648150117314" varName="testFinished" />
     </scopeInfo>
     <scopeInfo nodeId="6359254648150117408" fileName="XmlTestReporter.java" startLine="121" startPosition="0" endLine="133" endPosition="0">
-      <varInfo nodeId="5744180691547505948" varName="testFQname" />
       <varInfo nodeId="6359254648150117411" varName="msg" />
+      <varInfo nodeId="5744180691547505948" varName="testFQname" />
     </scopeInfo>
     <scopeInfo nodeId="6359254648150117700" fileName="XmlTestReporter.java" startLine="133" startPosition="0" endLine="145" endPosition="0">
-      <varInfo nodeId="5744180691547505951" varName="testFQname" />
       <varInfo nodeId="6359254648150117707" varName="msg" />
+      <varInfo nodeId="5744180691547505951" varName="testFQname" />
     </scopeInfo>
     <scopeInfo nodeId="6359254648150117388" fileName="XmlTestReporter.java" startLine="108" startPosition="0" endLine="121" endPosition="0">
-      <varInfo nodeId="6359254648150117392" varName="testFQname" />
       <varInfo nodeId="6359254648150117397" varName="longMsg" />
       <varInfo nodeId="6359254648150117394" varName="msg" />
+      <varInfo nodeId="6359254648150117392" varName="testFQname" />
     </scopeInfo>
     <scopeInfo nodeId="6359254648150115660" fileName="XmlTestReporter.java" startLine="94" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="6359254648150115664" varName="testFQname" />
@@ -450,10 +450,10 @@
     </scopeInfo>
     <scopeInfo nodeId="8688590116724766147" fileName="UnitTestRunner.java" startLine="52" startPosition="33" endLine="59" endPosition="110">
       <varInfo nodeId="8688590116724766158" varName="index" />
-      <varInfo nodeId="8688590116724766152" varName="s" />
-      <varInfo nodeId="8688590116724766182" varName="testClass" />
       <varInfo nodeId="8688590116724766173" varName="method" />
+      <varInfo nodeId="8688590116724766152" varName="s" />
       <varInfo nodeId="8688590116724766165" varName="testCase" />
+      <varInfo nodeId="8688590116724766182" varName="testClass" />
     </scopeInfo>
     <scopeInfo nodeId="8688590116724766301" fileName="UnitTestRunner.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="8688590116724766304" varName="result" />
@@ -594,8 +594,8 @@
     </scopeInfo>
     <scopeInfo nodeId="8688590116724765861" fileName="UnitTestOutputReader.java" startLine="73" startPosition="42" endLine="77" endPosition="5" />
     <scopeInfo nodeId="8688590116724765876" fileName="UnitTestOutputReader.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
-      <varInfo nodeId="8688590116724765879" varName="text" />
       <varInfo nodeId="8688590116724765881" varName="prefix" />
+      <varInfo nodeId="8688590116724765879" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="8688590116724765779" fileName="UnitTestOutputReader.java" startLine="61" startPosition="16" endLine="67" endPosition="7" />
     <scopeInfo nodeId="8688590116724765858" fileName="UnitTestOutputReader.java" startLine="72" startPosition="0" endLine="79" endPosition="0" />
@@ -614,13 +614,13 @@
       <varInfo nodeId="8688590116724765746" varName="textTrimmed" />
     </scopeInfo>
     <scopeInfo nodeId="8688590116724765737" fileName="UnitTestOutputReader.java" startLine="40" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="8688590116724765740" varName="text" />
       <varInfo nodeId="8688590116724765742" varName="error" />
+      <varInfo nodeId="8688590116724765740" varName="text" />
     </scopeInfo>
+    <unitInfo nodeId="8688590116724765630" fileName="UnitTestOutputReader.java" startLine="14" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader" />
     <unitInfo nodeId="8688590116724765704" fileName="UnitTestOutputReader.java" startLine="28" startPosition="24" endLine="32" endPosition="5" unitName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader$1" />
     <unitInfo nodeId="8688590116724765718" fileName="UnitTestOutputReader.java" startLine="33" startPosition="24" endLine="37" endPosition="5" unitName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader$2" />
     <unitInfo nodeId="8688590116724765628" fileName="UnitTestOutputReader.java" startLine="97" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader$BaseOutputReader" />
-    <unitInfo nodeId="8688590116724765630" fileName="UnitTestOutputReader.java" startLine="14" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader" />
   </root>
   <root nodeId="8688590116724765985">
     <nodeInfo nodeId="8688590116724765988" fileName="UnitTestAdapter.java" startLine="6" startPosition="58" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnitTestAdapter#()V" />
@@ -640,8 +640,8 @@
       <varInfo nodeId="8688590116724765995" varName="testName" />
     </scopeInfo>
     <scopeInfo nodeId="8688590116724765999" fileName="UnitTestAdapter.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="8688590116724766004" varName="message" />
       <varInfo nodeId="8688590116724766006" varName="details" />
+      <varInfo nodeId="8688590116724766004" varName="message" />
       <varInfo nodeId="8688590116724766002" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="8688590116724766010" fileName="UnitTestAdapter.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
@@ -665,8 +665,8 @@
       <varInfo nodeId="8688590116724766473" varName="testName" />
     </scopeInfo>
     <scopeInfo nodeId="8688590116724766476" fileName="UnitTestListener.java" startLine="7" startPosition="43" endLine="8" endPosition="70">
-      <varInfo nodeId="8688590116724766481" varName="message" />
       <varInfo nodeId="8688590116724766483" varName="details" />
+      <varInfo nodeId="8688590116724766481" varName="message" />
       <varInfo nodeId="8688590116724766479" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="8688590116724766486" fileName="UnitTestListener.java" startLine="8" startPosition="70" endLine="9" endPosition="44">

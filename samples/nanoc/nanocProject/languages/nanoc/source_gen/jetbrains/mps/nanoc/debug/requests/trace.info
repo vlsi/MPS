@@ -22,8 +22,8 @@
       <varInfo nodeId="3990508698139427268" varName="function" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427247" fileName="BreakpointRequestor.java" startLine="10" startPosition="0" endLine="14" endPosition="3">
-      <varInfo nodeId="3990508698139427250" varName="sourceFile" />
       <varInfo nodeId="3990508698139427252" varName="lineNumber" />
+      <varInfo nodeId="3990508698139427250" varName="sourceFile" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427278" fileName="BreakpointRequestor.java" startLine="20" startPosition="39" endLine="25" endPosition="5" />
     <scopeInfo nodeId="3990508698139427275" fileName="BreakpointRequestor.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
@@ -103,8 +103,8 @@
     <scopeInfo nodeId="3990508698139426806" fileName="GDBRequestor.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3990508698139426840" fileName="GDBRequestor.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="3990508698139426844" fileName="GDBRequestor.java" startLine="27" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="3990508698139426849" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139426847" varName="answer" />
+      <varInfo nodeId="3990508698139426849" varName="receivedStreamAnswers" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139426825" fileName="GDBRequestor.java" startLine="19" startPosition="23" endLine="23" endPosition="16" />
     <scopeInfo nodeId="3990508698139426810" fileName="GDBRequestor.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
@@ -141,9 +141,9 @@
     <scopeInfo nodeId="3990508698139429145" fileName="GDBRequestManager.java" startLine="51" startPosition="48" endLine="52" endPosition="67" />
     <scopeInfo nodeId="3990508698139429140" fileName="GDBRequestManager.java" startLine="50" startPosition="77" endLine="53" endPosition="7" />
     <scopeInfo nodeId="3990508698139429051" fileName="GDBRequestManager.java" startLine="26" startPosition="61" endLine="30" endPosition="0">
-      <varInfo nodeId="3990508698139429054" varName="result" />
-      <varInfo nodeId="3990508698139429056" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139429059" varName="gdbProcess" />
+      <varInfo nodeId="3990508698139429056" varName="receivedStreamAnswers" />
+      <varInfo nodeId="3990508698139429054" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139429100" fileName="GDBRequestManager.java" startLine="42" startPosition="53" endLine="46" endPosition="98">
       <varInfo nodeId="3990508698139429102" varName="id" />
@@ -170,8 +170,8 @@
       <varInfo nodeId="3990508698139429066" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139429064" varName="resultAnswer" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139429050" fileName="GDBRequestManager.java" startLine="26" startPosition="41" endLine="30" endPosition="5" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager$1" />
     <unitInfo nodeId="3990508698139429011" fileName="GDBRequestManager.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" />
+    <unitInfo nodeId="3990508698139429050" fileName="GDBRequestManager.java" startLine="26" startPosition="41" endLine="30" endPosition="5" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager$1" />
   </root>
 </debugInfo>
 

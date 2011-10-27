@@ -53,9 +53,9 @@
     <scopeInfo nodeId="1236700642836" fileName="ElementCreator.java" startLine="35" startPosition="84" endLine="38" endPosition="7" />
     <scopeInfo nodeId="1236700642866" fileName="ElementCreator.java" startLine="42" startPosition="89" endLine="46" endPosition="135" />
     <scopeInfo nodeId="1236700827377" fileName="ElementCreator.java" startLine="22" startPosition="9" endLine="27" endPosition="29">
-      <varInfo nodeId="1236700954190" varName="xmlOutputter" />
       <varInfo nodeId="1236700987315" varName="output" />
       <varInfo nodeId="1236700869046" varName="prettyFormat" />
+      <varInfo nodeId="1236700954190" varName="xmlOutputter" />
     </scopeInfo>
     <scopeInfo nodeId="1236700642835" fileName="ElementCreator.java" startLine="34" startPosition="81" endLine="39" endPosition="5">
       <varInfo nodeId="1236700642857" varName="attribute" />
@@ -65,16 +65,16 @@
       <varInfo nodeId="1236700642901" varName="part" />
     </scopeInfo>
     <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="17" startPosition="72" endLine="30" endPosition="5">
-      <varInfo nodeId="1236700571841" varName="result" />
-      <varInfo nodeId="1236700571835" varName="element" />
       <varInfo nodeId="1236700791061" varName="document" />
+      <varInfo nodeId="1236700571835" varName="element" />
+      <varInfo nodeId="1236700571841" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="16" startPosition="38" endLine="32" endPosition="0">
       <varInfo nodeId="1236700593595" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="33" startPosition="85" endLine="53" endPosition="18">
-      <varInfo nodeId="1236700642828" varName="result" />
       <varInfo nodeId="1236700642860" varName="first" />
+      <varInfo nodeId="1236700642828" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="32" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1236700623868" varName="element" />

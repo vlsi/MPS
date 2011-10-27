@@ -113,17 +113,17 @@
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490954" fileName="DiffRowTable.java" startLine="72" startPosition="43" endLine="79" endPosition="14" />
     <scopeInfo nodeId="1560298786499490747" fileName="DiffRowTable.java" startLine="34" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1560298786499490750" varName="obj" />
       <varInfo nodeId="1560298786499490752" varName="colNum" />
+      <varInfo nodeId="1560298786499490750" varName="obj" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490813" fileName="DiffRowTable.java" startLine="48" startPosition="36" endLine="57" endPosition="18">
-      <varInfo nodeId="1560298786499490815" varName="tm" />
       <varInfo nodeId="1560298786499490821" varName="height" />
+      <varInfo nodeId="1560298786499490815" varName="tm" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490693" fileName="DiffRowTable.java" startLine="21" startPosition="38" endLine="32" endPosition="14">
-      <varInfo nodeId="1560298786499490701" varName="rowSpacing" />
       <varInfo nodeId="1560298786499490709" varName="rowCount" />
       <varInfo nodeId="1560298786499490715" varName="rowHeight" />
+      <varInfo nodeId="1560298786499490701" varName="rowSpacing" />
       <varInfo nodeId="1560298786499490695" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490808" fileName="DiffRowTable.java" startLine="47" startPosition="0" endLine="59" endPosition="0">
@@ -133,21 +133,21 @@
       <varInfo nodeId="1560298786499490691" varName="point" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499491053" fileName="DiffRowTable.java" startLine="92" startPosition="50" endLine="108" endPosition="81">
-      <varInfo nodeId="1560298786499491061" varName="lastIndex" />
-      <varInfo nodeId="1560298786499491097" varName="index" />
       <varInfo nodeId="1560298786499491082" varName="dirtyRegion" />
-      <varInfo nodeId="1560298786499491091" varName="numColumns" />
       <varInfo nodeId="1560298786499491055" varName="firstIndex" />
+      <varInfo nodeId="1560298786499491097" varName="index" />
+      <varInfo nodeId="1560298786499491061" varName="lastIndex" />
+      <varInfo nodeId="1560298786499491091" varName="numColumns" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499491048" fileName="DiffRowTable.java" startLine="91" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="1560298786499491051" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490876" fileName="DiffRowTable.java" startLine="60" startPosition="77" endLine="85" endPosition="21">
-      <varInfo nodeId="1560298786499490935" varName="columnMargin" />
-      <varInfo nodeId="1560298786499490878" varName="cellFrame" />
-      <varInfo nodeId="1560298786499490931" varName="index" />
       <varInfo nodeId="1560298786499490881" varName="aColumn" />
+      <varInfo nodeId="1560298786499490878" varName="cellFrame" />
+      <varInfo nodeId="1560298786499490935" varName="columnMargin" />
       <varInfo nodeId="1560298786499490943" varName="enumeration" />
+      <varInfo nodeId="1560298786499490931" varName="index" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490867" fileName="DiffRowTable.java" startLine="59" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="1560298786499490872" varName="column" />
@@ -379,16 +379,16 @@
       <varInfo nodeId="1560298786499497259" varName="renderer" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496226" fileName="BasicDiffRowTableUI.java" startLine="45" startPosition="49" endLine="52" endPosition="34">
-      <varInfo nodeId="1560298786499496228" varName="width" />
       <varInfo nodeId="1560298786499496232" varName="enumeration" />
+      <varInfo nodeId="1560298786499496228" varName="width" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496272" fileName="BasicDiffRowTableUI.java" startLine="55" startPosition="51" endLine="62" endPosition="34">
-      <varInfo nodeId="1560298786499496274" varName="width" />
       <varInfo nodeId="1560298786499496278" varName="enumeration" />
+      <varInfo nodeId="1560298786499496274" varName="width" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496318" fileName="BasicDiffRowTableUI.java" startLine="65" startPosition="49" endLine="72" endPosition="34">
-      <varInfo nodeId="1560298786499496320" varName="width" />
       <varInfo nodeId="1560298786499496324" varName="enumeration" />
+      <varInfo nodeId="1560298786499496320" varName="width" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496537" fileName="BasicDiffRowTableUI.java" startLine="99" startPosition="38" endLine="106" endPosition="5" />
     <scopeInfo nodeId="1560298786499496741" fileName="BasicDiffRowTableUI.java" startLine="131" startPosition="62" endLine="139" endPosition="5">
@@ -417,36 +417,36 @@
       <varInfo nodeId="1560298786499496720" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496576" fileName="BasicDiffRowTableUI.java" startLine="109" startPosition="49" endLine="124" endPosition="5">
-      <varInfo nodeId="1560298786499496602" varName="lastIndex" />
-      <varInfo nodeId="1560298786499496609" varName="rowMargin" />
-      <varInfo nodeId="1560298786499496578" varName="r" />
       <varInfo nodeId="1560298786499496588" varName="firstIndex" />
+      <varInfo nodeId="1560298786499496602" varName="lastIndex" />
+      <varInfo nodeId="1560298786499496578" varName="r" />
       <varInfo nodeId="1560298786499496584" varName="rect" />
+      <varInfo nodeId="1560298786499496609" varName="rowMargin" />
       <varInfo nodeId="1560298786499496617" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496707" fileName="BasicDiffRowTableUI.java" startLine="126" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="1560298786499496710" varName="g" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499497063" fileName="BasicDiffRowTableUI.java" startLine="178" startPosition="62" endLine="193" endPosition="61">
+      <varInfo nodeId="1560298786499497107" varName="x1" />
+      <varInfo nodeId="1560298786499497119" varName="x2" />
       <varInfo nodeId="1560298786499497113" varName="y1" />
       <varInfo nodeId="1560298786499497129" varName="y2" />
-      <varInfo nodeId="1560298786499497119" varName="x2" />
-      <varInfo nodeId="1560298786499497107" varName="x1" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499497187" fileName="BasicDiffRowTableUI.java" startLine="197" startPosition="79" endLine="213" endPosition="150">
-      <varInfo nodeId="1560298786499497197" varName="spacingWidth" />
       <varInfo nodeId="1560298786499497189" varName="spacingHeight" />
+      <varInfo nodeId="1560298786499497197" varName="spacingWidth" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496571" fileName="BasicDiffRowTableUI.java" startLine="108" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="1560298786499496574" varName="g" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496083" fileName="BasicDiffRowTableUI.java" startLine="23" startPosition="49" endLine="42" endPosition="94">
-      <varInfo nodeId="1560298786499496101" varName="tm" />
       <varInfo nodeId="1560298786499496109" varName="height" />
-      <varInfo nodeId="1560298786499496161" varName="totalMarginWidth" />
-      <varInfo nodeId="1560298786499496093" varName="numRows" />
       <varInfo nodeId="1560298786499496085" varName="numCols" />
+      <varInfo nodeId="1560298786499496093" varName="numRows" />
+      <varInfo nodeId="1560298786499496101" varName="tm" />
       <varInfo nodeId="1560298786499496188" varName="totalHeight" />
+      <varInfo nodeId="1560298786499496161" varName="totalMarginWidth" />
       <varInfo nodeId="1560298786499496173" varName="widthWithMargin" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496946" fileName="BasicDiffRowTableUI.java" startLine="157" startPosition="43" endLine="176" endPosition="15">
@@ -454,36 +454,36 @@
     </scopeInfo>
     <scopeInfo nodeId="1560298786499497176" fileName="BasicDiffRowTableUI.java" startLine="196" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="1560298786499497181" varName="cellRect" />
-      <varInfo nodeId="1560298786499497179" varName="g" />
       <varInfo nodeId="1560298786499497185" varName="column" />
+      <varInfo nodeId="1560298786499497179" varName="g" />
       <varInfo nodeId="1560298786499497183" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496366" fileName="BasicDiffRowTableUI.java" startLine="75" startPosition="47" endLine="96" endPosition="29">
-      <varInfo nodeId="1560298786499496424" varName="lastIndex" />
-      <varInfo nodeId="1560298786499496431" varName="rowMargin" />
-      <varInfo nodeId="1560298786499496439" varName="rowRect" />
       <varInfo nodeId="1560298786499496374" varName="clipBounds" />
       <varInfo nodeId="1560298786499496410" varName="firstIndex" />
+      <varInfo nodeId="1560298786499496424" varName="lastIndex" />
       <varInfo nodeId="1560298786499496368" varName="oldClipBounds" />
+      <varInfo nodeId="1560298786499496431" varName="rowMargin" />
+      <varInfo nodeId="1560298786499496439" varName="rowRect" />
       <varInfo nodeId="1560298786499496380" varName="tableWidth" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496078" fileName="BasicDiffRowTableUI.java" startLine="22" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1560298786499496081" varName="width" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496359" fileName="BasicDiffRowTableUI.java" startLine="74" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="1560298786499496362" varName="g" />
       <varInfo nodeId="1560298786499496364" varName="c" />
+      <varInfo nodeId="1560298786499496362" varName="g" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496835" fileName="BasicDiffRowTableUI.java" startLine="142" startPosition="46" endLine="194" endPosition="5">
       <varInfo nodeId="1560298786499496876" varName="cellRect" />
+      <varInfo nodeId="1560298786499496843" varName="column" />
       <varInfo nodeId="1560298786499496856" varName="draggedCellRect" />
       <varInfo nodeId="1560298786499496851" varName="draggedColumnIndex" />
-      <varInfo nodeId="1560298786499496843" varName="column" />
-      <varInfo nodeId="1560298786499496933" varName="enumeration" />
-      <varInfo nodeId="1560298786499496860" varName="spacing" />
-      <varInfo nodeId="1560298786499496837" varName="rect" />
-      <varInfo nodeId="1560298786499496868" varName="header" />
       <varInfo nodeId="1560298786499496847" varName="drawn" />
+      <varInfo nodeId="1560298786499496933" varName="enumeration" />
+      <varInfo nodeId="1560298786499496868" varName="header" />
+      <varInfo nodeId="1560298786499496837" varName="rect" />
+      <varInfo nodeId="1560298786499496860" varName="spacing" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496828" fileName="BasicDiffRowTableUI.java" startLine="141" startPosition="0" endLine="196" endPosition="0">
       <varInfo nodeId="1560298786499496831" varName="g" />

@@ -38,12 +38,12 @@
     <scopeInfo nodeId="108366216419412897" fileName="AttributeUtils.java" startLine="29" startPosition="9" endLine="33" endPosition="8" />
     <scopeInfo nodeId="3903783035314707735" fileName="AttributeUtils.java" startLine="39" startPosition="77" endLine="44" endPosition="5" />
     <scopeInfo nodeId="108366216419407638" fileName="AttributeUtils.java" startLine="13" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="108366216419407643" varName="value" />
       <varInfo nodeId="108366216419407645" varName="defaultValue" />
+      <varInfo nodeId="108366216419407643" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="108366216419412843" fileName="AttributeUtils.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="108366216419412848" varName="value" />
       <varInfo nodeId="108366216419412850" varName="defaultValue" />
+      <varInfo nodeId="108366216419412848" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="108366216419412873" fileName="AttributeUtils.java" startLine="28" startPosition="72" endLine="36" endPosition="5" />
     <scopeInfo nodeId="3903783035314707732" fileName="AttributeUtils.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
@@ -51,8 +51,8 @@
       <varInfo nodeId="3903783035314707741" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="108366216419412870" fileName="AttributeUtils.java" startLine="27" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="108366216419412875" varName="value" />
       <varInfo nodeId="108366216419412877" varName="defaultValue" />
+      <varInfo nodeId="108366216419412875" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="2603967516254988460" fileName="AttributeUtils.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
   </root>

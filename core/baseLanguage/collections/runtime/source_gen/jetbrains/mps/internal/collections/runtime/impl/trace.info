@@ -91,8 +91,8 @@
     <scopeInfo nodeId="4611582986551925415" fileName="OfTypeSequence.java" startLine="70" startPosition="31" endLine="81" endPosition="7" />
     <scopeInfo nodeId="4611582986551925362" fileName="OfTypeSequence.java" startLine="48" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="4611582986551925412" fileName="OfTypeSequence.java" startLine="69" startPosition="0" endLine="83" endPosition="0" />
-    <unitInfo nodeId="4611582986551925320" fileName="OfTypeSequence.java" startLine="31" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.OfTypeSequence$OfTypeIterator" />
     <unitInfo nodeId="4611582986551925179" fileName="OfTypeSequence.java" startLine="8" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.OfTypeSequence" />
+    <unitInfo nodeId="4611582986551925320" fileName="OfTypeSequence.java" startLine="31" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.OfTypeSequence$OfTypeIterator" />
   </root>
   <root nodeId="6543581031674022257">
     <nodeInfo nodeId="6543581031674022262" fileName="NegateWhereFilter.java" startLine="8" startPosition="59" endLine="9" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="filter" />
@@ -564,8 +564,8 @@
     <scopeInfo nodeId="6543581031674025110" fileName="ConcatingSequence.java" startLine="45" startPosition="21" endLine="55" endPosition="30" />
     <scopeInfo nodeId="6543581031674025036" fileName="ConcatingSequence.java" startLine="66" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="6543581031674025027" fileName="ConcatingSequence.java" startLine="44" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="6543581031674025003" fileName="ConcatingSequence.java" startLine="26" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ConcatingSequence$ConcatingIterator" />
     <unitInfo nodeId="6543581031674024998" fileName="ConcatingSequence.java" startLine="10" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ConcatingSequence" />
+    <unitInfo nodeId="6543581031674025003" fileName="ConcatingSequence.java" startLine="26" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ConcatingSequence$ConcatingIterator" />
   </root>
   <root nodeId="6543581031674026327">
     <nodeInfo nodeId="6543581031674026372" fileName="TranslatingSequence.java" startLine="11" startPosition="101" endLine="12" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="translator" />
@@ -679,8 +679,8 @@
     <scopeInfo nodeId="6543581031674026486" fileName="TranslatingSequence.java" startLine="69" startPosition="10" endLine="99" endPosition="9" />
     <scopeInfo nodeId="6543581031674026471" fileName="TranslatingSequence.java" startLine="66" startPosition="31" endLine="100" endPosition="21" />
     <scopeInfo nodeId="6543581031674026369" fileName="TranslatingSequence.java" startLine="65" startPosition="0" endLine="102" endPosition="0" />
-    <unitInfo nodeId="6543581031674026336" fileName="TranslatingSequence.java" startLine="26" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence$TranslatingIterator" />
     <unitInfo nodeId="6543581031674026327" fileName="TranslatingSequence.java" startLine="11" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence" />
+    <unitInfo nodeId="6543581031674026336" fileName="TranslatingSequence.java" startLine="26" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence$TranslatingIterator" />
   </root>
   <root nodeId="6543581031674026581">
     <nodeInfo nodeId="6543581031674026663" fileName="SortingSequence.java" startLine="16" startPosition="76" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="input" />
@@ -756,8 +756,8 @@
     <scopeInfo nodeId="6543581031674026606" fileName="SortingSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="6543581031674026609" fileName="SortingSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="6543581031674026627" fileName="SortingSequence.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
-      <varInfo nodeId="6543581031674026632" varName="b" />
       <varInfo nodeId="6543581031674026630" varName="a" />
+      <varInfo nodeId="6543581031674026632" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026647" fileName="SortingSequence.java" startLine="99" startPosition="0" endLine="103" endPosition="5">
       <varInfo nodeId="6543581031674026650" varName="primary" />
@@ -772,32 +772,32 @@
       <varInfo nodeId="6543581031674026894" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026713" fileName="SortingSequence.java" startLine="30" startPosition="0" endLine="37" endPosition="3">
-      <varInfo nodeId="6543581031674026716" varName="input" />
       <varInfo nodeId="6543581031674026719" varName="comparator" />
+      <varInfo nodeId="6543581031674026716" varName="input" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026805" fileName="SortingSequence.java" startLine="54" startPosition="45" endLine="61" endPosition="32">
-      <varInfo nodeId="6543581031674026807" varName="cache" />
       <varInfo nodeId="6543581031674026824" varName="array" />
+      <varInfo nodeId="6543581031674026807" varName="cache" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026682" fileName="SortingSequence.java" startLine="20" startPosition="90" endLine="28" endPosition="6" />
     <scopeInfo nodeId="6543581031674026656" fileName="SortingSequence.java" startLine="104" startPosition="0" endLine="112" endPosition="0">
-      <varInfo nodeId="6543581031674026661" varName="b" />
       <varInfo nodeId="6543581031674026659" varName="a" />
+      <varInfo nodeId="6543581031674026661" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026764" fileName="SortingSequence.java" startLine="43" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="3473971317150288159" varName="selector" />
       <varInfo nodeId="6543581031674026773" varName="ascending" />
+      <varInfo nodeId="3473971317150288159" varName="selector" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026671" fileName="SortingSequence.java" startLine="19" startPosition="0" endLine="29" endPosition="3">
-      <varInfo nodeId="6543581031674026674" varName="input" />
       <varInfo nodeId="6543581031674026680" varName="ascending" />
       <varInfo nodeId="6543581031674026677" varName="comparator" />
+      <varInfo nodeId="6543581031674026674" varName="input" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026801" fileName="SortingSequence.java" startLine="52" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="6543581031674026612" fileName="SortingSequence.java" startLine="84" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$InversedComparator" />
-    <unitInfo nodeId="6543581031674026634" fileName="SortingSequence.java" startLine="96" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$CompoundComparator" />
-    <unitInfo nodeId="6543581031674026588" fileName="SortingSequence.java" startLine="64" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$UnmodifiableIterator" />
     <unitInfo nodeId="6543581031674026581" fileName="SortingSequence.java" startLine="16" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence" />
+    <unitInfo nodeId="6543581031674026634" fileName="SortingSequence.java" startLine="96" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$CompoundComparator" />
+    <unitInfo nodeId="6543581031674026612" fileName="SortingSequence.java" startLine="84" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$InversedComparator" />
+    <unitInfo nodeId="6543581031674026588" fileName="SortingSequence.java" startLine="64" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$UnmodifiableIterator" />
   </root>
   <root nodeId="6543581031674026912">
     <nodeInfo nodeId="6543581031674026960" fileName="NullListSequence.java" startLine="13" startPosition="105" endLine="14" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -927,8 +927,8 @@
       <varInfo nodeId="6543581031674026932" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026993" fileName="NullListSequence.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="6543581031674026996" varName="index" />
       <varInfo nodeId="6543581031674026998" varName="c" />
+      <varInfo nodeId="6543581031674026996" varName="index" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674027005" fileName="NullListSequence.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="6543581031674027008" varName="index" />
@@ -960,15 +960,15 @@
     </scopeInfo>
     <scopeInfo nodeId="6543581031674027094" fileName="NullListSequence.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="6543581031674027100" fileName="NullListSequence.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="6543581031674027105" varName="t" />
       <varInfo nodeId="6543581031674027103" varName="idx" />
+      <varInfo nodeId="6543581031674027105" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674027110" fileName="NullListSequence.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="6543581031674027113" varName="idx" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674027118" fileName="NullListSequence.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="6543581031674027123" varName="t" />
       <varInfo nodeId="6543581031674027121" varName="idx" />
+      <varInfo nodeId="6543581031674027123" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674027128" fileName="NullListSequence.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="6543581031674027132" varName="seq" />
@@ -1008,8 +1008,8 @@
       <varInfo nodeId="6543581031674027247" varName="runtimeClass" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026967" fileName="NullListSequence.java" startLine="134" startPosition="0" endLine="139" endPosition="0" />
-    <unitInfo nodeId="6543581031674026921" fileName="NullListSequence.java" startLine="140" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullListSequence$EmptyListIterator" />
     <unitInfo nodeId="6543581031674026912" fileName="NullListSequence.java" startLine="13" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullListSequence" />
+    <unitInfo nodeId="6543581031674026921" fileName="NullListSequence.java" startLine="140" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullListSequence$EmptyListIterator" />
   </root>
   <root nodeId="6543581031674027385">
     <nodeInfo nodeId="6543581031674027423" fileName="LimitedCardinalitySequence.java" startLine="9" startPosition="64" endLine="10" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="input" />
@@ -1093,8 +1093,8 @@
     <scopeInfo nodeId="6543581031674027527" fileName="LimitedCardinalitySequence.java" startLine="61" startPosition="31" endLine="72" endPosition="22" />
     <scopeInfo nodeId="6543581031674027414" fileName="LimitedCardinalitySequence.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="6543581031674027420" fileName="LimitedCardinalitySequence.java" startLine="60" startPosition="0" endLine="74" endPosition="0" />
-    <unitInfo nodeId="6543581031674027390" fileName="LimitedCardinalitySequence.java" startLine="25" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.LimitedCardinalitySequence$LimitedCardinalityIterator" />
     <unitInfo nodeId="6543581031674027385" fileName="LimitedCardinalitySequence.java" startLine="9" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.LimitedCardinalitySequence" />
+    <unitInfo nodeId="6543581031674027390" fileName="LimitedCardinalitySequence.java" startLine="25" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.LimitedCardinalitySequence$LimitedCardinalityIterator" />
   </root>
   <root nodeId="6543581031674027576">
     <nodeInfo nodeId="6543581031674027585" fileName="NullQueueSequence.java" startLine="10" startPosition="108" endLine="11" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -1407,9 +1407,9 @@
     <scopeInfo nodeId="6543581031674028448" fileName="ComparingSequence.java" startLine="104" startPosition="0" endLine="111" endPosition="0" />
     <scopeInfo nodeId="6401275180973221770" fileName="ComparingSequence.java" startLine="183" startPosition="0" endLine="190" endPosition="0" />
     <scopeInfo nodeId="6543581031674028470" fileName="ComparingSequence.java" startLine="16" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="6543581031674028479" varName="kind" />
       <varInfo nodeId="6543581031674028473" varName="left" />
       <varInfo nodeId="6543581031674028476" varName="right" />
-      <varInfo nodeId="6543581031674028479" varName="kind" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674028641" fileName="ComparingSequence.java" startLine="91" startPosition="25" endLine="99" endPosition="16" />
     <scopeInfo nodeId="6543581031674028436" fileName="ComparingSequence.java" startLine="50" startPosition="0" endLine="60" endPosition="0" />
@@ -1424,9 +1424,9 @@
     <scopeInfo nodeId="6543581031674028713" fileName="ComparingSequence.java" startLine="116" startPosition="10" endLine="177" endPosition="9" />
     <scopeInfo nodeId="6543581031674028698" fileName="ComparingSequence.java" startLine="112" startPosition="31" endLine="181" endPosition="7" />
     <scopeInfo nodeId="6543581031674028451" fileName="ComparingSequence.java" startLine="111" startPosition="0" endLine="183" endPosition="0" />
-    <unitInfo nodeId="6543581031674028398" fileName="ComparingSequence.java" startLine="30" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ComparingSequence$Kind" />
-    <unitInfo nodeId="6543581031674028407" fileName="ComparingSequence.java" startLine="40" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ComparingSequence$ComparingIterator" />
     <unitInfo nodeId="6543581031674028391" fileName="ComparingSequence.java" startLine="12" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ComparingSequence" />
+    <unitInfo nodeId="6543581031674028407" fileName="ComparingSequence.java" startLine="40" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ComparingSequence$ComparingIterator" />
+    <unitInfo nodeId="6543581031674028398" fileName="ComparingSequence.java" startLine="30" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ComparingSequence$Kind" />
   </root>
   <root nodeId="6543581031674028894">
     <nodeInfo nodeId="6543581031674028934" fileName="FilteringSequence.java" startLine="9" startPosition="96" endLine="10" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="filter" />
@@ -1496,8 +1496,8 @@
       <varInfo nodeId="6543581031674029050" varName="tmp" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674028939" fileName="FilteringSequence.java" startLine="11" startPosition="0" endLine="18" endPosition="3">
-      <varInfo nodeId="6543581031674028942" varName="input" />
       <varInfo nodeId="7730170264858257968" varName="filter" />
+      <varInfo nodeId="6543581031674028942" varName="input" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674028976" fileName="FilteringSequence.java" startLine="32" startPosition="30" endLine="39" endPosition="31" />
     <scopeInfo nodeId="5746517363044288601" fileName="FilteringSequence.java" startLine="75" startPosition="0" endLine="82" endPosition="0" />
@@ -1506,8 +1506,8 @@
     <scopeInfo nodeId="6543581031674029031" fileName="FilteringSequence.java" startLine="63" startPosition="31" endLine="73" endPosition="7" />
     <scopeInfo nodeId="6543581031674028922" fileName="FilteringSequence.java" startLine="41" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="6543581031674028931" fileName="FilteringSequence.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
-    <unitInfo nodeId="6543581031674028902" fileName="FilteringSequence.java" startLine="24" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.FilteringSequence$FilteringIterator" />
     <unitInfo nodeId="6543581031674028894" fileName="FilteringSequence.java" startLine="9" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.FilteringSequence" />
+    <unitInfo nodeId="6543581031674028902" fileName="FilteringSequence.java" startLine="24" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.FilteringSequence$FilteringIterator" />
   </root>
   <root nodeId="6543581031674029595">
     <nodeInfo nodeId="6543581031674029619" fileName="NullSequence.java" startLine="10" startPosition="73" endLine="11" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -1572,12 +1572,12 @@
       <varInfo nodeId="6543581031674029692" varName="length" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674029698" fileName="NullSequence.java" startLine="45" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="6543581031674029704" varName="skipplustake" />
       <varInfo nodeId="6543581031674029702" varName="skip" />
+      <varInfo nodeId="6543581031674029704" varName="skipplustake" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674029626" fileName="NullSequence.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
-    <unitInfo nodeId="6543581031674029602" fileName="NullSequence.java" startLine="60" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullSequence$EmptyIterator" />
     <unitInfo nodeId="6543581031674029595" fileName="NullSequence.java" startLine="10" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
+    <unitInfo nodeId="6543581031674029602" fileName="NullSequence.java" startLine="60" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullSequence$EmptyIterator" />
   </root>
   <root nodeId="6543581031674029731">
     <nodeInfo nodeId="6543581031674029740" fileName="NullLinkedListSequence.java" startLine="13" startPosition="118" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -1864,8 +1864,8 @@
     <scopeInfo nodeId="6543581031674034112" fileName="SelectingSequence.java" startLine="26" startPosition="0" endLine="28" endPosition="5" />
     <scopeInfo nodeId="6543581031674034245" fileName="SelectingSequence.java" startLine="66" startPosition="42" endLine="69" endPosition="11" />
     <scopeInfo nodeId="6543581031674034136" fileName="SelectingSequence.java" startLine="12" startPosition="0" endLine="16" endPosition="3">
-      <varInfo nodeId="3473971317150285085" varName="selector" />
       <varInfo nodeId="6543581031674034139" varName="input" />
+      <varInfo nodeId="3473971317150285085" varName="selector" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674034156" fileName="SelectingSequence.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="6543581031674034121" fileName="SelectingSequence.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
@@ -1883,8 +1883,8 @@
     <scopeInfo nodeId="6543581031674034118" fileName="SelectingSequence.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="6543581031674034216" fileName="SelectingSequence.java" startLine="61" startPosition="31" endLine="74" endPosition="7" />
     <scopeInfo nodeId="6543581031674034127" fileName="SelectingSequence.java" startLine="60" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="6543581031674034098" fileName="SelectingSequence.java" startLine="22" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SelectingSequence$SelectingIterator" />
     <unitInfo nodeId="6543581031674034089" fileName="SelectingSequence.java" startLine="10" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SelectingSequence" />
+    <unitInfo nodeId="6543581031674034098" fileName="SelectingSequence.java" startLine="22" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SelectingSequence$SelectingIterator" />
   </root>
   <root nodeId="6543581031674034265">
     <nodeInfo nodeId="6543581031674034302" fileName="ReversingSequence.java" startLine="10" startPosition="47" endLine="11" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1925,8 +1925,8 @@
       <varInfo nodeId="6543581031674034310" varName="cache" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674034304" fileName="ReversingSequence.java" startLine="13" startPosition="0" endLine="21" endPosition="0" />
-    <unitInfo nodeId="6543581031674034271" fileName="ReversingSequence.java" startLine="22" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ReversingSequence$ReversingIterator" />
     <unitInfo nodeId="6543581031674034265" fileName="ReversingSequence.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ReversingSequence" />
+    <unitInfo nodeId="6543581031674034271" fileName="ReversingSequence.java" startLine="22" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.ReversingSequence$ReversingIterator" />
   </root>
   <root nodeId="6543581031674034357">
     <nodeInfo nodeId="6543581031674034394" fileName="EnumeratorIterator.java" startLine="9" startPosition="71" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegate" />
@@ -2017,8 +2017,8 @@
     <scopeInfo nodeId="6543581031674034405" fileName="EnumeratorIterator.java" startLine="57" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="6543581031674034410" varName="itr" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674034362" fileName="EnumeratorIterator.java" startLine="70" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.EnumeratorIterator$Empty" />
     <unitInfo nodeId="6543581031674034357" fileName="EnumeratorIterator.java" startLine="9" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.EnumeratorIterator" />
+    <unitInfo nodeId="6543581031674034362" fileName="EnumeratorIterator.java" startLine="70" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.EnumeratorIterator$Empty" />
   </root>
   <root nodeId="6543581031674034581">
     <nodeInfo nodeId="6543581031674034590" fileName="HasNextState.java" startLine="10" startPosition="0" endLine="11" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="value" />
@@ -2128,8 +2128,8 @@
     </scopeInfo>
     <scopeInfo nodeId="6543581031674036203" fileName="NullSortedMapSequence.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="6543581031674036209" fileName="NullSortedMapSequence.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="6543581031674036216" varName="toKey" />
       <varInfo nodeId="6543581031674036214" varName="fromKey" />
+      <varInfo nodeId="6543581031674036216" varName="toKey" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674036221" fileName="NullSortedMapSequence.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="6543581031674036226" varName="fromKey" />
@@ -2291,8 +2291,8 @@
     <scopeInfo nodeId="6543581031674036379" fileName="PagingSequence.java" startLine="61" startPosition="21" endLine="71" endPosition="30" />
     <scopeInfo nodeId="6543581031674036308" fileName="PagingSequence.java" startLine="14" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="6543581031674036311" varName="input" />
-      <varInfo nodeId="6543581031674036314" varName="page" />
       <varInfo nodeId="6543581031674036316" varName="length" />
+      <varInfo nodeId="6543581031674036314" varName="page" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674036484" fileName="PagingSequence.java" startLine="99" startPosition="28" endLine="110" endPosition="7" />
     <scopeInfo nodeId="6543581031674036289" fileName="PagingSequence.java" startLine="155" startPosition="0" endLine="166" endPosition="0" />
@@ -2304,9 +2304,9 @@
     <scopeInfo nodeId="6543581031674036280" fileName="PagingSequence.java" startLine="77" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="6543581031674036507" fileName="PagingSequence.java" startLine="114" startPosition="31" endLine="146" endPosition="7" />
     <scopeInfo nodeId="6543581031674036286" fileName="PagingSequence.java" startLine="112" startPosition="0" endLine="148" endPosition="0" />
+    <unitInfo nodeId="6543581031674036231" fileName="PagingSequence.java" startLine="10" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.PagingSequence" />
     <unitInfo nodeId="6543581031674036238" fileName="PagingSequence.java" startLine="31" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.PagingSequence$Page" />
     <unitInfo nodeId="6543581031674036247" fileName="PagingSequence.java" startLine="41" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.PagingSequence$PagingIterator" />
-    <unitInfo nodeId="6543581031674036231" fileName="PagingSequence.java" startLine="10" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.PagingSequence" />
   </root>
   <root nodeId="6543581031674036695">
     <nodeInfo nodeId="6543581031674036709" fileName="NullMapSequence.java" startLine="15" startPosition="114" endLine="16" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -2381,8 +2381,8 @@
     </scopeInfo>
     <scopeInfo nodeId="6543581031674036776" fileName="NullMapSequence.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="6543581031674036783" fileName="NullMapSequence.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="6543581031674036788" varName="value" />
       <varInfo nodeId="6543581031674036786" varName="key" />
+      <varInfo nodeId="6543581031674036788" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674036803" fileName="NullMapSequence.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="6543581031674036806" varName="key" />
@@ -2393,8 +2393,8 @@
       <varInfo nodeId="6543581031674036829" varName="map" />
     </scopeInfo>
     <scopeInfo nodeId="3452893138210588551" fileName="NullMapSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="3452893138210588554" varName="value" />
       <varInfo nodeId="3452893138210588552" varName="key" />
+      <varInfo nodeId="3452893138210588554" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674036838" fileName="NullMapSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="6543581031674036841" varName="u" />

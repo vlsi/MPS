@@ -33,6 +33,7 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OptimizeImportsInGlobalScope_Action());
     addAction(new ReSaveAllModels_Action());
     addAction(new RebuildRequiredModels_Action());
+    addAction(new RemoveMPSClasspathDependencies_Action());
     addAction(new UpgradeModelPersistenceGlobally_Action());
     addAction(new UpgradeModelPersistenceInModel_Action());
     addAction(new UpgradeModelPersistenceInModule_Action());

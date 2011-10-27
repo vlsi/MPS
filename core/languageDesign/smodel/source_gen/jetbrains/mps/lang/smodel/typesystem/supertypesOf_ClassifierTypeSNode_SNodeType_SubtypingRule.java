@@ -17,7 +17,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)", "~SNode");
+  private static SNodePointer SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~SNode");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 

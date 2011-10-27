@@ -324,8 +324,8 @@
     <scopeInfo nodeId="1270798772176070201" fileName="BreakpointCreator_Editor.java" startLine="104" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="1270798772176070201" fileName="BreakpointCreator_Editor.java" startLine="64" startPosition="95" endLine="79" endPosition="22" />
     <scopeInfo nodeId="1270798772176070201" fileName="BreakpointCreator_Editor.java" startLine="63" startPosition="0" endLine="81" endPosition="0" />
-    <unitInfo nodeId="1270798772176070201" fileName="BreakpointCreator_Editor.java" startLine="82" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.BreakpointCreator_Editor$breakpointableConceptsListHandler_q67mwo_b1a" />
     <unitInfo nodeId="1270798772176070201" fileName="BreakpointCreator_Editor.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.BreakpointCreator_Editor" />
+    <unitInfo nodeId="1270798772176070201" fileName="BreakpointCreator_Editor.java" startLine="82" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.BreakpointCreator_Editor$breakpointableConceptsListHandler_q67mwo_b1a" />
   </root>
   <root nodeId="2566194812862845914">
     <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="103" startPosition="58" endLine="103" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -481,8 +481,8 @@
     <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="137" startPosition="0" endLine="149" endPosition="0" />
     <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="98" startPosition="88" endLine="112" endPosition="22" />
     <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="97" startPosition="0" endLine="114" endPosition="0" />
-    <unitInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="115" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.BreakpointableNodeItem_Editor$conceptsToCreateBreakpointListHandler_4n0rw6_b1a" />
     <unitInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="27" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.BreakpointableNodeItem_Editor" />
+    <unitInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="115" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.BreakpointableNodeItem_Editor$conceptsToCreateBreakpointListHandler_4n0rw6_b1a" />
   </root>
   <root nodeId="2569394751387978477">
     <nodeInfo nodeId="2569394751387978477" fileName="CreateBreakpointOperation_Editor.java" startLine="107" startPosition="58" endLine="107" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -684,8 +684,8 @@
     <scopeInfo nodeId="2569394751387978477" fileName="CreateBreakpointOperation_Editor.java" startLine="118" startPosition="0" endLine="135" endPosition="0" />
     <scopeInfo nodeId="2569394751387978477" fileName="CreateBreakpointOperation_Editor.java" startLine="136" startPosition="88" endLine="155" endPosition="22" />
     <scopeInfo nodeId="2569394751387978477" fileName="CreateBreakpointOperation_Editor.java" startLine="135" startPosition="0" endLine="157" endPosition="0" />
-    <unitInfo nodeId="2569394751387978477" fileName="CreateBreakpointOperation_Editor.java" startLine="158" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.CreateBreakpointOperation_Editor$CreateBreakpointOperation_generic_cellMenu_a0c0" />
     <unitInfo nodeId="2569394751387978477" fileName="CreateBreakpointOperation_Editor.java" startLine="37" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.CreateBreakpointOperation_Editor" />
+    <unitInfo nodeId="2569394751387978477" fileName="CreateBreakpointOperation_Editor.java" startLine="158" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.CreateBreakpointOperation_Editor$CreateBreakpointOperation_generic_cellMenu_a0c0" />
   </root>
   <root nodeId="5789575999242884601">
     <nodeInfo nodeId="5789575999242884601" fileName="ConceptDeclarationReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -760,8 +760,8 @@
     <scopeInfo nodeId="5789575999242884601" fileName="ConceptDeclarationReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="5789575999242884601" fileName="ConceptDeclarationReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="5789575999242884601" fileName="ConceptDeclarationReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="5789575999242884601" fileName="ConceptDeclarationReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.ConceptDeclarationReference_Editor$_Inline_dhgas9_a0a" />
     <unitInfo nodeId="5789575999242884601" fileName="ConceptDeclarationReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.ConceptDeclarationReference_Editor" />
+    <unitInfo nodeId="5789575999242884601" fileName="ConceptDeclarationReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.ConceptDeclarationReference_Editor$_Inline_dhgas9_a0a" />
   </root>
   <root nodeId="6720907903633286554">
     <nodeInfo nodeId="6720907903633286554" fileName="DebuggerConfiguration_Editor.java" startLine="70" startPosition="58" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

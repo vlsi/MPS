@@ -48,8 +48,8 @@
       <varInfo nodeId="1560298786499490492" varName="indices" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490532" fileName="BaseAddAction.java" startLine="31" startPosition="53" endLine="37" endPosition="18">
-      <varInfo nodeId="1560298786499490534" varName="result" />
       <varInfo nodeId="1560298786499490541" varName="addResult" />
+      <varInfo nodeId="1560298786499490534" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490485" fileName="BaseAddAction.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1560298786499490488" varName="e" />
@@ -136,9 +136,9 @@
       <varInfo nodeId="1560298786499494302" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494250" fileName="BaseValidatedAction.java" startLine="11" startPosition="0" endLine="14" endPosition="3">
+      <varInfo nodeId="1560298786499494254" varName="description" />
       <varInfo nodeId="1560298786499494256" varName="icon" />
       <varInfo nodeId="1560298786499494252" varName="text" />
-      <varInfo nodeId="1560298786499494254" varName="description" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494268" fileName="BaseValidatedAction.java" startLine="16" startPosition="54" endLine="20" endPosition="5" />
     <scopeInfo nodeId="1560298786499494287" fileName="BaseValidatedAction.java" startLine="22" startPosition="0" endLine="26" endPosition="0">

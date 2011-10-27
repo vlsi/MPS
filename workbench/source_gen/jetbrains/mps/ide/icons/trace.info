@@ -244,10 +244,10 @@
     <scopeInfo nodeId="2434140849679604420" fileName="IconManager.java" startLine="69" startPosition="0" endLine="71" endPosition="3" />
     <scopeInfo nodeId="2434140849679604603" fileName="IconManager.java" startLine="166" startPosition="56" endLine="168" endPosition="35" />
     <scopeInfo nodeId="2434140849679604403" fileName="IconManager.java" startLine="57" startPosition="52" endLine="60" endPosition="0">
-      <varInfo nodeId="2434140849679604408" varName="g" />
       <varInfo nodeId="2434140849679604406" varName="c" />
-      <varInfo nodeId="2434140849679604412" varName="y" />
+      <varInfo nodeId="2434140849679604408" varName="g" />
       <varInfo nodeId="2434140849679604410" varName="x" />
+      <varInfo nodeId="2434140849679604412" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="2434140849679605328" fileName="IconManager.java" startLine="126" startPosition="41" endLine="129" endPosition="11">
       <varInfo nodeId="2434140849679605334" varName="i" />
@@ -313,8 +313,8 @@
       <varInfo nodeId="2434140849679604540" varName="language" />
     </scopeInfo>
     <scopeInfo nodeId="2434140849679604965" fileName="IconManager.java" startLine="286" startPosition="0" endLine="298" endPosition="0">
-      <varInfo nodeId="2434140849679604968" varName="iconPath" />
       <varInfo nodeId="2434140849679604970" varName="cache" />
+      <varInfo nodeId="2434140849679604968" varName="iconPath" />
     </scopeInfo>
     <scopeInfo nodeId="2434140849679605161" fileName="IconManager.java" startLine="89" startPosition="32" endLine="102" endPosition="11">
       <varInfo nodeId="5943936487467192249" varName="alternativeIcon" />
@@ -331,9 +331,9 @@
       <varInfo nodeId="2434140849679604536" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="2434140849679604585" fileName="IconManager.java" startLine="162" startPosition="68" endLine="177" endPosition="16">
-      <varInfo nodeId="2434140849679604597" varName="icon" />
       <varInfo nodeId="2434140849679604587" varName="acd" />
       <varInfo nodeId="2434140849679604593" varName="cd" />
+      <varInfo nodeId="2434140849679604597" varName="icon" />
     </scopeInfo>
     <scopeInfo nodeId="2434140849679604736" fileName="IconManager.java" startLine="207" startPosition="67" endLine="223" endPosition="28" />
     <scopeInfo nodeId="2434140849679604775" fileName="IconManager.java" startLine="225" startPosition="0" endLine="241" endPosition="0">
@@ -356,8 +356,8 @@
       <varInfo nodeId="2434140849679604642" varName="namespace" />
     </scopeInfo>
     <scopeInfo nodeId="2434140849679604850" fileName="IconManager.java" startLine="254" startPosition="24" endLine="282" endPosition="7">
-      <varInfo nodeId="2434140849679604865" varName="is" />
       <varInfo nodeId="2434140849679604852" varName="image" />
+      <varInfo nodeId="2434140849679604865" varName="is" />
     </scopeInfo>
     <scopeInfo nodeId="2434140849679604841" fileName="IconManager.java" startLine="252" startPosition="45" endLine="284" endPosition="16">
       <varInfo nodeId="2434140849679604843" varName="icon" />
@@ -366,11 +366,11 @@
       <varInfo nodeId="2434140849679604839" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="2434140849679605145" fileName="IconManager.java" startLine="83" startPosition="29" endLine="132" endPosition="22">
-      <varInfo nodeId="2434140849679605279" varName="result" />
-      <varInfo nodeId="2434140849679605254" varName="model" />
       <varInfo nodeId="2434140849679605163" varName="concept" />
-      <varInfo nodeId="2434140849679605302" varName="markIcons" />
       <varInfo nodeId="2434140849679605147" varName="mainIcon" />
+      <varInfo nodeId="2434140849679605302" varName="markIcons" />
+      <varInfo nodeId="2434140849679605254" varName="model" />
+      <varInfo nodeId="2434140849679605279" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="2434140849679604494" fileName="IconManager.java" startLine="82" startPosition="72" endLine="134" endPosition="0" />
     <scopeInfo nodeId="2434140849679604485" fileName="IconManager.java" startLine="81" startPosition="93" endLine="134" endPosition="7" />
@@ -378,9 +378,9 @@
       <varInfo nodeId="2434140849679604480" varName="node" />
       <varInfo nodeId="2434140849679604483" varName="withoutAdditional" />
     </scopeInfo>
+    <unitInfo nodeId="2434140849679604371" fileName="IconManager.java" startLine="52" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.ide.icons.IconManager" />
     <unitInfo nodeId="2434140849679604402" fileName="IconManager.java" startLine="57" startPosition="44" endLine="68" endPosition="3" unitName="jetbrains.mps.ide.icons.IconManager$1" />
     <unitInfo nodeId="2434140849679604492" fileName="IconManager.java" startLine="82" startPosition="52" endLine="134" endPosition="5" unitName="jetbrains.mps.ide.icons.IconManager$2" />
-    <unitInfo nodeId="2434140849679604371" fileName="IconManager.java" startLine="52" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.ide.icons.IconManager" />
   </root>
 </debugInfo>
 

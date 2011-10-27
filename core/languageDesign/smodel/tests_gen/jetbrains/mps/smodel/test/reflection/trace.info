@@ -77,8 +77,8 @@
     <scopeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="2906110183022090598" fileName="SNodeGetReferenceOperation_Test.java" startLine="49" startPosition="53" endLine="56" endPosition="0" />
     <scopeInfo nodeId="2906110183022166158" fileName="SNodeGetReferenceOperation_Test.java" startLine="87" startPosition="49" endLine="94" endPosition="201">
-      <varInfo nodeId="2906110183022166162" varName="nullReferenceContainer" />
       <varInfo nodeId="2906110183022166182" varName="nullLinkDeclaration" />
+      <varInfo nodeId="2906110183022166162" varName="nullReferenceContainer" />
     </scopeInfo>
     <scopeInfo nodeId="2906110183022177243" fileName="SNodeGetReferenceOperation_Test.java" startLine="96" startPosition="0" endLine="104" endPosition="0" />
     <scopeInfo nodeId="2906110183022155174" fileName="SNodeGetReferenceOperation_Test.java" startLine="74" startPosition="70" endLine="84" endPosition="67">
@@ -88,13 +88,13 @@
     <scopeInfo nodeId="2906110183022166158" fileName="SNodeGetReferenceOperation_Test.java" startLine="86" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="2906110183022155174" fileName="SNodeGetReferenceOperation_Test.java" startLine="73" startPosition="0" endLine="86" endPosition="0" />
     <scopeInfo nodeId="2906110183022122676" fileName="SNodeGetReferenceOperation_Test.java" startLine="57" startPosition="59" endLine="71" endPosition="79">
+      <varInfo nodeId="6404411205049509323" varName="leftChildReference" />
       <varInfo nodeId="4617538449204348412" varName="rootContainerReference" />
       <varInfo nodeId="2906110183022122682" varName="rootLinkDeclaration" />
-      <varInfo nodeId="6404411205049509323" varName="leftChildReference" />
     </scopeInfo>
     <scopeInfo nodeId="2906110183022122676" fileName="SNodeGetReferenceOperation_Test.java" startLine="56" startPosition="0" endLine="73" endPosition="0" />
-    <unitInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="48" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody" />
     <unitInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test" />
+    <unitInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="48" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody" />
   </root>
   <root nodeId="2906110183022219806">
     <nodeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="23" startPosition="44" endLine="24" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -289,8 +289,8 @@
     <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="63" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="69" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="234" startPosition="0" endLine="240" endPosition="0">
-      <varInfo nodeId="2906110183022432313" varName="referenceTarget" />
       <varInfo nodeId="2906110183022432302" varName="input" />
+      <varInfo nodeId="2906110183022432313" varName="referenceTarget" />
     </scopeInfo>
     <scopeInfo nodeId="2906110183022219810" fileName="SNodeGetReferencesOperation_Test.java" startLine="78" startPosition="46" endLine="85" endPosition="217" />
     <scopeInfo nodeId="2906110183022219810" fileName="SNodeGetReferencesOperation_Test.java" startLine="77" startPosition="53" endLine="87" endPosition="0" />
@@ -307,10 +307,10 @@
     <scopeInfo nodeId="2906110183022448483" fileName="SNodeGetReferencesOperation_Test.java" startLine="219" startPosition="0" endLine="234" endPosition="0" />
     <scopeInfo nodeId="2906110183022332647" fileName="SNodeGetReferencesOperation_Test.java" startLine="114" startPosition="60" endLine="133" endPosition="20" />
     <scopeInfo nodeId="2906110183022432273" fileName="SNodeGetReferencesOperation_Test.java" startLine="172" startPosition="63" endLine="191" endPosition="189">
+      <varInfo nodeId="2906110183022432283" varName="initialSize" />
+      <varInfo nodeId="2906110183022432388" varName="theReference" />
       <varInfo nodeId="2906110183022432426" varName="unspecifiedReferenceName" />
       <varInfo nodeId="2906110183022432364" varName="unspecifiedReferences" />
-      <varInfo nodeId="2906110183022432388" varName="theReference" />
-      <varInfo nodeId="2906110183022432283" varName="initialSize" />
     </scopeInfo>
     <scopeInfo nodeId="2906110183022425073" fileName="SNodeGetReferencesOperation_Test.java" startLine="149" startPosition="53" endLine="169" endPosition="9" />
     <scopeInfo nodeId="2906110183022332647" fileName="SNodeGetReferencesOperation_Test.java" startLine="113" startPosition="0" endLine="135" endPosition="0" />
@@ -318,11 +318,15 @@
     <scopeInfo nodeId="2906110183022425073" fileName="SNodeGetReferencesOperation_Test.java" startLine="148" startPosition="0" endLine="171" endPosition="0" />
     <scopeInfo nodeId="2906110183022440078" fileName="SNodeGetReferencesOperation_Test.java" startLine="194" startPosition="61" endLine="217" endPosition="73">
       <varInfo nodeId="2906110183022440127" varName="brokenReferences" />
-      <varInfo nodeId="2906110183022440151" varName="theReference" />
       <varInfo nodeId="2906110183022440087" varName="initialSize" />
+      <varInfo nodeId="2906110183022440151" varName="theReference" />
     </scopeInfo>
     <scopeInfo nodeId="2906110183022440078" fileName="SNodeGetReferencesOperation_Test.java" startLine="193" startPosition="0" endLine="219" endPosition="0" />
+    <unitInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="20" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test" />
     <unitInfo nodeId="2906110183022230106" fileName="SNodeGetReferencesOperation_Test.java" startLine="94" startPosition="604" endLine="98" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$1" />
+    <unitInfo nodeId="2906110183022432372" fileName="SNodeGetReferencesOperation_Test.java" startLine="183" startPosition="240" endLine="187" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$10" />
+    <unitInfo nodeId="2906110183022440101" fileName="SNodeGetReferencesOperation_Test.java" startLine="201" startPosition="213" endLine="205" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$11" />
+    <unitInfo nodeId="2906110183022440135" fileName="SNodeGetReferencesOperation_Test.java" startLine="208" startPosition="235" endLine="212" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$12" />
     <unitInfo nodeId="2906110183022321809" fileName="SNodeGetReferencesOperation_Test.java" startLine="107" startPosition="591" endLine="111" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$2" />
     <unitInfo nodeId="2906110183022332693" fileName="SNodeGetReferencesOperation_Test.java" startLine="120" startPosition="388" endLine="124" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$3" />
     <unitInfo nodeId="2906110183022397787" fileName="SNodeGetReferencesOperation_Test.java" startLine="124" startPosition="20" endLine="128" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$4" />
@@ -331,11 +335,7 @@
     <unitInfo nodeId="6404411205049619220" fileName="SNodeGetReferencesOperation_Test.java" startLine="156" startPosition="198" endLine="160" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$7" />
     <unitInfo nodeId="2906110183022425090" fileName="SNodeGetReferencesOperation_Test.java" startLine="161" startPosition="196" endLine="165" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$8" />
     <unitInfo nodeId="2906110183022425166" fileName="SNodeGetReferencesOperation_Test.java" startLine="165" startPosition="22" endLine="169" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$9" />
-    <unitInfo nodeId="2906110183022432372" fileName="SNodeGetReferencesOperation_Test.java" startLine="183" startPosition="240" endLine="187" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$10" />
-    <unitInfo nodeId="2906110183022440101" fileName="SNodeGetReferencesOperation_Test.java" startLine="201" startPosition="213" endLine="205" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$11" />
-    <unitInfo nodeId="2906110183022440135" fileName="SNodeGetReferencesOperation_Test.java" startLine="208" startPosition="235" endLine="212" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$12" />
     <unitInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="76" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody" />
-    <unitInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="20" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test" />
   </root>
   <root nodeId="3386205146662078802">
     <nodeInfo nodeId="3386205146662078820" fileName="TestUtilities.java" startLine="9" startPosition="71" endLine="10" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -350,8 +350,8 @@
     </scopeInfo>
     <scopeInfo nodeId="3386205146662078811" fileName="TestUtilities.java" startLine="9" startPosition="71" endLine="15" endPosition="5" />
     <scopeInfo nodeId="3386205146662078808" fileName="TestUtilities.java" startLine="8" startPosition="28" endLine="17" endPosition="0">
-      <varInfo nodeId="3386205146662078812" varName="expected" />
       <varInfo nodeId="3386205146662078814" varName="actual" />
+      <varInfo nodeId="3386205146662078812" varName="expected" />
     </scopeInfo>
     <unitInfo nodeId="3386205146662078802" fileName="TestUtilities.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.TestUtilities" />
   </root>
@@ -479,19 +479,19 @@
       <varInfo nodeId="9203425869796452326" varName="nullNode" />
     </scopeInfo>
     <scopeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="158" startPosition="0" endLine="164" endPosition="0">
-      <varInfo nodeId="2906110183022467696" varName="unspecifiedChild" />
       <varInfo nodeId="2166349271756548502" varName="input" />
+      <varInfo nodeId="2906110183022467696" varName="unspecifiedChild" />
     </scopeInfo>
     <scopeInfo nodeId="2854075155748900275" fileName="SNodeGetChildrenOperation_Test.java" startLine="83" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="6119287946611354748" fileName="SNodeGetChildrenOperation_Test.java" startLine="149" startPosition="73" endLine="156" endPosition="219">
-      <varInfo nodeId="6119287946611354753" varName="nullNode" />
       <varInfo nodeId="6119287946611354782" varName="nullLinkDeclaration" />
+      <varInfo nodeId="6119287946611354753" varName="nullNode" />
     </scopeInfo>
     <scopeInfo nodeId="1433948805480755020" fileName="SNodeGetChildrenOperation_Test.java" startLine="73" startPosition="62" endLine="81" endPosition="10" />
     <scopeInfo nodeId="2166349271756282420" fileName="SNodeGetChildrenOperation_Test.java" startLine="91" startPosition="62" endLine="99" endPosition="10" />
     <scopeInfo nodeId="5815925154349110711" fileName="SNodeGetChildrenOperation_Test.java" startLine="130" startPosition="67" endLine="138" endPosition="299">
-      <varInfo nodeId="5815925154349132152" varName="twins" />
       <varInfo nodeId="5815925154349132092" varName="singleChild" />
+      <varInfo nodeId="5815925154349132152" varName="twins" />
     </scopeInfo>
     <scopeInfo nodeId="2600026384779198864" fileName="SNodeGetChildrenOperation_Test.java" startLine="140" startPosition="0" endLine="148" endPosition="0" />
     <scopeInfo nodeId="9203425869796452322" fileName="SNodeGetChildrenOperation_Test.java" startLine="120" startPosition="0" endLine="129" endPosition="0" />
@@ -500,18 +500,18 @@
     <scopeInfo nodeId="2166349271756282420" fileName="SNodeGetChildrenOperation_Test.java" startLine="90" startPosition="0" endLine="101" endPosition="0" />
     <scopeInfo nodeId="5815925154349110711" fileName="SNodeGetChildrenOperation_Test.java" startLine="129" startPosition="0" endLine="140" endPosition="0" />
     <scopeInfo nodeId="2166349271756548523" fileName="SNodeGetChildrenOperation_Test.java" startLine="102" startPosition="61" endLine="118" endPosition="54">
+      <varInfo nodeId="6253932327130367814" varName="initialSize" />
+      <varInfo nodeId="9203425869796418471" varName="theChild" />
       <varInfo nodeId="2906110183022467720" varName="unspecifiedChild" />
       <varInfo nodeId="2166349271756556643" varName="unspecifiedChildRole" />
-      <varInfo nodeId="9203425869796418471" varName="theChild" />
       <varInfo nodeId="9203425869796418392" varName="unspecifiedChildren" />
-      <varInfo nodeId="6253932327130367814" varName="initialSize" />
     </scopeInfo>
     <scopeInfo nodeId="2166349271756548523" fileName="SNodeGetChildrenOperation_Test.java" startLine="101" startPosition="0" endLine="120" endPosition="0" />
+    <unitInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="21" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test" />
     <unitInfo nodeId="2906110183022478464" fileName="SNodeGetChildrenOperation_Test.java" startLine="77" startPosition="448" endLine="81" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$1" />
     <unitInfo nodeId="2906110183022478533" fileName="SNodeGetChildrenOperation_Test.java" startLine="95" startPosition="527" endLine="99" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$2" />
     <unitInfo nodeId="9203425869796418406" fileName="SNodeGetChildrenOperation_Test.java" startLine="110" startPosition="217" endLine="114" endPosition="7" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$3" />
     <unitInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="71" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody" />
-    <unitInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="21" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test" />
   </root>
 </debugInfo>
 

@@ -23,8 +23,8 @@
     <scopeInfo nodeId="880980402160504517" fileName="PluginNameUtils.java" startLine="26" startPosition="65" endLine="27" endPosition="61" />
     <scopeInfo nodeId="3005430634737938155" fileName="PluginNameUtils.java" startLine="33" startPosition="46" endLine="34" endPosition="72" />
     <scopeInfo nodeId="1218029277055" fileName="PluginNameUtils.java" startLine="11" startPosition="59" endLine="15" endPosition="48">
-      <varInfo nodeId="1218029314809" varName="normalShortName" />
       <varInfo nodeId="1218029314782" varName="moduleUID" />
+      <varInfo nodeId="1218029314809" varName="normalShortName" />
       <varInfo nodeId="1218029314804" varName="shortName" />
     </scopeInfo>
     <scopeInfo nodeId="1213879030228" fileName="PluginNameUtils.java" startLine="17" startPosition="0" endLine="21" endPosition="0">

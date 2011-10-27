@@ -166,15 +166,15 @@
       <varInfo nodeId="6853886991698787742" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="5367124414732055990" fileName="EmbeddableEditor.java" startLine="65" startPosition="0" endLine="68" endPosition="3">
+      <varInfo nodeId="5367124414732055994" varName="context" />
       <varInfo nodeId="5367124414732055998" varName="node" />
       <varInfo nodeId="5367124414732055996" varName="owner" />
-      <varInfo nodeId="5367124414732055994" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="1219405202225" fileName="EmbeddableEditor.java" startLine="69" startPosition="0" endLine="72" endPosition="3">
-      <varInfo nodeId="1220272668087" varName="node" />
-      <varInfo nodeId="1219409493139" varName="owner" />
       <varInfo nodeId="1219405578628" varName="context" />
       <varInfo nodeId="5367124414732056003" varName="editable" />
+      <varInfo nodeId="1220272668087" varName="node" />
+      <varInfo nodeId="1219409493139" varName="owner" />
     </scopeInfo>
     <scopeInfo nodeId="7003329281689295522" fileName="EmbeddableEditor.java" startLine="184" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="7003329281689295535" varName="cd" />
@@ -226,11 +226,11 @@
     <scopeInfo nodeId="1219418281323" fileName="EmbeddableEditor.java" startLine="216" startPosition="66" endLine="222" endPosition="7" />
     <scopeInfo nodeId="199149364782675567" fileName="EmbeddableEditor.java" startLine="74" startPosition="124" endLine="81" endPosition="40" />
     <scopeInfo nodeId="276193728322472400" fileName="EmbeddableEditor.java" startLine="83" startPosition="0" endLine="90" endPosition="3">
-      <varInfo nodeId="5720687632037741500" varName="targetNode" />
-      <varInfo nodeId="5720687632037741498" varName="rootNode" />
-      <varInfo nodeId="5720687632037736075" varName="modelDescriptor" />
       <varInfo nodeId="276193728322472432" varName="context" />
       <varInfo nodeId="276193728322472440" varName="editable" />
+      <varInfo nodeId="5720687632037736075" varName="modelDescriptor" />
+      <varInfo nodeId="5720687632037741498" varName="rootNode" />
+      <varInfo nodeId="5720687632037741500" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="6737363541215469063" fileName="EmbeddableEditor.java" startLine="118" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="6737363541215469067" varName="color" />
@@ -246,11 +246,11 @@
     </scopeInfo>
     <scopeInfo nodeId="5602187481573650800" fileName="EmbeddableEditor.java" startLine="245" startPosition="50" endLine="253" endPosition="31" />
     <scopeInfo nodeId="199149364782675564" fileName="EmbeddableEditor.java" startLine="73" startPosition="0" endLine="82" endPosition="3">
-      <varInfo nodeId="199149364782675613" varName="targetNode" />
-      <varInfo nodeId="199149364782675617" varName="rootNode" />
-      <varInfo nodeId="199149364782675611" varName="owner" />
       <varInfo nodeId="199149364782675609" varName="context" />
       <varInfo nodeId="199149364782675615" varName="editable" />
+      <varInfo nodeId="199149364782675611" varName="owner" />
+      <varInfo nodeId="199149364782675617" varName="rootNode" />
+      <varInfo nodeId="199149364782675613" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="3732264744266842636" fileName="EmbeddableEditor.java" startLine="153" startPosition="36" endLine="162" endPosition="0">
       <varInfo nodeId="3732264744266842637" varName="ppool" />
@@ -274,20 +274,20 @@
       <varInfo nodeId="199149364782662234" varName="editor" />
     </scopeInfo>
     <scopeInfo nodeId="199149364782662172" fileName="EmbeddableEditor.java" startLine="91" startPosition="0" endLine="110" endPosition="0">
-      <varInfo nodeId="199149364782662179" varName="targetNode" />
       <varInfo nodeId="276193728322519106" varName="addToModel" />
       <varInfo nodeId="199149364782662177" varName="rootNode" />
+      <varInfo nodeId="199149364782662179" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="1219412504352" fileName="EmbeddableEditor.java" startLine="189" startPosition="83" endLine="209" endPosition="85">
-      <varInfo nodeId="1079232116104569375" varName="successful" />
       <varInfo nodeId="7865481948248722447" varName="handler" />
+      <varInfo nodeId="1079232116104569375" varName="successful" />
     </scopeInfo>
     <scopeInfo nodeId="1219412504349" fileName="EmbeddableEditor.java" startLine="187" startPosition="0" endLine="211" endPosition="0">
       <varInfo nodeId="5658679531526376321" varName="additionalClasspath" />
     </scopeInfo>
     <scopeInfo nodeId="7003329281689295557" fileName="EmbeddableEditor.java" startLine="148" startPosition="25" endLine="180" endPosition="9">
-      <varInfo nodeId="3732264744266842590" varName="session" />
       <varInfo nodeId="3732264744266842611" varName="ctl" />
+      <varInfo nodeId="3732264744266842590" varName="session" />
     </scopeInfo>
     <scopeInfo nodeId="7003329281689295554" fileName="EmbeddableEditor.java" startLine="147" startPosition="78" endLine="182" endPosition="0" />
     <scopeInfo nodeId="8713487063218322378" fileName="EmbeddableEditor.java" startLine="143" startPosition="57" endLine="182" endPosition="7">
@@ -296,16 +296,16 @@
     <scopeInfo nodeId="8713487063218322375" fileName="EmbeddableEditor.java" startLine="142" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="8713487063218322382" varName="classPath" />
     </scopeInfo>
-    <unitInfo nodeId="3732264744266842618" fileName="EmbeddableEditor.java" startLine="149" startPosition="63" endLine="153" endPosition="9" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$3" />
+    <unitInfo nodeId="1219405202223" fileName="EmbeddableEditor.java" startLine="56" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
+    <unitInfo nodeId="7003329281689295552" fileName="EmbeddableEditor.java" startLine="147" startPosition="66" endLine="182" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$1" />
     <unitInfo nodeId="7003329281689295571" fileName="EmbeddableEditor.java" startLine="171" startPosition="45" endLine="175" endPosition="15" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$2" />
+    <unitInfo nodeId="3732264744266842615" fileName="EmbeddableEditor.java" startLine="149" startPosition="36" endLine="162" endPosition="9" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$2" />
+    <unitInfo nodeId="7865481948248722451" fileName="EmbeddableEditor.java" startLine="193" startPosition="48" endLine="207" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$2" />
+    <unitInfo nodeId="3732264744266842618" fileName="EmbeddableEditor.java" startLine="149" startPosition="63" endLine="153" endPosition="9" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$3" />
+    <unitInfo nodeId="1219418302103" fileName="EmbeddableEditor.java" startLine="217" startPosition="55" endLine="222" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$3" />
     <unitInfo nodeId="1227605620574" fileName="EmbeddableEditor.java" startLine="226" startPosition="46" endLine="230" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$4" />
     <unitInfo nodeId="8119021187637935509" fileName="EmbeddableEditor.java" startLine="234" startPosition="46" endLine="238" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$5" />
     <unitInfo nodeId="7501380561942084" fileName="EmbeddableEditor.java" startLine="247" startPosition="48" endLine="251" endPosition="7" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$6" />
-    <unitInfo nodeId="1219418302103" fileName="EmbeddableEditor.java" startLine="217" startPosition="55" endLine="222" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$3" />
-    <unitInfo nodeId="3732264744266842615" fileName="EmbeddableEditor.java" startLine="149" startPosition="36" endLine="162" endPosition="9" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$2" />
-    <unitInfo nodeId="7865481948248722451" fileName="EmbeddableEditor.java" startLine="193" startPosition="48" endLine="207" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$2" />
-    <unitInfo nodeId="7003329281689295552" fileName="EmbeddableEditor.java" startLine="147" startPosition="66" endLine="182" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$1" />
-    <unitInfo nodeId="1219405202223" fileName="EmbeddableEditor.java" startLine="56" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
   </root>
   <root nodeId="1219411663047">
     <nodeInfo nodeId="1219412374874" fileName="GenerationResult.java" startLine="11" startPosition="55" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
@@ -344,8 +344,8 @@
     <scopeInfo nodeId="1219744933250" fileName="GenerationResult.java" startLine="52" startPosition="28" endLine="53" endPosition="18" />
     <scopeInfo nodeId="1219744797301" fileName="GenerationResult.java" startLine="26" startPosition="71" endLine="28" endPosition="18" />
     <scopeInfo nodeId="1219744797298" fileName="GenerationResult.java" startLine="25" startPosition="0" endLine="29" endPosition="3">
-      <varInfo nodeId="1219744816042" varName="node" />
       <varInfo nodeId="1219744816044" varName="context" />
+      <varInfo nodeId="1219744816042" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1219412424344" fileName="GenerationResult.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1219415849704" fileName="GenerationResult.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
@@ -357,11 +357,11 @@
     <scopeInfo nodeId="1219740551238" fileName="GenerationResult.java" startLine="51" startPosition="58" endLine="55" endPosition="64" />
     <scopeInfo nodeId="1219669234499" fileName="GenerationResult.java" startLine="18" startPosition="163" endLine="23" endPosition="28" />
     <scopeInfo nodeId="1219669234496" fileName="GenerationResult.java" startLine="17" startPosition="0" endLine="24" endPosition="3">
-      <varInfo nodeId="1219669245703" varName="node" />
-      <varInfo nodeId="1219669269757" varName="modelDescriptor" />
       <varInfo nodeId="1219669245705" varName="context" />
-      <varInfo nodeId="148290935931702966" varName="succesful" />
       <varInfo nodeId="1219740839230" varName="handler" />
+      <varInfo nodeId="1219669269757" varName="modelDescriptor" />
+      <varInfo nodeId="1219669245703" varName="node" />
+      <varInfo nodeId="148290935931702966" varName="succesful" />
     </scopeInfo>
     <scopeInfo nodeId="1219740551235" fileName="GenerationResult.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1219741072589" varName="parentLoader" />

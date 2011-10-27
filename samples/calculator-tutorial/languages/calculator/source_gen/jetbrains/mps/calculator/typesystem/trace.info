@@ -59,8 +59,8 @@
     <scopeInfo nodeId="1241364865026" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="59" startPosition="31" endLine="68" endPosition="20" />
     <scopeInfo nodeId="1241364865026" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="46" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1241364865026" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="1241364865026" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.calculator.typesystem.typeof_InputFieldReference_InferenceRule$QuotationClass_q8g7ld_a0a0a0" />
     <unitInfo nodeId="1241364865026" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.calculator.typesystem.typeof_InputFieldReference_InferenceRule" />
+    <unitInfo nodeId="1241364865026" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.calculator.typesystem.typeof_InputFieldReference_InferenceRule$QuotationClass_q8g7ld_a0a0a0" />
   </root>
 </debugInfo>
 

@@ -11,7 +11,7 @@ public class RunModuleConfigCreator_Behavior {
   }
 
   public static SNode virtual_getCreatorTypeParameter_5528847031674330314(SNode thisNode) {
-    return SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)", "~IModule");
+    return SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~IModule");
   }
 
   public static SNode virtual_getFunction_5528847031674340387(SNode thisNode) {

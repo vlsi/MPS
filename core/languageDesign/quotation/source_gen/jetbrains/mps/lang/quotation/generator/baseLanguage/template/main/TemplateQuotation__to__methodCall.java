@@ -624,7 +624,7 @@ public class TemplateQuotation__to__methodCall implements TemplateDeclarationWea
                                       try {
                                         environment.getTracer().pushTemplateNode(templateNode_g7vjva_a0a0a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1);
                                         environment.nodeCopied(context38, tnode42, "tpl/r:00000000-0000-4000-0000-011c8959034c/937236280924642981");
-                                        tnode42.addReference(SReference.create("baseMethodDeclaration", tnode42, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setReferent(java.lang.String,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SReference")));
+                                        tnode42.addReference(SReference.create("baseMethodDeclaration", tnode42, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setReferent(java.lang.String,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SReference")));
 
                                         {
                                           final SNode tnode43 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);

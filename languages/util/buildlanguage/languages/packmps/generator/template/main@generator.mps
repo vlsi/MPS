@@ -15,7 +15,7 @@
   <import index="tps4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="8" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="fthv" modelUID="r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)" version="-1" />
-  <import index="up6l" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps(MPS.Classpath/jetbrains.mps@java_stub)" version="-1" />
+  <import index="1p1s" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -119,11 +119,11 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5428983789738234570">
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5428983789738262452">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5428983789738262451">
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="up6l.~ClasspathReader$ClassType%dCORE" resolveInfo="CORE" />
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="up6l.~ClasspathReader$ClassType" resolveInfo="ClasspathReader.ClassType" />
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1p1s.~ClasspathReader$ClassType%dCORE" resolveInfo="CORE" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1p1s.~ClasspathReader$ClassType" resolveInfo="ClasspathReader.ClassType" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5428983789738262456">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="up6l.~ClasspathReader$ClassType%dgetTypeString()%cjava%dlang%dString" resolveInfo="getTypeString" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1p1s.~ClasspathReader$ClassType%dgetTypeString()%cjava%dlang%dString" resolveInfo="getTypeString" />
                     </node>
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5428983789738234569">
@@ -319,11 +319,11 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5428983789738262468">
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5428983789738262469">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5428983789738262473">
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="up6l.~ClasspathReader$ClassType%dEDITOR" resolveInfo="EDITOR" />
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="up6l.~ClasspathReader$ClassType" resolveInfo="ClasspathReader.ClassType" />
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1p1s.~ClasspathReader$ClassType%dEDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1p1s.~ClasspathReader$ClassType" resolveInfo="ClasspathReader.ClassType" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5428983789738262471">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="up6l.~ClasspathReader$ClassType%dgetTypeString()%cjava%dlang%dString" resolveInfo="getTypeString" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1p1s.~ClasspathReader$ClassType%dgetTypeString()%cjava%dlang%dString" resolveInfo="getTypeString" />
                     </node>
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5428983789738262472">
@@ -433,11 +433,11 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5428983789738262481">
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5428983789738262482">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5428983789738262486">
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="up6l.~ClasspathReader$ClassType%dWORKBENCH" resolveInfo="WORKBENCH" />
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="up6l.~ClasspathReader$ClassType" resolveInfo="ClasspathReader.ClassType" />
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1p1s.~ClasspathReader$ClassType%dWORKBENCH" resolveInfo="WORKBENCH" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1p1s.~ClasspathReader$ClassType" resolveInfo="ClasspathReader.ClassType" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5428983789738262484">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="up6l.~ClasspathReader$ClassType%dgetTypeString()%cjava%dlang%dString" resolveInfo="getTypeString" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1p1s.~ClasspathReader$ClassType%dgetTypeString()%cjava%dlang%dString" resolveInfo="getTypeString" />
                     </node>
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5428983789738262485">

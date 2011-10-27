@@ -25,8 +25,8 @@
     <scopeInfo nodeId="8247677264794237021" fileName="ExecutableParametersEditor.java" startLine="39" startPosition="31" endLine="40" endPosition="27" />
     <scopeInfo nodeId="8247677264794237031" fileName="ExecutableParametersEditor.java" startLine="43" startPosition="44" endLine="45" endPosition="36" />
     <scopeInfo nodeId="8247677264794236971" fileName="ExecutableParametersEditor.java" startLine="23" startPosition="50" endLine="27" endPosition="38">
-      <varInfo nodeId="8247677264794236973" varName="selectedFile" />
       <varInfo nodeId="8247677264794236979" varName="fileName" />
+      <varInfo nodeId="8247677264794236973" varName="selectedFile" />
     </scopeInfo>
     <scopeInfo nodeId="8247677264794236997" fileName="ExecutableParametersEditor.java" startLine="32" startPosition="39" endLine="36" endPosition="56" />
     <scopeInfo nodeId="8247677264794237018" fileName="ExecutableParametersEditor.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
@@ -35,14 +35,14 @@
     </scopeInfo>
     <scopeInfo nodeId="8247677264794236994" fileName="ExecutableParametersEditor.java" startLine="31" startPosition="0" endLine="37" endPosition="3" />
     <scopeInfo nodeId="8247677264794236953" fileName="ExecutableParametersEditor.java" startLine="20" startPosition="52" endLine="28" endPosition="7">
-      <varInfo nodeId="8247677264794236960" varName="result" />
       <varInfo nodeId="8247677264794236955" varName="fileChooser" />
+      <varInfo nodeId="8247677264794236960" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8247677264794236948" fileName="ExecutableParametersEditor.java" startLine="19" startPosition="67" endLine="30" endPosition="0">
       <varInfo nodeId="8247677264794236951" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="8247677264794236947" fileName="ExecutableParametersEditor.java" startLine="19" startPosition="45" endLine="30" endPosition="3" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor$1" />
     <unitInfo nodeId="8247677264794236929" fileName="ExecutableParametersEditor.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor" />
+    <unitInfo nodeId="8247677264794236947" fileName="ExecutableParametersEditor.java" startLine="19" startPosition="45" endLine="30" endPosition="3" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor$1" />
   </root>
   <root nodeId="8247677264794237122">
     <nodeInfo nodeId="8247677264794237136" fileName="NanocConfigRunPreparationUtil.java" startLine="24" startPosition="88" endLine="25" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -107,30 +107,30 @@
     <scopeInfo nodeId="8247677264794237179" fileName="NanocConfigRunPreparationUtil.java" startLine="30" startPosition="57" endLine="34" endPosition="0" />
     <scopeInfo nodeId="8247677264794237343" fileName="NanocConfigRunPreparationUtil.java" startLine="60" startPosition="31" endLine="69" endPosition="21" />
     <scopeInfo nodeId="8247677264794237135" fileName="NanocConfigRunPreparationUtil.java" startLine="24" startPosition="88" endLine="75" endPosition="26">
-      <varInfo nodeId="8247677264794237225" varName="f" />
-      <varInfo nodeId="8247677264794237160" varName="module" />
       <varInfo nodeId="8247677264794237308" varName="compileProcess" />
-      <varInfo nodeId="8247677264794237192" varName="packageName" />
-      <varInfo nodeId="8247677264794237137" varName="descriptor" />
-      <varInfo nodeId="8247677264794237154" varName="sourceFileNode" />
-      <varInfo nodeId="8247677264794237211" varName="modelClassesFolder" />
-      <varInfo nodeId="8247677264794237273" varName="executableFile" />
-      <varInfo nodeId="8247677264794237247" varName="gcc" />
-      <varInfo nodeId="8247677264794237145" varName="node" />
-      <varInfo nodeId="8247677264794237264" varName="processBuilder" />
-      <varInfo nodeId="8247677264794237269" varName="outputExtension" />
       <varInfo nodeId="8247677264794237332" varName="current" />
+      <varInfo nodeId="8247677264794237137" varName="descriptor" />
+      <varInfo nodeId="8247677264794237273" varName="executableFile" />
+      <varInfo nodeId="8247677264794237225" varName="f" />
+      <varInfo nodeId="8247677264794237247" varName="gcc" />
+      <varInfo nodeId="8247677264794237211" varName="modelClassesFolder" />
       <varInfo nodeId="8247677264794237199" varName="modelSourceFolder" />
+      <varInfo nodeId="8247677264794237160" varName="module" />
+      <varInfo nodeId="8247677264794237145" varName="node" />
+      <varInfo nodeId="8247677264794237269" varName="outputExtension" />
+      <varInfo nodeId="8247677264794237192" varName="packageName" />
+      <varInfo nodeId="8247677264794237264" varName="processBuilder" />
+      <varInfo nodeId="8247677264794237166" varName="sourceFileName" />
+      <varInfo nodeId="8247677264794237154" varName="sourceFileNode" />
       <varInfo nodeId="8247677264794237336" varName="success" />
       <varInfo nodeId="8247677264794237328" varName="timeout" />
-      <varInfo nodeId="8247677264794237166" varName="sourceFileName" />
     </scopeInfo>
     <scopeInfo nodeId="8247677264794237128" fileName="NanocConfigRunPreparationUtil.java" startLine="23" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="8247677264794237131" varName="nodeId" />
       <varInfo nodeId="8247677264794237133" varName="modelRef" />
+      <varInfo nodeId="8247677264794237131" varName="nodeId" />
     </scopeInfo>
-    <unitInfo nodeId="8247677264794237178" fileName="NanocConfigRunPreparationUtil.java" startLine="30" startPosition="45" endLine="34" endPosition="5" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparationUtil$1" />
     <unitInfo nodeId="8247677264794237122" fileName="NanocConfigRunPreparationUtil.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparationUtil" />
+    <unitInfo nodeId="8247677264794237178" fileName="NanocConfigRunPreparationUtil.java" startLine="30" startPosition="45" endLine="34" endPosition="5" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparationUtil$1" />
   </root>
   <root nodeId="8247677264794237383">
     <nodeInfo nodeId="8247677264794237386" fileName="ProgramsLocationEditor.java" startLine="16" startPosition="52" endLine="17" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGDBLocationFileName" />
@@ -178,12 +178,12 @@
     <scopeInfo nodeId="8247677264794237556" fileName="ProgramsLocationEditor.java" startLine="56" startPosition="50" endLine="58" endPosition="55" />
     <scopeInfo nodeId="8247677264794237575" fileName="ProgramsLocationEditor.java" startLine="61" startPosition="50" endLine="63" endPosition="50" />
     <scopeInfo nodeId="8247677264794237433" fileName="ProgramsLocationEditor.java" startLine="25" startPosition="50" endLine="29" endPosition="41">
-      <varInfo nodeId="8247677264794237435" varName="selectedFile" />
       <varInfo nodeId="8247677264794237441" varName="fileName" />
+      <varInfo nodeId="8247677264794237435" varName="selectedFile" />
     </scopeInfo>
     <scopeInfo nodeId="8247677264794237487" fileName="ProgramsLocationEditor.java" startLine="37" startPosition="50" endLine="41" endPosition="41">
-      <varInfo nodeId="8247677264794237489" varName="selectedFile" />
       <varInfo nodeId="8247677264794237495" varName="fileName" />
+      <varInfo nodeId="8247677264794237489" varName="selectedFile" />
     </scopeInfo>
     <scopeInfo nodeId="8247677264794237585" fileName="ProgramsLocationEditor.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="8247677264794237591" fileName="ProgramsLocationEditor.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
@@ -195,12 +195,12 @@
     </scopeInfo>
     <scopeInfo nodeId="8247677264794237513" fileName="ProgramsLocationEditor.java" startLine="46" startPosition="35" endLine="53" endPosition="59" />
     <scopeInfo nodeId="8247677264794237415" fileName="ProgramsLocationEditor.java" startLine="22" startPosition="52" endLine="30" endPosition="7">
-      <varInfo nodeId="8247677264794237422" varName="result" />
       <varInfo nodeId="8247677264794237417" varName="fileChooser" />
+      <varInfo nodeId="8247677264794237422" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8247677264794237469" fileName="ProgramsLocationEditor.java" startLine="34" startPosition="52" endLine="42" endPosition="7">
-      <varInfo nodeId="8247677264794237476" varName="result" />
       <varInfo nodeId="8247677264794237471" varName="fileChooser" />
+      <varInfo nodeId="8247677264794237476" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8247677264794237510" fileName="ProgramsLocationEditor.java" startLine="45" startPosition="0" endLine="54" endPosition="3" />
     <scopeInfo nodeId="8247677264794237410" fileName="ProgramsLocationEditor.java" startLine="21" startPosition="87" endLine="32" endPosition="0">
@@ -209,9 +209,9 @@
     <scopeInfo nodeId="8247677264794237464" fileName="ProgramsLocationEditor.java" startLine="33" startPosition="87" endLine="44" endPosition="0">
       <varInfo nodeId="8247677264794237467" varName="event" />
     </scopeInfo>
+    <unitInfo nodeId="8247677264794237383" fileName="ProgramsLocationEditor.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor" />
     <unitInfo nodeId="8247677264794237409" fileName="ProgramsLocationEditor.java" startLine="21" startPosition="48" endLine="32" endPosition="3" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor$1" />
     <unitInfo nodeId="8247677264794237463" fileName="ProgramsLocationEditor.java" startLine="33" startPosition="48" endLine="44" endPosition="3" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor$2" />
-    <unitInfo nodeId="8247677264794237383" fileName="ProgramsLocationEditor.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor" />
   </root>
 </debugInfo>
 
