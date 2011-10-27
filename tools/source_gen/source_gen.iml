@@ -614,6 +614,7 @@
     </orderEntry>
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="library" name="PicoContainer" level="project" />
+    <orderEntry type="module" module-name="baseLanguage-util" />
   </component>
 </module>
 

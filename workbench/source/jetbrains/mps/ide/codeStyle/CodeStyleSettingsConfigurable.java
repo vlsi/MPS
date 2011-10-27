@@ -21,8 +21,10 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
-import jetbrains.mps.codeStyle.CodeStyleSettings;
-import jetbrains.mps.codeStyle.CodeStyleSettings.MyState;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,34 +43,37 @@ import javax.swing.JComponent;
     )
   }
 )
-public class CodeStyleSettingsConfigurable implements PersistentStateComponent<MyState>, ProjectComponent, SearchableConfigurable {
+public class CodeStyleSettingsConfigurable implements PersistentStateComponent<CodeStyleSettings>, ProjectComponent, SearchableConfigurable {
 
-  private final CodeStyleSettings myCodeSettings;
   private CodeStylePreferencesPage myPage;
+  private CodeStyleSettings myState = new CodeStyleSettings();
+  private Project myProject;
 
-  public CodeStyleSettingsConfigurable(CodeStyleSettings codeSettings) {
-    myCodeSettings = codeSettings;
+  public CodeStyleSettingsConfigurable(Project project) {
+    myProject = project;
   }
 
   private CodeStylePreferencesPage getPage() {
     if (myPage == null) {
-      myPage = new CodeStylePreferencesPage(myCodeSettings);
+      myPage = new CodeStylePreferencesPage(myState);
     }
     return myPage;
   }
 
-  public MyState getState() {
-    return myCodeSettings.getState();
+  public CodeStyleSettings getState() {
+    return myState;
   }
 
-  public void loadState(MyState state) {
-    myCodeSettings.loadState(state);
+  public void loadState(CodeStyleSettings state) {
+    myState = state;
   }
 
   public void projectOpened() {
+    CodeStyleSettingsRegistry.registerSettings(ProjectHelper.toMPSProject(myProject), myState);
   }
 
   public void projectClosed() {
+    CodeStyleSettingsRegistry.unregisterSettings(ProjectHelper.toMPSProject(myProject));
   }
 
   @NotNull

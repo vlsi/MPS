@@ -17,6 +17,8 @@ package jetbrains.mps.codeStyle;
 
 import com.intellij.codeStyle.DefaultCodeStyleFacade;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class MPSCodeStyleFacade extends DefaultCodeStyleFacade {
   private final Project myProject;
@@ -26,7 +28,7 @@ public class MPSCodeStyleFacade extends DefaultCodeStyleFacade {
   }
 
   @Override
-   public String getLineSeparator() {
-    return CodeStyleSettings.getInstance(myProject).getLineSeparator();
+  public String getLineSeparator() {
+    return CodeStyleSettingsRegistry.getSettings(ProjectHelper.toMPSProject(myProject)).getLineSeparator();
   }
 }
