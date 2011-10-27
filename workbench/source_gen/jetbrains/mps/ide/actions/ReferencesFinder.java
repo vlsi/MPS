@@ -79,6 +79,12 @@ public class ReferencesFinder {
           return result;
         }
       }
+      for (SNode root : scope.getRoots()) {
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(root, scope)));
+        if (monitor.isCanceled()) {
+          return result;
+        }
+      }
     } finally {
       monitor.done();
     }

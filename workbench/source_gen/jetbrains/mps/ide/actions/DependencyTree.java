@@ -15,6 +15,7 @@ import jetbrains.mps.project.ModuleContext;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 
 public class DependencyTree extends MPSTree {
   private List<SModelDescriptor> myModels;
@@ -64,6 +65,9 @@ public class DependencyTree extends MPSTree {
         }
         if (node instanceof ProjectModuleTreeNode) {
           scope.add(((ProjectModuleTreeNode) node).getModule());
+        }
+        if (node instanceof SNodeTreeNode) {
+          scope.add(((SNodeTreeNode) node).getSNode());
         }
       }
       myParent.updateTargetsView(scope);

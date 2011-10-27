@@ -64,6 +64,10 @@ public class Scope {
     return myModules;
   }
 
+  public List<SNode> getRoots() {
+    return myRoots;
+  }
+
   public int getNumRoots() {
     int result = 0;
     for (IModule module : myModules) {
