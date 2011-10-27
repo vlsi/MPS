@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ui.LightColors;
-import jetbrains.mps.editor.runtime.impl.*;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
@@ -51,6 +50,7 @@ public class EditorManager {
   private boolean myCreatingInspectedCell = false;
 
   private Map<Class, Stack<EditorCell>> myAttributedClassesToAttributedCellStacksMap = new HashMap<Class, Stack<EditorCell>>();
+  private EditorCell myLastAttributedCell;
   private Stack<SNode> myAttributesStack = new Stack<SNode>();
 
   public static EditorManager getInstanceFromContext(IOperationContext operationContext) {
@@ -123,6 +123,10 @@ public class EditorManager {
   public EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
     // TODO: Make processing of style attributes more generic.
     EditorCell attributeCell = context.createRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
+    // see a comment for isAttributedCell() method
+    if (attributeCell == cellWithRole) {
+      return cellWithRole;
+    }
     if (cellWithRole.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
       attributeCell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
@@ -159,7 +163,9 @@ public class EditorManager {
       myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
     }
     stack.push(cellWithRole);
+    myLastAttributedCell = cellWithRole;
     EditorCell result = createEditorCell(context, sModelEvents, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
+    myLastAttributedCell = null;
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole);
     return result;
@@ -286,6 +292,10 @@ public class EditorManager {
         nodeCell = isInspectorCell ? editor.createInspectedCell(context, node) : editor.createEditorCell(context, node);
         //-voodoo
 
+        if (isAttributedCell(nodeCell)) {
+          return nodeCell;
+        }
+
         if (SNodeEditorUtil.hasRightTransformHint(node)) {
           nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.RIGHT);
           return nodeCell;
@@ -300,7 +310,7 @@ public class EditorManager {
         nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
       } finally {
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
-        if (nodeCell != null) {
+        if (nodeCell != null && !isAttributedCell(nodeCell)) {
           nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
           editorComponent.registerAsBigCell(nodeCell, this);
           addNodeDependenciesToEditor(nodeCell, nodeAccessListener, context);
@@ -312,6 +322,15 @@ public class EditorManager {
     } finally {
       context.popTracerTask();
     }
+  }
+
+  /**
+   * Some attributes node editors return attributed node cell directly. For such an editors we should skip
+   * all attribute-specific cell processing. This method is used to determine if the result of generated
+   * Editor execution is equals to not wrapped cell of attributed node.
+   */
+  private boolean isAttributedCell(EditorCell nodeCell) {
+    return myLastAttributedCell == nodeCell;
   }
 
   private void addNodeDependenciesToEditor(EditorCell cell, NodeReadAccessInEditorListener listener, EditorContext editorContext) {

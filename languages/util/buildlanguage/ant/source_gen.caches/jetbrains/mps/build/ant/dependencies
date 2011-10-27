@@ -106,7 +106,6 @@
     <classNode dependClassName="com.intellij.idea.IdeaTestApplication" />
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.util.PathUtil" />
     <classNode dependClassName="java.io.File" />
@@ -148,6 +147,7 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
     <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />

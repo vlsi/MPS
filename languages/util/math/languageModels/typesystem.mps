@@ -15,8 +15,8 @@
   <import index="r3rn" modelUID="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)" version="-1" />
   <import index="k2b1" modelUID="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="m9wl" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="epq1" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(java.math@java_stub)" version="-1" />
+  <import index="ua2a" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -1302,7 +1302,7 @@
               <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tpd4.RightOperandType_parameter" typeId="tpd4.1236083248858" id="7676695779583590348" />
               <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7955956620319855994">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.LeftOperandType_parameter" typeId="tpd4.1236083209648" id="7955956620319855995" />
               </node>
             </node>
@@ -1345,7 +1345,7 @@
               <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tpd4.RightOperandType_parameter" typeId="tpd4.1236083248858" id="7676695779583590413" />
               <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7955956620319855999">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.LeftOperandType_parameter" typeId="tpd4.1236083209648" id="7955956620319856000" />
               </node>
             </node>
@@ -4290,7 +4290,7 @@
                 <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6389121991275039375">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.ErrorInfoExpression" typeId="tpd4.1201618299781" id="6389121991275039376" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6389121991275039377">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="m9wl.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
                   </node>
                 </node>
               </node>
@@ -4337,7 +4337,7 @@
                 <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6389121991275039403">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.ErrorInfoExpression" typeId="tpd4.1201618299781" id="6389121991275039404" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6389121991275039405">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="m9wl.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
                   </node>
                 </node>
               </node>
@@ -4439,7 +4439,7 @@
                 <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7676695779583848934">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.ErrorInfoExpression" typeId="tpd4.1201618299781" id="7676695779583848935" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7676695779583848936">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="m9wl.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
                   </node>
                 </node>
               </node>
@@ -4506,7 +4506,7 @@
                 <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7676695779583848962">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.ErrorInfoExpression" typeId="tpd4.1201618299781" id="7676695779583848963" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7676695779583848964">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="m9wl.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
                   </node>
                 </node>
               </node>
@@ -4871,7 +4871,7 @@
                 <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6389121991275106422">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.ErrorInfoExpression" typeId="tpd4.1201618299781" id="6389121991275106423" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6389121991275106424">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="m9wl.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
                   </node>
                 </node>
               </node>
@@ -5504,7 +5504,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238344483684">
       <property name="name" nameId="tpck.1169194664001" value="expression" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.1238343594087" resolveInfo="TrigonometricExpression" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.1238343594087" resolveInfo="MathFuncExpression" />
     </node>
   </root>
   <root id="1238325105595">
@@ -6281,7 +6281,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238326549289">
       <property name="name" nameId="tpck.1169194664001" value="literal" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.1238326494701" resolveInfo="ILiteral" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.1238326494701" resolveInfo="LiteralI" />
     </node>
   </root>
   <root id="1238943420581">
@@ -6295,7 +6295,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.1238942002669" resolveInfo="convert1" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1238943469488">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="39kg.1238402702427" resolveInfo="BinaryOperationMathContext" />
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="39kg.1238402702427" resolveInfo="DecimalBinaryOperation" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpd4.ConceptFunctionParameter_node" typeId="tpd4.1216383337216" id="1238943459190" />
                 </node>
               </node>
@@ -6352,7 +6352,7 @@
                     <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5359814223490060189">
                       <node role="normalType" roleId="tpd4.1185788644032" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5359814223490060184">
                         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="5359814223490060185">
                           <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="5359814223490060123" resolveInfo="matrixType" />
                         </node>
@@ -6400,7 +6400,7 @@
                     <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5359814223490060230">
                       <node role="normalType" roleId="tpd4.1185788644032" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5359814223490060231">
                         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="5359814223490060232">
                           <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="5359814223490060123" resolveInfo="matrixType" />
                         </node>
@@ -6555,7 +6555,7 @@
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3361677252835032988">
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="3361677252835032990">
                         <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="3361677252835032962" resolveInfo="mT" />
                       </node>
@@ -7433,7 +7433,7 @@
                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8613885519962202359">
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8613885519962202360">
                                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8613885519962202361">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8613885519962201030" resolveInfo="opType" />
                                 </node>
@@ -7447,7 +7447,7 @@
                             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8613885519962202367">
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8613885519962202368">
                                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="r3rn.1238406290274" resolveInfo="MathUtil" />
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getElementType" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r3rn.2705856473428697721" resolveInfo="getUnboxedElementType" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8613885519962202369">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8613885519962201030" resolveInfo="opType" />
                                 </node>
@@ -7518,7 +7518,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238943151394">
       <property name="name" nameId="tpck.1169194664001" value="oper" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.1238402702427" resolveInfo="BinaryOperationMathContext" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.1238402702427" resolveInfo="DecimalBinaryOperation" />
     </node>
   </root>
   <root id="1236429236615">
@@ -7613,7 +7613,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4815887568697245518">
       <property name="name" nameId="tpck.1169194664001" value="mc" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.4815887568697232005" resolveInfo="VectorRowLiteral" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.4815887568697232005" resolveInfo="MatrixConstructor" />
     </node>
   </root>
   <root id="757772128651891024">
@@ -9247,7 +9247,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1236428090907">
       <property name="name" nameId="tpck.1169194664001" value="reference" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.1236427936913" resolveInfo="MathSymbolReference" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.1236427936913" resolveInfo="MathSymbolIndexReference" />
     </node>
   </root>
   <root id="263012178968580062">
@@ -9545,7 +9545,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1237103998150">
       <property name="name" nameId="tpck.1169194664001" value="fraction" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.1237100849157" resolveInfo="DivOperationFraction" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="39kg.1237100849157" resolveInfo="DivExpressionFraction" />
     </node>
   </root>
   <root id="1237205116347">

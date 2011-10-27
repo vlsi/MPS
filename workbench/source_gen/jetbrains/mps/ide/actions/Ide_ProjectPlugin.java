@@ -16,6 +16,7 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
 
   public List<BaseGeneratedTool> initAllTools(Project project) {
     List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
+    ListSequence.fromList(tools).addElement(new AnalyzeDependencies_Tool(project));
     ListSequence.fromList(tools).addElement(new AnalyzeStacktrace_Tool(project));
     return tools;
   }

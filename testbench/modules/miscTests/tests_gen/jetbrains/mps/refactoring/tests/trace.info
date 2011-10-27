@@ -62,24 +62,24 @@
     <scopeInfo nodeId="8306023725008093883" fileName="MoveConceptRefactoringTester.java" startLine="54" startPosition="25" endLine="71" endPosition="11" />
     <scopeInfo nodeId="8306023725008093198" fileName="MoveConceptRefactoringTester.java" startLine="53" startPosition="53" endLine="73" endPosition="0" />
     <scopeInfo nodeId="8306023725008093138" fileName="MoveConceptRefactoringTester.java" startLine="27" startPosition="209" endLine="74" endPosition="21">
-      <varInfo nodeId="8306023725008093186" varName="result" />
-      <varInfo nodeId="8306023725008093149" varName="refactoringContext" />
-      <varInfo nodeId="8306023725008093162" varName="targetStructureModelDescriptor" />
       <varInfo nodeId="8306023725008093140" varName="conceptName" />
       <varInfo nodeId="1122791325004695786" varName="refactoring" />
+      <varInfo nodeId="8306023725008093149" varName="refactoringContext" />
+      <varInfo nodeId="8306023725008093186" varName="result" />
+      <varInfo nodeId="8306023725008093162" varName="targetStructureModelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008093125" fileName="MoveConceptRefactoringTester.java" startLine="26" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="8306023725008093128" varName="project" />
-      <varInfo nodeId="8306023725008093134" varName="testRefactoringLanguage" />
-      <varInfo nodeId="8306023725008093136" varName="testRefactoringTargetLanguage" />
       <varInfo nodeId="8306023725008093130" varName="sandbox1" />
       <varInfo nodeId="8306023725008093132" varName="sandbox2" />
+      <varInfo nodeId="8306023725008093134" varName="testRefactoringLanguage" />
+      <varInfo nodeId="8306023725008093136" varName="testRefactoringTargetLanguage" />
     </scopeInfo>
+    <unitInfo nodeId="8306023725008093118" fileName="MoveConceptRefactoringTester.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester" />
     <unitInfo nodeId="7711885061309962055" fileName="MoveConceptRefactoringTester.java" startLine="30" startPosition="45" endLine="34" endPosition="5" unitName="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester$1" />
     <unitInfo nodeId="8306023725008093175" fileName="MoveConceptRefactoringTester.java" startLine="38" startPosition="45" endLine="50" endPosition="5" unitName="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester$2" />
-    <unitInfo nodeId="8306023725008093890" fileName="MoveConceptRefactoringTester.java" startLine="55" startPosition="49" endLine="71" endPosition="9" unitName="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester$4" />
     <unitInfo nodeId="8306023725008093197" fileName="MoveConceptRefactoringTester.java" startLine="53" startPosition="41" endLine="73" endPosition="5" unitName="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester$3" />
-    <unitInfo nodeId="8306023725008093118" fileName="MoveConceptRefactoringTester.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester" />
+    <unitInfo nodeId="8306023725008093890" fileName="MoveConceptRefactoringTester.java" startLine="55" startPosition="49" endLine="71" endPosition="9" unitName="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester$4" />
   </root>
   <root nodeId="8306023725008093978">
     <nodeInfo nodeId="1122791325004695844" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="28" startPosition="209" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -131,16 +131,16 @@
     <scopeInfo nodeId="8306023725008094129" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="67" startPosition="35" endLine="70" endPosition="21" />
     <scopeInfo nodeId="7711885061309965808" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="30" startPosition="57" endLine="34" endPosition="0" />
     <scopeInfo nodeId="8306023725008094057" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="39" startPosition="25" endLine="47" endPosition="68">
-      <varInfo nodeId="8306023725008094071" varName="node" />
       <varInfo nodeId="8306023725008094065" varName="model" />
-      <varInfo nodeId="8306023725008094059" varName="structureModelDescriptor" />
+      <varInfo nodeId="8306023725008094071" varName="node" />
       <varInfo nodeId="8306023725008094084" varName="property" />
+      <varInfo nodeId="8306023725008094059" varName="structureModelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094143" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="56" startPosition="17" endLine="66" endPosition="54">
-      <varInfo nodeId="8306023725008094164" varName="sModel" />
-      <varInfo nodeId="8306023725008094170" varName="root" />
-      <varInfo nodeId="8306023725008094188" varName="propertyValue" />
       <varInfo nodeId="8306023725008094178" varName="firstChild" />
+      <varInfo nodeId="8306023725008094188" varName="propertyValue" />
+      <varInfo nodeId="8306023725008094170" varName="root" />
+      <varInfo nodeId="8306023725008094164" varName="sModel" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094028" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="38" startPosition="57" endLine="49" endPosition="0" />
     <scopeInfo nodeId="8306023725008094126" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="55" startPosition="29" endLine="71" endPosition="13" />
@@ -148,23 +148,23 @@
     <scopeInfo nodeId="8306023725008094115" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="53" startPosition="25" endLine="73" endPosition="11" />
     <scopeInfo nodeId="8306023725008094050" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="52" startPosition="53" endLine="75" endPosition="0" />
     <scopeInfo nodeId="8306023725008093998" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="28" startPosition="209" endLine="76" endPosition="21">
-      <varInfo nodeId="8306023725008094038" varName="result" />
-      <varInfo nodeId="8306023725008094005" varName="refactoringContext" />
       <varInfo nodeId="8306023725008094018" varName="newPropertyName" />
       <varInfo nodeId="1122791325004695845" varName="refactoring" />
+      <varInfo nodeId="8306023725008094005" varName="refactoringContext" />
+      <varInfo nodeId="8306023725008094038" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008093985" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="27" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="8306023725008093988" varName="project" />
-      <varInfo nodeId="8306023725008093994" varName="testRefactoringLanguage" />
-      <varInfo nodeId="8306023725008093996" varName="testRefactoringTargetLanguage" />
       <varInfo nodeId="8306023725008093990" varName="sandbox1" />
       <varInfo nodeId="8306023725008093992" varName="sandbox2" />
+      <varInfo nodeId="8306023725008093994" varName="testRefactoringLanguage" />
+      <varInfo nodeId="8306023725008093996" varName="testRefactoringTargetLanguage" />
     </scopeInfo>
+    <unitInfo nodeId="8306023725008093978" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="24" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple" />
     <unitInfo nodeId="7711885061309965808" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="30" startPosition="45" endLine="34" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple$1" />
     <unitInfo nodeId="8306023725008094027" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="38" startPosition="45" endLine="49" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple$2" />
-    <unitInfo nodeId="8306023725008094122" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="54" startPosition="49" endLine="73" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple$4" />
     <unitInfo nodeId="8306023725008094049" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="52" startPosition="41" endLine="75" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple$3" />
-    <unitInfo nodeId="8306023725008093978" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="24" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple" />
+    <unitInfo nodeId="8306023725008094122" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="54" startPosition="49" endLine="73" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple$4" />
   </root>
   <root nodeId="8306023725008094203">
     <nodeInfo nodeId="8306023725008094224" fileName="RenameLinkRefactoringTester_Simple.java" startLine="28" startPosition="209" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -220,39 +220,39 @@
     <scopeInfo nodeId="8306023725008094354" fileName="RenameLinkRefactoringTester_Simple.java" startLine="71" startPosition="35" endLine="74" endPosition="21" />
     <scopeInfo nodeId="7711885061309965801" fileName="RenameLinkRefactoringTester_Simple.java" startLine="31" startPosition="57" endLine="35" endPosition="0" />
     <scopeInfo nodeId="8306023725008094282" fileName="RenameLinkRefactoringTester_Simple.java" startLine="39" startPosition="25" endLine="47" endPosition="64">
-      <varInfo nodeId="8306023725008094296" varName="node" />
-      <varInfo nodeId="8306023725008094290" varName="model" />
-      <varInfo nodeId="8306023725008094284" varName="structureModelDescriptor" />
       <varInfo nodeId="8306023725008094309" varName="link" />
+      <varInfo nodeId="8306023725008094290" varName="model" />
+      <varInfo nodeId="8306023725008094296" varName="node" />
+      <varInfo nodeId="8306023725008094284" varName="structureModelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094253" fileName="RenameLinkRefactoringTester_Simple.java" startLine="38" startPosition="57" endLine="49" endPosition="0" />
     <scopeInfo nodeId="8306023725008094368" fileName="RenameLinkRefactoringTester_Simple.java" startLine="56" startPosition="17" endLine="70" endPosition="63">
-      <varInfo nodeId="8306023725008094389" varName="sModel" />
       <varInfo nodeId="8306023725008094403" varName="referent" />
       <varInfo nodeId="8306023725008094395" varName="root" />
+      <varInfo nodeId="8306023725008094389" varName="sModel" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094351" fileName="RenameLinkRefactoringTester_Simple.java" startLine="55" startPosition="29" endLine="75" endPosition="13" />
     <scopeInfo nodeId="8306023725008094348" fileName="RenameLinkRefactoringTester_Simple.java" startLine="54" startPosition="61" endLine="77" endPosition="0" />
     <scopeInfo nodeId="8306023725008094340" fileName="RenameLinkRefactoringTester_Simple.java" startLine="53" startPosition="25" endLine="77" endPosition="11" />
     <scopeInfo nodeId="8306023725008094275" fileName="RenameLinkRefactoringTester_Simple.java" startLine="52" startPosition="53" endLine="79" endPosition="0" />
     <scopeInfo nodeId="8306023725008094223" fileName="RenameLinkRefactoringTester_Simple.java" startLine="28" startPosition="209" endLine="80" endPosition="21">
-      <varInfo nodeId="8306023725008094263" varName="result" />
-      <varInfo nodeId="8306023725008094234" varName="refactoringContext" />
       <varInfo nodeId="8306023725008094225" varName="newLinkName" />
       <varInfo nodeId="1122791325004695834" varName="refactoring" />
+      <varInfo nodeId="8306023725008094234" varName="refactoringContext" />
+      <varInfo nodeId="8306023725008094263" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094210" fileName="RenameLinkRefactoringTester_Simple.java" startLine="27" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="8306023725008094213" varName="project" />
-      <varInfo nodeId="8306023725008094219" varName="testRefactoringLanguage" />
-      <varInfo nodeId="8306023725008094221" varName="testRefactoringTargetLanguage" />
       <varInfo nodeId="8306023725008094215" varName="sandbox1" />
       <varInfo nodeId="8306023725008094217" varName="sandbox2" />
+      <varInfo nodeId="8306023725008094219" varName="testRefactoringLanguage" />
+      <varInfo nodeId="8306023725008094221" varName="testRefactoringTargetLanguage" />
     </scopeInfo>
+    <unitInfo nodeId="8306023725008094203" fileName="RenameLinkRefactoringTester_Simple.java" startLine="24" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple" />
     <unitInfo nodeId="7711885061309965801" fileName="RenameLinkRefactoringTester_Simple.java" startLine="31" startPosition="45" endLine="35" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple$1" />
     <unitInfo nodeId="8306023725008094252" fileName="RenameLinkRefactoringTester_Simple.java" startLine="38" startPosition="45" endLine="49" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple$2" />
-    <unitInfo nodeId="8306023725008094347" fileName="RenameLinkRefactoringTester_Simple.java" startLine="54" startPosition="49" endLine="77" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple$4" />
     <unitInfo nodeId="8306023725008094274" fileName="RenameLinkRefactoringTester_Simple.java" startLine="52" startPosition="41" endLine="79" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple$3" />
-    <unitInfo nodeId="8306023725008094203" fileName="RenameLinkRefactoringTester_Simple.java" startLine="24" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple" />
+    <unitInfo nodeId="8306023725008094347" fileName="RenameLinkRefactoringTester_Simple.java" startLine="54" startPosition="49" endLine="77" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple$4" />
   </root>
   <root nodeId="8306023725008094437">
     <nodeInfo nodeId="8306023725008094440" fileName="RenameConceptRefactoringTester.java" startLine="22" startPosition="75" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRMD" />
@@ -308,9 +308,9 @@
       <varInfo nodeId="8306023725008094522" varName="structureModelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094593" fileName="RenameConceptRefactoringTester.java" startLine="56" startPosition="17" endLine="65" endPosition="135">
+      <varInfo nodeId="8306023725008094620" varName="conceptFqName" />
       <varInfo nodeId="8306023725008094614" varName="sModel" />
       <varInfo nodeId="8306023725008094630" varName="structureModelDescriptor" />
-      <varInfo nodeId="8306023725008094620" varName="conceptFqName" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094491" fileName="RenameConceptRefactoringTester.java" startLine="38" startPosition="57" endLine="49" endPosition="0" />
     <scopeInfo nodeId="8306023725008094577" fileName="RenameConceptRefactoringTester.java" startLine="55" startPosition="29" endLine="69" endPosition="13" />
@@ -318,23 +318,23 @@
     <scopeInfo nodeId="8306023725008094566" fileName="RenameConceptRefactoringTester.java" startLine="53" startPosition="25" endLine="71" endPosition="11" />
     <scopeInfo nodeId="8306023725008094513" fileName="RenameConceptRefactoringTester.java" startLine="52" startPosition="53" endLine="73" endPosition="0" />
     <scopeInfo nodeId="8306023725008094461" fileName="RenameConceptRefactoringTester.java" startLine="28" startPosition="209" endLine="74" endPosition="21">
-      <varInfo nodeId="8306023725008094501" varName="result" />
-      <varInfo nodeId="8306023725008094472" varName="refactoringContext" />
       <varInfo nodeId="8306023725008094463" varName="newConceptName" />
       <varInfo nodeId="1122791325004695795" varName="refactoring" />
+      <varInfo nodeId="8306023725008094472" varName="refactoringContext" />
+      <varInfo nodeId="8306023725008094501" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094448" fileName="RenameConceptRefactoringTester.java" startLine="27" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="8306023725008094451" varName="project" />
-      <varInfo nodeId="8306023725008094457" varName="testRefactoringLanguage" />
-      <varInfo nodeId="8306023725008094459" varName="testRefactoringTargetLanguage" />
       <varInfo nodeId="8306023725008094453" varName="sandbox1" />
       <varInfo nodeId="8306023725008094455" varName="sandbox2" />
+      <varInfo nodeId="8306023725008094457" varName="testRefactoringLanguage" />
+      <varInfo nodeId="8306023725008094459" varName="testRefactoringTargetLanguage" />
     </scopeInfo>
+    <unitInfo nodeId="8306023725008094437" fileName="RenameConceptRefactoringTester.java" startLine="22" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester" />
     <unitInfo nodeId="7711885061309965787" fileName="RenameConceptRefactoringTester.java" startLine="31" startPosition="45" endLine="35" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$1" />
     <unitInfo nodeId="8306023725008094490" fileName="RenameConceptRefactoringTester.java" startLine="38" startPosition="45" endLine="49" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$2" />
-    <unitInfo nodeId="8306023725008094573" fileName="RenameConceptRefactoringTester.java" startLine="54" startPosition="49" endLine="71" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$4" />
     <unitInfo nodeId="8306023725008094512" fileName="RenameConceptRefactoringTester.java" startLine="52" startPosition="41" endLine="73" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$3" />
-    <unitInfo nodeId="8306023725008094437" fileName="RenameConceptRefactoringTester.java" startLine="22" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester" />
+    <unitInfo nodeId="8306023725008094573" fileName="RenameConceptRefactoringTester.java" startLine="54" startPosition="49" endLine="71" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$4" />
   </root>
   <root nodeId="8306023725008094655">
     <nodeInfo nodeId="1122791325004692532" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="30" startPosition="209" endLine="31" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -385,15 +385,15 @@
     <scopeInfo nodeId="8306023725008094838" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="60" startPosition="79" endLine="63" endPosition="23" />
     <scopeInfo nodeId="7711885061309965780" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="32" startPosition="57" endLine="36" endPosition="0" />
     <scopeInfo nodeId="8306023725008094738" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="41" startPosition="25" endLine="50" endPosition="56">
-      <varInfo nodeId="8306023725008094752" varName="node" />
-      <varInfo nodeId="8306023725008094746" varName="model" />
-      <varInfo nodeId="8306023725008094740" varName="structureModelDescriptor" />
       <varInfo nodeId="8306023725008094765" varName="link" />
+      <varInfo nodeId="8306023725008094746" varName="model" />
+      <varInfo nodeId="8306023725008094752" varName="node" />
+      <varInfo nodeId="8306023725008094740" varName="structureModelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094831" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="59" startPosition="17" endLine="68" endPosition="46">
-      <varInfo nodeId="8306023725008094852" varName="sModel" />
-      <varInfo nodeId="8306023725008094858" varName="root" />
       <varInfo nodeId="8306023725008094866" varName="reference" />
+      <varInfo nodeId="8306023725008094858" varName="root" />
+      <varInfo nodeId="8306023725008094852" varName="sModel" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094709" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="40" startPosition="57" endLine="52" endPosition="0" />
     <scopeInfo nodeId="8306023725008094815" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="58" startPosition="29" endLine="72" endPosition="13" />
@@ -401,23 +401,23 @@
     <scopeInfo nodeId="8306023725008094804" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="56" startPosition="25" endLine="74" endPosition="11" />
     <scopeInfo nodeId="8306023725008094731" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="55" startPosition="53" endLine="76" endPosition="0" />
     <scopeInfo nodeId="8306023725008094675" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="30" startPosition="209" endLine="77" endPosition="21">
-      <varInfo nodeId="8306023725008094719" varName="result" />
-      <varInfo nodeId="8306023725008094682" varName="refactoringContext" />
       <varInfo nodeId="8306023725008094695" varName="linkName" />
       <varInfo nodeId="1122791325004692533" varName="refactoring" />
+      <varInfo nodeId="8306023725008094682" varName="refactoringContext" />
+      <varInfo nodeId="8306023725008094719" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008094662" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="29" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="8306023725008094665" varName="project" />
-      <varInfo nodeId="8306023725008094671" varName="testRefactoringLanguage" />
-      <varInfo nodeId="8306023725008094673" varName="testRefactoringTargetLanguage" />
       <varInfo nodeId="8306023725008094667" varName="sandbox1" />
       <varInfo nodeId="8306023725008094669" varName="sandbox2" />
+      <varInfo nodeId="8306023725008094671" varName="testRefactoringLanguage" />
+      <varInfo nodeId="8306023725008094673" varName="testRefactoringTargetLanguage" />
     </scopeInfo>
+    <unitInfo nodeId="8306023725008094655" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="26" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.refactoring.tests.DeleteLinkRefactoringTester_Simple" />
     <unitInfo nodeId="7711885061309965780" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="32" startPosition="45" endLine="36" endPosition="5" unitName="jetbrains.mps.refactoring.tests.DeleteLinkRefactoringTester_Simple$1" />
     <unitInfo nodeId="8306023725008094708" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="40" startPosition="45" endLine="52" endPosition="5" unitName="jetbrains.mps.refactoring.tests.DeleteLinkRefactoringTester_Simple$2" />
-    <unitInfo nodeId="8306023725008094811" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="57" startPosition="49" endLine="74" endPosition="9" unitName="jetbrains.mps.refactoring.tests.DeleteLinkRefactoringTester_Simple$4" />
     <unitInfo nodeId="8306023725008094730" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="55" startPosition="41" endLine="76" endPosition="5" unitName="jetbrains.mps.refactoring.tests.DeleteLinkRefactoringTester_Simple$3" />
-    <unitInfo nodeId="8306023725008094655" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="26" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.refactoring.tests.DeleteLinkRefactoringTester_Simple" />
+    <unitInfo nodeId="8306023725008094811" fileName="DeleteLinkRefactoringTester_Simple.java" startLine="57" startPosition="49" endLine="74" endPosition="9" unitName="jetbrains.mps.refactoring.tests.DeleteLinkRefactoringTester_Simple$4" />
   </root>
   <root nodeId="8306023725008095390">
     <nodeInfo nodeId="8082134315887528054" fileName="RefactoringTestFacade.java" startLine="13" startPosition="9" endLine="14" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -487,14 +487,14 @@
     <scopeInfo nodeId="8306023725008095586" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="57" startPosition="79" endLine="60" endPosition="23" />
     <scopeInfo nodeId="7711885061309965794" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="30" startPosition="57" endLine="34" endPosition="0" />
     <scopeInfo nodeId="8306023725008095494" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="39" startPosition="25" endLine="47" endPosition="64">
-      <varInfo nodeId="8306023725008095508" varName="node" />
-      <varInfo nodeId="8306023725008095502" varName="model" />
-      <varInfo nodeId="8306023725008095496" varName="structureModelDescriptor" />
       <varInfo nodeId="8306023725008095521" varName="link" />
+      <varInfo nodeId="8306023725008095502" varName="model" />
+      <varInfo nodeId="8306023725008095508" varName="node" />
+      <varInfo nodeId="8306023725008095496" varName="structureModelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008095579" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="56" startPosition="17" endLine="64" endPosition="70">
-      <varInfo nodeId="8306023725008095600" varName="sModel" />
       <varInfo nodeId="8306023725008095606" varName="root" />
+      <varInfo nodeId="8306023725008095600" varName="sModel" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008095465" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="38" startPosition="57" endLine="49" endPosition="0" />
     <scopeInfo nodeId="8306023725008095563" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="55" startPosition="29" endLine="68" endPosition="13" />
@@ -502,23 +502,23 @@
     <scopeInfo nodeId="8306023725008095552" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="53" startPosition="25" endLine="70" endPosition="11" />
     <scopeInfo nodeId="8306023725008095487" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="52" startPosition="53" endLine="72" endPosition="0" />
     <scopeInfo nodeId="8306023725008095435" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="28" startPosition="209" endLine="73" endPosition="21">
-      <varInfo nodeId="8306023725008095475" varName="result" />
-      <varInfo nodeId="8306023725008095442" varName="refactoringContext" />
       <varInfo nodeId="8306023725008095455" varName="newLinkName" />
       <varInfo nodeId="1122791325004695804" varName="refactoring" />
+      <varInfo nodeId="8306023725008095442" varName="refactoringContext" />
+      <varInfo nodeId="8306023725008095475" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008095422" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="27" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="8306023725008095425" varName="project" />
-      <varInfo nodeId="8306023725008095431" varName="testRefactoringLanguage" />
-      <varInfo nodeId="8306023725008095433" varName="testRefactoringTargetLanguage" />
       <varInfo nodeId="8306023725008095427" varName="sandbox1" />
       <varInfo nodeId="8306023725008095429" varName="sandbox2" />
+      <varInfo nodeId="8306023725008095431" varName="testRefactoringLanguage" />
+      <varInfo nodeId="8306023725008095433" varName="testRefactoringTargetLanguage" />
     </scopeInfo>
+    <unitInfo nodeId="8306023725008095415" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="24" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy" />
     <unitInfo nodeId="7711885061309965794" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="30" startPosition="45" endLine="34" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy$1" />
     <unitInfo nodeId="8306023725008095464" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="38" startPosition="45" endLine="49" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy$2" />
-    <unitInfo nodeId="8306023725008095559" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="54" startPosition="49" endLine="70" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy$4" />
     <unitInfo nodeId="8306023725008095486" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="52" startPosition="41" endLine="72" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy$3" />
-    <unitInfo nodeId="8306023725008095415" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="24" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy" />
+    <unitInfo nodeId="8306023725008095559" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="54" startPosition="49" endLine="70" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy$4" />
   </root>
 </debugInfo>
 

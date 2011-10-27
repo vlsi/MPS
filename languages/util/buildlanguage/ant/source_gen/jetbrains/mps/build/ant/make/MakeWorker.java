@@ -5,7 +5,7 @@ package jetbrains.mps.build.ant.make;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
 import org.apache.tools.ant.ProjectComponent;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
 import java.util.LinkedHashSet;
@@ -29,10 +29,10 @@ public class MakeWorker extends MpsWorker {
   }
 
   @Override
-  protected void executeTask(MPSProject project, MpsWorker.ObjectsToProcess go) {
+  protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
     Set<IModule> toCompile = new LinkedHashSet<IModule>();
     toCompile.addAll(go.getModules());
-    for (MPSProject p : go.getProjects()) {
+    for (Project p : go.getProjects()) {
       toCompile.addAll(p.getModules());
     }
     for (final SModelDescriptor modelDescriptor : go.getModels()) {

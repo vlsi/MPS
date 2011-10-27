@@ -107,8 +107,8 @@
     <scopeInfo nodeId="1280144168199457874" fileName="ModuleSuite_Editor.java" startLine="103" startPosition="0" endLine="115" endPosition="0" />
     <scopeInfo nodeId="1280144168199457874" fileName="ModuleSuite_Editor.java" startLine="64" startPosition="88" endLine="78" endPosition="22" />
     <scopeInfo nodeId="1280144168199457874" fileName="ModuleSuite_Editor.java" startLine="63" startPosition="0" endLine="80" endPosition="0" />
-    <unitInfo nodeId="1280144168199457874" fileName="ModuleSuite_Editor.java" startLine="81" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.ModuleSuite_Editor$testRefListHandler_of3p2o_c0" />
     <unitInfo nodeId="1280144168199457874" fileName="ModuleSuite_Editor.java" startLine="26" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.ModuleSuite_Editor" />
+    <unitInfo nodeId="1280144168199457874" fileName="ModuleSuite_Editor.java" startLine="81" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.ModuleSuite_Editor$testRefListHandler_of3p2o_c0" />
   </root>
   <root nodeId="1280144168199457902">
     <nodeInfo nodeId="1280144168199457902" fileName="JUnit3TestCaseRef_Editor.java" startLine="62" startPosition="58" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -207,9 +207,9 @@
     <scopeInfo nodeId="1280144168199457902" fileName="JUnit3TestCaseRef_Editor.java" startLine="55" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1280144168199457902" fileName="JUnit3TestCaseRef_Editor.java" startLine="90" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="1280144168199457902" fileName="JUnit3TestCaseRef_Editor.java" startLine="34" startPosition="0" endLine="55" endPosition="0" />
+    <unitInfo nodeId="1280144168199457902" fileName="JUnit3TestCaseRef_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit3TestCaseRef_Editor" />
     <unitInfo nodeId="1280144168199457902" fileName="JUnit3TestCaseRef_Editor.java" startLine="40" startPosition="48" endLine="50" endPosition="7" unitName="jetbrains.mps.testbench.suite.editor.JUnit3TestCaseRef_Editor$1" />
     <unitInfo nodeId="1280144168199457902" fileName="JUnit3TestCaseRef_Editor.java" startLine="78" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit3TestCaseRef_Editor$_Inline_oadaxc_a1a" />
-    <unitInfo nodeId="1280144168199457902" fileName="JUnit3TestCaseRef_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit3TestCaseRef_Editor" />
   </root>
   <root nodeId="1280144168199457913">
     <nodeInfo nodeId="1280144168199457913" fileName="JUnit4TestCaseRef_Editor.java" startLine="62" startPosition="58" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -308,9 +308,9 @@
     <scopeInfo nodeId="1280144168199457913" fileName="JUnit4TestCaseRef_Editor.java" startLine="55" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1280144168199457913" fileName="JUnit4TestCaseRef_Editor.java" startLine="90" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="1280144168199457913" fileName="JUnit4TestCaseRef_Editor.java" startLine="34" startPosition="0" endLine="55" endPosition="0" />
+    <unitInfo nodeId="1280144168199457913" fileName="JUnit4TestCaseRef_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit4TestCaseRef_Editor" />
     <unitInfo nodeId="1280144168199457913" fileName="JUnit4TestCaseRef_Editor.java" startLine="40" startPosition="48" endLine="50" endPosition="7" unitName="jetbrains.mps.testbench.suite.editor.JUnit4TestCaseRef_Editor$1" />
     <unitInfo nodeId="1280144168199457913" fileName="JUnit4TestCaseRef_Editor.java" startLine="78" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit4TestCaseRef_Editor$_Inline_hazblc_a1a" />
-    <unitInfo nodeId="1280144168199457913" fileName="JUnit4TestCaseRef_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit4TestCaseRef_Editor" />
   </root>
   <root nodeId="1280144168199457924">
     <nodeInfo nodeId="1280144168199457924" fileName="TestCaseRef_Editor.java" startLine="62" startPosition="58" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -409,9 +409,9 @@
     <scopeInfo nodeId="1280144168199457924" fileName="TestCaseRef_Editor.java" startLine="55" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1280144168199457924" fileName="TestCaseRef_Editor.java" startLine="90" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="1280144168199457924" fileName="TestCaseRef_Editor.java" startLine="34" startPosition="0" endLine="55" endPosition="0" />
+    <unitInfo nodeId="1280144168199457924" fileName="TestCaseRef_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.TestCaseRef_Editor" />
     <unitInfo nodeId="1280144168199457924" fileName="TestCaseRef_Editor.java" startLine="40" startPosition="48" endLine="50" endPosition="7" unitName="jetbrains.mps.testbench.suite.editor.TestCaseRef_Editor$1" />
     <unitInfo nodeId="1280144168199457924" fileName="TestCaseRef_Editor.java" startLine="78" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.TestCaseRef_Editor$_Inline_aryab1_a1a" />
-    <unitInfo nodeId="1280144168199457924" fileName="TestCaseRef_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.TestCaseRef_Editor" />
   </root>
   <root nodeId="1280144168199507055">
     <nodeInfo nodeId="1280144168199507055" fileName="SolutionRef_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -481,10 +481,10 @@
     <scopeInfo nodeId="1280144168199507055" fileName="SolutionRef_Editor.java" startLine="36" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1280144168199507055" fileName="SolutionRef_Editor.java" startLine="49" startPosition="113" endLine="65" endPosition="22" />
     <scopeInfo nodeId="1280144168199507055" fileName="SolutionRef_Editor.java" startLine="48" startPosition="0" endLine="67" endPosition="0" />
+    <unitInfo nodeId="1280144168199507055" fileName="SolutionRef_Editor.java" startLine="24" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor" />
+    <unitInfo nodeId="1280144168199507055" fileName="SolutionRef_Editor.java" startLine="50" startPosition="83" endLine="61" endPosition="5" unitName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor$1" />
     <unitInfo nodeId="1280144168199507055" fileName="SolutionRef_Editor.java" startLine="68" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor$ReplaceWith_SolutionRef_cellMenu_a0a0" />
     <unitInfo nodeId="1280144168199507055" fileName="SolutionRef_Editor.java" startLine="77" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor$ReplaceWith_SolutionRef_cellMenu_a0b0" />
-    <unitInfo nodeId="1280144168199507055" fileName="SolutionRef_Editor.java" startLine="50" startPosition="83" endLine="61" endPosition="5" unitName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor$1" />
-    <unitInfo nodeId="1280144168199507055" fileName="SolutionRef_Editor.java" startLine="24" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor" />
   </root>
   <root nodeId="8605005254686522474">
     <nodeInfo nodeId="8605005254686522474" fileName="ITestRef_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.plugins.MacrosUtil;
+import jetbrains.mps.util.MacrosUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.resources.DResource;

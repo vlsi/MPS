@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.GeneratorUtil;
 
 public class MatchVariableReference_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_8gk9io_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104858751");
@@ -37,7 +36,7 @@ public class MatchVariableReference_Constraints extends BaseConstraintsDescripto
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return GeneratorUtil.collectMatchReferences(_context.getEnclosingNode());
+            return RegexUtil.collectMatchReferences(_context.getEnclosingNode());
           }
 
           @Override

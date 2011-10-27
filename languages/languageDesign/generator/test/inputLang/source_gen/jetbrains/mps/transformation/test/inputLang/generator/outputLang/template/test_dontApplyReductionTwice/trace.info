@@ -93,8 +93,8 @@
     <scopeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="104" startPosition="127" endLine="108" endPosition="18" />
     <scopeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="110" startPosition="0" endLine="115" endPosition="0" />
     <scopeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="103" startPosition="0" endLine="110" endPosition="0" />
-    <unitInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="84" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mappingmain$RootMappingRule0" />
     <unitInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mappingmain" />
+    <unitInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="84" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mappingmain$RootMappingRule0" />
   </root>
   <root nodeId="1209605205934">
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="15" startPosition="64" endLine="16" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_9pkn2m_a0a0" />

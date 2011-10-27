@@ -178,8 +178,8 @@
     <scopeInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="161" startPosition="0" endLine="173" endPosition="0" />
     <scopeInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="96" startPosition="88" endLine="111" endPosition="22" />
     <scopeInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="95" startPosition="0" endLine="113" endPosition="0" />
-    <unitInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="114" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.editor.ReaderConfiguration_Editor$mappingListHandler_vfprw_b2a" />
     <unitInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="28" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.editor.ReaderConfiguration_Editor" />
+    <unitInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="114" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.editor.ReaderConfiguration_Editor$mappingListHandler_vfprw_b2a" />
   </root>
   <root nodeId="1116535393470">
     <nodeInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -368,8 +368,8 @@
     <scopeInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="111" startPosition="89" endLine="126" endPosition="22" />
     <scopeInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="92" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="110" startPosition="0" endLine="128" endPosition="0" />
-    <unitInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="129" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.editor.Mapping_Editor$fieldListHandler_mcrsin_b1a" />
     <unitInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="28" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.editor.Mapping_Editor" />
+    <unitInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="129" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.editor.Mapping_Editor$fieldListHandler_mcrsin_b1a" />
   </root>
   <root nodeId="1116535736473">
     <nodeInfo nodeId="1116535736473" fileName="Field_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

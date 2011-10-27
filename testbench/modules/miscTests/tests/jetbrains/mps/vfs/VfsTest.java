@@ -141,6 +141,18 @@ public class VfsTest {
       fail();
     }
 
+    assertTrue(file1.rename("file111"));
+    assertTrue(file1.getName().equals("file111"));
+    assertTrue(file1.getParent().getDescendant("file111").equals(file1));
+    assertFalse(file1.getParent().getDescendant("file1").exists());
+
+    assertTrue(file1.rename("file1"));
+    String path1Original = file1.getPath();
+    assertTrue(file1.move(tmpDir));
+    assertFalse(file1.getPath().equals(path1Original));
+    assertTrue(file1.getParent().equals(tmpDir));
+    assertFalse(FileSystem.getInstance().getFileByPath(path1Original).exists());
+
     assertTrue(tmpDir.delete());
     assertFalse(tmpDir.exists());
   }

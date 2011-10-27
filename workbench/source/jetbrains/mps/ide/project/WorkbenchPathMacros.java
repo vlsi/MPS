@@ -53,6 +53,11 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
   }
 
   @Override
+  public Set<String> getUserNames() {
+    return PathMacros.getInstance().getUserMacroNames();
+  }
+
+  @Override
   public String getValue(String name) {
     return PathMacros.getInstance().getValue(name);
   }

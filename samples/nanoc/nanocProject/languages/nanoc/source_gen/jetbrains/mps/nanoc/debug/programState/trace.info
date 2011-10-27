@@ -77,8 +77,8 @@
     <scopeInfo nodeId="3990508698139429637" fileName="DefaultThread.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="3990508698139429482" fileName="DefaultThread.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="3990508698139429485" fileName="DefaultThread.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="3990508698139429490" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139429488" varName="answer" />
+      <varInfo nodeId="3990508698139429490" varName="receivedStreamAnswers" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139429504" fileName="DefaultThread.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="3990508698139429558" fileName="DefaultThread.java" startLine="27" startPosition="97" endLine="32" endPosition="5">
@@ -86,20 +86,20 @@
     </scopeInfo>
     <scopeInfo nodeId="3990508698139429679" fileName="DefaultThread.java" startLine="89" startPosition="99" endLine="95" endPosition="7" />
     <scopeInfo nodeId="3990508698139429507" fileName="DefaultThread.java" startLine="88" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="3990508698139429512" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139429510" varName="answer" />
+      <varInfo nodeId="3990508698139429512" varName="receivedStreamAnswers" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139429542" fileName="DefaultThread.java" startLine="25" startPosition="99" endLine="37" endPosition="5">
       <varInfo nodeId="3990508698139429548" varName="listMapValue" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139429533" fileName="DefaultThread.java" startLine="24" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="3990508698139429540" varName="debugSession" />
-      <varInfo nodeId="3990508698139429538" varName="sourceGen" />
       <varInfo nodeId="3990508698139429536" varName="resultAnswer" />
+      <varInfo nodeId="3990508698139429538" varName="sourceGen" />
     </scopeInfo>
+    <unitInfo nodeId="3990508698139424671" fileName="DefaultThread.java" startLine="18" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
     <unitInfo nodeId="3990508698139429471" fileName="DefaultThread.java" startLine="62" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread$MyRequestor1" />
     <unitInfo nodeId="3990508698139429493" fileName="DefaultThread.java" startLine="78" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread$MyRequestor2" />
-    <unitInfo nodeId="3990508698139424671" fileName="DefaultThread.java" startLine="18" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
   </root>
   <root nodeId="3990508698139427312">
     <nodeInfo nodeId="3990508698139427315" fileName="GDBLocation.java" startLine="10" startPosition="47" endLine="11" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -175,8 +175,8 @@
     <scopeInfo nodeId="3990508698139428834" fileName="SimpleVarWatchable.java" startLine="38" startPosition="26" endLine="39" endPosition="16" />
     <scopeInfo nodeId="3990508698139428792" fileName="SimpleVarWatchable.java" startLine="17" startPosition="59" endLine="19" endPosition="37" />
     <scopeInfo nodeId="3990508698139428785" fileName="SimpleVarWatchable.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
-      <varInfo nodeId="3990508698139428788" varName="varName" />
       <varInfo nodeId="3990508698139428790" varName="value" />
+      <varInfo nodeId="3990508698139428788" varName="varName" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428803" fileName="SimpleVarWatchable.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="3990508698139428810" fileName="SimpleVarWatchable.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
@@ -290,8 +290,8 @@
     <scopeInfo nodeId="3990508698139430098" fileName="GDBStackFrame.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="3990508698139430127" fileName="GDBStackFrame.java" startLine="92" startPosition="51" endLine="96" endPosition="65">
       <varInfo nodeId="3990508698139430135" varName="varName" />
-      <varInfo nodeId="3990508698139430142" varName="varValue" />
       <varInfo nodeId="3990508698139430129" varName="varRecord" />
+      <varInfo nodeId="3990508698139430142" varName="varValue" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139430156" fileName="GDBStackFrame.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
     <scopeInfo nodeId="3990508698139430038" fileName="GDBStackFrame.java" startLine="65" startPosition="55" endLine="70" endPosition="18">
@@ -319,9 +319,9 @@
       <varInfo nodeId="3990508698139429941" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139429930" fileName="GDBStackFrame.java" startLine="37" startPosition="0" endLine="55" endPosition="3">
+      <varInfo nodeId="3990508698139429937" varName="sourceGen" />
       <varInfo nodeId="3990508698139429935" varName="thread" />
       <varInfo nodeId="3990508698139429933" varName="value" />
-      <varInfo nodeId="3990508698139429937" varName="sourceGen" />
     </scopeInfo>
     <unitInfo nodeId="3990508698139429870" fileName="GDBStackFrame.java" startLine="20" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.GDBStackFrame" />
   </root>

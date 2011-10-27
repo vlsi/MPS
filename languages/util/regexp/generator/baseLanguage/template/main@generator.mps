@@ -17,6 +17,7 @@
   <import index="tpfs" modelUID="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" version="-1" />
   <import index="lgzw" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" version="-1" />
   <import index="cpb3" modelUID="r:92729f14-904d-49b9-944a-e9e4aeec5f56(jetbrains.mps.baseLanguage.regexp.runtime)" version="-1" />
+  <import index="tpft" modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -32,17 +33,17 @@
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1174510782150">
       <property name="name" nameId="tpck.1169194664001" value="reduce_InlineRegexp" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Reduce" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1174510540317" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1174510540317" resolveInfo="InlineRegexpExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1174512791870">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MatchRegexp" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Reduce" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1174512414484" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1174512414484" resolveInfo="MatchRegexpStatement" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1174657156447">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ReplaceWithRegexp" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Reduce" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1174655989549" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1174655989549" resolveInfo="ReplaceWithRegexpExpression" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1174658244528">
       <property name="name" nameId="tpck.1169194664001" value="ReplacerTemplate" />
@@ -55,27 +56,27 @@
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1175155416895">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ForEachMatchStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Reduce" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1175154849582" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1175154849582" resolveInfo="ForEachMatchStatement" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1175164916487">
       <property name="name" nameId="tpck.1169194664001" value="reduce_SplitExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Reduce" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1175164405556" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1175164405556" resolveInfo="SplitExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1175169578541">
       <property name="name" nameId="tpck.1169194664001" value="reduce_FindMatchStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Reduce" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1175169009571" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1175169009571" resolveInfo="FindMatchStatement" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1175170026377">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MatchVariableReference" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Reduce" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1174565027678" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1174565027678" resolveInfo="MatchVariableReference" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1179358112803">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MatchRegexpExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Reduce" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1179357154354" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1179357154354" resolveInfo="MatchRegexpExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1222257072263">
       <property name="name" nameId="tpck.1169194664001" value="reduce_SplitOperation" />
@@ -122,26 +123,26 @@
       <link role="mappingScript" roleId="tpf8.1195502167610" targetNodeId="7048923897762709814" resolveInfo="enum_RegexpUsages" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1174658358307">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1174656254036" />
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="1174658244528" resolveInfo="Replacer" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1174656254036" resolveInfo="ReplaceBlock" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="1174658244528" resolveInfo="ReplacerTemplate" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="1215475933721" resolveInfo="closure_adapterClass" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1174510769012">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1174510540317" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1174510540317" resolveInfo="InlineRegexpExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1174510922174">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1174510782150" resolveInfo="InlineRegexp" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1174510782150" resolveInfo="reduce_InlineRegexp" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1179358065768">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1179357154354" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1179357154354" resolveInfo="MatchRegexpExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1179358146298">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1179358112803" resolveInfo="MatchRegexpExpression" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1179358112803" resolveInfo="reduce_MatchRegexpExpression" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1174512970119">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1174512414484" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1174512414484" resolveInfo="MatchRegexpStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1174512973214">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1174512791870" resolveInfo="MatchRegexp" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1174512791870" resolveInfo="reduce_MatchRegexp" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8022472963611845532">
@@ -204,27 +205,27 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1174659109667">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1174655989549" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1174655989549" resolveInfo="ReplaceWithRegexpExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1174659127739">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1174657156447" resolveInfo="ReplaceWithRegexp" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1174657156447" resolveInfo="reduce_ReplaceWithRegexp" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1175155492784">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1175154849582" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1175154849582" resolveInfo="ForEachMatchStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1175155507208">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1175155416895" resolveInfo="ForEachMatchStatement" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1175155416895" resolveInfo="reduce_ForEachMatchStatement" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1175164985276">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1175164405556" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1175164405556" resolveInfo="SplitExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1175164989466">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1175164916487" resolveInfo="SplitExpression" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1175164916487" resolveInfo="reduce_SplitExpression" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1222259390002">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1222259413707">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1222257072263" resolveInfo="SplitOperation" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1222257072263" resolveInfo="reduce_SplitOperation" />
       </node>
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1222259398301">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222259398302">
@@ -274,7 +275,7 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1222261659032">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1222261719921">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1222261613401" resolveInfo="reduce_MatchRegexpExpression" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1222261613401" resolveInfo="reduce_MatchRegexpOperation" />
       </node>
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1222261663847">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222261663848">
@@ -322,9 +323,9 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1175169875417">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1175169009571" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpfo.1175169009571" resolveInfo="FindMatchStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1175169884622">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1175169578541" resolveInfo="FindMatchStatement" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1175169578541" resolveInfo="reduce_FindMatchStatement" />
       </node>
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1215475933721">
@@ -354,9 +355,9 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4276824325038550572">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="4276824325038550584">
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4276824325038550587" />
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4276824325038550574">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpfr.4276824325038550479" resolveInfo="getRegexpIfContainer" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpfr.1174922445389" resolveInfo="GeneratorUtil" />
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8030573611853795890">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpft.8030573611853795847" resolveInfo="getRegexpIfContainer" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpft.8030573611853647771" resolveInfo="RegexUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4276824325038550575" />
                   </node>
                 </node>
@@ -937,7 +938,7 @@
       </node>
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1174658315503">
-      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpfo.1174656254036" />
+      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpfo.1174656254036" resolveInfo="ReplaceBlock" />
     </node>
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6036754119531313881">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cpb3.8235206972880844181" resolveInfo="Replacer" />
@@ -973,7 +974,7 @@
                         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1174924153345">
                           <property name="name" nameId="tpck.1169194664001" value="parens" />
                           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1174924153346">
-                            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpfo.1174564062919" />
+                            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpfo.1174564062919" resolveInfo="MatchParensRegexp" />
                           </node>
                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227914076">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1174924153348" />
@@ -987,11 +988,11 @@
                         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1174924153351">
                           <property name="name" nameId="tpck.1169194664001" value="c" />
                           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1174924153352">
-                            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpfo.1174653354106" />
+                            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpfo.1174653354106" resolveInfo="RegexpUsingConstruction" />
                           </node>
-                          <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1174924153353">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpfr.1174922445389" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpfr.1174923515098" />
+                          <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8030573611853647996">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpft.8030573611853647890" resolveInfo="findRegexpUsingConstructionFor" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpft.8030573611853647771" resolveInfo="RegexUtil" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1174924153354" />
                           </node>
                         </node>
@@ -1481,9 +1482,9 @@
                         <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1216935519583" />
                         <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="1216935519584">
                           <link role="label" roleId="tpf3.1216860049628" targetNodeId="1215479319409" resolveInfo="matcher" />
-                          <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1216935452917">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpfr.1174923515098" resolveInfo="findRegexpUsingConstructionFor" />
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpfr.1174922445389" resolveInfo="GeneratorUtil" />
+                          <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8030573611853647994">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpft.8030573611853647890" resolveInfo="findRegexpUsingConstructionFor" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpft.8030573611853647771" resolveInfo="RegexUtil" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1216935463934" />
                           </node>
                         </node>
@@ -1521,9 +1522,9 @@
                           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5588026655405965643">
                             <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpfo.1174653354106" resolveInfo="RegexpUsingConstruction" />
                           </node>
-                          <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5588026655405965644">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpfr.1174922445389" resolveInfo="GeneratorUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpfr.1174923515098" resolveInfo="findRegexpUsingConstructionFor" />
+                          <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8030573611853647995">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpft.8030573611853647890" resolveInfo="findRegexpUsingConstructionFor" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpft.8030573611853647771" resolveInfo="RegexUtil" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5588026655405965645" />
                           </node>
                         </node>
@@ -2014,9 +2015,9 @@
                 <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4276824325038550539">
                   <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4276824325038550542">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpfr.4276824325038550479" resolveInfo="getContainer" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpfr.1174922445389" resolveInfo="GeneratorUtil" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8030573611853795889">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpft.8030573611853795847" resolveInfo="getRegexpIfContainer" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpft.8030573611853647771" resolveInfo="RegexUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4276824325038550543">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048923897762709822" resolveInfo="expr" />
                   </node>

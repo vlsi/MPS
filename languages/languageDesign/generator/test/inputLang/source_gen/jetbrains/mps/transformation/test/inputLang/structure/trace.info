@@ -284,8 +284,8 @@
     <scopeInfo nodeId="1195169251499" fileName="Option_PropertySupport.java" startLine="9" startPosition="61" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1195169251499" fileName="Option_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1195169251499" fileName="Option.java" startLine="45" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="1195169251499" fileName="Option_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option_PropertySupport" />
     <unitInfo nodeId="1195169251499" fileName="Option.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option" />
+    <unitInfo nodeId="1195169251499" fileName="Option_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option_PropertySupport" />
   </root>
   <root nodeId="1195171011194">
     <nodeInfo nodeId="1195171011194" fileName="InputNode_A.java" startLine="10" startPosition="44" endLine="11" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -417,8 +417,8 @@
     <scopeInfo nodeId="1202242680337" fileName="UseInTest_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1202242680337" fileName="UseInTest.java" startLine="56" startPosition="52" endLine="84" endPosition="34" />
     <scopeInfo nodeId="1202242680337" fileName="UseInTest.java" startLine="55" startPosition="0" endLine="86" endPosition="0" />
-    <unitInfo nodeId="1202242680337" fileName="UseInTest_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest_PropertySupport" />
     <unitInfo nodeId="1202242680337" fileName="UseInTest.java" startLine="9" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest" />
+    <unitInfo nodeId="1202242680337" fileName="UseInTest_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest_PropertySupport" />
   </root>
   <root nodeId="1206459872650">
     <nodeInfo nodeId="1206459872650" fileName="InputNode_B.java" startLine="10" startPosition="46" endLine="11" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

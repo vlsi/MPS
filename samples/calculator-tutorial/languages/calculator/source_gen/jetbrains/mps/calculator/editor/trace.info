@@ -171,9 +171,9 @@
     <scopeInfo nodeId="1241362569578" fileName="Calculator_Editor.java" startLine="159" startPosition="0" endLine="171" endPosition="0" />
     <scopeInfo nodeId="1241362569578" fileName="Calculator_Editor.java" startLine="83" startPosition="89" endLine="98" endPosition="22" />
     <scopeInfo nodeId="1241362569578" fileName="Calculator_Editor.java" startLine="82" startPosition="0" endLine="100" endPosition="0" />
+    <unitInfo nodeId="1241362569578" fileName="Calculator_Editor.java" startLine="26" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.calculator.editor.Calculator_Editor" />
     <unitInfo nodeId="1241362569578" fileName="Calculator_Editor.java" startLine="101" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.calculator.editor.Calculator_Editor$inputFieldListHandler_uh00px_b0" />
     <unitInfo nodeId="1241362569578" fileName="Calculator_Editor.java" startLine="137" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.calculator.editor.Calculator_Editor$outputFieldListHandler_uh00px_d0" />
-    <unitInfo nodeId="1241362569578" fileName="Calculator_Editor.java" startLine="26" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.calculator.editor.Calculator_Editor" />
   </root>
   <root nodeId="1241362645735">
     <nodeInfo nodeId="1241362645735" fileName="InputField_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -351,8 +351,8 @@
     <scopeInfo nodeId="1241363132729" fileName="InputFieldReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
     <scopeInfo nodeId="1241363132729" fileName="InputFieldReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1241363132729" fileName="InputFieldReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="1241363132729" fileName="InputFieldReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.calculator.editor.InputFieldReference_Editor$_Inline_tvw6ko_a0a" />
     <unitInfo nodeId="1241363132729" fileName="InputFieldReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.calculator.editor.InputFieldReference_Editor" />
+    <unitInfo nodeId="1241363132729" fileName="InputFieldReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.calculator.editor.InputFieldReference_Editor$_Inline_tvw6ko_a0a" />
   </root>
 </debugInfo>
 

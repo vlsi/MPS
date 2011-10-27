@@ -271,8 +271,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2378204549815375461" fileName="MethodDeclarationsFixer.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="2378204549815376391" fileName="MethodDeclarationsFixer.java" startLine="95" startPosition="69" endLine="100" endPosition="11">
-      <varInfo nodeId="2378204549815376399" varName="sourceNode" />
       <varInfo nodeId="2378204549815376393" varName="reference" />
+      <varInfo nodeId="2378204549815376399" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815375641" fileName="MethodDeclarationsFixer.java" startLine="150" startPosition="29" endLine="155" endPosition="36" />
     <scopeInfo nodeId="2378204549815376078" fileName="MethodDeclarationsFixer.java" startLine="234" startPosition="30" endLine="239" endPosition="7" />
@@ -329,12 +329,12 @@
     <scopeInfo nodeId="2521617545267445097" fileName="MethodDeclarationsFixer.java" startLine="135" startPosition="73" endLine="144" endPosition="0" />
     <scopeInfo nodeId="2378204549815375792" fileName="MethodDeclarationsFixer.java" startLine="186" startPosition="12" endLine="196" endPosition="7" />
     <scopeInfo nodeId="2378204549815376056" fileName="MethodDeclarationsFixer.java" startLine="231" startPosition="0" endLine="242" endPosition="0">
-      <varInfo nodeId="2378204549815376061" varName="resolveTargets" />
       <varInfo nodeId="2378204549815376059" varName="method" />
+      <varInfo nodeId="2378204549815376061" varName="resolveTargets" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376093" fileName="MethodDeclarationsFixer.java" startLine="242" startPosition="0" endLine="253" endPosition="0">
-      <varInfo nodeId="2378204549815376098" varName="resolveTargets" />
       <varInfo nodeId="2378204549815376096" varName="method" />
+      <varInfo nodeId="2378204549815376098" varName="resolveTargets" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376205" fileName="MethodDeclarationsFixer.java" startLine="268" startPosition="73" endLine="281" endPosition="5">
       <varInfo nodeId="2378204549815376246" varName="formalParam" />
@@ -346,18 +346,18 @@
       <varInfo nodeId="2378204549815376201" varName="resolveTargets" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376270" fileName="MethodDeclarationsFixer.java" startLine="283" startPosition="0" endLine="300" endPosition="0">
-      <varInfo nodeId="2378204549815376275" varName="formerParent" />
       <varInfo nodeId="2378204549815376273" varName="child" />
+      <varInfo nodeId="2378204549815376275" varName="formerParent" />
       <varInfo nodeId="2378204549815376277" varName="resolveTargets" />
     </scopeInfo>
     <scopeInfo nodeId="7501380562004520" fileName="MethodDeclarationsFixer.java" startLine="123" startPosition="25" endLine="144" endPosition="14">
       <varInfo nodeId="7548749784344542830" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815375866" fileName="MethodDeclarationsFixer.java" startLine="198" startPosition="28" endLine="220" endPosition="48">
-      <varInfo nodeId="2378204549815375930" varName="nodeSet" />
-      <varInfo nodeId="2378204549815375924" varName="newTargetNode" />
-      <varInfo nodeId="2378204549815375973" varName="nodesByNameAndConcept" />
       <varInfo nodeId="2378204549815375960" varName="key" />
+      <varInfo nodeId="2378204549815375924" varName="newTargetNode" />
+      <varInfo nodeId="2378204549815375930" varName="nodeSet" />
+      <varInfo nodeId="2378204549815375973" varName="nodesByNameAndConcept" />
     </scopeInfo>
     <scopeInfo nodeId="7501380562004519" fileName="MethodDeclarationsFixer.java" startLine="122" startPosition="52" endLine="146" endPosition="0" />
     <scopeInfo nodeId="2378204549815375544" fileName="MethodDeclarationsFixer.java" startLine="79" startPosition="12" endLine="120" endPosition="7">
@@ -365,15 +365,15 @@
       <varInfo nodeId="2378204549815375564" varName="visitor" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815375671" fileName="MethodDeclarationsFixer.java" startLine="158" startPosition="95" endLine="221" endPosition="5">
-      <varInfo nodeId="2378204549815375761" varName="typeByTypeVar" />
       <varInfo nodeId="2378204549815375733" varName="actualArgs" />
-      <varInfo nodeId="2378204549815375754" varName="newTarget" />
       <varInfo nodeId="2378204549815375680" varName="baseMethodDeclaration" />
+      <varInfo nodeId="2378204549815375740" varName="candidates" />
       <varInfo nodeId="2378204549815375758" varName="good" />
       <varInfo nodeId="2378204549815375778" varName="methodDeclarationsGoodParams" />
-      <varInfo nodeId="2378204549815375768" varName="parmCountPair" />
       <varInfo nodeId="2378204549815375686" varName="methodName" />
-      <varInfo nodeId="2378204549815375740" varName="candidates" />
+      <varInfo nodeId="2378204549815375754" varName="newTarget" />
+      <varInfo nodeId="2378204549815375768" varName="parmCountPair" />
+      <varInfo nodeId="2378204549815375761" varName="typeByTypeVar" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815375662" fileName="MethodDeclarationsFixer.java" startLine="157" startPosition="0" endLine="223" endPosition="0">
       <varInfo nodeId="2378204549815375665" varName="methodCallNode" />
@@ -385,15 +385,15 @@
     </scopeInfo>
     <scopeInfo nodeId="2378204549815375470" fileName="MethodDeclarationsFixer.java" startLine="65" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="2378204549815375483" varName="editorContext" />
-      <varInfo nodeId="2378204549815375474" varName="rootNode" />
       <varInfo nodeId="2378204549815375478" varName="events" />
+      <varInfo nodeId="2378204549815375474" varName="rootNode" />
       <varInfo nodeId="2378204549815375481" varName="wasCheckedOnce" />
     </scopeInfo>
-    <unitInfo nodeId="2378204549815375442" fileName="MethodDeclarationsFixer.java" startLine="46" startPosition="68" endLine="52" endPosition="3" unitName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer$1" />
-    <unitInfo nodeId="2521617545267445097" fileName="MethodDeclarationsFixer.java" startLine="135" startPosition="61" endLine="144" endPosition="9" unitName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer$4" />
-    <unitInfo nodeId="7501380562004519" fileName="MethodDeclarationsFixer.java" startLine="122" startPosition="40" endLine="146" endPosition="5" unitName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer$3" />
-    <unitInfo nodeId="2378204549815375568" fileName="MethodDeclarationsFixer.java" startLine="85" startPosition="39" endLine="111" endPosition="7" unitName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer$2" />
     <unitInfo nodeId="2378204549815375367" fileName="MethodDeclarationsFixer.java" startLine="36" startPosition="0" endLine="305" endPosition="0" unitName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer" />
+    <unitInfo nodeId="2378204549815375442" fileName="MethodDeclarationsFixer.java" startLine="46" startPosition="68" endLine="52" endPosition="3" unitName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer$1" />
+    <unitInfo nodeId="2378204549815375568" fileName="MethodDeclarationsFixer.java" startLine="85" startPosition="39" endLine="111" endPosition="7" unitName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer$2" />
+    <unitInfo nodeId="7501380562004519" fileName="MethodDeclarationsFixer.java" startLine="122" startPosition="40" endLine="146" endPosition="5" unitName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer$3" />
+    <unitInfo nodeId="2521617545267445097" fileName="MethodDeclarationsFixer.java" startLine="135" startPosition="61" endLine="144" endPosition="9" unitName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer$4" />
   </root>
   <root nodeId="2378204549815376507">
     <nodeInfo nodeId="2378204549815376509" fileName="ResolveResult.java" startLine="8" startPosition="28" endLine="9" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySourceNode" />
@@ -432,10 +432,10 @@
     <scopeInfo nodeId="2378204549815376555" fileName="ResolveResult.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="2378204549815376561" fileName="ResolveResult.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="2378204549815376521" fileName="ResolveResult.java" startLine="13" startPosition="0" endLine="19" endPosition="3">
-      <varInfo nodeId="2378204549815376526" varName="targetNode" />
-      <varInfo nodeId="2378204549815376524" varName="sourceNode" />
       <varInfo nodeId="2378204549815376528" varName="role" />
       <varInfo nodeId="2378204549815376530" varName="smartRefConcept" />
+      <varInfo nodeId="2378204549815376524" varName="sourceNode" />
+      <varInfo nodeId="2378204549815376526" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376576" fileName="ResolveResult.java" startLine="36" startPosition="12" endLine="42" endPosition="7">
       <varInfo nodeId="2378204549815376578" varName="parent" />
@@ -606,8 +606,8 @@
     <scopeInfo nodeId="2378204549815377322" fileName="Resolver.java" startLine="154" startPosition="52" endLine="157" endPosition="9" />
     <scopeInfo nodeId="2378204549815377426" fileName="Resolver.java" startLine="202" startPosition="83" endLine="205" endPosition="13" />
     <scopeInfo nodeId="2378204549815376973" fileName="Resolver.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="2378204549815376977" varName="references" />
       <varInfo nodeId="2378204549815376980" varName="operationContext" />
+      <varInfo nodeId="2378204549815376977" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377044" fileName="Resolver.java" startLine="63" startPosition="80" endLine="67" endPosition="9">
       <varInfo nodeId="2378204549815377046" varName="resolved" />
@@ -643,8 +643,8 @@
       <varInfo nodeId="2378204549815377032" varName="size" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377021" fileName="Resolver.java" startLine="48" startPosition="69" endLine="60" endPosition="0">
-      <varInfo nodeId="2378204549815377026" varName="o2" />
       <varInfo nodeId="2378204549815377024" varName="o1" />
+      <varInfo nodeId="2378204549815377026" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377395" fileName="Resolver.java" startLine="196" startPosition="40" endLine="211" endPosition="9" />
     <scopeInfo nodeId="2378204549815377391" fileName="Resolver.java" startLine="195" startPosition="35" endLine="212" endPosition="7">
@@ -653,25 +653,25 @@
     <scopeInfo nodeId="2378204549815377390" fileName="Resolver.java" startLine="195" startPosition="35" endLine="214" endPosition="46" />
     <scopeInfo nodeId="2378204549815377502" fileName="Resolver.java" startLine="93" startPosition="32" endLine="116" endPosition="21">
       <varInfo nodeId="2378204549815377560" varName="filtered" />
-      <varInfo nodeId="2378204549815377504" varName="status" />
       <varInfo nodeId="2378204549815377547" varName="nameMatchesCondition" />
       <varInfo nodeId="2378204549815377537" varName="nodes" />
       <varInfo nodeId="2378204549815377531" varName="searchScope" />
+      <varInfo nodeId="2378204549815377504" varName="status" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377621" fileName="Resolver.java" startLine="161" startPosition="78" endLine="184" endPosition="17">
+      <varInfo nodeId="2378204549815377642" varName="action1" />
+      <varInfo nodeId="2378204549815377648" varName="action2" />
       <varInfo nodeId="2378204549815377654" varName="model1" />
       <varInfo nodeId="2378204549815377658" varName="model2" />
-      <varInfo nodeId="2378204549815377648" varName="action2" />
-      <varInfo nodeId="2378204549815377642" varName="action1" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377341" fileName="Resolver.java" startLine="160" startPosition="79" endLine="186" endPosition="0">
-      <varInfo nodeId="2378204549815377346" varName="o2" />
       <varInfo nodeId="2378204549815377344" varName="o1" />
+      <varInfo nodeId="2378204549815377346" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377361" fileName="Resolver.java" startLine="190" startPosition="141" endLine="216" endPosition="21">
-      <varInfo nodeId="2378204549815377370" varName="newFrontier" />
-      <varInfo nodeId="2378204549815377363" varName="frontier" />
       <varInfo nodeId="2378204549815377377" varName="foundCell" />
+      <varInfo nodeId="2378204549815377363" varName="frontier" />
+      <varInfo nodeId="2378204549815377370" varName="newFrontier" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377005" fileName="Resolver.java" startLine="46" startPosition="167" endLine="73" endPosition="28">
       <varInfo nodeId="2378204549815377007" varName="referencesToSort" />
@@ -680,53 +680,53 @@
     <scopeInfo nodeId="2378204549815377350" fileName="Resolver.java" startLine="189" startPosition="0" endLine="218" endPosition="0">
       <varInfo nodeId="2378204549815377359" varName="childLinkDeclaration" />
       <varInfo nodeId="2378204549815377353" varName="editorCell" />
-      <varInfo nodeId="2378204549815377355" varName="sourceNode" />
       <varInfo nodeId="2378204549815377357" varName="refLinkDeclaration" />
+      <varInfo nodeId="2378204549815377355" varName="sourceNode" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376991" fileName="Resolver.java" startLine="45" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="2378204549815377003" varName="forceResolve" />
+      <varInfo nodeId="2378204549815376998" varName="operationContext" />
       <varInfo nodeId="2378204549815376995" varName="references" />
       <varInfo nodeId="2378204549815377000" varName="results" />
-      <varInfo nodeId="2378204549815376998" varName="operationContext" />
-      <varInfo nodeId="2378204549815377003" varName="forceResolve" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377099" fileName="Resolver.java" startLine="80" startPosition="167" endLine="119" endPosition="18">
-      <varInfo nodeId="2378204549815377140" varName="result" />
       <varInfo nodeId="2378204549815377120" varName="linkDeclaration" />
-      <varInfo nodeId="2378204549815377135" varName="referentConcept" />
-      <varInfo nodeId="2378204549815377114" varName="referenceNodeConcept" />
       <varInfo nodeId="2378204549815377101" varName="referenceNode" />
+      <varInfo nodeId="2378204549815377114" varName="referenceNodeConcept" />
+      <varInfo nodeId="2378204549815377135" varName="referentConcept" />
+      <varInfo nodeId="2378204549815377140" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377087" fileName="Resolver.java" startLine="79" startPosition="0" endLine="121" endPosition="0">
-      <varInfo nodeId="2378204549815377094" varName="results" />
-      <varInfo nodeId="2378204549815377092" varName="operationContext" />
       <varInfo nodeId="2378204549815377097" varName="forceResolve" />
+      <varInfo nodeId="2378204549815377092" varName="operationContext" />
       <varInfo nodeId="2378204549815377090" varName="reference" />
+      <varInfo nodeId="2378204549815377094" varName="results" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377164" fileName="Resolver.java" startLine="122" startPosition="153" endLine="187" endPosition="27">
-      <varInfo nodeId="2378204549815377166" varName="resolveInfo" />
-      <varInfo nodeId="2378204549815377221" varName="editorCell" />
-      <varInfo nodeId="2378204549815377178" varName="sourceNode" />
-      <varInfo nodeId="2378204549815377228" varName="inspectedCell" />
-      <varInfo nodeId="2378204549815377236" varName="refCell" />
-      <varInfo nodeId="2378204549815377291" varName="matchingActions" />
-      <varInfo nodeId="2378204549815377266" varName="substituteInfo" />
-      <varInfo nodeId="2378204549815377211" varName="childLinkDeclaration" />
-      <varInfo nodeId="2378204549815377196" varName="sourceParent" />
-      <varInfo nodeId="2378204549815377184" varName="sourceConcept" />
-      <varInfo nodeId="2378204549815377172" varName="role" />
-      <varInfo nodeId="2378204549815377190" varName="refLinkDeclaration" />
       <varInfo nodeId="2378204549815377282" varName="actions" />
+      <varInfo nodeId="2378204549815377211" varName="childLinkDeclaration" />
+      <varInfo nodeId="2378204549815377221" varName="editorCell" />
+      <varInfo nodeId="2378204549815377228" varName="inspectedCell" />
+      <varInfo nodeId="2378204549815377291" varName="matchingActions" />
+      <varInfo nodeId="2378204549815377236" varName="refCell" />
+      <varInfo nodeId="2378204549815377190" varName="refLinkDeclaration" />
+      <varInfo nodeId="2378204549815377166" varName="resolveInfo" />
+      <varInfo nodeId="2378204549815377172" varName="role" />
+      <varInfo nodeId="2378204549815377184" varName="sourceConcept" />
+      <varInfo nodeId="2378204549815377178" varName="sourceNode" />
+      <varInfo nodeId="2378204549815377196" varName="sourceParent" />
+      <varInfo nodeId="2378204549815377266" varName="substituteInfo" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377154" fileName="Resolver.java" startLine="121" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="2378204549815377162" varName="editorContext" />
       <varInfo nodeId="2378204549815377160" varName="operationContext" />
       <varInfo nodeId="2378204549815377158" varName="reference" />
     </scopeInfo>
-    <unitInfo nodeId="2378204549815377552" fileName="Resolver.java" startLine="101" startPosition="52" endLine="106" endPosition="9" unitName="jetbrains.mps.ide.resolve.Resolver$3" />
-    <unitInfo nodeId="2378204549815377019" fileName="Resolver.java" startLine="48" startPosition="43" endLine="60" endPosition="5" unitName="jetbrains.mps.ide.resolve.Resolver$1" />
-    <unitInfo nodeId="2378204549815377339" fileName="Resolver.java" startLine="160" startPosition="42" endLine="186" endPosition="5" unitName="jetbrains.mps.ide.resolve.Resolver$3" />
-    <unitInfo nodeId="2378204549815377147" fileName="Resolver.java" startLine="91" startPosition="75" endLine="118" endPosition="5" unitName="jetbrains.mps.ide.resolve.Resolver$2" />
     <unitInfo nodeId="2378204549815376617" fileName="Resolver.java" startLine="36" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.ide.resolve.Resolver" />
+    <unitInfo nodeId="2378204549815377019" fileName="Resolver.java" startLine="48" startPosition="43" endLine="60" endPosition="5" unitName="jetbrains.mps.ide.resolve.Resolver$1" />
+    <unitInfo nodeId="2378204549815377147" fileName="Resolver.java" startLine="91" startPosition="75" endLine="118" endPosition="5" unitName="jetbrains.mps.ide.resolve.Resolver$2" />
+    <unitInfo nodeId="2378204549815377552" fileName="Resolver.java" startLine="101" startPosition="52" endLine="106" endPosition="9" unitName="jetbrains.mps.ide.resolve.Resolver$3" />
+    <unitInfo nodeId="2378204549815377339" fileName="Resolver.java" startLine="160" startPosition="42" endLine="186" endPosition="5" unitName="jetbrains.mps.ide.resolve.Resolver$3" />
   </root>
   <root nodeId="2378204549815376618">
     <nodeInfo nodeId="2378204549815376641" fileName="AutoResolver.java" startLine="30" startPosition="145" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -842,9 +842,9 @@
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376706" fileName="AutoResolver.java" startLine="43" startPosition="39" endLine="53" endPosition="9" />
     <scopeInfo nodeId="2378204549815376781" fileName="AutoResolver.java" startLine="87" startPosition="76" endLine="97" endPosition="114">
-      <varInfo nodeId="2378204549815376814" varName="sModelRef" />
       <varInfo nodeId="2378204549815376783" varName="newTargetNode" />
       <varInfo nodeId="2378204549815376802" varName="reference" />
+      <varInfo nodeId="2378204549815376814" varName="sModelRef" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376835" fileName="AutoResolver.java" startLine="99" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="2378204549815376838" varName="resolveResult" />
@@ -863,19 +863,19 @@
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376751" fileName="AutoResolver.java" startLine="58" startPosition="52" endLine="79" endPosition="0" />
     <scopeInfo nodeId="2378204549815376640" fileName="AutoResolver.java" startLine="30" startPosition="145" endLine="84" endPosition="20">
-      <varInfo nodeId="2378204549815376675" varName="yetBadReferences" />
-      <varInfo nodeId="2378204549815376684" varName="resolveResultArrayList" />
       <varInfo nodeId="2378204549815376642" varName="messages" />
+      <varInfo nodeId="2378204549815376684" varName="resolveResultArrayList" />
+      <varInfo nodeId="2378204549815376675" varName="yetBadReferences" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376625" fileName="AutoResolver.java" startLine="29" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="2378204549815376638" varName="editorContext" />
-      <varInfo nodeId="2378204549815376629" varName="rootNode" />
       <varInfo nodeId="2378204549815376633" varName="events" />
+      <varInfo nodeId="2378204549815376629" varName="rootNode" />
       <varInfo nodeId="2378204549815376636" varName="wasCheckedOnce" />
     </scopeInfo>
-    <unitInfo nodeId="2378204549815376938" fileName="AutoResolver.java" startLine="71" startPosition="61" endLine="77" endPosition="9" unitName="jetbrains.mps.ide.resolve.AutoResolver$2" />
-    <unitInfo nodeId="2378204549815376750" fileName="AutoResolver.java" startLine="58" startPosition="40" endLine="79" endPosition="5" unitName="jetbrains.mps.ide.resolve.AutoResolver$1" />
     <unitInfo nodeId="2378204549815376618" fileName="AutoResolver.java" startLine="26" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.ide.resolve.AutoResolver" />
+    <unitInfo nodeId="2378204549815376750" fileName="AutoResolver.java" startLine="58" startPosition="40" endLine="79" endPosition="5" unitName="jetbrains.mps.ide.resolve.AutoResolver$1" />
+    <unitInfo nodeId="2378204549815376938" fileName="AutoResolver.java" startLine="71" startPosition="61" endLine="77" endPosition="9" unitName="jetbrains.mps.ide.resolve.AutoResolver$2" />
   </root>
 </debugInfo>
 

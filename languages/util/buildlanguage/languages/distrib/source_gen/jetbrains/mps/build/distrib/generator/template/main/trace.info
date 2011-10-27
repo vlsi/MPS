@@ -326,8 +326,8 @@
     <scopeInfo nodeId="1231692592754" fileName="QueriesGenerated.java" startLine="299" startPosition="148" endLine="300" endPosition="146" />
     <scopeInfo nodeId="1240223827209" fileName="QueriesGenerated.java" startLine="1079" startPosition="40" endLine="1080" endPosition="17" />
     <scopeInfo nodeId="1231694349380" fileName="QueriesGenerated.java" startLine="1078" startPosition="35" endLine="1086" endPosition="52">
-      <varInfo nodeId="1231694349388" varName="text" />
       <varInfo nodeId="1231694349382" varName="line" />
+      <varInfo nodeId="1231694349388" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1231694349377" fileName="QueriesGenerated.java" startLine="1077" startPosition="47" endLine="1087" endPosition="5" />
     <scopeInfo nodeId="1231694345956" fileName="QueriesGenerated.java" startLine="1075" startPosition="149" endLine="1088" endPosition="17">
@@ -481,8 +481,8 @@
       <varInfo nodeId="1234545245611" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1234511653428" fileName="QueriesGenerated.java" startLine="395" startPosition="148" endLine="403" endPosition="22">
-      <varInfo nodeId="1234511687627" varName="pathString" />
       <varInfo nodeId="1234511845756" varName="classPathItemList" />
+      <varInfo nodeId="1234511687627" varName="pathString" />
       <varInfo nodeId="1234511795933" varName="prefix" />
     </scopeInfo>
     <scopeInfo nodeId="1234545169127" fileName="QueriesGenerated.java" startLine="1109" startPosition="74" endLine="1117" endPosition="5" />
@@ -685,9 +685,9 @@
       <varInfo nodeId="1635896182103908229" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1635896182103908182" fileName="QueriesGenerated.java" startLine="521" startPosition="154" endLine="531" endPosition="30">
-      <varInfo nodeId="1635896182103908184" varName="startupDir" />
-      <varInfo nodeId="1635896182103908220" varName="pathFromStartupDir" />
       <varInfo nodeId="1635896182103908212" varName="path" />
+      <varInfo nodeId="1635896182103908220" varName="pathFromStartupDir" />
+      <varInfo nodeId="1635896182103908184" varName="startupDir" />
     </scopeInfo>
   </root>
 </debugInfo>

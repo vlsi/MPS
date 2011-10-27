@@ -68,8 +68,8 @@
       <varInfo nodeId="6033226775805315672" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="6033226775805315696" fileName="YNode.java" startLine="28" startPosition="0" endLine="33" endPosition="3">
-      <varInfo nodeId="6033226775805315701" varName="subnodes" />
       <varInfo nodeId="6033226775805315699" varName="name" />
+      <varInfo nodeId="6033226775805315701" varName="subnodes" />
     </scopeInfo>
     <scopeInfo nodeId="6033226775805315722" fileName="YNode.java" startLine="35" startPosition="31" endLine="40" endPosition="5" />
     <scopeInfo nodeId="6033226775805315791" fileName="YNode.java" startLine="67" startPosition="66" endLine="72" endPosition="26">
@@ -80,8 +80,8 @@
     <scopeInfo nodeId="6033226775805315785" fileName="YNode.java" startLine="66" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="6033226775805315788" varName="iterable" />
     </scopeInfo>
-    <unitInfo nodeId="6033226775805315661" fileName="YNode.java" startLine="9" startPosition="54" endLine="19" endPosition="3" unitName="test.ypath.util.YNode$1" />
     <unitInfo nodeId="6033226775805315496" fileName="YNode.java" startLine="8" startPosition="0" endLine="75" endPosition="0" unitName="test.ypath.util.YNode" />
+    <unitInfo nodeId="6033226775805315661" fileName="YNode.java" startLine="9" startPosition="54" endLine="19" endPosition="3" unitName="test.ypath.util.YNode$1" />
   </root>
   <root nodeId="6033226775805315497">
     <nodeInfo nodeId="6033226775805315499" fileName="TestFilterTraversal.java" startLine="11" startPosition="34" endLine="12" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE_PATH" />
@@ -105,8 +105,8 @@
       <varInfo nodeId="6033226775805315599" varName="nameStartsWithD" />
     </scopeInfo>
     <scopeInfo nodeId="6033226775805315594" fileName="TestFilterTraversal.java" startLine="19" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="6033226775805315604" fileName="TestFilterTraversal.java" startLine="22" startPosition="41" endLine="26" endPosition="5" unitName="test.ypath.util.TestFilterTraversal$1" />
     <unitInfo nodeId="6033226775805315497" fileName="TestFilterTraversal.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="test.ypath.util.TestFilterTraversal" />
+    <unitInfo nodeId="6033226775805315604" fileName="TestFilterTraversal.java" startLine="22" startPosition="41" endLine="26" endPosition="5" unitName="test.ypath.util.TestFilterTraversal$1" />
   </root>
   <root nodeId="6033226775805315825">
     <nodeInfo nodeId="6033226775805315827" fileName="TestTraversal.java" startLine="10" startPosition="28" endLine="11" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE_PATH" />

@@ -18,10 +18,10 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <import index="acqa" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.textGen(jetbrains.mps.textGen@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" />
   <import index="if8w" modelUID="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" version="0" />
+  <import index="zrid" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -417,8 +417,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3101153546911107945">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2352568442779188121">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2352568442779188123">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TraceInfoGenerationUtil%dcreatePositionInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="createPositionInfo" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="acqa.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TraceInfoGenerationUtil%dcreatePositionInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="createPositionInfo" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zrid.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2352568442779188124" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2352568442779188126">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234188917617" resolveInfo="node" />
@@ -448,8 +448,8 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2352568442779188127">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2352568442779188135">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TraceInfoGenerationUtil%dcreateScopeInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="createScopeInfo" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="acqa.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TraceInfoGenerationUtil%dcreateScopeInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="createScopeInfo" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zrid.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2352568442779188136" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2352568442779188137">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234188917617" resolveInfo="node" />
@@ -479,8 +479,8 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2352568442779188131">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2352568442779188138">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TraceInfoGenerationUtil%dcreateUnitInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="createUnitInfo" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="acqa.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TraceInfoGenerationUtil%dcreateUnitInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="createUnitInfo" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zrid.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2352568442779188139" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2352568442779188140">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234188917617" resolveInfo="node" />
@@ -511,10 +511,10 @@
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3101153546911107949">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="3101153546911107948">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3101153546911107953">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenBuffer%dhasPositionsSupport()%cboolean" resolveInfo="hasPositionsSupport" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenBuffer%dhasPositionsSupport()%cboolean" resolveInfo="hasPositionsSupport" />
             </node>
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="3101153546911107955">
@@ -572,13 +572,13 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8063439325683021750">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8063439325683021752">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8063439325683021751">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8063439325683021756">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenBuffer%dputUserObject(java%dlang%dObject,java%dlang%dObject)%cvoid" resolveInfo="putUserObject" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenBuffer%dputUserObject(java%dlang%dObject,java%dlang%dObject)%cvoid" resolveInfo="putUserObject" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8063439325683021757">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="acqa.~TextGenManager" resolveInfo="TextGenManager" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="acqa.~TextGenManager%dOUTPUT_ENCODING" resolveInfo="OUTPUT_ENCODING" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zrid.~TextGenManager" resolveInfo="TextGenManager" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zrid.~TextGenManager%dOUTPUT_ENCODING" resolveInfo="OUTPUT_ENCODING" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8063439325683021759">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8063439325682985359" resolveInfo="getEncoding" />
@@ -794,8 +794,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3101153546911107985">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2352568442779188142">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2352568442779188154">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="acqa.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TraceInfoGenerationUtil%dfillPositionInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode,java%dlang%dString)%cvoid" resolveInfo="fillPositionInfo" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zrid.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TraceInfoGenerationUtil%dfillPositionInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode,java%dlang%dString)%cvoid" resolveInfo="fillPositionInfo" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2352568442779188155" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2352568442779188156">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234188917617" resolveInfo="node" />
@@ -836,8 +836,8 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2352568442779188146">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2352568442779188157">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="acqa.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TraceInfoGenerationUtil%dfillScopeInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode,java%dutil%dList)%cvoid" resolveInfo="fillScopeInfo" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zrid.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TraceInfoGenerationUtil%dfillScopeInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode,java%dutil%dList)%cvoid" resolveInfo="fillScopeInfo" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2352568442779188158" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2352568442779188159">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234188917617" resolveInfo="node" />
@@ -878,8 +878,8 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2352568442779188150">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2352568442779188160">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="acqa.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TraceInfoGenerationUtil%dfillUnitInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode,java%dlang%dString)%cvoid" resolveInfo="fillUnitInfo" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zrid.~TraceInfoGenerationUtil" resolveInfo="TraceInfoGenerationUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TraceInfoGenerationUtil%dfillUnitInfo(jetbrains%dmps%dtextGen%dSNodeTextGen,jetbrains%dmps%dsmodel%dSNode,java%dlang%dString)%cvoid" resolveInfo="fillUnitInfo" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2352568442779188161" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8921200867566826242">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234188917617" resolveInfo="node" />
@@ -921,10 +921,10 @@
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3101153546911107989">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="3101153546911107988">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3101153546911107993">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenBuffer%dhasPositionsSupport()%cboolean" resolveInfo="hasPositionsSupport" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenBuffer%dhasPositionsSupport()%cboolean" resolveInfo="hasPositionsSupport" />
             </node>
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="3101153546911107995">
@@ -1271,7 +1271,7 @@
       </node>
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1233929884977">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
     </node>
   </root>
   <root id="1233763193714">
@@ -1292,7 +1292,7 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469354826">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1237469354465" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469359314">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dindentBuffer()%cvoid" resolveInfo="indentBuffer" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dindentBuffer()%cvoid" resolveInfo="indentBuffer" />
                   </node>
                 </node>
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1237469368380">
@@ -1313,21 +1313,21 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1234792849102">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1234792849103">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1234792849104">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="acqa.~TextGenManager" resolveInfo="TextGenManager" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenManager%dinstance()%cjetbrains%dmps%dtextGen%dTextGenManager" resolveInfo="instance" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zrid.~TextGenManager" resolveInfo="TextGenManager" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenManager%dinstance()%cjetbrains%dmps%dtextGen%dTextGenManager" resolveInfo="instance" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234792849105">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenManager%dappendNodeText(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dtextGen%dTextGenBuffer,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="appendNodeText" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenManager%dappendNodeText(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dtextGen%dTextGenBuffer,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="appendNodeText" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1234875561688">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1234880840577" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234875567364">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getContext" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getContext" />
                       </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1234875586191">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1234880861205" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234875589149">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
                       </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1234792849112">
@@ -1350,7 +1350,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1234875606351">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1234880872769" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234875610340">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
                       </node>
                     </node>
                   </node>
@@ -1363,7 +1363,7 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1233763206452" />
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234880850704">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -1417,7 +1417,7 @@
         <property name="name" nameId="tpck.1169194664001" value="textGen" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234790515466">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
         </node>
       </node>
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="1234790532952">
@@ -1474,7 +1474,7 @@
         <property name="name" nameId="tpck.1169194664001" value="textGen" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234804333201">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1234804294147">
@@ -1743,12 +1743,12 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1234783000907">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234783000908">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234783682111">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -1763,7 +1763,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1234875754117">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1234879348078" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234875760231">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1234875781464">
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
                   <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="1234875781465">
@@ -1787,13 +1787,13 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1234875750113">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234875750114">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1234279831102" />
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234879361673">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -1919,7 +1919,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1234783054331">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234783054332">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
@@ -1938,7 +1938,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1234874557782">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1234879468279" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234874568353">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappendNewLine()%cvoid" resolveInfo="appendNewLine" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappendNewLine()%cvoid" resolveInfo="appendNewLine" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1234874573402">
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
                   <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="1234874573403">
@@ -1962,12 +1962,12 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1234875662728">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234875662729">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234882686209">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -1984,7 +1984,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234879337244" resolveInfo="textGen" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234879337182">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1234879337183">
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
                   <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="1234879337184">
@@ -2008,13 +2008,13 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1234879337244">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234879337245">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1234879337246">
           <property name="name" nameId="tpck.1169194664001" value="this" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234879337247">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
@@ -2035,7 +2035,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234879458792" resolveInfo="textGen" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234879458783">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappendNewLine()%cvoid" resolveInfo="appendNewLine" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappendNewLine()%cvoid" resolveInfo="appendNewLine" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1234879458784">
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
                   <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="1234879458785">
@@ -2059,12 +2059,12 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1234879458792">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234879458793">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234882706867">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -2080,7 +2080,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1234880828372">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234880828373">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1234880828374" />
@@ -2094,7 +2094,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234880828372" resolveInfo="textGen" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237468648385">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dindentBuffer()%cvoid" resolveInfo="indentBuffer" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dindentBuffer()%cvoid" resolveInfo="indentBuffer" />
                   </node>
                 </node>
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1237468662200">
@@ -2115,17 +2115,17 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1234880828377">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1234880828378">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1234880828379">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="acqa.~TextGenManager" resolveInfo="TextGenManager" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenManager%dinstance()%cjetbrains%dmps%dtextGen%dTextGenManager" resolveInfo="instance" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zrid.~TextGenManager" resolveInfo="TextGenManager" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenManager%dinstance()%cjetbrains%dmps%dtextGen%dTextGenManager" resolveInfo="instance" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234880828380">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenManager%dappendNodeText(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dtextGen%dTextGenBuffer,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="appendNodeText" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenManager%dappendNodeText(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dtextGen%dTextGenBuffer,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="appendNodeText" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1234880828381">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1234880828382">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234880828372" resolveInfo="textGen" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234880828395">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getContext" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getContext" />
                       </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1234880828396">
@@ -2133,7 +2133,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234880828372" resolveInfo="textGen" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234880828410">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
                       </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1234880828411">
@@ -2158,7 +2158,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234880828372" resolveInfo="textGen" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1234880828433">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
                       </node>
                     </node>
                   </node>
@@ -2289,12 +2289,12 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1234881049010">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234881049011">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234881049012">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -2423,7 +2423,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1236186597617">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1236186597618">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1236186597619">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1236186602371">
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1236186605655">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1236186605656">
@@ -2473,7 +2473,7 @@
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1236186590521">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -2490,7 +2490,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1236186542233" resolveInfo="textGen" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1236186556225">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1236186562413">
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1236186566775">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1236186566776">
@@ -2540,7 +2540,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1236186542233">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1236186542234">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
@@ -2671,7 +2671,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1236188602224" resolveInfo="textGen" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1236188626999">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dincreaseDepth()%cvoid" resolveInfo="increaseDepth" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dincreaseDepth()%cvoid" resolveInfo="increaseDepth" />
                   </node>
                 </node>
               </node>
@@ -2702,7 +2702,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1236188602224" resolveInfo="textGen" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1236188632977">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%ddecreaseDepth()%cvoid" resolveInfo="decreaseDepth" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%ddecreaseDepth()%cvoid" resolveInfo="decreaseDepth" />
                   </node>
                 </node>
               </node>
@@ -2713,7 +2713,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1236188602224">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1236188616966">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
@@ -2731,7 +2731,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1236188722827">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1236188722828">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1236188722829">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dincreaseDepth()%cvoid" resolveInfo="increaseDepth" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dincreaseDepth()%cvoid" resolveInfo="increaseDepth" />
                   </node>
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1236188722830" />
                 </node>
@@ -2760,7 +2760,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1236188728005">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1236188728006">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1236188728007">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%ddecreaseDepth()%cvoid" resolveInfo="decreaseDepth" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%ddecreaseDepth()%cvoid" resolveInfo="decreaseDepth" />
                   </node>
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1236188728008" />
                 </node>
@@ -2771,7 +2771,7 @@
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1236188716561">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -2788,7 +2788,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237468555937" resolveInfo="textGen" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237468548864">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1237468578361">
                   <property name="value" nameId="tpee.1070475926801" value="text" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1237468586346">
@@ -2840,7 +2840,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1237468555937">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237468555938">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
@@ -2856,10 +2856,10 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1237468867860">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237468867861">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237468867862">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237468867863">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237468867864">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetReferentResolveInfoOrName(java%dlang%dString,jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="getReferentResolveInfoOrName" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetReferentResolveInfoOrName(java%dlang%dString,jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="getReferentResolveInfoOrName" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1237468867865">
                       <property name="value" nameId="tpee.1070475926801" value="role" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1237468867866">
@@ -2938,7 +2938,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1237468895226">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237468895227">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
@@ -2957,7 +2957,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237469022648" resolveInfo="textGen" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469033890">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappendNewLine()%cvoid" resolveInfo="appendNewLine" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappendNewLine()%cvoid" resolveInfo="appendNewLine" />
               </node>
             </node>
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1237469039222" />
@@ -2966,7 +2966,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1237469022648">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237469022649">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
@@ -3018,21 +3018,21 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1237469183217">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469183218">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1237469183219">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="acqa.~TextGenManager" resolveInfo="TextGenManager" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenManager%dinstance()%cjetbrains%dmps%dtextGen%dTextGenManager" resolveInfo="instance" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zrid.~TextGenManager" resolveInfo="TextGenManager" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenManager%dinstance()%cjetbrains%dmps%dtextGen%dTextGenManager" resolveInfo="instance" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469183220">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenManager%dappendNodeText(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dtextGen%dTextGenBuffer,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="appendNodeText" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenManager%dappendNodeText(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dtextGen%dTextGenBuffer,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="appendNodeText" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469183221">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1237469183222" />
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469183223">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getContext" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getContext" />
                           </node>
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469183224">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1237469183225" />
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469183226">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
                           </node>
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1237469183227">
@@ -3041,7 +3041,7 @@
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469183228">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1237469183229" />
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469183230">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
                           </node>
                         </node>
                       </node>
@@ -3066,17 +3066,17 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1237469183239">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469183240">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1237469183241">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenManager%dinstance()%cjetbrains%dmps%dtextGen%dTextGenManager" resolveInfo="instance" />
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="acqa.~TextGenManager" resolveInfo="TextGenManager" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenManager%dinstance()%cjetbrains%dmps%dtextGen%dTextGenManager" resolveInfo="instance" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zrid.~TextGenManager" resolveInfo="TextGenManager" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469183242">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~TextGenManager%dappendNodeText(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dtextGen%dTextGenBuffer,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="appendNodeText" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~TextGenManager%dappendNodeText(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dtextGen%dTextGenBuffer,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="appendNodeText" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469183243">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1237469183244">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237469183324" resolveInfo="textGen" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469183245">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getContext" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getContext" />
                           </node>
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469183246">
@@ -3084,7 +3084,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237469183324" resolveInfo="textGen" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469183248">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetBuffer()%cjetbrains%dmps%dtextGen%dTextGenBuffer" resolveInfo="getBuffer" />
                           </node>
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1237469183249">
@@ -3095,7 +3095,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237469183324" resolveInfo="textGen" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469183252">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
                           </node>
                         </node>
                       </node>
@@ -3121,7 +3121,7 @@
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469183263">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1237469183264" />
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469183265">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1237469183266">
                               <property name="value" nameId="tpee.1070475926801" value="separator" />
                               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1237469183267">
@@ -3165,7 +3165,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237469183324" resolveInfo="textGen" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469183285">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1237469183286">
                               <property name="value" nameId="tpee.1070475926801" value="separator" />
                               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1237469183287">
@@ -3282,12 +3282,12 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1237469183324">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237469183325">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237469183326">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -3395,7 +3395,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1237469431824">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469431825">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469431826">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappendNewLine()%cvoid" resolveInfo="appendNewLine" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappendNewLine()%cvoid" resolveInfo="appendNewLine" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1237469431827" />
             </node>
@@ -3404,7 +3404,7 @@
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237469423963">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -3418,10 +3418,10 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1237469632300">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469632301">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469632302">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6302490199502034186">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6302490199502034187">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetReferentResolveInfoOrName(java%dlang%dString,jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="getReferentResolveInfoOrName" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetReferentResolveInfoOrName(java%dlang%dString,jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="getReferentResolveInfoOrName" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6302490199502034188">
                       <property name="value" nameId="tpee.1070475926801" value="role" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="6302490199502034189">
@@ -3495,7 +3495,7 @@
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237469632339">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -3510,7 +3510,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237469665259">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1237469708804" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237469665261">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1237469665262">
                   <property name="value" nameId="tpee.1070475926801" value="text" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1237469665263">
@@ -3561,7 +3561,7 @@
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237469704209">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -3576,7 +3576,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237470912429">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1237470912022" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237470914699">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dfoundError(java%dlang%dString)%cvoid" resolveInfo="foundError" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dfoundError(java%dlang%dString)%cvoid" resolveInfo="foundError" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1237470918340">
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1237470933864">
                     <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1237470933865">
@@ -3617,7 +3617,7 @@
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237470907535">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -3634,7 +3634,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237471071051" resolveInfo="textGen" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237471210362">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dfoundError(java%dlang%dString)%cvoid" resolveInfo="foundError" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dfoundError(java%dlang%dString)%cvoid" resolveInfo="foundError" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1237471213503">
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1237471225043">
                     <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1237471225044">
@@ -3676,7 +3676,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1237471071051">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237471071052">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>
@@ -3692,10 +3692,10 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4340589516982036833">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4340589516982036834">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4340589516982036835">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4340589516982036837">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4340589516982036838">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetReferentPresentation(jetbrains%dmps%dsmodel%dSReference,boolean)%cjava%dlang%dString" resolveInfo="getReferentPresentation" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetReferentPresentation(jetbrains%dmps%dsmodel%dSReference,boolean)%cjava%dlang%dString" resolveInfo="getReferentPresentation" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4340589516982036840">
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="4340589516982036843">
                         <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="4340589516982036844">
@@ -3741,7 +3741,7 @@
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6911933836258446139">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
       </node>
     </node>
   </root>
@@ -3758,13 +3758,13 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6911933836258446185" resolveInfo="textGen" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6911933836258446193">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6911933836258446195">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6911933836258446194">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6911933836258446185" resolveInfo="textGen" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4340589516981959091">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="acqa.~SNodeTextGen%dgetReferentPresentation(jetbrains%dmps%dsmodel%dSReference,boolean)%cjava%dlang%dString" resolveInfo="getReferentPresentation" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zrid.~SNodeTextGen%dgetReferentPresentation(jetbrains%dmps%dsmodel%dSReference,boolean)%cjava%dlang%dString" resolveInfo="getReferentPresentation" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4340589516981966473">
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="4340589516981966479">
                         <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="4340589516981966480">
@@ -3809,7 +3809,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6911933836258446185">
           <property name="name" nameId="tpck.1169194664001" value="textGen" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6911933836258446186">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="acqa.~SNodeTextGen" resolveInfo="SNodeTextGen" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zrid.~SNodeTextGen" resolveInfo="SNodeTextGen" />
           </node>
         </node>
       </node>

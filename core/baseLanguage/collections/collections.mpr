@@ -41,17 +41,17 @@
   </component>
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="${project}/collections.mpl" />
+      <modulePath path="${project}/languages/trove/runtime/collections_trove.runtime.msd" folder="" />
+      <modulePath path="${project}/languages/trove/trove.mpl" />
+      <modulePath path="${project}/runtime/collections.runtime.msd" folder="" />
+      <modulePath path="${project}/runtime/gwt/collections.runtime.gwt.msd" folder="" />
       <modulePath path="${project}/solutions/collections/samples/collections_samples.msd" />
       <modulePath path="${project}/solutions/collections/sandbox/collections_sandbox.msd" />
       <modulePath path="${project}/solutions/collections/unittest/collections_unittest.msd" />
       <modulePath path="${project}/solutions/collections_trove.test/collections_trove.test.msd" folder="" />
       <modulePath path="${project}/solutions/internalCollections.sandbox/internalCollections.sandbox.msd" />
       <modulePath path="${project}/solutions/internalCollections.test/internalCollections.test.msd" />
-      <modulePath path="${project}/languages/trove/runtime/collections_trove.runtime.msd" folder="" />
-      <modulePath path="${project}/runtime/collections.runtime.msd" folder="" />
-      <modulePath path="${project}/runtime/gwt/collections.runtime.gwt.msd" folder="" />
-      <modulePath path="${project}/collections.mpl" />
-      <modulePath path="${project}/languages/trove/trove.mpl" />
     </projectModules>
     <genConfs>
       <genConfModule name="UnitTests" moduleRef="collections_unittest" />

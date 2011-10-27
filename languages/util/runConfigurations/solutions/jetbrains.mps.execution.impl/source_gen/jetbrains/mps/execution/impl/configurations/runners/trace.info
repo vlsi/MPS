@@ -92,13 +92,13 @@
     <scopeInfo nodeId="5145867626676112546" fileName="LegacyBeforeTaskProvider.java" startLine="102" startPosition="54" endLine="106" endPosition="5" />
     <scopeInfo nodeId="5145867626676112564" fileName="LegacyBeforeTaskProvider.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="5145867626676112572" fileName="LegacyBeforeTaskProvider.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="5145867626676112577" varName="task" />
       <varInfo nodeId="5145867626676112575" varName="runConfiguration" />
+      <varInfo nodeId="5145867626676112577" varName="task" />
     </scopeInfo>
     <scopeInfo nodeId="5145867626676112583" fileName="LegacyBeforeTaskProvider.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="5145867626676112606" fileName="LegacyBeforeTaskProvider.java" startLine="54" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="5145867626676112611" varName="task" />
       <varInfo nodeId="5145867626676112609" varName="runConfiguration" />
+      <varInfo nodeId="5145867626676112611" varName="task" />
     </scopeInfo>
     <scopeInfo nodeId="5145867626676112687" fileName="LegacyBeforeTaskProvider.java" startLine="72" startPosition="9" endLine="77" endPosition="93">
       <varInfo nodeId="5145867626676112689" varName="make" />
@@ -112,12 +112,12 @@
     </scopeInfo>
     <scopeInfo nodeId="5145867626676112649" fileName="LegacyBeforeTaskProvider.java" startLine="71" startPosition="123" endLine="95" endPosition="17" />
     <scopeInfo nodeId="5145867626676112640" fileName="LegacyBeforeTaskProvider.java" startLine="69" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="5145867626676112647" varName="task" />
-      <varInfo nodeId="5145867626676112643" varName="context" />
       <varInfo nodeId="5145867626676112645" varName="configuration" />
+      <varInfo nodeId="5145867626676112643" varName="context" />
+      <varInfo nodeId="5145867626676112647" varName="task" />
     </scopeInfo>
-    <unitInfo nodeId="5145867626676112543" fileName="LegacyBeforeTaskProvider.java" startLine="102" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider$MakeTask" />
     <unitInfo nodeId="5145867626676109821" fileName="LegacyBeforeTaskProvider.java" startLine="18" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider" />
+    <unitInfo nodeId="5145867626676112543" fileName="LegacyBeforeTaskProvider.java" startLine="102" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider$MakeTask" />
   </root>
   <root nodeId="5145867626676113213">
     <nodeInfo nodeId="5145867626676113213" fileName="MPSProgramRunner.java" startLine="13" startPosition="60" endLine="14" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />

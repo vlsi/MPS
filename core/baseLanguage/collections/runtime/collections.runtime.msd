@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="collections.runtime" uuid="9b80526e-f0bf-4992-bdf5-cee39c1833f3" compileInMPS="false">
+<solution name="collections.runtime" uuid="9b80526e-f0bf-4992-bdf5-cee39c1833f3" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}/jetbrains" namespacePrefix="jetbrains" />
   </models>

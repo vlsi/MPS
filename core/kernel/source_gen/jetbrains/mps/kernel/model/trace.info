@@ -264,36 +264,36 @@
       <varInfo nodeId="1237996347418" varName="extended" />
     </scopeInfo>
     <scopeInfo nodeId="5391092005707801159" fileName="SModelUtil.java" startLine="226" startPosition="91" endLine="236" endPosition="37">
-      <varInfo nodeId="5391092005707801163" varName="annotationLinks" />
       <varInfo nodeId="5391092005707801169" varName="annotationLinkDeclaration" />
+      <varInfo nodeId="5391092005707801163" varName="annotationLinks" />
     </scopeInfo>
     <scopeInfo nodeId="1238267621439" fileName="SModelUtil.java" startLine="61" startPosition="61" endLine="72" endPosition="5" />
     <scopeInfo nodeId="2116786884968876803" fileName="SModelUtil.java" startLine="88" startPosition="30" endLine="99" endPosition="22">
-      <varInfo nodeId="2116786884968876829" varName="result" />
-      <varInfo nodeId="2116786884968876810" varName="language" />
       <varInfo nodeId="2116786884968876824" varName="conceptName" />
+      <varInfo nodeId="2116786884968876810" varName="language" />
       <varInfo nodeId="2116786884968876805" varName="languageFqName" />
+      <varInfo nodeId="2116786884968876829" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7651139485607046795" fileName="SModelUtil.java" startLine="208" startPosition="81" endLine="219" endPosition="69" />
     <scopeInfo nodeId="1238254781295" fileName="SModelUtil.java" startLine="148" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="1238254781344" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="1238251253602" fileName="SModelUtil.java" startLine="185" startPosition="67" endLine="197" endPosition="69">
-      <varInfo nodeId="1238416975415" varName="toFqName" />
       <varInfo nodeId="1238416964688" varName="fromFqName" />
+      <varInfo nodeId="1238416975415" varName="toFqName" />
     </scopeInfo>
     <scopeInfo nodeId="5391092005707801156" fileName="SModelUtil.java" startLine="225" startPosition="0" endLine="238" endPosition="0">
-      <varInfo nodeId="6713097555595618839" varName="scope" />
       <varInfo nodeId="6713097555595618832" varName="childRole" />
+      <varInfo nodeId="6713097555595618839" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="2116786884968876800" fileName="SModelUtil.java" startLine="87" startPosition="90" endLine="101" endPosition="0" />
     <scopeInfo nodeId="7651139485607046792" fileName="SModelUtil.java" startLine="207" startPosition="0" endLine="221" endPosition="0">
-      <varInfo nodeId="7651139485607046799" varName="toFqName" />
       <varInfo nodeId="7651139485607046797" varName="fromFqName" />
+      <varInfo nodeId="7651139485607046799" varName="toFqName" />
     </scopeInfo>
     <scopeInfo nodeId="1238251253599" fileName="SModelUtil.java" startLine="184" startPosition="0" endLine="199" endPosition="0">
-      <varInfo nodeId="1238251304684" varName="to" />
       <varInfo nodeId="1238251299214" varName="from" />
+      <varInfo nodeId="1238251304684" varName="to" />
     </scopeInfo>
     <scopeInfo nodeId="1237995590838" fileName="SModelUtil.java" startLine="115" startPosition="62" endLine="131" endPosition="13">
       <varInfo nodeId="1237995590840" varName="l" />
@@ -308,8 +308,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1238267513315" fileName="SModelUtil.java" startLine="58" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="1238267551979" varName="concept" />
-      <varInfo nodeId="1238267561966" varName="scope" />
       <varInfo nodeId="1238267545899" varName="nodeFQName" />
+      <varInfo nodeId="1238267561966" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="1237995590970" fileName="SModelUtil.java" startLine="161" startPosition="67" endLine="182" endPosition="18">
       <varInfo nodeId="1237996276627" varName="result" />
@@ -321,12 +321,12 @@
       <varInfo nodeId="1237995590971" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="1237995590716" fileName="SModelUtil.java" startLine="78" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="1237995590800" varName="scope" />
       <varInfo nodeId="1237995590798" varName="conceptFQName" />
+      <varInfo nodeId="1237995590800" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="6713097555595619187" fileName="SModelUtil.java" startLine="231" startPosition="91" endLine="235" endPosition="5" unitName="jetbrains.mps.kernel.model.SModelUtil$2" />
-    <unitInfo nodeId="2116786884968876798" fileName="SModelUtil.java" startLine="87" startPosition="69" endLine="101" endPosition="5" unitName="jetbrains.mps.kernel.model.SModelUtil$1" />
     <unitInfo nodeId="1237995590703" fileName="SModelUtil.java" startLine="39" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.kernel.model.SModelUtil" />
+    <unitInfo nodeId="2116786884968876798" fileName="SModelUtil.java" startLine="87" startPosition="69" endLine="101" endPosition="5" unitName="jetbrains.mps.kernel.model.SModelUtil$1" />
+    <unitInfo nodeId="6713097555595619187" fileName="SModelUtil.java" startLine="231" startPosition="91" endLine="235" endPosition="5" unitName="jetbrains.mps.kernel.model.SModelUtil$2" />
   </root>
   <root nodeId="507022825981353176">
     <nodeInfo nodeId="507022825981353194" fileName="TemporaryModelOwner.java" startLine="24" startPosition="32" endLine="25" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -416,10 +416,10 @@
     <scopeInfo nodeId="8296861627646399843" fileName="TemporaryModelOwner.java" startLine="51" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="8296861627646404056" fileName="TemporaryModelOwner.java" startLine="59" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="8296861627646404109" fileName="TemporaryModelOwner.java" startLine="71" startPosition="71" endLine="83" endPosition="24">
-      <varInfo nodeId="8296861627646404130" varName="module" />
-      <varInfo nodeId="8296861627646404117" varName="model" />
-      <varInfo nodeId="8296861627646404111" varName="mRef" />
       <varInfo nodeId="8296861627646404142" varName="dep" />
+      <varInfo nodeId="8296861627646404111" varName="mRef" />
+      <varInfo nodeId="8296861627646404117" varName="model" />
+      <varInfo nodeId="8296861627646404130" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="8296861627646404100" fileName="TemporaryModelOwner.java" startLine="70" startPosition="58" endLine="84" endPosition="7" />
     <scopeInfo nodeId="8296861627646404101" fileName="TemporaryModelOwner.java" startLine="70" startPosition="58" endLine="84" endPosition="7">
@@ -433,9 +433,8 @@
     </scopeInfo>
     <scopeInfo nodeId="8296861627646404084" fileName="TemporaryModelOwner.java" startLine="67" startPosition="0" endLine="88" endPosition="0" />
     <unitInfo nodeId="507022825981353211" fileName="TemporaryModelOwner.java" startLine="28" startPosition="82" endLine="23" endPosition="0" />
-    <unitInfo nodeId="507022825981353202" fileName="TemporaryModelOwner.java" startLine="26" startPosition="46" endLine="30" endPosition="5" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner$2" />
     <unitInfo nodeId="507022825981353182" fileName="TemporaryModelOwner.java" startLine="34" startPosition="46" endLine="38" endPosition="5" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner$1" />
-    <unitInfo nodeId="507022825981353176" fileName="TemporaryModelOwner.java" startLine="23" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
+    <unitInfo nodeId="507022825981353202" fileName="TemporaryModelOwner.java" startLine="26" startPosition="46" endLine="30" endPosition="5" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner$2" />
   </root>
 </debugInfo>
 

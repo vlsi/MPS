@@ -51,7 +51,7 @@ public class RulesUtil {
       }
     }
     if (SConceptPropertyOperations.getBoolean(op, "applicableToConcept")) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new RulesUtil.QuotationClass_yxkngc_a1a0a0f0a().createNode(typeCheckingContext), false)) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new RulesUtil.QuotationClass_yxkngc_a1a0a0f0a().createNode(typeCheckingContext))) {
         isGood = true;
       }
     }

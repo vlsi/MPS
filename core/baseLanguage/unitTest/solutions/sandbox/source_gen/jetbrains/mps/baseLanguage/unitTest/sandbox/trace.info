@@ -89,8 +89,8 @@
       <varInfo nodeId="8923434991440664336" varName="clazz" />
     </scopeInfo>
     <scopeInfo nodeId="8923434991440664345" fileName="SimpleRunner.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="8923434991440664350" varName="notifier" />
       <varInfo nodeId="8923434991440664348" varName="method" />
+      <varInfo nodeId="8923434991440664350" varName="notifier" />
     </scopeInfo>
     <unitInfo nodeId="8923434991440662525" fileName="SimpleRunner.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.sandbox.SimpleRunner" />
   </root>

@@ -29,12 +29,17 @@ public class DependenciesTracer<T> {
 
   public void track(T node) {
     myCurrentTrace.add(node);
+    if (myCurrentTrace.size() == 1) return;
     Set<List<T>> traces = myTraces.get(node);
     if (traces == null) {
       traces = new HashSet<List<T>>();
       myTraces.put(node, traces);
     }
     traces.add(new ArrayList<T>(myCurrentTrace));
+  }
+
+  public void trackRuntime(T node) {
+
   }
 
   public void unTrack() {

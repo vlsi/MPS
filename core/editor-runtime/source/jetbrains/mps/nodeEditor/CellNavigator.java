@@ -53,6 +53,12 @@ abstract class CellNavigator {
       current = parent;
       parent = parent.getParent();
     }
+    if (myEditor.getRootCell() instanceof EditorCell_Collection) {
+      EditorCell result = findNextCellWithCondition(((EditorCell_Collection) myEditor.getRootCell()), null, backwards);
+      if (result != null) {
+        myEditor.changeSelection(result);
+      }
+    }
   }
 
   private EditorCell findNextCellWithCondition(

@@ -19,7 +19,7 @@ public class Add_NullableAnnotationToParameter_QuickFix extends QuickFix_Runtime
 
   public void execute(SNode node) {
     SNode instance = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
-    SLinkOperations.setTarget(instance, "annotation", SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)", "~Nullable"), false);
+    SLinkOperations.setTarget(instance, "annotation", SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)", "~Nullable"), false);
     ListSequence.fromList(SLinkOperations.getTargets(((SNode) Add_NullableAnnotationToParameter_QuickFix.this.getField("parameter")[0]), "annotation", true)).addElement(instance);
   }
 }

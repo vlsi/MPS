@@ -131,24 +131,24 @@
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121655" fileName="GoToRulesHelper.java" startLine="37" startPosition="97" endLine="50" endPosition="24">
       <varInfo nodeId="4832363360995121683" varName="m" />
-      <varInfo nodeId="4832363360995121694" varName="y" />
       <varInfo nodeId="4832363360995121657" varName="rules" />
       <varInfo nodeId="4832363360995121690" varName="x" />
+      <varInfo nodeId="4832363360995121694" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121772" fileName="GoToRulesHelper.java" startLine="59" startPosition="38" endLine="72" endPosition="9">
-      <varInfo nodeId="4832363360995121787" varName="iter" />
       <varInfo nodeId="4832363360995121774" varName="cond" />
+      <varInfo nodeId="4832363360995121787" varName="iter" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121901" fileName="GoToRulesHelper.java" startLine="93" startPosition="0" endLine="108" endPosition="0">
-      <varInfo nodeId="4832363360995121908" varName="skipExact" />
       <varInfo nodeId="4832363360995121906" varName="conceptDeclaration" />
       <varInfo nodeId="4832363360995121904" varName="ruleNode" />
+      <varInfo nodeId="4832363360995121908" varName="skipExact" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121644" fileName="GoToRulesHelper.java" startLine="36" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="4832363360995121653" varName="concept" />
-      <varInfo nodeId="4832363360995121647" varName="frame" />
       <varInfo nodeId="4832363360995121649" varName="cell" />
+      <varInfo nodeId="4832363360995121653" varName="concept" />
       <varInfo nodeId="4832363360995121651" varName="context" />
+      <varInfo nodeId="4832363360995121647" varName="frame" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121760" fileName="GoToRulesHelper.java" startLine="57" startPosition="78" endLine="73" endPosition="7">
       <varInfo nodeId="4832363360995121762" varName="helginsDescriptor" />
@@ -160,26 +160,26 @@
       <varInfo nodeId="4832363360995122060" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122020" fileName="GoToRulesHelper.java" startLine="121" startPosition="79" endLine="148" endPosition="7">
-      <varInfo nodeId="4832363360995122034" varName="label" />
       <varInfo nodeId="4832363360995122025" varName="caption" />
+      <varInfo nodeId="4832363360995122034" varName="label" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121632" fileName="GoToRulesHelper.java" startLine="120" startPosition="50" endLine="149" endPosition="5">
-      <varInfo nodeId="4832363360995121638" varName="operationContext" />
       <varInfo nodeId="4832363360995121635" varName="list" />
+      <varInfo nodeId="4832363360995121638" varName="operationContext" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121729" fileName="GoToRulesHelper.java" startLine="53" startPosition="98" endLine="83" endPosition="17">
-      <varInfo nodeId="4832363360995121743" varName="overriding" />
       <varInfo nodeId="4832363360995121731" varName="language" />
+      <varInfo nodeId="4832363360995121743" varName="overriding" />
       <varInfo nodeId="4832363360995121736" varName="rules" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121721" fileName="GoToRulesHelper.java" startLine="52" startPosition="0" endLine="85" endPosition="0">
-      <varInfo nodeId="4832363360995121727" varName="exactConcept" />
       <varInfo nodeId="4832363360995121725" varName="conceptDeclaration" />
+      <varInfo nodeId="4832363360995121727" varName="exactConcept" />
     </scopeInfo>
+    <unitInfo nodeId="4832363360995121627" fileName="GoToRulesHelper.java" startLine="33" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper" />
     <unitInfo nodeId="4832363360995121779" fileName="GoToRulesHelper.java" startLine="60" startPosition="36" endLine="64" endPosition="9" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$1" />
     <unitInfo nodeId="4832363360995122096" fileName="GoToRulesHelper.java" startLine="139" startPosition="16" endLine="147" endPosition="9" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$1" />
     <unitInfo nodeId="4832363360995121629" fileName="GoToRulesHelper.java" startLine="120" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$MyMenu" />
-    <unitInfo nodeId="4832363360995121627" fileName="GoToRulesHelper.java" startLine="33" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper" />
   </root>
   <root nodeId="4832363360995122135">
     <nodeInfo nodeId="4832363360995122137" fileName="DeleteNodesHelper.java" startLine="20" startPosition="32" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodes" />
@@ -267,9 +267,9 @@
     <scopeInfo nodeId="4832363360995122427" fileName="DeleteNodesHelper.java" startLine="99" startPosition="57" endLine="103" endPosition="0" />
     <scopeInfo nodeId="4832363360995122449" fileName="DeleteNodesHelper.java" startLine="106" startPosition="18" endLine="110" endPosition="0" />
     <scopeInfo nodeId="4832363360995122147" fileName="DeleteNodesHelper.java" startLine="24" startPosition="0" endLine="29" endPosition="3">
-      <varInfo nodeId="4832363360995122155" varName="safe" />
-      <varInfo nodeId="4832363360995122150" varName="nodes" />
       <varInfo nodeId="4832363360995122153" varName="context" />
+      <varInfo nodeId="4832363360995122150" varName="nodes" />
+      <varInfo nodeId="4832363360995122155" varName="safe" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122327" fileName="DeleteNodesHelper.java" startLine="67" startPosition="123" endLine="72" endPosition="7" />
     <scopeInfo nodeId="4832363360995122230" fileName="DeleteNodesHelper.java" startLine="44" startPosition="78" endLine="50" endPosition="26">
@@ -294,25 +294,25 @@
       <varInfo nodeId="4832363360995122173" varName="fromProjectPane" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122257" fileName="DeleteNodesHelper.java" startLine="53" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="4832363360995122264" varName="node" />
       <varInfo nodeId="4832363360995122262" varName="fromProjectPane" />
+      <varInfo nodeId="4832363360995122264" varName="node" />
       <varInfo nodeId="4832363360995122260" varName="projectPane" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122307" fileName="DeleteNodesHelper.java" startLine="65" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="4832363360995122310" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122357" fileName="DeleteNodesHelper.java" startLine="82" startPosition="78" endLine="110" endPosition="14">
-      <varInfo nodeId="4832363360995122405" varName="refactoringContext" />
-      <varInfo nodeId="4832363360995122359" varName="refactoringClass" />
       <varInfo nodeId="4832363360995122400" varName="refactoring" />
+      <varInfo nodeId="4832363360995122359" varName="refactoringClass" />
+      <varInfo nodeId="4832363360995122405" varName="refactoringContext" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122350" fileName="DeleteNodesHelper.java" startLine="81" startPosition="0" endLine="112" endPosition="0">
-      <varInfo nodeId="4832363360995122355" varName="node" />
       <varInfo nodeId="4832363360995122353" varName="context" />
+      <varInfo nodeId="4832363360995122355" varName="node" />
     </scopeInfo>
+    <unitInfo nodeId="4832363360995122135" fileName="DeleteNodesHelper.java" startLine="20" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.DeleteNodesHelper" />
     <unitInfo nodeId="4832363360995122426" fileName="DeleteNodesHelper.java" startLine="99" startPosition="45" endLine="103" endPosition="5" unitName="jetbrains.mps.ide.actions.nodes.DeleteNodesHelper$1" />
     <unitInfo nodeId="4832363360995122448" fileName="DeleteNodesHelper.java" startLine="106" startPosition="8" endLine="110" endPosition="5" unitName="jetbrains.mps.ide.actions.nodes.DeleteNodesHelper$2" />
-    <unitInfo nodeId="4832363360995122135" fileName="DeleteNodesHelper.java" startLine="20" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.DeleteNodesHelper" />
   </root>
   <root nodeId="4832363360995122470">
     <nodeInfo nodeId="4778270058596008619" fileName="GoToEditorDeclarationHelper.java" startLine="26" startPosition="30" endLine="27" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -372,45 +372,45 @@
     <scopeInfo nodeId="4832363360995122609" fileName="GoToEditorDeclarationHelper.java" startLine="59" startPosition="67" endLine="64" endPosition="0" />
     <scopeInfo nodeId="4832363360995122623" fileName="GoToEditorDeclarationHelper.java" startLine="68" startPosition="97" endLine="73" endPosition="7" />
     <scopeInfo nodeId="4832363360995122674" fileName="GoToEditorDeclarationHelper.java" startLine="76" startPosition="127" endLine="81" endPosition="18">
-      <varInfo nodeId="4778270058596023045" varName="result" />
       <varInfo nodeId="4832363360995122676" varName="editorModel" />
+      <varInfo nodeId="4778270058596023045" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122616" fileName="GoToEditorDeclarationHelper.java" startLine="67" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="4832363360995122621" varName="conceptDeclaration" />
       <varInfo nodeId="4832363360995122619" varName="editorModel" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122665" fileName="GoToEditorDeclarationHelper.java" startLine="75" startPosition="0" endLine="83" endPosition="0">
-      <varInfo nodeId="4832363360995122672" varName="scope" />
       <varInfo nodeId="4832363360995122668" varName="conceptDeclaration" />
       <varInfo nodeId="4832363360995122670" varName="editorModelDescriptor" />
+      <varInfo nodeId="4832363360995122672" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122560" fileName="GoToEditorDeclarationHelper.java" startLine="49" startPosition="124" endLine="65" endPosition="47">
-      <varInfo nodeId="4832363360995122575" varName="message" />
       <varInfo nodeId="4832363360995122562" varName="languageEditor" />
+      <varInfo nodeId="4832363360995122575" varName="message" />
       <varInfo nodeId="4832363360995122587" varName="option" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122551" fileName="GoToEditorDeclarationHelper.java" startLine="48" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="4832363360995122556" varName="concept" />
-      <varInfo nodeId="4832363360995122558" varName="scope" />
       <varInfo nodeId="4832363360995122554" varName="language" />
+      <varInfo nodeId="4832363360995122558" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122487" fileName="GoToEditorDeclarationHelper.java" startLine="24" startPosition="149" endLine="46" endPosition="13">
-      <varInfo nodeId="4832363360995122511" varName="message" />
       <varInfo nodeId="4832363360995122489" varName="editorDeclaration" />
+      <varInfo nodeId="4832363360995122511" varName="message" />
       <varInfo nodeId="4832363360995122524" varName="option" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995122476" fileName="GoToEditorDeclarationHelper.java" startLine="23" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="4832363360995122481" varName="concept" />
       <varInfo nodeId="4832363360995122479" varName="languageEditor" />
       <varInfo nodeId="4832363360995122483" varName="node" />
-      <varInfo nodeId="4832363360995122481" varName="concept" />
       <varInfo nodeId="4832363360995122485" varName="scope" />
     </scopeInfo>
+    <unitInfo nodeId="4832363360995122470" fileName="GoToEditorDeclarationHelper.java" startLine="20" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper" />
     <unitInfo nodeId="4832363360995122496" fileName="GoToEditorDeclarationHelper.java" startLine="25" startPosition="71" endLine="29" endPosition="5" unitName="jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper$1" />
     <unitInfo nodeId="4832363360995122518" fileName="GoToEditorDeclarationHelper.java" startLine="33" startPosition="62" endLine="37" endPosition="5" unitName="jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper$2" />
     <unitInfo nodeId="4832363360995122545" fileName="GoToEditorDeclarationHelper.java" startLine="42" startPosition="62" endLine="46" endPosition="5" unitName="jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper$3" />
-    <unitInfo nodeId="2074336189789658831" fileName="GoToEditorDeclarationHelper.java" startLine="69" startPosition="151" endLine="73" endPosition="5" unitName="jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper$5" />
     <unitInfo nodeId="4832363360995122608" fileName="GoToEditorDeclarationHelper.java" startLine="59" startPosition="55" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper$4" />
-    <unitInfo nodeId="4832363360995122470" fileName="GoToEditorDeclarationHelper.java" startLine="20" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper" />
+    <unitInfo nodeId="2074336189789658831" fileName="GoToEditorDeclarationHelper.java" startLine="69" startPosition="151" endLine="73" endPosition="5" unitName="jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper$5" />
   </root>
 </debugInfo>
 

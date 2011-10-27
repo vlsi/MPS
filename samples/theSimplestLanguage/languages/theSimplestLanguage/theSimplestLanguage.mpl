@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.samples.theSimplestLanguage" uuid="f8fecd49-3abe-4733-9741-0c637123d219" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.samples.theSimplestLanguage" />
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.samples.theSimplestLanguage" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.samples.theSimplestLanguage" />
   </models>
   <accessoryModels />
   <generators>
@@ -18,6 +18,9 @@
     </generator>
   </generators>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
+  </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>

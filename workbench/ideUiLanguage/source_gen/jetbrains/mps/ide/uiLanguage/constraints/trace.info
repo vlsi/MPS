@@ -25,8 +25,8 @@
       <varInfo nodeId="1203606533945" varName="parentNode" />
     </scopeInfo>
     <scopeInfo nodeId="1203607268700" fileName="DialogUtil.java" startLine="10" startPosition="61" endLine="21" endPosition="23">
-      <varInfo nodeId="1203607303158" varName="declaration" />
       <varInfo nodeId="1203607303142" varName="container" />
+      <varInfo nodeId="1203607303158" varName="declaration" />
     </scopeInfo>
     <scopeInfo nodeId="1203607268697" fileName="DialogUtil.java" startLine="9" startPosition="25" endLine="23" endPosition="0">
       <varInfo nodeId="1203607308900" varName="parentNode" />

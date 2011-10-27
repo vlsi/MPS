@@ -40,8 +40,8 @@
       <varInfo nodeId="6056923343037305866" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6056923343037305740" fileName="MappingConfigFinder.java" startLine="25" startPosition="0" endLine="29" endPosition="3">
-      <varInfo nodeId="6056923343037305745" varName="nodeToFindUsages" />
       <varInfo nodeId="6056923343037305743" varName="generator" />
+      <varInfo nodeId="6056923343037305745" varName="nodeToFindUsages" />
     </scopeInfo>
     <scopeInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="123" endLine="40" endPosition="0" />
     <scopeInfo nodeId="6056923343037305854" fileName="MappingConfigFinder.java" startLine="48" startPosition="47" endLine="53" endPosition="9" />
@@ -69,20 +69,20 @@
       <varInfo nodeId="6056923343037305789" varName="mappingConfig" />
     </scopeInfo>
     <scopeInfo nodeId="6056923343037305887" fileName="MappingConfigFinder.java" startLine="58" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="6056923343037305892" varName="result" />
       <varInfo nodeId="6056923343037305890" varName="parent" />
+      <varInfo nodeId="6056923343037305892" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6056923343037305764" fileName="MappingConfigFinder.java" startLine="31" startPosition="80" endLine="56" endPosition="85">
       <varInfo nodeId="6056923343037305775" varName="mappingConfigs" />
-      <varInfo nodeId="6056923343037305766" varName="results" />
       <varInfo nodeId="6056923343037305781" varName="nodesToCheck" />
+      <varInfo nodeId="6056923343037305766" varName="results" />
     </scopeInfo>
     <scopeInfo nodeId="6056923343037305756" fileName="MappingConfigFinder.java" startLine="30" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="6056923343037305762" varName="monitor" />
       <varInfo nodeId="6056923343037305760" varName="query" />
     </scopeInfo>
-    <unitInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="100" endLine="40" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder$1" />
     <unitInfo nodeId="6056923343037305731" fileName="MappingConfigFinder.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder" />
+    <unitInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="100" endLine="40" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder$1" />
   </root>
   <root nodeId="7228605397000826641">
     <nodeInfo nodeId="7228605397000826656" fileName="LanguageConceptsUsagesFinder.java" startLine="29" startPosition="73" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -142,18 +142,18 @@
       <varInfo nodeId="7228605397000830124" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7960820487347454274" fileName="LanguageConceptsUsagesFinder.java" startLine="54" startPosition="9" endLine="70" endPosition="27">
-      <varInfo nodeId="7228605397000826766" varName="models" />
-      <varInfo nodeId="7228605397000826790" varName="scope" />
-      <varInfo nodeId="7228605397000830182" varName="results" />
       <varInfo nodeId="7228605397000826754" varName="modelResults" />
+      <varInfo nodeId="7228605397000826766" varName="models" />
+      <varInfo nodeId="7228605397000830182" varName="results" />
+      <varInfo nodeId="7228605397000826790" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826655" fileName="LanguageConceptsUsagesFinder.java" startLine="29" startPosition="73" endLine="73" endPosition="5">
-      <varInfo nodeId="7228605397000826706" varName="sModel" />
-      <varInfo nodeId="7228605397000826674" varName="module" />
       <varInfo nodeId="7228605397000826664" varName="holder" />
-      <varInfo nodeId="7228605397000826657" varName="searchResults" />
-      <varInfo nodeId="7228605397000826728" varName="roots" />
       <varInfo nodeId="7228605397000826687" varName="language" />
+      <varInfo nodeId="7228605397000826674" varName="module" />
+      <varInfo nodeId="7228605397000826728" varName="roots" />
+      <varInfo nodeId="7228605397000826706" varName="sModel" />
+      <varInfo nodeId="7228605397000826657" varName="searchResults" />
       <varInfo nodeId="7228605397000826693" varName="structureModel" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826648" fileName="LanguageConceptsUsagesFinder.java" startLine="28" startPosition="0" endLine="75" endPosition="0">
@@ -233,8 +233,8 @@
     <scopeInfo nodeId="7228605397000826971" fileName="AspectMethodsFinder.java" startLine="51" startPosition="56" endLine="55" endPosition="7" />
     <scopeInfo nodeId="7228605397000827002" fileName="AspectMethodsFinder.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="7228605397000826843" fileName="AspectMethodsFinder.java" startLine="74" startPosition="0" endLine="78" endPosition="5">
-      <varInfo nodeId="7228605397000826846" varName="modelName" />
       <varInfo nodeId="7228605397000826848" varName="methodName" />
+      <varInfo nodeId="7228605397000826846" varName="modelName" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826850" fileName="AspectMethodsFinder.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="7228605397000827085" fileName="AspectMethodsFinder.java" startLine="33" startPosition="25" endLine="38" endPosition="9" />
@@ -246,12 +246,12 @@
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826853" fileName="AspectMethodsFinder.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="7228605397000826859" fileName="AspectMethodsFinder.java" startLine="88" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="7228605397000826864" varName="project" />
       <varInfo nodeId="7228605397000826862" varName="element" />
+      <varInfo nodeId="7228605397000826864" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826866" fileName="AspectMethodsFinder.java" startLine="93" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="7228605397000826871" varName="project" />
       <varInfo nodeId="7228605397000826869" varName="element" />
+      <varInfo nodeId="7228605397000826871" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826963" fileName="AspectMethodsFinder.java" startLine="50" startPosition="83" endLine="56" endPosition="5">
       <varInfo nodeId="7228605397000826969" varName="value" />
@@ -259,23 +259,23 @@
     <scopeInfo nodeId="7228605397000826921" fileName="AspectMethodsFinder.java" startLine="32" startPosition="57" endLine="40" endPosition="0" />
     <scopeInfo nodeId="7228605397000826962" fileName="AspectMethodsFinder.java" startLine="50" startPosition="83" endLine="59" endPosition="5" />
     <scopeInfo nodeId="7228605397000826952" fileName="AspectMethodsFinder.java" startLine="49" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="7228605397000826955" varName="res" />
-      <varInfo nodeId="7228605397000826958" varName="node" />
       <varInfo nodeId="7228605397000826960" varName="methodName" />
+      <varInfo nodeId="7228605397000826958" varName="node" />
+      <varInfo nodeId="7228605397000826955" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826896" fileName="AspectMethodsFinder.java" startLine="29" startPosition="80" endLine="47" endPosition="15">
-      <varInfo nodeId="7228605397000826925" varName="res" />
       <varInfo nodeId="7228605397000826908" varName="applicableModelDescriptors" />
       <varInfo nodeId="7228605397000826898" varName="data" />
+      <varInfo nodeId="7228605397000826925" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826888" fileName="AspectMethodsFinder.java" startLine="28" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="7228605397000826894" varName="monitor" />
       <varInfo nodeId="7228605397000826892" varName="query" />
     </scopeInfo>
-    <unitInfo nodeId="7228605397000826873" fileName="AspectMethodsFinder.java" startLine="100" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder$AspectMethodQueryData" />
-    <unitInfo nodeId="7228605397000826920" fileName="AspectMethodsFinder.java" startLine="32" startPosition="45" endLine="40" endPosition="5" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder$1" />
-    <unitInfo nodeId="7228605397000826827" fileName="AspectMethodsFinder.java" startLine="66" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder$AspectMethodsHolder" />
     <unitInfo nodeId="7228605397000826824" fileName="AspectMethodsFinder.java" startLine="25" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder" />
+    <unitInfo nodeId="7228605397000826920" fileName="AspectMethodsFinder.java" startLine="32" startPosition="45" endLine="40" endPosition="5" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder$1" />
+    <unitInfo nodeId="7228605397000826873" fileName="AspectMethodsFinder.java" startLine="100" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder$AspectMethodQueryData" />
+    <unitInfo nodeId="7228605397000826827" fileName="AspectMethodsFinder.java" startLine="66" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder$AspectMethodsHolder" />
   </root>
   <root nodeId="7228605397000827110">
     <nodeInfo nodeId="7228605397000827169" fileName="ConstantFinder.java" startLine="21" startPosition="48" endLine="22" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResults" />
@@ -333,12 +333,12 @@
     <scopeInfo nodeId="7228605397000827145" fileName="ConstantFinder.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="7228605397000827152" fileName="ConstantFinder.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="7228605397000827155" fileName="ConstantFinder.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="7228605397000827160" varName="project" />
       <varInfo nodeId="7228605397000827158" varName="element" />
+      <varInfo nodeId="7228605397000827160" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827162" fileName="ConstantFinder.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="7228605397000827167" varName="project" />
       <varInfo nodeId="7228605397000827165" varName="element" />
+      <varInfo nodeId="7228605397000827167" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827149" fileName="ConstantFinder.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="7228605397000827216" fileName="ConstantFinder.java" startLine="48" startPosition="59" endLine="54" endPosition="0" />
@@ -347,9 +347,9 @@
       <varInfo nodeId="7228605397000827143" varName="categoryName" />
       <varInfo nodeId="7228605397000827140" varName="nodes" />
     </scopeInfo>
+    <unitInfo nodeId="7228605397000827110" fileName="ConstantFinder.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder" />
     <unitInfo nodeId="7228605397000827215" fileName="ConstantFinder.java" startLine="48" startPosition="47" endLine="54" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder$1" />
     <unitInfo nodeId="7228605397000827113" fileName="ConstantFinder.java" startLine="35" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder$ConstantHolder" />
-    <unitInfo nodeId="7228605397000827110" fileName="ConstantFinder.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder" />
   </root>
   <root nodeId="7228605397000827258">
     <nodeInfo nodeId="7228605397000827273" fileName="ModelUsagesFinder.java" startLine="24" startPosition="73" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -378,10 +378,10 @@
       <varInfo nodeId="7228605397000827314" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827272" fileName="ModelUsagesFinder.java" startLine="24" startPosition="73" endLine="42" endPosition="25">
-      <varInfo nodeId="7228605397000827289" varName="model" />
       <varInfo nodeId="7228605397000827279" varName="holder" />
-      <varInfo nodeId="7228605397000827274" varName="searchResults" />
+      <varInfo nodeId="7228605397000827289" varName="model" />
       <varInfo nodeId="7228605397000827305" varName="modelReference" />
+      <varInfo nodeId="7228605397000827274" varName="searchResults" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827265" fileName="ModelUsagesFinder.java" startLine="23" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="7228605397000827270" varName="monitor" />
@@ -465,8 +465,8 @@
     <scopeInfo nodeId="7228605397000827497" fileName="LanguageUsagesFinder.java" startLine="62" startPosition="115" endLine="69" endPosition="5" />
     <scopeInfo nodeId="7228605397000827684" fileName="LanguageUsagesFinder.java" startLine="95" startPosition="77" endLine="102" endPosition="7" />
     <scopeInfo nodeId="7228605397000827619" fileName="LanguageUsagesFinder.java" startLine="84" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="7228605397000827626" varName="searchResults" />
       <varInfo nodeId="7228605397000827624" varName="devKit" />
+      <varInfo nodeId="7228605397000827626" varName="searchResults" />
       <varInfo nodeId="7228605397000827622" varName="searchedLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827677" fileName="LanguageUsagesFinder.java" startLine="94" startPosition="109" endLine="103" endPosition="5" />
@@ -481,24 +481,24 @@
     <scopeInfo nodeId="7228605397000827553" fileName="LanguageUsagesFinder.java" startLine="72" startPosition="115" endLine="82" endPosition="5" />
     <scopeInfo nodeId="7228605397000827442" fileName="LanguageUsagesFinder.java" startLine="45" startPosition="78" endLine="57" endPosition="7" />
     <scopeInfo nodeId="7228605397000827668" fileName="LanguageUsagesFinder.java" startLine="93" startPosition="0" endLine="105" endPosition="0">
-      <varInfo nodeId="7228605397000827675" varName="searchResults" />
       <varInfo nodeId="7228605397000827673" varName="owner" />
+      <varInfo nodeId="7228605397000827675" varName="searchResults" />
       <varInfo nodeId="7228605397000827671" varName="searchedLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827544" fileName="LanguageUsagesFinder.java" startLine="71" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="7228605397000827551" varName="searchResults" />
       <varInfo nodeId="7228605397000827549" varName="language" />
+      <varInfo nodeId="7228605397000827551" varName="searchResults" />
       <varInfo nodeId="7228605397000827547" varName="searchedLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827436" fileName="LanguageUsagesFinder.java" startLine="44" startPosition="50" endLine="58" endPosition="5">
       <varInfo nodeId="7228605397000827440" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827388" fileName="LanguageUsagesFinder.java" startLine="33" startPosition="73" endLine="59" endPosition="25">
+      <varInfo nodeId="7228605397000827431" varName="language" />
       <varInfo nodeId="7228605397000827410" varName="moduleHolder" />
+      <varInfo nodeId="7228605397000827395" varName="objectHolder" />
       <varInfo nodeId="7228605397000827390" varName="searchResults" />
       <varInfo nodeId="7228605397000827416" varName="searchedModule" />
-      <varInfo nodeId="7228605397000827431" varName="language" />
-      <varInfo nodeId="7228605397000827395" varName="objectHolder" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827381" fileName="LanguageUsagesFinder.java" startLine="32" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="7228605397000827386" varName="monitor" />

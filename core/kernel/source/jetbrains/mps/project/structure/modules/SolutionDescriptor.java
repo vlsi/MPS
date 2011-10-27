@@ -16,7 +16,9 @@
 package jetbrains.mps.project.structure.modules;
 
 public class SolutionDescriptor extends ModuleDescriptor {
+
   private String myOutputPath;
+  private SolutionKind myKind = SolutionKind.NONE;
 
   public String getOutputPath() {
     return myOutputPath;
@@ -24,5 +26,13 @@ public class SolutionDescriptor extends ModuleDescriptor {
 
   public void setOutputPath(String outputPath) {
     myOutputPath = outputPath;
+  }
+
+  public SolutionKind getKind() {
+    return myKind;
+  }
+
+  public void setKind(SolutionKind kind) {
+    myKind = kind;
   }
 }

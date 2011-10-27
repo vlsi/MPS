@@ -5,7 +5,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.generator.template.util.BinaryOperationUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />

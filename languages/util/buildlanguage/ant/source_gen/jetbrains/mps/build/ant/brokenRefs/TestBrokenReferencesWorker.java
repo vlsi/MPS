@@ -44,7 +44,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     setupEnvironment();
     Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
-    final MPSProject project = new MPSProject(ideaProject);
+    final jetbrains.mps.project.Project project = new MPSProject(ideaProject);
     project.init(projectFile, new ProjectDescriptor());
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess();
     collectModelsToGenerate(go);
@@ -53,8 +53,9 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     dispose();
   }
 
-  protected void executeTask(MPSProject project, final MpsWorker.ObjectsToProcess go) {
-    for (MPSProject p : go.getProjects()) {
+  @Override
+  protected void executeTask(jetbrains.mps.project.Project project, final MpsWorker.ObjectsToProcess go) {
+    for (jetbrains.mps.project.Project p : go.getProjects()) {
       extractModels(go.getModels(), p);
     }
     for (IModule m : go.getModules()) {

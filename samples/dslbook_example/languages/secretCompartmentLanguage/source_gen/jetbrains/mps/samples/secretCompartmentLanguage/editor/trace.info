@@ -325,10 +325,10 @@
     <scopeInfo nodeId="1197149586039" fileName="StateMachine_Editor.java" startLine="151" startPosition="0" endLine="169" endPosition="0" />
     <scopeInfo nodeId="1197149586039" fileName="StateMachine_Editor.java" startLine="169" startPosition="0" endLine="187" endPosition="0" />
     <scopeInfo nodeId="1197149586039" fileName="StateMachine_Editor.java" startLine="200" startPosition="0" endLine="219" endPosition="0" />
+    <unitInfo nodeId="1197149586039" fileName="StateMachine_Editor.java" startLine="28" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_Editor" />
     <unitInfo nodeId="1197149586039" fileName="StateMachine_Editor.java" startLine="188" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_Editor$_Inline_qpt50r_a1f0" />
     <unitInfo nodeId="1197149586039" fileName="StateMachine_Editor.java" startLine="221" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_Editor$eventListHandler_qpt50r_b3a" />
     <unitInfo nodeId="1197149586039" fileName="StateMachine_Editor.java" startLine="257" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_Editor$stateListHandler_qpt50r_h0" />
-    <unitInfo nodeId="1197149586039" fileName="StateMachine_Editor.java" startLine="28" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_Editor" />
   </root>
   <root nodeId="1197169421748">
     <nodeInfo nodeId="1197169421748" fileName="Event_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -550,8 +550,8 @@
     <scopeInfo nodeId="1197170596685" fileName="State_Editor.java" startLine="137" startPosition="0" endLine="149" endPosition="0" />
     <scopeInfo nodeId="1197170596685" fileName="State_Editor.java" startLine="97" startPosition="89" endLine="112" endPosition="22" />
     <scopeInfo nodeId="1197170596685" fileName="State_Editor.java" startLine="96" startPosition="0" endLine="114" endPosition="0" />
-    <unitInfo nodeId="1197170596685" fileName="State_Editor.java" startLine="115" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.State_Editor$transitionListHandler_sjqidp_b1a" />
     <unitInfo nodeId="1197170596685" fileName="State_Editor.java" startLine="26" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.State_Editor" />
+    <unitInfo nodeId="1197170596685" fileName="State_Editor.java" startLine="115" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.State_Editor$transitionListHandler_sjqidp_b1a" />
   </root>
   <root nodeId="1197240201006">
     <nodeInfo nodeId="1197240201006" fileName="Transition_Editor.java" startLine="45" startPosition="58" endLine="45" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -698,9 +698,9 @@
     <scopeInfo nodeId="1197240201006" fileName="Transition_Editor.java" startLine="56" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1197240201006" fileName="Transition_Editor.java" startLine="87" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="1197240201006" fileName="Transition_Editor.java" startLine="120" startPosition="0" endLine="139" endPosition="0" />
+    <unitInfo nodeId="1197240201006" fileName="Transition_Editor.java" startLine="18" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_Editor" />
     <unitInfo nodeId="1197240201006" fileName="Transition_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_Editor$_Inline_jj4qz_a0a" />
     <unitInfo nodeId="1197240201006" fileName="Transition_Editor.java" startLine="108" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_Editor$_Inline_jj4qz_a2a" />
-    <unitInfo nodeId="1197240201006" fileName="Transition_Editor.java" startLine="18" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_Editor" />
   </root>
   <root nodeId="1197246925130">
     <nodeInfo nodeId="1197246925130" fileName="StateMachineTest_Editor.java" startLine="82" startPosition="58" endLine="82" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -861,9 +861,9 @@
     <scopeInfo nodeId="1197246925130" fileName="StateMachineTest_Editor.java" startLine="107" startPosition="93" endLine="123" endPosition="24" />
     <scopeInfo nodeId="1197246925130" fileName="StateMachineTest_Editor.java" startLine="75" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="1197246925130" fileName="StateMachineTest_Editor.java" startLine="106" startPosition="0" endLine="125" endPosition="0" />
+    <unitInfo nodeId="1197246925130" fileName="StateMachineTest_Editor.java" startLine="28" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_Editor" />
     <unitInfo nodeId="1197246925130" fileName="StateMachineTest_Editor.java" startLine="94" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_Editor$_Inline_hhanjm_a0a0" />
     <unitInfo nodeId="1197246925130" fileName="StateMachineTest_Editor.java" startLine="127" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_Editor$testMethodListHandler_hhanjm_c0" />
-    <unitInfo nodeId="1197246925130" fileName="StateMachineTest_Editor.java" startLine="28" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_Editor" />
   </root>
   <root nodeId="1197252730365">
     <nodeInfo nodeId="1197252730365" fileName="StateMachineTestMethod_Editor.java" startLine="128" startPosition="58" endLine="128" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1110,9 +1110,9 @@
     <scopeInfo nodeId="1197252730365" fileName="StateMachineTestMethod_Editor.java" startLine="121" startPosition="0" endLine="139" endPosition="0" />
     <scopeInfo nodeId="1197252730365" fileName="StateMachineTestMethod_Editor.java" startLine="139" startPosition="0" endLine="157" endPosition="0" />
     <scopeInfo nodeId="1197252730365" fileName="StateMachineTestMethod_Editor.java" startLine="170" startPosition="0" endLine="189" endPosition="0" />
+    <unitInfo nodeId="1197252730365" fileName="StateMachineTestMethod_Editor.java" startLine="28" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_Editor" />
     <unitInfo nodeId="1197252730365" fileName="StateMachineTestMethod_Editor.java" startLine="158" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_Editor$_Inline_ttjdsx_a1b1b0" />
     <unitInfo nodeId="1197252730365" fileName="StateMachineTestMethod_Editor.java" startLine="191" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_Editor$handleEventListHandler_ttjdsx_a1b0" />
-    <unitInfo nodeId="1197252730365" fileName="StateMachineTestMethod_Editor.java" startLine="28" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_Editor" />
   </root>
   <root nodeId="1197255791393">
     <nodeInfo nodeId="1197255791393" fileName="HandleEvent_Editor.java" startLine="44" startPosition="58" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1199,8 +1199,8 @@
     <scopeInfo nodeId="1197255791393" fileName="HandleEvent_Editor.java" startLine="69" startPosition="92" endLine="85" endPosition="24" />
     <scopeInfo nodeId="1197255791393" fileName="HandleEvent_Editor.java" startLine="37" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1197255791393" fileName="HandleEvent_Editor.java" startLine="68" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="1197255791393" fileName="HandleEvent_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_Editor$_Inline_8essd9_a1a" />
     <unitInfo nodeId="1197255791393" fileName="HandleEvent_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_Editor" />
+    <unitInfo nodeId="1197255791393" fileName="HandleEvent_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.HandleEvent_Editor$_Inline_8essd9_a1a" />
   </root>
 </debugInfo>
 

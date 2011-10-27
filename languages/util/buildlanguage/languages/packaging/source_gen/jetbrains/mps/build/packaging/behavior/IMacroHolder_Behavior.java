@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import com.intellij.openapi.application.PathMacros;
+import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -37,7 +37,7 @@ public class IMacroHolder_Behavior {
     if (addBasedir) {
       ListSequence.fromList(names).addElement(Layout_Behavior.getBasedirName_1226509010730());
     }
-    ListSequence.fromList(names).addSequence(SetSequence.fromSet(PathMacros.getInstance().getUserMacroNames()));
+    ListSequence.fromList(names).addSequence(SetSequence.fromSet(PathMacros.getInstance().getUserNames()));
     return names;
   }
 

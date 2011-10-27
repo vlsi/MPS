@@ -109,8 +109,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5881102044690168112" fileName="TestRunner.java" startLine="32" startPosition="40" endLine="38" endPosition="95">
       <varInfo nodeId="5881102044690168123" varName="index" />
-      <varInfo nodeId="5881102044690168117" varName="s" />
       <varInfo nodeId="5881102044690168138" varName="method" />
+      <varInfo nodeId="5881102044690168117" varName="s" />
       <varInfo nodeId="5881102044690168130" varName="testCase" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690167932" fileName="TestRunner.java" startLine="98" startPosition="0" endLine="104" endPosition="0">
@@ -120,8 +120,8 @@
       <varInfo nodeId="5881102044690168019" varName="description" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690168034" fileName="TestRunner.java" startLine="127" startPosition="78" endLine="133" endPosition="7">
-      <varInfo nodeId="5881102044690168036" varName="testEvent" />
       <varInfo nodeId="5881102044690168043" varName="out" />
+      <varInfo nodeId="5881102044690168036" varName="testEvent" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690168195" fileName="TestRunner.java" startLine="45" startPosition="22" endLine="53" endPosition="63">
       <varInfo nodeId="5881102044690168197" varName="line" />
@@ -137,15 +137,15 @@
       <varInfo nodeId="5881102044690168064" varName="tokenPrefix" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690168271" fileName="TestRunner.java" startLine="69" startPosition="125" endLine="83" endPosition="5">
-      <varInfo nodeId="5881102044690168310" varName="requests" />
-      <varInfo nodeId="5881102044690168285" varName="err" />
       <varInfo nodeId="5881102044690168273" varName="core" />
+      <varInfo nodeId="5881102044690168285" varName="err" />
       <varInfo nodeId="5881102044690168279" varName="out" />
+      <varInfo nodeId="5881102044690168310" varName="requests" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690168162" fileName="TestRunner.java" startLine="39" startPosition="40" endLine="55" endPosition="94">
-      <varInfo nodeId="5881102044690168179" varName="reader" />
-      <varInfo nodeId="5881102044690168167" varName="filename" />
       <varInfo nodeId="5881102044690168187" varName="fileContents" />
+      <varInfo nodeId="5881102044690168167" varName="filename" />
+      <varInfo nodeId="5881102044690168179" varName="reader" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690168266" fileName="TestRunner.java" startLine="68" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="5881102044690168268" varName="args" />
@@ -156,11 +156,11 @@
       <varInfo nodeId="5881102044690168225" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690168069" fileName="TestRunner.java" startLine="25" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="5881102044690168074" varName="requests" />
       <varInfo nodeId="5881102044690168071" varName="argv" />
+      <varInfo nodeId="5881102044690168074" varName="requests" />
     </scopeInfo>
-    <unitInfo nodeId="5881102044690167908" fileName="TestRunner.java" startLine="90" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner$MyRunListener" />
     <unitInfo nodeId="5881102044690167886" fileName="TestRunner.java" startLine="22" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner" />
+    <unitInfo nodeId="5881102044690167908" fileName="TestRunner.java" startLine="90" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner$MyRunListener" />
   </root>
   <root nodeId="5881102044690168334">
     <nodeInfo nodeId="5881102044690168349" fileName="CommandOutputStream.java" startLine="9" startPosition="61" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLastChar" />
@@ -216,8 +216,8 @@
     <scopeInfo nodeId="5881102044690168497" fileName="CommandOutputStream.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="5881102044690168411" fileName="CommandOutputStream.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="5881102044690168414" varName="b" />
-      <varInfo nodeId="5881102044690168417" varName="off" />
       <varInfo nodeId="5881102044690168419" varName="len" />
+      <varInfo nodeId="5881102044690168417" varName="off" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690168459" fileName="CommandOutputStream.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="5881102044690168495" varName="command" />

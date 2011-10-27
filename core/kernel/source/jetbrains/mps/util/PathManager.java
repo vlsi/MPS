@@ -19,7 +19,12 @@ import jetbrains.mps.logging.Logger;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 
 public class PathManager {
@@ -30,9 +35,19 @@ public class PathManager {
   private static final String FILE = "file";
   private static final String JAR = "jar";
   private static final String JAR_DELIMITER = "!";
-  private static final String PROTOCOL_DELIMITER = ":";
+  private static final String MPS_DASH = "mps-";
+  private static final String DOT_JAR = ".jar";
+  private static final String MODULES_PREFIX = "!/modules";
 
+  private static final String PROTOCOL_DELIMITER = ":";
   private static String ourHomePath;
+
+  private static final FilenameFilter MPS_JARS = new FilenameFilter() {
+    @Override
+    public boolean accept(File dir, String name) {
+      return name.startsWith(MPS_DASH) && name.endsWith(DOT_JAR);
+    }
+  };
 
   public static String getHomePath() {
     if (ourHomePath != null) {
@@ -66,9 +81,24 @@ public class PathManager {
     // TODO temp fix
     String mpsJar = getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
     if(new File(mpsJar).exists()) {
-      return mpsJar + "!/modules";
+      return mpsJar + MODULES_PREFIX;
     }
     return getHomePath() + File.separator + "core";
+  }
+
+  public static Collection<String> getBootstrapPaths() {
+    List<String> paths;
+    File lib = new File(getHomePath() + File.separator + "lib");
+    if (lib.exists() && lib.isDirectory()) {
+      paths = new ArrayList<String>();
+      for (File jar : lib.listFiles(MPS_JARS)) {
+        paths.add(jar.getAbsolutePath()+ MODULES_PREFIX);
+      }
+      if (paths.size() > 0) {
+        return Collections.unmodifiableCollection(paths);
+      }
+    }
+    return Collections.singleton(getHomePath() + File.separator + "core");
   }
 
   public static String getLanguagesPath() {

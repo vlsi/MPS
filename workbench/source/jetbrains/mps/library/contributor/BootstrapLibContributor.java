@@ -27,7 +27,7 @@ import java.util.Set;
 public class BootstrapLibContributor implements LibraryContributor,ApplicationComponent {
   public Set<String> getLibraries() {
     Set<String> res = new HashSet<String>();
-    res.add(PathManager.getBootstrapPath());
+    res.addAll(PathManager.getBootstrapPaths());
     res.add(PathManager.getLanguagesPath());
     return res;
   }

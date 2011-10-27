@@ -29,6 +29,7 @@
   </generators>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
     <dependency reexport="false">fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)</dependency>
     <dependency reexport="false">8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)</dependency>
   </dependencies>

@@ -75,9 +75,9 @@
     <scopeInfo nodeId="7705742079275757766" fileName="GenerateFromChangeListAction.java" startLine="92" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="4164075873637459494" fileName="GenerateFromChangeListAction.java" startLine="37" startPosition="11" endLine="40" endPosition="9" />
     <scopeInfo nodeId="91579848780183588" fileName="GenerateFromChangeListAction.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="91579848780229070" varName="context" />
       <varInfo nodeId="91579848780229088" varName="modelsToGenerate" />
       <varInfo nodeId="91579848780199446" varName="session" />
-      <varInfo nodeId="91579848780229070" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757653" fileName="GenerateFromChangeListAction.java" startLine="58" startPosition="45" endLine="62" endPosition="9">
       <varInfo nodeId="7705742079275757655" varName="model" />
@@ -86,8 +86,8 @@
       <varInfo nodeId="7705742079275757742" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757748" fileName="GenerateFromChangeListAction.java" startLine="87" startPosition="0" endLine="92" endPosition="0">
-      <varInfo nodeId="7705742079275757751" varName="presentation" />
       <varInfo nodeId="7705742079275757753" varName="enable" />
+      <varInfo nodeId="7705742079275757751" varName="presentation" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757643" fileName="GenerateFromChangeListAction.java" startLine="57" startPosition="43" endLine="63" endPosition="7" />
     <scopeInfo nodeId="4164075873637430410" fileName="GenerateFromChangeListAction.java" startLine="36" startPosition="70" endLine="43" endPosition="7" />
@@ -95,23 +95,23 @@
       <varInfo nodeId="7705742079275757641" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757624" fileName="GenerateFromChangeListAction.java" startLine="54" startPosition="79" endLine="65" endPosition="28">
-      <varInfo nodeId="7705742079275757633" varName="modelsToGenerate" />
       <varInfo nodeId="7705742079275757626" varName="filesCollection" />
+      <varInfo nodeId="7705742079275757633" varName="modelsToGenerate" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757681" fileName="GenerateFromChangeListAction.java" startLine="68" startPosition="75" endLine="80" endPosition="5">
       <varInfo nodeId="7705742079275757683" varName="modelsToGenerate" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757587" fileName="GenerateFromChangeListAction.java" startLine="32" startPosition="57" endLine="45" endPosition="14">
-      <varInfo nodeId="7705742079275757595" varName="project" />
-      <varInfo nodeId="7705742079275757589" varName="modelsToGenerate" />
       <varInfo nodeId="7705742079275757601" varName="context" />
+      <varInfo nodeId="7705742079275757589" varName="modelsToGenerate" />
+      <varInfo nodeId="7705742079275757595" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757618" fileName="GenerateFromChangeListAction.java" startLine="53" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="7705742079275757622" varName="vcsContext" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757674" fileName="GenerateFromChangeListAction.java" startLine="67" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="7705742079275757677" varName="vcsContext" />
       <varInfo nodeId="7705742079275757679" varName="presentation" />
+      <varInfo nodeId="7705742079275757677" varName="vcsContext" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757582" fileName="GenerateFromChangeListAction.java" startLine="31" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="7705742079275757585" varName="vcsContext" />
@@ -171,12 +171,12 @@
       <varInfo nodeId="7705742079275757883" varName="baseDir" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757780" fileName="AbstractShowInFileView.java" startLine="20" startPosition="48" endLine="27" endPosition="5">
-      <varInfo nodeId="7705742079275757788" varName="selectedFile" />
       <varInfo nodeId="7705742079275757782" varName="project" />
+      <varInfo nodeId="7705742079275757788" varName="selectedFile" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757909" fileName="AbstractShowInFileView.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="7705742079275757914" varName="selectedFile" />
       <varInfo nodeId="7705742079275757912" varName="baseDir" />
+      <varInfo nodeId="7705742079275757914" varName="selectedFile" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757817" fileName="AbstractShowInFileView.java" startLine="31" startPosition="59" endLine="39" endPosition="56">
       <varInfo nodeId="7705742079275757819" varName="selectedFiles" />
@@ -185,15 +185,15 @@
       <varInfo nodeId="7705742079275757778" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757864" fileName="AbstractShowInFileView.java" startLine="44" startPosition="75" endLine="55" endPosition="35">
-      <varInfo nodeId="7705742079275757872" varName="selectedFile" />
       <varInfo nodeId="7705742079275757866" varName="baseDirs" />
+      <varInfo nodeId="7705742079275757872" varName="selectedFile" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757812" fileName="AbstractShowInFileView.java" startLine="29" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="7705742079275757815" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757857" fileName="AbstractShowInFileView.java" startLine="43" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="7705742079275757860" varName="vcsContext" />
       <varInfo nodeId="7705742079275757862" varName="presentation" />
+      <varInfo nodeId="7705742079275757860" varName="vcsContext" />
     </scopeInfo>
     <unitInfo nodeId="7705742079275757770" fileName="AbstractShowInFileView.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.actions.AbstractShowInFileView" />
   </root>
@@ -243,8 +243,8 @@
       <varInfo nodeId="7705742079275758075" varName="selectedFiles" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275758094" fileName="ShowInLogicalView.java" startLine="61" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="7705742079275758097" varName="vcsContext" />
       <varInfo nodeId="7705742079275758099" varName="presentation" />
+      <varInfo nodeId="7705742079275758097" varName="vcsContext" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275758043" fileName="ShowInLogicalView.java" startLine="32" startPosition="67" endLine="40" endPosition="7">
       <varInfo nodeId="7705742079275758045" varName="model" />
@@ -256,16 +256,16 @@
       <varInfo nodeId="7705742079275758071" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757981" fileName="ShowInLogicalView.java" startLine="24" startPosition="48" endLine="51" endPosition="5">
-      <varInfo nodeId="7705742079275757989" varName="selectedFile" />
       <varInfo nodeId="7705742079275757983" varName="project" />
       <varInfo nodeId="7705742079275758004" varName="projectPane" />
+      <varInfo nodeId="7705742079275757989" varName="selectedFile" />
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757976" fileName="ShowInLogicalView.java" startLine="23" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="7705742079275757979" varName="e" />
     </scopeInfo>
-    <unitInfo nodeId="7705742079275758052" fileName="ShowInLogicalView.java" startLine="33" startPosition="72" endLine="37" endPosition="7" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView$2" />
-    <unitInfo nodeId="7705742079275758027" fileName="ShowInLogicalView.java" startLine="43" startPosition="64" endLine="47" endPosition="7" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView$1" />
     <unitInfo nodeId="7705742079275757969" fileName="ShowInLogicalView.java" startLine="20" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView" />
+    <unitInfo nodeId="7705742079275758027" fileName="ShowInLogicalView.java" startLine="43" startPosition="64" endLine="47" endPosition="7" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView$1" />
+    <unitInfo nodeId="7705742079275758052" fileName="ShowInLogicalView.java" startLine="33" startPosition="72" endLine="37" endPosition="7" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView$2" />
   </root>
   <root nodeId="7705742079275758134">
     <nodeInfo nodeId="7705742079275758145" fileName="GenerateTextFromChangeListAction.java" startLine="19" startPosition="55" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -300,9 +300,9 @@
       <varInfo nodeId="1502718409600204165" varName="modelsToGenerate" />
     </scopeInfo>
     <scopeInfo nodeId="91579848780199471" fileName="GenerateTextFromChangeListAction.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="91579848780229092" varName="context" />
       <varInfo nodeId="91579848780229055" varName="modelsToGenerate" />
       <varInfo nodeId="91579848780199472" varName="session" />
-      <varInfo nodeId="91579848780229092" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="91579848780229108" fileName="GenerateTextFromChangeListAction.java" startLine="41" startPosition="75" endLine="48" endPosition="5">
       <varInfo nodeId="91579848780229133" varName="modelsToGenerate" />
@@ -311,8 +311,8 @@
       <varInfo nodeId="1502718409600204154" varName="vcsContext" />
     </scopeInfo>
     <scopeInfo nodeId="91579848780229101" fileName="GenerateTextFromChangeListAction.java" startLine="39" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="91579848780229104" varName="vcsContext" />
       <varInfo nodeId="91579848780229106" varName="presentation" />
+      <varInfo nodeId="91579848780229104" varName="vcsContext" />
     </scopeInfo>
     <unitInfo nodeId="7705742079275758134" fileName="GenerateTextFromChangeListAction.java" startLine="15" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.vcs.actions.GenerateTextFromChangeListAction" />
   </root>

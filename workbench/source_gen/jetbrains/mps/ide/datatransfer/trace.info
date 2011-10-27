@@ -286,12 +286,12 @@
     <scopeInfo nodeId="1963440973928775617" fileName="CopyPasteUtil.java" startLine="378" startPosition="88" endLine="379" endPosition="85" />
     <scopeInfo nodeId="1963440973928796480" fileName="CopyPasteUtil.java" startLine="395" startPosition="34" endLine="396" endPosition="50" />
     <scopeInfo nodeId="1963440973928775582" fileName="CopyPasteUtil.java" startLine="400" startPosition="42" endLine="401" endPosition="63">
-      <varInfo nodeId="1963440973928800266" varName="model" />
       <varInfo nodeId="1963440973928800268" varName="anchor" />
+      <varInfo nodeId="1963440973928800266" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="1963440973928775587" fileName="CopyPasteUtil.java" startLine="401" startPosition="63" endLine="402" endPosition="57">
-      <varInfo nodeId="1963440973928796540" varName="model" />
       <varInfo nodeId="1963440973928800238" varName="anchor" />
+      <varInfo nodeId="1963440973928796540" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="1963440973928775591" fileName="CopyPasteUtil.java" startLine="402" startPosition="57" endLine="403" endPosition="56">
       <varInfo nodeId="1963440973928796469" varName="model" />
@@ -364,13 +364,13 @@
       <varInfo nodeId="6299533519672650631" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650641" fileName="CopyPasteUtil.java" startLine="225" startPosition="0" endLine="229" endPosition="0">
-      <varInfo nodeId="6299533519672650647" varName="text" />
       <varInfo nodeId="6299533519672650644" varName="nodes" />
+      <varInfo nodeId="6299533519672650647" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650658" fileName="CopyPasteUtil.java" startLine="229" startPosition="0" endLine="233" endPosition="0">
-      <varInfo nodeId="6299533519672650669" varName="text" />
-      <varInfo nodeId="6299533519672650664" varName="nodesAndAttributes" />
       <varInfo nodeId="6299533519672650661" varName="nodes" />
+      <varInfo nodeId="6299533519672650664" varName="nodesAndAttributes" />
+      <varInfo nodeId="6299533519672650669" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="3237530507069914982" fileName="CopyPasteUtil.java" startLine="261" startPosition="0" endLine="265" endPosition="0">
       <varInfo nodeId="3237530507069923452" varName="content" />
@@ -388,8 +388,8 @@
       <varInfo nodeId="1963440973928775606" varName="dataConverter" />
     </scopeInfo>
     <scopeInfo nodeId="1963440973928775614" fileName="CopyPasteUtil.java" startLine="377" startPosition="0" endLine="381" endPosition="0">
-      <varInfo nodeId="1963440973928800271" varName="model" />
       <varInfo nodeId="1963440973928800273" varName="anchor" />
+      <varInfo nodeId="1963440973928800271" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="1963440973928775637" fileName="CopyPasteUtil.java" startLine="382" startPosition="84" endLine="386" endPosition="6" />
     <scopeInfo nodeId="6299533519672649909" fileName="CopyPasteUtil.java" startLine="75" startPosition="62" endLine="80" endPosition="5">
@@ -410,8 +410,8 @@
       <varInfo nodeId="6299533519672651062" varName="moduleReference" />
     </scopeInfo>
     <scopeInfo nodeId="1963440973928800246" fileName="CopyPasteUtil.java" startLine="388" startPosition="0" endLine="393" endPosition="0">
-      <varInfo nodeId="1963440973928800253" varName="model" />
       <varInfo nodeId="1963440973928800286" varName="anchor" />
+      <varInfo nodeId="1963440973928800253" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672649814" fileName="CopyPasteUtil.java" startLine="57" startPosition="42" endLine="63" endPosition="7" />
     <scopeInfo nodeId="6299533519672650257" fileName="CopyPasteUtil.java" startLine="131" startPosition="39" endLine="137" endPosition="9" />
@@ -426,8 +426,8 @@
       <varInfo nodeId="6299533519672650982" varName="trf" />
     </scopeInfo>
     <scopeInfo nodeId="1963440973928796472" fileName="CopyPasteUtil.java" startLine="393" startPosition="0" endLine="399" endPosition="0">
-      <varInfo nodeId="1963440973928796476" varName="model" />
       <varInfo nodeId="1963440973928800241" varName="anchor" />
+      <varInfo nodeId="1963440973928796476" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650703" fileName="CopyPasteUtil.java" startLine="269" startPosition="28" endLine="276" endPosition="5">
       <varInfo nodeId="6299533519672650705" varName="node" />
@@ -449,19 +449,19 @@
       <varInfo nodeId="6299533519672650975" varName="content" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650687" fileName="CopyPasteUtil.java" startLine="266" startPosition="62" endLine="277" endPosition="79">
-      <varInfo nodeId="6299533519672650689" varName="stringBuilder" />
-      <varInfo nodeId="6299533519672650698" varName="size" />
       <varInfo nodeId="6299533519672650694" varName="i" />
+      <varInfo nodeId="6299533519672650698" varName="size" />
+      <varInfo nodeId="6299533519672650689" varName="stringBuilder" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650970" fileName="CopyPasteUtil.java" startLine="362" startPosition="0" endLine="373" endPosition="0" />
     <scopeInfo nodeId="6299533519672650252" fileName="CopyPasteUtil.java" startLine="130" startPosition="40" endLine="142" endPosition="45">
-      <varInfo nodeId="6299533519672650283" varName="targetChild" />
       <varInfo nodeId="6299533519672650291" varName="role" />
+      <varInfo nodeId="6299533519672650283" varName="targetChild" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650565" fileName="CopyPasteUtil.java" startLine="206" startPosition="59" endLine="219" endPosition="20">
-      <varInfo nodeId="6299533519672650582" varName="newModel" />
       <varInfo nodeId="6299533519672650573" varName="fqName" />
       <varInfo nodeId="6299533519672650567" varName="modelReference" />
+      <varInfo nodeId="6299533519672650582" varName="newModel" />
     </scopeInfo>
     <scopeInfo nodeId="3237530507069942596" fileName="CopyPasteUtil.java" startLine="246" startPosition="66" endLine="259" endPosition="60" />
     <scopeInfo nodeId="6299533519672650821" fileName="CopyPasteUtil.java" startLine="302" startPosition="64" endLine="315" endPosition="7">
@@ -483,27 +483,27 @@
       <varInfo nodeId="6299533519672651002" varName="allImportedModels" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672649764" fileName="CopyPasteUtil.java" startLine="49" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="6299533519672649770" varName="necessaryLanguages" />
       <varInfo nodeId="6299533519672649777" varName="allReferences" />
       <varInfo nodeId="6299533519672649767" varName="necessaryImports" />
+      <varInfo nodeId="6299533519672649770" varName="necessaryLanguages" />
       <varInfo nodeId="6299533519672649773" varName="sourceNodesToNewNodes" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650482" fileName="CopyPasteUtil.java" startLine="182" startPosition="16" endLine="199" endPosition="11">
       <varInfo nodeId="6299533519672650484" varName="resolveInfo" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650043" fileName="CopyPasteUtil.java" startLine="99" startPosition="213" endLine="117" endPosition="131">
-      <varInfo nodeId="6299533519672650054" varName="result" />
       <varInfo nodeId="6299533519672650082" varName="allReferences" />
-      <varInfo nodeId="6299533519672650073" varName="sourceNodesToNewNodes" />
       <varInfo nodeId="6299533519672650089" varName="originalModel" />
       <varInfo nodeId="6299533519672650066" varName="referencesRequireResolve" />
+      <varInfo nodeId="6299533519672650054" varName="result" />
+      <varInfo nodeId="6299533519672650073" varName="sourceNodesToNewNodes" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650323" fileName="CopyPasteUtil.java" startLine="148" startPosition="54" endLine="166" endPosition="47">
-      <varInfo nodeId="6299533519672650338" varName="oldTargetNode" />
-      <varInfo nodeId="6299533519672650344" varName="newTargetNode" />
       <varInfo nodeId="6299533519672650351" varName="newReference" />
       <varInfo nodeId="6299533519672650331" varName="newSourceNode" />
+      <varInfo nodeId="6299533519672650344" varName="newTargetNode" />
       <varInfo nodeId="6299533519672650325" varName="oldSourceNode" />
+      <varInfo nodeId="6299533519672650338" varName="oldTargetNode" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650925" fileName="CopyPasteUtil.java" startLine="330" startPosition="57" endLine="349" endPosition="0" />
     <scopeInfo nodeId="6299533519672650318" fileName="CopyPasteUtil.java" startLine="147" startPosition="115" endLine="167" endPosition="5" />
@@ -511,12 +511,12 @@
       <varInfo nodeId="6299533519672650321" varName="sourceReference" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650025" fileName="CopyPasteUtil.java" startLine="98" startPosition="0" endLine="119" endPosition="0">
-      <varInfo nodeId="6299533519672650037" varName="necessaryLanguages" />
       <varInfo nodeId="6299533519672650033" varName="model" />
+      <varInfo nodeId="6299533519672650035" varName="modelProperties" />
+      <varInfo nodeId="6299533519672650037" varName="necessaryLanguages" />
       <varInfo nodeId="6299533519672650040" varName="necessaryModels" />
       <varInfo nodeId="6299533519672650031" varName="sourceModule" />
       <varInfo nodeId="6299533519672650028" varName="sourceNodes" />
-      <varInfo nodeId="6299533519672650035" varName="modelProperties" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650472" fileName="CopyPasteUtil.java" startLine="179" startPosition="14" endLine="200" endPosition="9" />
     <scopeInfo nodeId="6299533519672650308" fileName="CopyPasteUtil.java" startLine="146" startPosition="0" endLine="169" endPosition="0">
@@ -524,14 +524,14 @@
       <varInfo nodeId="6299533519672650311" varName="sourceNodesToNewNodes" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650201" fileName="CopyPasteUtil.java" startLine="120" startPosition="185" endLine="144" endPosition="22">
-      <varInfo nodeId="6299533519672650203" varName="targetNode" />
-      <varInfo nodeId="6299533519672650225" varName="references" />
       <varInfo nodeId="6299533519672650242" varName="children" />
+      <varInfo nodeId="6299533519672650225" varName="references" />
+      <varInfo nodeId="6299533519672650203" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650183" fileName="CopyPasteUtil.java" startLine="119" startPosition="0" endLine="146" endPosition="0">
+      <varInfo nodeId="6299533519672650198" varName="allReferences" />
       <varInfo nodeId="6299533519672650188" varName="nodesAndAttributes" />
       <varInfo nodeId="6299533519672650186" varName="sourceNode" />
-      <varInfo nodeId="6299533519672650198" varName="allReferences" />
       <varInfo nodeId="6299533519672650194" varName="sourceNodesToNewNodes" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650772" fileName="CopyPasteUtil.java" startLine="290" startPosition="75" endLine="317" endPosition="59">
@@ -542,29 +542,29 @@
       <varInfo nodeId="3237530507069942598" varName="content" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672649854" fileName="CopyPasteUtil.java" startLine="67" startPosition="122" endLine="96" endPosition="99">
-      <varInfo nodeId="6299533519672649941" varName="necessaryLanguages" />
-      <varInfo nodeId="6299533519672649882" varName="result" />
-      <varInfo nodeId="6299533519672649874" varName="module" />
-      <varInfo nodeId="6299533519672649865" varName="model" />
-      <varInfo nodeId="6299533519672649973" varName="newNodesToSourceNodes" />
-      <varInfo nodeId="6299533519672649948" varName="fakeModel" />
       <varInfo nodeId="6299533519672649903" varName="allReferences" />
+      <varInfo nodeId="6299533519672649948" varName="fakeModel" />
+      <varInfo nodeId="6299533519672649865" varName="model" />
+      <varInfo nodeId="6299533519672649874" varName="module" />
+      <varInfo nodeId="6299533519672649941" varName="necessaryLanguages" />
       <varInfo nodeId="6299533519672649934" varName="necessaryModels" />
+      <varInfo nodeId="6299533519672649973" varName="newNodesToSourceNodes" />
+      <varInfo nodeId="6299533519672649882" varName="result" />
       <varInfo nodeId="6299533519672649894" varName="sourceNodesToNewNodes" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650767" fileName="CopyPasteUtil.java" startLine="289" startPosition="0" endLine="319" endPosition="0">
       <varInfo nodeId="6299533519672650770" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650437" fileName="CopyPasteUtil.java" startLine="171" startPosition="54" endLine="202" endPosition="47">
-      <varInfo nodeId="6299533519672650452" varName="oldTargetNode" />
-      <varInfo nodeId="6299533519672650458" varName="newTargetNode" />
       <varInfo nodeId="6299533519672650465" varName="newReference" />
       <varInfo nodeId="6299533519672650445" varName="newSourceNode" />
+      <varInfo nodeId="6299533519672650458" varName="newTargetNode" />
       <varInfo nodeId="6299533519672650439" varName="oldSourceNode" />
+      <varInfo nodeId="6299533519672650452" varName="oldTargetNode" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672649843" fileName="CopyPasteUtil.java" startLine="66" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="6299533519672649849" varName="sourceNodesAndAttributes" />
       <varInfo nodeId="6299533519672649846" varName="sourceNodes" />
+      <varInfo nodeId="6299533519672649849" varName="sourceNodesAndAttributes" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650432" fileName="CopyPasteUtil.java" startLine="170" startPosition="158" endLine="203" endPosition="5" />
     <scopeInfo nodeId="6299533519672650433" fileName="CopyPasteUtil.java" startLine="170" startPosition="158" endLine="203" endPosition="5">
@@ -572,24 +572,24 @@
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650419" fileName="CopyPasteUtil.java" startLine="169" startPosition="0" endLine="205" endPosition="0">
       <varInfo nodeId="6299533519672650426" varName="allReferences" />
-      <varInfo nodeId="6299533519672650422" varName="sourceNodesToNewNodes" />
       <varInfo nodeId="6299533519672650429" varName="referencesRequireResolve" />
+      <varInfo nodeId="6299533519672650422" varName="sourceNodesToNewNodes" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650892" fileName="CopyPasteUtil.java" startLine="324" startPosition="225" endLine="360" endPosition="16">
-      <varInfo nodeId="6299533519672650912" varName="additionalModels" />
       <varInfo nodeId="6299533519672650905" varName="additionalLanguages" />
+      <varInfo nodeId="6299533519672650912" varName="additionalModels" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650877" fileName="CopyPasteUtil.java" startLine="323" startPosition="0" endLine="362" endPosition="0">
-      <varInfo nodeId="6299533519672650884" varName="necessaryLanguages" />
       <varInfo nodeId="6299533519672650890" varName="context" />
       <varInfo nodeId="6299533519672650887" varName="necessaryImports" />
+      <varInfo nodeId="6299533519672650884" varName="necessaryLanguages" />
       <varInfo nodeId="6299533519672650880" varName="sourceModule" />
       <varInfo nodeId="6299533519672650882" varName="targetModel" />
     </scopeInfo>
+    <unitInfo nodeId="6299533519672638253" fileName="CopyPasteUtil.java" startLine="43" startPosition="0" endLine="406" endPosition="0" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
+    <unitInfo nodeId="6299533519672650924" fileName="CopyPasteUtil.java" startLine="330" startPosition="45" endLine="349" endPosition="5" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil$1" />
     <unitInfo nodeId="6299533519672650949" fileName="CopyPasteUtil.java" startLine="351" startPosition="86" endLine="355" endPosition="7" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil$2" />
     <unitInfo nodeId="1963440973928775580" fileName="CopyPasteUtil.java" startLine="400" startPosition="0" endLine="405" endPosition="0" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil$IDataConverter" />
-    <unitInfo nodeId="6299533519672650924" fileName="CopyPasteUtil.java" startLine="330" startPosition="45" endLine="349" endPosition="5" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil$1" />
-    <unitInfo nodeId="6299533519672638253" fileName="CopyPasteUtil.java" startLine="43" startPosition="0" endLine="406" endPosition="0" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
   </root>
   <root nodeId="6299533519672649753">
     <nodeInfo nodeId="6299533519672652323" fileName="SModelDataFlavor.java" startLine="7" startPosition="50" endLine="8" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="sNode" />
@@ -686,13 +686,13 @@
       <varInfo nodeId="6299533519672652181" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672652019" fileName="SNodeTransferable.java" startLine="38" startPosition="0" endLine="42" endPosition="3">
-      <varInfo nodeId="6299533519672652025" varName="text" />
       <varInfo nodeId="6299533519672652022" varName="nodes" />
+      <varInfo nodeId="6299533519672652025" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672652047" fileName="SNodeTransferable.java" startLine="47" startPosition="0" endLine="51" endPosition="3">
-      <varInfo nodeId="6299533519672652054" varName="text" />
-      <varInfo nodeId="6299533519672652056" varName="nodesAndAttributes" />
       <varInfo nodeId="6299533519672652050" varName="nodes" />
+      <varInfo nodeId="6299533519672652056" varName="nodesAndAttributes" />
+      <varInfo nodeId="6299533519672652054" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672652007" fileName="SNodeTransferable.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="6299533519672652159" fileName="SNodeTransferable.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
@@ -709,9 +709,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6299533519672652118" fileName="SNodeTransferable.java" startLine="72" startPosition="99" endLine="83" endPosition="5" />
     <scopeInfo nodeId="6299533519672652252" fileName="SNodeTransferable.java" startLine="107" startPosition="54" endLine="120" endPosition="186">
-      <varInfo nodeId="6299533519672652254" varName="necessaryLanguages" />
       <varInfo nodeId="6299533519672652286" varName="module" />
       <varInfo nodeId="6299533519672652259" varName="necessaryImports" />
+      <varInfo nodeId="6299533519672652254" varName="necessaryLanguages" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672652113" fileName="SNodeTransferable.java" startLine="71" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="6299533519672652116" varName="flavor" />
@@ -724,8 +724,8 @@
       <varInfo nodeId="6299533519672652250" varName="sModel" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672652165" fileName="SNodeTransferable.java" startLine="89" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="6299533519672652172" varName="nodesAndAttributes" />
       <varInfo nodeId="6299533519672652168" varName="nodes" />
+      <varInfo nodeId="6299533519672652172" varName="nodesAndAttributes" />
     </scopeInfo>
     <unitInfo nodeId="6299533519672651952" fileName="SNodeTransferable.java" startLine="25" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />
   </root>

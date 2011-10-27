@@ -23,24 +23,10 @@
     <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="1842653058274900916" varName="manager" />
-      <varInfo nodeId="1842653058274900916" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="14" startPosition="65" endLine="18" endPosition="0">
-      <varInfo nodeId="1842653058274900916" varName="editorContext" />
-      <varInfo nodeId="1842653058274900916" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="1842653058274900916" varName="attributeConcept" />
-      <varInfo nodeId="1842653058274900916" varName="attributeKind" />
-      <varInfo nodeId="1842653058274900916" varName="editorCell" />
-      <varInfo nodeId="1842653058274900916" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1842653058274900916" varName="editorContext" />
-      <varInfo nodeId="1842653058274900916" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="14" startPosition="65" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="1842653058274900916" fileName="WatchableListType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.WatchableListType_Editor" />
   </root>
   <root nodeId="1842653058274918911">
@@ -75,31 +61,12 @@
     <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="22" startPosition="48" endLine="23" endPosition="88" />
     <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="32" startPosition="58" endLine="33" endPosition="50" />
     <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="31" startPosition="26" endLine="34" endPosition="73" />
-    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="37" startPosition="35" endLine="40" endPosition="105">
-      <varInfo nodeId="1842653058274918911" varName="manager" />
-      <varInfo nodeId="1842653058274918911" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="15" startPosition="69" endLine="19" endPosition="0">
-      <varInfo nodeId="1842653058274918911" varName="editorContext" />
-      <varInfo nodeId="1842653058274918911" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="20" startPosition="89" endLine="24" endPosition="22">
-      <varInfo nodeId="1842653058274918911" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="1842653058274918911" varName="editorContext" />
-      <varInfo nodeId="1842653058274918911" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="27" startPosition="95" endLine="42" endPosition="22">
-      <varInfo nodeId="1842653058274918911" varName="attributeConcept" />
-      <varInfo nodeId="1842653058274918911" varName="attributeKind" />
-      <varInfo nodeId="1842653058274918911" varName="editorCell" />
-      <varInfo nodeId="1842653058274918911" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="26" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="1842653058274918911" varName="editorContext" />
-      <varInfo nodeId="1842653058274918911" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="37" startPosition="35" endLine="40" endPosition="105" />
+    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="15" startPosition="69" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="20" startPosition="89" endLine="24" endPosition="22" />
+    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="19" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="27" startPosition="95" endLine="42" endPosition="22" />
+    <scopeInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="26" startPosition="0" endLine="44" endPosition="0" />
     <unitInfo nodeId="1842653058274918911" fileName="WatchablesListCreator_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.WatchablesListCreator_Editor" />
   </root>
   <root nodeId="1843851250586691380">
@@ -125,24 +92,10 @@
     <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="1843851250586691380" varName="manager" />
-      <varInfo nodeId="1843851250586691380" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="14" startPosition="66" endLine="18" endPosition="0">
-      <varInfo nodeId="1843851250586691380" varName="editorContext" />
-      <varInfo nodeId="1843851250586691380" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="1843851250586691380" varName="attributeConcept" />
-      <varInfo nodeId="1843851250586691380" varName="attributeKind" />
-      <varInfo nodeId="1843851250586691380" varName="editorCell" />
-      <varInfo nodeId="1843851250586691380" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1843851250586691380" varName="editorContext" />
-      <varInfo nodeId="1843851250586691380" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="14" startPosition="66" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="1843851250586691380" fileName="ClassNameOperation_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.ClassNameOperation_Editor" />
   </root>
   <root nodeId="1843851250586694543">
@@ -168,24 +121,10 @@
     <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="1843851250586694543" varName="manager" />
-      <varInfo nodeId="1843851250586694543" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="14" startPosition="68" endLine="18" endPosition="0">
-      <varInfo nodeId="1843851250586694543" varName="editorContext" />
-      <varInfo nodeId="1843851250586694543" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="1843851250586694543" varName="attributeConcept" />
-      <varInfo nodeId="1843851250586694543" varName="attributeKind" />
-      <varInfo nodeId="1843851250586694543" varName="editorCell" />
-      <varInfo nodeId="1843851250586694543" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1843851250586694543" varName="editorContext" />
-      <varInfo nodeId="1843851250586694543" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="14" startPosition="68" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="1843851250586694543" fileName="ClassFqNameOperation_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.ClassFqNameOperation_Editor" />
   </root>
   <root nodeId="1843851250586694565">
@@ -211,24 +150,10 @@
     <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="1843851250586694565" varName="manager" />
-      <varInfo nodeId="1843851250586694565" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="14" startPosition="61" endLine="18" endPosition="0">
-      <varInfo nodeId="1843851250586694565" varName="editorContext" />
-      <varInfo nodeId="1843851250586694565" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="1843851250586694565" varName="attributeConcept" />
-      <varInfo nodeId="1843851250586694565" varName="attributeKind" />
-      <varInfo nodeId="1843851250586694565" varName="editorCell" />
-      <varInfo nodeId="1843851250586694565" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1843851250586694565" varName="editorContext" />
-      <varInfo nodeId="1843851250586694565" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="14" startPosition="61" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="1843851250586694565" fileName="SizeOperation_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.SizeOperation_Editor" />
   </root>
   <root nodeId="1843851250586697547">
@@ -254,24 +179,10 @@
     <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="1843851250586697547" varName="manager" />
-      <varInfo nodeId="1843851250586697547" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="14" startPosition="68" endLine="18" endPosition="0">
-      <varInfo nodeId="1843851250586697547" varName="editorContext" />
-      <varInfo nodeId="1843851250586697547" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="1843851250586697547" varName="attributeConcept" />
-      <varInfo nodeId="1843851250586697547" varName="attributeKind" />
-      <varInfo nodeId="1843851250586697547" varName="editorCell" />
-      <varInfo nodeId="1843851250586697547" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1843851250586697547" varName="editorContext" />
-      <varInfo nodeId="1843851250586697547" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="14" startPosition="68" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="1843851250586697547" fileName="AllElementsOperation_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.AllElementsOperation_Editor" />
   </root>
   <root nodeId="1843851250586697577">
@@ -377,81 +288,25 @@
     <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="94" startPosition="58" endLine="95" endPosition="50" />
     <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="59" startPosition="26" endLine="61" endPosition="73" />
     <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="76" startPosition="26" endLine="78" endPosition="73" />
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105">
-      <varInfo nodeId="1843851250586697577" varName="manager" />
-      <varInfo nodeId="1843851250586697577" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="81" startPosition="35" endLine="84" endPosition="105">
-      <varInfo nodeId="1843851250586697577" varName="manager" />
-      <varInfo nodeId="1843851250586697577" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="81" startPosition="35" endLine="84" endPosition="105" />
     <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="93" startPosition="26" endLine="96" endPosition="73" />
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="99" startPosition="35" endLine="102" endPosition="105">
-      <varInfo nodeId="1843851250586697577" varName="manager" />
-      <varInfo nodeId="1843851250586697577" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="17" startPosition="70" endLine="21" endPosition="0">
-      <varInfo nodeId="1843851250586697577" varName="editorContext" />
-      <varInfo nodeId="1843851250586697577" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="34" startPosition="88" endLine="38" endPosition="22">
-      <varInfo nodeId="1843851250586697577" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="41" startPosition="88" endLine="45" endPosition="22">
-      <varInfo nodeId="1843851250586697577" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="48" startPosition="88" endLine="52" endPosition="22">
-      <varInfo nodeId="1843851250586697577" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="1843851250586697577" varName="editorContext" />
-      <varInfo nodeId="1843851250586697577" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="1843851250586697577" varName="editorContext" />
-      <varInfo nodeId="1843851250586697577" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="1843851250586697577" varName="editorContext" />
-      <varInfo nodeId="1843851250586697577" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="22" startPosition="89" endLine="31" endPosition="22">
-      <varInfo nodeId="1843851250586697577" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="21" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="1843851250586697577" varName="editorContext" />
-      <varInfo nodeId="1843851250586697577" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="55" startPosition="87" endLine="69" endPosition="22">
-      <varInfo nodeId="1843851250586697577" varName="attributeConcept" />
-      <varInfo nodeId="1843851250586697577" varName="attributeKind" />
-      <varInfo nodeId="1843851250586697577" varName="editorCell" />
-      <varInfo nodeId="1843851250586697577" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="72" startPosition="87" endLine="86" endPosition="22">
-      <varInfo nodeId="1843851250586697577" varName="attributeConcept" />
-      <varInfo nodeId="1843851250586697577" varName="attributeKind" />
-      <varInfo nodeId="1843851250586697577" varName="editorCell" />
-      <varInfo nodeId="1843851250586697577" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="89" startPosition="95" endLine="104" endPosition="22">
-      <varInfo nodeId="1843851250586697577" varName="attributeConcept" />
-      <varInfo nodeId="1843851250586697577" varName="attributeKind" />
-      <varInfo nodeId="1843851250586697577" varName="editorCell" />
-      <varInfo nodeId="1843851250586697577" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="54" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="1843851250586697577" varName="editorContext" />
-      <varInfo nodeId="1843851250586697577" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="71" startPosition="0" endLine="88" endPosition="0">
-      <varInfo nodeId="1843851250586697577" varName="editorContext" />
-      <varInfo nodeId="1843851250586697577" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="88" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="1843851250586697577" varName="editorContext" />
-      <varInfo nodeId="1843851250586697577" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="99" startPosition="35" endLine="102" endPosition="105" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="17" startPosition="70" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="34" startPosition="88" endLine="38" endPosition="22" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="41" startPosition="88" endLine="45" endPosition="22" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="48" startPosition="88" endLine="52" endPosition="22" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="33" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="47" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="22" startPosition="89" endLine="31" endPosition="22" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="21" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="55" startPosition="87" endLine="69" endPosition="22" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="72" startPosition="87" endLine="86" endPosition="22" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="89" startPosition="95" endLine="104" endPosition="22" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="54" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="71" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="88" startPosition="0" endLine="106" endPosition="0" />
     <unitInfo nodeId="1843851250586697577" fileName="ElementsRangeOperation_Editor.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.ElementsRangeOperation_Editor" />
   </root>
   <root nodeId="2488554353950283281">
@@ -477,24 +332,10 @@
     <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="2488554353950283281" varName="manager" />
-      <varInfo nodeId="2488554353950283281" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="14" startPosition="67" endLine="18" endPosition="0">
-      <varInfo nodeId="2488554353950283281" varName="editorContext" />
-      <varInfo nodeId="2488554353950283281" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="2488554353950283281" varName="attributeConcept" />
-      <varInfo nodeId="2488554353950283281" varName="attributeKind" />
-      <varInfo nodeId="2488554353950283281" varName="editorCell" />
-      <varInfo nodeId="2488554353950283281" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="2488554353950283281" varName="editorContext" />
-      <varInfo nodeId="2488554353950283281" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="14" startPosition="67" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="2488554353950283281" fileName="FieldsListOperation_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.FieldsListOperation_Editor" />
   </root>
   <root nodeId="2488554353950312698">
@@ -569,60 +410,20 @@
     <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="40" startPosition="87" endLine="41" endPosition="47" />
     <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="68" startPosition="58" endLine="69" endPosition="50" />
     <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="50" startPosition="26" endLine="52" endPosition="73" />
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="55" startPosition="35" endLine="58" endPosition="105">
-      <varInfo nodeId="2488554353950312698" varName="manager" />
-      <varInfo nodeId="2488554353950312698" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="55" startPosition="35" endLine="58" endPosition="105" />
     <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="67" startPosition="26" endLine="70" endPosition="73" />
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="73" startPosition="35" endLine="76" endPosition="105">
-      <varInfo nodeId="2488554353950312698" varName="manager" />
-      <varInfo nodeId="2488554353950312698" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="17" startPosition="62" endLine="21" endPosition="0">
-      <varInfo nodeId="2488554353950312698" varName="editorContext" />
-      <varInfo nodeId="2488554353950312698" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="32" startPosition="88" endLine="36" endPosition="22">
-      <varInfo nodeId="2488554353950312698" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="39" startPosition="88" endLine="43" endPosition="22">
-      <varInfo nodeId="2488554353950312698" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22">
-      <varInfo nodeId="2488554353950312698" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="2488554353950312698" varName="editorContext" />
-      <varInfo nodeId="2488554353950312698" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="2488554353950312698" varName="editorContext" />
-      <varInfo nodeId="2488554353950312698" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="2488554353950312698" varName="editorContext" />
-      <varInfo nodeId="2488554353950312698" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="46" startPosition="87" endLine="60" endPosition="22">
-      <varInfo nodeId="2488554353950312698" varName="attributeConcept" />
-      <varInfo nodeId="2488554353950312698" varName="attributeKind" />
-      <varInfo nodeId="2488554353950312698" varName="editorCell" />
-      <varInfo nodeId="2488554353950312698" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="63" startPosition="95" endLine="78" endPosition="22">
-      <varInfo nodeId="2488554353950312698" varName="attributeConcept" />
-      <varInfo nodeId="2488554353950312698" varName="attributeKind" />
-      <varInfo nodeId="2488554353950312698" varName="editorCell" />
-      <varInfo nodeId="2488554353950312698" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="2488554353950312698" varName="editorContext" />
-      <varInfo nodeId="2488554353950312698" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="62" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="2488554353950312698" varName="editorContext" />
-      <varInfo nodeId="2488554353950312698" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="73" startPosition="35" endLine="76" endPosition="105" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="17" startPosition="62" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="32" startPosition="88" endLine="36" endPosition="22" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="39" startPosition="88" endLine="43" endPosition="22" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="46" startPosition="87" endLine="60" endPosition="22" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="63" startPosition="95" endLine="78" endPosition="22" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="62" startPosition="0" endLine="80" endPosition="0" />
     <unitInfo nodeId="2488554353950312698" fileName="FieldOperation_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.FieldOperation_Editor" />
   </root>
   <root nodeId="2488554353950312754">
@@ -697,60 +498,20 @@
     <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="40" startPosition="87" endLine="41" endPosition="47" />
     <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="68" startPosition="58" endLine="69" endPosition="50" />
     <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="50" startPosition="26" endLine="52" endPosition="73" />
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="55" startPosition="35" endLine="58" endPosition="105">
-      <varInfo nodeId="2488554353950312754" varName="manager" />
-      <varInfo nodeId="2488554353950312754" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="55" startPosition="35" endLine="58" endPosition="105" />
     <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="67" startPosition="26" endLine="70" endPosition="73" />
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="73" startPosition="35" endLine="76" endPosition="105">
-      <varInfo nodeId="2488554353950312754" varName="manager" />
-      <varInfo nodeId="2488554353950312754" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="17" startPosition="64" endLine="21" endPosition="0">
-      <varInfo nodeId="2488554353950312754" varName="editorContext" />
-      <varInfo nodeId="2488554353950312754" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="32" startPosition="88" endLine="36" endPosition="22">
-      <varInfo nodeId="2488554353950312754" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="39" startPosition="88" endLine="43" endPosition="22">
-      <varInfo nodeId="2488554353950312754" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22">
-      <varInfo nodeId="2488554353950312754" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="2488554353950312754" varName="editorContext" />
-      <varInfo nodeId="2488554353950312754" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="2488554353950312754" varName="editorContext" />
-      <varInfo nodeId="2488554353950312754" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="2488554353950312754" varName="editorContext" />
-      <varInfo nodeId="2488554353950312754" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="46" startPosition="87" endLine="60" endPosition="22">
-      <varInfo nodeId="2488554353950312754" varName="attributeConcept" />
-      <varInfo nodeId="2488554353950312754" varName="attributeKind" />
-      <varInfo nodeId="2488554353950312754" varName="editorCell" />
-      <varInfo nodeId="2488554353950312754" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="63" startPosition="95" endLine="78" endPosition="22">
-      <varInfo nodeId="2488554353950312754" varName="attributeConcept" />
-      <varInfo nodeId="2488554353950312754" varName="attributeKind" />
-      <varInfo nodeId="2488554353950312754" varName="editorCell" />
-      <varInfo nodeId="2488554353950312754" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="2488554353950312754" varName="editorContext" />
-      <varInfo nodeId="2488554353950312754" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="62" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="2488554353950312754" varName="editorContext" />
-      <varInfo nodeId="2488554353950312754" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="73" startPosition="35" endLine="76" endPosition="105" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="17" startPosition="64" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="32" startPosition="88" endLine="36" endPosition="22" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="39" startPosition="88" endLine="43" endPosition="22" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="46" startPosition="87" endLine="60" endPosition="22" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="63" startPosition="95" endLine="78" endPosition="22" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="62" startPosition="0" endLine="80" endPosition="0" />
     <unitInfo nodeId="2488554353950312754" fileName="ElementOperation_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.ElementOperation_Editor" />
   </root>
   <root nodeId="3473983539747127457">
@@ -795,40 +556,14 @@
     <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="23" startPosition="88" endLine="24" endPosition="91" />
     <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="40" startPosition="58" endLine="41" endPosition="50" />
     <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="39" startPosition="26" endLine="42" endPosition="73" />
-    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="45" startPosition="35" endLine="48" endPosition="105">
-      <varInfo nodeId="3473983539747127457" varName="manager" />
-      <varInfo nodeId="3473983539747127457" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="15" startPosition="63" endLine="19" endPosition="0">
-      <varInfo nodeId="3473983539747127457" varName="editorContext" />
-      <varInfo nodeId="3473983539747127457" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="28" startPosition="98" endLine="32" endPosition="22">
-      <varInfo nodeId="3473983539747127457" varName="editorCell" />
-      <varInfo nodeId="3473983539747127457" varName="manager" />
-      <varInfo nodeId="3473983539747127457" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="20" startPosition="89" endLine="25" endPosition="22">
-      <varInfo nodeId="3473983539747127457" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="27" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="3473983539747127457" varName="editorContext" />
-      <varInfo nodeId="3473983539747127457" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="3473983539747127457" varName="editorContext" />
-      <varInfo nodeId="3473983539747127457" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="35" startPosition="95" endLine="50" endPosition="22">
-      <varInfo nodeId="3473983539747127457" varName="attributeConcept" />
-      <varInfo nodeId="3473983539747127457" varName="attributeKind" />
-      <varInfo nodeId="3473983539747127457" varName="editorCell" />
-      <varInfo nodeId="3473983539747127457" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="34" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="3473983539747127457" varName="editorContext" />
-      <varInfo nodeId="3473983539747127457" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="45" startPosition="35" endLine="48" endPosition="105" />
+    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="15" startPosition="63" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="28" startPosition="98" endLine="32" endPosition="22" />
+    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="20" startPosition="89" endLine="25" endPosition="22" />
+    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="27" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="35" startPosition="95" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="34" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="3473983539747127457" fileName="ToProcessMethod_Editor.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.ToProcessMethod_Editor" />
   </root>
   <root nodeId="43370322128311453">
@@ -953,97 +688,30 @@
     <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="122" startPosition="60" endLine="123" endPosition="44" />
     <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="72" startPosition="26" endLine="74" endPosition="73" />
     <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="54" startPosition="26" endLine="57" endPosition="73" />
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="105">
-      <varInfo nodeId="43370322128311453" varName="manager" />
-      <varInfo nodeId="43370322128311453" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="77" startPosition="35" endLine="80" endPosition="105">
-      <varInfo nodeId="43370322128311453" varName="manager" />
-      <varInfo nodeId="43370322128311453" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="105" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="77" startPosition="35" endLine="80" endPosition="105" />
     <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="89" startPosition="26" endLine="92" endPosition="73" />
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="95" startPosition="35" endLine="98" endPosition="105">
-      <varInfo nodeId="43370322128311453" varName="manager" />
-      <varInfo nodeId="43370322128311453" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="95" startPosition="35" endLine="98" endPosition="105" />
     <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="103" startPosition="69" endLine="106" endPosition="5" />
     <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="121" startPosition="28" endLine="124" endPosition="75" />
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="127" startPosition="37" endLine="130" endPosition="107">
-      <varInfo nodeId="43370322128311453" varName="manager" />
-      <varInfo nodeId="43370322128311453" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="20" startPosition="73" endLine="24" endPosition="0">
-      <varInfo nodeId="43370322128311453" varName="editorContext" />
-      <varInfo nodeId="43370322128311453" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="36" startPosition="88" endLine="40" endPosition="22">
-      <varInfo nodeId="43370322128311453" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="43" startPosition="88" endLine="47" endPosition="22">
-      <varInfo nodeId="43370322128311453" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
-      <varInfo nodeId="43370322128311453" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
-      <varInfo nodeId="43370322128311453" varName="editorContext" />
-      <varInfo nodeId="43370322128311453" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="43370322128311453" varName="editorContext" />
-      <varInfo nodeId="43370322128311453" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="43370322128311453" varName="editorContext" />
-      <varInfo nodeId="43370322128311453" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="25" startPosition="89" endLine="33" endPosition="22">
-      <varInfo nodeId="43370322128311453" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="43370322128311453" varName="editorContext" />
-      <varInfo nodeId="43370322128311453" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="68" startPosition="87" endLine="82" endPosition="22">
-      <varInfo nodeId="43370322128311453" varName="attributeConcept" />
-      <varInfo nodeId="43370322128311453" varName="attributeKind" />
-      <varInfo nodeId="43370322128311453" varName="editorCell" />
-      <varInfo nodeId="43370322128311453" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="50" startPosition="87" endLine="65" endPosition="22">
-      <varInfo nodeId="43370322128311453" varName="attributeConcept" />
-      <varInfo nodeId="43370322128311453" varName="attributeKind" />
-      <varInfo nodeId="43370322128311453" varName="editorCell" />
-      <varInfo nodeId="43370322128311453" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="85" startPosition="95" endLine="100" endPosition="22">
-      <varInfo nodeId="43370322128311453" varName="attributeConcept" />
-      <varInfo nodeId="43370322128311453" varName="attributeKind" />
-      <varInfo nodeId="43370322128311453" varName="editorCell" />
-      <varInfo nodeId="43370322128311453" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="116" startPosition="92" endLine="132" endPosition="24">
-      <varInfo nodeId="43370322128311453" varName="attributeConcept" />
-      <varInfo nodeId="43370322128311453" varName="attributeKind" />
-      <varInfo nodeId="43370322128311453" varName="editorCell" />
-      <varInfo nodeId="43370322128311453" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="67" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="43370322128311453" varName="editorContext" />
-      <varInfo nodeId="43370322128311453" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="49" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="43370322128311453" varName="editorContext" />
-      <varInfo nodeId="43370322128311453" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="84" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="43370322128311453" varName="editorContext" />
-      <varInfo nodeId="43370322128311453" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="115" startPosition="0" endLine="134" endPosition="0">
-      <varInfo nodeId="43370322128311453" varName="editorContext" />
-      <varInfo nodeId="43370322128311453" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="127" startPosition="37" endLine="130" endPosition="107" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="20" startPosition="73" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="36" startPosition="88" endLine="40" endPosition="22" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="43" startPosition="88" endLine="47" endPosition="22" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="25" startPosition="89" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="24" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="68" startPosition="87" endLine="82" endPosition="22" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="50" startPosition="87" endLine="65" endPosition="22" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="85" startPosition="95" endLine="100" endPosition="22" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="116" startPosition="92" endLine="132" endPosition="24" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="67" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="49" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="84" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="115" startPosition="0" endLine="134" endPosition="0" />
     <unitInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="20" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.HighLevelWatchableCreator_Editor" />
     <unitInfo nodeId="43370322128311453" fileName="HighLevelWatchableCreator_Editor.java" startLine="103" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.HighLevelWatchableCreator_Editor$_Inline_h88a5f_a1a" />
   </root>
@@ -1268,173 +936,53 @@
     <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="112" startPosition="86" endLine="113" endPosition="47" />
     <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="119" startPosition="107" endLine="120" endPosition="47" />
     <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="198" startPosition="58" endLine="199" endPosition="42" />
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="45" startPosition="5" endLine="47" endPosition="51">
-      <varInfo nodeId="43370322128323844" varName="style" />
-    </scopeInfo>
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="45" startPosition="5" endLine="47" endPosition="51" />
     <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="129" startPosition="26" endLine="131" endPosition="73" />
     <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="146" startPosition="26" endLine="148" endPosition="73" />
     <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="163" startPosition="26" endLine="165" endPosition="73" />
     <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="180" startPosition="26" endLine="182" endPosition="73" />
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="134" startPosition="35" endLine="137" endPosition="105">
-      <varInfo nodeId="43370322128323844" varName="manager" />
-      <varInfo nodeId="43370322128323844" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="151" startPosition="35" endLine="154" endPosition="105">
-      <varInfo nodeId="43370322128323844" varName="manager" />
-      <varInfo nodeId="43370322128323844" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="168" startPosition="35" endLine="171" endPosition="105">
-      <varInfo nodeId="43370322128323844" varName="manager" />
-      <varInfo nodeId="43370322128323844" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="185" startPosition="35" endLine="188" endPosition="105">
-      <varInfo nodeId="43370322128323844" varName="manager" />
-      <varInfo nodeId="43370322128323844" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="134" startPosition="35" endLine="137" endPosition="105" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="151" startPosition="35" endLine="154" endPosition="105" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="168" startPosition="35" endLine="171" endPosition="105" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="185" startPosition="35" endLine="188" endPosition="105" />
     <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="197" startPosition="26" endLine="200" endPosition="73" />
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="203" startPosition="35" endLine="206" endPosition="105">
-      <varInfo nodeId="43370322128323844" varName="manager" />
-      <varInfo nodeId="43370322128323844" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="19" startPosition="69" endLine="23" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="62" startPosition="89" endLine="66" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="69" startPosition="88" endLine="73" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="76" startPosition="89" endLine="80" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="83" startPosition="88" endLine="87" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="90" startPosition="88" endLine="94" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="97" startPosition="88" endLine="101" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="104" startPosition="88" endLine="108" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="111" startPosition="88" endLine="115" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="118" startPosition="88" endLine="122" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="203" startPosition="35" endLine="206" endPosition="105" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="19" startPosition="69" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="62" startPosition="89" endLine="66" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="69" startPosition="88" endLine="73" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="76" startPosition="89" endLine="80" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="83" startPosition="88" endLine="87" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="90" startPosition="88" endLine="94" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="97" startPosition="88" endLine="101" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="104" startPosition="88" endLine="108" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="111" startPosition="88" endLine="115" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="118" startPosition="88" endLine="122" endPosition="22" />
     <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="43" startPosition="99" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="54" startPosition="90" endLine="59" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="61" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="68" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="75" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="82" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="89" startPosition="0" endLine="96" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="96" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="103" startPosition="0" endLine="110" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="110" startPosition="0" endLine="117" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="117" startPosition="0" endLine="124" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="53" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="42" startPosition="90" endLine="51" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="41" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="125" startPosition="88" endLine="139" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="attributeConcept" />
-      <varInfo nodeId="43370322128323844" varName="attributeKind" />
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-      <varInfo nodeId="43370322128323844" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="142" startPosition="87" endLine="156" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="attributeConcept" />
-      <varInfo nodeId="43370322128323844" varName="attributeKind" />
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-      <varInfo nodeId="43370322128323844" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="159" startPosition="87" endLine="173" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="attributeConcept" />
-      <varInfo nodeId="43370322128323844" varName="attributeKind" />
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-      <varInfo nodeId="43370322128323844" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="176" startPosition="87" endLine="190" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="attributeConcept" />
-      <varInfo nodeId="43370322128323844" varName="attributeKind" />
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-      <varInfo nodeId="43370322128323844" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="24" startPosition="89" endLine="39" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="193" startPosition="89" endLine="208" endPosition="22">
-      <varInfo nodeId="43370322128323844" varName="attributeConcept" />
-      <varInfo nodeId="43370322128323844" varName="attributeKind" />
-      <varInfo nodeId="43370322128323844" varName="editorCell" />
-      <varInfo nodeId="43370322128323844" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="124" startPosition="0" endLine="141" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="141" startPosition="0" endLine="158" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="158" startPosition="0" endLine="175" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="175" startPosition="0" endLine="192" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="23" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="192" startPosition="0" endLine="210" endPosition="0">
-      <varInfo nodeId="43370322128323844" varName="editorContext" />
-      <varInfo nodeId="43370322128323844" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="54" startPosition="90" endLine="59" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="61" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="68" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="75" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="82" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="89" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="96" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="103" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="110" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="117" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="53" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="42" startPosition="90" endLine="51" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="41" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="125" startPosition="88" endLine="139" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="142" startPosition="87" endLine="156" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="159" startPosition="87" endLine="173" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="176" startPosition="87" endLine="190" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="24" startPosition="89" endLine="39" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="193" startPosition="89" endLine="208" endPosition="22" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="124" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="141" startPosition="0" endLine="158" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="158" startPosition="0" endLine="175" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="175" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="23" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="192" startPosition="0" endLine="210" endPosition="0" />
     <unitInfo nodeId="43370322128323844" fileName="HighLevelCustomViewer_Editor.java" startLine="19" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.HighLevelCustomViewer_Editor" />
   </root>
   <root nodeId="5117350825036234464">
@@ -1460,24 +1008,10 @@
     <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="5117350825036234464" varName="manager" />
-      <varInfo nodeId="5117350825036234464" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="14" startPosition="57" endLine="18" endPosition="0">
-      <varInfo nodeId="5117350825036234464" varName="editorContext" />
-      <varInfo nodeId="5117350825036234464" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="5117350825036234464" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036234464" varName="attributeKind" />
-      <varInfo nodeId="5117350825036234464" varName="editorCell" />
-      <varInfo nodeId="5117350825036234464" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="5117350825036234464" varName="editorContext" />
-      <varInfo nodeId="5117350825036234464" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="14" startPosition="57" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="5117350825036234464" fileName="ValueType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.ValueType_Editor" />
   </root>
   <root nodeId="5117350825036234470">
@@ -1503,24 +1037,10 @@
     <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="5117350825036234470" varName="manager" />
-      <varInfo nodeId="5117350825036234470" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="14" startPosition="62" endLine="18" endPosition="0">
-      <varInfo nodeId="5117350825036234470" varName="editorContext" />
-      <varInfo nodeId="5117350825036234470" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="5117350825036234470" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036234470" varName="attributeKind" />
-      <varInfo nodeId="5117350825036234470" varName="editorCell" />
-      <varInfo nodeId="5117350825036234470" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="5117350825036234470" varName="editorContext" />
-      <varInfo nodeId="5117350825036234470" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="14" startPosition="62" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="5117350825036234470" fileName="ArrayValueType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.ArrayValueType_Editor" />
   </root>
   <root nodeId="5117350825036234475">
@@ -1546,24 +1066,10 @@
     <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="5117350825036234475" varName="manager" />
-      <varInfo nodeId="5117350825036234475" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="14" startPosition="63" endLine="18" endPosition="0">
-      <varInfo nodeId="5117350825036234475" varName="editorContext" />
-      <varInfo nodeId="5117350825036234475" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="5117350825036234475" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036234475" varName="attributeKind" />
-      <varInfo nodeId="5117350825036234475" varName="editorCell" />
-      <varInfo nodeId="5117350825036234475" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="5117350825036234475" varName="editorContext" />
-      <varInfo nodeId="5117350825036234475" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="14" startPosition="63" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="5117350825036234475" fileName="ObjectValueType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.ObjectValueType_Editor" />
   </root>
   <root nodeId="5117350825036234480">
@@ -1589,24 +1095,10 @@
     <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="5117350825036234480" varName="manager" />
-      <varInfo nodeId="5117350825036234480" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="14" startPosition="66" endLine="18" endPosition="0">
-      <varInfo nodeId="5117350825036234480" varName="editorContext" />
-      <varInfo nodeId="5117350825036234480" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="5117350825036234480" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036234480" varName="attributeKind" />
-      <varInfo nodeId="5117350825036234480" varName="editorCell" />
-      <varInfo nodeId="5117350825036234480" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="5117350825036234480" varName="editorContext" />
-      <varInfo nodeId="5117350825036234480" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="14" startPosition="66" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="5117350825036234480" fileName="PrimitiveValueType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.PrimitiveValueType_Editor" />
   </root>
   <root nodeId="5117350825036235733">
@@ -1771,145 +1263,52 @@
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="162" startPosition="58" endLine="163" endPosition="46" />
     <scopeInfo nodeId="5117350825036256270" fileName="CustomWatchable_Editor.java" startLine="178" startPosition="25" endLine="179" endPosition="110" />
     <scopeInfo nodeId="5117350825036256308" fileName="CustomWatchable_Editor.java" startLine="184" startPosition="120" endLine="185" endPosition="78" />
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="58" startPosition="5" endLine="60" endPosition="51">
-      <varInfo nodeId="5117350825036235733" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="70" startPosition="5" endLine="72" endPosition="51">
-      <varInfo nodeId="5117350825036235733" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="83" startPosition="5" endLine="85" endPosition="51">
-      <varInfo nodeId="5117350825036235733" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="102" startPosition="5" endLine="104" endPosition="51">
-      <varInfo nodeId="5117350825036235733" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="113" startPosition="5" endLine="115" endPosition="65">
-      <varInfo nodeId="5117350825036235733" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="133" startPosition="91" endLine="136" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="58" startPosition="5" endLine="60" endPosition="51" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="70" startPosition="5" endLine="72" endPosition="51" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="83" startPosition="5" endLine="85" endPosition="51" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="102" startPosition="5" endLine="104" endPosition="51" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="113" startPosition="5" endLine="115" endPosition="65" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="133" startPosition="91" endLine="136" endPosition="22" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="143" startPosition="26" endLine="146" endPosition="73" />
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="149" startPosition="35" endLine="152" endPosition="105">
-      <varInfo nodeId="5117350825036235733" varName="manager" />
-      <varInfo nodeId="5117350825036235733" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="149" startPosition="35" endLine="152" endPosition="105" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="161" startPosition="26" endLine="164" endPosition="73" />
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="167" startPosition="35" endLine="170" endPosition="105">
-      <varInfo nodeId="5117350825036235733" varName="manager" />
-      <varInfo nodeId="5117350825036235733" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="30" startPosition="63" endLine="34" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="92" startPosition="89" endLine="96" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="167" startPosition="35" endLine="170" endPosition="105" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="30" startPosition="63" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="92" startPosition="89" endLine="96" endPosition="22" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="123" startPosition="115" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="183" startPosition="0" endLine="187" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="47" startPosition="89" endLine="52" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="183" startPosition="0" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="47" startPosition="89" endLine="52" endPosition="22" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="56" startPosition="99" endLine="61" endPosition="5" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="68" startPosition="99" endLine="73" endPosition="5" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="81" startPosition="99" endLine="86" endPosition="5" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="100" startPosition="91" endLine="105" endPosition="5" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="111" startPosition="95" endLine="116" endPosition="5" />
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="132" startPosition="0" endLine="138" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="132" startPosition="0" endLine="138" endPosition="0" />
     <scopeInfo nodeId="5117350825036256259" fileName="CustomWatchable_Editor.java" startLine="175" startPosition="112" endLine="181" endPosition="81">
       <varInfo nodeId="5117350825036256265" varName="module" />
       <varInfo nodeId="5117350825036256261" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="91" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="46" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="99" startPosition="89" endLine="107" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="110" startPosition="90" endLine="118" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="35" startPosition="92" endLine="44" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="alternationCondition" />
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="55" startPosition="90" endLine="64" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="80" startPosition="92" endLine="89" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="121" startPosition="100" endLine="130" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="174" startPosition="0" endLine="183" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-      <varInfo nodeId="5117350825036235733" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="67" startPosition="90" endLine="77" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="98" startPosition="0" endLine="109" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="109" startPosition="0" endLine="120" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="34" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="54" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="79" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="120" startPosition="0" endLine="132" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="66" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="139" startPosition="89" endLine="154" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036235733" varName="attributeKind" />
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-      <varInfo nodeId="5117350825036235733" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="157" startPosition="91" endLine="172" endPosition="22">
-      <varInfo nodeId="5117350825036235733" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036235733" varName="attributeKind" />
-      <varInfo nodeId="5117350825036235733" varName="editorCell" />
-      <varInfo nodeId="5117350825036235733" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="138" startPosition="0" endLine="156" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="156" startPosition="0" endLine="174" endPosition="0">
-      <varInfo nodeId="5117350825036235733" varName="editorContext" />
-      <varInfo nodeId="5117350825036235733" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="91" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="46" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="99" startPosition="89" endLine="107" endPosition="22" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="110" startPosition="90" endLine="118" endPosition="22" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="35" startPosition="92" endLine="44" endPosition="22" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="55" startPosition="90" endLine="64" endPosition="22" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="80" startPosition="92" endLine="89" endPosition="22" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="121" startPosition="100" endLine="130" endPosition="22" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="174" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="67" startPosition="90" endLine="77" endPosition="22" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="98" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="109" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="34" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="54" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="79" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="120" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="66" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="139" startPosition="89" endLine="154" endPosition="22" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="157" startPosition="91" endLine="172" endPosition="22" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="138" startPosition="0" endLine="156" endPosition="0" />
+    <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="156" startPosition="0" endLine="174" endPosition="0" />
     <unitInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="30" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.CustomWatchable_Editor" />
     <unitInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="123" startPosition="75" endLine="127" endPosition="5" unitName="jetbrains.mps.debug.customViewers.editor.CustomWatchable_Editor$1" />
   </root>
@@ -2010,97 +1409,33 @@
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="93" startPosition="101" endLine="94" endPosition="50" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="118" startPosition="34" endLine="119" endPosition="95" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="121" startPosition="131" endLine="122" endPosition="139" />
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="43" startPosition="5" endLine="45" endPosition="51">
-      <varInfo nodeId="5117350825036256319" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="97" startPosition="66" endLine="99" endPosition="93">
-      <varInfo nodeId="5117350825036256319" varName="listOwner" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="43" startPosition="5" endLine="45" endPosition="51" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="97" startPosition="66" endLine="99" endPosition="93" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="78" startPosition="26" endLine="81" endPosition="73" />
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="84" startPosition="35" endLine="87" endPosition="105">
-      <varInfo nodeId="5117350825036256319" varName="manager" />
-      <varInfo nodeId="5117350825036256319" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="92" startPosition="82" endLine="95" endPosition="5">
-      <varInfo nodeId="5117350825036256319" varName="childRole" />
-      <varInfo nodeId="5117350825036256319" varName="context" />
-      <varInfo nodeId="5117350825036256319" varName="ownerNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="102" startPosition="86" endLine="105" endPosition="25">
-      <varInfo nodeId="5117350825036256319" varName="elementCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="26" startPosition="73" endLine="30" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-      <varInfo nodeId="5117350825036256319" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="52" startPosition="89" endLine="56" endPosition="22">
-      <varInfo nodeId="5117350825036256319" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="59" startPosition="88" endLine="63" endPosition="22">
-      <varInfo nodeId="5117350825036256319" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="108" startPosition="68" endLine="112" endPosition="23">
-      <varInfo nodeId="5117350825036256319" varName="emptyCell" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="84" startPosition="35" endLine="87" endPosition="105" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="92" startPosition="82" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="102" startPosition="86" endLine="105" endPosition="25" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="26" startPosition="73" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="52" startPosition="89" endLine="56" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="59" startPosition="88" endLine="63" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="108" startPosition="68" endLine="112" endPosition="23" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="41" startPosition="99" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="66" startPosition="91" endLine="71" endPosition="22">
-      <varInfo nodeId="5117350825036256319" varName="editorCell" />
-      <varInfo nodeId="5117350825036256319" varName="handler" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="96" startPosition="0" endLine="101" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="31" startPosition="89" endLine="37" endPosition="22">
-      <varInfo nodeId="5117350825036256319" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="101" startPosition="0" endLine="107" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-      <varInfo nodeId="5117350825036256319" varName="elementNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="51" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-      <varInfo nodeId="5117350825036256319" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="58" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-      <varInfo nodeId="5117350825036256319" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="107" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="66" startPosition="91" endLine="71" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="96" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="31" startPosition="89" endLine="37" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="101" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="51" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="58" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="107" startPosition="0" endLine="114" endPosition="0" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="116" startPosition="96" endLine="123" endPosition="9" />
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="65" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-      <varInfo nodeId="5117350825036256319" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-      <varInfo nodeId="5117350825036256319" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="40" startPosition="90" endLine="49" endPosition="22">
-      <varInfo nodeId="5117350825036256319" varName="editorCell" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="65" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="30" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="40" startPosition="90" endLine="49" endPosition="22" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="115" startPosition="132" endLine="124" endPosition="7" />
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="39" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-      <varInfo nodeId="5117350825036256319" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="114" startPosition="0" endLine="126" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-      <varInfo nodeId="5117350825036256319" varName="elementCell" />
-      <varInfo nodeId="5117350825036256319" varName="elementNode" />
-      <varInfo nodeId="5117350825036256319" varName="listOwner" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="74" startPosition="89" endLine="89" endPosition="22">
-      <varInfo nodeId="5117350825036256319" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036256319" varName="attributeKind" />
-      <varInfo nodeId="5117350825036256319" varName="editorCell" />
-      <varInfo nodeId="5117350825036256319" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="73" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="5117350825036256319" varName="editorContext" />
-      <varInfo nodeId="5117350825036256319" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="39" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="114" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="74" startPosition="89" endLine="89" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="73" startPosition="0" endLine="91" endPosition="0" />
     <unitInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="26" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.CustomWatchablesContainer_Editor" />
     <unitInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="92" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.CustomWatchablesContainer_Editor$watchableListHandler_8ahkcj_c0" />
   </root>
@@ -2127,24 +1462,10 @@
     <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="67" />
     <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="5117350825036256335" varName="manager" />
-      <varInfo nodeId="5117350825036256335" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="14" startPosition="61" endLine="18" endPosition="0">
-      <varInfo nodeId="5117350825036256335" varName="editorContext" />
-      <varInfo nodeId="5117350825036256335" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="19" startPosition="93" endLine="34" endPosition="22">
-      <varInfo nodeId="5117350825036256335" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036256335" varName="attributeKind" />
-      <varInfo nodeId="5117350825036256335" varName="editorCell" />
-      <varInfo nodeId="5117350825036256335" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="5117350825036256335" varName="editorContext" />
-      <varInfo nodeId="5117350825036256335" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="14" startPosition="61" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="19" startPosition="93" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.WatchableType_Editor" />
   </root>
   <root nodeId="5117350825036256342">
@@ -2269,97 +1590,30 @@
     <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="122" startPosition="60" endLine="123" endPosition="44" />
     <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="72" startPosition="26" endLine="74" endPosition="73" />
     <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="54" startPosition="26" endLine="57" endPosition="73" />
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="105">
-      <varInfo nodeId="5117350825036256342" varName="manager" />
-      <varInfo nodeId="5117350825036256342" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="77" startPosition="35" endLine="80" endPosition="105">
-      <varInfo nodeId="5117350825036256342" varName="manager" />
-      <varInfo nodeId="5117350825036256342" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="105" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="77" startPosition="35" endLine="80" endPosition="105" />
     <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="89" startPosition="26" endLine="92" endPosition="73" />
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="95" startPosition="35" endLine="98" endPosition="105">
-      <varInfo nodeId="5117350825036256342" varName="manager" />
-      <varInfo nodeId="5117350825036256342" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="95" startPosition="35" endLine="98" endPosition="105" />
     <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="103" startPosition="69" endLine="106" endPosition="5" />
     <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="121" startPosition="28" endLine="124" endPosition="75" />
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="127" startPosition="37" endLine="130" endPosition="107">
-      <varInfo nodeId="5117350825036256342" varName="manager" />
-      <varInfo nodeId="5117350825036256342" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="20" startPosition="64" endLine="24" endPosition="0">
-      <varInfo nodeId="5117350825036256342" varName="editorContext" />
-      <varInfo nodeId="5117350825036256342" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="36" startPosition="88" endLine="40" endPosition="22">
-      <varInfo nodeId="5117350825036256342" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="43" startPosition="88" endLine="47" endPosition="22">
-      <varInfo nodeId="5117350825036256342" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
-      <varInfo nodeId="5117350825036256342" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
-      <varInfo nodeId="5117350825036256342" varName="editorContext" />
-      <varInfo nodeId="5117350825036256342" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="5117350825036256342" varName="editorContext" />
-      <varInfo nodeId="5117350825036256342" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="5117350825036256342" varName="editorContext" />
-      <varInfo nodeId="5117350825036256342" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="25" startPosition="89" endLine="33" endPosition="22">
-      <varInfo nodeId="5117350825036256342" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="5117350825036256342" varName="editorContext" />
-      <varInfo nodeId="5117350825036256342" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="68" startPosition="87" endLine="82" endPosition="22">
-      <varInfo nodeId="5117350825036256342" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036256342" varName="attributeKind" />
-      <varInfo nodeId="5117350825036256342" varName="editorCell" />
-      <varInfo nodeId="5117350825036256342" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="50" startPosition="87" endLine="65" endPosition="22">
-      <varInfo nodeId="5117350825036256342" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036256342" varName="attributeKind" />
-      <varInfo nodeId="5117350825036256342" varName="editorCell" />
-      <varInfo nodeId="5117350825036256342" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="85" startPosition="95" endLine="100" endPosition="22">
-      <varInfo nodeId="5117350825036256342" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036256342" varName="attributeKind" />
-      <varInfo nodeId="5117350825036256342" varName="editorCell" />
-      <varInfo nodeId="5117350825036256342" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="116" startPosition="92" endLine="132" endPosition="24">
-      <varInfo nodeId="5117350825036256342" varName="attributeConcept" />
-      <varInfo nodeId="5117350825036256342" varName="attributeKind" />
-      <varInfo nodeId="5117350825036256342" varName="editorCell" />
-      <varInfo nodeId="5117350825036256342" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="67" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="5117350825036256342" varName="editorContext" />
-      <varInfo nodeId="5117350825036256342" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="49" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="5117350825036256342" varName="editorContext" />
-      <varInfo nodeId="5117350825036256342" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="84" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="5117350825036256342" varName="editorContext" />
-      <varInfo nodeId="5117350825036256342" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="115" startPosition="0" endLine="134" endPosition="0">
-      <varInfo nodeId="5117350825036256342" varName="editorContext" />
-      <varInfo nodeId="5117350825036256342" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="127" startPosition="37" endLine="130" endPosition="107" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="20" startPosition="64" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="36" startPosition="88" endLine="40" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="43" startPosition="88" endLine="47" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="25" startPosition="89" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="24" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="68" startPosition="87" endLine="82" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="50" startPosition="87" endLine="65" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="85" startPosition="95" endLine="100" endPosition="22" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="116" startPosition="92" endLine="132" endPosition="24" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="67" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="49" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="84" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="115" startPosition="0" endLine="134" endPosition="0" />
     <unitInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="20" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.WatchableCreator_Editor" />
     <unitInfo nodeId="5117350825036256342" fileName="WatchableCreator_Editor.java" startLine="103" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.WatchableCreator_Editor$_Inline_4h8p2s_a1a" />
   </root>
@@ -2535,137 +1789,43 @@
     <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="88" startPosition="86" endLine="89" endPosition="47" />
     <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="95" startPosition="108" endLine="96" endPosition="47" />
     <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="157" startPosition="58" endLine="158" endPosition="42" />
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="43" startPosition="5" endLine="45" endPosition="51">
-      <varInfo nodeId="5264817233616809564" varName="style" />
-    </scopeInfo>
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="43" startPosition="5" endLine="45" endPosition="51" />
     <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="105" startPosition="26" endLine="107" endPosition="73" />
     <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="122" startPosition="26" endLine="124" endPosition="73" />
     <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="139" startPosition="26" endLine="141" endPosition="73" />
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="110" startPosition="35" endLine="113" endPosition="105">
-      <varInfo nodeId="5264817233616809564" varName="manager" />
-      <varInfo nodeId="5264817233616809564" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="127" startPosition="35" endLine="130" endPosition="105">
-      <varInfo nodeId="5264817233616809564" varName="manager" />
-      <varInfo nodeId="5264817233616809564" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="144" startPosition="35" endLine="147" endPosition="105">
-      <varInfo nodeId="5264817233616809564" varName="manager" />
-      <varInfo nodeId="5264817233616809564" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="110" startPosition="35" endLine="113" endPosition="105" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="127" startPosition="35" endLine="130" endPosition="105" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="144" startPosition="35" endLine="147" endPosition="105" />
     <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="156" startPosition="26" endLine="159" endPosition="73" />
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="162" startPosition="35" endLine="165" endPosition="105">
-      <varInfo nodeId="5264817233616809564" varName="manager" />
-      <varInfo nodeId="5264817233616809564" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="19" startPosition="60" endLine="23" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="52" startPosition="89" endLine="56" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="59" startPosition="88" endLine="63" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="66" startPosition="88" endLine="70" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="73" startPosition="88" endLine="77" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="80" startPosition="88" endLine="84" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="87" startPosition="88" endLine="91" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="94" startPosition="88" endLine="98" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-    </scopeInfo>
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="162" startPosition="35" endLine="165" endPosition="105" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="19" startPosition="60" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="52" startPosition="89" endLine="56" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="59" startPosition="88" endLine="63" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="66" startPosition="88" endLine="70" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="73" startPosition="88" endLine="77" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="80" startPosition="88" endLine="84" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="87" startPosition="88" endLine="91" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="94" startPosition="88" endLine="98" endPosition="22" />
     <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="41" startPosition="99" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="51" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="58" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="65" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="72" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="79" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="86" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="93" startPosition="0" endLine="100" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="40" startPosition="90" endLine="49" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="39" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="24" startPosition="89" endLine="37" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="101" startPosition="87" endLine="115" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="attributeConcept" />
-      <varInfo nodeId="5264817233616809564" varName="attributeKind" />
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-      <varInfo nodeId="5264817233616809564" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="118" startPosition="87" endLine="132" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="attributeConcept" />
-      <varInfo nodeId="5264817233616809564" varName="attributeKind" />
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-      <varInfo nodeId="5264817233616809564" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="135" startPosition="87" endLine="149" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="attributeConcept" />
-      <varInfo nodeId="5264817233616809564" varName="attributeKind" />
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-      <varInfo nodeId="5264817233616809564" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="152" startPosition="89" endLine="167" endPosition="22">
-      <varInfo nodeId="5264817233616809564" varName="attributeConcept" />
-      <varInfo nodeId="5264817233616809564" varName="attributeKind" />
-      <varInfo nodeId="5264817233616809564" varName="editorCell" />
-      <varInfo nodeId="5264817233616809564" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="23" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="100" startPosition="0" endLine="117" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="117" startPosition="0" endLine="134" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="134" startPosition="0" endLine="151" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="151" startPosition="0" endLine="169" endPosition="0">
-      <varInfo nodeId="5264817233616809564" varName="editorContext" />
-      <varInfo nodeId="5264817233616809564" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="51" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="58" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="65" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="72" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="79" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="86" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="93" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="40" startPosition="90" endLine="49" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="39" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="24" startPosition="89" endLine="37" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="101" startPosition="87" endLine="115" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="118" startPosition="87" endLine="132" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="135" startPosition="87" endLine="149" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="152" startPosition="89" endLine="167" endPosition="22" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="23" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="100" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="117" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="134" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="151" startPosition="0" endLine="169" endPosition="0" />
     <unitInfo nodeId="5264817233616809564" fileName="CustomViewer_Editor.java" startLine="19" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.CustomViewer_Editor" />
   </root>
   <root nodeId="7430908097350531685">
@@ -2691,24 +1851,10 @@
     <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="7430908097350531685" varName="manager" />
-      <varInfo nodeId="7430908097350531685" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="14" startPosition="63" endLine="18" endPosition="0">
-      <varInfo nodeId="7430908097350531685" varName="editorContext" />
-      <varInfo nodeId="7430908097350531685" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="7430908097350531685" varName="attributeConcept" />
-      <varInfo nodeId="7430908097350531685" varName="attributeKind" />
-      <varInfo nodeId="7430908097350531685" varName="editorCell" />
-      <varInfo nodeId="7430908097350531685" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="7430908097350531685" varName="editorContext" />
-      <varInfo nodeId="7430908097350531685" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="14" startPosition="63" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="7430908097350531685" fileName="StringValueType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.StringValueType_Editor" />
   </root>
   <root nodeId="7471356136625957321">
@@ -2734,24 +1880,10 @@
     <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="7471356136625957321" varName="manager" />
-      <varInfo nodeId="7471356136625957321" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="14" startPosition="68" endLine="18" endPosition="0">
-      <varInfo nodeId="7471356136625957321" varName="editorContext" />
-      <varInfo nodeId="7471356136625957321" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="7471356136625957321" varName="attributeConcept" />
-      <varInfo nodeId="7471356136625957321" varName="attributeKind" />
-      <varInfo nodeId="7471356136625957321" varName="editorCell" />
-      <varInfo nodeId="7471356136625957321" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="7471356136625957321" varName="editorContext" />
-      <varInfo nodeId="7471356136625957321" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="14" startPosition="68" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="7471356136625957321" fileName="StringValueOperation_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.StringValueOperation_Editor" />
   </root>
   <root nodeId="7744028807303022096">
@@ -2898,129 +2030,40 @@
     <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="156" startPosition="131" endLine="157" endPosition="139" />
     <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="78" startPosition="26" endLine="80" endPosition="73" />
     <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="95" startPosition="26" endLine="97" endPosition="73" />
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="131" startPosition="66" endLine="133" endPosition="93">
-      <varInfo nodeId="7744028807303022096" varName="listOwner" />
-    </scopeInfo>
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="131" startPosition="66" endLine="133" endPosition="93" />
     <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="152" startPosition="34" endLine="154" endPosition="80" />
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="83" startPosition="35" endLine="86" endPosition="105">
-      <varInfo nodeId="7744028807303022096" varName="manager" />
-      <varInfo nodeId="7744028807303022096" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="100" startPosition="35" endLine="103" endPosition="105">
-      <varInfo nodeId="7744028807303022096" varName="manager" />
-      <varInfo nodeId="7744028807303022096" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="83" startPosition="35" endLine="86" endPosition="105" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="100" startPosition="35" endLine="103" endPosition="105" />
     <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="112" startPosition="26" endLine="115" endPosition="73" />
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="118" startPosition="35" endLine="121" endPosition="105">
-      <varInfo nodeId="7744028807303022096" varName="manager" />
-      <varInfo nodeId="7744028807303022096" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="126" startPosition="82" endLine="129" endPosition="5">
-      <varInfo nodeId="7744028807303022096" varName="childRole" />
-      <varInfo nodeId="7744028807303022096" varName="context" />
-      <varInfo nodeId="7744028807303022096" varName="ownerNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="136" startPosition="86" endLine="139" endPosition="25">
-      <varInfo nodeId="7744028807303022096" varName="elementCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="27" startPosition="67" endLine="31" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="45" startPosition="88" endLine="49" endPosition="22">
-      <varInfo nodeId="7744028807303022096" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="52" startPosition="88" endLine="56" endPosition="22">
-      <varInfo nodeId="7744028807303022096" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="59" startPosition="88" endLine="63" endPosition="22">
-      <varInfo nodeId="7744028807303022096" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="142" startPosition="68" endLine="146" endPosition="23">
-      <varInfo nodeId="7744028807303022096" varName="emptyCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="66" startPosition="91" endLine="71" endPosition="22">
-      <varInfo nodeId="7744028807303022096" varName="editorCell" />
-      <varInfo nodeId="7744028807303022096" varName="handler" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="130" startPosition="0" endLine="135" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="163" startPosition="84" endLine="168" endPosition="24">
-      <varInfo nodeId="7744028807303022096" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="135" startPosition="0" endLine="141" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="elementNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="44" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="51" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="58" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="141" startPosition="0" endLine="148" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="65" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="118" startPosition="35" endLine="121" endPosition="105" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="126" startPosition="82" endLine="129" endPosition="5" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="136" startPosition="86" endLine="139" endPosition="25" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="27" startPosition="67" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="45" startPosition="88" endLine="49" endPosition="22" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="52" startPosition="88" endLine="56" endPosition="22" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="59" startPosition="88" endLine="63" endPosition="22" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="142" startPosition="68" endLine="146" endPosition="23" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="66" startPosition="91" endLine="71" endPosition="22" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="130" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="163" startPosition="84" endLine="168" endPosition="24" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="135" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="44" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="51" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="58" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="141" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="65" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="150" startPosition="96" endLine="158" endPosition="9" />
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="161" startPosition="0" endLine="170" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="32" startPosition="89" endLine="42" endPosition="22">
-      <varInfo nodeId="7744028807303022096" varName="editorCell" />
-    </scopeInfo>
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="161" startPosition="0" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="32" startPosition="89" endLine="42" endPosition="22" />
     <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="149" startPosition="132" endLine="159" endPosition="7" />
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="31" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="148" startPosition="0" endLine="161" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="elementCell" />
-      <varInfo nodeId="7744028807303022096" varName="elementNode" />
-      <varInfo nodeId="7744028807303022096" varName="listOwner" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="74" startPosition="87" endLine="88" endPosition="22">
-      <varInfo nodeId="7744028807303022096" varName="attributeConcept" />
-      <varInfo nodeId="7744028807303022096" varName="attributeKind" />
-      <varInfo nodeId="7744028807303022096" varName="editorCell" />
-      <varInfo nodeId="7744028807303022096" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="91" startPosition="87" endLine="105" endPosition="22">
-      <varInfo nodeId="7744028807303022096" varName="attributeConcept" />
-      <varInfo nodeId="7744028807303022096" varName="attributeKind" />
-      <varInfo nodeId="7744028807303022096" varName="editorCell" />
-      <varInfo nodeId="7744028807303022096" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="108" startPosition="95" endLine="123" endPosition="22">
-      <varInfo nodeId="7744028807303022096" varName="attributeConcept" />
-      <varInfo nodeId="7744028807303022096" varName="attributeKind" />
-      <varInfo nodeId="7744028807303022096" varName="editorCell" />
-      <varInfo nodeId="7744028807303022096" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="73" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="90" startPosition="0" endLine="107" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="107" startPosition="0" endLine="125" endPosition="0">
-      <varInfo nodeId="7744028807303022096" varName="editorContext" />
-      <varInfo nodeId="7744028807303022096" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="31" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="148" startPosition="0" endLine="161" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="74" startPosition="87" endLine="88" endPosition="22" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="91" startPosition="87" endLine="105" endPosition="22" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="108" startPosition="95" endLine="123" endPosition="22" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="73" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="90" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="107" startPosition="0" endLine="125" endPosition="0" />
     <unitInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="27" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.CallMethodOperation_Editor" />
     <unitInfo nodeId="7744028807303022096" fileName="CallMethodOperation_Editor.java" startLine="126" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.CallMethodOperation_Editor$argumentsListHandler_pwj0w2_f0" />
   </root>
@@ -3047,24 +2090,10 @@
     <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
     <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" />
     <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="23" startPosition="26" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105">
-      <varInfo nodeId="7744028807303050610" varName="manager" />
-      <varInfo nodeId="7744028807303050610" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="14" startPosition="66" endLine="18" endPosition="0">
-      <varInfo nodeId="7744028807303050610" varName="editorContext" />
-      <varInfo nodeId="7744028807303050610" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22">
-      <varInfo nodeId="7744028807303050610" varName="attributeConcept" />
-      <varInfo nodeId="7744028807303050610" varName="attributeKind" />
-      <varInfo nodeId="7744028807303050610" varName="editorCell" />
-      <varInfo nodeId="7744028807303050610" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="7744028807303050610" varName="editorContext" />
-      <varInfo nodeId="7744028807303050610" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="29" startPosition="35" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="14" startPosition="66" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="19" startPosition="94" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="7744028807303050610" fileName="JavaValueOperation_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.JavaValueOperation_Editor" />
   </root>
   <root nodeId="929171734855790864">
@@ -3139,60 +2168,20 @@
     <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="40" startPosition="87" endLine="41" endPosition="47" />
     <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="68" startPosition="58" endLine="69" endPosition="50" />
     <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="50" startPosition="26" endLine="52" endPosition="73" />
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="55" startPosition="35" endLine="58" endPosition="105">
-      <varInfo nodeId="929171734855790864" varName="manager" />
-      <varInfo nodeId="929171734855790864" varName="opContext" />
-    </scopeInfo>
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="55" startPosition="35" endLine="58" endPosition="105" />
     <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="67" startPosition="26" endLine="70" endPosition="73" />
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="73" startPosition="35" endLine="76" endPosition="105">
-      <varInfo nodeId="929171734855790864" varName="manager" />
-      <varInfo nodeId="929171734855790864" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="17" startPosition="69" endLine="21" endPosition="0">
-      <varInfo nodeId="929171734855790864" varName="editorContext" />
-      <varInfo nodeId="929171734855790864" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="32" startPosition="88" endLine="36" endPosition="22">
-      <varInfo nodeId="929171734855790864" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="39" startPosition="88" endLine="43" endPosition="22">
-      <varInfo nodeId="929171734855790864" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22">
-      <varInfo nodeId="929171734855790864" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="929171734855790864" varName="editorContext" />
-      <varInfo nodeId="929171734855790864" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="929171734855790864" varName="editorContext" />
-      <varInfo nodeId="929171734855790864" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="929171734855790864" varName="editorContext" />
-      <varInfo nodeId="929171734855790864" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="46" startPosition="87" endLine="60" endPosition="22">
-      <varInfo nodeId="929171734855790864" varName="attributeConcept" />
-      <varInfo nodeId="929171734855790864" varName="attributeKind" />
-      <varInfo nodeId="929171734855790864" varName="editorCell" />
-      <varInfo nodeId="929171734855790864" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="63" startPosition="95" endLine="78" endPosition="22">
-      <varInfo nodeId="929171734855790864" varName="attributeConcept" />
-      <varInfo nodeId="929171734855790864" varName="attributeKind" />
-      <varInfo nodeId="929171734855790864" varName="editorCell" />
-      <varInfo nodeId="929171734855790864" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="929171734855790864" varName="editorContext" />
-      <varInfo nodeId="929171734855790864" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="62" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="929171734855790864" varName="editorContext" />
-      <varInfo nodeId="929171734855790864" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="73" startPosition="35" endLine="76" endPosition="105" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="17" startPosition="69" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="32" startPosition="88" endLine="36" endPosition="22" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="39" startPosition="88" endLine="43" endPosition="22" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="46" startPosition="87" endLine="60" endPosition="22" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="63" startPosition="95" endLine="78" endPosition="22" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="62" startPosition="0" endLine="80" endPosition="0" />
     <unitInfo nodeId="929171734855790864" fileName="IsInstanceOfOperation_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.IsInstanceOfOperation_Editor" />
   </root>
 </debugInfo>

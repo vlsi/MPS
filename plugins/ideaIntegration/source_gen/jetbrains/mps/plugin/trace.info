@@ -87,8 +87,8 @@
     <scopeInfo nodeId="8632185942131070877" fileName="MPSPlugin.java" startLine="90" startPosition="41" endLine="94" endPosition="23" />
     <scopeInfo nodeId="8632185942131071075" fileName="MPSPlugin.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="8632185942131070899" fileName="MPSPlugin.java" startLine="24" startPosition="61" endLine="29" endPosition="42">
-      <varInfo nodeId="8632185942131070912" varName="projectFile" />
       <varInfo nodeId="8632185942131070903" varName="mpsProject" />
+      <varInfo nodeId="8632185942131070912" varName="projectFile" />
       <varInfo nodeId="8632185942131070918" varName="projectPath" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131070940" fileName="MPSPlugin.java" startLine="33" startPosition="9" endLine="38" endPosition="54">
@@ -101,8 +101,8 @@
     <scopeInfo nodeId="8632185942131070932" fileName="MPSPlugin.java" startLine="32" startPosition="64" endLine="41" endPosition="5" />
     <scopeInfo nodeId="8632185942131071046" fileName="MPSPlugin.java" startLine="78" startPosition="34" endLine="87" endPosition="20" />
     <scopeInfo nodeId="8632185942131070970" fileName="MPSPlugin.java" startLine="46" startPosition="9" endLine="56" endPosition="18">
-      <varInfo nodeId="8632185942131070972" varName="plugin" />
       <varInfo nodeId="8632185942131070983" varName="handler" />
+      <varInfo nodeId="8632185942131070972" varName="plugin" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131070927" fileName="MPSPlugin.java" startLine="31" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="8632185942131070930" varName="projectPath" />
@@ -308,8 +308,8 @@
     <scopeInfo nodeId="6887887908934058511" fileName="MPSProjectIDEHandler.java" startLine="114" startPosition="29" endLine="127" endPosition="52" />
     <scopeInfo nodeId="8632185942131071539" fileName="MPSProjectIDEHandler.java" startLine="197" startPosition="0" endLine="210" endPosition="0">
       <varInfo nodeId="8632185942131071542" varName="node" />
-      <varInfo nodeId="8632185942131071545" varName="scope" />
       <varInfo nodeId="8632185942131071547" varName="provider" />
+      <varInfo nodeId="8632185942131071545" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131071501" fileName="MPSProjectIDEHandler.java" startLine="149" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="8632185942131071504" varName="fqName" />
@@ -330,28 +330,28 @@
     <scopeInfo nodeId="8632185942131071779" fileName="MPSProjectIDEHandler.java" startLine="166" startPosition="25" endLine="193" endPosition="64">
       <varInfo nodeId="9184997660524409576" varName="allMethods" />
       <varInfo nodeId="8632185942131071781" varName="cls" />
-      <varInfo nodeId="9184997660524409833" varName="provider" />
       <varInfo nodeId="8632185942131071801" varName="method" />
+      <varInfo nodeId="9184997660524409833" varName="provider" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131071535" fileName="MPSProjectIDEHandler.java" startLine="165" startPosition="57" endLine="195" endPosition="0" />
     <scopeInfo nodeId="8632185942131071527" fileName="MPSProjectIDEHandler.java" startLine="164" startPosition="132" endLine="195" endPosition="7" />
     <scopeInfo nodeId="8632185942131071518" fileName="MPSProjectIDEHandler.java" startLine="163" startPosition="0" endLine="197" endPosition="0">
-      <varInfo nodeId="8632185942131071525" varName="parameterCount" />
-      <varInfo nodeId="8632185942131071523" varName="methodName" />
       <varInfo nodeId="8632185942131071521" varName="classFqName" />
+      <varInfo nodeId="8632185942131071523" varName="methodName" />
+      <varInfo nodeId="8632185942131071525" varName="parameterCount" />
     </scopeInfo>
-    <unitInfo nodeId="9184997660524409586" fileName="MPSProjectIDEHandler.java" startLine="177" startPosition="121" endLine="181" endPosition="9" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$7" />
-    <unitInfo nodeId="9184997660524409611" fileName="MPSProjectIDEHandler.java" startLine="182" startPosition="71" endLine="186" endPosition="9" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$7" />
-    <unitInfo nodeId="8632185942131071933" fileName="MPSProjectIDEHandler.java" startLine="201" startPosition="69" endLine="205" endPosition="9" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$8" />
-    <unitInfo nodeId="8632185942131071496" fileName="MPSProjectIDEHandler.java" startLine="141" startPosition="45" endLine="147" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$4" />
-    <unitInfo nodeId="8632185942131071554" fileName="MPSProjectIDEHandler.java" startLine="199" startPosition="8" endLine="208" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$7" />
-    <unitInfo nodeId="8632185942131071513" fileName="MPSProjectIDEHandler.java" startLine="151" startPosition="45" endLine="161" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$5" />
+    <unitInfo nodeId="8632185942131071134" fileName="MPSProjectIDEHandler.java" startLine="42" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler" />
     <unitInfo nodeId="8632185942131071376" fileName="MPSProjectIDEHandler.java" startLine="55" startPosition="8" endLine="67" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$1" />
-    <unitInfo nodeId="6887887908934058507" fileName="MPSProjectIDEHandler.java" startLine="113" startPosition="49" endLine="129" endPosition="9" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$4" />
     <unitInfo nodeId="8632185942131071395" fileName="MPSProjectIDEHandler.java" startLine="74" startPosition="8" endLine="91" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$2" />
     <unitInfo nodeId="6887887908934058496" fileName="MPSProjectIDEHandler.java" startLine="111" startPosition="40" endLine="131" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$3" />
+    <unitInfo nodeId="8632185942131071496" fileName="MPSProjectIDEHandler.java" startLine="141" startPosition="45" endLine="147" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$4" />
+    <unitInfo nodeId="6887887908934058507" fileName="MPSProjectIDEHandler.java" startLine="113" startPosition="49" endLine="129" endPosition="9" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$4" />
+    <unitInfo nodeId="8632185942131071513" fileName="MPSProjectIDEHandler.java" startLine="151" startPosition="45" endLine="161" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$5" />
     <unitInfo nodeId="8632185942131071534" fileName="MPSProjectIDEHandler.java" startLine="165" startPosition="45" endLine="195" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$6" />
-    <unitInfo nodeId="8632185942131071134" fileName="MPSProjectIDEHandler.java" startLine="42" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler" />
+    <unitInfo nodeId="9184997660524409586" fileName="MPSProjectIDEHandler.java" startLine="177" startPosition="121" endLine="181" endPosition="9" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$7" />
+    <unitInfo nodeId="9184997660524409611" fileName="MPSProjectIDEHandler.java" startLine="182" startPosition="71" endLine="186" endPosition="9" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$7" />
+    <unitInfo nodeId="8632185942131071554" fileName="MPSProjectIDEHandler.java" startLine="199" startPosition="8" endLine="208" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$7" />
+    <unitInfo nodeId="8632185942131071933" fileName="MPSProjectIDEHandler.java" startLine="201" startPosition="69" endLine="205" endPosition="9" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$8" />
   </root>
   <root nodeId="8632185942131071966">
     <nodeInfo nodeId="8632185942131071984" fileName="IDEAProjectPeer.java" startLine="15" startPosition="75" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -441,9 +441,9 @@
     <scopeInfo nodeId="8632185942131071979" fileName="IDEAProjectPeer.java" startLine="78" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="8632185942131071982" varName="module" />
     </scopeInfo>
+    <unitInfo nodeId="8632185942131071966" fileName="IDEAProjectPeer.java" startLine="15" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.plugin.IDEAProjectPeer" />
     <unitInfo nodeId="8632185942131072010" fileName="IDEAProjectPeer.java" startLine="24" startPosition="19" endLine="28" endPosition="5" unitName="jetbrains.mps.plugin.IDEAProjectPeer$1" />
     <unitInfo nodeId="8632185942131071970" fileName="IDEAProjectPeer.java" startLine="64" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.plugin.IDEAProjectPeer$IDEACompiler" />
-    <unitInfo nodeId="8632185942131071966" fileName="IDEAProjectPeer.java" startLine="15" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.plugin.IDEAProjectPeer" />
   </root>
   <root nodeId="8632185942131072152">
     <nodeInfo nodeId="8632185942131072167" fileName="IdeaNavigationProvider.java" startLine="15" startPosition="75" endLine="16" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -574,30 +574,30 @@
       <varInfo nodeId="8632185942131072316" varName="runnable" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072159" fileName="IdeaNavigationProvider.java" startLine="13" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="8632185942131072162" varName="projectPath" />
       <varInfo nodeId="8632185942131072164" varName="fqName" />
+      <varInfo nodeId="8632185942131072162" varName="projectPath" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072203" fileName="IdeaNavigationProvider.java" startLine="38" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="8632185942131072212" varName="parameterCount" />
-      <varInfo nodeId="8632185942131072210" varName="name" />
-      <varInfo nodeId="8632185942131072206" varName="projectPath" />
       <varInfo nodeId="8632185942131072208" varName="className" />
+      <varInfo nodeId="8632185942131072210" varName="name" />
+      <varInfo nodeId="8632185942131072212" varName="parameterCount" />
+      <varInfo nodeId="8632185942131072206" varName="projectPath" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072251" fileName="IdeaNavigationProvider.java" startLine="63" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="8632185942131072256" varName="className" />
       <varInfo nodeId="8632185942131072258" varName="name" />
       <varInfo nodeId="8632185942131072254" varName="projectPath" />
-      <varInfo nodeId="8632185942131072256" varName="className" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072297" fileName="IdeaNavigationProvider.java" startLine="88" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="8632185942131072302" varName="className" />
       <varInfo nodeId="8632185942131072304" varName="parameterCount" />
       <varInfo nodeId="8632185942131072300" varName="projectPath" />
-      <varInfo nodeId="8632185942131072302" varName="className" />
     </scopeInfo>
+    <unitInfo nodeId="8632185942131072152" fileName="IdeaNavigationProvider.java" startLine="10" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.plugin.IdeaNavigationProvider" />
     <unitInfo nodeId="8632185942131072180" fileName="IdeaNavigationProvider.java" startLine="17" startPosition="28" endLine="30" endPosition="5" unitName="jetbrains.mps.plugin.IdeaNavigationProvider$1" />
     <unitInfo nodeId="8632185942131072228" fileName="IdeaNavigationProvider.java" startLine="42" startPosition="28" endLine="55" endPosition="5" unitName="jetbrains.mps.plugin.IdeaNavigationProvider$2" />
     <unitInfo nodeId="8632185942131072274" fileName="IdeaNavigationProvider.java" startLine="67" startPosition="28" endLine="80" endPosition="5" unitName="jetbrains.mps.plugin.IdeaNavigationProvider$3" />
     <unitInfo nodeId="8632185942131072320" fileName="IdeaNavigationProvider.java" startLine="92" startPosition="28" endLine="105" endPosition="5" unitName="jetbrains.mps.plugin.IdeaNavigationProvider$4" />
-    <unitInfo nodeId="8632185942131072152" fileName="IdeaNavigationProvider.java" startLine="10" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.plugin.IdeaNavigationProvider" />
   </root>
   <root nodeId="8632185942131072620">
     <nodeInfo nodeId="7659306631806876586" fileName="IdeaAwareJavaGenerationHandler.java" startLine="25" startPosition="9" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -710,8 +710,8 @@
       <varInfo nodeId="8632185942131072948" varName="writingTask" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072682" fileName="IdeaAwareJavaGenerationHandler.java" startLine="40" startPosition="76" endLine="47" endPosition="75">
-      <varInfo nodeId="8632185942131072684" varName="module" />
       <varInfo nodeId="8632185942131072703" varName="compilationResult" />
+      <varInfo nodeId="8632185942131072684" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072972" fileName="IdeaAwareJavaGenerationHandler.java" startLine="129" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="8632185942131072975" varName="p" />
@@ -723,14 +723,14 @@
     </scopeInfo>
     <scopeInfo nodeId="7659306631806876698" fileName="IdeaAwareJavaGenerationHandler.java" startLine="89" startPosition="13" endLine="98" endPosition="0" />
     <scopeInfo nodeId="8632185942131072752" fileName="IdeaAwareJavaGenerationHandler.java" startLine="66" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="8632185942131072759" varName="ideaIsFresh" />
       <varInfo nodeId="8632185942131072755" varName="module" />
       <varInfo nodeId="8632185942131072762" varName="monitor" />
-      <varInfo nodeId="8632185942131072759" varName="ideaIsFresh" />
       <varInfo nodeId="8632185942131072757" varName="projectHandler" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072666" fileName="IdeaAwareJavaGenerationHandler.java" startLine="37" startPosition="25" endLine="55" endPosition="99">
-      <varInfo nodeId="8632185942131072672" varName="needToReload" />
       <varInfo nodeId="8632185942131072668" varName="compilationStart" />
+      <varInfo nodeId="8632185942131072672" varName="needToReload" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072818" fileName="IdeaAwareJavaGenerationHandler.java" startLine="85" startPosition="14" endLine="114" endPosition="9">
       <varInfo nodeId="8632185942131072859" varName="compilationResult" />
@@ -739,8 +739,8 @@
     <scopeInfo nodeId="7659306631806876575" fileName="IdeaAwareJavaGenerationHandler.java" startLine="25" startPosition="9" endLine="61" endPosition="34">
       <varInfo nodeId="7659306631806876587" varName="amount" />
       <varInfo nodeId="8632185942131072644" varName="compiledSuccessfully" />
-      <varInfo nodeId="8632185942131072658" varName="projectHandler" />
       <varInfo nodeId="8632185942131072648" varName="ideaIsFresh" />
+      <varInfo nodeId="8632185942131072658" varName="projectHandler" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072812" fileName="IdeaAwareJavaGenerationHandler.java" startLine="80" startPosition="25" endLine="116" endPosition="36" />
     <scopeInfo nodeId="8632185942131072642" fileName="IdeaAwareJavaGenerationHandler.java" startLine="24" startPosition="208" endLine="64" endPosition="5" />
@@ -748,16 +748,16 @@
       <varInfo nodeId="8632185942131072805" varName="compiledSuccessfully" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072791" fileName="IdeaAwareJavaGenerationHandler.java" startLine="77" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="8632185942131072798" varName="ideaIsFresh" />
       <varInfo nodeId="8632185942131072794" varName="module" />
       <varInfo nodeId="8632185942131072801" varName="monitor" />
-      <varInfo nodeId="8632185942131072798" varName="ideaIsFresh" />
       <varInfo nodeId="8632185942131072796" varName="projectHandler" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072627" fileName="IdeaAwareJavaGenerationHandler.java" startLine="22" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="8632185942131072638" varName="generationOK" />
       <varInfo nodeId="8632185942131072632" varName="input" />
       <varInfo nodeId="7659306631806876570" varName="monitor" />
       <varInfo nodeId="8632185942131072630" varName="operationContext" />
-      <varInfo nodeId="8632185942131072638" varName="generationOK" />
     </scopeInfo>
     <unitInfo nodeId="8632185942131072620" fileName="IdeaAwareJavaGenerationHandler.java" startLine="19" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.plugin.IdeaAwareJavaGenerationHandler" />
   </root>
@@ -934,9 +934,9 @@
       <varInfo nodeId="8632185942131073387" varName="ideFrame" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131073008" fileName="PluginStateMonitor.java" startLine="188" startPosition="0" endLine="193" endPosition="5">
-      <varInfo nodeId="8632185942131073011" varName="icon" />
       <varInfo nodeId="8632185942131073015" varName="defaultDelay" />
       <varInfo nodeId="8632185942131073013" varName="helpText" />
+      <varInfo nodeId="8632185942131073011" varName="icon" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131073090" fileName="PluginStateMonitor.java" startLine="43" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="8632185942131073228" fileName="PluginStateMonitor.java" startLine="138" startPosition="16" endLine="144" endPosition="11">
@@ -968,13 +968,13 @@
     <scopeInfo nodeId="8632185942131073207" fileName="PluginStateMonitor.java" startLine="97" startPosition="25" endLine="146" endPosition="7" />
     <scopeInfo nodeId="8632185942131073197" fileName="PluginStateMonitor.java" startLine="95" startPosition="23" endLine="147" endPosition="5" />
     <scopeInfo nodeId="8632185942131073194" fileName="PluginStateMonitor.java" startLine="94" startPosition="0" endLine="149" endPosition="0" />
-    <unitInfo nodeId="8632185942131073473" fileName="PluginStateMonitor.java" startLine="74" startPosition="70" endLine="78" endPosition="9" unitName="jetbrains.mps.plugin.PluginStateMonitor$3" />
-    <unitInfo nodeId="8632185942131073359" fileName="PluginStateMonitor.java" startLine="154" startPosition="35" endLine="159" endPosition="5" unitName="jetbrains.mps.plugin.PluginStateMonitor$3" />
+    <unitInfo nodeId="8632185942131072990" fileName="PluginStateMonitor.java" startLine="26" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateMonitor" />
     <unitInfo nodeId="8632185942131073132" fileName="PluginStateMonitor.java" startLine="62" startPosition="21" endLine="69" endPosition="5" unitName="jetbrains.mps.plugin.PluginStateMonitor$1" />
     <unitInfo nodeId="8632185942131073155" fileName="PluginStateMonitor.java" startLine="72" startPosition="49" endLine="80" endPosition="5" unitName="jetbrains.mps.plugin.PluginStateMonitor$2" />
+    <unitInfo nodeId="8632185942131073473" fileName="PluginStateMonitor.java" startLine="74" startPosition="70" endLine="78" endPosition="9" unitName="jetbrains.mps.plugin.PluginStateMonitor$3" />
+    <unitInfo nodeId="8632185942131073359" fileName="PluginStateMonitor.java" startLine="154" startPosition="35" endLine="159" endPosition="5" unitName="jetbrains.mps.plugin.PluginStateMonitor$3" />
     <unitInfo nodeId="8632185942131073026" fileName="PluginStateMonitor.java" startLine="208" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateMonitor$MyTimer" />
     <unitInfo nodeId="8632185942131072991" fileName="PluginStateMonitor.java" startLine="179" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateMonitor$State" />
-    <unitInfo nodeId="8632185942131072990" fileName="PluginStateMonitor.java" startLine="26" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateMonitor" />
   </root>
 </debugInfo>
 

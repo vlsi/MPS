@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
 
 public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
   public OpenParenthesis_KeyMap() {
@@ -55,7 +54,7 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      ParenthesisUtil.moveParenthesisToTheRightOrLeft(node, editorContext, false);
+      EditorParenthesisUtil.moveParenthesisToTheRightOrLeft(node, editorContext, false);
     }
 
     public String getKeyStroke() {
@@ -97,7 +96,7 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      ParenthesisUtil.moveParenthesisToTheLeftOrRightInside(node, editorContext, true);
+      EditorParenthesisUtil.moveParenthesisToTheLeftOrRightInside(node, editorContext, true);
     }
 
     public String getKeyStroke() {

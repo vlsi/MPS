@@ -160,8 +160,8 @@
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="92" startPosition="89" endLine="107" endPosition="22" />
     <scopeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="91" startPosition="0" endLine="109" endPosition="0" />
-    <unitInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="110" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.make.outlook.editor.Outlook_Editor$facetListHandler_qlzo2n_b1a" />
     <unitInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="27" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.make.outlook.editor.Outlook_Editor" />
+    <unitInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="110" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.make.outlook.editor.Outlook_Editor$facetListHandler_qlzo2n_b1a" />
   </root>
 </debugInfo>
 

@@ -2,14 +2,19 @@
 <solution name="jetbrains.mps.ui.unittest" uuid="8243a5aa-ceff-484d-8124-da694e9f8ef4" compileInMPS="true">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
+    <modelRoot path="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" namespacePrefix="">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
   </models>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)</dependency>
+    <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguage>

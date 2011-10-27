@@ -5,9 +5,9 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.generator.template.util.BinaryOperationUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.typeof_LeftOperand_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.typeof_RightOperand_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

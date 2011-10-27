@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -44,7 +45,10 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     });
     ViewOptions viewOptions = new ViewOptions(true, false);
     result.setOption(viewOptions);
-    ScopeOptions scopeOptions = new ScopeOptions(ScopeOptions.PROJECT_SCOPE, ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
+    ScopeOptions scopeOptions = new ScopeOptions((InternalFlag.isInternalMode() ?
+      ScopeOptions.GLOBAL_SCOPE :
+      ScopeOptions.PROJECT_SCOPE
+    ), ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
     result.setOption(scopeOptions);
     return result;
   }

@@ -1,6 +1,5 @@
 <project name="MPS-compile" default="compile.all">
   <property file="${ant.file}/../MPS.properties" />
-  <property name="collections_trove.runtime.classes" value="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
   <property name="jetbrains.mps.analyzers.classes" value="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.classes" value="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.blTypes.classes" value="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
@@ -55,7 +54,6 @@
   <property name="jetbrains.mps.gtext.runtime.classes" value="${base_dir}/languages/util/gtext/runtime/classes_gen" />
   <property name="jetbrains.mps.gwt.client.classes" value="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
   <property name="jetbrains.mps.ide.uiLanguage.classes" value="${base_dir}/workbench/ideUiLanguage/classes_gen" />
-  <property name="jetbrains.mps.ide.uiLanguage.runtime.classes" value="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
   <property name="jetbrains.mps.lang.actions.classes" value="${base_dir}/core/languageDesign/actions/classes_gen" />
   <property name="jetbrains.mps.lang.behavior.classes" value="${base_dir}/core/languageDesign/behavior/languages/behavior/classes_gen" />
   <property name="jetbrains.mps.lang.constraints.classes" value="${base_dir}/core/languageDesign/constraints/classes_gen" />
@@ -120,7 +118,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
@@ -158,10 +155,6 @@
     <path path="${base_dir}/workbench/idea-workbench/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
-  </path>
-  <path id="cycle.collections_trove.runtime_tjc.src">
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/source_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.analyzers_tjc.src">
     <path path="${base_dir}/core/analyzers/languages/analyzers/source_gen" />
@@ -391,10 +384,6 @@
     <path path="${base_dir}/workbench/ideUiLanguage/source_gen" />
     <path path="${base_dir}/workbench/ideUiLanguage/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc.src">
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
-  </path>
   <path id="cycle.jetbrains.mps.lang.descriptor_tjc.src">
     <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/source_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/test_gen" />
@@ -515,18 +504,6 @@
     <path path="${base_dir}/languages/util/ypath/solutions/test/source_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/test/test_gen" />
   </path>
-  <path id="cycle.collections_trove.runtime_tjc.classpaths">
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/languages/core/core/classes_gen" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
-    <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path refid="common.classpath" />
-  </path>
   <path id="cycle.jetbrains.mps.analyzers_tjc.classpaths">
     <path path="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
@@ -544,7 +521,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -635,7 +612,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -735,7 +711,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -826,7 +802,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -880,7 +855,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -972,7 +947,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -1026,7 +1000,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/constructors/classes_gen" />
@@ -1118,7 +1092,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -1172,7 +1145,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -1264,7 +1237,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -1318,7 +1290,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -1411,7 +1383,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -1477,7 +1448,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -1569,7 +1540,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -1623,7 +1593,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -1715,7 +1685,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -1769,7 +1738,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -1861,7 +1830,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -1915,7 +1883,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -2006,7 +1974,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -2060,7 +2027,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -2152,7 +2119,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -2228,7 +2194,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -2320,7 +2286,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -2381,7 +2346,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -2473,7 +2438,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -2557,7 +2521,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -2649,7 +2613,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -2703,7 +2666,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -2795,7 +2758,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -2850,7 +2812,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -2945,7 +2907,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -2999,7 +2960,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -3091,7 +3052,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -3147,7 +3107,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -3238,7 +3198,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -3292,7 +3251,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -3383,7 +3342,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -3437,7 +3395,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -3530,7 +3488,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -3584,7 +3541,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -3678,7 +3635,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -3734,7 +3690,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -3827,7 +3783,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -3883,7 +3838,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -3975,7 +3930,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -4020,7 +3974,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
@@ -4080,7 +4033,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -4171,7 +4124,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -4234,7 +4186,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -4325,7 +4277,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -4379,7 +4330,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -4470,7 +4421,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -4509,13 +4459,6 @@
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc.classpaths">
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="${base_dir}/languages/core/core/classes_gen" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path refid="common.classpath" />
-  </path>
   <path id="cycle.jetbrains.mps.lang.descriptor_tjc.classpaths">
     <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
@@ -4532,7 +4475,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -4624,7 +4567,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -4678,7 +4620,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -4770,7 +4712,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -4824,7 +4765,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -4916,7 +4857,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -4970,7 +4910,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -5061,7 +5001,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -5115,7 +5054,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -5207,7 +5146,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -5261,7 +5199,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -5352,7 +5290,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -5406,7 +5343,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -5498,7 +5435,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -5552,7 +5488,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -5643,7 +5579,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -5697,7 +5632,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -5789,7 +5724,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -5843,7 +5777,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -5934,7 +5868,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -5979,7 +5912,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
@@ -6038,7 +5970,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -6130,7 +6062,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -6185,7 +6116,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -6279,7 +6210,6 @@
     <path path="${base_dir}/languages/util/ui/languages/ui/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -6333,7 +6263,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -6428,7 +6358,6 @@
     <path path="${base_dir}/languages/util/ui/languages/ui/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -6482,7 +6411,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -6574,7 +6503,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -6628,7 +6556,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -6724,7 +6652,6 @@
     <path path="${base_dir}/languages/util/ui/languages/ui/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -6787,7 +6714,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -6886,7 +6813,6 @@
     <path path="${base_dir}/languages/util/ui/languages/ui/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -6949,7 +6875,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -7040,7 +6966,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -7095,7 +7020,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -7186,7 +7111,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -7240,7 +7164,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -7331,7 +7255,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -7385,7 +7308,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -7477,7 +7400,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlQuery/classes_gen" />
@@ -7532,7 +7454,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -7623,7 +7545,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -7677,7 +7598,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -7768,7 +7689,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -7845,7 +7765,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -7937,7 +7857,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -7991,7 +7910,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -8082,7 +8001,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -8137,7 +8055,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -8228,7 +8146,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
@@ -8268,29 +8185,7 @@
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.collections_trove.runtime_tjc,compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.gentest_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.debug.customViewers_tjc,compile.cycle.jetbrains.mps.debug.evaluation_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.execution.lib.startup_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlSchema_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
-  <target name="compile.cycle.collections_trove.runtime_tjc">
-    <property name="classes.dump" value="${collections_trove.runtime.classes}.tmp" />
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/source_gen" />
-    <mkdir dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/test_gen" />
-    <mkdir dir="${classes.dump}" />
-    <mkdir dir="${collections_trove.runtime.classes}" />
-    <javac classpathref="cycle.collections_trove.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
-      <src refid="cycle.collections_trove.runtime_tjc.src" />
-    </javac>
-    <copy todir="${collections_trove.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/test_gen" />
-    </copy>
-    <javac classpathref="cycle.collections_trove.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${collections_trove.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/source_gen" />
-        <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/test_gen" />
-      </src>
-    </javac>
-    <delete dir="${classes.dump}" />
-  </target>
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.gentest_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.debug.customViewers_tjc,compile.cycle.jetbrains.mps.debug.evaluation_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.execution.lib.startup_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlSchema_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -9250,7 +9145,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc" depends="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.regexp.runtime.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
@@ -9637,28 +9532,6 @@
       <src>
         <path path="${base_dir}/workbench/ideUiLanguage/source_gen" />
         <path path="${base_dir}/workbench/ideUiLanguage/test_gen" />
-      </src>
-    </javac>
-    <delete dir="${classes.dump}" />
-  </target>
-  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc" depends="compile.cycle.collections_trove.runtime_tjc">
-    <property name="classes.dump" value="${jetbrains.mps.ide.uiLanguage.runtime.classes}.tmp" />
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" />
-    <mkdir dir="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
-    <mkdir dir="${classes.dump}" />
-    <mkdir dir="${jetbrains.mps.ide.uiLanguage.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
-      <src refid="cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc.src" />
-    </javac>
-    <copy todir="${jetbrains.mps.ide.uiLanguage.runtime.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
-    </copy>
-    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.uiLanguage.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" />
-        <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -10328,7 +10201,6 @@
     <delete dir="${classes.dump}" />
   </target>
   <target name="clean.classes">
-    <delete dir="${collections_trove.runtime.classes}" />
     <delete dir="${jetbrains.mps.analyzers.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.blTypes.classes}" />
@@ -10410,7 +10282,6 @@
     <delete dir="${jetbrains.mps.gtext.runtime.classes}" />
     <delete dir="${jetbrains.mps.gwt.client.classes}" />
     <delete dir="${jetbrains.mps.ide.uiLanguage.classes}" />
-    <delete dir="${jetbrains.mps.ide.uiLanguage.runtime.classes}" />
     <delete dir="${jetbrains.mps.lang.descriptor.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.editorTest.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.table.classes}" />

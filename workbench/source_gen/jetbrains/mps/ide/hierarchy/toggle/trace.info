@@ -32,10 +32,10 @@
     <scopeInfo nodeId="5797068448049415526" fileName="GroupedToggleAction.java" startLine="41" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="5797068448049415530" fileName="GroupedToggleAction.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="5797068448049415449" fileName="GroupedToggleAction.java" startLine="12" startPosition="0" endLine="16" endPosition="3">
-      <varInfo nodeId="5797068448049415456" varName="icon" />
-      <varInfo nodeId="5797068448049415452" varName="text" />
-      <varInfo nodeId="5797068448049415458" varName="initiallySelected" />
       <varInfo nodeId="5797068448049415454" varName="description" />
+      <varInfo nodeId="5797068448049415456" varName="icon" />
+      <varInfo nodeId="5797068448049415458" varName="initiallySelected" />
+      <varInfo nodeId="5797068448049415452" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="5797068448049415469" fileName="GroupedToggleAction.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="5797068448049415472" varName="group" />

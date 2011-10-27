@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.plugins.MacrosUtil;
+import jetbrains.mps.util.MacrosUtil;
 
 public class ActionDeclaration_Behavior {
   public static void init(SNode thisNode) {

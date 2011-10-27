@@ -120,15 +120,15 @@
       <varInfo nodeId="2742566862758593612" varName="data" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758593207" fileName="HistoryWriter.java" startLine="47" startPosition="71" endLine="69" endPosition="16">
-      <varInfo nodeId="2742566862758593214" varName="elem" />
       <varInfo nodeId="2742566862758593229" varName="dependencies" />
+      <varInfo nodeId="2742566862758593214" varName="elem" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758593204" fileName="HistoryWriter.java" startLine="46" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="2742566862758593209" varName="modification" />
     </scopeInfo>
+    <unitInfo nodeId="2742566862758590074" fileName="HistoryWriter.java" startLine="15" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryWriter" />
     <unitInfo nodeId="2742566862758593200" fileName="HistoryWriter.java" startLine="39" startPosition="61" endLine="43" endPosition="5" unitName="jetbrains.mps.refactoring.HistoryWriter$1" />
     <unitInfo nodeId="2742566862758593405" fileName="HistoryWriter.java" startLine="63" startPosition="63" endLine="67" endPosition="5" unitName="jetbrains.mps.refactoring.HistoryWriter$2" />
-    <unitInfo nodeId="2742566862758590074" fileName="HistoryWriter.java" startLine="15" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryWriter" />
   </root>
   <root nodeId="2742566862758593747">
     <nodeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="18" startPosition="83" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
@@ -448,15 +448,15 @@
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="199" startPosition="0" endLine="225" endPosition="0" />
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="72" startPosition="115" endLine="103" endPosition="26" />
     <scopeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="70" startPosition="0" endLine="105" endPosition="0" />
-    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="292" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$MoveNodeElementHandler" />
-    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="357" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$RenameModelElementHandler" />
+    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="18" startPosition="0" endLine="386" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler" />
+    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="227" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$DependenciesElementHandler" />
+    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="171" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$ElementElementHandler" />
+    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="106" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$ElementHandler" />
     <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="140" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$HistoryElementHandler" />
     <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="260" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$ModelElementHandler" />
-    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="227" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$DependenciesElementHandler" />
-    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="106" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$ElementHandler" />
+    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="292" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$MoveNodeElementHandler" />
+    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="357" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$RenameModelElementHandler" />
     <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="321" startPosition="0" endLine="356" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$RenameNodeElementHandler" />
-    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="171" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$ElementElementHandler" />
-    <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="18" startPosition="0" endLine="386" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler" />
   </root>
   <root nodeId="5817662974489412297">
     <nodeInfo nodeId="2742566862758589996" fileName="StructureModification.java" startLine="19" startPosition="36" endLine="20" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependencies" />
@@ -557,8 +557,8 @@
     <scopeInfo nodeId="7323995121011047840" fileName="StructureModification.java" startLine="54" startPosition="100" endLine="58" endPosition="0" />
     <scopeInfo nodeId="5817662974489412297" fileName="StructureModification.java" startLine="62" startPosition="68" endLine="66" endPosition="6" />
     <scopeInfo nodeId="5817662974489416588" fileName="StructureModification.java" startLine="78" startPosition="0" endLine="82" endPosition="5">
-      <varInfo nodeId="2742566862758589868" varName="to" />
       <varInfo nodeId="2742566862758589866" varName="id" />
+      <varInfo nodeId="2742566862758589868" varName="to" />
     </scopeInfo>
     <scopeInfo nodeId="5817662974489421406" fileName="StructureModification.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="5817662974489429931" varName="linkMap" />
@@ -567,8 +567,8 @@
     <scopeInfo nodeId="2742566862758589901" fileName="StructureModification.java" startLine="99" startPosition="124" endLine="103" endPosition="31" />
     <scopeInfo nodeId="1190334391238664482" fileName="StructureModification.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
     <scopeInfo nodeId="4136069314959823740" fileName="StructureModification.java" startLine="137" startPosition="0" endLine="141" endPosition="5">
-      <varInfo nodeId="6383770312891618420" varName="to" />
       <varInfo nodeId="6383770312891618418" varName="from" />
+      <varInfo nodeId="6383770312891618420" varName="to" />
     </scopeInfo>
     <scopeInfo nodeId="1445347747076238409" fileName="StructureModification.java" startLine="142" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="1445347747076238414" varName="linkMap" />
@@ -598,13 +598,13 @@
     <scopeInfo nodeId="2742566862758589903" fileName="StructureModification.java" startLine="105" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="2742566862758589906" varName="linkMap" />
     </scopeInfo>
+    <unitInfo nodeId="5817662974489412297" fileName="StructureModification.java" startLine="19" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification" />
     <unitInfo nodeId="7323995121011047840" fileName="StructureModification.java" startLine="54" startPosition="59" endLine="58" endPosition="5" unitName="jetbrains.mps.refactoring.StructureModification$1" />
     <unitInfo nodeId="2742566862758589856" fileName="StructureModification.java" startLine="69" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification$Entry" />
-    <unitInfo nodeId="3796120688729065935" fileName="StructureModification.java" startLine="123" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification.RenameNode$RenameType" />
-    <unitInfo nodeId="4136069314959823738" fileName="StructureModification.java" startLine="134" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification$RenameModel" />
     <unitInfo nodeId="5817662974489416586" fileName="StructureModification.java" startLine="74" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification$MoveNode" />
+    <unitInfo nodeId="4136069314959823738" fileName="StructureModification.java" startLine="134" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification$RenameModel" />
     <unitInfo nodeId="2742566862758589896" fileName="StructureModification.java" startLine="93" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification$RenameNode" />
-    <unitInfo nodeId="5817662974489412297" fileName="StructureModification.java" startLine="19" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification" />
+    <unitInfo nodeId="3796120688729065935" fileName="StructureModification.java" startLine="123" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification.RenameNode$RenameType" />
   </root>
   <root nodeId="5817662974489429544">
     <nodeInfo nodeId="4136069314959834669" fileName="ModelLinkMap.java" startLine="30" startPosition="27" endLine="31" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
@@ -861,8 +861,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5911625124420811147" fileName="ModelLinkMap.java" startLine="239" startPosition="39" endLine="242" endPosition="7" />
     <scopeInfo nodeId="5817662974489429600" fileName="ModelLinkMap.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="5817662974489429612" varName="ref" />
       <varInfo nodeId="5817662974489429610" varName="ptr" />
+      <varInfo nodeId="5817662974489429612" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="5817662974489429586" fileName="ModelLinkMap.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="5817662974489429598" varName="node" />
@@ -873,17 +873,17 @@
       <varInfo nodeId="5817662974489429638" varName="ptr" />
     </scopeInfo>
     <scopeInfo nodeId="5817662974489429614" fileName="ModelLinkMap.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="5817662974489429626" varName="ref" />
       <varInfo nodeId="5817662974489429624" varName="ptr" />
+      <varInfo nodeId="5817662974489429626" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="5817662974489429642" fileName="ModelLinkMap.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="5817662974489429655" varName="node" />
       <varInfo nodeId="5817662974489429657" varName="name" />
+      <varInfo nodeId="5817662974489429655" varName="node" />
       <varInfo nodeId="5817662974489429653" varName="ptr" />
     </scopeInfo>
     <scopeInfo nodeId="5817662974489429659" fileName="ModelLinkMap.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="5817662974489429692" varName="ref" />
       <varInfo nodeId="5817662974489429690" varName="model" />
+      <varInfo nodeId="5817662974489429692" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758589448" fileName="ModelLinkMap.java" startLine="102" startPosition="81" endLine="106" endPosition="0" />
     <scopeInfo nodeId="2742566862758589460" fileName="ModelLinkMap.java" startLine="107" startPosition="85" endLine="111" endPosition="0" />
@@ -949,17 +949,17 @@
       <varInfo nodeId="2742566862758581553" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758577721" fileName="ModelLinkMap.java" startLine="273" startPosition="0" endLine="284" endPosition="0">
-      <varInfo nodeId="2742566862758577736" varName="value" />
-      <varInfo nodeId="2742566862758577726" varName="map" />
       <varInfo nodeId="2742566862758577764" varName="key" />
+      <varInfo nodeId="2742566862758577726" varName="map" />
+      <varInfo nodeId="2742566862758577736" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758577709" fileName="ModelLinkMap.java" startLine="285" startPosition="153" endLine="296" endPosition="16">
       <varInfo nodeId="2742566862758577818" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="6383770312891636726" fileName="ModelLinkMap.java" startLine="216" startPosition="57" endLine="228" endPosition="5" />
     <scopeInfo nodeId="6383770312891638917" fileName="ModelLinkMap.java" startLine="324" startPosition="0" endLine="336" endPosition="0">
-      <varInfo nodeId="6383770312891639091" varName="newModel" />
       <varInfo nodeId="6383770312891638924" varName="map" />
+      <varInfo nodeId="6383770312891639091" varName="newModel" />
       <varInfo nodeId="6383770312891638932" varName="oldModel" />
     </scopeInfo>
     <scopeInfo nodeId="4525791269560335717" fileName="ModelLinkMap.java" startLine="45" startPosition="40" endLine="58" endPosition="7" />
@@ -978,16 +978,16 @@
     </scopeInfo>
     <scopeInfo nodeId="2742566862758577706" fileName="ModelLinkMap.java" startLine="284" startPosition="0" endLine="298" endPosition="0">
       <varInfo nodeId="2742566862758577810" varName="f" />
-      <varInfo nodeId="2742566862758577807" varName="newPtr" />
       <varInfo nodeId="2742566862758577713" varName="map" />
+      <varInfo nodeId="2742566862758577807" varName="newPtr" />
       <varInfo nodeId="2742566862758577804" varName="ptr" />
     </scopeInfo>
     <scopeInfo nodeId="4525791269560364570" fileName="ModelLinkMap.java" startLine="44" startPosition="47" endLine="59" endPosition="5">
       <varInfo nodeId="4525791269560364620" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758589551" fileName="ModelLinkMap.java" startLine="164" startPosition="0" endLine="180" endPosition="0">
-      <varInfo nodeId="2742566862758589558" varName="role" />
       <varInfo nodeId="2742566862758589556" varName="ptr" />
+      <varInfo nodeId="2742566862758589558" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="4525791269560333034" fileName="ModelLinkMap.java" startLine="43" startPosition="31" endLine="60" endPosition="16" />
     <scopeInfo nodeId="2742566862758589544" fileName="ModelLinkMap.java" startLine="145" startPosition="63" endLine="162" endPosition="15">
@@ -1015,38 +1015,38 @@
     <scopeInfo nodeId="980809437931330623" fileName="ModelLinkMap.java" startLine="238" startPosition="38" endLine="271" endPosition="5" />
     <scopeInfo nodeId="980809437931330620" fileName="ModelLinkMap.java" startLine="237" startPosition="0" endLine="273" endPosition="0" />
     <scopeInfo nodeId="4136069314959834639" fileName="ModelLinkMap.java" startLine="181" startPosition="94" endLine="235" endPosition="15">
-      <varInfo nodeId="6383770312891620464" varName="res" />
       <varInfo nodeId="6383770312891638743" varName="list" />
+      <varInfo nodeId="6383770312891620464" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="4136069314959834636" fileName="ModelLinkMap.java" startLine="180" startPosition="0" endLine="237" endPosition="0">
-      <varInfo nodeId="4136069314959834643" varName="newModel" />
       <varInfo nodeId="4136069314959834641" varName="model" />
+      <varInfo nodeId="4136069314959834643" varName="newModel" />
     </scopeInfo>
-    <unitInfo nodeId="2742566862758589448" fileName="ModelLinkMap.java" startLine="102" startPosition="44" endLine="106" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$7" />
-    <unitInfo nodeId="2742566862758589460" fileName="ModelLinkMap.java" startLine="107" startPosition="43" endLine="111" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$8" />
-    <unitInfo nodeId="2742566862758589471" fileName="ModelLinkMap.java" startLine="112" startPosition="44" endLine="116" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$9" />
+    <unitInfo nodeId="5817662974489429544" fileName="ModelLinkMap.java" startLine="30" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.refactoring.ModelLinkMap" />
+    <unitInfo nodeId="2742566862758577849" fileName="ModelLinkMap.java" startLine="290" startPosition="45" endLine="294" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$1" />
     <unitInfo nodeId="2742566862758589513" fileName="ModelLinkMap.java" startLine="122" startPosition="42" endLine="126" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$10" />
     <unitInfo nodeId="2742566862758589531" fileName="ModelLinkMap.java" startLine="127" startPosition="42" endLine="131" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$11" />
     <unitInfo nodeId="2742566862758589566" fileName="ModelLinkMap.java" startLine="132" startPosition="41" endLine="136" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$12" />
     <unitInfo nodeId="2742566862758589599" fileName="ModelLinkMap.java" startLine="137" startPosition="42" endLine="141" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$13" />
+    <unitInfo nodeId="2742566862758589663" fileName="ModelLinkMap.java" startLine="147" startPosition="43" endLine="152" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$14" />
+    <unitInfo nodeId="2742566862758589704" fileName="ModelLinkMap.java" startLine="153" startPosition="43" endLine="161" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$15" />
     <unitInfo nodeId="2742566862758589814" fileName="ModelLinkMap.java" startLine="168" startPosition="43" endLine="172" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$16" />
     <unitInfo nodeId="2742566862758589840" fileName="ModelLinkMap.java" startLine="173" startPosition="42" endLine="177" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$17" />
     <unitInfo nodeId="6383770312891638787" fileName="ModelLinkMap.java" startLine="199" startPosition="47" endLine="203" endPosition="7" unitName="jetbrains.mps.refactoring.ModelLinkMap$18" />
     <unitInfo nodeId="6383770312891636713" fileName="ModelLinkMap.java" startLine="209" startPosition="86" endLine="213" endPosition="9" unitName="jetbrains.mps.refactoring.ModelLinkMap$19" />
+    <unitInfo nodeId="2742566862758581684" fileName="ModelLinkMap.java" startLine="304" startPosition="45" endLine="308" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$2" />
+    <unitInfo nodeId="6383770312891636762" fileName="ModelLinkMap.java" startLine="220" startPosition="88" endLine="226" endPosition="9" unitName="jetbrains.mps.refactoring.ModelLinkMap$20" />
     <unitInfo nodeId="980809437931347416" fileName="ModelLinkMap.java" startLine="244" startPosition="88" endLine="248" endPosition="9" unitName="jetbrains.mps.refactoring.ModelLinkMap$21" />
     <unitInfo nodeId="980809437931347444" fileName="ModelLinkMap.java" startLine="251" startPosition="88" endLine="255" endPosition="9" unitName="jetbrains.mps.refactoring.ModelLinkMap$22" />
     <unitInfo nodeId="980809437931347480" fileName="ModelLinkMap.java" startLine="258" startPosition="87" endLine="262" endPosition="9" unitName="jetbrains.mps.refactoring.ModelLinkMap$23" />
     <unitInfo nodeId="980809437931347517" fileName="ModelLinkMap.java" startLine="265" startPosition="88" endLine="269" endPosition="9" unitName="jetbrains.mps.refactoring.ModelLinkMap$24" />
-    <unitInfo nodeId="2742566862758577849" fileName="ModelLinkMap.java" startLine="290" startPosition="45" endLine="294" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$1" />
-    <unitInfo nodeId="2742566862758581684" fileName="ModelLinkMap.java" startLine="304" startPosition="45" endLine="308" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$2" />
     <unitInfo nodeId="2742566862758581593" fileName="ModelLinkMap.java" startLine="317" startPosition="45" endLine="321" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$3" />
     <unitInfo nodeId="6383770312891638945" fileName="ModelLinkMap.java" startLine="326" startPosition="98" endLine="330" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$4" />
     <unitInfo nodeId="2742566862758589349" fileName="ModelLinkMap.java" startLine="89" startPosition="49" endLine="94" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$5" />
-    <unitInfo nodeId="2742566862758589663" fileName="ModelLinkMap.java" startLine="147" startPosition="43" endLine="152" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$14" />
     <unitInfo nodeId="2742566862758589393" fileName="ModelLinkMap.java" startLine="95" startPosition="51" endLine="101" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$6" />
-    <unitInfo nodeId="6383770312891636762" fileName="ModelLinkMap.java" startLine="220" startPosition="88" endLine="226" endPosition="9" unitName="jetbrains.mps.refactoring.ModelLinkMap$20" />
-    <unitInfo nodeId="2742566862758589704" fileName="ModelLinkMap.java" startLine="153" startPosition="43" endLine="161" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$15" />
-    <unitInfo nodeId="5817662974489429544" fileName="ModelLinkMap.java" startLine="30" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.refactoring.ModelLinkMap" />
+    <unitInfo nodeId="2742566862758589448" fileName="ModelLinkMap.java" startLine="102" startPosition="44" endLine="106" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$7" />
+    <unitInfo nodeId="2742566862758589460" fileName="ModelLinkMap.java" startLine="107" startPosition="43" endLine="111" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$8" />
+    <unitInfo nodeId="2742566862758589471" fileName="ModelLinkMap.java" startLine="112" startPosition="44" endLine="116" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$9" />
   </root>
   <root nodeId="9051163691968345406">
     <nodeInfo nodeId="9051163691968345412" fileName="StructureModificationLog.java" startLine="11" startPosition="39" endLine="12" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDataList" />
@@ -1207,8 +1207,8 @@
     </scopeInfo>
     <scopeInfo nodeId="9051163691968380082" fileName="StructureModificationProcessor.java" startLine="51" startPosition="44" endLine="66" endPosition="19" />
     <scopeInfo nodeId="9051163691968353746" fileName="StructureModificationProcessor.java" startLine="72" startPosition="38" endLine="89" endPosition="18">
-      <varInfo nodeId="9051163691968353768" varName="result" />
       <varInfo nodeId="9051163691968353780" varName="played" />
+      <varInfo nodeId="9051163691968353768" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="9051163691968353683" fileName="StructureModificationProcessor.java" startLine="92" startPosition="74" endLine="109" endPosition="5" />
     <scopeInfo nodeId="9051163691968380095" fileName="StructureModificationProcessor.java" startLine="71" startPosition="0" endLine="91" endPosition="0" />
@@ -1222,8 +1222,8 @@
       <varInfo nodeId="9051163691968353911" varName="model" />
       <varInfo nodeId="3898791162642413839" varName="usedVersion" />
     </scopeInfo>
-    <unitInfo nodeId="1190334391238664534" fileName="StructureModificationProcessor.java" startLine="95" startPosition="69" endLine="99" endPosition="7" unitName="jetbrains.mps.refactoring.StructureModificationProcessor$1" />
     <unitInfo nodeId="9051163691968353666" fileName="StructureModificationProcessor.java" startLine="20" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModificationProcessor" />
+    <unitInfo nodeId="1190334391238664534" fileName="StructureModificationProcessor.java" startLine="95" startPosition="69" endLine="99" endPosition="7" unitName="jetbrains.mps.refactoring.StructureModificationProcessor$1" />
   </root>
 </debugInfo>
 

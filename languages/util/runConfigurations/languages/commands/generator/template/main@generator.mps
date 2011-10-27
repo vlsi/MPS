@@ -12,19 +12,19 @@
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" version="0" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="7jsa" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(MPS.Classpath/com.intellij.execution.process@java_stub)" version="-1" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <import index="x4jy" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api(MPS.Classpath/jetbrains.mps.debug.api@java_stub)" version="-1" />
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
-  <import index="1hm1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution(MPS.Classpath/com.intellij.execution@java_stub)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="mdoc" modelUID="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)" version="-1" />
-  <import index="cv0j" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.commands(MPS.Classpath/jetbrains.mps.execution.api.commands@java_stub)" version="-1" />
-  <import index="mmln" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api.run(MPS.Classpath/jetbrains.mps.debug.api.run@java_stub)" version="-1" />
   <import index="i1mc" modelUID="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.execution.common.behavior)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="7mi2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util.annotation(MPS.Classpath/jetbrains.mps.util.annotation@java_stub)" version="-1" />
+  <import index="5b61" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.commands(MPS.Workbench/jetbrains.mps.execution.api.commands@java_stub)" version="-1" />
+  <import index="eunx" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.annotation(MPS.Core/jetbrains.mps.util.annotation@java_stub)" version="-1" />
+  <import index="7pag" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.api(MPS.Workbench/jetbrains.mps.debug.api@java_stub)" version="-1" />
+  <import index="1dgl" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.api.run(MPS.Workbench/jetbrains.mps.debug.api.run@java_stub)" version="-1" />
+  <import index="gaen" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution(MPS.Workbench/com.intellij.execution@java_stub)" version="-1" />
+  <import index="lels" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution.process(MPS.Workbench/com.intellij.execution.process@java_stub)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -151,7 +151,7 @@
         </node>
       </node>
       <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="865001690840232892">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x4jy.~IDebugger" resolveInfo="IDebugger" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7pag.~IDebugger" resolveInfo="IDebugger" />
       </node>
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="865001690840232893">
         <property name="propertyName" nameId="tpck.1757699476691236117" value="methodName" />
@@ -293,7 +293,7 @@
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="865001690840233102">
       <property name="name" nameId="tpck.1169194664001" value="getDebugger" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="865001690840233103">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x4jy.~IDebugger" resolveInfo="IDebugger" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7pag.~IDebugger" resolveInfo="IDebugger" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="865001690840233104" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="865001690840233105">
@@ -330,7 +330,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4675583320452209726" resolveInfo="getDebuggerConfiguration" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4675583320452308055">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mmln.~IDebuggerConfiguration%dgetDebugger()%cjetbrains%dmps%ddebug%dapi%dIDebugger" resolveInfo="getDebugger" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1dgl.~IDebuggerConfiguration%dgetDebugger()%cjetbrains%dmps%ddebug%dapi%dIDebugger" resolveInfo="getDebugger" />
             </node>
           </node>
         </node>
@@ -426,9 +426,9 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="3754131050835964106">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="7mi2.~ToRemove" resolveInfo="ToRemove" />
+        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="eunx.~ToRemove" resolveInfo="ToRemove" />
         <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="3754131050835964164">
-          <link role="key" roleId="tpee.1188214555875" targetNodeId="7mi2.~ToRemove%dversion()" resolveInfo="version" />
+          <link role="key" roleId="tpee.1188214555875" targetNodeId="eunx.~ToRemove%dversion()" resolveInfo="version" />
           <node role="value" roleId="tpee.1188214607812" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="3754131050835964167">
             <property name="value" nameId="tpee.1113006610751" value="2.1" />
           </node>
@@ -738,7 +738,7 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="865001690840233084">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7jsa.~ProcessHandler" resolveInfo="ProcessHandler" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lels.~ProcessHandler" resolveInfo="ProcessHandler" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="865001690840233085" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="865001690840233086">
@@ -776,7 +776,7 @@
         </node>
       </node>
       <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="865001690840233101">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1hm1.~ExecutionException" resolveInfo="ExecutionException" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gaen.~ExecutionException" resolveInfo="ExecutionException" />
       </node>
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="6129022259108621702">
         <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="6129022259108621705">
@@ -940,7 +940,7 @@
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="getDebuggerConfiguration" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4675583320452209746">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mmln.~IDebuggerConfiguration" resolveInfo="IDebuggerConfiguration" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1dgl.~IDebuggerConfiguration" resolveInfo="IDebuggerConfiguration" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4675583320452209709">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4675583320452209747">
@@ -1308,7 +1308,7 @@
               </node>
             </node>
             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="865001690840233344">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7jsa.~ProcessHandler" resolveInfo="ProcessHandler" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lels.~ProcessHandler" resolveInfo="ProcessHandler" />
             </node>
             <node role="instance" roleId="tp68.1174317636233" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="865001690840233345">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="865001690840233346">
@@ -1474,7 +1474,7 @@
                                     </node>
                                   </node>
                                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6131607264791621041">
-                                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cv0j.~ProcessHandlerBuilder" resolveInfo="ProcessHandlerBuilder" />
+                                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5b61.~ProcessHandlerBuilder" resolveInfo="ProcessHandlerBuilder" />
                                   </node>
                                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="865001690840233412">
                                     <property name="propertyName" nameId="tpck.1757699476691236117" value="methodName" />
@@ -1550,7 +1550,7 @@
                                           <property name="fqClassName" nameId="tp68.1173992483054" value="command.fq.name" />
                                           <property name="methodName" nameId="tp68.1173992444083" value="getDebugger" />
                                           <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="865001690840233449">
-                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x4jy.~IDebugger" resolveInfo="IDebugger" />
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7pag.~IDebugger" resolveInfo="IDebugger" />
                                           </node>
                                           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="865001690840233450">
                                             <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
@@ -2349,7 +2349,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="865001690840233803">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="865001690840233804">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="865001690840233805">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="865001690840233806">
                 <node role="mapperFunction" roleId="tpf8.1170725844563" type="tpf8.MapSrcMacro_MapperFunction" typeId="tpf8.1170725621272" id="865001690840233807">
@@ -2363,7 +2363,7 @@
                         <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="865001690840233812">
                           <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="865001690840233813">
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="865001690840233814">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
                             </node>
                           </node>
                         </node>
@@ -2431,7 +2431,7 @@
                                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.DotExpression" typeId="tpee.1197027756228" id="865001690840233844">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="865001690840233845">
                                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="865001690840233846">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
                                       </node>
                                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="6131607264791621106">
                                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6131607264791621108">
@@ -2440,7 +2440,7 @@
                                       </node>
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="865001690840233849">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%dappend(java%dlang%dString%d%d%d)%cjetbrains%dmps%dexecution%dapi%dcommands%dProcessHandlerBuilder" resolveInfo="append" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%dappend(java%dlang%dString%d%d%d)%cjetbrains%dmps%dexecution%dapi%dcommands%dProcessHandlerBuilder" resolveInfo="append" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="865001690840233850">
                                         <property name="value" nameId="tpee.1070475926801" value="" />
                                         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="865001690840233851">
@@ -2566,7 +2566,7 @@
                                     <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3908032508224773846">
                                       <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3908032508224773847">
                                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3908032508224773848">
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
+                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
                                         </node>
                                         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="6131607264791621109">
                                           <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6131607264791621111">
@@ -2575,7 +2575,7 @@
                                         </node>
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3908032508224773851">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%dappendKey(java%dlang%dString,java%dlang%dString%d%d%d)%cjetbrains%dmps%dexecution%dapi%dcommands%dProcessHandlerBuilder" resolveInfo="appendKey" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%dappendKey(java%dlang%dString,java%dlang%dString%d%d%d)%cjetbrains%dmps%dexecution%dapi%dcommands%dProcessHandlerBuilder" resolveInfo="appendKey" />
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3908032508224773852">
                                           <property name="value" nameId="tpee.1070475926801" value="" />
                                           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="3908032508224773853">
@@ -2632,7 +2632,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="865001690840233925">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%dbuild(java%dio%dFile)%ccom%dintellij%dexecution%dprocess%dProcessHandler" resolveInfo="build" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%dbuild(java%dio%dFile)%ccom%dintellij%dexecution%dprocess%dProcessHandler" resolveInfo="build" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="865001690840233926">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="865001690840233927">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
@@ -2818,14 +2818,14 @@
   </root>
   <root id="865001690840234009">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="865001690840234010">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7jsa.~ProcessHandler" resolveInfo="ProcessHandler" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lels.~ProcessHandler" resolveInfo="ProcessHandler" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="865001690840234011" />
     </node>
   </root>
   <root id="865001690840234012">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6131607264791621112">
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~OutputRedirector%dredirect(com%dintellij%dexecution%dprocess%dProcessHandler,com%dintellij%dexecution%dprocess%dProcessListener)%ccom%dintellij%dexecution%dprocess%dProcessHandler" resolveInfo="redirect" />
-      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cv0j.~OutputRedirector" resolveInfo="OutputRedirector" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~OutputRedirector%dredirect(com%dintellij%dexecution%dprocess%dProcessHandler,com%dintellij%dexecution%dprocess%dProcessListener)%ccom%dintellij%dexecution%dprocess%dProcessHandler" resolveInfo="redirect" />
+      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5b61.~OutputRedirector" resolveInfo="OutputRedirector" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6131607264791621113">
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6131607264791621114">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6131607264791621115">
@@ -3075,7 +3075,7 @@
         <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="889694274152291892">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="889694274152291894">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~KeyValueCommandPart%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="KeyValueCommandPart" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~KeyValueCommandPart%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="KeyValueCommandPart" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8234001627574019817">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8234001627574019820">
                 <property name="value" nameId="tpee.1070475926801" value="" />
@@ -3158,7 +3158,7 @@
         <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6868250101935630752">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6868250101935630754">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ListCommandPart%d&lt;init&gt;(java%dutil%dList,java%dlang%dString)" resolveInfo="ListCommandPart" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ListCommandPart%d&lt;init&gt;(java%dutil%dList,java%dlang%dString)" resolveInfo="ListCommandPart" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6868250101935630756">
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6868250101935630776">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6868250101935630777">
@@ -3211,7 +3211,7 @@
             <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6868250101935630798">
               <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6868250101935630801">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6868250101935630803">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ListCommandPart%d&lt;init&gt;(java%dutil%dList)" resolveInfo="ListCommandPart" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ListCommandPart%d&lt;init&gt;(java%dutil%dList)" resolveInfo="ListCommandPart" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6868250101935630804">
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6868250101935630806">
                       <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6868250101935630807">
@@ -3256,7 +3256,7 @@
         <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2168104298250428189">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2168104298250428190">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ListCommandPart%d&lt;init&gt;(java%dutil%dList,java%dlang%dString)" resolveInfo="ListCommandPart" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ListCommandPart%d&lt;init&gt;(java%dutil%dList,java%dlang%dString)" resolveInfo="ListCommandPart" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2168104298250428239">
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="2168104298250428241">
                 <node role="initValue" roleId="tp2q.1237721435808" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2168104298250428191">
@@ -3313,7 +3313,7 @@
             <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2168104298250428216">
               <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2168104298250428217">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2168104298250428218">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ListCommandPart%d&lt;init&gt;(java%dutil%dList)" resolveInfo="ListCommandPart" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ListCommandPart%d&lt;init&gt;(java%dutil%dList)" resolveInfo="ListCommandPart" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2168104298250428243">
                     <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="2168104298250428244">
                       <node role="initValue" roleId="tp2q.1237721435808" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2168104298250428245">
@@ -3360,7 +3360,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="rzqf.889694274152216058" resolveInfo="ProcessBuilderCommandPartType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1616228152992009037">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1616228152992009828">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cv0j.~CommandPart" resolveInfo="CommandPart" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5b61.~CommandPart" resolveInfo="CommandPart" />
         </node>
       </node>
     </node>
@@ -3371,12 +3371,12 @@
         <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8234001627573828356">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1616228152992025002">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1616228152992025004">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ListCommandPart%d&lt;init&gt;(java%dutil%dList)" resolveInfo="ListCommandPart" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ListCommandPart%d&lt;init&gt;(java%dutil%dList)" resolveInfo="ListCommandPart" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1616228152992025005" />
             </node>
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8234001627573828360">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~AbstractCommandPart%dgetLength()%cint" resolveInfo="getLength" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~AbstractCommandPart%dgetLength()%cint" resolveInfo="getLength" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8234001627573843463" />
           </node>
         </node>
@@ -3389,12 +3389,12 @@
         <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8234001627573935271">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8234001627573935272">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8234001627573935273">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ListCommandPart%d&lt;init&gt;(java%dutil%dList)" resolveInfo="ListCommandPart" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ListCommandPart%d&lt;init&gt;(java%dutil%dList)" resolveInfo="ListCommandPart" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8234001627573935274" />
             </node>
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8234001627573935275">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~AbstractCommandPart%dgetCommandList()%cjava%dutil%dList" resolveInfo="getCommandList" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~AbstractCommandPart%dgetCommandList()%cjava%dutil%dList" resolveInfo="getCommandList" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8234001627573935276" />
           </node>
         </node>
@@ -3406,7 +3406,7 @@
         <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8234001627574107161">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7986696453016939343">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~PropertyCommandPart%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="PropertyCommandPart" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~PropertyCommandPart%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="PropertyCommandPart" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7986696453016939344">
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="7986696453016939348">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="7986696453016939351">
@@ -3447,8 +3447,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1317559410259917242">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1317559410259925627">
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cv0j.~ProcessHandlerBuilder" resolveInfo="ProcessHandlerBuilder" />
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%dstartAndWait(com%dintellij%dexecution%dprocess%dProcessHandler)%cint" resolveInfo="startAndWait" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5b61.~ProcessHandlerBuilder" resolveInfo="ProcessHandlerBuilder" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%dstartAndWait(com%dintellij%dexecution%dprocess%dProcessHandler)%cint" resolveInfo="startAndWait" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1317559410259925628">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1317559410259925630">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1317559410259925631">
@@ -3491,8 +3491,8 @@
             </node>
             <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3897882468730045871">
               <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3897882468730050121">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cv0j.~ProcessHandlerBuilder" resolveInfo="ProcessHandlerBuilder" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%dstartAndWait(com%dintellij%dexecution%dprocess%dProcessHandler,long)%cint" resolveInfo="startAndWait" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5b61.~ProcessHandlerBuilder" resolveInfo="ProcessHandlerBuilder" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%dstartAndWait(com%dintellij%dexecution%dprocess%dProcessHandler,long)%cint" resolveInfo="startAndWait" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3897882468730050122">
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3897882468730050137">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3897882468730050138">
@@ -3795,7 +3795,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8980950851470008601">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8980950851470008602">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8980950851470008603">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="8980950851470008604">
                 <node role="mapperFunction" roleId="tpf8.1170725844563" type="tpf8.MapSrcMacro_MapperFunction" typeId="tpf8.1170725621272" id="8980950851470008605">
@@ -3809,7 +3809,7 @@
                         <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="8980950851470008610">
                           <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8980950851470008611">
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8980950851470008612">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
                             </node>
                           </node>
                         </node>
@@ -3875,7 +3875,7 @@
                               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8980950851470008642">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8980950851470008643">
                                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8980950851470008644">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%d&lt;init&gt;()" resolveInfo="ProcessHandlerBuilder" />
                                   </node>
                                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="8980950851470008645">
                                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8980950851470008646">
@@ -3884,7 +3884,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8980950851470008647">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%dappend(java%dlang%dString%d%d%d)%cjetbrains%dmps%dexecution%dapi%dcommands%dProcessHandlerBuilder" resolveInfo="append" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%dappend(java%dlang%dString%d%d%d)%cjetbrains%dmps%dexecution%dapi%dcommands%dProcessHandlerBuilder" resolveInfo="append" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8980950851470008648">
                                     <property name="value" nameId="tpee.1070475926801" value="" />
                                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="8980950851470008649">
@@ -3913,7 +3913,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8980950851470008723">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%dbuild(java%dio%dFile)%ccom%dintellij%dexecution%dprocess%dProcessHandler" resolveInfo="build" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%dbuild(java%dio%dFile)%ccom%dintellij%dexecution%dprocess%dProcessHandler" resolveInfo="build" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8980950851470008724">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8980950851470008725">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />

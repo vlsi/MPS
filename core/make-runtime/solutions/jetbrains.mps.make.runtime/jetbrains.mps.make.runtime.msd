@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.make.runtime" uuid="a1250a4d-c090-42c3-ad7c-d298a3357dd4" dontLoadClasses="true" compileInMPS="false">
+<solution name="jetbrains.mps.make.runtime" uuid="a1250a4d-c090-42c3-ad7c-d298a3357dd4" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
+  <sourcePath />
   <dependencies>
-    <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
-    <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
+    <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
+    <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
+    <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</usedLanguage>

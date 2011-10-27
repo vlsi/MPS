@@ -6,9 +6,9 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="1" />
-  <import index="x4jy" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api(MPS.Classpath/jetbrains.mps.debug.api@java_stub)" version="-1" />
-  <import index="bc3m" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api.breakpoints(MPS.Classpath/jetbrains.mps.debug.api.breakpoints@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="i264" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.api.breakpoints(MPS.Workbench/jetbrains.mps.debug.api.breakpoints@java_stub)" version="-1" />
+  <import index="7pag" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.api(MPS.Workbench/jetbrains.mps.debug.api@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -60,7 +60,7 @@
                             <link role="variable" roleId="tp2q.1153944258490" targetNodeId="337851360307413991" resolveInfo="debugger" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="337851360307414018">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x4jy.~IDebugger%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~IDebugger%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
                           </node>
                         </node>
                       </node>
@@ -69,11 +69,11 @@
                 </node>
                 <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="337851360307413997">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="337851360307413998">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="x4jy.~Debuggers" resolveInfo="Debuggers" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x4jy.~Debuggers%dgetInstance()%cjetbrains%dmps%ddebug%dapi%dDebuggers" resolveInfo="getInstance" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7pag.~Debuggers" resolveInfo="Debuggers" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~Debuggers%dgetInstance()%cjetbrains%dmps%ddebug%dapi%dDebuggers" resolveInfo="getInstance" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="337851360307413999">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x4jy.~Debuggers%dgetDebuggers()%cjava%dutil%dList" resolveInfo="getDebuggers" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~Debuggers%dgetDebuggers()%cjava%dutil%dList" resolveInfo="getDebuggers" />
                   </node>
                 </node>
               </node>
@@ -196,16 +196,16 @@
                     <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2569394751388019612">
                       <property name="name" nameId="tpck.1169194664001" value="provider" />
                       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2569394751388019613">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bc3m.~IBreakpointsProvider" resolveInfo="IBreakpointsProvider" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpointsProvider" resolveInfo="IBreakpointsProvider" />
                       </node>
                       <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2569394751388019614">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2569394751388019615">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2569394751388019616">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x4jy.~Debuggers%dgetInstance()%cjetbrains%dmps%ddebug%dapi%dDebuggers" resolveInfo="getInstance" />
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="x4jy.~Debuggers" resolveInfo="Debuggers" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~Debuggers%dgetInstance()%cjetbrains%dmps%ddebug%dapi%dDebuggers" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7pag.~Debuggers" resolveInfo="Debuggers" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2569394751388019617">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x4jy.~Debuggers%dgetDebuggerByName(java%dlang%dString)%cjetbrains%dmps%ddebug%dapi%dIDebugger" resolveInfo="getDebuggerByName" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~Debuggers%dgetDebuggerByName(java%dlang%dString)%cjetbrains%dmps%ddebug%dapi%dIDebugger" resolveInfo="getDebuggerByName" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2569394751388019618">
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2569394751388019619">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2569394751388009813" resolveInfo="debuggerType" />
@@ -217,7 +217,7 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2569394751388019621">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x4jy.~IDebugger%dgetBreakpointsProvider()%cjetbrains%dmps%ddebug%dapi%dbreakpoints%dIBreakpointsProvider" resolveInfo="getBreakpointsProvider" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7pag.~IDebugger%dgetBreakpointsProvider()%cjetbrains%dmps%ddebug%dapi%dbreakpoints%dIBreakpointsProvider" resolveInfo="getBreakpointsProvider" />
                         </node>
                       </node>
                     </node>
@@ -230,7 +230,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2569394751388019612" resolveInfo="provider" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2569394751388019639">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bc3m.~IBreakpointsProvider%dgetAllKinds()%cjava%dutil%dList" resolveInfo="getAllKinds" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~IBreakpointsProvider%dgetAllKinds()%cjava%dutil%dList" resolveInfo="getAllKinds" />
                           </node>
                         </node>
                       </node>
@@ -267,7 +267,7 @@
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2526721715665338042">
                   <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="2526721715665338043">
                     <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2526721715665338044">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bc3m.~IBreakpointKind" resolveInfo="IBreakpointKind" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpointKind" resolveInfo="IBreakpointKind" />
                     </node>
                   </node>
                 </node>
@@ -305,7 +305,7 @@
                     <node role="value" roleId="tp25.1138662048170" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2569394751388029798">
                       <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="2569394751388029797" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2569394751388029802">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bc3m.~IBreakpointKind%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~IBreakpointKind%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
                       </node>
                     </node>
                   </node>
@@ -325,7 +325,7 @@
                     <node role="value" roleId="tp25.1138662048170" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2569394751388029809">
                       <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="2569394751388029810" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2569394751388029811">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bc3m.~IBreakpointKind%dgetPresentation()%cjava%dlang%dString" resolveInfo="getPresentation" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~IBreakpointKind%dgetPresentation()%cjava%dlang%dString" resolveInfo="getPresentation" />
                       </node>
                     </node>
                   </node>
@@ -339,7 +339,7 @@
             </node>
           </node>
           <node role="type" roleId="tpdg.1177337679534" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2569394751388009786">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bc3m.~IBreakpointKind" resolveInfo="IBreakpointKind" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i264.~IBreakpointKind" resolveInfo="IBreakpointKind" />
           </node>
           <node role="descriptionText" roleId="tpdg.1177339186632" type="tpdg.QueryFunction_ParameterizedSubstitute_String" typeId="tpdg.1177339114370" id="2569394751388019653">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2569394751388019654">
@@ -348,7 +348,7 @@
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2569394751388019657">
                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="2569394751388019658" />
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2569394751388019659">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bc3m.~IBreakpointKind%dgetPresentation()%cjava%dlang%dString" resolveInfo="getPresentation" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~IBreakpointKind%dgetPresentation()%cjava%dlang%dString" resolveInfo="getPresentation" />
                     </node>
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2569394751388019660">
@@ -364,7 +364,7 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2526721715665563579">
                   <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="2526721715665563580" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2526721715665563581">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bc3m.~IBreakpointKind%dgetPresentation()%cjava%dlang%dString" resolveInfo="getPresentation" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i264.~IBreakpointKind%dgetPresentation()%cjava%dlang%dString" resolveInfo="getPresentation" />
                   </node>
                 </node>
               </node>

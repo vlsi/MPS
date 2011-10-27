@@ -2,36 +2,36 @@
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104858749">
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="18" startPosition="83" endLine="19" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_8gk9io_a0a1a0a0a1a0b0a1a0" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="21" startPosition="47" endLine="22" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="26" startPosition="83" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="30" startPosition="44" endLine="31" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2588298302278069869" fileName="MatchVariableReference_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="44" startPosition="61" endLine="45" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="49" startPosition="7" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatchVariableReference_Constraints#()V" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="28" startPosition="83" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="37" startPosition="49" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="36" startPosition="56" endLine="47" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="33" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="27" startPosition="75" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="24" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="21" startPosition="47" endLine="22" endPosition="80" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="30" startPosition="44" endLine="31" endPosition="20" />
-    <scopeInfo nodeId="1213104858752" fileName="MatchVariableReference_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="85" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="44" startPosition="61" endLine="45" endPosition="58" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="28" startPosition="83" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="37" startPosition="49" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="36" startPosition="56" endLine="47" endPosition="10" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="33" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="26" startPosition="83" endLine="50" endPosition="22" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="24" startPosition="0" endLine="52" endPosition="0" />
-    <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints" />
-    <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="28" startPosition="32" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints$1" />
-    <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints$2" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="17" startPosition="83" endLine="18" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_8gk9io_a0a1a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="20" startPosition="47" endLine="21" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="25" startPosition="83" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="29" startPosition="44" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2588298302278069869" fileName="MatchVariableReference_Constraints.java" startLine="38" startPosition="142" endLine="39" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="43" startPosition="61" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="48" startPosition="7" endLine="49" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatchVariableReference_Constraints#()V" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="27" startPosition="83" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="36" startPosition="49" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="35" startPosition="56" endLine="46" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="32" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="26" startPosition="75" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="20" startPosition="47" endLine="21" endPosition="80" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="29" startPosition="44" endLine="30" endPosition="20" />
+    <scopeInfo nodeId="1213104858752" fileName="MatchVariableReference_Constraints.java" startLine="38" startPosition="142" endLine="39" endPosition="81" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="43" startPosition="61" endLine="44" endPosition="58" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="27" startPosition="83" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="36" startPosition="49" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="35" startPosition="56" endLine="46" endPosition="10" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="32" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="25" startPosition="83" endLine="49" endPosition="22" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="51" endPosition="0" />
+    <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints" />
+    <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="27" startPosition="32" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints$1" />
+    <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="36" startPosition="19" endLine="46" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints$2" />
   </root>
   <root nodeId="1213104860358">
     <nodeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="24" startPosition="89" endLine="25" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_15u81x_a0a3a0a0a1a0b0a1a0" />
@@ -337,6 +337,151 @@
     <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints" />
     <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints$1" />
+  </root>
+  <root nodeId="8030573611853647771">
+    <nodeInfo nodeId="8030573611853647782" fileName="RegexUtil.java" startLine="16" startPosition="73" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8030573611853647798" fileName="RegexUtil.java" startLine="18" startPosition="144" endLine="19" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8030573611853647806" fileName="RegexUtil.java" startLine="21" startPosition="126" endLine="22" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8030573611853647812" fileName="RegexUtil.java" startLine="23" startPosition="149" endLine="24" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8030573611853647838" fileName="RegexUtil.java" startLine="27" startPosition="162" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8030573611853647844" fileName="RegexUtil.java" startLine="28" startPosition="77" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8030573611853647858" fileName="RegexUtil.java" startLine="34" startPosition="159" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8030573611853647883" fileName="RegexUtil.java" startLine="38" startPosition="5" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030573611853647893" fileName="RegexUtil.java" startLine="42" startPosition="65" endLine="43" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8030573611853647899" fileName="RegexUtil.java" startLine="43" startPosition="66" endLine="44" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8030573611853647912" fileName="RegexUtil.java" startLine="45" startPosition="22" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030573611853647914" fileName="RegexUtil.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8030573611853647915" fileName="RegexUtil.java" startLine="48" startPosition="0" endLine="49" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8030573611853647945" fileName="RegexUtil.java" startLine="53" startPosition="74" endLine="54" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030573611853647955" fileName="RegexUtil.java" startLine="58" startPosition="5" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8030573611853647974" fileName="RegexUtil.java" startLine="62" startPosition="124" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030573611853647989" fileName="RegexUtil.java" startLine="66" startPosition="5" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030573611853648001" fileName="RegexUtil.java" startLine="70" startPosition="65" endLine="71" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8030573611853648007" fileName="RegexUtil.java" startLine="71" startPosition="45" endLine="72" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8030573611853648014" fileName="RegexUtil.java" startLine="72" startPosition="71" endLine="73" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030573611853795790" fileName="RegexUtil.java" startLine="77" startPosition="53" endLine="78" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030573611853795795" fileName="RegexUtil.java" startLine="79" startPosition="5" endLine="80" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8030573611853795800" fileName="RegexUtil.java" startLine="80" startPosition="49" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8030573611853795817" fileName="RegexUtil.java" startLine="83" startPosition="68" endLine="84" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8030573611853795833" fileName="RegexUtil.java" startLine="87" startPosition="148" endLine="88" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8030573611853795851" fileName="RegexUtil.java" startLine="92" startPosition="53" endLine="93" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8030573611853795861" fileName="RegexUtil.java" startLine="94" startPosition="299" endLine="95" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030573611853795885" fileName="RegexUtil.java" startLine="96" startPosition="5" endLine="97" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030573611853647773" fileName="RegexUtil.java" startLine="12" startPosition="24" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RegexUtil#()V" />
+    <nodeInfo nodeId="8030573611853647788" fileName="RegexUtil.java" startLine="17" startPosition="49" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030573611853647856" fileName="RegexUtil.java" startLine="33" startPosition="30" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030573611853647907" fileName="RegexUtil.java" startLine="44" startPosition="137" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030573611853647938" fileName="RegexUtil.java" startLine="52" startPosition="175" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030573611853647972" fileName="RegexUtil.java" startLine="61" startPosition="198" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030573611853795788" fileName="RegexUtil.java" startLine="76" startPosition="104" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030573611853795810" fileName="RegexUtil.java" startLine="82" startPosition="163" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030573611853795824" fileName="RegexUtil.java" startLine="86" startPosition="5" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030573611853795859" fileName="RegexUtil.java" startLine="93" startPosition="117" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030573611853647836" fileName="RegexUtil.java" startLine="26" startPosition="85" endLine="30" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030573611853647854" fileName="RegexUtil.java" startLine="32" startPosition="7" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030573611853647934" fileName="RegexUtil.java" startLine="51" startPosition="143" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030573611853647960" fileName="RegexUtil.java" startLine="60" startPosition="116" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030573611853795801" fileName="RegexUtil.java" startLine="81" startPosition="0" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030573611853647829" fileName="RegexUtil.java" startLine="25" startPosition="14" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030573611853647999" fileName="RegexUtil.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectNamedParentheses#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="8030573611853647827" fileName="RegexUtil.java" startLine="25" startPosition="12" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8030573611853647925" fileName="RegexUtil.java" startLine="50" startPosition="22" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030573611853647956" fileName="RegexUtil.java" startLine="59" startPosition="0" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030573611853795847" fileName="RegexUtil.java" startLine="91" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRegexpIfContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8030573611853647923" fileName="RegexUtil.java" startLine="49" startPosition="131" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030573611853647810" fileName="RegexUtil.java" startLine="22" startPosition="29" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030573611853795785" fileName="RegexUtil.java" startLine="75" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectNamedParenthesesInternal#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;Ljava/util/List;)V" />
+    <nodeInfo nodeId="8030573611853647804" fileName="RegexUtil.java" startLine="20" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030573611853647779" fileName="RegexUtil.java" startLine="15" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectMatchReferences#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="8030573611853647890" fileName="RegexUtil.java" startLine="41" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findRegexpUsingConstructionFor#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="8030573611853647776" fileName="RegexUtil.java" startLine="13" startPosition="22" endLine="13" endPosition="22" />
+    <scopeInfo nodeId="8030573611853647797" fileName="RegexUtil.java" startLine="18" startPosition="144" endLine="19" endPosition="102" />
+    <scopeInfo nodeId="8030573611853647811" fileName="RegexUtil.java" startLine="23" startPosition="149" endLine="24" endPosition="71" />
+    <scopeInfo nodeId="8030573611853647857" fileName="RegexUtil.java" startLine="34" startPosition="159" endLine="35" endPosition="107" />
+    <scopeInfo nodeId="8030573611853647911" fileName="RegexUtil.java" startLine="45" startPosition="22" endLine="46" endPosition="17" />
+    <scopeInfo nodeId="8030573611853647944" fileName="RegexUtil.java" startLine="53" startPosition="74" endLine="54" endPosition="29" />
+    <scopeInfo nodeId="8030573611853647973" fileName="RegexUtil.java" startLine="62" startPosition="124" endLine="63" endPosition="22" />
+    <scopeInfo nodeId="8030573611853795789" fileName="RegexUtil.java" startLine="77" startPosition="53" endLine="78" endPosition="13" />
+    <scopeInfo nodeId="8030573611853795816" fileName="RegexUtil.java" startLine="83" startPosition="68" endLine="84" endPosition="102" />
+    <scopeInfo nodeId="8030573611853795832" fileName="RegexUtil.java" startLine="87" startPosition="148" endLine="88" endPosition="51" />
+    <scopeInfo nodeId="8030573611853795860" fileName="RegexUtil.java" startLine="94" startPosition="299" endLine="95" endPosition="97" />
+    <scopeInfo nodeId="8030573611853647773" fileName="RegexUtil.java" startLine="12" startPosition="24" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="8030573611853647837" fileName="RegexUtil.java" startLine="27" startPosition="162" endLine="29" endPosition="18" />
+    <scopeInfo nodeId="8030573611853647788" fileName="RegexUtil.java" startLine="17" startPosition="49" endLine="20" endPosition="5">
+      <varInfo nodeId="8030573611853647795" varName="ruc" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647855" fileName="RegexUtil.java" startLine="33" startPosition="30" endLine="36" endPosition="9" />
+    <scopeInfo nodeId="8030573611853647856" fileName="RegexUtil.java" startLine="33" startPosition="30" endLine="36" endPosition="9">
+      <varInfo nodeId="8030573611853647870" varName="expr" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647937" fileName="RegexUtil.java" startLine="52" startPosition="175" endLine="55" endPosition="11" />
+    <scopeInfo nodeId="8030573611853647971" fileName="RegexUtil.java" startLine="61" startPosition="198" endLine="64" endPosition="9" />
+    <scopeInfo nodeId="8030573611853648000" fileName="RegexUtil.java" startLine="70" startPosition="65" endLine="73" endPosition="15">
+      <varInfo nodeId="8030573611853648002" varName="res" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853795809" fileName="RegexUtil.java" startLine="82" startPosition="163" endLine="85" endPosition="7" />
+    <scopeInfo nodeId="8030573611853795824" fileName="RegexUtil.java" startLine="86" startPosition="5" endLine="89" endPosition="5">
+      <varInfo nodeId="8030573611853795830" varName="mpe" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647835" fileName="RegexUtil.java" startLine="26" startPosition="85" endLine="30" endPosition="11" />
+    <scopeInfo nodeId="8030573611853647933" fileName="RegexUtil.java" startLine="51" startPosition="143" endLine="56" endPosition="9" />
+    <scopeInfo nodeId="8030573611853647934" fileName="RegexUtil.java" startLine="51" startPosition="143" endLine="56" endPosition="9">
+      <varInfo nodeId="8030573611853647935" varName="regref" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647959" fileName="RegexUtil.java" startLine="60" startPosition="116" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="8030573611853647960" fileName="RegexUtil.java" startLine="60" startPosition="116" endLine="65" endPosition="7">
+      <varInfo nodeId="8030573611853647969" varName="expr" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853795801" fileName="RegexUtil.java" startLine="81" startPosition="0" endLine="86" endPosition="5">
+      <varInfo nodeId="8030573611853795807" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853795850" fileName="RegexUtil.java" startLine="92" startPosition="53" endLine="97" endPosition="16">
+      <varInfo nodeId="8030573611853795852" varName="container" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647828" fileName="RegexUtil.java" startLine="25" startPosition="14" endLine="31" endPosition="9" />
+    <scopeInfo nodeId="8030573611853647829" fileName="RegexUtil.java" startLine="25" startPosition="14" endLine="31" endPosition="9">
+      <varInfo nodeId="8030573611853647833" varName="elseif" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647999" fileName="RegexUtil.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="8030573611853648017" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647924" fileName="RegexUtil.java" startLine="50" startPosition="22" endLine="57" endPosition="7" />
+    <scopeInfo nodeId="8030573611853647925" fileName="RegexUtil.java" startLine="50" startPosition="22" endLine="57" endPosition="7">
+      <varInfo nodeId="8030573611853647931" varName="parentRuc" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647956" fileName="RegexUtil.java" startLine="59" startPosition="0" endLine="66" endPosition="5">
+      <varInfo nodeId="8030573611853647957" varName="ifst" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853795847" fileName="RegexUtil.java" startLine="91" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="8030573611853795887" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853795787" fileName="RegexUtil.java" startLine="76" startPosition="104" endLine="89" endPosition="5" />
+    <scopeInfo nodeId="8030573611853647805" fileName="RegexUtil.java" startLine="21" startPosition="126" endLine="37" endPosition="7">
+      <varInfo nodeId="8030573611853647807" varName="toCollect" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853795785" fileName="RegexUtil.java" startLine="75" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="8030573611853795843" varName="found" />
+      <varInfo nodeId="8030573611853795839" varName="node" />
+      <varInfo nodeId="8030573611853795841" varName="seen" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647804" fileName="RegexUtil.java" startLine="20" startPosition="5" endLine="38" endPosition="5">
+      <varInfo nodeId="8030573611853647881" varName="ifst" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647781" fileName="RegexUtil.java" startLine="16" startPosition="73" endLine="39" endPosition="19">
+      <varInfo nodeId="8030573611853647783" varName="matches" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647892" fileName="RegexUtil.java" startLine="42" startPosition="65" endLine="67" endPosition="16">
+      <varInfo nodeId="8030573611853647916" varName="dcl" />
+      <varInfo nodeId="8030573611853647894" varName="parens" />
+      <varInfo nodeId="8030573611853647900" varName="ruc" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647779" fileName="RegexUtil.java" startLine="15" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="8030573611853647886" varName="enclosingNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647890" fileName="RegexUtil.java" startLine="41" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="8030573611853647991" varName="ref" />
+    </scopeInfo>
+    <unitInfo nodeId="8030573611853647771" fileName="RegexUtil.java" startLine="12" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.RegexUtil" />
   </root>
 </debugInfo>
 

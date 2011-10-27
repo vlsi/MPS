@@ -24,13 +24,13 @@
     <scopeInfo nodeId="5052799592147817905" fileName="GWTTransientValues.java" startLine="24" startPosition="65" endLine="28" endPosition="75" />
     <scopeInfo nodeId="5052799592147817933" fileName="GWTTransientValues.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="5052799592147817875" fileName="GWTTransientValues.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="5052799592147817898" varName="genContext" />
       <varInfo nodeId="5052799592147817900" varName="node" />
       <varInfo nodeId="5052799592147817902" varName="value" />
-      <varInfo nodeId="5052799592147817898" varName="genContext" />
     </scopeInfo>
     <scopeInfo nodeId="5052799592147817904" fileName="GWTTransientValues.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="5052799592147817931" varName="node" />
       <varInfo nodeId="5052799592147817929" varName="genContext" />
+      <varInfo nodeId="5052799592147817931" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="5052799592147817874" fileName="GWTTransientValues.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.gwt.generator.template.helper.GWTTransientValues" />
   </root>

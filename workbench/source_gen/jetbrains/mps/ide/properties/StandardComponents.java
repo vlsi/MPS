@@ -89,6 +89,8 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRe
 import jetbrains.mps.InternalFlag;
 import javax.swing.JCheckBox;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import com.intellij.openapi.ui.ComboBox;
+import javax.swing.DefaultComboBoxModel;
 import java.awt.Insets;
 
 public class StandardComponents {
@@ -532,6 +534,18 @@ public class StandardComponents {
     Property pNamespace = BeanProperty.create(fieldName);
     Property pNamespaceVar = BeanProperty.create("text");
     owner.addBinding(Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, props, pNamespace, tfNamespace, pNamespaceVar));
+    return panel;
+  }
+
+  public static JPanel createComboSelection(final IBindedDialog owner, final String caption, final List<String> values, Object props, String fieldName) {
+    JPanel panel = new JPanel(new BorderLayout());
+    panel.setBorder(new EmptyBorder(2, 2, 2, 2));
+    panel.add(new JLabel(caption + ":"), BorderLayout.WEST);
+    final ComboBox comboBox = new ComboBox(new DefaultComboBoxModel(values.toArray(new String[values.size()])));
+    panel.add(comboBox, BorderLayout.CENTER);
+    Property pNamespace = BeanProperty.create(fieldName);
+    Property pNamespaceVar = BeanProperty.create("selectedItem");
+    owner.addBinding(Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, props, pNamespace, comboBox, pNamespaceVar));
     return panel;
   }
 

@@ -231,6 +231,7 @@
   <dependency className="jetbrains.mps.vcs.diff.ui.DiffEditorsGroup" file="DiffEditorsGroup.java">
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.Rectangle" />
+    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -397,10 +398,14 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -412,10 +417,13 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeColors" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffTemporaryModule" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.InvokeRootDifferenceAction" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.InvokeTextDiffAction" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -853,6 +861,25 @@
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.ui.RevertRootsAction" file="RevertRootsAction.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" file="RootDifferenceDialog.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
@@ -861,43 +888,44 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.Separator" />
     <classNode dependClassName="com.intellij.openapi.diff.ex.DiffStatusBar" />
     <classNode dependClassName="com.intellij.openapi.diff.impl.util.TextDiffType" />
+    <classNode dependClassName="com.intellij.openapi.util.Ref" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JSplitPane" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorsGroup" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffModelTree" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffTemporaryModule" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.NextPreviousTraverser" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.GoToNeighbourRootActions" />
   </dependency>

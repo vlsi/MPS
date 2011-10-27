@@ -45,8 +45,12 @@ public class CommonPaths {
       }
     }, types);
     for (ClassType type : types) {
-      if (type == ClassType.WORKBENCH) {
-        addJars(result, new File(PathManager.getHomePath()));
+      if(type == ClassType.CORE) {
+        addCoreJars(result);
+      } else if (type == ClassType.EDITOR) {
+        addEditorJars(result);
+      } else if (type == ClassType.WORKBENCH) {
+        addIdeaJars(result);
       }
     }
     return itemToPath(result);
@@ -128,37 +132,35 @@ public class CommonPaths {
 
   public static IClassPathItem getMPSClassPath() {
     CompositeClassPathItem result = new CompositeClassPathItem();
-    addJars(result, new File(libPath()));
+    addCoreJars(result);
+    addEditorJars(result);
+    addIdeaJars(result);
     addClasses(result, PathManager.getHomePath());
     return result;
   }
 
-  private static void addJars(CompositeClassPathItem result, File dir) {
-/*
-    for (File child:dir.listFiles()){
-      if (child.isDirectory()){
-        addJars(result,child);
-      } else if (child.getName().endsWith(".jar")){
-        result.add(ClassPathFactory.getInstance().createFromPath(child.getAbsolutePath()));
-      }
-    }
-*/
+  private static void addCoreJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-core.jar");
-    addIfExists(result, "/lib/mps-editor.jar");
-    addIfExists(result, "/lib/mps-workbench.jar");
+    addIfExists(result, "/lib/annotations.jar");
+    addIfExists(result, "/lib/log4j.jar");
+    addIfExists(result, "/lib/commons-lang-2.4.jar");
+    addIfExists(result, "/lib/jdom.jar");
+    addIfExists(result, "/lib/ecj.jar");
+  }
 
+  private static void addEditorJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-editor.jar");
+  }
+
+  private static void addIdeaJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-workbench.jar");
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");
-    addIfExists(result, "/lib/annotations.jar");
     addIfExists(result, "/lib/execution-api.jar");
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");
     addIfExists(result, "/lib/junit-4.8.2.jar");
-    addIfExists(result, "/lib/log4j.jar");
-    addIfExists(result, "/lib/commons-lang-2.4.jar");
     addIfExists(result, "/lib/picocontainer.jar");
-    addIfExists(result, "/lib/jdom.jar");
-    addIfExists(result, "/lib/ecj.jar");
   }
 
   public static void addClasses(final CompositeClassPathItem result, final String homePath) {

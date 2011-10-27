@@ -18,11 +18,12 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.progress.ProgressMonitor;
 import com.intellij.openapi.project.DumbService;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.facet.plugin.MakeGenerationStrategy;
@@ -242,8 +243,8 @@ public class Generate_Facet extends IFacet.Stub {
           Iterable<IResource> _output_fi61u2_a0b = null;
           switch (0) {
             case 0:
-              if (DumbService.getInstance(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project()).isDumb()) {
-                DumbService.getInstance(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project()).showDumbModeNotification("Generation is not available until indices are built.");
+              if (DumbService.getInstance(ProjectHelper.toIdeaProject(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project())).isDumb()) {
+                DumbService.getInstance(ProjectHelper.toIdeaProject(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project())).showDumbModeNotification("Generation is not available until indices are built.");
                 return new IResult.FAILURE(_output_fi61u2_a0b);
               }
             default:

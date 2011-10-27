@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.IFile;
 import java.io.InputStream;
 import java.io.IOException;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.CommonPaths;
 import org.jdom.Element;
 import jetbrains.mps.vfs.FileSystem;
@@ -131,7 +132,8 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   @Nullable
   private URL getCacheUrl(@NotNull SModelDescriptor sm, IModule module) {
     IClassPathItem classPathItem;
-    if (module.isCompileInMPS() || !(module.getModuleDescriptor().getStubModelEntries().isEmpty())) {
+    ModuleDescriptor descriptor = module.getModuleDescriptor();
+    if (module.isCompileInMPS() || descriptor != null && !(descriptor.getStubModelEntries().isEmpty())) {
       classPathItem = module.getClassPathItem();
     } else {
       classPathItem = CommonPaths.getMPSClassPath();

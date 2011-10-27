@@ -82,7 +82,7 @@ public class ExecuteConfiguration_Function_Behavior {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(MPS.Classpath/com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
+          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.execution.process(MPS.Workbench/com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
           quotedNode_1.addChild("argument", quotedNode1_6);
         }
         result = quotedNode1_4;

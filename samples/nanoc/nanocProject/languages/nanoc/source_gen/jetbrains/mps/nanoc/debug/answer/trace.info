@@ -365,14 +365,14 @@
       <varInfo nodeId="3990508698139427707" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427830" fileName="GDBAnswerProducer.java" startLine="74" startPosition="43" endLine="80" endPosition="25">
+      <varInfo nodeId="3990508698139427842" varName="asyncAnswer" />
       <varInfo nodeId="3990508698139427832" varName="asyncClass" />
       <varInfo nodeId="3990508698139427836" varName="value" />
-      <varInfo nodeId="3990508698139427842" varName="asyncAnswer" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427790" fileName="GDBAnswerProducer.java" startLine="87" startPosition="19" endLine="93" endPosition="26">
-      <varInfo nodeId="3990508698139427796" varName="value" />
       <varInfo nodeId="3990508698139427802" varName="resultAnswer" />
       <varInfo nodeId="3990508698139427792" varName="resultClass" />
+      <varInfo nodeId="3990508698139427796" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427590" fileName="GDBAnswerProducer.java" startLine="15" startPosition="42" endLine="22" endPosition="5" />
     <scopeInfo nodeId="3990508698139427685" fileName="GDBAnswerProducer.java" startLine="47" startPosition="27" endLine="54" endPosition="5" />
@@ -386,8 +386,8 @@
     <scopeInfo nodeId="3990508698139427665" fileName="GDBAnswerProducer.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="3990508698139428012" fileName="GDBAnswerProducer.java" startLine="148" startPosition="0" endLine="156" endPosition="0" />
     <scopeInfo nodeId="3990508698139428346" fileName="GDBAnswerProducer.java" startLine="259" startPosition="47" endLine="267" endPosition="63">
-      <varInfo nodeId="3990508698139428348" varName="varSb" />
       <varInfo nodeId="3990508698139428369" varName="value" />
+      <varInfo nodeId="3990508698139428348" varName="varSb" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427585" fileName="GDBAnswerProducer.java" startLine="14" startPosition="0" endLine="23" endPosition="3">
       <varInfo nodeId="3990508698139427588" varName="input" />
@@ -425,8 +425,8 @@
       <varInfo nodeId="3990508698139427924" varName="recordValue" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428187" fileName="GDBAnswerProducer.java" startLine="192" startPosition="16" endLine="209" endPosition="7">
-      <varInfo nodeId="3990508698139428194" varName="result" />
       <varInfo nodeId="3990508698139428189" varName="listMapValue" />
+      <varInfo nodeId="3990508698139428194" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428133" fileName="GDBAnswerProducer.java" startLine="210" startPosition="12" endLine="227" endPosition="7">
       <varInfo nodeId="3990508698139428135" varName="listValue" />
@@ -438,13 +438,13 @@
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428255" fileName="GDBAnswerProducer.java" startLine="230" startPosition="0" endLine="258" endPosition="0" />
     <scopeInfo nodeId="3990508698139427731" fileName="GDBAnswerProducer.java" startLine="66" startPosition="34" endLine="97" endPosition="5">
-      <varInfo nodeId="3990508698139427737" varName="token" />
       <varInfo nodeId="3990508698139427733" varName="c" />
+      <varInfo nodeId="3990508698139427737" varName="token" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427728" fileName="GDBAnswerProducer.java" startLine="65" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="3990508698139428095" fileName="GDBAnswerProducer.java" startLine="180" startPosition="31" endLine="228" endPosition="5">
-      <varInfo nodeId="3990508698139428125" varName="isMap" />
       <varInfo nodeId="3990508698139428121" varName="first" />
+      <varInfo nodeId="3990508698139428125" varName="isMap" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428092" fileName="GDBAnswerProducer.java" startLine="179" startPosition="0" endLine="230" endPosition="0" />
     <unitInfo nodeId="3990508698139427565" fileName="GDBAnswerProducer.java" startLine="7" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.GDBAnswerProducer" />
@@ -549,8 +549,8 @@
       <varInfo nodeId="3990508698139430336" varName="entry" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139430304" fileName="ListMapValue.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="3990508698139430309" varName="value" />
       <varInfo nodeId="3990508698139430307" varName="key" />
+      <varInfo nodeId="3990508698139430309" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139430326" fileName="ListMapValue.java" startLine="19" startPosition="37" endLine="24" endPosition="18">
       <varInfo nodeId="3990508698139430328" varName="result" />

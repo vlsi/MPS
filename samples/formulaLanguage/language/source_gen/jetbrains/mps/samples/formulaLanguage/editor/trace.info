@@ -342,8 +342,8 @@
     <scopeInfo nodeId="1111785846484" fileName="Operation_Editor.java" startLine="32" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1111785846484" fileName="Operation_Editor.java" startLine="41" startPosition="87" endLine="56" endPosition="22" />
     <scopeInfo nodeId="1111785846484" fileName="Operation_Editor.java" startLine="40" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="1111785846484" fileName="Operation_Editor.java" startLine="59" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_Editor$ReplaceWith_Operation_cellMenu_a0b0" />
     <unitInfo nodeId="1111785846484" fileName="Operation_Editor.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_Editor" />
+    <unitInfo nodeId="1111785846484" fileName="Operation_Editor.java" startLine="59" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_Editor$ReplaceWith_Operation_cellMenu_a0b0" />
   </root>
   <root nodeId="1111786320571">
     <nodeInfo nodeId="1111786320571" fileName="PlusOperation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -433,8 +433,8 @@
     <scopeInfo nodeId="1111786320571" fileName="PlusOperation_Editor.java" startLine="67" startPosition="87" endLine="82" endPosition="22" />
     <scopeInfo nodeId="1111786320571" fileName="PlusOperation_Editor.java" startLine="48" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1111786320571" fileName="PlusOperation_Editor.java" startLine="66" startPosition="0" endLine="84" endPosition="0" />
-    <unitInfo nodeId="1111786320571" fileName="PlusOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.PlusOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_0" />
     <unitInfo nodeId="1111786320571" fileName="PlusOperation_Editor.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.PlusOperation_Editor" />
+    <unitInfo nodeId="1111786320571" fileName="PlusOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.PlusOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_0" />
   </root>
   <root nodeId="1111786419670">
     <nodeInfo nodeId="1111786419670" fileName="MinusOperation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -524,8 +524,8 @@
     <scopeInfo nodeId="1111786419670" fileName="MinusOperation_Editor.java" startLine="67" startPosition="87" endLine="82" endPosition="22" />
     <scopeInfo nodeId="1111786419670" fileName="MinusOperation_Editor.java" startLine="48" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1111786419670" fileName="MinusOperation_Editor.java" startLine="66" startPosition="0" endLine="84" endPosition="0" />
-    <unitInfo nodeId="1111786419670" fileName="MinusOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.MinusOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_1" />
     <unitInfo nodeId="1111786419670" fileName="MinusOperation_Editor.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.MinusOperation_Editor" />
+    <unitInfo nodeId="1111786419670" fileName="MinusOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.MinusOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_1" />
   </root>
   <root nodeId="1112037647500">
     <nodeInfo nodeId="1112037647500" fileName="LessThanOperation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -615,8 +615,8 @@
     <scopeInfo nodeId="1112037647500" fileName="LessThanOperation_Editor.java" startLine="67" startPosition="87" endLine="82" endPosition="22" />
     <scopeInfo nodeId="1112037647500" fileName="LessThanOperation_Editor.java" startLine="48" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1112037647500" fileName="LessThanOperation_Editor.java" startLine="66" startPosition="0" endLine="84" endPosition="0" />
-    <unitInfo nodeId="1112037647500" fileName="LessThanOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.LessThanOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_2" />
     <unitInfo nodeId="1112037647500" fileName="LessThanOperation_Editor.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.LessThanOperation_Editor" />
+    <unitInfo nodeId="1112037647500" fileName="LessThanOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.LessThanOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_2" />
   </root>
   <root nodeId="1112384321590">
     <nodeInfo nodeId="1112384321590" fileName="MultOperation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -706,8 +706,8 @@
     <scopeInfo nodeId="1112384321590" fileName="MultOperation_Editor.java" startLine="67" startPosition="86" endLine="82" endPosition="22" />
     <scopeInfo nodeId="1112384321590" fileName="MultOperation_Editor.java" startLine="48" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1112384321590" fileName="MultOperation_Editor.java" startLine="66" startPosition="0" endLine="84" endPosition="0" />
-    <unitInfo nodeId="1112384321590" fileName="MultOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.MultOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_3" />
     <unitInfo nodeId="1112384321590" fileName="MultOperation_Editor.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.MultOperation_Editor" />
+    <unitInfo nodeId="1112384321590" fileName="MultOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.MultOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_3" />
   </root>
   <root nodeId="1112406934674">
     <nodeInfo nodeId="1112406934674" fileName="GreaterThanOperation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -797,8 +797,8 @@
     <scopeInfo nodeId="1112406934674" fileName="GreaterThanOperation_Editor.java" startLine="67" startPosition="87" endLine="82" endPosition="22" />
     <scopeInfo nodeId="1112406934674" fileName="GreaterThanOperation_Editor.java" startLine="48" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1112406934674" fileName="GreaterThanOperation_Editor.java" startLine="66" startPosition="0" endLine="84" endPosition="0" />
-    <unitInfo nodeId="1112406934674" fileName="GreaterThanOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.GreaterThanOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_4" />
     <unitInfo nodeId="1112406934674" fileName="GreaterThanOperation_Editor.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.GreaterThanOperation_Editor" />
+    <unitInfo nodeId="1112406934674" fileName="GreaterThanOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.GreaterThanOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_4" />
   </root>
   <root nodeId="1133954712311">
     <nodeInfo nodeId="1133954712311" fileName="StringConstant_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -964,8 +964,8 @@
     <scopeInfo nodeId="1133956004355" fileName="AndOperation_Editor.java" startLine="67" startPosition="87" endLine="82" endPosition="22" />
     <scopeInfo nodeId="1133956004355" fileName="AndOperation_Editor.java" startLine="48" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1133956004355" fileName="AndOperation_Editor.java" startLine="66" startPosition="0" endLine="84" endPosition="0" />
-    <unitInfo nodeId="1133956004355" fileName="AndOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.AndOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_5" />
     <unitInfo nodeId="1133956004355" fileName="AndOperation_Editor.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.AndOperation_Editor" />
+    <unitInfo nodeId="1133956004355" fileName="AndOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.AndOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_5" />
   </root>
   <root nodeId="1133956014438">
     <nodeInfo nodeId="1133956014438" fileName="OrOperation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1055,8 +1055,8 @@
     <scopeInfo nodeId="1133956014438" fileName="OrOperation_Editor.java" startLine="67" startPosition="87" endLine="82" endPosition="22" />
     <scopeInfo nodeId="1133956014438" fileName="OrOperation_Editor.java" startLine="48" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1133956014438" fileName="OrOperation_Editor.java" startLine="66" startPosition="0" endLine="84" endPosition="0" />
-    <unitInfo nodeId="1133956014438" fileName="OrOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.OrOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_6" />
     <unitInfo nodeId="1133956014438" fileName="OrOperation_Editor.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.OrOperation_Editor" />
+    <unitInfo nodeId="1133956014438" fileName="OrOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.OrOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_6" />
   </root>
   <root nodeId="1134035392491">
     <nodeInfo nodeId="1134035392491" fileName="EqualsOperation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1146,8 +1146,8 @@
     <scopeInfo nodeId="1134035392491" fileName="EqualsOperation_Editor.java" startLine="67" startPosition="87" endLine="82" endPosition="22" />
     <scopeInfo nodeId="1134035392491" fileName="EqualsOperation_Editor.java" startLine="48" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1134035392491" fileName="EqualsOperation_Editor.java" startLine="66" startPosition="0" endLine="84" endPosition="0" />
-    <unitInfo nodeId="1134035392491" fileName="EqualsOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.EqualsOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_7" />
     <unitInfo nodeId="1134035392491" fileName="EqualsOperation_Editor.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.EqualsOperation_Editor" />
+    <unitInfo nodeId="1134035392491" fileName="EqualsOperation_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.EqualsOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_7" />
   </root>
   <root nodeId="1134036128378">
     <nodeInfo nodeId="1134036128378" fileName="ParenthisizedExpression_Editor.java" startLine="49" startPosition="58" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1308,8 +1308,8 @@
     <scopeInfo nodeId="1142519843962" fileName="IsNullOperation_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1142519843962" fileName="IsNullOperation_Editor.java" startLine="56" startPosition="87" endLine="70" endPosition="22" />
     <scopeInfo nodeId="1142519843962" fileName="IsNullOperation_Editor.java" startLine="55" startPosition="0" endLine="72" endPosition="0" />
-    <unitInfo nodeId="1142519843962" fileName="IsNullOperation_Editor.java" startLine="73" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.IsNullOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_8" />
     <unitInfo nodeId="1142519843962" fileName="IsNullOperation_Editor.java" startLine="23" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.IsNullOperation_Editor" />
+    <unitInfo nodeId="1142519843962" fileName="IsNullOperation_Editor.java" startLine="73" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.IsNullOperation_Editor$ReplaceWith_Operation_cellMenu_a0b0_8" />
   </root>
   <root nodeId="1142529738959">
     <nodeInfo nodeId="1142529738959" fileName="NotOperation_Editor.java" startLine="57" startPosition="58" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1408,8 +1408,8 @@
     <scopeInfo nodeId="1154452994236" fileName="Operation_leftOperand_Actions.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1154452994236" fileName="Operation_leftOperand_Actions.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1154452994236" fileName="Operation_leftOperand_Actions.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1154452994236" fileName="Operation_leftOperand_Actions.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_leftOperand_Actions$Operation_leftOperand_Actions_DELETE" />
     <unitInfo nodeId="1154452994236" fileName="Operation_leftOperand_Actions.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_leftOperand_Actions" />
+    <unitInfo nodeId="1154452994236" fileName="Operation_leftOperand_Actions.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_leftOperand_Actions$Operation_leftOperand_Actions_DELETE" />
   </root>
   <root nodeId="1154453098790">
     <nodeInfo nodeId="1154453098790" fileName="Operation_rightOperand_Actions.java" startLine="14" startPosition="95" endLine="15" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1433,8 +1433,8 @@
     <scopeInfo nodeId="1154453098790" fileName="Operation_rightOperand_Actions.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1154453098790" fileName="Operation_rightOperand_Actions.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1154453098790" fileName="Operation_rightOperand_Actions.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1154453098790" fileName="Operation_rightOperand_Actions.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_rightOperand_Actions$Operation_rightOperand_Actions_DELETE" />
     <unitInfo nodeId="1154453098790" fileName="Operation_rightOperand_Actions.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_rightOperand_Actions" />
+    <unitInfo nodeId="1154453098790" fileName="Operation_rightOperand_Actions.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_rightOperand_Actions$Operation_rightOperand_Actions_DELETE" />
   </root>
   <root nodeId="1154453497787">
     <nodeInfo nodeId="1154453497787" fileName="Operation_symbol_Actions.java" startLine="12" startPosition="95" endLine="13" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1457,8 +1457,8 @@
     <scopeInfo nodeId="1154453497787" fileName="Operation_symbol_Actions.java" startLine="11" startPosition="39" endLine="15" endPosition="0" />
     <scopeInfo nodeId="1154453497787" fileName="Operation_symbol_Actions.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1154453497787" fileName="Operation_symbol_Actions.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="1154453497787" fileName="Operation_symbol_Actions.java" startLine="16" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_symbol_Actions$Operation_symbol_Actions_DELETE" />
     <unitInfo nodeId="1154453497787" fileName="Operation_symbol_Actions.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_symbol_Actions" />
+    <unitInfo nodeId="1154453497787" fileName="Operation_symbol_Actions.java" startLine="16" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.Operation_symbol_Actions$Operation_symbol_Actions_DELETE" />
   </root>
 </debugInfo>
 

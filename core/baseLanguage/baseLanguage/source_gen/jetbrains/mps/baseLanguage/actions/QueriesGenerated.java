@@ -59,7 +59,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
-import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
+import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;

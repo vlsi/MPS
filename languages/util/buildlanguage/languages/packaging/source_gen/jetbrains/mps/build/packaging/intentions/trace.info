@@ -59,10 +59,10 @@
     <scopeInfo nodeId="1228401917617" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="55" startPosition="129" endLine="61" endPosition="5" />
     <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1228398444444" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="53" startPosition="76" endLine="67" endPosition="29">
+      <varInfo nodeId="1228401860649" varName="externalProps" />
+      <varInfo nodeId="1228398644854" varName="model" />
       <varInfo nodeId="1228399873799" varName="opener" />
       <varInfo nodeId="1228398608360" varName="project" />
-      <varInfo nodeId="1228398644854" varName="model" />
-      <varInfo nodeId="1228401860649" varName="externalProps" />
     </scopeInfo>
     <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="52" startPosition="0" endLine="69" endPosition="0" />
     <unitInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.build.packaging.intentions.CreateNewBuildLanguageProject_Intention" />

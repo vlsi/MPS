@@ -108,13 +108,13 @@
       <varInfo nodeId="7125917778320084504" varName="settings" />
     </scopeInfo>
     <scopeInfo nodeId="7125917778320084306" fileName="CppGDBCreator.java" startLine="31" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="7125917778320084315" varName="project" />
       <varInfo nodeId="7125917778320084309" varName="executor" />
-      <varInfo nodeId="7125917778320084313" varName="state" />
+      <varInfo nodeId="7125917778320084315" varName="project" />
       <varInfo nodeId="7125917778320084311" varName="runner" />
+      <varInfo nodeId="7125917778320084313" varName="state" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139426589" fileName="CppGDBCreator.java" startLine="43" startPosition="62" endLine="53" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppGDBCreator$1" />
     <unitInfo nodeId="3990508698139426393" fileName="CppGDBCreator.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppGDBCreator" />
+    <unitInfo nodeId="3990508698139426589" fileName="CppGDBCreator.java" startLine="43" startPosition="62" endLine="53" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppGDBCreator$1" />
   </root>
   <root nodeId="3990508698139427192">
     <nodeInfo nodeId="3990508698139427194" fileName="ProgramsLocationUtil.java" startLine="6" startPosition="35" endLine="7" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourGdbLocation" />
@@ -164,12 +164,12 @@
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427486" fileName="GDBCommands.java" startLine="12" startPosition="79" endLine="19" endPosition="58">
       <varInfo nodeId="3990508698139427494" varName="dir" />
-      <varInfo nodeId="3990508698139427500" varName="workingDir" />
       <varInfo nodeId="3990508698139427488" varName="programFile" />
+      <varInfo nodeId="3990508698139427500" varName="workingDir" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427479" fileName="GDBCommands.java" startLine="11" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="3990508698139427482" varName="gdbProcess" />
       <varInfo nodeId="3990508698139427484" varName="command" />
+      <varInfo nodeId="3990508698139427482" varName="gdbProcess" />
     </scopeInfo>
     <unitInfo nodeId="3990508698139427473" fileName="GDBCommands.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.nanoc.debug.GDBCommands" />
   </root>
@@ -261,15 +261,15 @@
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428646" fileName="CppDebugSession.java" startLine="119" startPosition="74" endLine="121" endPosition="55" />
     <scopeInfo nodeId="3990508698139428493" fileName="CppDebugSession.java" startLine="54" startPosition="55" endLine="57" endPosition="0">
-      <varInfo nodeId="3990508698139428498" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139428496" varName="answer" />
+      <varInfo nodeId="3990508698139428498" varName="receivedStreamAnswers" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428502" fileName="CppDebugSession.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="3990508698139428505" varName="terminateTargetProcess" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428524" fileName="CppDebugSession.java" startLine="65" startPosition="54" endLine="68" endPosition="0">
-      <varInfo nodeId="3990508698139428529" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139428527" varName="answer" />
+      <varInfo nodeId="3990508698139428529" varName="receivedStreamAnswers" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428533" fileName="CppDebugSession.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="3990508698139428538" fileName="CppDebugSession.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
@@ -288,8 +288,8 @@
     <scopeInfo nodeId="3990508698139428453" fileName="CppDebugSession.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="3990508698139428485" fileName="CppDebugSession.java" startLine="53" startPosition="23" endLine="57" endPosition="7" />
     <scopeInfo nodeId="3990508698139428730" fileName="CppDebugSession.java" startLine="89" startPosition="59" endLine="93" endPosition="0">
-      <varInfo nodeId="3990508698139428735" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139428733" varName="answer" />
+      <varInfo nodeId="3990508698139428735" varName="receivedStreamAnswers" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428604" fileName="CppDebugSession.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="3990508698139428607" varName="gdbProcess" />
@@ -301,8 +301,8 @@
     <scopeInfo nodeId="3990508698139428657" fileName="CppDebugSession.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
     <scopeInfo nodeId="3990508698139428663" fileName="CppDebugSession.java" startLine="128" startPosition="0" endLine="132" endPosition="0" />
     <scopeInfo nodeId="3990508698139428473" fileName="CppDebugSession.java" startLine="45" startPosition="56" endLine="50" endPosition="0">
-      <varInfo nodeId="3990508698139428478" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139428476" varName="answer" />
+      <varInfo nodeId="3990508698139428478" varName="receivedStreamAnswers" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428512" fileName="CppDebugSession.java" startLine="63" startPosition="26" endLine="68" endPosition="7" />
     <scopeInfo nodeId="3990508698139428632" fileName="CppDebugSession.java" startLine="110" startPosition="56" endLine="115" endPosition="0" />
@@ -320,32 +320,32 @@
     <scopeInfo nodeId="3990508698139428623" fileName="CppDebugSession.java" startLine="108" startPosition="51" endLine="115" endPosition="6" />
     <scopeInfo nodeId="3990508698139428638" fileName="CppDebugSession.java" startLine="117" startPosition="0" endLine="124" endPosition="0" />
     <scopeInfo nodeId="3990508698139428676" fileName="CppDebugSession.java" startLine="133" startPosition="101" endLine="140" endPosition="5">
-      <varInfo nodeId="3990508698139428683" varName="debugSessions" />
       <varInfo nodeId="3990508698139428678" varName="debugSessionManager" />
+      <varInfo nodeId="3990508698139428683" varName="debugSessions" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428509" fileName="CppDebugSession.java" startLine="62" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="3990508698139428462" fileName="CppDebugSession.java" startLine="43" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="3990508698139428597" fileName="CppDebugSession.java" startLine="87" startPosition="61" endLine="96" endPosition="0">
-      <varInfo nodeId="3990508698139428602" varName="gdbProcess" />
       <varInfo nodeId="3990508698139428600" varName="answer" />
+      <varInfo nodeId="3990508698139428602" varName="gdbProcess" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428618" fileName="CppDebugSession.java" startLine="107" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="3990508698139428621" varName="resultAnswer" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428669" fileName="CppDebugSession.java" startLine="132" startPosition="0" endLine="142" endPosition="0">
-      <varInfo nodeId="3990508698139428672" varName="p" />
       <varInfo nodeId="3990508698139428674" varName="action" />
+      <varInfo nodeId="3990508698139428672" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428589" fileName="CppDebugSession.java" startLine="86" startPosition="46" endLine="105" endPosition="67" />
     <scopeInfo nodeId="3990508698139428587" fileName="CppDebugSession.java" startLine="85" startPosition="0" endLine="107" endPosition="0" />
+    <unitInfo nodeId="3990508698139428411" fileName="CppDebugSession.java" startLine="25" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppDebugSession" />
+    <unitInfo nodeId="3990508698139428472" fileName="CppDebugSession.java" startLine="45" startPosition="39" endLine="50" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$1" />
     <unitInfo nodeId="3990508698139428492" fileName="CppDebugSession.java" startLine="54" startPosition="39" endLine="57" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$2" />
     <unitInfo nodeId="3990508698139428523" fileName="CppDebugSession.java" startLine="65" startPosition="39" endLine="68" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$3" />
-    <unitInfo nodeId="3990508698139424665" fileName="CppDebugSession.java" startLine="143" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$DebugSessionAction" />
-    <unitInfo nodeId="3990508698139428729" fileName="CppDebugSession.java" startLine="89" startPosition="39" endLine="93" endPosition="9" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$5" />
-    <unitInfo nodeId="3990508698139428472" fileName="CppDebugSession.java" startLine="45" startPosition="39" endLine="50" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$1" />
-    <unitInfo nodeId="3990508698139428631" fileName="CppDebugSession.java" startLine="110" startPosition="8" endLine="115" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$5" />
     <unitInfo nodeId="3990508698139428596" fileName="CppDebugSession.java" startLine="87" startPosition="41" endLine="104" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$4" />
-    <unitInfo nodeId="3990508698139428411" fileName="CppDebugSession.java" startLine="25" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppDebugSession" />
+    <unitInfo nodeId="3990508698139428729" fileName="CppDebugSession.java" startLine="89" startPosition="39" endLine="93" endPosition="9" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$5" />
+    <unitInfo nodeId="3990508698139428631" fileName="CppDebugSession.java" startLine="110" startPosition="8" endLine="115" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$5" />
+    <unitInfo nodeId="3990508698139424665" fileName="CppDebugSession.java" startLine="143" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$DebugSessionAction" />
   </root>
   <root nodeId="3990508698139429713">
     <nodeInfo nodeId="3990508698139429716" fileName="CppUiStateImpl.java" startLine="15" startPosition="48" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThread" />
@@ -454,13 +454,13 @@
     </scopeInfo>
     <scopeInfo nodeId="3990508698139426610" fileName="GdbProcessListener.java" startLine="65" startPosition="61" endLine="68" endPosition="62" />
     <scopeInfo nodeId="4781887771024752109" fileName="GdbProcessListener.java" startLine="27" startPosition="0" endLine="32" endPosition="3">
+      <varInfo nodeId="3495025700496039408" varName="executableFile" />
       <varInfo nodeId="3495025700496003630" varName="process" />
       <varInfo nodeId="3495025700496036067" varName="project" />
-      <varInfo nodeId="3495025700496039408" varName="executableFile" />
     </scopeInfo>
     <scopeInfo nodeId="4781887771024752216" fileName="GdbProcessListener.java" startLine="46" startPosition="67" endLine="51" endPosition="0">
-      <varInfo nodeId="4781887771024752221" varName="gdbProcess" />
       <varInfo nodeId="4781887771024752219" varName="answer" />
+      <varInfo nodeId="4781887771024752221" varName="gdbProcess" />
     </scopeInfo>
     <scopeInfo nodeId="3495025700496038902" fileName="GdbProcessListener.java" startLine="58" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="3990508698139426605" fileName="GdbProcessListener.java" startLine="64" startPosition="0" endLine="70" endPosition="0">
@@ -470,8 +470,8 @@
       <varInfo nodeId="4781887771024752204" varName="eventsHandler" />
     </scopeInfo>
     <scopeInfo nodeId="4781887771024752194" fileName="GdbProcessListener.java" startLine="43" startPosition="94" endLine="54" endPosition="0">
-      <varInfo nodeId="4781887771024752199" varName="receivedStreamAnswers" />
       <varInfo nodeId="4781887771024752197" varName="answer" />
+      <varInfo nodeId="4781887771024752199" varName="receivedStreamAnswers" />
     </scopeInfo>
     <scopeInfo nodeId="4781887771024752136" fileName="GdbProcessListener.java" startLine="37" startPosition="34" endLine="54" endPosition="11">
       <varInfo nodeId="3495025700496038892" varName="cppDebugSession" />
@@ -484,9 +484,9 @@
       <varInfo nodeId="4781887771024752116" varName="event" />
       <varInfo nodeId="4781887771024752118" varName="outputType" />
     </scopeInfo>
-    <unitInfo nodeId="4781887771024752215" fileName="GdbProcessListener.java" startLine="46" startPosition="47" endLine="51" endPosition="13" unitName="jetbrains.mps.nanoc.debug.GdbProcessListener$2" />
-    <unitInfo nodeId="4781887771024752193" fileName="GdbProcessListener.java" startLine="43" startPosition="65" endLine="54" endPosition="9" unitName="jetbrains.mps.nanoc.debug.GdbProcessListener$1" />
     <unitInfo nodeId="4781887771024752102" fileName="GdbProcessListener.java" startLine="22" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.nanoc.debug.GdbProcessListener" />
+    <unitInfo nodeId="4781887771024752193" fileName="GdbProcessListener.java" startLine="43" startPosition="65" endLine="54" endPosition="9" unitName="jetbrains.mps.nanoc.debug.GdbProcessListener$1" />
+    <unitInfo nodeId="4781887771024752215" fileName="GdbProcessListener.java" startLine="46" startPosition="47" endLine="51" endPosition="13" unitName="jetbrains.mps.nanoc.debug.GdbProcessListener$2" />
   </root>
   <root nodeId="7125917778320166850">
     <nodeInfo nodeId="7125917778320166850" fileName="ProcessUtil.java" startLine="9" startPosition="26" endLine="10" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

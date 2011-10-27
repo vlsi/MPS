@@ -9,8 +9,8 @@
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.RegexUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.Flags" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.GeneratorUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />

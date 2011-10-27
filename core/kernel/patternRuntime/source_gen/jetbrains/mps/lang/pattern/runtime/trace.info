@@ -20,10 +20,10 @@
     <scopeInfo nodeId="7783830406851712484" fileName="PatternUtil.java" startLine="25" startPosition="59" endLine="26" endPosition="19" />
     <scopeInfo nodeId="7783830406851712507" fileName="PatternUtil.java" startLine="10" startPosition="26" endLine="12" endPosition="3" />
     <scopeInfo nodeId="7783830406851712422" fileName="PatternUtil.java" startLine="14" startPosition="81" endLine="28" endPosition="16">
-      <varInfo nodeId="7783830406851712478" varName="id2" />
       <varInfo nodeId="7783830406851712472" varName="id1" />
-      <varInfo nodeId="7783830406851712447" varName="sModelReference2" />
+      <varInfo nodeId="7783830406851712478" varName="id2" />
       <varInfo nodeId="7783830406851712441" varName="sModelReference1" />
+      <varInfo nodeId="7783830406851712447" varName="sModelReference2" />
     </scopeInfo>
     <scopeInfo nodeId="7783830406851712419" fileName="PatternUtil.java" startLine="13" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="7783830406851712504" varName="node" />
