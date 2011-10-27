@@ -27,6 +27,9 @@ public class ClassifierTypeUtil {
   public static SNode getTypeCoercedToClassifierType(SNode type) {
     // cast is such to avoid exception if MeetType 
     SNode purified = (SNode) type;
+    if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
+      return purified;
+    }
     if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       return purified;
     }
@@ -41,7 +44,7 @@ public class ClassifierTypeUtil {
       return at;
     }
     if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.NullType")) {
-      return new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0f0a().createNode();
+      return new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0g0a().createNode();
     }
     if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
@@ -150,6 +153,9 @@ public class ClassifierTypeUtil {
   }
 
   public static SNode resolveType(SNode type, SNode concrete) {
+    if (SNodeOperations.isInstanceOf(concrete, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
+      return SNodeOperations.copyNode(concrete);
+    }
     List<SNode> ptypes = SLinkOperations.getTargets(concrete, "parameter", true);
     List<SNode> vars = SLinkOperations.getTargets(SLinkOperations.getTarget(concrete, "classifier", false), "typeVariableDeclaration", true);
     return resolveType(SNodeOperations.copyNode(type), ptypes, vars);
@@ -259,8 +265,8 @@ public class ClassifierTypeUtil {
     return cType;
   }
 
-  public static class QuotationClass_zgotlq_a0a0f0a {
-    public QuotationClass_zgotlq_a0a0f0a() {
+  public static class QuotationClass_zgotlq_a0a0g0a {
+    public QuotationClass_zgotlq_a0a0g0a() {
     }
 
     public SNode createNode() {

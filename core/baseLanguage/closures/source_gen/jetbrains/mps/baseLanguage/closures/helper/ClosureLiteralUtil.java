@@ -14,6 +14,7 @@ import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.JavaNameUtil;
@@ -75,7 +76,7 @@ public class ClosureLiteralUtil {
   }
 
   public static void addAdaptableClosureLiteralTarget(TemplateQueryContext genContext, SNode literal, SNode target) {
-    SNode trgCopy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode trgCopy = SConceptOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(target)), null);
     SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(target, "classifier", false), false);
     matchParameters(genContext, target, trgCopy, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(literal), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), literal);
     Values.LITERAL.set(genContext, trgCopy, literal);
@@ -223,6 +224,9 @@ public class ClosureLiteralUtil {
     if (SNodeOperations.isInstanceOf(right, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return true;
     }
+    if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(right, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
+      return true;
+    }
     if (SNodeOperations.getConceptDeclaration(left) == SNodeOperations.getConceptDeclaration(right)) {
       if (!(SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
         return true;
@@ -236,7 +240,7 @@ public class ClosureLiteralUtil {
     SNode matched = null;
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       matched = whichTypeMatching(SLinkOperations.getTargets(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true), absType);
-    } else if (isTypeMatching(realType, absType)) {
+    } else if (isTypeMatching(absType, realType)) {
       matched = realType;
     }
     if ((matched != null)) {
