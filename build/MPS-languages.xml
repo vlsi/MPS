@@ -248,6 +248,17 @@
       <fileset dir="${base_dir}/workbench/ideSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
+  <target name="pack.jetbrains.mps.ide.mps">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.mps" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.mps">
+      <fileset file="${base_dir}/workbench/mps-workbench/mps.msd" />
+      <fileset dir="${base_dir}/workbench/mps-workbench" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.mps/models">
+      <fileset dir="${base_dir}/workbench/mps-workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.uiLanguage.runtime" />
