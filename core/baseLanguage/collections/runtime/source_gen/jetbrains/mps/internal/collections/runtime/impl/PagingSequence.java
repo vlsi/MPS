@@ -68,7 +68,7 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
       if (!((hasNext.hasNext()))) {
         throw new NoSuchElementException();
       }
-      return this.clearNext();
+      return clearNext();
     }
 
     public void remove() {
@@ -79,17 +79,17 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
       switch (page) {
         case TAKE:
         case SKIP:
-          this.inputIt = input.toIterable().iterator();
-          this.countDown = length;
+          inputIt = input.toIterable().iterator();
+          countDown = length;
           break;
         case TAIL:
         case CUT:
-          this.cache = new ArrayList<U>();
+          cache = new ArrayList<U>();
           for (U o : input) {
             cache.add(o);
           }
-          this.inputIt = cache.iterator();
-          this.countDown = Math.max(0, cache.size() - length);
+          inputIt = cache.iterator();
+          countDown = Math.max(0, cache.size() - length);
           break;
         default:
           break;
@@ -148,15 +148,15 @@ skipping:
 
     private U clearNext() {
       U tmp = next;
-      this.next = null;
-      this.hasNext = HasNextState.UNKNOWN;
+      next = null;
+      hasNext = HasNextState.UNKNOWN;
       return tmp;
     }
 
     private boolean skipNext() {
       if (inputIt.hasNext()) {
         inputIt.next();
-        this.next = null;
+        next = null;
         return true;
       } else {
         stop();
@@ -165,15 +165,15 @@ skipping:
     }
 
     private void stop() {
-      this.hasNext = HasNextState.AT_END;
-      this.next = null;
+      hasNext = HasNextState.AT_END;
+      next = null;
       destroy();
     }
 
     private void takeNext() {
       if (inputIt.hasNext()) {
-        this.next = inputIt.next();
-        this.hasNext = HasNextState.HAS_NEXT;
+        next = inputIt.next();
+        hasNext = HasNextState.HAS_NEXT;
       } else {
         stop();
       }

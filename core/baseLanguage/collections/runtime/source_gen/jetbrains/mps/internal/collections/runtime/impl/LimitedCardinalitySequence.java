@@ -51,7 +51,7 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
       if (!((hasNext.hasNext()))) {
         throw new NoSuchElementException();
       }
-      return this.clearNext();
+      return clearNext();
     }
 
     public void remove() {
@@ -59,13 +59,13 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
     }
 
     private void moveToNext() {
-      this.next = null;
-      this.hasNext = HasNextState.AT_END;
+      next = null;
+      hasNext = HasNextState.AT_END;
       while (inputIt.hasNext()) {
         U tmp = inputIt.next();
         if (cardMap.postInc(tmp) < maxCardinality) {
-          this.next = tmp;
-          this.hasNext = HasNextState.HAS_NEXT;
+          next = tmp;
+          hasNext = HasNextState.HAS_NEXT;
           return;
         }
       }
@@ -74,14 +74,14 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
 
     private U clearNext() {
       U tmp = next;
-      this.next = null;
-      this.hasNext = HasNextState.UNKNOWN;
+      next = null;
+      hasNext = HasNextState.UNKNOWN;
       return tmp;
     }
 
     private void init() {
-      this.inputIt = input.iterator();
-      this.cardMap = new CardinalityMap<U>();
+      inputIt = input.iterator();
+      cardMap = new CardinalityMap<U>();
     }
   }
 }

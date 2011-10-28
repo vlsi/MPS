@@ -52,7 +52,7 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
       if (!((hasNext.hasNext()))) {
         throw new NoSuchElementException();
       }
-      return this.clearNext();
+      return clearNext();
     }
 
     public void remove() {
@@ -60,12 +60,12 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
     }
 
     private void init() {
-      this.inputIt = getInput().iterator();
+      inputIt = getInput().iterator();
     }
 
     private void moveToNext() {
-      this.hasNext = HasNextState.AT_END;
-      this.next = null;
+      hasNext = HasNextState.AT_END;
+      next = null;
       do {
         try {
           if (transIt != null && transIt.hasNext()) {
@@ -75,8 +75,8 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
                 continue;
               }
             }
-            this.next = tmp;
-            this.hasNext = HasNextState.HAS_NEXT;
+            next = tmp;
+            hasNext = HasNextState.HAS_NEXT;
             break;
           }
         } catch (StopIteratingException stop) {
@@ -90,7 +90,7 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
                 transSeq = NullSequence.instance();
               }
             }
-            this.transIt = transSeq.iterator();
+            transIt = transSeq.iterator();
           } catch (StopIteratingException illegal) {
             throw new IllegalStateException(illegal);
           }
@@ -102,8 +102,8 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
 
     private V clearNext() {
       V tmp = next;
-      this.next = null;
-      this.hasNext = HasNextState.UNKNOWN;
+      next = null;
+      hasNext = HasNextState.UNKNOWN;
       return tmp;
     }
   }

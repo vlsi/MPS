@@ -49,7 +49,7 @@ public class FilteringSequence<U> extends AbstractChainedSequence<U, U> implemen
       if (!((hasNext.hasNext()))) {
         throw new NoSuchElementException();
       }
-      return this.clearNext();
+      return clearNext();
     }
 
     public void remove() {
@@ -57,17 +57,17 @@ public class FilteringSequence<U> extends AbstractChainedSequence<U, U> implemen
     }
 
     private void init() {
-      this.inputIterator = getInput().iterator();
+      inputIterator = getInput().iterator();
     }
 
     private void moveToNext() {
-      this.hasNext = HasNextState.AT_END;
-      this.next = null;
+      hasNext = HasNextState.AT_END;
+      next = null;
       while (inputIterator.hasNext()) {
         U tmp = inputIterator.next();
         if (filter.invoke(tmp)) {
-          this.next = tmp;
-          this.hasNext = HasNextState.HAS_NEXT;
+          next = tmp;
+          hasNext = HasNextState.HAS_NEXT;
           break;
         }
       }
@@ -75,8 +75,8 @@ public class FilteringSequence<U> extends AbstractChainedSequence<U, U> implemen
 
     private U clearNext() {
       U tmp = next;
-      this.next = null;
-      this.hasNext = HasNextState.UNKNOWN;
+      next = null;
+      hasNext = HasNextState.UNKNOWN;
       return tmp;
     }
   }

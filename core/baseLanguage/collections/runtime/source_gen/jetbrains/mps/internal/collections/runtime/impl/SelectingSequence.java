@@ -47,7 +47,7 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
       if (!(hasNext.hasNext())) {
         throw new NoSuchElementException();
       }
-      return this.clearNext();
+      return clearNext();
     }
 
     public void remove() {
@@ -55,12 +55,12 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
     }
 
     private void init() {
-      this.inputIterator = getInput().iterator();
+      inputIterator = getInput().iterator();
     }
 
     private void moveToNext() {
-      this.hasNext = HasNextState.AT_END;
-      this.next = null;
+      hasNext = HasNextState.AT_END;
+      next = null;
       while (inputIterator.hasNext()) {
         V tmp = selector.invoke(inputIterator.next());
         if (Sequence.IGNORE_NULL_VALUES) {
@@ -68,16 +68,16 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
             continue;
           }
         }
-        this.hasNext = HasNextState.HAS_NEXT;
-        this.next = tmp;
+        hasNext = HasNextState.HAS_NEXT;
+        next = tmp;
         break;
       }
     }
 
     private V clearNext() {
       V tmp = next;
-      this.next = null;
-      this.hasNext = HasNextState.UNKNOWN;
+      next = null;
+      hasNext = HasNextState.UNKNOWN;
       return tmp;
     }
   }

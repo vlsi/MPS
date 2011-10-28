@@ -15,7 +15,7 @@ public class EnumeratorIterator<T> implements IEnumerator.Iterator<T> {
     if (iterator == null) {
       throw new NullPointerException();
     }
-    this.delegate = iterator;
+    delegate = iterator;
   }
 
   public boolean hasNext() {
@@ -47,8 +47,8 @@ public class EnumeratorIterator<T> implements IEnumerator.Iterator<T> {
   }
 
   private boolean primMoveNext() {
-    this.hasCurrent = delegate.hasNext();
-    this.current = (hasCurrent ?
+    hasCurrent = delegate.hasNext();
+    current = (hasCurrent ?
       delegate.next() :
       null
     );
