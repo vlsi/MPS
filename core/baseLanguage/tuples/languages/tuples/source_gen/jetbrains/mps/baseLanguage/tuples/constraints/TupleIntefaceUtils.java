@@ -23,36 +23,36 @@ public class TupleIntefaceUtils {
     return ListSequence.fromList(analyzeTupleInterface(ifc)).isNotEmpty();
   }
 
-  public static List<TupleIntefaceUtils.Property> analyzeTupleInterface(SNode ifc) {
-    List<TupleIntefaceUtils.Property> accessors = ListSequence.fromList(new ArrayList<TupleIntefaceUtils.Property>());
-    List<TupleIntefaceUtils.Property> mutators = ListSequence.fromList(new ArrayList<TupleIntefaceUtils.Property>());
+  public static List<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> analyzeTupleInterface(SNode ifc) {
+    List<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> accessors = ListSequence.fromList(new ArrayList<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property>());
+    List<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> mutators = ListSequence.fromList(new ArrayList<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property>());
     int ignored = 0;
     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(ifc, "method", true))) {
       if ((int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-        ListSequence.fromList(accessors).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
+        ListSequence.fromList(accessors).addElement(new jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
       } else if ((int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && MatchingUtil.matchNodes(SLinkOperations.getTarget(method, "returnType", true), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence().first())) {
-        ListSequence.fromList(mutators).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
+        ListSequence.fromList(mutators).addElement(new jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
       } else if ("equals".equals(SPropertyOperations.getString(method, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
         ignored++;
       } else if ("hashCode".equals(SPropertyOperations.getString(method, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
         ignored++;
       }
     }
-    List<TupleIntefaceUtils.Property> result = null;
-    IEnumerator<TupleIntefaceUtils.Property> ait = ListSequence.fromList(accessors).sort(new ISelector<TupleIntefaceUtils.Property, Comparable<?>>() {
-      public Comparable<?> select(TupleIntefaceUtils.Property p) {
+    List<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> result = null;
+    IEnumerator<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> ait = ListSequence.fromList(accessors).sort(new ISelector<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property, Comparable<?>>() {
+      public Comparable<?> select(jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property p) {
         return p.name();
       }
     }, true).enumerator();
-    IEnumerator<TupleIntefaceUtils.Property> mit = ListSequence.fromList(mutators).sort(new ISelector<TupleIntefaceUtils.Property, Comparable<?>>() {
-      public Comparable<?> select(TupleIntefaceUtils.Property p) {
+    IEnumerator<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> mit = ListSequence.fromList(mutators).sort(new ISelector<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property, Comparable<?>>() {
+      public Comparable<?> select(jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property p) {
         return p.name();
       }
     }, true).enumerator();
     boolean hasMutators = mit.moveNext();
     while (ait.moveNext()) {
       if (result == null) {
-        result = ListSequence.fromList(new ArrayList<TupleIntefaceUtils.Property>());
+        result = ListSequence.fromList(new ArrayList<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property>());
       }
       while (hasMutators && ait.current().name().compareTo(mit.current().name()) < 0) {
         hasMutators = mit.moveNext();
