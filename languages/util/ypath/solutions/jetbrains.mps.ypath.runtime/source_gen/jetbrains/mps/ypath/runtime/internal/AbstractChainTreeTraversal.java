@@ -14,12 +14,12 @@ public abstract class AbstractChainTreeTraversal<T> extends AbstractTreeTraversa
 
   public AbstractChainTreeTraversal(ITreeTraversal<T> sourceTraversal) {
     this.sourceTraversal = sourceTraversal;
-    this.featureDesc = null;
+    featureDesc = null;
   }
 
   public AbstractChainTreeTraversal(ITreeTraversal<T> sourceTraversal, IFeatureDescriptor<T> feature) {
     this.sourceTraversal = sourceTraversal;
-    this.featureDesc = feature;
+    featureDesc = feature;
   }
 
   public ITreePath<T> getTreePath() {

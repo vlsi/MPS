@@ -141,21 +141,21 @@ public abstract class TreePath<T> implements ITreePath<T> {
     private TreePath.FeatureFilter<T> filter;
 
     public AllFeaturesIterator(T t) {
-      this.node = t;
-      this.featuresItr = getAllFeatureDescriptors().iterator();
+      node = t;
+      featuresItr = getAllFeatureDescriptors().iterator();
       moveToNext();
     }
 
     public AllFeaturesIterator(T t, TreePath.FeatureFilter<T> ff) {
-      this.node = t;
-      this.featuresItr = getAllFeatureDescriptors().iterator();
-      this.filter = ff;
+      node = t;
+      featuresItr = getAllFeatureDescriptors().iterator();
+      filter = ff;
       moveToNext();
     }
 
     private void moveToNext() {
-      this.hasNext = false;
-      this.next = null;
+      hasNext = false;
+      next = null;
 while_not_hasnext:
       while (!(hasNext)) {
         if (currentItr == null || !(currentItr.hasNext())) {
@@ -164,13 +164,13 @@ while_not_hasnext:
             if (filter != null && !(filter.accept(desc))) {
               continue;
             }
-            this.currentItr = desc.getContents(node).iterator();
+            currentItr = desc.getContents(node).iterator();
             continue while_not_hasnext;
           }
           break;
         } else {
-          this.hasNext = true;
-          this.next = currentItr.next();
+          hasNext = true;
+          next = currentItr.next();
         }
       }
     }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b443su06chwkf56oftntit062ar4uzh">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3lxfcg9w0sl635r6n0c4d5sryip3kpx" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="7c5ssk9ukgkps0ad18aex01o7lv119u" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="akfobdt43q9rrlj8pszut5gr07xi91o" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="1qpl4dcq87orqyeop7drkzps9naovu7" />
+<dependencies version="2" modelHash="4bfidhhp6klr9riq0yrnsc17kbfqf4b">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="c8w34ecdfwjr8bgl4l1u8jgdbwvii8c" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="4592mc0c92ee86m4hdnk27h6ntxlxqu" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
   <common hash="-blm7y5aw79jk7xyk1k3w10ssevjktjn" />
-  <source id="2295870045929265710" name="CompositeFilter" hash="1mcrnq39ppuqwdnpc5nc62ubwbga3as">
+  <source id="2295870045929265710" name="CompositeFilter" hash="1tpm5io4r1r5p7tor4n63562wnt4e30">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -14,11 +14,11 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CompositeFilter.java" />
   </source>
-  <source id="2295870045929265520" name="ITreePath" hash="1tgw2kzr4ih10gdy2p4llch86q9tlbh">
+  <source id="2295870045929265520" name="ITreePath" hash="-72ebnlabh92cwme1qkm87dlix8r8883">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ITreePath.java" />
   </source>
-  <source id="2295870045929266247" name="TraversalAxis" hash="-8pvqjkgcouri82zyehfn2bh6xmz41n3">
+  <source id="2295870045929266247" name="TraversalAxis" hash="-4d6dbaffckafb2hje7fl53v27xwrq2q">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -26,7 +26,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TraversalAxis.java" />
   </source>
-  <source id="2295870045929265511" name="IFeatureDescriptor" hash="12lvidmnry9909zyqv2urdi5jp85wn8">
+  <source id="2295870045929265511" name="IFeatureDescriptor" hash="-tybm2hzm7gk6igxgbh2wscdzduoxcm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -38,7 +38,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IFilter.java" />
   </source>
-  <source id="2295870045929267447" name="TreeTraversalFactory" hash="3pyed11ynzjit7g9bvckzex0k1b2xmm">
+  <source id="2295870045929267447" name="TreeTraversalFactory" hash="-6wy5vbuh2cfcuqci26bd61z5knoz2fj">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -46,7 +46,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TreeTraversalFactory.java" />
   </source>
-  <source id="2295870045929265522" name="TreePath" hash="64pas14njhm0q6p29q6jjn29odtd8dh">
+  <source id="2295870045929265522" name="TreePath" hash="-46cw8cz7fvtkhpvo843olo5wlenp6xn">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -54,11 +54,11 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TreePath.java" />
   </source>
-  <source id="2295870045929265510" name="ITreeTraversal" hash="-45gzxqm6j8ko26xrslkvy7w5zwmrrtx">
+  <source id="2295870045929265510" name="ITreeTraversal" hash="-boeckwevpto991aqsc2giegfzybs3v1">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ITreeTraversal.java" />
   </source>
-  <source id="2295870045929265513" name="ISiblingsFilter" hash="asqhvxdfo35vuntnl4j9a0z6gkw6m4q">
+  <source id="2295870045929265513" name="ISiblingsFilter" hash="-bztsqx4rg09k8ktugu2mge50zx6jkjh">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ISiblingsFilter.java" />
   </source>

@@ -12,7 +12,7 @@
     <nodeInfo nodeId="6033226775805315717" fileName="YNode.java" startLine="31" startPosition="29" endLine="32" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6033226775805315733" fileName="YNode.java" startLine="37" startPosition="35" endLine="38" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6033226775805315742" fileName="YNode.java" startLine="43" startPosition="27" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6033226775805315750" fileName="YNode.java" startLine="47" startPosition="41" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6033226775805315750" fileName="YNode.java" startLine="47" startPosition="41" endLine="48" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6033226775805315760" fileName="YNode.java" startLine="51" startPosition="31" endLine="52" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6033226775805315767" fileName="YNode.java" startLine="55" startPosition="32" endLine="56" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6033226775805315792" fileName="YNode.java" startLine="67" startPosition="66" endLine="68" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -39,7 +39,7 @@
     <scopeInfo nodeId="6033226775805315689" fileName="YNode.java" startLine="25" startPosition="29" endLine="26" endPosition="21" />
     <scopeInfo nodeId="6033226775805315732" fileName="YNode.java" startLine="37" startPosition="35" endLine="38" endPosition="32" />
     <scopeInfo nodeId="6033226775805315741" fileName="YNode.java" startLine="43" startPosition="27" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="6033226775805315749" fileName="YNode.java" startLine="47" startPosition="41" endLine="48" endPosition="26" />
+    <scopeInfo nodeId="6033226775805315749" fileName="YNode.java" startLine="47" startPosition="41" endLine="48" endPosition="21" />
     <scopeInfo nodeId="6033226775805315759" fileName="YNode.java" startLine="51" startPosition="31" endLine="52" endPosition="21" />
     <scopeInfo nodeId="6033226775805315766" fileName="YNode.java" startLine="55" startPosition="32" endLine="56" endPosition="20" />
     <scopeInfo nodeId="6033226775805315801" fileName="YNode.java" startLine="69" startPosition="33" endLine="70" endPosition="33" />

@@ -4,9 +4,9 @@
     <nodeInfo nodeId="2295870045929266634" fileName="AbstractChainTreeTraversal.java" startLine="11" startPosition="86" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sourceTraversal" />
     <nodeInfo nodeId="2295870045929266638" fileName="AbstractChainTreeTraversal.java" startLine="12" startPosition="50" endLine="13" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="featureDesc" />
     <nodeInfo nodeId="2295870045929266649" fileName="AbstractChainTreeTraversal.java" startLine="15" startPosition="72" endLine="16" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266655" fileName="AbstractChainTreeTraversal.java" startLine="16" startPosition="43" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266655" fileName="AbstractChainTreeTraversal.java" startLine="16" startPosition="43" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929266671" fileName="AbstractChainTreeTraversal.java" startLine="20" startPosition="103" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266677" fileName="AbstractChainTreeTraversal.java" startLine="21" startPosition="43" endLine="22" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266677" fileName="AbstractChainTreeTraversal.java" startLine="21" startPosition="43" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929266688" fileName="AbstractChainTreeTraversal.java" startLine="25" startPosition="37" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266697" fileName="AbstractChainTreeTraversal.java" startLine="29" startPosition="55" endLine="30" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266706" fileName="AbstractChainTreeTraversal.java" startLine="33" startPosition="51" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -28,14 +28,14 @@
     <scopeInfo nodeId="2295870045929266705" fileName="AbstractChainTreeTraversal.java" startLine="33" startPosition="51" endLine="34" endPosition="79" />
     <scopeInfo nodeId="2295870045929266744" fileName="AbstractChainTreeTraversal.java" startLine="39" startPosition="58" endLine="40" endPosition="88" />
     <scopeInfo nodeId="2295870045929266777" fileName="AbstractChainTreeTraversal.java" startLine="47" startPosition="52" endLine="48" endPosition="27" />
-    <scopeInfo nodeId="2295870045929266648" fileName="AbstractChainTreeTraversal.java" startLine="15" startPosition="72" endLine="17" endPosition="28" />
-    <scopeInfo nodeId="2295870045929266670" fileName="AbstractChainTreeTraversal.java" startLine="20" startPosition="103" endLine="22" endPosition="31" />
+    <scopeInfo nodeId="2295870045929266648" fileName="AbstractChainTreeTraversal.java" startLine="15" startPosition="72" endLine="17" endPosition="23" />
+    <scopeInfo nodeId="2295870045929266670" fileName="AbstractChainTreeTraversal.java" startLine="20" startPosition="103" endLine="22" endPosition="26" />
     <scopeInfo nodeId="2295870045929266642" fileName="AbstractChainTreeTraversal.java" startLine="14" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="2295870045929266645" varName="sourceTraversal" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266661" fileName="AbstractChainTreeTraversal.java" startLine="19" startPosition="0" endLine="23" endPosition="3">
-      <varInfo nodeId="2295870045929266664" varName="sourceTraversal" />
       <varInfo nodeId="2295870045929266667" varName="feature" />
+      <varInfo nodeId="2295870045929266664" varName="sourceTraversal" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266683" fileName="AbstractChainTreeTraversal.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="2295870045929266692" fileName="AbstractChainTreeTraversal.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
@@ -61,26 +61,26 @@
     <nodeInfo nodeId="2295870045929266347" fileName="AbstractTreeTraversal.java" startLine="35" startPosition="21" endLine="36" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266360" fileName="AbstractTreeTraversal.java" startLine="37" startPosition="26" endLine="38" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266378" fileName="AbstractTreeTraversal.java" startLine="40" startPosition="76" endLine="41" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="accepting" />
-    <nodeInfo nodeId="2295870045929266495" fileName="AbstractTreeTraversal.java" startLine="43" startPosition="38" endLine="44" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266501" fileName="AbstractTreeTraversal.java" startLine="44" startPosition="35" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929266519" fileName="AbstractTreeTraversal.java" startLine="49" startPosition="87" endLine="50" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266525" fileName="AbstractTreeTraversal.java" startLine="50" startPosition="36" endLine="51" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929266495" fileName="AbstractTreeTraversal.java" startLine="43" startPosition="38" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266501" fileName="AbstractTreeTraversal.java" startLine="44" startPosition="30" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929266519" fileName="AbstractTreeTraversal.java" startLine="49" startPosition="87" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266525" fileName="AbstractTreeTraversal.java" startLine="50" startPosition="31" endLine="51" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266527" fileName="AbstractTreeTraversal.java" startLine="52" startPosition="13" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266406" fileName="AbstractTreeTraversal.java" startLine="57" startPosition="76" endLine="58" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="accepting" />
-    <nodeInfo nodeId="2295870045929266530" fileName="AbstractTreeTraversal.java" startLine="60" startPosition="38" endLine="61" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266536" fileName="AbstractTreeTraversal.java" startLine="61" startPosition="35" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929266554" fileName="AbstractTreeTraversal.java" startLine="66" startPosition="87" endLine="67" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266530" fileName="AbstractTreeTraversal.java" startLine="60" startPosition="38" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266536" fileName="AbstractTreeTraversal.java" startLine="61" startPosition="30" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929266554" fileName="AbstractTreeTraversal.java" startLine="66" startPosition="87" endLine="67" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929266560" fileName="AbstractTreeTraversal.java" startLine="68" startPosition="13" endLine="69" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266434" fileName="AbstractTreeTraversal.java" startLine="73" startPosition="76" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="accepting" />
-    <nodeInfo nodeId="2295870045929266563" fileName="AbstractTreeTraversal.java" startLine="76" startPosition="38" endLine="77" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266569" fileName="AbstractTreeTraversal.java" startLine="77" startPosition="34" endLine="78" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929266587" fileName="AbstractTreeTraversal.java" startLine="82" startPosition="87" endLine="83" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266563" fileName="AbstractTreeTraversal.java" startLine="76" startPosition="38" endLine="77" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266569" fileName="AbstractTreeTraversal.java" startLine="77" startPosition="29" endLine="78" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929266587" fileName="AbstractTreeTraversal.java" startLine="82" startPosition="87" endLine="83" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929266593" fileName="AbstractTreeTraversal.java" startLine="84" startPosition="13" endLine="85" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266462" fileName="AbstractTreeTraversal.java" startLine="89" startPosition="76" endLine="90" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="accepting" />
-    <nodeInfo nodeId="2295870045929266596" fileName="AbstractTreeTraversal.java" startLine="92" startPosition="38" endLine="93" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266602" fileName="AbstractTreeTraversal.java" startLine="93" startPosition="34" endLine="94" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929266620" fileName="AbstractTreeTraversal.java" startLine="98" startPosition="87" endLine="99" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266626" fileName="AbstractTreeTraversal.java" startLine="99" startPosition="37" endLine="100" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929266596" fileName="AbstractTreeTraversal.java" startLine="92" startPosition="38" endLine="93" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266602" fileName="AbstractTreeTraversal.java" startLine="93" startPosition="29" endLine="94" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929266620" fileName="AbstractTreeTraversal.java" startLine="98" startPosition="87" endLine="99" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266626" fileName="AbstractTreeTraversal.java" startLine="99" startPosition="32" endLine="100" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266628" fileName="AbstractTreeTraversal.java" startLine="101" startPosition="13" endLine="102" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266312" fileName="AbstractTreeTraversal.java" startLine="105" startPosition="14" endLine="106" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="2295870045929266478" fileName="AbstractTreeTraversal.java" startLine="107" startPosition="5" endLine="108" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -116,8 +116,8 @@
     <scopeInfo nodeId="2295870045929266337" fileName="AbstractTreeTraversal.java" startLine="33" startPosition="20" endLine="34" endPosition="63" />
     <scopeInfo nodeId="2295870045929266346" fileName="AbstractTreeTraversal.java" startLine="35" startPosition="21" endLine="36" endPosition="111" />
     <scopeInfo nodeId="2295870045929266359" fileName="AbstractTreeTraversal.java" startLine="37" startPosition="26" endLine="38" endPosition="70" />
-    <scopeInfo nodeId="2295870045929266553" fileName="AbstractTreeTraversal.java" startLine="66" startPosition="87" endLine="67" endPosition="36" />
-    <scopeInfo nodeId="2295870045929266586" fileName="AbstractTreeTraversal.java" startLine="82" startPosition="87" endLine="83" endPosition="37" />
+    <scopeInfo nodeId="2295870045929266553" fileName="AbstractTreeTraversal.java" startLine="66" startPosition="87" endLine="67" endPosition="31" />
+    <scopeInfo nodeId="2295870045929266586" fileName="AbstractTreeTraversal.java" startLine="82" startPosition="87" endLine="83" endPosition="32" />
     <scopeInfo nodeId="2295870045929266311" fileName="AbstractTreeTraversal.java" startLine="105" startPosition="14" endLine="106" endPosition="14" />
     <scopeInfo nodeId="2295870045929266487" fileName="AbstractTreeTraversal.java" startLine="111" startPosition="60" endLine="112" endPosition="54" />
     <scopeInfo nodeId="2295870045929266251" fileName="AbstractTreeTraversal.java" startLine="11" startPosition="77" endLine="13" endPosition="3" />
@@ -153,24 +153,24 @@
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266604" fileName="AbstractTreeTraversal.java" startLine="97" startPosition="56" endLine="102" endPosition="29" />
     <scopeInfo nodeId="2295870045929266414" fileName="AbstractTreeTraversal.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="2295870045929266419" varName="thisNode" />
       <varInfo nodeId="2295870045929266417" varName="sibling" />
+      <varInfo nodeId="2295870045929266419" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266442" fileName="AbstractTreeTraversal.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="2295870045929266447" varName="thisNode" />
       <varInfo nodeId="2295870045929266445" varName="sibling" />
+      <varInfo nodeId="2295870045929266447" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266269" fileName="AbstractTreeTraversal.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="2295870045929266273" varName="axis" />
       <varInfo nodeId="2295870045929266275" varName="feature" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266386" fileName="AbstractTreeTraversal.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="2295870045929266391" varName="thisNode" />
       <varInfo nodeId="2295870045929266389" varName="sibling" />
+      <varInfo nodeId="2295870045929266391" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266470" fileName="AbstractTreeTraversal.java" startLine="96" startPosition="0" endLine="104" endPosition="0">
-      <varInfo nodeId="2295870045929266475" varName="thisNode" />
       <varInfo nodeId="2295870045929266473" varName="sibling" />
+      <varInfo nodeId="2295870045929266475" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266396" fileName="AbstractTreeTraversal.java" startLine="56" startPosition="35" endLine="71" endPosition="24" />
     <scopeInfo nodeId="2295870045929266424" fileName="AbstractTreeTraversal.java" startLine="72" startPosition="30" endLine="87" endPosition="24" />
@@ -181,11 +181,11 @@
       <varInfo nodeId="2295870045929266303" varName="axis" />
       <varInfo nodeId="2295870045929266305" varName="featureDesc" />
     </scopeInfo>
+    <unitInfo nodeId="2295870045929265519" fileName="AbstractTreeTraversal.java" startLine="11" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.AbstractTreeTraversal" />
+    <unitInfo nodeId="2295870045929266376" fileName="AbstractTreeTraversal.java" startLine="40" startPosition="54" endLine="55" endPosition="9" unitName="jetbrains.mps.ypath.runtime.internal.AbstractTreeTraversal$1" />
     <unitInfo nodeId="2295870045929266404" fileName="AbstractTreeTraversal.java" startLine="57" startPosition="54" endLine="71" endPosition="9" unitName="jetbrains.mps.ypath.runtime.internal.AbstractTreeTraversal$2" />
     <unitInfo nodeId="2295870045929266432" fileName="AbstractTreeTraversal.java" startLine="73" startPosition="54" endLine="87" endPosition="9" unitName="jetbrains.mps.ypath.runtime.internal.AbstractTreeTraversal$3" />
-    <unitInfo nodeId="2295870045929266376" fileName="AbstractTreeTraversal.java" startLine="40" startPosition="54" endLine="55" endPosition="9" unitName="jetbrains.mps.ypath.runtime.internal.AbstractTreeTraversal$1" />
     <unitInfo nodeId="2295870045929266460" fileName="AbstractTreeTraversal.java" startLine="89" startPosition="54" endLine="104" endPosition="9" unitName="jetbrains.mps.ypath.runtime.internal.AbstractTreeTraversal$4" />
-    <unitInfo nodeId="2295870045929265519" fileName="AbstractTreeTraversal.java" startLine="11" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.AbstractTreeTraversal" />
   </root>
   <root nodeId="2295870045929265527">
     <nodeInfo nodeId="2295870045929265577" fileName="ParentTreeTraversal.java" startLine="11" startPosition="56" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -195,15 +195,15 @@
     <nodeInfo nodeId="2295870045929265542" fileName="ParentTreeTraversal.java" startLine="24" startPosition="45" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="currentParentsIterator" />
     <nodeInfo nodeId="2295870045929265546" fileName="ParentTreeTraversal.java" startLine="25" startPosition="54" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nextNode" />
     <nodeInfo nodeId="2295870045929265549" fileName="ParentTreeTraversal.java" startLine="26" startPosition="30" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasNextNode" />
-    <nodeInfo nodeId="2295870045929265607" fileName="ParentTreeTraversal.java" startLine="29" startPosition="49" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265613" fileName="ParentTreeTraversal.java" startLine="30" startPosition="35" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265616" fileName="ParentTreeTraversal.java" startLine="34" startPosition="31" endLine="35" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265622" fileName="ParentTreeTraversal.java" startLine="35" startPosition="27" endLine="36" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265643" fileName="ParentTreeTraversal.java" startLine="37" startPosition="115" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265649" fileName="ParentTreeTraversal.java" startLine="38" startPosition="43" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2295870045929265655" fileName="ParentTreeTraversal.java" startLine="39" startPosition="39" endLine="40" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265673" fileName="ParentTreeTraversal.java" startLine="42" startPosition="79" endLine="43" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265681" fileName="ParentTreeTraversal.java" startLine="43" startPosition="54" endLine="44" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265607" fileName="ParentTreeTraversal.java" startLine="29" startPosition="49" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265613" fileName="ParentTreeTraversal.java" startLine="30" startPosition="30" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265616" fileName="ParentTreeTraversal.java" startLine="34" startPosition="31" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265622" fileName="ParentTreeTraversal.java" startLine="35" startPosition="22" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265643" fileName="ParentTreeTraversal.java" startLine="37" startPosition="115" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265649" fileName="ParentTreeTraversal.java" startLine="38" startPosition="38" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2295870045929265655" fileName="ParentTreeTraversal.java" startLine="39" startPosition="39" endLine="40" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265673" fileName="ParentTreeTraversal.java" startLine="42" startPosition="79" endLine="43" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265681" fileName="ParentTreeTraversal.java" startLine="43" startPosition="49" endLine="44" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929265688" fileName="ParentTreeTraversal.java" startLine="48" startPosition="30" endLine="49" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929265695" fileName="ParentTreeTraversal.java" startLine="53" startPosition="27" endLine="54" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="2295870045929265698" fileName="ParentTreeTraversal.java" startLine="55" startPosition="7" endLine="56" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -218,7 +218,7 @@
     <nodeInfo nodeId="2295870045929265664" fileName="ParentTreeTraversal.java" startLine="41" startPosition="7" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2295870045929265561" fileName="ParentTreeTraversal.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
     <nodeInfo nodeId="2295870045929265567" fileName="ParentTreeTraversal.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="2295870045929265628" fileName="ParentTreeTraversal.java" startLine="36" startPosition="31" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2295870045929265628" fileName="ParentTreeTraversal.java" startLine="36" startPosition="26" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="2295870045929265564" fileName="ParentTreeTraversal.java" startLine="51" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
     <nodeInfo nodeId="2295870045929265558" fileName="ParentTreeTraversal.java" startLine="33" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()V" />
     <scopeInfo nodeId="2295870045929265576" fileName="ParentTreeTraversal.java" startLine="11" startPosition="56" endLine="12" endPosition="18" />
@@ -228,15 +228,15 @@
     <scopeInfo nodeId="2295870045929265694" fileName="ParentTreeTraversal.java" startLine="53" startPosition="27" endLine="54" endPosition="43" />
     <scopeInfo nodeId="2295870045929265706" fileName="ParentTreeTraversal.java" startLine="61" startPosition="26" endLine="62" endPosition="48" />
     <scopeInfo nodeId="2295870045929265606" fileName="ParentTreeTraversal.java" startLine="29" startPosition="49" endLine="31" endPosition="19" />
-    <scopeInfo nodeId="2295870045929265672" fileName="ParentTreeTraversal.java" startLine="42" startPosition="79" endLine="44" endPosition="32" />
+    <scopeInfo nodeId="2295870045929265672" fileName="ParentTreeTraversal.java" startLine="42" startPosition="79" endLine="44" endPosition="27" />
     <scopeInfo nodeId="2295870045929265570" fileName="ParentTreeTraversal.java" startLine="10" startPosition="104" endLine="13" endPosition="3">
       <varInfo nodeId="2295870045929265573" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929265579" fileName="ParentTreeTraversal.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
-      <varInfo nodeId="2295870045929265582" varName="source" />
       <varInfo nodeId="2295870045929265585" varName="fd" />
+      <varInfo nodeId="2295870045929265582" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="2295870045929265642" fileName="ParentTreeTraversal.java" startLine="37" startPosition="115" endLine="40" endPosition="75">
+    <scopeInfo nodeId="2295870045929265642" fileName="ParentTreeTraversal.java" startLine="37" startPosition="115" endLine="40" endPosition="70">
       <varInfo nodeId="2295870045929265650" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929265592" fileName="ParentTreeTraversal.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
@@ -251,8 +251,8 @@
     <scopeInfo nodeId="2295870045929265564" fileName="ParentTreeTraversal.java" startLine="51" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="2295870045929265615" fileName="ParentTreeTraversal.java" startLine="34" startPosition="31" endLine="45" endPosition="7" />
     <scopeInfo nodeId="2295870045929265558" fileName="ParentTreeTraversal.java" startLine="33" startPosition="0" endLine="47" endPosition="0" />
-    <unitInfo nodeId="2295870045929265534" fileName="ParentTreeTraversal.java" startLine="23" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.ParentTreeTraversal$ParentsIterator" />
     <unitInfo nodeId="2295870045929265527" fileName="ParentTreeTraversal.java" startLine="10" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.ParentTreeTraversal" />
+    <unitInfo nodeId="2295870045929265534" fileName="ParentTreeTraversal.java" startLine="23" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.ParentTreeTraversal$ParentsIterator" />
   </root>
   <root nodeId="2295870045929265830">
     <nodeInfo nodeId="2295870045929265869" fileName="FilteredTreeTraversal.java" startLine="10" startPosition="106" endLine="11" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="filter" />
@@ -262,14 +262,14 @@
     <nodeInfo nodeId="2295870045929265841" fileName="FilteredTreeTraversal.java" startLine="22" startPosition="58" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sourceIterator" />
     <nodeInfo nodeId="2295870045929265845" fileName="FilteredTreeTraversal.java" startLine="23" startPosition="39" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasNextNode" />
     <nodeInfo nodeId="2295870045929265848" fileName="FilteredTreeTraversal.java" startLine="24" startPosition="32" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nextNode" />
-    <nodeInfo nodeId="2295870045929265903" fileName="FilteredTreeTraversal.java" startLine="27" startPosition="53" endLine="28" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265909" fileName="FilteredTreeTraversal.java" startLine="28" startPosition="37" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265912" fileName="FilteredTreeTraversal.java" startLine="32" startPosition="31" endLine="33" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265918" fileName="FilteredTreeTraversal.java" startLine="33" startPosition="27" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265903" fileName="FilteredTreeTraversal.java" startLine="27" startPosition="53" endLine="28" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265909" fileName="FilteredTreeTraversal.java" startLine="28" startPosition="32" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265912" fileName="FilteredTreeTraversal.java" startLine="32" startPosition="31" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265918" fileName="FilteredTreeTraversal.java" startLine="33" startPosition="22" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929265929" fileName="FilteredTreeTraversal.java" startLine="35" startPosition="40" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2295870045929265941" fileName="FilteredTreeTraversal.java" startLine="37" startPosition="34" endLine="38" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265947" fileName="FilteredTreeTraversal.java" startLine="38" startPosition="31" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929265953" fileName="FilteredTreeTraversal.java" startLine="39" startPosition="34" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2295870045929265941" fileName="FilteredTreeTraversal.java" startLine="37" startPosition="34" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265947" fileName="FilteredTreeTraversal.java" startLine="38" startPosition="26" endLine="39" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929265953" fileName="FilteredTreeTraversal.java" startLine="39" startPosition="29" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="2295870045929265955" fileName="FilteredTreeTraversal.java" startLine="45" startPosition="30" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929265962" fileName="FilteredTreeTraversal.java" startLine="50" startPosition="27" endLine="51" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="2295870045929265965" fileName="FilteredTreeTraversal.java" startLine="52" startPosition="7" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -283,7 +283,7 @@
     <nodeInfo nodeId="2295870045929265860" fileName="FilteredTreeTraversal.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
     <nodeInfo nodeId="2295870045929265866" fileName="FilteredTreeTraversal.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
     <nodeInfo nodeId="2295870045929265935" fileName="FilteredTreeTraversal.java" startLine="36" startPosition="39" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2295870045929265924" fileName="FilteredTreeTraversal.java" startLine="34" startPosition="31" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2295870045929265924" fileName="FilteredTreeTraversal.java" startLine="34" startPosition="26" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="2295870045929265863" fileName="FilteredTreeTraversal.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
     <nodeInfo nodeId="2295870045929265857" fileName="FilteredTreeTraversal.java" startLine="31" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()V" />
     <scopeInfo nodeId="2295870045929265895" fileName="FilteredTreeTraversal.java" startLine="18" startPosition="33" endLine="19" endPosition="88" />
@@ -294,8 +294,8 @@
     <scopeInfo nodeId="2295870045929265902" fileName="FilteredTreeTraversal.java" startLine="27" startPosition="53" endLine="29" endPosition="19" />
     <scopeInfo nodeId="2295870045929265940" fileName="FilteredTreeTraversal.java" startLine="37" startPosition="34" endLine="40" endPosition="16" />
     <scopeInfo nodeId="2295870045929265873" fileName="FilteredTreeTraversal.java" startLine="12" startPosition="0" endLine="16" endPosition="3">
-      <varInfo nodeId="2295870045929265876" varName="sourceTraversal" />
       <varInfo nodeId="2295870045929265879" varName="filter" />
+      <varInfo nodeId="2295870045929265876" varName="sourceTraversal" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929265891" fileName="FilteredTreeTraversal.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="2295870045929265851" fileName="FilteredTreeTraversal.java" startLine="26" startPosition="0" endLine="30" endPosition="5">
@@ -312,8 +312,8 @@
     <scopeInfo nodeId="2295870045929265863" fileName="FilteredTreeTraversal.java" startLine="48" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="2295870045929265911" fileName="FilteredTreeTraversal.java" startLine="32" startPosition="31" endLine="42" endPosition="7" />
     <scopeInfo nodeId="2295870045929265857" fileName="FilteredTreeTraversal.java" startLine="31" startPosition="0" endLine="44" endPosition="0" />
-    <unitInfo nodeId="2295870045929265837" fileName="FilteredTreeTraversal.java" startLine="22" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.FilteredTreeTraversal$FilteringIterator" />
     <unitInfo nodeId="2295870045929265830" fileName="FilteredTreeTraversal.java" startLine="10" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.FilteredTreeTraversal" />
+    <unitInfo nodeId="2295870045929265837" fileName="FilteredTreeTraversal.java" startLine="22" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.FilteredTreeTraversal$FilteringIterator" />
   </root>
   <root nodeId="2295870045929266007">
     <nodeInfo nodeId="2295870045929266054" fileName="AncestorsOrThisTreeTraversal.java" startLine="12" startPosition="65" endLine="13" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -324,16 +324,16 @@
     <nodeInfo nodeId="2295870045929266026" fileName="AncestorsOrThisTreeTraversal.java" startLine="26" startPosition="30" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasNextNode" />
     <nodeInfo nodeId="2295870045929266087" fileName="AncestorsOrThisTreeTraversal.java" startLine="29" startPosition="57" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929266092" fileName="AncestorsOrThisTreeTraversal.java" startLine="30" startPosition="43" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266095" fileName="AncestorsOrThisTreeTraversal.java" startLine="34" startPosition="31" endLine="35" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266101" fileName="AncestorsOrThisTreeTraversal.java" startLine="35" startPosition="27" endLine="36" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266095" fileName="AncestorsOrThisTreeTraversal.java" startLine="34" startPosition="31" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266101" fileName="AncestorsOrThisTreeTraversal.java" startLine="35" startPosition="22" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929266113" fileName="AncestorsOrThisTreeTraversal.java" startLine="37" startPosition="52" endLine="38" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2295870045929266125" fileName="AncestorsOrThisTreeTraversal.java" startLine="39" startPosition="27" endLine="40" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929266130" fileName="AncestorsOrThisTreeTraversal.java" startLine="40" startPosition="43" endLine="41" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2295870045929266136" fileName="AncestorsOrThisTreeTraversal.java" startLine="41" startPosition="29" endLine="42" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2295870045929266149" fileName="AncestorsOrThisTreeTraversal.java" startLine="43" startPosition="35" endLine="44" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266154" fileName="AncestorsOrThisTreeTraversal.java" startLine="45" startPosition="11" endLine="46" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266160" fileName="AncestorsOrThisTreeTraversal.java" startLine="46" startPosition="31" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266166" fileName="AncestorsOrThisTreeTraversal.java" startLine="47" startPosition="34" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2295870045929266154" fileName="AncestorsOrThisTreeTraversal.java" startLine="45" startPosition="11" endLine="46" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266160" fileName="AncestorsOrThisTreeTraversal.java" startLine="46" startPosition="26" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266166" fileName="AncestorsOrThisTreeTraversal.java" startLine="47" startPosition="29" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="2295870045929266168" fileName="AncestorsOrThisTreeTraversal.java" startLine="53" startPosition="30" endLine="54" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266175" fileName="AncestorsOrThisTreeTraversal.java" startLine="58" startPosition="27" endLine="59" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="2295870045929266178" fileName="AncestorsOrThisTreeTraversal.java" startLine="60" startPosition="7" endLine="61" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -350,7 +350,7 @@
     <nodeInfo nodeId="2295870045929266044" fileName="AncestorsOrThisTreeTraversal.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
     <nodeInfo nodeId="2295870045929266041" fileName="AncestorsOrThisTreeTraversal.java" startLine="56" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
     <nodeInfo nodeId="2295870045929266120" fileName="AncestorsOrThisTreeTraversal.java" startLine="38" startPosition="55" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2295870045929266107" fileName="AncestorsOrThisTreeTraversal.java" startLine="36" startPosition="31" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2295870045929266107" fileName="AncestorsOrThisTreeTraversal.java" startLine="36" startPosition="26" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="2295870045929266035" fileName="AncestorsOrThisTreeTraversal.java" startLine="33" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()V" />
     <scopeInfo nodeId="2295870045929266053" fileName="AncestorsOrThisTreeTraversal.java" startLine="12" startPosition="65" endLine="13" endPosition="18" />
     <scopeInfo nodeId="2295870045929266065" fileName="AncestorsOrThisTreeTraversal.java" startLine="16" startPosition="91" endLine="17" endPosition="22" />
@@ -364,8 +364,8 @@
       <varInfo nodeId="2295870045929266050" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266056" fileName="AncestorsOrThisTreeTraversal.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
-      <varInfo nodeId="2295870045929266059" varName="source" />
       <varInfo nodeId="2295870045929266062" varName="fd" />
+      <varInfo nodeId="2295870045929266059" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266069" fileName="AncestorsOrThisTreeTraversal.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="2295870045929266029" fileName="AncestorsOrThisTreeTraversal.java" startLine="28" startPosition="0" endLine="32" endPosition="5">
@@ -377,8 +377,8 @@
       <varInfo nodeId="2295870045929266179" varName="tmp" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266124" fileName="AncestorsOrThisTreeTraversal.java" startLine="39" startPosition="27" endLine="48" endPosition="16">
-      <varInfo nodeId="2295870045929266137" varName="parentIt" />
       <varInfo nodeId="2295870045929266131" varName="node" />
+      <varInfo nodeId="2295870045929266137" varName="parentIt" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266041" fileName="AncestorsOrThisTreeTraversal.java" startLine="56" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="2295870045929266112" fileName="AncestorsOrThisTreeTraversal.java" startLine="37" startPosition="52" endLine="49" endPosition="9">
@@ -386,8 +386,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2295870045929266094" fileName="AncestorsOrThisTreeTraversal.java" startLine="34" startPosition="31" endLine="50" endPosition="7" />
     <scopeInfo nodeId="2295870045929266035" fileName="AncestorsOrThisTreeTraversal.java" startLine="33" startPosition="0" endLine="52" endPosition="0" />
-    <unitInfo nodeId="2295870045929266014" fileName="AncestorsOrThisTreeTraversal.java" startLine="24" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.AncestorsOrThisTreeTraversal$AncestorsOrThisIterator" />
     <unitInfo nodeId="2295870045929266007" fileName="AncestorsOrThisTreeTraversal.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.AncestorsOrThisTreeTraversal" />
+    <unitInfo nodeId="2295870045929266014" fileName="AncestorsOrThisTreeTraversal.java" startLine="24" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.AncestorsOrThisTreeTraversal$AncestorsOrThisIterator" />
   </root>
   <root nodeId="2295870045929266780">
     <nodeInfo nodeId="2295870045929266787" fileName="StartTreeTraversal.java" startLine="10" startPosition="98" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="treePath" />
@@ -430,16 +430,16 @@
     <nodeInfo nodeId="2295870045929267132" fileName="DescedantsOrThisTreeTraversal.java" startLine="22" startPosition="30" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasNextNode" />
     <nodeInfo nodeId="2295870045929267184" fileName="DescedantsOrThisTreeTraversal.java" startLine="25" startPosition="63" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929267189" fileName="DescedantsOrThisTreeTraversal.java" startLine="26" startPosition="42" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929267192" fileName="DescedantsOrThisTreeTraversal.java" startLine="30" startPosition="31" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929267198" fileName="DescedantsOrThisTreeTraversal.java" startLine="31" startPosition="27" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929267192" fileName="DescedantsOrThisTreeTraversal.java" startLine="30" startPosition="31" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929267198" fileName="DescedantsOrThisTreeTraversal.java" startLine="31" startPosition="22" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929267210" fileName="DescedantsOrThisTreeTraversal.java" startLine="33" startPosition="51" endLine="34" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2295870045929267222" fileName="DescedantsOrThisTreeTraversal.java" startLine="35" startPosition="27" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929267227" fileName="DescedantsOrThisTreeTraversal.java" startLine="36" startPosition="42" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2295870045929267233" fileName="DescedantsOrThisTreeTraversal.java" startLine="37" startPosition="29" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2295870045929267246" fileName="DescedantsOrThisTreeTraversal.java" startLine="39" startPosition="34" endLine="40" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929267251" fileName="DescedantsOrThisTreeTraversal.java" startLine="41" startPosition="11" endLine="42" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929267257" fileName="DescedantsOrThisTreeTraversal.java" startLine="42" startPosition="31" endLine="43" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929267263" fileName="DescedantsOrThisTreeTraversal.java" startLine="43" startPosition="34" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2295870045929267251" fileName="DescedantsOrThisTreeTraversal.java" startLine="41" startPosition="11" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929267257" fileName="DescedantsOrThisTreeTraversal.java" startLine="42" startPosition="26" endLine="43" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929267263" fileName="DescedantsOrThisTreeTraversal.java" startLine="43" startPosition="29" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="2295870045929267265" fileName="DescedantsOrThisTreeTraversal.java" startLine="49" startPosition="30" endLine="50" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929267272" fileName="DescedantsOrThisTreeTraversal.java" startLine="54" startPosition="27" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="2295870045929267275" fileName="DescedantsOrThisTreeTraversal.java" startLine="56" startPosition="7" endLine="57" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -455,7 +455,7 @@
     <nodeInfo nodeId="2295870045929267150" fileName="DescedantsOrThisTreeTraversal.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
     <nodeInfo nodeId="2295870045929267147" fileName="DescedantsOrThisTreeTraversal.java" startLine="52" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
     <nodeInfo nodeId="2295870045929267217" fileName="DescedantsOrThisTreeTraversal.java" startLine="34" startPosition="54" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2295870045929267204" fileName="DescedantsOrThisTreeTraversal.java" startLine="32" startPosition="31" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2295870045929267204" fileName="DescedantsOrThisTreeTraversal.java" startLine="32" startPosition="26" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="2295870045929267141" fileName="DescedantsOrThisTreeTraversal.java" startLine="29" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()V" />
     <scopeInfo nodeId="2295870045929267162" fileName="DescedantsOrThisTreeTraversal.java" startLine="12" startPosition="97" endLine="13" endPosition="27" />
     <scopeInfo nodeId="2295870045929267170" fileName="DescedantsOrThisTreeTraversal.java" startLine="16" startPosition="33" endLine="17" endPosition="108" />
@@ -465,8 +465,8 @@
     <scopeInfo nodeId="2295870045929267283" fileName="DescedantsOrThisTreeTraversal.java" startLine="62" startPosition="26" endLine="63" endPosition="48" />
     <scopeInfo nodeId="2295870045929267183" fileName="DescedantsOrThisTreeTraversal.java" startLine="25" startPosition="63" endLine="27" endPosition="19" />
     <scopeInfo nodeId="2295870045929267153" fileName="DescedantsOrThisTreeTraversal.java" startLine="11" startPosition="114" endLine="14" endPosition="3">
-      <varInfo nodeId="2295870045929267156" varName="source" />
       <varInfo nodeId="2295870045929267159" varName="feature" />
+      <varInfo nodeId="2295870045929267156" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929267166" fileName="DescedantsOrThisTreeTraversal.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="2295870045929267135" fileName="DescedantsOrThisTreeTraversal.java" startLine="24" startPosition="0" endLine="28" endPosition="5">
@@ -478,8 +478,8 @@
       <varInfo nodeId="2295870045929267276" varName="tmp" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929267221" fileName="DescedantsOrThisTreeTraversal.java" startLine="35" startPosition="27" endLine="44" endPosition="16">
-      <varInfo nodeId="2295870045929267228" varName="node" />
       <varInfo nodeId="2295870045929267234" varName="childIt" />
+      <varInfo nodeId="2295870045929267228" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929267147" fileName="DescedantsOrThisTreeTraversal.java" startLine="52" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="2295870045929267209" fileName="DescedantsOrThisTreeTraversal.java" startLine="33" startPosition="51" endLine="45" endPosition="9">
@@ -487,8 +487,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2295870045929267191" fileName="DescedantsOrThisTreeTraversal.java" startLine="30" startPosition="31" endLine="46" endPosition="7" />
     <scopeInfo nodeId="2295870045929267141" fileName="DescedantsOrThisTreeTraversal.java" startLine="29" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="2295870045929267120" fileName="DescedantsOrThisTreeTraversal.java" startLine="20" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.DescedantsOrThisTreeTraversal$DescendantsOrThisTreeIterator" />
     <unitInfo nodeId="2295870045929267113" fileName="DescedantsOrThisTreeTraversal.java" startLine="11" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.DescedantsOrThisTreeTraversal" />
+    <unitInfo nodeId="2295870045929267120" fileName="DescedantsOrThisTreeTraversal.java" startLine="20" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.DescedantsOrThisTreeTraversal$DescendantsOrThisTreeIterator" />
   </root>
   <root nodeId="2295870045929268322">
     <nodeInfo nodeId="2295870045929268375" fileName="SiblingsTreeTraversal.java" startLine="11" startPosition="106" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="siblingsFilter" />
@@ -503,25 +503,25 @@
     <nodeInfo nodeId="2295870045929268347" fileName="SiblingsTreeTraversal.java" startLine="31" startPosition="45" endLine="32" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="currentParentsIterator" />
     <nodeInfo nodeId="2295870045929268351" fileName="SiblingsTreeTraversal.java" startLine="32" startPosition="54" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nextNode" />
     <nodeInfo nodeId="2295870045929268354" fileName="SiblingsTreeTraversal.java" startLine="33" startPosition="30" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasNextNode" />
-    <nodeInfo nodeId="2295870045929268425" fileName="SiblingsTreeTraversal.java" startLine="36" startPosition="50" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268431" fileName="SiblingsTreeTraversal.java" startLine="37" startPosition="35" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268434" fileName="SiblingsTreeTraversal.java" startLine="41" startPosition="31" endLine="42" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268440" fileName="SiblingsTreeTraversal.java" startLine="42" startPosition="27" endLine="43" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268459" fileName="SiblingsTreeTraversal.java" startLine="45" startPosition="65" endLine="46" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268425" fileName="SiblingsTreeTraversal.java" startLine="36" startPosition="50" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268431" fileName="SiblingsTreeTraversal.java" startLine="37" startPosition="30" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268434" fileName="SiblingsTreeTraversal.java" startLine="41" startPosition="31" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268440" fileName="SiblingsTreeTraversal.java" startLine="42" startPosition="22" endLine="43" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268459" fileName="SiblingsTreeTraversal.java" startLine="45" startPosition="65" endLine="46" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929268474" fileName="SiblingsTreeTraversal.java" startLine="47" startPosition="60" endLine="48" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="2295870045929268475" fileName="SiblingsTreeTraversal.java" startLine="49" startPosition="11" endLine="50" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268481" fileName="SiblingsTreeTraversal.java" startLine="50" startPosition="39" endLine="51" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268487" fileName="SiblingsTreeTraversal.java" startLine="51" startPosition="45" endLine="52" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268493" fileName="SiblingsTreeTraversal.java" startLine="52" startPosition="46" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2295870045929268475" fileName="SiblingsTreeTraversal.java" startLine="49" startPosition="11" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268481" fileName="SiblingsTreeTraversal.java" startLine="50" startPosition="34" endLine="51" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268487" fileName="SiblingsTreeTraversal.java" startLine="51" startPosition="40" endLine="52" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268493" fileName="SiblingsTreeTraversal.java" startLine="52" startPosition="41" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="2295870045929268499" fileName="SiblingsTreeTraversal.java" startLine="55" startPosition="45" endLine="56" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929268527" fileName="SiblingsTreeTraversal.java" startLine="59" startPosition="49" endLine="60" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929268522" fileName="SiblingsTreeTraversal.java" startLine="61" startPosition="18" endLine="62" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929268545" fileName="SiblingsTreeTraversal.java" startLine="65" startPosition="86" endLine="66" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2295870045929268559" fileName="SiblingsTreeTraversal.java" startLine="67" startPosition="69" endLine="68" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="2295870045929268560" fileName="SiblingsTreeTraversal.java" startLine="69" startPosition="11" endLine="70" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268566" fileName="SiblingsTreeTraversal.java" startLine="70" startPosition="34" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268572" fileName="SiblingsTreeTraversal.java" startLine="71" startPosition="34" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929268573" fileName="SiblingsTreeTraversal.java" startLine="73" startPosition="9" endLine="74" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268560" fileName="SiblingsTreeTraversal.java" startLine="69" startPosition="11" endLine="70" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268566" fileName="SiblingsTreeTraversal.java" startLine="70" startPosition="29" endLine="71" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268572" fileName="SiblingsTreeTraversal.java" startLine="71" startPosition="29" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929268573" fileName="SiblingsTreeTraversal.java" startLine="73" startPosition="9" endLine="74" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929268580" fileName="SiblingsTreeTraversal.java" startLine="78" startPosition="30" endLine="79" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929268587" fileName="SiblingsTreeTraversal.java" startLine="83" startPosition="27" endLine="84" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="2295870045929268590" fileName="SiblingsTreeTraversal.java" startLine="85" startPosition="7" endLine="86" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -529,7 +529,7 @@
     <nodeInfo nodeId="2295870045929268596" fileName="SiblingsTreeTraversal.java" startLine="87" startPosition="19" endLine="88" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929268599" fileName="SiblingsTreeTraversal.java" startLine="91" startPosition="26" endLine="92" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="2295870045929268520" fileName="SiblingsTreeTraversal.java" startLine="61" startPosition="16" endLine="63" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2295870045929268467" fileName="SiblingsTreeTraversal.java" startLine="46" startPosition="53" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2295870045929268467" fileName="SiblingsTreeTraversal.java" startLine="46" startPosition="48" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2295870045929268494" fileName="SiblingsTreeTraversal.java" startLine="54" startPosition="9" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2295870045929268551" fileName="SiblingsTreeTraversal.java" startLine="66" startPosition="53" endLine="69" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2295870045929268583" fileName="SiblingsTreeTraversal.java" startLine="82" startPosition="21" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -544,7 +544,7 @@
     <nodeInfo nodeId="2295870045929268536" fileName="SiblingsTreeTraversal.java" startLine="64" startPosition="9" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="2295870045929268369" fileName="SiblingsTreeTraversal.java" startLine="81" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
     <nodeInfo nodeId="2295870045929268451" fileName="SiblingsTreeTraversal.java" startLine="44" startPosition="10" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2295870045929268446" fileName="SiblingsTreeTraversal.java" startLine="43" startPosition="31" endLine="75" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="2295870045929268446" fileName="SiblingsTreeTraversal.java" startLine="43" startPosition="26" endLine="75" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
     <nodeInfo nodeId="2295870045929268363" fileName="SiblingsTreeTraversal.java" startLine="40" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()V" />
     <scopeInfo nodeId="2295870045929268405" fileName="SiblingsTreeTraversal.java" startLine="19" startPosition="49" endLine="20" endPosition="26" />
     <scopeInfo nodeId="2295870045929268412" fileName="SiblingsTreeTraversal.java" startLine="23" startPosition="33" endLine="24" endPosition="87" />
@@ -559,9 +559,9 @@
     <scopeInfo nodeId="2295870045929268391" fileName="SiblingsTreeTraversal.java" startLine="14" startPosition="124" endLine="16" endPosition="41" />
     <scopeInfo nodeId="2295870045929268424" fileName="SiblingsTreeTraversal.java" startLine="36" startPosition="50" endLine="38" endPosition="19" />
     <scopeInfo nodeId="2295870045929268379" fileName="SiblingsTreeTraversal.java" startLine="13" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="2295870045929268388" varName="feature" />
       <varInfo nodeId="2295870045929268385" varName="siblingsFilter" />
       <varInfo nodeId="2295870045929268382" varName="source" />
-      <varInfo nodeId="2295870045929268388" varName="feature" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929268401" fileName="SiblingsTreeTraversal.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="2295870045929268408" fileName="SiblingsTreeTraversal.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -579,11 +579,11 @@
     </scopeInfo>
     <scopeInfo nodeId="2295870045929268458" fileName="SiblingsTreeTraversal.java" startLine="45" startPosition="65" endLine="53" endPosition="16" />
     <scopeInfo nodeId="2295870045929268369" fileName="SiblingsTreeTraversal.java" startLine="81" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="2295870045929268450" fileName="SiblingsTreeTraversal.java" startLine="44" startPosition="10" endLine="74" endPosition="38" />
+    <scopeInfo nodeId="2295870045929268450" fileName="SiblingsTreeTraversal.java" startLine="44" startPosition="10" endLine="74" endPosition="33" />
     <scopeInfo nodeId="2295870045929268433" fileName="SiblingsTreeTraversal.java" startLine="41" startPosition="31" endLine="75" endPosition="41" />
     <scopeInfo nodeId="2295870045929268363" fileName="SiblingsTreeTraversal.java" startLine="40" startPosition="0" endLine="77" endPosition="0" />
-    <unitInfo nodeId="2295870045929268329" fileName="SiblingsTreeTraversal.java" startLine="27" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.SiblingsTreeTraversal$SiblingsIterator" />
     <unitInfo nodeId="2295870045929268322" fileName="SiblingsTreeTraversal.java" startLine="11" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.SiblingsTreeTraversal" />
+    <unitInfo nodeId="2295870045929268329" fileName="SiblingsTreeTraversal.java" startLine="27" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.SiblingsTreeTraversal$SiblingsIterator" />
   </root>
   <root nodeId="2295870045929268602">
     <nodeInfo nodeId="2295870045929268655" fileName="ChildrenTreeTraversal.java" startLine="11" startPosition="89" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -592,15 +592,15 @@
     <nodeInfo nodeId="2295870045929268617" fileName="ChildrenTreeTraversal.java" startLine="20" startPosition="45" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="childrenIterator" />
     <nodeInfo nodeId="2295870045929268621" fileName="ChildrenTreeTraversal.java" startLine="21" startPosition="48" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nextNode" />
     <nodeInfo nodeId="2295870045929268624" fileName="ChildrenTreeTraversal.java" startLine="22" startPosition="30" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasNextNode" />
-    <nodeInfo nodeId="2295870045929268673" fileName="ChildrenTreeTraversal.java" startLine="25" startPosition="50" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268679" fileName="ChildrenTreeTraversal.java" startLine="26" startPosition="35" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268682" fileName="ChildrenTreeTraversal.java" startLine="30" startPosition="31" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268688" fileName="ChildrenTreeTraversal.java" startLine="31" startPosition="27" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268709" fileName="ChildrenTreeTraversal.java" startLine="33" startPosition="103" endLine="34" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268715" fileName="ChildrenTreeTraversal.java" startLine="34" startPosition="37" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2295870045929268721" fileName="ChildrenTreeTraversal.java" startLine="35" startPosition="39" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268739" fileName="ChildrenTreeTraversal.java" startLine="38" startPosition="67" endLine="39" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929268747" fileName="ChildrenTreeTraversal.java" startLine="39" startPosition="48" endLine="40" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268673" fileName="ChildrenTreeTraversal.java" startLine="25" startPosition="50" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268679" fileName="ChildrenTreeTraversal.java" startLine="26" startPosition="30" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268682" fileName="ChildrenTreeTraversal.java" startLine="30" startPosition="31" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268688" fileName="ChildrenTreeTraversal.java" startLine="31" startPosition="22" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268709" fileName="ChildrenTreeTraversal.java" startLine="33" startPosition="103" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268715" fileName="ChildrenTreeTraversal.java" startLine="34" startPosition="32" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2295870045929268721" fileName="ChildrenTreeTraversal.java" startLine="35" startPosition="39" endLine="36" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268739" fileName="ChildrenTreeTraversal.java" startLine="38" startPosition="67" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929268747" fileName="ChildrenTreeTraversal.java" startLine="39" startPosition="43" endLine="40" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929268754" fileName="ChildrenTreeTraversal.java" startLine="44" startPosition="30" endLine="45" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929268761" fileName="ChildrenTreeTraversal.java" startLine="49" startPosition="27" endLine="50" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="2295870045929268764" fileName="ChildrenTreeTraversal.java" startLine="51" startPosition="7" endLine="52" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -614,7 +614,7 @@
     <nodeInfo nodeId="2295870045929268730" fileName="ChildrenTreeTraversal.java" startLine="37" startPosition="7" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2295870045929268636" fileName="ChildrenTreeTraversal.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
     <nodeInfo nodeId="2295870045929268642" fileName="ChildrenTreeTraversal.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="2295870045929268694" fileName="ChildrenTreeTraversal.java" startLine="32" startPosition="31" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2295870045929268694" fileName="ChildrenTreeTraversal.java" startLine="32" startPosition="26" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="2295870045929268639" fileName="ChildrenTreeTraversal.java" startLine="47" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
     <nodeInfo nodeId="2295870045929268633" fileName="ChildrenTreeTraversal.java" startLine="29" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()V" />
     <scopeInfo nodeId="2295870045929268654" fileName="ChildrenTreeTraversal.java" startLine="11" startPosition="89" endLine="12" endPosition="27" />
@@ -623,12 +623,12 @@
     <scopeInfo nodeId="2295870045929268760" fileName="ChildrenTreeTraversal.java" startLine="49" startPosition="27" endLine="50" endPosition="43" />
     <scopeInfo nodeId="2295870045929268772" fileName="ChildrenTreeTraversal.java" startLine="57" startPosition="26" endLine="58" endPosition="48" />
     <scopeInfo nodeId="2295870045929268672" fileName="ChildrenTreeTraversal.java" startLine="25" startPosition="50" endLine="27" endPosition="19" />
-    <scopeInfo nodeId="2295870045929268738" fileName="ChildrenTreeTraversal.java" startLine="38" startPosition="67" endLine="40" endPosition="32" />
+    <scopeInfo nodeId="2295870045929268738" fileName="ChildrenTreeTraversal.java" startLine="38" startPosition="67" endLine="40" endPosition="27" />
     <scopeInfo nodeId="2295870045929268645" fileName="ChildrenTreeTraversal.java" startLine="10" startPosition="106" endLine="13" endPosition="3">
-      <varInfo nodeId="2295870045929268648" varName="source" />
       <varInfo nodeId="2295870045929268651" varName="feature" />
+      <varInfo nodeId="2295870045929268648" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="2295870045929268708" fileName="ChildrenTreeTraversal.java" startLine="33" startPosition="103" endLine="36" endPosition="67">
+    <scopeInfo nodeId="2295870045929268708" fileName="ChildrenTreeTraversal.java" startLine="33" startPosition="103" endLine="36" endPosition="62">
       <varInfo nodeId="2295870045929268716" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2295870045929268658" fileName="ChildrenTreeTraversal.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
@@ -643,8 +643,8 @@
     <scopeInfo nodeId="2295870045929268639" fileName="ChildrenTreeTraversal.java" startLine="47" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="2295870045929268681" fileName="ChildrenTreeTraversal.java" startLine="30" startPosition="31" endLine="41" endPosition="7" />
     <scopeInfo nodeId="2295870045929268633" fileName="ChildrenTreeTraversal.java" startLine="29" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="2295870045929268609" fileName="ChildrenTreeTraversal.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.ChildrenTreeTraversal$ChildrenIterator" />
     <unitInfo nodeId="2295870045929268602" fileName="ChildrenTreeTraversal.java" startLine="10" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.ChildrenTreeTraversal" />
+    <unitInfo nodeId="2295870045929268609" fileName="ChildrenTreeTraversal.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ypath.runtime.internal.ChildrenTreeTraversal$ChildrenIterator" />
   </root>
 </debugInfo>
 

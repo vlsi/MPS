@@ -34,22 +34,22 @@ public class SiblingsTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
     private boolean hasNextNode = false;
 
     private SiblingsIterator(Iterator<T> source) {
-      this.sourceIterator = source;
+      sourceIterator = source;
       moveToNext();
     }
 
     private void moveToNext() {
-      this.nextNode = null;
-      this.hasNextNode = false;
+      nextNode = null;
+      hasNextNode = false;
       do {
         while (!(hasCurrentSource) && sourceIterator.hasNext()) {
-          this.currentSource = sourceIterator.next();
+          currentSource = sourceIterator.next();
           if (!(getSiblingFilter().accept(currentSource))) {
             continue;
           }
-          this.hasCurrentSource = true;
-          this.currentParentsIterator = null;
-          this.currentSiblingsIterator = null;
+          hasCurrentSource = true;
+          currentParentsIterator = null;
+          currentSiblingsIterator = null;
           break;
         }
         if (currentParentsIterator == null) {
@@ -67,11 +67,11 @@ public class SiblingsTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
           if (!(getSiblingFilter().accept(sibling, currentSource))) {
             continue;
           }
-          this.nextNode = sibling;
-          this.hasNextNode = true;
+          nextNode = sibling;
+          hasNextNode = true;
           return;
         }
-        this.hasCurrentSource = false;
+        hasCurrentSource = false;
       } while (sourceIterator.hasNext());
     }
 

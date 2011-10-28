@@ -17,7 +17,7 @@ public class ChainedIterator<E> implements Iterator<E> {
   }
 
   public ChainedIterator(List<Iterator<E>> iteratorsList) {
-    this.iterators = iteratorsList;
+    iterators = iteratorsList;
     moveToNext();
   }
 

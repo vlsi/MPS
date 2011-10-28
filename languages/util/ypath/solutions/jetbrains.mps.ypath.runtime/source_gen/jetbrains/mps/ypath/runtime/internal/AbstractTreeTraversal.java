@@ -41,13 +41,13 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
           private boolean accepting;
 
           public boolean accept(T t) {
-            this.accepting = false;
+            accepting = false;
             return true;
           }
 
           public boolean accept(T sibling, T thisNode) {
             if (sibling == thisNode || (sibling != null && sibling.equals(thisNode))) {
-              this.accepting = true;
+              accepting = true;
               return false;
             }
             return accepting;
@@ -58,13 +58,13 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
           private boolean accepting;
 
           public boolean accept(T t) {
-            this.accepting = false;
+            accepting = false;
             return true;
           }
 
           public boolean accept(T sibling, T thisNode) {
             if (sibling == thisNode || (sibling != null && sibling.equals(thisNode))) {
-              this.accepting = true;
+              accepting = true;
             }
             return accepting;
           }
@@ -74,13 +74,13 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
           private boolean accepting;
 
           public boolean accept(T t) {
-            this.accepting = true;
+            accepting = true;
             return true;
           }
 
           public boolean accept(T sibling, T thisNode) {
             if (sibling == thisNode || (sibling != null && sibling.equals(thisNode))) {
-              this.accepting = false;
+              accepting = false;
             }
             return accepting;
           }
@@ -90,13 +90,13 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
           private boolean accepting;
 
           public boolean accept(T t) {
-            this.accepting = true;
+            accepting = true;
             return true;
           }
 
           public boolean accept(T sibling, T thisNode) {
             if (sibling == thisNode || (sibling != null && sibling.equals(thisNode))) {
-              this.accepting = false;
+              accepting = false;
               return true;
             }
             return accepting;

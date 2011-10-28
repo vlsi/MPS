@@ -32,8 +32,8 @@ public class AncestorsOrThisTreeTraversal<T> extends AbstractChainTreeTraversal<
     }
 
     private void moveToNext() {
-      this.nextNode = null;
-      this.hasNextNode = false;
+      nextNode = null;
+      hasNextNode = false;
       while (!(ancestorsIteratorsStack.isEmpty())) {
         Iterator<T> it = ancestorsIteratorsStack.pop();
         if (it.hasNext()) {
@@ -43,8 +43,8 @@ public class AncestorsOrThisTreeTraversal<T> extends AbstractChainTreeTraversal<
           if (parentIt.hasNext()) {
             ancestorsIteratorsStack.push(parentIt);
           }
-          this.nextNode = node;
-          this.hasNextNode = true;
+          nextNode = node;
+          hasNextNode = true;
           break;
         }
       }

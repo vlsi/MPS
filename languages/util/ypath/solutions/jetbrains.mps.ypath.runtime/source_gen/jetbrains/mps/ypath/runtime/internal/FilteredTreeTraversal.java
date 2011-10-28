@@ -25,18 +25,18 @@ public class FilteredTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
     private T nextNode;
 
     private FilteringIterator(Iterator<T> iterator) {
-      this.sourceIterator = iterator;
+      sourceIterator = iterator;
       moveToNext();
     }
 
     private void moveToNext() {
-      this.nextNode = null;
-      this.hasNextNode = false;
+      nextNode = null;
+      hasNextNode = false;
       while (sourceIterator.hasNext()) {
         T node = sourceIterator.next();
         if (filter.accept(node)) {
-          this.nextNode = node;
-          this.hasNextNode = true;
+          nextNode = node;
+          hasNextNode = true;
           break;
         }
       }

@@ -23,21 +23,21 @@ public class ChildrenTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
     private boolean hasNextNode = false;
 
     private ChildrenIterator(Iterator<T> source) {
-      this.sourceIterator = source;
+      sourceIterator = source;
       moveToNext();
     }
 
     private void moveToNext() {
-      this.nextNode = null;
-      this.hasNextNode = false;
+      nextNode = null;
+      hasNextNode = false;
       while ((childrenIterator == null || !(childrenIterator.hasNext())) && sourceIterator.hasNext()) {
-        this.childrenIterator = null;
+        childrenIterator = null;
         T node = sourceIterator.next();
-        this.childrenIterator = getDirectContents(node).iterator();
+        childrenIterator = getDirectContents(node).iterator();
       }
       if (childrenIterator != null && childrenIterator.hasNext()) {
-        this.nextNode = childrenIterator.next();
-        this.hasNextNode = true;
+        nextNode = childrenIterator.next();
+        hasNextNode = true;
       }
     }
 

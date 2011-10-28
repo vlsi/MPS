@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dul88oo5qcjjeehmjvbw1gloc8op5px">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3lxfcg9w0sl635r6n0c4d5sryip3kpx" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="7c5ssk9ukgkps0ad18aex01o7lv119u" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="akfobdt43q9rrlj8pszut5gr07xi91o" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="1qpl4dcq87orqyeop7drkzps9naovu7" />
+<dependencies version="2" modelHash="-btw2k65c9ebbbrgzqpfe7vu3w2kymq0">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="c8w34ecdfwjr8bgl4l1u8jgdbwvii8c" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="4592mc0c92ee86m4hdnk27h6ntxlxqu" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-7zc5n4l9a9zrjq93znk167hfo3dyd2v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
   <common hash="dlohpmiuquh1zkbgol35sbqgwd5fe2t" />
-  <source id="2295870045929265527" name="ParentTreeTraversal" hash="-52nmq2ui7yur8thdpbm7pjb2guv1720">
+  <source id="2295870045929265527" name="ParentTreeTraversal" hash="e940ydm6i8y3pgj248w23ezyhqkq85e">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -14,7 +14,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ParentTreeTraversal.java" />
   </source>
-  <source id="2295870045929265830" name="FilteredTreeTraversal" hash="3kn9l5xj7rsvql6o5ea0w7eaulb8wpu">
+  <source id="2295870045929265830" name="FilteredTreeTraversal" hash="2n0frocczptrgdlieaku94yu2mhbf88">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -22,7 +22,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FilteredTreeTraversal.java" />
   </source>
-  <source id="2295870045929266007" name="AncestorsOrThisTreeTraversal" hash="-dmr512x0d0fv0jaf5ou70t2105p3r1g">
+  <source id="2295870045929266007" name="AncestorsOrThisTreeTraversal" hash="-kv7zcoadzsh99cf7mj2fv0rzrz8z2v">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -30,7 +30,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AncestorsOrThisTreeTraversal.java" />
   </source>
-  <source id="2295870045929265519" name="AbstractTreeTraversal" hash="6tfc0tl2wi2agag495cnxnh84t6wzfc">
+  <source id="2295870045929265519" name="AbstractTreeTraversal" hash="ch8axjlkn6j29fwoteyf4h1tafbmiyn">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -38,7 +38,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AbstractTreeTraversal.java" />
   </source>
-  <source id="2295870045929265509" name="AbstractChainTreeTraversal" hash="-6rccw8ama77t69z4gvi9967bwqzxpyg">
+  <source id="2295870045929265509" name="AbstractChainTreeTraversal" hash="-dbl80vxsy6ej8hi6iz62a3bu3ap2q3n">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -46,7 +46,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AbstractChainTreeTraversal.java" />
   </source>
-  <source id="2295870045929266780" name="StartTreeTraversal" hash="-by4xc8ahl5gpv9xdkvkfb54tqbsij6u">
+  <source id="2295870045929266780" name="StartTreeTraversal" hash="1lqjmiacb1c9rjyvle3zkxtnhhbgjd4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -54,7 +54,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StartTreeTraversal.java" />
   </source>
-  <source id="2295870045929267113" name="DescedantsOrThisTreeTraversal" hash="-cc7joav8ph1sh13iscrlwt76xqpw1df">
+  <source id="2295870045929267113" name="DescedantsOrThisTreeTraversal" hash="-1jsm3hv6648ebpg7t37xfcttvq9jnc6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -62,7 +62,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DescedantsOrThisTreeTraversal.java" />
   </source>
-  <source id="2295870045929268322" name="SiblingsTreeTraversal" hash="15zz1vtzq48b0hvet04judpnemcoo0u">
+  <source id="2295870045929268322" name="SiblingsTreeTraversal" hash="-ecy1qgmfbx19rdmghtubqipnbdsw1bn">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -70,7 +70,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SiblingsTreeTraversal.java" />
   </source>
-  <source id="2295870045929268602" name="ChildrenTreeTraversal" hash="-5262ged7ij968yynnmj1g4z6e78u7jn">
+  <source id="2295870045929268602" name="ChildrenTreeTraversal" hash="8kzn37i33b1muutft0devlh01ar25sg">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

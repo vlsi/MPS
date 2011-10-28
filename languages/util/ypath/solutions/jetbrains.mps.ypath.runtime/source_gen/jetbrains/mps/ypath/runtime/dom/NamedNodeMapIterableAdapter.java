@@ -11,7 +11,7 @@ public class NamedNodeMapIterableAdapter implements Iterable<Node> {
   private NamedNodeMap nodeMap;
 
   public NamedNodeMapIterableAdapter(NamedNodeMap map) {
-    this.nodeMap = map;
+    nodeMap = map;
   }
 
   public Iterator<Node> iterator() {

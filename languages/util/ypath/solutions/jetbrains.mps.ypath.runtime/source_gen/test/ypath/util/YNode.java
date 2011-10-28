@@ -45,7 +45,7 @@ public class YNode {
   }
 
   private void setSupernode(YNode node) {
-    this.supernode = node;
+    supernode = node;
   }
 
   public YNode getSupernode() {

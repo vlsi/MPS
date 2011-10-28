@@ -20,20 +20,20 @@ public enum TraversalAxis {
   /*package*/ String myValue;
 
   TraversalAxis(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
+    myName = name;
+    myValue = value;
   }
 
   public String getName() {
-    return this.myName;
+    return myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
 
   public String getValue() {
-    return this.myValue;
+    return myValue;
   }
 
   public static List<TraversalAxis> getConstants() {
