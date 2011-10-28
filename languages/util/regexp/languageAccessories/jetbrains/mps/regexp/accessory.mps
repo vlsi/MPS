@@ -253,7 +253,9 @@
         <node role="part" roleId="tpfo.1174557628217" type="tpfo.CharacterSymbolClassPart" typeId="tpfo.1174557878319" id="1220361787412">
           <property name="character" nameId="tpfo.1174557887320" value="a" />
         </node>
-        <node role="part" roleId="tpfo.1174557628217" type="tpfo.SymbolClassPart" typeId="tpfo.1174557861378" id="1220361795973" />
+        <node role="part" roleId="tpfo.1174557628217" type="tpfo.PredefinedSymbolClassSymbolClassPart" typeId="tpfo.1174558792178" id="984336073404353785">
+          <link role="declaration" roleId="tpfo.1174558819022" targetNodeId="1174554738336" resolveInfo="\w" />
+        </node>
       </node>
     </node>
   </root>
