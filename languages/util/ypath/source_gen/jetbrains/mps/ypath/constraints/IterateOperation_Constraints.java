@@ -45,7 +45,7 @@ public class IterateOperation_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode tpoe;
             if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
-              tpoe = _context.getEnclosingNode();
+              tpoe = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
             } else {
               tpoe = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
             }

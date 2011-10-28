@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -43,7 +44,7 @@ public class TreeNodeKindOccurrence_Constraints extends BaseConstraintsDescripto
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode tpoe = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
             SNode tpa = SNodeOperations.cast(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), "jetbrains.mps.ypath.structure.TreePathAspect");
-            return ListSequence.fromList(SNodeOperations.getDescendants(tpa, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+            return (List<SNode>) ListSequence.fromList(SNodeOperations.getDescendants(tpa, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKind");
               }

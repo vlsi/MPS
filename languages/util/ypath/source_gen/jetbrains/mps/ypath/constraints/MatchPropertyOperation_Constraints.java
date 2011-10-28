@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -42,7 +43,7 @@ public class MatchPropertyOperation_Constraints extends BaseConstraintsDescripto
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode nk = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "nodeKindOccurrence", true), "nodeKind", false);
-            return ListSequence.fromList(SNodeOperations.getDescendants(nk, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+            return (List<SNode>) ListSequence.fromList(SNodeOperations.getDescendants(nk, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKindProperty");
               }

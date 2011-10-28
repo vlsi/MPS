@@ -6,6 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ypath.design.IGenericParameterizedFeatureDesign;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ypath.design.IGenericFeatureDesign;
 import jetbrains.mps.ypath.design.IParameterizedFeatureDesign;
 import java.util.List;
@@ -17,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ypath.design.IFeatureDesign;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.ypath.plugin.DesignPartLoader;
 
@@ -28,7 +28,7 @@ public class FeatureUtil {
     IGenericParameterizedFeatureDesign gfd = (IGenericParameterizedFeatureDesign) getFeatureDesign(feature);
     if (gfd != null) {
       try {
-        SNode expr = gfd.getterExpression(srcExpr, param, generator);
+        SNode expr = SNodeOperations.cast(gfd.getterExpression(srcExpr, param, generator), "jetbrains.mps.baseLanguage.structure.Expression");
         return expr;
       } catch (Throwable t) {
         t.printStackTrace();
@@ -41,7 +41,7 @@ public class FeatureUtil {
     IGenericFeatureDesign gfd = (IGenericFeatureDesign) getFeatureDesign(feature);
     if (gfd != null) {
       try {
-        SNode expr = gfd.getterExpression(srcExpr, generator);
+        SNode expr = SNodeOperations.cast(gfd.getterExpression(srcExpr, generator), "jetbrains.mps.baseLanguage.structure.Expression");
         return expr;
       } catch (Throwable t) {
         t.printStackTrace();
@@ -77,7 +77,7 @@ public class FeatureUtil {
   public static List<SNode> getParameterObjects(SNode feature, SNode nodeType) {
     final IParameterizedFeatureDesign fd = (IParameterizedFeatureDesign) getFeatureDesign(feature);
     if (fd != null) {
-      Iterable<Object> params = fd.getParameters(nodeType);
+      Iterable<Object> params = (Iterable<Object>) fd.getParameters(nodeType);
       if (Sequence.fromIterable(params).isNotEmpty()) {
         return Sequence.fromIterable(params).select(new ISelector<Object, SNode>() {
           public SNode select(Object it) {
