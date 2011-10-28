@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
+import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.behavior.Statement_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.HashMap;
@@ -30,10 +31,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public abstract class ExtractMethodRefactoring {
-  public static final int CANNOT_BE_STATIC = 0;
-  public static final int CAN_BE_STATIC = 1;
-  public static final int SHOULD_BE_STATIC = 2;
-
   protected ExtractMethodRefactoringParameters myParameters;
   protected ExtractMethodRefactoringAnalyzer myAnalyzer;
   private IStaticContainerProcessor myStaticContainer;
@@ -86,7 +83,9 @@ public abstract class ExtractMethodRefactoring {
       myMethod = this.myStaticContainer.createNewMethod();
     } else {
       IExtractMethodRefactoringProcessor processor = this.myAnalyzer.getExtractMethodReafactoringProcessor();
-      processor.setStatic(this.myParameters.isStatic());
+      if (processor instanceof AbstractExtractMethodRefactoringProcessor) {
+        ((AbstractExtractMethodRefactoringProcessor) processor).setStatic(this.myParameters.isStatic());
+      }
       myMethod = processor.createNewMethod();
     }
     this.fillBaseMethodDeclaration(myMethod, returnType, params, body);
@@ -176,7 +175,7 @@ public abstract class ExtractMethodRefactoring {
   public Map<SNode, SNode> createInputVaryablesMapping(Map<SNode, SNode> variableDeclarationToParameter, List<SNode> nodes) {
     Map<SNode, SNode> mapping = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (SNode node : ListSequence.fromList(nodes)) {
-      for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+      for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", true, new String[]{}))) {
         if (MoveRefactoringUtils.isReference(reference)) {
           SNode target = Sequence.fromIterable(SNodeOperations.getReferences(reference)).first().getTargetNode();
           if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(target)) {
@@ -184,7 +183,7 @@ public abstract class ExtractMethodRefactoring {
           }
         }
       }
-      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
+      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", true, new String[]{}))) {
         SNode declaration = IParameter_Behavior.call_getDeclaration_1225282371351(parameter);
         if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(declaration)) {
           MapSequence.fromMap(mapping).put(parameter, MapSequence.fromMap(variableDeclarationToParameter).get(declaration));
@@ -211,7 +210,6 @@ public abstract class ExtractMethodRefactoring {
   protected SNode createMethodCall(SNode methodDeclaration, List<SNode> parameters) {
     if (this.myStaticContainer == null) {
       IExtractMethodRefactoringProcessor processor = this.myAnalyzer.getExtractMethodReafactoringProcessor();
-      processor.setStatic(this.myParameters.isStatic());
       return processor.createMethodCall(methodDeclaration, parameters);
     } else {
       return this.myStaticContainer.createMethodCall(methodDeclaration, parameters);
@@ -260,16 +258,12 @@ public abstract class ExtractMethodRefactoring {
 
   public abstract SNode getMethodType();
 
-  public int canBeStatic() {
-    if (!(this.myAnalyzer.canBeStatic())) {
-      return CANNOT_BE_STATIC;
-    } else {
-      if (!(this.myAnalyzer.shouldBeStatic())) {
-        return CAN_BE_STATIC;
-      } else {
-        return SHOULD_BE_STATIC;
-      }
-    }
+  public boolean canBeStatic() {
+    return this.myAnalyzer.canBeStatic();
+  }
+
+  public boolean shouldBeStatic() {
+    return this.myAnalyzer.shouldBeStatic();
   }
 
   public static class QuotationClass_jq3ovj_a0a0a0a0a2a6 {

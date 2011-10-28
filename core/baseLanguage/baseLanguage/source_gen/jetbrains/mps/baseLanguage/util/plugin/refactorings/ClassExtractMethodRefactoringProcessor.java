@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMethodRefactoringProcessor {
@@ -19,7 +19,7 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
   }
 
   public SNode createMethodCall(SNode declaration, List<SNode> parameters) {
-    if (!(isStatic)) {
+    if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), true);
       SNode callOperation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);

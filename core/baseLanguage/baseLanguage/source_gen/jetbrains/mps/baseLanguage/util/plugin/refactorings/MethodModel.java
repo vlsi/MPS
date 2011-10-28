@@ -19,7 +19,7 @@ public class MethodModel {
   private List<ChangeListener> myListeners = ListSequence.fromList(new ArrayList<ChangeListener>());
   private Map<String, SNode> myTypesMap = MapSequence.fromMap(new HashMap<String, SNode>());
   private List<String> myExceptions = ListSequence.fromList(new ArrayList<String>());
-  protected boolean isStatic;
+  protected boolean myIsStatic;
 
   public MethodModel() {
   }
@@ -43,12 +43,12 @@ public class MethodModel {
   }
 
   public void setStatic(boolean isStatic) {
-    this.isStatic = isStatic;
+    this.myIsStatic = isStatic;
     this.fireChange();
   }
 
   public boolean isStatic() {
-    return this.isStatic;
+    return this.myIsStatic;
   }
 
   public void fireChange() {
@@ -76,7 +76,7 @@ public class MethodModel {
 
   public String getMethodText() {
     final StringBuffer text = new StringBuffer();
-    if (this.isStatic) {
+    if (this.myIsStatic) {
       text.append("static ");
     }
 

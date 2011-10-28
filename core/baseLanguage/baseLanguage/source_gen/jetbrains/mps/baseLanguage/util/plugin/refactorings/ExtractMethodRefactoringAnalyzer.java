@@ -93,7 +93,7 @@ public class ExtractMethodRefactoringAnalyzer {
       return true;
     }
     SNode containerMethod = this.myProcessor.getContainerMethod();
-    if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+    if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration")) {
       return true;
     } else {
       return false;
@@ -244,7 +244,7 @@ public class ExtractMethodRefactoringAnalyzer {
     // added to fix problems with closures 
     addExternalParameters(result);
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
-      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
+      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", true, new String[]{}))) {
         SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(parameter), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
         MapSequence.fromMap(result).put(IParameter_Behavior.call_getDeclaration_1225282371351(parameter), new MethodParameter(IParameter_Behavior.call_getDeclaration_1225282371351(parameter), expressionType, IParameter_Behavior.call_getParameterName_1225280611056(parameter), parameter));
       }
