@@ -391,27 +391,27 @@
     <nodeInfo nodeId="2295870045929267101" fileName="TraversalAxis.java" startLine="31" startPosition="36" endLine="32" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929267109" fileName="TraversalAxis.java" startLine="35" startPosition="28" endLine="36" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266924" fileName="TraversalAxis.java" startLine="39" startPosition="52" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2295870045929266931" fileName="TraversalAxis.java" startLine="40" startPosition="63" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266936" fileName="TraversalAxis.java" startLine="41" startPosition="26" endLine="42" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266941" fileName="TraversalAxis.java" startLine="42" startPosition="31" endLine="43" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266946" fileName="TraversalAxis.java" startLine="43" startPosition="23" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266951" fileName="TraversalAxis.java" startLine="44" startPosition="24" endLine="45" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266956" fileName="TraversalAxis.java" startLine="45" startPosition="29" endLine="46" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266961" fileName="TraversalAxis.java" startLine="46" startPosition="33" endLine="47" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266966" fileName="TraversalAxis.java" startLine="47" startPosition="38" endLine="48" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266971" fileName="TraversalAxis.java" startLine="48" startPosition="33" endLine="49" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2295870045929266976" fileName="TraversalAxis.java" startLine="49" startPosition="38" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929266982" fileName="TraversalAxis.java" startLine="53" startPosition="44" endLine="54" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929266931" fileName="TraversalAxis.java" startLine="40" startPosition="63" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266936" fileName="TraversalAxis.java" startLine="41" startPosition="40" endLine="42" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266941" fileName="TraversalAxis.java" startLine="42" startPosition="45" endLine="43" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266946" fileName="TraversalAxis.java" startLine="43" startPosition="37" endLine="44" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266951" fileName="TraversalAxis.java" startLine="44" startPosition="38" endLine="45" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266956" fileName="TraversalAxis.java" startLine="45" startPosition="43" endLine="46" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266961" fileName="TraversalAxis.java" startLine="46" startPosition="47" endLine="47" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266966" fileName="TraversalAxis.java" startLine="47" startPosition="52" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266971" fileName="TraversalAxis.java" startLine="48" startPosition="47" endLine="49" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2295870045929266976" fileName="TraversalAxis.java" startLine="49" startPosition="52" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929266982" fileName="TraversalAxis.java" startLine="53" startPosition="44" endLine="54" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266995" fileName="TraversalAxis.java" startLine="58" startPosition="24" endLine="59" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929267005" fileName="TraversalAxis.java" startLine="61" startPosition="55" endLine="62" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929267015" fileName="TraversalAxis.java" startLine="64" startPosition="60" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929267025" fileName="TraversalAxis.java" startLine="67" startPosition="52" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929267035" fileName="TraversalAxis.java" startLine="70" startPosition="53" endLine="71" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929267045" fileName="TraversalAxis.java" startLine="73" startPosition="58" endLine="74" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929267055" fileName="TraversalAxis.java" startLine="76" startPosition="62" endLine="77" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929267065" fileName="TraversalAxis.java" startLine="79" startPosition="67" endLine="80" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929267075" fileName="TraversalAxis.java" startLine="82" startPosition="62" endLine="83" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2295870045929267085" fileName="TraversalAxis.java" startLine="85" startPosition="67" endLine="86" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="797879589497484197" fileName="TraversalAxis.java" startLine="61" startPosition="69" endLine="62" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929267015" fileName="TraversalAxis.java" startLine="64" startPosition="74" endLine="65" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929267025" fileName="TraversalAxis.java" startLine="67" startPosition="66" endLine="68" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929267035" fileName="TraversalAxis.java" startLine="70" startPosition="67" endLine="71" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929267045" fileName="TraversalAxis.java" startLine="73" startPosition="72" endLine="74" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929267055" fileName="TraversalAxis.java" startLine="76" startPosition="76" endLine="77" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929267065" fileName="TraversalAxis.java" startLine="79" startPosition="81" endLine="80" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929267075" fileName="TraversalAxis.java" startLine="82" startPosition="76" endLine="83" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295870045929267085" fileName="TraversalAxis.java" startLine="85" startPosition="81" endLine="86" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929267087" fileName="TraversalAxis.java" startLine="87" startPosition="5" endLine="88" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2295870045929266990" fileName="TraversalAxis.java" startLine="57" startPosition="56" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2295870045929266997" fileName="TraversalAxis.java" startLine="60" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -433,17 +433,17 @@
     <scopeInfo nodeId="2295870045929267092" fileName="TraversalAxis.java" startLine="27" startPosition="27" endLine="28" endPosition="18" />
     <scopeInfo nodeId="2295870045929267100" fileName="TraversalAxis.java" startLine="31" startPosition="36" endLine="32" endPosition="19" />
     <scopeInfo nodeId="2295870045929267108" fileName="TraversalAxis.java" startLine="35" startPosition="28" endLine="36" endPosition="19" />
-    <scopeInfo nodeId="2295870045929266981" fileName="TraversalAxis.java" startLine="53" startPosition="44" endLine="54" endPosition="23" />
+    <scopeInfo nodeId="2295870045929266981" fileName="TraversalAxis.java" startLine="53" startPosition="44" endLine="54" endPosition="37" />
     <scopeInfo nodeId="2295870045929266994" fileName="TraversalAxis.java" startLine="58" startPosition="24" endLine="59" endPosition="40" />
-    <scopeInfo nodeId="2295870045929267004" fileName="TraversalAxis.java" startLine="61" startPosition="55" endLine="62" endPosition="25" />
-    <scopeInfo nodeId="2295870045929267014" fileName="TraversalAxis.java" startLine="64" startPosition="60" endLine="65" endPosition="30" />
-    <scopeInfo nodeId="2295870045929267024" fileName="TraversalAxis.java" startLine="67" startPosition="52" endLine="68" endPosition="22" />
-    <scopeInfo nodeId="2295870045929267034" fileName="TraversalAxis.java" startLine="70" startPosition="53" endLine="71" endPosition="23" />
-    <scopeInfo nodeId="2295870045929267044" fileName="TraversalAxis.java" startLine="73" startPosition="58" endLine="74" endPosition="28" />
-    <scopeInfo nodeId="2295870045929267054" fileName="TraversalAxis.java" startLine="76" startPosition="62" endLine="77" endPosition="32" />
-    <scopeInfo nodeId="2295870045929267064" fileName="TraversalAxis.java" startLine="79" startPosition="67" endLine="80" endPosition="37" />
-    <scopeInfo nodeId="2295870045929267074" fileName="TraversalAxis.java" startLine="82" startPosition="62" endLine="83" endPosition="32" />
-    <scopeInfo nodeId="2295870045929267084" fileName="TraversalAxis.java" startLine="85" startPosition="67" endLine="86" endPosition="37" />
+    <scopeInfo nodeId="2295870045929267004" fileName="TraversalAxis.java" startLine="61" startPosition="69" endLine="62" endPosition="39" />
+    <scopeInfo nodeId="2295870045929267014" fileName="TraversalAxis.java" startLine="64" startPosition="74" endLine="65" endPosition="44" />
+    <scopeInfo nodeId="2295870045929267024" fileName="TraversalAxis.java" startLine="67" startPosition="66" endLine="68" endPosition="36" />
+    <scopeInfo nodeId="2295870045929267034" fileName="TraversalAxis.java" startLine="70" startPosition="67" endLine="71" endPosition="37" />
+    <scopeInfo nodeId="2295870045929267044" fileName="TraversalAxis.java" startLine="73" startPosition="72" endLine="74" endPosition="42" />
+    <scopeInfo nodeId="2295870045929267054" fileName="TraversalAxis.java" startLine="76" startPosition="76" endLine="77" endPosition="46" />
+    <scopeInfo nodeId="2295870045929267064" fileName="TraversalAxis.java" startLine="79" startPosition="81" endLine="80" endPosition="51" />
+    <scopeInfo nodeId="2295870045929267074" fileName="TraversalAxis.java" startLine="82" startPosition="76" endLine="83" endPosition="46" />
+    <scopeInfo nodeId="2295870045929267084" fileName="TraversalAxis.java" startLine="85" startPosition="81" endLine="86" endPosition="51" />
     <scopeInfo nodeId="2295870045929266906" fileName="TraversalAxis.java" startLine="22" startPosition="44" endLine="24" endPosition="20" />
     <scopeInfo nodeId="2295870045929266899" fileName="TraversalAxis.java" startLine="21" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="2295870045929266902" varName="name" />

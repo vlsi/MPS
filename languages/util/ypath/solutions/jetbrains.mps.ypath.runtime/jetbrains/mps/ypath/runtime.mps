@@ -407,8 +407,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929266934">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929266935">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266868" resolveInfo="DESCENDANTS" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484160">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266868" resolveInfo="DESCENDANTS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -420,8 +421,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929266939">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929266940">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266871" resolveInfo="SELF_DESCENDANTS" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484164">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266871" resolveInfo="SELF_DESCENDANTS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -433,8 +435,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929266944">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929266945">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266874" resolveInfo="CHILDREN" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484166">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266874" resolveInfo="CHILDREN" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -446,8 +449,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929266949">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929266950">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266877" resolveInfo="ANCESTORS" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484168">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266877" resolveInfo="ANCESTORS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -459,8 +463,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929266954">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929266955">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266880" resolveInfo="SELF_ANCESTORS" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484170">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266880" resolveInfo="SELF_ANCESTORS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -472,8 +477,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929266959">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929266960">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266883" resolveInfo="FOLLOWING_SIBLINGS" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484172">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266883" resolveInfo="FOLLOWING_SIBLINGS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -485,8 +491,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929266964">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929266965">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266886" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484176">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266886" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -498,8 +505,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929266969">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929266970">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266889" resolveInfo="PRECEDING_SIBLINGS" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484178">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266889" resolveInfo="PRECEDING_SIBLINGS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -511,8 +519,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929266974">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929266975">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266892" resolveInfo="PRECEDING_SIBLINGS_SELF" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484180">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266892" resolveInfo="PRECEDING_SIBLINGS_SELF" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -532,8 +541,9 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2295870045929266981">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2295870045929266982">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929266983">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266868" resolveInfo="DESCENDANTS" />
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484204">
+            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
+            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266868" resolveInfo="DESCENDANTS" />
           </node>
         </node>
       </node>
@@ -575,19 +585,21 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267000">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2295870045929267001">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267002">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266868" resolveInfo="DESCENDANTS" />
-                </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267003">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2295870045929267097" resolveInfo="getValueAsString" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484184">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266868" resolveInfo="DESCENDANTS" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
               </node>
             </node>
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2295870045929267004">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2295870045929267005">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267006">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266868" resolveInfo="DESCENDANTS" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="797879589497484197">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484199">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266868" resolveInfo="DESCENDANTS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -600,19 +612,21 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267010">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2295870045929267011">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267012">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266871" resolveInfo="SELF_DESCENDANTS" />
-                </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267013">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2295870045929267097" resolveInfo="getValueAsString" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484209">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266871" resolveInfo="SELF_DESCENDANTS" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
               </node>
             </node>
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2295870045929267014">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2295870045929267015">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267016">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266871" resolveInfo="SELF_DESCENDANTS" />
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484207">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266871" resolveInfo="SELF_DESCENDANTS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -625,19 +639,21 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267020">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2295870045929267021">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267022">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266874" resolveInfo="CHILDREN" />
-                </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267023">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2295870045929267097" resolveInfo="getValueAsString" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484211">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266874" resolveInfo="CHILDREN" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
               </node>
             </node>
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2295870045929267024">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2295870045929267025">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267026">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266874" resolveInfo="CHILDREN" />
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484214">
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266874" resolveInfo="CHILDREN" />
               </node>
             </node>
           </node>
@@ -650,19 +666,21 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267030">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2295870045929267031">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267032">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266877" resolveInfo="ANCESTORS" />
-                </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267033">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2295870045929267097" resolveInfo="getValueAsString" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484218">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266877" resolveInfo="ANCESTORS" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
               </node>
             </node>
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2295870045929267034">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2295870045929267035">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267036">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266877" resolveInfo="ANCESTORS" />
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497484216">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266877" resolveInfo="ANCESTORS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -675,8 +693,9 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267040">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2295870045929267041">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267042">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266880" resolveInfo="SELF_ANCESTORS" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497560942">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266880" resolveInfo="SELF_ANCESTORS" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267043">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2295870045929267097" resolveInfo="getValueAsString" />
@@ -686,8 +705,9 @@
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2295870045929267044">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2295870045929267045">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267046">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266880" resolveInfo="SELF_ANCESTORS" />
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497560944">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266880" resolveInfo="SELF_ANCESTORS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -700,8 +720,9 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267050">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2295870045929267051">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267052">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266883" resolveInfo="FOLLOWING_SIBLINGS" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497560949">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266883" resolveInfo="FOLLOWING_SIBLINGS" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267053">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2295870045929267097" resolveInfo="getValueAsString" />
@@ -711,8 +732,9 @@
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2295870045929267054">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2295870045929267055">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267056">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266883" resolveInfo="FOLLOWING_SIBLINGS" />
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497560946">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266883" resolveInfo="FOLLOWING_SIBLINGS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -725,8 +747,9 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267060">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2295870045929267061">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267062">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266886" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497560941">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266886" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267063">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2295870045929267097" resolveInfo="getValueAsString" />
@@ -736,8 +759,9 @@
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2295870045929267064">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2295870045929267065">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267066">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266886" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497560943">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266886" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -750,8 +774,9 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267070">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2295870045929267071">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267072">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266889" resolveInfo="PRECEDING_SIBLINGS" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497560947">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266889" resolveInfo="PRECEDING_SIBLINGS" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267073">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2295870045929267097" resolveInfo="getValueAsString" />
@@ -761,8 +786,9 @@
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2295870045929267074">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2295870045929267075">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267076">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266889" resolveInfo="PRECEDING_SIBLINGS" />
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497560948">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266889" resolveInfo="PRECEDING_SIBLINGS" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>
@@ -775,8 +801,9 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267080">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2295870045929267081">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267082">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266892" resolveInfo="PRECEDING_SIBLINGS_SELF" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497560950">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266892" resolveInfo="PRECEDING_SIBLINGS_SELF" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2295870045929267083">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2295870045929267097" resolveInfo="getValueAsString" />
@@ -786,8 +813,9 @@
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2295870045929267084">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2295870045929267085">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2295870045929267086">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2295870045929266892" resolveInfo="PRECEDING_SIBLINGS_SELF" />
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="797879589497560945">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2295870045929266892" resolveInfo="PRECEDING_SIBLINGS_SELF" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2295870045929266247" resolveInfo="TraversalAxis" />
               </node>
             </node>
           </node>

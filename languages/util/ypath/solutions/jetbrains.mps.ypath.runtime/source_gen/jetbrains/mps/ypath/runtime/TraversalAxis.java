@@ -38,52 +38,52 @@ public enum TraversalAxis {
 
   public static List<TraversalAxis> getConstants() {
     List<TraversalAxis> list = new LinkedList<TraversalAxis>();
-    list.add(DESCENDANTS);
-    list.add(SELF_DESCENDANTS);
-    list.add(CHILDREN);
-    list.add(ANCESTORS);
-    list.add(SELF_ANCESTORS);
-    list.add(FOLLOWING_SIBLINGS);
-    list.add(SELF_FOLLOWING_SIBLINGS);
-    list.add(PRECEDING_SIBLINGS);
-    list.add(PRECEDING_SIBLINGS_SELF);
+    list.add(TraversalAxis.DESCENDANTS);
+    list.add(TraversalAxis.SELF_DESCENDANTS);
+    list.add(TraversalAxis.CHILDREN);
+    list.add(TraversalAxis.ANCESTORS);
+    list.add(TraversalAxis.SELF_ANCESTORS);
+    list.add(TraversalAxis.FOLLOWING_SIBLINGS);
+    list.add(TraversalAxis.SELF_FOLLOWING_SIBLINGS);
+    list.add(TraversalAxis.PRECEDING_SIBLINGS);
+    list.add(TraversalAxis.PRECEDING_SIBLINGS_SELF);
     return list;
   }
 
   public static TraversalAxis getDefault() {
-    return DESCENDANTS;
+    return TraversalAxis.DESCENDANTS;
   }
 
   public static TraversalAxis parseValue(String value) {
     if (value == null) {
       return TraversalAxis.getDefault();
     }
-    if (value.equals(DESCENDANTS.getValueAsString())) {
-      return DESCENDANTS;
+    if (value.equals(TraversalAxis.DESCENDANTS.getValueAsString())) {
+      return TraversalAxis.DESCENDANTS;
     }
-    if (value.equals(SELF_DESCENDANTS.getValueAsString())) {
-      return SELF_DESCENDANTS;
+    if (value.equals(TraversalAxis.SELF_DESCENDANTS.getValueAsString())) {
+      return TraversalAxis.SELF_DESCENDANTS;
     }
-    if (value.equals(CHILDREN.getValueAsString())) {
-      return CHILDREN;
+    if (value.equals(TraversalAxis.CHILDREN.getValueAsString())) {
+      return TraversalAxis.CHILDREN;
     }
-    if (value.equals(ANCESTORS.getValueAsString())) {
-      return ANCESTORS;
+    if (value.equals(TraversalAxis.ANCESTORS.getValueAsString())) {
+      return TraversalAxis.ANCESTORS;
     }
-    if (value.equals(SELF_ANCESTORS.getValueAsString())) {
-      return SELF_ANCESTORS;
+    if (value.equals(TraversalAxis.SELF_ANCESTORS.getValueAsString())) {
+      return TraversalAxis.SELF_ANCESTORS;
     }
-    if (value.equals(FOLLOWING_SIBLINGS.getValueAsString())) {
-      return FOLLOWING_SIBLINGS;
+    if (value.equals(TraversalAxis.FOLLOWING_SIBLINGS.getValueAsString())) {
+      return TraversalAxis.FOLLOWING_SIBLINGS;
     }
-    if (value.equals(SELF_FOLLOWING_SIBLINGS.getValueAsString())) {
-      return SELF_FOLLOWING_SIBLINGS;
+    if (value.equals(TraversalAxis.SELF_FOLLOWING_SIBLINGS.getValueAsString())) {
+      return TraversalAxis.SELF_FOLLOWING_SIBLINGS;
     }
-    if (value.equals(PRECEDING_SIBLINGS.getValueAsString())) {
-      return PRECEDING_SIBLINGS;
+    if (value.equals(TraversalAxis.PRECEDING_SIBLINGS.getValueAsString())) {
+      return TraversalAxis.PRECEDING_SIBLINGS;
     }
-    if (value.equals(PRECEDING_SIBLINGS_SELF.getValueAsString())) {
-      return PRECEDING_SIBLINGS_SELF;
+    if (value.equals(TraversalAxis.PRECEDING_SIBLINGS_SELF.getValueAsString())) {
+      return TraversalAxis.PRECEDING_SIBLINGS_SELF;
     }
     return TraversalAxis.getDefault();
   }
