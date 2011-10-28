@@ -18,7 +18,7 @@ public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>,
   private Queue<T> queue;
 
   protected QueueSequence(Queue<T> queue) {
-    this.setQueue(queue);
+    setQueue(queue);
   }
 
   public T element() {

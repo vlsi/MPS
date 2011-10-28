@@ -10,7 +10,7 @@ public class OfTypeSequence<U, V> extends AbstractChainedSequence<U, V> implemen
 
   public OfTypeSequence(Iterable<U> input, Class<V> reqType) {
     super(input);
-    this.requestedType = reqType;
+    requestedType = reqType;
   }
 
   public Iterator<V> iterator() {
@@ -56,7 +56,7 @@ public class OfTypeSequence<U, V> extends AbstractChainedSequence<U, V> implemen
       if (!(hasNext.hasNext())) {
         throw new NoSuchElementException();
       }
-      return this.clearNext();
+      return clearNext();
     }
 
     public void remove() {
@@ -64,27 +64,27 @@ public class OfTypeSequence<U, V> extends AbstractChainedSequence<U, V> implemen
     }
 
     private void init() {
-      this.inputIterator = getInput().iterator();
+      inputIterator = getInput().iterator();
     }
 
     private void moveToNext() {
-      this.hasNext = HasNextState.AT_END;
-      this.next = null;
+      hasNext = HasNextState.AT_END;
+      next = null;
       while (inputIterator.hasNext()) {
         U tmp = inputIterator.next();
         if (!(isOfType(tmp))) {
           continue;
         }
-        this.hasNext = HasNextState.HAS_NEXT;
-        this.next = cast(tmp);
+        hasNext = HasNextState.HAS_NEXT;
+        next = cast(tmp);
         break;
       }
     }
 
     private V clearNext() {
       V tmp = next;
-      this.next = null;
-      this.hasNext = HasNextState.UNKNOWN;
+      next = null;
+      hasNext = HasNextState.UNKNOWN;
       return tmp;
     }
   }

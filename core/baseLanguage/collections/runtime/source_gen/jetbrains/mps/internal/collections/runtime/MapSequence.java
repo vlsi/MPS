@@ -201,7 +201,7 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
     private Iterator<Map.Entry<U, V>> entriesIt;
 
     public MappingIterator() {
-      this.entriesIt = entrySet().iterator();
+      entriesIt = entrySet().iterator();
     }
 
     public boolean hasNext() {
@@ -251,8 +251,8 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
       if (that == null) {
         return false;
       }
-      if (this.getClass() == that.getClass()) {
-        return this.entry.equals(((MapSequence.EntryMapping<F, S>) that).entry);
+      if (getClass() == that.getClass()) {
+        return entry.equals(((MapSequence.EntryMapping<F, S>) that).entry);
       }
       if (that instanceof IMapping) {
         return eq(key(), ((IMapping) that).key()) && eq(value(), ((IMapping) that).value());

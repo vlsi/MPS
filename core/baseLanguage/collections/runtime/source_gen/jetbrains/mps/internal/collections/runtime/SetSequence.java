@@ -22,7 +22,7 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
   }
 
   protected SetSequence(SetSequence<T> other) {
-    this.set = new HashSet<T>(other.set);
+    set = new HashSet<T>(other.set);
   }
 
   public boolean addAll(Collection<? extends T> c) {

@@ -115,7 +115,7 @@ public class ArrayUtils {
 
     private ArrayIterator(Object array) {
       this.array = array;
-      this.length = Array.getLength(array);
+      length = Array.getLength(array);
     }
 
     public boolean hasNext() {

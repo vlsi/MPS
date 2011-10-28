@@ -68,7 +68,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
       if (!((hasNext.hasNext()))) {
         throw new NoSuchElementException();
       }
-      return this.clearNext();
+      return clearNext();
     }
 
     public void remove() {
@@ -82,11 +82,11 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
           for (U o : right.toIterable()) {
             cardMap.postInc(o);
           }
-          this.leftIt = left.toIterable().iterator();
+          leftIt = left.toIterable().iterator();
           break;
         case UNION:
-          this.leftIt = left.toIterable().iterator();
-          this.rightIt = right.toIterable().iterator();
+          leftIt = left.toIterable().iterator();
+          rightIt = right.toIterable().iterator();
           break;
         case DISJUNCTION:
           cache = new ArrayList<U>();
@@ -94,8 +94,8 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
             cardMap.postInc(o);
             cache.add(o);
           }
-          this.leftIt = left.toIterable().iterator();
-          this.rightIt = cache.iterator();
+          leftIt = left.toIterable().iterator();
+          rightIt = cache.iterator();
           break;
         default:
           break;
@@ -110,8 +110,8 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
     }
 
     private void moveToNext() {
-      this.next = null;
-      this.hasNext = HasNextState.AT_END;
+      next = null;
+      hasNext = HasNextState.AT_END;
 loop:
       do {
         switch (kind) {
@@ -183,14 +183,14 @@ loop:
 
     private U clearNext() {
       U tmp = next;
-      this.next = null;
-      this.hasNext = HasNextState.UNKNOWN;
+      next = null;
+      hasNext = HasNextState.UNKNOWN;
       return tmp;
     }
 
     private void setNext(U tmp) {
-      this.next = tmp;
-      this.hasNext = HasNextState.HAS_NEXT;
+      next = tmp;
+      hasNext = HasNextState.HAS_NEXT;
     }
   }
 }

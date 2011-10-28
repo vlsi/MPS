@@ -201,7 +201,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
   }
 
   public T reduceRight(_FunctionTypes._return_P2_E0<? extends T, ? super T, ? super T> comb) {
-    return IterableUtils.reduceRight(this.reverse(), comb);
+    return IterableUtils.reduceRight(reverse(), comb);
   }
 
   public <S> S foldLeft(S seed, _FunctionTypes._return_P2_E0<? extends S, ? super S, ? super T> comb) {
@@ -209,7 +209,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
   }
 
   public <S> S foldRight(S seed, _FunctionTypes._return_P2_E0<? extends S, ? super T, ? super S> comb) {
-    return IterableUtils.foldRight(this.reverse(), seed, comb);
+    return IterableUtils.foldRight(reverse(), seed, comb);
   }
 
   public Iterable<T> toIterable() {

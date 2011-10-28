@@ -52,7 +52,7 @@ public class ConcatingSequence<U> extends Sequence<U> {
       if (!((hasNext.hasNext()))) {
         throw new NoSuchElementException();
       }
-      return this.clearNext();
+      return clearNext();
     }
 
     public void remove() {
@@ -60,13 +60,13 @@ public class ConcatingSequence<U> extends Sequence<U> {
     }
 
     private void init() {
-      this.leftIt = left.toIterable().iterator();
-      this.rightIt = right.toIterable().iterator();
+      leftIt = left.toIterable().iterator();
+      rightIt = right.toIterable().iterator();
     }
 
     private void moveToNext() {
-      this.next = null;
-      this.hasNext = HasNextState.AT_END;
+      next = null;
+      hasNext = HasNextState.AT_END;
       if (leftIt.hasNext()) {
         setNext(leftIt.next());
       } else
@@ -77,14 +77,14 @@ public class ConcatingSequence<U> extends Sequence<U> {
 
     private U clearNext() {
       U tmp = next;
-      this.next = null;
-      this.hasNext = HasNextState.UNKNOWN;
+      next = null;
+      hasNext = HasNextState.UNKNOWN;
       return tmp;
     }
 
     private void setNext(U next) {
       this.next = next;
-      this.hasNext = HasNextState.HAS_NEXT;
+      hasNext = HasNextState.HAS_NEXT;
     }
   }
 }
