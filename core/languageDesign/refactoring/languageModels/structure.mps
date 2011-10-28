@@ -26,6 +26,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1189693812263">
       <property name="name" nameId="tpck.1169194664001" value="OldRefactoring" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Deprecated" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1189693830529">
