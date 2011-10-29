@@ -184,8 +184,8 @@ public class ClassifierTypeUtil {
 
   public static SNode copyTypeRecursively(SNode type, boolean covariant) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      SNode copy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-      SLinkOperations.setTarget(copy, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
+      SNode copy = SNodeOperations.copyNode(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+      ListSequence.fromList(SLinkOperations.getTargets(copy, "parameter", true)).clear();
       boolean covariantParam = isFunctionTypeClassifierReturningValue(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
       for (SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)) {
         ListSequence.fromList(SLinkOperations.getTargets(copy, "parameter", true)).addElement((isFunctionTypeClassifier(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)) ?
