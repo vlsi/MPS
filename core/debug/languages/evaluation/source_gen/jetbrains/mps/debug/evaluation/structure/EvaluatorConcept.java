@@ -22,6 +22,8 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike, IEvalu
   public static final String IS_SHOW_CONTEXT = "isShowContext";
   public static final String THIS_TYPE = "thisType";
   public static final String STATIC_CONTEXT_TYPE = "staticContextType";
+  public static final String THIS_NODE = "thisNode";
+  public static final String CONTEXT_NODE = "contextNode";
   public static final String EVALUATED_STATEMENTS = "evaluatedStatements";
   public static final String VARIABLES = "variables";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
@@ -76,6 +78,22 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike, IEvalu
 
   public void setStaticContextType(ClassifierType node) {
     super.setChild(EvaluatorConcept.STATIC_CONTEXT_TYPE, node);
+  }
+
+  public UnitNode getThisNode() {
+    return (UnitNode) this.getChild(UnitNode.class, EvaluatorConcept.THIS_NODE);
+  }
+
+  public void setThisNode(UnitNode node) {
+    super.setChild(EvaluatorConcept.THIS_NODE, node);
+  }
+
+  public UnitNode getContextNode() {
+    return (UnitNode) this.getChild(UnitNode.class, EvaluatorConcept.CONTEXT_NODE);
+  }
+
+  public void setContextNode(UnitNode node) {
+    super.setChild(EvaluatorConcept.CONTEXT_NODE, node);
   }
 
   public StatementList getEvaluatedStatements() {

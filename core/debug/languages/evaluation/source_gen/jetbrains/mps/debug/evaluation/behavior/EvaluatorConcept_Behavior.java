@@ -13,7 +13,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -93,7 +92,7 @@ public class EvaluatorConcept_Behavior {
     }
 
     if (SConceptPropertyOperations.getBoolean(expression, "constant")) {
-      return ((Object) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.Expression"), "virtual_getCompileTimeConstantValue_1238860310638", new Class[]{SNode.class, IModule.class}, SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode)))) + "";
+      return ((Object) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.Expression"), "virtual_getCompileTimeConstantValue_1238860310638", new Class[]{SNode.class, IModule.class}, SNodeOperations.getModel(thisNode).getModelDescriptor().getModule())) + "";
     }
 
     return BaseConcept_Behavior.call_getPresentation_1213877396640(expression);

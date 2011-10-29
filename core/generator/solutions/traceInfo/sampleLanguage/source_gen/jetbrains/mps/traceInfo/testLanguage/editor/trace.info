@@ -60,19 +60,54 @@
     <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="56" startPosition="81" endLine="57" endPosition="66" />
     <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="66" startPosition="60" endLine="67" endPosition="44" />
     <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="33" startPosition="26" endLine="36" endPosition="73" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="39" startPosition="35" endLine="42" endPosition="105" />
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="39" startPosition="35" endLine="42" endPosition="105">
+      <varInfo nodeId="6037616576568587483" varName="manager" />
+      <varInfo nodeId="6037616576568587483" varName="opContext" />
+    </scopeInfo>
     <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="47" startPosition="69" endLine="50" endPosition="5" />
     <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="65" startPosition="28" endLine="68" endPosition="75" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="71" startPosition="37" endLine="74" endPosition="107" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="17" startPosition="71" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="22" startPosition="89" endLine="26" endPosition="22" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="29" startPosition="87" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="71" startPosition="37" endLine="74" endPosition="107">
+      <varInfo nodeId="6037616576568587483" varName="manager" />
+      <varInfo nodeId="6037616576568587483" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="17" startPosition="71" endLine="21" endPosition="0">
+      <varInfo nodeId="6037616576568587483" varName="editorContext" />
+      <varInfo nodeId="6037616576568587483" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="22" startPosition="89" endLine="26" endPosition="22">
+      <varInfo nodeId="6037616576568587483" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="6037616576568587483" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="6037616576568587483" varName="editorContext" />
+      <varInfo nodeId="6037616576568587483" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="6037616576568587483" varName="editorContext" />
+      <varInfo nodeId="6037616576568587483" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="29" startPosition="87" endLine="44" endPosition="22">
+      <varInfo nodeId="6037616576568587483" varName="attributeConcept" />
+      <varInfo nodeId="6037616576568587483" varName="attributeKind" />
+      <varInfo nodeId="6037616576568587483" varName="editorCell" />
+      <varInfo nodeId="6037616576568587483" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="60" startPosition="92" endLine="76" endPosition="24">
+      <varInfo nodeId="6037616576568587483" varName="attributeConcept" />
+      <varInfo nodeId="6037616576568587483" varName="attributeKind" />
+      <varInfo nodeId="6037616576568587483" varName="editorCell" />
+      <varInfo nodeId="6037616576568587483" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="28" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="6037616576568587483" varName="editorContext" />
+      <varInfo nodeId="6037616576568587483" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="59" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="6037616576568587483" varName="editorContext" />
+      <varInfo nodeId="6037616576568587483" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.traceInfo.testLanguage.editor.CustomVariableReference_Editor" />
     <unitInfo nodeId="6037616576568587483" fileName="CustomVariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.traceInfo.testLanguage.editor.CustomVariableReference_Editor$_Inline_qt9wyv_a0a" />
   </root>
@@ -128,16 +163,45 @@
     <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="38" startPosition="87" endLine="39" endPosition="47" />
     <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="49" startPosition="58" endLine="50" endPosition="42" />
     <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="48" startPosition="26" endLine="51" endPosition="73" />
-    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="54" startPosition="35" endLine="57" endPosition="105" />
-    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="16" startPosition="73" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="30" startPosition="88" endLine="34" endPosition="22" />
-    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="37" startPosition="88" endLine="41" endPosition="22" />
-    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="21" startPosition="89" endLine="27" endPosition="22" />
-    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="20" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="44" startPosition="88" endLine="59" endPosition="22" />
-    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="43" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="54" startPosition="35" endLine="57" endPosition="105">
+      <varInfo nodeId="6037616576568591045" varName="manager" />
+      <varInfo nodeId="6037616576568591045" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="16" startPosition="73" endLine="20" endPosition="0">
+      <varInfo nodeId="6037616576568591045" varName="editorContext" />
+      <varInfo nodeId="6037616576568591045" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="30" startPosition="88" endLine="34" endPosition="22">
+      <varInfo nodeId="6037616576568591045" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="37" startPosition="88" endLine="41" endPosition="22">
+      <varInfo nodeId="6037616576568591045" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="21" startPosition="89" endLine="27" endPosition="22">
+      <varInfo nodeId="6037616576568591045" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="6037616576568591045" varName="editorContext" />
+      <varInfo nodeId="6037616576568591045" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="6037616576568591045" varName="editorContext" />
+      <varInfo nodeId="6037616576568591045" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="20" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="6037616576568591045" varName="editorContext" />
+      <varInfo nodeId="6037616576568591045" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="44" startPosition="88" endLine="59" endPosition="22">
+      <varInfo nodeId="6037616576568591045" varName="attributeConcept" />
+      <varInfo nodeId="6037616576568591045" varName="attributeKind" />
+      <varInfo nodeId="6037616576568591045" varName="editorCell" />
+      <varInfo nodeId="6037616576568591045" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="43" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="6037616576568591045" varName="editorContext" />
+      <varInfo nodeId="6037616576568591045" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="6037616576568591045" fileName="CustomVariableDeclaration_Editor.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.traceInfo.testLanguage.editor.CustomVariableDeclaration_Editor" />
   </root>
 </debugInfo>

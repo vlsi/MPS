@@ -27,6 +27,10 @@ import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.InvalidStackFrameException;
 import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.sun.jdi.ObjectReference;
 import com.sun.jdi.PrimitiveType;
 import com.sun.jdi.BooleanType;
@@ -41,8 +45,7 @@ import com.sun.jdi.ArrayType;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.debug.evaluation.transform.TransformationUtil;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodeId;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -199,7 +202,16 @@ public class StackFrameContext extends EvaluationContext {
     if (unitType == null) {
       return null;
     }
-    return createClassifierType.invoke(unitType);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.UnitNode", null);
+    SNode lowLevelType = createClassifierType.invoke(unitType);
+    SNode highLevelNode = getStaticContextNode();
+    if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_3305065273710880775", new Class[]{SNode.class}))), true);
+    } else {
+      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, null), true);
+    }
+    SPropertyOperations.set(result, "highLevelNodeId", check_4zsmpx_a0a0g0h(highLevelNode).toString());
+    return result;
   }
 
   private String getStaticContextTypeName() {
@@ -208,6 +220,22 @@ public class StackFrameContext extends EvaluationContext {
       Location location = frame.getLocation().getLocation();
       try {
         return TraceInfoUtil.getUnitName(location.declaringType().name(), location.sourceName(), location.lineNumber());
+      } catch (AbsentInformationException e) {
+        if (log.isErrorEnabled()) {
+          log.error("", e);
+        }
+      }
+    }
+    return null;
+  }
+
+  private SNode getStaticContextNode() {
+    JavaStackFrame frame = myUiState.getStackFrame();
+    if (frame != null) {
+      Location location = frame.getLocation().getLocation();
+      try {
+        SNode unitNode = TraceInfoUtil.getUnitNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
+        return unitNode;
       } catch (AbsentInformationException e) {
         if (log.isErrorEnabled()) {
           log.error("", e);
@@ -232,31 +260,31 @@ public class StackFrameContext extends EvaluationContext {
     // TODO generics 
     if (type instanceof PrimitiveType) {
       if (type instanceof BooleanType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0a0b0k().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0a0b0l().createNode();
       }
       if (type instanceof ByteType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0b0b0k().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0b0b0l().createNode();
       }
       if (type instanceof ShortType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0c0b0k().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0c0b0l().createNode();
       }
       if (type instanceof LongType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0d0b0k().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0d0b0l().createNode();
       }
       if (type instanceof IntegerType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0e0b0k().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0e0b0l().createNode();
       }
       if (type instanceof DoubleType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0f0b0k().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0f0b0l().createNode();
       }
       if (type instanceof FloatType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0g0b0k().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0g0b0l().createNode();
       }
       if (type instanceof CharType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0h0b0k().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0h0b0l().createNode();
       }
     } else if (type instanceof ArrayType) {
-      return new StackFrameContext.QuotationClass_4zsmpx_a0a0a1a01().createNode(getMpsTypeFromJdiType(((ArrayType) type).componentType(), createClassifierType));
+      return new StackFrameContext.QuotationClass_4zsmpx_a0a0a1a11().createNode(getMpsTypeFromJdiType(((ArrayType) type).componentType(), createClassifierType));
     }
     return createClassifierType.invoke(type.name());
   }
@@ -265,10 +293,10 @@ public class StackFrameContext extends EvaluationContext {
     final Wrappers._boolean visible = new Wrappers._boolean(false);
     foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, LocalVariable>() {
       public Boolean invoke(LocalVariable variable) {
-        if (eq_4zsmpx_a0a0a0a0a1a11(variable.name(), variableName)) {
+        if (eq_4zsmpx_a0a0a0a0a1a21(variable.name(), variableName)) {
           try {
             String variableTypeSignature = TransformationUtil.getJniSignatureFromType(variableType);
-            if (eq_4zsmpx_a0b0a0a0a0a0a1a11(variableTypeSignature, variable.type().signature())) {
+            if (eq_4zsmpx_a0b0a0a0a0a0a1a21(variableTypeSignature, variable.type().signature())) {
               visible.value = true;
               return true;
             }
@@ -289,7 +317,7 @@ public class StackFrameContext extends EvaluationContext {
     if (thisObject == null) {
       return false;
     }
-    return eq_4zsmpx_a0c0m(thisObject.referenceType().signature(), TransformationUtil.getJniSignatureFromType(thisType));
+    return eq_4zsmpx_a0c0n(thisObject.referenceType().signature(), TransformationUtil.getJniSignatureFromType(thisType));
   }
 
   public boolean isStaticContextTypeValid(SNode staticContextType) {
@@ -303,29 +331,36 @@ public class StackFrameContext extends EvaluationContext {
     return staticContextTypeName.equals(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
   }
 
-  private static boolean eq_4zsmpx_a0a0a0a0a1a11(Object a, Object b) {
+  private static SNodeId check_4zsmpx_a0a0g0h(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
+    }
+    return null;
+  }
+
+  private static boolean eq_4zsmpx_a0a0a0a0a1a21(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_4zsmpx_a0b0a0a0a0a0a1a11(Object a, Object b) {
+  private static boolean eq_4zsmpx_a0b0a0a0a0a0a1a21(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_4zsmpx_a0c0m(Object a, Object b) {
+  private static boolean eq_4zsmpx_a0c0n(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static class QuotationClass_4zsmpx_a0a0a0b0k {
-    public QuotationClass_4zsmpx_a0a0a0b0k() {
+  public static class QuotationClass_4zsmpx_a0a0a0b0l {
+    public QuotationClass_4zsmpx_a0a0a0b0l() {
     }
 
     public SNode createNode() {
@@ -341,8 +376,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0b0b0k {
-    public QuotationClass_4zsmpx_a0a0b0b0k() {
+  public static class QuotationClass_4zsmpx_a0a0b0b0l {
+    public QuotationClass_4zsmpx_a0a0b0b0l() {
     }
 
     public SNode createNode() {
@@ -358,8 +393,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0c0b0k {
-    public QuotationClass_4zsmpx_a0a0c0b0k() {
+  public static class QuotationClass_4zsmpx_a0a0c0b0l {
+    public QuotationClass_4zsmpx_a0a0c0b0l() {
     }
 
     public SNode createNode() {
@@ -375,8 +410,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0d0b0k {
-    public QuotationClass_4zsmpx_a0a0d0b0k() {
+  public static class QuotationClass_4zsmpx_a0a0d0b0l {
+    public QuotationClass_4zsmpx_a0a0d0b0l() {
     }
 
     public SNode createNode() {
@@ -392,8 +427,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0e0b0k {
-    public QuotationClass_4zsmpx_a0a0e0b0k() {
+  public static class QuotationClass_4zsmpx_a0a0e0b0l {
+    public QuotationClass_4zsmpx_a0a0e0b0l() {
     }
 
     public SNode createNode() {
@@ -409,8 +444,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0f0b0k {
-    public QuotationClass_4zsmpx_a0a0f0b0k() {
+  public static class QuotationClass_4zsmpx_a0a0f0b0l {
+    public QuotationClass_4zsmpx_a0a0f0b0l() {
     }
 
     public SNode createNode() {
@@ -426,8 +461,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0g0b0k {
-    public QuotationClass_4zsmpx_a0a0g0b0k() {
+  public static class QuotationClass_4zsmpx_a0a0g0b0l {
+    public QuotationClass_4zsmpx_a0a0g0b0l() {
     }
 
     public SNode createNode() {
@@ -443,8 +478,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0h0b0k {
-    public QuotationClass_4zsmpx_a0a0h0b0k() {
+  public static class QuotationClass_4zsmpx_a0a0h0b0l {
+    public QuotationClass_4zsmpx_a0a0h0b0l() {
     }
 
     public SNode createNode() {
@@ -460,8 +495,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0a1a01 {
-    public QuotationClass_4zsmpx_a0a0a1a01() {
+  public static class QuotationClass_4zsmpx_a0a0a1a11 {
+    public QuotationClass_4zsmpx_a0a0a1a11() {
     }
 
     public SNode createNode(Object parameter_5) {

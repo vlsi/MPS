@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class VariableDescription {
   private SNode myHighLevelType;
@@ -25,14 +26,19 @@ public class VariableDescription {
   public void updateLowLevelVariable(SNode variable) {
     if (myIsHighLevelInfoAvailable) {
       SPropertyOperations.set(variable, "name", myHighLevelName);
-      SLinkOperations.setTarget(variable, "type", myHighLevelType, true);
       SPropertyOperations.set(variable, "highLevelNodeId", myHighLevelNode.getNodeId().toString());
     } else {
       SPropertyOperations.set(variable, "name", myLowLevelName);
-      SLinkOperations.setTarget(variable, "type", SNodeOperations.copyNode(myLowLevelType), true);
     }
+    SLinkOperations.setTarget(variable, "type", createDebuggedType(), true);
     SPropertyOperations.set(variable, "lowLevelName", myLowLevelName);
-    SLinkOperations.setTarget(variable, "lowLevelType", myLowLevelType, true);
+  }
+
+  private SNode createDebuggedType() {
+    return createDebuggedType(myLowLevelType, (myIsHighLevelInfoAvailable ?
+      myHighLevelType :
+      null
+    ));
   }
 
   public void setHighLevelNode(SNode node) {
@@ -55,10 +61,22 @@ public class VariableDescription {
 
   @Override
   public boolean equals(Object object) {
-    return eq_5ytd5s_a0a0e(myLowLevelName, ((VariableDescription) object).myLowLevelName);
+    return eq_5ytd5s_a0a0f(myLowLevelName, ((VariableDescription) object).myLowLevelName);
   }
 
-  private static boolean eq_5ytd5s_a0a0e(Object a, Object b) {
+  public static SNode createDebuggedType(SNode lowType, SNode highType) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.DebuggedType", null);
+    if ((highType != null)) {
+      SLinkOperations.setTarget(result, "highType", highType, true);
+    } else {
+      SLinkOperations.setTarget(result, "highType", SNodeOperations.copyNode(lowType), true);
+    }
+    SPropertyOperations.set(result, "isHigh", "" + (highType != null));
+    SLinkOperations.setTarget(result, "lowType", lowType, true);
+    return result;
+  }
+
+  private static boolean eq_5ytd5s_a0a0f(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

@@ -4,7 +4,6 @@ package jetbrains.mps.debug.evaluation.structure;
 
 import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -14,7 +13,6 @@ public class LowLevelVariable extends BaseVariableDeclaration {
   public static final String HIGH_LEVEL_NODE_ID = "highLevelNodeId";
   public static final String LOW_LEVEL_NAME = "lowLevelName";
   public static final String IS_OUT_OF_SCOPE = "isOutOfScope";
-  public static final String LOW_LEVEL_TYPE = "lowLevelType";
 
   public LowLevelVariable(SNode node) {
     super(node);
@@ -44,19 +42,11 @@ public class LowLevelVariable extends BaseVariableDeclaration {
     this.setBooleanProperty(LowLevelVariable.IS_OUT_OF_SCOPE, value);
   }
 
-  public Type getLowLevelType() {
-    return (Type) this.getChild(Type.class, LowLevelVariable.LOW_LEVEL_TYPE);
+  public DebuggedType getDebuggedType() {
+    return this.ensureAdapter(DebuggedType.class, "type", this.getType());
   }
 
-  public void setLowLevelType(Type node) {
-    super.setChild(LowLevelVariable.LOW_LEVEL_TYPE, node);
-  }
-
-  public Type getDeducedType() {
-    return this.ensureAdapter(Type.class, "type", this.getType());
-  }
-
-  public void setDeducedType(Type node) {
+  public void setDebuggedType(DebuggedType node) {
     this.setType(node);
   }
 

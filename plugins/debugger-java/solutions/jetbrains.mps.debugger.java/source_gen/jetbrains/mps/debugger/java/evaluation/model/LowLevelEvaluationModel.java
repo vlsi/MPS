@@ -322,9 +322,9 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
       if (needUpdateVariables()) {
         // create static context type 
-        SLinkOperations.setTarget(evaluatorConcept, "staticContextType", myEvaluationContext.getStaticContextType(createClassifierType), true);
+        SLinkOperations.setTarget(evaluatorConcept, "contextNode", myEvaluationContext.getStaticContextType(createClassifierType), true);
         // create this 
-        SLinkOperations.setTarget(evaluatorConcept, "thisType", myEvaluationContext.getThisClassifierType(createClassifierType), true);
+        SLinkOperations.setTarget(evaluatorConcept, "thisNode", myEvaluationContext.getThisClassifierType(createClassifierType), true);
       }
       // todo highlight when this type or static context type are invalid 
     } catch (InvalidStackFrameException e) {

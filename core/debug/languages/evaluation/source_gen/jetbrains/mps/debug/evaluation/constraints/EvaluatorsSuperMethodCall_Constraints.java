@@ -16,8 +16,9 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.debug.evaluation.behavior.DebuggedType_Behavior;
 import jetbrains.mps.baseLanguage.search.SuperMethodCall_InstanceMethodScope;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 
@@ -60,7 +61,9 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode enclosingClass = SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", false, false), "thisType", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+            SNode thisNode = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true);
+            SNode classifier = SLinkOperations.getTarget(DebuggedType_Behavior.call_getHighClassifierType_4544608336420723238(SLinkOperations.getTarget(thisNode, "debuggedType", true)), "classifier", false);
+            SNode enclosingClass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
             return new SuperMethodCall_InstanceMethodScope(ClassConcept_Behavior.call_getSuperclass_1240936569950(enclosingClass), _context.getEnclosingNode());
           }
 
@@ -75,7 +78,6 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
   }
 
   public static boolean static_canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    SNode classifierType = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", false, false), "thisType", true);
-    return (classifierType != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(DebuggedType_Behavior.call_getHighClassifierType_4544608336420723238(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true), "debuggedType", true)), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 }
