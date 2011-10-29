@@ -139,6 +139,11 @@ public class Transformator {
   }
 
   private void preprocess() {
+    // remove downcasts 
+    for (SNode downcast : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.debug.evaluation.structure.DownCastToLowLevel", false, new String[]{}))) {
+      SNodeOperations.replaceWithAnother(downcast, SLinkOperations.getTarget(downcast, "expression", true));
+    }
+
     // we need normalized dot expression for wrapping method calls 
     // i.e. we need the structure of a dot expression to look like ((().op1).op2).op3 
     normalizeAllDotExpressions(myWhatToEvaluate);
