@@ -13,15 +13,18 @@ import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
+import jetbrains.mps.nodeEditor.selection.MultipleSelection;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.ImageIcon;
@@ -60,7 +63,7 @@ public class EvaluateExpression_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selectedNodes", event.getData(MPSDataKeys.NODES));
+    MapSequence.fromMap(_params).put("component", event.getData(MPSDataKeys.EDITOR_COMPONENT));
     return true;
   }
 
@@ -68,24 +71,26 @@ public class EvaluateExpression_Action extends GeneratedAction {
     try {
       IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
       if (evaluationProvider != null) {
-        final Wrappers._T<List<SNodePointer>> nodePointers = new Wrappers._T<List<SNodePointer>>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            nodePointers.value = (((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")) == null ?
-              ListSequence.fromList(new ArrayList<SNodePointer>()) :
-              Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {
-                public Iterable<SNode> iterable() {
-                  return ((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes"));
-                }
-              })).select(new ISelector<SNode, SNodePointer>() {
-                public SNodePointer select(SNode it) {
-                  return new SNodePointer(it);
-                }
-              }).toListSequence()
-            );
+        final List<SNodePointer> nodePointers = ListSequence.fromList(new ArrayList<SNodePointer>());
+        if (((EditorComponent) MapSequence.fromMap(_params).get("component")) != null) {
+          final Selection selection = ((EditorComponent) MapSequence.fromMap(_params).get("component")).getSelectionManager().getSelection();
+          if ((selection instanceof EditorCellLabelSelection && ((EditorCellLabelSelection) selection).hasNonTrivialSelection()) || (selection instanceof MultipleSelection)) {
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                ListSequence.fromList(nodePointers).addSequence(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {
+                  public Iterable<SNode> iterable() {
+                    return selection.getSelectedNodes();
+                  }
+                })).select(new ISelector<SNode, SNodePointer>() {
+                  public SNodePointer select(SNode it) {
+                    return new SNodePointer(it);
+                  }
+                }));
+              }
+            });
           }
-        });
-        evaluationProvider.showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), nodePointers.value);
+        }
+        evaluationProvider.showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), nodePointers);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
