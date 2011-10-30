@@ -18,6 +18,7 @@
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="ge2m" modelUID="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -183,6 +184,11 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ModelsToGenerateByDefault" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="RefDecl.Methods" />
     </node>
+    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="883491221943684120">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Context" />
+      <property name="name" nameId="tpck.1169194664001" value="supertypeOf_ContextType_RefactoringContext" />
+      <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
+    </node>
   </roots>
   <root id="1190728555341">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1190728555342">
@@ -208,7 +214,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1190728567156">
       <property name="name" nameId="tpck.1169194664001" value="requiredAdditionalArgument" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp1h.1189693830529" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp1h.1189693830529" resolveInfo="RequiredAdditionalArgument" />
     </node>
   </root>
   <root id="1190728582079">
@@ -237,7 +243,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1190728588113">
       <property name="name" nameId="tpck.1169194664001" value="requiredAdditionalArgumentReference" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp1h.1189694084608" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp1h.1189694084608" resolveInfo="RequiredAdditionalArgumentReference" />
     </node>
   </root>
   <root id="1192794377384">
@@ -779,7 +785,7 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="7754459869734029577">
                       <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="7754459869734029578">
                         <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7754459869734029859">
-                          <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp1h.1189693812263" resolveInfo="Refactoring" />
+                          <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp1h.1189693812263" resolveInfo="OldRefactoring" />
                         </node>
                       </node>
                     </node>
@@ -843,7 +849,7 @@
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1215084454338">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1215084449238">
             <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1215084451255">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1215084433136" resolveInfo="nodeToCheck" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1215084433136" resolveInfo="moduleOperation" />
             </node>
           </node>
         </node>
@@ -1828,6 +1834,21 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4347648036456857060">
       <property name="name" nameId="tpck.1169194664001" value="modelsToGenerateByDefault" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp1h.4347648036456711197" resolveInfo="ModelsToGenerateByDefault" />
+    </node>
+  </root>
+  <root id="883491221943684120">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="883491221943684121">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="883491221943684129">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="883491221943684131">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="883491221943684132">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ge2m.4792031542972811415" resolveInfo="RefactoringContext" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="883491221943684122">
+      <property name="name" nameId="tpck.1169194664001" value="node" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp1h.7953996722066536522" resolveInfo="ContextType" />
     </node>
   </root>
 </model>

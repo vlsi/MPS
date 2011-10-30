@@ -52,7 +52,7 @@ public class RefactoringOptionsDialog extends BaseDialog {
 
     if (myRefactoring instanceof ILoggableRefactoring) {
       myIsLocalCheckBox = new JCheckBox("is local");
-      myIsLocalCheckBox.setSelected(false);
+      myIsLocalCheckBox.setSelected(myRefactoringContext.isLocal());
       myInnerPanel.add(myIsLocalCheckBox, c);
       myNeedToBeShown = true;
     }

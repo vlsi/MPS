@@ -9230,8 +9230,8 @@
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4792031542972815057">
             <property name="name" nameId="tpck.1169194664001" value="entry" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4792031542972815058">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x7fz.~StructureModification$Entry" resolveInfo="StructureModification.Entry" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="883491221944084681">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ufjo.2742566862758589856" resolveInfo="StructureModification.Entry" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="4792031542972815059">

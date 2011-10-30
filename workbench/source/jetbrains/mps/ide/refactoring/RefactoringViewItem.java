@@ -131,7 +131,7 @@ public abstract class RefactoringViewItem {
     //noinspection ConstantConditions
     if (myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
       myIsLocalCheckbox = new JCheckBox("is local");
-      myIsLocalCheckbox.setSelected(true);
+      myIsLocalCheckbox.setSelected(myRefactoringContext.isLocal());
       myButtonsPanel.add(myIsLocalCheckbox);
     }
   }
