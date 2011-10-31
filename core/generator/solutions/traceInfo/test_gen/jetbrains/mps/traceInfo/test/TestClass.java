@@ -34,7 +34,5 @@ public class TestClass {
   }
 
   public static void main(String[] args) {
-    String customvar = "var";
-    System.out.println(customvar);
   }
 }
