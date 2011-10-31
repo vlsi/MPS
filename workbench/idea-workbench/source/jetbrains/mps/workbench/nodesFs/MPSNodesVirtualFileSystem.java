@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -43,6 +44,9 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   public static MPSNodesVirtualFileSystem getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
+  }
+
+  public MPSNodesVirtualFileSystem(MPSCoreComponents coreComponents) {
   }
 
   private SModelCommandListener myCommandListener = new MyCommandListener();
