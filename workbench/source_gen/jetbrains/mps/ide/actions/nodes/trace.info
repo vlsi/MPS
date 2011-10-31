@@ -368,7 +368,9 @@
     <scopeInfo nodeId="4832363360995122498" fileName="GoToEditorDeclarationHelper.java" startLine="25" startPosition="92" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4832363360995122520" fileName="GoToEditorDeclarationHelper.java" startLine="33" startPosition="84" endLine="37" endPosition="0" />
     <scopeInfo nodeId="4832363360995122547" fileName="GoToEditorDeclarationHelper.java" startLine="42" startPosition="83" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="2074336189789658831" fileName="GoToEditorDeclarationHelper.java" startLine="69" startPosition="174" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="2074336189789658831" fileName="GoToEditorDeclarationHelper.java" startLine="69" startPosition="174" endLine="73" endPosition="0">
+      <varInfo nodeId="2074336189789658831" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="4832363360995122609" fileName="GoToEditorDeclarationHelper.java" startLine="59" startPosition="67" endLine="64" endPosition="0" />
     <scopeInfo nodeId="4832363360995122623" fileName="GoToEditorDeclarationHelper.java" startLine="68" startPosition="97" endLine="73" endPosition="7" />
     <scopeInfo nodeId="4832363360995122674" fileName="GoToEditorDeclarationHelper.java" startLine="76" startPosition="127" endLine="81" endPosition="18">

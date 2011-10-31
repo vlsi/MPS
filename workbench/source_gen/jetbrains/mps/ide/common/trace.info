@@ -74,25 +74,47 @@
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="57" startPosition="30" endLine="59" endPosition="25" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="75" startPosition="49" endLine="78" endPosition="7" />
-    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="109" startPosition="40" endLine="112" endPosition="56" />
-    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="115" startPosition="37" endLine="118" endPosition="56" />
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="109" startPosition="40" endLine="112" endPosition="56">
+      <varInfo nodeId="1203601634745" varName="oldValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="115" startPosition="37" endLine="118" endPosition="56">
+      <varInfo nodeId="1203601634745" varName="oldValue" />
+    </scopeInfo>
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="82" startPosition="43" endLine="86" endPosition="21" />
-    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="93" startPosition="54" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="82" startPosition="43" endLine="86" endPosition="21">
+      <varInfo nodeId="1203601634745" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="93" startPosition="54" endLine="97" endPosition="0">
+      <varInfo nodeId="1203601634745" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="74" startPosition="25" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="108" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="114" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="38" startPosition="22" endLine="45" endPosition="53" />
-    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="63" startPosition="5" endLine="70" endPosition="65" />
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="108" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="1203601634745" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="114" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="1203601634745" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="38" startPosition="22" endLine="45" endPosition="53">
+      <varInfo nodeId="1203601634745" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="63" startPosition="5" endLine="70" endPosition="65">
+      <varInfo nodeId="1203601634745" varName="binding" />
+      <varInfo nodeId="1203601634745" varName="sourceObject" />
+      <varInfo nodeId="1203601634745" varName="sourceProperty" />
+      <varInfo nodeId="1203601634745" varName="targetObject" />
+      <varInfo nodeId="1203601634745" varName="targetProperty" />
+    </scopeInfo>
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="81" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="73" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="37" startPosition="0" endLine="46" endPosition="3" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="62" startPosition="23" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="89" startPosition="40" endLine="98" endPosition="21" />
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="89" startPosition="40" endLine="98" endPosition="21">
+      <varInfo nodeId="1203601634745" varName="component" />
+    </scopeInfo>
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="61" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="88" startPosition="0" endLine="100" endPosition="0" />
     <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="23" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ide.common.PathField" />

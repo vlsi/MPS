@@ -374,10 +374,18 @@
     <scopeInfo nodeId="1560298786499493675" fileName="ListsFactory.java" startLine="134" startPosition="115" endLine="141" endPosition="0">
       <varInfo nodeId="1560298786499493678" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="206" startPosition="0" endLine="213" endPosition="0" />
-    <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="213" startPosition="0" endLine="220" endPosition="0" />
-    <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="220" startPosition="0" endLine="227" endPosition="0" />
-    <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="227" startPosition="0" endLine="234" endPosition="0" />
+    <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="206" startPosition="0" endLine="213" endPosition="0">
+      <varInfo nodeId="1560298786499493498" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="213" startPosition="0" endLine="220" endPosition="0">
+      <varInfo nodeId="1560298786499493498" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="220" startPosition="0" endLine="227" endPosition="0">
+      <varInfo nodeId="1560298786499493498" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="227" startPosition="0" endLine="234" endPosition="0">
+      <varInfo nodeId="1560298786499493498" varName="checkedDotOperand" />
+    </scopeInfo>
     <scopeInfo nodeId="1560298786499493521" fileName="ListsFactory.java" startLine="26" startPosition="142" endLine="34" endPosition="0">
       <varInfo nodeId="1560298786499493524" varName="o1" />
       <varInfo nodeId="1560298786499493526" varName="o2" />

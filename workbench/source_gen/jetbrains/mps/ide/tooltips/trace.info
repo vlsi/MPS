@@ -196,8 +196,14 @@
     <scopeInfo nodeId="6462432499626686448" fileName="MPSToolTipManager.java" startLine="98" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="6462432499626687729" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="1657638272963439183" fileName="MPSToolTipManager.java" startLine="164" startPosition="0" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="1657638272963439183" fileName="MPSToolTipManager.java" startLine="171" startPosition="0" endLine="178" endPosition="0" />
+    <scopeInfo nodeId="1657638272963439183" fileName="MPSToolTipManager.java" startLine="164" startPosition="0" endLine="171" endPosition="0">
+      <varInfo nodeId="1657638272963439183" varName="a" />
+      <varInfo nodeId="1657638272963439183" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1657638272963439183" fileName="MPSToolTipManager.java" startLine="171" startPosition="0" endLine="178" endPosition="0">
+      <varInfo nodeId="1657638272963439183" varName="a" />
+      <varInfo nodeId="1657638272963439183" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1142165476403803445" fileName="MPSToolTipManager.java" startLine="69" startPosition="55" endLine="78" endPosition="39" />
     <scopeInfo nodeId="5943684961278747694" fileName="MPSToolTipManager.java" startLine="149" startPosition="29" endLine="158" endPosition="18" />
     <scopeInfo nodeId="1228803144333909133" fileName="MPSToolTipManager.java" startLine="110" startPosition="103" endLine="120" endPosition="39">

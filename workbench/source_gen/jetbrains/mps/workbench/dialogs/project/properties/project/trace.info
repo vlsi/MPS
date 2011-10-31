@@ -51,7 +51,9 @@
     <scopeInfo nodeId="3201642974933580368" fileName="ProjectProperties.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="3201642974933580387" fileName="ProjectProperties.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="3201642974933580405" fileName="ProjectProperties.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4543209876460383282" fileName="ProjectProperties.java" startLine="58" startPosition="147" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="4543209876460383282" fileName="ProjectProperties.java" startLine="58" startPosition="147" endLine="62" endPosition="0">
+      <varInfo nodeId="4543209876460383282" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="3201642974933580508" fileName="ProjectProperties.java" startLine="49" startPosition="44" endLine="54" endPosition="70" />
     <scopeInfo nodeId="3201642974933580419" fileName="ProjectProperties.java" startLine="40" startPosition="62" endLine="46" endPosition="35">
       <varInfo nodeId="3201642974933580421" varName="paths" />
@@ -120,10 +122,16 @@
     <scopeInfo nodeId="3201642974933583184" fileName="ProjectPropertiesComponent.java" startLine="31" startPosition="27" endLine="33" endPosition="34" />
     <scopeInfo nodeId="3201642974933583196" fileName="ProjectPropertiesComponent.java" startLine="36" startPosition="30" endLine="38" endPosition="36" />
     <scopeInfo nodeId="3201642974933583208" fileName="ProjectPropertiesComponent.java" startLine="41" startPosition="25" endLine="43" endPosition="68" />
-    <scopeInfo nodeId="2505864428223727622" fileName="ProjectPropertiesComponent.java" startLine="59" startPosition="7" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="2505864428223727635" fileName="ProjectPropertiesComponent.java" startLine="65" startPosition="23" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="2505864428223727622" fileName="ProjectPropertiesComponent.java" startLine="59" startPosition="7" endLine="62" endPosition="5">
+      <varInfo nodeId="2505864428223727622" varName="ep" />
+    </scopeInfo>
+    <scopeInfo nodeId="2505864428223727635" fileName="ProjectPropertiesComponent.java" startLine="65" startPosition="23" endLine="68" endPosition="5">
+      <varInfo nodeId="2505864428223727635" varName="ep" />
+    </scopeInfo>
     <scopeInfo nodeId="3201642974933583157" fileName="ProjectPropertiesComponent.java" startLine="24" startPosition="54" endLine="28" endPosition="13" />
-    <scopeInfo nodeId="2505864428223727657" fileName="ProjectPropertiesComponent.java" startLine="47" startPosition="190" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2505864428223727657" fileName="ProjectPropertiesComponent.java" startLine="47" startPosition="190" endLine="51" endPosition="0">
+      <varInfo nodeId="2505864428223727657" varName="ep" />
+    </scopeInfo>
     <scopeInfo nodeId="3201642974933583252" fileName="ProjectPropertiesComponent.java" startLine="55" startPosition="58" endLine="59" endPosition="0" />
     <scopeInfo nodeId="3201642974933583281" fileName="ProjectPropertiesComponent.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="3201642974933583181" fileName="ProjectPropertiesComponent.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
@@ -457,14 +465,22 @@
     <scopeInfo nodeId="3201642974933584776" fileName="TestConfigurationDialog.java" startLine="89" startPosition="119" endLine="93" endPosition="13" />
     <scopeInfo nodeId="3201642974933584802" fileName="TestConfigurationDialog.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="3201642974933585278" fileName="TestConfigurationDialog.java" startLine="181" startPosition="0" endLine="185" endPosition="0" />
-    <scopeInfo nodeId="1918923653324395783" fileName="TestConfigurationDialog.java" startLine="243" startPosition="146" endLine="247" endPosition="0" />
-    <scopeInfo nodeId="1918923653324395801" fileName="TestConfigurationDialog.java" startLine="248" startPosition="132" endLine="252" endPosition="0" />
+    <scopeInfo nodeId="1918923653324395783" fileName="TestConfigurationDialog.java" startLine="243" startPosition="146" endLine="247" endPosition="0">
+      <varInfo nodeId="1918923653324395783" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1918923653324395801" fileName="TestConfigurationDialog.java" startLine="248" startPosition="132" endLine="252" endPosition="0">
+      <varInfo nodeId="1918923653324395801" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="3201642974933584634" fileName="TestConfigurationDialog.java" startLine="270" startPosition="0" endLine="274" endPosition="0">
       <varInfo nodeId="3201642974933584637" varName="mtc" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585870" fileName="TestConfigurationDialog.java" startLine="306" startPosition="82" endLine="310" endPosition="17" />
-    <scopeInfo nodeId="8715098193949534418" fileName="TestConfigurationDialog.java" startLine="332" startPosition="182" endLine="336" endPosition="0" />
-    <scopeInfo nodeId="8715098193949534440" fileName="TestConfigurationDialog.java" startLine="336" startPosition="120" endLine="340" endPosition="0" />
+    <scopeInfo nodeId="8715098193949534418" fileName="TestConfigurationDialog.java" startLine="332" startPosition="182" endLine="336" endPosition="0">
+      <varInfo nodeId="8715098193949534418" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8715098193949534440" fileName="TestConfigurationDialog.java" startLine="336" startPosition="120" endLine="340" endPosition="0">
+      <varInfo nodeId="8715098193949534440" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="3201642974933585981" fileName="TestConfigurationDialog.java" startLine="354" startPosition="50" endLine="358" endPosition="11" />
     <scopeInfo nodeId="3201642974933585982" fileName="TestConfigurationDialog.java" startLine="354" startPosition="50" endLine="358" endPosition="11">
       <varInfo nodeId="3201642974933585988" varName="o" />
@@ -747,7 +763,9 @@
     <scopeInfo nodeId="3201642974933587576" fileName="ProjectPropertiesDialog.java" startLine="90" startPosition="29" endLine="91" endPosition="18" />
     <scopeInfo nodeId="3201642974933587465" fileName="ProjectPropertiesDialog.java" startLine="45" startPosition="43" endLine="47" endPosition="43" />
     <scopeInfo nodeId="3201642974933587588" fileName="ProjectPropertiesDialog.java" startLine="56" startPosition="25" endLine="58" endPosition="25" />
-    <scopeInfo nodeId="2505864428223718807" fileName="ProjectPropertiesDialog.java" startLine="39" startPosition="180" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="2505864428223718807" fileName="ProjectPropertiesDialog.java" startLine="39" startPosition="180" endLine="42" endPosition="5">
+      <varInfo nodeId="2505864428223718807" varName="extraPanel" />
+    </scopeInfo>
     <scopeInfo nodeId="3201642974933587337" fileName="ProjectPropertiesDialog.java" startLine="22" startPosition="57" endLine="26" endPosition="13" />
     <scopeInfo nodeId="3201642974933587482" fileName="ProjectPropertiesDialog.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="3201642974933587511" fileName="ProjectPropertiesDialog.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />

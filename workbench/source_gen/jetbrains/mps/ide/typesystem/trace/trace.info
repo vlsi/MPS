@@ -141,10 +141,20 @@
     <scopeInfo nodeId="866755926374575421" fileName="PresentationUtil.java" startLine="31" startPosition="33" endLine="38" endPosition="7">
       <varInfo nodeId="866755926374575423" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="61" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="68" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="75" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="866755926374575379" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="61" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="866755926374575379" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="68" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="866755926374575379" varName="checkedDotOperand" />
+      <varInfo nodeId="866755926374575379" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="866755926374575379" fileName="PresentationUtil.java" startLine="75" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="866755926374575379" varName="checkedDotOperand" />
+      <varInfo nodeId="866755926374575379" varName="var" />
+    </scopeInfo>
     <scopeInfo nodeId="866755926374575380" fileName="PresentationUtil.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="866755926374575393" varName="editorComponent" />
       <varInfo nodeId="866755926374575395" varName="node" />
@@ -416,7 +426,10 @@
       <varInfo nodeId="866755926374575631" varName="operationContext" />
       <varInfo nodeId="866755926374575633" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374575616" fileName="TypeSystemStateTree.java" startLine="199" startPosition="0" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="866755926374575616" fileName="TypeSystemStateTree.java" startLine="199" startPosition="0" endLine="206" endPosition="0">
+      <varInfo nodeId="866755926374575616" varName="checkedDotOperand" />
+      <varInfo nodeId="866755926374575616" varName="var" />
+    </scopeInfo>
     <scopeInfo nodeId="866755926374575789" fileName="TypeSystemStateTree.java" startLine="80" startPosition="98" endLine="88" endPosition="18">
       <varInfo nodeId="866755926374575791" varName="result" />
     </scopeInfo>
@@ -1015,7 +1028,9 @@
     <scopeInfo nodeId="866755926374577397" fileName="TypeSystemTraceTree.java" startLine="200" startPosition="17" endLine="207" endPosition="5">
       <varInfo nodeId="866755926374577421" varName="errorNode" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="285" startPosition="0" endLine="292" endPosition="0" />
+    <scopeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="285" startPosition="0" endLine="292" endPosition="0">
+      <varInfo nodeId="866755926374576838" varName="checkedDotOperand" />
+    </scopeInfo>
     <scopeInfo nodeId="866755926374577105" fileName="TypeSystemTraceTree.java" startLine="107" startPosition="35" endLine="115" endPosition="18">
       <varInfo nodeId="866755926374577123" varName="result" />
     </scopeInfo>

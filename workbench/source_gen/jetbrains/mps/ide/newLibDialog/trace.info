@@ -173,55 +173,107 @@
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="69" startPosition="27" endLine="71" endPosition="16" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="70" startPosition="43" endLine="72" endPosition="43" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="74" startPosition="30" endLine="76" endPosition="25" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="7619659760484896627" varName="frame" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="101" startPosition="49" endLine="104" endPosition="7" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="115" startPosition="43" endLine="118" endPosition="21" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="128" startPosition="42" endLine="131" endPosition="21" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="161" startPosition="47" endLine="164" endPosition="63" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="174" startPosition="43" endLine="177" endPosition="58" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="180" startPosition="48" endLine="183" endPosition="58" />
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="115" startPosition="43" endLine="118" endPosition="21">
+      <varInfo nodeId="7619659760484896627" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="128" startPosition="42" endLine="131" endPosition="21">
+      <varInfo nodeId="7619659760484896627" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="161" startPosition="47" endLine="164" endPosition="63">
+      <varInfo nodeId="7619659760484896627" varName="oldValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="174" startPosition="43" endLine="177" endPosition="58">
+      <varInfo nodeId="7619659760484896627" varName="oldValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="180" startPosition="48" endLine="183" endPosition="58">
+      <varInfo nodeId="7619659760484896627" varName="oldValue" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="58" startPosition="31" endLine="62" endPosition="37" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="108" startPosition="39" endLine="112" endPosition="21" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="121" startPosition="39" endLine="125" endPosition="21" />
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="108" startPosition="39" endLine="112" endPosition="21">
+      <varInfo nodeId="7619659760484896627" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="121" startPosition="39" endLine="125" endPosition="21">
+      <varInfo nodeId="7619659760484896627" varName="component" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="137" startPosition="0" endLine="141" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="145" startPosition="0" endLine="149" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="149" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="154" startPosition="47" endLine="158" endPosition="31" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="167" startPosition="47" endLine="171" endPosition="31" />
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="154" startPosition="47" endLine="158" endPosition="31">
+      <varInfo nodeId="7619659760484896627" varName="oldValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="167" startPosition="47" endLine="171" endPosition="31">
+      <varInfo nodeId="7619659760484896627" varName="oldValue" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="23" startPosition="40" endLine="28" endPosition="30" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="54" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="7619659760484896627" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="7619659760484896627" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="64" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="7619659760484896627" varName="newValue" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="68" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="69" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="7619659760484896627" varName="newValue" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="73" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="100" startPosition="25" endLine="105" endPosition="5" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="114" startPosition="0" endLine="120" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="127" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="160" startPosition="0" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="173" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="179" startPosition="0" endLine="185" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="80" startPosition="5" endLine="87" endPosition="65" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="89" startPosition="5" endLine="96" endPosition="65" />
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="160" startPosition="0" endLine="166" endPosition="0">
+      <varInfo nodeId="7619659760484896627" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="173" startPosition="0" endLine="179" endPosition="0">
+      <varInfo nodeId="7619659760484896627" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="179" startPosition="0" endLine="185" endPosition="0">
+      <varInfo nodeId="7619659760484896627" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="80" startPosition="5" endLine="87" endPosition="65">
+      <varInfo nodeId="7619659760484896627" varName="binding" />
+      <varInfo nodeId="7619659760484896627" varName="sourceObject" />
+      <varInfo nodeId="7619659760484896627" varName="sourceProperty" />
+      <varInfo nodeId="7619659760484896627" varName="targetObject" />
+      <varInfo nodeId="7619659760484896627" varName="targetProperty" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="89" startPosition="5" endLine="96" endPosition="65">
+      <varInfo nodeId="7619659760484896627" varName="binding" />
+      <varInfo nodeId="7619659760484896627" varName="sourceObject" />
+      <varInfo nodeId="7619659760484896627" varName="sourceProperty" />
+      <varInfo nodeId="7619659760484896627" varName="targetObject" />
+      <varInfo nodeId="7619659760484896627" varName="targetProperty" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="107" startPosition="0" endLine="114" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="120" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="153" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="166" startPosition="0" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="153" startPosition="0" endLine="160" endPosition="0">
+      <varInfo nodeId="7619659760484896627" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="166" startPosition="0" endLine="173" endPosition="0">
+      <varInfo nodeId="7619659760484896627" varName="newValue" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="22" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="99" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="50" startPosition="36" endLine="62" endPosition="37" />
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="50" startPosition="36" endLine="62" endPosition="37">
+      <varInfo nodeId="7619659760484896627" varName="component" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="49" startPosition="0" endLine="63" endPosition="3" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="79" startPosition="23" endLine="97" endPosition="5" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="78" startPosition="0" endLine="99" endPosition="0" />
@@ -263,9 +315,15 @@
     <scopeInfo nodeId="7619659760484896747" fileName="NewLibDialogContentPane.java" startLine="214" startPosition="38" endLine="215" endPosition="13" />
     <scopeInfo nodeId="7619659760484896777" fileName="NewLibDialogContentPane.java" startLine="219" startPosition="94" endLine="220" endPosition="62" />
     <scopeInfo nodeId="7619659760484896677" fileName="NewLibDialogContentPane.java" startLine="188" startPosition="26" endLine="190" endPosition="13" />
-    <scopeInfo nodeId="7619659760484896726" fileName="NewLibDialogContentPane.java" startLine="200" startPosition="63" endLine="203" endPosition="0" />
+    <scopeInfo nodeId="7619659760484896726" fileName="NewLibDialogContentPane.java" startLine="200" startPosition="63" endLine="203" endPosition="0">
+      <varInfo nodeId="7619659760484896726" varName="d" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896803" fileName="NewLibDialogContentPane.java" startLine="58" startPosition="31" endLine="62" endPosition="37" />
-    <scopeInfo nodeId="7619659760484896713" fileName="NewLibDialogContentPane.java" startLine="196" startPosition="222" endLine="200" endPosition="0" />
+    <scopeInfo nodeId="7619659760484896713" fileName="NewLibDialogContentPane.java" startLine="196" startPosition="222" endLine="200" endPosition="0">
+      <varInfo nodeId="7619659760484896713" varName="f" />
+      <varInfo nodeId="7619659760484896713" varName="p" />
+      <varInfo nodeId="7619659760484896713" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896739" fileName="NewLibDialogContentPane.java" startLine="208" startPosition="0" endLine="212" endPosition="0" />
     <scopeInfo nodeId="7619659760484896745" fileName="NewLibDialogContentPane.java" startLine="213" startPosition="40" endLine="221" endPosition="5">
       <varInfo nodeId="7619659760484896755" varName="path" />
@@ -273,7 +331,9 @@
     </scopeInfo>
     <scopeInfo nodeId="7619659760484896691" fileName="NewLibDialogContentPane.java" startLine="195" startPosition="48" endLine="204" endPosition="27" />
     <scopeInfo nodeId="7619659760484896743" fileName="NewLibDialogContentPane.java" startLine="212" startPosition="0" endLine="223" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896690" fileName="NewLibDialogContentPane.java" startLine="194" startPosition="116" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="7619659760484896690" fileName="NewLibDialogContentPane.java" startLine="194" startPosition="116" endLine="206" endPosition="0">
+      <varInfo nodeId="7619659760484896690" varName="monitor" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896664" fileName="NewLibDialogContentPane.java" startLine="186" startPosition="27" endLine="206" endPosition="47">
       <varInfo nodeId="7619659760484896666" varName="message" />
     </scopeInfo>

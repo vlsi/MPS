@@ -43,7 +43,9 @@
       <varInfo nodeId="6056923343037305743" varName="generator" />
       <varInfo nodeId="6056923343037305745" varName="nodeToFindUsages" />
     </scopeInfo>
-    <scopeInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="123" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="123" endLine="40" endPosition="0">
+      <varInfo nodeId="6056923343037331220" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="6056923343037305854" fileName="MappingConfigFinder.java" startLine="48" startPosition="47" endLine="53" endPosition="9" />
     <scopeInfo nodeId="6056923343037305908" fileName="MappingConfigFinder.java" startLine="61" startPosition="34" endLine="66" endPosition="67" />
     <scopeInfo nodeId="6056923343037305850" fileName="MappingConfigFinder.java" startLine="47" startPosition="57" endLine="54" endPosition="7">
