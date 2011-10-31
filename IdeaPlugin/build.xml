@@ -13,23 +13,34 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<project name="IDEA-plugin-compile" default="compile" basedir="..">
+<project name="IDEA-plugin-compile" default="compile" basedir=".">
 
-    <property name="base_dir" value="."/>
+    <property name="base_dir" value=".."/>
     <property name="artifacts" value="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <property name="build_dir" value="${base_dir}/IdeaPlugin/build"/>
+    <property file="build.properties"/>
+    <property name="ideaPath" value="${home.idea_ce}"/>
+
+    <path id="javac2.classpath">
+        <pathelement location="${ideaPath}/lib/javac2.jar"/>
+        <pathelement location="${ideaPath}/lib/jdom.jar"/>
+        <pathelement location="${ideaPath}/lib/asm.jar"/>
+        <pathelement location="${ideaPath}/lib/asm-commons.jar"/>
+        <pathelement location="${ideaPath}/lib/jgoodies-forms.jar"/>
+    </path>
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
 
     <path id="mps.core.libraries">
-        <path path="${base_dir}/lib/ecj.jar"/>
-        <path path="${base_dir}/lib/guava-r06.jar"/>
-        <path path="${base_dir}/lib/jdom.jar"/>
-        <path path="${base_dir}/lib/log4j.jar"/>
-        <path path="${base_dir}/lib/trove4j.jar"/>
-        <path path="${base_dir}/lib/xstream.jar"/>
-        <path path="${base_dir}/lib/annotations.jar"/>
+        <path path="${home.idea_ce}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar"/>
+        <path path="${home.idea_ce}/lib/guava-r09.jar"/>
+        <path path="${home.idea_ce}/lib/jdom.jar"/>
+        <path path="${home.idea_ce}/lib/log4j.jar"/>
+        <path path="${home.idea_ce}/lib/trove4j.jar"/>
+        <path path="${home.idea_ce}/lib/xstream.jar"/>
+        <path path="${home.idea_ce}/lib/annotations.jar"/>
+        <path path="${home.idea_ce}/lib/commons-lang-2.4.jar"/>
+        <path path="${home.idea_ce}/lib/commons-logging-1.1.1.jar"/>
         <path path="${base_dir}/lib/asm.jar"/>
-        <path path="${base_dir}/lib/commons-lang-2.4.jar"/>
-        <path path="${base_dir}/lib/commons-logging-1.1.jar"/>
         <path path="${base_dir}/lib/diffutils-1.2.1.jar"/>
     </path>
 
@@ -41,6 +52,7 @@
     <target name="compile">
         <mkdir dir="${artifacts}"/>
 
+        <!-- MPS Core -->
         <mkdir dir="${build_dir}/mpscore_jar"/>
         <javac classpathref="mps.core.libraries" destdir="${build_dir}/mpscore_jar" fork="true"
                memorymaximumsize="1024m"
@@ -53,36 +65,42 @@
                 <path path="${base_dir}/core/baseLanguage/tuples/runtime/source_gen"/>
 
                 <!-- runtime -->
-                <path path="core/runtime/source"/>
+                <path path="${base_dir}/core/runtime/source"/>
 
                 <!-- kernel -->
-                <path path="core/kernel/source"/>
-                <path path="core/kernel/source_gen"/>
-                <path path="core/kernel/dataFlowRuntime/source"/>
-                <path path="core/kernel/dataFlowRuntime/source_gen"/>
-                <path path="core/kernel/patternRuntime/source"/>
-                <path path="core/kernel/patternRuntime/source_gen"/>
-                <path path="core/kernel/resources/source_gen"/>
-                <path path="core/kernel/smodelRuntime/source_gen"/>
-                <path path="core/kernel/stubUtils/source_gen"/>
-                <path path="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen"/>
+                <path path="${base_dir}/core/kernel/source"/>
+                <path path="${base_dir}/core/kernel/source_gen"/>
+                <path path="${base_dir}/core/kernel/dataFlowRuntime/source"/>
+                <path path="${base_dir}/core/kernel/dataFlowRuntime/source_gen"/>
+                <path path="${base_dir}/core/kernel/patternRuntime/source"/>
+                <path path="${base_dir}/core/kernel/patternRuntime/source_gen"/>
+                <path path="${base_dir}/core/kernel/resources/source_gen"/>
+                <path path="${base_dir}/core/kernel/smodelRuntime/source_gen"/>
+                <path path="${base_dir}/core/kernel/stubUtils/source_gen"/>
+                <path path="${base_dir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen"/>
 
                 <!-- make-runtime -->
-                <path path="core/make-runtime/solutions/jetbrains.mps.make/source_gen"/>
-                <path path="core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen"/>
+                <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/source_gen"/>
+                <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen"/>
 
                 <!-- generator -->
-                <path path="core/generator/solutions/traceInfo/util/source_gen"/>
-                <path path="core/generator/source"/>
-                <path path="core/generator/source_gen"/>
+                <path path="${base_dir}/core/generator/solutions/traceInfo/util/source_gen"/>
+                <path path="${base_dir}/core/generator/source"/>
+                <path path="${base_dir}/core/generator/source_gen"/>
 
                 <!-- typesystemEngine -->
-                <path path="core/typesystemEngine/source"/>
-                <path path="core/typesystemEngine/source_gen"/>
+                <path path="${base_dir}/core/typesystemEngine/source"/>
+                <path path="${base_dir}/core/typesystemEngine/source_gen"/>
 
                 <!-- findUsages-runtime -->
-                <path path="core/findUsages-runtime/source"/>
-                <path path="core/findUsages-runtime/source_gen"/>
+                <path path="${base_dir}/core/findUsages-runtime/source"/>
+                <path path="${base_dir}/core/findUsages-runtime/source_gen"/>
+
+                <!-- analyzers -->
+                <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen"/>
+
+                <!-- baseLanguage search -->
+                <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
             </src>
         </javac>
         <jar destfile="${artifacts}/mps-core.jar">
@@ -96,18 +114,69 @@
         </jar>
         <copy todir="${artifacts}" flatten="true">
             <resources>
-                <file file="${base_dir}/lib/ecj.jar"/>
-                <file file="${base_dir}/lib/guava-r06.jar"/>
-                <file file="${base_dir}/lib/jdom.jar"/>
-                <file file="${base_dir}/lib/log4j.jar"/>
-                <file file="${base_dir}/lib/trove4j.jar"/>
-                <file file="${base_dir}/lib/xstream.jar"/>
-                <file file="${base_dir}/lib/annotations.jar"/>
                 <file file="${base_dir}/lib/asm.jar"/>
-                <file file="${base_dir}/lib/commons-lang-2.4.jar"/>
-                <file file="${base_dir}/lib/commons-logging-1.1.jar"/>
                 <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
             </resources>
         </copy>
+
+        <!-- MPS Core sources -->
+        <mkdir dir="${build_dir}/mpscore-src_jar"/>
+        <copy includeemptydirs="false" todir="${build_dir}/mpscore-src_jar">
+            <fileset dir="${base_dir}/core/kernel/source" includes="**/*.java"/>
+        </copy>
+        <jar destfile="${artifacts}/mps-core-src.jar">
+            <fileset dir="${build_dir}/mpscore-src_jar"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Core modeling framework"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+
+        <!-- IDEA workbench -->
+        <mkdir dir="${build_dir}/mpsworkbench_jar"/>
+        <javac destdir="${build_dir}/mpsworkbench_jar" fork="true"
+               memorymaximumsize="1024m"
+               includeantruntime="false">
+            <compilerarg value="-Xlint:none"/>
+            <src>
+                <!-- idea-workbench -->
+                <path path="${base_dir}/workbench/idea-workbench/source"/>
+            </src>
+            <classpath>
+                <fileset dir="${artifacts}" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+            </classpath>
+        </javac>
+        <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
+            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="**/*.png"/>
+        </copy>
+        <jar destfile="${artifacts}/mps-workbench.jar">
+            <fileset dir="${build_dir}/mpsworkbench_jar"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="IDEA Workbench integration package"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+
+        <!-- IDEA workbench sources -->
+        <mkdir dir="${build_dir}/mpsworkbench-src_jar"/>
+        <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench-src_jar">
+            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="**/*.java"/>
+        </copy>
+        <jar destfile="${artifacts}/mps-workbench-src.jar">
+            <fileset dir="${build_dir}/mpsworkbench-src_jar"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="IDEA Workbench integration package sources"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+
     </target>
 </project>

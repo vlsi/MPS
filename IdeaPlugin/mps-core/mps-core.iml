@@ -1,27 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PLUGIN_MODULE" version="4">
   <component name="DevKit.ModuleBuildProperties" url="file://$MODULE_DIR$/META-INF/plugin.xml" />
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/classes" />
+    <output-test url="file://$MODULE_DIR$/testclasses" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../core">
+      <sourceFolder url="file://$MODULE_DIR$/../../core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/closures/runtime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/closures/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/collections/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/baseLanguage/tuples/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/findUsages-runtime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/findUsages-runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/generator/solutions/traceInfo/util/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/generator/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/dataFlowRuntime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/dataFlowRuntime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/patternRuntime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/patternRuntime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/resources/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/smodelRuntime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/make-runtime/solutions/jetbrains.mps.make/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/runtime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/typesystemEngine/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/typesystemEngine/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/stubUtils/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../workbench/idea-workbench">
+      <sourceFolder url="file://$MODULE_DIR$/../../workbench/idea-workbench/source" isTestSource="false" />
+    </content>
     <orderEntry type="module-library">
       <library name="MPS-core">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/ecj.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/xstream.jar!/" />
           <root url="jar://$MODULE_DIR$/lib/diffutils-1.2.1.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/commons-logging-1.1.jar!/" />
           <root url="jar://$MODULE_DIR$/lib/asm.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/annotations.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/jdom.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/trove4j.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/mps-core.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/log4j.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/guava-r06.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/commons-lang-2.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
