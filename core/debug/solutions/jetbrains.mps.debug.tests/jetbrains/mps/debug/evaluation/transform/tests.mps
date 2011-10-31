@@ -6747,9 +6747,6 @@
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="8638796163619025274">
           <property name="name" nameId="tpck.1169194664001" value="strings" />
-          <node role="deducedType" type="tp2q.ListType" typeId="tp2q.1151688443754" id="8638796163619040021">
-            <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="8638796163619040022" />
-          </node>
           <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223155">
             <node role="lowType" roleId="8sls.4544608336420691673" type="tp2q.LinkedListType" typeId="tp2q.3358009230509553641" id="2754592889269223156">
               <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223157" />
@@ -6909,9 +6906,6 @@
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="1774703052633005921">
           <property name="name" nameId="tpck.1169194664001" value="integers" />
-          <node role="deducedType" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1774703052633005922">
-            <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="1774703052633005923" />
-          </node>
           <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223135">
             <node role="lowType" roleId="8sls.4544608336420691673" type="tp2q.LinkedListType" typeId="tp2q.3358009230509553641" id="2754592889269223136">
               <node role="elementType" roleId="tp2q.1151688676805" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223137" />
