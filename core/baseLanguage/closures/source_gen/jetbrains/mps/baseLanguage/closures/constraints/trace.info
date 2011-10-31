@@ -33,10 +33,10 @@
     <scopeInfo nodeId="100821637069090025" fileName="FunctionType_Constraints.java" startLine="37" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="100821637069090025" fileName="FunctionType_Constraints.java" startLine="30" startPosition="83" endLine="58" endPosition="22" />
     <scopeInfo nodeId="100821637069090025" fileName="FunctionType_Constraints.java" startLine="28" startPosition="0" endLine="60" endPosition="0" />
-    <unitInfo nodeId="100821637069106774" fileName="FunctionType_Constraints.java" startLine="44" startPosition="195" endLine="48" endPosition="13" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$3" />
-    <unitInfo nodeId="100821637069090025" fileName="FunctionType_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$2" />
-    <unitInfo nodeId="100821637069090025" fileName="FunctionType_Constraints.java" startLine="32" startPosition="39" endLine="57" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$1" />
     <unitInfo nodeId="100821637069090025" fileName="FunctionType_Constraints.java" startLine="22" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints" />
+    <unitInfo nodeId="100821637069090025" fileName="FunctionType_Constraints.java" startLine="32" startPosition="39" endLine="57" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$1" />
+    <unitInfo nodeId="100821637069090025" fileName="FunctionType_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$2" />
+    <unitInfo nodeId="100821637069106774" fileName="FunctionType_Constraints.java" startLine="44" startPosition="195" endLine="48" endPosition="13" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$3" />
   </root>
   <root nodeId="1201536121399">
     <nodeInfo nodeId="7376433222636454079" fileName="ClassifierTypeUtil.java" startLine="27" startPosition="66" endLine="28" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -398,8 +398,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1210666992365" fileName="ClassifierTypeUtil.java" startLine="138" startPosition="9" endLine="144" endPosition="11" />
     <scopeInfo nodeId="1203271919823" fileName="ClassifierTypeUtil.java" startLine="155" startPosition="63" endLine="161" endPosition="69">
-      <varInfo nodeId="1203272041120" varName="vars" />
       <varInfo nodeId="1203272023773" varName="ptypes" />
+      <varInfo nodeId="1203272041120" varName="vars" />
     </scopeInfo>
     <scopeInfo nodeId="1203276018782" fileName="ClassifierTypeUtil.java" startLine="166" startPosition="18" endLine="172" endPosition="7">
       <varInfo nodeId="1203276018786" varName="tvd" />
@@ -417,8 +417,8 @@
       <varInfo nodeId="1222884459490" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="627851238370254508" fileName="ClassifierTypeUtil.java" startLine="114" startPosition="47" endLine="121" endPosition="42">
-      <varInfo nodeId="627851238370254528" varName="ldi" />
       <varInfo nodeId="627851238370254522" varName="cname" />
+      <varInfo nodeId="627851238370254528" varName="ldi" />
     </scopeInfo>
     <scopeInfo nodeId="1203272152479" fileName="ClassifierTypeUtil.java" startLine="165" startPosition="154" endLine="172" endPosition="7">
       <varInfo nodeId="1203276070555" varName="idx" />
@@ -431,8 +431,8 @@
       <varInfo nodeId="1222884443798" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="1203271919820" fileName="ClassifierTypeUtil.java" startLine="154" startPosition="0" endLine="163" endPosition="0">
-      <varInfo nodeId="1203271935591" varName="type" />
       <varInfo nodeId="1203271943641" varName="concrete" />
+      <varInfo nodeId="1203271935591" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="1227623349661" fileName="ClassifierTypeUtil.java" startLine="74" startPosition="26" endLine="84" endPosition="19">
       <varInfo nodeId="1227623349663" varName="params" />
@@ -493,13 +493,13 @@
       <varInfo nodeId="1228170259151" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="1203272075551" fileName="ClassifierTypeUtil.java" startLine="163" startPosition="0" endLine="184" endPosition="0">
-      <varInfo nodeId="1203272117707" varName="vars" />
       <varInfo nodeId="1203272102323" varName="actTypes" />
       <varInfo nodeId="1203272096450" varName="type" />
+      <varInfo nodeId="1203272117707" varName="vars" />
     </scopeInfo>
     <scopeInfo nodeId="1202774154495" fileName="ClassifierTypeUtil.java" startLine="186" startPosition="100" endLine="207" endPosition="7">
-      <varInfo nodeId="1202775434821" varName="covariantParam" />
       <varInfo nodeId="1202774154497" varName="copy" />
+      <varInfo nodeId="1202775434821" varName="covariantParam" />
     </scopeInfo>
     <scopeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="308" startPosition="49" endLine="331" endPosition="20" />
     <scopeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="339" startPosition="49" endLine="362" endPosition="20" />
@@ -508,8 +508,8 @@
     <scopeInfo nodeId="1202763885220" fileName="ClassifierTypeUtil.java" startLine="221" startPosition="55" endLine="245" endPosition="5" />
     <scopeInfo nodeId="1210666961221" fileName="ClassifierTypeUtil.java" startLine="126" startPosition="78" endLine="152" endPosition="19">
       <varInfo nodeId="1210666992324" varName="concretes" />
-      <varInfo nodeId="1210666992317" varName="visitedClassifiers" />
       <varInfo nodeId="1210666992336" varName="resType" />
+      <varInfo nodeId="1210666992317" varName="visitedClassifiers" />
     </scopeInfo>
     <scopeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="307" startPosition="0" endLine="333" endPosition="0" />
     <scopeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="338" startPosition="0" endLine="364" endPosition="0" />
@@ -519,8 +519,8 @@
       <varInfo nodeId="1202763885293" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="1210666961218" fileName="ClassifierTypeUtil.java" startLine="125" startPosition="0" endLine="154" endPosition="0">
-      <varInfo nodeId="1210666984944" varName="type" />
       <varInfo nodeId="1210666984947" varName="concrete" />
+      <varInfo nodeId="1210666984944" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="1202774154489" fileName="ClassifierTypeUtil.java" startLine="185" startPosition="74" endLine="218" endPosition="5" />
     <scopeInfo nodeId="1202774154486" fileName="ClassifierTypeUtil.java" startLine="184" startPosition="0" endLine="220" endPosition="0">
@@ -534,13 +534,13 @@
     <scopeInfo nodeId="1201536134312" fileName="ClassifierTypeUtil.java" startLine="26" startPosition="33" endLine="71" endPosition="0">
       <varInfo nodeId="2386296566107169686" varName="type" />
     </scopeInfo>
-    <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="268" startPosition="0" endLine="285" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil$QuotationClass_zgotlq_a0a0g0a" />
+    <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="26" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
     <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="286" startPosition="0" endLine="303" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil$QuotationClass_zgotlq_a0a0a0a0d" />
-    <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="304" startPosition="0" endLine="334" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil$QuotationClass_zgotlq_a0a0a4a0a8" />
-    <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="335" startPosition="0" endLine="365" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil$QuotationClass_zgotlq_a0a0a0e0a0i" />
     <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="366" startPosition="0" endLine="396" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil$QuotationClass_zgotlq_a0a0a0a0i" />
     <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="397" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil$QuotationClass_zgotlq_a0a0a0a0i_0" />
-    <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="26" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
+    <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="335" startPosition="0" endLine="365" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil$QuotationClass_zgotlq_a0a0a0e0a0i" />
+    <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="304" startPosition="0" endLine="334" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil$QuotationClass_zgotlq_a0a0a4a0a8" />
+    <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="268" startPosition="0" endLine="285" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil$QuotationClass_zgotlq_a0a0g0a" />
   </root>
   <root nodeId="1213107436309">
     <nodeInfo nodeId="1213107436309" fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="14" startPosition="95" endLine="15" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -616,8 +616,8 @@
     <scopeInfo nodeId="1229600981370" fileName="ControlAbstractionContainer_Constraints.java" startLine="28" startPosition="45" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1229600981370" fileName="ControlAbstractionContainer_Constraints.java" startLine="27" startPosition="59" endLine="41" endPosition="6" />
     <scopeInfo nodeId="1229600981370" fileName="ControlAbstractionContainer_Constraints.java" startLine="25" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="1229600981370" fileName="ControlAbstractionContainer_Constraints.java" startLine="28" startPosition="15" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.ControlAbstractionContainer_Constraints$1" />
     <unitInfo nodeId="1229600981370" fileName="ControlAbstractionContainer_Constraints.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ControlAbstractionContainer_Constraints" />
+    <unitInfo nodeId="1229600981370" fileName="ControlAbstractionContainer_Constraints.java" startLine="28" startPosition="15" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.ControlAbstractionContainer_Constraints$1" />
   </root>
   <root nodeId="2684105348703956460">
     <nodeInfo nodeId="2684105348703956460" fileName="FunctionMethodDeclaration_Constraints.java" startLine="14" startPosition="50" endLine="15" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -653,9 +653,9 @@
     <scopeInfo nodeId="2684105348703956460" fileName="FunctionMethodDeclaration_Constraints.java" startLine="38" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="2684105348703956460" fileName="FunctionMethodDeclaration_Constraints.java" startLine="19" startPosition="82" endLine="45" endPosition="22" />
     <scopeInfo nodeId="2684105348703956460" fileName="FunctionMethodDeclaration_Constraints.java" startLine="17" startPosition="0" endLine="47" endPosition="0" />
+    <unitInfo nodeId="2684105348703956460" fileName="FunctionMethodDeclaration_Constraints.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints" />
     <unitInfo nodeId="2684105348703956460" fileName="FunctionMethodDeclaration_Constraints.java" startLine="21" startPosition="31" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints$1" />
     <unitInfo nodeId="2684105348703956460" fileName="FunctionMethodDeclaration_Constraints.java" startLine="33" startPosition="37" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints$2" />
-    <unitInfo nodeId="2684105348703956460" fileName="FunctionMethodDeclaration_Constraints.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints" />
   </root>
   <root nodeId="5612111951671408000">
     <nodeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="15" startPosition="81" endLine="16" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />

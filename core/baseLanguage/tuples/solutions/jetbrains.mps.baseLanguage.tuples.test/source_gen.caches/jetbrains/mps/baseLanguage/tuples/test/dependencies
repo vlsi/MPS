@@ -26,7 +26,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples_Test" file="ExtendedNamedTuples_Test.java">
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples.Bar" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples.Foo" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
