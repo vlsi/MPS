@@ -158,7 +158,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myEvaluator, "evaluatedStatements", true), "statement", true)).addElement(clone);
       } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement")) {
         transformNode(node);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myEvaluator, "evaluatedStatements", true), "statement", true)).addElement(node);
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myEvaluator, "evaluatedStatements", true), "statement", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Statement"));
       }
     }
   }
