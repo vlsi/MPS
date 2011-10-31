@@ -111,7 +111,7 @@ public class EvaluationPanel extends EvaluationUi {
           EvaluationPanel.this.myTabbedPane.add("Generated Result", EvaluationPanel.this.myResultEditor.getComponenet());
           EvaluationPanel.this.myTabbedPane.validate();
         } else {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               EvaluationPanel.this.myResultEditor.setNode(generatedResult);
             }
