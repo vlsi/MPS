@@ -365,9 +365,7 @@
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="55" startPosition="57" endLine="59" endPosition="11" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
-    <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="54" startPosition="26" endLine="60" endPosition="9">
-      <varInfo nodeId="1205248417575" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="54" startPosition="26" endLine="60" endPosition="9" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="78" startPosition="96" endLine="84" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="35" startPosition="89" endLine="44" endPosition="5" />
     <scopeInfo nodeId="1205248417575" fileName="CommentStatements_Action.java" startLine="77" startPosition="0" endLine="86" endPosition="0">

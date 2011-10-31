@@ -35,14 +35,27 @@
     <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1200309609796" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1200309609796" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1200413446952" fileName="OverridingMethods_Finder.java" startLine="42" startPosition="201" endLine="47" endPosition="9" />
-    <scopeInfo nodeId="1200413471959" fileName="OverridingMethods_Finder.java" startLine="42" startPosition="201" endLine="47" endPosition="9" />
+    <scopeInfo nodeId="1200413471959" fileName="OverridingMethods_Finder.java" startLine="42" startPosition="201" endLine="47" endPosition="9">
+      <varInfo nodeId="1200413471959" varName="sMethod" />
+    </scopeInfo>
     <scopeInfo nodeId="1200309609800" fileName="OverridingMethods_Finder.java" startLine="41" startPosition="9" endLine="48" endPosition="7" />
-    <scopeInfo nodeId="1200413446949" fileName="OverridingMethods_Finder.java" startLine="41" startPosition="9" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="1200413446949" fileName="OverridingMethods_Finder.java" startLine="41" startPosition="9" endLine="48" endPosition="7">
+      <varInfo nodeId="1200413446949" varName="classNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="39" startPosition="98" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="38" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="38" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1200309609796" varName="_results" />
+      <varInfo nodeId="1200309609796" varName="monitor" />
+      <varInfo nodeId="1200309609796" varName="node" />
+      <varInfo nodeId="1200309609796" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder" />
   </root>
   <root nodeId="1200310248824">
@@ -94,16 +107,26 @@
     <scopeInfo nodeId="1200427341277" fileName="ImplementingClasses_Finder.java" startLine="41" startPosition="67" endLine="44" endPosition="7">
       <varInfo nodeId="1200427341281" varName="derivedInterface" />
     </scopeInfo>
-    <scopeInfo nodeId="1206537282893" fileName="ImplementingClasses_Finder.java" startLine="50" startPosition="97" endLine="53" endPosition="13" />
-    <scopeInfo nodeId="1206537247474" fileName="ImplementingClasses_Finder.java" startLine="66" startPosition="53" endLine="69" endPosition="5" />
+    <scopeInfo nodeId="1206537282893" fileName="ImplementingClasses_Finder.java" startLine="50" startPosition="97" endLine="53" endPosition="13">
+      <varInfo nodeId="1206537282893" varName="classNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1206537247474" fileName="ImplementingClasses_Finder.java" startLine="66" startPosition="53" endLine="69" endPosition="5">
+      <varInfo nodeId="1206537247474" varName="derivedInterface" />
+    </scopeInfo>
     <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1200411794366" fileName="ImplementingClasses_Finder.java" startLine="49" startPosition="132" endLine="53" endPosition="13" />
     <scopeInfo nodeId="1206537184281" fileName="ImplementingClasses_Finder.java" startLine="65" startPosition="80" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1200310248824" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1200411794364" fileName="ImplementingClasses_Finder.java" startLine="47" startPosition="138" endLine="54" endPosition="11" />
-    <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="64" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1200310248824" varName="_results" />
+      <varInfo nodeId="1200310248824" varName="node" />
+      <varInfo nodeId="1200310248824" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="1200411794357" fileName="ImplementingClasses_Finder.java" startLine="46" startPosition="59" endLine="58" endPosition="9" />
     <scopeInfo nodeId="1200411794356" fileName="ImplementingClasses_Finder.java" startLine="45" startPosition="9" endLine="59" endPosition="7">
       <varInfo nodeId="1200411794380" varName="interfaceNode" />
@@ -113,7 +136,12 @@
       <varInfo nodeId="1200427260703" varName="derivedInterfacesUsages" />
     </scopeInfo>
     <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="35" startPosition="98" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="34" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="34" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1200310248824" varName="_results" />
+      <varInfo nodeId="1200310248824" varName="monitor" />
+      <varInfo nodeId="1200310248824" varName="node" />
+      <varInfo nodeId="1200310248824" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="17" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder" />
   </root>
   <root nodeId="1200310287391">
@@ -156,7 +184,9 @@
     <scopeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1200310287391" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1200312291069" fileName="DerivedInterfaces_Finder.java" startLine="42" startPosition="78" endLine="47" endPosition="9">
       <varInfo nodeId="1200312291096" varName="nodeUsage" />
     </scopeInfo>
@@ -168,7 +198,12 @@
       <varInfo nodeId="1205524854774" varName="passed" />
     </scopeInfo>
     <scopeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="34" startPosition="98" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="33" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="33" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1200310287391" varName="_results" />
+      <varInfo nodeId="1200310287391" varName="monitor" />
+      <varInfo nodeId="1200310287391" varName="node" />
+      <varInfo nodeId="1200310287391" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder" />
   </root>
   <root nodeId="1200310473077">
@@ -212,7 +247,9 @@
     <scopeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1200310473077" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1200315820153" fileName="DerivedClasses_Finder.java" startLine="41" startPosition="64" endLine="49" endPosition="17">
       <varInfo nodeId="1205525161583" varName="passingNode" />
     </scopeInfo>
@@ -221,7 +258,12 @@
       <varInfo nodeId="1205524751062" varName="passed" />
     </scopeInfo>
     <scopeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="34" startPosition="98" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="33" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="33" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1200310473077" varName="_results" />
+      <varInfo nodeId="1200310473077" varName="monitor" />
+      <varInfo nodeId="1200310473077" varName="node" />
+      <varInfo nodeId="1200310473077" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder" />
   </root>
   <root nodeId="1200317943493">
@@ -295,24 +337,39 @@
     <scopeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1206454288720" fileName="AllMethodUsages_Finder.java" startLine="61" startPosition="187" endLine="65" endPosition="64" />
     <scopeInfo nodeId="1206537426816" fileName="AllMethodUsages_Finder.java" startLine="75" startPosition="119" endLine="79" endPosition="65" />
-    <scopeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1200317943493" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1200422478133" fileName="AllMethodUsages_Finder.java" startLine="49" startPosition="121" endLine="54" endPosition="9" />
     <scopeInfo nodeId="1200420377472" fileName="AllMethodUsages_Finder.java" startLine="60" startPosition="58" endLine="66" endPosition="9" />
-    <scopeInfo nodeId="1206454288717" fileName="AllMethodUsages_Finder.java" startLine="60" startPosition="58" endLine="66" endPosition="9" />
+    <scopeInfo nodeId="1206454288717" fileName="AllMethodUsages_Finder.java" startLine="60" startPosition="58" endLine="66" endPosition="9">
+      <varInfo nodeId="1206454288717" varName="nodeUsage" />
+    </scopeInfo>
     <scopeInfo nodeId="1200317943495" fileName="AllMethodUsages_Finder.java" startLine="35" startPosition="43" endLine="42" endPosition="16" />
     <scopeInfo nodeId="1200420377471" fileName="AllMethodUsages_Finder.java" startLine="59" startPosition="9" endLine="67" endPosition="7">
       <varInfo nodeId="1200420377475" varName="methodDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="34" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1200317943493" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1206537426292" fileName="AllMethodUsages_Finder.java" startLine="73" startPosition="80" endLine="86" endPosition="5">
       <varInfo nodeId="1206537426813" varName="methodDeclarations" />
     </scopeInfo>
-    <scopeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="72" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="72" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1200317943493" varName="_results" />
+      <varInfo nodeId="1200317943493" varName="node" />
+      <varInfo nodeId="1200317943493" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="1200317943497" fileName="AllMethodUsages_Finder.java" startLine="47" startPosition="9" endLine="67" endPosition="7">
       <varInfo nodeId="1200407961325" varName="methodDeclarations" />
     </scopeInfo>
     <scopeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="45" startPosition="98" endLine="70" endPosition="5" />
-    <scopeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="44" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="44" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="1200317943493" varName="_results" />
+      <varInfo nodeId="1200317943493" varName="monitor" />
+      <varInfo nodeId="1200317943493" varName="node" />
+      <varInfo nodeId="1200317943493" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder" />
   </root>
   <root nodeId="1200405628545">
@@ -362,23 +419,42 @@
     <scopeInfo nodeId="1206463233017" fileName="FieldUsages_Finder.java" startLine="73" startPosition="45" endLine="74" endPosition="26" />
     <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
     <scopeInfo nodeId="1206537147100" fileName="FieldUsages_Finder.java" startLine="54" startPosition="79" endLine="57" endPosition="9" />
-    <scopeInfo nodeId="1206537167248" fileName="FieldUsages_Finder.java" startLine="54" startPosition="79" endLine="57" endPosition="9" />
+    <scopeInfo nodeId="1206537167248" fileName="FieldUsages_Finder.java" startLine="54" startPosition="79" endLine="57" endPosition="9">
+      <varInfo nodeId="1206537167248" varName="fieldUsage" />
+    </scopeInfo>
     <scopeInfo nodeId="1206537064530" fileName="FieldUsages_Finder.java" startLine="66" startPosition="119" endLine="69" endPosition="7" />
-    <scopeInfo nodeId="1206537111490" fileName="FieldUsages_Finder.java" startLine="66" startPosition="119" endLine="69" endPosition="7" />
+    <scopeInfo nodeId="1206537111490" fileName="FieldUsages_Finder.java" startLine="66" startPosition="119" endLine="69" endPosition="7">
+      <varInfo nodeId="1206537111490" varName="fieldNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="1206537147097" fileName="FieldUsages_Finder.java" startLine="53" startPosition="9" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="1200405628545" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1206537147097" fileName="FieldUsages_Finder.java" startLine="53" startPosition="9" endLine="58" endPosition="7">
+      <varInfo nodeId="1206537147097" varName="fieldDeclaration" />
+    </scopeInfo>
     <scopeInfo nodeId="1206537006735" fileName="FieldUsages_Finder.java" startLine="64" startPosition="80" endLine="70" endPosition="5" />
     <scopeInfo nodeId="1200405628547" fileName="FieldUsages_Finder.java" startLine="35" startPosition="43" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="63" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="34" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="63" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="1200405628545" varName="_results" />
+      <varInfo nodeId="1200405628545" varName="node" />
+      <varInfo nodeId="1200405628545" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1200405628545" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1200405628559" fileName="FieldUsages_Finder.java" startLine="47" startPosition="9" endLine="58" endPosition="7">
       <varInfo nodeId="1206450127073" varName="fieldDeclarations" />
     </scopeInfo>
     <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="45" startPosition="98" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="44" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="44" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="1200405628545" varName="_results" />
+      <varInfo nodeId="1200405628545" varName="monitor" />
+      <varInfo nodeId="1200405628545" varName="node" />
+      <varInfo nodeId="1200405628545" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder" />
   </root>
   <root nodeId="1200420731716">
@@ -427,17 +503,30 @@
     <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1200497698914" fileName="OverridingFields_Finder.java" startLine="56" startPosition="9" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1200420731716" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200497698914" fileName="OverridingFields_Finder.java" startLine="56" startPosition="9" endLine="61" endPosition="9">
+      <varInfo nodeId="1200497698914" varName="field" />
+    </scopeInfo>
     <scopeInfo nodeId="1200420731718" fileName="OverridingFields_Finder.java" startLine="37" startPosition="43" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="36" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="36" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1200420731716" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1200497698881" fileName="OverridingFields_Finder.java" startLine="50" startPosition="201" endLine="61" endPosition="9">
       <varInfo nodeId="1200497698891" varName="fieldsOfSameKind" />
     </scopeInfo>
     <scopeInfo nodeId="1200420731720" fileName="OverridingFields_Finder.java" startLine="49" startPosition="9" endLine="62" endPosition="7" />
-    <scopeInfo nodeId="1200497698878" fileName="OverridingFields_Finder.java" startLine="49" startPosition="9" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="1200497698878" fileName="OverridingFields_Finder.java" startLine="49" startPosition="9" endLine="62" endPosition="7">
+      <varInfo nodeId="1200497698878" varName="classNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="47" startPosition="98" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="46" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="46" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1200420731716" varName="_results" />
+      <varInfo nodeId="1200420731716" varName="monitor" />
+      <varInfo nodeId="1200420731716" varName="node" />
+      <varInfo nodeId="1200420731716" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="19" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder" />
   </root>
   <root nodeId="1200425321273">
@@ -477,22 +566,39 @@
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="59" startPosition="15" endLine="60" endPosition="21" />
     <scopeInfo nodeId="1206463267275" fileName="InterfaceMethodImplementations_Finder.java" startLine="64" startPosition="45" endLine="65" endPosition="35" />
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="1200503699300" fileName="InterfaceMethodImplementations_Finder.java" startLine="44" startPosition="72" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="1200503699300" fileName="InterfaceMethodImplementations_Finder.java" startLine="44" startPosition="72" endLine="47" endPosition="7">
+      <varInfo nodeId="1200503699300" varName="implementor" />
+    </scopeInfo>
     <scopeInfo nodeId="1200425863014" fileName="InterfaceMethodImplementations_Finder.java" startLine="53" startPosition="108" endLine="56" endPosition="11" />
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="48" startPosition="119" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1200425321273" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="48" startPosition="119" endLine="52" endPosition="0">
+      <varInfo nodeId="3636996958059114128" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1200425321273" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1200425862979" fileName="InterfaceMethodImplementations_Finder.java" startLine="52" startPosition="11" endLine="57" endPosition="9" />
-    <scopeInfo nodeId="1200425863012" fileName="InterfaceMethodImplementations_Finder.java" startLine="52" startPosition="11" endLine="57" endPosition="9" />
-    <scopeInfo nodeId="1200425862976" fileName="InterfaceMethodImplementations_Finder.java" startLine="47" startPosition="7" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="1200425863012" fileName="InterfaceMethodImplementations_Finder.java" startLine="52" startPosition="11" endLine="57" endPosition="9">
+      <varInfo nodeId="1200425863012" varName="sMethod" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200425862976" fileName="InterfaceMethodImplementations_Finder.java" startLine="47" startPosition="7" endLine="58" endPosition="7">
+      <varInfo nodeId="1200425862976" varName="classNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1200425662194" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="9" endLine="58" endPosition="7">
       <varInfo nodeId="1200503349565" varName="implementorsAndAncestorsList" />
     </scopeInfo>
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="41" startPosition="98" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="40" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="40" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="1200425321273" varName="_results" />
+      <varInfo nodeId="1200425321273" varName="monitor" />
+      <varInfo nodeId="1200425321273" varName="node" />
+      <varInfo nodeId="1200425321273" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" />
     <unitInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="48" startPosition="92" endLine="52" endPosition="7" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder$1" />
   </root>
@@ -530,17 +636,27 @@
     <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="50" startPosition="15" endLine="51" endPosition="21" />
     <scopeInfo nodeId="1206463167799" fileName="ClassAncestors_Finder.java" startLine="55" startPosition="45" endLine="56" endPosition="22" />
     <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="17" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1200502085335" varName="node" />
+      <varInfo nodeId="1200502085335" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1200502163112" fileName="ClassAncestors_Finder.java" startLine="44" startPosition="31" endLine="48" endPosition="9" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1200502085335" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1200502085339" fileName="ClassAncestors_Finder.java" startLine="39" startPosition="9" endLine="49" endPosition="7">
       <varInfo nodeId="1200502177137" varName="current" />
     </scopeInfo>
     <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="37" startPosition="98" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="36" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1200502085335" varName="_results" />
+      <varInfo nodeId="1200502085335" varName="monitor" />
+      <varInfo nodeId="1200502085335" varName="node" />
+      <varInfo nodeId="1200502085335" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder" />
   </root>
   <root nodeId="1201091722183">
@@ -587,17 +703,27 @@
     <scopeInfo nodeId="1206537384340" fileName="ParameterUsages_Finder.java" startLine="64" startPosition="71" endLine="65" endPosition="266" />
     <scopeInfo nodeId="1206463308207" fileName="ParameterUsages_Finder.java" startLine="69" startPosition="45" endLine="70" endPosition="30" />
     <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="1206453838173" fileName="ParameterUsages_Finder.java" startLine="48" startPosition="246" endLine="51" endPosition="9" />
-    <scopeInfo nodeId="1206537384337" fileName="ParameterUsages_Finder.java" startLine="63" startPosition="7" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="1206453838173" fileName="ParameterUsages_Finder.java" startLine="48" startPosition="246" endLine="51" endPosition="9">
+      <varInfo nodeId="1206453838173" varName="parameterUsage" />
+    </scopeInfo>
+    <scopeInfo nodeId="1206537384337" fileName="ParameterUsages_Finder.java" startLine="63" startPosition="7" endLine="66" endPosition="5">
+      <varInfo nodeId="1206537384337" varName="methodNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1201091722183" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1201108565457" fileName="ParameterUsages_Finder.java" startLine="47" startPosition="73" endLine="51" endPosition="9">
       <varInfo nodeId="1201108733509" varName="parameterNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1201108565454" fileName="ParameterUsages_Finder.java" startLine="46" startPosition="9" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="1201091722183" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201108565454" fileName="ParameterUsages_Finder.java" startLine="46" startPosition="9" endLine="52" endPosition="7">
+      <varInfo nodeId="1201108565454" varName="methodNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1206537383899" fileName="ParameterUsages_Finder.java" startLine="58" startPosition="80" endLine="66" endPosition="5">
       <varInfo nodeId="1206537384297" varName="nodeParentMethod" />
       <varInfo nodeId="1206537384327" varName="overridingMethods" />
@@ -606,9 +732,18 @@
       <varInfo nodeId="1201112068290" varName="nodeParentMethod" />
       <varInfo nodeId="1201108396686" varName="overridingMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="57" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="57" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1201091722183" varName="_results" />
+      <varInfo nodeId="1201091722183" varName="node" />
+      <varInfo nodeId="1201091722183" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="39" startPosition="98" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="38" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="38" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1201091722183" varName="_results" />
+      <varInfo nodeId="1201091722183" varName="monitor" />
+      <varInfo nodeId="1201091722183" varName="node" />
+      <varInfo nodeId="1201091722183" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ParameterUsages_Finder" />
   </root>
   <root nodeId="1204121124763">
@@ -675,13 +810,21 @@
     <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="92" startPosition="15" endLine="93" endPosition="21" />
     <scopeInfo nodeId="1206463190533" fileName="ConstructorUsages_Finder.java" startLine="97" startPosition="45" endLine="98" endPosition="32" />
     <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
-    <scopeInfo nodeId="1204121482996" fileName="ConstructorUsages_Finder.java" startLine="44" startPosition="84" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="1204121482996" fileName="ConstructorUsages_Finder.java" startLine="44" startPosition="84" endLine="47" endPosition="7">
+      <varInfo nodeId="1204121482996" varName="nodeUsage" />
+    </scopeInfo>
     <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1227876797642" fileName="ConstructorUsages_Finder.java" startLine="51" startPosition="167" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1204121124763" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227876797642" fileName="ConstructorUsages_Finder.java" startLine="51" startPosition="167" endLine="55" endPosition="0">
+      <varInfo nodeId="1227876797642" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="1204121124763" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1204127398191" fileName="ConstructorUsages_Finder.java" startLine="59" startPosition="139" endLine="64" endPosition="17">
       <varInfo nodeId="1204127398193" varName="actualArgument" />
       <varInfo nodeId="1204127398203" varName="formalArgument" />
@@ -706,17 +849,30 @@
       <varInfo nodeId="1204127398185" varName="thisConstructor" />
     </scopeInfo>
     <scopeInfo nodeId="1204121678255" fileName="ConstructorUsages_Finder.java" startLine="75" startPosition="29" endLine="90" endPosition="9" />
-    <scopeInfo nodeId="1204121808317" fileName="ConstructorUsages_Finder.java" startLine="75" startPosition="29" endLine="90" endPosition="9" />
+    <scopeInfo nodeId="1204121808317" fileName="ConstructorUsages_Finder.java" startLine="75" startPosition="29" endLine="90" endPosition="9">
+      <varInfo nodeId="1204121808317" varName="enumConstant" />
+    </scopeInfo>
     <scopeInfo nodeId="1204127076384" fileName="ConstructorUsages_Finder.java" startLine="50" startPosition="201" endLine="70" endPosition="11" />
-    <scopeInfo nodeId="1204127350109" fileName="ConstructorUsages_Finder.java" startLine="50" startPosition="201" endLine="70" endPosition="11" />
+    <scopeInfo nodeId="1204127350109" fileName="ConstructorUsages_Finder.java" startLine="50" startPosition="201" endLine="70" endPosition="11">
+      <varInfo nodeId="1204127350109" varName="invocation" />
+    </scopeInfo>
     <scopeInfo nodeId="1204127040741" fileName="ConstructorUsages_Finder.java" startLine="49" startPosition="283" endLine="71" endPosition="9" />
-    <scopeInfo nodeId="1204127076381" fileName="ConstructorUsages_Finder.java" startLine="49" startPosition="283" endLine="71" endPosition="9" />
-    <scopeInfo nodeId="1204127040738" fileName="ConstructorUsages_Finder.java" startLine="48" startPosition="41" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="1204127076381" fileName="ConstructorUsages_Finder.java" startLine="49" startPosition="283" endLine="71" endPosition="9">
+      <varInfo nodeId="1204127076381" varName="constructorNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204127040738" fileName="ConstructorUsages_Finder.java" startLine="48" startPosition="41" endLine="72" endPosition="7">
+      <varInfo nodeId="1204127040738" varName="subclassResult" />
+    </scopeInfo>
     <scopeInfo nodeId="1204121124767" fileName="ConstructorUsages_Finder.java" startLine="42" startPosition="9" endLine="91" endPosition="7">
       <varInfo nodeId="1204125931627" varName="enumNode" />
     </scopeInfo>
     <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="40" startPosition="98" endLine="94" endPosition="5" />
-    <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="39" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="39" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1204121124763" varName="_results" />
+      <varInfo nodeId="1204121124763" varName="monitor" />
+      <varInfo nodeId="1204121124763" varName="node" />
+      <varInfo nodeId="1204121124763" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="18" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder" />
     <unitInfo nodeId="1227876797642" fileName="ConstructorUsages_Finder.java" startLine="51" startPosition="144" endLine="55" endPosition="11" unitName="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder$1" />
   </root>
@@ -751,14 +907,21 @@
     <scopeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1204122859723" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1204123335973" fileName="StraightDerivedClasses_Finder.java" startLine="36" startPosition="149" endLine="41" endPosition="9" />
     <scopeInfo nodeId="1204122859727" fileName="StraightDerivedClasses_Finder.java" startLine="35" startPosition="9" endLine="42" endPosition="7" />
     <scopeInfo nodeId="1204123335972" fileName="StraightDerivedClasses_Finder.java" startLine="35" startPosition="9" endLine="42" endPosition="7">
       <varInfo nodeId="1204123336001" varName="nodeUsage" />
     </scopeInfo>
     <scopeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="33" startPosition="98" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="32" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="32" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1204122859723" varName="_results" />
+      <varInfo nodeId="1204122859723" varName="monitor" />
+      <varInfo nodeId="1204122859723" varName="node" />
+      <varInfo nodeId="1204122859723" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" />
   </root>
   <root nodeId="1204898641595">
@@ -827,19 +990,29 @@
     <scopeInfo nodeId="1216391847837" fileName="BaseMethod_Finder.java" startLine="57" startPosition="30" endLine="60" endPosition="212" />
     <scopeInfo nodeId="1216393234200" fileName="BaseMethod_Finder.java" startLine="68" startPosition="23" endLine="71" endPosition="11" />
     <scopeInfo nodeId="1216393234219" fileName="BaseMethod_Finder.java" startLine="79" startPosition="71" endLine="82" endPosition="11" />
-    <scopeInfo nodeId="1216400655028" fileName="BaseMethod_Finder.java" startLine="84" startPosition="7" endLine="87" endPosition="7" />
+    <scopeInfo nodeId="1216400655028" fileName="BaseMethod_Finder.java" startLine="84" startPosition="7" endLine="87" endPosition="7">
+      <varInfo nodeId="1216400655028" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1204898641595" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1216393234209" fileName="BaseMethod_Finder.java" startLine="72" startPosition="16" endLine="77" endPosition="11" />
-    <scopeInfo nodeId="1216393234216" fileName="BaseMethod_Finder.java" startLine="78" startPosition="9" endLine="83" endPosition="9" />
+    <scopeInfo nodeId="1216393234216" fileName="BaseMethod_Finder.java" startLine="78" startPosition="9" endLine="83" endPosition="9">
+      <varInfo nodeId="1216393234216" varName="classMethod" />
+    </scopeInfo>
     <scopeInfo nodeId="1204898641597" fileName="BaseMethod_Finder.java" startLine="39" startPosition="43" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="38" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="38" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1204898641595" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1216393013712" fileName="BaseMethod_Finder.java" startLine="66" startPosition="66" endLine="83" endPosition="9">
       <varInfo nodeId="1216393234196" varName="classMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="1216393013709" fileName="BaseMethod_Finder.java" startLine="65" startPosition="69" endLine="84" endPosition="7" />
+    <scopeInfo nodeId="1216393013709" fileName="BaseMethod_Finder.java" startLine="65" startPosition="69" endLine="84" endPosition="7">
+      <varInfo nodeId="1216393013709" varName="ancestor" />
+    </scopeInfo>
     <scopeInfo nodeId="1204898641599" fileName="BaseMethod_Finder.java" startLine="51" startPosition="9" endLine="87" endPosition="7">
       <varInfo nodeId="1216391750269" varName="allAncestors" />
       <varInfo nodeId="1216392932421" varName="classNode" />
@@ -849,7 +1022,12 @@
       <varInfo nodeId="1216400588562" varName="results" />
     </scopeInfo>
     <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="49" startPosition="98" endLine="90" endPosition="5" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="48" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="48" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1204898641595" varName="_results" />
+      <varInfo nodeId="1204898641595" varName="monitor" />
+      <varInfo nodeId="1204898641595" varName="node" />
+      <varInfo nodeId="1204898641595" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder" />
   </root>
   <root nodeId="1204899453042">
@@ -887,21 +1065,35 @@
     <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="51" startPosition="15" endLine="52" endPosition="21" />
     <scopeInfo nodeId="1206463258072" fileName="InterfaceAncestors_Finder.java" startLine="56" startPosition="45" endLine="57" endPosition="22" />
     <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="17" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1204902212205" fileName="InterfaceAncestors_Finder.java" startLine="46" startPosition="65" endLine="49" endPosition="9" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1204902212205" fileName="InterfaceAncestors_Finder.java" startLine="46" startPosition="65" endLine="49" endPosition="9">
+      <varInfo nodeId="1204902212205" varName="ancestorAncestor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1204899453042" varName="node" />
+      <varInfo nodeId="1204899453042" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1204899453042" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1204902118530" fileName="InterfaceAncestors_Finder.java" startLine="44" startPosition="116" endLine="49" endPosition="9">
       <varInfo nodeId="1216398221896" varName="ancestorNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1204902118525" fileName="InterfaceAncestors_Finder.java" startLine="43" startPosition="27" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="1204902118525" fileName="InterfaceAncestors_Finder.java" startLine="43" startPosition="27" endLine="50" endPosition="7">
+      <varInfo nodeId="1204902118525" varName="ancestor" />
+    </scopeInfo>
     <scopeInfo nodeId="1204899453046" fileName="InterfaceAncestors_Finder.java" startLine="39" startPosition="9" endLine="50" endPosition="7">
       <varInfo nodeId="1204899912019" varName="current" />
     </scopeInfo>
     <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="37" startPosition="98" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="36" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="36" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1204899453042" varName="_results" />
+      <varInfo nodeId="1204899453042" varName="monitor" />
+      <varInfo nodeId="1204899453042" varName="node" />
+      <varInfo nodeId="1204899453042" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" />
   </root>
   <root nodeId="1216385454403">
@@ -946,13 +1138,21 @@
     <scopeInfo nodeId="1216386272408" fileName="BaseMethodUsages_Finder.java" startLine="67" startPosition="45" endLine="68" endPosition="32" />
     <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
     <scopeInfo nodeId="1216386159395" fileName="BaseMethodUsages_Finder.java" startLine="49" startPosition="63" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="1216386170455" fileName="BaseMethodUsages_Finder.java" startLine="49" startPosition="63" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="1216386130657" fileName="BaseMethodUsages_Finder.java" startLine="61" startPosition="56" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="1216386170455" fileName="BaseMethodUsages_Finder.java" startLine="49" startPosition="63" endLine="52" endPosition="9">
+      <varInfo nodeId="1216386170455" varName="usage" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216386130657" fileName="BaseMethodUsages_Finder.java" startLine="61" startPosition="56" endLine="64" endPosition="5">
+      <varInfo nodeId="1216386130657" varName="method" />
+    </scopeInfo>
     <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1216386159393" fileName="BaseMethodUsages_Finder.java" startLine="48" startPosition="168" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1216385454403" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216386159393" fileName="BaseMethodUsages_Finder.java" startLine="48" startPosition="168" endLine="53" endPosition="7">
+      <varInfo nodeId="1216386159393" varName="method" />
+    </scopeInfo>
     <scopeInfo nodeId="1216385900929" fileName="BaseMethodUsages_Finder.java" startLine="59" startPosition="80" endLine="64" endPosition="5">
       <varInfo nodeId="1216395373526" varName="baseMethods" />
     </scopeInfo>
@@ -960,10 +1160,21 @@
       <varInfo nodeId="1216394312522" varName="baseMethods" />
     </scopeInfo>
     <scopeInfo nodeId="1216386091012" fileName="BaseMethodUsages_Finder.java" startLine="35" startPosition="43" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="58" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="34" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="58" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1216385454403" varName="_results" />
+      <varInfo nodeId="1216385454403" varName="node" />
+      <varInfo nodeId="1216385454403" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1216385454403" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="45" startPosition="98" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="44" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="44" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1216385454403" varName="_results" />
+      <varInfo nodeId="1216385454403" varName="monitor" />
+      <varInfo nodeId="1216385454403" varName="node" />
+      <varInfo nodeId="1216385454403" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder" />
   </root>
   <root nodeId="1216392046439">
@@ -1002,20 +1213,33 @@
     <scopeInfo nodeId="1216392459938" fileName="ImplementedInterfaces_Finder.java" startLine="42" startPosition="210" endLine="45" endPosition="223">
       <varInfo nodeId="1216392593418" varName="interfaceNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1216392878454" fileName="ImplementedInterfaces_Finder.java" startLine="47" startPosition="7" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="1216392878454" fileName="ImplementedInterfaces_Finder.java" startLine="47" startPosition="7" endLine="50" endPosition="7">
+      <varInfo nodeId="1216392878454" varName="interfaceNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1216392046439" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1216392203371" fileName="ImplementedInterfaces_Finder.java" startLine="41" startPosition="65" endLine="46" endPosition="9" />
-    <scopeInfo nodeId="1216392459935" fileName="ImplementedInterfaces_Finder.java" startLine="41" startPosition="65" endLine="46" endPosition="9" />
-    <scopeInfo nodeId="1216392203368" fileName="ImplementedInterfaces_Finder.java" startLine="40" startPosition="57" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="1216392459935" fileName="ImplementedInterfaces_Finder.java" startLine="41" startPosition="65" endLine="46" endPosition="9">
+      <varInfo nodeId="1216392459935" varName="implementedInterface" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216392203368" fileName="ImplementedInterfaces_Finder.java" startLine="40" startPosition="57" endLine="47" endPosition="7">
+      <varInfo nodeId="1216392203368" varName="classNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1216392046441" fileName="ImplementedInterfaces_Finder.java" startLine="37" startPosition="9" endLine="50" endPosition="7">
       <varInfo nodeId="1216392709434" varName="classNodes" />
       <varInfo nodeId="1216392185707" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="35" startPosition="98" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="34" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="34" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1216392046439" varName="_results" />
+      <varInfo nodeId="1216392046439" varName="monitor" />
+      <varInfo nodeId="1216392046439" varName="node" />
+      <varInfo nodeId="1216392046439" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder" />
   </root>
   <root nodeId="1227527031007">
@@ -1049,12 +1273,21 @@
     <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1227527031007" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1227527192373" fileName="ExactMethodUsages_Finder.java" startLine="41" startPosition="172" endLine="46" endPosition="9" />
     <scopeInfo nodeId="1227527031009" fileName="ExactMethodUsages_Finder.java" startLine="40" startPosition="9" endLine="47" endPosition="7" />
-    <scopeInfo nodeId="1227527192369" fileName="ExactMethodUsages_Finder.java" startLine="40" startPosition="9" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="1227527192369" fileName="ExactMethodUsages_Finder.java" startLine="40" startPosition="9" endLine="47" endPosition="7">
+      <varInfo nodeId="1227527192369" varName="nodeUsage" />
+    </scopeInfo>
     <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="38" startPosition="98" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="37" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="37" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1227527031007" varName="_results" />
+      <varInfo nodeId="1227527031007" varName="monitor" />
+      <varInfo nodeId="1227527031007" varName="node" />
+      <varInfo nodeId="1227527031007" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder" />
   </root>
   <root nodeId="1237738696198">
@@ -1091,20 +1324,39 @@
     <scopeInfo nodeId="1237742095140" fileName="ClassUsages_Finder.java" startLine="51" startPosition="108" endLine="52" endPosition="62" />
     <scopeInfo nodeId="1237742072286" fileName="ClassUsages_Finder.java" startLine="56" startPosition="45" endLine="57" endPosition="26" />
     <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="17" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1237738774628" fileName="ClassUsages_Finder.java" startLine="35" startPosition="9" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1237738774628" fileName="ClassUsages_Finder.java" startLine="35" startPosition="9" endLine="38" endPosition="7">
+      <varInfo nodeId="1237738774628" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1237742023497" fileName="ClassUsages_Finder.java" startLine="39" startPosition="110" endLine="42" endPosition="9" />
-    <scopeInfo nodeId="1237742045352" fileName="ClassUsages_Finder.java" startLine="39" startPosition="110" endLine="42" endPosition="9" />
-    <scopeInfo nodeId="1237742095137" fileName="ClassUsages_Finder.java" startLine="50" startPosition="53" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="1237742045352" fileName="ClassUsages_Finder.java" startLine="39" startPosition="110" endLine="42" endPosition="9">
+      <varInfo nodeId="1237742045352" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1237742095137" fileName="ClassUsages_Finder.java" startLine="50" startPosition="53" endLine="53" endPosition="5">
+      <varInfo nodeId="1237742095137" varName="constructor" />
+    </scopeInfo>
     <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1237742080789" fileName="ClassUsages_Finder.java" startLine="49" startPosition="80" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1237742023494" fileName="ClassUsages_Finder.java" startLine="38" startPosition="7" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="48" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1237738696198" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1237742023494" fileName="ClassUsages_Finder.java" startLine="38" startPosition="7" endLine="43" endPosition="7">
+      <varInfo nodeId="1237742023494" varName="constructor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1237738696198" varName="_results" />
+      <varInfo nodeId="1237738696198" varName="node" />
+      <varInfo nodeId="1237738696198" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="1237738696200" fileName="ClassUsages_Finder.java" startLine="35" startPosition="9" endLine="43" endPosition="7" />
     <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="33" startPosition="98" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="32" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="32" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1237738696198" varName="_results" />
+      <varInfo nodeId="1237738696198" varName="monitor" />
+      <varInfo nodeId="1237738696198" varName="node" />
+      <varInfo nodeId="1237738696198" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder" />
   </root>
   <root nodeId="4151347580001021181">
@@ -1151,22 +1403,41 @@
     <scopeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="126" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="43" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="58" startPosition="125" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="62" startPosition="47" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4151347580001021181" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="126" endLine="51" endPosition="0">
+      <varInfo nodeId="4151347580001030863" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="43" endLine="55" endPosition="0">
+      <varInfo nodeId="4151347580001030936" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="58" startPosition="125" endLine="62" endPosition="0">
+      <varInfo nodeId="4717960406884169459" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="62" startPosition="47" endLine="66" endPosition="0">
+      <varInfo nodeId="4717960406884170478" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="4717960406884169438" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="201" endLine="66" endPosition="15" />
     <scopeInfo nodeId="4717960406884169424" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="112" endLine="67" endPosition="11" />
-    <scopeInfo nodeId="4717960406884169435" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="112" endLine="67" endPosition="11" />
+    <scopeInfo nodeId="4717960406884169435" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="112" endLine="67" endPosition="11">
+      <varInfo nodeId="4717960406884169435" varName="enumConstant" />
+    </scopeInfo>
     <scopeInfo nodeId="4151347580001030694" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="138" endLine="68" endPosition="9" />
-    <scopeInfo nodeId="4151347580001030692" fileName="DerivedMethods_Finder.java" startLine="45" startPosition="40" endLine="69" endPosition="7" />
+    <scopeInfo nodeId="4151347580001030692" fileName="DerivedMethods_Finder.java" startLine="45" startPosition="40" endLine="69" endPosition="7">
+      <varInfo nodeId="4151347580001030692" varName="derivedClassifier" />
+    </scopeInfo>
     <scopeInfo nodeId="4151347580001021183" fileName="DerivedMethods_Finder.java" startLine="43" startPosition="9" endLine="69" endPosition="7">
       <varInfo nodeId="4151347580001030664" varName="classifier" />
       <varInfo nodeId="4151347580001040947" varName="instanceMethod" />
     </scopeInfo>
     <scopeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="41" startPosition="104" endLine="72" endPosition="5" />
-    <scopeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="40" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="40" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="4151347580001021181" varName="_results" />
+      <varInfo nodeId="4151347580001021181" varName="monitor" />
+      <varInfo nodeId="4151347580001021181" varName="node" />
+      <varInfo nodeId="4151347580001021181" varName="scope" />
+    </scopeInfo>
     <unitInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder" />
     <unitInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="103" endLine="51" endPosition="9" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$1" />
     <unitInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="24" endLine="55" endPosition="9" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$2" />

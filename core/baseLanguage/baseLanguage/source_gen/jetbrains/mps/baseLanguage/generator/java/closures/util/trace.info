@@ -96,11 +96,19 @@
     <scopeInfo nodeId="1196276308422" fileName="QueriesUtil.java" startLine="70" startPosition="252" endLine="73" endPosition="22">
       <varInfo nodeId="1196276396238" varName="thisExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="97" startPosition="9" endLine="100" endPosition="59" />
-    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="102" startPosition="9" endLine="105" endPosition="60" />
-    <scopeInfo nodeId="1170869717775" fileName="QueriesUtil.java" startLine="35" startPosition="84" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="97" startPosition="9" endLine="100" endPosition="59">
+      <varInfo nodeId="1170730182541" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="102" startPosition="9" endLine="105" endPosition="60">
+      <varInfo nodeId="1170730182541" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1170869717775" fileName="QueriesUtil.java" startLine="35" startPosition="84" endLine="39" endPosition="5">
+      <varInfo nodeId="1170869717775" varName="typeVar" />
+    </scopeInfo>
     <scopeInfo nodeId="1219331728661" fileName="QueriesUtil.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="121" startPosition="7" endLine="125" endPosition="31" />
+    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="121" startPosition="7" endLine="125" endPosition="31">
+      <varInfo nodeId="1170730182541" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1196275284507" fileName="QueriesUtil.java" startLine="62" startPosition="113" endLine="67" endPosition="22">
       <varInfo nodeId="1196275352612" varName="fieldRef" />
       <varInfo nodeId="1196275925820" varName="typeOfField" />
@@ -115,20 +123,32 @@
       <varInfo nodeId="1170874222693" varName="inputClosure" />
       <varInfo nodeId="1170874368084" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="117" startPosition="31" endLine="127" endPosition="20" />
+    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="117" startPosition="31" endLine="127" endPosition="20">
+      <varInfo nodeId="1170730182541" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1170730182541" varName="quotedNode_1" />
+      <varInfo nodeId="1170730182541" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1170730182544" fileName="QueriesUtil.java" startLine="27" startPosition="115" endLine="40" endPosition="27">
       <varInfo nodeId="1170730182546" varName="enclosingClass" />
       <varInfo nodeId="1170730182577" varName="outputClassType" />
       <varInfo nodeId="1170730182572" varName="outputModel" />
     </scopeInfo>
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="116" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="93" startPosition="7" endLine="107" endPosition="31" />
+    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="93" startPosition="7" endLine="107" endPosition="31">
+      <varInfo nodeId="1170730182541" varName="quotedNode1_4" />
+    </scopeInfo>
     <scopeInfo nodeId="1170730182542" fileName="QueriesUtil.java" startLine="26" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1170730182593" varName="generator" />
       <varInfo nodeId="1170730182591" varName="inputClosure" />
     </scopeInfo>
     <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="92" startPosition="32" endLine="108" endPosition="7" />
-    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="87" startPosition="31" endLine="109" endPosition="20" />
+    <scopeInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="87" startPosition="31" endLine="109" endPosition="20">
+      <varInfo nodeId="1170730182541" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1170730182541" varName="quotedNode_1" />
+      <varInfo nodeId="1170730182541" varName="quotedNode_2" />
+      <varInfo nodeId="1170730182541" varName="quotedNode_3" />
+      <varInfo nodeId="1170730182541" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1196274932498" fileName="QueriesUtil.java" startLine="52" startPosition="76" endLine="76" endPosition="102">
       <varInfo nodeId="1196275097910" varName="enclosingClass" />
       <varInfo nodeId="1196275252362" varName="enclosingMethodOrClosure" />
@@ -372,7 +392,9 @@
       <varInfo nodeId="1238942221060" varName="generator" />
       <varInfo nodeId="1238942209733" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="1238942883548" fileName="ClosuresUtil.java" startLine="113" startPosition="35" endLine="125" endPosition="5" />
+    <scopeInfo nodeId="1238942883548" fileName="ClosuresUtil.java" startLine="113" startPosition="35" endLine="125" endPosition="5">
+      <varInfo nodeId="1238942883548" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="1238944280390" fileName="ClosuresUtil.java" startLine="197" startPosition="45" endLine="209" endPosition="57">
       <varInfo nodeId="1238944957258" varName="count" />
       <varInfo nodeId="1238944999951" varName="name" />
@@ -394,7 +416,9 @@
       <varInfo nodeId="1238942766439" varName="localVariables" />
       <varInfo nodeId="1238942760827" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1238943810509" fileName="ClosuresUtil.java" startLine="137" startPosition="35" endLine="154" endPosition="5" />
+    <scopeInfo nodeId="1238943810509" fileName="ClosuresUtil.java" startLine="137" startPosition="35" endLine="154" endPosition="5">
+      <varInfo nodeId="1238943810509" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="1238941692849" fileName="ClosuresUtil.java" startLine="70" startPosition="100" endLine="88" endPosition="5" />
     <scopeInfo nodeId="1238943693571" fileName="ClosuresUtil.java" startLine="136" startPosition="129" endLine="155" endPosition="26">
       <varInfo nodeId="1238943796965" varName="outerVarsFound" />

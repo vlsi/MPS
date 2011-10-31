@@ -19,9 +19,7 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <stubSolutions>
-    <stubSolution moduleName="JDK.Tools" moduleId="fdb93da0-59ed-4001-b2aa-4fad79ec058e" />
-  </stubSolutions>
+  <stubSolutions/>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
