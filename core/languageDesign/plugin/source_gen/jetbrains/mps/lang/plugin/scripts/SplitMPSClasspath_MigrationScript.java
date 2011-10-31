@@ -23,7 +23,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 
 public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
   public SplitMPSClasspath_MigrationScript(IOperationContext operationContext) {
-    super("Split MPS.Classpath stubs");
+    super("Split MPS.Classpath Stubs");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "MPS.Classpath -> MPS.Core / .Editor / .Workbench";
@@ -40,7 +40,7 @@ public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return ListSequence.fromList(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return check_ylpn3n_a0a0a0a0a0a0(check_ylpn3n_a0a0a0a0a0a0a(SNodeOperations.getModel(SLinkOperations.getTargetNode(it)))) == MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("37a3367b-1fb2-44d8-aa6b-18075e74e003"));
+            return check_ylpn3n_a0a0a0a0a0a0a(check_ylpn3n_a0a0a0a0a0a0a0(SNodeOperations.getModel(SLinkOperations.getTargetNode(it)))) == MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("37a3367b-1fb2-44d8-aa6b-18075e74e003")) || it.getTargetSModelReference().getSModelFqName().toString().startsWith("jetbrains.mps.baseLanguage/");
           }
         }).isNotEmpty();
       }
@@ -97,14 +97,14 @@ public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  private static IModule check_ylpn3n_a0a0a0a0a0a0(SModelDescriptor checkedDotOperand) {
+  private static IModule check_ylpn3n_a0a0a0a0a0a0a(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_ylpn3n_a0a0a0a0a0a0a(SModel checkedDotOperand) {
+  private static SModelDescriptor check_ylpn3n_a0a0a0a0a0a0a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
