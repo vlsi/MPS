@@ -12,6 +12,8 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debugger.java.ui.evaluation.EvaluationDialog;
@@ -67,13 +69,18 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   @Override
-  public void showEvaluationDialog(final IOperationContext context) {
+  public void showEvaluationDialog(IOperationContext context) {
+    showEvaluationDialog(context, ListSequence.fromList(new ArrayList<SNodePointer>()));
+  }
+
+  @Override
+  public void showEvaluationDialog(final IOperationContext context, final List<SNodePointer> selectedNodes) {
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
       public void run() {
         JavaUiState state = myDebugSession.getUiState();
         if (state.isPausedOnBreakpoint()) {
-          final AbstractEvaluationModel model = createLowLevelEvaluationModel(false);
+          final AbstractEvaluationModel model = createLowLevelEvaluationModel(AbstractEvaluationModel.IS_DEVELOPER_MODE, selectedNodes);
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -153,7 +160,11 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   /*package*/ AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext) {
-    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), isShowContext);
+    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), isShowContext, ListSequence.fromList(new ArrayList<SNodePointer>()));
+  }
+
+  /*package*/ AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext, List<SNodePointer> selectedNodes) {
+    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), isShowContext, selectedNodes);
   }
 
   public List<AbstractEvaluationModel> getWatches() {

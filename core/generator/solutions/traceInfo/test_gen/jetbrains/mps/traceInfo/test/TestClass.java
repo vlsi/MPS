@@ -32,4 +32,7 @@ public class TestClass {
   public static void blockStatementTest() {
     throw new RuntimeException();
   }
+
+  public static void main(String[] args) {
+  }
 }

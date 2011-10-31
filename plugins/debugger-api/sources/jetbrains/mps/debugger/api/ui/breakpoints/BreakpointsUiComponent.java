@@ -257,23 +257,20 @@ public class BreakpointsUiComponent implements ProjectComponent {
   private void toggleBreakpoint(@NotNull SNode node, boolean handleRemoveBreakpoint) {
     SNode root = node.getContainingRoot();
     if (root == null) return;
-    boolean hasBreakpoint = false;
+
     IBreakpoint breakpoint = null;
-    SNodePointer rootPointer = new SNodePointer(root);
-    Set<ILocationBreakpoint> mpsBreakpointSet = myBreakpointsManagerComponent.getBreakpoints(rootPointer);
+
+    Set<ILocationBreakpoint> mpsBreakpointSet = myBreakpointsManagerComponent.getBreakpoints(new SNodePointer(root));
     if (mpsBreakpointSet != null) {
-      hasBreakpoint = false;
       for (ILocationBreakpoint mpsBreakpoint : mpsBreakpointSet) {
-        if (mpsBreakpoint.getLocation().getSNode() == node) {
-          hasBreakpoint = true;
+        if (mpsBreakpoint.getLocation().getNodePointer().equals(new SNodePointer(node))) {
           breakpoint = mpsBreakpoint;
           break;
         }
       }
-    } else {
-      hasBreakpoint = false;
     }
-    if (hasBreakpoint) {
+
+    if (breakpoint != null) {
       if (handleRemoveBreakpoint) {
         myBreakpointsManagerComponent.removeBreakpoint(breakpoint);
       }

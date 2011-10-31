@@ -17,7 +17,6 @@ package jetbrains.mps.debug.customViewers;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.debug.runtime.java.programState.proxies.CustomViewersDescriptor;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper;
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory;

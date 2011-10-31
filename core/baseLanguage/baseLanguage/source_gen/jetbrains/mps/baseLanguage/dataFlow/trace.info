@@ -37,7 +37,10 @@
     <scopeInfo nodeId="1217868916800" fileName="IfStatement_DataFlow.java" startLine="30" startPosition="65" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1217867461509" fileName="IfStatement_DataFlow.java" startLine="29" startPosition="280" endLine="34" endPosition="9" />
     <scopeInfo nodeId="1206454554509" fileName="IfStatement_DataFlow.java" startLine="18" startPosition="102" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1206454554507" fileName="IfStatement_DataFlow.java" startLine="17" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1206454554507" fileName="IfStatement_DataFlow.java" startLine="17" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1206454554507" varName="_context" />
+      <varInfo nodeId="1206454554507" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206454554507" fileName="IfStatement_DataFlow.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfStatement_DataFlow" />
     <unitInfo nodeId="1217868916800" fileName="IfStatement_DataFlow.java" startLine="30" startPosition="53" endLine="34" endPosition="7" unitName="jetbrains.mps.baseLanguage.dataFlow.IfStatement_DataFlow$1" />
   </root>
@@ -65,7 +68,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1206969769500" fileName="WhileStatement_DataFlow.java" startLine="28" startPosition="63" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1206455216236" fileName="WhileStatement_DataFlow.java" startLine="17" startPosition="102" endLine="32" endPosition="7" />
-    <scopeInfo nodeId="1206455216234" fileName="WhileStatement_DataFlow.java" startLine="16" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1206455216234" fileName="WhileStatement_DataFlow.java" startLine="16" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1206455216234" varName="_context" />
+      <varInfo nodeId="1206455216234" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206455216234" fileName="WhileStatement_DataFlow.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileStatement_DataFlow" />
     <unitInfo nodeId="1206969769500" fileName="WhileStatement_DataFlow.java" startLine="28" startPosition="51" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileStatement_DataFlow$1" />
   </root>
@@ -76,7 +82,10 @@
     <scopeInfo nodeId="1206459403819" fileName="Expression_DataFlow.java" startLine="10" startPosition="32" endLine="10" endPosition="32" />
     <scopeInfo nodeId="1206459403821" fileName="Expression_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
     <scopeInfo nodeId="1206459403819" fileName="Expression_DataFlow.java" startLine="9" startPosition="58" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="1206459403819" fileName="Expression_DataFlow.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="1206459403819" fileName="Expression_DataFlow.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="1206459403819" varName="_context" />
+      <varInfo nodeId="1206459403819" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206459403819" fileName="Expression_DataFlow.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.Expression_DataFlow" />
   </root>
   <root nodeId="1206459413245">
@@ -86,7 +95,10 @@
     <scopeInfo nodeId="1206459413245" fileName="ExpressionStatement_DataFlow.java" startLine="12" startPosition="41" endLine="12" endPosition="41" />
     <scopeInfo nodeId="1206459413247" fileName="ExpressionStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1206459413245" fileName="ExpressionStatement_DataFlow.java" startLine="11" startPosition="67" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1206459413245" fileName="ExpressionStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1206459413245" fileName="ExpressionStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1206459413245" varName="_context" />
+      <varInfo nodeId="1206459413245" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206459413245" fileName="ExpressionStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ExpressionStatement_DataFlow" />
   </root>
   <root nodeId="1206460142537">
@@ -96,7 +108,10 @@
     <scopeInfo nodeId="1206460142537" fileName="BlockStatement_DataFlow.java" startLine="12" startPosition="36" endLine="12" endPosition="36" />
     <scopeInfo nodeId="1206460142539" fileName="BlockStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1206460142537" fileName="BlockStatement_DataFlow.java" startLine="11" startPosition="62" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1206460142537" fileName="BlockStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1206460142537" fileName="BlockStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1206460142537" varName="_context" />
+      <varInfo nodeId="1206460142537" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206460142537" fileName="BlockStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BlockStatement_DataFlow" />
   </root>
   <root nodeId="1206460267925">
@@ -121,7 +136,9 @@
     <scopeInfo nodeId="4447433352191878442" fileName="StatementList_DataFlow.java" startLine="30" startPosition="33" endLine="31" endPosition="93" />
     <scopeInfo nodeId="4447433352191878532" fileName="StatementList_DataFlow.java" startLine="36" startPosition="279" endLine="37" endPosition="40" />
     <scopeInfo nodeId="1206460267925" fileName="StatementList_DataFlow.java" startLine="15" startPosition="61" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="1207304745749" fileName="StatementList_DataFlow.java" startLine="21" startPosition="148" endLine="24" endPosition="7" />
+    <scopeInfo nodeId="1207304745749" fileName="StatementList_DataFlow.java" startLine="21" startPosition="148" endLine="24" endPosition="7">
+      <varInfo nodeId="1207304745749" varName="param" />
+    </scopeInfo>
     <scopeInfo nodeId="1207304660464" fileName="StatementList_DataFlow.java" startLine="20" startPosition="148" endLine="24" endPosition="7">
       <varInfo nodeId="1207304730767" varName="bmd" />
     </scopeInfo>
@@ -135,7 +152,10 @@
     <scopeInfo nodeId="1206460267927" fileName="StatementList_DataFlow.java" startLine="19" startPosition="102" endLine="39" endPosition="5">
       <varInfo nodeId="4447433352191878498" varName="lastStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460267925" fileName="StatementList_DataFlow.java" startLine="18" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1206460267925" fileName="StatementList_DataFlow.java" startLine="18" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1206460267925" varName="_context" />
+      <varInfo nodeId="1206460267925" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206460267925" fileName="StatementList_DataFlow.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.StatementList_DataFlow" />
   </root>
   <root nodeId="1206460339989">
@@ -156,7 +176,10 @@
     <scopeInfo nodeId="1206460339991" fileName="AssignmentExpression_DataFlow.java" startLine="17" startPosition="102" endLine="26" endPosition="5">
       <varInfo nodeId="1225456499112" varName="variable" />
     </scopeInfo>
-    <scopeInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="16" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="16" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1206460339989" varName="_context" />
+      <varInfo nodeId="1206460339989" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AssignmentExpression_DataFlow" />
   </root>
   <root nodeId="1206460471601">
@@ -166,7 +189,10 @@
     <scopeInfo nodeId="1206460471601" fileName="CastExpression_DataFlow.java" startLine="12" startPosition="36" endLine="12" endPosition="36" />
     <scopeInfo nodeId="1206460471603" fileName="CastExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1206460471601" fileName="CastExpression_DataFlow.java" startLine="11" startPosition="62" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1206460471601" fileName="CastExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1206460471601" fileName="CastExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1206460471601" varName="_context" />
+      <varInfo nodeId="1206460471601" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206460471601" fileName="CastExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.CastExpression_DataFlow" />
   </root>
   <root nodeId="1206460508525">
@@ -177,7 +203,10 @@
     <scopeInfo nodeId="1206460508525" fileName="BinaryOperation_DataFlow.java" startLine="12" startPosition="37" endLine="12" endPosition="37" />
     <scopeInfo nodeId="1206460508525" fileName="BinaryOperation_DataFlow.java" startLine="11" startPosition="63" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1206460508527" fileName="BinaryOperation_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="112" />
-    <scopeInfo nodeId="1206460508525" fileName="BinaryOperation_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1206460508525" fileName="BinaryOperation_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1206460508525" varName="_context" />
+      <varInfo nodeId="1206460508525" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206460508525" fileName="BinaryOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BinaryOperation_DataFlow" />
   </root>
   <root nodeId="1206463017323">
@@ -193,7 +222,10 @@
     <scopeInfo nodeId="1229351991439" fileName="ReturnStatement_DataFlow.java" startLine="20" startPosition="12" endLine="21" endPosition="38" />
     <scopeInfo nodeId="1206463017323" fileName="ReturnStatement_DataFlow.java" startLine="12" startPosition="63" endLine="14" endPosition="3" />
     <scopeInfo nodeId="1206463017325" fileName="ReturnStatement_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="1206463017323" fileName="ReturnStatement_DataFlow.java" startLine="15" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1206463017323" fileName="ReturnStatement_DataFlow.java" startLine="15" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1206463017323" varName="_context" />
+      <varInfo nodeId="1206463017323" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206463017323" fileName="ReturnStatement_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ReturnStatement_DataFlow" />
   </root>
   <root nodeId="1206463694662">
@@ -238,7 +270,10 @@
       <varInfo nodeId="1032195626824969355" varName="iteration" />
     </scopeInfo>
     <scopeInfo nodeId="1206463694664" fileName="ForStatement_DataFlow.java" startLine="17" startPosition="102" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="1206463694662" fileName="ForStatement_DataFlow.java" startLine="16" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1206463694662" fileName="ForStatement_DataFlow.java" startLine="16" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1206463694662" varName="_context" />
+      <varInfo nodeId="1206463694662" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206463694662" fileName="ForStatement_DataFlow.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ForStatement_DataFlow" />
     <unitInfo nodeId="1206536501766" fileName="ForStatement_DataFlow.java" startLine="35" startPosition="53" endLine="39" endPosition="7" unitName="jetbrains.mps.baseLanguage.dataFlow.ForStatement_DataFlow$1" />
     <unitInfo nodeId="9092976468699818453" fileName="ForStatement_DataFlow.java" startLine="41" startPosition="51" endLine="45" endPosition="5" unitName="jetbrains.mps.baseLanguage.dataFlow.ForStatement_DataFlow$2" />
@@ -259,7 +294,10 @@
     <scopeInfo nodeId="1206463758605" fileName="ForeachStatement_DataFlow.java" startLine="11" startPosition="64" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1206536188858" fileName="ForeachStatement_DataFlow.java" startLine="21" startPosition="63" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1206463758607" fileName="ForeachStatement_DataFlow.java" startLine="15" startPosition="102" endLine="25" endPosition="7" />
-    <scopeInfo nodeId="1206463758605" fileName="ForeachStatement_DataFlow.java" startLine="14" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1206463758605" fileName="ForeachStatement_DataFlow.java" startLine="14" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1206463758605" varName="_context" />
+      <varInfo nodeId="1206463758605" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206463758605" fileName="ForeachStatement_DataFlow.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ForeachStatement_DataFlow" />
     <unitInfo nodeId="1206536188858" fileName="ForeachStatement_DataFlow.java" startLine="21" startPosition="51" endLine="25" endPosition="5" unitName="jetbrains.mps.baseLanguage.dataFlow.ForeachStatement_DataFlow$1" />
   </root>
@@ -280,7 +318,10 @@
     <scopeInfo nodeId="1206536360279" fileName="DoWhileStatement_DataFlow.java" startLine="17" startPosition="63" endLine="21" endPosition="0" />
     <scopeInfo nodeId="1206536361593" fileName="DoWhileStatement_DataFlow.java" startLine="22" startPosition="63" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1206463818825" fileName="DoWhileStatement_DataFlow.java" startLine="15" startPosition="102" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="1206463818823" fileName="DoWhileStatement_DataFlow.java" startLine="14" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1206463818823" fileName="DoWhileStatement_DataFlow.java" startLine="14" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1206463818823" varName="_context" />
+      <varInfo nodeId="1206463818823" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206463818823" fileName="DoWhileStatement_DataFlow.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DoWhileStatement_DataFlow" />
     <unitInfo nodeId="1206536360279" fileName="DoWhileStatement_DataFlow.java" startLine="17" startPosition="51" endLine="21" endPosition="5" unitName="jetbrains.mps.baseLanguage.dataFlow.DoWhileStatement_DataFlow$1" />
     <unitInfo nodeId="1206536361593" fileName="DoWhileStatement_DataFlow.java" startLine="22" startPosition="51" endLine="26" endPosition="5" unitName="jetbrains.mps.baseLanguage.dataFlow.DoWhileStatement_DataFlow$2" />
@@ -294,7 +335,10 @@
     <scopeInfo nodeId="1206463895940" fileName="AssertStatement_DataFlow.java" startLine="12" startPosition="37" endLine="12" endPosition="37" />
     <scopeInfo nodeId="1206463895940" fileName="AssertStatement_DataFlow.java" startLine="11" startPosition="63" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1206463895942" fileName="AssertStatement_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="104" />
-    <scopeInfo nodeId="1206463895940" fileName="AssertStatement_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1206463895940" fileName="AssertStatement_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1206463895940" varName="_context" />
+      <varInfo nodeId="1206463895940" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206463895940" fileName="AssertStatement_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AssertStatement_DataFlow" />
   </root>
   <root nodeId="1206464650340">
@@ -324,7 +368,10 @@
       <varInfo nodeId="5942313089042534459" varName="interrupt" />
       <varInfo nodeId="8754905177066795649" varName="tryCatch" />
     </scopeInfo>
-    <scopeInfo nodeId="1206464650340" fileName="ThrowStatement_DataFlow.java" startLine="18" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1206464650340" fileName="ThrowStatement_DataFlow.java" startLine="18" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1206464650340" varName="_context" />
+      <varInfo nodeId="1206464650340" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206464650340" fileName="ThrowStatement_DataFlow.java" startLine="15" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ThrowStatement_DataFlow" />
   </root>
   <root nodeId="1206465225322">
@@ -342,7 +389,10 @@
     <scopeInfo nodeId="1206465225324" fileName="BreakStatement_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5">
       <varInfo nodeId="4652593672361679356" varName="statement" />
     </scopeInfo>
-    <scopeInfo nodeId="1206465225322" fileName="BreakStatement_DataFlow.java" startLine="15" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1206465225322" fileName="BreakStatement_DataFlow.java" startLine="15" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1206465225322" varName="_context" />
+      <varInfo nodeId="1206465225322" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206465225322" fileName="BreakStatement_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BreakStatement_DataFlow" />
   </root>
   <root nodeId="1206465285674">
@@ -357,7 +407,10 @@
     <scopeInfo nodeId="1409563270991702782" fileName="ContinueStatement_DataFlow.java" startLine="17" startPosition="12" endLine="18" endPosition="38" />
     <scopeInfo nodeId="1206465285674" fileName="ContinueStatement_DataFlow.java" startLine="10" startPosition="65" endLine="12" endPosition="3" />
     <scopeInfo nodeId="1206465285676" fileName="ContinueStatement_DataFlow.java" startLine="14" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="1206465285674" fileName="ContinueStatement_DataFlow.java" startLine="13" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1206465285674" fileName="ContinueStatement_DataFlow.java" startLine="13" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1206465285674" varName="_context" />
+      <varInfo nodeId="1206465285674" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206465285674" fileName="ContinueStatement_DataFlow.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ContinueStatement_DataFlow" />
   </root>
   <root nodeId="1206536652080">
@@ -374,7 +427,10 @@
     <scopeInfo nodeId="1206536652080" fileName="ElsifClause_DataFlow.java" startLine="12" startPosition="59" endLine="14" endPosition="3" />
     <scopeInfo nodeId="1217865537592" fileName="ElsifClause_DataFlow.java" startLine="20" startPosition="63" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1206536652082" fileName="ElsifClause_DataFlow.java" startLine="16" startPosition="102" endLine="24" endPosition="7" />
-    <scopeInfo nodeId="1206536652080" fileName="ElsifClause_DataFlow.java" startLine="15" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1206536652080" fileName="ElsifClause_DataFlow.java" startLine="15" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1206536652080" varName="_context" />
+      <varInfo nodeId="1206536652080" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206536652080" fileName="ElsifClause_DataFlow.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ElsifClause_DataFlow" />
     <unitInfo nodeId="1217865537592" fileName="ElsifClause_DataFlow.java" startLine="20" startPosition="51" endLine="24" endPosition="5" unitName="jetbrains.mps.baseLanguage.dataFlow.ElsifClause_DataFlow$1" />
   </root>
@@ -386,7 +442,10 @@
     <scopeInfo nodeId="1206536952487" fileName="VariableDeclaration_DataFlow.java" startLine="12" startPosition="41" endLine="12" endPosition="41" />
     <scopeInfo nodeId="1206536952487" fileName="VariableDeclaration_DataFlow.java" startLine="11" startPosition="67" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1206536952489" fileName="VariableDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="108" />
-    <scopeInfo nodeId="1206536952487" fileName="VariableDeclaration_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1206536952487" fileName="VariableDeclaration_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1206536952487" varName="_context" />
+      <varInfo nodeId="1206536952487" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206536952487" fileName="VariableDeclaration_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.VariableDeclaration_DataFlow" />
   </root>
   <root nodeId="1206537015271">
@@ -400,7 +459,10 @@
     <scopeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
     <scopeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="11" startPosition="73" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1206537015273" fileName="TernaryOperatorExpression_DataFlow.java" startLine="15" startPosition="102" endLine="20" endPosition="104" />
-    <scopeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="14" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="1206537015271" varName="_context" />
+      <varInfo nodeId="1206537015271" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206537015271" fileName="TernaryOperatorExpression_DataFlow.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.TernaryOperatorExpression_DataFlow" />
   </root>
   <root nodeId="1206537062960">
@@ -411,7 +473,10 @@
     <scopeInfo nodeId="1206537062960" fileName="SynchronizedStatement_DataFlow.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1206537062960" fileName="SynchronizedStatement_DataFlow.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1206537062962" fileName="SynchronizedStatement_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="102" />
-    <scopeInfo nodeId="1206537062960" fileName="SynchronizedStatement_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1206537062960" fileName="SynchronizedStatement_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1206537062960" varName="_context" />
+      <varInfo nodeId="1206537062960" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206537062960" fileName="SynchronizedStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.SynchronizedStatement_DataFlow" />
   </root>
   <root nodeId="1206542922860">
@@ -469,7 +534,10 @@
     <scopeInfo nodeId="1206957590309" fileName="TryStatement_DataFlow.java" startLine="18" startPosition="36" endLine="45" endPosition="52" />
     <scopeInfo nodeId="1206542922862" fileName="TryStatement_DataFlow.java" startLine="17" startPosition="102" endLine="48" endPosition="39" />
     <scopeInfo nodeId="1206957590308" fileName="TryStatement_DataFlow.java" startLine="17" startPosition="102" endLine="48" endPosition="39" />
-    <scopeInfo nodeId="1206542922860" fileName="TryStatement_DataFlow.java" startLine="16" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1206542922860" fileName="TryStatement_DataFlow.java" startLine="16" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1206542922860" varName="_context" />
+      <varInfo nodeId="1206542922860" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206542922860" fileName="TryStatement_DataFlow.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.TryStatement_DataFlow" />
     <unitInfo nodeId="1207141276961" fileName="TryStatement_DataFlow.java" startLine="32" startPosition="51" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.dataFlow.TryStatement_DataFlow$1" />
     <unitInfo nodeId="1207141436796" fileName="TryStatement_DataFlow.java" startLine="39" startPosition="53" endLine="43" endPosition="7" unitName="jetbrains.mps.baseLanguage.dataFlow.TryStatement_DataFlow$2" />
@@ -512,7 +580,10 @@
       <varInfo nodeId="4969132436615607636" varName="instruction" />
     </scopeInfo>
     <scopeInfo nodeId="1206542990056" fileName="TryCatchStatement_DataFlow.java" startLine="17" startPosition="102" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="16" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="16" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1206542990054" varName="_context" />
+      <varInfo nodeId="1206542990054" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.TryCatchStatement_DataFlow" />
     <unitInfo nodeId="1207218708174" fileName="TryCatchStatement_DataFlow.java" startLine="30" startPosition="51" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.dataFlow.TryCatchStatement_DataFlow$1" />
   </root>
@@ -523,7 +594,10 @@
     <scopeInfo nodeId="1206543144792" fileName="ParenthesizedExpression_DataFlow.java" startLine="12" startPosition="45" endLine="12" endPosition="45" />
     <scopeInfo nodeId="1206543144794" fileName="ParenthesizedExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1206543144792" fileName="ParenthesizedExpression_DataFlow.java" startLine="11" startPosition="71" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1206543144792" fileName="ParenthesizedExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1206543144792" fileName="ParenthesizedExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1206543144792" varName="_context" />
+      <varInfo nodeId="1206543144792" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206543144792" fileName="ParenthesizedExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ParenthesizedExpression_DataFlow" />
   </root>
   <root nodeId="1206543200622">
@@ -534,7 +608,10 @@
     <scopeInfo nodeId="1206543200622" fileName="DotExpression_DataFlow.java" startLine="12" startPosition="35" endLine="12" endPosition="35" />
     <scopeInfo nodeId="1206543200622" fileName="DotExpression_DataFlow.java" startLine="11" startPosition="61" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1206543200624" fileName="DotExpression_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="106" />
-    <scopeInfo nodeId="1206543200622" fileName="DotExpression_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1206543200622" fileName="DotExpression_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1206543200622" varName="_context" />
+      <varInfo nodeId="1206543200622" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206543200622" fileName="DotExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DotExpression_DataFlow" />
   </root>
   <root nodeId="1206543641005">
@@ -549,7 +626,10 @@
     <scopeInfo nodeId="1206543643055" fileName="IMethodCall_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1206543643057" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="1206543641005" fileName="IMethodCall_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1206543641005" fileName="IMethodCall_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1206543641005" varName="_context" />
+      <varInfo nodeId="1206543641005" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206543641005" fileName="IMethodCall_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IMethodCall_DataFlow" />
   </root>
   <root nodeId="1206544616802">
@@ -560,7 +640,10 @@
     <scopeInfo nodeId="1206544616802" fileName="ArrayAccessExpression_DataFlow.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1206544616802" fileName="ArrayAccessExpression_DataFlow.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1206544616804" fileName="ArrayAccessExpression_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="102" />
-    <scopeInfo nodeId="1206544616802" fileName="ArrayAccessExpression_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1206544616802" fileName="ArrayAccessExpression_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1206544616802" varName="_context" />
+      <varInfo nodeId="1206544616802" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206544616802" fileName="ArrayAccessExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayAccessExpression_DataFlow" />
   </root>
   <root nodeId="1206544649897">
@@ -575,7 +658,10 @@
     <scopeInfo nodeId="1206544652759" fileName="ArrayLiteral_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1206544652761" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="1206544649897" fileName="ArrayLiteral_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1206544649897" fileName="ArrayLiteral_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1206544649897" varName="_context" />
+      <varInfo nodeId="1206544649897" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206544649897" fileName="ArrayLiteral_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayLiteral_DataFlow" />
   </root>
   <root nodeId="1206544689883">
@@ -585,7 +671,10 @@
     <scopeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="12" startPosition="41" endLine="12" endPosition="41" />
     <scopeInfo nodeId="1206544689885" fileName="DimensionExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="11" startPosition="67" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1206544689883" varName="_context" />
+      <varInfo nodeId="1206544689883" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DimensionExpression_DataFlow" />
   </root>
   <root nodeId="1206544778849">
@@ -595,7 +684,10 @@
     <scopeInfo nodeId="1206544778849" fileName="InstanceOfExpression_DataFlow.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="1206544778851" fileName="InstanceOfExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="111" />
     <scopeInfo nodeId="1206544778849" fileName="InstanceOfExpression_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1206544778849" fileName="InstanceOfExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1206544778849" fileName="InstanceOfExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1206544778849" varName="_context" />
+      <varInfo nodeId="1206544778849" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206544778849" fileName="InstanceOfExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.InstanceOfExpression_DataFlow" />
   </root>
   <root nodeId="1206987106933">
@@ -605,7 +697,10 @@
     <scopeInfo nodeId="1206987106933" fileName="LocalVariableDeclarationStatement_DataFlow.java" startLine="12" startPosition="55" endLine="12" endPosition="55" />
     <scopeInfo nodeId="1206987106935" fileName="LocalVariableDeclarationStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="121" />
     <scopeInfo nodeId="1206987106933" fileName="LocalVariableDeclarationStatement_DataFlow.java" startLine="11" startPosition="81" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1206987106933" fileName="LocalVariableDeclarationStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1206987106933" fileName="LocalVariableDeclarationStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1206987106933" varName="_context" />
+      <varInfo nodeId="1206987106933" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206987106933" fileName="LocalVariableDeclarationStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableDeclarationStatement_DataFlow" />
   </root>
   <root nodeId="1206987156907">
@@ -619,7 +714,10 @@
     <scopeInfo nodeId="1206987156907" fileName="LocalVariableDeclaration_DataFlow.java" startLine="11" startPosition="72" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1206987165527" fileName="LocalVariableDeclaration_DataFlow.java" startLine="17" startPosition="87" endLine="19" endPosition="126" />
     <scopeInfo nodeId="1206987156909" fileName="LocalVariableDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="1206987156907" fileName="LocalVariableDeclaration_DataFlow.java" startLine="14" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1206987156907" fileName="LocalVariableDeclaration_DataFlow.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="1206987156907" varName="_context" />
+      <varInfo nodeId="1206987156907" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206987156907" fileName="LocalVariableDeclaration_DataFlow.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableDeclaration_DataFlow" />
   </root>
   <root nodeId="1206987602762">
@@ -629,7 +727,10 @@
     <scopeInfo nodeId="1206987602762" fileName="BaseMethodDeclaration_DataFlow.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1206987602764" fileName="BaseMethodDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
     <scopeInfo nodeId="1206987602762" fileName="BaseMethodDeclaration_DataFlow.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1206987602762" fileName="BaseMethodDeclaration_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1206987602762" fileName="BaseMethodDeclaration_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1206987602762" varName="_context" />
+      <varInfo nodeId="1206987602762" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1206987602762" fileName="BaseMethodDeclaration_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BaseMethodDeclaration_DataFlow" />
   </root>
   <root nodeId="1207060493473">
@@ -644,7 +745,10 @@
     <scopeInfo nodeId="1207060495936" fileName="StaticMethodCall_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1207060495938" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="1207060493473" fileName="StaticMethodCall_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1207060493473" fileName="StaticMethodCall_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1207060493473" varName="_context" />
+      <varInfo nodeId="1207060493473" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207060493473" fileName="StaticMethodCall_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.StaticMethodCall_DataFlow" />
   </root>
   <root nodeId="1207075974495">
@@ -654,7 +758,10 @@
     <scopeInfo nodeId="1207075974495" fileName="NotExpression_DataFlow.java" startLine="12" startPosition="35" endLine="12" endPosition="35" />
     <scopeInfo nodeId="1207075974497" fileName="NotExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1207075974495" fileName="NotExpression_DataFlow.java" startLine="11" startPosition="61" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1207075974495" fileName="NotExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1207075974495" fileName="NotExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1207075974495" varName="_context" />
+      <varInfo nodeId="1207075974495" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207075974495" fileName="NotExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NotExpression_DataFlow" />
   </root>
   <root nodeId="1207140821807">
@@ -665,7 +772,10 @@
     <scopeInfo nodeId="1207140821807" fileName="CatchClause_DataFlow.java" startLine="12" startPosition="33" endLine="12" endPosition="33" />
     <scopeInfo nodeId="1207140821807" fileName="CatchClause_DataFlow.java" startLine="11" startPosition="59" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1207140821809" fileName="CatchClause_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="106" />
-    <scopeInfo nodeId="1207140821807" fileName="CatchClause_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1207140821807" fileName="CatchClause_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1207140821807" varName="_context" />
+      <varInfo nodeId="1207140821807" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207140821807" fileName="CatchClause_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.CatchClause_DataFlow" />
   </root>
   <root nodeId="1207556563737">
@@ -680,7 +790,10 @@
     <scopeInfo nodeId="1207556566318" fileName="InstanceMethodCallOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1207556566320" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="1207556563737" fileName="InstanceMethodCallOperation_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1207556563737" fileName="InstanceMethodCallOperation_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1207556563737" varName="_context" />
+      <varInfo nodeId="1207556563737" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207556563737" fileName="InstanceMethodCallOperation_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.InstanceMethodCallOperation_DataFlow" />
   </root>
   <root nodeId="1207556861986">
@@ -692,8 +805,13 @@
     <scopeInfo nodeId="1209401534132" fileName="ArrayCreator_DataFlow.java" startLine="17" startPosition="129" endLine="18" endPosition="54" />
     <scopeInfo nodeId="1207556861986" fileName="ArrayCreator_DataFlow.java" startLine="12" startPosition="60" endLine="14" endPosition="3" />
     <scopeInfo nodeId="1207556861988" fileName="ArrayCreator_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="1209401534129" fileName="ArrayCreator_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="1207556861986" fileName="ArrayCreator_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1209401534129" fileName="ArrayCreator_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5">
+      <varInfo nodeId="1209401534129" varName="expression" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207556861986" fileName="ArrayCreator_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1207556861986" varName="_context" />
+      <varInfo nodeId="1207556861986" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207556861986" fileName="ArrayCreator_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreator_DataFlow" />
   </root>
   <root nodeId="1207557107230">
@@ -708,7 +826,10 @@
     <scopeInfo nodeId="1207557109799" fileName="ArrayCreatorWithInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1207557109801" varName="initValue" />
     </scopeInfo>
-    <scopeInfo nodeId="1207557107230" fileName="ArrayCreatorWithInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1207557107230" fileName="ArrayCreatorWithInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1207557107230" varName="_context" />
+      <varInfo nodeId="1207557107230" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207557107230" fileName="ArrayCreatorWithInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreatorWithInitializer_DataFlow" />
   </root>
   <root nodeId="1207558448518">
@@ -718,7 +839,10 @@
     <scopeInfo nodeId="1207558448518" fileName="InstanceInitializer_DataFlow.java" startLine="12" startPosition="41" endLine="12" endPosition="41" />
     <scopeInfo nodeId="1207558448520" fileName="InstanceInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="110" />
     <scopeInfo nodeId="1207558448518" fileName="InstanceInitializer_DataFlow.java" startLine="11" startPosition="67" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1207558448518" fileName="InstanceInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1207558448518" fileName="InstanceInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1207558448518" varName="_context" />
+      <varInfo nodeId="1207558448518" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207558448518" fileName="InstanceInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.InstanceInitializer_DataFlow" />
   </root>
   <root nodeId="1207558671026">
@@ -742,7 +866,10 @@
       <varInfo nodeId="1207558728445" varName="switchCase" />
     </scopeInfo>
     <scopeInfo nodeId="1207558671028" fileName="SwitchStatement_DataFlow.java" startLine="15" startPosition="102" endLine="24" endPosition="109" />
-    <scopeInfo nodeId="1207558671026" fileName="SwitchStatement_DataFlow.java" startLine="14" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1207558671026" fileName="SwitchStatement_DataFlow.java" startLine="14" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1207558671026" varName="_context" />
+      <varInfo nodeId="1207558671026" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207558671026" fileName="SwitchStatement_DataFlow.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.SwitchStatement_DataFlow" />
   </root>
   <root nodeId="1207559189249">
@@ -752,7 +879,10 @@
     <scopeInfo nodeId="1207559189249" fileName="SwitchCase_DataFlow.java" startLine="12" startPosition="32" endLine="12" endPosition="32" />
     <scopeInfo nodeId="1207559189251" fileName="SwitchCase_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
     <scopeInfo nodeId="1207559189249" fileName="SwitchCase_DataFlow.java" startLine="11" startPosition="58" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1207559189249" fileName="SwitchCase_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1207559189249" fileName="SwitchCase_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1207559189249" varName="_context" />
+      <varInfo nodeId="1207559189249" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207559189249" fileName="SwitchCase_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.SwitchCase_DataFlow" />
   </root>
   <root nodeId="1210936137812">
@@ -762,7 +892,10 @@
     <scopeInfo nodeId="1210936137812" fileName="GenericNewExpression_DataFlow.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="1210936137814" fileName="GenericNewExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="104" />
     <scopeInfo nodeId="1210936137812" fileName="GenericNewExpression_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1210936137812" fileName="GenericNewExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1210936137812" fileName="GenericNewExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1210936137812" varName="_context" />
+      <varInfo nodeId="1210936137812" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1210936137812" fileName="GenericNewExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.GenericNewExpression_DataFlow" />
   </root>
   <root nodeId="1210954246889">
@@ -771,7 +904,10 @@
     <scopeInfo nodeId="1210954246889" fileName="RemarkStatement_DataFlow.java" startLine="10" startPosition="37" endLine="10" endPosition="37" />
     <scopeInfo nodeId="1210954246891" fileName="RemarkStatement_DataFlow.java" startLine="13" startPosition="102" endLine="13" endPosition="102" />
     <scopeInfo nodeId="1210954246889" fileName="RemarkStatement_DataFlow.java" startLine="9" startPosition="63" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="1210954246889" fileName="RemarkStatement_DataFlow.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="1210954246889" fileName="RemarkStatement_DataFlow.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1210954246889" varName="_context" />
+      <varInfo nodeId="1210954246889" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1210954246889" fileName="RemarkStatement_DataFlow.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RemarkStatement_DataFlow" />
   </root>
   <root nodeId="1214499184018">
@@ -815,7 +951,10 @@
       <varInfo nodeId="1214502049365" varName="methods" />
       <varInfo nodeId="1214502174630" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="20" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="20" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1214499184018" varName="_context" />
+      <varInfo nodeId="1214499184018" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AnonymousClassCreator_DataFlow" />
   </root>
   <root nodeId="1215696302779">
@@ -835,7 +974,10 @@
     <scopeInfo nodeId="1215696303840" fileName="BaseAssignmentExpression_DataFlow.java" startLine="24" startPosition="12" endLine="26" endPosition="105" />
     <scopeInfo nodeId="1215696303814" fileName="BaseAssignmentExpression_DataFlow.java" startLine="18" startPosition="160" endLine="23" endPosition="238" />
     <scopeInfo nodeId="1215696302781" fileName="BaseAssignmentExpression_DataFlow.java" startLine="17" startPosition="102" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="1215696302779" fileName="BaseAssignmentExpression_DataFlow.java" startLine="16" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1215696302779" fileName="BaseAssignmentExpression_DataFlow.java" startLine="16" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1215696302779" varName="_context" />
+      <varInfo nodeId="1215696302779" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1215696302779" fileName="BaseAssignmentExpression_DataFlow.java" startLine="13" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BaseAssignmentExpression_DataFlow" />
   </root>
   <root nodeId="1217516459747">
@@ -850,7 +992,10 @@
     <scopeInfo nodeId="1217516462655" fileName="BaseMethodCall_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1217516462659" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="1217516459747" fileName="BaseMethodCall_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1217516459747" fileName="BaseMethodCall_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1217516459747" varName="_context" />
+      <varInfo nodeId="1217516459747" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1217516459747" fileName="BaseMethodCall_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BaseMethodCall_DataFlow" />
   </root>
   <root nodeId="1220010442774">
@@ -860,7 +1005,10 @@
     <scopeInfo nodeId="1220010442774" fileName="ParameterDeclaration_DataFlow.java" startLine="10" startPosition="42" endLine="10" endPosition="42" />
     <scopeInfo nodeId="1220010442776" fileName="ParameterDeclaration_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="56" />
     <scopeInfo nodeId="1220010442774" fileName="ParameterDeclaration_DataFlow.java" startLine="9" startPosition="68" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="1220010442774" fileName="ParameterDeclaration_DataFlow.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="1220010442774" fileName="ParameterDeclaration_DataFlow.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="1220010442774" varName="_context" />
+      <varInfo nodeId="1220010442774" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1220010442774" fileName="ParameterDeclaration_DataFlow.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ParameterDeclaration_DataFlow" />
   </root>
   <root nodeId="1221737454577">
@@ -870,7 +1018,10 @@
     <scopeInfo nodeId="1221737454577" fileName="StaticInitializer_DataFlow.java" startLine="12" startPosition="39" endLine="12" endPosition="39" />
     <scopeInfo nodeId="1221737454579" fileName="StaticInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="110" />
     <scopeInfo nodeId="1221737454577" fileName="StaticInitializer_DataFlow.java" startLine="11" startPosition="65" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1221737454577" fileName="StaticInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1221737454577" fileName="StaticInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1221737454577" varName="_context" />
+      <varInfo nodeId="1221737454577" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1221737454577" fileName="StaticInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.StaticInitializer_DataFlow" />
   </root>
   <root nodeId="1221825780289">
@@ -880,7 +1031,10 @@
     <scopeInfo nodeId="1221825780289" fileName="ConceptFunction_DataFlow.java" startLine="12" startPosition="37" endLine="12" endPosition="37" />
     <scopeInfo nodeId="1221825780291" fileName="ConceptFunction_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
     <scopeInfo nodeId="1221825780289" fileName="ConceptFunction_DataFlow.java" startLine="11" startPosition="63" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1221825780289" fileName="ConceptFunction_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1221825780289" fileName="ConceptFunction_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1221825780289" varName="_context" />
+      <varInfo nodeId="1221825780289" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1221825780289" fileName="ConceptFunction_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ConceptFunction_DataFlow" />
   </root>
   <root nodeId="1222757967616">
@@ -892,7 +1046,10 @@
     <scopeInfo nodeId="1225099965057" fileName="LocalVariableReference_DataFlow.java" startLine="16" startPosition="111" endLine="17" endPosition="114" />
     <scopeInfo nodeId="1222757967616" fileName="LocalVariableReference_DataFlow.java" startLine="11" startPosition="70" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1222758001081" fileName="LocalVariableReference_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="1222757967616" fileName="LocalVariableReference_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1222757967616" fileName="LocalVariableReference_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1222757967616" varName="_context" />
+      <varInfo nodeId="1222757967616" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1222757967616" fileName="LocalVariableReference_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableReference_DataFlow" />
   </root>
   <root nodeId="1222758017511">
@@ -902,7 +1059,10 @@
     <scopeInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="11" startPosition="40" endLine="11" endPosition="40" />
     <scopeInfo nodeId="1222758017513" fileName="ParameterReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="112" />
     <scopeInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="10" startPosition="66" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="1222758017511" varName="_context" />
+      <varInfo nodeId="1222758017511" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ParameterReference_DataFlow" />
   </root>
   <root nodeId="1223989582690">
@@ -914,8 +1074,13 @@
     <scopeInfo nodeId="1223989851677" fileName="Closure_DataFlow.java" startLine="17" startPosition="134" endLine="18" endPosition="42" />
     <scopeInfo nodeId="1223989582690" fileName="Closure_DataFlow.java" startLine="12" startPosition="55" endLine="14" endPosition="3" />
     <scopeInfo nodeId="1223989582692" fileName="Closure_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="1223989851674" fileName="Closure_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="1223989582690" fileName="Closure_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1223989851674" fileName="Closure_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5">
+      <varInfo nodeId="1223989851674" varName="var" />
+    </scopeInfo>
+    <scopeInfo nodeId="1223989582690" fileName="Closure_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1223989582690" varName="_context" />
+      <varInfo nodeId="1223989582690" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1223989582690" fileName="Closure_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.Closure_DataFlow" />
   </root>
   <root nodeId="1225271597111">
@@ -931,7 +1096,10 @@
     <scopeInfo nodeId="1225271597135" fileName="SubstringExpression_DataFlow.java" startLine="20" startPosition="82" endLine="21" endPosition="107" />
     <scopeInfo nodeId="1225271597111" fileName="SubstringExpression_DataFlow.java" startLine="11" startPosition="67" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1225271597113" fileName="SubstringExpression_DataFlow.java" startLine="15" startPosition="102" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="1225271597111" fileName="SubstringExpression_DataFlow.java" startLine="14" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1225271597111" fileName="SubstringExpression_DataFlow.java" startLine="14" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1225271597111" varName="_context" />
+      <varInfo nodeId="1225271597111" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1225271597111" fileName="SubstringExpression_DataFlow.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.SubstringExpression_DataFlow" />
   </root>
   <root nodeId="1226075737918">
@@ -941,7 +1109,10 @@
     <scopeInfo nodeId="1226075737918" fileName="BitwiseNotExpression_DataFlow.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="1226075737920" fileName="BitwiseNotExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1226075737918" fileName="BitwiseNotExpression_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1226075737918" fileName="BitwiseNotExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1226075737918" fileName="BitwiseNotExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1226075737918" varName="_context" />
+      <varInfo nodeId="1226075737918" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1226075737918" fileName="BitwiseNotExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BitwiseNotExpression_DataFlow" />
   </root>
   <root nodeId="1226935762687">
@@ -955,7 +1126,10 @@
     <scopeInfo nodeId="1226935762687" fileName="CommentedStatementsBlock_DataFlow.java" startLine="9" startPosition="72" endLine="11" endPosition="3" />
     <scopeInfo nodeId="1226935788187" fileName="CommentedStatementsBlock_DataFlow.java" startLine="14" startPosition="63" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1226935762689" fileName="CommentedStatementsBlock_DataFlow.java" startLine="13" startPosition="102" endLine="18" endPosition="7" />
-    <scopeInfo nodeId="1226935762687" fileName="CommentedStatementsBlock_DataFlow.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1226935762687" fileName="CommentedStatementsBlock_DataFlow.java" startLine="12" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1226935762687" varName="_context" />
+      <varInfo nodeId="1226935762687" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1226935762687" fileName="CommentedStatementsBlock_DataFlow.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.CommentedStatementsBlock_DataFlow" />
     <unitInfo nodeId="1226935788187" fileName="CommentedStatementsBlock_DataFlow.java" startLine="14" startPosition="51" endLine="18" endPosition="5" unitName="jetbrains.mps.baseLanguage.dataFlow.CommentedStatementsBlock_DataFlow$1" />
   </root>
@@ -967,7 +1141,10 @@
     <scopeInfo nodeId="1239714962884" fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="12" startPosition="50" endLine="12" endPosition="50" />
     <scopeInfo nodeId="1239714962884" fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="11" startPosition="76" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1239714962886" fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="36" />
-    <scopeInfo nodeId="1239714962884" fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1239714962884" fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1239714962884" varName="_context" />
+      <varInfo nodeId="1239714962884" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1239714962884" fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AbstractUnaryNumberOperation_DataFlow" />
   </root>
   <root nodeId="1265678854311102657">
@@ -1019,21 +1196,41 @@
     <scopeInfo nodeId="1265678854311102657" fileName="IfEqualsNullAll.java" startLine="25" startPosition="46" endLine="26" endPosition="62" />
     <scopeInfo nodeId="1228615757308591716" fileName="IfEqualsNullAll.java" startLine="35" startPosition="34" endLine="36" endPosition="62" />
     <scopeInfo nodeId="1265678854311102657" fileName="IfEqualsNullAll.java" startLine="17" startPosition="58" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1265678854311102657" fileName="IfEqualsNullAll.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1265678854311102657" fileName="IfEqualsNullAll.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1265678854311102657" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1265678854311102657" fileName="IfEqualsNullAll.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1228615757308591708" fileName="IfEqualsNullAll.java" startLine="33" startPosition="110" endLine="37" endPosition="9">
       <varInfo nodeId="1228615757308591710" varName="notNullNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1228615757308596556" fileName="IfEqualsNullAll.java" startLine="44" startPosition="47" endLine="49" endPosition="72" />
-    <scopeInfo nodeId="1259268621398138708" fileName="IfEqualsNullAll.java" startLine="58" startPosition="47" endLine="63" endPosition="72" />
-    <scopeInfo nodeId="4258402621852112799" fileName="IfEqualsNullAll.java" startLine="71" startPosition="45" endLine="76" endPosition="70" />
+    <scopeInfo nodeId="1228615757308596556" fileName="IfEqualsNullAll.java" startLine="44" startPosition="47" endLine="49" endPosition="72">
+      <varInfo nodeId="1228615757308596556" varName="before" />
+      <varInfo nodeId="1228615757308596556" varName="instruction" />
+      <varInfo nodeId="1228615757308596556" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="1259268621398138708" fileName="IfEqualsNullAll.java" startLine="58" startPosition="47" endLine="63" endPosition="72">
+      <varInfo nodeId="1259268621398138708" varName="before" />
+      <varInfo nodeId="1259268621398138708" varName="instruction" />
+      <varInfo nodeId="1259268621398138708" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="4258402621852112799" fileName="IfEqualsNullAll.java" startLine="71" startPosition="45" endLine="76" endPosition="70">
+      <varInfo nodeId="4258402621852112799" varName="before" />
+      <varInfo nodeId="4258402621852112799" varName="instruction" />
+      <varInfo nodeId="4258402621852112799" varName="position" />
+    </scopeInfo>
     <scopeInfo nodeId="1228615757308591702" fileName="IfEqualsNullAll.java" startLine="32" startPosition="65" endLine="38" endPosition="7" />
     <scopeInfo nodeId="1228615757308591697" fileName="IfEqualsNullAll.java" startLine="31" startPosition="46" endLine="39" endPosition="5">
       <varInfo nodeId="1228615757308591698" varName="expression" />
     </scopeInfo>
-    <scopeInfo nodeId="1228615757308596556" fileName="IfEqualsNullAll.java" startLine="42" startPosition="9" endLine="50" endPosition="11" />
-    <scopeInfo nodeId="1259268621398138708" fileName="IfEqualsNullAll.java" startLine="56" startPosition="9" endLine="64" endPosition="11" />
-    <scopeInfo nodeId="4258402621852112799" fileName="IfEqualsNullAll.java" startLine="69" startPosition="7" endLine="77" endPosition="9" />
+    <scopeInfo nodeId="1228615757308596556" fileName="IfEqualsNullAll.java" startLine="42" startPosition="9" endLine="50" endPosition="11">
+      <varInfo nodeId="1228615757308596556" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="1259268621398138708" fileName="IfEqualsNullAll.java" startLine="56" startPosition="9" endLine="64" endPosition="11">
+      <varInfo nodeId="1259268621398138708" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="4258402621852112799" fileName="IfEqualsNullAll.java" startLine="69" startPosition="7" endLine="77" endPosition="9">
+      <varInfo nodeId="4258402621852112799" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="1228615757308596550" fileName="IfEqualsNullAll.java" startLine="41" startPosition="30" endLine="51" endPosition="9" />
     <scopeInfo nodeId="1259268621398138707" fileName="IfEqualsNullAll.java" startLine="55" startPosition="30" endLine="65" endPosition="9" />
     <scopeInfo nodeId="4258402621852112787" fileName="IfEqualsNullAll.java" startLine="68" startPosition="28" endLine="78" endPosition="7" />
@@ -1052,7 +1249,10 @@
       <varInfo nodeId="1265678854311140225" varName="ifTrue" />
       <varInfo nodeId="1228615757308591727" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="1265678854311102657" fileName="IfEqualsNullAll.java" startLine="28" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="1265678854311102657" fileName="IfEqualsNullAll.java" startLine="28" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1265678854311102657" varName="node" />
+      <varInfo nodeId="1265678854311102657" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="1265678854311102657" fileName="IfEqualsNullAll.java" startLine="17" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfEqualsNullAll" />
   </root>
   <root nodeId="1265678854311165373">
@@ -1185,16 +1385,42 @@
     <scopeInfo nodeId="2263844335513468315" fileName="IfNotNullAll.java" startLine="20" startPosition="43" endLine="21" endPosition="174" />
     <scopeInfo nodeId="2263844335513468315" fileName="IfNotNullAll.java" startLine="24" startPosition="46" endLine="25" endPosition="62" />
     <scopeInfo nodeId="2263844335513468315" fileName="IfNotNullAll.java" startLine="16" startPosition="55" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="2263844335513468315" fileName="IfNotNullAll.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="2263844335513468315" fileName="IfNotNullAll.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="2263844335513468315" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2263844335513468315" fileName="IfNotNullAll.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2263844335513471519" fileName="IfNotNullAll.java" startLine="36" startPosition="49" endLine="41" endPosition="74" />
-    <scopeInfo nodeId="2263844335513479569" fileName="IfNotNullAll.java" startLine="46" startPosition="49" endLine="51" endPosition="74" />
-    <scopeInfo nodeId="1007191014633107714" fileName="IfNotNullAll.java" startLine="57" startPosition="51" endLine="62" endPosition="76" />
-    <scopeInfo nodeId="1007191014633107741" fileName="IfNotNullAll.java" startLine="69" startPosition="51" endLine="74" endPosition="76" />
-    <scopeInfo nodeId="2263844335513471519" fileName="IfNotNullAll.java" startLine="34" startPosition="11" endLine="42" endPosition="13" />
-    <scopeInfo nodeId="2263844335513479569" fileName="IfNotNullAll.java" startLine="44" startPosition="11" endLine="52" endPosition="13" />
-    <scopeInfo nodeId="1007191014633107714" fileName="IfNotNullAll.java" startLine="55" startPosition="13" endLine="63" endPosition="15" />
-    <scopeInfo nodeId="1007191014633107741" fileName="IfNotNullAll.java" startLine="67" startPosition="13" endLine="75" endPosition="15" />
+    <scopeInfo nodeId="2263844335513471519" fileName="IfNotNullAll.java" startLine="36" startPosition="49" endLine="41" endPosition="74">
+      <varInfo nodeId="2263844335513471519" varName="before" />
+      <varInfo nodeId="2263844335513471519" varName="instruction" />
+      <varInfo nodeId="2263844335513471519" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="2263844335513479569" fileName="IfNotNullAll.java" startLine="46" startPosition="49" endLine="51" endPosition="74">
+      <varInfo nodeId="2263844335513479569" varName="before" />
+      <varInfo nodeId="2263844335513479569" varName="instruction" />
+      <varInfo nodeId="2263844335513479569" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="1007191014633107714" fileName="IfNotNullAll.java" startLine="57" startPosition="51" endLine="62" endPosition="76">
+      <varInfo nodeId="1007191014633107714" varName="before" />
+      <varInfo nodeId="1007191014633107714" varName="instruction" />
+      <varInfo nodeId="1007191014633107714" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="1007191014633107741" fileName="IfNotNullAll.java" startLine="69" startPosition="51" endLine="74" endPosition="76">
+      <varInfo nodeId="1007191014633107741" varName="before" />
+      <varInfo nodeId="1007191014633107741" varName="instruction" />
+      <varInfo nodeId="1007191014633107741" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="2263844335513471519" fileName="IfNotNullAll.java" startLine="34" startPosition="11" endLine="42" endPosition="13">
+      <varInfo nodeId="2263844335513471519" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="2263844335513479569" fileName="IfNotNullAll.java" startLine="44" startPosition="11" endLine="52" endPosition="13">
+      <varInfo nodeId="2263844335513479569" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="1007191014633107714" fileName="IfNotNullAll.java" startLine="55" startPosition="13" endLine="63" endPosition="15">
+      <varInfo nodeId="1007191014633107714" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="1007191014633107741" fileName="IfNotNullAll.java" startLine="67" startPosition="13" endLine="75" endPosition="15">
+      <varInfo nodeId="1007191014633107741" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="1007191014633107701" fileName="IfNotNullAll.java" startLine="54" startPosition="82" endLine="64" endPosition="13" />
     <scopeInfo nodeId="1007191014633107727" fileName="IfNotNullAll.java" startLine="66" startPosition="107" endLine="76" endPosition="13" />
     <scopeInfo nodeId="2263844335513471511" fileName="IfNotNullAll.java" startLine="33" startPosition="34" endLine="77" endPosition="11" />
@@ -1208,7 +1434,10 @@
     <scopeInfo nodeId="2263844335513468318" fileName="IfNotNullAll.java" startLine="28" startPosition="53" endLine="80" endPosition="5">
       <varInfo nodeId="2263844335513469433" varName="conditions" />
     </scopeInfo>
-    <scopeInfo nodeId="2263844335513468315" fileName="IfNotNullAll.java" startLine="27" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="2263844335513468315" fileName="IfNotNullAll.java" startLine="27" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="2263844335513468315" varName="node" />
+      <varInfo nodeId="2263844335513468315" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="2263844335513468315" fileName="IfNotNullAll.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfNotNullAll" />
   </root>
   <root nodeId="3383816410303205607">
@@ -1263,16 +1492,42 @@
     <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="22" startPosition="46" endLine="23" endPosition="76" />
     <scopeInfo nodeId="3383816410303360086" fileName="RuleTernaryOperation.java" startLine="30" startPosition="26" endLine="31" endPosition="15" />
     <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="14" startPosition="63" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="3383816410303205607" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="36" startPosition="47" endLine="41" endPosition="72" />
-    <scopeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="46" startPosition="47" endLine="51" endPosition="72" />
-    <scopeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="57" startPosition="47" endLine="62" endPosition="72" />
-    <scopeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="67" startPosition="47" endLine="72" endPosition="72" />
-    <scopeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="34" startPosition="9" endLine="42" endPosition="11" />
-    <scopeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="44" startPosition="9" endLine="52" endPosition="11" />
-    <scopeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="55" startPosition="9" endLine="63" endPosition="11" />
-    <scopeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="65" startPosition="9" endLine="73" endPosition="11" />
+    <scopeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="36" startPosition="47" endLine="41" endPosition="72">
+      <varInfo nodeId="3383816410303360124" varName="before" />
+      <varInfo nodeId="3383816410303360124" varName="instruction" />
+      <varInfo nodeId="3383816410303360124" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="46" startPosition="47" endLine="51" endPosition="72">
+      <varInfo nodeId="3383816410303360110" varName="before" />
+      <varInfo nodeId="3383816410303360110" varName="instruction" />
+      <varInfo nodeId="3383816410303360110" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="57" startPosition="47" endLine="62" endPosition="72">
+      <varInfo nodeId="3383816410303360132" varName="before" />
+      <varInfo nodeId="3383816410303360132" varName="instruction" />
+      <varInfo nodeId="3383816410303360132" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="67" startPosition="47" endLine="72" endPosition="72">
+      <varInfo nodeId="3383816410303360139" varName="before" />
+      <varInfo nodeId="3383816410303360139" varName="instruction" />
+      <varInfo nodeId="3383816410303360139" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="3383816410303360124" fileName="RuleTernaryOperation.java" startLine="34" startPosition="9" endLine="42" endPosition="11">
+      <varInfo nodeId="3383816410303360124" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="3383816410303360110" fileName="RuleTernaryOperation.java" startLine="44" startPosition="9" endLine="52" endPosition="11">
+      <varInfo nodeId="3383816410303360110" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="3383816410303360132" fileName="RuleTernaryOperation.java" startLine="55" startPosition="9" endLine="63" endPosition="11">
+      <varInfo nodeId="3383816410303360132" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="3383816410303360139" fileName="RuleTernaryOperation.java" startLine="65" startPosition="9" endLine="73" endPosition="11">
+      <varInfo nodeId="3383816410303360139" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="3383816410303360097" fileName="RuleTernaryOperation.java" startLine="33" startPosition="109" endLine="53" endPosition="9" />
     <scopeInfo nodeId="3383816410303360109" fileName="RuleTernaryOperation.java" startLine="54" startPosition="14" endLine="74" endPosition="9" />
     <scopeInfo nodeId="3383816410303236866" fileName="RuleTernaryOperation.java" startLine="28" startPosition="210" endLine="75" endPosition="7">
@@ -1281,7 +1536,10 @@
     <scopeInfo nodeId="3383816410303226599" fileName="RuleTernaryOperation.java" startLine="26" startPosition="53" endLine="77" endPosition="0">
       <varInfo nodeId="3383816410303360069" varName="condition" />
     </scopeInfo>
-    <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="25" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="25" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="3383816410303205607" varName="node" />
+      <varInfo nodeId="3383816410303205607" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="14" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
   </root>
   <root nodeId="5730083271929368106">
@@ -1484,65 +1742,139 @@
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="175" startPosition="122" endLine="177" endPosition="7" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="87" startPosition="51" endLine="90" endPosition="7" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="90" startPosition="7" endLine="93" endPosition="7" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="133" startPosition="15" endLine="136" endPosition="73" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="133" startPosition="15" endLine="136" endPosition="73">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch_RuleAssertNull_ah97h0_a0a0a0a" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="149" startPosition="103" endLine="152" endPosition="17" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="163" startPosition="0" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="170" startPosition="0" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="163" startPosition="0" endLine="166" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="170" startPosition="0" endLine="173" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="195" startPosition="99" endLine="198" endPosition="17" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="209" startPosition="15" endLine="212" endPosition="75" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="223" startPosition="0" endLine="226" endPosition="0" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="230" startPosition="0" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="209" startPosition="15" endLine="212" endPosition="75">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch_RuleAssertNull_ah97h0_a0b0a0a_0" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="223" startPosition="0" endLine="226" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="230" startPosition="0" endLine="233" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="node" />
+      <varInfo nodeId="5730083271929368106" varName="program" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="80" startPosition="71" endLine="84" endPosition="7" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="159" startPosition="0" endLine="163" endPosition="0" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="166" startPosition="0" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="166" startPosition="0" endLine="170" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="219" startPosition="0" endLine="223" endPosition="0" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="226" startPosition="0" endLine="230" endPosition="0" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="226" startPosition="0" endLine="230" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="54" startPosition="51" endLine="59" endPosition="17" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="59" startPosition="17" endLine="64" endPosition="17" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="147" startPosition="15" endLine="152" endPosition="17" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="193" startPosition="15" endLine="198" endPosition="17" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="131" startPosition="13" endLine="137" endPosition="15" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="207" startPosition="13" endLine="213" endPosition="15" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="79" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="147" startPosition="15" endLine="152" endPosition="17">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch_RuleAssertNull_ah97h0_a0a0a0a_0" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="193" startPosition="15" endLine="198" endPosition="17">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch_RuleAssertNull_ah97h0_a0b0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="131" startPosition="13" endLine="137" endPosition="15">
+      <varInfo nodeId="5730083271929368106" varName="childVar_RuleAssertNull_ah97h0_a0a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="207" startPosition="13" endLine="213" endPosition="15">
+      <varInfo nodeId="5730083271929368106" varName="childVar_RuleAssertNull_ah97h0_a0b0a0a_0" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="79" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="pattern" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="87" startPosition="51" endLine="94" endPosition="18" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="145" startPosition="13" endLine="153" endPosition="15" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="191" startPosition="13" endLine="199" endPosition="15" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="86" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="100" startPosition="45" endLine="110" endPosition="70" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="145" startPosition="13" endLine="153" endPosition="15">
+      <varInfo nodeId="5730083271929368106" varName="childVar_RuleAssertNull_ah97h0_a0a0a0a_0" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="191" startPosition="13" endLine="199" endPosition="15">
+      <varInfo nodeId="5730083271929368106" varName="childVar_RuleAssertNull_ah97h0_a0b0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="86" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="fieldName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="100" startPosition="45" endLine="110" endPosition="70">
+      <varInfo nodeId="1508313647019626155" varName="before" />
+      <varInfo nodeId="1508313647019626155" varName="instruction" />
+      <varInfo nodeId="1508313647019626155" varName="position" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="127" startPosition="73" endLine="138" endPosition="13" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="203" startPosition="74" endLine="214" endPosition="13" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="126" startPosition="11" endLine="138" endPosition="13" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="202" startPosition="11" endLine="214" endPosition="13" />
-    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="98" startPosition="7" endLine="111" endPosition="9" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="126" startPosition="11" endLine="138" endPosition="13">
+      <varInfo nodeId="5730083271929368106" varName="childRole_RuleAssertNull_ah97h0__0" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="202" startPosition="11" endLine="214" endPosition="13">
+      <varInfo nodeId="5730083271929368106" varName="childRole_RuleAssertNull_ah97h0__3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="98" startPosition="7" endLine="111" endPosition="9">
+      <varInfo nodeId="1508313647019626155" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="141" startPosition="74" endLine="154" endPosition="13" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="187" startPosition="73" endLine="200" endPosition="13" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="140" startPosition="11" endLine="154" endPosition="13" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="186" startPosition="11" endLine="200" endPosition="13" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="52" startPosition="15" endLine="67" endPosition="17" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="140" startPosition="11" endLine="154" endPosition="13">
+      <varInfo nodeId="5730083271929368106" varName="childRole_RuleAssertNull_ah97h0__1" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="186" startPosition="11" endLine="200" endPosition="13">
+      <varInfo nodeId="5730083271929368106" varName="childRole_RuleAssertNull_ah97h0__2" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="52" startPosition="15" endLine="67" endPosition="17">
+      <varInfo nodeId="5730083271929368106" varName="orMatches" />
+      <varInfo nodeId="5730083271929368106" varName="orPattern" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="97" startPosition="42" endLine="112" endPosition="7" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="96" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="49" startPosition="13" endLine="68" endPosition="15" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="47" startPosition="11" endLine="69" endPosition="13" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="96" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="49" startPosition="13" endLine="68" endPosition="15">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch_RuleAssertNull_ah97h0_a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="47" startPosition="11" endLine="69" endPosition="13">
+      <varInfo nodeId="5730083271929368106" varName="childVar_RuleAssertNull_ah97h0_a0a0" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="43" startPosition="64" endLine="70" endPosition="11" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="42" startPosition="9" endLine="70" endPosition="11" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="42" startPosition="9" endLine="70" endPosition="11">
+      <varInfo nodeId="5730083271929368106" varName="childRole_RuleAssertNull_ah97h0_" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="41" startPosition="9" endLine="71" endPosition="9" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="125" startPosition="11" endLine="155" endPosition="11" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="185" startPosition="11" endLine="215" endPosition="11" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="38" startPosition="90" endLine="71" endPosition="9" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="122" startPosition="65" endLine="155" endPosition="11" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="182" startPosition="65" endLine="215" endPosition="11" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="120" startPosition="9" endLine="155" endPosition="11" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="180" startPosition="9" endLine="215" endPosition="11" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="35" startPosition="7" endLine="71" endPosition="9" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="120" startPosition="9" endLine="155" endPosition="11">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch_RuleAssertNull_ah97h0_a0a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="180" startPosition="9" endLine="215" endPosition="11">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch_RuleAssertNull_ah97h0_a1a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="35" startPosition="7" endLine="71" endPosition="9">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch_RuleAssertNull_ah97h0_a0a" />
+    </scopeInfo>
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="119" startPosition="47" endLine="157" endPosition="20" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="179" startPosition="47" endLine="217" endPosition="20" />
     <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="34" startPosition="45" endLine="73" endPosition="18" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="118" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="178" startPosition="0" endLine="219" endPosition="0" />
-    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="33" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="118" startPosition="0" endLine="159" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="178" startPosition="0" endLine="219" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch" />
+    </scopeInfo>
+    <scopeInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="33" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="5730083271929368106" varName="nodeToMatch" />
+    </scopeInfo>
     <unitInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="12" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull" />
     <unitInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="26" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull$Pattern_ah97h0_a0a" />
     <unitInfo nodeId="5730083271929368106" fileName="RuleAssertNull.java" startLine="115" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull.Pattern_ah97h0_a0a$Pattern_ah97h0_a0a0a2a2a1a1a1a0a1a3a0a0a0a" />
@@ -1555,7 +1887,10 @@
     <scopeInfo nodeId="6023428257643051553" fileName="AsExpression_DataFlow.java" startLine="12" startPosition="34" endLine="12" endPosition="34" />
     <scopeInfo nodeId="6023428257643051555" fileName="AsExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="6023428257643051553" fileName="AsExpression_DataFlow.java" startLine="11" startPosition="60" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="6023428257643051553" fileName="AsExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="6023428257643051553" fileName="AsExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="6023428257643051553" varName="_context" />
+      <varInfo nodeId="6023428257643051553" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="6023428257643051553" fileName="AsExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AsExpression_DataFlow" />
   </root>
   <root nodeId="6371033132130083106">
@@ -1581,17 +1916,28 @@
     <scopeInfo nodeId="6371033132130083106" fileName="ForLoopNotNull.java" startLine="18" startPosition="43" endLine="19" endPosition="174" />
     <scopeInfo nodeId="6371033132130083106" fileName="ForLoopNotNull.java" startLine="22" startPosition="46" endLine="23" endPosition="63" />
     <scopeInfo nodeId="6371033132130083106" fileName="ForLoopNotNull.java" startLine="14" startPosition="57" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="6371033132130083106" fileName="ForLoopNotNull.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="6371033132130083106" fileName="ForLoopNotNull.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="6371033132130083106" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6371033132130083106" fileName="ForLoopNotNull.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="6371033132130114742" fileName="ForLoopNotNull.java" startLine="33" startPosition="47" endLine="38" endPosition="72" />
-    <scopeInfo nodeId="6371033132130114742" fileName="ForLoopNotNull.java" startLine="31" startPosition="9" endLine="39" endPosition="11" />
+    <scopeInfo nodeId="6371033132130114742" fileName="ForLoopNotNull.java" startLine="33" startPosition="47" endLine="38" endPosition="72">
+      <varInfo nodeId="6371033132130114742" varName="before" />
+      <varInfo nodeId="6371033132130114742" varName="instruction" />
+      <varInfo nodeId="6371033132130114742" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="6371033132130114742" fileName="ForLoopNotNull.java" startLine="31" startPosition="9" endLine="39" endPosition="11">
+      <varInfo nodeId="6371033132130114742" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="6371033132130114734" fileName="ForLoopNotNull.java" startLine="30" startPosition="28" endLine="40" endPosition="9" />
     <scopeInfo nodeId="6371033132130114696" fileName="ForLoopNotNull.java" startLine="27" startPosition="151" endLine="41" endPosition="7">
       <varInfo nodeId="6371033132130114706" varName="notEquals" />
       <varInfo nodeId="6371033132130114728" varName="notNull" />
     </scopeInfo>
     <scopeInfo nodeId="6371033132130083109" fileName="ForLoopNotNull.java" startLine="26" startPosition="53" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="6371033132130083106" fileName="ForLoopNotNull.java" startLine="25" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6371033132130083106" fileName="ForLoopNotNull.java" startLine="25" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="6371033132130083106" varName="node" />
+      <varInfo nodeId="6371033132130083106" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="6371033132130083106" fileName="ForLoopNotNull.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ForLoopNotNull" />
   </root>
   <root nodeId="6868777471677432036">
@@ -1770,7 +2116,9 @@
       <varInfo nodeId="6868777471677432059" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="57" startPosition="67" endLine="60" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="62" startPosition="7" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="62" startPosition="7" endLine="65" endPosition="7">
+      <varInfo nodeId="6868777471677432036" varName="rule" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="76" startPosition="53" endLine="79" endPosition="7" />
     <scopeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
@@ -1782,24 +2130,48 @@
     <scopeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="25" startPosition="45" endLine="30" endPosition="63" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="40" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="6868777471677432036" varName="program" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="56" startPosition="45" endLine="61" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="75" startPosition="73" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="24" startPosition="5" endLine="30" endPosition="49" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="32" startPosition="5" endLine="38" endPosition="49" />
-    <scopeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="12" startPosition="44" endLine="19" endPosition="35" />
-    <scopeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="12" startPosition="47" endLine="19" endPosition="35" />
-    <scopeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="12" startPosition="48" endLine="19" endPosition="35" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="24" startPosition="0" endLine="31" endPosition="3" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="75" startPosition="73" endLine="80" endPosition="5">
+      <varInfo nodeId="6868777471677432036" varName="rule" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="24" startPosition="5" endLine="30" endPosition="49">
+      <varInfo nodeId="6868777471677432036" varName="conceptName" />
+      <varInfo nodeId="6868777471677432036" varName="rule" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="32" startPosition="5" endLine="38" endPosition="49">
+      <varInfo nodeId="6868777471677432036" varName="conceptName" />
+      <varInfo nodeId="6868777471677432036" varName="rule" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="12" startPosition="44" endLine="19" endPosition="35">
+      <varInfo nodeId="6868777471677432053" varName="sb" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="12" startPosition="47" endLine="19" endPosition="35">
+      <varInfo nodeId="6868777471677432047" varName="sb" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="12" startPosition="48" endLine="19" endPosition="35">
+      <varInfo nodeId="6868777471677432050" varName="sb" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="24" startPosition="0" endLine="31" endPosition="3">
+      <varInfo nodeId="6868777471677432036" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4212311917866530323" fileName="NullableAnalyzerRunner.java" startLine="49" startPosition="79" endLine="56" endPosition="50">
       <varInfo nodeId="4212311917866530325" varName="expr" />
       <varInfo nodeId="4212311917866530337" varName="resValue" />
       <varInfo nodeId="4212311917866530331" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="84" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="6868777471677432047" varName="expression" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="6868777471677432050" varName="expression" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="6868777471677432053" varName="expression" />
+    </scopeInfo>
     <scopeInfo nodeId="4212311917866530303" fileName="NullableAnalyzerRunner.java" startLine="48" startPosition="60" endLine="57" endPosition="9" />
     <scopeInfo nodeId="4212311917866530318" fileName="NullableAnalyzerRunner.java" startLine="48" startPosition="60" endLine="57" endPosition="9">
       <varInfo nodeId="4212311917866530319" varName="entry" />
@@ -1812,18 +2184,32 @@
     <scopeInfo nodeId="4212311917866530301" fileName="NullableAnalyzerRunner.java" startLine="47" startPosition="77" endLine="58" endPosition="7">
       <varInfo nodeId="4212311917866530302" varName="inputElement" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="54" startPosition="59" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="54" startPosition="59" endLine="65" endPosition="7">
+      <varInfo nodeId="6868777471677432036" varName="key" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432070" fileName="NullableAnalyzerRunner.java" startLine="46" startPosition="100" endLine="59" endPosition="20">
       <varInfo nodeId="6868777471677432072" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="53" startPosition="57" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="69" startPosition="57" endLine="82" endPosition="18" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="45" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="52" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="69" startPosition="57" endLine="82" endPosition="18">
+      <varInfo nodeId="6868777471677432036" varName="cachedResult" />
+      <varInfo nodeId="6868777471677432036" varName="concept" />
+      <varInfo nodeId="6868777471677432036" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="6868777471677432036" varName="input" />
+      <varInfo nodeId="6868777471677432036" varName="program" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="52" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="6868777471677432036" varName="nodeToApply" />
+      <varInfo nodeId="6868777471677432036" varName="program" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432152" fileName="NullableAnalyzerRunner.java" startLine="66" startPosition="56" endLine="82" endPosition="9">
       <varInfo nodeId="6868777471677432154" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="68" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="68" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="6868777471677432036" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="23" startPosition="34" endLine="50" endPosition="47" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="22" startPosition="0" endLine="51" endPosition="3" />
     <scopeInfo nodeId="6868777471677432134" fileName="NullableAnalyzerRunner.java" startLine="62" startPosition="95" endLine="96" endPosition="20">
@@ -1831,7 +2217,10 @@
       <varInfo nodeId="6868777471677432148" varName="nullableState" />
       <varInfo nodeId="6868777471677432136" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="61" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="61" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="6868777471677432036" varName="input" />
+      <varInfo nodeId="6868777471677432036" varName="state" />
+    </scopeInfo>
     <unitInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="16" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRules" />
     <unitInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner" />
     <unitInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="37" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner$NullableAnalyzer" />
@@ -1895,13 +2284,24 @@
     <scopeInfo nodeId="6868777471677432374" fileName="RuleAfterDotExpression.java" startLine="19" startPosition="43" endLine="20" endPosition="174" />
     <scopeInfo nodeId="6868777471677432374" fileName="RuleAfterDotExpression.java" startLine="23" startPosition="46" endLine="24" endPosition="64" />
     <scopeInfo nodeId="6868777471677432374" fileName="RuleAfterDotExpression.java" startLine="15" startPosition="65" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="6868777471677432374" fileName="RuleAfterDotExpression.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432374" fileName="RuleAfterDotExpression.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="6868777471677432374" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432374" fileName="RuleAfterDotExpression.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432385" fileName="RuleAfterDotExpression.java" startLine="31" startPosition="45" endLine="36" endPosition="70" />
-    <scopeInfo nodeId="6868777471677432385" fileName="RuleAfterDotExpression.java" startLine="29" startPosition="7" endLine="37" endPosition="9" />
+    <scopeInfo nodeId="6868777471677432385" fileName="RuleAfterDotExpression.java" startLine="31" startPosition="45" endLine="36" endPosition="70">
+      <varInfo nodeId="6868777471677432385" varName="before" />
+      <varInfo nodeId="6868777471677432385" varName="instruction" />
+      <varInfo nodeId="6868777471677432385" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432385" fileName="RuleAfterDotExpression.java" startLine="29" startPosition="7" endLine="37" endPosition="9">
+      <varInfo nodeId="6868777471677432385" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432384" fileName="RuleAfterDotExpression.java" startLine="28" startPosition="240" endLine="38" endPosition="7" />
     <scopeInfo nodeId="6868777471677432376" fileName="RuleAfterDotExpression.java" startLine="27" startPosition="53" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="6868777471677432374" fileName="RuleAfterDotExpression.java" startLine="26" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432374" fileName="RuleAfterDotExpression.java" startLine="26" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="6868777471677432374" varName="node" />
+      <varInfo nodeId="6868777471677432374" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="6868777471677432374" fileName="RuleAfterDotExpression.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAfterDotExpression" />
   </root>
   <root nodeId="6868777471677432394">
@@ -1923,12 +2323,23 @@
     <scopeInfo nodeId="6868777471677432394" fileName="RuleCreator.java" startLine="17" startPosition="43" endLine="18" endPosition="174" />
     <scopeInfo nodeId="6868777471677432394" fileName="RuleCreator.java" startLine="21" startPosition="46" endLine="22" endPosition="66" />
     <scopeInfo nodeId="6868777471677432394" fileName="RuleCreator.java" startLine="13" startPosition="54" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="6868777471677432394" fileName="RuleCreator.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432394" fileName="RuleCreator.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="6868777471677432394" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432394" fileName="RuleCreator.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432397" fileName="RuleCreator.java" startLine="28" startPosition="43" endLine="33" endPosition="68" />
-    <scopeInfo nodeId="6868777471677432397" fileName="RuleCreator.java" startLine="26" startPosition="5" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="6868777471677432397" fileName="RuleCreator.java" startLine="28" startPosition="43" endLine="33" endPosition="68">
+      <varInfo nodeId="6868777471677432397" varName="before" />
+      <varInfo nodeId="6868777471677432397" varName="instruction" />
+      <varInfo nodeId="6868777471677432397" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432397" fileName="RuleCreator.java" startLine="26" startPosition="5" endLine="34" endPosition="7">
+      <varInfo nodeId="6868777471677432397" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432396" fileName="RuleCreator.java" startLine="25" startPosition="53" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="6868777471677432394" fileName="RuleCreator.java" startLine="24" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432394" fileName="RuleCreator.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="6868777471677432394" varName="node" />
+      <varInfo nodeId="6868777471677432394" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="6868777471677432394" fileName="RuleCreator.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleCreator" />
   </root>
   <root nodeId="6868777471677432402">
@@ -2226,84 +2637,188 @@
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="144" startPosition="7" endLine="147" endPosition="7" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="147" startPosition="7" endLine="150" endPosition="7" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="150" startPosition="7" endLine="153" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="223" startPosition="15" endLine="226" endPosition="73" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="223" startPosition="15" endLine="226" endPosition="73">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0a" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="239" startPosition="103" endLine="242" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="253" startPosition="0" endLine="256" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="260" startPosition="0" endLine="263" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="253" startPosition="0" endLine="256" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="260" startPosition="0" endLine="263" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="285" startPosition="99" endLine="288" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="299" startPosition="15" endLine="302" endPosition="75" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="313" startPosition="0" endLine="316" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="320" startPosition="0" endLine="323" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="299" startPosition="15" endLine="302" endPosition="75">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a0b0a0a_0" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="313" startPosition="0" endLine="316" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="320" startPosition="0" endLine="323" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="node" />
+      <varInfo nodeId="6868777471677432402" varName="program" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="133" startPosition="69" endLine="137" endPosition="69" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="249" startPosition="0" endLine="253" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="256" startPosition="0" endLine="260" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="256" startPosition="0" endLine="260" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="309" startPosition="0" endLine="313" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="316" startPosition="0" endLine="320" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="316" startPosition="0" endLine="320" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="56" startPosition="51" endLine="61" endPosition="17" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="61" startPosition="17" endLine="66" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="94" startPosition="19" endLine="99" endPosition="21" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="114" startPosition="13" endLine="119" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="237" startPosition="15" endLine="242" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="283" startPosition="15" endLine="288" endPosition="17" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="94" startPosition="19" endLine="99" endPosition="21">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="114" startPosition="13" endLine="119" endPosition="15">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a0a0_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="237" startPosition="15" endLine="242" endPosition="17">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0a_0" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="283" startPosition="15" endLine="288" endPosition="17">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a0b0a0a" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="132" startPosition="71" endLine="138" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="221" startPosition="13" endLine="227" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="297" startPosition="13" endLine="303" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="235" startPosition="13" endLine="243" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="281" startPosition="13" endLine="289" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="92" startPosition="17" endLine="101" endPosition="75" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="112" startPosition="11" endLine="121" endPosition="70" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="131" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="160" startPosition="45" endLine="170" endPosition="70" />
-    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="175" startPosition="45" endLine="185" endPosition="70" />
-    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="190" startPosition="45" endLine="200" endPosition="70" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="221" startPosition="13" endLine="227" endPosition="15">
+      <varInfo nodeId="6868777471677432402" varName="childVar_RuleEqualsNull_vwsftd_a0a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="297" startPosition="13" endLine="303" endPosition="15">
+      <varInfo nodeId="6868777471677432402" varName="childVar_RuleEqualsNull_vwsftd_a0b0a0a_0" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="235" startPosition="13" endLine="243" endPosition="15">
+      <varInfo nodeId="6868777471677432402" varName="childVar_RuleEqualsNull_vwsftd_a0a0a0a_0" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="281" startPosition="13" endLine="289" endPosition="15">
+      <varInfo nodeId="6868777471677432402" varName="childVar_RuleEqualsNull_vwsftd_a0b0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="92" startPosition="17" endLine="101" endPosition="75">
+      <varInfo nodeId="6868777471677432402" varName="childVar_RuleEqualsNull_vwsftd_a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="112" startPosition="11" endLine="121" endPosition="70">
+      <varInfo nodeId="6868777471677432402" varName="childVar_RuleEqualsNull_vwsftd_a0a0_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="131" startPosition="0" endLine="140" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="160" startPosition="45" endLine="170" endPosition="70">
+      <varInfo nodeId="1508313647019559683" varName="before" />
+      <varInfo nodeId="1508313647019559683" varName="instruction" />
+      <varInfo nodeId="1508313647019559683" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="175" startPosition="45" endLine="185" endPosition="70">
+      <varInfo nodeId="24089196731069966" varName="before" />
+      <varInfo nodeId="24089196731069966" varName="instruction" />
+      <varInfo nodeId="24089196731069966" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="190" startPosition="45" endLine="200" endPosition="70">
+      <varInfo nodeId="1508313647019559673" varName="before" />
+      <varInfo nodeId="1508313647019559673" varName="instruction" />
+      <varInfo nodeId="1508313647019559673" varName="position" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="217" startPosition="73" endLine="228" endPosition="13" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="293" startPosition="74" endLine="304" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="216" startPosition="11" endLine="228" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="292" startPosition="11" endLine="304" endPosition="13" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="216" startPosition="11" endLine="228" endPosition="13">
+      <varInfo nodeId="6868777471677432402" varName="childRole_RuleEqualsNull_vwsftd__0" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="292" startPosition="11" endLine="304" endPosition="13">
+      <varInfo nodeId="6868777471677432402" varName="childRole_RuleEqualsNull_vwsftd__3" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="141" startPosition="51" endLine="154" endPosition="18" />
-    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="158" startPosition="7" endLine="171" endPosition="9" />
-    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="173" startPosition="7" endLine="186" endPosition="9" />
-    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="188" startPosition="7" endLine="201" endPosition="9" />
+    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="158" startPosition="7" endLine="171" endPosition="9">
+      <varInfo nodeId="1508313647019559683" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="173" startPosition="7" endLine="186" endPosition="9">
+      <varInfo nodeId="24089196731069966" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="188" startPosition="7" endLine="201" endPosition="9">
+      <varInfo nodeId="1508313647019559673" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="231" startPosition="74" endLine="244" endPosition="13" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="277" startPosition="73" endLine="290" endPosition="13" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="88" startPosition="73" endLine="102" endPosition="17" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="108" startPosition="63" endLine="122" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="230" startPosition="11" endLine="244" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="276" startPosition="11" endLine="290" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="54" startPosition="15" endLine="69" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="87" startPosition="15" endLine="102" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="107" startPosition="9" endLine="122" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="140" startPosition="0" endLine="156" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="230" startPosition="11" endLine="244" endPosition="13">
+      <varInfo nodeId="6868777471677432402" varName="childRole_RuleEqualsNull_vwsftd__1" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="276" startPosition="11" endLine="290" endPosition="13">
+      <varInfo nodeId="6868777471677432402" varName="childRole_RuleEqualsNull_vwsftd__2" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="54" startPosition="15" endLine="69" endPosition="17">
+      <varInfo nodeId="6868777471677432402" varName="orMatches" />
+      <varInfo nodeId="6868777471677432402" varName="orPattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="87" startPosition="15" endLine="102" endPosition="17">
+      <varInfo nodeId="6868777471677432402" varName="childRole_RuleEqualsNull_vwsftd__5" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="107" startPosition="9" endLine="122" endPosition="11">
+      <varInfo nodeId="6868777471677432402" varName="childRole_RuleEqualsNull_vwsftd__6" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="140" startPosition="0" endLine="156" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="86" startPosition="15" endLine="103" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="51" startPosition="13" endLine="70" endPosition="15" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="51" startPosition="13" endLine="70" endPosition="15">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a0a0" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="83" startPosition="95" endLine="103" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="49" startPosition="11" endLine="71" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="81" startPosition="13" endLine="103" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="79" startPosition="11" endLine="104" endPosition="13" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="49" startPosition="11" endLine="71" endPosition="13">
+      <varInfo nodeId="6868777471677432402" varName="childVar_RuleEqualsNull_vwsftd_a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="81" startPosition="13" endLine="103" endPosition="15">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a0a0_0" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="79" startPosition="11" endLine="104" endPosition="13">
+      <varInfo nodeId="6868777471677432402" varName="childVar_RuleEqualsNull_vwsftd_a0a0_0" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="45" startPosition="64" endLine="72" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="44" startPosition="9" endLine="72" endPosition="11" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="44" startPosition="9" endLine="72" endPosition="11">
+      <varInfo nodeId="6868777471677432402" varName="childRole_RuleEqualsNull_vwsftd_" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="75" startPosition="73" endLine="105" endPosition="11" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="215" startPosition="11" endLine="245" endPosition="11" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="275" startPosition="11" endLine="305" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="74" startPosition="9" endLine="105" endPosition="11" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="74" startPosition="9" endLine="105" endPosition="11">
+      <varInfo nodeId="6868777471677432402" varName="childRole_RuleEqualsNull_vwsftd__4" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="212" startPosition="65" endLine="245" endPosition="11" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="272" startPosition="65" endLine="305" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="210" startPosition="9" endLine="245" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="270" startPosition="9" endLine="305" endPosition="11" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="210" startPosition="9" endLine="245" endPosition="11">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="270" startPosition="9" endLine="305" endPosition="11">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a1a0a0" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="209" startPosition="47" endLine="247" endPosition="20" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="269" startPosition="47" endLine="307" endPosition="20" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="208" startPosition="0" endLine="249" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="268" startPosition="0" endLine="309" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="208" startPosition="0" endLine="249" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="268" startPosition="0" endLine="309" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="157" startPosition="42" endLine="202" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="156" startPosition="0" endLine="204" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="156" startPosition="0" endLine="204" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="43" startPosition="9" endLine="123" endPosition="9" />
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="40" startPosition="62" endLine="123" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="37" startPosition="7" endLine="123" endPosition="9" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="37" startPosition="7" endLine="123" endPosition="9">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch_RuleEqualsNull_vwsftd_a0a" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="36" startPosition="45" endLine="125" endPosition="18" />
-    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="35" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="35" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="6868777471677432402" varName="nodeToMatch" />
+    </scopeInfo>
     <unitInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="12" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull" />
     <unitInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="26" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull$Pattern_vwsftd_a0a" />
     <unitInfo nodeId="6868777471677432402" fileName="RuleEqualsNull.java" startLine="205" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a2a2a1a1a1a0a1a3a0a0a0a" />
@@ -2332,10 +2847,18 @@
     <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="19" startPosition="43" endLine="20" endPosition="174" />
     <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="23" startPosition="46" endLine="24" endPosition="78" />
     <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="15" startPosition="61" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="6868777471677432435" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="34" startPosition="49" endLine="39" endPosition="74" />
-    <scopeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="32" startPosition="11" endLine="40" endPosition="13" />
+    <scopeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="34" startPosition="49" endLine="39" endPosition="74">
+      <varInfo nodeId="6868777471677432475" varName="before" />
+      <varInfo nodeId="6868777471677432475" varName="instruction" />
+      <varInfo nodeId="6868777471677432475" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="32" startPosition="11" endLine="40" endPosition="13">
+      <varInfo nodeId="6868777471677432475" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432474" fileName="RuleFieldReference.java" startLine="31" startPosition="236" endLine="41" endPosition="11" />
     <scopeInfo nodeId="6868777471677432450" fileName="RuleFieldReference.java" startLine="29" startPosition="142" endLine="42" endPosition="9">
       <varInfo nodeId="6868777471677432452" varName="name" />
@@ -2345,7 +2868,10 @@
       <varInfo nodeId="6868777471677432448" varName="annotation" />
     </scopeInfo>
     <scopeInfo nodeId="6868777471677432437" fileName="RuleFieldReference.java" startLine="27" startPosition="53" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="26" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="26" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="6868777471677432435" varName="node" />
+      <varInfo nodeId="6868777471677432435" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="15" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleFieldReference" />
   </root>
   <root nodeId="6868777471677432514">
@@ -2380,12 +2906,26 @@
     <scopeInfo nodeId="6868777471677432514" fileName="RuleMethodCall.java" startLine="18" startPosition="43" endLine="19" endPosition="174" />
     <scopeInfo nodeId="6868777471677432514" fileName="RuleMethodCall.java" startLine="22" startPosition="46" endLine="23" endPosition="62" />
     <scopeInfo nodeId="6868777471677432514" fileName="RuleMethodCall.java" startLine="14" startPosition="57" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="6868777471677432514" fileName="RuleMethodCall.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432514" fileName="RuleMethodCall.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="6868777471677432514" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432514" fileName="RuleMethodCall.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432528" fileName="RuleMethodCall.java" startLine="33" startPosition="49" endLine="38" endPosition="74" />
-    <scopeInfo nodeId="6868777471677432540" fileName="RuleMethodCall.java" startLine="45" startPosition="49" endLine="50" endPosition="74" />
-    <scopeInfo nodeId="6868777471677432528" fileName="RuleMethodCall.java" startLine="31" startPosition="11" endLine="39" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432540" fileName="RuleMethodCall.java" startLine="43" startPosition="11" endLine="51" endPosition="13" />
+    <scopeInfo nodeId="6868777471677432528" fileName="RuleMethodCall.java" startLine="33" startPosition="49" endLine="38" endPosition="74">
+      <varInfo nodeId="6868777471677432528" varName="before" />
+      <varInfo nodeId="6868777471677432528" varName="instruction" />
+      <varInfo nodeId="6868777471677432528" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432540" fileName="RuleMethodCall.java" startLine="45" startPosition="49" endLine="50" endPosition="74">
+      <varInfo nodeId="6868777471677432540" varName="before" />
+      <varInfo nodeId="6868777471677432540" varName="instruction" />
+      <varInfo nodeId="6868777471677432540" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432528" fileName="RuleMethodCall.java" startLine="31" startPosition="11" endLine="39" endPosition="13">
+      <varInfo nodeId="6868777471677432528" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432540" fileName="RuleMethodCall.java" startLine="43" startPosition="11" endLine="51" endPosition="13">
+      <varInfo nodeId="6868777471677432540" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432527" fileName="RuleMethodCall.java" startLine="30" startPosition="237" endLine="40" endPosition="11" />
     <scopeInfo nodeId="6868777471677432539" fileName="RuleMethodCall.java" startLine="42" startPosition="236" endLine="52" endPosition="11" />
     <scopeInfo nodeId="6868777471677432525" fileName="RuleMethodCall.java" startLine="29" startPosition="141" endLine="53" endPosition="9" />
@@ -2396,7 +2936,10 @@
     <scopeInfo nodeId="6868777471677432515" fileName="RuleMethodCall.java" startLine="26" startPosition="53" endLine="55" endPosition="5">
       <varInfo nodeId="6868777471677432517" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432514" fileName="RuleMethodCall.java" startLine="25" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432514" fileName="RuleMethodCall.java" startLine="25" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="6868777471677432514" varName="node" />
+      <varInfo nodeId="6868777471677432514" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="6868777471677432514" fileName="RuleMethodCall.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleMethodCall" />
   </root>
   <root nodeId="6868777471677432616">
@@ -2418,12 +2961,23 @@
     <scopeInfo nodeId="6868777471677432616" fileName="RuleNullLiteral.java" startLine="17" startPosition="43" endLine="18" endPosition="174" />
     <scopeInfo nodeId="6868777471677432616" fileName="RuleNullLiteral.java" startLine="21" startPosition="46" endLine="22" endPosition="62" />
     <scopeInfo nodeId="6868777471677432616" fileName="RuleNullLiteral.java" startLine="13" startPosition="58" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="6868777471677432616" fileName="RuleNullLiteral.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432616" fileName="RuleNullLiteral.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="6868777471677432616" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432616" fileName="RuleNullLiteral.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432619" fileName="RuleNullLiteral.java" startLine="28" startPosition="43" endLine="33" endPosition="68" />
-    <scopeInfo nodeId="6868777471677432619" fileName="RuleNullLiteral.java" startLine="26" startPosition="5" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="6868777471677432619" fileName="RuleNullLiteral.java" startLine="28" startPosition="43" endLine="33" endPosition="68">
+      <varInfo nodeId="6868777471677432619" varName="before" />
+      <varInfo nodeId="6868777471677432619" varName="instruction" />
+      <varInfo nodeId="6868777471677432619" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432619" fileName="RuleNullLiteral.java" startLine="26" startPosition="5" endLine="34" endPosition="7">
+      <varInfo nodeId="6868777471677432619" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432618" fileName="RuleNullLiteral.java" startLine="25" startPosition="53" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="6868777471677432616" fileName="RuleNullLiteral.java" startLine="24" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432616" fileName="RuleNullLiteral.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="6868777471677432616" varName="node" />
+      <varInfo nodeId="6868777471677432616" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="6868777471677432616" fileName="RuleNullLiteral.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleNullLiteral" />
   </root>
   <root nodeId="6868777471677432624">
@@ -2458,12 +3012,26 @@
     <scopeInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="19" startPosition="43" endLine="20" endPosition="174" />
     <scopeInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="23" startPosition="46" endLine="24" endPosition="70" />
     <scopeInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="15" startPosition="66" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="6868777471677432624" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432643" fileName="RuleVariableDeclaration.java" startLine="34" startPosition="49" endLine="39" endPosition="74" />
-    <scopeInfo nodeId="6868777471677432655" fileName="RuleVariableDeclaration.java" startLine="46" startPosition="49" endLine="51" endPosition="74" />
-    <scopeInfo nodeId="6868777471677432643" fileName="RuleVariableDeclaration.java" startLine="32" startPosition="11" endLine="40" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432655" fileName="RuleVariableDeclaration.java" startLine="44" startPosition="11" endLine="52" endPosition="13" />
+    <scopeInfo nodeId="6868777471677432643" fileName="RuleVariableDeclaration.java" startLine="34" startPosition="49" endLine="39" endPosition="74">
+      <varInfo nodeId="6868777471677432643" varName="before" />
+      <varInfo nodeId="6868777471677432643" varName="instruction" />
+      <varInfo nodeId="6868777471677432643" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432655" fileName="RuleVariableDeclaration.java" startLine="46" startPosition="49" endLine="51" endPosition="74">
+      <varInfo nodeId="6868777471677432655" varName="before" />
+      <varInfo nodeId="6868777471677432655" varName="instruction" />
+      <varInfo nodeId="6868777471677432655" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432643" fileName="RuleVariableDeclaration.java" startLine="32" startPosition="11" endLine="40" endPosition="13">
+      <varInfo nodeId="6868777471677432643" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432655" fileName="RuleVariableDeclaration.java" startLine="44" startPosition="11" endLine="52" endPosition="13">
+      <varInfo nodeId="6868777471677432655" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432642" fileName="RuleVariableDeclaration.java" startLine="31" startPosition="237" endLine="41" endPosition="11" />
     <scopeInfo nodeId="6868777471677432654" fileName="RuleVariableDeclaration.java" startLine="43" startPosition="236" endLine="53" endPosition="11" />
     <scopeInfo nodeId="6868777471677432632" fileName="RuleVariableDeclaration.java" startLine="29" startPosition="85" endLine="54" endPosition="9">
@@ -2474,7 +3042,10 @@
       <varInfo nodeId="6868777471677432630" varName="annotation" />
     </scopeInfo>
     <scopeInfo nodeId="6868777471677432626" fileName="RuleVariableDeclaration.java" startLine="27" startPosition="53" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="26" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="26" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6868777471677432624" varName="node" />
+      <varInfo nodeId="6868777471677432624" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleVariableDeclaration" />
   </root>
   <root nodeId="7597254041024463759">
@@ -2553,10 +3124,18 @@
     <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="80" startPosition="56" endLine="82" endPosition="5" />
     <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="98" startPosition="60" endLine="100" endPosition="5" />
     <scopeInfo nodeId="7597254041024527676" fileName="DataFlowTryCatchUtil.java" startLine="34" startPosition="50" endLine="37" endPosition="11" />
-    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="52" startPosition="7" endLine="56" endPosition="31" />
-    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="70" startPosition="7" endLine="74" endPosition="31" />
-    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="88" startPosition="7" endLine="92" endPosition="31" />
-    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="106" startPosition="7" endLine="110" endPosition="31" />
+    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="52" startPosition="7" endLine="56" endPosition="31">
+      <varInfo nodeId="7597254041024463759" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="70" startPosition="7" endLine="74" endPosition="31">
+      <varInfo nodeId="7597254041024463759" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="88" startPosition="7" endLine="92" endPosition="31">
+      <varInfo nodeId="7597254041024463759" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="106" startPosition="7" endLine="110" endPosition="31">
+      <varInfo nodeId="7597254041024463759" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="7597254041024527674" fileName="DataFlowTryCatchUtil.java" startLine="33" startPosition="14" endLine="38" endPosition="9" />
     <scopeInfo nodeId="7597254041024527675" fileName="DataFlowTryCatchUtil.java" startLine="33" startPosition="14" endLine="38" endPosition="9">
       <varInfo nodeId="7597254041024527691" varName="throwed" />
@@ -2568,17 +3147,35 @@
     <scopeInfo nodeId="7597254041024527643" fileName="DataFlowTryCatchUtil.java" startLine="29" startPosition="44" endLine="39" endPosition="7">
       <varInfo nodeId="7597254041024527645" varName="caughtType" />
     </scopeInfo>
-    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="48" startPosition="31" endLine="58" endPosition="20" />
-    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="66" startPosition="31" endLine="76" endPosition="20" />
-    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="84" startPosition="31" endLine="94" endPosition="20" />
-    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="102" startPosition="49" endLine="112" endPosition="20" />
+    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="48" startPosition="31" endLine="58" endPosition="20">
+      <varInfo nodeId="7597254041024463759" varName="_parameterValues_129834374" />
+      <varInfo nodeId="7597254041024463759" varName="quotedNode_1" />
+      <varInfo nodeId="7597254041024463759" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="66" startPosition="31" endLine="76" endPosition="20">
+      <varInfo nodeId="7597254041024463759" varName="_parameterValues_129834374" />
+      <varInfo nodeId="7597254041024463759" varName="quotedNode_1" />
+      <varInfo nodeId="7597254041024463759" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="84" startPosition="31" endLine="94" endPosition="20">
+      <varInfo nodeId="7597254041024463759" varName="_parameterValues_129834374" />
+      <varInfo nodeId="7597254041024463759" varName="quotedNode_1" />
+      <varInfo nodeId="7597254041024463759" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="102" startPosition="49" endLine="112" endPosition="20">
+      <varInfo nodeId="7597254041024463759" varName="_parameterValues_129834374" />
+      <varInfo nodeId="7597254041024463759" varName="quotedNode_1" />
+      <varInfo nodeId="7597254041024463759" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="7597254041024527642" fileName="DataFlowTryCatchUtil.java" startLine="28" startPosition="117" endLine="40" endPosition="5">
       <varInfo nodeId="7597254041024527696" varName="catchClause" />
     </scopeInfo>
     <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="47" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="65" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="83" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="101" startPosition="0" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="101" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="7597254041024463759" varName="parameter_3" />
+    </scopeInfo>
     <scopeInfo nodeId="7597254041024463768" fileName="DataFlowTryCatchUtil.java" startLine="25" startPosition="88" endLine="41" endPosition="18">
       <varInfo nodeId="7597254041024527613" varName="result" />
       <varInfo nodeId="7597254041024527700" varName="statement" />
@@ -2628,12 +3225,26 @@
     <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="20" startPosition="43" endLine="21" endPosition="174" />
     <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="24" startPosition="46" endLine="25" endPosition="65" />
     <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="16" startPosition="59" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="7718715537694335441" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="37" startPosition="49" endLine="42" endPosition="74" />
-    <scopeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="47" startPosition="49" endLine="52" endPosition="74" />
-    <scopeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="35" startPosition="11" endLine="43" endPosition="13" />
-    <scopeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="45" startPosition="11" endLine="53" endPosition="13" />
+    <scopeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="37" startPosition="49" endLine="42" endPosition="74">
+      <varInfo nodeId="7718715537694335485" varName="before" />
+      <varInfo nodeId="7718715537694335485" varName="instruction" />
+      <varInfo nodeId="7718715537694335485" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="47" startPosition="49" endLine="52" endPosition="74">
+      <varInfo nodeId="7718715537694335490" varName="before" />
+      <varInfo nodeId="7718715537694335490" varName="instruction" />
+      <varInfo nodeId="7718715537694335490" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="35" startPosition="11" endLine="43" endPosition="13">
+      <varInfo nodeId="7718715537694335485" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="45" startPosition="11" endLine="53" endPosition="13">
+      <varInfo nodeId="7718715537694335490" varName="object" />
+    </scopeInfo>
     <scopeInfo nodeId="7718715537694335484" fileName="RuleWhileNotNull.java" startLine="34" startPosition="34" endLine="54" endPosition="11" />
     <scopeInfo nodeId="7718715537694335476" fileName="RuleWhileNotNull.java" startLine="32" startPosition="112" endLine="55" endPosition="9">
       <varInfo nodeId="7718715537694335478" varName="notNullNode" />
@@ -2645,7 +3256,10 @@
     <scopeInfo nodeId="7718715537694335444" fileName="RuleWhileNotNull.java" startLine="28" startPosition="53" endLine="58" endPosition="0">
       <varInfo nodeId="7718715537694335463" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="27" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="27" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="7718715537694335441" varName="node" />
+      <varInfo nodeId="7718715537694335441" varName="o" />
+    </scopeInfo>
     <unitInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleWhileNotNull" />
   </root>
 </debugInfo>

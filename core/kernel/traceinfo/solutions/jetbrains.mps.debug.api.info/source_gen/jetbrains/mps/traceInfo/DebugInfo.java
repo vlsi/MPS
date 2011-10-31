@@ -177,6 +177,8 @@ public class DebugInfo {
         return var;
       }
     }
+    // no need in the following code 
+    // <node> 
     return null;
   }
 
@@ -322,6 +324,13 @@ public class DebugInfo {
       throw new RuntimeException(e);
     }
     return info;
+  }
+
+  private static boolean eq_exfyrk_a0a1a0a5a8(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   private static boolean eq_exfyrk_a0a0a0j(Object a, Object b) {

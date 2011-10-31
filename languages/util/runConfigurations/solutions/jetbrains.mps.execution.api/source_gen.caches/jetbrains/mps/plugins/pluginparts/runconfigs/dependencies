@@ -48,7 +48,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.debug.DebuggerKeys" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSessionCreator" />
-    <classNode dependClassName="jetbrains.mps.debug.api.DefaultDebugger" />
+    <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />

@@ -19,8 +19,8 @@ public class typeof_EvaluatorsThisExpression_InferenceRule extends AbstractInfer
   public void applyRule(final SNode evaluatorsThisExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = evaluatorsThisExpression;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debug.evaluation.typesystem)", "6036237525966316010", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debug.evaluation.typesystem)", "6036237525966316007", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(evaluatorsThisExpression, "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", false, false), "thisType", true), _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debug.evaluation.typesystem)", "4544608336420724767", 0, null);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debug.evaluation.typesystem)", "4544608336420724764", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(evaluatorsThisExpression, "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true), "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debug.evaluation.typesystem)", "4544608336420724772", true), _info_12389875345);
     }
   }
 

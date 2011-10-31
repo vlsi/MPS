@@ -166,7 +166,10 @@ public class SModelOperations {
     for (Language language : getLanguages(model, scope)) {
       for (SModelDescriptor am : language.getAccessoryModels()) {
         if (am != sourceModel) {
-          result.add(am);
+          SModelDescriptor scopeModelDescriptor = scope.getModelDescriptor(am.getSModelReference());
+          if (scopeModelDescriptor != null){
+            result.add(scopeModelDescriptor);
+          }
         }
       }
     }

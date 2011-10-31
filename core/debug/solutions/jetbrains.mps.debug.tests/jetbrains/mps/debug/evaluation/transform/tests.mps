@@ -15,12 +15,12 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="te5p" modelUID="r:b4456070-b665-4c03-b3d3-15a7362ba239(jetbrains.mps.debug.evaluation.transform)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="8413" modelUID="f:java_stub#cf8c9de5-1b4a-4dc8-8e6d-847159af31dd#com.sun.jdi(com.sun.jdi@java_stub)" version="-1" />
   <import index="22fg" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" version="-1" />
-  <import index="3be4" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation.proxies(MPS.Workbench/jetbrains.mps.debug.evaluation.proxies@java_stub)" version="-1" />
+  <import index="4c6z" modelUID="f:java_stub#fdb93da0-59ed-4001-b2aa-4fad79ec058e#com.sun.jdi(JDK.Tools/com.sun.jdi@java_stub)" version="-1" />
   <import index="4tse" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation(MPS.Workbench/jetbrains.mps.debug.evaluation@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="a52w" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.tests(MPS.Workbench/com.intellij.tests@java_stub)" version="-1" />
+  <import index="3be4" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation.proxies(MPS.Workbench/jetbrains.mps.debug.evaluation.proxies@java_stub)" version="-1" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -892,7 +892,7 @@
       </node>
     </node>
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="2932187755699712805">
-      <property name="name" nameId="tpck.1169194664001" value="instanceof" />
+      <property name="name" nameId="tpck.1169194664001" value="instanceoff" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2932187755699712806" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2932187755699712807">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9146569226295726805">
@@ -922,7 +922,7 @@
       </node>
     </node>
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="2932187755699927593">
-      <property name="name" nameId="tpck.1169194664001" value="super" />
+      <property name="name" nameId="tpck.1169194664001" value="superr" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2932187755699927594" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2932187755699927595">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9146569226295726834">
@@ -1223,9 +1223,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5543996881668550169">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5543996881668550170">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="5543996881668550171">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5543996881668550172" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223140">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223141" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223142" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="5543996881668550174">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5543996881668550175">
@@ -1248,22 +1252,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277104">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277105">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277106">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277107">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277108" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277109">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277110">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277111" />
                 </node>
@@ -1278,9 +1282,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667908421">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667908422">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="6196179103670446424">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6196179103670446426" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223189">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223190" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223191" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="1454920206667908426">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1454920206667908427">
@@ -1312,14 +1320,14 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277114">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277115">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277116" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277117">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277118">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277119" />
                 </node>
@@ -1428,6 +1436,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5543996881668550217">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5543996881668550218">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550224">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -1459,6 +1468,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667900337">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667900338">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900344">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -1490,6 +1500,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5543996881668550233">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5543996881668550234">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550243">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -1545,6 +1556,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667900361">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667900362">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900371">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -1596,6 +1608,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5543996881668550258">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5543996881668550259">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550266">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -1640,7 +1653,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277142">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277143">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277144" />
                 </node>
@@ -1655,6 +1668,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667900391">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667900392">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900399">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -1694,7 +1708,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277162">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277163">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277164" />
                 </node>
@@ -1709,6 +1723,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5543996881668550283">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5543996881668550284">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550294">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -1773,6 +1788,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667908298">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667908299">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667908309">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -1835,6 +1851,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="607759879653675041">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="607759879653675042">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="607759879653675052">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -1888,7 +1905,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277183">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277185">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277186" />
                 </node>
@@ -1909,6 +1926,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667908335">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667908336">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667908345">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -1955,7 +1973,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277218">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277219">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277220" />
                 </node>
@@ -1973,10 +1991,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="607759879653679926">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="607759879653679927">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="607759879653679928">
           <property name="name" nameId="tpck.1169194664001" value="array" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="607759879653679931">
-            <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="607759879653679930" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223169">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ArrayType" typeId="tpee.1070534760951" id="2754592889269223170">
+              <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223171" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ArrayType" typeId="tpee.1070534760951" id="2754592889269223172">
+              <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223173" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="607759879653679934">
@@ -2026,14 +2050,14 @@
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277265">
                         <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                         <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277266">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                         </node>
                         <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277267" />
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277268">
                         <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                         <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277269">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                         </node>
                         <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277270" />
                       </node>
@@ -2051,10 +2075,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="607759879653679942">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="607759879653679943">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="607759879653679944">
           <property name="name" nameId="tpck.1169194664001" value="array" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="607759879653679945">
-            <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="607759879653679946" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223216">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ArrayType" typeId="tpee.1070534760951" id="2754592889269223217">
+              <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223218" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ArrayType" typeId="tpee.1070534760951" id="2754592889269223219">
+              <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223220" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="607759879653679948">
@@ -2100,14 +2130,14 @@
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277295">
                           <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277296">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277297" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277298">
                           <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277299">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277300" />
                         </node>
@@ -2120,7 +2150,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="9146569226295736285">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9146569226295736286">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="9146569226295736287" />
             </node>
@@ -2133,6 +2163,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="2932187755699706728">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="2932187755699706729">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2932187755699707953">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -2181,7 +2212,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="9146569226295799163">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9146569226295799164">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="9146569226295799165" />
             </node>
@@ -2194,6 +2225,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="2932187755699923973">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="2932187755699923974">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2932187755699923975">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -2252,6 +2284,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="2932187755699930360">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="2932187755699930361">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2932187755699930362">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -2287,7 +2320,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7843490654472659457">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7843490654472659458">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="7843490654472659459" />
             </node>
@@ -2303,6 +2336,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="8441349676536412410">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="8441349676536412411">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8441349676536412412">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
         </node>
@@ -2339,7 +2373,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7843490654472659447">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7843490654472659449">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="7843490654472659450" />
             </node>
@@ -2355,13 +2389,20 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="2932187755699941120">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="2932187755699941122">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="2932187755699941123">
           <property name="name" nameId="tpck.1169194664001" value="intVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2932187755699941125" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223163">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223164" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223165" />
+          </node>
         </node>
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="2932187755699941126">
           <property name="name" nameId="tpck.1169194664001" value="doubleVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.DoubleType" typeId="tpee.1070534513062" id="2932187755699941128" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223166">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.DoubleType" typeId="tpee.1070534513062" id="2754592889269223167" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.DoubleType" typeId="tpee.1070534513062" id="2754592889269223168" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="2932187755699941130">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2932187755699941131">
@@ -2403,22 +2444,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277301">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277302">
                             <property name="value" nameId="tpee.1070475926801" value="intVar" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277303">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277304">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277305" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277306">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277307">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277308" />
                           </node>
@@ -2444,22 +2485,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277309">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277310">
                             <property name="value" nameId="tpee.1070475926801" value="doubleVar" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277311">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277312">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277313" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277314">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277315">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277316" />
                           </node>
@@ -2473,7 +2514,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="9146569226295799196">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9146569226295799197">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="9146569226295799198" />
             </node>
@@ -2486,14 +2527,23 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="3278243436493715611">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="3278243436493715612">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="3278243436493715613">
           <property name="name" nameId="tpck.1169194664001" value="stringVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3278243436493715625" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223201">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223202" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223203" />
+          </node>
         </node>
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="3278243436493715615">
           <property name="name" nameId="tpck.1169194664001" value="objectVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3278243436493715624">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223204">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223205">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223206">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="3278243436493715618">
@@ -2534,22 +2584,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3278243436493715583">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3278243436493715584">
                             <property name="value" nameId="tpee.1070475926801" value="stringVar" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3278243436493715585">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3278243436493715586">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="3278243436493715587" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3278243436493715588">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3278243436493715589">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="3278243436493715590" />
                           </node>
@@ -2588,14 +2638,14 @@
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3278243436493836679">
                               <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3278243436493836680">
-                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                               </node>
                               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="3278243436493836681" />
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3278243436493836682">
                               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3278243436493836683">
-                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                               </node>
                               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="3278243436493836684" />
                             </node>
@@ -2616,7 +2666,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3278243436493715607">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3278243436493715608">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="3278243436493715609" />
             </node>
@@ -2629,16 +2679,27 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="6721540366799618936">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="6721540366799618937">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="6721540366799618938">
           <property name="name" nameId="tpck.1169194664001" value="var1" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6721540366799618940">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223129">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223130">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223131">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+            </node>
           </node>
         </node>
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="6721540366799618941">
           <property name="name" nameId="tpck.1169194664001" value="var2" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6721540366799618943">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223132">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223133">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223134">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="6721540366799618945">
@@ -2665,30 +2726,30 @@
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~MirrorUtil%dgetValueProxyFromJavaValue(java%dlang%dObject,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValueProxyFromJavaValue" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="326937949444917378">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~ProxyEqualsUtil" resolveInfo="ProxyEqualsUtil" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~ProxyEqualsUtil%djavaEquals(jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy,jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy)%cboolean" resolveInfo="javaEquals" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~ProxyEqualsUtil" resolveInfo="ProxyEqualsUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="326937949444917402">
                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="326937949444917403">
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917404">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="326937949444917405">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="326937949444917406">
                       <property name="value" nameId="tpee.1070475926801" value="var1" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="326937949444917407">
                       <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917408">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="326937949444917409" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="326937949444917410">
                       <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917411">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="326937949444917412" />
                     </node>
@@ -2701,22 +2762,22 @@
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="326937949444917393">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="326937949444917394">
                       <property name="value" nameId="tpee.1070475926801" value="var2" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="326937949444917395">
                       <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917396">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="326937949444917397" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="326937949444917398">
                       <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917399">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="326937949444917400" />
                     </node>
@@ -2727,7 +2788,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="326937949444917373">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917374">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="326937949444917375" />
             </node>
@@ -2740,16 +2801,27 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="6721540366799622797">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="6721540366799622798">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="6721540366799622799">
           <property name="name" nameId="tpck.1169194664001" value="var1" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6721540366799622800">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223227">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223228">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223229">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+            </node>
           </node>
         </node>
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="6721540366799622801">
           <property name="name" nameId="tpck.1169194664001" value="var2" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6721540366799622802">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223230">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223231">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223232">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="6721540366799622804">
@@ -2773,34 +2845,34 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.StatementList" typeId="tpee.1068580123136" id="6721540366799622778">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="326937949444917443">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="326937949444917444">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~MirrorUtil%dgetValueProxyFromJavaValue(java%dlang%dObject,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValueProxyFromJavaValue" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NotExpression" typeId="tpee.1081516740877" id="326937949444917471">
               <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="326937949444917445">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~ProxyEqualsUtil" resolveInfo="ProxyEqualsUtil" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~ProxyEqualsUtil%djavaEquals(jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy,jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy)%cboolean" resolveInfo="javaEquals" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~ProxyEqualsUtil" resolveInfo="ProxyEqualsUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="326937949444917446">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="326937949444917447">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917448">
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="326937949444917449">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="326937949444917450">
                         <property name="value" nameId="tpee.1070475926801" value="var1" />
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="326937949444917451">
                         <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                         <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917452">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                         </node>
                         <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="326937949444917453" />
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="326937949444917454">
                         <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                         <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917455">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                         </node>
                         <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="326937949444917456" />
                       </node>
@@ -2813,22 +2885,22 @@
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="326937949444917460">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="326937949444917461">
                         <property name="value" nameId="tpee.1070475926801" value="var2" />
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="326937949444917462">
                         <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                         <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917463">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                         </node>
                         <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="326937949444917464" />
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="326937949444917465">
                         <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                         <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917466">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                         </node>
                         <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="326937949444917467" />
                       </node>
@@ -2840,7 +2912,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="326937949444917468">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="326937949444917469">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="326937949444917470" />
             </node>
@@ -2853,9 +2925,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="6721540366799627023">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="6721540366799627024">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="6721540366799627025">
           <property name="name" nameId="tpck.1169194664001" value="var1" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6721540366799627036" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223149">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223150" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223151" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="6721540366799627030">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6721540366799627031">
@@ -2894,22 +2970,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277349">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277350">
                             <property name="value" nameId="tpee.1070475926801" value="var1" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277351">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277352">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277353" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277354">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277355">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277356" />
                           </node>
@@ -2923,7 +2999,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="9146569226295799282">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9146569226295799283">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="9146569226295799284" />
             </node>
@@ -2936,6 +3012,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="4693929676428713095">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="4693929676428713096">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="4693929676428713100">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4693929676428713105">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="4693929676428713108">
@@ -2965,7 +3042,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277372">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277374">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277375" />
                 </node>
@@ -2980,6 +3057,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="8441349676536441170">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="8441349676536441171">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="8441349676536441173">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8441349676536441174">
             <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalClassExpression" typeId="tp68.1174478619261" id="8441349676536441178">
@@ -3009,7 +3087,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277382">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277384">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277385" />
                 </node>
@@ -4104,10 +4182,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="7696059916860905166">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="7696059916860905167">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="7696059916860914275">
           <property name="name" nameId="tpck.1169194664001" value="intVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7696059916860914277">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223180">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223181">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223182">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="7696059916860905171">
@@ -4166,22 +4250,22 @@
                         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277386">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277387">
                           <property name="value" nameId="tpee.1070475926801" value="intVar" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277388">
                           <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277389">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277390" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277391">
                           <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277392">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277393" />
                         </node>
@@ -4205,10 +4289,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="7413144797245913930">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="7413144797245913931">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="7413144797245913932">
           <property name="name" nameId="tpck.1169194664001" value="intVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245913933">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223160">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223161">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223162">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="7413144797245913935">
@@ -4278,22 +4368,22 @@
                         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277394">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277395">
                           <property name="value" nameId="tpee.1070475926801" value="intVar" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277396">
                           <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277397">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277398" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277399">
                           <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277400">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277401" />
                         </node>
@@ -4320,10 +4410,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="770214570644685900">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="770214570644685901">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="770214570644685902">
           <property name="name" nameId="tpck.1169194664001" value="intVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="770214570644685903">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223174">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223175">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223176">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="770214570644685905">
@@ -4368,8 +4464,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784477391">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dbox(jetbrains%dmps%ddebug%devaluation%dproxies%dPrimitiveValueProxy,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy" resolveInfo="box" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7295371247045145339">
                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7295371247045145341">
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7295371247045145343">
@@ -4400,14 +4496,14 @@
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7295371247045145353">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7295371247045145354">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="7295371247045145355" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7295371247045145356">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7295371247045145357">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="7295371247045145358" />
                           </node>
@@ -4420,7 +4516,7 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784477407">
                 <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784477408">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784477409" />
               </node>
@@ -4458,10 +4554,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5325372602757295234">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5325372602757295235">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="5325372602757295236">
           <property name="name" nameId="tpck.1169194664001" value="intVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5325372602757295237">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223207">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223208">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223209">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="5325372602757295239">
@@ -4524,8 +4626,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5325372602757295202">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dbox(jetbrains%dmps%ddebug%devaluation%dproxies%dPrimitiveValueProxy,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy" resolveInfo="box" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5325372602757295203">
                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5325372602757295204">
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5325372602757295205">
@@ -4556,14 +4658,14 @@
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5325372602757295215">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5325372602757295216">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5325372602757295217" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5325372602757295218">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5325372602757295219">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5325372602757295220" />
                           </node>
@@ -4576,7 +4678,7 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5325372602757295221">
                 <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5325372602757295222">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5325372602757295223" />
               </node>
@@ -4614,10 +4716,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="7413144797245913984">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="7413144797245913985">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="7413144797245913986">
           <property name="name" nameId="tpck.1169194664001" value="intVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245913987">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223102">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223103">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223104">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="7413144797245913989">
@@ -4676,8 +4784,8 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2717152680784463465" resolveInfo="intValue" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784463535">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dbox(jetbrains%dmps%ddebug%devaluation%dproxies%dPrimitiveValueProxy,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy" resolveInfo="box" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7295371247045160468">
                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7295371247045160470">
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7295371247045160472">
@@ -4708,14 +4816,14 @@
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7295371247045160482">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7295371247045160483">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="7295371247045160484" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7295371247045160485">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7295371247045160486">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="7295371247045160487" />
                           </node>
@@ -4728,7 +4836,7 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784463547">
                 <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784463548">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784463549" />
               </node>
@@ -4766,10 +4874,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="770214570644685972">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="770214570644685973">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="770214570644685974">
           <property name="name" nameId="tpck.1169194664001" value="intVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="770214570644685975">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223183">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223184">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223185">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="770214570644685977">
@@ -4830,22 +4944,22 @@
                         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277418">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277419">
                           <property name="value" nameId="tpee.1070475926801" value="intVar" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277420">
                           <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277421">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277422" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277423">
                           <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277424">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277425" />
                         </node>
@@ -4869,10 +4983,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="7413144797245757993">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="7413144797245757994">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="7413144797245757995">
           <property name="name" nameId="tpck.1169194664001" value="intVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245757996">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223195">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223196">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223197">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="7413144797245757998">
@@ -4944,22 +5064,22 @@
                         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277426">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277427">
                           <property name="value" nameId="tpee.1070475926801" value="intVar" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277428">
                           <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277429">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277430" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277431">
                           <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277432">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277433" />
                         </node>
@@ -4986,10 +5106,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="7413144797245923854">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="7413144797245923855">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="7413144797245923856">
           <property name="name" nameId="tpck.1169194664001" value="intVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245923857">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223123">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223124">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223125">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="7413144797245923859">
@@ -5041,22 +5167,22 @@
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277434">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277435">
                       <property name="value" nameId="tpee.1070475926801" value="intVar" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277436">
                       <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277437">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277438" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277439">
                       <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277440">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277441" />
                     </node>
@@ -5076,22 +5202,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277442">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277443">
                   <property name="value" nameId="tpee.1070475926801" value="intVar" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277444">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277445">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277446" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277447">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277448">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277449" />
                 </node>
@@ -5106,10 +5232,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="7413144797245923956">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="7413144797245923957">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="7413144797245923958">
           <property name="name" nameId="tpck.1169194664001" value="intVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245923959">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223198">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223199">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223200">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="7413144797245923961">
@@ -5150,22 +5282,22 @@
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784449136">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784449137">
                       <property name="value" nameId="tpee.1070475926801" value="intVar" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784449138">
                       <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784449139">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784449140" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784449141">
                       <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784449142">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784449143" />
                     </node>
@@ -5182,22 +5314,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277458">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277459">
                   <property name="value" nameId="tpee.1070475926801" value="intVar" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277460">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277461">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277462" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277463">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277464">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277465" />
                 </node>
@@ -5212,9 +5344,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="89292631370179155">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="89292631370179156">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="89292631370179157">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="89292631370179202" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223221">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223222" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223223" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="89292631370179160">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="89292631370179203">
@@ -5277,22 +5413,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277466">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277467">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277468">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277469">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277470" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277471">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277472">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277473" />
                           </node>
@@ -5318,22 +5454,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277522">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277523">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277524">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277525">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277526" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277527">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277528">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277529" />
                 </node>
@@ -5348,9 +5484,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="89292631370193169">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="89292631370193170">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="89292631370193171">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="89292631370193172" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223091">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223092" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223093" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="89292631370193174">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="89292631370193175">
@@ -5413,22 +5553,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277482">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277483">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277484">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277485">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277486" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277487">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277488">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277489" />
                           </node>
@@ -5454,22 +5594,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277490">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277491">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277492">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277493">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277494" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277495">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277496">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277497" />
                 </node>
@@ -5484,9 +5624,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="89292631370193120">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="89292631370193121">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="89292631370193122">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="89292631370193123" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223105">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223106" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223107" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="89292631370193125">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="89292631370193126">
@@ -5549,22 +5693,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277498">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277499">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277500">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277501">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277502" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277503">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277504">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277505" />
                           </node>
@@ -5590,22 +5734,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277506">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277507">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277508">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277509">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277510" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277511">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277512">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277513" />
                 </node>
@@ -5620,9 +5764,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="89292631370192751">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="89292631370192752">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="89292631370192753">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="89292631370192768" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223108">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223109" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223110" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="89292631370192756">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="89292631370192757">
@@ -5685,22 +5833,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277514">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277515">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277516">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277517">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277518" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277519">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277520">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277521" />
                           </node>
@@ -5726,22 +5874,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277530">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277531">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277532">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277533">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277534" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277535">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277536">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277537" />
                 </node>
@@ -5756,9 +5904,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="89292631370192827">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="89292631370192828">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="89292631370192829">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="89292631370192830" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223114">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223115" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223116" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="89292631370192832">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="89292631370192833">
@@ -5821,22 +5973,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277538">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277539">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277540">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277541">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277542" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277543">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277544">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277545" />
                           </node>
@@ -5862,22 +6014,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277546">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277547">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277548">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277549">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277550" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277551">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277552">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277553" />
                 </node>
@@ -5892,9 +6044,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="89292631370193071">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="89292631370193072">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="89292631370193073">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="89292631370193074" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223111">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223112" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223113" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="89292631370193076">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="89292631370193077">
@@ -5957,22 +6113,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277554">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277555">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277556">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277557">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277558" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277559">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277560">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277561" />
                           </node>
@@ -5998,22 +6154,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277562">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277563">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277564">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277565">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277566" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277567">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277568">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277569" />
                 </node>
@@ -6028,9 +6184,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="89292631370193022">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="89292631370193023">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="89292631370193024">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="89292631370193025" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223210">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223211" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223212" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="89292631370193027">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="89292631370193028">
@@ -6093,22 +6253,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277570">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277571">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277572">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277573">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277574" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277575">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277576">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277577" />
                           </node>
@@ -6134,22 +6294,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277578">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277579">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277580">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277581">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277582" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277583">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277584">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277585" />
                 </node>
@@ -6164,9 +6324,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="89292631370192973">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="89292631370192974">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="89292631370192975">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="89292631370192976" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223177">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223178" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223179" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="89292631370192978">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="89292631370192979">
@@ -6229,22 +6393,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277586">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277587">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277588">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277589">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277590" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277591">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277592">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277593" />
                           </node>
@@ -6270,22 +6434,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277594">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277595">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277596">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277597">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277598" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277599">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277600">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277601" />
                 </node>
@@ -6300,9 +6464,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="89292631370192924">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="89292631370192925">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="89292631370192926">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="89292631370192927" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223224">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223225" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223226" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="89292631370192929">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="89292631370192930">
@@ -6365,22 +6533,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277602">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277603">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277604">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277605">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277606" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277607">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277608">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277609" />
                           </node>
@@ -6406,22 +6574,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277610">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277611">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277612">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277613">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277614" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277615">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277616">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277617" />
                 </node>
@@ -6436,9 +6604,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="89292631370196920">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="89292631370196921">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="89292631370196922">
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="89292631370196923" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223152">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223153" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223154" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="89292631370196925">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="89292631370196926">
@@ -6501,22 +6673,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277618">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277619">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277620">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277621">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277622" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277623">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277624">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277625" />
                           </node>
@@ -6542,22 +6714,22 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2717152680784277626">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2717152680784277627">
                   <property name="value" nameId="tpee.1070475926801" value="var" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277628">
                   <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277629">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277630" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277631">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277632">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277633" />
                 </node>
@@ -6572,13 +6744,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="8638796163619025272">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="8638796163619025273">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="8638796163619025274">
           <property name="name" nameId="tpck.1169194664001" value="strings" />
-          <node role="deducedType" roleId="8sls.6036237525966189269" type="tp2q.ListType" typeId="tp2q.1151688443754" id="8638796163619040021">
-            <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="8638796163619040022" />
-          </node>
-          <node role="type" roleId="tpee.5680397130376446158" type="tp2q.LinkedListType" typeId="tp2q.3358009230509553641" id="8638796163619040023">
-            <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="8638796163619040025" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223155">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tp2q.LinkedListType" typeId="tp2q.3358009230509553641" id="2754592889269223156">
+              <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223157" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tp2q.LinkedListType" typeId="tp2q.3358009230509553641" id="2754592889269223158">
+              <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223159" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="8638796163619040027">
@@ -6686,14 +6861,14 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277649">
                     <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277650">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277651" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277652">
                     <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277653">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2717152680784277654" />
                   </node>
@@ -6715,7 +6890,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="1429427586727377218">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1429427586727377219">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="1429427586727377220" />
             </node>
@@ -6728,13 +6903,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1774703052633005919">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1774703052633005920">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="1774703052633005921">
           <property name="name" nameId="tpck.1169194664001" value="integers" />
-          <node role="deducedType" roleId="8sls.6036237525966189269" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1774703052633005922">
-            <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="1774703052633005923" />
-          </node>
-          <node role="type" roleId="tpee.5680397130376446158" type="tp2q.LinkedListType" typeId="tp2q.3358009230509553641" id="1774703052633005924">
-            <node role="elementType" roleId="tp2q.1151688676805" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1774703052633005944" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223135">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tp2q.LinkedListType" typeId="tp2q.3358009230509553641" id="2754592889269223136">
+              <node role="elementType" roleId="tp2q.1151688676805" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223137" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tp2q.LinkedListType" typeId="tp2q.3358009230509553641" id="2754592889269223138">
+              <node role="elementType" roleId="tp2q.1151688676805" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223139" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="1774703052633005927">
@@ -6844,14 +7022,14 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4854718415082573636">
                     <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4854718415082573637">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4854718415082573638" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4854718415082573639">
                     <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4854718415082573640">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4854718415082573641" />
                   </node>
@@ -6873,7 +7051,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="1429427586727377224">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1429427586727377225">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="1429427586727377226" />
             </node>
@@ -6886,9 +7064,13 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="6583956526375658284">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="6583956526375658285">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="6583956526375658286">
           <property name="name" nameId="tpck.1169194664001" value="stringValue" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6583956526375658288" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223094">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223095" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223096" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="6583956526375658290">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6583956526375658291">
@@ -6953,14 +7135,14 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="6583956526375658361">
                     <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6583956526375658362">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="6583956526375658363" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="6583956526375658364">
                     <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6583956526375658365">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="6583956526375658366" />
                   </node>
@@ -6990,7 +7172,7 @@
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="6583956526375659761">
                         <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                         <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6583956526375659762">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                         </node>
                         <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="6583956526375659763" />
                       </node>
@@ -7001,8 +7183,8 @@
             </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6583956526375658369">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~ProxyEqualsUtil" resolveInfo="ProxyEqualsUtil" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~ProxyEqualsUtil%djavaEquals(jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy,jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy)%cboolean" resolveInfo="javaEquals" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~ProxyEqualsUtil" resolveInfo="ProxyEqualsUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6583956526375658370">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6583956526375658323" resolveInfo="notNullStringValue" />
             </node>
@@ -7021,10 +7203,16 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="4322674958982459622">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="4322674958982459623">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="4322674958982459644">
           <property name="name" nameId="tpck.1169194664001" value="node" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3473983539747237799">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNode" resolveInfo="SNode" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223126">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223127">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNode" resolveInfo="SNode" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223128">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNode" resolveInfo="SNode" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="4322674958982459627">
@@ -7093,14 +7281,14 @@
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4322674958982464654">
                           <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4322674958982464655">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4322674958982464656" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4322674958982464657">
                           <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                           <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4322674958982464658">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                           </node>
                           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4322674958982464659" />
                         </node>
@@ -7135,11 +7323,19 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="2281056005883150415">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="2281056005883150416">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="2281056005883150417">
           <property name="name" nameId="tpck.1169194664001" value="objectVar" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="2281056005883150435">
-            <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2281056005883150434">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223097">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ArrayType" typeId="tpee.1070534760951" id="2754592889269223098">
+              <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223099">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
+              </node>
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ArrayType" typeId="tpee.1070534760951" id="2754592889269223100">
+              <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223101">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
+              </node>
             </node>
           </node>
         </node>
@@ -7189,14 +7385,14 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="386801750265878483">
                     <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="386801750265878484">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="386801750265878485" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="386801750265878486">
                     <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="386801750265878487">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="386801750265878488" />
                   </node>
@@ -7215,6 +7411,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="8071722462615359839">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="8071722462615359840">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="8071722462615359845">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8071722462615359852">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8071722462615359853">
@@ -7249,7 +7446,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2836258709954279489">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2836258709954279490">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2836258709954279491" />
             </node>
@@ -7268,6 +7465,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="335932010435400773">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="335932010435400774">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="335932010435400776">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="335932010435400777">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="335932010435400778">
@@ -7301,7 +7499,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="215665606921554824">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="215665606921554825">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="215665606921554826" />
             </node>
@@ -7317,6 +7515,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="4609929908986493501">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="4609929908986493502">
+        <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="4609929908986493504">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4609929908986493505">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4609929908986493506">
@@ -7348,7 +7547,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4609929908986493496">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4609929908986493497">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4609929908986493498" />
             </node>
@@ -7392,7 +7591,10 @@
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="4816137365279729469">
           <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4816137365279729471" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223186">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223187" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223188" />
+          </node>
         </node>
       </node>
     </node>
@@ -7409,8 +7611,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5098404879615976874">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5098404879615976876">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~MirrorUtil%dgetValueProxyFromJavaValue(java%dlang%dObject,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValueProxyFromJavaValue" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5098404879615976877">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5098404879615976878">
                 <node role="type" roleId="tpee.1070534934091" type="tpee.StringType" typeId="tpee.1225271177708" id="5098404879616064288" />
@@ -7434,14 +7636,14 @@
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5098404879616030187">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5098404879616030188">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5098404879616030189" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5098404879616030190">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5098404879616030191">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5098404879616030192" />
                           </node>
@@ -7458,7 +7660,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5098404879615976894">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5098404879615976895">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5098404879615976896" />
             </node>
@@ -7505,7 +7707,10 @@
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="4587766555754887094">
           <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4587766555754887095" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223213">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223214" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223215" />
+          </node>
         </node>
       </node>
     </node>
@@ -7522,8 +7727,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4587766555754887058">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4587766555754887059">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~MirrorUtil%dgetValueProxyFromJavaValue(java%dlang%dObject,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValueProxyFromJavaValue" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="4587766555754887115">
               <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="4587766555754887120">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4587766555754887123" />
@@ -7556,14 +7761,14 @@
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4587766555754887135">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4587766555754887136">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4587766555754887137" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4587766555754887138">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4587766555754887139">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4587766555754887140" />
                           </node>
@@ -7577,7 +7782,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4587766555754887078">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4587766555754887079">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4587766555754887080" />
             </node>
@@ -7624,7 +7829,10 @@
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="4587766555754950828">
           <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4587766555754950829" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223143">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223144" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223145" />
+          </node>
         </node>
       </node>
     </node>
@@ -7641,8 +7849,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4587766555754950786">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4587766555754950787">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~MirrorUtil%dgetValueProxyFromJavaValue(java%dlang%dObject,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValueProxyFromJavaValue" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="4587766555754950788">
               <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="4587766555754950789">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4587766555754950790" />
@@ -7672,14 +7880,14 @@
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4587766555754950843">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4587766555754950844">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4587766555754950845" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4587766555754950846">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4587766555754950847">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4587766555754950848" />
                           </node>
@@ -7696,7 +7904,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4587766555754950809">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4587766555754950810">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4587766555754950811" />
             </node>
@@ -7731,7 +7939,10 @@
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="4587766555754950778">
           <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="var" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="4587766555754950850" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223192">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223193" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223194" />
+          </node>
         </node>
       </node>
     </node>
@@ -7739,8 +7950,8 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.StatementList" typeId="tpee.1068580123136" id="4587766555754950731">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4587766555754950736">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4587766555754950737">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~MirrorUtil%dgetValueProxyFromJavaValue(java%dlang%dObject,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValueProxyFromJavaValue" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~MirrorUtil" resolveInfo="MirrorUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="4587766555754950738">
               <node role="condition" roleId="tpee.1163668914799" type="tpee.CastExpression" typeId="tpee.1070534934090" id="4587766555754950904">
                 <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4587766555754950905">
@@ -7755,22 +7966,22 @@
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4587766555754950911">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4587766555754950912">
                             <property name="value" nameId="tpee.1070475926801" value="var" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4587766555754950913">
                             <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4587766555754950914">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4587766555754950915" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4587766555754950916">
                             <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4587766555754950917">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                             </node>
                             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4587766555754950918" />
                           </node>
@@ -7793,7 +8004,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4587766555754950759">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4587766555754950760">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4587766555754950761" />
             </node>
@@ -7880,8 +8091,13 @@
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="5586226261252332134">
           <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="value" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5586226261252332136">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223117">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223118">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223119">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="5586226261252332124">
@@ -7919,14 +8135,14 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5586226261252384868">
                     <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5586226261252384869">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5586226261252384870" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5586226261252384872">
                     <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5586226261252384873">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5586226261252384874" />
                   </node>
@@ -7946,7 +8162,10 @@
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="3525964900474412384">
           <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="value" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="3525964900474412392" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223146">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223147" />
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223148" />
+          </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="3525964900474412386">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3525964900474412387">
@@ -7985,14 +8204,14 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3525964900474412399">
                     <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3525964900474412400">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="3525964900474412401" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3525964900474412402">
                     <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3525964900474412403">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="3525964900474412404" />
                   </node>
@@ -8005,7 +8224,7 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="8828574841075702277">
               <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8828574841075702278">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
               </node>
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="8828574841075702279" />
             </node>
@@ -8019,8 +8238,13 @@
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="5586226261252384875">
           <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="value" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5586226261252384883">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
+          <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223120">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223121">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223122">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
+            </node>
           </node>
         </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="5586226261252332095">
@@ -8063,14 +8287,14 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5586226261252384893">
                     <property name="methodName" nameId="tp68.1174294288199" value="getStackFrame" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5586226261252384894">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~StackFrame" resolveInfo="StackFrame" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~StackFrame" resolveInfo="StackFrame" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5586226261252384895" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5586226261252384896">
                     <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5586226261252384897">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
                     </node>
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5586226261252384898" />
                   </node>

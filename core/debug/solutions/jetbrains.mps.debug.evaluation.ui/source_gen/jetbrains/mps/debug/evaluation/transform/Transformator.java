@@ -139,6 +139,11 @@ public class Transformator {
   }
 
   private void preprocess() {
+    // remove downcasts 
+    for (SNode downcast : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.debug.evaluation.structure.DownCastToLowLevel", false, new String[]{}))) {
+      SNodeOperations.replaceWithAnother(downcast, SLinkOperations.getTarget(downcast, "expression", true));
+    }
+
     // we need normalized dot expression for wrapping method calls 
     // i.e. we need the structure of a dot expression to look like ((().op1).op2).op3 
     normalizeAllDotExpressions(myWhatToEvaluate);
@@ -955,8 +960,8 @@ public class Transformator {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.addReference(SReference.create("classConcept", quotedNode1_4, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation.proxies(MPS.Workbench/jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~ProxyEqualsUtil")));
         quotedNode1_4.addReference(SReference.create("baseMethodDeclaration", quotedNode1_4, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation.proxies(MPS.Workbench/jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~ProxyEqualsUtil.javaEquals(jetbrains.mps.debug.evaluation.proxies.IValueProxy,jetbrains.mps.debug.evaluation.proxies.IValueProxy):boolean")));
+        quotedNode1_4.addReference(SReference.create("classConcept", quotedNode1_4, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation.proxies(MPS.Workbench/jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~ProxyEqualsUtil")));
         {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
@@ -1042,8 +1047,8 @@ public class Transformator {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.addReference(SReference.create("classConcept", quotedNode1_6, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation.proxies(MPS.Workbench/jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~ProxyEqualsUtil")));
           quotedNode1_6.addReference(SReference.create("baseMethodDeclaration", quotedNode1_6, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation.proxies(MPS.Workbench/jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~ProxyEqualsUtil.javaEquals(jetbrains.mps.debug.evaluation.proxies.IValueProxy,jetbrains.mps.debug.evaluation.proxies.IValueProxy):boolean")));
+          quotedNode1_6.addReference(SReference.create("classConcept", quotedNode1_6, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation.proxies(MPS.Workbench/jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~ProxyEqualsUtil")));
           {
             quotedNode_3 = (SNode) parameter_9;
             SNode quotedNode1_7;

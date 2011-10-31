@@ -8,7 +8,10 @@
     <scopeInfo nodeId="1702017979374406642" fileName="HighLevelWatchableCreator_DataFlow.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
     <scopeInfo nodeId="1702017979374406644" fileName="HighLevelWatchableCreator_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" />
     <scopeInfo nodeId="1702017979374406642" fileName="HighLevelWatchableCreator_DataFlow.java" startLine="11" startPosition="73" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1702017979374406642" fileName="HighLevelWatchableCreator_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1702017979374406642" fileName="HighLevelWatchableCreator_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1702017979374406642" varName="_context" />
+      <varInfo nodeId="1702017979374406642" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1702017979374406642" fileName="HighLevelWatchableCreator_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.debug.customViewers.dataFlow.HighLevelWatchableCreator_DataFlow" />
   </root>
 </debugInfo>

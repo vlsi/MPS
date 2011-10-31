@@ -17,10 +17,7 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.evaluation.DummyEvaluationProvider;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -157,15 +154,9 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
     return myExecutionState;
   }
 
-  @Deprecated
-  @ToRemove(version = 2.0)
-  public void showEvaluationDialog(IOperationContext operationContext) {
-  }
-
   @Nullable
   public IEvaluationProvider getEvaluationProvider() {
-    if (!canShowEvaluationDialog()) return null;
-    return new DummyEvaluationProvider(this);
+    return null;
   }
 
   public void sessionRegistered(DebugSessionManagerComponent manager) {

@@ -210,8 +210,8 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_6rl195_c0b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("staticContextType");
-    provider.setNoTargetText("<no staticContextType>");
+    provider.setRole("contextNode");
+    provider.setNoTargetText("<no contextNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -227,8 +227,8 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_6rl195_c1b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("thisType");
-    provider.setNoTargetText("<no thisType>");
+    provider.setRole("thisNode");
+    provider.setNoTargetText("<no thisNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

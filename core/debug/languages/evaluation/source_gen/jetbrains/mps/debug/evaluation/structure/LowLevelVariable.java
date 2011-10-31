@@ -4,17 +4,34 @@ package jetbrains.mps.debug.evaluation.structure;
 
 import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LowLevelVariable extends BaseVariableDeclaration {
   public static final String concept = "jetbrains.mps.debug.evaluation.structure.LowLevelVariable";
+  public static final String HIGH_LEVEL_NODE_ID = "highLevelNodeId";
+  public static final String LOW_LEVEL_NAME = "lowLevelName";
   public static final String IS_OUT_OF_SCOPE = "isOutOfScope";
 
   public LowLevelVariable(SNode node) {
     super(node);
+  }
+
+  public String getHighLevelNodeId() {
+    return this.getProperty(LowLevelVariable.HIGH_LEVEL_NODE_ID);
+  }
+
+  public void setHighLevelNodeId(String value) {
+    this.setProperty(LowLevelVariable.HIGH_LEVEL_NODE_ID, value);
+  }
+
+  public String getLowLevelName() {
+    return this.getProperty(LowLevelVariable.LOW_LEVEL_NAME);
+  }
+
+  public void setLowLevelName(String value) {
+    this.setProperty(LowLevelVariable.LOW_LEVEL_NAME, value);
   }
 
   public boolean getIsOutOfScope() {
@@ -25,11 +42,11 @@ public class LowLevelVariable extends BaseVariableDeclaration {
     this.setBooleanProperty(LowLevelVariable.IS_OUT_OF_SCOPE, value);
   }
 
-  public Type getDeducedType() {
-    return this.ensureAdapter(Type.class, "type", this.getType());
+  public DebuggedType getDebuggedType() {
+    return this.ensureAdapter(DebuggedType.class, "type", this.getType());
   }
 
-  public void setDeducedType(Type node) {
+  public void setDebuggedType(DebuggedType node) {
     this.setType(node);
   }
 

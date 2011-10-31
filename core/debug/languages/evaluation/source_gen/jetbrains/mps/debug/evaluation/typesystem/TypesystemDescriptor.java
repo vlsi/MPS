@@ -4,9 +4,14 @@ package jetbrains.mps.debug.evaluation.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_DownCastToLowLevel_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
     {
       InferenceRule_Runtime inferenceRule = new typeof_EvaluatorsThisExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
@@ -18,6 +23,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       InferenceRule_Runtime inferenceRule = new typeof_LowLevelVariableReference_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_UnitNode_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new DebuggedtypeIsHighLevelType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
     }
   }
 }

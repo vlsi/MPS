@@ -37,7 +37,6 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.stubs.LibrariesLoader;
-import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.util.QueryMethodGenerated;
 
 /**
@@ -92,7 +91,6 @@ public class MPSCore extends ComponentPlugin {
     init(new ProjectStructureModule(myModuleRepository, myModelRepository));
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));
-    init(new TraceInfoManager());
     init(new BLDependenciesCache(myModelRepository));
     init(new ProxyFindUsagesManager(classLoaderManager));
     init(new DataFlowManager(classLoaderManager, myModuleRepository));

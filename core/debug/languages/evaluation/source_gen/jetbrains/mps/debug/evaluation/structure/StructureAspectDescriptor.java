@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation", "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debug.evaluation.structure.LowLevelVariable", "jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"};
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.debug.evaluation.structure.DebuggedType", "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation", "jetbrains.mps.debug.evaluation.structure.DownCastToLowLevel", "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debug.evaluation.structure.IEvaluatorConcept", "jetbrains.mps.debug.evaluation.structure.LowLevelVariable", "jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debug.evaluation.structure.UnitNode", "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"};
 
   public StructureAspectDescriptor() {
   }
@@ -16,22 +16,30 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", false, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.DebuggedType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{"isHigh"}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike"}, new String[]{"isShowContext"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", false, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{}, new String[]{});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodCall", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"instanceMethodDeclaration"});
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.DownCastToLowLevel", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.debug.evaluation.structure.IEvaluatorConcept"}, new String[]{"isShowContext"}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodCall", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"instanceMethodDeclaration"});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"}, new String[]{"isOutOfScope"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"}, new String[]{}, new String[]{"variableDeclaration"});
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", false, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.IEvaluatorConcept", null, true, new String[]{}, new String[]{}, new String[]{});
       case 8:
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"}, new String[]{"isOutOfScope", "highLevelNodeId", "lowLevelName"}, new String[]{});
+      case 9:
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"}, new String[]{}, new String[]{"variableDeclaration"});
+      case 10:
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", false, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{}, new String[]{});
+      case 11:
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.UnitNode", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"highLevelNodeId"}, new String[]{});
+      case 12:
         return new CompiledConceptDescriptor("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", false, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);

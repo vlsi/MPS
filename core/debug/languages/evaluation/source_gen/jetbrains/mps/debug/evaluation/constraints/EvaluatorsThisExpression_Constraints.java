@@ -36,6 +36,6 @@ public class EvaluatorsThisExpression_Constraints extends BaseConstraintsDescrip
   }
 
   public static boolean static_canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", true, false), "thisType", true) != null);
+    return (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", true, false), "thisNode", true) != null);
   }
 }

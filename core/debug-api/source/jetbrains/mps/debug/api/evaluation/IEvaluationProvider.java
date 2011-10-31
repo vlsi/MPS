@@ -16,21 +16,17 @@
 package jetbrains.mps.debug.api.evaluation;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
+import java.util.List;
 
 public interface IEvaluationProvider {
 
-  /* todo we need different kinds of evaluation: low-level/high-level and context/contextless (is that a legitimate word?)
-                high-level              low-level
-  context       breakpoints conditions  evaluate expression
-                evaluate selection
-                evaluate expression
-  contextless   watch                   watch
-  */
-
   void showEvaluationDialog(IOperationContext context);
+
+  void showEvaluationDialog(IOperationContext context, List<SNodePointer> selectedNodes);
 
   @Nullable
   JComponent createWatchesPanel();

@@ -21,10 +21,21 @@
     <scopeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="33" startPosition="51" endLine="34" endPosition="67" />
     <scopeInfo nodeId="5365453833390579713" fileName="CreateBreakpointOperation_Constraints.java" startLine="40" startPosition="121" endLine="41" endPosition="362" />
     <scopeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
-    <scopeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5365453833390579711" varName="_context" />
+      <varInfo nodeId="5365453833390579711" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="30" startPosition="166" endLine="37" endPosition="18" />
-    <scopeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="30" startPosition="166" endLine="37" endPosition="18">
+      <varInfo nodeId="5365453833390579711" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="5365453833390579711" varName="checkingNodeContext" />
+      <varInfo nodeId="5365453833390579711" varName="node" />
+      <varInfo nodeId="5365453833390579711" varName="node1" />
+      <varInfo nodeId="5365453833390579711" varName="node2" />
+      <varInfo nodeId="5365453833390579711" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="17" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debug.apiLang.constraints.CreateBreakpointOperation_Constraints" />
   </root>
 </debugInfo>

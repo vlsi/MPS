@@ -4,8 +4,9 @@ package jetbrains.mps.debugger.java.evaluation.model;
 
 import jetbrains.mps.debug.runtime.JavaUiState;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.CompositeClassPathItem;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
@@ -19,8 +20,8 @@ public abstract class EvaluationContext {
   }
 
   @NotNull
-  public IClassPathItem getClassPathItem() {
-    return new CompositeClassPathItem();
+  public List<String> getClassPath() {
+    return ListSequence.fromList(new ArrayList<String>());
   }
 
   @Nullable
@@ -35,7 +36,7 @@ public abstract class EvaluationContext {
   }
 
   @NotNull
-  public abstract Map<String, SNode> getVariables(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType);
+  public abstract Map<String, VariableDescription> getVariables(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType);
 
   @Nullable
   public abstract SNode getStaticContextType(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType);

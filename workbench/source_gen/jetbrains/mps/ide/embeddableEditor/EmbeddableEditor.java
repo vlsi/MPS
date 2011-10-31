@@ -60,7 +60,6 @@ public class EmbeddableEditor {
   private final EditableSModelDescriptor myModel;
   private final ModelOwner myOwner;
   private SNode myNode;
-  private SNode myRootNode;
   private final boolean myIsEditable;
 
   public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node) {
@@ -68,32 +67,27 @@ public class EmbeddableEditor {
   }
 
   public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node, boolean editable) {
-    this(context, owner, node, node, editable);
-  }
-
-  public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode rootNode, SNode targetNode, boolean editable) {
     myOwner = owner;
     myContext = context;
     myIsEditable = editable;
     myModel = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(true));
     myModel.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
     SModelRepository.getInstance().registerModelDescriptor(myModel, myOwner);
-    setNode(rootNode, targetNode, true);
+    setNode(node, true);
   }
 
-  public EmbeddableEditor(IOperationContext context, EditableSModelDescriptor modelDescriptor, SNode rootNode, SNode targetNode, boolean editable) {
+  public EmbeddableEditor(IOperationContext context, EditableSModelDescriptor modelDescriptor, SNode node, boolean editable) {
     myOwner = modelDescriptor.getModule();
     myContext = context;
     myIsEditable = editable;
     myModel = modelDescriptor;
-    setNode(rootNode, targetNode, false);
+    setNode(node, false);
   }
 
-  private void setNode(@NotNull final SNode rootNode, @NotNull SNode targetNode, boolean addToModel) {
-    myRootNode = rootNode;
-    myNode = targetNode;
+  private void setNode(@NotNull final SNode node, boolean addToModel) {
+    myNode = node;
     if (addToModel) {
-      myModel.getSModel().addRoot(rootNode);
+      myModel.getSModel().addRoot(node);
     }
     myFileNodeEditor = new MPSFileNodeEditor(myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode));
     IEditor editor = myFileNodeEditor.getNodeEditor();
@@ -109,7 +103,7 @@ public class EmbeddableEditor {
   }
 
   public void setNode(@NotNull SNode node) {
-    setNode(node, node, true);
+    setNode(node, true);
   }
 
   public JComponent getComponenet() {
@@ -187,7 +181,7 @@ public class EmbeddableEditor {
 
   @Deprecated
   public GenerationResult generate(final Set<IClassPathItem> additionalClasspath) {
-    if (myRootNode == null) {
+    if (myNode == null) {
       return null;
     }
     InMemoryJavaGenerationHandler handler = new InMemoryJavaGenerationHandler(false, false) {
@@ -206,7 +200,7 @@ public class EmbeddableEditor {
       }
     };
     boolean successful = GeneratorUIFacade.getInstance().generateModels(myContext, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), myModel), handler, true, true);
-    return new GenerationResult(myRootNode, myContext, myModel, handler, successful);
+    return new GenerationResult(myNode, myContext, myModel, handler, successful);
   }
 
   public EditableSModelDescriptor getModel() {

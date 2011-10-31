@@ -51,7 +51,7 @@ import com.sun.jdi.IncompatibleThreadStateException;
 
   @Override
   public IValueProxy invokeMethod(String name, String jniSignature, Object... args) throws EvaluationException {
-    ClassType classType = (ClassType) myReferenceType;
+    ClassType classType = myReferenceType;
     int options = 0;
     return invoke(name, jniSignature, classType, options, args);
   }
