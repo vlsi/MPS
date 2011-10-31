@@ -3,6 +3,42 @@
   <dependency className="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" file="AdapterClass.java">
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.DelayedException" file="DelayedException.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode extendsClassName="java.lang.RuntimeException" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.FunctionTypes" file="FunctionTypes.java">
+    <classNode dependClassName="java.lang.Throwable" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.FunctionTypes2" file="FunctionTypes2.java">
+    <classNode dependClassName="java.lang.Throwable" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Nothing" file="Nothing.java" />
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Outcome" file="Outcome.java" />
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Result" file="Result.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Byte" />
+    <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Double" />
+    <classNode dependClassName="java.lang.Float" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Long" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Short" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Outcome" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" file="Wrappers.java" />
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" file="YieldingIterator.java">
+    <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.NoSuchElementException" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.DelayedException" />
+    <classNode extendsClassName="java.util.Iterator" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" file="_FunctionTypes.java">
     <classNode dependClassName="java.lang.Throwable" />
   </dependency>
