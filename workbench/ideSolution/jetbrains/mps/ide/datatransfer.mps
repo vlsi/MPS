@@ -4,15 +4,12 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <language namespace="f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tt4m" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.datatransfer(JDK/java.awt.datatransfer@java_stub)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="tnm0" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#com.intellij.ide(MPS.Core/com.intellij.ide@java_stub)" version="-1" />
   <import index="t6w" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" version="-1" />
   <import index="kqhl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
@@ -21,6 +18,7 @@
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="mzqo" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.dialogs(MPS.Workbench/jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
+  <import index="zjpd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.ide(MPS.Workbench/com.intellij.ide@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -29,6 +27,7 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
+  <import index="tnm0" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#com.intellij.ide(MPS.Core/com.intellij.ide@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6299533519672638253">
       <property name="name" nameId="tpck.1169194664001" value="CopyPasteUtil" />
@@ -2343,8 +2342,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6299533519672650634">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672650635">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6299533519672650636">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tnm0.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672650637">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dsetContents(java%dawt%ddatatransfer%dTransferable)%cvoid" resolveInfo="setContents" />
@@ -2538,7 +2537,7 @@
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3237530507069949331">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3237530507069949330">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tnm0.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3237530507069949335">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dremoveContent(java%dawt%ddatatransfer%dTransferable)%cvoid" resolveInfo="removeContent" />
@@ -2554,7 +2553,7 @@
                   <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3237530507069942663">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3237530507069942662">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tnm0.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3237530507069942667">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
@@ -2569,7 +2568,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3237530507069949351">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3237530507069949350">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tnm0.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3237530507069949355">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dsetContents(java%dawt%ddatatransfer%dTransferable)%cvoid" resolveInfo="setContents" />
@@ -2929,8 +2928,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="6299533519672650785">
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672650786">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6299533519672650787">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tnm0.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672650788">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
@@ -3645,8 +3644,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="6299533519672650978">
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672650979">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6299533519672650980">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tnm0.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672650981">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
@@ -4849,8 +4848,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="6299533519672652348">
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672652349">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6299533519672652350">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tnm0.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672652351">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
@@ -4929,8 +4928,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="6299533519672652382">
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6299533519672652383">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6299533519672652384">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tnm0.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetInstanceEx()%ccom%dintellij%dide%dCopyPasteManagerEx" resolveInfo="getInstanceEx" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zjpd.~CopyPasteManagerEx" resolveInfo="CopyPasteManagerEx" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672652385">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tnm0.~CopyPasteManagerEx%dgetAllContents()%cjava%dawt%ddatatransfer%dTransferable[]" resolveInfo="getAllContents" />
