@@ -43,7 +43,7 @@ public class CellAction_PasteNode extends EditorCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_PasteNode.class);
 
   public boolean canExecute(EditorContext context) {
-    EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+    EditorCell selectedCell = getCellToPasteTo(context.getNodeEditorComponent().getSelectedCell());
     if (selectedCell == null) {
       return false;
     }
@@ -56,7 +56,7 @@ public class CellAction_PasteNode extends EditorCellAction {
       return CopyPasteUtil.isConversionAvailable(selectedNode.getModel(), selectedNode);
     }
 
-    if (!new NodePaster(pasteNodes).canPaste(getCellToPasteTo(selectedCell))) {
+    if (!new NodePaster(pasteNodes).canPaste(selectedCell)) {
       LOG.debug("Couldn't paste node here");
       return false;
     }
@@ -148,6 +148,9 @@ public class CellAction_PasteNode extends EditorCellAction {
   }
 
   private EditorCell getCellToPasteTo(EditorCell cell) {
+    if (cell == null) {
+      return cell;
+    }
     if (cell.isLastPositionInBigCell()) return cell;
 
     if (cell instanceof EditorCell_Label && cell.getRole() == null) {
