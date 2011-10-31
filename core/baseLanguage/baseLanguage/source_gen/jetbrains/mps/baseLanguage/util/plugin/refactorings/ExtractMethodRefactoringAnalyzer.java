@@ -293,7 +293,6 @@ public class ExtractMethodRefactoringAnalyzer {
     })) {
       final ReadInstruction read = (ReadInstruction) instruction;
       Set<WriteInstruction> writes = reachability.get(read);
-
       if (SetSequence.fromSet(writes).where(new IWhereFilter<WriteInstruction>() {
         public boolean accept(WriteInstruction it) {
           return it.getVariable() == read.getVariable();

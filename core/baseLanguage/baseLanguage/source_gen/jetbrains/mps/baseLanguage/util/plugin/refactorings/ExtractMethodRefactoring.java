@@ -231,10 +231,6 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public IStaticContainerProcessor getStaticContainer() {
-    return this.myStaticContainer;
-  }
-
   public Set<SNode> getOutputReferences() {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     List<SNode> outputVariables = myParameters.getAnalyzer().getOutputVariables();
