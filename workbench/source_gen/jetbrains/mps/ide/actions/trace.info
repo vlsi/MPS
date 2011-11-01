@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.actions.IconContainer" />
   <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="243" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
-  <unitInfo fileName="Ide_ProjectPlugin.java" startLine="13" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
+  <unitInfo fileName="Ide_ProjectPlugin.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
   <root nodeId="1204991215587">
     <nodeInfo nodeId="1204991215587" fileName="NodeActions_ActionGroup.java" startLine="11" startPosition="67" endLine="12" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1204991215587" fileName="NodeActions_ActionGroup.java" startLine="12" startPosition="78" endLine="13" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -9113,109 +9113,61 @@
     <unitInfo nodeId="5100037748390843664" fileName="SetNodePackageDialog.java" startLine="39" startPosition="38" endLine="43" endPosition="5" unitName="jetbrains.mps.ide.actions.SetNodePackageDialog$1" />
     <unitInfo nodeId="4514830148568024326" fileName="SetNodePackageDialog.java" startLine="44" startPosition="68" endLine="50" endPosition="5" unitName="jetbrains.mps.ide.actions.SetNodePackageDialog$2" />
   </root>
-  <root nodeId="4533699301447536443">
-    <nodeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="23" startPosition="59" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="4533699301447536444" fileName="AnalyzeStacktrace_Tool.java" startLine="25" startPosition="0" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStackTrace" />
-    <nodeInfo nodeId="4533699301447536447" fileName="AnalyzeStacktrace_Tool.java" startLine="26" startPosition="30" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsoleView" />
-    <nodeInfo nodeId="4533699301447536450" fileName="AnalyzeStacktrace_Tool.java" startLine="27" startPosition="40" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
-    <nodeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="30" startPosition="50" endLine="31" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="34" startPosition="37" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536491" fileName="AnalyzeStacktrace_Tool.java" startLine="35" startPosition="24" endLine="36" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536500" fileName="AnalyzeStacktrace_Tool.java" startLine="36" startPosition="127" endLine="37" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536509" fileName="AnalyzeStacktrace_Tool.java" startLine="37" startPosition="77" endLine="38" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536520" fileName="AnalyzeStacktrace_Tool.java" startLine="38" startPosition="106" endLine="39" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4533699301447536525" fileName="AnalyzeStacktrace_Tool.java" startLine="39" startPosition="58" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536532" fileName="AnalyzeStacktrace_Tool.java" startLine="40" startPosition="62" endLine="41" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536549" fileName="AnalyzeStacktrace_Tool.java" startLine="44" startPosition="25" endLine="45" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="45" startPosition="64" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536459" fileName="AnalyzeStacktrace_Tool.java" startLine="49" startPosition="41" endLine="50" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536465" fileName="AnalyzeStacktrace_Tool.java" startLine="50" startPosition="51" endLine="51" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536471" fileName="AnalyzeStacktrace_Tool.java" startLine="51" startPosition="54" endLine="52" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4533699301447536477" fileName="AnalyzeStacktrace_Tool.java" startLine="52" startPosition="72" endLine="53" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536485" fileName="AnalyzeStacktrace_Tool.java" startLine="56" startPosition="36" endLine="57" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="29" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AnalyzeStacktrace_Tool#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="4533699301447536453" fileName="AnalyzeStacktrace_Tool.java" startLine="48" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStackTrace#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="33" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
-    <scopeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="30" startPosition="50" endLine="31" endPosition="83" />
-    <scopeInfo nodeId="4533699301447536484" fileName="AnalyzeStacktrace_Tool.java" startLine="56" startPosition="36" endLine="57" endPosition="51" />
-    <scopeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="44" startPosition="25" endLine="46" endPosition="20" />
-    <scopeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="29" startPosition="0" endLine="32" endPosition="3">
-      <varInfo nodeId="4533699301447536443" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="4533699301447536458" fileName="AnalyzeStacktrace_Tool.java" startLine="49" startPosition="41" endLine="53" endPosition="64">
-      <varInfo nodeId="4533699301447536472" varName="consoleView" />
-    </scopeInfo>
-    <scopeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="34" startPosition="37" endLine="41" endPosition="175">
-      <varInfo nodeId="4533699301447536521" varName="actions" />
-    </scopeInfo>
-    <scopeInfo nodeId="4533699301447536453" fileName="AnalyzeStacktrace_Tool.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="4533699301447536456" varName="str" />
-    </scopeInfo>
-    <scopeInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="33" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="4533699301447536443" varName="project" />
-    </scopeInfo>
-    <unitInfo nodeId="4533699301447536443" fileName="AnalyzeStacktrace_Tool.java" startLine="23" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeStacktrace_Tool" />
-  </root>
   <root nodeId="4533699301447536554">
-    <nodeInfo nodeId="4533699301447536555" fileName="AnalyzeStacktraceDialog.java" startLine="20" startPosition="57" endLine="21" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
-    <nodeInfo nodeId="4533699301447536558" fileName="AnalyzeStacktraceDialog.java" startLine="21" startPosition="33" endLine="22" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
-    <nodeInfo nodeId="4533699301447536561" fileName="AnalyzeStacktraceDialog.java" startLine="22" startPosition="27" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="4533699301447536569" fileName="AnalyzeStacktraceDialog.java" startLine="25" startPosition="97" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4533699301447536572" fileName="AnalyzeStacktraceDialog.java" startLine="26" startPosition="39" endLine="27" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536578" fileName="AnalyzeStacktraceDialog.java" startLine="27" startPosition="29" endLine="28" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536597" fileName="AnalyzeStacktraceDialog.java" startLine="31" startPosition="43" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4533699301447536605" fileName="AnalyzeStacktraceDialog.java" startLine="35" startPosition="35" endLine="36" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4533699301447536612" fileName="AnalyzeStacktraceDialog.java" startLine="36" startPosition="50" endLine="37" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536620" fileName="AnalyzeStacktraceDialog.java" startLine="37" startPosition="73" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536628" fileName="AnalyzeStacktraceDialog.java" startLine="38" startPosition="36" endLine="39" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4533699301447536634" fileName="AnalyzeStacktraceDialog.java" startLine="40" startPosition="22" endLine="41" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536644" fileName="AnalyzeStacktraceDialog.java" startLine="42" startPosition="5" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536652" fileName="AnalyzeStacktraceDialog.java" startLine="43" startPosition="48" endLine="44" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4533699301447536658" fileName="AnalyzeStacktraceDialog.java" startLine="44" startPosition="71" endLine="45" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536665" fileName="AnalyzeStacktraceDialog.java" startLine="45" startPosition="60" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536672" fileName="AnalyzeStacktraceDialog.java" startLine="46" startPosition="59" endLine="47" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536679" fileName="AnalyzeStacktraceDialog.java" startLine="47" startPosition="62" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4533699301447536685" fileName="AnalyzeStacktraceDialog.java" startLine="52" startPosition="82" endLine="53" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4533699301447536697" fileName="AnalyzeStacktraceDialog.java" startLine="57" startPosition="22" endLine="58" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4533699301447536705" fileName="AnalyzeStacktraceDialog.java" startLine="58" startPosition="128" endLine="59" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536714" fileName="AnalyzeStacktraceDialog.java" startLine="59" startPosition="46" endLine="60" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536719" fileName="AnalyzeStacktraceDialog.java" startLine="60" startPosition="29" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536555" fileName="AnalyzeStacktraceDialog.java" startLine="21" startPosition="57" endLine="22" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="4533699301447536558" fileName="AnalyzeStacktraceDialog.java" startLine="22" startPosition="33" endLine="23" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
+    <nodeInfo nodeId="4533699301447536561" fileName="AnalyzeStacktraceDialog.java" startLine="23" startPosition="27" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="4533699301447536569" fileName="AnalyzeStacktraceDialog.java" startLine="26" startPosition="97" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4533699301447536572" fileName="AnalyzeStacktraceDialog.java" startLine="27" startPosition="39" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536578" fileName="AnalyzeStacktraceDialog.java" startLine="28" startPosition="29" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536597" fileName="AnalyzeStacktraceDialog.java" startLine="32" startPosition="43" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4533699301447536605" fileName="AnalyzeStacktraceDialog.java" startLine="36" startPosition="35" endLine="37" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4533699301447536612" fileName="AnalyzeStacktraceDialog.java" startLine="37" startPosition="50" endLine="38" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536620" fileName="AnalyzeStacktraceDialog.java" startLine="38" startPosition="73" endLine="39" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536628" fileName="AnalyzeStacktraceDialog.java" startLine="39" startPosition="36" endLine="40" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4533699301447536634" fileName="AnalyzeStacktraceDialog.java" startLine="41" startPosition="22" endLine="42" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536644" fileName="AnalyzeStacktraceDialog.java" startLine="43" startPosition="5" endLine="44" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536652" fileName="AnalyzeStacktraceDialog.java" startLine="44" startPosition="48" endLine="45" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4533699301447536658" fileName="AnalyzeStacktraceDialog.java" startLine="45" startPosition="71" endLine="46" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536665" fileName="AnalyzeStacktraceDialog.java" startLine="46" startPosition="60" endLine="47" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536672" fileName="AnalyzeStacktraceDialog.java" startLine="47" startPosition="59" endLine="48" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536679" fileName="AnalyzeStacktraceDialog.java" startLine="48" startPosition="62" endLine="49" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4533699301447536685" fileName="AnalyzeStacktraceDialog.java" startLine="53" startPosition="82" endLine="54" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="738639550409824154" fileName="AnalyzeStacktraceDialog.java" startLine="58" startPosition="22" endLine="59" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="738639550409824161" fileName="AnalyzeStacktraceDialog.java" startLine="59" startPosition="96" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4533699301447536719" fileName="AnalyzeStacktraceDialog.java" startLine="60" startPosition="73" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4533699301447536736" fileName="AnalyzeStacktraceDialog.java" startLine="65" startPosition="26" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4533699301447536632" fileName="AnalyzeStacktraceDialog.java" startLine="39" startPosition="56" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4533699301447536593" fileName="AnalyzeStacktraceDialog.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="4533699301447536565" fileName="AnalyzeStacktraceDialog.java" startLine="24" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AnalyzeStacktraceDialog#(Ljava/awt/Frame;Ljetbrains/mps/smodel/IOperationContext;Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="4533699301447536681" fileName="AnalyzeStacktraceDialog.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
+    <nodeInfo nodeId="4533699301447536632" fileName="AnalyzeStacktraceDialog.java" startLine="40" startPosition="56" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4533699301447536593" fileName="AnalyzeStacktraceDialog.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="4533699301447536565" fileName="AnalyzeStacktraceDialog.java" startLine="25" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AnalyzeStacktraceDialog#(Ljava/awt/Frame;Ljetbrains/mps/smodel/IOperationContext;Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="4533699301447536681" fileName="AnalyzeStacktraceDialog.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
     <nodeInfo nodeId="4533699301447536732" fileName="AnalyzeStacktraceDialog.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
-    <nodeInfo nodeId="4533699301447536693" fileName="AnalyzeStacktraceDialog.java" startLine="55" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" />
-    <nodeInfo nodeId="4533699301447536601" fileName="AnalyzeStacktraceDialog.java" startLine="34" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPanel#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="4533699301447536596" fileName="AnalyzeStacktraceDialog.java" startLine="31" startPosition="43" endLine="32" endPosition="28" />
-    <scopeInfo nodeId="4533699301447536633" fileName="AnalyzeStacktraceDialog.java" startLine="40" startPosition="22" endLine="41" endPosition="31" />
-    <scopeInfo nodeId="4533699301447536684" fileName="AnalyzeStacktraceDialog.java" startLine="52" startPosition="82" endLine="53" endPosition="77" />
+    <nodeInfo nodeId="4533699301447536693" fileName="AnalyzeStacktraceDialog.java" startLine="56" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" />
+    <nodeInfo nodeId="4533699301447536601" fileName="AnalyzeStacktraceDialog.java" startLine="35" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="4533699301447536596" fileName="AnalyzeStacktraceDialog.java" startLine="32" startPosition="43" endLine="33" endPosition="28" />
+    <scopeInfo nodeId="4533699301447536633" fileName="AnalyzeStacktraceDialog.java" startLine="41" startPosition="22" endLine="42" endPosition="31" />
+    <scopeInfo nodeId="4533699301447536684" fileName="AnalyzeStacktraceDialog.java" startLine="53" startPosition="82" endLine="54" endPosition="77" />
     <scopeInfo nodeId="4533699301447536735" fileName="AnalyzeStacktraceDialog.java" startLine="65" startPosition="26" endLine="66" endPosition="19" />
-    <scopeInfo nodeId="4533699301447536568" fileName="AnalyzeStacktraceDialog.java" startLine="25" startPosition="97" endLine="28" endPosition="42" />
-    <scopeInfo nodeId="4533699301447536593" fileName="AnalyzeStacktraceDialog.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="4533699301447536696" fileName="AnalyzeStacktraceDialog.java" startLine="57" startPosition="22" endLine="61" endPosition="19">
-      <varInfo nodeId="4533699301447536698" varName="tool" />
+    <scopeInfo nodeId="4533699301447536568" fileName="AnalyzeStacktraceDialog.java" startLine="26" startPosition="97" endLine="29" endPosition="42" />
+    <scopeInfo nodeId="4533699301447536696" fileName="AnalyzeStacktraceDialog.java" startLine="58" startPosition="22" endLine="61" endPosition="19">
+      <varInfo nodeId="738639550409824155" varName="consoleView" />
     </scopeInfo>
-    <scopeInfo nodeId="4533699301447536565" fileName="AnalyzeStacktraceDialog.java" startLine="24" startPosition="0" endLine="29" endPosition="3">
+    <scopeInfo nodeId="4533699301447536593" fileName="AnalyzeStacktraceDialog.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="4533699301447536565" fileName="AnalyzeStacktraceDialog.java" startLine="25" startPosition="0" endLine="30" endPosition="3">
       <varInfo nodeId="4533699301447536588" varName="context" />
       <varInfo nodeId="4533699301447536586" varName="frame" />
       <varInfo nodeId="4533699301447536590" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4533699301447536681" fileName="AnalyzeStacktraceDialog.java" startLine="50" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="4533699301447536681" fileName="AnalyzeStacktraceDialog.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="4533699301447536732" fileName="AnalyzeStacktraceDialog.java" startLine="63" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="4533699301447536693" fileName="AnalyzeStacktraceDialog.java" startLine="55" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4533699301447536604" fileName="AnalyzeStacktraceDialog.java" startLine="35" startPosition="35" endLine="48" endPosition="22">
+    <scopeInfo nodeId="4533699301447536693" fileName="AnalyzeStacktraceDialog.java" startLine="56" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="4533699301447536604" fileName="AnalyzeStacktraceDialog.java" startLine="36" startPosition="35" endLine="49" endPosition="22">
       <varInfo nodeId="4533699301447536606" varName="panel" />
       <varInfo nodeId="4533699301447536653" varName="scrollPane" />
       <varInfo nodeId="4533699301447536629" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="4533699301447536601" fileName="AnalyzeStacktraceDialog.java" startLine="34" startPosition="0" endLine="50" endPosition="0" />
-    <unitInfo nodeId="4533699301447536554" fileName="AnalyzeStacktraceDialog.java" startLine="20" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeStacktraceDialog" />
+    <scopeInfo nodeId="4533699301447536601" fileName="AnalyzeStacktraceDialog.java" startLine="35" startPosition="0" endLine="51" endPosition="0" />
+    <unitInfo nodeId="4533699301447536554" fileName="AnalyzeStacktraceDialog.java" startLine="21" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeStacktraceDialog" />
   </root>
   <root nodeId="4610292975587456551">
     <nodeInfo nodeId="3234236841102028263" fileName="ReferencesFinder.java" startLine="20" startPosition="31" endLine="21" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelsRefsCache" />

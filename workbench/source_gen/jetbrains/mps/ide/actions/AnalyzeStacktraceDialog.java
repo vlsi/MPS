@@ -15,7 +15,8 @@ import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import com.intellij.execution.ui.ConsoleView;
+import com.intellij.unscramble.AnalyzeStacktraceUtil;
 
 public class AnalyzeStacktraceDialog extends BaseDialog {
   private JComponent myComponent;
@@ -55,9 +56,8 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
 
   @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = true)
   public void onOk() {
-    AnalyzeStacktrace_Tool tool = this.myProject.getComponent(ProjectPluginManager.class).getTool(AnalyzeStacktrace_Tool.class);
-    tool.setStackTrace(this.myText.getText());
-    tool.openToolLater(true);
+    ConsoleView consoleView = AnalyzeStacktraceUtil.addConsole(myProject, null, "<Stacktrace>");
+    AnalyzeStacktraceUtil.printStacktrace(consoleView, myText.getText());
     this.dispose();
   }
 
