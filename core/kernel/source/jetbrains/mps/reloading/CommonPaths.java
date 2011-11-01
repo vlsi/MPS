@@ -161,6 +161,7 @@ public class CommonPaths {
     addIfExists(result, "/lib/extensions.jar");
     addIfExists(result, "/lib/junit-4.8.2.jar");
     addIfExists(result, "/lib/picocontainer.jar");
+    addIfExists(result, "/lib/tools.jar");
   }
 
   public static void addClasses(final CompositeClassPathItem result, final String homePath) {
