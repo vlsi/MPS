@@ -202,6 +202,8 @@ public abstract class TypeCheckingContext {
 
   public abstract boolean isCheckedRoot(boolean considerNonTypesystemRules);
 
+  public abstract boolean messagesChanged(Object requesting);
+
   public abstract SNode getTypeDontCheck(SNode node);
 
   public abstract List<IErrorReporter> getTypeMessagesDontCheck(SNode node);
