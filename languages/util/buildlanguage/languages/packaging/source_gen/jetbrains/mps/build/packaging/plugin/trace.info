@@ -16,7 +16,9 @@
     <nodeInfo nodeId="1218726094600" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1218726094600" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPaneModelAddition_ActionGroup#()V" />
     <scopeInfo nodeId="1218726094600" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="125" />
-    <scopeInfo nodeId="1218726094600" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39" />
+    <scopeInfo nodeId="1218726094600" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39">
+      <varInfo nodeId="1218726094600" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1218726094600" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
     <scopeInfo nodeId="1218726094600" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="12" startPosition="49" endLine="20" endPosition="5" />
     <scopeInfo nodeId="1218726094600" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
@@ -61,13 +63,22 @@
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="47" startPosition="62" endLine="48" endPosition="19" />
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="51" startPosition="70" endLine="52" endPosition="19" />
     <scopeInfo nodeId="8485638366356752674" fileName="GenerateBuildAction_Action.java" startLine="60" startPosition="22" endLine="61" endPosition="53" />
-    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="63" startPosition="0" endLine="64" endPosition="91" />
+    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="63" startPosition="0" endLine="64" endPosition="91">
+      <varInfo nodeId="1218726094604" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="63" startPosition="27" endLine="64" endPosition="91" />
-    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="32" startPosition="7" endLine="34" endPosition="63" />
-    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="36" startPosition="0" endLine="38" endPosition="44" />
+    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="32" startPosition="7" endLine="34" endPosition="63">
+      <varInfo nodeId="1218726094604" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="36" startPosition="0" endLine="38" endPosition="44">
+      <varInfo nodeId="1218726094604" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="36" startPosition="27" endLine="38" endPosition="44" />
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="20" startPosition="39" endLine="23" endPosition="40" />
-    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1218726094604" varName="_params" />
+      <varInfo nodeId="1218726094604" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="31" startPosition="9" endLine="35" endPosition="7" />
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="45" startPosition="5" endLine="49" endPosition="5" />
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="49" startPosition="5" endLine="53" endPosition="5" />
@@ -77,10 +88,19 @@
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="19" startPosition="0" endLine="24" endPosition="3" />
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="57" startPosition="96" endLine="65" endPosition="5" />
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="30" startPosition="89" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="56" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="29" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="56" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1218726094604" varName="_params" />
+      <varInfo nodeId="1218726094604" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="29" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1218726094604" varName="_params" />
+      <varInfo nodeId="1218726094604" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="42" startPosition="95" endLine="54" endPosition="16" />
-    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="41" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="41" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1218726094604" varName="_params" />
+      <varInfo nodeId="1218726094604" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="1218726094604" fileName="GenerateBuildAction_Action.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.GenerateBuildAction_Action" />
   </root>
   <root nodeId="1220376685232">
@@ -217,9 +237,13 @@
     <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="41" startPosition="65" endLine="42" endPosition="19" />
     <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="45" startPosition="62" endLine="46" endPosition="19" />
     <scopeInfo nodeId="1222955077728" fileName="GenerateBuildForProjectAction_Action.java" startLine="56" startPosition="27" endLine="57" endPosition="24" />
-    <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="60" startPosition="0" endLine="61" endPosition="101" />
+    <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="60" startPosition="0" endLine="61" endPosition="101">
+      <varInfo nodeId="1221149114857" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="60" startPosition="27" endLine="61" endPosition="101" />
-    <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="30" startPosition="0" endLine="32" endPosition="44" />
+    <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="30" startPosition="0" endLine="32" endPosition="44">
+      <varInfo nodeId="1221149114857" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="30" startPosition="27" endLine="32" endPosition="44" />
     <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="21" startPosition="49" endLine="24" endPosition="41" />
     <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="39" startPosition="5" endLine="43" endPosition="5" />
@@ -230,11 +254,20 @@
     <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="52" startPosition="9" endLine="59" endPosition="34">
       <varInfo nodeId="1222955094897" varName="wizard" />
     </scopeInfo>
-    <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="26" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="26" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1221149114857" varName="_params" />
+      <varInfo nodeId="1221149114857" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="51" startPosition="96" endLine="62" endPosition="5" />
     <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="36" startPosition="95" endLine="48" endPosition="16" />
-    <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="50" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="35" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="50" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1221149114857" varName="_params" />
+      <varInfo nodeId="1221149114857" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="35" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1221149114857" varName="_params" />
+      <varInfo nodeId="1221149114857" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="1221149114857" fileName="GenerateBuildForProjectAction_Action.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.GenerateBuildForProjectAction_Action" />
     <unitInfo nodeId="1222955077723" fileName="GenerateBuildForProjectAction_Action.java" startLine="55" startPosition="58" endLine="59" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.GenerateBuildForProjectAction_Action$1" />
   </root>
@@ -249,7 +282,9 @@
     <nodeInfo nodeId="1221153700178" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1221153700178" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1221153700178" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPaneProjectAddition_ActionGroup#()V" />
-    <scopeInfo nodeId="1221153700178" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="1221153700178" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
+      <varInfo nodeId="1221153700178" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1221153700178" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
     <scopeInfo nodeId="1221153700178" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="16" startPosition="9" endLine="18" endPosition="137" />
     <scopeInfo nodeId="1221153700178" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="12" startPosition="51" endLine="21" endPosition="5" />
@@ -488,16 +523,30 @@
     <scopeInfo nodeId="1224168814056" fileName="BuildGeneratorImpl.java" startLine="228" startPosition="70" endLine="230" endPosition="63" />
     <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="239" startPosition="53" endLine="241" endPosition="5" />
     <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="276" startPosition="53" endLine="278" endPosition="5" />
-    <scopeInfo nodeId="6979612000521482027" fileName="BuildGeneratorImpl.java" startLine="67" startPosition="62" endLine="70" endPosition="9" />
-    <scopeInfo nodeId="6979612000521480026" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="9" endLine="73" endPosition="9" />
-    <scopeInfo nodeId="1224167835664" fileName="BuildGeneratorImpl.java" startLine="233" startPosition="7" endLine="236" endPosition="5" />
+    <scopeInfo nodeId="6979612000521482027" fileName="BuildGeneratorImpl.java" startLine="67" startPosition="62" endLine="70" endPosition="9">
+      <varInfo nodeId="6979612000521482027" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="6979612000521480026" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="9" endLine="73" endPosition="9">
+      <varInfo nodeId="6979612000521480026" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224167835664" fileName="BuildGeneratorImpl.java" startLine="233" startPosition="7" endLine="236" endPosition="5">
+      <varInfo nodeId="1224167835664" varName="topLevelComponent" />
+    </scopeInfo>
     <scopeInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="84" startPosition="70" endLine="88" endPosition="0" />
     <scopeInfo nodeId="1068566623012681009" fileName="BuildGeneratorImpl.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="7819841746799321430" fileName="BuildGeneratorImpl.java" startLine="135" startPosition="27" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="253" startPosition="9" endLine="257" endPosition="56" />
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="262" startPosition="11" endLine="266" endPosition="66" />
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="290" startPosition="9" endLine="294" endPosition="56" />
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="299" startPosition="11" endLine="303" endPosition="66" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="253" startPosition="9" endLine="257" endPosition="56">
+      <varInfo nodeId="1222854011172" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="262" startPosition="11" endLine="266" endPosition="66">
+      <varInfo nodeId="1222854011172" varName="quotedNode1_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="290" startPosition="9" endLine="294" endPosition="56">
+      <varInfo nodeId="1222854011172" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="299" startPosition="11" endLine="303" endPosition="66">
+      <varInfo nodeId="1222854011172" varName="quotedNode1_8" />
+    </scopeInfo>
     <scopeInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="179" startPosition="67" endLine="184" endPosition="0" />
     <scopeInfo nodeId="1224167666694" fileName="BuildGeneratorImpl.java" startLine="214" startPosition="73" endLine="219" endPosition="13">
       <varInfo nodeId="1224167666696" varName="childComponent" />
@@ -538,9 +587,15 @@
       <varInfo nodeId="1222854358073" varName="selectedData" />
       <varInfo nodeId="1222854358067" varName="targetModelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167666685" fileName="BuildGeneratorImpl.java" startLine="212" startPosition="53" endLine="221" endPosition="9" />
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="259" startPosition="9" endLine="268" endPosition="73" />
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="296" startPosition="9" endLine="305" endPosition="73" />
+    <scopeInfo nodeId="1224167666685" fileName="BuildGeneratorImpl.java" startLine="212" startPosition="53" endLine="221" endPosition="9">
+      <varInfo nodeId="1224167666685" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="259" startPosition="9" endLine="268" endPosition="73">
+      <varInfo nodeId="1222854011172" varName="quotedNode1_7" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="296" startPosition="9" endLine="305" endPosition="73">
+      <varInfo nodeId="1222854011172" varName="quotedNode1_7" />
+    </scopeInfo>
     <scopeInfo nodeId="6979612000521479930" fileName="BuildGeneratorImpl.java" startLine="80" startPosition="125" endLine="90" endPosition="0">
       <varInfo nodeId="6979612000521479933" varName="progressIndicator" />
     </scopeInfo>
@@ -566,8 +621,12 @@
       <varInfo nodeId="1223991390037" varName="solution" />
     </scopeInfo>
     <scopeInfo nodeId="1223991159402" fileName="BuildGeneratorImpl.java" startLine="101" startPosition="76" endLine="119" endPosition="5" />
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="250" startPosition="7" endLine="270" endPosition="31" />
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="287" startPosition="7" endLine="307" endPosition="31" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="250" startPosition="7" endLine="270" endPosition="31">
+      <varInfo nodeId="1222854011172" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="287" startPosition="7" endLine="307" endPosition="31">
+      <varInfo nodeId="1222854011172" varName="quotedNode1_5" />
+    </scopeInfo>
     <scopeInfo nodeId="1223991159398" fileName="BuildGeneratorImpl.java" startLine="100" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="1240394372601" varName="indicator" />
     </scopeInfo>
@@ -577,9 +636,25 @@
       <varInfo nodeId="1224167141124" varName="component" />
       <varInfo nodeId="1224168796642" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="243" startPosition="49" endLine="272" endPosition="20" />
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="280" startPosition="49" endLine="309" endPosition="20" />
-    <scopeInfo nodeId="1224167141119" fileName="BuildGeneratorImpl.java" startLine="201" startPosition="74" endLine="232" endPosition="5" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="243" startPosition="49" endLine="272" endPosition="20">
+      <varInfo nodeId="1222854011172" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1222854011172" varName="quotedNode_1" />
+      <varInfo nodeId="1222854011172" varName="quotedNode_2" />
+      <varInfo nodeId="1222854011172" varName="quotedNode_3" />
+      <varInfo nodeId="1222854011172" varName="quotedNode_4" />
+      <varInfo nodeId="1222854011172" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="280" startPosition="49" endLine="309" endPosition="20">
+      <varInfo nodeId="1222854011172" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1222854011172" varName="quotedNode_1" />
+      <varInfo nodeId="1222854011172" varName="quotedNode_2" />
+      <varInfo nodeId="1222854011172" varName="quotedNode_3" />
+      <varInfo nodeId="1222854011172" varName="quotedNode_4" />
+      <varInfo nodeId="1222854011172" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224167141119" fileName="BuildGeneratorImpl.java" startLine="201" startPosition="74" endLine="232" endPosition="5">
+      <varInfo nodeId="1224167141119" varName="data" />
+    </scopeInfo>
     <scopeInfo nodeId="7285053786290847982" fileName="BuildGeneratorImpl.java" startLine="60" startPosition="25" endLine="92" endPosition="36">
       <varInfo nodeId="6979612000521479968" varName="descriptor" />
       <varInfo nodeId="6979612000521481992" varName="moduleReferencesToAdd" />
@@ -590,8 +665,12 @@
       <varInfo nodeId="6979612000521480021" varName="runnable" />
       <varInfo nodeId="8683696394983855212" varName="solution" />
     </scopeInfo>
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="242" startPosition="0" endLine="274" endPosition="0" />
-    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="279" startPosition="0" endLine="311" endPosition="0" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="242" startPosition="0" endLine="274" endPosition="0">
+      <varInfo nodeId="1222854011172" varName="parameter_9" />
+    </scopeInfo>
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="279" startPosition="0" endLine="311" endPosition="0">
+      <varInfo nodeId="1222854011172" varName="parameter_9" />
+    </scopeInfo>
     <scopeInfo nodeId="1241461839327" fileName="BuildGeneratorImpl.java" startLine="142" startPosition="133" endLine="175" endPosition="21">
       <varInfo nodeId="1241528543664" varName="basedirPath" />
       <varInfo nodeId="1241461839464" varName="folder" />
@@ -692,7 +771,9 @@
     <scopeInfo nodeId="1240327566451" fileName="BuildGeneratorUtil.java" startLine="58" startPosition="87" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1224874899540" fileName="BuildGeneratorUtil.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="1222950820954" fileName="BuildGeneratorUtil.java" startLine="39" startPosition="40" endLine="44" endPosition="9" />
-    <scopeInfo nodeId="1222950820936" fileName="BuildGeneratorUtil.java" startLine="32" startPosition="98" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="1222950820936" fileName="BuildGeneratorUtil.java" startLine="32" startPosition="98" endLine="38" endPosition="5">
+      <varInfo nodeId="1222950820936" varName="descriptor" />
+    </scopeInfo>
     <scopeInfo nodeId="1222950334125" fileName="BuildGeneratorUtil.java" startLine="76" startPosition="114" endLine="86" endPosition="112">
       <varInfo nodeId="1232209671636" varName="descriptor" />
       <varInfo nodeId="1222950372062" varName="fileName" />
@@ -1338,8 +1419,12 @@
     <scopeInfo nodeId="1223656795985" fileName="LanguagesStep.java" startLine="168" startPosition="39" endLine="170" endPosition="75">
       <varInfo nodeId="1223660353175" varName="moduleData" />
     </scopeInfo>
-    <scopeInfo nodeId="1223657251115" fileName="LanguagesStep.java" startLine="75" startPosition="86" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="1224169221248" fileName="LanguagesStep.java" startLine="103" startPosition="79" endLine="106" endPosition="5" />
+    <scopeInfo nodeId="1223657251115" fileName="LanguagesStep.java" startLine="75" startPosition="86" endLine="78" endPosition="5">
+      <varInfo nodeId="1223657251115" varName="moduleData" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224169221248" fileName="LanguagesStep.java" startLine="103" startPosition="79" endLine="106" endPosition="5">
+      <varInfo nodeId="1224169221248" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1223050119667" fileName="LanguagesStep.java" startLine="34" startPosition="98" endLine="38" endPosition="29" />
     <scopeInfo nodeId="1223050119635" fileName="LanguagesStep.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="1224169237609" fileName="LanguagesStep.java" startLine="121" startPosition="72" endLine="125" endPosition="5" />
@@ -1387,7 +1472,10 @@
     <scopeInfo nodeId="1224164745964" fileName="LanguagesStep.java" startLine="85" startPosition="71" endLine="94" endPosition="5">
       <varInfo nodeId="1224165840866" varName="childCount" />
     </scopeInfo>
-    <scopeInfo nodeId="1240240904785" fileName="LanguagesStep.java" startLine="108" startPosition="67" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1240240904785" fileName="LanguagesStep.java" startLine="108" startPosition="67" endLine="117" endPosition="0">
+      <varInfo nodeId="1240240904785" varName="a" />
+      <varInfo nodeId="1240240904785" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1224847897165" fileName="LanguagesStep.java" startLine="128" startPosition="36" endLine="138" endPosition="32" />
     <scopeInfo nodeId="1223656740074" fileName="LanguagesStep.java" startLine="165" startPosition="54" endLine="175" endPosition="23">
       <varInfo nodeId="1223656849132" varName="data" />
@@ -1404,7 +1492,10 @@
     <scopeInfo nodeId="1223656740069" fileName="LanguagesStep.java" startLine="164" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="1223656740072" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1240241042006" fileName="LanguagesStep.java" startLine="59" startPosition="71" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1240241042006" fileName="LanguagesStep.java" startLine="59" startPosition="71" endLine="74" endPosition="0">
+      <varInfo nodeId="1240241042006" varName="data1" />
+      <varInfo nodeId="1240241042006" varName="data2" />
+    </scopeInfo>
     <scopeInfo nodeId="1223050119646" fileName="LanguagesStep.java" startLine="101" startPosition="39" endLine="118" endPosition="40">
       <varInfo nodeId="1223492808910" varName="modules" />
       <varInfo nodeId="1223492384484" varName="selectedItems" />
@@ -1535,7 +1626,10 @@
     <scopeInfo nodeId="1223050120010" fileName="ModulesListData.java" startLine="16" startPosition="49" endLine="20" endPosition="5">
       <varInfo nodeId="1223050120012" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="1240241187221" fileName="ModulesListData.java" startLine="21" startPosition="77" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1240241187221" fileName="ModulesListData.java" startLine="21" startPosition="77" endLine="25" endPosition="0">
+      <varInfo nodeId="1240241187221" varName="p0" />
+      <varInfo nodeId="1240241187221" varName="p1" />
+    </scopeInfo>
     <scopeInfo nodeId="1223050120033" fileName="ModulesListData.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="1223050120039" fileName="ModulesListData.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="1224165457618" fileName="ModulesListData.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
@@ -1997,7 +2091,9 @@
       <varInfo nodeId="1224785935827" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1224787292284" fileName="ModelStep.java" startLine="104" startPosition="48" endLine="108" endPosition="69" />
-    <scopeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="77" startPosition="15" endLine="82" endPosition="15" />
+    <scopeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="77" startPosition="15" endLine="82" endPosition="15">
+      <varInfo nodeId="1224163112049" varName="root" />
+    </scopeInfo>
     <scopeInfo nodeId="1224787292281" fileName="ModelStep.java" startLine="103" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="1224787292299" varName="text" />
     </scopeInfo>
@@ -2095,31 +2191,49 @@
     <scopeInfo nodeId="1289308558160105184" fileName="PackagingBuildScript_Producer.java" startLine="92" startPosition="27" endLine="93" endPosition="131" />
     <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="104" startPosition="83" endLine="105" endPosition="92" />
     <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="32" startPosition="96" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="32" startPosition="96" endLine="35" endPosition="5">
+      <varInfo nodeId="1289308558160097174" varName="configurationType" />
+      <varInfo nodeId="1289308558160097174" varName="factoryName" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160097195" fileName="PackagingBuildScript_Producer.java" startLine="47" startPosition="27" endLine="50" endPosition="49" />
-    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="69" startPosition="89" endLine="72" endPosition="5" />
-    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="25" startPosition="102" endLine="29" endPosition="20" />
-    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="69" startPosition="89" endLine="72" endPosition="5">
+      <varInfo nodeId="1289308558160097174" varName="configurationType" />
+      <varInfo nodeId="1289308558160097174" varName="factoryName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="25" startPosition="102" endLine="29" endPosition="20">
+      <varInfo nodeId="1289308558160097174" varName="creators" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1289308558160097174" varName="source" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1289308558160097174" varName="source" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160105160" fileName="PackagingBuildScript_Producer.java" startLine="81" startPosition="59" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1289308558160105183" fileName="PackagingBuildScript_Producer.java" startLine="91" startPosition="59" endLine="95" endPosition="0" />
     <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="62" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="102" startPosition="0" endLine="107" endPosition="0" />
     <scopeInfo nodeId="1289308558160097194" fileName="PackagingBuildScript_Producer.java" startLine="46" startPosition="59" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1289308558160097174" varName="configurationType" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="41" startPosition="92" endLine="60" endPosition="27">
       <varInfo nodeId="1289308558160105102" varName="configuration" />
       <varInfo nodeId="1289308558160097191" varName="configurationId" />
       <varInfo nodeId="1289308558160097188" varName="isApplicable" />
       <varInfo nodeId="1289308558160097185" varName="layout" />
     </scopeInfo>
-    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="40" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="40" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="1289308558160097174" varName="source" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="78" startPosition="92" endLine="100" endPosition="27">
       <varInfo nodeId="1289308558160105206" varName="configuration" />
       <varInfo nodeId="1289308558160105180" varName="configurationId" />
       <varInfo nodeId="1289308558160105157" varName="isApplicable" />
     </scopeInfo>
-    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="77" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="77" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="1289308558160097174" varName="source" />
+    </scopeInfo>
     <unitInfo nodeId="1289308558160097174" fileName="PackagingBuildScript_Producer.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Producer" />
     <unitInfo nodeId="1289308558160105160" fileName="PackagingBuildScript_Producer.java" startLine="81" startPosition="47" endLine="85" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Producer$1" />
     <unitInfo nodeId="1289308558160097194" fileName="PackagingBuildScript_Producer.java" startLine="46" startPosition="47" endLine="52" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Producer$1" />
@@ -2154,8 +2268,12 @@
     <scopeInfo nodeId="4869723224670717906" fileName="GenerateBuild_BeforeTask.java" startLine="36" startPosition="45" endLine="39" endPosition="65" />
     <scopeInfo nodeId="4869723224670717906" fileName="GenerateBuild_BeforeTask.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="4869723224670717906" fileName="GenerateBuild_BeforeTask.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="4869723224670717906" fileName="GenerateBuild_BeforeTask.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="4869723224670717906" fileName="GenerateBuild_BeforeTask.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="4869723224670717906" fileName="GenerateBuild_BeforeTask.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="4869723224670717906" varName="layout" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670717906" fileName="GenerateBuild_BeforeTask.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="4869723224670717906" varName="project" />
+    </scopeInfo>
     <unitInfo nodeId="4869723224670717906" fileName="GenerateBuild_BeforeTask.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.GenerateBuild_BeforeTask" />
     <unitInfo nodeId="4869723224670717906" fileName="GenerateBuild_BeforeTask.java" startLine="25" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.GenerateBuild_BeforeTask$GenerateBuild_BeforeTask_RunTask" />
   </root>
@@ -2429,7 +2547,9 @@
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="104" startPosition="50" endLine="105" endPosition="22" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="108" startPosition="48" endLine="109" endPosition="38" />
     <scopeInfo nodeId="1051814066736485577" fileName="PackagingBuildScript_Configuration.java" startLine="115" startPosition="25" endLine="116" endPosition="269" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="131" startPosition="0" endLine="132" endPosition="55" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="131" startPosition="0" endLine="132" endPosition="55">
+      <varInfo nodeId="4869723224670741878" varName="ex" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="131" startPosition="45" endLine="132" endPosition="55" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="138" startPosition="132" endLine="139" endPosition="95" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="143" startPosition="91" endLine="144" endPosition="16" />
@@ -2440,43 +2560,81 @@
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="164" startPosition="48" endLine="165" endPosition="85" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="168" startPosition="45" endLine="169" endPosition="122" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="26" startPosition="127" endLine="28" endPosition="26" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="86" startPosition="5" endLine="88" endPosition="40" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="90" startPosition="5" endLine="92" endPosition="44" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="86" startPosition="5" endLine="88" endPosition="40">
+      <varInfo nodeId="4869723224670741878" varName="fieldElement" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="90" startPosition="5" endLine="92" endPosition="44">
+      <varInfo nodeId="4869723224670741878" varName="fieldElement" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="174" startPosition="0" endLine="176" endPosition="5" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Factory.java" startLine="10" startPosition="86" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Factory.java" startLine="10" startPosition="86" endLine="13" endPosition="3">
+      <varInfo nodeId="4869723224670741878" varName="type" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="31" startPosition="31" endLine="34" endPosition="33" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="57" startPosition="0" endLine="60" endPosition="3" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="57" startPosition="0" endLine="60" endPosition="3">
+      <varInfo nodeId="4869723224670741878" varName="factory" />
+      <varInfo nodeId="4869723224670741878" varName="name" />
+      <varInfo nodeId="4869723224670741878" varName="project" />
+    </scopeInfo>
     <scopeInfo nodeId="1051814066736325083" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="57" startPosition="115" endLine="60" endPosition="78" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="57" startPosition="115" endLine="60" endPosition="78" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="63" startPosition="87" endLine="66" endPosition="180" />
     <scopeInfo nodeId="4869723224670771267" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="63" startPosition="87" endLine="66" endPosition="180" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="68" startPosition="5" endLine="71" endPosition="39" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="73" startPosition="5" endLine="76" endPosition="39" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="179" startPosition="61" endLine="182" endPosition="19" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Factory.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="25" startPosition="0" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="68" startPosition="5" endLine="71" endPosition="39">
+      <varInfo nodeId="4869723224670741878" varName="fieldElement" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="73" startPosition="5" endLine="76" endPosition="39">
+      <varInfo nodeId="4869723224670741878" varName="fieldElement" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="179" startPosition="61" endLine="182" endPosition="19">
+      <varInfo nodeId="4869723224670741878" varName="state" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Factory.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="4869723224670741878" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="25" startPosition="0" endLine="29" endPosition="3">
+      <varInfo nodeId="4869723224670741878" varName="node" />
+      <varInfo nodeId="4869723224670741878" varName="settings" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670767160" fileName="PackagingBuildScript_Configuration.java" startLine="41" startPosition="123" endLine="45" endPosition="0" />
     <scopeInfo nodeId="4869723224670767193" fileName="PackagingBuildScript_Configuration.java" startLine="48" startPosition="59" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="4869723224670772856" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="48" startPosition="67" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="4869723224670772856" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="48" startPosition="67" endLine="52" endPosition="0">
+      <varInfo nodeId="4869723224670772856" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="4869723224670741878" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1051814066736485576" fileName="PackagingBuildScript_Configuration.java" startLine="114" startPosition="57" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="146" startPosition="0" endLine="150" endPosition="0">
+      <varInfo nodeId="4869723224670741878" varName="provider" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="154" startPosition="0" endLine="158" endPosition="0" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="158" startPosition="0" endLine="162" endPosition="0" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="167" startPosition="0" endLine="171" endPosition="0" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Factory.java" startLine="18" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="125" startPosition="9" endLine="130" endPosition="19" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="136" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="141" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="162" startPosition="0" endLine="167" endPosition="0" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="136" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="4869723224670741878" varName="environment" />
+      <varInfo nodeId="4869723224670741878" varName="executor" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="141" startPosition="0" endLine="146" endPosition="0">
+      <varInfo nodeId="4869723224670741878" varName="runner" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="162" startPosition="0" endLine="167" endPosition="0">
+      <varInfo nodeId="4869723224670741878" varName="executorId" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="30" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="56" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="62" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="56" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="4869723224670741878" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="4869723224670741878" varName="configuration" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670767163" fileName="PackagingBuildScript_Configuration.java" startLine="46" startPosition="45" endLine="53" endPosition="32">
       <varInfo nodeId="4869723224670767190" varName="isApplicable" />
     </scopeInfo>
@@ -2484,17 +2642,25 @@
       <varInfo nodeId="1051814066736485573" varName="configuration" />
     </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="177" startPosition="0" endLine="184" endPosition="0" />
-    <scopeInfo nodeId="4869723224670767162" fileName="PackagingBuildScript_Configuration.java" startLine="45" startPosition="58" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="4869723224670767162" fileName="PackagingBuildScript_Configuration.java" startLine="45" startPosition="58" endLine="55" endPosition="0">
+      <varInfo nodeId="4869723224670767162" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="111" startPosition="0" endLine="121" endPosition="0" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="66" startPosition="76" endLine="77" endPosition="5" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="123" startPosition="53" endLine="134" endPosition="17" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="123" startPosition="53" endLine="134" endPosition="17">
+      <varInfo nodeId="4869723224670741878" varName="clone" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="81" startPosition="73" endLine="93" endPosition="5" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="64" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="64" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="4869723224670741878" varName="element" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="121" startPosition="0" endLine="136" endPosition="0" />
     <scopeInfo nodeId="4869723224670741881" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="38" startPosition="32" endLine="54" endPosition="17">
       <varInfo nodeId="4869723224670768175" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="79" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="79" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="4869723224670741878" varName="element" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="36" startPosition="0" endLine="56" endPosition="0" />
     <unitInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="36" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Configuration" />
     <unitInfo nodeId="4869723224670767160" fileName="PackagingBuildScript_Configuration.java" startLine="41" startPosition="102" endLine="45" endPosition="3" unitName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Configuration$1" />
@@ -2534,15 +2700,29 @@
     <scopeInfo nodeId="1051814066736481868" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="56" startPosition="30" endLine="57" endPosition="33" />
     <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="64" startPosition="60" endLine="65" endPosition="18" />
     <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="32" startPosition="191" endLine="34" endPosition="32" />
-    <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="31" startPosition="0" endLine="35" endPosition="3" />
+    <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="31" startPosition="0" endLine="35" endPosition="3">
+      <varInfo nodeId="4869723224670741883" varName="configuration" />
+      <varInfo nodeId="4869723224670741883" varName="environment" />
+      <varInfo nodeId="4869723224670741883" varName="executor" />
+    </scopeInfo>
     <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1051814066736481868" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="55" startPosition="148" endLine="59" endPosition="0" />
     <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="63" startPosition="55" endLine="67" endPosition="17" />
-    <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="62" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1051814066736481868" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="48" startPosition="5" endLine="59" endPosition="10" />
-    <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="46" startPosition="110" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="44" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="4869723224670741883" varName="executorId" />
+    </scopeInfo>
+    <scopeInfo nodeId="1051814066736481868" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="48" startPosition="5" endLine="59" endPosition="10">
+      <varInfo nodeId="1051814066736481868" varName="_consoleView" />
+      <varInfo nodeId="1051814066736481868" varName="_processHandler" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="46" startPosition="110" endLine="60" endPosition="5">
+      <varInfo nodeId="4869723224670741883" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="44" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="4869723224670741883" varName="executor" />
+      <varInfo nodeId="4869723224670741883" varName="runner" />
+    </scopeInfo>
     <unitInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="26" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Configuration_RunProfileState" />
     <unitInfo nodeId="1051814066736481868" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="55" startPosition="118" endLine="59" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Configuration_RunProfileState$1" />
   </root>

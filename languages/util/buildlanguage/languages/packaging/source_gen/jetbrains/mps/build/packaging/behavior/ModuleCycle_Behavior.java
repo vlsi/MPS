@@ -38,7 +38,7 @@ public class ModuleCycle_Behavior {
     IClassPathItem classpath = AbstractModule.getDependenciesClasspath(modules, false);
     List<String> stringClasspath = ListSequence.fromList(ModuleUtil.retrieveClassPath(classpath)).select(new ISelector<String, String>() {
       public String select(String it) {
-        return it.replace(File.separator, Util.SEPARATOR);
+        return (String) it.replace(File.separator, Util.SEPARATOR);
       }
     }).distinct().toListSequence();
     // creating path holders to use in generator 
