@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui;
 
+import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 
 import javax.swing.*;
@@ -99,16 +100,6 @@ public class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
   }
 
   public void paint(Graphics g) {
-    Color background;
-    if (mySelected) {
-      background = UIManager.getColor("Tree.selectionBackground");
-    } else {
-      background = UIManager.getColor("Tree.textBackground");
-      if (background == null) {
-        background = getBackground();
-      }
-    }
-
     int imageOffset;
     Icon icon = myMainTextLabel.getIcon();
     if (icon != null) {
@@ -117,18 +108,31 @@ public class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
       imageOffset = 0;
     }
 
-    if (background != null) {
-      g.setColor(background);
-      g.fillRect(imageOffset, 0, getWidth() - imageOffset, getHeight());
-    }
-
-    if (myHasFocus) {
-      Boolean drawDashedFocusIndicator = (Boolean) UIManager.get("Tree.drawDashedFocusIndicator");
-      if (drawDashedFocusIndicator != null && drawDashedFocusIndicator) {
-        BasicGraphicsUtils.drawDashedRect(g, imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
+    if (!SystemInfo.isMac) {
+      Color background;
+      if (mySelected) {
+        background = UIManager.getColor("Tree.selectionBackground");
       } else {
-        g.setColor(UIManager.getColor("Tree.selectionBorderColor"));
-        g.drawRect(imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
+        background = UIManager.getColor("Tree.textBackground");
+        if (background == null) {
+          background = getBackground();
+        }
+      }
+
+
+      if (background != null) {
+        g.setColor(background);
+        g.fillRect(imageOffset, 0, getWidth() - imageOffset, getHeight());
+      }
+
+      if (myHasFocus) {
+        Boolean drawDashedFocusIndicator = (Boolean) UIManager.get("Tree.drawDashedFocusIndicator");
+        if (drawDashedFocusIndicator != null && drawDashedFocusIndicator) {
+          BasicGraphicsUtils.drawDashedRect(g, imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
+        } else {
+          g.setColor(UIManager.getColor("Tree.selectionBorderColor"));
+          g.drawRect(imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
+        }
       }
     }
 
