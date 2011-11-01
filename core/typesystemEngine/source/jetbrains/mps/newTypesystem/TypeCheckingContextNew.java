@@ -47,6 +47,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private boolean myIsTraceMode = false;
   private boolean myIsInferenceMode = false;
   private IOperationContext myOperationContext;
+  private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
+  private Integer myOldHash = 0;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     myState = new State(this);
@@ -323,6 +325,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public void dispose() {
     myRootNode = null;
     myNodeTypesComponent.dispose();
+    myRequesting.clear();
     myState.clear(true);
   }
 
@@ -334,6 +337,20 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
     return myNodeTypesComponent.isChecked(considerNonTypesystemRules);
+  }
+
+  public boolean messagesChanged(Object requesting) {
+    int hash = myNodeTypesComponent.getNodesWithErrors().hashCode();
+    if (hash != myOldHash) {
+      myRequesting.clear();
+      myOldHash = hash;
+    }
+    Integer oldHash = myRequesting.get(requesting);
+    if (oldHash == null || oldHash != hash) {
+      myRequesting.put(requesting, hash);
+      return true;
+    }
+    return false;
   }
 
   //--------

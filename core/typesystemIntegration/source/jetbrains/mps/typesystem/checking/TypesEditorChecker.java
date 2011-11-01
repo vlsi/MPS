@@ -59,7 +59,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
       @Override
       public void run() {
         NodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
-        if (!wasCheckedOnce || !context.isCheckedRoot(true)) {
+        if (!wasCheckedOnce || !context.isCheckedRoot(true) || context.messagesChanged(editorContext.getNodeEditorComponent().getClass())) {
           try {
             myMessagesChanged = true;
             context.checkRoot();
