@@ -235,7 +235,9 @@
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="73" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialog.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="100" startPosition="25" endLine="105" endPosition="5" />
+    <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="100" startPosition="25" endLine="105" endPosition="5">
+      <varInfo nodeId="7619659760484896627" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="114" startPosition="0" endLine="120" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="127" startPosition="0" endLine="133" endPosition="0" />
     <scopeInfo nodeId="7619659760484896627" fileName="NewLibDialogContentPane.java" startLine="160" startPosition="0" endLine="166" endPosition="0">
