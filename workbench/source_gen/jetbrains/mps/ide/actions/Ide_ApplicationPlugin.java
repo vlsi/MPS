@@ -30,6 +30,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddToNewFavoritesList_Action());
     addAction(new AnalyzeClasspath_Action());
     addAction(new AnalyzeDependencies_Action());
+    addAction(new AnalyzeStacktrace_Action());
     addAction(new CloneModel_Action());
     addAction(new CloneRoot_Action());
     addAction(new CollapseAll_Action());
@@ -79,6 +80,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OptimizeModuleImports_Action());
     addAction(new OptimizeProjectImports_Action());
     addAction(new PasteNode_Action());
+    addAction(new PrintNodePosition_Action());
     addAction(new QuickCreate_Action());
     addAction(new RemoveAllBookmarks_Action());
     addAction(new RemoveFromFavorites_Action());
@@ -154,6 +156,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new NodeActions_ActionGroup());
     addGroup(new PackageActions_ActionGroup());
     addGroup(new PackageNewActions_ActionGroup());
+    addGroup(new PrintNodePosition_Addition_ActionGroup());
     addGroup(new ProjectActions_ActionGroup());
     addGroup(new ProjectNewActions_ActionGroup());
     addGroup(new PropertyNodeActions_ActionGroup());
@@ -223,6 +226,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_commonModule);
+    insertGroupIntoAnother(PrintNodePosition_Addition_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(Search_ActionGroup.ID, "SearchMenu", null);
     insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);
     insertGroupIntoAnother(FavoritesPopupWrapper_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_popup);

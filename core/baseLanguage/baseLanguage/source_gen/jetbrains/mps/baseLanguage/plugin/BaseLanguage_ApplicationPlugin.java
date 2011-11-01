@@ -11,7 +11,6 @@ import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup;
 import jetbrains.mps.ide.actions.Code_ActionGroup;
 import jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -30,7 +29,6 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new AnalyzeStacktrace_Action());
     addAction(new CommentLine_Action());
     addAction(new CommentStatements_Action());
     addAction(new ExtractMethod_Action());
@@ -43,7 +41,6 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new IntroduceField_Action());
     addAction(new IntroduceVariable_Action());
     addAction(new OverrideMethod_Action());
-    addAction(new PrintNodePosition_Action());
     addAction(new RenameVariable_Action());
     addAction(new ShowMembers_Action());
     addAction(new ShowNullDFA_Action());
@@ -57,7 +54,6 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new BaseLanguageNodeActionsInternal_ActionGroup());
     addGroup(new BaseLanguageToolsAddition_ActionGroup());
     addGroup(new BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup());
-    addGroup(new PrintNodePosition_ActionGroup());
     addGroup(new RefactoringAddition_ActionGroup());
   }
 
@@ -70,7 +66,6 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
     insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_comments);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(PrintNodePosition_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
