@@ -21,6 +21,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.ide.resolve.AutoResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.NodeTypesComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -29,6 +30,7 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
@@ -62,7 +64,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
         if (!wasCheckedOnce || !context.isCheckedRoot(true)) {
           try {
             myMessagesChanged = true;
-            context.checkRoot();
+            context.checkIfNotChecked(node, false);
           } catch (Throwable t) {
             LOG.error(t);
             typesComponent.setCheckedTypesystem();
