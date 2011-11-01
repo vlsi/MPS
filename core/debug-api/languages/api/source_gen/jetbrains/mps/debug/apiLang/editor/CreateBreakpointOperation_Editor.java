@@ -29,9 +29,9 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debug.api.Debuggers;
+import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import jetbrains.mps.smodel.SModel;
 
 public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
@@ -164,7 +164,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
       if (debuggerType != null && StringUtils.isNotEmpty(SPropertyOperations.getString(debuggerType, "name"))) {
         IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, "name")).getBreakpointsProvider();
         if (provider != null) {
-          return provider.getAllKinds();
+          return (List<IBreakpointKind>) provider.getAllKinds();
         }
       }
       return ListSequence.fromList(new ArrayList<IBreakpointKind>());
