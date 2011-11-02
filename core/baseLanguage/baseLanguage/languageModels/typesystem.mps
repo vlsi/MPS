@@ -13605,6 +13605,27 @@
           </node>
         </node>
       </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="6392007121188978308">
+        <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="6392007121188978309">
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.AddDependencyStatement" typeId="tpd4.1220357310820" id="6392007121188978305">
+            <node role="dependency" roleId="tpd4.1220357350423" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6392007121189011370">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6392007121188978311" resolveInfo="m" />
+            </node>
+          </node>
+        </node>
+        <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6392007121188978311">
+          <property name="name" nameId="tpck.1169194664001" value="m" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6392007121189011369" />
+        </node>
+        <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6392007121188978314">
+          <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6392007121188978313">
+            <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1221637809879" resolveInfo="cls" />
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="6392007121189011368">
+            <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1107880067339" />
+          </node>
+        </node>
+      </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1221637826069">
         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1221637826070">
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="1221637871546">

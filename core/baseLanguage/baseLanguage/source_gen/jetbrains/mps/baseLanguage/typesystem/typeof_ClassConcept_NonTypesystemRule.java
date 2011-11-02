@@ -36,6 +36,9 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
         }
       }
     }
+    for (SNode m : SLinkOperations.getTargets(cls, "method", true)) {
+      typeCheckingContext.addDependencyForCurrent(m);
+    }
     if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(cls)).isNotEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
