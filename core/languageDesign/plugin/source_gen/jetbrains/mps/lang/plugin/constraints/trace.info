@@ -21,10 +21,21 @@
     <scopeInfo nodeId="1213104844944" fileName="ActionDeclaration_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="1215776990685" fileName="ActionDeclaration_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="141" />
     <scopeInfo nodeId="1213104844944" fileName="ActionDeclaration_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1213104844944" fileName="ActionDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1213104844944" fileName="ActionDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1213104844944" varName="_context" />
+      <varInfo nodeId="1213104844944" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104844944" fileName="ActionDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1213104844944" fileName="ActionDeclaration_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="1213104844944" fileName="ActionDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1213104844944" fileName="ActionDeclaration_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="1213104844944" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104844944" fileName="ActionDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1213104844944" varName="checkingNodeContext" />
+      <varInfo nodeId="1213104844944" varName="node" />
+      <varInfo nodeId="1213104844944" varName="node1" />
+      <varInfo nodeId="1213104844944" varName="node2" />
+      <varInfo nodeId="1213104844944" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1213104844944" fileName="ActionDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionDeclaration_Constraints" />
   </root>
   <root nodeId="1213104860268">
@@ -72,8 +83,12 @@
     <scopeInfo nodeId="1239971610522" fileName="ModificationStatement_Constraints.java" startLine="81" startPosition="47" endLine="82" endPosition="118" />
     <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="90" startPosition="61" endLine="91" endPosition="58" />
     <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="1239972259491" fileName="ModificationStatement_Constraints.java" startLine="50" startPosition="214" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1239971610519" fileName="ModificationStatement_Constraints.java" startLine="80" startPosition="196" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="1239972259491" fileName="ModificationStatement_Constraints.java" startLine="50" startPosition="214" endLine="54" endPosition="0">
+      <varInfo nodeId="1239972259491" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1239971610519" fileName="ModificationStatement_Constraints.java" startLine="80" startPosition="196" endLine="84" endPosition="0">
+      <varInfo nodeId="1239971610519" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="36" startPosition="83" endLine="41" endPosition="0" />
     <scopeInfo nodeId="1239972251972" fileName="ModificationStatement_Constraints.java" startLine="49" startPosition="116" endLine="54" endPosition="34" />
     <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="58" startPosition="0" endLine="63" endPosition="0" />
@@ -87,13 +102,21 @@
       <varInfo nodeId="1213104860321" varName="groupDeclaration" />
       <varInfo nodeId="1213104860328" varName="thisGroupChildGroups" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="45" startPosition="49" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="75" startPosition="49" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="45" startPosition="49" endLine="58" endPosition="0">
+      <varInfo nodeId="1213104860268" varName="_context" />
+      <varInfo nodeId="1213104860268" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="75" startPosition="49" endLine="88" endPosition="0">
+      <varInfo nodeId="1213104860268" varName="_context" />
+      <varInfo nodeId="1213104860268" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="44" startPosition="56" endLine="63" endPosition="10" />
     <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="74" startPosition="56" endLine="93" endPosition="10" />
     <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="41" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="71" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="34" startPosition="83" endLine="96" endPosition="22" />
+    <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="34" startPosition="83" endLine="96" endPosition="22">
+      <varInfo nodeId="1213104860268" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="32" startPosition="0" endLine="98" endPosition="0" />
     <unitInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="25" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ModificationStatement_Constraints" />
     <unitInfo nodeId="1213104860268" fileName="ModificationStatement_Constraints.java" startLine="36" startPosition="32" endLine="65" endPosition="5" unitName="jetbrains.mps.lang.plugin.constraints.ModificationStatement_Constraints$1" />
@@ -123,10 +146,21 @@
     <scopeInfo nodeId="1213107435692" fileName="AddElementStatement_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="1213107435694" fileName="AddElementStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="232" />
     <scopeInfo nodeId="1213107435692" fileName="AddElementStatement_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1213107435692" fileName="AddElementStatement_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1213107435692" fileName="AddElementStatement_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1213107435692" varName="_context" />
+      <varInfo nodeId="1213107435692" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213107435692" fileName="AddElementStatement_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1213107435692" fileName="AddElementStatement_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="1213107435692" fileName="AddElementStatement_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1213107435692" fileName="AddElementStatement_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="1213107435692" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213107435692" fileName="AddElementStatement_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1213107435692" varName="checkingNodeContext" />
+      <varInfo nodeId="1213107435692" varName="node" />
+      <varInfo nodeId="1213107435692" varName="node1" />
+      <varInfo nodeId="1213107435692" varName="node2" />
+      <varInfo nodeId="1213107435692" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1213107435692" fileName="AddElementStatement_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.AddElementStatement_Constraints" />
   </root>
   <root nodeId="1213107437648">
@@ -149,10 +183,21 @@
     <scopeInfo nodeId="1213107437648" fileName="ToolInstanceExpression_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="1213107437650" fileName="ToolInstanceExpression_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="146" />
     <scopeInfo nodeId="1213107437648" fileName="ToolInstanceExpression_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1213107437648" fileName="ToolInstanceExpression_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1213107437648" fileName="ToolInstanceExpression_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1213107437648" varName="_context" />
+      <varInfo nodeId="1213107437648" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213107437648" fileName="ToolInstanceExpression_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1213107437648" fileName="ToolInstanceExpression_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="1213107437648" fileName="ToolInstanceExpression_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1213107437648" fileName="ToolInstanceExpression_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="1213107437648" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213107437648" fileName="ToolInstanceExpression_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1213107437648" varName="checkingNodeContext" />
+      <varInfo nodeId="1213107437648" varName="node" />
+      <varInfo nodeId="1213107437648" varName="node1" />
+      <varInfo nodeId="1213107437648" varName="node2" />
+      <varInfo nodeId="1213107437648" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1213107437648" fileName="ToolInstanceExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ToolInstanceExpression_Constraints" />
   </root>
   <root nodeId="1213107437767">
@@ -192,16 +237,33 @@
     <scopeInfo nodeId="1213107437779" fileName="ProjectOperation_Constraints.java" startLine="48" startPosition="119" endLine="49" endPosition="335" />
     <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="54" startPosition="56" endLine="56" endPosition="5" />
     <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
-    <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="62" startPosition="7" endLine="66" endPosition="31" />
+    <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="62" startPosition="7" endLine="66" endPosition="31">
+      <varInfo nodeId="1213107437767" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1213107437769" fileName="ProjectOperation_Constraints.java" startLine="46" startPosition="121" endLine="51" endPosition="15">
       <varInfo nodeId="1213107437771" varName="can" />
     </scopeInfo>
     <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="61" startPosition="32" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="36" startPosition="166" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="45" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="58" startPosition="31" endLine="68" endPosition="20" />
-    <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="34" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="36" startPosition="166" endLine="43" endPosition="18">
+      <varInfo nodeId="1213107437767" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="45" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1213107437767" varName="_context" />
+      <varInfo nodeId="1213107437767" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="58" startPosition="31" endLine="68" endPosition="20">
+      <varInfo nodeId="1213107437767" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1213107437767" varName="quotedNode_1" />
+      <varInfo nodeId="1213107437767" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="34" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1213107437767" varName="checkingNodeContext" />
+      <varInfo nodeId="1213107437767" varName="node" />
+      <varInfo nodeId="1213107437767" varName="node1" />
+      <varInfo nodeId="1213107437767" varName="node2" />
+      <varInfo nodeId="1213107437767" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="57" startPosition="0" endLine="70" endPosition="0" />
     <unitInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="23" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ProjectOperation_Constraints" />
     <unitInfo nodeId="1213107437767" fileName="ProjectOperation_Constraints.java" startLine="54" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ProjectOperation_Constraints$QuotationClass_7gb1lu_a1a0a0a1a0" />
@@ -226,10 +288,21 @@
     <scopeInfo nodeId="1215776856972" fileName="GroupAnchor_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="1215776860583" fileName="GroupAnchor_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="278" />
     <scopeInfo nodeId="1215776856972" fileName="GroupAnchor_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1215776856972" fileName="GroupAnchor_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1215776856972" fileName="GroupAnchor_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1215776856972" varName="_context" />
+      <varInfo nodeId="1215776856972" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1215776856972" fileName="GroupAnchor_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1215776856972" fileName="GroupAnchor_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="1215776856972" fileName="GroupAnchor_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1215776856972" fileName="GroupAnchor_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="1215776856972" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215776856972" fileName="GroupAnchor_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1215776856972" varName="checkingNodeContext" />
+      <varInfo nodeId="1215776856972" varName="node" />
+      <varInfo nodeId="1215776856972" varName="node1" />
+      <varInfo nodeId="1215776856972" varName="node2" />
+      <varInfo nodeId="1215776856972" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1215776856972" fileName="GroupAnchor_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.GroupAnchor_Constraints" />
   </root>
   <root nodeId="1215777002116">
@@ -252,10 +325,21 @@
     <scopeInfo nodeId="1215777002116" fileName="Separator_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="1215777006556" fileName="Separator_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="141" />
     <scopeInfo nodeId="1215777002116" fileName="Separator_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1215777002116" fileName="Separator_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1215777002116" fileName="Separator_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1215777002116" varName="_context" />
+      <varInfo nodeId="1215777002116" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1215777002116" fileName="Separator_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1215777002116" fileName="Separator_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="1215777002116" fileName="Separator_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1215777002116" fileName="Separator_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="1215777002116" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215777002116" fileName="Separator_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1215777002116" varName="checkingNodeContext" />
+      <varInfo nodeId="1215777002116" varName="node" />
+      <varInfo nodeId="1215777002116" varName="node1" />
+      <varInfo nodeId="1215777002116" varName="node2" />
+      <varInfo nodeId="1215777002116" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1215777002116" fileName="Separator_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.Separator_Constraints" />
   </root>
   <root nodeId="1215777014643">
@@ -278,10 +362,21 @@
     <scopeInfo nodeId="1215777014643" fileName="ActionGroupDeclaration_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="1215777016911" fileName="ActionGroupDeclaration_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="141" />
     <scopeInfo nodeId="1215777014643" fileName="ActionGroupDeclaration_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1215777014643" fileName="ActionGroupDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1215777014643" fileName="ActionGroupDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1215777014643" varName="_context" />
+      <varInfo nodeId="1215777014643" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1215777014643" fileName="ActionGroupDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1215777014643" fileName="ActionGroupDeclaration_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="1215777014643" fileName="ActionGroupDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1215777014643" fileName="ActionGroupDeclaration_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="1215777014643" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215777014643" fileName="ActionGroupDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1215777014643" varName="checkingNodeContext" />
+      <varInfo nodeId="1215777014643" varName="node" />
+      <varInfo nodeId="1215777014643" varName="node1" />
+      <varInfo nodeId="1215777014643" varName="node2" />
+      <varInfo nodeId="1215777014643" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1215777014643" fileName="ActionGroupDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionGroupDeclaration_Constraints" />
   </root>
   <root nodeId="1215777027935">
@@ -304,10 +399,21 @@
     <scopeInfo nodeId="1215777027935" fileName="InterfaceExtentionPoint_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="1215777030422" fileName="InterfaceExtentionPoint_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="141" />
     <scopeInfo nodeId="1215777027935" fileName="InterfaceExtentionPoint_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1215777027935" fileName="InterfaceExtentionPoint_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1215777027935" fileName="InterfaceExtentionPoint_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1215777027935" varName="_context" />
+      <varInfo nodeId="1215777027935" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1215777027935" fileName="InterfaceExtentionPoint_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1215777027935" fileName="InterfaceExtentionPoint_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="1215777027935" fileName="InterfaceExtentionPoint_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1215777027935" fileName="InterfaceExtentionPoint_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="1215777027935" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215777027935" fileName="InterfaceExtentionPoint_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1215777027935" varName="checkingNodeContext" />
+      <varInfo nodeId="1215777027935" varName="node" />
+      <varInfo nodeId="1215777027935" varName="node1" />
+      <varInfo nodeId="1215777027935" varName="node2" />
+      <varInfo nodeId="1215777027935" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1215777027935" fileName="InterfaceExtentionPoint_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.InterfaceExtentionPoint_Constraints" />
   </root>
   <root nodeId="1217253124985">
@@ -332,11 +438,16 @@
     <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="44" startPosition="61" endLine="45" endPosition="58" />
     <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
     <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="28" startPosition="79" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="37" startPosition="49" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="37" startPosition="49" endLine="42" endPosition="0">
+      <varInfo nodeId="1217253124985" varName="_context" />
+      <varInfo nodeId="1217253124985" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="36" startPosition="56" endLine="47" endPosition="10" />
     <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="33" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="26" startPosition="83" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="26" startPosition="83" endLine="50" endPosition="22">
+      <varInfo nodeId="1217253124985" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="24" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionDataParameterDeclaration_Constraints" />
     <unitInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="28" startPosition="30" endLine="49" endPosition="5" unitName="jetbrains.mps.lang.plugin.constraints.ActionDataParameterDeclaration_Constraints$1" />
@@ -362,10 +473,21 @@
     <scopeInfo nodeId="1217679244579" fileName="ActionParameterDeclaration_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="1217679246550" fileName="ActionParameterDeclaration_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="143" />
     <scopeInfo nodeId="1217679244579" fileName="ActionParameterDeclaration_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1217679244579" fileName="ActionParameterDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1217679244579" fileName="ActionParameterDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1217679244579" varName="_context" />
+      <varInfo nodeId="1217679244579" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1217679244579" fileName="ActionParameterDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1217679244579" fileName="ActionParameterDeclaration_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="1217679244579" fileName="ActionParameterDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1217679244579" fileName="ActionParameterDeclaration_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="1217679244579" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217679244579" fileName="ActionParameterDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1217679244579" varName="checkingNodeContext" />
+      <varInfo nodeId="1217679244579" varName="node" />
+      <varInfo nodeId="1217679244579" varName="node1" />
+      <varInfo nodeId="1217679244579" varName="node2" />
+      <varInfo nodeId="1217679244579" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1217679244579" fileName="ActionParameterDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionParameterDeclaration_Constraints" />
   </root>
   <root nodeId="1227013116652">
@@ -403,14 +525,36 @@
     <scopeInfo nodeId="1227013118717" fileName="AddStatement_Constraints.java" startLine="55" startPosition="121" endLine="56" endPosition="232" />
     <scopeInfo nodeId="1227014460148" fileName="AddStatement_Constraints.java" startLine="59" startPosition="123" endLine="60" endPosition="231" />
     <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1227013116652" varName="_context" />
+      <varInfo nodeId="1227013116652" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="1227013116652" varName="_context" />
+      <varInfo nodeId="1227013116652" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="29" startPosition="166" endLine="36" endPosition="18" />
-    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="45" startPosition="155" endLine="52" endPosition="18" />
-    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="27" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="43" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="29" startPosition="166" endLine="36" endPosition="18">
+      <varInfo nodeId="1227013116652" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="45" startPosition="155" endLine="52" endPosition="18">
+      <varInfo nodeId="1227013116652" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="27" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1227013116652" varName="checkingNodeContext" />
+      <varInfo nodeId="1227013116652" varName="node" />
+      <varInfo nodeId="1227013116652" varName="node1" />
+      <varInfo nodeId="1227013116652" varName="node2" />
+      <varInfo nodeId="1227013116652" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="43" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1227013116652" varName="checkingNodeContext" />
+      <varInfo nodeId="1227013116652" varName="node" />
+      <varInfo nodeId="1227013116652" varName="node1" />
+      <varInfo nodeId="1227013116652" varName="node2" />
+      <varInfo nodeId="1227013116652" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1227013116652" fileName="AddStatement_Constraints.java" startLine="15" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.AddStatement_Constraints" />
   </root>
   <root nodeId="1628770029971140583">
@@ -439,10 +583,15 @@
     <scopeInfo nodeId="1628770029971140586" fileName="PropertyRefExpression_Constraints.java" startLine="44" startPosition="142" endLine="48" endPosition="325" />
     <scopeInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="33" startPosition="111" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="50" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="42" startPosition="49" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="42" startPosition="49" endLine="50" endPosition="0">
+      <varInfo nodeId="1628770029971140583" varName="_context" />
+      <varInfo nodeId="1628770029971140583" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="41" startPosition="56" endLine="55" endPosition="10" />
     <scopeInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="38" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="31" startPosition="83" endLine="58" endPosition="22" />
+    <scopeInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="31" startPosition="83" endLine="58" endPosition="22">
+      <varInfo nodeId="1628770029971140583" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="29" startPosition="0" endLine="60" endPosition="0" />
     <unitInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="23" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.PropertyRefExpression_Constraints" />
     <unitInfo nodeId="1628770029971140583" fileName="PropertyRefExpression_Constraints.java" startLine="33" startPosition="46" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.plugin.constraints.PropertyRefExpression_Constraints$1" />
@@ -487,16 +636,32 @@
       <varInfo nodeId="1821622352985039142" varName="sc" />
     </scopeInfo>
     <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
-    <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1821622352985038319" varName="_context" />
+      <varInfo nodeId="1821622352985038319" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="49" startPosition="111" endLine="54" endPosition="0" />
     <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="58" startPosition="49" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="36" startPosition="166" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="34" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="58" startPosition="49" endLine="64" endPosition="0">
+      <varInfo nodeId="1821622352985038319" varName="_context" />
+      <varInfo nodeId="1821622352985038319" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="36" startPosition="166" endLine="43" endPosition="18">
+      <varInfo nodeId="1821622352985038319" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="34" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1821622352985038319" varName="checkingNodeContext" />
+      <varInfo nodeId="1821622352985038319" varName="node" />
+      <varInfo nodeId="1821622352985038319" varName="node1" />
+      <varInfo nodeId="1821622352985038319" varName="node2" />
+      <varInfo nodeId="1821622352985038319" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="57" startPosition="56" endLine="69" endPosition="10" />
     <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="54" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="47" startPosition="83" endLine="72" endPosition="22" />
+    <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="47" startPosition="83" endLine="72" endPosition="22">
+      <varInfo nodeId="1821622352985038319" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="45" startPosition="0" endLine="74" endPosition="0" />
     <unitInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionParameterReference_Constraints" />
     <unitInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="49" startPosition="46" endLine="71" endPosition="5" unitName="jetbrains.mps.lang.plugin.constraints.ActionParameterReference_Constraints$1" />
@@ -539,16 +704,33 @@
     <scopeInfo nodeId="3339131993542058167" fileName="BaseProjectOperation_Constraints.java" startLine="48" startPosition="119" endLine="49" endPosition="339" />
     <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="54" startPosition="56" endLine="56" endPosition="5" />
     <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
-    <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="62" startPosition="7" endLine="66" endPosition="31" />
+    <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="62" startPosition="7" endLine="66" endPosition="31">
+      <varInfo nodeId="3339131993542058155" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="3339131993542058157" fileName="BaseProjectOperation_Constraints.java" startLine="46" startPosition="121" endLine="51" endPosition="15">
       <varInfo nodeId="3339131993542058159" varName="can" />
     </scopeInfo>
     <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="61" startPosition="32" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="36" startPosition="166" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="45" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="58" startPosition="31" endLine="68" endPosition="20" />
-    <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="34" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="36" startPosition="166" endLine="43" endPosition="18">
+      <varInfo nodeId="3339131993542058155" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="45" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="3339131993542058155" varName="_context" />
+      <varInfo nodeId="3339131993542058155" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="58" startPosition="31" endLine="68" endPosition="20">
+      <varInfo nodeId="3339131993542058155" varName="_parameterValues_129834374" />
+      <varInfo nodeId="3339131993542058155" varName="quotedNode_1" />
+      <varInfo nodeId="3339131993542058155" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="34" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="3339131993542058155" varName="checkingNodeContext" />
+      <varInfo nodeId="3339131993542058155" varName="node" />
+      <varInfo nodeId="3339131993542058155" varName="node1" />
+      <varInfo nodeId="3339131993542058155" varName="node2" />
+      <varInfo nodeId="3339131993542058155" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="57" startPosition="0" endLine="70" endPosition="0" />
     <unitInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="23" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.BaseProjectOperation_Constraints" />
     <unitInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="54" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.BaseProjectOperation_Constraints$QuotationClass_u117dn_a1a0a0a1a0" />
@@ -573,10 +755,21 @@
     <scopeInfo nodeId="3452826078638187868" fileName="ComponentReference_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="3452826078638187870" fileName="ComponentReference_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="159" />
     <scopeInfo nodeId="3452826078638187868" fileName="ComponentReference_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="3452826078638187868" fileName="ComponentReference_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="3452826078638187868" fileName="ComponentReference_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="3452826078638187868" varName="_context" />
+      <varInfo nodeId="3452826078638187868" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3452826078638187868" fileName="ComponentReference_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="3452826078638187868" fileName="ComponentReference_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="3452826078638187868" fileName="ComponentReference_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="3452826078638187868" fileName="ComponentReference_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="3452826078638187868" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3452826078638187868" fileName="ComponentReference_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="3452826078638187868" varName="checkingNodeContext" />
+      <varInfo nodeId="3452826078638187868" varName="node" />
+      <varInfo nodeId="3452826078638187868" varName="node1" />
+      <varInfo nodeId="3452826078638187868" varName="node2" />
+      <varInfo nodeId="3452826078638187868" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="3452826078638187868" fileName="ComponentReference_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ComponentReference_Constraints" />
   </root>
   <root nodeId="444169778578071400">
@@ -599,10 +792,21 @@
     <scopeInfo nodeId="444169778578071400" fileName="ExecuteParameterQuery_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="444169778578071402" fileName="ExecuteParameterQuery_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="130" />
     <scopeInfo nodeId="444169778578071400" fileName="ExecuteParameterQuery_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="444169778578071400" fileName="ExecuteParameterQuery_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="444169778578071400" fileName="ExecuteParameterQuery_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="444169778578071400" varName="_context" />
+      <varInfo nodeId="444169778578071400" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="444169778578071400" fileName="ExecuteParameterQuery_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="444169778578071400" fileName="ExecuteParameterQuery_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="444169778578071400" fileName="ExecuteParameterQuery_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="444169778578071400" fileName="ExecuteParameterQuery_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="444169778578071400" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="444169778578071400" fileName="ExecuteParameterQuery_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="444169778578071400" varName="checkingNodeContext" />
+      <varInfo nodeId="444169778578071400" varName="node" />
+      <varInfo nodeId="444169778578071400" varName="node1" />
+      <varInfo nodeId="444169778578071400" varName="node2" />
+      <varInfo nodeId="444169778578071400" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="444169778578071400" fileName="ExecuteParameterQuery_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ExecuteParameterQuery_Constraints" />
   </root>
   <root nodeId="485694842828666087">
@@ -625,10 +829,21 @@
     <scopeInfo nodeId="485694842828666087" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="485694842828666089" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="130" />
     <scopeInfo nodeId="485694842828666087" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="485694842828666087" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="485694842828666087" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="485694842828666087" varName="_context" />
+      <varInfo nodeId="485694842828666087" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="485694842828666087" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="485694842828666087" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="485694842828666087" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="485694842828666087" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="485694842828666087" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="485694842828666087" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="485694842828666087" varName="checkingNodeContext" />
+      <varInfo nodeId="485694842828666087" varName="node" />
+      <varInfo nodeId="485694842828666087" varName="node1" />
+      <varInfo nodeId="485694842828666087" varName="node2" />
+      <varInfo nodeId="485694842828666087" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="485694842828666087" fileName="SmartDisposeClosureParameterDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.SmartDisposeClosureParameterDeclaration_Constraints" />
   </root>
   <root nodeId="5267773026153284329">
@@ -662,10 +877,21 @@
     <scopeInfo nodeId="5703381818026462229" fileName="AskStatement_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="5703381818026462231" fileName="AskStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="136" />
     <scopeInfo nodeId="5703381818026462229" fileName="AskStatement_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="5703381818026462229" fileName="AskStatement_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="5703381818026462229" fileName="AskStatement_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="5703381818026462229" varName="_context" />
+      <varInfo nodeId="5703381818026462229" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5703381818026462229" fileName="AskStatement_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="5703381818026462229" fileName="AskStatement_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="5703381818026462229" fileName="AskStatement_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="5703381818026462229" fileName="AskStatement_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="5703381818026462229" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5703381818026462229" fileName="AskStatement_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5703381818026462229" varName="checkingNodeContext" />
+      <varInfo nodeId="5703381818026462229" varName="node" />
+      <varInfo nodeId="5703381818026462229" varName="node1" />
+      <varInfo nodeId="5703381818026462229" varName="node2" />
+      <varInfo nodeId="5703381818026462229" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="5703381818026462229" fileName="AskStatement_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.AskStatement_Constraints" />
   </root>
   <root nodeId="5857416866788535172">
@@ -688,10 +914,21 @@
     <scopeInfo nodeId="5857416866788535172" fileName="VariableNodeExpression_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="5857416866788535174" fileName="VariableNodeExpression_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="144" />
     <scopeInfo nodeId="5857416866788535172" fileName="VariableNodeExpression_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="5857416866788535172" fileName="VariableNodeExpression_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="5857416866788535172" fileName="VariableNodeExpression_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="5857416866788535172" varName="_context" />
+      <varInfo nodeId="5857416866788535172" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5857416866788535172" fileName="VariableNodeExpression_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="5857416866788535172" fileName="VariableNodeExpression_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="5857416866788535172" fileName="VariableNodeExpression_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="5857416866788535172" fileName="VariableNodeExpression_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="5857416866788535172" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5857416866788535172" fileName="VariableNodeExpression_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5857416866788535172" varName="checkingNodeContext" />
+      <varInfo nodeId="5857416866788535172" varName="node" />
+      <varInfo nodeId="5857416866788535172" varName="node1" />
+      <varInfo nodeId="5857416866788535172" varName="node2" />
+      <varInfo nodeId="5857416866788535172" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="5857416866788535172" fileName="VariableNodeExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.VariableNodeExpression_Constraints" />
   </root>
   <root nodeId="6193305307616734335">
@@ -716,11 +953,16 @@
     <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="44" startPosition="61" endLine="45" endPosition="58" />
     <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
     <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="28" startPosition="85" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="37" startPosition="49" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="37" startPosition="49" endLine="42" endPosition="0">
+      <varInfo nodeId="6193305307616734335" varName="_context" />
+      <varInfo nodeId="6193305307616734335" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="36" startPosition="56" endLine="47" endPosition="10" />
     <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="33" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="26" startPosition="83" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="26" startPosition="83" endLine="50" endPosition="22">
+      <varInfo nodeId="6193305307616734335" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="24" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ShortcutChange_Constraints" />
     <unitInfo nodeId="6193305307616734335" fileName="ShortcutChange_Constraints.java" startLine="28" startPosition="33" endLine="49" endPosition="5" unitName="jetbrains.mps.lang.plugin.constraints.ShortcutChange_Constraints$1" />
@@ -746,10 +988,21 @@
     <scopeInfo nodeId="678887849223527751" fileName="ExecuteSpecific_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="678887849223527753" fileName="ExecuteSpecific_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="145" />
     <scopeInfo nodeId="678887849223527751" fileName="ExecuteSpecific_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="678887849223527751" fileName="ExecuteSpecific_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="678887849223527751" fileName="ExecuteSpecific_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="678887849223527751" varName="_context" />
+      <varInfo nodeId="678887849223527751" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="678887849223527751" fileName="ExecuteSpecific_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="678887849223527751" fileName="ExecuteSpecific_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="678887849223527751" fileName="ExecuteSpecific_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="678887849223527751" fileName="ExecuteSpecific_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="678887849223527751" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="678887849223527751" fileName="ExecuteSpecific_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="678887849223527751" varName="checkingNodeContext" />
+      <varInfo nodeId="678887849223527751" varName="node" />
+      <varInfo nodeId="678887849223527751" varName="node1" />
+      <varInfo nodeId="678887849223527751" varName="node2" />
+      <varInfo nodeId="678887849223527751" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="678887849223527751" fileName="ExecuteSpecific_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ExecuteSpecific_Constraints" />
   </root>
   <root nodeId="7029281142617299475">
@@ -777,17 +1030,24 @@
     <scopeInfo nodeId="2555604323322937022" fileName="ActionInstance_Constraints.java" startLine="49" startPosition="47" endLine="50" endPosition="121" />
     <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="57" startPosition="61" endLine="58" endPosition="58" />
     <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="3" />
-    <scopeInfo nodeId="2555604323322937021" fileName="ActionInstance_Constraints.java" startLine="48" startPosition="281" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="2555604323322937021" fileName="ActionInstance_Constraints.java" startLine="48" startPosition="281" endLine="52" endPosition="0">
+      <varInfo nodeId="2555604323322937021" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="35" startPosition="85" endLine="40" endPosition="0" />
     <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="55" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="7029281142617299478" fileName="ActionInstance_Constraints.java" startLine="46" startPosition="142" endLine="53" endPosition="100">
       <varInfo nodeId="2555604323322937007" varName="abstractImported" />
       <varInfo nodeId="2555604323322937048" varName="ownActions" />
     </scopeInfo>
-    <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="44" startPosition="49" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="44" startPosition="49" endLine="55" endPosition="0">
+      <varInfo nodeId="7029281142617299475" varName="_context" />
+      <varInfo nodeId="7029281142617299475" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="43" startPosition="56" endLine="60" endPosition="10" />
     <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="40" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="33" startPosition="83" endLine="63" endPosition="22" />
+    <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="33" startPosition="83" endLine="63" endPosition="22">
+      <varInfo nodeId="7029281142617299475" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="31" startPosition="0" endLine="65" endPosition="0" />
     <unitInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="25" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionInstance_Constraints" />
     <unitInfo nodeId="7029281142617299475" fileName="ActionInstance_Constraints.java" startLine="35" startPosition="33" endLine="62" endPosition="5" unitName="jetbrains.mps.lang.plugin.constraints.ActionInstance_Constraints$1" />
@@ -819,7 +1079,10 @@
       <varInfo nodeId="7043625615963660245" varName="action" />
     </scopeInfo>
     <scopeInfo nodeId="7043625615963660227" fileName="ActionConstructionParameterDeclaration_Constraints.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="7043625615963660227" fileName="ActionConstructionParameterDeclaration_Constraints.java" startLine="29" startPosition="45" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="7043625615963660227" fileName="ActionConstructionParameterDeclaration_Constraints.java" startLine="29" startPosition="45" endLine="38" endPosition="0">
+      <varInfo nodeId="7043625615963660227" varName="_context" />
+      <varInfo nodeId="7043625615963660227" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="7043625615963660227" fileName="ActionConstructionParameterDeclaration_Constraints.java" startLine="28" startPosition="59" endLine="43" endPosition="6" />
     <scopeInfo nodeId="7043625615963660227" fileName="ActionConstructionParameterDeclaration_Constraints.java" startLine="26" startPosition="0" endLine="45" endPosition="0" />
     <unitInfo nodeId="7043625615963660227" fileName="ActionConstructionParameterDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionConstructionParameterDeclaration_Constraints" />
@@ -869,20 +1132,32 @@
     <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="3" />
     <scopeInfo nodeId="3361586479359798751" fileName="RunConfigPropertyInstance_Constraints.java" startLine="43" startPosition="37" endLine="47" endPosition="105" />
     <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="35" startPosition="80" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="42" startPosition="56" endLine="47" endPosition="105" />
+    <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="42" startPosition="56" endLine="47" endPosition="105">
+      <varInfo nodeId="7066926174333292960" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="56" startPosition="89" endLine="61" endPosition="0" />
     <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="40" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="40" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="7066926174333292960" varName="node" />
+      <varInfo nodeId="7066926174333292960" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="7066926174333292963" fileName="RunConfigPropertyInstance_Constraints.java" startLine="67" startPosition="142" endLine="76" endPosition="75">
       <varInfo nodeId="7066926174333292976" varName="createStatement" />
       <varInfo nodeId="7066926174333305965" varName="runConfig" />
     </scopeInfo>
-    <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="65" startPosition="49" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="33" startPosition="82" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="65" startPosition="49" endLine="78" endPosition="0">
+      <varInfo nodeId="7066926174333292960" varName="_context" />
+      <varInfo nodeId="7066926174333292960" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="33" startPosition="82" endLine="50" endPosition="22">
+      <varInfo nodeId="7066926174333292960" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="64" startPosition="56" endLine="83" endPosition="10" />
     <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="31" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="61" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="54" startPosition="83" endLine="86" endPosition="22" />
+    <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="54" startPosition="83" endLine="86" endPosition="22">
+      <varInfo nodeId="7066926174333292960" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="52" startPosition="0" endLine="88" endPosition="0" />
     <unitInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="25" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.RunConfigPropertyInstance_Constraints" />
     <unitInfo nodeId="7066926174333292960" fileName="RunConfigPropertyInstance_Constraints.java" startLine="35" startPosition="31" endLine="49" endPosition="5" unitName="jetbrains.mps.lang.plugin.constraints.RunConfigPropertyInstance_Constraints$1" />
@@ -924,9 +1199,20 @@
     </scopeInfo>
     <scopeInfo nodeId="8096638938275444162" fileName="TabbedToolOperation_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
     <scopeInfo nodeId="8096638938275444162" fileName="TabbedToolOperation_Constraints.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="8096638938275444162" fileName="TabbedToolOperation_Constraints.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="8096638938275444162" fileName="TabbedToolOperation_Constraints.java" startLine="29" startPosition="166" endLine="36" endPosition="18" />
-    <scopeInfo nodeId="8096638938275444162" fileName="TabbedToolOperation_Constraints.java" startLine="27" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="8096638938275444162" fileName="TabbedToolOperation_Constraints.java" startLine="38" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="8096638938275444162" varName="_context" />
+      <varInfo nodeId="8096638938275444162" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8096638938275444162" fileName="TabbedToolOperation_Constraints.java" startLine="29" startPosition="166" endLine="36" endPosition="18">
+      <varInfo nodeId="8096638938275444162" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8096638938275444162" fileName="TabbedToolOperation_Constraints.java" startLine="27" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="8096638938275444162" varName="checkingNodeContext" />
+      <varInfo nodeId="8096638938275444162" varName="node" />
+      <varInfo nodeId="8096638938275444162" varName="node1" />
+      <varInfo nodeId="8096638938275444162" varName="node2" />
+      <varInfo nodeId="8096638938275444162" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="8096638938275444162" fileName="TabbedToolOperation_Constraints.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.TabbedToolOperation_Constraints" />
   </root>
   <root nodeId="8179323502814656939">
@@ -949,10 +1235,21 @@
     <scopeInfo nodeId="8179323502814656939" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="8179323502814656941" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="148" />
     <scopeInfo nodeId="8179323502814656939" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="8179323502814656939" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8179323502814656939" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8179323502814656939" varName="_context" />
+      <varInfo nodeId="8179323502814656939" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8179323502814656939" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="8179323502814656939" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="8179323502814656939" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8179323502814656939" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="8179323502814656939" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8179323502814656939" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="8179323502814656939" varName="checkingNodeContext" />
+      <varInfo nodeId="8179323502814656939" varName="node" />
+      <varInfo nodeId="8179323502814656939" varName="node1" />
+      <varInfo nodeId="8179323502814656939" varName="node2" />
+      <varInfo nodeId="8179323502814656939" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="8179323502814656939" fileName="RunConfigParameterReferenceOperation_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.RunConfigParameterReferenceOperation_Constraints" />
   </root>
   <root nodeId="8415911927033050434">
@@ -975,10 +1272,21 @@
     <scopeInfo nodeId="8415911927033050434" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="8415911927033051485" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="148" />
     <scopeInfo nodeId="8415911927033050434" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="8415911927033050434" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8415911927033050434" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8415911927033050434" varName="_context" />
+      <varInfo nodeId="8415911927033050434" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8415911927033050434" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="8415911927033050434" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="8415911927033050434" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8415911927033050434" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="8415911927033050434" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8415911927033050434" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="8415911927033050434" varName="checkingNodeContext" />
+      <varInfo nodeId="8415911927033050434" varName="node" />
+      <varInfo nodeId="8415911927033050434" varName="node1" />
+      <varInfo nodeId="8415911927033050434" varName="node2" />
+      <varInfo nodeId="8415911927033050434" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="8415911927033050434" fileName="RunConfigMainNodeStatement_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.RunConfigMainNodeStatement_Constraints" />
   </root>
   <root nodeId="8415911927033051504">
@@ -1001,10 +1309,21 @@
     <scopeInfo nodeId="8415911927033051504" fileName="CreateRunConfigStatement_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="8415911927033051506" fileName="CreateRunConfigStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="148" />
     <scopeInfo nodeId="8415911927033051504" fileName="CreateRunConfigStatement_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="8415911927033051504" fileName="CreateRunConfigStatement_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8415911927033051504" fileName="CreateRunConfigStatement_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8415911927033051504" varName="_context" />
+      <varInfo nodeId="8415911927033051504" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8415911927033051504" fileName="CreateRunConfigStatement_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="8415911927033051504" fileName="CreateRunConfigStatement_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="8415911927033051504" fileName="CreateRunConfigStatement_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8415911927033051504" fileName="CreateRunConfigStatement_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="8415911927033051504" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8415911927033051504" fileName="CreateRunConfigStatement_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="8415911927033051504" varName="checkingNodeContext" />
+      <varInfo nodeId="8415911927033051504" varName="node" />
+      <varInfo nodeId="8415911927033051504" varName="node1" />
+      <varInfo nodeId="8415911927033051504" varName="node2" />
+      <varInfo nodeId="8415911927033051504" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="8415911927033051504" fileName="CreateRunConfigStatement_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.CreateRunConfigStatement_Constraints" />
   </root>
   <root nodeId="8713489730824201065">
@@ -1041,13 +1360,30 @@
     <scopeInfo nodeId="8713489730824201067" fileName="EditableModel_Constraints.java" startLine="45" startPosition="121" endLine="46" endPosition="320" />
     <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="49" startPosition="53" endLine="51" endPosition="5" />
     <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
-    <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="57" startPosition="7" endLine="61" endPosition="31" />
+    <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="8713489730824201065" varName="_context" />
+      <varInfo nodeId="8713489730824201065" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="57" startPosition="7" endLine="61" endPosition="31">
+      <varInfo nodeId="8713489730824201065" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="56" startPosition="32" endLine="62" endPosition="7" />
-    <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="35" startPosition="166" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="53" startPosition="31" endLine="63" endPosition="20" />
-    <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="35" startPosition="166" endLine="42" endPosition="18">
+      <varInfo nodeId="8713489730824201065" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="53" startPosition="31" endLine="63" endPosition="20">
+      <varInfo nodeId="8713489730824201065" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8713489730824201065" varName="quotedNode_1" />
+      <varInfo nodeId="8713489730824201065" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="33" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="8713489730824201065" varName="checkingNodeContext" />
+      <varInfo nodeId="8713489730824201065" varName="node" />
+      <varInfo nodeId="8713489730824201065" varName="node1" />
+      <varInfo nodeId="8713489730824201065" varName="node2" />
+      <varInfo nodeId="8713489730824201065" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="52" startPosition="0" endLine="65" endPosition="0" />
     <unitInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.EditableModel_Constraints" />
     <unitInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="49" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.EditableModel_Constraints$QuotationClass_z543ji_a1a0a0a" />
@@ -1072,10 +1408,21 @@
     <scopeInfo nodeId="8821770403474030736" fileName="ReportErrorStatement_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
     <scopeInfo nodeId="8821770403474030738" fileName="ReportErrorStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="150" />
     <scopeInfo nodeId="8821770403474030736" fileName="ReportErrorStatement_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="8821770403474030736" fileName="ReportErrorStatement_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8821770403474030736" fileName="ReportErrorStatement_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8821770403474030736" varName="_context" />
+      <varInfo nodeId="8821770403474030736" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8821770403474030736" fileName="ReportErrorStatement_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="8821770403474030736" fileName="ReportErrorStatement_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="8821770403474030736" fileName="ReportErrorStatement_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8821770403474030736" fileName="ReportErrorStatement_Constraints.java" startLine="27" startPosition="166" endLine="34" endPosition="18">
+      <varInfo nodeId="8821770403474030736" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8821770403474030736" fileName="ReportErrorStatement_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="8821770403474030736" varName="checkingNodeContext" />
+      <varInfo nodeId="8821770403474030736" varName="node" />
+      <varInfo nodeId="8821770403474030736" varName="node1" />
+      <varInfo nodeId="8821770403474030736" varName="node2" />
+      <varInfo nodeId="8821770403474030736" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="8821770403474030736" fileName="ReportErrorStatement_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ReportErrorStatement_Constraints" />
   </root>
 </debugInfo>
