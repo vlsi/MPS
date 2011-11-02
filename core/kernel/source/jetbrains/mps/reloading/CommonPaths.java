@@ -135,6 +135,7 @@ public class CommonPaths {
     addCoreJars(result);
     addEditorJars(result);
     addIdeaJars(result);
+    addToolsJar(result);
     addClasses(result, PathManager.getHomePath());
     return result;
   }
@@ -161,6 +162,9 @@ public class CommonPaths {
     addIfExists(result, "/lib/extensions.jar");
     addIfExists(result, "/lib/junit-4.8.2.jar");
     addIfExists(result, "/lib/picocontainer.jar");
+  }
+
+  private static void addToolsJar(CompositeClassPathItem result) {
     addIfExists(result, "/lib/tools.jar");
   }
 
