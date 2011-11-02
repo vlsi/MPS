@@ -1364,8 +1364,7 @@ public class JavaConverterTreeBuilder {
     }
     SNode method = SNodeOperations.cast(myTypesProvider.getRaw(b), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
     for (ReferenceBinding referenceBinding : b.thrownExceptions) {
-      SNode exceptionType = SNodeOperations.cast(myTypesProvider.createType(referenceBinding), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addElement(exceptionType);
+      ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addElement(myTypesProvider.createType(referenceBinding));
     }
   }
 
