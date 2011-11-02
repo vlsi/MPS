@@ -477,10 +477,10 @@ public class ClassifierUpdater {
       return new ClassifierUpdater.QuotationClass_ol94f8_a0a0d0u().createNode(value.toString());
     }
     if (value instanceof Character) {
-      return null;
+      return new ClassifierUpdater.QuotationClass_ol94f8_a0a0e0u().createNode(value.toString());
     }
     if (value instanceof Long) {
-      return null;
+      return new ClassifierUpdater.QuotationClass_ol94f8_a0a0f0u().createNode(value.toString() + "L");
     }
     if (value instanceof Float) {
       return new ClassifierUpdater.QuotationClass_ol94f8_a0a0g0u().createNode(value.toString());
@@ -1364,6 +1364,42 @@ public class ClassifierUpdater {
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("value", (String) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_ol94f8_a0a0e0u {
+    public QuotationClass_ol94f8_a0a0e0u() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharConstant", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("charConstant", (String) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_ol94f8_a0a0f0u {
+    public QuotationClass_ol94f8_a0a0f0u() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongLiteral", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_3);
         result = quotedNode1_2;
