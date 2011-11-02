@@ -4,6 +4,7 @@ package jetbrains.mps.lang.refactoring.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
@@ -166,6 +167,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       InferenceRule_Runtime inferenceRule = new typeof_UpdateModelProcedure_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypeOf_ContextType_RefactoringContext_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
     }
   }
 }

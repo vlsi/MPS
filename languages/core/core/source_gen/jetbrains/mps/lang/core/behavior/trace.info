@@ -105,45 +105,103 @@
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="124" startPosition="108" endLine="125" endPosition="245" />
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="128" startPosition="122" endLine="129" endPosition="265" />
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="132" startPosition="108" endLine="133" endPosition="256" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="82" startPosition="81" endLine="84" endPosition="212" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="87" startPosition="82" endLine="89" endPosition="213" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="92" startPosition="77" endLine="94" endPosition="209" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="97" startPosition="75" endLine="99" endPosition="200" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="102" startPosition="89" endLine="104" endPosition="220" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="107" startPosition="75" endLine="109" endPosition="211" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="82" startPosition="81" endLine="84" endPosition="212">
+      <varInfo nodeId="1213877396626" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="87" startPosition="82" endLine="89" endPosition="213">
+      <varInfo nodeId="1213877396626" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="92" startPosition="77" endLine="94" endPosition="209">
+      <varInfo nodeId="1213877396626" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="97" startPosition="75" endLine="99" endPosition="200">
+      <varInfo nodeId="1213877396626" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="102" startPosition="89" endLine="104" endPosition="220">
+      <varInfo nodeId="1213877396626" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="107" startPosition="75" endLine="109" endPosition="211">
+      <varInfo nodeId="1213877396626" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="201537367881074494" fileName="BaseConcept_Behavior.java" startLine="75" startPosition="22" endLine="78" endPosition="5">
       <varInfo nodeId="201537367881074496" varName="metaLevelChanger" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="123" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="127" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="131" startPosition="0" endLine="135" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877396644" fileName="BaseConcept_Behavior.java" startLine="46" startPosition="100" endLine="51" endPosition="121">
       <varInfo nodeId="1213877396646" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="81" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="86" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="91" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="96" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="101" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="106" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="86" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="91" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="96" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="101" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="106" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="3981318653438234729" fileName="BaseConcept_Behavior.java" startLine="71" startPosition="78" endLine="79" endPosition="21">
       <varInfo nodeId="201537367881074508" varName="metalevel" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="70" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="70" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877396642" fileName="BaseConcept_Behavior.java" startLine="45" startPosition="78" endLine="64" endPosition="98">
       <varInfo nodeId="1213877396688" varName="conceptAlias" />
       <varInfo nodeId="1213877396675" varName="smartRefPresentation" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="44" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="44" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1213877396626" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="18" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
   </root>
   <root nodeId="1213877404257">
@@ -162,20 +220,33 @@
     <scopeInfo nodeId="1213877404289" fileName="INamedConcept_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1213877404271" fileName="INamedConcept_Behavior.java" startLine="20" startPosition="30" endLine="21" endPosition="61" />
     <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="31" startPosition="102" endLine="32" endPosition="241" />
-    <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="26" startPosition="69" endLine="28" endPosition="196" />
-    <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="26" startPosition="69" endLine="28" endPosition="196">
+      <varInfo nodeId="1213877404257" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="1213877404257" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1213877404257" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877404257" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877404260" fileName="INamedConcept_Behavior.java" startLine="18" startPosition="72" endLine="23" endPosition="76">
       <varInfo nodeId="1213877404262" varName="longName" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="17" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1213877404257" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1213877404257" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
   </root>
   <root nodeId="1213877439350">
     <nodeInfo nodeId="1213877439350" fileName="IResolveInfo_Behavior.java" startLine="7" startPosition="36" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877439352" fileName="IResolveInfo_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877439350" fileName="IResolveInfo_Behavior.java" startLine="7" startPosition="36" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="1213877439350" fileName="IResolveInfo_Behavior.java" startLine="7" startPosition="36" endLine="10" endPosition="0">
+      <varInfo nodeId="1213877439350" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1213877439350" fileName="IResolveInfo_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IResolveInfo_Behavior" />
   </root>
   <root nodeId="1224608888226">
@@ -201,15 +272,35 @@
     <scopeInfo nodeId="1225207468595" fileName="IDeprecatable_Behavior.java" startLine="22" startPosition="73" endLine="23" endPosition="16" />
     <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="36" startPosition="106" endLine="37" endPosition="246" />
     <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="40" startPosition="103" endLine="41" endPosition="242" />
-    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="26" startPosition="73" endLine="28" endPosition="201" />
-    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="31" startPosition="70" endLine="33" endPosition="197" />
-    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="26" startPosition="73" endLine="28" endPosition="201">
+      <varInfo nodeId="1224608888226" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="31" startPosition="70" endLine="33" endPosition="197">
+      <varInfo nodeId="1224608888226" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="1224608888226" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1224608888226" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1224608888226" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1224608888226" varName="callerConceptFqName" />
+      <varInfo nodeId="1224608888226" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1224608888226" varName="callerConceptFqName" />
+      <varInfo nodeId="1224608888226" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1224608888226" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1224608888226" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior" />
   </root>
   <root nodeId="201537367881074471">
@@ -222,10 +313,19 @@
     <nodeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMetaLevelChange_201537367881074474#(Ljetbrains/mps/smodel/SNode;)I" />
     <scopeInfo nodeId="201537367881074473" fileName="IMetaLevelChanger_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="22" startPosition="113" endLine="23" endPosition="266" />
-    <scopeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="17" startPosition="80" endLine="19" endPosition="221" />
-    <scopeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="17" startPosition="80" endLine="19" endPosition="221">
+      <varInfo nodeId="201537367881074471" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="201537367881074471" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="201537367881074471" varName="callerConceptFqName" />
+      <varInfo nodeId="201537367881074471" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="201537367881074471" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_Behavior" />
   </root>
   <root nodeId="2565736246230026577">
@@ -288,13 +388,21 @@
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="92" startPosition="36" endLine="93" endPosition="52" />
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="99" startPosition="36" endLine="100" endPosition="46" />
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="106" startPosition="36" endLine="107" endPosition="53" />
-    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="28" startPosition="120" endLine="30" endPosition="239" />
-    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="28" startPosition="120" endLine="30" endPosition="239">
+      <varInfo nodeId="2565736246230026577" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="2565736246230026577" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="2565736246230026577" varName="callerConceptFqName" />
       <varInfo nodeId="2565736246230026589" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960056" varName="targetNode" />
+      <varInfo nodeId="2565736246230026577" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="48" startPosition="153" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="48" startPosition="153" endLine="52" endPosition="0">
+      <varInfo nodeId="8656690432819148317" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="84" startPosition="81" endLine="88" endPosition="16" />
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="91" startPosition="81" endLine="95" endPosition="16" />
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="98" startPosition="79" endLine="102" endPosition="16" />
@@ -302,6 +410,7 @@
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="2565736246230026589" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960056" varName="targetNode" />
+      <varInfo nodeId="2565736246230026577" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2565736246230026652" fileName="ExportScope_Behavior.java" startLine="37" startPosition="69" endLine="42" endPosition="57">
       <varInfo nodeId="4109418420583959989" varName="module" />
@@ -309,10 +418,18 @@
     <scopeInfo nodeId="2565736246230031482" fileName="ExportScope_Behavior.java" startLine="76" startPosition="106" endLine="81" endPosition="7">
       <varInfo nodeId="2565736246230031494" varName="exp" />
     </scopeInfo>
-    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="83" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="90" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="97" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="104" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="2565736246230026577" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="90" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="2565736246230026577" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="97" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="2565736246230026577" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="104" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="2565736246230026577" varName="checkedDotOperand" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="36" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="2565736246230026654" varName="node" />
     </scopeInfo>
@@ -349,19 +466,27 @@
     <scopeInfo nodeId="402007580867586250" fileName="ExportScopePublic_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="402007580867586253" fileName="ExportScopePublic_Behavior.java" startLine="17" startPosition="123" endLine="18" endPosition="16" />
     <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="26" startPosition="152" endLine="27" endPosition="289" />
-    <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="21" startPosition="119" endLine="23" endPosition="244" />
-    <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="21" startPosition="119" endLine="23" endPosition="244">
+      <varInfo nodeId="402007580867586248" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="402007580867586248" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="402007580867586254" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960061" varName="targetNode" />
+      <varInfo nodeId="402007580867586248" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="402007580867586248" varName="callerConceptFqName" />
       <varInfo nodeId="402007580867586254" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960061" varName="targetNode" />
+      <varInfo nodeId="402007580867586248" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="402007580867586254" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960061" varName="targetNode" />
+      <varInfo nodeId="402007580867586248" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="402007580867586248" fileName="ExportScopePublic_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopePublic_Behavior" />
   </root>
@@ -378,19 +503,27 @@
     <scopeInfo nodeId="402007580867586262" fileName="ExportScopeModule_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="402007580867586265" fileName="ExportScopeModule_Behavior.java" startLine="17" startPosition="123" endLine="18" endPosition="101" />
     <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="26" startPosition="152" endLine="27" endPosition="289" />
-    <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="21" startPosition="119" endLine="23" endPosition="244" />
-    <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="21" startPosition="119" endLine="23" endPosition="244">
+      <varInfo nodeId="402007580867586260" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="402007580867586260" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="402007580867586266" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960064" varName="targetNode" />
+      <varInfo nodeId="402007580867586260" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="402007580867586260" varName="callerConceptFqName" />
       <varInfo nodeId="402007580867586266" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960064" varName="targetNode" />
+      <varInfo nodeId="402007580867586260" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="402007580867586266" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960064" varName="targetNode" />
+      <varInfo nodeId="402007580867586260" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="402007580867586260" fileName="ExportScopeModule_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeModule_Behavior" />
   </root>
@@ -407,19 +540,27 @@
     <scopeInfo nodeId="402007580867615877" fileName="ExportScopeNamespace_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="402007580867615880" fileName="ExportScopeNamespace_Behavior.java" startLine="18" startPosition="123" endLine="19" endPosition="156" />
     <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="27" startPosition="152" endLine="28" endPosition="292" />
-    <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="22" startPosition="119" endLine="24" endPosition="247" />
-    <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="22" startPosition="119" endLine="24" endPosition="247">
+      <varInfo nodeId="402007580867615875" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="402007580867615875" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="402007580867615881" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960068" varName="targetNode" />
+      <varInfo nodeId="402007580867615875" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="402007580867615875" varName="callerConceptFqName" />
       <varInfo nodeId="402007580867615881" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960068" varName="targetNode" />
+      <varInfo nodeId="402007580867615875" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="402007580867615881" varName="sourceNamespace" />
       <varInfo nodeId="8259195909097960068" varName="targetNode" />
+      <varInfo nodeId="402007580867615875" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="402007580867615875" fileName="ExportScopeNamespace_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_Behavior" />
   </root>

@@ -74,12 +74,18 @@
       <varInfo nodeId="1347577327951781540" varName="newConceptName" />
     </scopeInfo>
     <scopeInfo nodeId="1347577327951781586" fileName="RenameConcept.java" startLine="64" startPosition="33" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="1347577327951781587" fileName="RenameConcept.java" startLine="64" startPosition="33" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="1347577327951781523" fileName="RenameConcept_newName_Settings.java" startLine="11" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1347577327951781587" fileName="RenameConcept.java" startLine="64" startPosition="33" endLine="67" endPosition="7">
+      <varInfo nodeId="1347577327951781587" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1347577327951781523" fileName="RenameConcept_newName_Settings.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1347577327951781523" varName="context" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1347577327951781523" fileName="RenameConcept_newName_Settings.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1347577327951781521" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="23" startPosition="60" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
     <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
@@ -87,18 +93,31 @@
     <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="8292108433549550610" fileName="RenameConcept.java" startLine="47" startPosition="74" endLine="51" endPosition="106" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1347577327951781517" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="1347577327951781517" varName="model" />
+      <varInfo nodeId="1347577327951781517" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="55" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="55" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1347577327951781517" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1347577327951781521" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781534" fileName="RenameConcept.java" startLine="45" startPosition="68" endLine="53" endPosition="16" />
     <scopeInfo nodeId="1347577327951781565" fileName="RenameConcept.java" startLine="61" startPosition="88" endLine="69" endPosition="18">
       <varInfo nodeId="1347577327951781567" varName="result" />
       <varInfo nodeId="1347577327951781574" varName="sourceLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="44" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="60" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1347577327951781517" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="60" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1347577327951781517" varName="refactoringContext" />
+    </scopeInfo>
     <unitInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="23" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
     <unitInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameConcept_Target" />
     <unitInfo nodeId="1347577327951781523" fileName="RenameConcept_newName_Settings.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameConcept_newName_Settings" />
@@ -181,12 +200,18 @@
       <varInfo nodeId="1347577327951781662" varName="concept" />
       <varInfo nodeId="1347577327951781672" varName="newLinkName" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781732" fileName="RenameLink.java" startLine="72" startPosition="156" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="1347577327951781643" fileName="RenameLink_newName_Settings.java" startLine="11" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1347577327951781732" fileName="RenameLink.java" startLine="72" startPosition="156" endLine="75" endPosition="5">
+      <varInfo nodeId="1347577327951781732" varName="modelList" />
+    </scopeInfo>
+    <scopeInfo nodeId="1347577327951781643" fileName="RenameLink_newName_Settings.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1347577327951781643" varName="context" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1347577327951781643" fileName="RenameLink_newName_Settings.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1347577327951781653" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
     <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="27" startPosition="57" endLine="31" endPosition="3" />
     <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
@@ -194,19 +219,32 @@
     <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="8292108433549528141" fileName="RenameLink.java" startLine="51" startPosition="74" endLine="55" endPosition="106" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1347577327951781638" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1347577327951781638" varName="model" />
+      <varInfo nodeId="1347577327951781638" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="59" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1347577327951781638" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1347577327951781653" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781655" fileName="RenameLink.java" startLine="49" startPosition="68" endLine="57" endPosition="16" />
     <scopeInfo nodeId="1347577327951781699" fileName="RenameLink.java" startLine="66" startPosition="88" endLine="76" endPosition="18">
       <varInfo nodeId="1347577327951781722" varName="modelMap" />
       <varInfo nodeId="1347577327951781701" varName="result" />
       <varInfo nodeId="1347577327951781708" varName="sourceLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="48" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="65" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1347577327951781638" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="65" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1347577327951781638" varName="refactoringContext" />
+    </scopeInfo>
     <unitInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="27" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameLink" />
     <unitInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameLink_Target" />
     <unitInfo nodeId="1347577327951781643" fileName="RenameLink_newName_Settings.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameLink_newName_Settings" />
@@ -293,11 +331,15 @@
     <scopeInfo nodeId="1347577327951781874" fileName="RenameProperty.java" startLine="72" startPosition="157" endLine="75" endPosition="5">
       <varInfo nodeId="1347577327951781884" varName="modelList" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781779" fileName="RenameProperty_newName_Settings.java" startLine="11" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1347577327951781779" fileName="RenameProperty_newName_Settings.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1347577327951781779" varName="context" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781789" fileName="RenameProperty_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1347577327951781779" fileName="RenameProperty_newName_Settings.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1347577327951781789" fileName="RenameProperty_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781789" fileName="RenameProperty_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781789" fileName="RenameProperty_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1347577327951781789" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781789" fileName="RenameProperty_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
     <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="26" startPosition="61" endLine="30" endPosition="3" />
     <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
@@ -305,19 +347,32 @@
     <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="7845864677499819174" fileName="RenameProperty.java" startLine="50" startPosition="74" endLine="54" endPosition="106" />
-    <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1347577327951781764" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1347577327951781764" varName="model" />
+      <varInfo nodeId="1347577327951781764" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="58" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781789" fileName="RenameProperty_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1347577327951781764" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1347577327951781789" fileName="RenameProperty_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1347577327951781789" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781791" fileName="RenameProperty.java" startLine="48" startPosition="68" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="47" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="47" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1347577327951781764" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781835" fileName="RenameProperty.java" startLine="65" startPosition="88" endLine="76" endPosition="18">
       <varInfo nodeId="1347577327951781864" varName="modelsMap" />
       <varInfo nodeId="1347577327951781837" varName="result" />
       <varInfo nodeId="1347577327951781844" varName="sourceLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="64" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="64" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1347577327951781764" varName="refactoringContext" />
+    </scopeInfo>
     <unitInfo nodeId="1347577327951781764" fileName="RenameProperty.java" startLine="26" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameProperty" />
     <unitInfo nodeId="1347577327951781789" fileName="RenameProperty_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameProperty_Target" />
     <unitInfo nodeId="1347577327951781779" fileName="RenameProperty_newName_Settings.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameProperty_newName_Settings" />
@@ -488,35 +543,68 @@
     <scopeInfo nodeId="6934781091951606363" fileName="MoveConcepts.java" startLine="129" startPosition="26" endLine="132" endPosition="5">
       <varInfo nodeId="6934781091951606382" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8299073042392952013" fileName="MoveConcepts.java" startLine="145" startPosition="5" endLine="148" endPosition="5" />
-    <scopeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="156" startPosition="172" endLine="159" endPosition="7" />
-    <scopeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="163" startPosition="124" endLine="166" endPosition="7" />
-    <scopeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="173" startPosition="54" endLine="176" endPosition="5" />
+    <scopeInfo nodeId="8299073042392952013" fileName="MoveConcepts.java" startLine="145" startPosition="5" endLine="148" endPosition="5">
+      <varInfo nodeId="8299073042392952013" varName="ext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="156" startPosition="172" endLine="159" endPosition="7">
+      <varInfo nodeId="3068114543317979858" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="163" startPosition="124" endLine="166" endPosition="7">
+      <varInfo nodeId="3068114543317979873" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="173" startPosition="54" endLine="176" endPosition="5">
+      <varInfo nodeId="3068114543317978892" varName="selNode" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="3068114543317961954" fileName="MoveConcepts_targetModel_Settings.java" startLine="14" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="3068114543317961954" fileName="MoveConcepts_targetModel_Settings.java" startLine="14" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="3068114543317961954" varName="context" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="3068114543317961954" fileName="MoveConcepts_targetModel_Settings.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="3068114543317961954" fileName="MoveConcepts_targetModel_Settings.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="3068114543317961954" varName="entity" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="3068114543317961951" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
     <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="3801613833947582242" fileName="MoveConcepts.java" startLine="75" startPosition="120" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="3801613833947572746" fileName="MoveConcepts.java" startLine="80" startPosition="121" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="8299073042392952077" fileName="MoveConcepts.java" startLine="104" startPosition="139" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="8299073042392964901" fileName="MoveConcepts.java" startLine="109" startPosition="126" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="8299073042392964934" fileName="MoveConcepts.java" startLine="113" startPosition="77" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="8299073042392964969" fileName="MoveConcepts.java" startLine="117" startPosition="50" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="8299073042392951832" fileName="MoveConcepts.java" startLine="123" startPosition="273" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="3801613833947582242" fileName="MoveConcepts.java" startLine="75" startPosition="120" endLine="79" endPosition="0">
+      <varInfo nodeId="3801613833947582242" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3801613833947572746" fileName="MoveConcepts.java" startLine="80" startPosition="121" endLine="84" endPosition="0">
+      <varInfo nodeId="3801613833947572746" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8299073042392952077" fileName="MoveConcepts.java" startLine="104" startPosition="139" endLine="108" endPosition="0">
+      <varInfo nodeId="8299073042392952077" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8299073042392964901" fileName="MoveConcepts.java" startLine="109" startPosition="126" endLine="113" endPosition="0">
+      <varInfo nodeId="8299073042392964901" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8299073042392964934" fileName="MoveConcepts.java" startLine="113" startPosition="77" endLine="117" endPosition="0">
+      <varInfo nodeId="8299073042392964934" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8299073042392964969" fileName="MoveConcepts.java" startLine="117" startPosition="50" endLine="121" endPosition="0">
+      <varInfo nodeId="8299073042392964969" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8299073042392951832" fileName="MoveConcepts.java" startLine="123" startPosition="273" endLine="127" endPosition="0">
+      <varInfo nodeId="8299073042392951832" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317979349" fileName="MoveConcepts.java" startLine="155" startPosition="81" endLine="159" endPosition="7">
       <varInfo nodeId="3068114543317979773" varName="models" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317979366" fileName="MoveConcepts.java" startLine="162" startPosition="33" endLine="166" endPosition="7">
       <varInfo nodeId="3068114543317979843" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="3883347270486229141" fileName="MoveConcepts.java" startLine="178" startPosition="137" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="187" startPosition="0" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="3883347270486229141" fileName="MoveConcepts.java" startLine="178" startPosition="137" endLine="182" endPosition="0">
+      <varInfo nodeId="3883347270486229141" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="187" startPosition="0" endLine="191" endPosition="0">
+      <varInfo nodeId="3068114543317961454" varName="model" />
+      <varInfo nodeId="3068114543317961454" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="191" startPosition="0" endLine="195" endPosition="0" />
     <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="196" startPosition="89" endLine="200" endPosition="16" />
     <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="203" startPosition="88" endLine="207" endPosition="16" />
@@ -525,11 +613,21 @@
       <varInfo nodeId="3883347270486229103" varName="fromModel" />
       <varInfo nodeId="3883347270486211468" varName="toModel" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4893885478268658550" fileName="MoveConcepts.java" startLine="134" startPosition="20" endLine="141" endPosition="5" />
-    <scopeInfo nodeId="4893885478268658533" fileName="MoveConcepts.java" startLine="177" startPosition="185" endLine="184" endPosition="5" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="195" startPosition="0" endLine="202" endPosition="0" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="202" startPosition="0" endLine="209" endPosition="0" />
+    <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="3068114543317961951" varName="entity" />
+    </scopeInfo>
+    <scopeInfo nodeId="4893885478268658550" fileName="MoveConcepts.java" startLine="134" startPosition="20" endLine="141" endPosition="5">
+      <varInfo nodeId="4893885478268658550" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="4893885478268658533" fileName="MoveConcepts.java" startLine="177" startPosition="185" endLine="184" endPosition="5">
+      <varInfo nodeId="4893885478268658533" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="195" startPosition="0" endLine="202" endPosition="0">
+      <varInfo nodeId="3068114543317961454" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="202" startPosition="0" endLine="209" endPosition="0">
+      <varInfo nodeId="3068114543317961454" varName="checkedDotOperand" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317978822" fileName="MoveConcepts.java" startLine="71" startPosition="25" endLine="84" endPosition="11">
       <varInfo nodeId="3068114543317978832" varName="model" />
     </scopeInfo>
@@ -538,18 +636,24 @@
       <varInfo nodeId="3068114543317978888" varName="searchResults" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317978821" fileName="MoveConcepts.java" startLine="70" startPosition="57" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="171" startPosition="0" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="171" startPosition="0" endLine="187" endPosition="0">
+      <varInfo nodeId="3068114543317961454" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317979331" fileName="MoveConcepts.java" startLine="151" startPosition="88" endLine="169" endPosition="18">
       <varInfo nodeId="3068114543317980414" varName="project" />
       <varInfo nodeId="3068114543317979333" varName="result" />
       <varInfo nodeId="3068114543317979361" varName="targetLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="150" startPosition="0" endLine="171" endPosition="0" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="150" startPosition="0" endLine="171" endPosition="0">
+      <varInfo nodeId="3068114543317961454" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317978761" fileName="MoveConcepts.java" startLine="67" startPosition="68" endLine="94" endPosition="185">
       <varInfo nodeId="3068114543317978825" varName="canRefactor" />
       <varInfo nodeId="3801613833947572722" varName="hasGenerator" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="66" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="66" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="3068114543317961454" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317961457" fileName="MoveConcepts.java" startLine="97" startPosition="69" endLine="148" endPosition="5">
       <varInfo nodeId="3883347270486229675" varName="aspectNodes" />
       <varInfo nodeId="8299073042392939545" varName="isSourceExtends" />
@@ -558,7 +662,9 @@
       <varInfo nodeId="8299073042392964889" varName="targetExtends" />
       <varInfo nodeId="3068114543317978963" varName="targetLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="96" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="96" startPosition="0" endLine="150" endPosition="0">
+      <varInfo nodeId="3068114543317961454" varName="refactoringContext" />
+    </scopeInfo>
     <unitInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="44" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts" />
     <unitInfo nodeId="3068114543317978821" fileName="MoveConcepts.java" startLine="70" startPosition="45" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$1" />
     <unitInfo nodeId="3801613833947582242" fileName="MoveConcepts.java" startLine="75" startPosition="97" endLine="79" endPosition="9" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$2" />
@@ -699,13 +805,21 @@
     <scopeInfo nodeId="2893383476258734866" fileName="MoveLinkUp_mergeLinks_Settings.java" startLine="11" startPosition="75" endLine="13" endPosition="40" />
     <scopeInfo nodeId="6188135140808771200" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="15" startPosition="88" endLine="18" endPosition="51" />
     <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="31" startPosition="23" endLine="34" endPosition="48" />
-    <scopeInfo nodeId="3068114543317980315" fileName="MoveLinkUp.java" startLine="100" startPosition="124" endLine="103" endPosition="7" />
-    <scopeInfo nodeId="3068114543317980351" fileName="MoveLinkUp.java" startLine="107" startPosition="124" endLine="110" endPosition="7" />
-    <scopeInfo nodeId="2893383476258734866" fileName="MoveLinkUp_mergeLinks_Settings.java" startLine="10" startPosition="0" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="3068114543317980315" fileName="MoveLinkUp.java" startLine="100" startPosition="124" endLine="103" endPosition="7">
+      <varInfo nodeId="3068114543317980315" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317980351" fileName="MoveLinkUp.java" startLine="107" startPosition="124" endLine="110" endPosition="7">
+      <varInfo nodeId="3068114543317980351" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="2893383476258734866" fileName="MoveLinkUp_mergeLinks_Settings.java" startLine="10" startPosition="0" endLine="14" endPosition="3">
+      <varInfo nodeId="2893383476258734866" varName="context" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317979891" fileName="MoveLinkUp_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="2893383476258734866" fileName="MoveLinkUp_mergeLinks_Settings.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="3068114543317979891" fileName="MoveLinkUp_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="3068114543317979891" fileName="MoveLinkUp_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="3068114543317979891" fileName="MoveLinkUp_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="3068114543317979891" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="6188135140808771200" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="6188135140808771200" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="3068114543317979891" fileName="MoveLinkUp_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
@@ -722,32 +836,47 @@
     <scopeInfo nodeId="3068114543317980341" fileName="MoveLinkUp.java" startLine="106" startPosition="33" endLine="110" endPosition="7">
       <varInfo nodeId="3068114543317980343" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="3068114543317979887" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="3068114543317979887" varName="model" />
+      <varInfo nodeId="3068114543317979887" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="6188135140808771200" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="14" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="6188135140808771200" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="14" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="6188135140808771200" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="30" startPosition="57" endLine="35" endPosition="3" />
     <scopeInfo nodeId="6188135140808771204" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="33" startPosition="58" endLine="38" endPosition="112">
       <varInfo nodeId="6188135140808824103" varName="selectedObject" />
     </scopeInfo>
     <scopeInfo nodeId="2893383476258780719" fileName="MoveLinkUp.java" startLine="73" startPosition="79" endLine="79" endPosition="7" />
-    <scopeInfo nodeId="3068114543317979891" fileName="MoveLinkUp_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3068114543317979891" fileName="MoveLinkUp_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="3068114543317979891" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317979890" fileName="MoveLinkUp.java" startLine="84" startPosition="69" endLine="91" endPosition="5">
       <varInfo nodeId="3068114543317980697" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6188135140808771200" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="32" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="83" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="83" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="3068114543317979887" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317979982" fileName="MoveLinkUp.java" startLine="94" startPosition="88" endLine="113" endPosition="18">
       <varInfo nodeId="3068114543317980392" varName="project" />
       <varInfo nodeId="3068114543317980285" varName="result" />
       <varInfo nodeId="3068114543317980378" varName="sourceLanguage" />
       <varInfo nodeId="3068114543317980402" varName="targetLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="93" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="93" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="3068114543317979887" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317979894" fileName="MoveLinkUp.java" startLine="53" startPosition="68" endLine="81" endPosition="16">
       <varInfo nodeId="3068114543317980112" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="52" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="52" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="3068114543317979887" varName="refactoringContext" />
+    </scopeInfo>
     <unitInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="30" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveLinkUp" />
     <unitInfo nodeId="3068114543317980093" fileName="MoveLinkUp.java" startLine="55" startPosition="45" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveLinkUp$1" />
     <unitInfo nodeId="2893383476258745391" fileName="MoveLinkUp.java" startLine="68" startPosition="45" endLine="72" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveLinkUp$2" />
@@ -861,11 +990,17 @@
     <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="9" startPosition="66" endLine="11" endPosition="3" />
     <scopeInfo nodeId="6188135140808824140" fileName="MovePropertyUp_targetConcept_Chooser.java" startLine="15" startPosition="92" endLine="18" endPosition="51" />
     <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="30" startPosition="61" endLine="33" endPosition="3" />
-    <scopeInfo nodeId="3068114543317980601" fileName="MovePropertyUp.java" startLine="85" startPosition="124" endLine="88" endPosition="7" />
-    <scopeInfo nodeId="3068114543317980639" fileName="MovePropertyUp.java" startLine="92" startPosition="124" endLine="95" endPosition="7" />
+    <scopeInfo nodeId="3068114543317980601" fileName="MovePropertyUp.java" startLine="85" startPosition="124" endLine="88" endPosition="7">
+      <varInfo nodeId="3068114543317980601" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317980639" fileName="MovePropertyUp.java" startLine="92" startPosition="124" endLine="95" endPosition="7">
+      <varInfo nodeId="3068114543317980639" varName="list" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="3068114543317980452" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="6188135140808824140" fileName="MovePropertyUp_targetConcept_Chooser.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="6188135140808824140" fileName="MovePropertyUp_targetConcept_Chooser.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
@@ -881,14 +1016,23 @@
     <scopeInfo nodeId="3068114543317980629" fileName="MovePropertyUp.java" startLine="91" startPosition="33" endLine="95" endPosition="7">
       <varInfo nodeId="3068114543317980631" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="3068114543317980424" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="3068114543317980424" varName="model" />
+      <varInfo nodeId="3068114543317980424" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="6188135140808824140" fileName="MovePropertyUp_targetConcept_Chooser.java" startLine="14" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="6188135140808824140" fileName="MovePropertyUp_targetConcept_Chooser.java" startLine="14" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="6188135140808824140" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="6188135140808824146" fileName="MovePropertyUp_targetConcept_Chooser.java" startLine="33" startPosition="58" endLine="38" endPosition="116">
       <varInfo nodeId="6188135140808824148" varName="selectedObject" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="3068114543317980452" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="6188135140808824140" fileName="MovePropertyUp_targetConcept_Chooser.java" startLine="32" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="3068114543317980524" fileName="MovePropertyUp.java" startLine="51" startPosition="68" endLine="62" endPosition="117">
       <varInfo nodeId="3068114543317980526" varName="concept" />
@@ -896,15 +1040,21 @@
     <scopeInfo nodeId="3068114543317980454" fileName="MovePropertyUp.java" startLine="65" startPosition="69" endLine="76" endPosition="302">
       <varInfo nodeId="3068114543317980669" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="50" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="64" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="50" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="3068114543317980424" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="64" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="3068114543317980424" varName="refactoringContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3068114543317980561" fileName="MovePropertyUp.java" startLine="79" startPosition="88" endLine="98" endPosition="18">
       <varInfo nodeId="3068114543317980571" varName="project" />
       <varInfo nodeId="3068114543317980563" varName="result" />
       <varInfo nodeId="3068114543317980579" varName="sourceLanguage" />
       <varInfo nodeId="3068114543317980619" varName="targetLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="78" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="78" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="3068114543317980424" varName="refactoringContext" />
+    </scopeInfo>
     <unitInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="30" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MovePropertyUp" />
     <unitInfo nodeId="3068114543317980529" fileName="MovePropertyUp.java" startLine="53" startPosition="45" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MovePropertyUp$1" />
     <unitInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MovePropertyUp_Target" />
@@ -947,10 +1097,16 @@
       <varInfo nodeId="3883347270486229657" varName="aspectNodes" />
     </scopeInfo>
     <scopeInfo nodeId="3883347270486219802" fileName="ConceptMoveUtil.java" startLine="48" startPosition="80" endLine="52" endPosition="16" />
-    <scopeInfo nodeId="3883347270486219844" fileName="ConceptMoveUtil.java" startLine="24" startPosition="163" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="3883347270486219844" fileName="ConceptMoveUtil.java" startLine="24" startPosition="163" endLine="29" endPosition="0">
+      <varInfo nodeId="3883347270486219844" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="3883347270486219815" fileName="ConceptMoveUtil.java" startLine="23" startPosition="96" endLine="29" endPosition="24" />
-    <scopeInfo nodeId="3883347270486229652" fileName="ConceptMoveUtil.java" startLine="38" startPosition="118" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="3883347270486219802" fileName="ConceptMoveUtil.java" startLine="47" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="3883347270486229652" fileName="ConceptMoveUtil.java" startLine="38" startPosition="118" endLine="44" endPosition="5">
+      <varInfo nodeId="3883347270486229652" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="3883347270486219802" fileName="ConceptMoveUtil.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="3883347270486219802" varName="checkedDotOperand" />
+    </scopeInfo>
     <scopeInfo nodeId="3883347270486219812" fileName="ConceptMoveUtil.java" startLine="22" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="3883347270486219822" varName="aspectModel" />
       <varInfo nodeId="3883347270486219816" varName="concepts" />
