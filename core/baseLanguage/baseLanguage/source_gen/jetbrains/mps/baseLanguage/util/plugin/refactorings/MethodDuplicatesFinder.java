@@ -42,7 +42,7 @@ public class MethodDuplicatesFinder {
           break;
         } else {
           modifier.getMatch().putNode(current);
-          if (!(MatchingUtil.matchNodes(current, nodeToFind, modifier, true))) {
+          if (!(ExtractMethodFactory.isRefactoringAvailable(modifier.getMatch().getNodes())) || !(MatchingUtil.matchNodes(current, nodeToFind, modifier, true))) {
             hasNoErrors = false;
             break;
           }
