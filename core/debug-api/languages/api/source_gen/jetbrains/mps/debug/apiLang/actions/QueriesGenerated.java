@@ -83,7 +83,7 @@ public class QueriesGenerated {
             if (debuggerType != null && StringUtils.isNotEmpty(SPropertyOperations.getString(debuggerType, "name"))) {
               IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, "name")).getBreakpointsProvider();
               if (provider != null) {
-                return provider.getAllKinds();
+                return (List<IBreakpointKind>) provider.getAllKinds();
               }
             }
             return ListSequence.fromList(new ArrayList<IBreakpointKind>());

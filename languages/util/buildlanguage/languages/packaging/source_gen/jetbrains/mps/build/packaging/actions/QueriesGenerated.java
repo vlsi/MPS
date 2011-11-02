@@ -100,7 +100,7 @@ public class QueriesGenerated {
               }
             }).select(new ISelector<File, String>() {
               public String select(File it) {
-                return it.getName();
+                return (String) it.getName();
               }
             }).union(Sequence.fromIterable((inRootDir ?
               Sequence.fromIterable(Collections.<String>emptyList()) :

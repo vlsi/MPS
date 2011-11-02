@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
@@ -60,9 +60,9 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new VisibleClassifiersScope(_context.getEnclosingNode(), AbstractClassifiersScope.INTERFACE, operationContext.getScope()).getNodes(new Condition<SNode>() {
+            return (Iterable<SNode>) new VisibleClassifiersScope(_context.getEnclosingNode(), AbstractClassifiersScope.INTERFACE, operationContext.getScope()).getNodes(new Condition<SNode>() {
               public boolean met(SNode cls) {
-                return Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(new ResourceClassifierType_Constraints.QuotationClass_ymgo28_a0a0a0a0a0a0c0a0a0b0a1a0b0a().createNode(), "classifier", false));
+                return Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(new ResourceClassifierType_Constraints.QuotationClass_ymgo28_a0a0a0a0a0a0a2a0a0a1a0b0a1a0().createNode(), "classifier", false));
               }
             });
           }
@@ -77,8 +77,8 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  public static class QuotationClass_ymgo28_a0a0a0a0a0a0c0a0a0b0a1a0b0a {
-    public QuotationClass_ymgo28_a0a0a0a0a0a0c0a0a0b0a1a0b0a() {
+  public static class QuotationClass_ymgo28_a0a0a0a0a0a0a2a0a0a1a0b0a1a0 {
+    public QuotationClass_ymgo28_a0a0a0a0a0a0a2a0a0a1a0b0a1a0() {
     }
 
     public SNode createNode() {

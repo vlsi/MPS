@@ -44,23 +44,51 @@
     <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="69" />
     <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
     <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="17" startPosition="124" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45" />
+    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45">
+      <varInfo nodeId="2526721715665547048" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="44" startPosition="52" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="2526721715665562909" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="416" />
+    <scopeInfo nodeId="2526721715665562909" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="416">
+      <varInfo nodeId="2526721715665562909" varName="_info_12389875345" />
+      <varInfo nodeId="2526721715665562909" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
     <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />
     <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="52" startPosition="7" endLine="56" endPosition="31" />
-    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="65" startPosition="7" endLine="69" endPosition="31" />
+    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="52" startPosition="7" endLine="56" endPosition="31">
+      <varInfo nodeId="2526721715665547048" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="65" startPosition="7" endLine="69" endPosition="31">
+      <varInfo nodeId="2526721715665547048" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="2526721715665547049" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="21" startPosition="130" endLine="26" endPosition="5" />
     <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="51" startPosition="32" endLine="57" endPosition="7" />
     <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="64" startPosition="32" endLine="70" endPosition="7" />
-    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="48" startPosition="96" endLine="58" endPosition="20" />
-    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="61" startPosition="49" endLine="71" endPosition="20" />
-    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="47" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="60" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="32" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2526721715665547048" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="20" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="2526721715665547048" varName="debuggerReference" />
+      <varInfo nodeId="2526721715665547048" varName="status" />
+      <varInfo nodeId="2526721715665547048" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="48" startPosition="96" endLine="58" endPosition="20">
+      <varInfo nodeId="2526721715665547048" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2526721715665547048" varName="quotedNode_1" />
+      <varInfo nodeId="2526721715665547048" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="61" startPosition="49" endLine="71" endPosition="20">
+      <varInfo nodeId="2526721715665547048" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2526721715665547048" varName="quotedNode_1" />
+      <varInfo nodeId="2526721715665547048" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="47" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="2526721715665547048" varName="parameter_3" />
+      <varInfo nodeId="2526721715665547048" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="60" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="2526721715665547048" varName="parameter_3" />
+    </scopeInfo>
     <unitInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_DebuggerReference_InferenceRule" />
     <unitInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="44" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_DebuggerReference_InferenceRule$QuotationClass_uu2qih_a0a0a0" />
   </root>
@@ -106,21 +134,43 @@
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="34" startPosition="27" endLine="35" endPosition="17" />
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="38" startPosition="39" endLine="39" endPosition="16" />
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="15" startPosition="119" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="28" startPosition="5" endLine="30" endPosition="45" />
+    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="28" startPosition="5" endLine="30" endPosition="45">
+      <varInfo nodeId="3570824963050586846" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="42" startPosition="51" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="50" startPosition="7" endLine="53" endPosition="31" />
-    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="62" startPosition="7" endLine="65" endPosition="31" />
-    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="50" startPosition="7" endLine="53" endPosition="31">
+      <varInfo nodeId="3570824963050586846" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="62" startPosition="7" endLine="65" endPosition="31">
+      <varInfo nodeId="3570824963050586846" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="3570824963050586846" varName="debuggerType" />
+      <varInfo nodeId="3570824963050586846" varName="status" />
+      <varInfo nodeId="3570824963050586846" varName="typeCheckingContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="27" startPosition="68" endLine="31" endPosition="5" />
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="49" startPosition="32" endLine="54" endPosition="7" />
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="61" startPosition="32" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="26" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="46" startPosition="76" endLine="55" endPosition="20" />
-    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="58" startPosition="31" endLine="67" endPosition="20" />
-    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="45" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="3570824963050586846" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="46" startPosition="76" endLine="55" endPosition="20">
+      <varInfo nodeId="3570824963050586846" varName="_parameterValues_129834374" />
+      <varInfo nodeId="3570824963050586846" varName="quotedNode_1" />
+      <varInfo nodeId="3570824963050586846" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="58" startPosition="31" endLine="67" endPosition="20">
+      <varInfo nodeId="3570824963050586846" varName="_parameterValues_129834374" />
+      <varInfo nodeId="3570824963050586846" varName="quotedNode_1" />
+      <varInfo nodeId="3570824963050586846" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="45" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="3570824963050586846" varName="typeCheckingContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="57" startPosition="0" endLine="69" endPosition="0" />
     <unitInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule" />
     <unitInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="42" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule$QuotationClass_ueeq0q_a0a0a" />
@@ -168,7 +218,9 @@
     <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="33" startPosition="46" endLine="34" endPosition="69" />
     <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" />
     <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="21" startPosition="152" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45" />
+    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
+      <varInfo nodeId="4030433165041852571" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="48" startPosition="55" endLine="50" endPosition="5" />
     <scopeInfo nodeId="7329423411587718619" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="26" startPosition="152" endLine="29" endPosition="92">
       <varInfo nodeId="7329423411587718640" varName="throwables" />
@@ -176,16 +228,36 @@
     <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" />
     <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="56" startPosition="7" endLine="60" endPosition="31" />
-    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="69" startPosition="7" endLine="73" endPosition="31" />
+    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="56" startPosition="7" endLine="60" endPosition="31">
+      <varInfo nodeId="4030433165041852571" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="69" startPosition="7" endLine="73" endPosition="31">
+      <varInfo nodeId="4030433165041852571" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="4030433165041852572" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="25" startPosition="130" endLine="30" endPosition="5" />
     <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="55" startPosition="32" endLine="61" endPosition="7" />
     <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="68" startPosition="32" endLine="74" endPosition="7" />
-    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="52" startPosition="76" endLine="62" endPosition="20" />
-    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="65" startPosition="31" endLine="75" endPosition="20" />
-    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="51" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="4030433165041852571" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="4030433165041852571" varName="debuggerReference" />
+      <varInfo nodeId="4030433165041852571" varName="status" />
+      <varInfo nodeId="4030433165041852571" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="52" startPosition="76" endLine="62" endPosition="20">
+      <varInfo nodeId="4030433165041852571" varName="_parameterValues_129834374" />
+      <varInfo nodeId="4030433165041852571" varName="quotedNode_1" />
+      <varInfo nodeId="4030433165041852571" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="65" startPosition="31" endLine="75" endPosition="20">
+      <varInfo nodeId="4030433165041852571" varName="_parameterValues_129834374" />
+      <varInfo nodeId="4030433165041852571" varName="quotedNode_1" />
+      <varInfo nodeId="4030433165041852571" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="51" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="4030433165041852571" varName="typeCheckingContext" />
+    </scopeInfo>
     <scopeInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="64" startPosition="0" endLine="77" endPosition="0" />
     <unitInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule" />
     <unitInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule$QuotationClass_fpej4j_a0a0b0a0a" />
@@ -233,25 +305,50 @@
     <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="33" startPosition="46" endLine="34" endPosition="77" />
     <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" />
     <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="18" startPosition="132" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45" />
+    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
+      <varInfo nodeId="5365453833390544926" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="48" startPosition="54" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="5365453833390548276" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="25" startPosition="7" endLine="28" endPosition="386" />
-    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="56" startPosition="7" endLine="59" endPosition="31" />
-    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="68" startPosition="7" endLine="71" endPosition="31" />
+    <scopeInfo nodeId="5365453833390548276" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="25" startPosition="7" endLine="28" endPosition="386">
+      <varInfo nodeId="5365453833390548276" varName="_info_12389875345" />
+      <varInfo nodeId="5365453833390548276" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="56" startPosition="7" endLine="59" endPosition="31">
+      <varInfo nodeId="5365453833390544926" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="68" startPosition="7" endLine="71" endPosition="31">
+      <varInfo nodeId="5365453833390544926" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" />
     <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="5365453833390548237" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="24" startPosition="241" endLine="29" endPosition="7" />
     <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="55" startPosition="32" endLine="60" endPosition="7" />
     <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="67" startPosition="32" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5365453833390544926" varName="argument" />
+    </scopeInfo>
     <scopeInfo nodeId="5365453833390544927" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="22" startPosition="138" endLine="30" endPosition="5">
       <varInfo nodeId="5365453833390548229" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="52" startPosition="76" endLine="61" endPosition="20" />
-    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="64" startPosition="31" endLine="73" endPosition="20" />
-    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="51" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="52" startPosition="76" endLine="61" endPosition="20">
+      <varInfo nodeId="5365453833390544926" varName="_parameterValues_129834374" />
+      <varInfo nodeId="5365453833390544926" varName="quotedNode_1" />
+      <varInfo nodeId="5365453833390544926" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="64" startPosition="31" endLine="73" endPosition="20">
+      <varInfo nodeId="5365453833390544926" varName="_parameterValues_129834374" />
+      <varInfo nodeId="5365453833390544926" varName="quotedNode_1" />
+      <varInfo nodeId="5365453833390544926" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="5365453833390544926" varName="createBreakpointOperation" />
+      <varInfo nodeId="5365453833390544926" varName="status" />
+      <varInfo nodeId="5365453833390544926" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="51" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="5365453833390544926" varName="typeCheckingContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="63" startPosition="0" endLine="75" endPosition="0" />
     <unitInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_CreateBreakpointOperation_InferenceRule" />
     <unitInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="48" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_CreateBreakpointOperation_InferenceRule$QuotationClass_btj441_a0a0a1a0" />
@@ -297,22 +394,47 @@
     <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="73" />
     <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
     <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="17" startPosition="128" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45" />
+    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45">
+      <varInfo nodeId="6586232406240905081" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="44" startPosition="52" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="6586232406240905084" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="378" />
-    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="52" startPosition="7" endLine="55" endPosition="31" />
-    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="64" startPosition="7" endLine="67" endPosition="31" />
+    <scopeInfo nodeId="6586232406240905084" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="378">
+      <varInfo nodeId="6586232406240905084" varName="_info_12389875345" />
+      <varInfo nodeId="6586232406240905084" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="52" startPosition="7" endLine="55" endPosition="31">
+      <varInfo nodeId="6586232406240905081" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="64" startPosition="7" endLine="67" endPosition="31">
+      <varInfo nodeId="6586232406240905081" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />
     <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="6586232406240905082" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="21" startPosition="134" endLine="26" endPosition="5" />
     <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="51" startPosition="32" endLine="56" endPosition="7" />
     <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="63" startPosition="32" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="48" startPosition="76" endLine="57" endPosition="20" />
-    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="60" startPosition="31" endLine="69" endPosition="20" />
-    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="47" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="32" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="6586232406240905081" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="20" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="6586232406240905081" varName="debuggerConfiguration" />
+      <varInfo nodeId="6586232406240905081" varName="status" />
+      <varInfo nodeId="6586232406240905081" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="48" startPosition="76" endLine="57" endPosition="20">
+      <varInfo nodeId="6586232406240905081" varName="_parameterValues_129834374" />
+      <varInfo nodeId="6586232406240905081" varName="quotedNode_1" />
+      <varInfo nodeId="6586232406240905081" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="60" startPosition="31" endLine="69" endPosition="20">
+      <varInfo nodeId="6586232406240905081" varName="_parameterValues_129834374" />
+      <varInfo nodeId="6586232406240905081" varName="quotedNode_1" />
+      <varInfo nodeId="6586232406240905081" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="47" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="6586232406240905081" varName="typeCheckingContext" />
+    </scopeInfo>
     <scopeInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="59" startPosition="0" endLine="71" endPosition="0" />
     <unitInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_DebuggerConfiguration_InferenceRule" />
     <unitInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_DebuggerConfiguration_InferenceRule$QuotationClass_p6alym_a0a0a0" />
