@@ -12550,28 +12550,31 @@
     <nodeInfo nodeId="1221637809856" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="27" startPosition="60" endLine="28" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1221637809876" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="34" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1221637809876" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="34" startPosition="62" endLine="35" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1221637871546" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="40" startPosition="7" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1221637871546" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="41" startPosition="60" endLine="42" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="47" startPosition="46" endLine="48" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="52" startPosition="5" endLine="53" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="53" startPosition="117" endLine="54" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="58" startPosition="30" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6392007121188978305" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="39" startPosition="69" endLine="40" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1221637871546" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="43" startPosition="7" endLine="44" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221637871546" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="44" startPosition="60" endLine="45" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="50" startPosition="46" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="55" startPosition="5" endLine="56" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="56" startPosition="117" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="61" startPosition="30" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="20" startPosition="131" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ClassConcept_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="6392007121188978308" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1221637809856" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="25" startPosition="259" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221637809876" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="32" startPosition="148" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1221637871546" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="39" startPosition="183" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="51" startPosition="68" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="1221637871546" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="42" startPosition="183" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="54" startPosition="68" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="1221637809823" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="24" startPosition="116" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1221637809867" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="31" startPosition="109" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1221637826069" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1221637826069" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="41" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="53" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
     <nodeInfo nodeId="1221637809861" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="30" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="21" startPosition="50" endLine="21" endPosition="50" />
-    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="47" startPosition="46" endLine="48" endPosition="63" />
-    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="58" startPosition="30" endLine="59" endPosition="17" />
+    <scopeInfo nodeId="6392007121188978309" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="39" startPosition="69" endLine="40" endPosition="53" />
+    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="50" startPosition="46" endLine="51" endPosition="63" />
+    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="61" startPosition="30" endLine="62" endPosition="17" />
     <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="20" startPosition="131" endLine="22" endPosition="3" />
     <scopeInfo nodeId="1221637809856" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="28" endPosition="269">
       <varInfo nodeId="1221637809856" varName="_reporter_2309309498" />
@@ -12581,33 +12584,36 @@
       <varInfo nodeId="1221637809876" varName="_reporter_2309309498" />
       <varInfo nodeId="1221637809876" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="1221637871546" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="40" startPosition="7" endLine="42" endPosition="261">
+    <scopeInfo nodeId="1221637871546" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="43" startPosition="7" endLine="45" endPosition="261">
       <varInfo nodeId="1221637871546" varName="_reporter_2309309498" />
       <varInfo nodeId="1221637871546" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="52" startPosition="5" endLine="54" endPosition="45">
+    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="55" startPosition="5" endLine="57" endPosition="45">
       <varInfo nodeId="1221637809819" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="6392007121188978308" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="41" endPosition="5">
+      <varInfo nodeId="6392007121188978311" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="1221637809855" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="25" startPosition="259" endLine="29" endPosition="7" />
     <scopeInfo nodeId="1221637809875" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="32" startPosition="148" endLine="36" endPosition="9" />
-    <scopeInfo nodeId="1221637826070" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="39" startPosition="183" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="51" startPosition="68" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1221637826070" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="42" startPosition="183" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="54" startPosition="68" endLine="58" endPosition="5" />
+    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1221637809866" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="31" startPosition="109" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="53" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="1221637809819" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="1221637809861" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="30" startPosition="5" endLine="38" endPosition="5">
       <varInfo nodeId="1221637809861" varName="impl" />
     </scopeInfo>
-    <scopeInfo nodeId="1221637809822" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="24" startPosition="116" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="1221637809822" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="24" startPosition="116" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1221637809819" varName="cls" />
       <varInfo nodeId="1221637809819" varName="status" />
       <varInfo nodeId="1221637809819" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_ClassConcept_NonTypesystemRule" />
+    <unitInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_ClassConcept_NonTypesystemRule" />
   </root>
   <root nodeId="1221737503734">
     <nodeInfo nodeId="1223643054732" fileName="check_StaticInitializer_NonTypesystemRule.java" startLine="17" startPosition="130" endLine="18" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
