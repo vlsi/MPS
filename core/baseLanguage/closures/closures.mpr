@@ -26,11 +26,11 @@
   </component>
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="${project}/closures.mpl" />
       <modulePath path="${project}/runtime/closures.runtime.msd" />
       <modulePath path="${project}/solutions/closures.sandbox/closures.sandbox.msd" />
       <modulePath path="${project}/solutions/closures.test/closures.test.msd" />
       <modulePath path="${project}/solutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains.mps.baseLanguage.closures.unittest.msd" folder="" />
-      <modulePath path="${project}/closures.mpl" />
     </projectModules>
     <genConfs>
       <genConfModels name="runtime">
@@ -41,9 +41,6 @@
       <genConfModule name="closures" moduleRef="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
       <genConfModule name="closures.test" moduleRef="closures.test" />
     </genConfs>
-  </component>
-  <component name="MigrationState">
-    <option name="myState" value="INITIAL" />
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="closures" />
