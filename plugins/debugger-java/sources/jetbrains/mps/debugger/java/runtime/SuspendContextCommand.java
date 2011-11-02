@@ -13,25 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debugger.java.runtime;
+
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
  * Date: 04.02.2010
- * Time: 16:45:11
+ * Time: 13:44:02
  * To change this template use File | Settings | File Templates.
  */
-public class RunFailedException extends Exception {
-  public RunFailedException(String message) {
-    super(message);
+public abstract class SuspendContextCommand extends DebuggerCommand {  //todo
+  private final SuspendContext mySuspendContext;
+
+  public SuspendContextCommand(@NotNull SuspendContext suspendContext) {
+    mySuspendContext = suspendContext;
   }
 
-  public RunFailedException(String message, Throwable cause) {
-    super(message, cause);
-  }
-
-  public RunFailedException(Throwable cause) {
-    super(cause);
+  public SuspendContext getSuspendContext() {
+    return mySuspendContext;
   }
 }

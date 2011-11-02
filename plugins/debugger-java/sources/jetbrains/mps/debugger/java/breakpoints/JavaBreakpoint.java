@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.breakpoints;
+package jetbrains.mps.debugger.java.breakpoints;
 
 import com.intellij.openapi.project.Project;
 import com.sun.jdi.IncompatibleThreadStateException;
@@ -21,10 +21,13 @@ import com.sun.jdi.ReferenceType;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.EventRequest;
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.runtime.*;
-import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
-import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
+import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.RequestManager;
+import jetbrains.mps.debugger.java.runtime.SuspendContext;
+import jetbrains.mps.debugger.java.runtime.SuspendContextCommand;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debugger.java.runtime.requests.ClassPrepareRequestor;
+import jetbrains.mps.debugger.java.runtime.requests.LocatableEventRequestor;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 

@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debugger.java.runtime;
 
 import com.sun.jdi.InternalException;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.event.EventSet;
 import com.sun.jdi.request.EventRequest;
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

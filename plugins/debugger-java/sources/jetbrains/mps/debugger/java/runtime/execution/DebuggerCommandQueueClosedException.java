@@ -13,22 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime.execution;
+package jetbrains.mps.debugger.java.runtime.execution;
 
-public interface IDebuggerCommand {
-  void release();
-
-  void hold();
-
-  void waitFor();
-
-  void notifyCancelled();
-
-  public CommandPriority getPriority();
-
-  void run() throws Exception;
-
-  enum CommandPriority {
-    HIGH, NORMAL, LOW
-  }
+public class DebuggerCommandQueueClosedException extends Exception {
 }

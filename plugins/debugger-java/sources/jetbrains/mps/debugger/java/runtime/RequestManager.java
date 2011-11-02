@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debugger.java.runtime;
 
 import com.intellij.util.containers.HashMap;
 import com.sun.jdi.*;
@@ -21,12 +21,12 @@ import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.request.*;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.breakpoints.*;
-import jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent.AllDebugProcessesAction;
-import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
-import jetbrains.mps.debug.runtime.requests.Requestor;
+import jetbrains.mps.debugger.java.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent.AllDebugProcessesAction;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debugger.java.runtime.requests.ClassPrepareRequestor;
+import jetbrains.mps.debugger.java.runtime.requests.Requestor;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

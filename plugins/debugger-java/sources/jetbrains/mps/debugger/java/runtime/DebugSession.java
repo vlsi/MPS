@@ -13,22 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debugger.java.runtime;
 
-import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
-import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
-import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
-import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
+import jetbrains.mps.debugger.java.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor.StepType;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
-public class DebugSession extends AbstractDebugSession<JavaUiState> {
+public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
   //todo extract abstract superclass to allow suspend/resume/etc. any process if developer implements it
   private final DebugVMEventsProcessor myEventsProcessor;
   private volatile boolean myIsMute = false;
@@ -41,8 +40,8 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     eventsProcessor.getMulticaster().addListener(new MyDebugProcessAdapter());
   }
 
-  protected JavaUiState createUiState() {
-    return new JavaUiState(null, this);
+  protected JavaUiStateImpl createUiState() {
+    return new JavaUiStateImpl(null, this);
   }
 
   public void resume() {
@@ -76,7 +75,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
   }
 
   private void step(StepType type) {
-    JavaUiState state = getUiState();
+    JavaUiStateImpl state = getUiState();
     SuspendContext context = state.getContext();
     assert context != null : "Context is null while debug session state is " + myExecutionState;
     assert state.isPausedOnBreakpoint() : "State is not paused on breakpoint.";
@@ -88,19 +87,19 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
   }
 
   private void pause(SuspendContext suspendContext) {
-    JavaUiState state = getUiState();
+    JavaUiStateImpl state = getUiState();
     setState(state, state.paused(suspendContext), false);
   }
 
-  public JavaUiState refresh() {
-    JavaUiState state = getUiState();
-    JavaUiState newState = state.paused(state.getContext());
+  public JavaUiStateImpl refresh() {
+    JavaUiStateImpl state = getUiState();
+    JavaUiStateImpl newState = state.paused(state.getContext());
     setState(state, newState);
     return newState;
   }
 
   private void resume(SuspendContext suspendContext) {
-    JavaUiState state = getUiState();
+    JavaUiStateImpl state = getUiState();
     setState(state, state.resumed(suspendContext), false);
   }
 
@@ -183,7 +182,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     @Override
     public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
       myExecutionState = ExecutionState.Stopped;
-      setState(getUiState(), new JavaUiState(null, DebugSession.this), false);
+      setState(getUiState(), new JavaUiStateImpl(null, DebugSession.this), false);
       fireSessionResumed(DebugSession.this); // TODO hack
     }
   }

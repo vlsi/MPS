@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debugger.java.runtime;
 
 import com.sun.jdi.*;
 import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
-import jetbrains.mps.debug.runtime.requests.Requestor;
+import jetbrains.mps.debugger.java.runtime.requests.Requestor;
 import jetbrains.mps.logging.Logger;
 
 // in idea similar thing is called RequestHint

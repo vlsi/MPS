@@ -13,28 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debugger.java.runtime;
 
-import org.jetbrains.annotations.NotNull;
-
-public abstract class DebugProcessAdapter implements DebugProcessListener {
-  @Override
-  public void connectorIsReady() {
+/**
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 04.02.2010
+ * Time: 16:45:11
+ * To change this template use File | Settings | File Templates.
+ */
+public class RunFailedException extends Exception {
+  public RunFailedException(String message) {
+    super(message);
   }
 
-  @Override
-  public void paused(@NotNull SuspendContext suspendContext) {
+  public RunFailedException(String message, Throwable cause) {
+    super(message, cause);
   }
 
-  @Override
-  public void resumed(@NotNull SuspendContext suspendContext) {
-  }
-
-  @Override
-  public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
-  }
-
-  @Override
-  public void processAttached(@NotNull DebugVMEventsProcessor process) {
+  public RunFailedException(Throwable cause) {
+    super(cause);
   }
 }

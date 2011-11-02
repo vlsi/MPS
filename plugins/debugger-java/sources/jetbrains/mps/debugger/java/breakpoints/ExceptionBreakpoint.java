@@ -19,12 +19,9 @@ import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.ExceptionRequest;
-import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
-import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
-import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
-import jetbrains.mps.debug.runtime.RequestManager;
-import jetbrains.mps.debug.runtime.SuspendContextCommand;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.RequestManager;
+import jetbrains.mps.debugger.java.runtime.SuspendContextCommand;import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
 public class ExceptionBreakpoint extends JavaBreakpoint {

@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debugger.java.runtime;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
-import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;

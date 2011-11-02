@@ -39,15 +39,13 @@ import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.api.ToDebugAPI;
 import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
-import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
-import jetbrains.mps.debug.runtime.*;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.debugger.java.evaluation.EvaluationProvider;
 import jetbrains.mps.debugger.java.remote.RemoteProcessHandler;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.debugger.java.runtime.execution.IDebuggerManagerThread;import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

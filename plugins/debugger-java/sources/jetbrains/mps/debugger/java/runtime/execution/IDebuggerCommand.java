@@ -13,12 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime.requests;
+package jetbrains.mps.debugger.java.runtime.execution;
 
-import com.sun.jdi.event.LocatableEvent;
-import jetbrains.mps.debug.runtime.SuspendContextCommand;
+public interface IDebuggerCommand {
+  void release();
 
-public interface LocatableEventRequestor extends Requestor {
-  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event);
-  int getSuspendPolicy();
+  void hold();
+
+  void waitFor();
+
+  void notifyCancelled();
+
+  public CommandPriority getPriority();
+
+  void run() throws Exception;
+
+  enum CommandPriority {
+    HIGH, NORMAL, LOW
+  }
 }

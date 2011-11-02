@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime.execution;
+package jetbrains.mps.debugger.java.runtime.execution;
 
-import jetbrains.mps.debug.runtime.execution.IDebuggerCommand.CommandPriority;
+import jetbrains.mps.debugger.java.runtime.execution.IDebuggerCommand.CommandPriority;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 

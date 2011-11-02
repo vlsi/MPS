@@ -13,7 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime.execution;
+package jetbrains.mps.debugger.java.runtime;
 
-public class DebuggerCommandQueueClosedException extends Exception {
+import org.jetbrains.annotations.NotNull;
+
+public abstract class DebugProcessAdapter implements DebugProcessListener {
+  @Override
+  public void connectorIsReady() {
+  }
+
+  @Override
+  public void paused(@NotNull SuspendContext suspendContext) {
+  }
+
+  @Override
+  public void resumed(@NotNull SuspendContext suspendContext) {
+  }
+
+  @Override
+  public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
+  }
+
+  @Override
+  public void processAttached(@NotNull DebugVMEventsProcessor process) {
+  }
 }

@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime.execution;
+package jetbrains.mps.debugger.java.runtime.execution;
 
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.util.Pair;
-import jetbrains.mps.debug.runtime.DebugProcessAdapter;
-import jetbrains.mps.debug.runtime.DebugProcessMulticaster;
-import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debugger.java.runtime.DebugProcessAdapter;
+import jetbrains.mps.debugger.java.runtime.DebugProcessMulticaster;import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;

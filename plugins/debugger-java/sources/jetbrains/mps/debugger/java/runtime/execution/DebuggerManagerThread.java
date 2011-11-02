@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime.execution;
+package jetbrains.mps.debugger.java.runtime.execution;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.sun.jdi.VMDisconnectedException;

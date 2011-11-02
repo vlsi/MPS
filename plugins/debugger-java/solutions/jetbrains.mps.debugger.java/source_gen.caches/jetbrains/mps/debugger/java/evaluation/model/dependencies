@@ -23,10 +23,10 @@
     <classNode dependClassName="jetbrains.mps.debug.evaluation.Evaluator" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.EvaluationContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.MyInMemoryJavaGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
@@ -88,10 +88,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.EvaluationContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.VariableDescription" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

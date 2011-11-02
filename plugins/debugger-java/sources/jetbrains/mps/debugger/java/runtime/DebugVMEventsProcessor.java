@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debugger.java.runtime;
 
 import com.sun.jdi.InternalException;
 import com.sun.jdi.ThreadReference;
@@ -25,12 +25,12 @@ import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
-import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
-import jetbrains.mps.debug.runtime.execution.SystemMessagesReporter;
-import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
+import jetbrains.mps.debugger.java.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debugger.java.runtime.execution.SystemMessagesReporter;
+import jetbrains.mps.debugger.java.runtime.requests.LocatableEventRequestor;
+import jetbrains.mps.debugger.java.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 

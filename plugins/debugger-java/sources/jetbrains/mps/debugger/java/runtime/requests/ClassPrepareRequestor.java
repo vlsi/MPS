@@ -13,14 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime.requests;
+package jetbrains.mps.debugger.java.runtime.requests;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 17.12.2009
- * Time: 17:07:03
- * To change this template use File | Settings | File Templates.
- */
-public interface Requestor {
+import com.sun.jdi.ReferenceType;
+import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+
+public interface ClassPrepareRequestor extends Requestor {
+  public void processClassPrepare(final DebugVMEventsProcessor debugProcess, final ReferenceType classType);
 }

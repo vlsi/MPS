@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime.requests;
+package jetbrains.mps.debugger.java.runtime.requests;
 
-import com.sun.jdi.ReferenceType;
-import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
+import com.sun.jdi.event.LocatableEvent;
+import jetbrains.mps.debugger.java.runtime.SuspendContextCommand;
 
-public interface ClassPrepareRequestor extends Requestor {
-  public void processClassPrepare(final DebugVMEventsProcessor debugProcess, final ReferenceType classType);
+public interface LocatableEventRequestor extends Requestor {
+  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event);
+  int getSuspendPolicy();
 }

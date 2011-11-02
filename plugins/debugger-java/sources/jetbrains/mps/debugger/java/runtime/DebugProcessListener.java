@@ -13,26 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debugger.java.runtime;
 
-import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
- * Date: 04.02.2010
- * Time: 13:44:02
+ * Date: 17.12.2009
+ * Time: 17:13:01
  * To change this template use File | Settings | File Templates.
  */
-public abstract class SuspendContextCommand extends DebuggerCommand {  //todo
-  private final SuspendContext mySuspendContext;
+public interface DebugProcessListener {
+  //executed in manager thread
 
-  public SuspendContextCommand(@NotNull SuspendContext suspendContext) {
-    mySuspendContext = suspendContext;
-  }
+  void connectorIsReady();
 
-  public SuspendContext getSuspendContext() {
-    return mySuspendContext;
-  }
+  //executed in manager thread
+
+  void paused(@NotNull SuspendContext suspendContext);
+
+  //executed in manager thread
+
+  void resumed(@NotNull SuspendContext suspendContext);
+
+  //executed in manager thread
+
+  void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser);
+
+  //executed in manager thread
+
+  void processAttached(@NotNull DebugVMEventsProcessor process);
 }
