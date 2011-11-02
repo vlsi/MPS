@@ -38,6 +38,7 @@ public class DependencyTree extends MPSTree {
       root.add(node);
     }
     setRootVisible(false);
+    setShowsRootHandles(true);
     return root;
   }
 

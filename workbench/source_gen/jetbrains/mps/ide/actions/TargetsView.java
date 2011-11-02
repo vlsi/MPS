@@ -6,9 +6,6 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
@@ -21,16 +18,12 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeD
 
 public class TargetsView extends UsagesView {
   public TargetsView(Project project, DependenciesComponent parent) {
-    super(project, new ViewOptions(false, false, false, true, false));
+    super(project, new ViewOptions(true, true, false, false, false));
     UsagesTree usagesTree = getTreeComponent().getTree();
     usagesTree.addTreeSelectionListener(new TargetsView.MyTreeSelectionListener(usagesTree, parent));
   }
 
   public void close() {
-  }
-
-  @Override
-  public void setRunOptions(IResultProvider provider, SearchQuery query, UsagesView.ButtonConfiguration configuration, SearchResults results) {
   }
 
   private static <T> T as_w7qo2b_a0a0a0a1a2a3a0a(Object o, Class<T> type) {

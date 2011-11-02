@@ -10,9 +10,8 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import javax.swing.JSplitPane;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
@@ -42,15 +41,8 @@ public class DependenciesComponent extends JComponent {
   public void setContent(Scope scope, MPSProject project) {
     myInitTree = new DependencyTree(this);
     myTargetsView = new TargetsView(myProject, this);
-    myReferencesView = new UsagesView(myProject, new ViewOptions(false, false, false, true, false)) {
-      public void close() {
-      }
-
-      @Override
-      public void setRunOptions(IResultProvider provider, SearchQuery query, UsagesView.ButtonConfiguration configuration) {
-      }
-    };
-
+    myReferencesView = new ReferencesView(myProject);
+    myReferencesView.setRunOptions(null, new SearchQuery(new VoidHolder("References rr", null), null), new UsagesView.ButtonConfiguration(false));
     JSplitPane splitPane = new JSplitPane();
     JSplitPane rightSplitPane = new JSplitPane();
     setLayout(new BorderLayout());
