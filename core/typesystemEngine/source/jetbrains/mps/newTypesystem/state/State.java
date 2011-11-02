@@ -268,6 +268,16 @@ public class State {
   }
 
   public void addComparable(SNode left, SNode right, boolean isWeak, boolean inference, EquationInfo info) {
+    if (myInequalitySystem != null) {
+      if (myInequalitySystem.getHoleType()== right) {
+        myInequalitySystem.addComparable(left, isWeak);
+        return;
+      }
+      if (myInequalitySystem.getHoleType()== left) {
+        myInequalitySystem.addComparable(right, isWeak);
+        return;
+      }
+    }
     addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, !inference, true), info));
   }
 
