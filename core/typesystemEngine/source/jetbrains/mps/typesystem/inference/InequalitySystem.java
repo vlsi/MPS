@@ -46,6 +46,8 @@ public class InequalitySystem {
   private Set<SNode> myStrongSubTypes = new THashSet<SNode>();
   private Set<SNode> mySuperTypes = new THashSet<SNode>();
   private Set<SNode> myStrongSuperTypes = new THashSet<SNode>();
+  private Set<SNode> myComparableTypes = new THashSet<SNode>();
+  private Set<SNode> myStrongComparableTypes = new THashSet<SNode>();
 
   public void addEquation(SNode equalWrapper) {
     myEquals.add(equalWrapper);
@@ -64,6 +66,14 @@ public class InequalitySystem {
       mySubTypes.add(subtype);
     } else {
       myStrongSubTypes.add(subtype);
+    }
+  }
+
+  public void addComparable(SNode comparable, boolean isWeak) {
+    if (isWeak) {
+      myComparableTypes.add(comparable);
+    } else {
+      myStrongComparableTypes.add(comparable);
     }
   }
 
@@ -87,6 +97,13 @@ public class InequalitySystem {
     for (SNode subtype : myStrongSubTypes) {
       if (!subtypingManager.isSubtype(subtype, type, false)) return false;
     }
+    for (SNode comparable : myComparableTypes) {
+      if (!subtypingManager.isComparable(comparable, type, true)) return false;
+    }
+    for (SNode comparable : myStrongComparableTypes) {
+      if (!subtypingManager.isComparable(comparable, type, false)) return false;
+    }
+
     return true;
   }
 
@@ -99,20 +116,23 @@ public class InequalitySystem {
         result.add(expanded);
       //}
     }
+
     return result;
   }
 
   public void expandAll(Equations equations) {
     myEquals = expandSet(myEquals, equations);
     mySubTypes = expandSet(mySubTypes, equations);
+    myComparableTypes = expandSet(myComparableTypes, equations);
     mySuperTypes = expandSet(mySuperTypes, equations);
     myStrongSubTypes = expandSet(myStrongSubTypes, equations);
     myStrongSuperTypes = expandSet(myStrongSuperTypes, equations);
+    myStrongComparableTypes = expandSet(myStrongComparableTypes, equations);
   }
 
   public boolean isEmpty() {
     return myEquals.isEmpty() && mySubTypes.isEmpty() && mySuperTypes.isEmpty()
-      && myStrongSubTypes.isEmpty() && myStrongSuperTypes.isEmpty();
+      && myStrongSubTypes.isEmpty() && myStrongSuperTypes.isEmpty() && myComparableTypes.isEmpty() && myStrongComparableTypes.isEmpty();
   }
 
   public String[] getPresentation() {
@@ -136,6 +156,12 @@ public class InequalitySystem {
     for (SNode wrapper : myStrongSuperTypes) {
       result[i++] = "* << " + wrapper.toString();
     }
+    for (SNode wrapper : myComparableTypes) {
+      result[i++] = " ~ " + wrapper.toString();
+    }
+    for (SNode wrapper : myStrongComparableTypes) {
+      result[i++] = " *~ " + wrapper.toString();
+    }
     return result;
   }
 
@@ -146,6 +172,10 @@ public class InequalitySystem {
      expandAll(myState.getEquations());
      superTypes.addAll(mySuperTypes);
      superTypes.addAll(myStrongSuperTypes);
+     if (superTypes.isEmpty()) {
+       superTypes.addAll(myComparableTypes);
+       superTypes.addAll(myStrongComparableTypes);
+     }
      return subtypingManager.createLCS(superTypes, myState.getTypeCheckingContext());
    }
 }

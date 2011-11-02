@@ -41,5 +41,7 @@ public abstract class SubtypingManager {
 
   public abstract Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak);
 
+  public abstract boolean isComparable(SNode left, SNode right, boolean isWeak);
+
   public abstract Set<SNode> mostSpecificTypes(Set<SNode> nodes);
 }
