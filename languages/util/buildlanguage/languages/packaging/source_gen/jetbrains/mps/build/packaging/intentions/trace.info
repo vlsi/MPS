@@ -49,22 +49,36 @@
     <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1228398444440" varName="editorContext" />
+      <varInfo nodeId="1228398444440" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="42" startPosition="84" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1228398444440" varName="editorContext" />
+      <varInfo nodeId="1228398444440" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1228401917620" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="56" startPosition="62" endLine="60" endPosition="104">
       <varInfo nodeId="1228401952130" varName="property" />
     </scopeInfo>
     <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1228401917617" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="55" startPosition="129" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1228401917617" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="55" startPosition="129" endLine="61" endPosition="5">
+      <varInfo nodeId="1228401917617" varName="prop" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1228398444440" varName="editorContext" />
+      <varInfo nodeId="1228398444440" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1228398444444" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="53" startPosition="76" endLine="67" endPosition="29">
       <varInfo nodeId="1228401860649" varName="externalProps" />
       <varInfo nodeId="1228398644854" varName="model" />
       <varInfo nodeId="1228399873799" varName="opener" />
       <varInfo nodeId="1228398608360" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="52" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="52" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1228398444440" varName="editorContext" />
+      <varInfo nodeId="1228398444440" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.build.packaging.intentions.CreateNewBuildLanguageProject_Intention" />
   </root>
   <root nodeId="1228400780252">
@@ -107,16 +121,28 @@
     <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1228400780252" varName="editorContext" />
+      <varInfo nodeId="1228400780252" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="38" startPosition="84" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1228400780252" varName="editorContext" />
+      <varInfo nodeId="1228400780252" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="1228400780256" fileName="CreateNewTarget_Intention.java" startLine="49" startPosition="76" endLine="54" endPosition="39">
       <varInfo nodeId="1228400918915" varName="opener" />
       <varInfo nodeId="1228400837641" varName="targetDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1228400780252" varName="editorContext" />
+      <varInfo nodeId="1228400780252" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="48" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1228400780252" varName="editorContext" />
+      <varInfo nodeId="1228400780252" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.build.packaging.intentions.CreateNewTarget_Intention" />
   </root>
 </debugInfo>
