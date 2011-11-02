@@ -2061,269 +2061,609 @@
     <unitInfo nodeId="5866603471302721315" fileName="SplitTabbedEditors_MigrationScript.java" startLine="419" startPosition="0" endLine="436" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a2a4a81a4a0a0a1a0" />
   </root>
   <root nodeId="8954236049244973041">
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="21" startPosition="80" endLine="22" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="24" startPosition="31" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="28" startPosition="41" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1775333756811322719" fileName="Mps21ApiMigration_MigrationScript.java" startLine="36" startPosition="59" endLine="37" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1775333756811383749" fileName="Mps21ApiMigration_MigrationScript.java" startLine="40" startPosition="52" endLine="41" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1775333756811383760" fileName="Mps21ApiMigration_MigrationScript.java" startLine="41" startPosition="213" endLine="42" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3674307013789842399" fileName="Mps21ApiMigration_MigrationScript.java" startLine="42" startPosition="223" endLine="43" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="46" startPosition="42" endLine="47" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="51" startPosition="31" endLine="52" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="55" startPosition="41" endLine="56" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="59" startPosition="59" endLine="60" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1775333756811564678" fileName="Mps21ApiMigration_MigrationScript.java" startLine="63" startPosition="59" endLine="64" endPosition="434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3674307013789828503" fileName="Mps21ApiMigration_MigrationScript.java" startLine="67" startPosition="52" endLine="68" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="71" startPosition="42" endLine="72" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="76" startPosition="31" endLine="77" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="80" startPosition="41" endLine="81" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="84" startPosition="59" endLine="85" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3674307013789831050" fileName="Mps21ApiMigration_MigrationScript.java" startLine="88" startPosition="59" endLine="89" endPosition="414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3674307013789839580" fileName="Mps21ApiMigration_MigrationScript.java" startLine="92" startPosition="52" endLine="93" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="96" startPosition="42" endLine="97" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="106" startPosition="31" endLine="107" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="107" startPosition="26" endLine="108" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="108" startPosition="67" endLine="109" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="109" startPosition="32" endLine="110" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="110" startPosition="32" endLine="111" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="112" startPosition="7" endLine="113" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="113" startPosition="165" endLine="114" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="114" startPosition="43" endLine="115" endPosition="330" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="115" startPosition="330" endLine="116" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="117" startPosition="9" endLine="118" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="118" startPosition="162" endLine="119" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="119" startPosition="45" endLine="120" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="122" startPosition="9" endLine="123" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="123" startPosition="162" endLine="124" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="124" startPosition="45" endLine="125" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="126" startPosition="9" endLine="127" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="128" startPosition="7" endLine="129" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="137" startPosition="50" endLine="138" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="138" startPosition="26" endLine="139" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="139" startPosition="67" endLine="140" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="140" startPosition="32" endLine="141" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="141" startPosition="32" endLine="142" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="142" startPosition="32" endLine="143" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="143" startPosition="32" endLine="144" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="144" startPosition="32" endLine="145" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="145" startPosition="32" endLine="146" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="147" startPosition="7" endLine="148" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="148" startPosition="165" endLine="149" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="149" startPosition="43" endLine="150" endPosition="371" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="150" startPosition="371" endLine="151" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="152" startPosition="9" endLine="153" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="153" startPosition="164" endLine="154" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="155" startPosition="11" endLine="156" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="156" startPosition="48" endLine="157" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="158" startPosition="68" endLine="159" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="160" startPosition="20" endLine="161" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="161" startPosition="59" endLine="162" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="164" startPosition="41" endLine="165" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="168" startPosition="11" endLine="169" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="169" startPosition="180" endLine="170" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="170" startPosition="48" endLine="171" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="171" startPosition="327" endLine="172" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="173" startPosition="11" endLine="174" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="175" startPosition="9" endLine="176" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="177" startPosition="7" endLine="178" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="186" startPosition="50" endLine="187" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="187" startPosition="26" endLine="188" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="188" startPosition="67" endLine="189" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="189" startPosition="32" endLine="190" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="190" startPosition="32" endLine="191" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="191" startPosition="32" endLine="192" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="192" startPosition="32" endLine="193" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="193" startPosition="32" endLine="194" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="194" startPosition="32" endLine="195" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="196" startPosition="7" endLine="197" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="197" startPosition="165" endLine="198" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="198" startPosition="43" endLine="199" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="199" startPosition="280" endLine="200" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="201" startPosition="9" endLine="202" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="202" startPosition="164" endLine="203" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="204" startPosition="11" endLine="205" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="205" startPosition="48" endLine="206" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="207" startPosition="68" endLine="208" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="209" startPosition="20" endLine="210" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="210" startPosition="59" endLine="211" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="213" startPosition="41" endLine="214" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="217" startPosition="11" endLine="218" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="218" startPosition="180" endLine="219" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="219" startPosition="48" endLine="220" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="220" startPosition="327" endLine="221" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="222" startPosition="11" endLine="223" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="224" startPosition="9" endLine="225" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="226" startPosition="7" endLine="227" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="102" startPosition="61" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_q3kr7y_a0c0b0e0a0a0b0a#()V" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="133" startPosition="60" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_q3kr7y_a1a0a4a0a0a2a0#()V" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="182" startPosition="60" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_q3kr7y_a1a0a4a0a0a3a0#()V" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="160" startPosition="18" endLine="163" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="163" startPosition="13" endLine="166" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="209" startPosition="18" endLine="212" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="212" startPosition="13" endLine="215" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="23" startPosition="76" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="50" startPosition="76" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="75" startPosition="76" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="116" startPosition="258" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="116" startPosition="258" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="121" startPosition="9" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="121" startPosition="9" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="157" startPosition="33" endLine="163" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="167" startPosition="11" endLine="173" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="167" startPosition="11" endLine="173" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="206" startPosition="33" endLine="212" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="216" startPosition="11" endLine="222" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="216" startPosition="11" endLine="222" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="154" startPosition="45" endLine="167" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="154" startPosition="45" endLine="167" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="203" startPosition="45" endLine="216" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="203" startPosition="45" endLine="216" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="111" startPosition="32" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="111" startPosition="32" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="151" startPosition="280" endLine="175" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="151" startPosition="280" endLine="175" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="200" startPosition="347" endLine="224" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="200" startPosition="347" endLine="224" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="49" startPosition="7" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="74" startPosition="7" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="105" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="22" startPosition="27" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="146" startPosition="32" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="146" startPosition="32" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="195" startPosition="32" endLine="226" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="195" startPosition="32" endLine="226" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="136" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="185" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="20" startPosition="76" endLine="100" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Mps21ApiMigration_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="103" startPosition="52" endLine="103" endPosition="52" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="134" startPosition="51" endLine="134" endPosition="51" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="183" startPosition="51" endLine="183" endPosition="51" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="24" startPosition="31" endLine="25" endPosition="41" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="28" startPosition="41" endLine="29" endPosition="41" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="71" />
-    <scopeInfo nodeId="1775333756811222515" fileName="Mps21ApiMigration_MigrationScript.java" startLine="36" startPosition="59" endLine="37" endPosition="151" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="46" startPosition="42" endLine="47" endPosition="21" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="51" startPosition="31" endLine="52" endPosition="48" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="55" startPosition="41" endLine="56" endPosition="48" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="59" startPosition="59" endLine="60" endPosition="68" />
-    <scopeInfo nodeId="1775333756811564615" fileName="Mps21ApiMigration_MigrationScript.java" startLine="63" startPosition="59" endLine="64" endPosition="434" />
-    <scopeInfo nodeId="1775333756811564596" fileName="Mps21ApiMigration_MigrationScript.java" startLine="67" startPosition="52" endLine="68" endPosition="177" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="71" startPosition="42" endLine="72" endPosition="21" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="76" startPosition="31" endLine="77" endPosition="50" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="80" startPosition="41" endLine="81" endPosition="50" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="84" startPosition="59" endLine="85" endPosition="68" />
-    <scopeInfo nodeId="3674307013789831049" fileName="Mps21ApiMigration_MigrationScript.java" startLine="88" startPosition="59" endLine="89" endPosition="414" />
-    <scopeInfo nodeId="3674307013789831021" fileName="Mps21ApiMigration_MigrationScript.java" startLine="92" startPosition="52" endLine="93" endPosition="177" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="96" startPosition="42" endLine="97" endPosition="21" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="158" startPosition="68" endLine="159" endPosition="67" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="164" startPosition="41" endLine="165" endPosition="86" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="207" startPosition="68" endLine="208" endPosition="67" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="213" startPosition="41" endLine="214" endPosition="86" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="102" startPosition="61" endLine="104" endPosition="5" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="133" startPosition="60" endLine="135" endPosition="5" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="160" startPosition="20" endLine="162" endPosition="44" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="182" startPosition="60" endLine="184" endPosition="5" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="209" startPosition="20" endLine="211" endPosition="44" />
-    <scopeInfo nodeId="8954236049244973048" fileName="Mps21ApiMigration_MigrationScript.java" startLine="40" startPosition="52" endLine="43" endPosition="77" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="117" startPosition="9" endLine="120" endPosition="65">
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="22" startPosition="80" endLine="23" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="25" startPosition="31" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="29" startPosition="41" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="33" startPosition="59" endLine="34" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1775333756811322719" fileName="Mps21ApiMigration_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1775333756811383749" fileName="Mps21ApiMigration_MigrationScript.java" startLine="41" startPosition="52" endLine="42" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1775333756811383760" fileName="Mps21ApiMigration_MigrationScript.java" startLine="42" startPosition="213" endLine="43" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3674307013789842399" fileName="Mps21ApiMigration_MigrationScript.java" startLine="43" startPosition="223" endLine="44" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="47" startPosition="42" endLine="48" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="52" startPosition="31" endLine="53" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="56" startPosition="41" endLine="57" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="60" startPosition="59" endLine="61" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1775333756811564678" fileName="Mps21ApiMigration_MigrationScript.java" startLine="64" startPosition="59" endLine="65" endPosition="434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3674307013789828503" fileName="Mps21ApiMigration_MigrationScript.java" startLine="68" startPosition="52" endLine="69" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="72" startPosition="42" endLine="73" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="77" startPosition="31" endLine="78" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="81" startPosition="41" endLine="82" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="85" startPosition="59" endLine="86" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3674307013789831050" fileName="Mps21ApiMigration_MigrationScript.java" startLine="89" startPosition="59" endLine="90" endPosition="414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3674307013789839580" fileName="Mps21ApiMigration_MigrationScript.java" startLine="93" startPosition="52" endLine="94" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="97" startPosition="42" endLine="98" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="102" startPosition="31" endLine="103" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="106" startPosition="41" endLine="107" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="110" startPosition="59" endLine="111" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3674307013789881840" fileName="Mps21ApiMigration_MigrationScript.java" startLine="114" startPosition="59" endLine="115" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3674307013789881854" fileName="Mps21ApiMigration_MigrationScript.java" startLine="118" startPosition="52" endLine="119" endPosition="697" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="122" startPosition="42" endLine="123" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="132" startPosition="31" endLine="133" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="133" startPosition="26" endLine="134" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="134" startPosition="67" endLine="135" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="135" startPosition="32" endLine="136" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="136" startPosition="32" endLine="137" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="138" startPosition="7" endLine="139" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="139" startPosition="165" endLine="140" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="140" startPosition="43" endLine="141" endPosition="330" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="141" startPosition="330" endLine="142" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="143" startPosition="9" endLine="144" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="144" startPosition="162" endLine="145" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="145" startPosition="45" endLine="146" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="148" startPosition="9" endLine="149" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="149" startPosition="162" endLine="150" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="150" startPosition="45" endLine="151" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="152" startPosition="9" endLine="153" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="154" startPosition="7" endLine="155" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="163" startPosition="50" endLine="164" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="164" startPosition="26" endLine="165" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="165" startPosition="67" endLine="166" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="166" startPosition="32" endLine="167" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="167" startPosition="32" endLine="168" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="168" startPosition="32" endLine="169" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="169" startPosition="32" endLine="170" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="170" startPosition="32" endLine="171" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="171" startPosition="32" endLine="172" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="173" startPosition="7" endLine="174" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="174" startPosition="165" endLine="175" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="175" startPosition="43" endLine="176" endPosition="371" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="176" startPosition="371" endLine="177" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="178" startPosition="9" endLine="179" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="179" startPosition="164" endLine="180" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="181" startPosition="11" endLine="182" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="182" startPosition="48" endLine="183" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="184" startPosition="68" endLine="185" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="186" startPosition="20" endLine="187" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="187" startPosition="59" endLine="188" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="190" startPosition="41" endLine="191" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="194" startPosition="11" endLine="195" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="195" startPosition="180" endLine="196" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="196" startPosition="48" endLine="197" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="197" startPosition="327" endLine="198" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="199" startPosition="11" endLine="200" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="201" startPosition="9" endLine="202" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="203" startPosition="7" endLine="204" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="212" startPosition="50" endLine="213" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="213" startPosition="26" endLine="214" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="214" startPosition="67" endLine="215" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="215" startPosition="32" endLine="216" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="216" startPosition="32" endLine="217" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="217" startPosition="32" endLine="218" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="218" startPosition="32" endLine="219" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="219" startPosition="32" endLine="220" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="220" startPosition="32" endLine="221" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="222" startPosition="7" endLine="223" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="223" startPosition="165" endLine="224" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="224" startPosition="43" endLine="225" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="225" startPosition="280" endLine="226" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="227" startPosition="9" endLine="228" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="228" startPosition="164" endLine="229" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="230" startPosition="11" endLine="231" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="231" startPosition="48" endLine="232" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="233" startPosition="68" endLine="234" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="235" startPosition="20" endLine="236" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="236" startPosition="59" endLine="237" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="239" startPosition="41" endLine="240" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="243" startPosition="11" endLine="244" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="244" startPosition="180" endLine="245" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="245" startPosition="48" endLine="246" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="246" startPosition="327" endLine="247" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="248" startPosition="11" endLine="249" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="250" startPosition="9" endLine="251" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="252" startPosition="7" endLine="253" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="261" startPosition="155" endLine="262" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="262" startPosition="26" endLine="263" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="263" startPosition="67" endLine="264" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="264" startPosition="32" endLine="265" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="265" startPosition="32" endLine="266" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="266" startPosition="32" endLine="267" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="267" startPosition="32" endLine="268" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="268" startPosition="32" endLine="269" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="269" startPosition="32" endLine="270" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="270" startPosition="32" endLine="271" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="271" startPosition="32" endLine="272" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="272" startPosition="32" endLine="273" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="273" startPosition="33" endLine="274" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="274" startPosition="33" endLine="275" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="275" startPosition="33" endLine="276" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="276" startPosition="33" endLine="277" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="277" startPosition="33" endLine="278" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="278" startPosition="33" endLine="279" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="279" startPosition="33" endLine="280" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="280" startPosition="33" endLine="281" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="281" startPosition="33" endLine="282" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="282" startPosition="33" endLine="283" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="283" startPosition="33" endLine="284" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="284" startPosition="33" endLine="285" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="285" startPosition="33" endLine="286" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="286" startPosition="33" endLine="287" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="287" startPosition="33" endLine="288" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="288" startPosition="33" endLine="289" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="289" startPosition="33" endLine="290" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="290" startPosition="33" endLine="291" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="291" startPosition="33" endLine="292" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="292" startPosition="33" endLine="293" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="293" startPosition="33" endLine="294" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="295" startPosition="7" endLine="296" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="296" startPosition="162" endLine="297" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="298" startPosition="9" endLine="299" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="299" startPosition="174" endLine="300" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="301" startPosition="11" endLine="302" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="302" startPosition="167" endLine="303" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="304" startPosition="13" endLine="305" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="305" startPosition="169" endLine="306" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="306" startPosition="50" endLine="307" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="307" startPosition="278" endLine="308" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="310" startPosition="13" endLine="311" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="311" startPosition="167" endLine="312" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="312" startPosition="51" endLine="313" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="314" startPosition="13" endLine="315" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="316" startPosition="11" endLine="317" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="319" startPosition="9" endLine="320" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="320" startPosition="178" endLine="321" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="321" startPosition="46" endLine="322" endPosition="449" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="323" startPosition="11" endLine="324" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="324" startPosition="173" endLine="325" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="326" startPosition="13" endLine="327" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="327" startPosition="177" endLine="328" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="329" startPosition="15" endLine="330" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="330" startPosition="172" endLine="331" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="331" startPosition="53" endLine="332" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="332" startPosition="64" endLine="333" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="333" startPosition="301" endLine="334" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="335" startPosition="17" endLine="336" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="336" startPosition="176" endLine="337" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="337" startPosition="55" endLine="338" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="340" startPosition="17" endLine="341" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="341" startPosition="185" endLine="342" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="342" startPosition="55" endLine="343" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="343" startPosition="68" endLine="344" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="344" startPosition="70" endLine="345" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="345" startPosition="65" endLine="346" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="347" startPosition="19" endLine="348" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="348" startPosition="178" endLine="349" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="349" startPosition="57" endLine="350" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="352" startPosition="19" endLine="353" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="353" startPosition="170" endLine="354" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="354" startPosition="57" endLine="355" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="357" startPosition="19" endLine="358" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="358" startPosition="182" endLine="359" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="359" startPosition="57" endLine="360" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="361" startPosition="21" endLine="362" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="362" startPosition="178" endLine="363" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="363" startPosition="59" endLine="364" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="364" startPosition="285" endLine="365" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="367" startPosition="21" endLine="368" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="368" startPosition="182" endLine="369" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="369" startPosition="59" endLine="370" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="370" startPosition="283" endLine="371" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="372" startPosition="21" endLine="373" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="375" startPosition="19" endLine="376" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="376" startPosition="175" endLine="377" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="378" startPosition="21" endLine="379" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="379" startPosition="183" endLine="380" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="381" startPosition="23" endLine="382" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="382" startPosition="179" endLine="383" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="384" startPosition="25" endLine="385" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="385" startPosition="63" endLine="386" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="387" startPosition="83" endLine="388" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="389" startPosition="34" endLine="390" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="390" startPosition="74" endLine="391" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="393" startPosition="55" endLine="394" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="397" startPosition="25" endLine="398" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="398" startPosition="195" endLine="399" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="399" startPosition="63" endLine="400" endPosition="373" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="401" startPosition="27" endLine="402" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="402" startPosition="190" endLine="403" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="404" startPosition="29" endLine="405" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="405" startPosition="184" endLine="406" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="406" startPosition="67" endLine="407" endPosition="372" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="408" startPosition="31" endLine="409" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="409" startPosition="192" endLine="410" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="410" startPosition="69" endLine="411" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="412" startPosition="31" endLine="413" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="414" startPosition="29" endLine="415" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="416" startPosition="27" endLine="417" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="418" startPosition="25" endLine="419" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="420" startPosition="23" endLine="421" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="422" startPosition="21" endLine="423" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="424" startPosition="19" endLine="425" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="426" startPosition="17" endLine="427" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="428" startPosition="15" endLine="429" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="430" startPosition="13" endLine="431" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="433" startPosition="11" endLine="434" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="434" startPosition="48" endLine="435" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="436" startPosition="68" endLine="437" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="438" startPosition="20" endLine="439" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="439" startPosition="59" endLine="440" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="442" startPosition="41" endLine="443" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="446" startPosition="11" endLine="447" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="447" startPosition="48" endLine="448" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="449" startPosition="68" endLine="450" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="451" startPosition="20" endLine="452" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="452" startPosition="59" endLine="453" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="455" startPosition="41" endLine="456" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="459" startPosition="11" endLine="460" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="460" startPosition="169" endLine="461" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="461" startPosition="48" endLine="462" endPosition="376" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="462" startPosition="376" endLine="463" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="464" startPosition="13" endLine="465" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="465" startPosition="51" endLine="466" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="467" startPosition="71" endLine="468" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="469" startPosition="22" endLine="470" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="470" startPosition="62" endLine="471" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="473" startPosition="43" endLine="474" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="476" startPosition="13" endLine="477" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="478" startPosition="11" endLine="479" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="480" startPosition="9" endLine="481" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="482" startPosition="7" endLine="483" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="483" startPosition="70" endLine="484" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="128" startPosition="61" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_q3kr7y_a0c0b0e0a0a0b0a#()V" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="159" startPosition="60" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_q3kr7y_a1a0a4a0a0a2a0#()V" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="208" startPosition="60" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_q3kr7y_a1a0a4a0a0a3a0#()V" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="257" startPosition="60" endLine="259" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_q3kr7y_a1a0a4a0a0a4a0#()V" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="186" startPosition="18" endLine="189" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="189" startPosition="13" endLine="192" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="235" startPosition="18" endLine="238" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="238" startPosition="13" endLine="241" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="389" startPosition="32" endLine="392" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="392" startPosition="27" endLine="395" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="438" startPosition="18" endLine="441" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="441" startPosition="13" endLine="444" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="451" startPosition="18" endLine="454" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="454" startPosition="13" endLine="457" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="469" startPosition="20" endLine="472" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="472" startPosition="15" endLine="475" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="24" startPosition="76" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="51" startPosition="76" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="76" startPosition="76" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="101" startPosition="76" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="142" startPosition="258" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="142" startPosition="258" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="147" startPosition="9" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="147" startPosition="9" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="309" startPosition="13" endLine="314" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="309" startPosition="13" endLine="314" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="334" startPosition="259" endLine="339" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="334" startPosition="259" endLine="339" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="346" startPosition="60" endLine="351" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="346" startPosition="60" endLine="351" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="351" startPosition="19" endLine="356" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="351" startPosition="19" endLine="356" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="407" startPosition="372" endLine="412" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="407" startPosition="372" endLine="412" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="183" startPosition="33" endLine="189" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="193" startPosition="11" endLine="199" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="193" startPosition="11" endLine="199" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="232" startPosition="33" endLine="238" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="242" startPosition="11" endLine="248" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="242" startPosition="11" endLine="248" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="303" startPosition="48" endLine="309" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="303" startPosition="48" endLine="309" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="360" startPosition="61" endLine="366" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="360" startPosition="61" endLine="366" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="366" startPosition="21" endLine="372" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="366" startPosition="21" endLine="372" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="386" startPosition="47" endLine="392" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="435" startPosition="33" endLine="441" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="448" startPosition="33" endLine="454" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="466" startPosition="35" endLine="472" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="403" startPosition="65" endLine="414" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="403" startPosition="65" endLine="414" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="180" startPosition="45" endLine="193" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="180" startPosition="45" endLine="193" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="229" startPosition="45" endLine="242" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="229" startPosition="45" endLine="242" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="383" startPosition="61" endLine="396" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="383" startPosition="61" endLine="396" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="432" startPosition="11" endLine="445" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="432" startPosition="11" endLine="445" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="445" startPosition="11" endLine="458" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="445" startPosition="11" endLine="458" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="463" startPosition="286" endLine="476" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="463" startPosition="286" endLine="476" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="300" startPosition="46" endLine="316" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="300" startPosition="46" endLine="316" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="400" startPosition="373" endLine="416" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="400" startPosition="373" endLine="416" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="137" startPosition="32" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="137" startPosition="32" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="356" startPosition="19" endLine="374" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="356" startPosition="19" endLine="374" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="458" startPosition="11" endLine="478" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="458" startPosition="11" endLine="478" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="297" startPosition="44" endLine="318" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="297" startPosition="44" endLine="318" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="396" startPosition="25" endLine="418" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="396" startPosition="25" endLine="418" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="177" startPosition="280" endLine="201" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="177" startPosition="280" endLine="201" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="226" startPosition="347" endLine="250" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="226" startPosition="347" endLine="250" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="50" startPosition="7" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="75" startPosition="7" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="100" startPosition="7" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="131" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="23" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="172" startPosition="32" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="172" startPosition="32" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="221" startPosition="32" endLine="252" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="221" startPosition="32" endLine="252" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="380" startPosition="59" endLine="420" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="380" startPosition="59" endLine="420" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="162" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="211" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="377" startPosition="57" endLine="422" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="377" startPosition="57" endLine="422" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="374" startPosition="19" endLine="424" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="374" startPosition="19" endLine="424" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="339" startPosition="17" endLine="426" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="339" startPosition="17" endLine="426" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="328" startPosition="51" endLine="428" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="328" startPosition="51" endLine="428" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="21" startPosition="76" endLine="126" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Mps21ApiMigration_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="325" startPosition="48" endLine="430" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="325" startPosition="48" endLine="430" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="322" startPosition="449" endLine="432" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="322" startPosition="449" endLine="432" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="318" startPosition="9" endLine="480" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="318" startPosition="9" endLine="480" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="294" startPosition="33" endLine="482" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="294" startPosition="33" endLine="482" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="260" startPosition="0" endLine="486" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="129" startPosition="52" endLine="129" endPosition="52" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="160" startPosition="51" endLine="160" endPosition="51" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="209" startPosition="51" endLine="209" endPosition="51" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="258" startPosition="51" endLine="258" endPosition="51" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="25" startPosition="31" endLine="26" endPosition="41" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="29" startPosition="41" endLine="30" endPosition="41" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="33" startPosition="59" endLine="34" endPosition="71" />
+    <scopeInfo nodeId="1775333756811222515" fileName="Mps21ApiMigration_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="151" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="47" startPosition="42" endLine="48" endPosition="21" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="52" startPosition="31" endLine="53" endPosition="48" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="56" startPosition="41" endLine="57" endPosition="48" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="60" startPosition="59" endLine="61" endPosition="68" />
+    <scopeInfo nodeId="1775333756811564615" fileName="Mps21ApiMigration_MigrationScript.java" startLine="64" startPosition="59" endLine="65" endPosition="434" />
+    <scopeInfo nodeId="1775333756811564596" fileName="Mps21ApiMigration_MigrationScript.java" startLine="68" startPosition="52" endLine="69" endPosition="177" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="72" startPosition="42" endLine="73" endPosition="21" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="77" startPosition="31" endLine="78" endPosition="50" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="81" startPosition="41" endLine="82" endPosition="50" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="85" startPosition="59" endLine="86" endPosition="68" />
+    <scopeInfo nodeId="3674307013789831049" fileName="Mps21ApiMigration_MigrationScript.java" startLine="89" startPosition="59" endLine="90" endPosition="414" />
+    <scopeInfo nodeId="3674307013789831021" fileName="Mps21ApiMigration_MigrationScript.java" startLine="93" startPosition="52" endLine="94" endPosition="177" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="97" startPosition="42" endLine="98" endPosition="21" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="102" startPosition="31" endLine="103" endPosition="78" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="106" startPosition="41" endLine="107" endPosition="78" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="110" startPosition="59" endLine="111" endPosition="82" />
+    <scopeInfo nodeId="3674307013789881839" fileName="Mps21ApiMigration_MigrationScript.java" startLine="114" startPosition="59" endLine="115" endPosition="249" />
+    <scopeInfo nodeId="3674307013789881837" fileName="Mps21ApiMigration_MigrationScript.java" startLine="118" startPosition="52" endLine="119" endPosition="697" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="122" startPosition="42" endLine="123" endPosition="21" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="184" startPosition="68" endLine="185" endPosition="67" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="190" startPosition="41" endLine="191" endPosition="86" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="233" startPosition="68" endLine="234" endPosition="67" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="239" startPosition="41" endLine="240" endPosition="86" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="387" startPosition="83" endLine="388" endPosition="82" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="393" startPosition="55" endLine="394" endPosition="101" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="436" startPosition="68" endLine="437" endPosition="67" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="442" startPosition="41" endLine="443" endPosition="93" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="449" startPosition="68" endLine="450" endPosition="67" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="455" startPosition="41" endLine="456" endPosition="93" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="467" startPosition="71" endLine="468" endPosition="70" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="473" startPosition="43" endLine="474" endPosition="95" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="128" startPosition="61" endLine="130" endPosition="5" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="159" startPosition="60" endLine="161" endPosition="5" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="186" startPosition="20" endLine="188" endPosition="44" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="208" startPosition="60" endLine="210" endPosition="5" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="235" startPosition="20" endLine="237" endPosition="44" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="257" startPosition="60" endLine="259" endPosition="5" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="389" startPosition="34" endLine="391" endPosition="59" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="438" startPosition="20" endLine="440" endPosition="44" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="451" startPosition="20" endLine="453" endPosition="44" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="469" startPosition="22" endLine="471" endPosition="47" />
+    <scopeInfo nodeId="8954236049244973048" fileName="Mps21ApiMigration_MigrationScript.java" startLine="41" startPosition="52" endLine="44" endPosition="77" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="143" startPosition="9" endLine="146" endPosition="65">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_5" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="122" startPosition="9" endLine="125" endPosition="65">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="148" startPosition="9" endLine="151" endPosition="65">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_6" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="23" startPosition="76" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="310" startPosition="13" endLine="313" endPosition="66">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_36" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="335" startPosition="17" endLine="338" endPosition="71">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_41" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="347" startPosition="19" endLine="350" endPosition="73">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_43" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="352" startPosition="19" endLine="355" endPosition="73">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_44" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="408" startPosition="31" endLine="411" endPosition="89">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_55" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="24" startPosition="76" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="8954236049244973041" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="50" startPosition="76" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="51" startPosition="76" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="8954236049244973041" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="8954236049244973041" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="75" startPosition="76" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="76" startPosition="76" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="8954236049244973041" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="8954236049244973041" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="168" startPosition="11" endLine="172" endPosition="63">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="101" startPosition="76" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="8954236049244973041" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="8954236049244973041" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="194" startPosition="11" endLine="198" endPosition="63">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_11" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="217" startPosition="11" endLine="221" endPosition="63">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="243" startPosition="11" endLine="247" endPosition="63">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_11" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="116" startPosition="258" endLine="121" endPosition="9" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="121" startPosition="9" endLine="126" endPosition="9" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="39" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="304" startPosition="13" endLine="308" endPosition="60">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_35" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="361" startPosition="21" endLine="365" endPosition="69">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_46" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="367" startPosition="21" endLine="371" endPosition="75">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_47" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="142" startPosition="258" endLine="147" endPosition="9" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="147" startPosition="9" endLine="152" endPosition="9" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="309" startPosition="13" endLine="314" endPosition="13" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="334" startPosition="259" endLine="339" endPosition="17" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="346" startPosition="60" endLine="351" endPosition="19" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="351" startPosition="19" endLine="356" endPosition="19" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="407" startPosition="372" endLine="412" endPosition="31" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="8954236049244973041" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="167" startPosition="11" endLine="173" endPosition="11" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="216" startPosition="11" endLine="222" endPosition="11" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="155" startPosition="11" endLine="166" endPosition="13">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="193" startPosition="11" endLine="199" endPosition="11" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="242" startPosition="11" endLine="248" endPosition="11" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="303" startPosition="48" endLine="309" endPosition="13" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="360" startPosition="61" endLine="366" endPosition="21" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="366" startPosition="21" endLine="372" endPosition="21" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="404" startPosition="29" endLine="413" endPosition="80">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_54" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="181" startPosition="11" endLine="192" endPosition="13">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_10" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="204" startPosition="11" endLine="215" endPosition="13">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="230" startPosition="11" endLine="241" endPosition="13">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_10" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="154" startPosition="45" endLine="167" endPosition="11" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="203" startPosition="45" endLine="216" endPosition="11" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="112" startPosition="7" endLine="127" endPosition="31">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="384" startPosition="25" endLine="395" endPosition="27">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_51" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="403" startPosition="65" endLine="414" endPosition="29" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="433" startPosition="11" endLine="444" endPosition="13">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_56" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="446" startPosition="11" endLine="457" endPosition="13">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_57" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="464" startPosition="13" endLine="475" endPosition="15">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_59" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="180" startPosition="45" endLine="193" endPosition="11" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="229" startPosition="45" endLine="242" endPosition="11" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="383" startPosition="61" endLine="396" endPosition="25" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="432" startPosition="11" endLine="445" endPosition="11" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="445" startPosition="11" endLine="458" endPosition="11" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="463" startPosition="286" endLine="476" endPosition="13" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="301" startPosition="11" endLine="315" endPosition="64">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_34" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="401" startPosition="27" endLine="415" endPosition="85">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_53" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="138" startPosition="7" endLine="153" endPosition="31">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_4" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="111" startPosition="32" endLine="128" endPosition="7" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="152" startPosition="9" endLine="174" endPosition="65">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="300" startPosition="46" endLine="316" endPosition="11" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="357" startPosition="19" endLine="373" endPosition="72">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_45" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="400" startPosition="373" endLine="416" endPosition="27" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="137" startPosition="32" endLine="154" endPosition="7" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="356" startPosition="19" endLine="374" endPosition="19" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="459" startPosition="11" endLine="477" endPosition="68">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_58" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="298" startPosition="9" endLine="317" endPosition="59">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_33" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="397" startPosition="25" endLine="417" endPosition="78">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_52" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="458" startPosition="11" endLine="478" endPosition="11" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="297" startPosition="44" endLine="318" endPosition="9" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="178" startPosition="9" endLine="200" endPosition="65">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_9" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="201" startPosition="9" endLine="223" endPosition="65">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="227" startPosition="9" endLine="249" endPosition="65">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_9" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="106" startPosition="31" endLine="129" endPosition="20">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="396" startPosition="25" endLine="418" endPosition="25" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="132" startPosition="31" endLine="155" endPosition="20">
       <varInfo nodeId="8954236049244973041" varName="_parameterValues_129834374" />
       <varInfo nodeId="8954236049244973041" varName="quotedNode_1" />
       <varInfo nodeId="8954236049244973041" varName="quotedNode_2" />
       <varInfo nodeId="8954236049244973041" varName="quotedNode_3" />
       <varInfo nodeId="8954236049244973041" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="151" startPosition="280" endLine="175" endPosition="9" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="200" startPosition="347" endLine="224" endPosition="9" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="105" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="147" startPosition="7" endLine="176" endPosition="31">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="177" startPosition="280" endLine="201" endPosition="9" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="226" startPosition="347" endLine="250" endPosition="9" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="131" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="173" startPosition="7" endLine="202" endPosition="31">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_8" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="196" startPosition="7" endLine="225" endPosition="31">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="222" startPosition="7" endLine="251" endPosition="31">
       <varInfo nodeId="8954236049244973041" varName="quotedNode1_8" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="146" startPosition="32" endLine="177" endPosition="7" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="195" startPosition="32" endLine="226" endPosition="7" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="137" startPosition="50" endLine="178" endPosition="20">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="172" startPosition="32" endLine="203" endPosition="7" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="221" startPosition="32" endLine="252" endPosition="7" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="381" startPosition="23" endLine="419" endPosition="77">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_50" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="380" startPosition="59" endLine="420" endPosition="23" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="163" startPosition="50" endLine="204" endPosition="20">
       <varInfo nodeId="8954236049244973041" varName="_parameterValues_129834374" />
       <varInfo nodeId="8954236049244973041" varName="quotedNode_1" />
       <varInfo nodeId="8954236049244973041" varName="quotedNode_2" />
@@ -2334,7 +2674,7 @@
       <varInfo nodeId="8954236049244973041" varName="quotedNode_7" />
       <varInfo nodeId="8954236049244973041" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="186" startPosition="50" endLine="227" endPosition="20">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="212" startPosition="50" endLine="253" endPosition="20">
       <varInfo nodeId="8954236049244973041" varName="_parameterValues_129834374" />
       <varInfo nodeId="8954236049244973041" varName="quotedNode_1" />
       <varInfo nodeId="8954236049244973041" varName="quotedNode_2" />
@@ -2345,23 +2685,100 @@
       <varInfo nodeId="8954236049244973041" varName="quotedNode_7" />
       <varInfo nodeId="8954236049244973041" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="136" startPosition="0" endLine="180" endPosition="0">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="378" startPosition="21" endLine="421" endPosition="74">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_49" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="162" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="8954236049244973041" varName="parameter_12" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="185" startPosition="0" endLine="229" endPosition="0">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="211" startPosition="0" endLine="255" endPosition="0">
       <varInfo nodeId="8954236049244973041" varName="parameter_12" />
     </scopeInfo>
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="21" startPosition="80" endLine="99" endPosition="7" />
-    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="20" startPosition="76" endLine="100" endPosition="3">
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="377" startPosition="57" endLine="422" endPosition="21" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="375" startPosition="19" endLine="423" endPosition="67">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_48" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="374" startPosition="19" endLine="424" endPosition="19" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="340" startPosition="17" endLine="425" endPosition="67">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_42" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="339" startPosition="17" endLine="426" endPosition="17" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="329" startPosition="15" endLine="427" endPosition="62">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_40" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="328" startPosition="51" endLine="428" endPosition="15" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="22" startPosition="80" endLine="125" endPosition="7" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="326" startPosition="13" endLine="429" endPosition="63">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_39" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="21" startPosition="76" endLine="126" endPosition="3">
       <varInfo nodeId="8954236049244973041" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="20" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript" />
-    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="23" startPosition="28" endLine="49" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$1" />
-    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="50" startPosition="28" endLine="74" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$2" />
-    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="75" startPosition="28" endLine="99" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$3" />
-    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="102" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$QuotationClass_q3kr7y_a0c0b0e0a0a0b0a" />
-    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="133" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$QuotationClass_q3kr7y_a1a0a4a0a0a2a0" />
-    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="182" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$QuotationClass_q3kr7y_a1a0a4a0a0a3a0" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="325" startPosition="48" endLine="430" endPosition="13" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="323" startPosition="11" endLine="431" endPosition="68">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_38" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="322" startPosition="449" endLine="432" endPosition="11" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="319" startPosition="9" endLine="479" endPosition="61">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_37" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="318" startPosition="9" endLine="480" endPosition="9" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="295" startPosition="7" endLine="481" endPosition="32">
+      <varInfo nodeId="8954236049244973041" varName="quotedNode1_32" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="294" startPosition="33" endLine="482" endPosition="7" />
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="261" startPosition="155" endLine="484" endPosition="20">
+      <varInfo nodeId="8954236049244973041" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_1" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_10" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_11" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_12" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_13" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_14" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_15" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_16" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_17" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_18" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_19" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_2" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_20" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_21" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_22" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_23" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_24" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_25" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_26" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_27" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_28" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_29" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_3" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_30" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_31" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_4" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_5" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_6" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_7" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_8" />
+      <varInfo nodeId="8954236049244973041" varName="quotedNode_9" />
+      <varInfo nodeId="8954236049244973041" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="260" startPosition="0" endLine="486" endPosition="0">
+      <varInfo nodeId="8954236049244973041" varName="parameter_60" />
+      <varInfo nodeId="8954236049244973041" varName="parameter_61" />
+      <varInfo nodeId="8954236049244973041" varName="parameter_62" />
+      <varInfo nodeId="8954236049244973041" varName="parameter_63" />
+      <varInfo nodeId="8954236049244973041" varName="parameter_64" />
+      <varInfo nodeId="8954236049244973041" varName="parameter_65" />
+    </scopeInfo>
+    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="21" startPosition="0" endLine="488" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript" />
+    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="24" startPosition="28" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$1" />
+    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="51" startPosition="28" endLine="75" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$2" />
+    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="76" startPosition="28" endLine="100" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$3" />
+    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="101" startPosition="28" endLine="125" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$4" />
+    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="128" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$QuotationClass_q3kr7y_a0c0b0e0a0a0b0a" />
+    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="159" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$QuotationClass_q3kr7y_a1a0a4a0a0a2a0" />
+    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="208" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$QuotationClass_q3kr7y_a1a0a4a0a0a3a0" />
+    <unitInfo nodeId="8954236049244973041" fileName="Mps21ApiMigration_MigrationScript.java" startLine="257" startPosition="0" endLine="487" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Mps21ApiMigration_MigrationScript$QuotationClass_q3kr7y_a1a0a4a0a0a4a0" />
   </root>
 </debugInfo>
 
