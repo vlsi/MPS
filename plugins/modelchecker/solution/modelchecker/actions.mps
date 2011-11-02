@@ -2593,7 +2593,7 @@
                           <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1453248744423273304" resolveInfo="ModelChecker" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2253178666244634289">
-                          <property name="value" nameId="tpee.1070475926801" value="unresolved reference" />
+                          <property name="value" nameId="tpee.1070475926801" value="target module not imported" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="2253178666244634290">
                           <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="2253178666244634291">
