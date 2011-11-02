@@ -52,10 +52,16 @@
     <scopeInfo nodeId="178770917832652130" fileName="Analyzer_Behavior.java" startLine="25" startPosition="30" endLine="26" endPosition="87" />
     <scopeInfo nodeId="178770917832626049" fileName="Analyzer_Behavior.java" startLine="31" startPosition="80" endLine="32" endPosition="72" />
     <scopeInfo nodeId="4130591939054438384" fileName="Analyzer_Behavior.java" startLine="38" startPosition="75" endLine="39" endPosition="55" />
-    <scopeInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="15" startPosition="32" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="15" startPosition="32" endLine="18" endPosition="0">
+      <varInfo nodeId="178770917832626022" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="4130591939054438358" fileName="Analyzer_Behavior.java" startLine="37" startPosition="172" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="178770917832626022" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="178770917832626022" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="178770917832652118" fileName="Analyzer_Behavior.java" startLine="23" startPosition="88" endLine="28" endPosition="102">
       <varInfo nodeId="178770917832652121" varName="longName" />
     </scopeInfo>
@@ -65,8 +71,12 @@
     <scopeInfo nodeId="4130591939054429270" fileName="Analyzer_Behavior.java" startLine="35" startPosition="79" endLine="42" endPosition="18">
       <varInfo nodeId="4130591939054438345" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="22" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="34" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="178770917832626022" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="178770917832626022" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Analyzer_Behavior" />
   </root>
   <root nodeId="430844094082161345">
@@ -75,8 +85,12 @@
     <nodeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="430844094082161347" fileName="AnalyzerFunFunction_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="430844094082161349" fileName="AnalyzerFunFunction_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="164" />
-    <scopeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="9" startPosition="43" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="9" startPosition="43" endLine="12" endPosition="0">
+      <varInfo nodeId="430844094082161345" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="430844094082161345" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.AnalyzerFunFunction_Behavior" />
   </root>
   <root nodeId="430844094082161366">
@@ -85,8 +99,12 @@
     <nodeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="430844094082161368" fileName="AnalyzerMergeFunction_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="430844094082161370" fileName="AnalyzerMergeFunction_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="164" />
-    <scopeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="9" startPosition="45" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="9" startPosition="45" endLine="12" endPosition="0">
+      <varInfo nodeId="430844094082161366" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="430844094082161366" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.AnalyzerMergeFunction_Behavior" />
   </root>
   <root nodeId="430844094082161381">
@@ -95,8 +113,12 @@
     <nodeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="430844094082161383" fileName="AnalyzerInitialFunction_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="430844094082161385" fileName="AnalyzerInitialFunction_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="164" />
-    <scopeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="9" startPosition="47" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="9" startPosition="47" endLine="12" endPosition="0">
+      <varInfo nodeId="430844094082161381" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="430844094082161381" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.AnalyzerInitialFunction_Behavior" />
   </root>
   <root nodeId="4413230749907681645">
@@ -112,11 +134,22 @@
     <scopeInfo nodeId="4413230749907681647" fileName="PatternCondition_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="4413230749907681662" fileName="PatternCondition_Behavior.java" startLine="18" startPosition="88" endLine="19" endPosition="151" />
     <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="27" startPosition="118" endLine="28" endPosition="266" />
-    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="22" startPosition="85" endLine="24" endPosition="221" />
-    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="22" startPosition="85" endLine="24" endPosition="221">
+      <varInfo nodeId="4413230749907681645" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="4413230749907681645" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="4413230749907681645" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4413230749907681645" varName="callerConceptFqName" />
+      <varInfo nodeId="4413230749907681645" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="4413230749907681645" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.PatternCondition_Behavior" />
   </root>
   <root nodeId="4413230749907681648">
@@ -129,10 +162,19 @@
     <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getApplicableConcept_4413230749907681652#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4413230749907681650" fileName="ApplicableCondition_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="22" startPosition="118" endLine="23" endPosition="269" />
-    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="17" startPosition="85" endLine="19" endPosition="224" />
-    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="17" startPosition="85" endLine="19" endPosition="224">
+      <varInfo nodeId="4413230749907681648" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="4413230749907681648" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4413230749907681648" varName="callerConceptFqName" />
+      <varInfo nodeId="4413230749907681648" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="4413230749907681648" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.ApplicableCondition_Behavior" />
   </root>
   <root nodeId="4943044633101739072">
@@ -148,23 +190,38 @@
     <scopeInfo nodeId="4943044633101739074" fileName="ConceptCondition_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="4943044633101739077" fileName="ConceptCondition_Behavior.java" startLine="18" startPosition="88" endLine="19" endPosition="65" />
     <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="27" startPosition="118" endLine="28" endPosition="266" />
-    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="22" startPosition="85" endLine="24" endPosition="221" />
-    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="22" startPosition="85" endLine="24" endPosition="221">
+      <varInfo nodeId="4943044633101739072" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="4943044633101739072" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="4943044633101739072" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4943044633101739072" varName="callerConceptFqName" />
+      <varInfo nodeId="4943044633101739072" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="4943044633101739072" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.ConceptCondition_Behavior" />
   </root>
   <root nodeId="8424563347437838494">
     <nodeInfo nodeId="8424563347437838494" fileName="EmitInstruction_Behavior.java" startLine="7" startPosition="39" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="8424563347437838496" fileName="EmitInstruction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="8424563347437838494" fileName="EmitInstruction_Behavior.java" startLine="7" startPosition="39" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="8424563347437838494" fileName="EmitInstruction_Behavior.java" startLine="7" startPosition="39" endLine="10" endPosition="0">
+      <varInfo nodeId="8424563347437838494" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8424563347437838494" fileName="EmitInstruction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.EmitInstruction_Behavior" />
   </root>
   <root nodeId="8656002014371076002">
     <nodeInfo nodeId="8656002014371076002" fileName="Instruction_Behavior.java" startLine="7" startPosition="35" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="8656002014371076004" fileName="Instruction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="8656002014371076002" fileName="Instruction_Behavior.java" startLine="7" startPosition="35" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="8656002014371076002" fileName="Instruction_Behavior.java" startLine="7" startPosition="35" endLine="10" endPosition="0">
+      <varInfo nodeId="8656002014371076002" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8656002014371076002" fileName="Instruction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Instruction_Behavior" />
   </root>
   <root nodeId="8656002014371076039">
@@ -176,8 +233,12 @@
     <scopeInfo nodeId="8656002014371076045" fileName="InstructionReference_Behavior.java" startLine="13" startPosition="81" endLine="15" endPosition="18">
       <varInfo nodeId="8656002014371076047" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8656002014371076039" fileName="InstructionReference_Behavior.java" startLine="9" startPosition="44" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="8656002014371076039" fileName="InstructionReference_Behavior.java" startLine="12" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="8656002014371076039" fileName="InstructionReference_Behavior.java" startLine="9" startPosition="44" endLine="12" endPosition="0">
+      <varInfo nodeId="8656002014371076039" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8656002014371076039" fileName="InstructionReference_Behavior.java" startLine="12" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="8656002014371076039" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8656002014371076039" fileName="InstructionReference_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.InstructionReference_Behavior" />
   </root>
   <root nodeId="8716397433969715146">
@@ -189,11 +250,15 @@
     <nodeInfo nodeId="8716397433969715146" fileName="Rule_Behavior.java" startLine="12" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFqName_8716397433969716516#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="8716397433969715148" fileName="Rule_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="8716397433969716530" fileName="Rule_Behavior.java" startLine="15" startPosition="30" endLine="16" endPosition="61" />
-    <scopeInfo nodeId="8716397433969715146" fileName="Rule_Behavior.java" startLine="9" startPosition="28" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="8716397433969715146" fileName="Rule_Behavior.java" startLine="9" startPosition="28" endLine="12" endPosition="0">
+      <varInfo nodeId="8716397433969715146" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8716397433969716519" fileName="Rule_Behavior.java" startLine="13" startPosition="75" endLine="18" endPosition="76">
       <varInfo nodeId="8716397433969716521" varName="longName" />
     </scopeInfo>
-    <scopeInfo nodeId="8716397433969715146" fileName="Rule_Behavior.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="8716397433969715146" fileName="Rule_Behavior.java" startLine="12" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="8716397433969715146" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8716397433969715146" fileName="Rule_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Rule_Behavior" />
   </root>
 </debugInfo>
