@@ -2,6 +2,59 @@
 <debugInfo>
   <unitInfo fileName="_Adapters.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.closures.test._Adapters$_return_P1_E0_to__void_P1_E0_adapter" />
   <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.closures.test._Adapters" />
+  <root nodeId="1052694437380217074">
+    <nodeInfo nodeId="1052694437380224178" fileName="MPS14656_helper.java" startLine="15" startPosition="47" endLine="16" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1052694437380438448" fileName="MPS14656_helper.java" startLine="23" startPosition="47" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380217094" fileName="MPS14656_helper.java" startLine="29" startPosition="94" endLine="30" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380217076" fileName="MPS14656_helper.java" startLine="9" startPosition="30" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS14656_helper#()V" />
+    <nodeInfo nodeId="1052694437380224176" fileName="MPS14656_helper.java" startLine="14" startPosition="55" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="1052694437380224191" fileName="MPS14656_helper.java" startLine="22" startPosition="55" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="1052694437380217084" fileName="MPS14656_helper.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="run#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E1;)V" />
+    <nodeInfo nodeId="1052694437380224174" fileName="MPS14656_helper.java" startLine="13" startPosition="47" endLine="18" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380224189" fileName="MPS14656_helper.java" startLine="21" startPosition="49" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380224170" fileName="MPS14656_helper.java" startLine="12" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="valid#()V" />
+    <nodeInfo nodeId="1052694437380224185" fileName="MPS14656_helper.java" startLine="20" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invalid#()V" />
+    <scopeInfo nodeId="1052694437380217079" fileName="MPS14656_helper.java" startLine="10" startPosition="28" endLine="10" endPosition="28" />
+    <scopeInfo nodeId="1052694437380224177" fileName="MPS14656_helper.java" startLine="15" startPosition="47" endLine="16" endPosition="32" />
+    <scopeInfo nodeId="1052694437380224192" fileName="MPS14656_helper.java" startLine="23" startPosition="47" endLine="24" endPosition="36" />
+    <scopeInfo nodeId="1052694437380217087" fileName="MPS14656_helper.java" startLine="29" startPosition="94" endLine="30" endPosition="15" />
+    <scopeInfo nodeId="1052694437380217076" fileName="MPS14656_helper.java" startLine="9" startPosition="30" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="1052694437380224176" fileName="MPS14656_helper.java" startLine="14" startPosition="55" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1052694437380224191" fileName="MPS14656_helper.java" startLine="22" startPosition="55" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1052694437380217084" fileName="MPS14656_helper.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1052694437380217088" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="1052694437380224173" fileName="MPS14656_helper.java" startLine="13" startPosition="47" endLine="18" endPosition="7" />
+    <scopeInfo nodeId="1052694437380224188" fileName="MPS14656_helper.java" startLine="21" startPosition="49" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="1052694437380224170" fileName="MPS14656_helper.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1052694437380224185" fileName="MPS14656_helper.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
+    <unitInfo nodeId="1052694437380224176" fileName="MPS14656_helper.java" startLine="14" startPosition="12" endLine="18" endPosition="5" unitName="jetbrains.mps.closures.test.MPS14656_helper$1" />
+    <unitInfo nodeId="1052694437380224191" fileName="MPS14656_helper.java" startLine="22" startPosition="12" endLine="26" endPosition="5" unitName="jetbrains.mps.closures.test.MPS14656_helper$2" />
+    <unitInfo nodeId="1052694437380217074" fileName="MPS14656_helper.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14656_helper" />
+  </root>
+  <root nodeId="1052694437380230815">
+    <nodeInfo nodeId="1052694437380230840" fileName="MPS14656_Test.java" startLine="11" startPosition="9" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="12" startPosition="30" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="14" startPosition="29" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1052694437380230847" fileName="MPS14656_Test.java" startLine="20" startPosition="9" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="21" startPosition="30" endLine="22" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="23" startPosition="29" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="10" startPosition="45" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="19" startPosition="47" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1052694437380230822" fileName="MPS14656_Test.java" startLine="9" startPosition="45" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_valid#()V" />
+    <nodeInfo nodeId="1052694437380230829" fileName="MPS14656_Test.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_invalid#()V" />
+    <scopeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="14" startPosition="0" endLine="15" endPosition="28" />
+    <scopeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="14" startPosition="29" endLine="15" endPosition="28" />
+    <scopeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="23" startPosition="0" endLine="24" endPosition="28" />
+    <scopeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="23" startPosition="29" endLine="24" endPosition="28" />
+    <scopeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="11" startPosition="9" endLine="13" endPosition="20" />
+    <scopeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="20" startPosition="9" endLine="22" endPosition="20" />
+    <scopeInfo nodeId="1052694437380230825" fileName="MPS14656_Test.java" startLine="10" startPosition="45" endLine="16" endPosition="5" />
+    <scopeInfo nodeId="1052694437380230832" fileName="MPS14656_Test.java" startLine="19" startPosition="47" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="1052694437380230822" fileName="MPS14656_Test.java" startLine="9" startPosition="45" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1052694437380230829" fileName="MPS14656_Test.java" startLine="18" startPosition="0" endLine="27" endPosition="0" />
+    <unitInfo nodeId="1052694437380230815" fileName="MPS14656_Test.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14656_Test" />
+  </root>
   <root nodeId="1201432919093">
     <nodeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="100" startPosition="27" endLine="100" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="103" startPosition="27" endLine="103" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
