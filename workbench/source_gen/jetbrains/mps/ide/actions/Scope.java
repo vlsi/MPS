@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class Scope {
   private List<IModule> myModules;
@@ -61,16 +62,24 @@ public class Scope {
     ListSequence.fromList(myModules).addElement(module);
   }
 
-  public void add(SModelDescriptor model) {
-    if (!(contains(model))) {
-      ListSequence.fromList(myModels).addElement(model);
-    }
+  public void add(final SModelDescriptor model) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        if (!(contains(model))) {
+          ListSequence.fromList(myModels).addElement(model);
+        }
+      }
+    });
   }
 
-  public void add(SNode root) {
-    if (!(contains(root))) {
-      ListSequence.fromList(myRoots).addElement(root);
-    }
+  public void add(final SNode root) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        if (!(contains(root))) {
+          ListSequence.fromList(myRoots).addElement(root);
+        }
+      }
+    });
   }
 
   public List<SModelDescriptor> getModels() {
@@ -119,7 +128,7 @@ public class Scope {
         sb.append(" and ");
       }
       if ((int) ListSequence.fromList(myModels).count() == 1) {
-        sb.append(ListSequence.fromList(myModels).getElement(0).getLongName());
+        sb.append("model " + ListSequence.fromList(myModels).getElement(0).getLongName());
       } else {
         sb.append(ListSequence.fromList(myModels).count() + " models");
       }
