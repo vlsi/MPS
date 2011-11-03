@@ -65,6 +65,10 @@ public class DependenciesComponent extends JComponent {
     repaint();
   }
 
+  public UsagesView getReferencesViewComponent() {
+    return myReferencesView;
+  }
+
   public void setProject(Project project) {
     myProject = project;
   }

@@ -289,12 +289,16 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.AnalyzeDependencies_Tool" file="AnalyzeDependencies_Tool.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.wm.ToolWindow" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DependenciesComponent" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Scope" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.INavigateableTool" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.INavigator" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.UsagesViewTracker" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
