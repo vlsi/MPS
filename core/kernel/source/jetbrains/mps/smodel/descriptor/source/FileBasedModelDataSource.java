@@ -26,7 +26,7 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
   public SourceChangeWatcher getChangeWatcher() {
     if (mySourceChangeWatcher == null) {
       mySourceChangeWatcher = new FileSourceChangeWatcher() {
-        public boolean containFile(IFile file) {
+        public boolean containFile(String file) {
           return FileBasedModelDataSource.this.containFile(file);
         }
       };
@@ -38,5 +38,5 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
     mySourceChangeWatcher.changed(new EmptyProgressMonitor());
   }
 
-  public abstract boolean containFile(IFile file);
+  public abstract boolean containFile(String file);
 }

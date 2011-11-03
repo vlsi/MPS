@@ -30,11 +30,13 @@ import java.util.Collections;
 
 @ImmutableObject
 public class FileStubSource extends FileBasedModelDataSource {
-  private IFile myFile;
+  private final IFile myFile;
+  private final String myPath;
   private SModelReference ref;
 
   public FileStubSource(IFile file, SModelReference ref) {
     myFile = file;
+    myPath = myFile.getPath();
     this.ref = ref;
   }
 
@@ -42,8 +44,8 @@ public class FileStubSource extends FileBasedModelDataSource {
     return myFile;
   }
 
-  public boolean containFile(IFile file) {
-    return eq_9hjfki_a0a0b(myFile, file);
+  public boolean containFile(String file) {
+    return eq_9hjfki_a0a0b(myPath, file);
   }
 
   public long getTimestamp() {

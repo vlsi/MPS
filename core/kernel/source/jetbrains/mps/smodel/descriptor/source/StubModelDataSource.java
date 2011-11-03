@@ -24,12 +24,13 @@ import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 import java.util.Set;
 
 public abstract class StubModelDataSource extends FileBasedModelDataSource {
+  private static final String JAR = ".jar";
   private final Set<String> myStubPaths = new THashSet<String>();
+  private final Set<String> myJarPaths = new THashSet<String>();
 
   public StubModelDataSource() {
 
@@ -39,11 +40,14 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
     return "stub model data source"; //todo include filenames
   }
 
-  public boolean containFile(IFile file) {
-    for (String p : myStubPaths) {
-      if (p.equals(file.getParent().getPath())) return true;
+  public boolean containFile(String file) {
+    if (!file.contains(JAR)) {
+      //todo this is because in 10.x platform file.getPath() is too slow. They fixed it in 11 - can rewrite after it
+      int index = Math.max(file.lastIndexOf('/'), file.lastIndexOf('\\'));
+      return myStubPaths.contains(index < 0 ? file : file.substring(0, index));
+    } else {
+      return myJarPaths.contains(file.substring(0,file.indexOf(JAR)+JAR.length()));
     }
-    return false;
   }
 
   public long getTimestamp() {
@@ -83,11 +87,14 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
 
   public void addPath(String path) {
     myStubPaths.add(path);
+    if (path.contains(JAR)){
+      myJarPaths.add(path.substring(0,path.indexOf(JAR)+JAR.length()));
+    }
     sourcesSetChanged();
   }
 
   protected Set<String> getStubPaths() {
-    return myStubPaths;
+    return Collections.unmodifiableSet(myStubPaths);
   }
 
   //todo more precise

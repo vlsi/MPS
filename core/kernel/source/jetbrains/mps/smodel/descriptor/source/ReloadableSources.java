@@ -52,7 +52,7 @@ public class ReloadableSources {
 
   //--------------
 
-  public void invalidate(IFile file) {
+  public void invalidate(String file) {
     THashSet<FileSourceChangeWatcher> validSources = new THashSet<FileSourceChangeWatcher>(mySources);
     validSources.removeAll(myInvalidatedSources);
 

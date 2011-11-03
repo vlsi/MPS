@@ -33,7 +33,6 @@ import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.vfs.IFile;
 
 public class ConfStubSource extends StubModelDataSource {
   private List<ModelRoot> roots;
@@ -106,7 +105,7 @@ public class ConfStubSource extends StubModelDataSource {
     return null;
   }
 
-  public boolean containFile(IFile file) {
+  public boolean containFile(String file) {
     return false;
   }
 

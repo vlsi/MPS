@@ -60,5 +60,5 @@ public abstract class FileSourceChangeWatcher implements SourceChangeWatcher {
     }
   }
 
-  public abstract boolean containFile(IFile file);
+  public abstract boolean containFile(String file);
 }
