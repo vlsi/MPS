@@ -47,16 +47,30 @@ public class Scope {
     return false;
   }
 
+  public boolean contains(SModelDescriptor model) {
+    if (ListSequence.fromList(myModels).contains(model)) {
+      return true;
+    }
+    if (ListSequence.fromList(myModules).contains(model.getModule())) {
+      return true;
+    }
+    return false;
+  }
+
   public void add(IModule module) {
     ListSequence.fromList(myModules).addElement(module);
   }
 
   public void add(SModelDescriptor model) {
-    ListSequence.fromList(myModels).addElement(model);
+    if (!(contains(model))) {
+      ListSequence.fromList(myModels).addElement(model);
+    }
   }
 
   public void add(SNode root) {
-    ListSequence.fromList(myRoots).addElement(root);
+    if (!(contains(root))) {
+      ListSequence.fromList(myRoots).addElement(root);
+    }
   }
 
   public List<SModelDescriptor> getModels() {
