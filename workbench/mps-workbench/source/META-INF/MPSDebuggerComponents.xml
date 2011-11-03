@@ -27,10 +27,5 @@
       <implementation-class>jetbrains.mps.debug.api.DebugSessionManagerComponent</implementation-class>
       <skipForDummyProject/>
     </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent</implementation-class>
-      <skipForDummyProject/>
-    </component>
   </project-components>
 </components>
