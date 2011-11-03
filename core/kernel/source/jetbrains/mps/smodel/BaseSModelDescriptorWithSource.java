@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.smodel.descriptor.source.ChangeListener;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.changes.ChangeListener;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
@@ -33,7 +33,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   protected BaseSModelDescriptorWithSource(@NotNull SModelReference modelReference, @NotNull ModelDataSource source, boolean checkDup) {
     super(modelReference, checkDup);
     mySource = source;
-    mySource.getChangeWatcher().startListening(mySourceListener);
+    mySource.startListening(mySourceListener);
   }
 
   @NotNull
@@ -42,7 +42,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   }
 
   public void dispose() {
-    mySource.getChangeWatcher().stopListening(mySourceListener);
+    mySource.stopListening(mySourceListener);
     super.dispose();
   }
 

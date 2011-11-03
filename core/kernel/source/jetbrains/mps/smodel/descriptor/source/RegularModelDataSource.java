@@ -40,16 +40,17 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Set;
 
 public class RegularModelDataSource extends FileBasedModelDataSource {
   private static Logger LOG = Logger.getLogger(RegularModelDataSource.class);
 
   private IFile myFile;
-  private String myPath;
 
   public RegularModelDataSource(@NotNull IFile file) {
-    setFile(file);
+    myFile = file;
   }
 
   @Deprecated  //todo remove
@@ -61,8 +62,8 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return myFile.toString();
   }
 
-  public boolean containFile(String file) {
-    return myPath.equals(file);
+  public Collection<String> getFilesToListen() {
+    return Collections.singleton(myFile.getPath());
   }
 
   public boolean isReadOnly() {
@@ -186,7 +187,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
   public void setFile(IFile file) {
     myFile = file;
-    myPath = myFile.getPath();
+    sourceFilesChanged();
   }
 
   public void rename(SModelDescriptor sm, SModelFqName modelFqName, boolean changeFile) {

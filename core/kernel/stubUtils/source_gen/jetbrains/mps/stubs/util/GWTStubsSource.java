@@ -102,10 +102,6 @@ public class GWTStubsSource extends StubModelDataSource {
     return null;
   }
 
-  public boolean containFile(String file) {
-    return false;
-  }
-
   public long getTimestamp() {
     return 0;
   }
