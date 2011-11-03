@@ -98,8 +98,8 @@ public class TransformationUtil {
     SNodeOperations.replaceWithAnother(baseAssignment, new TransformationUtil.QuotationClass_crriw5_a0a0g0f().createNode(SLinkOperations.getTarget(baseAssignment, "lValue", true), rightExpression));
     rightExpression.addChild(Transformator.LTYPE, SNodeOperations.copyNode(lvalueType));
     rightExpression.addChild(Transformator.RTYPE, SNodeOperations.copyNode(rvalueType));
-    AttributeOperations.createAndSetAttrbiute(rightExpression, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
-    AttributeOperations.createAndSetAttrbiute(baseAssignment, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
+    AttributeOperations.createAndSetAttrbiute(rightExpression, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
+    AttributeOperations.createAndSetAttrbiute(baseAssignment, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
   }
 
   public static void replaceLowLevelVariableReference(String variableName, SNode variableType, SNode variableRef) {
@@ -154,11 +154,11 @@ public class TransformationUtil {
   }
 
   public static boolean isUnprocessed(SNode node) {
-    return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"))) != null) && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation"))) == null);
+    return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"))) != null) && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"))) == null);
   }
 
   public static boolean isLowLevelVariableReference(SNode variableRef) {
-    if (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference")) {
+    if (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference")) {
       return true;
     }
     if (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.baseLanguage.structure.ParameterReference")) {
@@ -177,8 +177,8 @@ public class TransformationUtil {
   }
 
   public static SNode getBoxedTypeIfNeeded(SNode rawType) {
-    if (SNodeOperations.isInstanceOf(rawType, "jetbrains.mps.debug.evaluation.structure.DebuggedType")) {
-      rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(rawType, "jetbrains.mps.debug.evaluation.structure.DebuggedType"), "lowType", true));
+    if (SNodeOperations.isInstanceOf(rawType, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType")) {
+      rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(rawType, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"), "lowType", true));
     }
     // we can't cast from Object to primitive, so we must box primitive types 
     // stupid java "everything is an object, except the things which are not" 
@@ -220,8 +220,8 @@ public class TransformationUtil {
   }
 
   public static SNode getValueProxyTypeFromType(SNode type) {
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.debug.evaluation.structure.DebuggedType")) {
-      type = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.debug.evaluation.structure.DebuggedType"), "lowType", true);
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType")) {
+      type = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"), "lowType", true);
     }
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       return new TransformationUtil.QuotationClass_crriw5_a0a0b0v().createNode();
@@ -267,8 +267,8 @@ public class TransformationUtil {
     if ((type == null)) {
       return "V";
     }
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.debug.evaluation.structure.DebuggedType")) {
-      type = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.debug.evaluation.structure.DebuggedType"), "lowType", true);
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType")) {
+      type = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"), "lowType", true);
     }
     // why subtyping? 
     // I do not know 

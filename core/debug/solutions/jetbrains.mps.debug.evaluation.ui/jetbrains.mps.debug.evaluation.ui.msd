@@ -11,7 +11,7 @@
     <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
     <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
     <dependency reexport="false">df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</dependency>
-    <dependency reexport="false">7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debug.evaluation)</dependency>
+    <dependency reexport="false">7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)</dependency>
     <dependency reexport="false">ef703a71-a5a3-42af-b53c-ddced816ad5c(jetbrains.mps.lang.stubs)</dependency>
   </dependencies>
   <usedLanguages>
@@ -24,7 +24,7 @@
     <usedLanguage>a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)</usedLanguage>
     <usedLanguage>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguage>
     <usedLanguage>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguage>
-    <usedLanguage>7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debug.evaluation)</usedLanguage>
+    <usedLanguage>7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)</usedLanguage>
     <usedLanguage>aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</usedLanguage>
     <usedLanguage>3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)</usedLanguage>
     <usedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</usedLanguage>

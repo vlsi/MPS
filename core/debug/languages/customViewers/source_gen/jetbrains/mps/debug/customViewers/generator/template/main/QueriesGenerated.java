@@ -241,40 +241,40 @@ public class QueriesGenerated {
   }
 
   public static void mapSrcMacro_post_mapper_1123500463147192694(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_5639218245806456017(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_6772833964096462904(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_5639218245806455992(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_5639218245806446718(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_1464575230816145950(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_8256349518541671180(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
     ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), null, false, new String[]{})).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        AttributeOperations.createAndSetAttrbiute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+        AttributeOperations.createAndSetAttrbiute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
       }
     });
   }
 
   public static void mapSrcMacro_post_mapper_1855642807426525752(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mappingScript_CodeBlock_264293128390891135(final IOperationContext operationContext, final MappingScriptContext _context) {

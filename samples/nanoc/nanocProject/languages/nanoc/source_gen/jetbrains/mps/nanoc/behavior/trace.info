@@ -37,8 +37,12 @@
     <nodeInfo nodeId="3968096696026417880" fileName="File_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getUnitName_5067982036267369911#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="3968096696026417882" fileName="File_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="3968096696026417889" fileName="File_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="59" />
-    <scopeInfo nodeId="3968096696026417880" fileName="File_Behavior.java" startLine="8" startPosition="28" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="3968096696026417880" fileName="File_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="3968096696026417880" fileName="File_Behavior.java" startLine="8" startPosition="28" endLine="11" endPosition="0">
+      <varInfo nodeId="3968096696026417880" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026417880" fileName="File_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="3968096696026417880" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="3968096696026417880" fileName="File_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.nanoc.behavior.File_Behavior" />
   </root>
 </debugInfo>

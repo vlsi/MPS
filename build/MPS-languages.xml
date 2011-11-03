@@ -8540,12 +8540,12 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp" />
   </target>
-  <target name="pack.jetbrains.mps.debug.evaluation">
+  <target name="pack.jetbrains.mps.debugger.java.evaluation">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/core/debug/languages/evaluation/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation.jar.jtmp/module.xml">
-      <module namespace="jetbrains.mps.debug.evaluation" uuid="7da4580f-9d75-4603-8162-51a896d78375" type="language">
+    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.evaluation.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.evaluation.jar.jtmp/module.xml">
+      <module namespace="jetbrains.mps.debugger.java.evaluation" uuid="7da4580f-9d75-4603-8162-51a896d78375" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
           <module ref="04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.lib)" />
@@ -8609,7 +8609,7 @@
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
           <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
           <module ref="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)" />
-          <module ref="80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debug.privateMembers)" />
+          <module ref="80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)" />
           <module ref="823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml.deprecated)" />
           <module ref="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
           <module ref="83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)" />
@@ -8689,22 +8689,22 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
-        <sources jar="jetbrains.mps.debug.evaluation-src.jar" descriptor="evaluation.mpl" />
+        <sources jar="jetbrains.mps.debugger.java.evaluation-src.jar" descriptor="evaluation.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.evaluation-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/debug/languages/evaluation/evaluation.mpl" prefix="module" />
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.evaluation.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.evaluation.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation" includes="icons/**, resources/**" />
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.evaluation.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.debug.customViewers">
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -8775,9 +8775,9 @@
           <module ref="77c9a130-703f-4530-bf21-6580757768d0(jetbrains.mps.build.antsupport)" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
           <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-          <module ref="7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debug.evaluation)" />
+          <module ref="7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)" />
           <module ref="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)" />
-          <module ref="80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debug.privateMembers)" />
+          <module ref="80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)" />
           <module ref="823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml.deprecated)" />
           <module ref="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
           <module ref="83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)" />
@@ -8874,12 +8874,12 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers.jar.jtmp" />
   </target>
-  <target name="pack.jetbrains.mps.debug.privateMembers">
+  <target name="pack.jetbrains.mps.debugger.java.privateMembers">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.privateMembers.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.privateMembers.jar.jtmp/module.xml">
-      <module namespace="jetbrains.mps.debug.privateMembers" uuid="80208897-4572-437d-b50e-8f050cba9566" type="language">
+    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.privateMembers.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.privateMembers.jar.jtmp/module.xml">
+      <module namespace="jetbrains.mps.debugger.java.privateMembers" uuid="80208897-4572-437d-b50e-8f050cba9566" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
           <module ref="04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.lib)" />
@@ -9022,21 +9022,21 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
-        <sources jar="jetbrains.mps.debug.privateMembers-src.jar" descriptor="privateMembers.mpl" />
+        <sources jar="jetbrains.mps.debugger.java.privateMembers-src.jar" descriptor="privateMembers.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.privateMembers-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.privateMembers-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/core/debug/languages/privateMembers/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/debug/languages/privateMembers/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/debug/languages/privateMembers/privateMembers.mpl" prefix="module" />
       <zipfileset dir="${base_dir}/core/debug/languages/privateMembers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.privateMembers.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.privateMembers.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.privateMembers.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.privateMembers.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/debug/languages/privateMembers" includes="icons/**, resources/**" />
       <zipfileset dir="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.privateMembers.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.privateMembers.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.debug.apiLang">
     <fail unless="base_dir" message="Property base_dir unspecified." />

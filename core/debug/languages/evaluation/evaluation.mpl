@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.debug.evaluation" uuid="7da4580f-9d75-4603-8162-51a896d78375" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.debugger.java.evaluation" uuid="7da4580f-9d75-4603-8162-51a896d78375" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.debug.evaluation" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.debugger.java.evaluation" />
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.debug.evaluation#1620955434532134778" uuid="c6bda6e2-9c37-4cbb-9e2c-bb38ed451c7e">
+    <generator name="" generatorUID="jetbrains.mps.debugger.java.evaluation#1620955434532134778" uuid="c6bda6e2-9c37-4cbb-9e2c-bb38ed451c7e">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.debug.evaluation.generator.template" />
+        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.debugger.java.evaluation.generator.template" />
       </models>
       <external-templates />
       <dependencies>
@@ -24,7 +24,7 @@
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
-    <dependency reexport="true">80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debug.privateMembers)</dependency>
+    <dependency reexport="true">80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

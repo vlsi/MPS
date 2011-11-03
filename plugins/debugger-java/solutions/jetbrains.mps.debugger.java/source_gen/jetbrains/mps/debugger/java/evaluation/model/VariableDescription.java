@@ -65,7 +65,7 @@ public class VariableDescription {
   }
 
   public static SNode createDebuggedType(SNode lowType, SNode highType) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.DebuggedType", null);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", null);
     if ((highType != null)) {
       SLinkOperations.setTarget(result, "highType", highType, true);
     } else {

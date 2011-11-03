@@ -72,7 +72,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
   public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context, boolean isShowContext, final List<SNodePointer> nodesToImport) {
     super(project, session, module, context, isShowContext);
-    ListSequence.fromList(myLanguages).addSequence(LinkedListSequence.fromLinkedList(LinkedListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.privateMembers"))));
+    ListSequence.fromList(myLanguages).addSequence(LinkedListSequence.fromLinkedList(LinkedListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debugger.java.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debugger.java.privateMembers"))));
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -132,9 +132,9 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   protected SNode createEvaluator(SModelDescriptor model) {
-    SNode evaluatorConcept = SNodeFactoryOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", null);
+    SNode evaluatorConcept = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", null);
     SPropertyOperations.set(evaluatorConcept, "isShowContext", "" + (myShowContext));
-    AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatements", true), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
+    AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatements", true), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
     return evaluatorConcept;
   }
 
@@ -213,7 +213,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           });
         }
         if (matchingVar != null) {
-          SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", null);
+          SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", null);
           SLinkOperations.setTarget(newVariableReference, "baseVariableDeclaration", matchingVar, false);
           SNodeOperations.replaceWithAnother(node, newVariableReference);
         }
@@ -303,7 +303,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         if (needUpdateVariables()) {
           // we should update variables if we are first time here or if we do not show context (i.e. in evaluation) 
           if (lowLevelVarNode == null) {
-            lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
+            lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable", null);
             ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true)).addElement(lowLevelVarNode);
             MapSequence.fromMap(declaredVariables).put(name, lowLevelVarNode);
           }

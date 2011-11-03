@@ -38,6 +38,15 @@
     <modelRoot path="${mps_home}/plugins/debugger-java/classes" namespacePrefix="">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
+    <modelRoot path="${mps_home}/plugins/debugger-api/classes" namespacePrefix="">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
+    <modelRoot path="${mps_home}/plugins/debugger-java" namespacePrefix="">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </modelRoot>
+    <modelRoot path="${mps_home}/plugins/debugger-java/classes" namespacePrefix="">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
   </models>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/debugger-api/classes">
@@ -58,7 +67,7 @@
     <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
     <dependency reexport="false">c2b4d111-b1a9-4476-8bfc-454cbf1a6e6c(jetbrains.mps.baseLanguage.runConfigurations.runtime)</dependency>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
-    <dependency reexport="false">7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debug.evaluation)</dependency>
+    <dependency reexport="false">7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)</dependency>
     <dependency reexport="false">cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debug.java.api)</dependency>
     <dependency reexport="false">04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.lib)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
@@ -79,8 +88,8 @@
     <usedLanguage>760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)</usedLanguage>
     <usedLanguage>a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)</usedLanguage>
     <usedLanguage>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguage>
-    <usedLanguage>7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debug.evaluation)</usedLanguage>
-    <usedLanguage>80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debug.privateMembers)</usedLanguage>
+    <usedLanguage>7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)</usedLanguage>
+    <usedLanguage>80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)</usedLanguage>
     <usedLanguage>f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.execution.commands)</usedLanguage>
     <usedLanguage>22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.execution.configurations)</usedLanguage>
     <usedLanguage>756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.execution.settings)</usedLanguage>

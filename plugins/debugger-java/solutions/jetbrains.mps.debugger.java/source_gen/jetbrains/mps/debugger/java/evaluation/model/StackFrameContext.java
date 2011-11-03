@@ -202,7 +202,7 @@ public class StackFrameContext extends EvaluationContext {
     if (unitType == null) {
       return null;
     }
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.UnitNode", null);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.UnitNode", null);
     SNode lowLevelType = createClassifierType.invoke(unitType);
     SNode highLevelNode = getStaticContextNode();
     if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {

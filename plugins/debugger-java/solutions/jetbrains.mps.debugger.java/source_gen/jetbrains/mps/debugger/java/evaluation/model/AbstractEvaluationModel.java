@@ -172,7 +172,7 @@ public abstract class AbstractEvaluationModel {
   public String getPresentation() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(getNodeToShow(), "jetbrains.mps.debug.evaluation.structure.IEvaluatorConcept"), "virtual_getEvaluatorPresentation_9172312269976647295", new Class[]{SNode.class}));
+        return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(getNodeToShow(), "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), "virtual_getEvaluatorPresentation_9172312269976647295", new Class[]{SNode.class}));
       }
     });
   }
