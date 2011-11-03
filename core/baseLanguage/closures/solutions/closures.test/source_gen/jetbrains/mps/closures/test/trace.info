@@ -2,6 +2,63 @@
 <debugInfo>
   <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.closures.test._Adapters" />
   <unitInfo fileName="_Adapters.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.closures.test._Adapters$_return_P1_E0_to__void_P1_E0_adapter" />
+  <root nodeId="1052694437380217074">
+    <nodeInfo nodeId="1052694437380224178" fileName="MPS14656_helper.java" startLine="15" startPosition="47" endLine="16" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1052694437380438448" fileName="MPS14656_helper.java" startLine="23" startPosition="47" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380217094" fileName="MPS14656_helper.java" startLine="29" startPosition="94" endLine="30" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380217076" fileName="MPS14656_helper.java" startLine="9" startPosition="30" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS14656_helper#()V" />
+    <nodeInfo nodeId="1052694437380224176" fileName="MPS14656_helper.java" startLine="14" startPosition="55" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="1052694437380224191" fileName="MPS14656_helper.java" startLine="22" startPosition="55" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="1052694437380217084" fileName="MPS14656_helper.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="run#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E1;)V" />
+    <nodeInfo nodeId="1052694437380224174" fileName="MPS14656_helper.java" startLine="13" startPosition="47" endLine="18" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380224189" fileName="MPS14656_helper.java" startLine="21" startPosition="49" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380224170" fileName="MPS14656_helper.java" startLine="12" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="valid#()V" />
+    <nodeInfo nodeId="1052694437380224185" fileName="MPS14656_helper.java" startLine="20" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invalid#()V" />
+    <scopeInfo nodeId="1052694437380217079" fileName="MPS14656_helper.java" startLine="10" startPosition="28" endLine="10" endPosition="28" />
+    <scopeInfo nodeId="1052694437380224177" fileName="MPS14656_helper.java" startLine="15" startPosition="47" endLine="16" endPosition="32" />
+    <scopeInfo nodeId="1052694437380224192" fileName="MPS14656_helper.java" startLine="23" startPosition="47" endLine="24" endPosition="36" />
+    <scopeInfo nodeId="1052694437380217087" fileName="MPS14656_helper.java" startLine="29" startPosition="94" endLine="30" endPosition="15" />
+    <scopeInfo nodeId="1052694437380217076" fileName="MPS14656_helper.java" startLine="9" startPosition="30" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="1052694437380224176" fileName="MPS14656_helper.java" startLine="14" startPosition="55" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1052694437380224191" fileName="MPS14656_helper.java" startLine="22" startPosition="55" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1052694437380217084" fileName="MPS14656_helper.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1052694437380217088" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="1052694437380224173" fileName="MPS14656_helper.java" startLine="13" startPosition="47" endLine="18" endPosition="7" />
+    <scopeInfo nodeId="1052694437380224188" fileName="MPS14656_helper.java" startLine="21" startPosition="49" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="1052694437380224170" fileName="MPS14656_helper.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1052694437380224185" fileName="MPS14656_helper.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
+    <unitInfo nodeId="1052694437380217074" fileName="MPS14656_helper.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14656_helper" />
+    <unitInfo nodeId="1052694437380224176" fileName="MPS14656_helper.java" startLine="14" startPosition="12" endLine="18" endPosition="5" unitName="jetbrains.mps.closures.test.MPS14656_helper$1" />
+    <unitInfo nodeId="1052694437380224191" fileName="MPS14656_helper.java" startLine="22" startPosition="12" endLine="26" endPosition="5" unitName="jetbrains.mps.closures.test.MPS14656_helper$2" />
+  </root>
+  <root nodeId="1052694437380230815">
+    <nodeInfo nodeId="1052694437380230840" fileName="MPS14656_Test.java" startLine="11" startPosition="9" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="12" startPosition="30" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="14" startPosition="29" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1052694437380230847" fileName="MPS14656_Test.java" startLine="20" startPosition="9" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="21" startPosition="30" endLine="22" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="23" startPosition="29" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="10" startPosition="45" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="19" startPosition="47" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1052694437380230822" fileName="MPS14656_Test.java" startLine="9" startPosition="45" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_valid#()V" />
+    <nodeInfo nodeId="1052694437380230829" fileName="MPS14656_Test.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_invalid#()V" />
+    <scopeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="14" startPosition="0" endLine="15" endPosition="28">
+      <varInfo nodeId="1052694437380230836" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="14" startPosition="29" endLine="15" endPosition="28" />
+    <scopeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="23" startPosition="0" endLine="24" endPosition="28">
+      <varInfo nodeId="1052694437380230843" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="23" startPosition="29" endLine="24" endPosition="28" />
+    <scopeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="11" startPosition="9" endLine="13" endPosition="20" />
+    <scopeInfo nodeId="1052694437380230843" fileName="MPS14656_Test.java" startLine="20" startPosition="9" endLine="22" endPosition="20" />
+    <scopeInfo nodeId="1052694437380230825" fileName="MPS14656_Test.java" startLine="10" startPosition="45" endLine="16" endPosition="5" />
+    <scopeInfo nodeId="1052694437380230832" fileName="MPS14656_Test.java" startLine="19" startPosition="47" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="1052694437380230822" fileName="MPS14656_Test.java" startLine="9" startPosition="45" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1052694437380230829" fileName="MPS14656_Test.java" startLine="18" startPosition="0" endLine="27" endPosition="0" />
+    <unitInfo nodeId="1052694437380230815" fileName="MPS14656_Test.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14656_Test" />
+  </root>
   <root nodeId="1201432919093">
     <nodeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="100" startPosition="27" endLine="100" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="103" startPosition="27" endLine="103" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1829,7 +1886,9 @@
     <scopeInfo nodeId="1229277702711" fileName="YieldClosures_Test.java" startLine="1644" startPosition="27" endLine="1647" endPosition="34" />
     <scopeInfo nodeId="1229277702711" fileName="YieldClosures_Test.java" startLine="1651" startPosition="27" endLine="1654" endPosition="28" />
     <scopeInfo nodeId="1229277702711" fileName="YieldClosures_Test.java" startLine="1655" startPosition="27" endLine="1658" endPosition="28" />
-    <scopeInfo nodeId="1229277797328" fileName="YieldClosures_Test.java" startLine="1670" startPosition="46" endLine="1673" endPosition="5" />
+    <scopeInfo nodeId="1229277797328" fileName="YieldClosures_Test.java" startLine="1670" startPosition="46" endLine="1673" endPosition="5">
+      <varInfo nodeId="1229277797328" varName="k" />
+    </scopeInfo>
     <scopeInfo nodeId="5997054828945109591" fileName="YieldClosures_Test.java" startLine="1693" startPosition="27" endLine="1696" endPosition="34" />
     <scopeInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1764" startPosition="27" endLine="1767" endPosition="34" />
     <scopeInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1768" startPosition="28" endLine="1771" endPosition="34" />
@@ -1917,7 +1976,9 @@
     <scopeInfo nodeId="1201535668305" fileName="YieldClosures_Test.java" startLine="438" startPosition="45" endLine="446" endPosition="9">
       <varInfo nodeId="1201535668307" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1201534543801" fileName="YieldClosures_Test.java" startLine="352" startPosition="77" endLine="361" endPosition="0" />
+    <scopeInfo nodeId="1201534543801" fileName="YieldClosures_Test.java" startLine="352" startPosition="77" endLine="361" endPosition="0">
+      <varInfo nodeId="1201534543801" varName="exp" />
+    </scopeInfo>
     <scopeInfo nodeId="1203355552936" fileName="YieldClosures_Test.java" startLine="529" startPosition="38" endLine="538" endPosition="11" />
     <scopeInfo nodeId="1203355592308" fileName="YieldClosures_Test.java" startLine="529" startPosition="38" endLine="538" endPosition="11">
       <varInfo nodeId="1203355592312" varName="j" />
@@ -1926,7 +1987,9 @@
       <varInfo nodeId="6654551869131342290" varName="ll" />
     </scopeInfo>
     <scopeInfo nodeId="1229002084021" fileName="YieldClosures_Test.java" startLine="1231" startPosition="52" endLine="1241" endPosition="7" />
-    <scopeInfo nodeId="1201535652897" fileName="YieldClosures_Test.java" startLine="437" startPosition="77" endLine="448" endPosition="0" />
+    <scopeInfo nodeId="1201535652897" fileName="YieldClosures_Test.java" startLine="437" startPosition="77" endLine="448" endPosition="0">
+      <varInfo nodeId="1201535652897" varName="exp" />
+    </scopeInfo>
     <scopeInfo nodeId="1203355552935" fileName="YieldClosures_Test.java" startLine="528" startPosition="18" endLine="539" endPosition="9">
       <varInfo nodeId="1203355552938" varName="i" />
     </scopeInfo>
@@ -1940,7 +2003,12 @@
     <scopeInfo nodeId="1201785603460" fileName="YieldClosures_Test.java" startLine="636" startPosition="99" endLine="648" endPosition="11" />
     <scopeInfo nodeId="1209326000124" fileName="YieldClosures_Test.java" startLine="747" startPosition="39" endLine="759" endPosition="11" />
     <scopeInfo nodeId="1209326150938" fileName="YieldClosures_Test.java" startLine="791" startPosition="27" endLine="803" endPosition="28" />
-    <scopeInfo nodeId="1229107197834" fileName="YieldClosures_Test.java" startLine="2019" startPosition="50" endLine="2031" endPosition="7" />
+    <scopeInfo nodeId="1229107197834" fileName="YieldClosures_Test.java" startLine="2019" startPosition="50" endLine="2031" endPosition="7">
+      <varInfo nodeId="1229107197834" varName="a_it" />
+      <varInfo nodeId="1229107197834" varName="a_var" />
+      <varInfo nodeId="1229107197834" varName="b_it" />
+      <varInfo nodeId="1229107197834" varName="b_var" />
+    </scopeInfo>
     <scopeInfo nodeId="1201433476071" fileName="YieldClosures_Test.java" startLine="25" startPosition="45" endLine="38" endPosition="9" />
     <scopeInfo nodeId="6654551869131341439" fileName="YieldClosures_Test.java" startLine="872" startPosition="45" endLine="885" endPosition="9" />
     <scopeInfo nodeId="1229002084019" fileName="YieldClosures_Test.java" startLine="1230" startPosition="0" endLine="1243" endPosition="0" />
@@ -1955,24 +2023,45 @@
     <scopeInfo nodeId="1209326000121" fileName="YieldClosures_Test.java" startLine="746" startPosition="45" endLine="760" endPosition="9">
       <varInfo nodeId="1209326000122" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1210769449194" fileName="YieldClosures_Test.java" startLine="987" startPosition="77" endLine="1001" endPosition="0" />
+    <scopeInfo nodeId="1210769449194" fileName="YieldClosures_Test.java" startLine="987" startPosition="77" endLine="1001" endPosition="0">
+      <varInfo nodeId="1210769449194" varName="exp" />
+    </scopeInfo>
     <scopeInfo nodeId="3376587159404841515" fileName="YieldClosures_Test.java" startLine="1141" startPosition="28" endLine="1155" endPosition="23" />
-    <scopeInfo nodeId="1203355520123" fileName="YieldClosures_Test.java" startLine="526" startPosition="77" endLine="541" endPosition="0" />
+    <scopeInfo nodeId="1203355520123" fileName="YieldClosures_Test.java" startLine="526" startPosition="77" endLine="541" endPosition="0">
+      <varInfo nodeId="1203355520123" varName="exp" />
+    </scopeInfo>
     <scopeInfo nodeId="5997054828945109591" fileName="YieldClosures_Test.java" startLine="1687" startPosition="20" endLine="1702" endPosition="19" />
-    <scopeInfo nodeId="1201433476070" fileName="YieldClosures_Test.java" startLine="24" startPosition="77" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1201433476070" fileName="YieldClosures_Test.java" startLine="24" startPosition="77" endLine="40" endPosition="0">
+      <varInfo nodeId="1201433476070" varName="exp" />
+    </scopeInfo>
     <scopeInfo nodeId="1201519068370" fileName="YieldClosures_Test.java" startLine="235" startPosition="45" endLine="251" endPosition="33">
       <varInfo nodeId="1201528259253" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="6654551869131341435" fileName="YieldClosures_Test.java" startLine="871" startPosition="77" endLine="887" endPosition="0" />
-    <scopeInfo nodeId="1201439804502" fileName="YieldClosures_Test.java" startLine="129" startPosition="77" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="1201785477030" fileName="YieldClosures_Test.java" startLine="634" startPosition="77" endLine="651" endPosition="0" />
-    <scopeInfo nodeId="1209325983791" fileName="YieldClosures_Test.java" startLine="745" startPosition="77" endLine="762" endPosition="0" />
-    <scopeInfo nodeId="1201519068369" fileName="YieldClosures_Test.java" startLine="234" startPosition="77" endLine="253" endPosition="0" />
+    <scopeInfo nodeId="6654551869131341435" fileName="YieldClosures_Test.java" startLine="871" startPosition="77" endLine="887" endPosition="0">
+      <varInfo nodeId="6654551869131341435" varName="exp" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201439804502" fileName="YieldClosures_Test.java" startLine="129" startPosition="77" endLine="146" endPosition="0">
+      <varInfo nodeId="1201439804502" varName="exp" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201785477030" fileName="YieldClosures_Test.java" startLine="634" startPosition="77" endLine="651" endPosition="0">
+      <varInfo nodeId="1201785477030" varName="exp" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209325983791" fileName="YieldClosures_Test.java" startLine="745" startPosition="77" endLine="762" endPosition="0">
+      <varInfo nodeId="1209325983791" varName="exp" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201519068369" fileName="YieldClosures_Test.java" startLine="234" startPosition="77" endLine="253" endPosition="0">
+      <varInfo nodeId="1201519068369" varName="exp" />
+    </scopeInfo>
     <scopeInfo nodeId="3376587159404838416" fileName="YieldClosures_Test.java" startLine="1079" startPosition="44" endLine="1098" endPosition="53" />
     <scopeInfo nodeId="1229086530164" fileName="YieldClosures_Test.java" startLine="1524" startPosition="24" endLine="1543" endPosition="23" />
     <scopeInfo nodeId="5997054828945109591" fileName="YieldClosures_Test.java" startLine="1685" startPosition="46" endLine="1704" endPosition="29" />
     <scopeInfo nodeId="1229428853863" fileName="YieldClosures_Test.java" startLine="1812" startPosition="20" endLine="1831" endPosition="19" />
-    <scopeInfo nodeId="1229107197834" fileName="YieldClosures_Test.java" startLine="2013" startPosition="87" endLine="2032" endPosition="5" />
+    <scopeInfo nodeId="1229107197834" fileName="YieldClosures_Test.java" startLine="2013" startPosition="87" endLine="2032" endPosition="5">
+      <varInfo nodeId="1229107197834" varName="bar_it" />
+      <varInfo nodeId="1229107197834" varName="bar_var" />
+      <varInfo nodeId="1229107197834" varName="foo_it" />
+      <varInfo nodeId="1229107197834" varName="foo_var" />
+    </scopeInfo>
     <scopeInfo nodeId="3376587159404838413" fileName="YieldClosures_Test.java" startLine="1077" startPosition="23" endLine="1099" endPosition="11">
       <varInfo nodeId="3376587159404838414" varName="j" />
     </scopeInfo>
@@ -1997,7 +2086,9 @@
     <scopeInfo nodeId="1229087132438" fileName="YieldClosures_Test.java" startLine="1571" startPosition="50" endLine="1600" endPosition="33" />
     <scopeInfo nodeId="5997054828945109591" fileName="YieldClosures_Test.java" startLine="1679" startPosition="42" endLine="1708" endPosition="10" />
     <scopeInfo nodeId="1229428853863" fileName="YieldClosures_Test.java" startLine="1806" startPosition="47" endLine="1835" endPosition="14" />
-    <scopeInfo nodeId="3376587159404838392" fileName="YieldClosures_Test.java" startLine="1073" startPosition="77" endLine="1104" endPosition="0" />
+    <scopeInfo nodeId="3376587159404838392" fileName="YieldClosures_Test.java" startLine="1073" startPosition="77" endLine="1104" endPosition="0">
+      <varInfo nodeId="3376587159404838392" varName="exp" />
+    </scopeInfo>
     <scopeInfo nodeId="1229019599670" fileName="YieldClosures_Test.java" startLine="1260" startPosition="20" endLine="1292" endPosition="19" />
     <scopeInfo nodeId="1229019522329" fileName="YieldClosures_Test.java" startLine="1319" startPosition="20" endLine="1351" endPosition="19" />
     <scopeInfo nodeId="1229086530164" fileName="YieldClosures_Test.java" startLine="1517" startPosition="44" endLine="1549" endPosition="0" />
@@ -2011,7 +2102,9 @@
     <scopeInfo nodeId="1229443175163" fileName="YieldClosures_Test.java" startLine="1861" startPosition="0" endLine="1896" endPosition="0" />
     <scopeInfo nodeId="1229019599670" fileName="YieldClosures_Test.java" startLine="1258" startPosition="46" endLine="1294" endPosition="29" />
     <scopeInfo nodeId="1229019522329" fileName="YieldClosures_Test.java" startLine="1317" startPosition="46" endLine="1353" endPosition="29" />
-    <scopeInfo nodeId="1229086530164" fileName="YieldClosures_Test.java" startLine="1515" startPosition="96" endLine="1551" endPosition="0" />
+    <scopeInfo nodeId="1229086530164" fileName="YieldClosures_Test.java" startLine="1515" startPosition="96" endLine="1551" endPosition="0">
+      <varInfo nodeId="1229086530164" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1229277702711" fileName="YieldClosures_Test.java" startLine="1625" startPosition="20" endLine="1661" endPosition="19" />
     <scopeInfo nodeId="1229428853863" fileName="YieldClosures_Test.java" startLine="1803" startPosition="83" endLine="1839" endPosition="0" />
     <scopeInfo nodeId="1229086530159" fileName="YieldClosures_Test.java" startLine="1514" startPosition="52" endLine="1551" endPosition="11" />
@@ -2023,7 +2116,9 @@
     <scopeInfo nodeId="1229086530158" fileName="YieldClosures_Test.java" startLine="1513" startPosition="131" endLine="1553" endPosition="0" />
     <scopeInfo nodeId="1229277702711" fileName="YieldClosures_Test.java" startLine="1623" startPosition="46" endLine="1663" endPosition="29" />
     <scopeInfo nodeId="1229443175163" fileName="YieldClosures_Test.java" startLine="1857" startPosition="40" endLine="1898" endPosition="0" />
-    <scopeInfo nodeId="1229087132438" fileName="YieldClosures_Test.java" startLine="1564" startPosition="96" endLine="1606" endPosition="0" />
+    <scopeInfo nodeId="1229087132438" fileName="YieldClosures_Test.java" startLine="1564" startPosition="96" endLine="1606" endPosition="0">
+      <varInfo nodeId="1229087132438" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1229443175163" fileName="YieldClosures_Test.java" startLine="1856" startPosition="43" endLine="1898" endPosition="10" />
     <scopeInfo nodeId="1229087132433" fileName="YieldClosures_Test.java" startLine="1563" startPosition="52" endLine="1606" endPosition="11" />
     <scopeInfo nodeId="1229277702711" fileName="YieldClosures_Test.java" startLine="1622" startPosition="0" endLine="1665" endPosition="0" />
@@ -2066,7 +2161,10 @@
     <scopeInfo nodeId="1229427994425" fileName="YieldClosures_Test.java" startLine="1801" startPosition="0" endLine="1853" endPosition="0" />
     <scopeInfo nodeId="1201535652936" fileName="YieldClosures_Test.java" startLine="461" startPosition="20" endLine="514" endPosition="19" />
     <scopeInfo nodeId="1210769642288" fileName="YieldClosures_Test.java" startLine="1010" startPosition="46" endLine="1063" endPosition="29" />
-    <scopeInfo nodeId="1229277702711" fileName="YieldClosures_Test.java" startLine="1615" startPosition="175" endLine="1669" endPosition="0" />
+    <scopeInfo nodeId="1229277702711" fileName="YieldClosures_Test.java" startLine="1615" startPosition="175" endLine="1669" endPosition="0">
+      <varInfo nodeId="1229277702711" varName="end" />
+      <varInfo nodeId="1229277702711" varName="start" />
+    </scopeInfo>
     <scopeInfo nodeId="1201534555460" fileName="YieldClosures_Test.java" startLine="370" startPosition="46" endLine="425" endPosition="29" />
     <scopeInfo nodeId="1229087101147" fileName="YieldClosures_Test.java" startLine="1556" startPosition="0" endLine="1611" endPosition="0" />
     <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1946" startPosition="20" endLine="2001" endPosition="19" />
@@ -2134,7 +2232,9 @@
     <scopeInfo nodeId="1201785509884" fileName="YieldClosures_Test.java" startLine="660" startPosition="46" endLine="735" endPosition="29" />
     <scopeInfo nodeId="1201519088406" fileName="YieldClosures_Test.java" startLine="264" startPosition="20" endLine="340" endPosition="19" />
     <scopeInfo nodeId="1203355537892" fileName="YieldClosures_Test.java" startLine="550" startPosition="0" endLine="626" endPosition="0" />
-    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1933" startPosition="92" endLine="2009" endPosition="0" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1933" startPosition="92" endLine="2009" endPosition="0">
+      <varInfo nodeId="8867458942910706579" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="1201439820459" fileName="YieldClosures_Test.java" startLine="149" startPosition="47" endLine="226" endPosition="14" />
     <scopeInfo nodeId="1229443148776" fileName="YieldClosures_Test.java" startLine="1853" startPosition="0" endLine="1930" endPosition="0" />
     <scopeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="43" startPosition="47" endLine="121" endPosition="14" />
@@ -2638,18 +2738,40 @@
     <scopeInfo nodeId="1214833953806" fileName="FunctionTypes_Test.java" startLine="45" startPosition="115" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1214833958577" fileName="FunctionTypes_Test.java" startLine="50" startPosition="144" endLine="54" endPosition="0" />
     <scopeInfo nodeId="1214835512587" fileName="FunctionTypes_Test.java" startLine="56" startPosition="77" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1201709523091" fileName="FunctionTypes_Test.java" startLine="206" startPosition="130" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="1201709543062" fileName="FunctionTypes_Test.java" startLine="211" startPosition="130" endLine="215" endPosition="0" />
-    <scopeInfo nodeId="1201709581613" fileName="FunctionTypes_Test.java" startLine="218" startPosition="128" endLine="222" endPosition="0" />
-    <scopeInfo nodeId="1201709599885" fileName="FunctionTypes_Test.java" startLine="223" startPosition="128" endLine="227" endPosition="0" />
-    <scopeInfo nodeId="1201698876876" fileName="FunctionTypes_Test.java" startLine="229" startPosition="83" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="1201698908664" fileName="FunctionTypes_Test.java" startLine="236" startPosition="87" endLine="240" endPosition="0" />
-    <scopeInfo nodeId="1201709898842" fileName="FunctionTypes_Test.java" startLine="243" startPosition="87" endLine="247" endPosition="0" />
-    <scopeInfo nodeId="1201698247246" fileName="FunctionTypes_Test.java" startLine="250" startPosition="89" endLine="254" endPosition="0" />
-    <scopeInfo nodeId="1201698282354" fileName="FunctionTypes_Test.java" startLine="256" startPosition="88" endLine="260" endPosition="0" />
-    <scopeInfo nodeId="1201698396776" fileName="FunctionTypes_Test.java" startLine="261" startPosition="88" endLine="265" endPosition="0" />
+    <scopeInfo nodeId="1201709523091" fileName="FunctionTypes_Test.java" startLine="206" startPosition="130" endLine="210" endPosition="0">
+      <varInfo nodeId="1201709523091" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201709543062" fileName="FunctionTypes_Test.java" startLine="211" startPosition="130" endLine="215" endPosition="0">
+      <varInfo nodeId="1201709543062" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201709581613" fileName="FunctionTypes_Test.java" startLine="218" startPosition="128" endLine="222" endPosition="0">
+      <varInfo nodeId="1201709581613" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201709599885" fileName="FunctionTypes_Test.java" startLine="223" startPosition="128" endLine="227" endPosition="0">
+      <varInfo nodeId="1201709599885" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201698876876" fileName="FunctionTypes_Test.java" startLine="229" startPosition="83" endLine="233" endPosition="0">
+      <varInfo nodeId="1201698876876" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201698908664" fileName="FunctionTypes_Test.java" startLine="236" startPosition="87" endLine="240" endPosition="0">
+      <varInfo nodeId="1201698908664" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201709898842" fileName="FunctionTypes_Test.java" startLine="243" startPosition="87" endLine="247" endPosition="0">
+      <varInfo nodeId="1201709898842" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201698247246" fileName="FunctionTypes_Test.java" startLine="250" startPosition="89" endLine="254" endPosition="0">
+      <varInfo nodeId="1201698247246" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201698282354" fileName="FunctionTypes_Test.java" startLine="256" startPosition="88" endLine="260" endPosition="0">
+      <varInfo nodeId="1201698282354" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201698396776" fileName="FunctionTypes_Test.java" startLine="261" startPosition="88" endLine="265" endPosition="0">
+      <varInfo nodeId="1201698396776" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="1891437680216305829" fileName="FunctionTypes_Test.java" startLine="284" startPosition="61" endLine="288" endPosition="0" />
-    <scopeInfo nodeId="6871507691291132955" fileName="FunctionTypes_Test.java" startLine="293" startPosition="130" endLine="297" endPosition="0" />
+    <scopeInfo nodeId="6871507691291132955" fileName="FunctionTypes_Test.java" startLine="293" startPosition="130" endLine="297" endPosition="0">
+      <varInfo nodeId="6871507691291132955" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1214835545674" fileName="FunctionTypes_Test.java" startLine="62" startPosition="80" endLine="67" endPosition="9" />
     <scopeInfo nodeId="1891437680216304353" fileName="FunctionTypes_Test.java" startLine="273" startPosition="30" endLine="278" endPosition="9" />
     <scopeInfo nodeId="100821637069279989" fileName="FunctionTypes_Test.java" startLine="292" startPosition="58" endLine="297" endPosition="6">
@@ -2888,8 +3010,12 @@
     <scopeInfo nodeId="1227876790689" fileName="SequenceFunctionTypes_Test.java" startLine="35" startPosition="27" endLine="38" endPosition="34" />
     <scopeInfo nodeId="1201774158168" fileName="SequenceFunctionTypes_Test.java" startLine="78" startPosition="27" endLine="81" endPosition="34" />
     <scopeInfo nodeId="1201774171138" fileName="SequenceFunctionTypes_Test.java" startLine="111" startPosition="27" endLine="114" endPosition="34" />
-    <scopeInfo nodeId="1201777622004" fileName="SequenceFunctionTypes_Test.java" startLine="132" startPosition="118" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="1201777671676" fileName="SequenceFunctionTypes_Test.java" startLine="136" startPosition="118" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="1201777622004" fileName="SequenceFunctionTypes_Test.java" startLine="132" startPosition="118" endLine="135" endPosition="0">
+      <varInfo nodeId="1201777622004" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201777671676" fileName="SequenceFunctionTypes_Test.java" startLine="136" startPosition="118" endLine="139" endPosition="0">
+      <varInfo nodeId="1201777671676" varName="p" />
+    </scopeInfo>
     <scopeInfo nodeId="1227876789544" fileName="SequenceFunctionTypes_Test.java" startLine="160" startPosition="27" endLine="163" endPosition="34" />
     <scopeInfo nodeId="1227876789544" fileName="SequenceFunctionTypes_Test.java" startLine="164" startPosition="27" endLine="167" endPosition="34" />
     <scopeInfo nodeId="1227876789544" fileName="SequenceFunctionTypes_Test.java" startLine="168" startPosition="27" endLine="171" endPosition="34" />
@@ -3015,10 +3141,19 @@
     <scopeInfo nodeId="1201778902896" fileName="AdvancedFunctionTypes_Test.java" startLine="63" startPosition="40" endLine="64" endPosition="32" />
     <scopeInfo nodeId="1201777947111" fileName="AdvancedFunctionTypes_Test.java" startLine="13" startPosition="60" endLine="17" endPosition="0" />
     <scopeInfo nodeId="1201778635410" fileName="AdvancedFunctionTypes_Test.java" startLine="24" startPosition="64" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1201778761112" fileName="AdvancedFunctionTypes_Test.java" startLine="42" startPosition="209" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1201779035291" fileName="AdvancedFunctionTypes_Test.java" startLine="47" startPosition="155" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1201779071592" fileName="AdvancedFunctionTypes_Test.java" startLine="52" startPosition="135" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1201778902895" fileName="AdvancedFunctionTypes_Test.java" startLine="62" startPosition="65" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1201778761112" fileName="AdvancedFunctionTypes_Test.java" startLine="42" startPosition="209" endLine="46" endPosition="0">
+      <varInfo nodeId="1201778761112" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201779035291" fileName="AdvancedFunctionTypes_Test.java" startLine="47" startPosition="155" endLine="51" endPosition="0">
+      <varInfo nodeId="1201779035291" varName="x" />
+      <varInfo nodeId="1201779035291" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201779071592" fileName="AdvancedFunctionTypes_Test.java" startLine="52" startPosition="135" endLine="56" endPosition="0">
+      <varInfo nodeId="1201779071592" varName="x" />
+    </scopeInfo>
+    <scopeInfo nodeId="1201778902895" fileName="AdvancedFunctionTypes_Test.java" startLine="62" startPosition="65" endLine="66" endPosition="0">
+      <varInfo nodeId="1201778902895" varName="x" />
+    </scopeInfo>
     <scopeInfo nodeId="1201777932248" fileName="AdvancedFunctionTypes_Test.java" startLine="12" startPosition="71" endLine="17" endPosition="10" />
     <scopeInfo nodeId="1201778623497" fileName="AdvancedFunctionTypes_Test.java" startLine="23" startPosition="75" endLine="28" endPosition="14" />
     <scopeInfo nodeId="1201778804595" fileName="AdvancedFunctionTypes_Test.java" startLine="61" startPosition="187" endLine="66" endPosition="6" />
@@ -3350,7 +3485,9 @@
     <scopeInfo nodeId="1204637272608" fileName="ClassifierAdapters_Test.java" startLine="167" startPosition="39" endLine="168" endPosition="33" />
     <scopeInfo nodeId="1204637282825" fileName="ClassifierAdapters_Test.java" startLine="172" startPosition="39" endLine="173" endPosition="33" />
     <scopeInfo nodeId="1214829349069" fileName="ClassifierAdapters_Test.java" startLine="182" startPosition="44" endLine="183" endPosition="44" />
-    <scopeInfo nodeId="1214828648349" fileName="ClassifierAdapters_Test.java" startLine="189" startPosition="0" endLine="190" endPosition="28" />
+    <scopeInfo nodeId="1214828648349" fileName="ClassifierAdapters_Test.java" startLine="189" startPosition="0" endLine="190" endPosition="28">
+      <varInfo nodeId="1214828648349" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1214828648349" fileName="ClassifierAdapters_Test.java" startLine="189" startPosition="37" endLine="190" endPosition="28" />
     <scopeInfo nodeId="1202780600124" fileName="ClassifierAdapters_Test.java" startLine="205" startPosition="46" endLine="206" endPosition="43" />
     <scopeInfo nodeId="1219743569117" fileName="ClassifierAdapters_Test.java" startLine="215" startPosition="25" endLine="216" endPosition="23" />
@@ -3363,7 +3500,9 @@
     <scopeInfo nodeId="1215520948179" fileName="ClassifierAdapters_Test.java" startLine="250" startPosition="53" endLine="251" endPosition="37">
       <varInfo nodeId="1215520963535" varName="wrk" />
     </scopeInfo>
-    <scopeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="259" startPosition="0" endLine="260" endPosition="28" />
+    <scopeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="259" startPosition="0" endLine="260" endPosition="28">
+      <varInfo nodeId="1215526287560" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="259" startPosition="37" endLine="260" endPosition="28" />
     <scopeInfo nodeId="4073449185570422617" fileName="ClassifierAdapters_Test.java" startLine="283" startPosition="31" endLine="284" endPosition="29" />
     <scopeInfo nodeId="4073449185570422653" fileName="ClassifierAdapters_Test.java" startLine="290" startPosition="31" endLine="291" endPosition="29" />
@@ -3386,7 +3525,9 @@
     <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="414" startPosition="28" endLine="415" endPosition="37" />
     <scopeInfo nodeId="811905832257259152" fileName="ClassifierAdapters_Test.java" startLine="426" startPosition="91" endLine="427" endPosition="54" />
     <scopeInfo nodeId="4600621396854791272" fileName="ClassifierAdapters_Test.java" startLine="438" startPosition="32" endLine="439" endPosition="41" />
-    <scopeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="445" startPosition="0" endLine="446" endPosition="28" />
+    <scopeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="445" startPosition="0" endLine="446" endPosition="28">
+      <varInfo nodeId="4600621396854788292" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="445" startPosition="34" endLine="446" endPosition="28" />
     <scopeInfo nodeId="1204637135746" fileName="ClassifierAdapters_Test.java" startLine="456" startPosition="49" endLine="457" endPosition="25" />
     <scopeInfo nodeId="1214828672040" fileName="ClassifierAdapters_Test.java" startLine="460" startPosition="78" endLine="461" endPosition="30" />
@@ -3414,7 +3555,10 @@
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="131" startPosition="27" endLine="134" endPosition="34" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="135" startPosition="27" endLine="138" endPosition="34" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="139" startPosition="27" endLine="142" endPosition="34" />
-    <scopeInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="266" startPosition="123" endLine="269" endPosition="0" />
+    <scopeInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="266" startPosition="123" endLine="269" endPosition="0">
+      <varInfo nodeId="876385242039332960" varName="bar" />
+      <varInfo nodeId="876385242039332960" varName="foo" />
+    </scopeInfo>
     <scopeInfo nodeId="876385242039333147" fileName="ClassifierAdapters_Test.java" startLine="274" startPosition="47" endLine="277" endPosition="6" />
     <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="362" startPosition="27" endLine="365" endPosition="34" />
     <scopeInfo nodeId="1202928326902" fileName="ClassifierAdapters_Test.java" startLine="449" startPosition="0" endLine="452" endPosition="0">
@@ -3427,21 +3571,34 @@
     <scopeInfo nodeId="1202778460041" fileName="ClassifierAdapters_Test.java" startLine="26" startPosition="31" endLine="30" endPosition="0">
       <varInfo nodeId="1202778471487" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="1202778862220" fileName="ClassifierAdapters_Test.java" startLine="42" startPosition="127" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1202822583244" fileName="ClassifierAdapters_Test.java" startLine="57" startPosition="31" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1202778862220" fileName="ClassifierAdapters_Test.java" startLine="42" startPosition="127" endLine="46" endPosition="0">
+      <varInfo nodeId="1202778862220" varName="foo" />
+    </scopeInfo>
+    <scopeInfo nodeId="1202822583244" fileName="ClassifierAdapters_Test.java" startLine="57" startPosition="31" endLine="61" endPosition="0">
+      <varInfo nodeId="1202822583244" varName="foo" />
+    </scopeInfo>
     <scopeInfo nodeId="1203187378280" fileName="ClassifierAdapters_Test.java" startLine="108" startPosition="14" endLine="112" endPosition="5">
       <varInfo nodeId="1203187378284" varName="in" />
     </scopeInfo>
     <scopeInfo nodeId="1203268570323" fileName="ClassifierAdapters_Test.java" startLine="157" startPosition="20" endLine="161" endPosition="5">
       <varInfo nodeId="1203268570327" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1204637272605" fileName="ClassifierAdapters_Test.java" startLine="166" startPosition="60" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="1204637282822" fileName="ClassifierAdapters_Test.java" startLine="171" startPosition="60" endLine="175" endPosition="0" />
+    <scopeInfo nodeId="1204637272605" fileName="ClassifierAdapters_Test.java" startLine="166" startPosition="60" endLine="170" endPosition="0">
+      <varInfo nodeId="1204637272605" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204637282822" fileName="ClassifierAdapters_Test.java" startLine="171" startPosition="60" endLine="175" endPosition="0">
+      <varInfo nodeId="1204637282822" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="1214828754113" fileName="ClassifierAdapters_Test.java" startLine="181" startPosition="69" endLine="185" endPosition="19" />
-    <scopeInfo nodeId="1202780600123" fileName="ClassifierAdapters_Test.java" startLine="204" startPosition="53" endLine="208" endPosition="0" />
+    <scopeInfo nodeId="1202780600123" fileName="ClassifierAdapters_Test.java" startLine="204" startPosition="53" endLine="208" endPosition="0">
+      <varInfo nodeId="1202780600123" varName="a" />
+      <varInfo nodeId="1202780600123" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1219743569116" fileName="ClassifierAdapters_Test.java" startLine="214" startPosition="44" endLine="218" endPosition="0" />
     <scopeInfo nodeId="5988816933596123644" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="44" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="243" startPosition="36" endLine="247" endPosition="0" />
+    <scopeInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="243" startPosition="36" endLine="247" endPosition="0">
+      <varInfo nodeId="1202928346611" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="1215520948177" fileName="ClassifierAdapters_Test.java" startLine="249" startPosition="0" endLine="253" endPosition="0" />
     <scopeInfo nodeId="4073449185570422616" fileName="ClassifierAdapters_Test.java" startLine="282" startPosition="102" endLine="286" endPosition="0" />
     <scopeInfo nodeId="4073449185570422652" fileName="ClassifierAdapters_Test.java" startLine="289" startPosition="49" endLine="293" endPosition="0" />
@@ -3450,7 +3607,9 @@
     <scopeInfo nodeId="3294521177951870054" fileName="ClassifierAdapters_Test.java" startLine="337" startPosition="48" endLine="341" endPosition="0" />
     <scopeInfo nodeId="3294521177951977997" fileName="ClassifierAdapters_Test.java" startLine="342" startPosition="48" endLine="346" endPosition="0" />
     <scopeInfo nodeId="811905832257259140" fileName="ClassifierAdapters_Test.java" startLine="405" startPosition="77" endLine="409" endPosition="0" />
-    <scopeInfo nodeId="811905832257259151" fileName="ClassifierAdapters_Test.java" startLine="425" startPosition="140" endLine="429" endPosition="0" />
+    <scopeInfo nodeId="811905832257259151" fileName="ClassifierAdapters_Test.java" startLine="425" startPosition="140" endLine="429" endPosition="0">
+      <varInfo nodeId="811905832257259151" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="4600621396854791265" fileName="ClassifierAdapters_Test.java" startLine="437" startPosition="40" endLine="441" endPosition="22" />
     <scopeInfo nodeId="1204637135743" fileName="ClassifierAdapters_Test.java" startLine="455" startPosition="0" endLine="459" endPosition="0">
       <varInfo nodeId="1204637152916" varName="i" />
@@ -3460,9 +3619,15 @@
       <varInfo nodeId="1214828680157" varName="instr" />
       <varInfo nodeId="1214828687751" varName="prc" />
     </scopeInfo>
-    <scopeInfo nodeId="1215520889970" fileName="ClassifierAdapters_Test.java" startLine="465" startPosition="25" endLine="469" endPosition="0" />
-    <scopeInfo nodeId="1215526194217" fileName="ClassifierAdapters_Test.java" startLine="473" startPosition="28" endLine="477" endPosition="0" />
-    <scopeInfo nodeId="4923436771430621964" fileName="ClassifierAdapters_Test.java" startLine="481" startPosition="26" endLine="485" endPosition="0" />
+    <scopeInfo nodeId="1215520889970" fileName="ClassifierAdapters_Test.java" startLine="465" startPosition="25" endLine="469" endPosition="0">
+      <varInfo nodeId="1215520889970" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215526194217" fileName="ClassifierAdapters_Test.java" startLine="473" startPosition="28" endLine="477" endPosition="0">
+      <varInfo nodeId="1215526194217" varName="str" />
+    </scopeInfo>
+    <scopeInfo nodeId="4923436771430621964" fileName="ClassifierAdapters_Test.java" startLine="481" startPosition="26" endLine="485" endPosition="0">
+      <varInfo nodeId="4923436771430621964" varName="name" />
+    </scopeInfo>
     <scopeInfo nodeId="1659062322706257965" fileName="ClassifierAdapters_Test.java" startLine="487" startPosition="0" endLine="491" endPosition="0">
       <varInfo nodeId="1659062322706257969" varName="fff" />
     </scopeInfo>
@@ -3477,13 +3642,17 @@
       <varInfo nodeId="1202822578134" varName="wrk" />
     </scopeInfo>
     <scopeInfo nodeId="876385242039333145" fileName="ClassifierAdapters_Test.java" startLine="273" startPosition="0" endLine="279" endPosition="0" />
-    <scopeInfo nodeId="1214828754112" fileName="ClassifierAdapters_Test.java" startLine="180" startPosition="36" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="1214828754112" fileName="ClassifierAdapters_Test.java" startLine="180" startPosition="36" endLine="187" endPosition="0">
+      <varInfo nodeId="1214828754112" varName="instr" />
+    </scopeInfo>
     <scopeInfo nodeId="1215526259411" fileName="ClassifierAdapters_Test.java" startLine="254" startPosition="56" endLine="261" endPosition="5">
       <varInfo nodeId="1215526271372" varName="prc" />
     </scopeInfo>
     <scopeInfo nodeId="876385242039332336" fileName="ClassifierAdapters_Test.java" startLine="264" startPosition="47" endLine="271" endPosition="6" />
     <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="403" startPosition="27" endLine="410" endPosition="34" />
-    <scopeInfo nodeId="4600621396854791262" fileName="ClassifierAdapters_Test.java" startLine="436" startPosition="78" endLine="443" endPosition="0" />
+    <scopeInfo nodeId="4600621396854791262" fileName="ClassifierAdapters_Test.java" startLine="436" startPosition="78" endLine="443" endPosition="0">
+      <varInfo nodeId="4600621396854791262" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="1202928341317" fileName="ClassifierAdapters_Test.java" startLine="241" startPosition="0" endLine="249" endPosition="0" />
     <scopeInfo nodeId="1215520845523" fileName="ClassifierAdapters_Test.java" startLine="463" startPosition="0" endLine="471" endPosition="0" />
     <scopeInfo nodeId="1215526179878" fileName="ClassifierAdapters_Test.java" startLine="471" startPosition="0" endLine="479" endPosition="0" />
@@ -3510,7 +3679,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1204637019115" fileName="ClassifierAdapters_Test.java" startLine="164" startPosition="0" endLine="177" endPosition="0" />
     <scopeInfo nodeId="1214828622503" fileName="ClassifierAdapters_Test.java" startLine="178" startPosition="50" endLine="191" endPosition="5" />
-    <scopeInfo nodeId="4073449185570422692" fileName="ClassifierAdapters_Test.java" startLine="300" startPosition="5" endLine="313" endPosition="7" />
+    <scopeInfo nodeId="4073449185570422692" fileName="ClassifierAdapters_Test.java" startLine="300" startPosition="5" endLine="313" endPosition="7">
+      <varInfo nodeId="4073449185570422692" varName="__result__" />
+    </scopeInfo>
     <scopeInfo nodeId="1659062322706260950" fileName="ClassifierAdapters_Test.java" startLine="434" startPosition="47" endLine="447" endPosition="5" />
     <scopeInfo nodeId="1202778440637" fileName="ClassifierAdapters_Test.java" startLine="40" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1202780473358" fileName="ClassifierAdapters_Test.java" startLine="194" startPosition="66" endLine="209" endPosition="75">
@@ -3522,7 +3693,9 @@
     <scopeInfo nodeId="1202741857090" fileName="ClassifierAdapters_Test.java" startLine="24" startPosition="55" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1214828622501" fileName="ClassifierAdapters_Test.java" startLine="177" startPosition="0" endLine="193" endPosition="0" />
     <scopeInfo nodeId="1659062322706260947" fileName="ClassifierAdapters_Test.java" startLine="433" startPosition="0" endLine="449" endPosition="0" />
-    <scopeInfo nodeId="4073449185570422737" fileName="ClassifierAdapters_Test.java" startLine="316" startPosition="5" endLine="333" endPosition="7" />
+    <scopeInfo nodeId="4073449185570422737" fileName="ClassifierAdapters_Test.java" startLine="316" startPosition="5" endLine="333" endPosition="7">
+      <varInfo nodeId="4073449185570422737" varName="__result__" />
+    </scopeInfo>
     <scopeInfo nodeId="1202780473356" fileName="ClassifierAdapters_Test.java" startLine="193" startPosition="0" endLine="211" endPosition="0" />
     <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="354" startPosition="46" endLine="373" endPosition="29" />
     <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="397" startPosition="20" endLine="416" endPosition="19" />
@@ -3574,6 +3747,22 @@
     </scopeInfo>
     <scopeInfo nodeId="4073449185570421959" fileName="ClassifierAdapters_Test.java" startLine="279" startPosition="0" endLine="381" endPosition="0" />
     <unitInfo nodeId="5988816933596123665" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="21" endLine="24" endPosition="0" />
+    <unitInfo nodeId="1202741841877" fileName="ClassifierAdapters_Test.java" startLine="24" startPosition="0" endLine="492" endPosition="0" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test" />
+    <unitInfo nodeId="1202778458188" fileName="ClassifierAdapters_Test.java" startLine="26" startPosition="21" endLine="30" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$1" />
+    <unitInfo nodeId="1219743569116" fileName="ClassifierAdapters_Test.java" startLine="214" startPosition="32" endLine="218" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$10" />
+    <unitInfo nodeId="5988816933596123644" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="32" endLine="233" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$12" />
+    <unitInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="243" startPosition="26" endLine="247" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$12" />
+    <unitInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="266" startPosition="76" endLine="269" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$13" />
+    <unitInfo nodeId="4073449185570422616" fileName="ClassifierAdapters_Test.java" startLine="282" startPosition="61" endLine="286" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$14" />
+    <unitInfo nodeId="4073449185570422652" fileName="ClassifierAdapters_Test.java" startLine="289" startPosition="8" endLine="293" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$15" />
+    <unitInfo nodeId="4073449185570422683" fileName="ClassifierAdapters_Test.java" startLine="295" startPosition="103" endLine="299" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$16" />
+    <unitInfo nodeId="4073449185570422767" fileName="ClassifierAdapters_Test.java" startLine="317" startPosition="52" endLine="321" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$17" />
+    <unitInfo nodeId="3294521177951870054" fileName="ClassifierAdapters_Test.java" startLine="337" startPosition="8" endLine="341" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$18" />
+    <unitInfo nodeId="3294521177951977997" fileName="ClassifierAdapters_Test.java" startLine="342" startPosition="8" endLine="346" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$19" />
+    <unitInfo nodeId="1202778862220" fileName="ClassifierAdapters_Test.java" startLine="42" startPosition="78" endLine="46" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$2" />
+    <unitInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="347" startPosition="8" endLine="379" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$20" />
+    <unitInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="349" startPosition="19" endLine="377" endPosition="9" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$21" />
+    <unitInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="388" startPosition="92" endLine="424" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$21" />
     <unitInfo nodeId="811905832257259151" fileName="ClassifierAdapters_Test.java" startLine="425" startPosition="68" endLine="429" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$22" />
     <unitInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="351" startPosition="23" endLine="375" endPosition="13" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$22" />
     <unitInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="390" startPosition="19" endLine="422" endPosition="9" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$22" />
@@ -3736,8 +3925,13 @@
     <scopeInfo nodeId="1202835091861" fileName="ExternalReferences_Test.java" startLine="128" startPosition="59" endLine="132" endPosition="0" />
     <scopeInfo nodeId="1237139671980" fileName="ExternalReferences_Test.java" startLine="141" startPosition="55" endLine="145" endPosition="0" />
     <scopeInfo nodeId="9188746615686021948" fileName="ExternalReferences_Test.java" startLine="150" startPosition="82" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="7668669956905496038" fileName="ExternalReferences_Test.java" startLine="160" startPosition="89" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="3384408096809872771" fileName="ExternalReferences_Test.java" startLine="175" startPosition="124" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="7668669956905496038" fileName="ExternalReferences_Test.java" startLine="160" startPosition="89" endLine="164" endPosition="0">
+      <varInfo nodeId="7668669956905496038" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="3384408096809872771" fileName="ExternalReferences_Test.java" startLine="175" startPosition="124" endLine="179" endPosition="0">
+      <varInfo nodeId="3384408096809872771" varName="it" />
+      <varInfo nodeId="3384408096809872771" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="7668669956905402824" fileName="ExternalReferences_Test.java" startLine="186" startPosition="43" endLine="190" endPosition="0" />
     <scopeInfo nodeId="1207147589492" fileName="ExternalReferences_Test.java" startLine="27" startPosition="34" endLine="32" endPosition="17" />
     <scopeInfo nodeId="1215542924121" fileName="ExternalReferences_Test.java" startLine="83" startPosition="48" endLine="88" endPosition="0" />
@@ -3753,7 +3947,9 @@
     <scopeInfo nodeId="1207147589491" fileName="ExternalReferences_Test.java" startLine="26" startPosition="51" endLine="33" endPosition="5">
       <varInfo nodeId="1207147589494" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1219840019855" fileName="ExternalReferences_Test.java" startLine="107" startPosition="39" endLine="114" endPosition="35" />
+    <scopeInfo nodeId="1219840019855" fileName="ExternalReferences_Test.java" startLine="107" startPosition="39" endLine="114" endPosition="35">
+      <varInfo nodeId="1219840019855" varName="_d" />
+    </scopeInfo>
     <scopeInfo nodeId="1202835091858" fileName="ExternalReferences_Test.java" startLine="125" startPosition="41" endLine="132" endPosition="19" />
     <scopeInfo nodeId="1237139653263" fileName="ExternalReferences_Test.java" startLine="139" startPosition="10" endLine="146" endPosition="5">
       <varInfo nodeId="1237139653266" varName="i" />
@@ -3762,7 +3958,9 @@
       <varInfo nodeId="7668669956905496005" varName="num" />
       <varInfo nodeId="7668669956905496034" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="7668669956905391790" fileName="ExternalReferences_Test.java" startLine="184" startPosition="101" endLine="191" endPosition="20" />
+    <scopeInfo nodeId="7668669956905391790" fileName="ExternalReferences_Test.java" startLine="184" startPosition="101" endLine="191" endPosition="20">
+      <varInfo nodeId="7668669956905391790" varName="_t" />
+    </scopeInfo>
     <scopeInfo nodeId="1215542888034" fileName="ExternalReferences_Test.java" startLine="81" startPosition="61" endLine="89" endPosition="45">
       <varInfo nodeId="1215542895879" varName="bytes" />
     </scopeInfo>
@@ -3983,7 +4181,9 @@
     <scopeInfo nodeId="1226351812960" fileName="FinalClosureParameter_Test.java" startLine="14" startPosition="42" endLine="20" endPosition="16">
       <varInfo nodeId="1226351893011" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="1226351812959" fileName="FinalClosureParameter_Test.java" startLine="13" startPosition="66" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1226351812959" fileName="FinalClosureParameter_Test.java" startLine="13" startPosition="66" endLine="22" endPosition="0">
+      <varInfo nodeId="1226351812959" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="1226351791140" fileName="FinalClosureParameter_Test.java" startLine="11" startPosition="48" endLine="23" endPosition="42">
       <varInfo nodeId="1226351923706" varName="foo" />
     </scopeInfo>
@@ -4006,8 +4206,12 @@
     <scopeInfo nodeId="1226422583667" fileName="Functions.java" startLine="13" startPosition="39" endLine="14" endPosition="33" />
     <scopeInfo nodeId="1226422606519" fileName="Functions.java" startLine="21" startPosition="39" endLine="22" endPosition="23" />
     <scopeInfo nodeId="1226422463303" fileName="Functions.java" startLine="7" startPosition="24" endLine="9" endPosition="3" />
-    <scopeInfo nodeId="1226422583666" fileName="Functions.java" startLine="12" startPosition="64" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1226422606518" fileName="Functions.java" startLine="20" startPosition="64" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1226422583666" fileName="Functions.java" startLine="12" startPosition="64" endLine="16" endPosition="0">
+      <varInfo nodeId="1226422583666" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1226422606518" fileName="Functions.java" startLine="20" startPosition="64" endLine="24" endPosition="0">
+      <varInfo nodeId="1226422606518" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="1226422483079" fileName="Functions.java" startLine="11" startPosition="89" endLine="16" endPosition="6" />
     <scopeInfo nodeId="1226422508782" fileName="Functions.java" startLine="19" startPosition="94" endLine="24" endPosition="6" />
     <scopeInfo nodeId="1226422483076" fileName="Functions.java" startLine="10" startPosition="0" endLine="18" endPosition="0" />
@@ -4109,8 +4313,12 @@
     <scopeInfo nodeId="5340426812923603402" fileName="MPS9808.java" startLine="20" startPosition="90" endLine="21" endPosition="35" />
     <scopeInfo nodeId="5340426812923603425" fileName="MPS9808.java" startLine="28" startPosition="90" endLine="29" endPosition="35" />
     <scopeInfo nodeId="5340426812923603353" fileName="MPS9808.java" startLine="14" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="5340426812923603401" fileName="MPS9808.java" startLine="19" startPosition="130" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="5340426812923603424" fileName="MPS9808.java" startLine="27" startPosition="129" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="5340426812923603401" fileName="MPS9808.java" startLine="19" startPosition="130" endLine="23" endPosition="0">
+      <varInfo nodeId="5340426812923603401" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5340426812923603424" fileName="MPS9808.java" startLine="27" startPosition="129" endLine="31" endPosition="0">
+      <varInfo nodeId="5340426812923603424" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="5340426812923603396" fileName="MPS9808.java" startLine="18" startPosition="74" endLine="23" endPosition="7" />
     <scopeInfo nodeId="5340426812923603419" fileName="MPS9808.java" startLine="26" startPosition="73" endLine="31" endPosition="7" />
     <scopeInfo nodeId="5340426812923603393" fileName="MPS9808.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
@@ -4140,10 +4348,14 @@
     <nodeInfo nodeId="5501998944440406895" fileName="MPS14653_Test.java" startLine="25" startPosition="6" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5501998944439577536" fileName="MPS14653_Test.java" startLine="9" startPosition="45" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_getFunction#()V" />
     <nodeInfo nodeId="5501998944440406869" fileName="MPS14653_Test.java" startLine="19" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_acceptFunction#()V" />
-    <scopeInfo nodeId="5501998944439589597" fileName="MPS14653_Test.java" startLine="15" startPosition="0" endLine="16" endPosition="28" />
+    <scopeInfo nodeId="5501998944439589597" fileName="MPS14653_Test.java" startLine="15" startPosition="0" endLine="16" endPosition="28">
+      <varInfo nodeId="5501998944439589597" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="5501998944439589597" fileName="MPS14653_Test.java" startLine="15" startPosition="27" endLine="16" endPosition="28" />
     <scopeInfo nodeId="5501998944440406888" fileName="MPS14653_Test.java" startLine="22" startPosition="45" endLine="23" endPosition="30" />
-    <scopeInfo nodeId="5501998944440406895" fileName="MPS14653_Test.java" startLine="29" startPosition="0" endLine="30" endPosition="28" />
+    <scopeInfo nodeId="5501998944440406895" fileName="MPS14653_Test.java" startLine="29" startPosition="0" endLine="30" endPosition="28">
+      <varInfo nodeId="5501998944440406895" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="5501998944440406895" fileName="MPS14653_Test.java" startLine="29" startPosition="27" endLine="30" endPosition="28" />
     <scopeInfo nodeId="5501998944439589597" fileName="MPS14653_Test.java" startLine="12" startPosition="9" endLine="14" endPosition="20" />
     <scopeInfo nodeId="5501998944440406895" fileName="MPS14653_Test.java" startLine="26" startPosition="9" endLine="28" endPosition="20" />
@@ -4156,8 +4368,8 @@
       <varInfo nodeId="5501998944440406877" varName="fun" />
     </scopeInfo>
     <scopeInfo nodeId="5501998944440406869" fileName="MPS14653_Test.java" startLine="19" startPosition="0" endLine="33" endPosition="0" />
-    <unitInfo nodeId="5501998944440406887" fileName="MPS14653_Test.java" startLine="21" startPosition="62" endLine="25" endPosition="5" unitName="jetbrains.mps.closures.test.MPS14653_Test$1" />
     <unitInfo nodeId="5501998944439577529" fileName="MPS14653_Test.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14653_Test" />
+    <unitInfo nodeId="5501998944440406887" fileName="MPS14653_Test.java" startLine="21" startPosition="62" endLine="25" endPosition="5" unitName="jetbrains.mps.closures.test.MPS14653_Test$1" />
   </root>
   <root nodeId="5501998944439577540">
     <nodeInfo nodeId="5501998944440278198" fileName="MPS14653_helper.java" startLine="17" startPosition="47" endLine="18" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
@@ -4180,9 +4392,9 @@
     </scopeInfo>
     <scopeInfo nodeId="5501998944439577562" fileName="MPS14653_helper.java" startLine="15" startPosition="66" endLine="20" endPosition="8" />
     <scopeInfo nodeId="5501998944439577559" fileName="MPS14653_helper.java" startLine="14" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="5501998944439577540" fileName="MPS14653_helper.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14653_helper" />
     <unitInfo nodeId="5501998944440278196" fileName="MPS14653_helper.java" startLine="16" startPosition="59" endLine="20" endPosition="7" unitName="jetbrains.mps.closures.test.MPS14653_helper$1" />
     <unitInfo nodeId="5501998944439577548" fileName="MPS14653_helper.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14653_helper$Context" />
-    <unitInfo nodeId="5501998944439577540" fileName="MPS14653_helper.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14653_helper" />
   </root>
   <root nodeId="5902225204490666277">
     <nodeInfo nodeId="5902225204490684995" fileName="WhileBreak_Test.java" startLine="63" startPosition="27" endLine="63" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4341,7 +4553,9 @@
       <varInfo nodeId="7026901688661322626" varName="code" />
     </scopeInfo>
     <scopeInfo nodeId="7026901688661325612" fileName="MPS7448.java" startLine="13" startPosition="45" endLine="18" endPosition="19" />
-    <scopeInfo nodeId="7026901688661325611" fileName="MPS7448.java" startLine="12" startPosition="77" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="7026901688661325611" fileName="MPS7448.java" startLine="12" startPosition="77" endLine="20" endPosition="0">
+      <varInfo nodeId="7026901688661325611" varName="aa" />
+    </scopeInfo>
     <scopeInfo nodeId="7026901688661325607" fileName="MPS7448.java" startLine="11" startPosition="22" endLine="20" endPosition="7" />
     <scopeInfo nodeId="7026901688661325604" fileName="MPS7448.java" startLine="10" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="7026901688661322616" fileName="MPS7448.java" startLine="7" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.closures.test.MPS7448" />
@@ -4368,7 +4582,9 @@
     <scopeInfo nodeId="7179096584831896800" fileName="MPS7440.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="7179096584831896804" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="7179096584831896829" fileName="MPS7440.java" startLine="12" startPosition="150" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7179096584831896829" fileName="MPS7440.java" startLine="12" startPosition="150" endLine="16" endPosition="0">
+      <varInfo nodeId="7179096584831896829" varName="abc" />
+    </scopeInfo>
     <scopeInfo nodeId="7179096584831896825" fileName="MPS7440.java" startLine="11" startPosition="22" endLine="16" endPosition="8" />
     <scopeInfo nodeId="7179096584831896822" fileName="MPS7440.java" startLine="10" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="7179096584831896774" fileName="MPS7440.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.closures.test.MPS7440" />
@@ -4391,7 +4607,9 @@
     </scopeInfo>
     <scopeInfo nodeId="7312086843227482249" fileName="MPS9324.java" startLine="6" startPosition="25" endLine="8" endPosition="3" />
     <scopeInfo nodeId="7312086843227556464" fileName="MPS9324.java" startLine="21" startPosition="38" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="7312086843227556479" fileName="MPS9324.java" startLine="11" startPosition="95" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="7312086843227556479" fileName="MPS9324.java" startLine="11" startPosition="95" endLine="14" endPosition="0">
+      <varInfo nodeId="7312086843227556479" varName="p" />
+    </scopeInfo>
     <scopeInfo nodeId="7312086843227556448" fileName="MPS9324.java" startLine="10" startPosition="24" endLine="14" endPosition="6">
       <varInfo nodeId="7312086843227556471" varName="i" />
     </scopeInfo>
@@ -4446,7 +4664,9 @@
     <scopeInfo nodeId="7854901761081544260" fileName="MPS9119.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="7854901761081544266" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="7854901761081544282" fileName="MPS9119.java" startLine="18" startPosition="64" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="7854901761081544282" fileName="MPS9119.java" startLine="18" startPosition="64" endLine="23" endPosition="0">
+      <varInfo nodeId="7854901761081544282" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="7854901761081544279" fileName="MPS9119.java" startLine="17" startPosition="27" endLine="23" endPosition="7" />
     <scopeInfo nodeId="7854901761081544276" fileName="MPS9119.java" startLine="16" startPosition="0" endLine="25" endPosition="0" />
     <unitInfo nodeId="7854901761081544254" fileName="MPS9119.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9119" />
