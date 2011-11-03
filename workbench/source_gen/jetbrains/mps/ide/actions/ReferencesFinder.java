@@ -26,9 +26,9 @@ public class ReferencesFinder {
   public SearchResults getTargetSearchResults(List<SReference> references, ProgressMonitor monitor) {
     SearchResults results = new SearchResults();
     try {
-      monitor.start("computing targets", ListSequence.fromList(references).count());
+      monitor.start("computing references' targets", ListSequence.fromList(references).count());
       for (SReference ref : references) {
-        results.getSearchResults().add(new SearchResult(ref.getTargetNode(), "target"));
+        results.getSearchResults().add(new SearchResult(ref.getTargetNode(), "targets"));
         monitor.advance(1);
         if (monitor.isCanceled()) {
           return results;
@@ -48,7 +48,7 @@ public class ReferencesFinder {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             if (scope.contains(ref.getTargetNode())) {
-              results.getSearchResults().add(new SearchResult(ref.getSourceNode(), "reference"));
+              results.getSearchResults().add(new SearchResult(ref.getSourceNode(), "references"));
             }
           }
         });
@@ -66,7 +66,7 @@ public class ReferencesFinder {
   public List<SReference> getReferences(Scope scope, ProgressMonitor monitor) {
     List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
     try {
-      monitor.start("searching references", scope.getNumRoots());
+      monitor.start("searching references in " + scope.getPresentation(), scope.getNumRoots());
       for (SModelDescriptor element : scope.getModels()) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(element, scope, monitor)));
         if (monitor.isCanceled()) {

@@ -15,12 +15,27 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeD
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
+import jetbrains.mps.smodel.SNode;
+import java.util.List;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
+import java.util.Arrays;
+import javax.swing.Icon;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import org.jetbrains.annotations.NotNull;
+import org.jdom.Element;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 
 public class TargetsView extends UsagesView {
+  private DependenciesComponent myParent;
+
   public TargetsView(Project project, DependenciesComponent parent) {
     super(project, new ViewOptions(true, true, false, false, false));
     UsagesTree usagesTree = getTreeComponent().getTree();
     usagesTree.addTreeSelectionListener(new TargetsView.MyTreeSelectionListener(usagesTree, parent));
+    myParent = parent;
+    setCustomNodeRepresentator(new TargetsView.MyNodeRepresentator());
   }
 
   public void close() {
@@ -79,6 +94,42 @@ public class TargetsView extends UsagesView {
         }
       }
       myDependenciesComponent.updateReferencesView(scope);
+    }
+  }
+
+  public class MyNodeRepresentator implements INodeRepresentator<SNode> {
+    public MyNodeRepresentator() {
+    }
+
+    public List<CategoryKind> getCategoryKinds() {
+      return Arrays.asList(CategoryKind.DEFAULT_CATEGORY_KIND);
+    }
+
+    public Icon getCategoryIcon(String string) {
+      return null;
+    }
+
+    public String getCategoryText(TextOptions options, String string, boolean b) {
+      return "Targets";
+    }
+
+    public Icon getResultsIcon() {
+      return null;
+    }
+
+    public String getResultsText(TextOptions options) {
+      return "Dependencies of " + myParent.getCurrentScope().getPresentation();
+    }
+
+    @NotNull
+    public String getPresentation(SNode node) {
+      return node.getPresentation();
+    }
+
+    public void read(Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
+    }
+
+    public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
     }
   }
 }

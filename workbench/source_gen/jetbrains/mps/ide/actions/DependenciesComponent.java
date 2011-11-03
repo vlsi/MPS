@@ -10,8 +10,6 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import javax.swing.JSplitPane;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
@@ -42,24 +40,27 @@ public class DependenciesComponent extends JComponent {
     myInitTree = new DependencyTree(this);
     myTargetsView = new TargetsView(myProject, this);
     myReferencesView = new ReferencesView(myProject);
-    myReferencesView.setRunOptions(null, new SearchQuery(new VoidHolder("References rr", null), null), new UsagesView.ButtonConfiguration(false));
+    myReferencesView.setRunOptions(null, null, new UsagesView.ButtonConfiguration(false, false, false));
     JSplitPane splitPane = new JSplitPane();
     JSplitPane rightSplitPane = new JSplitPane();
     setLayout(new BorderLayout());
     JBScrollPane leftPane = new JBScrollPane(myInitTree);
     splitPane.setLeftComponent(leftPane);
     splitPane.setRightComponent(rightSplitPane);
-    splitPane.setDividerLocation(0.25);
-    splitPane.setResizeWeight(0.25);
+    splitPane.setDividerLocation(0.2);
+    splitPane.setResizeWeight(0.2);
     rightSplitPane.setLeftComponent(myTargetsView.getComponent());
     rightSplitPane.setRightComponent(myReferencesView.getComponent());
-    rightSplitPane.setDividerLocation(0.5);
-    rightSplitPane.setResizeWeight(0.5);
+    rightSplitPane.setDividerLocation(0.4);
+    rightSplitPane.setResizeWeight(0.4);
+    splitPane.setDividerSize(3);
+    rightSplitPane.setDividerSize(3);
+
     this.removeAll();
     this.add(splitPane);
     myReferencesFinder = new ReferencesFinder();
     setVisible(true);
-    myInitTree.setContent(scope.getModels(), scope.getModules(), project);
+    myInitTree.setContent(scope, project);
     updateTargetsView(scope);
     repaint();
   }
@@ -68,10 +69,14 @@ public class DependenciesComponent extends JComponent {
     myProject = project;
   }
 
+  public Scope getCurrentScope() {
+    return myScope;
+  }
+
   public void updateTargetsView(final Scope scope) {
     myScope = scope;
     final Wrappers._T<SearchResults<SNode>> results = new Wrappers._T<SearchResults<SNode>>(new SearchResults());
-    ProgressManager.getInstance().run(new Task.Modal(myProject, "Targets search", true) {
+    ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
       public void run(@NotNull final ProgressIndicator indicator) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
@@ -89,10 +94,11 @@ public class DependenciesComponent extends JComponent {
       }
     });
     myTargetsView.setContents(results.value);
+    updateReferencesView(new Scope());
   }
 
   public void updateReferencesView(final Scope scope) {
-    ProgressManager.getInstance().run(new Task.Modal(myProject, "References search", true) {
+    ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
         myReferencesView.setContents(myReferencesFinder.getRefSearchResults(myReferences, scope, monitor));

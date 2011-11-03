@@ -34,6 +34,9 @@ public class Scope {
     if (ListSequence.fromList(myRoots).contains(root)) {
       return true;
     }
+    if (ListSequence.fromList(myRoots).contains(node)) {
+      return true;
+    }
     SModelDescriptor descriptor = root.getModel().getModelDescriptor();
     if (ListSequence.fromList(myModels).contains(descriptor)) {
       return true;
@@ -76,7 +79,12 @@ public class Scope {
     for (SModelDescriptor model : myModels) {
       result += getNumRoots(model);
     }
+    result += ListSequence.fromList(myRoots).count();
     return result;
+  }
+
+  public boolean isEmpty() {
+    return ListSequence.fromList(myModels).isEmpty() && ListSequence.fromList(myModules).isEmpty() && ListSequence.fromList(myRoots).isEmpty();
   }
 
   private int getNumRoots(IModule module) {
@@ -85,5 +93,39 @@ public class Scope {
       result += getNumRoots(model);
     }
     return result;
+  }
+
+  public String getPresentation() {
+    StringBuilder sb = new StringBuilder();
+    if (ListSequence.fromList(myModules).count() > 0) {
+      sb.append(getPresentation(myModules, "module"));
+    }
+    if (ListSequence.fromList(myModels).count() > 0) {
+      if (sb.length() > 0) {
+        sb.append(" and ");
+      }
+      if ((int) ListSequence.fromList(myModels).count() == 1) {
+        sb.append(ListSequence.fromList(myModels).getElement(0).getLongName());
+      } else {
+        sb.append(ListSequence.fromList(myModels).count() + " models");
+      }
+    }
+    if (ListSequence.fromList(myRoots).count() > 0) {
+      if (sb.length() > 0) {
+        sb.append(" and ");
+      }
+      sb.append(getPresentation(myRoots, "node"));
+    }
+    return sb.toString();
+  }
+
+  private <T> String getPresentation(List<T> list, String elementType) {
+    if ((int) ListSequence.fromList(list).count() == 0) {
+      return "";
+    }
+    if ((int) ListSequence.fromList(list).count() == 1) {
+      return elementType + " " + ListSequence.fromList(list).getElement(0);
+    }
+    return ListSequence.fromList(list).count() + " " + elementType + "s";
   }
 }
