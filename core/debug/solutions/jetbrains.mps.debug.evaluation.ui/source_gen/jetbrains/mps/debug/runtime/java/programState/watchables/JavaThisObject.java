@@ -8,7 +8,7 @@ import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IValue;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import com.sun.jdi.Location;
@@ -48,7 +48,7 @@ public class JavaThisObject extends JavaBreakpointWatchable implements IWatchabl
 
   @Override
   public IValue getValue() {
-    return JavaValue.fromJDIValue(myThisObject, myClassFQName, myThreadReference);
+    return ValueUtil.fromJDIValue(myThisObject, myClassFQName, myThreadReference);
   }
 
   @Override

@@ -9,6 +9,7 @@ import com.sun.jdi.Field;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import com.sun.jdi.ThreadReference;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
@@ -25,7 +26,7 @@ public class JavaField extends JavaBreakpointWatchable implements IWatchable {
     super(classFqName, threadReference);
     myField = field;
     myParent = parent;
-    myCachedValue = JavaValue.fromJDIValue(myParent.getValue(myField), classFqName, threadReference);
+    myCachedValue = ValueUtil.fromJDIValue(myParent.getValue(myField), classFqName, threadReference);
   }
 
   public Field getField() {

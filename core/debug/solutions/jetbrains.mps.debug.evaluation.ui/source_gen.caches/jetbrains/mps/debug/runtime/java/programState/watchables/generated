@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4u5299cezejd26nj0b39fseya3igcm7">
+<dependencies version="2" modelHash="-930c4icmxgwkixt5aw0fzoeptv73bjr">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="c8w34ecdfwjr8bgl4l1u8jgdbwvii8c" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="4592mc0c92ee86m4hdnk27h6ntxlxqu" />
@@ -14,7 +14,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaWatchpointValue.java" />
   </source>
-  <source id="3432969378036013923" name="JavaField" hash="9mog18r7l2dv7ddmdzfkesckqkylepg">
+  <source id="3432969378036013923" name="JavaField" hash="85vzkzdr54dghq584o97opsocwz1nn4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -28,7 +28,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaBreakpointWatchable.java" />
   </source>
-  <source id="3432969378036014083" name="JavaWatchpointWatchable" hash="7bxxkmpb2p216l4spaoheswv5qd3yvp">
+  <source id="3432969378036014083" name="JavaWatchpointWatchable" hash="-1jsg03eb5c5xjza7j3l2ykyk1zdmr5v">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -36,7 +36,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaWatchpointWatchable.java" />
   </source>
-  <source id="3432969378036014277" name="JavaThisObject" hash="1texjjvzxecltwagit13ewklfibmyjz">
+  <source id="3432969378036014277" name="JavaThisObject" hash="k3ux84ily6uxtsxhrspcy6nbfs0lmm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -60,7 +60,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaStaticContext.java" />
   </source>
-  <source id="3432969378036016032" name="JavaReturnWatchable" hash="-72vs9he71v4jq6evtcdwbxu4mf66mb9">
+  <source id="3432969378036016032" name="JavaReturnWatchable" hash="-36qpls2empb4y6vxoazecawesycax82">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -68,7 +68,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaReturnWatchable.java" />
   </source>
-  <source id="3432969378036016095" name="JavaStaticField" hash="6mbd49fwp36aa77g4czsrzvs1ff5485">
+  <source id="3432969378036016095" name="JavaStaticField" hash="-d6kq5ww37s025yd1akosrbbslvszej7">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -76,7 +76,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaStaticField.java" />
   </source>
-  <source id="3432969378036016286" name="JavaArrayItem" hash="3z8665oisw13f16ozerkrlw0yb8q52i">
+  <source id="3432969378036016286" name="JavaArrayItem" hash="2de7uooixadz1b358cbowtbumcgp2wr">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -90,7 +90,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaExceptionWatchable.java" />
   </source>
-  <source id="3432969378036014276" name="JavaLocalVariable" hash="-9xmxt976pj11idefy32w08akka4j34l">
+  <source id="3432969378036014276" name="JavaLocalVariable" hash="-6b45pw7ws8ie59k45brws2pti8j1vts">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -98,7 +98,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaLocalVariable.java" />
   </source>
-  <source id="3432969378036017747" name="CalculatedWatchable" hash="3ub1r8pus7fmsbmx2nw2czzuzycfkx6">
+  <source id="3432969378036017747" name="CalculatedWatchable" hash="-48cfvfk17mlui9lcsqhls19cae80siu">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

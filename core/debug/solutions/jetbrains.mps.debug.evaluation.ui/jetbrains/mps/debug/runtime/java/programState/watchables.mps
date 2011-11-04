@@ -399,9 +399,9 @@
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036013966">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036013938" resolveInfo="myCachedValue" />
             </node>
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036013967">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015313" resolveInfo="fromJDIValue" />
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499220941">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.4838833313499220915" resolveInfo="fromJDIValue" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.4838833313499220909" resolveInfo="ValueUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3432969378036013968">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036013969">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036013935" resolveInfo="myParent" />
@@ -986,9 +986,9 @@
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036014140">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036014108" resolveInfo="myCurrentValue" />
             </node>
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036014141">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015313" resolveInfo="fromJDIValue" />
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499220948">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.4838833313499220915" resolveInfo="fromJDIValue" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.4838833313499220909" resolveInfo="ValueUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3432969378036014142">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036014122" resolveInfo="currentValue" />
               </node>
@@ -1006,9 +1006,9 @@
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036014147">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036014111" resolveInfo="myNewValue" />
             </node>
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036014148">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015313" resolveInfo="fromJDIValue" />
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499220949">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.4838833313499220915" resolveInfo="fromJDIValue" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.4838833313499220909" resolveInfo="ValueUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3432969378036014149">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036014124" resolveInfo="newValue" />
               </node>
@@ -1089,9 +1089,9 @@
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036014177">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036014108" resolveInfo="myCurrentValue" />
             </node>
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036014178">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015313" resolveInfo="fromJDIValue" />
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499220950">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.4838833313499220915" resolveInfo="fromJDIValue" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.4838833313499220909" resolveInfo="ValueUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3432969378036014179">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036014161" resolveInfo="currentValue" />
               </node>
@@ -1371,9 +1371,9 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3432969378036014331">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3432969378036014332">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036014333">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015313" resolveInfo="fromJDIValue" />
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499220947">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.4838833313499220915" resolveInfo="fromJDIValue" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.4838833313499220909" resolveInfo="ValueUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036014334">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036014286" resolveInfo="myThisObject" />
             </node>
@@ -2156,9 +2156,9 @@
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036016053">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036016035" resolveInfo="myValue" />
             </node>
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036016054">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015313" resolveInfo="fromJDIValue" />
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499220943">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.4838833313499220915" resolveInfo="fromJDIValue" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.4838833313499220909" resolveInfo="ValueUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3432969378036016055">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036016041" resolveInfo="value" />
               </node>
@@ -2348,9 +2348,9 @@
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036016124">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036016102" resolveInfo="myCachedValue" />
             </node>
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036016125">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015313" resolveInfo="fromJDIValue" />
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499220946">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.4838833313499220915" resolveInfo="fromJDIValue" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.4838833313499220909" resolveInfo="ValueUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3432969378036016126">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3432969378036016127">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3432969378036016128">
@@ -2623,9 +2623,9 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3432969378036016339">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3432969378036016340">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036016341">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015313" resolveInfo="fromJDIValue" />
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499220940">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.4838833313499220915" resolveInfo="fromJDIValue" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.4838833313499220909" resolveInfo="ValueUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3432969378036016342">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036016343">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036016290" resolveInfo="myArray" />
@@ -3047,9 +3047,9 @@
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036017631">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036017592" resolveInfo="myCachedValue" />
                 </node>
-                <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036017632">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015313" resolveInfo="fromJDIValue" />
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499220942">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.4838833313499220915" resolveInfo="fromJDIValue" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.4838833313499220909" resolveInfo="ValueUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3432969378036017633">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3432969378036017634">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036017619" resolveInfo="javaStackFrame" />
@@ -3412,9 +3412,9 @@
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3432969378036017779">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036017751" resolveInfo="myValue" />
             </node>
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3432969378036017780">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015313" resolveInfo="fromJDIValue" />
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499220939">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.4838833313499220915" resolveInfo="fromJDIValue" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y3sp.4838833313499220909" resolveInfo="ValueUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3432969378036017781">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3432969378036017762" resolveInfo="value" />
               </node>

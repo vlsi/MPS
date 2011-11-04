@@ -6,7 +6,7 @@ import jetbrains.mps.debug.api.programState.IWatchable;
 import com.sun.jdi.ArrayReference;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IValue;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
@@ -40,7 +40,7 @@ public class JavaArrayItem extends JavaBreakpointWatchable implements IWatchable
 
   @Override
   public IValue getValue() {
-    return JavaValue.fromJDIValue(myArray.getValue(myIndex), myClassFQName, myThreadReference);
+    return ValueUtil.fromJDIValue(myArray.getValue(myIndex), myClassFQName, myThreadReference);
   }
 
   @Override

@@ -10,6 +10,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
@@ -33,7 +34,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaBreakpointWatchable" />
@@ -68,6 +69,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ProxyForJava" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
@@ -87,6 +89,7 @@
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -119,6 +122,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaBreakpointWatchable" />
   </dependency>
@@ -149,6 +153,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaBreakpointWatchable" />
@@ -165,7 +170,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -199,6 +204,7 @@
     <classNode dependClassName="jetbrains.mps.debug.integration.ui.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchpointValue" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IValue" />

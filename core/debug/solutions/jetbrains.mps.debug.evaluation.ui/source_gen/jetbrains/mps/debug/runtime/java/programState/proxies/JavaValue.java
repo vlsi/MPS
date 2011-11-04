@@ -6,11 +6,6 @@ import jetbrains.mps.debug.api.programState.IValue;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debug.customViewers.CustomViewersManager;
-import com.sun.jdi.ObjectReference;
-import com.sun.jdi.ArrayReference;
-import com.sun.jdi.StringReference;
 
 public abstract class JavaValue extends ProxyForJava implements IValue {
   @Nullable
@@ -36,51 +31,5 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
 
   public ThreadReference getThreadReference() {
     return myThreadReference;
-  }
-
-  public static JavaValue fromJDIValue(Value value, @NotNull String classFQname, ThreadReference threadReference) {
-    //  could not we, like, get fqName from the value? 
-    JavaValue javaValue = JavaValue.fromJDIValueRaw(value, classFQname, threadReference);
-    return JavaValue.tryToWrap(classFQname, javaValue);
-  }
-
-  public static JavaValue fromJDIValue(@Nullable Value value, ThreadReference threadReference) {
-    if (value == null) {
-      return JavaValue.fromJDIValueRaw(value, "java.lang.Object", threadReference);
-    }
-    JavaValue javaValue = JavaValue.fromJDIValueRaw(value, value.type().name(), threadReference);
-    return JavaValue.tryToWrap(value.type().name(), javaValue);
-  }
-
-  public static JavaValue tryToWrap(@NotNull JavaValue javaValue) {
-    //  why here? 
-    return JavaValue.tryToWrap(javaValue.getClassFQName(), javaValue);
-  }
-
-  private static JavaValue tryToWrap(@NotNull String classFQname, JavaValue javaValue) {
-    CustomViewersManager customViewersManager = CustomViewersManager.getInstance();
-    ValueWrapper wrapper = customViewersManager.getValueWrapper(javaValue, classFQname);
-    if (wrapper == null) {
-      return javaValue;
-    }
-    return wrapper;
-  }
-
-  public static JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
-    if (value == null) {
-      return new JavaPrimitiveValue(value, classFQname, threadReference);
-    }
-    if (value instanceof ObjectReference) {
-      if (value instanceof ArrayReference) {
-        return new JavaArrayValue(value, classFQname, threadReference);
-      } else
-      if (value instanceof StringReference) {
-        return new JavaStringValue(value, classFQname, threadReference);
-      } else {
-        return new JavaObjectValue(value, classFQname, threadReference);
-      }
-    } else {
-      return new JavaPrimitiveValue(value, classFQname, threadReference);
-    }
   }
 }

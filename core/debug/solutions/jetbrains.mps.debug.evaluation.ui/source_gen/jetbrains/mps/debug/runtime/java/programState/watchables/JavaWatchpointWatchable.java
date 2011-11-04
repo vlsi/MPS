@@ -6,6 +6,7 @@ import com.sun.jdi.Field;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
@@ -25,15 +26,15 @@ public class JavaWatchpointWatchable extends JavaBreakpointWatchable {
   public JavaWatchpointWatchable(Field field, Value currentValue, Value newValue, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myField = field;
-    myCurrentValue = JavaValue.fromJDIValue(currentValue, myClassFQName, threadReference);
-    myNewValue = JavaValue.fromJDIValue(newValue, myClassFQName, threadReference);
+    myCurrentValue = ValueUtil.fromJDIValue(currentValue, myClassFQName, threadReference);
+    myNewValue = ValueUtil.fromJDIValue(newValue, myClassFQName, threadReference);
     myAccess = false;
   }
 
   public JavaWatchpointWatchable(Field field, Value currentValue, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myField = field;
-    myCurrentValue = JavaValue.fromJDIValue(currentValue, myClassFQName, threadReference);
+    myCurrentValue = ValueUtil.fromJDIValue(currentValue, myClassFQName, threadReference);
     myNewValue = null;
     myAccess = true;
   }
