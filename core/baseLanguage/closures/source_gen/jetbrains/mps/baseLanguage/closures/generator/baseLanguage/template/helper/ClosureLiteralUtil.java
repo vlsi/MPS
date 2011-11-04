@@ -121,12 +121,19 @@ public class ClosureLiteralUtil {
         List<SNode> fttypes = FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(ft);
         List<SNode> mttypes = FunctionTypeUtil.normalizeThrowsTypes(SLinkOperations.getTargets(method, "throwsItem", true));
         for (SNode mtt : mttypes) {
-          if (tidx >= ListSequence.fromList(fttypes).count()) {
-            genContext.showErrorMessage(literal, "Closure generic throws types count doesn't match method '" + SPropertyOperations.getString(method, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(ctNoParams, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(ctNoParams, "classifier", false), "name")));
-            return;
+          if (tidx < ListSequence.fromList(fttypes).count()) {
+            map = matchType(mtt, ListSequence.fromList(fttypes).getElement(tidx), map);
+            tidx++;
+          } else {
+            for (SNode mttt : mttypes) {
+              SNode tvd = SLinkOperations.getTarget(SNodeOperations.as(mttt, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
+              if (tvd != null && (map == null || !(MapSequence.fromMap(map).containsKey(tvd)))) {
+                genContext.showErrorMessage(literal, "Closure generic throws types count doesn't match method '" + SPropertyOperations.getString(method, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(ctNoParams, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(ctNoParams, "classifier", false), "name")));
+                return;
+              }
+            }
+            break;
           }
-          map = matchType(mtt, ListSequence.fromList(fttypes).getElement(tidx), map);
-          tidx++;
         }
       }
     }
