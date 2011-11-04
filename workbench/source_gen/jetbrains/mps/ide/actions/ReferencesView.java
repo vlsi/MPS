@@ -9,7 +9,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
-import java.util.Arrays;
+import java.util.Collections;
 import javax.swing.Icon;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -19,12 +19,16 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 
 public class ReferencesView extends UsagesView {
-  public ReferencesView(Project project) {
-    super(project, new ViewOptions(false, false, false, false, false));
+  private DependenciesComponent myComponent;
+
+  public ReferencesView(Project project, DependenciesComponent component) {
+    super(project, new ViewOptions(false, false, false, false, false, false));
     setCustomNodeRepresentator(new ReferencesView.MyNodeRepresentator());
+    myComponent = component;
   }
 
   public void close() {
+    myComponent.close();
   }
 
   public class MyNodeRepresentator implements INodeRepresentator<SNode> {
@@ -32,7 +36,7 @@ public class ReferencesView extends UsagesView {
     }
 
     public List<CategoryKind> getCategoryKinds() {
-      return Arrays.asList(CategoryKind.DEFAULT_CATEGORY_KIND);
+      return Collections.emptyList();
     }
 
     public Icon getCategoryIcon(String string) {

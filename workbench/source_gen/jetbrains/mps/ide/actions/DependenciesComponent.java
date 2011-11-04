@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
-import javax.swing.JSplitPane;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
+import javax.swing.JSplitPane;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
@@ -31,33 +31,32 @@ public class DependenciesComponent extends JComponent {
   private Project myProject;
   private Scope myScope;
   private List<SReference> myReferences = ListSequence.fromList(new ArrayList<SReference>());
+  private AnalyzeDependencies_Tool myTool;
   private ReferencesFinder myReferencesFinder = null;
 
-  public DependenciesComponent() {
+  public DependenciesComponent(AnalyzeDependencies_Tool tool) {
+    myTool = tool;
   }
 
   public void setContent(Scope scope, MPSProject project) {
     myInitTree = new DependencyTree(this);
     myTargetsView = new TargetsView(myProject, this);
-    myReferencesView = new ReferencesView(myProject);
-    myReferencesView.setRunOptions(null, null, new UsagesView.ButtonConfiguration(false, false, false));
-    JSplitPane splitPane = new JSplitPane();
-    JSplitPane rightSplitPane = new JSplitPane();
+    myReferencesView = new ReferencesView(myProject, this);
+    myReferencesView.setRunOptions(null, null, new UsagesView.ButtonConfiguration(false, false, true));
     setLayout(new BorderLayout());
     JBScrollPane leftPane = new JBScrollPane(myInitTree);
-    splitPane.setLeftComponent(leftPane);
-    splitPane.setRightComponent(rightSplitPane);
-    splitPane.setDividerLocation(0.2);
-    splitPane.setResizeWeight(0.2);
-    rightSplitPane.setLeftComponent(myTargetsView.getComponent());
-    rightSplitPane.setRightComponent(myReferencesView.getComponent());
-    rightSplitPane.setDividerLocation(0.4);
-    rightSplitPane.setResizeWeight(0.4);
-    splitPane.setDividerSize(3);
-    rightSplitPane.setDividerSize(3);
+    JSplitPane secondSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPane, myTargetsView.getTreeComponent());
+    JSplitPane mainSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, secondSplitPane, myReferencesView.getComponent());
+
+    mainSplitPane.setDividerLocation(0.5);
+    mainSplitPane.setResizeWeight(0.5);
+    secondSplitPane.setDividerLocation(0.4);
+    secondSplitPane.setResizeWeight(0.4);
+    secondSplitPane.setDividerSize(3);
+    mainSplitPane.setDividerSize(3);
 
     this.removeAll();
-    this.add(splitPane);
+    this.add(mainSplitPane);
     myReferencesFinder = new ReferencesFinder();
     setVisible(true);
     myInitTree.setContent(scope, project);
@@ -109,5 +108,9 @@ public class DependenciesComponent extends JComponent {
 
       }
     });
+  }
+
+  public void close() {
+    myTool.close();
   }
 }

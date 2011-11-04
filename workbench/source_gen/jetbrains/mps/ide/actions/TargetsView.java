@@ -19,7 +19,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
-import java.util.Arrays;
+import java.util.Collections;
 import javax.swing.Icon;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -32,7 +32,7 @@ public class TargetsView extends UsagesView {
   private DependenciesComponent myParent;
 
   public TargetsView(Project project, DependenciesComponent parent) {
-    super(project, new ViewOptions(true, true, false, false, false));
+    super(project, new ViewOptions(true, true, false, false, false, false));
     UsagesTree usagesTree = getTreeComponent().getTree();
     usagesTree.addTreeSelectionListener(new TargetsView.MyTreeSelectionListener(usagesTree, parent));
     myParent = parent;
@@ -103,7 +103,7 @@ public class TargetsView extends UsagesView {
     }
 
     public List<CategoryKind> getCategoryKinds() {
-      return Arrays.asList(CategoryKind.DEFAULT_CATEGORY_KIND);
+      return Collections.emptyList();
     }
 
     public Icon getCategoryIcon(String string) {

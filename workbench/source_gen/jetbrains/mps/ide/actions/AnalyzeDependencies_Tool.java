@@ -39,7 +39,7 @@ public class AnalyzeDependencies_Tool extends GeneratedTool {
 
   public void init(Project project) {
     super.init(project);
-    AnalyzeDependencies_Tool.this.myDependenciesComponent = new DependenciesComponent();
+    AnalyzeDependencies_Tool.this.myDependenciesComponent = new DependenciesComponent(AnalyzeDependencies_Tool.this);
     AnalyzeDependencies_Tool.this.myDependenciesComponent.setProject(project);
   }
 

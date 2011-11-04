@@ -17,6 +17,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
+import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 
 public class DependencyTree extends MPSTree {
   private Scope myScope;
@@ -78,6 +79,15 @@ public class DependencyTree extends MPSTree {
         if (node instanceof SNodeTreeNode) {
           scope.add(((SNodeTreeNode) node).getSNode());
         }
+        if (node instanceof NamespaceTextNode) {
+          for (IModule module : ((NamespaceTextNode) node).getModulesUnder()) {
+            scope.add(module);
+          }
+          for (SModelDescriptor model : ((NamespaceTextNode) node).getModelsUnder()) {
+            scope.add(model);
+          }
+        }
+
       }
       myParent.updateTargetsView(scope);
     }

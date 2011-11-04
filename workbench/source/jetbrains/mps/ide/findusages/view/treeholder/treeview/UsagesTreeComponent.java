@@ -64,6 +64,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   private ViewOptions myDefaultOptions;
 
   private boolean mySearchedNodesButtonsVisible = true;
+  private boolean myAdditionalInfoButtonVisible = true;
 
   public UsagesTreeComponent(ViewOptions defaultOptions) {
     super(new BorderLayout());
@@ -323,7 +324,10 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
           myActions.remove(myShowSearchedNodesButton);
           myActions.remove(myGroupSearchedNodesButton);
         }
-
+        myAdditionalInfoButtonVisible = options.myAdditionalInfoButtonVisible;
+        if (!myAdditionalInfoButtonVisible) {
+          myActions.remove(myAdditionalInfoNeededButton);
+        }
         myTree.finishAdjusting();
       }
 
@@ -334,6 +338,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         options.myGroupSearchedNodes = myGroupSearchedNodesButton.isSelected(null);
 
         options.mySearchedNodesButtonsVisible = mySearchedNodesButtonsVisible;
+        options.myAdditionalInfoButtonVisible = myAdditionalInfoButtonVisible;
       }
     }
 
