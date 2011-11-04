@@ -45,7 +45,6 @@ import jetbrains.mps.project.IModule;
 
   @Override
   protected void processCreate(VFileEvent event, ReloadSession reloadSession) {
-    ReloadableSources.getInstance().invalidate(FileSystem.getInstance().getFileByPath(event.getPath()));
     IFile ifile = FileSystem.getInstance().getFileByPath(event.getPath());
     SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
     if (model == null) {
@@ -58,7 +57,6 @@ import jetbrains.mps.project.IModule;
   }
 
   private void fileDeleted(String path, ReloadSession reloadSession) {
-    ReloadableSources.getInstance().invalidate(FileSystem.getInstance().getFileByPath(path));
     IFile ifile = FileSystem.getInstance().getFileByPath(path);
     final EditableSModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
     if (model == null) {
