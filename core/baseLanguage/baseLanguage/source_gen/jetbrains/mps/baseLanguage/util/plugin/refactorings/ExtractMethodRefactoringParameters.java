@@ -24,6 +24,7 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
     for (MethodParameter inputVariable : ListSequence.fromList(this.myAnalyzer.getInputVariables())) {
       ListSequence.fromList(this.myParameters).addElement(inputVariable);
     }
+    this.myIsStatic = this.getStatic();
   }
 
   public List<SNode> getNodesToRefactor() {
@@ -40,6 +41,7 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
 
   public void setVisibilityLevel(VisibilityLevel level) {
     this.myVisibility = level;
+    this.fireChange();
   }
 
   public List<MethodParameter> getParameters() {
@@ -91,5 +93,19 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
       return false;
     }
     return true;
+  }
+
+  private boolean getStatic() {
+    if (this.myAnalyzer.canBeStatic() && this.myAnalyzer.shouldBeStatic()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public String getMethodText() {
+    String result = this.myVisibility.getName() + " " + super.getMethodText();
+    return result;
+
   }
 }

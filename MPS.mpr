@@ -35,6 +35,7 @@
       <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="baseLanguage.unitTest" />
+      <modulePath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/blTypes/blTypes.mpl" folder="baseLanguage" />
       <modulePath path="${project}/core/baseLanguage/checkDot/languages/checkedDots/checkedDots.mpl" folder="baseLanguage.checkedDots" />

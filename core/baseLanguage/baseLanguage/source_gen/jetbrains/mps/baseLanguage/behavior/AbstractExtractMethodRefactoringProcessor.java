@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class AbstractExtractMethodRefactoringProcessor implements IExtractMethodRefactoringProcessor {
   protected SNode myNode;
   protected List<SNode> myNodesToRefactor;
+  protected boolean isStatic;
 
   public AbstractExtractMethodRefactoringProcessor(SNode node, List<SNode> nodesToRefactor) {
     this.myNode = node;
@@ -57,6 +58,10 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
       return TypeChecker.getInstance().getRuntimeSupport().coerce_(ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction")), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
     }
     return null;
+  }
+
+  public void setStatic(boolean isStatic) {
+    this.isStatic = isStatic;
   }
 
   public static void universalAddMethod(SNode container, SNode method) {

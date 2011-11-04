@@ -5,12 +5,12 @@ package jetbrains.mps.debugger.java.remote;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
-import jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent;
+import jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.runtime.DebugSession;
-import jetbrains.mps.debug.runtime.DebugProcessAdapter;
+import jetbrains.mps.debugger.java.runtime.DebugSession;
+import jetbrains.mps.debugger.java.runtime.DebugProcessAdapter;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
 import java.io.OutputStream;
 
 public class RemoteProcessHandler extends ProcessHandler {

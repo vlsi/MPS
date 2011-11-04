@@ -12,8 +12,8 @@ import javax.swing.Icon;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.codeStyle.CodeStyleSettings;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -88,24 +88,24 @@ public class FieldDeclaration_Behavior {
   }
 
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
-    CodeStyleSettings settings = CodeStyleSettings.getInstance(ProjectHelper.toIdeaProject(project));
+    CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
-    return (settings.getFieldSettings().o2 == null ?
+    return (settings.getFieldSuffix() == null ?
       "" :
-      settings.getFieldSettings().o2
+      settings.getFieldSuffix()
     );
   }
 
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
-    CodeStyleSettings settings = CodeStyleSettings.getInstance(ProjectHelper.toIdeaProject(project));
+    CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
-    return (settings.getFieldSettings().o1 == null ?
+    return (settings.getFieldPrefix() == null ?
       "" :
-      settings.getFieldSettings().o1
+      settings.getFieldPrefix()
     );
   }
 

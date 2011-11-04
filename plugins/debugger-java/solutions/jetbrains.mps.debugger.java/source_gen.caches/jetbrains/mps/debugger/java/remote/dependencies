@@ -6,10 +6,10 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugProcessAdapter" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugVMEventsProcessor" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugProcessAdapter" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.process.ProcessHandler" />
   </dependency>

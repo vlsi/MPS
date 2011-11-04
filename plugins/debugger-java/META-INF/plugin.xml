@@ -16,6 +16,9 @@
   </application-components>
 
   <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent</implementation-class>
+    </component>
   </project-components>
 
   <actions>

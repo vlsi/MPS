@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JCheckBox;
 import javax.swing.event.TableModelListener;
 import javax.swing.event.TableModelEvent;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.table.TableColumn;
@@ -68,9 +70,13 @@ import java.awt.event.ActionEvent;
         ParametersPanel.this.fitTableColumns(parametersTable);
       }
     });
+    parametersTable.setPreferredScrollableViewportSize(new Dimension(parametersTable.getPreferredScrollableViewportSize().width, parametersTable.getRowHeight() * 7));
+    JScrollPane scrollPane = new JScrollPane(parametersTable, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
 
     GridBagConstraints c = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-    this.add(parametersTable, c);
+
+    this.add(scrollPane, c);
 
     c.gridx = 1;
     c.weightx = 0;

@@ -117,6 +117,7 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
@@ -513,6 +514,7 @@
     <path path="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -703,6 +705,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -847,6 +850,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -992,6 +996,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -1137,6 +1142,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -1282,6 +1288,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -1439,6 +1446,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -1584,6 +1592,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -1729,6 +1738,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -1874,6 +1884,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -2018,6 +2029,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -2184,6 +2196,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -2336,6 +2349,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -2510,6 +2524,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -2655,6 +2670,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -2801,6 +2817,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -2949,6 +2966,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -3096,6 +3114,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -3240,6 +3259,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -3384,6 +3404,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -3530,6 +3551,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -3679,6 +3701,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -3827,6 +3850,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -3971,6 +3995,7 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
@@ -4022,6 +4047,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -4175,6 +4201,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -4319,6 +4346,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -4464,6 +4492,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -4609,6 +4638,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -4754,6 +4784,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -4899,6 +4930,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -5043,6 +5075,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -5188,6 +5221,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -5332,6 +5366,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -5477,6 +5512,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -5621,6 +5657,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -5766,6 +5803,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -5909,6 +5947,7 @@
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
@@ -5959,6 +5998,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -6105,6 +6145,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -6252,6 +6293,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -6400,6 +6442,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -6545,6 +6588,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -6703,6 +6747,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -6864,6 +6909,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -7009,6 +7055,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -7153,6 +7200,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -7297,6 +7345,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -7443,6 +7492,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -7587,6 +7637,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -7753,6 +7804,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -7898,6 +7950,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -8043,6 +8096,7 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />

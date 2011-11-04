@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.codeStyle.CodeStyleSettings;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -38,24 +38,24 @@ public class ParameterDeclaration_Behavior {
   }
 
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
-    CodeStyleSettings settings = CodeStyleSettings.getInstance(ProjectHelper.toIdeaProject(project));
+    CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
-    return (settings.getParameterSettings().o2 == null ?
+    return (settings.getParameterSuffix() == null ?
       "" :
-      settings.getParameterSettings().o2
+      settings.getParameterSuffix()
     );
   }
 
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
-    CodeStyleSettings settings = CodeStyleSettings.getInstance(ProjectHelper.toIdeaProject(project));
+    CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
-    return (settings.getParameterSettings().o1 == null ?
+    return (settings.getParameterPrefix() == null ?
       "" :
-      settings.getParameterSettings().o1
+      settings.getParameterPrefix()
     );
   }
 

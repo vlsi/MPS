@@ -45,6 +45,9 @@ public class ExtractMethodRefactoringAnalyzer {
   private AnalysisResult<VarSet> myLiveVariables;
   private AnalysisResult<Set<WriteInstruction>> myReachingDefinitions;
   private IExtractMethodRefactoringProcessor myProcessor;
+  private boolean shouldBeStatic;
+  private boolean canBeStatic;
+  private boolean shouldChooseOuterContainer;
 
   public ExtractMethodRefactoringAnalyzer(List<SNode> nodes) {
     this.myPartToExtract = nodes;
@@ -54,6 +57,8 @@ public class ExtractMethodRefactoringAnalyzer {
     this.myInternalExitPoints = this.calculateInternalExitPoints();
     this.myLiveVariables = this.myProgram.analyze(new LivenessAnalyzer());
     this.myReachingDefinitions = this.myProgram.analyze(new ReachingDefinitionsAnalyzer());
+    this.shouldBeStatic = this.findIfShouldBeStatic();
+    this.canBeStatic = this.findIfCanBeStatic();
   }
 
   /*package*/ boolean hasExitPoints() {
@@ -69,6 +74,39 @@ public class ExtractMethodRefactoringAnalyzer {
       current = SNodeOperations.getParent(current);
     }
     return false;
+  }
+
+  public boolean shouldBeStatic() {
+    return shouldBeStatic;
+  }
+
+  public boolean canBeStatic() {
+    return canBeStatic;
+  }
+
+  public boolean shouldChooseOuterContainer() {
+    return shouldChooseOuterContainer;
+  }
+
+  private boolean findIfShouldBeStatic() {
+    if (shouldChooseOuterContainer) {
+      return true;
+    }
+    SNode containerMethod = this.myProcessor.getContainerMethod();
+    if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  private boolean findIfCanBeStatic() {
+    for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
+      if (ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IThisExpression", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.SuperMethodCall", false, new String[]{})).isNotEmpty()) {
+        return false;
+      }
+    }
+    return true;
   }
 
   private List<SNode> calculateInternalExitPoints() {
@@ -206,7 +244,7 @@ public class ExtractMethodRefactoringAnalyzer {
     // added to fix problems with closures 
     addExternalParameters(result);
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
-      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
+      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", true, new String[]{}))) {
         SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(parameter), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
         MapSequence.fromMap(result).put(IParameter_Behavior.call_getDeclaration_1225282371351(parameter), new MethodParameter(IParameter_Behavior.call_getDeclaration_1225282371351(parameter), expressionType, IParameter_Behavior.call_getParameterName_1225280611056(parameter), parameter));
       }
@@ -223,6 +261,7 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   private void findExtractMethodRefactoringProcessor() {
+    shouldChooseOuterContainer = false;
     SNode first = ListSequence.fromList(this.myPartToExtract).first();
     SNode classConcept = SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (classConcept != null) {
@@ -232,6 +271,7 @@ public class ExtractMethodRefactoringAnalyzer {
       this.myProcessor = IExtractMethodAvailable_Behavior.call_getExtractMethodRefactoringProcessor_1221393367929(extractable, this.myPartToExtract);
     } else {
       this.myProcessor = new AbstractExtractMethodRefactoringProcessor(null, this.myPartToExtract);
+      shouldChooseOuterContainer = true;
     }
   }
 

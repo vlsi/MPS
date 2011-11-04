@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="3432969378036014082">
+    <nodeInfo nodeId="3432969378036016174" fileName="Icons.java" startLine="8" startPosition="20" endLine="9" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLE_PRIMITIVE" />
+    <nodeInfo nodeId="3432969378036016183" fileName="Icons.java" startLine="9" startPosition="107" endLine="10" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLE_OBJECT" />
+    <nodeInfo nodeId="3432969378036016192" fileName="Icons.java" startLine="10" startPosition="101" endLine="11" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXCEPTION_BREAKPOINT" />
+    <nodeInfo nodeId="3432969378036016201" fileName="Icons.java" startLine="11" startPosition="120" endLine="12" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DISABLED_EXCEPTION_BREAKPOINT" />
+    <nodeInfo nodeId="3432969378036016210" fileName="Icons.java" startLine="12" startPosition="138" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="METHOD_BREAKPOINT" />
+    <nodeInfo nodeId="3432969378036016219" fileName="Icons.java" startLine="13" startPosition="114" endLine="14" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DISABLED_METHOD_BREAKPOINT" />
+    <nodeInfo nodeId="3432969378036016228" fileName="Icons.java" startLine="14" startPosition="132" endLine="15" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FIELD_BREAKPOINT" />
+    <nodeInfo nodeId="3432969378036016237" fileName="Icons.java" startLine="15" startPosition="112" endLine="16" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DISABLED_FIELD_BREAKPOINT" />
+    <nodeInfo nodeId="3432969378036016246" fileName="Icons.java" startLine="16" startPosition="130" endLine="17" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WATCH" />
+    <nodeInfo nodeId="3432969378036016255" fileName="Icons.java" startLine="17" startPosition="90" endLine="18" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THREAD_RUNNING" />
+    <nodeInfo nodeId="3432969378036016264" fileName="Icons.java" startLine="18" startPosition="108" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THREAD_SUSPENDED" />
+    <nodeInfo nodeId="3432969378036016273" fileName="Icons.java" startLine="19" startPosition="112" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THREAD_AT_BREAKPOINT" />
+    <nodeInfo nodeId="3432969378036016282" fileName="Icons.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Icons#()V" />
+    <scopeInfo nodeId="3432969378036016285" fileName="Icons.java" startLine="22" startPosition="18" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="3432969378036016282" fileName="Icons.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
+    <unitInfo nodeId="3432969378036014082" fileName="Icons.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debug.integration.ui.icons.Icons" />
+  </root>
+</debugInfo>
+

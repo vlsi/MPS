@@ -153,8 +153,8 @@ public class ClassifierTypeUtil {
   }
 
   public static SNode resolveType(SNode type, SNode concrete) {
-    if (SNodeOperations.isInstanceOf(concrete, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
-      return SNodeOperations.copyNode(concrete);
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
+      return SNodeOperations.copyNode(type);
     }
     List<SNode> ptypes = SLinkOperations.getTargets(concrete, "parameter", true);
     List<SNode> vars = SLinkOperations.getTargets(SLinkOperations.getTarget(concrete, "classifier", false), "typeVariableDeclaration", true);

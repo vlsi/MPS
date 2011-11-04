@@ -30,6 +30,9 @@
   <import index="g3z6" modelUID="f:java_stub#fcffe3cf-3ebc-4d3d-989b-2f30533bc904#jetbrains.mps.debugger.java.ui.evaluation(jetbrains.mps.debugger.java.ui.evaluation@java_stub)" version="-1" />
   <import index="dp1x" modelUID="r:84719e1a-99f6-4297-90ba-8ad2a947fa4a(jetbrains.mps.ide.datatransfer)" version="-1" />
   <import index="4c6z" modelUID="f:java_stub#fdb93da0-59ed-4001-b2aa-4fad79ec058e#com.sun.jdi(JDK.Tools/com.sun.jdi@java_stub)" version="-1" />
+  <import index="f12c" modelUID="f:java_stub#fcffe3cf-3ebc-4d3d-989b-2f30533bc904#jetbrains.mps.debugger.java.runtime(jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.runtime@java_stub)" version="-1" />
+  <import index="vjwt" modelUID="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debug.integration.ui.icons)" version="-1" />
+  <import index="qgwr" modelUID="r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
@@ -38,7 +41,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="v5yn" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.runtime.java.programState.proxies(MPS.Workbench/jetbrains.mps.debug.runtime.java.programState.proxies@java_stub)" version="-1" implicit="yes" />
   <import index="g3hj" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.runtime.java.programState.watchables(MPS.Workbench/jetbrains.mps.debug.runtime.java.programState.watchables@java_stub)" version="-1" implicit="yes" />
-  <import index="zju4" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.integration.ui.icons(MPS.Workbench/jetbrains.mps.debug.integration.ui.icons@java_stub)" version="-1" implicit="yes" />
   <import index="1qcs" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem(MPS.Workbench/com.intellij.openapi.actionSystem@java_stub)" version="-1" implicit="yes" />
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" implicit="yes" />
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" implicit="yes" />
@@ -60,7 +62,6 @@
   <import index="s7g4" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation.ui(MPS.Workbench/jetbrains.mps.debug.evaluation.ui@java_stub)" version="-1" implicit="yes" />
   <import index="to5d" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" version="-1" implicit="yes" />
   <import index="yds1" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons(MPS.Workbench/jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons@java_stub)" version="-1" implicit="yes" />
-  <import index="jkhy" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.runtime(MPS.Workbench/jetbrains.mps.debug.runtime@java_stub)" version="-1" implicit="yes" />
   <import index="8iu6" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.project(MPS.Workbench/jetbrains.mps.ide.project@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5849716370568348282">
@@ -339,8 +340,8 @@
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2814952292830089909">
         <property name="name" nameId="tpck.1169194664001" value="session" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2814952292830089911">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jkhy.~DebugSession" resolveInfo="DebugSession" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3432969378035544355">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f12c.~DebugSession" resolveInfo="DebugSession" />
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2814952292830089912">
           <link role="annotation" roleId="tpee.1188208074048" targetNodeId="68ai.~NotNull" resolveInfo="NotNull" />
@@ -567,7 +568,7 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7930787450152615910">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~JavaUiState%dgetStackFrame()%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaStackFrame" resolveInfo="getStackFrame" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~JavaUiStateImpl%dgetStackFrame()%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaStackFrame" resolveInfo="getStackFrame" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7930787450152615911">
@@ -589,7 +590,7 @@
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7930787450152615918">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~JavaUiState%dgetThread()%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaThread" resolveInfo="getThread" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~JavaUiStateImpl%dgetThread()%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaThread" resolveInfo="getThread" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7930787450152615919">
@@ -2069,7 +2070,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8590356478998757181">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~DebugSession%dgetEvaluationProvider()%cjetbrains%dmps%ddebug%dapi%devaluation%dIEvaluationProvider" resolveInfo="getEvaluationProvider" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~DebugSession%dgetEvaluationProvider()%cjetbrains%dmps%ddebug%dapi%devaluation%dIEvaluationProvider" resolveInfo="getEvaluationProvider" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6647443673251176092">
@@ -3194,8 +3195,8 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="4120145653580383644">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTreeNode%dsetIcon(javax%dswing%dIcon)%cvoid" resolveInfo="setIcon" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4120145653580383645">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zju4.~Icons%dWATCH" resolveInfo="WATCH" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zju4.~Icons" resolveInfo="Icons" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="vjwt.3432969378036014082" resolveInfo="Icons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vjwt.3432969378036016246" resolveInfo="WATCH" />
               </node>
             </node>
           </node>
@@ -3326,8 +3327,8 @@
       <property name="name" nameId="tpck.1169194664001" value="myDebugSession" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="7406771907178600394" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7406771907178600395">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jkhy.~DebugSession" resolveInfo="DebugSession" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3432969378035544409">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f12c.~DebugSession" resolveInfo="DebugSession" />
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="7406771907178600399">
@@ -3438,8 +3439,8 @@
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7406771907178600460">
         <property name="name" nameId="tpck.1169194664001" value="session" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7406771907178600461">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jkhy.~DebugSession" resolveInfo="DebugSession" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3432969378035544412">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f12c.~DebugSession" resolveInfo="DebugSession" />
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7406771907178600473">
           <link role="annotation" roleId="tpee.1188208074048" targetNodeId="68ai.~NotNull" resolveInfo="NotNull" />
@@ -3533,7 +3534,7 @@
             <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6647443673251176083">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7406771907178600131">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7406771907178600132">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~DebugSession%dgetEvaluationProvider()%cjetbrains%dmps%ddebug%dapi%devaluation%dIEvaluationProvider" resolveInfo="getEvaluationProvider" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~DebugSession%dgetEvaluationProvider()%cjetbrains%dmps%ddebug%dapi%devaluation%dIEvaluationProvider" resolveInfo="getEvaluationProvider" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6647443673251176082">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7406771907178600393" resolveInfo="myDebugSession" />
@@ -3578,8 +3579,8 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7406771907178600149">
                 <property name="name" nameId="tpck.1169194664001" value="evaluator" />
                 <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7406771907178600150">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4tse.~Evaluator" resolveInfo="Evaluator" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3432969378036242990">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qgwr.4727801710070563175" resolveInfo="Evaluator" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7406771907178600151">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7406771907178600152">
@@ -3603,15 +3604,15 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7406771907178600158">
                 <property name="isFinal" nameId="tpee.1176718929932" value="true" />
                 <property name="name" nameId="tpck.1169194664001" value="eventsProcessor" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7406771907178600159">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jkhy.~DebugVMEventsProcessor" resolveInfo="DebugVMEventsProcessor" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3432969378035544413">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f12c.~DebugVMEventsProcessor" resolveInfo="DebugVMEventsProcessor" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7406771907178600160">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7406771907178600161">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7406771907178600393" resolveInfo="myDebugSession" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7406771907178600162">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~DebugSession%dgetEventsProcessor()%cjetbrains%dmps%ddebug%druntime%dDebugVMEventsProcessor" resolveInfo="getEventsProcessor" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~DebugSession%dgetEventsProcessor()%cjetbrains%dmps%ddebugger%djava%druntime%dDebugVMEventsProcessor" resolveInfo="getEventsProcessor" />
                   </node>
                 </node>
               </node>
@@ -3640,8 +3641,8 @@
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7406771907178600175">
                               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7406771907178600176">
                                 <property name="name" nameId="tpck.1169194664001" value="suspendContext" />
-                                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7406771907178600177">
-                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jkhy.~SuspendContext" resolveInfo="SuspendContext" />
+                                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3432969378035544742">
+                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f12c.~SuspendContext" resolveInfo="SuspendContext" />
                                 </node>
                                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7406771907178600178">
                                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7406771907178600179">
@@ -3649,11 +3650,11 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7406771907178600158" resolveInfo="eventsProcessor" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7406771907178600181">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~DebugVMEventsProcessor%dgetSuspendManager()%cjetbrains%dmps%ddebug%druntime%dSuspendManager" resolveInfo="getSuspendManager" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~DebugVMEventsProcessor%dgetSuspendManager()%cjetbrains%dmps%ddebugger%djava%druntime%dSuspendManager" resolveInfo="getSuspendManager" />
                                     </node>
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7406771907178600182">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~SuspendManager%dgetPausedContext()%cjetbrains%dmps%ddebug%druntime%dSuspendContext" resolveInfo="getPausedContext" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~SuspendManager%dgetPausedContext()%cjetbrains%dmps%ddebugger%djava%druntime%dSuspendContext" resolveInfo="getPausedContext" />
                                   </node>
                                 </node>
                               </node>
@@ -3674,7 +3675,7 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7406771907178600176" resolveInfo="suspendContext" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7406771907178600192">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~SuspendContext%dsetIsEvaluating(boolean)%cvoid" resolveInfo="setIsEvaluating" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~SuspendContext%dsetIsEvaluating(boolean)%cvoid" resolveInfo="setIsEvaluating" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7406771907178600193">
                                         <property name="value" nameId="tpee.1068580123138" value="true" />
                                       </node>
@@ -3692,7 +3693,7 @@
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7406771907178600149" resolveInfo="evaluator" />
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7406771907178600199">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~Evaluator%devaluate()%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="evaluate" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.4727801710070563277" resolveInfo="evaluate" />
                                       </node>
                                     </node>
                                   </node>
@@ -3800,7 +3801,7 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7406771907178600176" resolveInfo="suspendContext" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7406771907178600234">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~SuspendContext%dsetIsEvaluating(boolean)%cvoid" resolveInfo="setIsEvaluating" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~SuspendContext%dsetIsEvaluating(boolean)%cvoid" resolveInfo="setIsEvaluating" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7406771907178600235">
                                         <property name="value" nameId="tpee.1068580123138" value="false" />
                                       </node>
@@ -4346,7 +4347,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="55706870180663545">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~JavaUiState%dgetStackFrame()%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaStackFrame" resolveInfo="getStackFrame" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~JavaUiStateImpl%dgetStackFrame()%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaStackFrame" resolveInfo="getStackFrame" />
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="55706870180663546">
@@ -4368,7 +4369,7 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="55706870180663553">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~JavaUiState%dgetThread()%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaThread" resolveInfo="getThread" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~JavaUiStateImpl%dgetThread()%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaThread" resolveInfo="getThread" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="55706870180663554">
@@ -4819,8 +4820,8 @@
       <property name="name" nameId="tpck.1169194664001" value="mySessionStopDisposer" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4577525712681101295" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4577525712681046233">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jkhy.~SessionStopDisposer" resolveInfo="SessionStopDisposer" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3432969378035544335">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f12c.~SessionStopDisposer" resolveInfo="SessionStopDisposer" />
       </node>
     </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4577525712681046200">
@@ -4867,8 +4868,8 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4577525712681046253">
             <property name="name" nameId="tpck.1169194664001" value="debugSession" />
             <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4577525712681046254">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jkhy.~DebugSession" resolveInfo="DebugSession" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3432969378035544339">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f12c.~DebugSession" resolveInfo="DebugSession" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4577525712681046255">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4577525712681046256">
@@ -4960,8 +4961,8 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="4577525712681046290">
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="4577525712681046291">
                   <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~SessionStopDisposer%d&lt;init&gt;(jetbrains%dmps%ddebug%druntime%dDebugSession)" resolveInfo="SessionStopDisposer" />
-                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="jkhy.~SessionStopDisposer" resolveInfo="SessionStopDisposer" />
+                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="f12c.~SessionStopDisposer" resolveInfo="SessionStopDisposer" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~SessionStopDisposer%d&lt;init&gt;(jetbrains%dmps%ddebugger%djava%druntime%dDebugSession)" resolveInfo="SessionStopDisposer" />
                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4577525712681046292" />
                   <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4577525712681046293">
                     <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -5205,7 +5206,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2915139105446351476">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~DebugSession%dgetEvaluationProvider()%cjetbrains%dmps%ddebug%dapi%devaluation%dIEvaluationProvider" resolveInfo="getEvaluationProvider" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~DebugSession%dgetEvaluationProvider()%cjetbrains%dmps%ddebug%dapi%devaluation%dIEvaluationProvider" resolveInfo="getEvaluationProvider" />
                     </node>
                   </node>
                 </node>
@@ -5596,8 +5597,8 @@
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5600062460044309381">
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="mySessionStopDisposer" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5600062460044309382">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jkhy.~SessionStopDisposer" resolveInfo="SessionStopDisposer" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3432969378035544749">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f12c.~SessionStopDisposer" resolveInfo="SessionStopDisposer" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5600062460044309383" />
     </node>
@@ -5875,8 +5876,8 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="5600062460044309494">
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="5600062460044309495">
                   <property name="name" nameId="tpck.1169194664001" value="" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jkhy.~SessionStopDisposer%d&lt;init&gt;(jetbrains%dmps%ddebug%druntime%dDebugSession)" resolveInfo="SessionStopDisposer" />
-                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="jkhy.~SessionStopDisposer" resolveInfo="SessionStopDisposer" />
+                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="f12c.~SessionStopDisposer" resolveInfo="SessionStopDisposer" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f12c.~SessionStopDisposer%d&lt;init&gt;(jetbrains%dmps%ddebugger%djava%druntime%dDebugSession)" resolveInfo="SessionStopDisposer" />
                   <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5600062460044309496">
                     <property name="name" nameId="tpck.1169194664001" value="doDispose" />
                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5600062460044309497" />

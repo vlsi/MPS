@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.codeStyle.CodeStyleSettings;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -56,24 +56,24 @@ public class LocalVariableDeclaration_Behavior {
   }
 
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
-    CodeStyleSettings settings = CodeStyleSettings.getInstance(ProjectHelper.toIdeaProject(project));
+    CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
-    return (settings.getLocalVariableSettings().o1 == null ?
+    return (settings.getLocalVariablePrefix() == null ?
       "" :
-      settings.getLocalVariableSettings().o1
+      settings.getLocalVariablePrefix()
     );
   }
 
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
-    CodeStyleSettings settings = CodeStyleSettings.getInstance(ProjectHelper.toIdeaProject(project));
+    CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
-    return (settings.getLocalVariableSettings().o2 == null ?
+    return (settings.getLocalVariableSuffix() == null ?
       "" :
-      settings.getLocalVariableSettings().o2
+      settings.getLocalVariableSuffix()
     );
   }
 

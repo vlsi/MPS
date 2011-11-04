@@ -8,7 +8,7 @@ import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debug.runtime.DebugSession;
+import jetbrains.mps.debugger.java.runtime.DebugSession;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import java.util.List;
 import jetbrains.mps.smodel.SNodePointer;

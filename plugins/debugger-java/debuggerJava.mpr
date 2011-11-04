@@ -30,8 +30,8 @@
       <modulePath path="${mps_home}/core/debug/languages/customViewers/customViewers.mpl" />
       <modulePath path="${mps_home}/core/debug/languages/evaluation/evaluation.mpl" folder="evaluation" />
       <modulePath path="${mps_home}/core/debug/languages/privateMembers/privateMembers.mpl" folder="evaluation" />
-      <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" folder="evaluation" />
-      <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.tests/jetbrains.mps.debug.tests.msd" folder="evaluation" />
+      <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" />
+      <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.tests/jetbrains.mps.debug.tests.msd" />
       <modulePath path="${mps_home}/core/generator/solutions/traceInfo/jetbrains.mps.traceInfo.test.msd" />
       <modulePath path="${mps_home}/core/generator/solutions/traceInfo/util/cache.msd" folder="trace" />
       <modulePath path="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="trace" />

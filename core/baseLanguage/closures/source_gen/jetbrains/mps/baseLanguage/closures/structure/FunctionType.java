@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import java.util.Iterator;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -63,19 +62,19 @@ public class FunctionType extends Type {
     return this.getChildCount(FunctionType.THROWS_TYPE);
   }
 
-  public Iterator<ClassifierType> throwsTypes() {
-    return this.children(ClassifierType.class, FunctionType.THROWS_TYPE);
+  public Iterator<Type> throwsTypes() {
+    return this.children(Type.class, FunctionType.THROWS_TYPE);
   }
 
-  public List<ClassifierType> getThrowsTypes() {
-    return this.getChildren(ClassifierType.class, FunctionType.THROWS_TYPE);
+  public List<Type> getThrowsTypes() {
+    return this.getChildren(Type.class, FunctionType.THROWS_TYPE);
   }
 
-  public void addThrowsType(ClassifierType node) {
+  public void addThrowsType(Type node) {
     this.addChild(FunctionType.THROWS_TYPE, node);
   }
 
-  public void insertThrowsType(ClassifierType prev, ClassifierType node) {
+  public void insertThrowsType(Type prev, Type node) {
     this.insertChild(prev, FunctionType.THROWS_TYPE, node);
   }
 

@@ -42,6 +42,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     MethodParameter param = ListSequence.fromList(this.myParameters).getElement(a);
     ListSequence.fromList(this.myParameters).setElement(a, ListSequence.fromList(this.myParameters).getElement(b));
     ListSequence.fromList(this.myParameters).setElement(b, param);
+    fireTableRowsUpdated(a, b);
   }
 
   public Object getValueAt(int row, int column) {

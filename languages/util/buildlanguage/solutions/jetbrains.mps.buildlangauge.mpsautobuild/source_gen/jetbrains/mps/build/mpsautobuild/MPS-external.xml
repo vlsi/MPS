@@ -155,6 +155,9 @@
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
       <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
+      <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
+    </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.kernel" />
     <antcall target="MPS-languages.pack.jetbrains.mps.runtime" />
@@ -170,6 +173,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.make" />
     <antcall target="MPS-languages.pack.jetbrains.mps.smodel.resources" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.search" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.util" />
     <antcall target="MPS-languages.pack.collections.runtime" />
     <antcall target="MPS-languages.pack.closures.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime" />

@@ -6,10 +6,10 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.SessionStopDisposer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.EvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SessionStopDisposer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.ui.evaluation.EvaluationPanel" />
     <classNode dependClassName="jetbrains.mps.debugger.java.ui.evaluation.EvaluationUi" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
@@ -49,8 +49,8 @@
     <classNode dependClassName="javax.swing.JTabbedPane" />
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
@@ -131,10 +131,10 @@
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugVMEventsProcessor" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.SuspendContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.ui.evaluation.EvaluationTree" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -152,9 +152,9 @@
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.SessionStopDisposer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.EvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SessionStopDisposer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.ui.evaluation.EvaluationTreeActions" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.ui.evaluation.EvaluationUi" />
   </dependency>

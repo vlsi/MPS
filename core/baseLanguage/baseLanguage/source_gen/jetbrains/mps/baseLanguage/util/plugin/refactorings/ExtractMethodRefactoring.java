@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
+import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.behavior.Statement_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.HashMap;
@@ -82,6 +83,9 @@ public abstract class ExtractMethodRefactoring {
       myMethod = this.myStaticContainer.createNewMethod();
     } else {
       IExtractMethodRefactoringProcessor processor = this.myAnalyzer.getExtractMethodReafactoringProcessor();
+      if (processor instanceof AbstractExtractMethodRefactoringProcessor) {
+        ((AbstractExtractMethodRefactoringProcessor) processor).setStatic(this.myParameters.isStatic());
+      }
       myMethod = processor.createNewMethod();
     }
     this.fillBaseMethodDeclaration(myMethod, returnType, params, body);
@@ -249,6 +253,14 @@ public abstract class ExtractMethodRefactoring {
   }
 
   public abstract SNode getMethodType();
+
+  public boolean canBeStatic() {
+    return this.myAnalyzer.canBeStatic();
+  }
+
+  public boolean shouldBeStatic() {
+    return this.myAnalyzer.shouldBeStatic();
+  }
 
   public static class QuotationClass_jq3ovj_a0a0a0a0a2a6 {
     public QuotationClass_jq3ovj_a0a0a0a0a2a6() {

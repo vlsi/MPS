@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.ide.codeStyle;
 
-import jetbrains.mps.codeStyle.CodeStyleSettings;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
 
@@ -122,28 +121,40 @@ public class CodeStylePreferencesPage {
   }
 
   public void commit() {
-    mySettings.setFieldSettings(myFieldItem.getSettings());
-    mySettings.setStaticFieldSettings(myStaticField.getSettings());
-    mySettings.setParameterSettings(myParameter.getSettings());
-    mySettings.setLocalVariableSettings(myLocalVariable.getSettings());
+    mySettings.setFieldPrefix(myFieldItem.getPrefix());
+    mySettings.setFieldSuffix(myFieldItem.getSuffix());
+    mySettings.setStaticFieldPrefix(myStaticField.getPrefix());
+    mySettings.setStaticFieldSuffix(myStaticField.getSuffix());
+    mySettings.setParameterPrefix(myParameter.getPrefix());
+    mySettings.setParameterSuffix(myParameter.getSuffix());
+    mySettings.setLocalVariablePrefix(myLocalVariable.getPrefix());
+    mySettings.setLocalVariableSuffix(myLocalVariable.getSuffix());
     mySettings.setLineSeparator(getSelectedLineSeparator());
   }
 
   public boolean isModified() {
-    return !(mySettings.getFieldSettings().equals(myFieldItem.getSettings()) &&
-      mySettings.getStaticFieldSettings().equals(myStaticField.getSettings()) &&
-      mySettings.getParameterSettings().equals(myParameter.getSettings()) &&
-      mySettings.getLocalVariableSettings().equals(myLocalVariable.getSettings()) &&
-      ObjectUtils.equals(mySettings.getLineSeparatorSetting(), getSelectedLineSeparator()));
+    return !(equals(mySettings.getFieldPrefix(), mySettings.getFieldSuffix(), myFieldItem) &&
+      equals(mySettings.getStaticFieldPrefix(), mySettings.getStaticFieldSuffix(), myStaticField) &&
+      equals(mySettings.getParameterPrefix(), mySettings.getParameterSuffix(), myParameter) &&
+      equals(mySettings.getLocalVariablePrefix(), mySettings.getLocalVariableSuffix(), myLocalVariable) &&
+      equals(mySettings.getLineSeparator(), getSelectedLineSeparator()));
+  }
+
+  private boolean equals(String prefix, String suffix, CodeStyleItem item) {
+    return equals(prefix, item.getPrefix()) && equals(suffix, item.getSuffix());
+  }
+
+  private boolean equals(String s1, String s2) {
+    return s1 == null ? s2 == null : s1.equals(s2);
   }
 
   public void update() {
-    myFieldItem.setSettings(mySettings.getFieldSettings());
-    myStaticField.setSettings(mySettings.getStaticFieldSettings());
-    myParameter.setSettings(mySettings.getParameterSettings());
-    myLocalVariable.setSettings(mySettings.getLocalVariableSettings());
+    myFieldItem.setSettings(mySettings.getFieldPrefix(), mySettings.getFieldSuffix());
+    myStaticField.setSettings(mySettings.getStaticFieldPrefix(), mySettings.getStaticFieldSuffix());
+    myParameter.setSettings(mySettings.getParameterPrefix(), mySettings.getParameterSuffix());
+    myLocalVariable.setSettings(mySettings.getLocalVariablePrefix(), mySettings.getLocalVariableSuffix());
     for (LineSeparatorOption option : LineSeparatorOption.values()) {
-      if (ObjectUtils.equals(option.getSetting(), mySettings.getLineSeparatorSetting())) {
+      if (ObjectUtils.equals(option.getSetting(), mySettings.getLineSeparator())) {
         myLineSeparatorComboBox.setSelectedItem(option);
       }
     }
@@ -162,13 +173,17 @@ public class CodeStylePreferencesPage {
       addComponent(owner, mySuffix, 2, index);
     }
 
-    Pair<String, String> getSettings() {
-      return new Pair<String, String>(myPrefix.getText(), mySuffix.getText());
+    String getPrefix() {
+      return myPrefix.getText();
     }
 
-    void setSettings(Pair<String, String> settings) {
-      myPrefix.setText(settings.o1);
-      mySuffix.setText(settings.o2);
+    String getSuffix() {
+      return mySuffix.getText();
+    }
+
+    void setSettings(String prefix, String suffix) {
+      myPrefix.setText(prefix);
+      mySuffix.setText(suffix);
     }
 
     private void addComponent(JComponent owner, JComponent child, int x, int y) {

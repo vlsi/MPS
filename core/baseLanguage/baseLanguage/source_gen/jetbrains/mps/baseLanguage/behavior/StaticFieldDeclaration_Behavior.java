@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.codeStyle.CodeStyleSettings;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
+import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -56,24 +56,24 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
-    CodeStyleSettings settings = CodeStyleSettings.getInstance(ProjectHelper.toIdeaProject(project));
+    CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
-    return (settings.getStaticFieldSettings().o2 == null ?
+    return (settings.getStaticFieldSuffix() == null ?
       "" :
-      settings.getStaticFieldSettings().o2
+      settings.getStaticFieldSuffix()
     );
   }
 
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
-    CodeStyleSettings settings = CodeStyleSettings.getInstance(ProjectHelper.toIdeaProject(project));
+    CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
-    return (settings.getStaticFieldSettings().o1 == null ?
+    return (settings.getStaticFieldPrefix() == null ?
       "" :
-      settings.getStaticFieldSettings().o1
+      settings.getStaticFieldPrefix()
     );
   }
 

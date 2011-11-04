@@ -92,8 +92,13 @@ public class ConceptBehavior_Behavior {
 
       @Override
       public SNode createNewMethod() {
-        SNode container = this.getContainerMethod();
-        return SConceptOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(container)), null);
+        // <node> 
+        // <node> 
+        if (isStatic) {
+          return SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", null);
+        } else {
+          return SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", null);
+        }
       }
     };
     return result;
