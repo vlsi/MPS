@@ -9,49 +9,51 @@
     <nodeInfo nodeId="4707157387247360760" fileName="ModelFileProcessor.java" startLine="40" startPosition="40" endLine="41" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4707157387247360766" fileName="ModelFileProcessor.java" startLine="41" startPosition="54" endLine="42" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4707157387247360782" fileName="ModelFileProcessor.java" startLine="42" startPosition="105" endLine="43" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247360795" fileName="ModelFileProcessor.java" startLine="47" startPosition="79" endLine="48" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247360804" fileName="ModelFileProcessor.java" startLine="48" startPosition="74" endLine="49" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247360816" fileName="ModelFileProcessor.java" startLine="50" startPosition="24" endLine="51" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247360826" fileName="ModelFileProcessor.java" startLine="52" startPosition="26" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247360827" fileName="ModelFileProcessor.java" startLine="54" startPosition="7" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247360841" fileName="ModelFileProcessor.java" startLine="59" startPosition="70" endLine="60" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247360848" fileName="ModelFileProcessor.java" startLine="60" startPosition="63" endLine="61" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2896881808974525142" fileName="ModelFileProcessor.java" startLine="62" startPosition="24" endLine="63" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2896881808974525152" fileName="ModelFileProcessor.java" startLine="64" startPosition="5" endLine="65" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2896881808974525168" fileName="ModelFileProcessor.java" startLine="66" startPosition="25" endLine="67" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7042922670433004655" fileName="ModelFileProcessor.java" startLine="68" startPosition="5" endLine="69" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247360658" fileName="ModelFileProcessor.java" startLine="72" startPosition="50" endLine="73" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1431483834080208900" fileName="ModelFileProcessor.java" startLine="47" startPosition="79" endLine="48" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247360795" fileName="ModelFileProcessor.java" startLine="48" startPosition="104" endLine="49" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247360804" fileName="ModelFileProcessor.java" startLine="49" startPosition="74" endLine="50" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247360816" fileName="ModelFileProcessor.java" startLine="51" startPosition="24" endLine="52" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247360826" fileName="ModelFileProcessor.java" startLine="53" startPosition="26" endLine="54" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247360827" fileName="ModelFileProcessor.java" startLine="55" startPosition="7" endLine="56" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1431483834080208910" fileName="ModelFileProcessor.java" startLine="60" startPosition="70" endLine="61" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247360841" fileName="ModelFileProcessor.java" startLine="61" startPosition="93" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247360848" fileName="ModelFileProcessor.java" startLine="62" startPosition="63" endLine="63" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2896881808974525142" fileName="ModelFileProcessor.java" startLine="64" startPosition="24" endLine="65" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2896881808974525152" fileName="ModelFileProcessor.java" startLine="66" startPosition="5" endLine="67" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2896881808974525168" fileName="ModelFileProcessor.java" startLine="68" startPosition="25" endLine="69" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7042922670433004655" fileName="ModelFileProcessor.java" startLine="70" startPosition="5" endLine="71" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247360658" fileName="ModelFileProcessor.java" startLine="74" startPosition="50" endLine="75" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247360651" fileName="ModelFileProcessor.java" startLine="22" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFileProcessor#()V" />
     <nodeInfo nodeId="4707157387247360668" fileName="ModelFileProcessor.java" startLine="27" startPosition="87" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4707157387247360821" fileName="ModelFileProcessor.java" startLine="51" startPosition="52" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7042922670433004650" fileName="ModelFileProcessor.java" startLine="61" startPosition="91" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2896881808974525159" fileName="ModelFileProcessor.java" startLine="65" startPosition="39" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4707157387247360654" fileName="ModelFileProcessor.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/watching/ModelFileProcessor;" />
+    <nodeInfo nodeId="4707157387247360821" fileName="ModelFileProcessor.java" startLine="52" startPosition="52" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7042922670433004650" fileName="ModelFileProcessor.java" startLine="63" startPosition="91" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2896881808974525159" fileName="ModelFileProcessor.java" startLine="67" startPosition="39" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247360654" fileName="ModelFileProcessor.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/watching/ModelFileProcessor;" />
     <nodeInfo nodeId="4707157387247360735" fileName="ModelFileProcessor.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCopy#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/watching/ReloadSession;)V" />
     <nodeInfo nodeId="4707157387247360660" fileName="ModelFileProcessor.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processContentChanged#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="4707157387247360811" fileName="ModelFileProcessor.java" startLine="49" startPosition="77" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247360811" fileName="ModelFileProcessor.java" startLine="50" startPosition="77" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4707157387247360748" fileName="ModelFileProcessor.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processMove#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="4707157387247360787" fileName="ModelFileProcessor.java" startLine="45" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCreate#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="4707157387247360833" fileName="ModelFileProcessor.java" startLine="58" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileDeleted#(Ljava/lang/String;Ljetbrains/mps/watching/ReloadSession;)V" />
+    <nodeInfo nodeId="4707157387247360787" fileName="ModelFileProcessor.java" startLine="45" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCreate#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/watching/ReloadSession;)V" />
+    <nodeInfo nodeId="4707157387247360833" fileName="ModelFileProcessor.java" startLine="59" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileDeleted#(Ljava/lang/String;Ljetbrains/mps/watching/ReloadSession;)V" />
     <scopeInfo nodeId="4707157387247360653" fileName="ModelFileProcessor.java" startLine="23" startPosition="36" endLine="23" endPosition="36" />
     <scopeInfo nodeId="4707157387247360678" fileName="ModelFileProcessor.java" startLine="28" startPosition="53" endLine="29" endPosition="106" />
     <scopeInfo nodeId="4707157387247360742" fileName="ModelFileProcessor.java" startLine="34" startPosition="77" endLine="35" endPosition="40" />
-    <scopeInfo nodeId="4707157387247360825" fileName="ModelFileProcessor.java" startLine="52" startPosition="26" endLine="53" endPosition="15" />
-    <scopeInfo nodeId="2896881808974525140" fileName="ModelFileProcessor.java" startLine="62" startPosition="24" endLine="63" endPosition="13" />
-    <scopeInfo nodeId="2896881808974525160" fileName="ModelFileProcessor.java" startLine="66" startPosition="25" endLine="67" endPosition="13" />
-    <scopeInfo nodeId="4707157387247360657" fileName="ModelFileProcessor.java" startLine="72" startPosition="50" endLine="73" endPosition="20" />
+    <scopeInfo nodeId="4707157387247360825" fileName="ModelFileProcessor.java" startLine="53" startPosition="26" endLine="54" endPosition="15" />
+    <scopeInfo nodeId="2896881808974525140" fileName="ModelFileProcessor.java" startLine="64" startPosition="24" endLine="65" endPosition="13" />
+    <scopeInfo nodeId="2896881808974525160" fileName="ModelFileProcessor.java" startLine="68" startPosition="25" endLine="69" endPosition="13" />
+    <scopeInfo nodeId="4707157387247360657" fileName="ModelFileProcessor.java" startLine="74" startPosition="50" endLine="75" endPosition="20" />
     <scopeInfo nodeId="4707157387247360651" fileName="ModelFileProcessor.java" startLine="22" startPosition="0" endLine="24" endPosition="3" />
     <scopeInfo nodeId="4707157387247360667" fileName="ModelFileProcessor.java" startLine="27" startPosition="87" endLine="30" endPosition="5" />
     <scopeInfo nodeId="4707157387247360755" fileName="ModelFileProcessor.java" startLine="39" startPosition="77" endLine="43" endPosition="40">
       <varInfo nodeId="4707157387247360761" varName="moveEvent" />
       <varInfo nodeId="4707157387247360767" varName="oldPath" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247360654" fileName="ModelFileProcessor.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="4707157387247360654" fileName="ModelFileProcessor.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="4707157387247360735" fileName="ModelFileProcessor.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="4707157387247360738" varName="event" />
       <varInfo nodeId="4707157387247360740" varName="reloadSession" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247360815" fileName="ModelFileProcessor.java" startLine="50" startPosition="24" endLine="55" endPosition="43">
+    <scopeInfo nodeId="4707157387247360815" fileName="ModelFileProcessor.java" startLine="51" startPosition="24" endLine="56" endPosition="43">
       <varInfo nodeId="4707157387247360817" varName="vfile" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247360660" fileName="ModelFileProcessor.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
@@ -62,24 +64,24 @@
       <varInfo nodeId="4707157387247360751" varName="event" />
       <varInfo nodeId="4707157387247360753" varName="reloadSession" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247360794" fileName="ModelFileProcessor.java" startLine="47" startPosition="79" endLine="56" endPosition="5">
+    <scopeInfo nodeId="4707157387247360794" fileName="ModelFileProcessor.java" startLine="47" startPosition="79" endLine="57" endPosition="5">
       <varInfo nodeId="4707157387247360796" varName="ifile" />
       <varInfo nodeId="4707157387247360805" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247360840" fileName="ModelFileProcessor.java" startLine="59" startPosition="70" endLine="69" endPosition="43">
+    <scopeInfo nodeId="4707157387247360840" fileName="ModelFileProcessor.java" startLine="60" startPosition="70" endLine="71" endPosition="43">
       <varInfo nodeId="4707157387247360842" varName="ifile" />
       <varInfo nodeId="4707157387247360849" varName="model" />
       <varInfo nodeId="2896881808974525153" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247360787" fileName="ModelFileProcessor.java" startLine="45" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="4707157387247360787" fileName="ModelFileProcessor.java" startLine="45" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="4707157387247360790" varName="event" />
       <varInfo nodeId="4707157387247360792" varName="reloadSession" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247360833" fileName="ModelFileProcessor.java" startLine="58" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="4707157387247360833" fileName="ModelFileProcessor.java" startLine="59" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="4707157387247360836" varName="path" />
       <varInfo nodeId="4707157387247360838" varName="reloadSession" />
     </scopeInfo>
-    <unitInfo nodeId="4707157387247360639" fileName="ModelFileProcessor.java" startLine="19" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.watching.ModelFileProcessor" />
+    <unitInfo nodeId="4707157387247360639" fileName="ModelFileProcessor.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.watching.ModelFileProcessor" />
   </root>
   <root nodeId="4707157387247360865">
     <nodeInfo nodeId="4707157387247360867" fileName="ModuleFileProcessor.java" startLine="14" startPosition="62" endLine="15" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
