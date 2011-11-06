@@ -15,32 +15,48 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
-import com.intellij.openapi.wm.ToolWindowId;
-import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
-import jetbrains.mps.ide.findusages.INavigateableTool;
-import jetbrains.mps.ide.findusages.INavigator;
-import jetbrains.mps.ide.findusages.UsagesViewTracker;
-import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
+import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
+import jetbrains.mps.ide.blame.dialog.BlameDialog;
+import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
+import jetbrains.mps.ide.blame.perform.Response;
+import jetbrains.mps.ide.messages.MessageList.MessageListState;
+import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
-import java.util.*;
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import java.awt.datatransfer.StringSelection;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @State(
   name = "MessagesViewTool",
@@ -51,7 +67,7 @@ import java.util.*;
     )
   }
 )
-public class MessagesViewTool implements ProjectComponent, PersistentStateComponent<MyState>, INavigateableTool {
+public class MessagesViewTool implements ProjectComponent, PersistentStateComponent<MessageListState> {
   /*package*/ static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final String DEFAULT_LIST = "DEFAULT_LIST";
 
@@ -79,11 +95,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public void clear() {
-     getDefaultList().clear();
-  }
-
-  public void add(final IMessage message) {
-     getDefaultList().add(message);
+    getDefaultList().clear();
   }
 
   public void clear(String listName) {
@@ -91,6 +103,10 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     if (list != null) {
       list.clear();
     }
+  }
+
+  public void add(final IMessage message) {
+    getDefaultList().add(message);
   }
 
   public void add(final IMessage message, String listName) {
@@ -120,40 +136,27 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   public void projectOpened() {
     myLoggingHandler = new MessageViewLoggingHandler(this);
     Logger.addLoggingHandler(myLoggingHandler);
-    UsagesViewTracker.register(this);
   }
 
   public void projectClosed() {
-    UsagesViewTracker.unregister(this);
     Logger.removeLoggingHandler(myLoggingHandler);
   }
 
-  public MyState getState() {
+  public MessageListState getState() {
     return getDefaultList().getState();
   }
 
-  public void loadState(MyState state) {
+  public void loadState(MessageListState state) {
     getDefaultList().loadState(state);
-  }
-
-  public ToolWindow getToolWindow() {
-    return ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW);
   }
 
   public MessageView getMessagesService() {
     return SERVICE.getInstance(myProject);
   }
 
-  public INavigator getCurrentNavigateableView() {
-    return getSelectedList().createNavigator();
-  }
-
-  /** What's this? */
-  public int getPriority() {
-    return 1;
-  }
-
-  /** What's this? */
+  /**
+   * What's this?
+   */
   public void resetAutoscrollOption() {
     getDefaultList().resetAutoscrollOption();
   }
@@ -171,13 +174,13 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     if (!myMessageLists.containsKey(name)) {
       myMessageLists.put(name, lists);
     }
-    for (int i=lists.size()-1; i>=0; --i) {
+    for (int i = lists.size() - 1; i >= 0; --i) {
       MessageList messageList = lists.get(i);
       ContentManager contentManager = null;
       try {
-      contentManager = getMessagesService().getContentManager();
+        contentManager = getMessagesService().getContentManager();
+      } catch (NullPointerException dumb) {
       }
-      catch (NullPointerException dumb) {}
       Content content = contentManager != null ? contentManager.getContent(messageList.getComponent()) : null;
       if (content == null || !content.isPinned()) {
         return messageList;
@@ -215,12 +218,117 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     return getSingletonList(DEFAULT_LIST);
   }
 
-  private MessageList getSelectedList () {
+  private MessageList getSelectedList() {
     Content selectedContent = getMessagesService().getContentManager().getSelectedContent();
     return myContents.containsKey(selectedContent) ? myContents.get(selectedContent) : getDefaultList();
   }
 
-  private class DefaultMessageList extends MessageList {
+  private abstract class MessageListWithActions extends MessageList {
+    protected MessageListWithActions(Project project) {
+      super(project);
+    }
+
+    @Override
+    protected void populateActions(JList list, DefaultActionGroup group) {
+      if (list.getSelectedIndices().length >= 1) {
+        final Object[] messages = list.getSelectedValues();
+        boolean containsError = false;
+        for (Object message : messages) {
+          if (((Message) message).getKind() == MessageKind.ERROR) {
+            containsError = true;
+            break;
+          }
+        }
+        if (containsError) {
+          group.addSeparator();
+          group.add(new BaseAction(messages.length > 1 ? "Submit as One Issue" : "Submit to Issue Tracker") {
+            {
+              setExecuteOutsideCommand(true);
+            }
+
+            protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+              submitToTracker(messages);
+            }
+          });
+        }
+      }
+      if (list.getSelectedIndices().length == 1) {
+        Throwable exc = null;
+        for (Object message : list.getSelectedValues()) {
+          exc = ((Message) message).getException();
+        }
+        if (exc != null) {
+          final Throwable toShow = exc;
+          group.add(new BaseAction("Show Exception") {
+            {
+              setExecuteOutsideCommand(true);
+            }
+
+            protected void doExecute(AnActionEvent e, Map<String, Object> params) {
+              showException(toShow);
+            }
+          });
+        }
+      }
+    }
+
+    private void submitToTracker(Object[] msgs) {
+      JFrame frame = WindowManager.getInstance().getFrame(getProject());
+      BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(getProject(), frame);
+      StringBuilder description = new StringBuilder();
+      boolean first = true;
+      for (Object msg : msgs) {
+        if (!(msg instanceof Message)) continue;
+        Message message = (Message) msg;
+        if (first) {
+          dialog.setIssueTitle(message.getText());
+          first = false;
+        } else {
+          description.append(message.getText()).append('\n');
+        }
+        dialog.addEx(message.getException());
+      }
+      dialog.setDescription(description.toString());
+      dialog.showDialog();
+
+      if (!dialog.isCancelled()) {
+        Response response = dialog.getResult();
+        String message = response.getMessage();
+        if (response.isSuccess()) {
+          JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+          JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
+          LOG.error("Submit failed: " + response.getMessage(), response.getThrowable());
+        }
+      }
+    }
+
+    @Override
+    protected void openCurrentMessageIfPossible() {
+      final Message selectedMessage = (Message) myList.getSelectedValue();
+      if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
+
+      /* temp hack: write action instead of read, TODO remove lock*/
+      final Project project = getProject();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          NavigationManager.getInstance().navigateTo(project, selectedMessage.getHintObject(), true, true);
+        }
+      });
+    }
+
+    private void showException(Throwable toShow) {
+      JFrame frame = WindowManager.getInstance().getFrame(getProject());
+      StringWriter writer = new StringWriter();
+      toShow.printStackTrace(new PrintWriter(writer));
+      StringSelection contents = new StringSelection(writer.toString());
+      CopyPasteManagerEx.getInstanceEx().setContents(contents);
+      AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
+      dialog.showDialog();
+    }
+  }
+
+  private class DefaultMessageList extends MessageListWithActions {
 
     public DefaultMessageList(Project project) {
       super(project);
@@ -228,14 +336,14 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     @Override
     public void createContent() {
-      if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+      if (MPSCore.getInstance().isTestMode()) return;
 
       final MessageView service = getMessagesService();
       service.runWhenInitialized(new Runnable() {
         public void run() {
           initUI();
           Content content = service.getContentManager().getFactory().createContent(getComponent(), "Messages", true);
-          myContents.put (content, DefaultMessageList.this);
+          myContents.put(content, DefaultMessageList.this);
 
           content.setCloseable(false);
           content.setPinned(false);
@@ -264,7 +372,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
   }
 
-  private class AuxMessageList extends MessageList {
+  private class AuxMessageList extends MessageListWithActions {
 
     private String myName;
 
@@ -273,13 +381,13 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
       myName = name;
     }
 
-    public String getName () {
+    public String getName() {
       return myName;
     }
 
     @Override
     public void createContent() {
-      if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+      if (MPSCore.getInstance().isTestMode()) return;
 
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
@@ -323,51 +431,11 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
         public void run() {
           Content content = service.getContentManager().getContent(getComponent());
           if (content != null) {
-            content.setDisplayName((name !=null && name.length()>0) ? myName + ": " + name : myName);
+            content.setDisplayName((name != null && name.length() > 0) ? myName + ": " + name : myName);
           }
         }
       });
 
-    }
-  }
-
-
-  public static class MyState {
-    private boolean myWarnings;
-    private boolean myInfo;
-    private boolean myAutoscrollToSource;
-
-    public MyState() {
-    }
-
-    public MyState(boolean warnings, boolean info, boolean autoscrollToSource) {
-      myWarnings = warnings;
-      myInfo = info;
-      myAutoscrollToSource = autoscrollToSource;
-    }
-
-    public boolean isWarnings() {
-      return myWarnings;
-    }
-
-    public void setWarnings(boolean warnings) {
-      myWarnings = warnings;
-    }
-
-    public boolean isInfo() {
-      return myInfo;
-    }
-
-    public void setInfo(boolean info) {
-      myInfo = info;
-    }
-
-    public boolean isAutoscrollToSource() {
-      return myAutoscrollToSource;
-    }
-
-    public void setAutoscrollToSource(boolean autoscrollToSource) {
-      myAutoscrollToSource = autoscrollToSource;
     }
   }
 }

@@ -25,11 +25,8 @@ import java.awt.Color;
 import java.awt.Component;
 
 /**
- * Created by IntelliJ IDEA.
  * User: Alexander Shatalin
  * Date: 1/24/11
- * Time: 3:00 PM
- * To change this template use File | Settings | File Templates.
  */
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
   @Override

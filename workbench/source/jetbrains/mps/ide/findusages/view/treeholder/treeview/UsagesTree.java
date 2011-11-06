@@ -31,20 +31,21 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNode
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
@@ -244,17 +245,6 @@ public class UsagesTree extends MPSTree {
     myResultPathProvider = pathProvider;
     if (myIsAdjusting == 0) {
       rebuildLater();
-    }
-  }
-
-  public void expandResults() {
-    expandAll(getResultsNode());
-  }
-
-  public void collapseResults() {
-    int i;
-    for (i = 0; i < getResultsNode().getChildCount(); i++) {
-      collapseAll((UsagesTreeNode) getResultsNode().getChildAt(i));
     }
   }
 
@@ -673,23 +663,26 @@ public class UsagesTree extends MPSTree {
   }
 
   public void navigateToNode(final SNode node, boolean focus) {
-    ModuleContext context = ModuleContext.create(node, ProjectHelper.toMPSProject(myProject));
-    boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        return !node.isRoot();
-      }
-    });
-    myProject.getComponent(MPSEditorOpener.class).openNode(node, context, focus, select);
+    ModelAccess.assertLegalRead();
+
+    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    if (modelDescriptor == null) return;
+
+    IModule module = modelDescriptor.getModule();
+    if (module == null) return;
+
+    ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(myProject));
+    NavigationSupport.getInstance().openNode(context, node, focus, !node.isRoot());
   }
 
   private void navigateInTree(Object o, boolean focus) {
-    ProjectPane projectPane = ProjectPane.getInstance(myProject);
+    ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
     if (o instanceof SNode) {
-      projectPane.selectNode((SNode) o, focus);
+      NavigationSupport.getInstance().selectInTree(context, (SNode) o, focus);
     } else if (o instanceof SModel) {
-      projectPane.selectModel(((SModel) o).getModelDescriptor(), focus);
+      NavigationSupport.getInstance().selectInTree(context, ((SModel) o).getModelDescriptor(), focus);
     } else if (o instanceof IModule) {
-      projectPane.selectModule((IModule) o, focus);
+      NavigationSupport.getInstance().selectInTree(context, (IModule) o, focus);
     } else {
       throw new IllegalArgumentException();
     }

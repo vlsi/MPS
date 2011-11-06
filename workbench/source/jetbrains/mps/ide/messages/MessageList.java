@@ -17,34 +17,28 @@ package jetbrains.mps.ide.messages;
 
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.CopyPasteManagerEx;
+import com.intellij.ide.OccurenceNavigator;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.openapi.wm.WindowManager;
+import com.intellij.pom.Navigatable;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
-import jetbrains.mps.ide.blame.dialog.BlameDialog;
-import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
-import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.ide.findusages.INavigator;
-import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
-import jetbrains.mps.ide.messages.navigation.NavigationManager;
+import com.intellij.usageView.UsageViewBundle;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -53,21 +47,15 @@ import java.awt.Cursor;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.*;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static jetbrains.mps.ide.messages.MessagesViewTool.LOG;
-
 /**
- * Created by IntelliJ IDEA.
  * User: fyodor
  * Date: 4/21/11
- * Time: 12:33 PM
- * To change this template use File | Settings | File Templates.
  */
 abstract class MessageList implements IMessageList {
+
   static final int MAX_SIZE = 10000;
 
   private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", Icons.WARNING_ICON) {
@@ -92,26 +80,22 @@ abstract class MessageList implements IMessageList {
   private int myErrors;
   private int myHintObjects;
 
-  private FastListModel myModel = new FastListModel(MAX_SIZE);
-  private JPanel myComponent = new JPanel();
-  private JList myList = new JBList(myModel);
+  protected final FastListModel myModel = new FastListModel(MAX_SIZE);
+  private JPanel myComponent = new RootPanel();
+  protected final JList myList = new JBList(myModel);
   private ActionToolbar myToolbar;
   private AtomicInteger myMessagesInProgress = new AtomicInteger();
   private MessageToolSearchPanel mySearchPanel = null;
   private Project myProject;
 
-  public MessageList(Project project) {
+  protected MessageList(Project project) {
     this.myProject = project;
   }
 
-  public abstract void createContent();
-
-  protected abstract boolean isDisposed();
-
   public void show(boolean setActive) {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
-    ToolWindow window = getToolWindow();
+    ToolWindow window = ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW);
     if (!window.isAvailable()) window.setAvailable(true, null);
     if (!window.isVisible()) window.show(null);
     if (setActive) window.activate(null);
@@ -121,7 +105,7 @@ abstract class MessageList implements IMessageList {
   }
 
   public void clear() {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -142,7 +126,7 @@ abstract class MessageList implements IMessageList {
   }
 
   public void add(final IMessage message) {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
     myMessagesInProgress.incrementAndGet();
 
@@ -209,35 +193,6 @@ abstract class MessageList implements IMessageList {
     return myComponent;
   }
 
-  public INavigator createNavigator() {
-    return new INavigator() {
-      public void goToNext() {
-        int i = Math.max(0, myList.getSelectedIndex() + 1);
-
-        for (; i < myModel.getSize(); i++) {
-          if (tryNavigate(i)) return;
-        }
-      }
-
-      public void goToPrevious() {
-        int i = Math.min(myModel.getSize() - 1, myList.getSelectedIndex() - 1);
-
-        for (; i >= 0; i--) {
-          if (tryNavigate(i)) return;
-        }
-      }
-
-      public boolean tryNavigate(int index) {
-        Message msg = ((Message) myModel.getElementAt(index));
-        if (msg.getHintObject() == null) return false;
-        myList.setSelectedIndex(index);
-        myList.ensureIndexIsVisible(index);
-        openCurrentMessageNodeIfPossible();
-        return true;
-      }
-    };
-  }
-
   public MessageView getMessagesService() {
     return SERVICE.getInstance(myProject);
   }
@@ -278,13 +233,13 @@ abstract class MessageList implements IMessageList {
 
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentMessageNodeIfPossible();
+        openCurrentMessageIfPossible();
       }
     }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentMessageNodeIfPossible();
+        openCurrentMessageIfPossible();
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
@@ -306,7 +261,7 @@ abstract class MessageList implements IMessageList {
         boolean oneClickOpen = e.getClickCount() == 1 && e.getButton() == MouseEvent.BUTTON1 && myAutoscrollToSourceAction.isSelected(null);
         boolean twoClickOpen = e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1;
         if (oneClickOpen || twoClickOpen) {
-          openCurrentMessageNodeIfPossible();
+          openCurrentMessageIfPossible();
         }
       }
 
@@ -345,11 +300,13 @@ abstract class MessageList implements IMessageList {
     });
   }
 
+  protected abstract void openCurrentMessageIfPossible();
+
   protected abstract void setDisplayInfo(String name);
 
-  private ToolWindow getToolWindow() {
-    return ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW);
-  }
+  public abstract void createContent();
+
+  protected abstract boolean isDisposed();
 
   private void showPopupMenu(MouseEvent evt) {
     if (myList.getSelectedValue() == null) return;
@@ -396,47 +353,7 @@ abstract class MessageList implements IMessageList {
     });
 
     group.addSeparator();
-
-    if (myList.getSelectedIndices().length >= 1) {
-      final Object[] messages = myList.getSelectedValues();
-      boolean containsError = false;
-      for (Object message : messages) {
-        if (((Message) message).getKind() == MessageKind.ERROR) {
-          containsError = true;
-          break;
-        }
-      }
-      if (containsError) {
-        group.addSeparator();
-        group.add(new BaseAction(messages.length > 1 ? "Submit as One Issue" : "Submit to Issue Tracker") {
-          {
-            setExecuteOutsideCommand(true);
-          }
-
-          protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-            submitToTracker(messages);
-          }
-        });
-      }
-    }
-    if (myList.getSelectedIndices().length == 1) {
-      Throwable exc = null;
-      for (Object message : myList.getSelectedValues()) {
-        exc = ((Message) message).getException();
-      }
-      if (exc != null) {
-        final Throwable toShow = exc;
-        group.add(new BaseAction("Show Exception") {
-          {
-            setExecuteOutsideCommand(true);
-          }
-
-          protected void doExecute(AnActionEvent e, Map<String, Object> params) {
-            showException(toShow);
-          }
-        });
-      }
-    }
+    populateActions(myList, group);
     group.addSeparator();
 
     group.add(new BaseAction("Clear") {
@@ -452,46 +369,7 @@ abstract class MessageList implements IMessageList {
     return group;
   }
 
-  private void submitToTracker(Object[] msgs) {
-    JFrame frame = WindowManager.getInstance().getFrame(getProject());
-    BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(getProject(), frame);
-    StringBuilder description = new StringBuilder();
-    boolean first = true;
-    for (Object msg : msgs) {
-      if (!(msg instanceof Message)) continue;
-      Message message = (Message) msg;
-      if (first) {
-        dialog.setIssueTitle(message.getText());
-        first = false;
-      } else {
-        description.append(message.getText()).append('\n');
-      }
-      dialog.addEx(message.getException());
-    }
-    dialog.setDescription(description.toString());
-    dialog.showDialog();
-
-    if (!dialog.isCancelled()) {
-      Response response = dialog.getResult();
-      String message = response.getMessage();
-      if (response.isSuccess()) {
-        JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
-      } else {
-        JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
-        LOG.error("Submit failed: " + response.getMessage(), response.getThrowable());
-      }
-    }
-  }
-
-  private void showException(Throwable toShow) {
-    JFrame frame = WindowManager.getInstance().getFrame(getProject());
-    StringWriter writer = new StringWriter();
-    toShow.printStackTrace(new PrintWriter(writer));
-    StringSelection contents = new StringSelection(writer.toString());
-    CopyPasteManagerEx.getInstanceEx().setContents(contents);
-    AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
-    dialog.showDialog();
-  }
+  protected abstract void populateActions(JList list, DefaultActionGroup group);
 
   private Project getProject() {
     return myProject;
@@ -508,19 +386,6 @@ abstract class MessageList implements IMessageList {
 
     Message message = (Message) (myList.getSelectedValue());
     return message.getHelpUrl();
-  }
-
-  private void openCurrentMessageNodeIfPossible() {
-    final Message selectedMessage = (Message) myList.getSelectedValue();
-    if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
-
-    /* temp hack: write action instead of read, TODO remove lock*/
-    final Project project = getProject();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        NavigationManager.getInstance().navigateTo(project, selectedMessage.getHintObject(), true, true);
-      }
-    });
   }
 
   private void rebuildModel() {
@@ -624,11 +489,11 @@ abstract class MessageList implements IMessageList {
     }
   }
 
-  /*package*/ MyState getState() {
-    return new MyState(myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myAutoscrollToSourceAction.isSelected(null));
+  /*package*/ MessageListState getState() {
+    return new MessageListState(myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myAutoscrollToSourceAction.isSelected(null));
   }
 
-  /*package*/ void loadState(MyState state) {
+  /*package*/ void loadState(MessageListState state) {
     myWarningsAction.setSelected(null, state.isWarnings());
     myInfoAction.setSelected(null, state.isInfo());
     myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
@@ -681,6 +546,97 @@ abstract class MessageList implements IMessageList {
       if (oldSize > 0) {
         fireIntervalRemoved(this, 0, oldSize - 1);
       }
+    }
+  }
+
+  public static class MessageListState {
+    private boolean myWarnings;
+    private boolean myInfo;
+    private boolean myAutoscrollToSource;
+
+    public MessageListState() {
+    }
+
+    public MessageListState(boolean warnings, boolean info, boolean autoscrollToSource) {
+      myWarnings = warnings;
+      myInfo = info;
+      myAutoscrollToSource = autoscrollToSource;
+    }
+
+    public boolean isWarnings() {
+      return myWarnings;
+    }
+
+    public void setWarnings(boolean warnings) {
+      myWarnings = warnings;
+    }
+
+    public boolean isInfo() {
+      return myInfo;
+    }
+
+    public void setInfo(boolean info) {
+      myInfo = info;
+    }
+
+    public boolean isAutoscrollToSource() {
+      return myAutoscrollToSource;
+    }
+
+    public void setAutoscrollToSource(boolean autoscrollToSource) {
+      myAutoscrollToSource = autoscrollToSource;
+    }
+  }
+
+  private class RootPanel extends JPanel implements OccurenceNavigator {
+
+    @Override
+    public boolean hasNextOccurence() {
+      return next(1, false) != null;
+    }
+
+    @Override
+    public boolean hasPreviousOccurence() {
+      return next(-1, false) != null;
+    }
+
+    @Override
+    public OccurenceInfo goNextOccurence() {
+      return next(1, true);
+    }
+
+    @Override
+    public OccurenceInfo goPreviousOccurence() {
+      return next(-1, true);
+    }
+
+
+    @Nullable
+    private OccurenceInfo next(final int delta, boolean doMove) {
+      int current = myList.getSelectedIndex();
+      for (current += delta; current >= 0 && current < myModel.getSize(); current += delta) {
+        Message msg = ((Message) myModel.getElementAt(current));
+        if (msg.getHintObject() == null) continue;
+        if (doMove) {
+          myList.setSelectedIndex(current);
+          myList.ensureIndexIsVisible(current);
+        }
+        return new OccurenceInfo(new Navigatable.Adapter() {
+          @Override
+          public void navigate(boolean requestFocus) {
+            openCurrentMessageIfPossible();
+          }
+        }, current, myModel.getSize());
+      }
+      return null;
+    }
+
+    public String getNextOccurenceActionName() {
+      return UsageViewBundle.message("action.next.occurrence");
+    }
+
+    public String getPreviousOccurenceActionName() {
+      return UsageViewBundle.message("action.previous.occurrence");
     }
   }
 }

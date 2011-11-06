@@ -44,13 +44,13 @@ public class UsagesViewTracker implements ApplicationComponent {
     myTools.remove(tool);
   }
 
-  private static KeyboardShortcut getNextShortcut() {
-    return new KeyboardShortcut(KeyStroke.getKeyStroke("control alt DOWN"), null);
-  }
+//  private static KeyboardShortcut getNextShortcut() {
+//    return new KeyboardShortcut(KeyStroke.getKeyStroke("control alt DOWN"), null);
+//  }
 
-  private static KeyboardShortcut getPrevShortcut() {
-    return new KeyboardShortcut(KeyStroke.getKeyStroke("control alt UP"), null);
-  }
+//  private static KeyboardShortcut getPrevShortcut() {
+//    return new KeyboardShortcut(KeyStroke.getKeyStroke("control alt UP"), null);
+//  }
 
   public static List<HierarchyViewTool> getHierarchyTools() {
     List<HierarchyViewTool> result = new ArrayList<HierarchyViewTool>();
@@ -62,32 +62,32 @@ public class UsagesViewTracker implements ApplicationComponent {
     return result;
   }
 
-  public static INavigator getNavigator() {
-    Collections.sort(myTools, new Comparator<INavigateableTool>() {
-      public int compare(INavigateableTool t1, INavigateableTool t2) {
-        boolean v1 = t1.getToolWindow().isVisible();
-        boolean v2 = t2.getToolWindow().isVisible();
-
-        if (v1 && !v2) return -1;
-        if (!v1 && v2) return 1;
-
-        boolean a1 = t1.getToolWindow().isAvailable();
-        boolean a2 = t2.getToolWindow().isAvailable();
-
-        if (a1 && !a2) return -1;
-        if (!a1 && a2) return 1;
-
-        return t1.getPriority() - t2.getPriority();
-      }
-    });
-
-    for (INavigateableTool tool : myTools) {
-      INavigator navigator = tool.getCurrentNavigateableView();
-      if (navigator != null) return navigator;
-    }
-
-    return null;
-  }
+//  public static INavigator getNavigator() {
+//    Collections.sort(myTools, new Comparator<INavigateableTool>() {
+//      public int compare(INavigateableTool t1, INavigateableTool t2) {
+//        boolean v1 = t1.getToolWindow().isVisible();
+//        boolean v2 = t2.getToolWindow().isVisible();
+//
+//        if (v1 && !v2) return -1;
+//        if (!v1 && v2) return 1;
+//
+//        boolean a1 = t1.getToolWindow().isAvailable();
+//        boolean a2 = t2.getToolWindow().isAvailable();
+//
+//        if (a1 && !a2) return -1;
+//        if (!a1 && a2) return 1;
+//
+//        return t1.getPriority() - t2.getPriority();
+//      }
+//    });
+//
+//    for (INavigateableTool tool : myTools) {
+//      INavigator navigator = tool.getCurrentNavigateableView();
+//      if (navigator != null) return navigator;
+//    }
+//
+//    return null;
+//  }
 
   @NotNull
   public String getComponentName() {
@@ -95,31 +95,31 @@ public class UsagesViewTracker implements ApplicationComponent {
   }
 
   public void initComponent() {
-    Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
-    assert keymap != null : "Default IDEA keymap is not found";
-    ActionManager am = ActionManager.getInstance();
-
-    am.registerAction(PREV_COMMAND, new AnAction() {
-      public void actionPerformed(AnActionEvent e) {
-        INavigator navigator = getNavigator();
-        if (navigator != null) navigator.goToPrevious();
-      }
-    });
-    keymap.addShortcut(PREV_COMMAND, getPrevShortcut());
-
-    am.registerAction(NEXT_COMMAND, new AnAction() {
-      public void actionPerformed(AnActionEvent e) {
-        INavigator navigator = getNavigator();
-        if (navigator != null) navigator.goToNext();
-      }
-    });
-    keymap.addShortcut(NEXT_COMMAND, getNextShortcut());
+//    Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
+//    assert keymap != null : "Default IDEA keymap is not found";
+//    ActionManager am = ActionManager.getInstance();
+//
+//    am.registerAction(PREV_COMMAND, new AnAction() {
+//      public void actionPerformed(AnActionEvent e) {
+//        INavigator navigator = getNavigator();
+//        if (navigator != null) navigator.goToPrevious();
+//      }
+//    });
+//    keymap.addShortcut(PREV_COMMAND, getPrevShortcut());
+//
+//    am.registerAction(NEXT_COMMAND, new AnAction() {
+//      public void actionPerformed(AnActionEvent e) {
+//        INavigator navigator = getNavigator();
+//        if (navigator != null) navigator.goToNext();
+//      }
+//    });
+//    keymap.addShortcut(NEXT_COMMAND, getNextShortcut());
   }
 
   public void disposeComponent() {
-    KeymapManager.getInstance().getActiveKeymap().removeShortcut(PREV_COMMAND, getPrevShortcut());
-    KeymapManager.getInstance().getActiveKeymap().removeShortcut(NEXT_COMMAND, getNextShortcut());
-    ActionManager.getInstance().unregisterAction(PREV_COMMAND);
-    ActionManager.getInstance().unregisterAction(NEXT_COMMAND);
+//    KeymapManager.getInstance().getActiveKeymap().removeShortcut(PREV_COMMAND, getPrevShortcut());
+//    KeymapManager.getInstance().getActiveKeymap().removeShortcut(NEXT_COMMAND, getNextShortcut());
+//    ActionManager.getInstance().unregisterAction(PREV_COMMAND);
+//    ActionManager.getInstance().unregisterAction(NEXT_COMMAND);
   }
 }

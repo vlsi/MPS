@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
+import com.intellij.ide.*;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.pom.Navigatable;
 import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.usageView.UsageViewBundle;
+import com.intellij.util.ui.tree.TreeUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
@@ -25,11 +29,19 @@ import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.IChangeListener;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree.UsagesTreeNode;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
+import jetbrains.mps.ide.navigation.ModelNavigatable;
+import jetbrains.mps.ide.navigation.ModuleNavigatable;
+import jetbrains.mps.ide.navigation.NodeNavigatable;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,7 +50,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.BorderLayout;
 import java.util.*;
 
@@ -64,11 +76,37 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   private ViewOptions myDefaultOptions;
 
   private boolean mySearchedNodesButtonsVisible = true;
+  private OccurenceNavigatorSupport myOccurenceNavigator;
 
   public UsagesTreeComponent(ViewOptions defaultOptions) {
     super(new BorderLayout());
 
     myTree = new UsagesTree(UsagesTreeComponent.this.getProject());
+    myOccurenceNavigator = new OccurenceNavigatorSupport(myTree) {
+      protected Navigatable createDescriptorForNode(DefaultMutableTreeNode node) {
+        if (node.getChildCount() > 0) return null;
+        if (!(node instanceof UsagesTreeNode)) return null;
+        UsagesTreeNode treeNode = (UsagesTreeNode) node;
+
+        if (treeNode.getUserObject() == null) {
+          return null;
+        }
+
+        final BaseNodeData data = treeNode.getUserObject().getData();
+        Navigatable n = toNavigatable(data);
+        return n != null && n.canNavigate() ? n : null;
+      }
+
+
+      public String getNextOccurenceActionName() {
+        return UsageViewBundle.message("action.next.occurrence");
+      }
+
+      public String getPreviousOccurenceActionName() {
+        return UsageViewBundle.message("action.previous.occurrence");
+      }
+    };
+
     myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
 
     JScrollPane treePane = ScrollPaneFactory.createScrollPane(myTree);
@@ -96,6 +134,10 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
   public void setContents(SearchResults contents) {
     myContents.setContents(contents, myNodeRepresentator);
+  }
+
+  public OccurenceNavigator getOccurenceNavigator() {
+    return myOccurenceNavigator;
   }
 
   public void changed() {
@@ -196,14 +238,6 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     return myContents.getAllResultNodes();
   }
 
-  public void goToNext() {
-    myTree.navigateToNextResult();
-  }
-
-  public void goToPrevious() {
-    myTree.navigateToPreviousResult();
-  }
-
   public ActionGroup getActionsToolbar() {
     return myActionsToolbar.getActions();
   }
@@ -217,6 +251,17 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   }
 
   public abstract com.intellij.openapi.project.Project getProject();
+
+  private Navigatable toNavigatable(BaseNodeData data) {
+    if (data instanceof NodeNodeData) {
+      return new NodeNavigatable(ProjectHelper.toMPSProject(getProject()), ((NodeNodeData) data).getNodePointer());
+    } else if (data instanceof ModelNodeData) {
+      return new ModelNavigatable(ProjectHelper.toMPSProject(getProject()), ((ModelNodeData) data).getModelReference());
+    } else if (data instanceof ModuleNodeData) {
+      return new ModuleNavigatable(ProjectHelper.toMPSProject(getProject()), ((ModuleNodeData) data).getModuleReference());
+    }
+    return null;
+  }
 
   class ViewToolbar extends JPanel {
     private PathOptionsToolbar myPathOptionsToolbar;
@@ -475,26 +520,18 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     public ActionsToolbar() {
       myActions = new DefaultActionGroup();
 
-      myActions.addAction(new AnAction("Collapse", "", Icons.COLLAPSE_ICON) {
-        public void actionPerformed(AnActionEvent e) {
-          myTree.collapseResults();
+      final CommonActionsManager actionsManager = CommonActionsManager.getInstance();
+      final TreeExpander treeExpander = new DefaultTreeExpander(myTree) {
+        @Override
+        public void collapseAll() {
+          super.collapseAll();
+          TreeUtil.expand(myTree, 2);
         }
-      });
-      myActions.addAction(new AnAction("Expand", "", Icons.EXPAND_ICON) {
-        public void actionPerformed(AnActionEvent e) {
-          myTree.expandResults();
-        }
-      });
-      myActions.addAction(new AnAction("Previous occurence", "", Icons.PREVIOUS_ICON) {
-        public void actionPerformed(AnActionEvent e) {
-          myTree.navigateToPreviousResult();
-        }
-      });
-      myActions.addAction(new AnAction("Next occurence", "", Icons.NEXT_ICON) {
-        public void actionPerformed(AnActionEvent e) {
-          myTree.navigateToNextResult();
-        }
-      });
+      };
+      myActions.add(actionsManager.createExpandAllAction(treeExpander, myTree));
+      myActions.add(actionsManager.createCollapseAllAction(treeExpander, myTree));
+      myActions.add(actionsManager.createPrevOccurenceAction(getOccurenceNavigator()));
+      myActions.add(actionsManager.createNextOccurenceAction(getOccurenceNavigator()));
       myAutoscrollButton = new MyBaseToggleAction("Autoscroll to source", "", Icons.AUTOSCROLL_ICON) {
         public boolean isSelected(AnActionEvent e) {
           return myTree.isAutoscroll();
