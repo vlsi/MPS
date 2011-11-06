@@ -18,7 +18,6 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Library;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
@@ -37,8 +36,6 @@ public class ModuleValidatorFactory {
     } else if (m instanceof DevKit) {
       return new DevkitValidator((DevKit) m);
     } else if (m instanceof ProjectStructureModule) {
-      return new EmptyValidator();
-    } else if (m instanceof Library) {
       return new EmptyValidator();
     } else {
       throw new IllegalArgumentException("Unknown module for validation: " + m.getClass());

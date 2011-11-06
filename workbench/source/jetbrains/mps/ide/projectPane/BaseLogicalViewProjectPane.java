@@ -45,7 +45,6 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Library;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -347,8 +346,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         return ActionPlace.PROJECT_PANE_DEVKIT;
       } else if (module instanceof Solution) {
         return ActionPlace.PROJECT_PANE_SOLUTION;
-      } else if (module instanceof Library) {
-        return ActionPlace.PROJECT_PANE_LIBRARY;
       }
     }
     return ActionPlace.PROJECT_PANE;

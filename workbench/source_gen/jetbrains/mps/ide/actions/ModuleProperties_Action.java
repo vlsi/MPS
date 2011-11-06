@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.properties.StandardDialogs;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.Library;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Generator;
 import javax.swing.ImageIcon;
@@ -71,8 +70,6 @@ public class ModuleProperties_Action extends GeneratedAction {
             dialog.value = StandardDialogs.createLanguagePropertiesDialog((Language) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Solution) {
             dialog.value = StandardDialogs.createSolutionPropertiesDialog((Solution) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Library) {
-            dialog.value = StandardDialogs.createLibraryPropertiesDialog((Library) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof DevKit) {
             dialog.value = StandardDialogs.createDevKitPropertiesDialog((DevKit) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {

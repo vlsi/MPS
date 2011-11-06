@@ -370,10 +370,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public boolean isPackaged() {
-    if (getDescriptorFile() == null) {
-      return false;
-    }
-    return FileSystem.getInstance().isPackaged(getDescriptorFile());
+    return getDescriptorFile() != null && FileSystem.getInstance().isPackaged(getDescriptorFile());
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {

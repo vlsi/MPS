@@ -91,16 +91,6 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
       builder.fillNode(devkits);
       add(devkits);
     }
-
-    {
-      ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
-      TextTreeNode libs = new TextTreeNode("Libraries");
-      for (Library lib : CollectionUtil.filter(Library.class, modules)) {
-        builder.addNode(ProjectModuleTreeNode.createFor(myProject, lib, true));
-      }
-      builder.fillNode(libs);
-      add(libs);
-    }
   }
 
   private List<IModule> collectModules() {

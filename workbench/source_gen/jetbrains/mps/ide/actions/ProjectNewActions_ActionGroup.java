@@ -19,7 +19,6 @@ public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
     try {
       ProjectNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewSolution_Action");
-      ProjectNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewLibrary_Action");
       {
         LabelledAnchor action = new LabelledAnchor(ProjectNewActions_ActionGroup.LABEL_ID_end);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
