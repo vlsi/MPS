@@ -241,8 +241,8 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  public boolean canLoadClasses(AbstractModule m) {
-    return myRuntimeEnvironment == null ? false : myRuntimeEnvironment.get(m.getModuleReference()) != null;
+  public boolean canLoadClasses(IModule m) {
+    return myRuntimeEnvironment != null && myRuntimeEnvironment.get(m.getModuleReference()) != null;
   }
 
   //---------------reload handlers------------------

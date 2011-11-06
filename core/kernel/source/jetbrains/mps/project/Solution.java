@@ -24,11 +24,13 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 
+import java.net.URL;
 import java.util.UUID;
 
 /**
@@ -233,8 +235,18 @@ public class Solution extends AbstractModule {
   public BytecodeLocator getBytecodeLocator() {
     return new ModuleBytecodeLocator() {
       public byte[] find(String fqName) {
-        if (!getModuleDescriptor().getCompileInMPS()) return null;
+        if (!canLoad()) return null;
         return super.find(fqName);
+      }
+
+      public URL findResource(String name) {
+        if (!canLoad()) return null;
+        return super.findResource(name);
+      }
+
+      private boolean canLoad() {
+        return getModuleDescriptor().getCompileInMPS();
+          //&& getModuleDescriptor().getKind() != SolutionKind.NONE;
       }
     };
   }

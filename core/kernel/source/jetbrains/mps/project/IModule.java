@@ -120,8 +120,6 @@ public interface IModule extends ModelOwner {
 
   boolean needReloading();
 
-  boolean canLoadClasses();
-
   public static interface ModelAdjuster {
     void adjust(SModelDescriptor model);
   }

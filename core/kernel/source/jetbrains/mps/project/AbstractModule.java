@@ -462,10 +462,6 @@ public abstract class AbstractModule implements IModule {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
   }
 
-  public boolean canLoadClasses() {
-    return ClassLoaderManager.getInstance().canLoadClasses(this);
-  }
-
   public Class getClass(String fqName) {
     try {
       return ClassLoaderManager.getInstance().getClassFor(this, fqName);
@@ -601,6 +597,9 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected class ModuleBytecodeLocator implements BytecodeLocator {
+    public ModuleBytecodeLocator() {
+    }
+
     public byte[] find(String fqName) {
       return getClassPathItem().getClass(fqName);
     }
