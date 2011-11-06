@@ -16,6 +16,8 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-workbench" />
   </component>
 </module>
 

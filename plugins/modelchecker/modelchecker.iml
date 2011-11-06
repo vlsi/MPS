@@ -21,6 +21,8 @@
     <orderEntry type="library" name="commons-lang" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-workbench" />
   </component>
 </module>
 
