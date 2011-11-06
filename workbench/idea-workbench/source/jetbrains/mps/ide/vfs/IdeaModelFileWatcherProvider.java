@@ -19,6 +19,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vfs.VirtualFileEvent;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcherProvider;
 
@@ -30,10 +31,12 @@ public class IdeaModelFileWatcherProvider implements ModelFileWatcherProvider {
   public IdeaModelFileWatcherProvider(VirtualFileManager manager) {
     VirtualFileManager.getInstance().addVirtualFileListener(new VirtualFileAdapter() {
       public void contentsChanged(VirtualFileEvent event) {
-        VirtualFile file = event.getFile();
-        while (file != null) {
-          invalidate(file.getPath());
-          file = file.getParent();
+        if (!isEventFromSave(event)) {
+          VirtualFile file = event.getFile();
+          while (file != null) {
+            invalidate(file.getPath());
+            file = file.getParent();
+          }
         }
       }
 
@@ -45,6 +48,10 @@ public class IdeaModelFileWatcherProvider implements ModelFileWatcherProvider {
         }
       }
     });
+  }
+
+  private static boolean isEventFromSave(VirtualFileEvent event) {
+    return event.getRequestor() == IdeaFileSystemProvider.class;
   }
 
   private void invalidate(String path) {
