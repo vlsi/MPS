@@ -18,8 +18,7 @@ package jetbrains.mps.ide.modelRepositoryViewer;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -92,7 +91,7 @@ public class ModelRepositoryComponent {
             }
           };
 
-          if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+          if (MPSCore.getInstance().isTestMode()) return;
 
           for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getModelDescriptors())) {
             root[0].add(new ModelTreeNode(modelDescriptor));

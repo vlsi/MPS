@@ -19,7 +19,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vfs.VirtualFileEvent;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcherProvider;
 

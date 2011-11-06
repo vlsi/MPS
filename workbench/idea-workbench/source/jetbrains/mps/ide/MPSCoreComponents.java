@@ -16,8 +16,6 @@
 package jetbrains.mps.ide;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.findUsages.ProxyFindUsagesManager;
@@ -26,10 +24,8 @@ import jetbrains.mps.ide.findusages.MPSFindUsages;
 import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
-import jetbrains.mps.ide.vfs.IdeaModelFileWatcherProvider;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
 import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;

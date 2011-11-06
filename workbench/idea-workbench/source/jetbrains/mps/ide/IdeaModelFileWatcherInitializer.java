@@ -18,13 +18,11 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.ide.vfs.IdeaModelFileWatcherProvider;
 import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
-import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 
-public class IdeaModelFileWatcherInitializer implements ApplicationComponent{
+public class IdeaModelFileWatcherInitializer implements ApplicationComponent {
   private VirtualFileManager myManager;
 
   public IdeaModelFileWatcherInitializer(VirtualFileManager manager) {

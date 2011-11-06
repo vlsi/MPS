@@ -19,6 +19,7 @@ import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.ui.DialogWrapper;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
@@ -26,8 +27,6 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -159,7 +158,7 @@ public class GeneratorUIFacade {
               message.append("\n").append(sm.getSModelReference().getSModelFqName());
             }
 
-            if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
+            if (!MPSCore.getInstance().isTestMode()) {
               DialogWrapper questionDialog = new GenerateRequirementsDialog(ideaProject, settings, message.toString());
               questionDialog.show();
               result = questionDialog.getExitCode();
