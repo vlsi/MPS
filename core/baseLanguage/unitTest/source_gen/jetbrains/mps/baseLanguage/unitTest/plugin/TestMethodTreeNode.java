@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 
 public class TestMethodTreeNode extends BaseTestTreeNode {
   @NotNull
@@ -55,7 +55,14 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
   }
 
   public void doubleClick() {
-    this.getOperationContext().getComponent(MPSEditorOpener.class).openNode(this.testMethod.getNode(), this.getOperationContext(), true, true);
+    Runnable nav = new Runnable() {
+      public void run() {
+        NavigationSupport.getInstance().openNode(getOperationContext(), testMethod.getNode(), true, true);
+      }
+    };
+    if (!(ModelAccess.instance().tryRead(nav))) {
+      ModelAccess.instance().runReadInEDT(nav);
+    }
   }
 
   @Override

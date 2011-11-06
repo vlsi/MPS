@@ -22,11 +22,13 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -172,12 +174,16 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
   public void autoscroll() {
     super.autoscroll();
-    SNode nodeToOpen = myTracerNode.getNodePointer().getNode();
-    if (nodeToOpen == null) return;
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SNode nodeToOpen = myTracerNode.getNodePointer().getNode();
+        if (nodeToOpen == null) return;
 
-    IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-
-    new MPSEditorOpener(myProject).openNode(nodeToOpen, context, true, true);
+        IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
+        NavigationSupport.getInstance().openNode(context, nodeToOpen, true, true);
+      }
+    });
   }
 
   public void doubleClick() {
