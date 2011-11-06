@@ -13,17 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.messages;
+package jetbrains.mps.ide.messages.navigation;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.messages.navigation.*;
+import jetbrains.mps.ide.messages.FileWithLogicalPosition;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.FileWithPosition;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -51,7 +52,12 @@ public class NavigationManager {
     myHandlers.put(IModule.class, new ModuleNavigationHandler());
   }
 
+  /**
+   *  Navigates to the object. Requires: model read, EDT.
+   */
   public void navigateTo(Project project, Object o, boolean focus, boolean select) {
+    ModelAccess.assertLegalRead();
+
     Class cls = o.getClass();
 
     for (Class c : myHandlers.keySet()) {

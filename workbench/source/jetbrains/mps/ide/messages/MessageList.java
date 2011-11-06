@@ -36,6 +36,7 @@ import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
+import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.Message;

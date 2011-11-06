@@ -16,17 +16,13 @@
 package jetbrains.mps.ide.messages.navigation;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectOperationContext;
 
-public class NodeWithContextNavigationHandler implements INavigationHandler<NodeWithContext> {
-  public void navigate(Project project, NodeWithContext object, boolean focus, boolean select) {
-    SNode node = object.getNode();
-    if (node == null) return;
-    IOperationContext context = object.getContext();
-    if (context == null) return;
-    context.getComponent(MPSEditorOpener.class).openNode(node, context, focus, select);
+class ModuleNavigationHandler implements INavigationHandler<IModule> {
+  public void navigate(Project project, IModule module, boolean focus, boolean select) {
+    NavigationSupport.getInstance().selectInTree(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), module, focus);
   }
 }
