@@ -43,5 +43,11 @@
     </extensions>
 
     <actions>
+        <action
+                id="test.modelRepository"
+                class="jetbrains.mps.idea.core.actions.TestRepository"
+                description="Test MPS model repository">
+            <add-to-group group-id="ToolsMenu" relative-to-action="GenerateJavadoc" anchor="after"/>
+        </action>
     </actions>
 </idea-plugin>
