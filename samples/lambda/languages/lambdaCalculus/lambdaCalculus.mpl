@@ -39,6 +39,8 @@
   <runtime>
     <dependency reexport="false">3adc1bc4-83b1-45f4-b261-03e8e8553ebc(jetbrains.mps.samples.lambdaCalculus.runtime)</dependency>
   </runtime>
-  <extendedLanguages />
+  <extendedLanguages>
+    <extendedLanguage>4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)</extendedLanguage>
+  </extendedLanguages>
 </language>
 
