@@ -62,12 +62,24 @@ import jetbrains.mps.smodel.SModelDescriptor;
     return isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept")), targetModel, SNodeId.fromString(classId)) && isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
   }
 
+  /*package*/ static boolean isClassifierType(SNode classifierType, @NotNull SModelReference targetModel, @NotNull String classId) {
+    return isReferenceTo(SNodeOperations.getReference(classifierType, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), targetModel, SNodeId.fromString(classId));
+  }
+
   /*package*/ static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull String methodSignature) {
     return isReferenceToMethod(SNodeOperations.getReference(methodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), methodSignature);
   }
 
+  /*package*/ static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull SModelReference targetModel, @NotNull String methodId) {
+    return isReferenceTo(SNodeOperations.getReference(methodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
+  }
+
   /*package*/ static boolean isClassCreator(SNode creator, @NotNull String creatorSignature) {
     return isReferenceToMethod(SNodeOperations.getReference(creator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), creatorSignature);
+  }
+
+  /*package*/ static boolean isClassCreator(SNode creator, @NotNull SModelReference creatorModel, @NotNull String creatorId) {
+    return isReferenceTo(SNodeOperations.getReference(creator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), creatorModel, SNodeId.fromString(creatorId));
   }
 
   /*package*/ static void addRequiredImports(SModel model, SNode newNode) {
@@ -79,8 +91,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
       SModelReference targetModelRef = ref.getTargetSModelReference();
       model.addModelImport(targetModelRef, false);
 
-      IModule sourceModule = check_4tnolf_a0d0a0j(model.getModelDescriptor());
-      IModule targetModule = check_4tnolf_a0e0a0j(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
+      IModule sourceModule = check_4tnolf_a0d0a0m(model.getModelDescriptor());
+      IModule targetModule = check_4tnolf_a0e0a0m(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
       if (sourceModule != null && targetModule != null) {
         if (!(sourceModule.getDependenciesManager().getAllVisibleModules().contains(targetModule))) {
           sourceModule.addDependency(targetModule.getModuleReference(), false);
@@ -137,14 +149,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
     return null;
   }
 
-  private static IModule check_4tnolf_a0d0a0j(SModelDescriptor checkedDotOperand) {
+  private static IModule check_4tnolf_a0d0a0m(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_4tnolf_a0e0a0j(SModelDescriptor checkedDotOperand) {
+  private static IModule check_4tnolf_a0e0a0m(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
