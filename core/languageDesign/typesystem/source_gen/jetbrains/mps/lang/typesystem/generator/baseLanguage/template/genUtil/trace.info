@@ -74,12 +74,18 @@
     <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="78" startPosition="60" endLine="80" endPosition="5" />
     <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="96" startPosition="56" endLine="98" endPosition="5" />
     <scopeInfo nodeId="7087631766427572171" fileName="TypesystemGenUtil.java" startLine="52" startPosition="42" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="104" startPosition="7" endLine="107" endPosition="31" />
+    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="104" startPosition="7" endLine="107" endPosition="31">
+      <varInfo nodeId="1220457566052" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1224161565536" fileName="TypesystemGenUtil.java" startLine="40" startPosition="110" endLine="44" endPosition="9">
       <varInfo nodeId="1224161783139" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="68" startPosition="7" endLine="72" endPosition="31" />
-    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="86" startPosition="7" endLine="90" endPosition="31" />
+    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="68" startPosition="7" endLine="72" endPosition="31">
+      <varInfo nodeId="1220457566052" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="86" startPosition="7" endLine="90" endPosition="31">
+      <varInfo nodeId="1220457566052" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="7087631766427572170" fileName="TypesystemGenUtil.java" startLine="51" startPosition="339" endLine="56" endPosition="5">
       <varInfo nodeId="7087631766427572174" varName="retSt" />
     </scopeInfo>
@@ -97,15 +103,27 @@
     <scopeInfo nodeId="7087631766427572127" fileName="TypesystemGenUtil.java" startLine="50" startPosition="58" endLine="57" endPosition="16">
       <varInfo nodeId="7087631766427572152" varName="returnStatements" />
     </scopeInfo>
-    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="100" startPosition="31" endLine="109" endPosition="20" />
+    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="100" startPosition="31" endLine="109" endPosition="20">
+      <varInfo nodeId="1220457566052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1220457566052" varName="quotedNode_1" />
+      <varInfo nodeId="1220457566052" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1220457598870" fileName="TypesystemGenUtil.java" startLine="22" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1220457656515" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7087631766427572124" fileName="TypesystemGenUtil.java" startLine="49" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="7087631766427572130" varName="subtypingRule" />
     </scopeInfo>
-    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="64" startPosition="31" endLine="74" endPosition="20" />
-    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="82" startPosition="31" endLine="92" endPosition="20" />
+    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="64" startPosition="31" endLine="74" endPosition="20">
+      <varInfo nodeId="1220457566052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1220457566052" varName="quotedNode_1" />
+      <varInfo nodeId="1220457566052" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="82" startPosition="31" endLine="92" endPosition="20">
+      <varInfo nodeId="1220457566052" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1220457566052" varName="quotedNode_1" />
+      <varInfo nodeId="1220457566052" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="99" startPosition="0" endLine="111" endPosition="0" />
     <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="63" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="81" startPosition="0" endLine="94" endPosition="0" />
