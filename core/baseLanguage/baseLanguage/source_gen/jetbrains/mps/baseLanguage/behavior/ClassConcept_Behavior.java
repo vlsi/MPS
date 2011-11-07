@@ -69,7 +69,7 @@ public class ClassConcept_Behavior {
       LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
       return false;
     }
-    if (thisNode == nodeToCompare) {
+    if (Classifier_Behavior.call_isSame_4855996797771684010(thisNode, nodeToCompare)) {
       return true;
     }
     if (SLinkOperations.getTarget(thisNode, "superclass", true) == null) {
