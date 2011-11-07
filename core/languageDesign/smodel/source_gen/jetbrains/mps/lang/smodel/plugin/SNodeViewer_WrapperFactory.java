@@ -14,7 +14,7 @@ import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatcha
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.Collections;
 import java.util.ArrayList;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
+import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
 import jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.ProxyEqualsUtil;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
@@ -59,28 +59,28 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
 
-      result.add(new SNodeWatchables.MyWatchable_text(JavaObjectValue.fromJDIValue(((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;")).getJDIValue(), getThreadReference()), "text"));
-      result.add(new SNodeWatchables.MyWatchable_id(JavaObjectValue.fromJDIValue(((IObjectValueProxy) value.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
-      result.add(new SNodeWatchables.MyWatchable_model(JavaObjectValue.fromJDIValue(((IObjectValueProxy) value.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
-      result.add(new SNodeWatchables.MyWatchable_concept(JavaObjectValue.fromJDIValue(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
+      result.add(new SNodeWatchables.MyWatchable_text(AbstractValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;")).getJDIValue(), getThreadReference()), "text"));
+      result.add(new SNodeWatchables.MyWatchable_id(AbstractValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) value.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
+      result.add(new SNodeWatchables.MyWatchable_model(AbstractValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) value.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
+      result.add(new SNodeWatchables.MyWatchable_concept(AbstractValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
 
       IArrayValueProxy properties = ((IArrayValueProxy) value.getFieldValue("myProperties"));
       if (!(ProxyEqualsUtil.javaEquals(properties, null))) {
         for (IObjectValueProxy property : EvaluationUtils.<IObjectValueProxy>toIterable(((IObjectValueProxy) ((IObjectValueProxy) value.invokeMethod("getProperties", "()Ljava/util/Map;")).invokeMethod("entrySet", "()Ljava/util/Set;")))) {
-          result.add(new SNodeWatchables.MyWatchable_property(JavaObjectValue.fromJDIValue(property.getJDIValue(), getThreadReference()), "property"));
+          result.add(new SNodeWatchables.MyWatchable_property(AbstractValueUtil.getInstance().fromJDIValue(property.getJDIValue(), getThreadReference()), "property"));
         }
       }
 
       IObjectValueProxy currentChild = ((IObjectValueProxy) value.getFieldValue("myFirstChild"));
       while (!(ProxyEqualsUtil.javaEquals(currentChild, null))) {
-        result.add(new SNodeWatchables.MyWatchable_child(JavaObjectValue.fromJDIValue(currentChild.getJDIValue(), getThreadReference()), "child"));
+        result.add(new SNodeWatchables.MyWatchable_child(AbstractValueUtil.getInstance().fromJDIValue(currentChild.getJDIValue(), getThreadReference()), "child"));
         currentChild = ((IObjectValueProxy) currentChild.getFieldValue("myNextSibling"));
       }
 
       IArrayValueProxy references = ((IArrayValueProxy) value.getFieldValue("myReferences"));
       if (!(ProxyEqualsUtil.javaEquals(references, null))) {
         for (int i = 0; i < ((IArrayValueProxy) references).getLength(); i++) {
-          result.add(new SNodeWatchables.MyWatchable_reference(JavaObjectValue.fromJDIValue(((IObjectValueProxy) references.getElementAt(i)).getJDIValue(), getThreadReference()), "reference"));
+          result.add(new SNodeWatchables.MyWatchable_reference(AbstractValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) references.getElementAt(i)).getJDIValue(), getThreadReference()), "reference"));
         }
       }
 

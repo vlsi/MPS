@@ -76,7 +76,7 @@ public class JavaObjectValue extends JavaValue {
     try {
       ObjectReference ref = (ObjectReference) myValue;
       Field field = EvaluationUtils.findField((ClassType) ref.referenceType(), fieldName);
-      return ValueUtil.fromJDIValueRaw(ref.getValue(field), myClassFQName, myThreadReference);
+      return AbstractValueUtil.getInstance().fromJDIValueRaw(ref.getValue(field), myClassFQName, myThreadReference);
     } catch (InvalidEvaluatedExpressionException e) {
       //  we get NPE instead 
       return null;
@@ -88,7 +88,7 @@ public class JavaObjectValue extends JavaValue {
     List<Field> fieldList = ref.referenceType().fields();
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Field f : fieldList) {
-      result.add(ValueUtil.fromJDIValueRaw(ref.getValue(f), myClassFQName, myThreadReference));
+      result.add(AbstractValueUtil.getInstance().fromJDIValueRaw(ref.getValue(f), myClassFQName, myThreadReference));
     }
     return result;
   }
@@ -101,7 +101,7 @@ public class JavaObjectValue extends JavaValue {
   @Nullable
   public JavaValue executeMethod(String methodName, String jniSignature, Object... args) {
     try {
-      return ValueUtil.fromJDIValueRaw(createValueProxy().invokeMethod(methodName, jniSignature, args).getJDIValue(), myClassFQName, myThreadReference);
+      return AbstractValueUtil.getInstance().fromJDIValueRaw(createValueProxy().invokeMethod(methodName, jniSignature, args).getJDIValue(), myClassFQName, myThreadReference);
     } catch (EvaluationException e) {
       return null;
     }

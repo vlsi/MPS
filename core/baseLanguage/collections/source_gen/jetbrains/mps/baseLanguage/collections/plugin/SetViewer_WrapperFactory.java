@@ -15,7 +15,7 @@ import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
+import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
 
 public class SetViewer_WrapperFactory extends ValueWrapperFactory {
   public SetViewer_WrapperFactory() {
@@ -59,10 +59,10 @@ public class SetViewer_WrapperFactory extends ValueWrapperFactory {
       List<CustomJavaWatchable> watchables = new ArrayList<CustomJavaWatchable>();
 
       PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I"));
-      watchables.add(new CollectionsWatchables.MyWatchable_size(JavaObjectValue.fromJDIValue(size.getJDIValue(), getThreadReference()), "size"));
+      watchables.add(new CollectionsWatchables.MyWatchable_size(AbstractValueUtil.getInstance().fromJDIValue(size.getJDIValue(), getThreadReference()), "size"));
 
       for (IObjectValueProxy element : EvaluationUtils.<IObjectValueProxy>toIterable(value)) {
-        watchables.add(new CollectionsWatchables.MyWatchable_element(JavaObjectValue.fromJDIValue(element.getJDIValue(), getThreadReference()), "element"));
+        watchables.add(new CollectionsWatchables.MyWatchable_element(AbstractValueUtil.getInstance().fromJDIValue(element.getJDIValue(), getThreadReference()), "element"));
       }
 
       return watchables;

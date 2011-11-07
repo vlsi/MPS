@@ -106,7 +106,9 @@
     <scopeInfo nodeId="742486944792922402" fileName="ChooseFromStubsByNameModel.java" startLine="68" startPosition="25" endLine="70" endPosition="67">
       <varInfo nodeId="742486944792922406" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="4733928027686958948" fileName="ChooseFromStubsByNameModel.java" startLine="45" startPosition="110" endLine="48" endPosition="11" />
+    <scopeInfo nodeId="4733928027686958948" fileName="ChooseFromStubsByNameModel.java" startLine="45" startPosition="110" endLine="48" endPosition="11">
+      <varInfo nodeId="4733928027686958948" varName="model" />
+    </scopeInfo>
     <scopeInfo nodeId="742486944792922333" fileName="ChooseFromStubsByNameModel.java" startLine="36" startPosition="66" endLine="40" endPosition="13" />
     <scopeInfo nodeId="742486944792821027" fileName="ChooseFromStubsByNameModel.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="742486944792821030" varName="descriptor" />
@@ -286,7 +288,10 @@
     <scopeInfo nodeId="742486944792833419" fileName="ExceptionChooserDialog.java" startLine="29" startPosition="41" endLine="34" endPosition="117">
       <varInfo nodeId="742486944792833421" varName="base" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792833383" fileName="ExceptionChooserDialog.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="742486944792833383" fileName="ExceptionChooserDialog.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="742486944792833383" varName="a" />
+      <varInfo nodeId="742486944792833383" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="742486944792833396" fileName="ExceptionChooserDialog.java" startLine="17" startPosition="89" endLine="25" endPosition="39">
       <varInfo nodeId="742486944792924452" varName="node" />
     </scopeInfo>

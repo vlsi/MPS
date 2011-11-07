@@ -62,15 +62,28 @@
     <scopeInfo nodeId="1240668510010" fileName="CheckLangForJavaStubModels_Action.java" startLine="82" startPosition="20" endLine="83" endPosition="73" />
     <scopeInfo nodeId="1240669991832" fileName="CheckLangForJavaStubModels_Action.java" startLine="89" startPosition="68" endLine="90" endPosition="48" />
     <scopeInfo nodeId="1240670025366" fileName="CheckLangForJavaStubModels_Action.java" startLine="93" startPosition="69" endLine="94" endPosition="49" />
-    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="104" startPosition="0" endLine="105" endPosition="98" />
+    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="104" startPosition="0" endLine="105" endPosition="98">
+      <varInfo nodeId="1240664643338" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="104" startPosition="27" endLine="105" endPosition="98" />
-    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="45" startPosition="7" endLine="47" endPosition="63" />
-    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="49" startPosition="0" endLine="51" endPosition="44" />
+    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="45" startPosition="7" endLine="47" endPosition="63">
+      <varInfo nodeId="1240664643338" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="49" startPosition="0" endLine="51" endPosition="44">
+      <varInfo nodeId="1240664643338" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="49" startPosition="27" endLine="51" endPosition="44" />
     <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="33" startPosition="46" endLine="36" endPosition="41" />
-    <scopeInfo nodeId="1240669991829" fileName="CheckLangForJavaStubModels_Action.java" startLine="88" startPosition="31" endLine="91" endPosition="7" />
-    <scopeInfo nodeId="1240670025363" fileName="CheckLangForJavaStubModels_Action.java" startLine="92" startPosition="32" endLine="95" endPosition="7" />
-    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1240669991829" fileName="CheckLangForJavaStubModels_Action.java" startLine="88" startPosition="31" endLine="91" endPosition="7">
+      <varInfo nodeId="1240669991829" varName="modelName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240670025363" fileName="CheckLangForJavaStubModels_Action.java" startLine="92" startPosition="32" endLine="95" endPosition="7">
+      <varInfo nodeId="1240670025363" varName="modelName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1240664643338" varName="_params" />
+      <varInfo nodeId="1240664643338" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="44" startPosition="9" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
     <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
@@ -82,11 +95,21 @@
     <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="43" startPosition="89" endLine="52" endPosition="5" />
     <scopeInfo nodeId="1240664759218" fileName="CheckLangForJavaStubModels_Action.java" startLine="76" startPosition="116" endLine="85" endPosition="11" />
     <scopeInfo nodeId="1240664734918" fileName="CheckLangForJavaStubModels_Action.java" startLine="75" startPosition="101" endLine="86" endPosition="9" />
-    <scopeInfo nodeId="1240664759215" fileName="CheckLangForJavaStubModels_Action.java" startLine="75" startPosition="101" endLine="86" endPosition="9" />
-    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="42" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1240664759215" fileName="CheckLangForJavaStubModels_Action.java" startLine="75" startPosition="101" endLine="86" endPosition="9">
+      <varInfo nodeId="1240664759215" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="42" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1240664643338" varName="_params" />
+      <varInfo nodeId="1240664643338" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="55" startPosition="95" endLine="67" endPosition="16" />
-    <scopeInfo nodeId="1240664734869" fileName="CheckLangForJavaStubModels_Action.java" startLine="74" startPosition="79" endLine="87" endPosition="7" />
-    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="54" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1240664734869" fileName="CheckLangForJavaStubModels_Action.java" startLine="74" startPosition="79" endLine="87" endPosition="7">
+      <varInfo nodeId="1240664734869" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="54" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1240664643338" varName="_params" />
+      <varInfo nodeId="1240664643338" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="71" startPosition="9" endLine="103" endPosition="98">
       <varInfo nodeId="1240669806600" varName="langStubModels" />
       <varInfo nodeId="1240669985025" varName="langStubsMsg" />
@@ -96,7 +119,10 @@
       <varInfo nodeId="1240670030362" varName="otherStubsMsg" />
     </scopeInfo>
     <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="70" startPosition="96" endLine="106" endPosition="5" />
-    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="69" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="69" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="1240664643338" varName="_params" />
+      <varInfo nodeId="1240664643338" varName="event" />
+    </scopeInfo>
     <unitInfo nodeId="1240664643338" fileName="CheckLangForJavaStubModels_Action.java" startLine="29" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.smodel.plugin.CheckLangForJavaStubModels_Action" />
   </root>
   <root nodeId="1240665064999">
@@ -111,7 +137,9 @@
     <nodeInfo nodeId="1240665064999" fileName="LanguageInternalAddition_ActionGroup.java" startLine="16" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1240665064999" fileName="LanguageInternalAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageInternalAddition_ActionGroup#()V" />
     <scopeInfo nodeId="1240665064999" fileName="LanguageInternalAddition_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="128" />
-    <scopeInfo nodeId="1240665064999" fileName="LanguageInternalAddition_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="1240665064999" fileName="LanguageInternalAddition_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
+      <varInfo nodeId="1240665064999" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1240665064999" fileName="LanguageInternalAddition_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
     <scopeInfo nodeId="1240665064999" fileName="LanguageInternalAddition_ActionGroup.java" startLine="12" startPosition="49" endLine="21" endPosition="5" />
     <scopeInfo nodeId="1240665064999" fileName="LanguageInternalAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" />
@@ -127,20 +155,20 @@
     <nodeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="53" startPosition="78" endLine="54" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2647935289680933630" fileName="SNodeViewer_WrapperFactory.java" startLine="59" startPosition="110" endLine="60" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2647935289680933637" fileName="SNodeViewer_WrapperFactory.java" startLine="60" startPosition="78" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3173086048273253537" fileName="SNodeViewer_WrapperFactory.java" startLine="61" startPosition="0" endLine="62" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2647935289680935401" fileName="SNodeViewer_WrapperFactory.java" startLine="62" startPosition="207" endLine="63" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2647935289680969333" fileName="SNodeViewer_WrapperFactory.java" startLine="63" startPosition="176" endLine="64" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2647935289680971578" fileName="SNodeViewer_WrapperFactory.java" startLine="64" startPosition="185" endLine="65" endPosition="372" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2647935289680971577" fileName="SNodeViewer_WrapperFactory.java" startLine="65" startPosition="372" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3173086048273253537" fileName="SNodeViewer_WrapperFactory.java" startLine="61" startPosition="0" endLine="62" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2647935289680935401" fileName="SNodeViewer_WrapperFactory.java" startLine="62" startPosition="223" endLine="63" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2647935289680969333" fileName="SNodeViewer_WrapperFactory.java" startLine="63" startPosition="192" endLine="64" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2647935289680971578" fileName="SNodeViewer_WrapperFactory.java" startLine="64" startPosition="201" endLine="65" endPosition="388" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2647935289680971577" fileName="SNodeViewer_WrapperFactory.java" startLine="65" startPosition="388" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4322674958982372352" fileName="SNodeViewer_WrapperFactory.java" startLine="66" startPosition="0" endLine="67" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4322674958982425531" fileName="SNodeViewer_WrapperFactory.java" startLine="69" startPosition="238" endLine="70" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4322674958982425531" fileName="SNodeViewer_WrapperFactory.java" startLine="69" startPosition="238" endLine="70" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2647935289680970210" fileName="SNodeViewer_WrapperFactory.java" startLine="72" startPosition="7" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7328749533186372117" fileName="SNodeViewer_WrapperFactory.java" startLine="73" startPosition="0" endLine="74" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7328749533186372138" fileName="SNodeViewer_WrapperFactory.java" startLine="75" startPosition="65" endLine="76" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7328749533186414816" fileName="SNodeViewer_WrapperFactory.java" startLine="76" startPosition="147" endLine="77" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7328749533186372138" fileName="SNodeViewer_WrapperFactory.java" startLine="75" startPosition="65" endLine="76" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7328749533186414816" fileName="SNodeViewer_WrapperFactory.java" startLine="76" startPosition="163" endLine="77" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2647935289680969350" fileName="SNodeViewer_WrapperFactory.java" startLine="78" startPosition="7" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6720888454534253493" fileName="SNodeViewer_WrapperFactory.java" startLine="79" startPosition="0" endLine="80" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4322674958982425554" fileName="SNodeViewer_WrapperFactory.java" startLine="82" startPosition="79" endLine="83" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4322674958982425554" fileName="SNodeViewer_WrapperFactory.java" startLine="82" startPosition="79" endLine="83" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2647935289680933642" fileName="SNodeViewer_WrapperFactory.java" startLine="85" startPosition="7" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2647935289680933639" fileName="SNodeViewer_WrapperFactory.java" startLine="86" startPosition="0" endLine="87" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="92" startPosition="59" endLine="93" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -177,14 +205,16 @@
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="38" startPosition="116" endLine="39" endPosition="23" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="47" startPosition="48" endLine="48" endPosition="19" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="53" startPosition="78" endLine="54" endPosition="68" />
-    <scopeInfo nodeId="4322674958982425530" fileName="SNodeViewer_WrapperFactory.java" startLine="69" startPosition="238" endLine="70" endPosition="151" />
-    <scopeInfo nodeId="4322674958982425553" fileName="SNodeViewer_WrapperFactory.java" startLine="82" startPosition="79" endLine="83" endPosition="193" />
+    <scopeInfo nodeId="4322674958982425530" fileName="SNodeViewer_WrapperFactory.java" startLine="69" startPosition="238" endLine="70" endPosition="167" />
+    <scopeInfo nodeId="4322674958982425553" fileName="SNodeViewer_WrapperFactory.java" startLine="82" startPosition="79" endLine="83" endPosition="209" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="92" startPosition="59" endLine="93" endPosition="72" />
     <scopeInfo nodeId="6583956526375652262" fileName="SNodeViewer_WrapperFactory.java" startLine="100" startPosition="64" endLine="101" endPosition="164" />
     <scopeInfo nodeId="6720888454534220004" fileName="SNodeViewer_WrapperFactory.java" startLine="102" startPosition="14" endLine="103" endPosition="111" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="22" startPosition="69" endLine="24" endPosition="3" />
     <scopeInfo nodeId="7328749533186372132" fileName="SNodeViewer_WrapperFactory.java" startLine="75" startPosition="65" endLine="77" endPosition="89" />
-    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="46" startPosition="63" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="46" startPosition="63" endLine="49" endPosition="5">
+      <varInfo nodeId="2647935289680925237" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4322674958982425516" fileName="SNodeViewer_WrapperFactory.java" startLine="68" startPosition="60" endLine="71" endPosition="9" />
     <scopeInfo nodeId="4322674958982425525" fileName="SNodeViewer_WrapperFactory.java" startLine="68" startPosition="60" endLine="71" endPosition="9">
       <varInfo nodeId="4322674958982425526" varName="property" />
@@ -193,7 +223,9 @@
     <scopeInfo nodeId="4322674958982425552" fileName="SNodeViewer_WrapperFactory.java" startLine="81" startPosition="60" endLine="84" endPosition="9">
       <varInfo nodeId="4322674958982425563" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="2647935289680925237" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="52" startPosition="128" endLine="56" endPosition="0" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="91" startPosition="109" endLine="95" endPosition="0" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="51" startPosition="60" endLine="56" endPosition="55" />
@@ -201,20 +233,28 @@
     <scopeInfo nodeId="2647935289680933588" fileName="SNodeViewer_WrapperFactory.java" startLine="98" startPosition="95" endLine="105" endPosition="159">
       <varInfo nodeId="6583956526375553963" varName="containingRole" />
     </scopeInfo>
-    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="33" startPosition="58" endLine="41" endPosition="20" />
+    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="33" startPosition="58" endLine="41" endPosition="20">
+      <varInfo nodeId="2647935289680925237" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="50" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="89" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="97" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="97" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="2647935289680925237" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="32" startPosition="108" endLine="43" endPosition="0" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="31" startPosition="67" endLine="43" endPosition="14" />
-    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="29" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="29" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="2647935289680925237" varName="javaValue" />
+    </scopeInfo>
     <scopeInfo nodeId="2647935289680925240" fileName="SNodeViewer_WrapperFactory.java" startLine="59" startPosition="110" endLine="87" endPosition="20">
       <varInfo nodeId="7328749533186372118" varName="currentChild" />
       <varInfo nodeId="4322674958982372353" varName="properties" />
       <varInfo nodeId="6720888454534253494" varName="references" />
       <varInfo nodeId="2647935289680933631" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="58" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="58" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="2647935289680925237" varName="value" />
+    </scopeInfo>
     <unitInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="22" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.smodel.plugin.SNodeViewer_WrapperFactory" />
     <unitInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="52" startPosition="60" endLine="56" endPosition="7" unitName="jetbrains.mps.lang.smodel.plugin.SNodeViewer_WrapperFactory$1" />
     <unitInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="32" startPosition="58" endLine="43" endPosition="5" unitName="jetbrains.mps.lang.smodel.plugin.SNodeViewer_WrapperFactory$1" />
@@ -274,13 +314,34 @@
     <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="88" startPosition="59" endLine="89" endPosition="25" />
     <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="92" startPosition="45" endLine="93" endPosition="25" />
     <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="9" startPosition="30" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="15" startPosition="0" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="27" startPosition="0" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="39" startPosition="0" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="51" startPosition="0" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="63" startPosition="0" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="75" startPosition="0" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="87" startPosition="0" endLine="90" endPosition="5" />
+    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="15" startPosition="0" endLine="18" endPosition="5">
+      <varInfo nodeId="2647935289680933623" varName="name" />
+      <varInfo nodeId="2647935289680933623" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="27" startPosition="0" endLine="30" endPosition="5">
+      <varInfo nodeId="2647935289680933623" varName="name" />
+      <varInfo nodeId="2647935289680933623" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="39" startPosition="0" endLine="42" endPosition="5">
+      <varInfo nodeId="2647935289680933623" varName="name" />
+      <varInfo nodeId="2647935289680933623" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="51" startPosition="0" endLine="54" endPosition="5">
+      <varInfo nodeId="2647935289680933623" varName="name" />
+      <varInfo nodeId="2647935289680933623" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="63" startPosition="0" endLine="66" endPosition="5">
+      <varInfo nodeId="2647935289680933623" varName="name" />
+      <varInfo nodeId="2647935289680933623" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="75" startPosition="0" endLine="78" endPosition="5">
+      <varInfo nodeId="2647935289680933623" varName="name" />
+      <varInfo nodeId="2647935289680933623" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="87" startPosition="0" endLine="90" endPosition="5">
+      <varInfo nodeId="2647935289680933623" varName="name" />
+      <varInfo nodeId="2647935289680933623" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="2647935289680933623" fileName="SNodeWatchables.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />

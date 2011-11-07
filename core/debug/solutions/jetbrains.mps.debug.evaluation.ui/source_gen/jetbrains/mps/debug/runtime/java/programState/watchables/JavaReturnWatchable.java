@@ -5,7 +5,7 @@ package jetbrains.mps.debug.runtime.java.programState.watchables;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
@@ -17,7 +17,7 @@ public class JavaReturnWatchable extends JavaBreakpointWatchable {
 
   public JavaReturnWatchable(Value value, String classFQName, ThreadReference threadReference) {
     super(classFQName, threadReference);
-    myValue = ValueUtil.fromJDIValue(value, myClassFQName, threadReference);
+    myValue = AbstractValueUtil.getInstance().fromJDIValue(value, myClassFQName, threadReference);
   }
 
   @Override

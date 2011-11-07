@@ -62,7 +62,7 @@ public class JavaArrayValue extends JavaValue {
   }
 
   public JavaValue getElementValue(int index) {
-    return ValueUtil.fromJDIValueRaw(EvaluationUtils.getElementAt((ArrayReference) myValue, index), myClassFQName, myThreadReference);
+    return AbstractValueUtil.getInstance().fromJDIValueRaw(EvaluationUtils.getElementAt((ArrayReference) myValue, index), myClassFQName, myThreadReference);
   }
 
   public int getSize() {
@@ -74,7 +74,7 @@ public class JavaArrayValue extends JavaValue {
     List<Value> valueList = arrayReference.getValues();
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Value v : valueList) {
-      result.add(ValueUtil.fromJDIValueRaw(v, myClassFQName, myThreadReference));
+      result.add(AbstractValueUtil.getInstance().fromJDIValueRaw(v, myClassFQName, myThreadReference));
     }
     return result;
   }
@@ -91,7 +91,7 @@ public class JavaArrayValue extends JavaValue {
     List<Value> valueList = arrayReference.getValues(startIndex, endIndex);
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Value v : valueList) {
-      result.add(ValueUtil.fromJDIValueRaw(v, myClassFQName, myThreadReference));
+      result.add(AbstractValueUtil.getInstance().fromJDIValueRaw(v, myClassFQName, myThreadReference));
     }
     return result;
   }

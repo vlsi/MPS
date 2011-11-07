@@ -11,17 +11,17 @@ import com.sun.jdi.ObjectReference;
 import com.sun.jdi.ArrayReference;
 import com.sun.jdi.StringReference;
 
-public class ValueUtil {
+/*package*/ class ValueUtil extends AbstractValueUtil {
   public ValueUtil() {
   }
 
-  public static JavaValue fromJDIValue(Value value, @NotNull String classFQname, ThreadReference threadReference) {
+  public JavaValue fromJDIValue(Value value, @NotNull String classFQname, ThreadReference threadReference) {
     //  could not we, like, get fqName from the value? 
     JavaValue javaValue = fromJDIValueRaw(value, classFQname, threadReference);
     return tryToWrap(classFQname, javaValue);
   }
 
-  public static JavaValue fromJDIValue(@Nullable Value value, ThreadReference threadReference) {
+  public JavaValue fromJDIValue(@Nullable Value value, ThreadReference threadReference) {
     if (value == null) {
       return fromJDIValueRaw(value, "java.lang.Object", threadReference);
     }
@@ -29,21 +29,15 @@ public class ValueUtil {
     return tryToWrap(value.type().name(), javaValue);
   }
 
-  public static JavaValue tryToWrap(@NotNull JavaValue javaValue) {
-    //  why here? 
-    return tryToWrap(javaValue.getClassFQName(), javaValue);
-  }
-
-  private static JavaValue tryToWrap(@NotNull String classFQname, JavaValue javaValue) {
-    CustomViewersManager customViewersManager = CustomViewersManager.getInstance();
-    ValueWrapper wrapper = customViewersManager.getValueWrapper(javaValue, classFQname);
+  private JavaValue tryToWrap(@NotNull String classFQname, JavaValue javaValue) {
+    ValueWrapper wrapper = CustomViewersManager.getInstance().getValueWrapper(javaValue, classFQname);
     if (wrapper == null) {
       return javaValue;
     }
     return wrapper;
   }
 
-  public static JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
+  public JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
     if (value == null) {
       return new JavaPrimitiveValue(value, classFQname, threadReference);
     }
@@ -59,5 +53,9 @@ public class ValueUtil {
     } else {
       return new JavaPrimitiveValue(value, classFQname, threadReference);
     }
+  }
+
+  static {
+    AbstractValueUtil.INSTANCE = new ValueUtil();
   }
 }

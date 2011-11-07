@@ -132,7 +132,9 @@
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="89" startPosition="50" endLine="90" endPosition="40" />
     <scopeInfo nodeId="2526540486116006665" fileName="MPSInstance_Configuration.java" startLine="93" startPosition="41" endLine="94" endPosition="130" />
     <scopeInfo nodeId="1806801515172088112" fileName="MPSInstance_Configuration.java" startLine="98" startPosition="36" endLine="99" endPosition="18" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="111" startPosition="0" endLine="112" endPosition="46" />
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="111" startPosition="0" endLine="112" endPosition="46">
+      <varInfo nodeId="3271576760503781388" varName="ex" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="111" startPosition="45" endLine="112" endPosition="46" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="118" startPosition="132" endLine="119" endPosition="86" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="123" startPosition="91" endLine="124" endPosition="16" />
@@ -143,11 +145,19 @@
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="144" startPosition="48" endLine="145" endPosition="76" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Editor.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="153" startPosition="0" endLine="155" endPosition="5" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Factory.java" startLine="9" startPosition="77" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Factory.java" startLine="9" startPosition="77" endLine="12" endPosition="3">
+      <varInfo nodeId="3271576760503781388" varName="type" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="34" startPosition="0" endLine="37" endPosition="3" />
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="34" startPosition="0" endLine="37" endPosition="3">
+      <varInfo nodeId="3271576760503781388" varName="factory" />
+      <varInfo nodeId="3271576760503781388" varName="name" />
+      <varInfo nodeId="3271576760503781388" varName="project" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="107" startPosition="9" endLine="110" endPosition="19" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Factory.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Factory.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="project" />
+    </scopeInfo>
     <scopeInfo nodeId="1675890557021687493" fileName="MPSInstance_Configuration_Editor.java" startLine="43" startPosition="106" endLine="47" endPosition="95" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Editor.java" startLine="43" startPosition="106" endLine="47" endPosition="95" />
     <scopeInfo nodeId="1675890557021687471" fileName="MPSInstance_Configuration_Editor.java" startLine="50" startPosition="78" endLine="54" endPosition="96" />
@@ -157,34 +167,63 @@
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="2526540486116051337" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="2526540486116068178" fileName="MPSInstance_Configuration.java" startLine="97" startPosition="40" endLine="101" endPosition="130" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="126" startPosition="0" endLine="130" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="provider" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Factory.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="47" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="116" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="121" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="142" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="47" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="116" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="environment" />
+      <varInfo nodeId="3271576760503781388" varName="executor" />
+    </scopeInfo>
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="121" startPosition="0" endLine="126" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="runner" />
+    </scopeInfo>
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="142" startPosition="0" endLine="147" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="executorId" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="39" startPosition="73" endLine="45" endPosition="5" />
     <scopeInfo nodeId="3691751483355943647" fileName="MPSInstance_Configuration.java" startLine="39" startPosition="73" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="158" startPosition="61" endLine="164" endPosition="19" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Editor.java" startLine="49" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="158" startPosition="61" endLine="164" endPosition="19">
+      <varInfo nodeId="3271576760503781388" varName="state" />
+    </scopeInfo>
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration_Editor.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="configuration" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="96" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="2526540486116068189" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="52" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="52" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="3271576760503781388" varName="element" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="38" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="105" startPosition="44" endLine="114" endPosition="17" />
+    <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="105" startPosition="44" endLine="114" endPosition="17">
+      <varInfo nodeId="3271576760503781388" varName="clone" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503781388" fileName="MPSInstance_Configuration.java" startLine="156" startPosition="0" endLine="166" endPosition="0" />
     <scopeInfo nodeId="3271576760503781391" fileName="MPSInstance_Configuration_Editor.java" startLine="28" startPosition="32" endLine="40" endPosition="21">
       <varInfo nodeId="4836152615233882427" varName="mainPanel" />
@@ -225,11 +264,15 @@
     <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="66" />
     <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="54" startPosition="40" endLine="55" endPosition="103" />
     <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="84" />
+    <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="84">
+      <varInfo nodeId="3271576760503788622" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="3271576760503788622" varName="factory" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="3271576760503788622" fileName="MPS_Kind.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
@@ -271,18 +314,31 @@
     <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="71" startPosition="60" endLine="72" endPosition="18" />
     <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="74" startPosition="62" endLine="75" endPosition="18" />
     <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="35" startPosition="173" endLine="37" endPosition="32" />
-    <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="34" startPosition="0" endLine="38" endPosition="3" />
+    <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="34" startPosition="0" endLine="38" endPosition="3">
+      <varInfo nodeId="3271576760503799855" varName="configuration" />
+      <varInfo nodeId="3271576760503799855" varName="environment" />
+      <varInfo nodeId="3271576760503799855" varName="executor" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="57" startPosition="148" endLine="61" endPosition="0" />
     <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="70" startPosition="55" endLine="77" endPosition="17" />
-    <scopeInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="53" startPosition="5" endLine="61" endPosition="10" />
-    <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="69" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="53" startPosition="5" endLine="61" endPosition="10">
+      <varInfo nodeId="3271576760503830825" varName="_consoleView" />
+      <varInfo nodeId="3271576760503830825" varName="_processHandler" />
+    </scopeInfo>
+    <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="69" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="3271576760503799855" varName="executorId" />
+    </scopeInfo>
     <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="49" startPosition="110" endLine="62" endPosition="5">
       <varInfo nodeId="7236226861153446602" varName="console" />
+      <varInfo nodeId="3271576760503799855" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="47" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="47" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="3271576760503799855" varName="executor" />
+      <varInfo nodeId="3271576760503799855" varName="runner" />
+    </scopeInfo>
     <unitInfo nodeId="3271576760503799855" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="29" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_RunProfileState" />
     <unitInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="57" startPosition="118" endLine="61" endPosition="7" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_RunProfileState$1" />
   </root>
@@ -400,8 +456,12 @@
     <scopeInfo nodeId="6269383727488505976" fileName="Mps_Command.java" startLine="132" startPosition="61" endLine="136" endPosition="33" />
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="4820256314556385190" fileName="Mps_Command.java" startLine="157" startPosition="85" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="8234001627574046935" fileName="Mps_Command.java" startLine="161" startPosition="45" endLine="165" endPosition="0" />
+    <scopeInfo nodeId="4820256314556385190" fileName="Mps_Command.java" startLine="157" startPosition="85" endLine="161" endPosition="0">
+      <varInfo nodeId="4820256314556385190" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8234001627574046935" fileName="Mps_Command.java" startLine="161" startPosition="45" endLine="165" endPosition="0">
+      <varInfo nodeId="8234001627574046935" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="6586232406240918737" fileName="Mps_Command.java" startLine="174" startPosition="0" endLine="178" endPosition="0" />
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="41" startPosition="83" endLine="46" endPosition="16" />
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="51" startPosition="49" endLine="56" endPosition="16" />
@@ -410,18 +470,40 @@
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="81" startPosition="67" endLine="86" endPosition="16" />
     <scopeInfo nodeId="4505698065304913547" fileName="Mps_Command.java" startLine="149" startPosition="39" endLine="154" endPosition="9" />
     <scopeInfo nodeId="6586232406240918737" fileName="Mps_Command.java" startLine="169" startPosition="41" endLine="174" endPosition="0" />
-    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="88" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="95" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="102" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="109" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="116" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="88" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="7364083846322268554" varName="virtualMachineParameters" />
+    </scopeInfo>
+    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="95" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="7364083846322268554" varName="jrePath" />
+    </scopeInfo>
+    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="102" startPosition="0" endLine="109" endPosition="0">
+      <varInfo nodeId="7364083846322268554" varName="configurationPath" />
+    </scopeInfo>
+    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="109" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="7364083846322268554" varName="systemPath" />
+    </scopeInfo>
+    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="116" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="7364083846322268554" varName="debuggerSettings" />
+    </scopeInfo>
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="131" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="4505698065304913546" fileName="Mps_Command.java" startLine="148" startPosition="223" endLine="156" endPosition="0" />
-    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="38" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="48" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="58" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="68" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="78" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="4505698065304913546" fileName="Mps_Command.java" startLine="148" startPosition="223" endLine="156" endPosition="0">
+      <varInfo nodeId="4505698065304913546" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="38" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="7364083846322268554" varName="virtualMachineParameters" />
+    </scopeInfo>
+    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="48" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="7364083846322268554" varName="jrePath" />
+    </scopeInfo>
+    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="58" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="7364083846322268554" varName="configurationPath" />
+    </scopeInfo>
+    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="68" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="7364083846322268554" varName="systemPath" />
+    </scopeInfo>
+    <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="78" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="7364083846322268554" varName="debuggerSettings" />
+    </scopeInfo>
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="168" startPosition="67" endLine="178" endPosition="6" />
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="167" startPosition="0" endLine="180" endPosition="0" />
     <scopeInfo nodeId="6600548944311449759" fileName="Mps_Command.java" startLine="147" startPosition="44" endLine="165" endPosition="24">
