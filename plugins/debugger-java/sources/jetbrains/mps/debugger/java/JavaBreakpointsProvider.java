@@ -28,7 +28,7 @@ import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debugger.api.ui.icons.Icons;
 import jetbrains.mps.debugger.java.breakpoints.*;
 import jetbrains.mps.debugger.java.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
-import jetbrains.mps.debugger.java.ui.breakpoints.ExceptionChooserDialog;
+import jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog;
 import jetbrains.mps.debugger.java.breakpoints.JavaBreakpoint;import jetbrains.mps.debugger.java.breakpoints.JavaBreakpointInfo;import jetbrains.mps.debugger.java.breakpoints.JavaBreakpointKind;import jetbrains.mps.debugger.java.breakpoints.LineBreakpoint;import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;

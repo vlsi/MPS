@@ -25,8 +25,8 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <configurationType implementation="jetbrains.mps.debugger.java.remote.Remote_Kind"/>
-    <configurationType implementation="jetbrains.mps.debugger.java.mps.MPS_Kind"/>
+    <configurationType implementation="jetbrains.mps.debugger.java.runtime.remote.Remote_Kind"/>
+    <configurationType implementation="jetbrains.mps.debugger.java.runtime.mps.MPS_Kind"/>
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
   </extensions>
 </idea-plugin>
