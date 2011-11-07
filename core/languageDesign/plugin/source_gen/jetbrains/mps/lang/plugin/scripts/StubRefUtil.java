@@ -66,6 +66,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
     return isReferenceToMethod(SNodeOperations.getReference(methodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), methodSignature);
   }
 
+  /*package*/ static boolean isClassCreator(SNode creator, @NotNull String creatorSignature) {
+    return isReferenceToMethod(SNodeOperations.getReference(creator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), creatorSignature);
+  }
+
   /*package*/ static void addRequiredImports(SModel model, SNode newNode) {
     for (SReference ref : ListSequence.fromList(SNodeOperations.getDescendants(newNode, null, true, new String[]{})).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode n) {
@@ -75,8 +79,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
       SModelReference targetModelRef = ref.getTargetSModelReference();
       model.addModelImport(targetModelRef, false);
 
-      IModule sourceModule = check_4tnolf_a0d0a0i(model.getModelDescriptor());
-      IModule targetModule = check_4tnolf_a0e0a0i(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
+      IModule sourceModule = check_4tnolf_a0d0a0j(model.getModelDescriptor());
+      IModule targetModule = check_4tnolf_a0e0a0j(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
       if (sourceModule != null && targetModule != null) {
         if (!(sourceModule.getDependenciesManager().getAllVisibleModules().contains(targetModule))) {
           sourceModule.addDependency(targetModule.getModuleReference(), false);
@@ -133,14 +137,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
     return null;
   }
 
-  private static IModule check_4tnolf_a0d0a0i(SModelDescriptor checkedDotOperand) {
+  private static IModule check_4tnolf_a0d0a0j(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_4tnolf_a0e0a0i(SModelDescriptor checkedDotOperand) {
+  private static IModule check_4tnolf_a0e0a0j(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
