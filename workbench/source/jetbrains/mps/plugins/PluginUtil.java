@@ -118,7 +118,7 @@ public class PluginUtil {
 
     public String getPlugin(Solution s) {
       if (s.getModuleFqName().equals(IDE_MODULE_ID)) return Ide_ProjectPlugin.class.getName();
-      return NameUtil.namespaceFromLongName(s.getModuleFqName()) + "." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ProjectPlugin";
+      return NameUtil.namespaceFromLongName(s.getModuleFqName()) + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ProjectPlugin";
     }
   }
 
@@ -129,7 +129,7 @@ public class PluginUtil {
 
     public String getPlugin(Solution s) {
       if (s.getModuleFqName().equals(IDE_MODULE_ID)) return Ide_ApplicationPlugin.class.getName();
-      return NameUtil.namespaceFromLongName(s.getModuleFqName()) + "." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ApplicationPlugin";
+      return NameUtil.namespaceFromLongName(s.getModuleFqName()) + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ApplicationPlugin";
     }
   }
 }
