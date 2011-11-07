@@ -23,6 +23,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.nodeEditor.cellLayout.PunctuationUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -55,7 +56,8 @@ public class SearchPanel extends AbstractSearchPanel {
     myEditor = editor;
   }
 
-  protected SearchHistoryComponent getSearchHistory() {
+  @Override
+  protected SearchHistoryStorage getSearchHistory() {
     IOperationContext operationContext = myEditor.getOperationContext();
     if (operationContext == null) {
       return new SearchHistoryComponent();

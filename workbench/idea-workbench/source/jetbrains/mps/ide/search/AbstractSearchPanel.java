@@ -16,15 +16,12 @@
 package jetbrains.mps.ide.search;
 
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.components.panels.NonOpaquePanel;
-import jetbrains.mps.ide.actions.FindNext_Action;
-import jetbrains.mps.ide.actions.FindPrevious_Action;
-import jetbrains.mps.ide.actions.Find_Action;
-import jetbrains.mps.ide.ui.CompletionTextField;
+import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.search.icons.Icons;
+import jetbrains.mps.ide.ui.CompletionTextField;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -33,6 +30,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -47,7 +45,7 @@ public abstract class AbstractSearchPanel extends JPanel {
   private JComponent myToolbarComponent;
   private String myErrorMessage = null;
 
-  protected abstract SearchHistoryComponent getSearchHistory();
+  protected abstract SearchHistoryStorage getSearchHistory();
 
   public abstract void goToPrevious();
 
@@ -72,7 +70,9 @@ public abstract class AbstractSearchPanel extends JPanel {
     group.add(new ShowHistoryAction());
     group.add(new PrevOccurenceAction());
     group.add(new NextOccurenceAction());
-    group.add(new FindAllAction());
+    if (canExportToFindTool()) {
+      group.add(new FindAllAction());
+    }
 
     final ActionToolbar tb = ActionManager.getInstance().createActionToolbar("SearchBar", group, true);
     tb.setLayoutPolicy(ActionToolbar.NOWRAP_LAYOUT_POLICY);
@@ -329,8 +329,7 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setText("Search History");
 
       ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
-        Find_Action.class.getName()).getShortcutSet().getShortcuts()));
+      shortcuts.addAll(getActionShortcuts(MPSActions.EDITOR_FIND));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_H, KeyEvent.CTRL_DOWN_MASK), null));
 
       registerCustomShortcutSet(
@@ -354,10 +353,8 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setText("Previous Occurrence");
 
       ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
-        FindPrevious_Action.class.getName()).getShortcutSet().getShortcuts()));
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
-        IdeActions.ACTION_EDITOR_MOVE_CARET_UP).getShortcutSet().getShortcuts()));
+      shortcuts.addAll(getActionShortcuts(MPSActions.EDITOR_FIND_PREVIOUS));
+      shortcuts.addAll(getActionShortcuts(IdeActions.ACTION_EDITOR_MOVE_CARET_UP));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, KeyEvent.SHIFT_DOWN_MASK), null));
 
       registerCustomShortcutSet(
@@ -382,10 +379,8 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setText("Next Occurrence");
 
       ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
-        FindNext_Action.class.getName()).getShortcutSet().getShortcuts()));
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
-        IdeActions.ACTION_EDITOR_MOVE_CARET_DOWN).getShortcutSet().getShortcuts()));
+      shortcuts.addAll(getActionShortcuts(MPSActions.EDITOR_FIND_NEXT));
+      shortcuts.addAll(getActionShortcuts(IdeActions.ACTION_EDITOR_MOVE_CARET_DOWN));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), null));
 
       registerCustomShortcutSet(
@@ -405,11 +400,13 @@ public abstract class AbstractSearchPanel extends JPanel {
 
   private class FindAllAction extends AnAction {
     private FindAllAction() {
-      getTemplatePresentation().setIcon(IconLoader.getIcon("/actions/export.png"));
+      // FIXME absent icon getTemplatePresentation().setIcon(IconLoader.getIcon("/actions/export.png"));
       getTemplatePresentation().setDescription("Export matches to Find tool window");
       getTemplatePresentation().setText("Find All");
-      registerCustomShortcutSet(ActionManager.getInstance().getAction(
-        FindNext_Action.class.getName()).getShortcutSet(), myText);
+      AnAction findNext = ActionManager.getInstance().getAction(MPSActions.EDITOR_FIND_NEXT);
+      if (findNext != null) {
+        registerCustomShortcutSet(findNext.getShortcutSet(), myText);
+      }
     }
 
     public void update(AnActionEvent e) {
@@ -420,5 +417,14 @@ public abstract class AbstractSearchPanel extends JPanel {
     public void actionPerformed(AnActionEvent e) {
       exportToFindTool();
     }
+  }
+
+  private static List<Shortcut> getActionShortcuts(String actionId) {
+    AnAction action = ActionManager.getInstance().getAction(
+      actionId);
+    if (action == null) {
+      return Collections.emptyList();
+    }
+    return Arrays.asList(action.getShortcutSet().getShortcuts());
   }
 }

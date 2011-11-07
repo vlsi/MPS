@@ -36,7 +36,7 @@ import java.util.List;
     )
   }
 )
-public class SearchHistoryComponent implements ProjectComponent, PersistentStateComponent<MyState> {
+public class SearchHistoryComponent implements ProjectComponent, PersistentStateComponent<MyState>, SearchHistoryStorage {
   private MyState myState = new MyState();
 
   public void projectOpened() {

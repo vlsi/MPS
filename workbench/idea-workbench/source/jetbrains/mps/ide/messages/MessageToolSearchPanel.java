@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.ide.messages;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.search.AbstractSearchPanel;
-import jetbrains.mps.ide.search.SearchHistoryComponent;
+import jetbrains.mps.ide.search.SearchHistoryStorage;
 
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
@@ -32,15 +31,15 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
   private final Color myHighlightColor = new Color(250, 250, 0, 150);
 
   private JList myList;
-  private Project myProject;
+  private SearchHistoryStorage myHistory;
   private int myCountResult = 0;
   private List<Integer> myResults = new ArrayList<Integer>();
   private MyCellRenderer myRenderer = new MyCellRenderer();
   private ListCellRenderer myOriginalCellRenderer;
 
-  public MessageToolSearchPanel(JList list, Project project) {
-    myProject = project;
+  public MessageToolSearchPanel(JList list, SearchHistoryStorage history) {
     myList = list;
+    myHistory = history;
   }
 
   public void goToPrevious() {
@@ -71,8 +70,9 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     myList.setSelectedIndex(myResults.get(0));
   }
 
-  protected SearchHistoryComponent getSearchHistory() {
-    return myProject.getComponent(SearchHistoryComponent.class);
+  @Override
+  protected SearchHistoryStorage getSearchHistory() {
+    return myHistory;
   }
 
   protected void search() {

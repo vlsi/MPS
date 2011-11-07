@@ -31,6 +31,7 @@ import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import com.intellij.usageView.UsageViewBundle;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.Message;
@@ -52,7 +53,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * User: fyodor
  * Date: 4/21/11
  */
-abstract class MessageList implements IMessageList {
+abstract class MessageList implements IMessageList, SearchHistoryStorage {
 
   static final int MAX_SIZE = 10000;
 
@@ -77,6 +78,7 @@ abstract class MessageList implements IMessageList {
   private int myWarnings;
   private int myErrors;
   private int myHintObjects;
+  private List<String> mySearches = new ArrayList<String>();
 
   protected final FastListModel myModel = new FastListModel(MAX_SIZE);
   private JPanel myComponent = new RootPanel();
@@ -187,6 +189,17 @@ abstract class MessageList implements IMessageList {
     myList.setAutoscrolls(true);
   }
 
+  @Override
+  public List<String> getSearches() {
+    return new ArrayList<String>(mySearches);
+  }
+
+  @Override
+  public void setSearches(List<String> searches) {
+    mySearches.clear();
+    mySearches.addAll(searches);
+  }
+
   public JComponent getComponent() {
     return myComponent;
   }
@@ -218,7 +231,7 @@ abstract class MessageList implements IMessageList {
     myComponent.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         if (mySearchPanel == null) {
-          mySearchPanel = new MessageToolSearchPanel(myList, getProject());
+          mySearchPanel = new MessageToolSearchPanel(myList, MessageList.this);
           myComponent.add(mySearchPanel, BorderLayout.NORTH);
         }
         mySearchPanel.activate();
@@ -483,13 +496,14 @@ abstract class MessageList implements IMessageList {
   }
 
   /*package*/ MessageListState getState() {
-    return new MessageListState(myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myAutoscrollToSourceAction.isSelected(null));
+    return new MessageListState(myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myAutoscrollToSourceAction.isSelected(null), mySearches);
   }
 
   /*package*/ void loadState(MessageListState state) {
     myWarningsAction.setSelected(null, state.isWarnings());
     myInfoAction.setSelected(null, state.isInfo());
     myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
+    setSearches(state.getSearches());
   }
 
   public /*for tests*/ static class FastListModel extends AbstractListModel {
@@ -546,14 +560,16 @@ abstract class MessageList implements IMessageList {
     private boolean myWarnings;
     private boolean myInfo;
     private boolean myAutoscrollToSource;
+    private List<String> mySearches = new ArrayList<String>();
 
     public MessageListState() {
     }
 
-    public MessageListState(boolean warnings, boolean info, boolean autoscrollToSource) {
+    public MessageListState(boolean warnings, boolean info, boolean autoscrollToSource, List<String> searches) {
       myWarnings = warnings;
       myInfo = info;
       myAutoscrollToSource = autoscrollToSource;
+      mySearches = new ArrayList<String>(searches);
     }
 
     public boolean isWarnings() {
@@ -578,6 +594,14 @@ abstract class MessageList implements IMessageList {
 
     public void setAutoscrollToSource(boolean autoscrollToSource) {
       myAutoscrollToSource = autoscrollToSource;
+    }
+
+    public List<String> getSearches() {
+      return mySearches;
+    }
+
+    public void setSearches(List<String> searches) {
+      mySearches = searches;
     }
   }
 
