@@ -245,8 +245,8 @@ public class Solution extends AbstractModule {
       }
 
       private boolean canLoad() {
-        return getModuleDescriptor().getCompileInMPS();
-          //&& getModuleDescriptor().getKind() != SolutionKind.NONE;
+        return getModuleDescriptor().getCompileInMPS()
+          && getModuleDescriptor().getKind() != SolutionKind.NONE;
       }
     };
   }
