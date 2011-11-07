@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.workbench.save;
+package jetbrains.mps.ide.save;
 
 import com.intellij.AppTopics;
 import com.intellij.openapi.application.ApplicationManager;
@@ -35,7 +35,7 @@ public class ModelsSaver implements ApplicationComponent {
 
   @NotNull
   public String getComponentName() {
-    return "VCS Project Helper";
+    return "Models Saver";
   }
 
   public void initComponent() {

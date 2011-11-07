@@ -16,8 +16,8 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.search.AbstractSearchPanel;
-import jetbrains.mps.workbench.search.SearchHistoryComponent;
+import jetbrains.mps.ide.search.AbstractSearchPanel;
+import jetbrains.mps.ide.search.SearchHistoryComponent;
 
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;

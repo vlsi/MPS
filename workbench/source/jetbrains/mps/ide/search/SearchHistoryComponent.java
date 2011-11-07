@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.search;
+package jetbrains.mps.ide.search;
 
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import jetbrains.mps.workbench.search.SearchHistoryComponent.MyState;
+import jetbrains.mps.ide.search.SearchHistoryComponent.MyState;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

@@ -21,11 +21,9 @@ import gnu.trove.THashMap;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.Map;

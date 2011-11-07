@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.search;
+package jetbrains.mps.ide.search;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.IconLoader;
@@ -24,7 +24,7 @@ import jetbrains.mps.ide.actions.FindNext_Action;
 import jetbrains.mps.ide.actions.FindPrevious_Action;
 import jetbrains.mps.ide.actions.Find_Action;
 import jetbrains.mps.ide.ui.CompletionTextField;
-import jetbrains.mps.workbench.search.icons.Icons;
+import jetbrains.mps.ide.search.icons.Icons;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;

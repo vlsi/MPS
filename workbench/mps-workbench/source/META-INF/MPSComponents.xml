@@ -192,10 +192,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.save.ModelsSaver</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.generator.GeneratorCacheComponent</implementation-class>
     </component>
 
@@ -374,7 +370,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.search.SearchHistoryComponent</implementation-class>
+      <implementation-class>jetbrains.mps.ide.search.SearchHistoryComponent</implementation-class>
     </component>
 
     <component>

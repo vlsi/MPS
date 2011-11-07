@@ -36,8 +36,6 @@ import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -205,11 +203,10 @@ abstract class MessageList implements IMessageList {
     final JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JPanel(), BorderLayout.CENTER);
 
-    final DefaultActionGroup group = ActionUtils.groupFromActions(
-      myWarningsAction,
-      myInfoAction,
-      myAutoscrollToSourceAction
-    );
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(myWarningsAction);
+    group.add(myInfoAction);
+    group.add(myAutoscrollToSourceAction);
 
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
@@ -321,12 +318,9 @@ abstract class MessageList implements IMessageList {
     DefaultActionGroup group = new DefaultActionGroup();
 
     if (myList.getSelectedIndices().length != 0) {
-      group.add(new BaseAction("Copy Text") {
-        {
-          setExecuteOutsideCommand(true);
-        }
-
-        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+      group.add(new AnAction("Copy Text", null, null) {
+        @Override
+        public void actionPerformed(AnActionEvent e) {
           StringBuilder sb = new StringBuilder();
           for (Object o : myList.getSelectedValues()) {
             sb.append(((Message) o).getText());
@@ -339,15 +333,17 @@ abstract class MessageList implements IMessageList {
 
     group.addSeparator();
 
-    group.add(new BaseAction("Show Help for This Message") {
+    group.add(new AnAction("Show Help for This Message", null, null) {
       @Override
-      protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
+      public void update(AnActionEvent e) {
         boolean enabled = getHelpUrlForCurrentMessage() != null;
-        setEnabledState(e.getPresentation(), enabled);
+        Presentation presentation = e.getPresentation();
+        presentation.setEnabled(enabled);
+        presentation.setVisible(enabled);
       }
 
       @Override
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+      public void actionPerformed(AnActionEvent e) {
         showHelpForCurrentMessage();
       }
     });
@@ -356,12 +352,9 @@ abstract class MessageList implements IMessageList {
     populateActions(myList, group);
     group.addSeparator();
 
-    group.add(new BaseAction("Clear") {
-      {
-        setExecuteOutsideCommand(true);
-      }
-
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+    group.add(new AnAction("Clear", null, null) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
         clear();
       }
     });
