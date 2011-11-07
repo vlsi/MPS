@@ -19,8 +19,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.command.CommandProcessorEx;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -88,7 +87,7 @@ public class ModuleRepositoryComponent {
 
           };
 
-          if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+          if (MPSCore.getInstance().isTestMode()) return;
 
           for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
             root[0].add(new LanguageTreeNode(module));

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.ide.OccurenceNavigator;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
@@ -25,7 +26,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
-import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -58,7 +58,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-public abstract class UsagesView implements IExternalizeable, INavigator {
+public abstract class UsagesView implements IExternalizeable {
   //read/write constants
   private static final String QUERY = "query";
   private static final String RESULT_PROVIDER = "result_provider";
@@ -83,17 +83,18 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
   //for assertions - check invariant - constructor -> read|setRunOpts
   private boolean myIsInitialized = false;
   private AtomicReference<MakeSession> myMakeSession = new AtomicReference<MakeSession>();
+  private OccurenceNavigator myOccurenceNavigator;
 
   public UsagesView(Project project, ViewOptions defaultOptions) {
     myProject = project;
 
-    myPanel = new JPanel(new BorderLayout());
-
+    myPanel = new RootPanel();
     myTreeComponent = new UsagesTreeComponent(defaultOptions) {
       public Project getProject() {
         return myProject;
       }
     };
+    myOccurenceNavigator = myTreeComponent.getOccurenceNavigator();
 
     JPanel treeWrapperPanel = new JPanel(new BorderLayout());
     JPanel treeToolbarPanel = new JPanel(new BorderLayout());
@@ -107,6 +108,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   public void dispose() {
     myTreeComponent.dispose();
+    myOccurenceNavigator = null;
   }
 
   //----RUN STUFF----
@@ -159,14 +161,6 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
       }
     }
 //    GeneratorUIFacade.getInstance().generateModels(context, models, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
-  }
-
-  public void goToNext() {
-    myTreeComponent.goToNext();
-  }
-
-  public void goToPrevious() {
-    myTreeComponent.goToPrevious();
   }
 
   //----COMPONENT STUFF----
@@ -303,6 +297,36 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
       element.setAttribute(RERUN, Boolean.toString(myShowRerunButton));
       element.setAttribute(REGENERATE, Boolean.toString(myShowRegenerateButton));
       element.setAttribute(CLOSE, Boolean.toString(myShowCloseButton));
+    }
+  }
+
+  private class RootPanel extends JPanel implements OccurenceNavigator {
+    public RootPanel() {
+      super(new BorderLayout());
+    }
+
+    public boolean hasNextOccurence() {
+      return myOccurenceNavigator != null && myOccurenceNavigator.hasNextOccurence();
+    }
+
+    public boolean hasPreviousOccurence() {
+      return myOccurenceNavigator != null && myOccurenceNavigator.hasPreviousOccurence();
+    }
+
+    public OccurenceInfo goNextOccurence() {
+      return myOccurenceNavigator != null ? myOccurenceNavigator.goNextOccurence() : null;
+    }
+
+    public OccurenceInfo goPreviousOccurence() {
+      return myOccurenceNavigator != null ? myOccurenceNavigator.goPreviousOccurence() : null;
+    }
+
+    public String getNextOccurenceActionName() {
+      return myOccurenceNavigator != null ? myOccurenceNavigator.getNextOccurenceActionName() : "";
+    }
+
+    public String getPreviousOccurenceActionName() {
+      return myOccurenceNavigator != null ? myOccurenceNavigator.getPreviousOccurenceActionName() : "";
     }
   }
 

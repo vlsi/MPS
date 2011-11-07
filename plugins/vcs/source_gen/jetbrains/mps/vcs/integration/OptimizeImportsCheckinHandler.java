@@ -81,7 +81,7 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
         affectedModels.add(model);
       }
       final IOperationContext operationContext = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-      ThreadUtils.assertLogIsEDT();
+      ThreadUtils.assertEDT();
       try {
         jetbrains.mps.project.Project project = operationContext.getProject();
         if (project != null) {

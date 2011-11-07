@@ -188,10 +188,6 @@ public abstract class AbstractModule implements IModule {
 
   //----stubs
 
-  public boolean areJavaStubsEnabled() {
-    return false;
-  }
-
   public List<StubPath> getAllStubPaths() {
     LinkedHashSet<StubPath> result = new LinkedHashSet<StubPath>();
     result.addAll(getStubPaths());
@@ -215,8 +211,19 @@ public abstract class AbstractModule implements IModule {
 
   public List<StubPath> getStubPaths() {
     ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return Collections.emptyList();
+
+    List<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
+    ArrayList<StubPath> result = new ArrayList<StubPath>(stubModelEntries.size());
+    for (ModelRoot entry : stubModelEntries) {
+      result.add(new StubPath(entry.getPath(), entry.getManager()));
+    }
+    return result;
+  }
+
+  public static List<StubPath> getStubPaths(ModuleDescriptor descriptor) {
     if (descriptor != null) {
-      List<ModelRoot> stubModelEntries = getModuleDescriptor().getStubModelEntries();
+      List<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
       ArrayList<StubPath> result = new ArrayList<StubPath>(stubModelEntries.size());
       for (ModelRoot entry : stubModelEntries) {
         result.add(new StubPath(entry.getPath(), entry.getManager()));

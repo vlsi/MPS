@@ -21,20 +21,15 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.findusages.INavigateableTool;
-import jetbrains.mps.ide.findusages.INavigator;
-import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.SwingUtilities;
 
-public abstract class TabbedUsagesTool extends BaseProjectTool implements INavigateableTool {
+public abstract class TabbedUsagesTool extends BaseProjectTool {
   private static final Logger LOG = Logger.getLogger(UsagesViewTool.class);
   private ContentManagerAdapter myContentListener;
   private ReloadAdapter myReloadHandler;
@@ -44,21 +39,7 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
     super(project, id, number, icon, anchor, canCloseContent);
   }
 
-  @Nullable
-  public INavigator getCurrentNavigateableView() {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
-
-    int index = getCurrentTabIndex();
-    if (index == -1) return null;
-
-    return getUsagesView(index);
-  }
-
   public void doRegister() {
-    UsagesViewTracker.register(this);
-
     myContentListener = new ContentManagerAdapter() {
       public void contentRemoved(ContentManagerEvent event) {
         int index = event.getIndex();
@@ -94,8 +75,6 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
     if (myReloadHandler != null) {
       ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
     }
-
-    UsagesViewTracker.unregister(this);
   }
 
   protected void closeTab(int index) {

@@ -2531,7 +2531,7 @@ public class QueriesGenerated {
       baseMethodDeclaration = oldBMD;
       if ((baseMethodDeclaration != null)) {
         SNode instanceMethodDeclaration = SLinkOperations.getTarget(instanceMethodCall, "baseMethodDeclaration", false);
-        if (!(SPropertyOperations.getString(instanceMethodDeclaration, "name").equals("createNode"))) {
+        if (!("createNode".equals(SPropertyOperations.getString(instanceMethodDeclaration, "name")))) {
           continue;
         }
         SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(instanceMethodCall), "jetbrains.mps.baseLanguage.structure.DotExpression");
@@ -2583,7 +2583,7 @@ parametersLoop:
       baseMethodDeclaration = oldBMD;
       if ((baseMethodDeclaration != null)) {
         SNode instanceMethodDeclaration = SLinkOperations.getTarget(instanceMethodCall, "baseMethodDeclaration", false);
-        if (!(SPropertyOperations.getString(instanceMethodDeclaration, "name").equals("coerce_"))) {
+        if (!("coerce_".equals(SPropertyOperations.getString(instanceMethodDeclaration, "name")))) {
           continue;
         }
         SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(instanceMethodCall), "jetbrains.mps.baseLanguage.structure.DotExpression");

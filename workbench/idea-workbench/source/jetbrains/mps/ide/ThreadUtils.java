@@ -16,6 +16,7 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.IllegalModelAccessError;
 
 import javax.swing.SwingUtilities;
 
@@ -57,9 +58,9 @@ public class ThreadUtils {
     return SwingUtilities.isEventDispatchThread();
   }
 
-  public static void assertLogIsEDT() {
-    if (!isEventDispatchThread()) {
-      LOG.errorWithTrace("must be called from EDT");
+  public static void assertEDT() {
+    if(!isEventDispatchThread()) {
+      LOG.error(new IllegalStateException("must be called from EDT"));
     }
   }
 }

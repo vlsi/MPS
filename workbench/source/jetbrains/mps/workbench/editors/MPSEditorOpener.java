@@ -26,6 +26,7 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -34,18 +35,14 @@ import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
 import java.awt.Component;
 
 public class MPSEditorOpener {
@@ -76,60 +73,45 @@ public class MPSEditorOpener {
   public void openNode(final SNode node) {
     if (node == null) return;
     //todo why later?
-    SwingUtilities.invokeLater(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        ModuleContext context = ModuleContext.create(node, ProjectHelper.toMPSProject(myProject));
-        if (context == null) return;
-        boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          public Boolean compute() {
-            return !node.isRoot();
-          }
-        });
-        openNode(node, context, true, select);
+        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        if (modelDescriptor == null) return;
+
+        IModule module = modelDescriptor.getModule();
+        if (module == null) return;
+
+        ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(myProject));
+        openNode(node, context, true, !node.isRoot());
       }
     });
   }
 
+  /*
+   * Requires: model read, EDT.
+   */
   public IEditor editNode(@NotNull final SNode node, final IOperationContext context) {
-    return editNode(node, context, true);
+    ThreadUtils.assertEDT();
+    ModelAccess.assertLegalRead();
+
+    return openNode(node, context, true, !node.isRoot());
   }
 
-  public IEditor editNodeExplicitly(@NotNull final SNode node, final IOperationContext context) {
-    return editNode(node, context, false);
-  }
-
+  /*
+   * Requires: model read, EDT.
+   */
   public IEditor openNode(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
-    return openNode(node, context, focus, select, true);
-  }
+    ThreadUtils.assertEDT();
+    ModelAccess.assertLegalRead();
 
-  public IEditor openNodeExplicitly(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
-    return openNode(node, context, focus, select, false);
-  }
-
-  //----------generic
-
-  private IEditor editNode(final SNode node, final IOperationContext context, boolean openBaseNode) {
-    boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        return !node.isRoot();
-      }
-    });
-    return openNode(node, context, true, select, openBaseNode);
-  }
-
-  private IEditor openNode(final SNode node, @NotNull final IOperationContext context, final boolean focus, final boolean select, final boolean openBaseNode) {
     final jetbrains.mps.project.Project mpsProject = context.getProject();
     mpsProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     /* TODO use SNodePointer instead of SNode */
     /* temp hack: runWriteAction instead of read, TODO move sync into doOpenNode */
-    return ModelAccess.instance().runReadAction(new Computable<IEditor>() {
-      public IEditor compute() {
-        return doOpenNode(node, context, focus, select, openBaseNode);
-      }
-    });
+    return doOpenNode(node, context, focus, select);
   }
 
-  private IEditor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select, boolean openBaseNode) {
+  private IEditor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select) {
     assert node.isRegistered() : "You can't edit unregistered node";
 
     if (node.getModel().getModelDescriptor() == null) {
@@ -151,7 +133,7 @@ public class MPSEditorOpener {
         (node.getModel() != null ? ", modelDisposed: " + node.getModel().isDisposed() : "");
     }
     // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
-    final IEditor nodeEditor = openEditor(containingRoot, context, openBaseNode);
+    final IEditor nodeEditor = openEditor(containingRoot, context, true);
 
     //restore inspector state for opened editor (if exists)
     if (!restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector())) {

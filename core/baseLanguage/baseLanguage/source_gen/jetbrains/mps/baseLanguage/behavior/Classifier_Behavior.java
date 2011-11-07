@@ -18,6 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -145,6 +147,18 @@ public class Classifier_Behavior {
     return false;
   }
 
+  public static boolean call_isSame_4855996797771684010(SNode thisNode, SNode that) {
+    if (SNodeOperations.getConceptDeclaration(thisNode) != SNodeOperations.getConceptDeclaration(that)) {
+      return false;
+    }
+    // ignore model defferences for java_stub models 
+    String javastub = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
+    if (javastub.equals(SNodeOperations.getModel(thisNode).getStereotype()) && javastub.equals(SNodeOperations.getModel(that).getStereotype())) {
+      return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode).equals(INamedConcept_Behavior.call_getFqName_1213877404258(that));
+    }
+    return thisNode == that;
+  }
+
   public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     return false;
   }
@@ -183,7 +197,7 @@ public class Classifier_Behavior {
   }
 
   public static SNode call_getWithResolvedTypevars_3305065273710852527(SNode thisNode, SNode t, SNode ancestor) {
-    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a91(ancestor), true);
+    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a02(ancestor), true);
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return Classifier_Behavior.call_getResolvedVar_3305065273710881245(thisNode, SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), ancestor, coercedType);
     } else {
@@ -346,26 +360,26 @@ public class Classifier_Behavior {
     return SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
   }
 
-  public static class Pattern_qw8l7c_a1a0a0a91 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_qw8l7c_a1a0a0a02 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_foo;
-    /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a81;
+    /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a91;
 
-    public Pattern_qw8l7c_a1a0a0a91(Object parameter_qw8l7c_a0a0a0a0a81) {
-      this.AntiquotationField_qw8l7c_a0a0a0a0a81 = parameter_qw8l7c_a0a0a0a0a81;
+    public Pattern_qw8l7c_a1a0a0a02(Object parameter_qw8l7c_a0a0a0a0a91) {
+      this.AntiquotationField_qw8l7c_a0a0a0a0a91 = parameter_qw8l7c_a0a0a0a0a91;
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a81;
-        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a81 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a81.getConceptFqName()))) {
+        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a91;
+        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a91 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a91.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a81;
-          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a81.getReferent("classifier") != referent) {
+          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a91;
+          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a91.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -373,7 +387,7 @@ public class Classifier_Behavior {
           String childRole_Classifier_Behavior_qw8l7c_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_foo = null;
-          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a81.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
+          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a91.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
             patternVar_foo = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }

@@ -4,20 +4,30 @@ package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
 import javax.swing.ButtonGroup;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JScrollPane;
+import com.intellij.ide.OccurenceNavigatorSupport;
 import com.intellij.openapi.project.Project;
 import javax.swing.Icon;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.pom.Navigatable;
+import javax.swing.tree.DefaultMutableTreeNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.navigation.NodeNavigatable;
+import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.usageView.UsageViewBundle;
+import java.awt.BorderLayout;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.SwingUtilities;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
@@ -37,16 +47,16 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.ide.OccurenceNavigator;
 
 public abstract class AbstractHierarchyView extends BaseProjectTool {
   protected AbstractHierarchyTree myHierarchyTree;
   protected HierarchyTreeNode myTreeNode;
-  protected JPanel myComponent = new JPanel(new BorderLayout());
+  protected JPanel myComponent = new AbstractHierarchyView.RootPanel();
   protected ButtonGroup myButtonGroup = new ButtonGroup();
   protected IOperationContext myContext;
   public JScrollPane myScrollPane;
+  private OccurenceNavigatorSupport myOccurenceNavigator;
 
   public AbstractHierarchyView(Project project, String id, int number, Icon icon) {
     super(project, id, number, icon, ToolWindowAnchor.RIGHT, true);
@@ -55,6 +65,44 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   public void initComponent() {
     super.initComponent();
     myHierarchyTree = createHierarchyTree(false);
+    myOccurenceNavigator = new OccurenceNavigatorSupport(myHierarchyTree) {
+      @Nullable
+      protected Navigatable createDescriptorForNode(DefaultMutableTreeNode node) {
+        if (!(node instanceof HierarchyTreeNode)) {
+          return null;
+        }
+        final HierarchyTreeNode treeNode = (HierarchyTreeNode) node;
+
+        SNodePointer ptr = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+          public SNodePointer compute() {
+            SNode node = treeNode.getNode();
+            if (node == null || node.isDisposed()) {
+              return null;
+            }
+
+            return new SNodePointer(node);
+          }
+        });
+
+        if (ptr == null) {
+          return null;
+        }
+
+        Navigatable n = new NodeNavigatable(ProjectHelper.toMPSProject(getProject()), ptr);
+        return (n.canNavigate() ?
+          n :
+          null
+        );
+      }
+
+      public String getPreviousOccurenceActionName() {
+        return UsageViewBundle.message("action.previous.occurrence");
+      }
+
+      public String getNextOccurenceActionName() {
+        return UsageViewBundle.message("action.next.occurrence");
+      }
+    };
     myHierarchyTree.setRootVisible(true);
     final JPanel panel = new JPanel(new BorderLayout());
     myComponent.add(panel, BorderLayout.NORTH);
@@ -72,7 +120,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   protected abstract AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy);
 
   public void openNode(SNode node, IOperationContext context) {
-    context.getComponent(MPSEditorOpener.class).openNode(node, context, true, true);
+    NavigationSupport.getInstance().openNode(context, node, true, true);
   }
 
   protected DefaultActionGroup createButtonsGroup() {
@@ -187,5 +235,47 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
 
   public JComponent getComponent() {
     return myComponent;
+  }
+
+  public class RootPanel extends JPanel implements OccurenceNavigator {
+    public RootPanel() {
+      super(new BorderLayout());
+    }
+
+    public String getPreviousOccurenceActionName() {
+      return (myOccurenceNavigator != null ?
+        myOccurenceNavigator.getPreviousOccurenceActionName() :
+        ""
+      );
+    }
+
+    public String getNextOccurenceActionName() {
+      return (myOccurenceNavigator != null ?
+        myOccurenceNavigator.getNextOccurenceActionName() :
+        ""
+      );
+    }
+
+    public OccurenceNavigator.OccurenceInfo goPreviousOccurence() {
+      return (myOccurenceNavigator != null ?
+        myOccurenceNavigator.goPreviousOccurence() :
+        null
+      );
+    }
+
+    public OccurenceNavigator.OccurenceInfo goNextOccurence() {
+      return (myOccurenceNavigator != null ?
+        myOccurenceNavigator.goNextOccurence() :
+        null
+      );
+    }
+
+    public boolean hasPreviousOccurence() {
+      return myOccurenceNavigator != null && myOccurenceNavigator.hasPreviousOccurence();
+    }
+
+    public boolean hasNextOccurence() {
+      return myOccurenceNavigator != null && myOccurenceNavigator.hasNextOccurence();
+    }
   }
 }

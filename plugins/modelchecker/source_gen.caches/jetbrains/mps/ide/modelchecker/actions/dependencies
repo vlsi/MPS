@@ -410,7 +410,6 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.vcs.checkin.CheckinHandler" />
-    <classNode dependClassName="com.intellij.openapi.wm.ToolWindow" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -418,12 +417,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
-    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.INavigateableTool" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.INavigator" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.UsagesViewTracker" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
@@ -517,7 +512,6 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="javax.swing.JPanel" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.INavigator" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModelPropertiesChecker" file="ModelPropertiesChecker.java">

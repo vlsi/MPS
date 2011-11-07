@@ -6,12 +6,7 @@ import jetbrains.mps.plugins.pluginparts.tool.GeneratedTabbedTool;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.findusages.INavigateableTool;
-import com.intellij.openapi.wm.ToolWindow;
-import jetbrains.mps.ide.findusages.INavigator;
-import javax.swing.JComponent;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JOptionPane;
@@ -35,22 +30,6 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   private static final Icon ICON = new ImageIcon(ModelCheckerTool_Tool.class.getResource("modelChecker.png"));
 
   private Project myProject;
-  private INavigateableTool myNavigateableTool = new INavigateableTool() {
-    public int getPriority() {
-      return 3;
-    }
-
-    public ToolWindow getToolWindow() {
-      ModelCheckerTool_Tool.this.register();
-      return ModelCheckerTool_Tool.this.getToolWindow();
-    }
-
-    public INavigator getCurrentNavigateableView() {
-      JComponent component = ModelCheckerTool_Tool.this.getSelectedTab();
-      assert component instanceof ModelCheckerViewer;
-      return (ModelCheckerViewer) component;
-    }
-  };
 
   public ModelCheckerTool_Tool(Project project) {
     super(project, "Model Checker", -1, ICON, ToolWindowAnchor.BOTTOM, true);
@@ -66,11 +45,9 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   protected void doRegister() {
-    UsagesViewTracker.register(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 
   protected void doUnregister() {
-    UsagesViewTracker.unregister(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 
   private ModelCheckerViewer performCheckingTask(_FunctionTypes._void_P1_E0<? super ModelCheckerViewer> task, IOperationContext operationContext, boolean showTab) {
