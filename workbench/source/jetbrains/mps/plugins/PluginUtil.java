@@ -15,21 +15,18 @@
  */
 package jetbrains.mps.plugins;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,33 +37,18 @@ public class PluginUtil {
 
   public static final String IDE_MODULE_ID = "jetbrains.mps.ide";
 
-  public static Set<IModule> collectPluginModules(Project project) {
-    MPSProject mpsProject = project.getComponent(MPSProject.class);
-
+  public static Set<IModule> collectPluginModules() {
     Set<IModule> modules = new HashSet<IModule>();
 
-    for (Solution s : mpsProject.getProjectModules(Solution.class)) {
-      modules.addAll(IterableUtil.asCollection(s.getScope().getVisibleLanguages()));
-      modules.addAll(IterableUtil.asCollection(s.getScope().getVisibleDevkits()));
-    }
-
-    for (Language l : mpsProject.getProjectModules(Language.class)) {
-      modules.add(l);
-    }
-
-    for (DevKit dk : mpsProject.getProjectModules(DevKit.class)) {
-      modules.add(dk);
-    }
-
+    //todo this line should be removed as long as we move plugins out from languages
     modules.addAll(MPSModuleRepository.getInstance().getAllLanguages());
-    modules.addAll(MPSModuleRepository.getInstance().getAllDevkits());
+
+    for (Solution s : MPSModuleRepository.getInstance().getAllSolutions()) {
+      if (s.getModuleDescriptor().getKind() == SolutionKind.NONE) continue;
+      modules.add(s);
+    }
 
     return modules;
-  }
-
-  public static List<Solution> getBootstrapPluginModules() {
-    Solution ide = MPSModuleRepository.getInstance().getSolution(IDE_MODULE_ID);
-    return ide != null ? Collections.singletonList(ide) : Collections.<Solution>emptyList();
   }
 
   public static <T> List<T> createPlugins(Collection<IModule> modules, PluginCreator<T> creator) {
@@ -117,8 +99,6 @@ public class PluginUtil {
       } else if (module instanceof Solution) {
         Solution solution = (Solution) module;
         return getPlugin(solution);
-      } else if (module instanceof DevKit) {
-        return null;
       } else {
         throw new IllegalStateException("Module type \"" + module.getClass().getSimpleName() + "\" is not supported");
       }
@@ -138,7 +118,7 @@ public class PluginUtil {
 
     public String getPlugin(Solution s) {
       if (s.getModuleFqName().equals(IDE_MODULE_ID)) return Ide_ProjectPlugin.class.getName();
-      return NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ProjectPlugin";
+      return NameUtil.namespaceFromLongName(s.getModuleFqName()) + "." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ProjectPlugin";
     }
   }
 
@@ -149,7 +129,7 @@ public class PluginUtil {
 
     public String getPlugin(Solution s) {
       if (s.getModuleFqName().equals(IDE_MODULE_ID)) return Ide_ApplicationPlugin.class.getName();
-      return NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ApplicationPlugin";
+      return NameUtil.namespaceFromLongName(s.getModuleFqName()) + "." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ApplicationPlugin";
     }
   }
 }

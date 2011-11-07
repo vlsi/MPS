@@ -17,8 +17,6 @@ package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.PluginContributor;
@@ -37,9 +35,9 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
   //-------
 
-  public BaseApplicationPlugin getPlugin(PluginId id){
-    for (BaseApplicationPlugin p:mySortedPlugins){
-      if (p.getId()==id) return p;
+  public BaseApplicationPlugin getPlugin(PluginId id) {
+    for (BaseApplicationPlugin p : mySortedPlugins) {
+      if (p.getId() == id) return p;
     }
     return null;
   }
@@ -96,23 +94,16 @@ public class ApplicationPluginManager implements ApplicationComponent {
   private List<BaseApplicationPlugin> createPlugins() {
     List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
 
-    Collection bootstrapPlugins = PluginUtil.getBootstrapPluginModules();
-    if (!bootstrapPlugins.isEmpty()) {
-      result.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ApplicationPluginCreator()));
-    }
+    Set<IModule> modules = new HashSet<IModule>();
+    modules.addAll(PluginUtil.collectPluginModules());
+    result.addAll(PluginUtil.createPlugins(modules, new ApplicationPluginCreator()));
 
     Collection<PluginContributor> pluginContributors = PluginUtil.getPluginContributors();
-    for (PluginContributor c:pluginContributors){
+    for (PluginContributor c : pluginContributors) {
       BaseApplicationPlugin plugin = c.createApplicationPlugin();
-      if (plugin==null) continue;
+      if (plugin == null) continue;
       result.add(plugin);
     }
-
-    Set<IModule> modules = new HashSet<IModule>();
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-      modules.addAll(PluginUtil.collectPluginModules(p));
-    }
-    result.addAll(PluginUtil.createPlugins(modules, new ApplicationPluginCreator()));
 
     return result;
   }
