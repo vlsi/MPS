@@ -27,7 +27,9 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.BytecodeLocator;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
@@ -106,7 +108,7 @@ public class Solution extends AbstractModule {
   @Deprecated
   public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     ModuleDescriptor desciptor = null;
-    if(descriptorFile.exists()) {
+    if (descriptorFile.exists()) {
       desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
     }
     return newInstance(new ModuleHandle(descriptorFile, desciptor), moduleOwner);
@@ -220,7 +222,7 @@ public class Solution extends AbstractModule {
     descriptor.setUUID(UUID.randomUUID().toString());
 
     IFile modelsDir = descriptorFile.getParent().getDescendant(SOLUTION_MODELS);
-    if (modelsDir.exists()) {
+    if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
       throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
     }
 
