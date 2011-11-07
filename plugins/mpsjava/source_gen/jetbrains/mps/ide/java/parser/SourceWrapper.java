@@ -148,6 +148,10 @@ public abstract class SourceWrapper {
         index = source.indexOf(sClass);
       }
       if (index == -1) {
+        sClass = "enum";
+        index = source.indexOf(sClass);
+      }
+      if (index == -1) {
         throw new ConversionFailedException("not a class or interface");
       } else {
         int i = index + sClass.length();
