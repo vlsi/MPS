@@ -59,8 +59,6 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
-  <import index="7r44" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.eclipse.jdt.internal.compiler.ast(MPS.Classpath/org.eclipse.jdt.internal.compiler.ast@java_stub)" version="-1" implicit="yes" />
-  <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5646944109420291028">
       <property name="name" nameId="tpck.1169194664001" value="ClasspathSelectionTree" />
@@ -12187,7 +12185,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7933219999540390263">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%daddReference(jetbrains%dmps%dsmodel%dSReference)%cvoid" resolveInfo="addReference" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%daddReference(jetbrains%dmps%dsmodel%dSReference)%cvoid" resolveInfo="addReference" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7933219999540404194">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7933219999540404195">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420319084" resolveInfo="myTypesProvider" />
@@ -12206,7 +12204,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420320854" resolveInfo="x" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7933219999540404243">
-                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="7r44.~FieldReference%dtoken" resolveInfo="token" />
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="aeqf.~FieldReference%dtoken" resolveInfo="token" />
                             </node>
                           </node>
                         </node>
@@ -12228,7 +12226,7 @@
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5646944109420319096" resolveInfo="processExpressionRefl" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7933219999540404210">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7933219999540404211">
-                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="7r44.~FieldReference%dreceiver" resolveInfo="receiver" />
+                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="aeqf.~FieldReference%dreceiver" resolveInfo="receiver" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7933219999540404212">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420320854" resolveInfo="x" />
