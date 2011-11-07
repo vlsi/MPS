@@ -69,6 +69,7 @@ import org.eclipse.jdt.internal.compiler.ast.QualifiedThisReference;
 import org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding;
 import org.eclipse.jdt.internal.compiler.ast.FieldReference;
 import org.eclipse.jdt.internal.compiler.lookup.FieldBinding;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.eclipse.jdt.internal.compiler.lookup.ParameterizedFieldBinding;
 import org.eclipse.jdt.internal.compiler.lookup.ProblemBinding;
 import jetbrains.mps.smodel.SNodePointer;
@@ -117,13 +118,13 @@ import org.eclipse.jdt.internal.compiler.ast.AbstractVariableDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Javadoc;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class JavaConverterTreeBuilder {
   private static final Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
@@ -640,6 +641,11 @@ public class JavaConverterTreeBuilder {
 
   /*package*/ SNode processExpression(FieldReference x) {
     FieldBinding fieldBinding = x.binding;
+    if (fieldBinding == null) {
+      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+      ref.addReference(myTypesProvider.createErrorReference("fieldDeclaration", new String(x.token), ref));
+      return new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0c0b0nb().createNode(processExpressionRefl(x.receiver), ref);
+    }
     return expressionFromFieldBinding(fieldBinding, processExpressionRefl(x.receiver));
   }
 
@@ -1689,6 +1695,51 @@ public class JavaConverterTreeBuilder {
       }
     }
     return result;
+  }
+
+  public static class QuotationClass_m30mvz_a0c0b0nb {
+    public QuotationClass_m30mvz_a0c0b0nb() {
+    }
+
+    public SNode createNode(Object parameter_7, Object parameter_8) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
+        {
+          quotedNode_2 = (SNode) parameter_7;
+          SNode quotedNode1_5;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_5 = quotedNode_2;
+          }
+          if (quotedNode1_5 != null) {
+            quotedNode_1.addChild("operand", HUtil.copyIfNecessary(quotedNode1_5));
+          }
+        }
+        {
+          quotedNode_3 = (SNode) parameter_8;
+          SNode quotedNode1_6;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
+          } else {
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_6 = quotedNode_3;
+          }
+          if (quotedNode1_6 != null) {
+            quotedNode_1.addChild("operation", HUtil.copyIfNecessary(quotedNode1_6));
+          }
+        }
+        result = quotedNode1_4;
+      }
+      return result;
+    }
   }
 
   public static class QuotationClass_m30mvz_a0a0bd {
