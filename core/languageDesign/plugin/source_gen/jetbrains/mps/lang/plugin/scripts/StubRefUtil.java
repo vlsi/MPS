@@ -11,12 +11,13 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelDescriptor;
 
@@ -53,6 +54,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
     return isReferenceToClass(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept")), classFqName) && isReferenceToMethod(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration")), methodSignature);
   }
 
+  private static boolean isReferenceTo(@Nullable SReference ref, @NotNull SModelReference targetModel, @NotNull SNodeId targetId) {
+    return ref != null && targetId.equals(ref.getTargetNodeId()) && targetModel.equals(ref.getTargetSModelReference());
+  }
+
+  /*package*/ static boolean isStaticMethodCall(SNode staticMethodCall, @NotNull SModelReference targetModel, @NotNull String classId, @NotNull String methodId) {
+    return isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept")), targetModel, SNodeId.fromString(classId)) && isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
+  }
+
   /*package*/ static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull String methodSignature) {
     return isReferenceToMethod(SNodeOperations.getReference(methodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), methodSignature);
   }
@@ -66,8 +75,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
       SModelReference targetModelRef = ref.getTargetSModelReference();
       model.addModelImport(targetModelRef, false);
 
-      IModule sourceModule = check_4tnolf_a0d0a0g(model.getModelDescriptor());
-      IModule targetModule = check_4tnolf_a0e0a0g(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
+      IModule sourceModule = check_4tnolf_a0d0a0i(model.getModelDescriptor());
+      IModule targetModule = check_4tnolf_a0e0a0i(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
       if (sourceModule != null && targetModule != null) {
         if (!(sourceModule.getDependenciesManager().getAllVisibleModules().contains(targetModule))) {
           sourceModule.addDependency(targetModule.getModuleReference(), false);
@@ -79,6 +88,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
   /*package*/ static void replaceNode(SNode oldNode, SNode newNode) {
     StubRefUtil.addRequiredImports(SNodeOperations.getModel(oldNode), newNode);
     SNodeOperations.replaceWithAnother(oldNode, newNode);
+  }
+
+  /*package*/ static void replaceRefs(SNode oldNode, SNode newNode) {
+    for (SReference newRef : ListSequence.fromList(newNode.getReferences())) {
+      oldNode.removeReference(oldNode.getReference(newRef.getRole()));
+      oldNode.addReference(new StaticReference(newRef.getRole(), oldNode, newRef.getTargetSModelReference(), newRef.getTargetNodeId(), newRef.getResolveInfo()));
+    }
+    StubRefUtil.addRequiredImports(oldNode.getModel(), newNode);
   }
 
   private static boolean check_4tnolf_a0a0a(String checkedDotOperand, String STUB_SUFFIX) {
@@ -116,14 +133,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
     return null;
   }
 
-  private static IModule check_4tnolf_a0d0a0g(SModelDescriptor checkedDotOperand) {
+  private static IModule check_4tnolf_a0d0a0i(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_4tnolf_a0e0a0g(SModelDescriptor checkedDotOperand) {
+  private static IModule check_4tnolf_a0e0a0i(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
