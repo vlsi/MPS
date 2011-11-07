@@ -34,6 +34,8 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
+      <modulePath path="${mps_home}/languages/util/runConfigurations/languages/demo/demo.mpl" />
+      <modulePath path="${mps_home}/languages/util/runConfigurations/languages/demo/pluginSolution/pluginSolution.msd" folder="" />
       <modulePath path="${project}/plugin.mpl" />
     </projectModules>
     <genConfs>
