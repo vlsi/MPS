@@ -69,6 +69,7 @@
   <import index="51om" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.cleanup(MPS.Core/jetbrains.mps.cleanup@java_stub)" version="-1" />
   <import index="1bi5" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.components(MPS.Workbench/com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="eyn9" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence(MPS.Core/jetbrains.mps.smodel.persistence@java_stub)" version="-1" />
+  <import index="cdx8" modelUID="r:9e383f3b-cf02-4e9f-861b-72b030ba5e68(jetbrains.mps.debug.evaluation.transform)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -5840,8 +5841,8 @@
                             <property name="name" nameId="tpck.1169194664001" value="variableTypeSignature" />
                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2416198621220213792" />
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2416198621220213793">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cvs4.3289830327332265871" resolveInfo="TransformationUtil" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cvs4.3289830327332267069" resolveInfo="getJniSignatureFromType" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cdx8.5978697451487558921" resolveInfo="TransformationUtil" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cdx8.5978697451487560119" resolveInfo="getJniSignatureFromType" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2416198621220213794">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2416198621220205665" resolveInfo="variableType" />
                               </node>
@@ -5981,8 +5982,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2416198621220213860">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.NPEEqualsExpression" typeId="tpee.1225271283259" id="2416198621220213877">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2416198621220213881">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cvs4.3289830327332267069" resolveInfo="getJniSignatureFromType" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cvs4.3289830327332265871" resolveInfo="TransformationUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cdx8.5978697451487560119" resolveInfo="getJniSignatureFromType" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cdx8.5978697451487558921" resolveInfo="TransformationUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2416198621220213882">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2416198621220205657" resolveInfo="thisType" />
               </node>
@@ -6375,7 +6376,7 @@
                       <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="726740647142989883">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="726740647142989884">
                           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="726740647142989885">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cvs4.3289830327332267952" resolveInfo="Transformator" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cdx8.5978697451487561002" resolveInfo="Transformator" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="726740647142989886">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="726740647142989872" resolveInfo="evaluator" />
                             </node>
@@ -6385,7 +6386,7 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="726740647142989888">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cvs4.3289830327332267832" resolveInfo="transformEvaluator" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cdx8.5978697451487560882" resolveInfo="transformEvaluator" />
                         </node>
                       </node>
                     </node>

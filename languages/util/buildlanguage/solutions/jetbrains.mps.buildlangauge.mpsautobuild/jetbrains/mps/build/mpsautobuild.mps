@@ -1875,6 +1875,10 @@
         <property name="id" nameId="tps4.1222447189012" value="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debug.apiLang" />
       </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="5978697451487588432">
+        <property name="id" nameId="tps4.1222447189012" value="cf8c9de5-1b4a-4dc8-8e6d-847159af31dd" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.api" />
+      </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2520429355395831040">
         <property name="name" nameId="tps4.1223641503366" value="debug" />
       </node>

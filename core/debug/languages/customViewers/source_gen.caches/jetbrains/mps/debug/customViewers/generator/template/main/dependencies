@@ -9,7 +9,6 @@
     <classNode dependClassName="jetbrains.mps.debug.customViewers.behavior.HighLevelCustomViewer_Behavior" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.TransformationUtil" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.Transformator" />
-    <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MapSrcMacroPostProcContext" />
