@@ -17,8 +17,8 @@ package jetbrains.mps.workbench;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DataKey;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -32,13 +32,9 @@ import jetbrains.mps.util.Pair;
 
 import javax.swing.tree.TreeNode;
 import java.awt.Frame;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
 import java.util.List;
 
-public class MPSDataKeys extends PlatformDataKeys {
+public class MPSDataKeys extends MPSCommonDataKeys {
   @Description(description = "current MPS project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
 
@@ -101,12 +97,4 @@ public class MPSDataKeys extends PlatformDataKeys {
   public static final DataKey<EditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_EditorComponent");
   @Description(description = "active place")
   public static final DataKey<ActionPlace> PLACE = DataKey.create("MPS_Place");
-
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(ElementType.FIELD)
-  public @interface Description {
-    String description() default "";
-
-    String longDescription() default "";
-  }
 }

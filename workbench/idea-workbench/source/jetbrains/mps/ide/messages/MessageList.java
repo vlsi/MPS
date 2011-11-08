@@ -31,12 +31,16 @@ import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import com.intellij.usageView.UsageViewBundle;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -313,7 +317,18 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
     });
   }
 
-  protected abstract void openCurrentMessageIfPossible();
+  protected void openCurrentMessageIfPossible() {
+    final Message selectedMessage = (Message) myList.getSelectedValue();
+    if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
+
+    /* temp hack: write action instead of read, TODO remove lock*/
+    final Project project = getProject();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        NavigationManager.getInstance().navigateTo(project, selectedMessage.getHintObject(), true, true);
+      }
+    });
+  }
 
   protected abstract void setDisplayInfo(String name);
 
@@ -608,7 +623,20 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
     }
   }
 
-  private class RootPanel extends JPanel implements OccurenceNavigator {
+  private class RootPanel extends JPanel implements OccurenceNavigator, DataProvider {
+    @Override
+    public Object getData(@NonNls String id) {
+      if (id.equals(MPSCommonDataKeys.EXCEPTION.getName())) {
+        Throwable exc = null;
+        for (Object message : myList.getSelectedValues()) {
+          exc = ((Message) message).getException();
+          if(exc != null) break;
+        }
+        return exc;
+      }
+      return null;
+
+    }
 
     @Override
     public boolean hasNextOccurence() {

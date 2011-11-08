@@ -127,6 +127,8 @@
       <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
     </group>
 
+    <group id="MPS.MessagesView" popup="false"></group>
+
     <group id="EditorFix">
       <!--We need this only cause platform requires this action, and NPE is thrown if
                 the action is not in its place (see MPS-2081 for further details) -->

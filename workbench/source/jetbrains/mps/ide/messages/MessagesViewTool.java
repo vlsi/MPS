@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.ide.messages;
 
-import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
@@ -31,28 +29,20 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.ide.MessageViewLoggingHandler;
-import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.messages.MessageList.MessageListState;
-import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import java.awt.datatransfer.StringSelection;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -218,9 +208,35 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     return getSingletonList(DEFAULT_LIST);
   }
 
-  private MessageList getSelectedList() {
-    Content selectedContent = getMessagesService().getContentManager().getSelectedContent();
-    return myContents.containsKey(selectedContent) ? myContents.get(selectedContent) : getDefaultList();
+  private void submitToTracker(Object[] msgs) {
+    JFrame frame = WindowManager.getInstance().getFrame(getProject());
+    BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(getProject(), frame);
+    StringBuilder description = new StringBuilder();
+    boolean first = true;
+    for (Object msg : msgs) {
+      if (!(msg instanceof Message)) continue;
+      Message message = (Message) msg;
+      if (first) {
+        dialog.setIssueTitle(message.getText());
+        first = false;
+      } else {
+        description.append(message.getText()).append('\n');
+      }
+      dialog.addEx(message.getException());
+    }
+    dialog.setDescription(description.toString());
+    dialog.showDialog();
+
+    if (!dialog.isCancelled()) {
+      Response response = dialog.getResult();
+      String message = response.getMessage();
+      if (response.isSuccess()) {
+        JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
+      } else {
+        JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
+        LOG.error("Submit failed: " + response.getMessage(), response.getThrowable());
+      }
+    }
   }
 
   private abstract class MessageListWithActions extends MessageList {
@@ -241,90 +257,16 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
         }
         if (containsError) {
           group.addSeparator();
-          group.add(new BaseAction(messages.length > 1 ? "Submit as One Issue" : "Submit to Issue Tracker") {
-            {
-              setExecuteOutsideCommand(true);
-            }
-
-            protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+          group.add(new AnAction(messages.length > 1 ? "Submit as One Issue" : "Submit to Issue Tracker") {
+            @Override
+            public void actionPerformed(AnActionEvent e) {
               submitToTracker(messages);
             }
           });
         }
       }
-      if (list.getSelectedIndices().length == 1) {
-        Throwable exc = null;
-        for (Object message : list.getSelectedValues()) {
-          exc = ((Message) message).getException();
-        }
-        if (exc != null) {
-          final Throwable toShow = exc;
-          group.add(new BaseAction("Show Exception") {
-            {
-              setExecuteOutsideCommand(true);
-            }
-
-            protected void doExecute(AnActionEvent e, Map<String, Object> params) {
-              showException(toShow);
-            }
-          });
-        }
-      }
-    }
-
-    private void submitToTracker(Object[] msgs) {
-      JFrame frame = WindowManager.getInstance().getFrame(getProject());
-      BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(getProject(), frame);
-      StringBuilder description = new StringBuilder();
-      boolean first = true;
-      for (Object msg : msgs) {
-        if (!(msg instanceof Message)) continue;
-        Message message = (Message) msg;
-        if (first) {
-          dialog.setIssueTitle(message.getText());
-          first = false;
-        } else {
-          description.append(message.getText()).append('\n');
-        }
-        dialog.addEx(message.getException());
-      }
-      dialog.setDescription(description.toString());
-      dialog.showDialog();
-
-      if (!dialog.isCancelled()) {
-        Response response = dialog.getResult();
-        String message = response.getMessage();
-        if (response.isSuccess()) {
-          JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-          JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
-          LOG.error("Submit failed: " + response.getMessage(), response.getThrowable());
-        }
-      }
-    }
-
-    @Override
-    protected void openCurrentMessageIfPossible() {
-      final Message selectedMessage = (Message) myList.getSelectedValue();
-      if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
-
-      /* temp hack: write action instead of read, TODO remove lock*/
-      final Project project = getProject();
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          NavigationManager.getInstance().navigateTo(project, selectedMessage.getHintObject(), true, true);
-        }
-      });
-    }
-
-    private void showException(Throwable toShow) {
-      JFrame frame = WindowManager.getInstance().getFrame(getProject());
-      StringWriter writer = new StringWriter();
-      toShow.printStackTrace(new PrintWriter(writer));
-      StringSelection contents = new StringSelection(writer.toString());
-      CopyPasteManagerEx.getInstanceEx().setContents(contents);
-      AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
-      dialog.showDialog();
+      ActionGroup acts = (ActionGroup) ActionManager.getInstance().getAction("MPS.MessagesView");
+      group.addAll(acts);
     }
   }
 
