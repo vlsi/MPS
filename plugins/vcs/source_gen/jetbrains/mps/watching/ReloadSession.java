@@ -46,6 +46,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
   }
 
   public void doReload() {
+    if (!(hasAnythingToDo())) {
+      return;
+    }
+
     ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
       public void run(@NotNull final ProgressIndicator progressIndicator) {
         fireReloadStarted();
@@ -209,5 +213,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
   public void addDeletedModule(IModule module) {
     SetSequence.fromSet(myDeletedModules).addElement(module);
+  }
+
+  public boolean hasAnythingToDo() {
+    return ReloadableSources.getInstance().needsReloading() || SetSequence.fromSet(myChangedModules).isNotEmpty() || SetSequence.fromSet(myChangedProjects).isNotEmpty() || SetSequence.fromSet(myNewModelVFiles).isNotEmpty() || SetSequence.fromSet(myNewModuleVFiles).isNotEmpty() || SetSequence.fromSet(myDeletedModules).isNotEmpty();
   }
 }

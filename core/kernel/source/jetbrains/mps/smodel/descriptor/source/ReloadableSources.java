@@ -48,13 +48,21 @@ public class ReloadableSources {
 
   //--------------
 
+  public boolean needsReloading() {
+    for (FileBasedModelDataSource source : mySources) {
+      if (source.isInvalidated()) return true;
+    }
+    return false;
+  }
+
   public void reload(ProgressMonitor monitor) {
     final ArrayList<FileBasedModelDataSource> fileSourceChangeWatchers = new ArrayList<FileBasedModelDataSource>(mySources);
     monitor.start("", fileSourceChangeWatchers.size());
     try {
       for (FileBasedModelDataSource source : fileSourceChangeWatchers) {
         try {
-          source.reloadIfNeeded(monitor.subTask(1));
+          if (!source.isInvalidated()) continue;
+          source.reload(monitor.subTask(1));
         } catch (RuntimeException e) {
           LOG.error("error on reloading model", e);
         }

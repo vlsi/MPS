@@ -48,8 +48,7 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
     }
   }
 
-  public void reloadIfNeeded(ProgressMonitor monitor) {
-    if (!myInvalidated) return;
+  public void reload(ProgressMonitor monitor) {
     myInvalidated = false;
 
     List<ChangeListener> listeners;
@@ -67,6 +66,10 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
   }
 
   public abstract Collection<String> getFilesToListen();
+
+  public boolean isInvalidated(){
+    return myInvalidated;
+  }
 
   public void invalidate() {
     myInvalidated = true;
