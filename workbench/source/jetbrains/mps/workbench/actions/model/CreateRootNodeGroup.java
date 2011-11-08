@@ -24,14 +24,14 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.actions.AddLanguageImport_Action;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -43,7 +43,6 @@ import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
@@ -211,24 +210,26 @@ public class CreateRootNodeGroup extends BaseGroup {
     }
 
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-      final SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
-        public SNode compute() {
-          SNode result = NodeFactoryManager.createNode(myNodeConcept.getNode(), null, null, myModelDescriptor.getSModel(), myScope);
-          result.setProperty(SModelTreeNode.PACK, myPackage);
-          myModelDescriptor.getSModel().addRoot(result);
-          return result;
+      ModelAccess.instance().runCommandInEDT(new Runnable() {
+        @Override
+        public void run() {
+          final SNode node = NodeFactoryManager.createNode(myNodeConcept.getNode(), null, null, myModelDescriptor.getSModel(), myScope);
+          node.setProperty(SModelTreeNode.PACK, myPackage);
+          myModelDescriptor.getSModel().addRoot(node);
+
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            @Override
+            public void run() {
+              if (!trySelectInCurrentPane(node)) {
+                ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
+                NavigationSupport.getInstance().selectInTree(context, node, false);
+              }
+
+              NavigationSupport.getInstance().openNode(myContext, node, true, false);
+            }
+          });
         }
       }, myProject.getComponent(MPSProject.class));
-
-      if (!trySelectInCurrentPane(node)) {
-        ProjectPane pane = ProjectPane.getInstance(myProject);
-        pane.selectNode(node, false);
-      }
-
-      IEditor editor = myProject.getComponent(MPSEditorOpener.class).editNode(node, myContext);
-      EditorComponent component = editor.getCurrentEditorComponent();
-      if (component == null) return;
-      component.requestFocus();
     }
 
     private boolean trySelectInCurrentPane(final SNode node) {
