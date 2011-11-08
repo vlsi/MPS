@@ -16,7 +16,6 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IllegalModelAccessError;
 
 import javax.swing.SwingUtilities;
 
@@ -54,6 +53,11 @@ public class ThreadUtils {
     }
   }
 
+  /**
+   * use ModelAccess.instance().isInEDT()
+   * @return
+   */
+  @Deprecated
   public static boolean isEventDispatchThread() {
     return SwingUtilities.isEventDispatchThread();
   }
