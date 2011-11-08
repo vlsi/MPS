@@ -41,7 +41,9 @@
     <scopeInfo nodeId="8128243960970298626" fileName="TestConfigurationsMigration_Test.java" startLine="51" startPosition="50" endLine="58" endPosition="9">
       <varInfo nodeId="8128243960970298628" varName="settings" />
     </scopeInfo>
-    <scopeInfo nodeId="8128243960970298624" fileName="TestConfigurationsMigration_Test.java" startLine="50" startPosition="0" endLine="59" endPosition="7" />
+    <scopeInfo nodeId="8128243960970298624" fileName="TestConfigurationsMigration_Test.java" startLine="50" startPosition="0" endLine="59" endPosition="7">
+      <varInfo nodeId="8128243960970298624" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="8128243960970298563" fileName="TestConfigurationsMigration_Test.java" startLine="43" startPosition="78" endLine="59" endPosition="7">
       <varInfo nodeId="8128243960970298591" varName="element" />
       <varInfo nodeId="8128243960970298606" varName="project" />
