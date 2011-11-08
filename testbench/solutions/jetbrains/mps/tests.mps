@@ -1143,7 +1143,7 @@
     </node>
   </root>
   <root id="2712670354707832565">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="1247371618987660542">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="3907325479407088416">
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.debugger.java.runtime.tests" />
       <property name="moduleID" nameId="pop3.1280144168199506910" value="70b17f0c-ff72-43e8-9468-eda69efb2b71" />
     </node>

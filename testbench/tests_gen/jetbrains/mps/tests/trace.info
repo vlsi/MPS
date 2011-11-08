@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="2712670354707832463">
+    <nodeInfo nodeId="2712670354707832463" fileName="TestModule_closures_test.java" startLine="11" startPosition="39" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_closures_test#()V" />
+    <scopeInfo nodeId="2712670354707832463" fileName="TestModule_closures_test.java" startLine="12" startPosition="37" endLine="12" endPosition="37" />
+    <scopeInfo nodeId="2712670354707832463" fileName="TestModule_closures_test.java" startLine="11" startPosition="39" endLine="13" endPosition="3" />
+    <unitInfo nodeId="2712670354707832463" fileName="TestModule_closures_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_closures_test" />
+  </root>
   <root nodeId="2712670354707832565">
     <nodeInfo nodeId="2712670354707832565" fileName="TestModule_jetbrains_mps_debugger_java_runtime_tests.java" startLine="11" startPosition="67" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_debugger_java_runtime_tests#()V" />
     <scopeInfo nodeId="2712670354707832565" fileName="TestModule_jetbrains_mps_debugger_java_runtime_tests.java" startLine="12" startPosition="65" endLine="12" endPosition="65" />
