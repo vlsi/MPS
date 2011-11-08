@@ -30,7 +30,6 @@
       <modulePath path="${mps_home}/core/debug/languages/customViewers/customViewers.mpl" folder="java" />
       <modulePath path="${mps_home}/core/debug/languages/evaluation/evaluation.mpl" folder="java.evaluation" />
       <modulePath path="${mps_home}/core/debug/languages/privateMembers/privateMembers.mpl" folder="java.evaluation" />
-      <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.tests/jetbrains.mps.debug.tests.msd" folder="java.evaluation" />
       <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debugger.java.api/jetbrains.mps.debugger.java.api.msd" folder="java" />
       <modulePath path="${mps_home}/core/generator/solutions/traceInfo/jetbrains.mps.traceInfo.test.msd" folder="trace" />
       <modulePath path="${mps_home}/core/generator/solutions/traceInfo/util/cache.msd" folder="trace" />
@@ -42,6 +41,7 @@
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="api.usages" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="api.usages" />
       <modulePath path="${project}/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" folder="java" />
+      <modulePath path="${project}/solutions/jetbrains.mps.debugger.java.runtime.tests/jetbrains.mps.debugger.java.runtime.tests.msd" folder="java" />
       <modulePath path="${project}/solutions/jetbrains.mps.debugger.java.runtime/jetbrains.mps.debugger.java.runtime.msd" folder="java" />
     </projectModules>
     <genConfs>

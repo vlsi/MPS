@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.debug.evaluation.transform.Transformator;
+import jetbrains.mps.debugger.java.runtime.evaluation.transform.Transformator;
 
 /*package*/ class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {
   protected static Log log = LogFactory.getLog(MyInMemoryJavaGenerationHandler.class);

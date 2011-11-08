@@ -43,7 +43,7 @@ import com.sun.jdi.FloatType;
 import com.sun.jdi.CharType;
 import com.sun.jdi.ArrayType;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.debug.evaluation.transform.TransformationUtil;
+import jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformationUtil;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.Set;

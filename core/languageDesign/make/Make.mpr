@@ -55,8 +55,6 @@
       <modulePath path="${mps_home}/testbench/solution/jetbrains.mps.testbench.msd" folder="testbench" />
       <modulePath path="${mps_home}/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="testbench" />
       <modulePath path="${mps_home}/workbench/make/jetbrains.mps.workbench.make.msd" folder="" />
-      <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
-      <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.impl/impl.msd" />
       <modulePath path="${project}/languages/facet/facet.mpl" />
       <modulePath path="${project}/languages/outlook/outlook.mpl" folder="" />
       <modulePath path="${project}/languages/script/script.mpl" folder="" />
