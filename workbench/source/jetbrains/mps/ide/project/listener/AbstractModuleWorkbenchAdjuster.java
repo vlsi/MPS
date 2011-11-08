@@ -29,7 +29,6 @@ public class AbstractModuleWorkbenchAdjuster implements ApplicationComponent {
   }
 
   public void initComponent() {
-    AbstractModule.registerModelCreationListener(new StructureAspectCreationListener());
     AbstractModule.registerModelCreationListener(new GeneratorModelCreationListener());
     AbstractModule.registerModelCreationListener(new LanguageAspectCreationListener());
     AbstractModule.registerModelCreationListener(new LanguageModelCreationListener());

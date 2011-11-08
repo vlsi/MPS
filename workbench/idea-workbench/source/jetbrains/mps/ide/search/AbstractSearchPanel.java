@@ -70,9 +70,7 @@ public abstract class AbstractSearchPanel extends JPanel {
     group.add(new ShowHistoryAction());
     group.add(new PrevOccurenceAction());
     group.add(new NextOccurenceAction());
-    if (canExportToFindTool()) {
-      group.add(new FindAllAction());
-    }
+    group.add(new FindAllAction());
 
     final ActionToolbar tb = ActionManager.getInstance().createActionToolbar("SearchBar", group, true);
     tb.setLayoutPolicy(ActionToolbar.NOWRAP_LAYOUT_POLICY);
@@ -400,7 +398,7 @@ public abstract class AbstractSearchPanel extends JPanel {
 
   private class FindAllAction extends AnAction {
     private FindAllAction() {
-      // FIXME absent icon getTemplatePresentation().setIcon(IconLoader.getIcon("/actions/export.png"));
+      getTemplatePresentation().setIcon(Icons.EXPORT_ICON);
       getTemplatePresentation().setDescription("Export matches to Find tool window");
       getTemplatePresentation().setText("Find All");
       AnAction findNext = ActionManager.getInstance().getAction(MPSActions.EDITOR_FIND_NEXT);
@@ -411,7 +409,9 @@ public abstract class AbstractSearchPanel extends JPanel {
 
     public void update(AnActionEvent e) {
       super.update(e);
-      e.getPresentation().setEnabled(canExportToFindTool());
+      boolean enabled = canExportToFindTool();
+      e.getPresentation().setEnabled(enabled);
+      e.getPresentation().setVisible(enabled);
     }
 
     public void actionPerformed(AnActionEvent e) {
@@ -420,8 +420,7 @@ public abstract class AbstractSearchPanel extends JPanel {
   }
 
   private static List<Shortcut> getActionShortcuts(String actionId) {
-    AnAction action = ActionManager.getInstance().getAction(
-      actionId);
+    AnAction action = ActionManager.getInstance().getAction(actionId);
     if (action == null) {
       return Collections.emptyList();
     }

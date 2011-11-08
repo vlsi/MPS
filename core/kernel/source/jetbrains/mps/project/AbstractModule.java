@@ -70,6 +70,10 @@ public abstract class AbstractModule implements IModule {
     ourModelCreationListeners.add(listener);
   }
 
+  public static void unregisterModelCreationListener(ModelCreationListener creationListener) {
+    ourModelCreationListeners.remove(creationListener);
+  }
+
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root, ModelAdjuster adj) {
     IModelRootManager manager = root.getManager();
 

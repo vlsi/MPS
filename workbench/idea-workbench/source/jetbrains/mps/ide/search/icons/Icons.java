@@ -23,4 +23,5 @@ public class Icons {
   public static final Icon PREVIOUS_ICON = new ImageIcon(Icons.class.getResource("previousOccurence.png"));
   public static final Icon SEARCH_ICON = new ImageIcon(Icons.class.getResource("search.png"));
   public static final Icon ESCAPE_ICON = new ImageIcon(Icons.class.getResource("cross.png"));
+  public static final Icon EXPORT_ICON = new ImageIcon(Icons.class.getResource("export.png"));
 }

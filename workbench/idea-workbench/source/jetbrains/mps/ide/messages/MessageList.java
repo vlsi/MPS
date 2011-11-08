@@ -228,6 +228,9 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
     final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myList);
     myComponent.add(scrollPane, BorderLayout.CENTER);
 
+    KeyStroke findKeyStroke = com.intellij.openapi.util.SystemInfo.isMac
+      ? KeyStroke.getKeyStroke("meta F")
+      : KeyStroke.getKeyStroke("ctrl F");
     myComponent.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         if (mySearchPanel == null) {
@@ -236,7 +239,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
         }
         mySearchPanel.activate();
       }
-    }, KeyStroke.getKeyStroke("ctrl F"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, findKeyStroke, JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
