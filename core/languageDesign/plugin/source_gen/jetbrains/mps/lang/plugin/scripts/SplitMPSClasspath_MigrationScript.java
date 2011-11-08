@@ -40,7 +40,7 @@ public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return ListSequence.fromList(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return check_ylpn3n_a0a0a0a0a0a0a(check_ylpn3n_a0a0a0a0a0a0a0(SNodeOperations.getModel(SLinkOperations.getTargetNode(it)))) == MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("37a3367b-1fb2-44d8-aa6b-18075e74e003")) || it.getTargetSModelReference().getSModelFqName().toString().startsWith("jetbrains.mps.baseLanguage/");
+            return check_ylpn3n_a0a0a0a0a0a0a(check_ylpn3n_a0a0a0a0a0a0a0(SNodeOperations.getModel(SLinkOperations.getTargetNode(it)))) == MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("37a3367b-1fb2-44d8-aa6b-18075e74e003")) || it.getTargetSModelReference().getSModelId().toString().contains("#" + MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference().getModuleId() + "#");
           }
         }).isNotEmpty();
       }
