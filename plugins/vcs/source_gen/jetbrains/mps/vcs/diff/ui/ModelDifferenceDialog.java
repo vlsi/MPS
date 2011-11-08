@@ -76,6 +76,7 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   private void fillRootToChange() {
     MapSequence.fromMap(myRootToChanges).clear();
+    ListSequence.fromList(myMetadataChanges).clear();
     for (ModelChange c : ListSequence.fromList(myChangeSet.getModelChanges())) {
       SNodeId id = c.getRootId();
       if (id == null) {
