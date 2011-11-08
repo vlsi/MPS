@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.runtime.evaluation;
 
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.DebugSession;
-import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
+import jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule;
 import java.util.List;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
 import java.util.ArrayList;

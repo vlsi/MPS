@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.DebugSession;
-import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import java.util.List;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

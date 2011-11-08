@@ -6,7 +6,6 @@ import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debugger.java.runtime.DebugSession;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
