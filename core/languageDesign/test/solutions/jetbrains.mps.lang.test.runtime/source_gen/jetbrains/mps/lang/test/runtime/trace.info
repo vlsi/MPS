@@ -313,7 +313,9 @@
       <varInfo nodeId="7189304461457253870" varName="modelDescriptor" />
       <varInfo nodeId="7189304461457253868" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5036973107684677791" fileName="BaseTransformationTest.java" startLine="65" startPosition="43" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="5036973107684677791" fileName="BaseTransformationTest.java" startLine="65" startPosition="43" endLine="70" endPosition="7">
+      <varInfo nodeId="5036973107684677791" varName="project" />
+    </scopeInfo>
     <scopeInfo nodeId="1223217167467" fileName="BaseTransformationTest.java" startLine="79" startPosition="71" endLine="84" endPosition="0" />
     <scopeInfo nodeId="2379153299285136315" fileName="BaseTransformationTest.java" startLine="103" startPosition="51" endLine="108" endPosition="13">
       <varInfo nodeId="2379153299285146815" varName="canonicalPath" />
@@ -340,7 +342,9 @@
     </scopeInfo>
     <scopeInfo nodeId="2379153299285135250" fileName="BaseTransformationTest.java" startLine="99" startPosition="91" endLine="111" endPosition="7" />
     <scopeInfo nodeId="2379153299285096981" fileName="BaseTransformationTest.java" startLine="98" startPosition="34" endLine="112" endPosition="5" />
-    <scopeInfo nodeId="2379153299285135247" fileName="BaseTransformationTest.java" startLine="98" startPosition="34" endLine="112" endPosition="5" />
+    <scopeInfo nodeId="2379153299285135247" fileName="BaseTransformationTest.java" startLine="98" startPosition="34" endLine="112" endPosition="5">
+      <varInfo nodeId="2379153299285135247" varName="property" />
+    </scopeInfo>
     <scopeInfo nodeId="1228143641847" fileName="BaseTransformationTest.java" startLine="161" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="1228143641850" varName="clazz" />
       <varInfo nodeId="1228143641852" varName="methodName" />
@@ -455,7 +459,9 @@
     <scopeInfo nodeId="1221570180056" fileName="BaseTestBody.java" startLine="43" startPosition="39" endLine="44" endPosition="89" />
     <scopeInfo nodeId="1221570218024" fileName="BaseTestBody.java" startLine="47" startPosition="43" endLine="48" endPosition="52" />
     <scopeInfo nodeId="1221569991490" fileName="BaseTestBody.java" startLine="24" startPosition="25" endLine="26" endPosition="66" />
-    <scopeInfo nodeId="1228145369660" fileName="BaseTestBody.java" startLine="33" startPosition="94" endLine="36" endPosition="9" />
+    <scopeInfo nodeId="1228145369660" fileName="BaseTestBody.java" startLine="33" startPosition="94" endLine="36" endPosition="9">
+      <varInfo nodeId="1228145369660" varName="a" />
+    </scopeInfo>
     <scopeInfo nodeId="1221569991487" fileName="BaseTestBody.java" startLine="23" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1221570180054" fileName="BaseTestBody.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1221570180081" varName="id" />
@@ -638,13 +644,17 @@
       <varInfo nodeId="1229267128018" varName="annotations" />
     </scopeInfo>
     <scopeInfo nodeId="4840161274939429362" fileName="BaseEditorTestBody.java" startLine="127" startPosition="15" endLine="132" endPosition="9" />
-    <scopeInfo nodeId="7633582661619344940" fileName="BaseEditorTestBody.java" startLine="148" startPosition="155" endLine="153" endPosition="13" />
+    <scopeInfo nodeId="7633582661619344940" fileName="BaseEditorTestBody.java" startLine="148" startPosition="155" endLine="153" endPosition="13">
+      <varInfo nodeId="7633582661619344940" varName="intention" />
+    </scopeInfo>
     <scopeInfo nodeId="1225981799334" fileName="BaseEditorTestBody.java" startLine="165" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="1225981862355" varName="node" />
       <varInfo nodeId="1225981812341" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7633582661619311613" fileName="BaseEditorTestBody.java" startLine="191" startPosition="25" endLine="196" endPosition="9" />
-    <scopeInfo nodeId="7633582661619311616" fileName="BaseEditorTestBody.java" startLine="191" startPosition="25" endLine="196" endPosition="9" />
+    <scopeInfo nodeId="7633582661619311616" fileName="BaseEditorTestBody.java" startLine="191" startPosition="25" endLine="196" endPosition="9">
+      <varInfo nodeId="7633582661619311616" varName="code" />
+    </scopeInfo>
     <scopeInfo nodeId="5180312817676877426" fileName="BaseEditorTestBody.java" startLine="103" startPosition="19" endLine="109" endPosition="17">
       <varInfo nodeId="4639535695230346505" varName="editedNode" />
       <varInfo nodeId="7633582661619655994" varName="map" />
