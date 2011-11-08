@@ -223,6 +223,7 @@ public class ModelPersistence {
       XMLSAXHandler<List<LineContent>> handler = mp.getLineToContentMapReaderHandler();
       if (handler != null) {
         parseAndHandleExceptions(new InputSource(new StringReader(content)), handler, "line to content map");
+        return handler.getResult();
       }
     }
     return null;

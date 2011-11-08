@@ -40,12 +40,14 @@
     <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangesUtil" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ContentRevision" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.ui.ChangesViewContentManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.TextTransferrable" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsFileRevision" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="com.intellij.openapi.vcs.ui.VcsBalloonProblemNotifier" />
     <classNode dependClassName="com.intellij.openapi.vcs.versionBrowser.CommittedChangeList" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="com.intellij.openapi.wm.ToolWindowManager" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
     <classNode dependClassName="java.awt.Color" />
