@@ -506,7 +506,7 @@
     <nodeInfo nodeId="3432969378036017392" fileName="JavaExceptionWatchable.java" startLine="19" startPosition="40" endLine="20" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3432969378036017400" fileName="JavaExceptionWatchable.java" startLine="24" startPosition="27" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036017407" fileName="JavaExceptionWatchable.java" startLine="29" startPosition="43" endLine="30" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036017414" fileName="JavaExceptionWatchable.java" startLine="34" startPosition="28" endLine="35" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384132484" fileName="JavaExceptionWatchable.java" startLine="34" startPosition="28" endLine="35" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036017425" fileName="JavaExceptionWatchable.java" startLine="39" startPosition="37" endLine="40" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036017432" fileName="JavaExceptionWatchable.java" startLine="44" startPosition="26" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036017379" fileName="JavaExceptionWatchable.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaExceptionWatchable#(Lcom/sun/jdi/ObjectReference;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)V" />
@@ -517,7 +517,7 @@
     <nodeInfo nodeId="3432969378036017428" fileName="JavaExceptionWatchable.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="3432969378036017399" fileName="JavaExceptionWatchable.java" startLine="24" startPosition="27" endLine="25" endPosition="23" />
     <scopeInfo nodeId="3432969378036017406" fileName="JavaExceptionWatchable.java" startLine="29" startPosition="43" endLine="30" endPosition="51" />
-    <scopeInfo nodeId="3432969378036017413" fileName="JavaExceptionWatchable.java" startLine="34" startPosition="28" endLine="35" endPosition="78" />
+    <scopeInfo nodeId="3432969378036017413" fileName="JavaExceptionWatchable.java" startLine="34" startPosition="28" endLine="35" endPosition="103" />
     <scopeInfo nodeId="3432969378036017424" fileName="JavaExceptionWatchable.java" startLine="39" startPosition="37" endLine="40" endPosition="38" />
     <scopeInfo nodeId="3432969378036017431" fileName="JavaExceptionWatchable.java" startLine="44" startPosition="26" endLine="45" endPosition="16" />
     <scopeInfo nodeId="3432969378036017388" fileName="JavaExceptionWatchable.java" startLine="18" startPosition="113" endLine="20" endPosition="28" />

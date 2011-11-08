@@ -54,7 +54,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debug.integration.ui.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaBreakpointWatchable" />
   </dependency>
