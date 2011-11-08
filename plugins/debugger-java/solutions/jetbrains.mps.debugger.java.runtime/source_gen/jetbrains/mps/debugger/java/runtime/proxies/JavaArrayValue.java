@@ -23,7 +23,7 @@ import jetbrains.mps.debug.evaluation.EvaluationUtils;
  * * Time: 16:47:53
  * * To change this template use File | Settings | File Templates.
  */
-public class JavaArrayValue extends JavaValue {
+/*package*/ class JavaArrayValue extends JavaValue {
   private static final int MAX_ARRAY_VALUES = 100;
 
   public JavaArrayValue(Value value, String classFQname, ThreadReference threadReference) {

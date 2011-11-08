@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
-public abstract class EvaluationContext {
+/*package*/ abstract class EvaluationContext {
   protected JavaUiState myUiState;
 
   public EvaluationContext(JavaUiState state) {

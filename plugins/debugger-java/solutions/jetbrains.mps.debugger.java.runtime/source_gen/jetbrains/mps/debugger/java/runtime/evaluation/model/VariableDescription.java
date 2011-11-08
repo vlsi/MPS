@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class VariableDescription {
+/*package*/ class VariableDescription {
   private SNode myHighLevelType;
   private final SNode myLowLevelType;
   private SNodePointer myHighLevelNode;

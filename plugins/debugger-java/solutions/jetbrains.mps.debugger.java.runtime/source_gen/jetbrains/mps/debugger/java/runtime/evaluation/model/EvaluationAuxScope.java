@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelFqName;
 
-public class EvaluationAuxScope extends GlobalScope {
+/*package*/ class EvaluationAuxScope extends GlobalScope {
   private final EvaluationAuxModule myModule;
 
   public EvaluationAuxScope(EvaluationAuxModule module) {

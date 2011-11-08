@@ -52,7 +52,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class StackFrameContext extends EvaluationContext {
+/*package*/ class StackFrameContext extends EvaluationContext {
   protected static Log log = LogFactory.getLog(StackFrameContext.class);
 
   public StackFrameContext(JavaUiState uiState) {

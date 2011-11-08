@@ -34,7 +34,7 @@ import jetbrains.mps.util.NameUtil;
  * * Time: 16:51:12
  * * To change this template use File | Settings | File Templates.
  */
-public class JavaObjectValue extends JavaValue {
+/*package*/ class JavaObjectValue extends JavaValue {
   public JavaObjectValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);
   }

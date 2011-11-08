@@ -14,7 +14,7 @@ import com.sun.jdi.StringReference;
  * * Time: 15:55:06
  * * To change this template use File | Settings | File Templates.
  */
-public class JavaStringValue extends JavaObjectValue {
+/*package*/ class JavaStringValue extends JavaObjectValue {
   public JavaStringValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);
   }

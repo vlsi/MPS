@@ -20,7 +20,7 @@ import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
  * * Time: 16:56:49
  * * To change this template use File | Settings | File Templates.
  */
-public class JavaPrimitiveValue extends JavaValue {
+/*package*/ class JavaPrimitiveValue extends JavaValue {
   public JavaPrimitiveValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);
   }

@@ -45,7 +45,6 @@
     </node>
   </roots>
   <root id="6957207478384132498">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6957207478384132499" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6957207478384132500">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
     </node>
@@ -253,7 +252,6 @@
     </node>
   </root>
   <root id="6957207478384132580">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6957207478384132581" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6957207478384132582">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
     </node>
@@ -1107,7 +1105,6 @@
     </node>
   </root>
   <root id="6957207478384132896">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6957207478384132897" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6957207478384132898">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6957207478384132580" resolveInfo="JavaObjectValue" />
     </node>
@@ -1217,7 +1214,6 @@
     </node>
   </root>
   <root id="6957207478384132938">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6957207478384132939" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6957207478384132940">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y3sp.3432969378036013922" resolveInfo="JavaValue" />
     </node>
