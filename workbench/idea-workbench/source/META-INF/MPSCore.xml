@@ -25,6 +25,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.IdeaModelFileWatcherInitializer</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.messages.navigation.NavigationManager</implementation-class>
     </component>
 

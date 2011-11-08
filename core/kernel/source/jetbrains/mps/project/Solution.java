@@ -205,10 +205,6 @@ public class Solution extends AbstractModule {
     return false;
   }
 
-  public boolean areJavaStubsEnabled() {
-    return getModuleDescriptor().getEnableJavaStubs() || !getModuleDescriptor().getSourcePaths().isEmpty();
-  }
-
   @Override
   protected SolutionDescriptor loadDescriptor() {
     IFile file = getDescriptorFile();

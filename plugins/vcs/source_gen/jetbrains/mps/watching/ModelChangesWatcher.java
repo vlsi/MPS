@@ -110,9 +110,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
       if (myReloadSession == null) {
         return;
       }
-      if (!(myReloadSession.hasAnythingToDo())) {
-        return;
-      }
       for (Project project : myProjectManager.getOpenProjects()) {
         if (project.getComponent(ProjectLevelVcsManager.class).isBackgroundVcsOperationRunning()) {
           return;
@@ -157,13 +154,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private void doReload() {
     final ReloadSession session = myReloadSession;
     myReloadSession = null;
-    if (session.hasAnythingToDo()) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          session.doReload();
-        }
-      }, ModalityState.NON_MODAL);
-    }
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        session.doReload();
+      }
+    }, ModalityState.NON_MODAL);
   }
 
   public Set<VirtualFile> getSignificantRoots() {

@@ -24,8 +24,8 @@ import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Set;
 
 public abstract class StubModelDataSource extends FileBasedModelDataSource {
@@ -39,11 +39,8 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
     return "stub model data source"; //todo include filenames
   }
 
-  public boolean containFile(IFile file) {
-    for (String p : myStubPaths) {
-      if (p.equals(file.getParent().getPath())) return true;
-    }
-    return false;
+  public Collection<String> getFilesToListen() {
+    return getStubPaths();
   }
 
   public long getTimestamp() {
@@ -83,11 +80,11 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
 
   public void addPath(String path) {
     myStubPaths.add(path);
-    sourcesSetChanged();
+    sourceFilesChanged();
   }
 
   protected Set<String> getStubPaths() {
-    return myStubPaths;
+    return Collections.unmodifiableSet(myStubPaths);
   }
 
   //todo more precise
