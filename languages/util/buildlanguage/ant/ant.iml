@@ -26,6 +26,8 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="module" module-name="idea-workbench" />
   </component>
 </module>
 

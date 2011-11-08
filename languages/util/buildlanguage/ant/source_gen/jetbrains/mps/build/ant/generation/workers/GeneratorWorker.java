@@ -7,7 +7,7 @@ import jetbrains.mps.build.ant.WhatToDo;
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.build.ant.generation.GenerateTask;
-import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -17,10 +17,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.build.ant.util.ThreadUtils;
 import java.util.concurrent.ExecutionException;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -70,12 +68,12 @@ public class GeneratorWorker extends MpsWorker {
 
   private void setGenerationProperties() {
     boolean strictMode = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.STRICT_MODE));
-    GenerationSettings.getInstance().setStrictMode(strictMode);
+    GenerationSettingsProvider.getInstance().getGenerationSettings().setStrictMode(strictMode);
     if (strictMode) {
       boolean parallelMode = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.PARALLEL_MODE));
-      GenerationSettings.getInstance().setParallelGenerator(parallelMode);
+      GenerationSettingsProvider.getInstance().getGenerationSettings().setParallelGenerator(parallelMode);
       if (parallelMode) {
-        GenerationSettings.getInstance().setNumberOfParallelThreads(8);
+        GenerationSettingsProvider.getInstance().getGenerationSettings().setNumberOfParallelThreads(8);
       }
       info("Generating in strict mode, parallel generation = " + ((parallelMode ?
         "on" :
@@ -123,10 +121,6 @@ public class GeneratorWorker extends MpsWorker {
       myErrors.add(e.toString());
     }
     ModelAccess.instance().flushEventQueue();
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-      }
-    }, ModalityState.defaultModalityState());
   }
 
   private Iterable<IModule> withGenerators(Iterable<IModule> modules) {

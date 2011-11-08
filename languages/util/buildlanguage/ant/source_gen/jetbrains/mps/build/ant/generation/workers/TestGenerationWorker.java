@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.build.ant.generation.GenerateTask;
-import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -32,7 +32,7 @@ import jetbrains.mps.build.ant.generation.unittest.UnitTestListener;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.build.ant.util.ThreadUtils;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.MakeSession;
@@ -43,7 +43,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
 import java.lang.reflect.Method;
-import jetbrains.mps.project.MPSProject;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -104,12 +103,12 @@ public class TestGenerationWorker extends MpsWorker {
 
   private void setGenerationProperties() {
     boolean strictMode = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.STRICT_MODE));
-    GenerationSettings.getInstance().setStrictMode(strictMode);
+    GenerationSettingsProvider.getInstance().getGenerationSettings().setStrictMode(strictMode);
     if (strictMode) {
       boolean parallelMode = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.PARALLEL_MODE));
-      GenerationSettings.getInstance().setParallelGenerator(parallelMode);
+      GenerationSettingsProvider.getInstance().getGenerationSettings().setParallelGenerator(parallelMode);
       if (parallelMode) {
-        GenerationSettings.getInstance().setNumberOfParallelThreads(8);
+        GenerationSettingsProvider.getInstance().getGenerationSettings().setNumberOfParallelThreads(8);
       }
       info("Generating in strict mode, parallel generation = " + ((parallelMode ?
         "on" :
@@ -270,7 +269,7 @@ public class TestGenerationWorker extends MpsWorker {
       try {
         Class<?> cls = Class.forName("jetbrains.mps.TestMain");
         Method meth = cls.getMethod("loadProject", File.class);
-        p = (MPSProject) meth.invoke(null, file);
+        p = (Project) meth.invoke(null, file);
       } catch (Exception ex) {
         throw new RuntimeException(ex);
       }

@@ -5,43 +5,37 @@ package jetbrains.mps.build.ant;
 import org.apache.log4j.Logger;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
+import jetbrains.mps.project.PathMacrosProvider;
+import jetbrains.mps.build.ant.util.SetLibraryContributor;
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.project.PathMacros;
+import jetbrains.mps.library.LibraryInitializer;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.ThreadUtils;
-import com.intellij.ide.IdeEventQueue;
+import jetbrains.mps.build.ant.util.ThreadUtils;
+import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.MPSCore;
+import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.plugins.PluginUtil;
-import java.util.Collections;
-import jetbrains.mps.library.Library;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.make.MPSCompilationResult;
 import org.apache.commons.lang.StringUtils;
 import org.apache.tools.ant.BuildException;
+import java.util.Set;
 import org.apache.log4j.Level;
 import java.util.Map;
-import com.intellij.util.PathUtil;
-import com.intellij.openapi.application.PathMacros;
-import jetbrains.mps.library.BaseLibraryManager;
-import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.library.LibraryInitializer;
+import java.util.HashMap;
+import jetbrains.mps.build.ant.util.PathUtil;
+import jetbrains.mps.build.ant.util.MapPathMacrosProvider;
+import java.util.HashSet;
 import jetbrains.mps.project.MPSExtentions;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -52,6 +46,7 @@ import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collection;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
+import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -61,8 +56,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import com.intellij.openapi.application.PathManager;
-import com.intellij.idea.IdeaTestApplication;
+import jetbrains.mps.build.ant.util.PathManager;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.logging.ILoggingHandler;
@@ -76,7 +70,8 @@ public abstract class MpsWorker {
   protected final WhatToDo myWhatToDo;
   private final MpsWorker.AntLogger myLogger;
   private MpsWorker.MyMessageHandlerAppender myMessageHandler = new MpsWorker.MyMessageHandlerAppender();
-  private final List<BaseApplicationPlugin> myPlugins = new ArrayList<BaseApplicationPlugin>();
+  private PathMacrosProvider myMacroProvider;
+  private SetLibraryContributor myLibraryContibutor;
 
   private MpsWorker() {
     this(null, (MpsWorker.AntLogger) null);
@@ -112,13 +107,7 @@ public abstract class MpsWorker {
     collectModelsToGenerate(go);
     if (go.hasAnythingToGenerate()) {
       reload();
-      if (go.getProjects().isEmpty()) {
-        loadPlugins();
-      }
       executeTask(project, go);
-      if (go.getProjects().isEmpty()) {
-        disposePlugins();
-      }
     } else {
       error("Could not find anything to generate.");
     }
@@ -128,16 +117,21 @@ public abstract class MpsWorker {
   }
 
   protected Project createDummyProject() {
-    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
-    final Project project = new MPSProject(ideaProject);
-    project.init(projectFile, new ProjectDescriptor());
+    final Project project = new FileMPSProject(projectFile);
     projectFile.deleteOnExit();
     return project;
   }
 
   protected void dispose() {
-    disposePlugins();
+    if (myMacroProvider != null) {
+      PathMacros.getInstance().removeMacrosProvider(myMacroProvider);
+      this.myMacroProvider = null;
+    }
+    if (myLibraryContibutor != null) {
+      LibraryInitializer.getInstance().removeContributor(myLibraryContibutor);
+      this.myLibraryContibutor = null;
+    }
     for (int i = 0; i < 3; i++) {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
@@ -155,7 +149,7 @@ public abstract class MpsWorker {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         p.dispose();
-        IdeEventQueue.getInstance().flushQueue();
+        ModelAccess.instance().flushEventQueue();
         System.gc();
       }
     });
@@ -165,9 +159,11 @@ public abstract class MpsWorker {
     BasicConfigurator.configure(new ConsoleAppender());
     Logger.getRootLogger().setLevel(getLog4jLevel());
     jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
+    // <node> 
+    MPSCore.getInstance().setTestMode();
+    GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
     try {
-      MpsWorker.configureMPS("jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make");
+      MpsWorker.configureMPS();
     } catch (Exception ex) {
       throw new RuntimeException(ex);
     }
@@ -193,51 +189,6 @@ public abstract class MpsWorker {
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     });
-  }
-
-  protected void loadPlugins() {
-    Set<IModule> modules = new HashSet<IModule>();
-    modules.add(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.make.facet"));
-    myPlugins.addAll(PluginUtil.createPlugins(modules, new PluginUtil.ApplicationPluginCreator()));
-    for (BaseApplicationPlugin plugin : myPlugins) {
-      try {
-        plugin.createCustomParts();
-      } catch (Throwable t1) {
-        log("Plugin " + plugin + " threw an exception during initialization ", t1);
-      }
-    }
-  }
-
-  protected void disposePlugins() {
-    Collections.reverse(myPlugins);
-    for (BaseApplicationPlugin plugin : myPlugins) {
-      try {
-        plugin.dispose();
-      } catch (Throwable t) {
-        log("Plugin " + plugin + " threw an exception during disposing ", t);
-      }
-    }
-    myPlugins.clear();
-  }
-
-  protected void startMake(Set<Library> compiledLibraries, Set<IModule> toCompile) {
-    info("Starting compilation:");
-    StringBuffer sb = new StringBuffer();
-    for (IModule m : toCompile) {
-      sb.append("    ");
-      sb.append(m.getModuleFqName());
-      sb.append("\n");
-    }
-    info(sb.toString());
-  }
-
-  protected void finishMake(Set<Library> compiledLibraries, @NotNull MPSCompilationResult result) {
-    if (!(result.isOk())) {
-      error(result.toString());
-      throw new RuntimeException(result.toString());
-    } else {
-      info(result.toString());
-    }
   }
 
   protected abstract void executeTask(Project project, MpsWorker.ObjectsToProcess go);
@@ -292,25 +243,29 @@ public abstract class MpsWorker {
 
   private void setMacro() {
     Map<String, String> macro = myWhatToDo.getMacro();
+    Map<String, String> realMacros = new HashMap<String, String>();
     for (String macroName : macro.keySet()) {
       String canonicalPath = PathUtil.getCanonicalPath(macro.get(macroName));
       File file = new File(canonicalPath);
       if (file.exists() && file.isDirectory()) {
-        PathMacros.getInstance().setMacro(macroName, canonicalPath);
+        realMacros.put(macroName, canonicalPath);
       }
+    }
+    if (myMacroProvider == null) {
+      this.myMacroProvider = new MapPathMacrosProvider(realMacros);
+      PathMacros.getInstance().addMacrosProvider(myMacroProvider);
     }
   }
 
   private void loadLibraries() {
-    BaseLibraryManager.MyState state = LibraryManager.getInstance().getState();
-    Map<String, Library> libraries = state.getLibraries();
-    for (String libName : myWhatToDo.getLibraries().keySet()) {
-      Library library = new Library();
-      library.setName(libName);
-      library.setPath(myWhatToDo.getLibraries().get(libName).getAbsolutePath());
-      libraries.put(libName, library);
+    if (myLibraryContibutor == null) {
+      Set<String> libraryPaths = new HashSet<String>();
+      for (String libName : myWhatToDo.getLibraries().keySet()) {
+        libraryPaths.add(myWhatToDo.getLibraries().get(libName).getAbsolutePath());
+      }
+      this.myLibraryContibutor = new SetLibraryContributor(libraryPaths);
+      LibraryInitializer.getInstance().addContributor(myLibraryContibutor);
     }
-    LibraryManager.getInstance().loadState(state);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         LibraryInitializer.getInstance().update();
@@ -491,16 +446,14 @@ public abstract class MpsWorker {
     error(text + "\n" + sb.toString());
   }
 
-  public static void configureMPS(String... plugins) {
+  public static void configureMPS() {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", (mpsInternal == null ?
       "false" :
       mpsInternal
     ));
     System.setProperty("idea.no.jre.check", "true");
-    if (plugins.length == 0) {
-      System.setProperty("idea.load.plugins", "false");
-    }
+    System.setProperty("idea.load.plugins", "false");
     System.setProperty("idea.platform.prefix", "Idea");
     StringBuffer pluginPath = new StringBuffer();
     File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
@@ -511,13 +464,6 @@ public abstract class MpsWorker {
       pluginPath.append(pluginFolder.getPath());
     }
     System.setProperty("plugin.path", pluginPath.toString());
-    //  Value of this property is comma-separated list of plugin IDs intended to load by platform 
-    System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
-    try {
-      IdeaTestApplication.getInstance(null);
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
   }
 
   public static StringBuffer extractStackTrace(Throwable e) {
