@@ -23,8 +23,6 @@ import jetbrains.mps.ide.resolve.Resolver;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
@@ -65,7 +63,6 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
               if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
                 SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
                 check_xiru3y_a1a0a5a0a5a2a5a0(check_xiru3y_a0b0a0f0a0f0c0f0a(operationContext), sm);
-                ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
                 return true;
               }
               return false;
