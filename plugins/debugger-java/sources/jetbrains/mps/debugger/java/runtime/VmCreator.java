@@ -43,7 +43,7 @@ import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
-import jetbrains.mps.debugger.java.runtime.remote.RemoteProcessHandler;
+import jetbrains.mps.debugger.java.runtime.configurations.remote.RemoteProcessHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.debugger.java.runtime.execution.IDebuggerManagerThread;import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
