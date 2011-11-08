@@ -8,7 +8,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class FibonacciSequence {
-  /*package*/ FibonacciSequence() {
+  public FibonacciSequence() {
   }
 
   public Iterable<Integer> numbers(final int max) {

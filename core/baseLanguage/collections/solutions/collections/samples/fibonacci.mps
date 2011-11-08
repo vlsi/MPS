@@ -127,9 +127,10 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1214338700574" />
     </node>
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1152305232543">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.Type" typeId="tpee.1068431790189" id="1152305232544" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1152305232545" />
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1052538209549030801">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1052538209549030802" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1052538209549030803" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1052538209549030804" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1214338693555" />
   </root>
@@ -142,11 +143,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1152305767928">
             <property name="name" nameId="tpck.1169194664001" value="fib" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1152305767929">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1152305201679" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1152305201679" resolveInfo="FibonacciSequence" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1214339257941">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1214339257943">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1152305232543" resolveInfo="FibonacciSequence" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1052538209549030801" resolveInfo="FibonacciSequence" />
               </node>
             </node>
           </node>
@@ -157,7 +158,7 @@
           </node>
           <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1214339255721">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1154035882799">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1152305767928" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1152305767928" resolveInfo="fib" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1214339255722">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1152305253646" resolveInfo="numbers" />
@@ -176,7 +177,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1214339255687">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dObject)%cvoid" resolveInfo="println" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1154035905464">
-                    <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1154035872812" />
+                    <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1154035872812" resolveInfo="num" />
                   </node>
                 </node>
               </node>
