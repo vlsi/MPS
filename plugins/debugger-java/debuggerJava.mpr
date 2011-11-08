@@ -27,7 +27,7 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="${mps_home}/core/debug-api/languages/api/api.mpl" folder="api" />
-      <modulePath path="${mps_home}/core/debug-api/solutions/jetbrains.mps.debugger.api.api/api.msd" folder="" />
+      <modulePath path="${mps_home}/core/debug-api/solutions/jetbrains.mps.debugger.api.api/api.msd" folder="api" />
       <modulePath path="${mps_home}/core/debug/languages/customViewers/customViewers.mpl" folder="java" />
       <modulePath path="${mps_home}/core/debug/languages/evaluation/evaluation.mpl" folder="java.evaluation" />
       <modulePath path="${mps_home}/core/debug/languages/privateMembers/privateMembers.mpl" folder="java.evaluation" />

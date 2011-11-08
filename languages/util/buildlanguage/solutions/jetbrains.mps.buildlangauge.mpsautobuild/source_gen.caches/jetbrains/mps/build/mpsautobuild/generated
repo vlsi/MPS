@@ -5,6 +5,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" hash="caob73bt010qamop72qesq01lhfoeik" />
   <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" hash="8g7jr66fpehu1ow28sl9xtkh09xtft6" />
   <dep model="r:00000000-0000-4000-0000-011c895904d0(jetbrains.mps.build.dependency.generator.buildlanguage.template.main@generator)" hash="-9rsbjmkjj49drdz7g9898f4k0nd7rry" />
+  <dep model="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" hash="-bfpi0tgg0wahu5wls18idthaeq78t2w" />
   <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" hash="-93bjzuxajip64t1s5z70d0r85rauj4i" />
   <dep model="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" hash="-c9jn14xx3eznqfw6w68svvps1coym58" />
   <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" hash="67i7oghv65vyzyi0nktmd5fhen02az" />
@@ -40,6 +41,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895904d0(jetbrains.mps.build.dependency.generator.buildlanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" />

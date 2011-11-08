@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.debugger.api.runner.MPSDebugRunner" file="MPSDebugRunner.java">
+    <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="com.intellij.execution.ExecutionResult" />
+    <classNode dependClassName="com.intellij.execution.Executor" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunProfile" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
+    <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
+    <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
+    <classNode dependClassName="com.intellij.execution.ui.RunContentDescriptor" />
+    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSessionCreator" />
+    <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
+    <classNode dependClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder" />
+    <classNode dependClassName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.execution.runners.GenericProgramRunner" />
+  </dependency>
+</dependenciesRoot>
+
