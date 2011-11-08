@@ -23,17 +23,5 @@
     <component>
       <implementation-class>jetbrains.mps.library.contributor.PluginLibContributor</implementation-class>
     </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.IdeaModelFileWatcherInitializer</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.messages.navigation.NavigationManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.save.ModelsSaver</implementation-class>
-    </component>
   </application-components>
 </components>

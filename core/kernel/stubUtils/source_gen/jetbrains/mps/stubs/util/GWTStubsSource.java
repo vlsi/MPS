@@ -34,6 +34,7 @@ import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.vfs.IFile;
 
 public class GWTStubsSource extends StubModelDataSource {
   private ModelRoot root;
@@ -100,6 +101,10 @@ public class GWTStubsSource extends StubModelDataSource {
 
   public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName name) {
     return null;
+  }
+
+  public boolean containFile(IFile file) {
+    return false;
   }
 
   public long getTimestamp() {

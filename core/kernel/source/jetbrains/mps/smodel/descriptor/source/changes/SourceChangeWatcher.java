@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,8 @@
  */
 package jetbrains.mps.smodel.descriptor.source.changes;
 
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
+public interface SourceChangeWatcher {
+  void startListening(ChangeListener l);
 
-import java.util.Collection;
-
-public interface ModelFileWatcherProvider {
-  void startListening(FileBasedModelDataSource source, Collection<String> files);
-
-  void stopListening(FileBasedModelDataSource source, Collection<String> remove);
+  void stopListening(ChangeListener l);
 }

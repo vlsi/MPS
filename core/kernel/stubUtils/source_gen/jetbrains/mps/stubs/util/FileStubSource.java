@@ -6,8 +6,6 @@ import jetbrains.mps.util.annotation.ImmutableObject;
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelReference;
-import java.util.Collection;
-import java.util.Collections;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelFqName;
@@ -28,10 +26,11 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Collections;
 
 @ImmutableObject
 public class FileStubSource extends FileBasedModelDataSource {
-  private final IFile myFile;
+  private IFile myFile;
   private SModelReference ref;
 
   public FileStubSource(IFile file, SModelReference ref) {
@@ -43,8 +42,8 @@ public class FileStubSource extends FileBasedModelDataSource {
     return myFile;
   }
 
-  public Collection<String> getFilesToListen() {
-    return Collections.singleton(myFile.getPath());
+  public boolean containFile(IFile file) {
+    return eq_9hjfki_a0a0b(myFile, file);
   }
 
   public long getTimestamp() {
@@ -97,5 +96,12 @@ public class FileStubSource extends FileBasedModelDataSource {
 
   public boolean hasModel(SModelDescriptor descriptor) {
     return myFile != null && myFile.exists();
+  }
+
+  private static boolean eq_9hjfki_a0a0b(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

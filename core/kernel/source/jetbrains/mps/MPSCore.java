@@ -33,7 +33,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;

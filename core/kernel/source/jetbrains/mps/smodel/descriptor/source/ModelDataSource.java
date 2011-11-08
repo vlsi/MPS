@@ -20,15 +20,14 @@ import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.descriptor.source.changes.SourceChangeWatcher;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 
 public interface ModelDataSource {
   //------changes watching--------
 
-  void startListening(ChangeListener l);
-
-  void stopListening(ChangeListener l);
+  SourceChangeWatcher getChangeWatcher();
 
   long getTimestamp();
 
@@ -42,6 +41,5 @@ public interface ModelDataSource {
 
   //------model deletion handling------
 
-  // todo move to loadSModel - return null in case no model is there
   boolean hasModel(SModelDescriptor d);
 }

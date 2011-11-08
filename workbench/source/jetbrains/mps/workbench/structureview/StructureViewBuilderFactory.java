@@ -40,18 +40,10 @@ public class StructureViewBuilderFactory implements ProjectComponent {
       public StructureViewBuilder compute() {
         List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors();
         SNode node = np.getNode();
-
         for (EditorTabDescriptor tab : tabs) {
           SNode baseNode = tab.getBaseNode(node);
           if (baseNode != null && baseNode.getName() != null) {
             return new NodeStructureViewBuilder(myProject, new SNodePointer(baseNode));
-          }
-        }
-
-        for (EditorTabDescriptor tab : tabs) {
-          List<SNode> nodes = tab.getNodes(node);
-          if (!nodes.isEmpty()) {
-            return new NodeStructureViewBuilder(myProject, new SNodePointer(node));
           }
         }
 

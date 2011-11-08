@@ -42,9 +42,9 @@ public class MPSCoreComponents implements ApplicationComponent {
 
   @Override
   public void initComponent() {
+    // setup filesystem provider
     boolean useIoFile = MPSCore.getInstance().isTestMode() && "true".equals(System.getProperty("mps.vfs.useIoFile"));
     if (!useIoFile) {
-      // setup filesystem provider
       FileSystem.getInstance().setFileSystemProvider(new IdeaFileSystemProvider());
     }
 
