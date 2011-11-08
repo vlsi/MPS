@@ -62,16 +62,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   };
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new ModelChangesWatcher.BulkFileChangesListener();
-  private IMakeNotificationListener myMakeListener = new IMakeNotificationListener() {
-    public void handleNotification(MakeNotification notification) {
-    }
-
-    public void scriptAboutToStart(MakeNotification notification) {
-    }
-
-    public void scriptFinished(MakeNotification notification) {
-    }
-
+  private IMakeNotificationListener myMakeListener = new IMakeNotificationListener.Stub() {
     public void sessionOpened(MakeNotification notification) {
       suspendTasksProcessing();
     }
