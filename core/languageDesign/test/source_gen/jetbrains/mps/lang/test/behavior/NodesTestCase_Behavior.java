@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;
 import java.net.URI;
@@ -44,11 +43,7 @@ public class NodesTestCase_Behavior {
   }
 
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true)).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{})).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return (SNode) it;
-      }
-    })).toListSequence();
+    return ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(thisNode, "testMethods", true))).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{}))).toListSequence();
   }
 
   public static boolean isIntentionApplicable_1217250498008(SNode node) {
