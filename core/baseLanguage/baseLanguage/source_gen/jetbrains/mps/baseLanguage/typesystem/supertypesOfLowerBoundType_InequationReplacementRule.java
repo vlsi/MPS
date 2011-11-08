@@ -19,7 +19,7 @@ public class supertypesOfLowerBoundType_InequationReplacementRule extends Abstra
   }
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(supertype, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", false, new String[]{})).isEmpty() && ListSequence.fromList(SNodeOperations.getDescendants(subtype, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", false, new String[]{})).isEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(supertype, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", false, new String[]{})).isEmpty();
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
