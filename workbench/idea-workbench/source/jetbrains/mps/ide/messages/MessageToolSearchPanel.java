@@ -44,6 +44,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
 
   public void goToPrevious() {
     if (myResults.isEmpty()) return;
+    addToHistory();
     int selected = myList.getSelectedIndex();
     if (selected != -1) {
       for (int i = myResults.size() - 1; i >= 0; i--) {
@@ -58,6 +59,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
 
   public void goToNext() {
     if (myResults.isEmpty()) return;
+    addToHistory();
     int selected = myList.getSelectedIndex();
     if (selected != -1) {
       for (Integer index : myResults) {
