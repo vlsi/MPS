@@ -16,6 +16,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
@@ -23,13 +24,16 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class GoToInheritedClassifier_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -110,22 +114,35 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
         }
       });
 
-      final List<SNode> nodes = new ArrayList<SNode>();
+      final List<SNodePointer> nodes = ListSequence.fromList(new ArrayList<SNodePointer>());
+
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
         public void run(@NotNull final ProgressIndicator p) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               for (String finderClass : ListSequence.fromList(finderClasses)) {
-                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p))));
+                List<SNode> list = FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
+                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
+                  public SNodePointer select(SNode it) {
+                    return new SNodePointer(it);
+                  }
+                }));
+                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumClass");
+                  }
+                }).translate(new ITranslator2<SNode, SNodePointer>() {
+                  public Iterable<SNodePointer> translate(SNode it) {
+                    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).select(new ISelector<SNode, SNodePointer>() {
+                      public SNodePointer select(SNode e) {
+                        return new SNodePointer(e);
+                      }
+                    });
+                  }
+                }));
               }
             }
           });
-        }
-      });
-      final Wrappers._T<List<SNode>> nodesIncludingEnumConstants = new Wrappers._T<List<SNode>>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          nodesIncludingEnumConstants.value = GoToInheritedClassifier_Action.this.appendEnumConstants(nodes, _params);
         }
       });
 
@@ -133,22 +150,9 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
       Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
       RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
 
-      GoToHelper.showInheritedClassesMenu(nodesIncludingEnumConstants.value, relPoint, ((Project) MapSequence.fromMap(_params).get("project")));
+      GoToHelper.showInheritedClassesMenu(nodes, relPoint, ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
     }
-  }
-
-  private List<SNode> appendEnumConstants(List<SNode> nodes, final Map<String, Object> _params) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode node : ListSequence.fromList(nodes)) {
-      ListSequence.fromList(result).addElement(node);
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-        for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
-          ListSequence.fromList(result).addElement(enumConstant);
-        }
-      }
-    }
-    return result;
   }
 }

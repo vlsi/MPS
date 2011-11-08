@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import java.util.Set;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.progress.ProgressManager;
@@ -28,11 +29,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class GoToOverridingMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -123,13 +126,18 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
         }
       });
 
-      final Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
+      final Set<SNodePointer> nodes = SetSequence.fromSet(new HashSet<SNodePointer>());
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
         public void run(@NotNull final ProgressIndicator p) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               for (String finder : ListSequence.fromList(finders)) {
-                SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finder, ((SNode) MapSequence.fromMap(_params).get("methodNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p))));
+                List<SNode> list = FindUtils.executeFinder(finder, ((SNode) MapSequence.fromMap(_params).get("methodNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
+                SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
+                  public SNodePointer select(SNode it) {
+                    return new SNodePointer(it);
+                  }
+                }));
               }
             }
           });
@@ -140,7 +148,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
       Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
       RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
 
-      GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relPoint, ((Project) MapSequence.fromMap(_params).get("project")), methodName[0]);
+      GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relPoint, ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))), methodName[0]);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
     }
