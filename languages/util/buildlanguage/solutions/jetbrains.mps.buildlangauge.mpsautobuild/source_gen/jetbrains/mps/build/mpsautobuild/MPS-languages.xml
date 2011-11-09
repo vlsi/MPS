@@ -8827,7 +8827,7 @@
           <module ref="cab85f8b-9525-42cb-8e6d-258ca6e56432(jetbrains.mps.baseLanguage.index)" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
           <module ref="ceb47609-02c2-4927-bb6d-d58368388a62(jetbrains.mps.ide.uiLanguage.runtime)" />
-          <module ref="cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debugger.java.api)" />
+          <module ref="cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debug.java.api)" />
           <module ref="d05c4356-e6a8-4dcf-a81a-3adf36be3c35(jetbrains.mps.execution.settings#946964771156035778)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
@@ -9204,11 +9204,11 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.apiLang.jar.jtmp" />
   </target>
-  <target name="pack.jetbrains.mps.debugger.java.api">
+  <target name="pack.jetbrains.mps.debug.java.api">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.api.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.api.jar.jtmp/module.xml">
-      <module namespace="jetbrains.mps.debugger.java.api" uuid="cf8c9de5-1b4a-4dc8-8e6d-847159af31dd" type="solution">
+    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.java.api.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.java.api.jar.jtmp/module.xml">
+      <module namespace="jetbrains.mps.debug.java.api" uuid="cf8c9de5-1b4a-4dc8-8e6d-847159af31dd" type="solution">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
           <module ref="04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.lib)" />
@@ -9353,20 +9353,20 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
-        <sources jar="jetbrains.mps.debugger.java.api-src.jar" descriptor="jetbrains.mps.debugger.java.api.msd" />
+        <sources jar="jetbrains.mps.debug.java.api-src.jar" descriptor="jetbrains.mps.debugger.java.api.msd" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.api-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.java.api-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/core/debug/solutions/jetbrains.mps.debugger.java.api/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/debug/solutions/jetbrains.mps.debugger.java.api/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/debug/solutions/jetbrains.mps.debugger.java.api/jetbrains.mps.debugger.java.api.msd" prefix="module" />
       <zipfileset dir="${base_dir}/core/debug/solutions/jetbrains.mps.debugger.java.api" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.api.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.api.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.java.api.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.java.api.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/debug/solutions/jetbrains.mps.debugger.java.api" includes="icons/**, resources/**" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debugger.java.api.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.java.api.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.execution.configurations">
     <fail unless="base_dir" message="Property base_dir unspecified." />

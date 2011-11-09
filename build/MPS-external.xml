@@ -397,7 +397,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.customViewers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.privateMembers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.apiLang" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.api" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.debug.java.api" />
     <mkdir dir="${deploy.dir}/MPS/languages/debug" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.api" />
