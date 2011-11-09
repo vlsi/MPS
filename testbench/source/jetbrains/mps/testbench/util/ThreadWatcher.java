@@ -55,6 +55,7 @@ public class ThreadWatcher implements Output {
         "(FS Sync.*)|" +
         "(timed reference disposer)|" +
         "(Alarm pool\\(own\\))|" +
+        "(Poller SunPKCS11-Darwin)|" +
         "(MPS interrupt.*)");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();
