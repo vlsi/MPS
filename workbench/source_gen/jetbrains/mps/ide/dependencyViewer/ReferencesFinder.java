@@ -91,7 +91,7 @@ public class ReferencesFinder {
     return result;
   }
 
-  public List<SReference> getReferences(IModule module, Scope scope, ProgressMonitor monitor) {
+  private List<SReference> getReferences(IModule module, Scope scope, ProgressMonitor monitor) {
     List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
     for (SModelDescriptor element : module.getOwnModelDescriptors()) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(element, scope, monitor)));
@@ -102,7 +102,7 @@ public class ReferencesFinder {
     return result;
   }
 
-  public List<SReference> getReferences(SModelDescriptor model, Scope scope, ProgressMonitor monitor) {
+  private List<SReference> getReferences(SModelDescriptor model, Scope scope, ProgressMonitor monitor) {
     List<SReference> result = myModelsRefsCache.get(model);
     monitor.step(model.getLongName());
     if (result != null) {
@@ -120,7 +120,7 @@ public class ReferencesFinder {
     return result;
   }
 
-  public List<SReference> getReferences(final SNode root, final Scope scope) {
+  private List<SReference> getReferences(final SNode root, final Scope scope) {
     final List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
