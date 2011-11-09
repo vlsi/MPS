@@ -627,13 +627,25 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
   private class RootPanel extends JPanel implements OccurenceNavigator, DataProvider {
     @Override
     public Object getData(@NonNls String id) {
-      if (id.equals(MPSCommonDataKeys.EXCEPTION.getName())) {
+      if (MPSCommonDataKeys.EXCEPTION.getName().equals(id)) {
         Throwable exc = null;
         for (Object message : myList.getSelectedValues()) {
           exc = ((Message) message).getException();
           if(exc != null) break;
         }
         return exc;
+      }
+      if(MPSCommonDataKeys.MESSAGES.getName().equals(id)) {
+        Object[] selectedValues = myList.getSelectedValues();
+        if(selectedValues == null || selectedValues.length == 0) {
+          return null;
+        }
+
+        List<IMessage> messages = new ArrayList<IMessage>(selectedValues.length);
+        for (Object message : selectedValues) {
+          messages.add((IMessage) message);
+        }
+        return messages;
       }
       return null;
 

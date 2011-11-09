@@ -16,32 +16,26 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
-import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.ide.blame.dialog.BlameDialog;
-import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
-import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.messages.MessageList.MessageListState;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JFrame;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -208,37 +202,6 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     return getSingletonList(DEFAULT_LIST);
   }
 
-  private void submitToTracker(Object[] msgs) {
-    JFrame frame = WindowManager.getInstance().getFrame(getProject());
-    BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(getProject(), frame);
-    StringBuilder description = new StringBuilder();
-    boolean first = true;
-    for (Object msg : msgs) {
-      if (!(msg instanceof Message)) continue;
-      Message message = (Message) msg;
-      if (first) {
-        dialog.setIssueTitle(message.getText());
-        first = false;
-      } else {
-        description.append(message.getText()).append('\n');
-      }
-      dialog.addEx(message.getException());
-    }
-    dialog.setDescription(description.toString());
-    dialog.showDialog();
-
-    if (!dialog.isCancelled()) {
-      Response response = dialog.getResult();
-      String message = response.getMessage();
-      if (response.isSuccess()) {
-        JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
-      } else {
-        JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
-        LOG.error("Submit failed: " + response.getMessage(), response.getThrowable());
-      }
-    }
-  }
-
   private abstract class MessageListWithActions extends MessageList {
     protected MessageListWithActions(Project project) {
       super(project);
@@ -246,25 +209,6 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     @Override
     protected void populateActions(JList list, DefaultActionGroup group) {
-      if (list.getSelectedIndices().length >= 1) {
-        final Object[] messages = list.getSelectedValues();
-        boolean containsError = false;
-        for (Object message : messages) {
-          if (((Message) message).getKind() == MessageKind.ERROR) {
-            containsError = true;
-            break;
-          }
-        }
-        if (containsError) {
-          group.addSeparator();
-          group.add(new AnAction(messages.length > 1 ? "Submit as One Issue" : "Submit to Issue Tracker") {
-            @Override
-            public void actionPerformed(AnActionEvent e) {
-              submitToTracker(messages);
-            }
-          });
-        }
-      }
       ActionGroup acts = (ActionGroup) ActionManager.getInstance().getAction("MPS.MessagesView");
       group.addAll(acts);
     }
