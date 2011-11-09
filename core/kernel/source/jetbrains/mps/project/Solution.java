@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
@@ -247,8 +248,12 @@ public class Solution extends AbstractModule {
       }
 
       private boolean canLoad() {
-        return getModuleDescriptor().getCompileInMPS();
-          //&& getModuleDescriptor().getKind() != SolutionKind.NONE;
+        return
+          MPSCore.getInstance().isTestMode() ||
+            (
+              getModuleDescriptor().getCompileInMPS()
+                && getModuleDescriptor().getKind() != SolutionKind.NONE
+            );
       }
     };
   }
