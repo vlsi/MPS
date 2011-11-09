@@ -24,15 +24,17 @@ import javax.swing.JList;
 import jetbrains.mps.util.NameUtil;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.ide.properties.StandardDialogs;
-import javax.lang.model.SourceVersion;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import javax.lang.model.SourceVersion;
 import javax.swing.JComponent;
 
 public class NewModelDialog extends BaseDialog {
@@ -102,7 +104,6 @@ public class NewModelDialog extends BaseDialog {
       }
     });
     myModelRoots.setModel(model);
-    check();
 
     myModelName.setText((myNamespace.length() == 0 ?
       myNamespace :
@@ -110,10 +111,25 @@ public class NewModelDialog extends BaseDialog {
     ));
     mainPanel.add(new JLabel("Model name:"));
     mainPanel.add(myModelName);
+    myModelName.addKeyListener(new KeyAdapter() {
+      public void keyReleased(KeyEvent event) {
+        check();
+      }
+    });
 
     mainPanel.add(new JLabel("Stereotype:"));
     myModelStereotype.setEditable(true);
     myModelStereotype.setModel(new DefaultComboBoxModel(SModelStereotype.values));
+    myModelStereotype.addKeyListener(new KeyAdapter() {
+      public void keyReleased(KeyEvent event) {
+        check();
+      }
+    });
+    myModelStereotype.addItemListener(new ItemListener() {
+      public void itemStateChanged(ItemEvent p0) {
+        check();
+      }
+    });
     mainPanel.add(myModelStereotype);
 
     myContentPane.add(mainPanel, BorderLayout.NORTH);
@@ -168,11 +184,6 @@ public class NewModelDialog extends BaseDialog {
       return false;
     }
 
-    if (!(SourceVersion.isName(modelName))) {
-      setErrorText("Model name should be valid Java package");
-      return false;
-
-    }
     SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
     if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
       setErrorText("Model with an uid " + modelName + " already exists");
@@ -194,11 +205,17 @@ public class NewModelDialog extends BaseDialog {
       }
     }
 
+    if (!(SourceVersion.isName(modelName))) {
+      setErrorText("Model name should be valid Java package");
+      return false;
+    }
+
     if (!(manager.canCreateModel(myModule, mr.getModelRoot(), getFqName()))) {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }
 
+    setErrorText("");
     return true;
   }
 
