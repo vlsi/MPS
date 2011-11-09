@@ -1789,7 +1789,7 @@
     <nodeInfo nodeId="650390925806007101" fileName="NewModel_Action.java" startLine="158" startPosition="104" endLine="159" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="650390925806007109" fileName="NewModel_Action.java" startLine="160" startPosition="27" endLine="161" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2006872123071116625" fileName="NewModel_Action.java" startLine="163" startPosition="5" endLine="164" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218634788292" fileName="NewModel_Action.java" startLine="167" startPosition="68" endLine="168" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218634788292" fileName="NewModel_Action.java" startLine="167" startPosition="68" endLine="168" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6351584993764441300" fileName="NewModel_Action.java" startLine="99" startPosition="14" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5500129768599897566" fileName="NewModel_Action.java" startLine="40" startPosition="68" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5500129768599897707" fileName="NewModel_Action.java" startLine="44" startPosition="64" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1851,7 +1851,7 @@
     <scopeInfo nodeId="650390925806007079" fileName="NewModel_Action.java" startLine="148" startPosition="27" endLine="149" endPosition="38" />
     <scopeInfo nodeId="2006872123071116610" fileName="NewModel_Action.java" startLine="156" startPosition="98" endLine="157" endPosition="105" />
     <scopeInfo nodeId="650390925806007108" fileName="NewModel_Action.java" startLine="160" startPosition="27" endLine="161" endPosition="33" />
-    <scopeInfo nodeId="1218634715032" fileName="NewModel_Action.java" startLine="167" startPosition="68" endLine="168" endPosition="16" />
+    <scopeInfo nodeId="1218634715032" fileName="NewModel_Action.java" startLine="167" startPosition="68" endLine="168" endPosition="84" />
     <scopeInfo nodeId="1215903504454" fileName="NewModel_Action.java" startLine="54" startPosition="7" endLine="56" endPosition="63">
       <varInfo nodeId="1215903504454" varName="enabled" />
     </scopeInfo>
