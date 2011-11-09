@@ -89,8 +89,6 @@ public class DependenciesViewerTest extends BaseMPSTest {
             }
           }
         });
-
-        System.out.println(res[0]);
         return res[0];
       }
     });
