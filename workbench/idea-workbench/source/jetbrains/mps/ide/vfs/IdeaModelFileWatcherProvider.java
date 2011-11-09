@@ -42,7 +42,7 @@ public class IdeaModelFileWatcherProvider implements ModelFileWatcherProvider {
       public void fileDeleted(VirtualFileEvent event) {
         VirtualFile file = event.getFile();
         while (file != null) {
-          invalidate(file.getPath());
+          if (invalidate(file.getPath())) break;
           file = file.getParent();
         }
       }
@@ -53,12 +53,13 @@ public class IdeaModelFileWatcherProvider implements ModelFileWatcherProvider {
     return event.getRequestor() == IdeaFileSystemProvider.class;
   }
 
-  private void invalidate(String path) {
+  private boolean invalidate(String path) {
     Set<FileBasedModelDataSource> sources = myFile2Source.get(path);
-    if (sources == null) return;
+    if (sources == null || sources.isEmpty()) return false;
     for (FileBasedModelDataSource source : sources) {
       source.invalidate();
     }
+    return true;
   }
 
   public void startListening(FileBasedModelDataSource source, Collection<String> files) {
