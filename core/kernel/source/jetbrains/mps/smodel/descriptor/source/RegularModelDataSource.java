@@ -231,11 +231,13 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     //prefixed with language namespace
     if (!NameUtil.namespaceFromLongName(modelFqName.getLongName()).equals(module.getModuleFqName())) return false;
     //is aspect model name
-    if (LanguageAspect.valueOf(NameUtil.shortNameFromLongName(modelFqName.getLongName())) == null) return false;
+    String name = NameUtil.shortNameFromLongName(modelFqName.getLongName());
+    for (LanguageAspect la:LanguageAspect.values()){
+      if (la.getName().equals(name)) return true;
+    }
+    return false;
     //is non-stereotyped (? test models)
     //if (modelFqName.getStereotype() != null && !modelFqName.getStereotype().equals("")) return false;
-
-    return true;
   }
 
   public static boolean isUnderLanguageModels(IModule module, ModelRoot root) {
