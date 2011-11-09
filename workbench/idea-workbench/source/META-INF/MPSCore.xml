@@ -36,4 +36,11 @@
       <implementation-class>jetbrains.mps.ide.save.ModelsSaver</implementation-class>
     </component>
   </application-components>
+
+  <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+  </project-components>
 </components>

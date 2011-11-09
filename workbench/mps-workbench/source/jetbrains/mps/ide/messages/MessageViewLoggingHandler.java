@@ -15,12 +15,15 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import org.jetbrains.annotations.NotNull;
 
-public class MessageViewLoggingHandler implements ILoggingHandler {
+public class MessageViewLoggingHandler implements ILoggingHandler, ProjectComponent {
   private MessagesViewTool myMessagesView;
 
   public MessageViewLoggingHandler(MessagesViewTool messagesView) {
@@ -50,5 +53,29 @@ public class MessageViewLoggingHandler implements ILoggingHandler {
     Message message = new Message(kind, e.getSourceClass(), e.getMessage());
     message.setHintObject(e.getHintObject());
     myMessagesView.add(message);
+  }
+
+  @Override
+  public void projectOpened() {
+    Logger.addLoggingHandler(this);
+  }
+
+  @Override
+  public void projectClosed() {
+    Logger.removeLoggingHandler(this);
+  }
+
+  @Override
+  public void initComponent() {
+  }
+
+  @Override
+  public void disposeComponent() {
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "MPS log to messages view";
   }
 }

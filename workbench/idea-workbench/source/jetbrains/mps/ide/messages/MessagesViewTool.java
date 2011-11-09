@@ -55,7 +55,6 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   /*package*/ static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final String DEFAULT_LIST = "DEFAULT_LIST";
 
-  private MessageViewLoggingHandler myLoggingHandler;
   private Project myProject;
   private Map<Object, List<MessageList>> myMessageLists = new HashMap<Object, List<MessageList>>();
   private Map<Content, MessageList> myContents = new HashMap<Content, MessageList>();
@@ -118,12 +117,9 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public void projectOpened() {
-    myLoggingHandler = new MessageViewLoggingHandler(this);
-    Logger.addLoggingHandler(myLoggingHandler);
   }
 
   public void projectClosed() {
-    Logger.removeLoggingHandler(myLoggingHandler);
   }
 
   public MessageListState getState() {
