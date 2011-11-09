@@ -52,6 +52,7 @@ public class MessageViewLoggingHandler implements ILoggingHandler, ProjectCompon
   private void add(MessageKind kind, LogEntry e) {
     Message message = new Message(kind, e.getSourceClass(), e.getMessage());
     message.setHintObject(e.getHintObject());
+    message.setException(e.getThrowable());
     myMessagesView.add(message);
   }
 
