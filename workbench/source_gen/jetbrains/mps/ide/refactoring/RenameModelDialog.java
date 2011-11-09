@@ -69,10 +69,6 @@ public class RenameModelDialog extends BaseDialog {
       setErrorText("Model name should be valid Java package");
       return;
     }
-    if (!(myModelRoot.isCorrectModelFqName(fqName))) {
-      setErrorText("Incorrect model name for the model root (should start with prefix " + myModelRoot.getPrefix() + ")");
-      return;
-    }
     if (!((fqName.equals(myModelDescriptor.getSModelReference().getSModelFqName())))) {
       ApplicationManager.getApplication().runWriteAction(new Runnable() {
         @Override

@@ -71,7 +71,6 @@ public class NewModuleUtil {
     }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
       public void invoke(ModuleDescriptor d) {
         ModelRoot modelRoot = new ModelRoot();
-        modelRoot.setPrefix("");
         modelRoot.setPath(rootPath);
         d.getModelRoots().add(modelRoot);
 

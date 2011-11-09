@@ -73,9 +73,8 @@ public class NewModelDialog extends BaseDialog {
     mainPanel.add(myModelRoots);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (SModelRoot root : myModule.getSModelRoots()) {
-      if (myNamespace == null || myNamespace.startsWith(root.getPrefix())) {
-        model.addElement(new NewModelDialog.ModelRootWrapper(root));
-      }
+      // todo chack if the model can really be created via manager.canCreate() 
+      model.addElement(new NewModelDialog.ModelRootWrapper(root));
     }
     if (model.getSize() == 0) {
       model.addElement("<NO MODEL ROOTS FOR SELECTED NAMESPACE>");
@@ -179,10 +178,7 @@ public class NewModelDialog extends BaseDialog {
 
     private ModelRootWrapper(SModelRoot modelRoot) {
       myModelRoot = modelRoot;
-      myNamespace = myModelRoot.getPrefix();
-      if (myNamespace == null) {
-        myNamespace = "";
-      }
+      myNamespace = "";
       boolean needsNamespace = !(myNamespace.equals(""));
       myText = myModelRoot.getPath() + ((needsNamespace ?
         " (" + myNamespace + ")" :

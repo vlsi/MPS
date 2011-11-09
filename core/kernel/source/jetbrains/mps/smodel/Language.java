@@ -699,7 +699,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     // default descriptorModel roots
     jetbrains.mps.project.structure.model.ModelRoot modelRoot = new jetbrains.mps.project.structure.model.ModelRoot();
     modelRoot.setPath(languageModels.getPath());
-    modelRoot.setPrefix(languageNamespace);
     languageDescriptor.getModelRoots().add(modelRoot);
     return languageDescriptor;
   }

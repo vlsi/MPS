@@ -105,7 +105,6 @@ public class CloneModelProperties {
     if (modelRoot != null) {
       myRoot = new RootReference();
       myRoot.setPath(modelRoot.getPath());
-      myRoot.setPrefix(modelRoot.getPrefix());
     }
 
     myImportedLanguages.addAll(model.importedLanguages());

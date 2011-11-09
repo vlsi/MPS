@@ -42,18 +42,14 @@ public class StubModelDescriptors {
   public Set<BaseStubModelDescriptor> getDescriptors(_FunctionTypes._return_P1_E0<? extends PathItem, ? super String> getPathItem) {
     Set<BaseStubModelDescriptor> result = SetSequence.fromSet(new HashSet<BaseStubModelDescriptor>());
     for (ModelRoot mr : modelRoot) {
-      collectDescriptors(mr, getPathItem, result);
+      collectDescriptors(mr, "", getPathItem, result);
     }
     return result;
   }
 
-  private void collectDescriptors(ModelRoot loc, _FunctionTypes._return_P1_E0<? extends PathItem, ? super String> getPathItem, Set<BaseStubModelDescriptor> result) {
-    String pkg = loc.getPrefix();
-    if (pkg == null) {
-      pkg = "";
-    }
+  private void collectDescriptors(ModelRoot loc, String prefix, _FunctionTypes._return_P1_E0<? extends PathItem, ? super String> getPathItem, Set<BaseStubModelDescriptor> result) {
     PathItem pi = getPathItem.invoke(loc.getPath());
-    for (String subpkg : ListSequence.fromList(pi.subpackages(pkg))) {
+    for (String subpkg : ListSequence.fromList(pi.subpackages(prefix))) {
       if (ListSequence.fromList(pi.resources(subpkg)).isNotEmpty()) {
         SModelReference smref = smodelRefWithId(subpkg);
         SModelDescriptor descById = SModelRepository.getInstance().getModelDescriptor(smref);
@@ -75,8 +71,7 @@ public class StubModelDescriptors {
       }
       ModelRoot mr = new ModelRoot();
       mr.setPath(loc.getPath());
-      mr.setPrefix(subpkg);
-      collectDescriptors(mr, getPathItem, result);
+      collectDescriptors(mr, subpkg, getPathItem, result);
     }
   }
 

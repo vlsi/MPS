@@ -42,7 +42,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (ModelHandle handle : models) {
       SModelDescriptor modelDescriptor = getInstance(module,new RegularModelDataSource(handle.getFile()), handle.getReference(), handle.getLoadResult());
-      LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + root.getPath() + " " + root.getPrefix());
+      LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + root.getPath());
       result.add(modelDescriptor);
     }
     return result;
@@ -53,8 +53,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   public SModelDescriptor createModel(IModule module,@NotNull ModelRoot root, @NotNull SModelFqName fqName) {
-    assert root.getPrefix().length() <= 0 || fqName.getLongName().startsWith(root.getPrefix()) : "Model name should start with model root prefix";
-
     if (SModelRepository.getInstance().getModelDescriptor(fqName) != null) {
       LOG.error("Couldn't create new model \"" + fqName.getLongName() + "\" because such model exists");
       return null;

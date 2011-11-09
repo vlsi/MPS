@@ -19,11 +19,9 @@ import org.apache.commons.lang.ObjectUtils;
 
 public class ModelRoot {
   public static final String PATH = "path";
-  public static final String PREFIX = "prefix";
   public static final String MANAGER = "manager";
 
   private String myPath;
-  private String myPrefix;
   private ModelRootManager myManager;
 
   public String getPath() {
@@ -32,14 +30,6 @@ public class ModelRoot {
 
   public void setPath(String path) {
     myPath = path;
-  }
-
-  public String getPrefix() {
-    return myPrefix;
-  }
-
-  public void setPrefix(String prefix) {
-    myPrefix = prefix;
   }
 
   public ModelRootManager getManager() {
@@ -71,7 +61,6 @@ public class ModelRoot {
   public ModelRoot getCopy() {
     ModelRoot result = new ModelRoot();
     result.myPath = myPath;
-    result.myPrefix = myPrefix;
     result.myManager = myManager == null ? null : myManager.getCopy();
 
     return result;

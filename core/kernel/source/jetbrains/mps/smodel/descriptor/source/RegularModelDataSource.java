@@ -207,15 +207,9 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
   }
 
   private static IFile createFileForModelUID(ModelRoot root, SModelFqName fqName) {
-    String pathPrefix = root.getPrefix();
     String path = root.getPath();
 
-    if (pathPrefix == null) pathPrefix = "";
-    if (pathPrefix.length() > 0 && !fqName.getLongName().startsWith(pathPrefix)) {
-      LOG.error("Model fqName \"" + fqName + "\" doesn't match name prefix \"" + pathPrefix + "\"");
-    }
-
-    String filenameSuffix = fqName.getLongName().substring(pathPrefix.length());
+    String filenameSuffix = fqName.getLongName();
     if (fqName.hasStereotype()) {
       filenameSuffix = filenameSuffix + '@' + fqName.getStereotype();
     }

@@ -163,23 +163,21 @@ public class ModuleDescriptorPersistence {
     return new _FunctionTypes._return_P0_E0<ModelRoot>() {
       public ModelRoot invoke() {
         final ModelRoot result_dxyzb6_a0a0a7 = new ModelRoot();
-        final String result_dxyzb6_a0a0a0a7 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("namespacePrefix"), "");
-        result_dxyzb6_a0a0a7.setPrefix(result_dxyzb6_a0a0a0a7);
         String pathName = modelRootElement.getAttributeValue("path");
         if (pathName == null) {
           // left for compatibility 
           pathName = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("rootPath"), "");
         }
-        final String result_dxyzb6_a3a0a0a7 = macros.expandPath(pathName, file);
-        result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a3a0a0a7);
+        final String result_dxyzb6_a2a0a0a7 = macros.expandPath(pathName, file);
+        result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a2a0a0a7);
         if (ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).isNotEmpty()) {
-          final ModelRootManager result_dxyzb6_a0a4a0a0a7 = new ModelRootManager();
+          final ModelRootManager result_dxyzb6_a0a3a0a0a7 = new ModelRootManager();
           Element manager = ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first();
-          final String result_dxyzb6_a1a0a4a0a0a7 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
-          result_dxyzb6_a0a4a0a0a7.setModuleId(result_dxyzb6_a1a0a4a0a0a7);
-          final String result_dxyzb6_a2a0a4a0a0a7 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
-          result_dxyzb6_a0a4a0a0a7.setClassName(result_dxyzb6_a2a0a4a0a0a7);
-          result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a0a4a0a0a7);
+          final String result_dxyzb6_a1a0a3a0a0a7 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
+          result_dxyzb6_a0a3a0a0a7.setModuleId(result_dxyzb6_a1a0a3a0a0a7);
+          final String result_dxyzb6_a2a0a3a0a0a7 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
+          result_dxyzb6_a0a3a0a0a7.setClassName(result_dxyzb6_a2a0a3a0a0a7);
+          result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a0a3a0a0a7);
         }
         return result_dxyzb6_a0a0a7;
       }
@@ -220,18 +218,13 @@ public class ModuleDescriptorPersistence {
         root.getPath()
       ), file);
       result_dxyzb6_a0a0a0a01.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a01);
-      final String result_dxyzb6_a1a0a0a0a01 = (root.getPrefix() == null ?
-        "" :
-        root.getPrefix()
-      );
-      result_dxyzb6_a0a0a0a01.setAttribute("namespacePrefix", "" + result_dxyzb6_a1a0a0a0a01);
       if (root.getManager() != null) {
-        final Element result_dxyzb6_a0a2a0a0a0a01 = new Element("manager");
-        final String result_dxyzb6_a0a0a2a0a0a0a01 = root.getManager().getModuleId();
-        result_dxyzb6_a0a2a0a0a0a01.setAttribute("moduleId", "" + result_dxyzb6_a0a0a2a0a0a0a01);
-        final String result_dxyzb6_a1a0a2a0a0a0a01 = root.getManager().getClassName();
-        result_dxyzb6_a0a2a0a0a0a01.setAttribute("className", "" + result_dxyzb6_a1a0a2a0a0a0a01);
-        result_dxyzb6_a0a0a0a01.addContent(result_dxyzb6_a0a2a0a0a0a01);
+        final Element result_dxyzb6_a0a1a0a0a0a01 = new Element("manager");
+        final String result_dxyzb6_a0a0a1a0a0a0a01 = root.getManager().getModuleId();
+        result_dxyzb6_a0a1a0a0a0a01.setAttribute("moduleId", "" + result_dxyzb6_a0a0a1a0a0a0a01);
+        final String result_dxyzb6_a1a0a1a0a0a0a01 = root.getManager().getClassName();
+        result_dxyzb6_a0a1a0a0a0a01.setAttribute("className", "" + result_dxyzb6_a1a0a1a0a0a0a01);
+        result_dxyzb6_a0a0a0a01.addContent(result_dxyzb6_a0a1a0a0a0a01);
       }
       result_dxyzb6_a0a01.addContent(result_dxyzb6_a0a0a0a01);
     }
