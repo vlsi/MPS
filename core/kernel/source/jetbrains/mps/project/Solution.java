@@ -249,10 +249,10 @@ public class Solution extends AbstractModule {
 
       private boolean canLoad() {
         return
-          MPSCore.getInstance().isTestMode() ||
+          getModuleDescriptor().getCompileInMPS() &&
             (
-              getModuleDescriptor().getCompileInMPS()
-                && getModuleDescriptor().getKind() != SolutionKind.NONE
+              MPSCore.getInstance().isTestMode() ||
+                getModuleDescriptor().getKind() != SolutionKind.NONE
             );
       }
     };
