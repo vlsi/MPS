@@ -17,7 +17,6 @@ import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
@@ -26,7 +25,7 @@ public class AddSourcesToModelRoots_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(AddSourcesToModelRoots_Action.class);
 
   public AddSourcesToModelRoots_Action() {
-    super("Add clases_gen to Model Roots for Modules With Sources", "", ICON);
+    super("Add classes__gen to Model Roots for Modules With Sources", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -64,12 +63,14 @@ public class AddSourcesToModelRoots_Action extends GeneratedAction {
 
         ModelRoot mr = new ModelRoot();
         mr.setPath(module.getClassesGen().getPath());
-        mr.setManager(new ModelRootManager(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference().getModuleId().toString(), JavaStubs.class.getName()));
+        mr.setManager(new ModelRootManager(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs"));
 
         List<ModelRoot> mrs = descriptor.getModelRoots();
         if (!(mrs.contains(mr))) {
           mrs.add(mr);
         }
+
+        module.setModuleDescriptor(descriptor, false);
         module.save();
       }
 

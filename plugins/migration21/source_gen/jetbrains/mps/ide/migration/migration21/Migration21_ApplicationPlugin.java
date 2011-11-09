@@ -4,7 +4,7 @@ package jetbrains.mps.ide.migration.migration21;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.migration.actions.ToolsAddition_ActionGroup;
+import jetbrains.mps.ide.actions.Tools_ActionGroup;
 
 public class Migration21_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.ide.migration21");
@@ -25,6 +25,6 @@ public class Migration21_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(Migrations21_ActionGroup.ID, ToolsAddition_ActionGroup.ID, ToolsAddition_ActionGroup.LABEL_ID_migrationGroup);
+    insertGroupIntoAnother(Migrations21_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_migration);
   }
 }
