@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.dependencyViewer.DependenciesComponent" file="DependenciesComponent.java">
+  <dependency className="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" file="DependenciesPanel.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.ui.Splitter" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.JSplitPane" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependencyTree" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.ReferencesFinder" />
@@ -28,14 +28,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.workbench.tools.BaseTool" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="javax.swing.JComponent" />
+    <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dependencyViewer.DependencyTree" file="DependencyTree.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JPopupMenu" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.Scope" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.NamespaceTextNode" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode" />
@@ -76,7 +76,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantLoadSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.CategoryKind" />
@@ -113,7 +113,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.Scope" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantLoadSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />

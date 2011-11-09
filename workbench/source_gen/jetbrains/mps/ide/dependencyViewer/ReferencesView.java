@@ -19,12 +19,13 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 
 public class ReferencesView extends UsagesView {
-  private DependenciesComponent myComponent;
+  private DependenciesPanel myComponent;
 
-  public ReferencesView(Project project, DependenciesComponent component) {
+  public ReferencesView(Project project, DependenciesPanel component) {
     super(project, new ViewOptions(false, false, false, false, false, false));
     setCustomNodeRepresentator(new ReferencesView.MyNodeRepresentator());
     myComponent = component;
+    getTreeComponent().getTree().setSelectionRow(0);
   }
 
   public void close() {

@@ -151,7 +151,7 @@ public class MPSEditorOpener {
         (node.getModel() != null ? ", modelDisposed: " + node.getModel().isDisposed() : "");
     }
     // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
-    final IEditor nodeEditor = openEditor(containingRoot, context, openBaseNode);
+    final IEditor nodeEditor = openEditor(containingRoot, context, openBaseNode, false);
 
     //restore inspector state for opened editor (if exists)
     if (!restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector())) {
@@ -175,7 +175,7 @@ public class MPSEditorOpener {
     return nodeEditor;
   }
 
-  private IEditor openEditor(final SNode root, IOperationContext context, boolean openBaseNode) {
+  private IEditor openEditor(final SNode root, IOperationContext context, boolean openBaseNode, boolean focus) {
     SNode baseNode = null;
 
     if (openBaseNode && isUseTabs()) {
@@ -198,7 +198,7 @@ public class MPSEditorOpener {
     assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodePointer: " + new SNodePointer(baseNode).getNode();
     // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-    FileEditor fileEditor = editorManager.openFile(file, true)[0];
+    FileEditor fileEditor = editorManager.openFile(file, focus)[0];
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
 

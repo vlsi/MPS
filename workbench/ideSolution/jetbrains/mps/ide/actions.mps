@@ -30749,10 +30749,10 @@
   </root>
   <root id="5102590037491954904">
     <node role="fieldDeclaration" roleId="tp4k.6547237850567462849" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="2562278481386439122">
-      <property name="name" nameId="tpck.1169194664001" value="myDependenciesComponent" />
+      <property name="name" nameId="tpck.1169194664001" value="myDependenciesPanel" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2562278481386439123" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2562278481386439279">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="69zs.8294989614925456943" resolveInfo="DependenciesComponent" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="69zs.8294989614925456943" resolveInfo="DependenciesPanel" />
       </node>
     </node>
     <node role="fieldDeclaration" roleId="tp4k.6547237850567462849" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="1453248744423411978">
@@ -30822,7 +30822,7 @@
                         <link role="classifier" roleId="tp4f.1218736638915" targetNodeId="5102590037491954904" resolveInfo="AnalyzeDependencies" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="7706384037636304406">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesComponent" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesPanel" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7706384037636313190">
@@ -30845,7 +30845,7 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2562278481386587385">
               <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2562278481386587386" />
               <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="2562278481386587387">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesComponent" />
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesPanel" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2562278481386587392">
@@ -30864,7 +30864,7 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2352843840764634244">
               <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2352843840764634245" />
               <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="2352843840764634246">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesComponent" />
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesPanel" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2352843840764634251">
@@ -30931,7 +30931,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2562278481386439281">
             <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2562278481386439282" />
             <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="2562278481386439283">
-              <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesComponent" />
+              <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesPanel" />
             </node>
           </node>
         </node>
@@ -30943,14 +30943,14 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2562278481386445767">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2562278481386445770">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2562278481386453498">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="69zs.8294989614925457266" resolveInfo="DependenciesComponent" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="69zs.8294989614925457266" resolveInfo="DependenciesPanel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2296622719037765095" />
               </node>
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2562278481386445764">
               <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2562278481386445765" />
               <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="2562278481386445766">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesComponent" />
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesPanel" />
               </node>
             </node>
           </node>
@@ -30960,7 +30960,7 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4610292975587532023">
               <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4610292975587532024" />
               <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="4610292975587532025">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesComponent" />
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="2562278481386439122" resolveInfo="myDependenciesPanel" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4610292975587532030">

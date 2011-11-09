@@ -22,9 +22,9 @@ import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 public class DependencyTree extends MPSTree {
   private Scope myScope;
   private MPSProject myProject;
-  private DependenciesComponent myParent;
+  private DependenciesPanel myParent;
 
-  public DependencyTree(DependenciesComponent parent) {
+  public DependencyTree(DependenciesPanel parent) {
     myParent = parent;
     addTreeSelectionListener(new DependencyTree.MyTreeSelectionListener());
   }

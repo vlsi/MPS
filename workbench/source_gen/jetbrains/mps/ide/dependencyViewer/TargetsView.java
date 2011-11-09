@@ -29,14 +29,15 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 
 public class TargetsView extends UsagesView {
-  private DependenciesComponent myParent;
+  private DependenciesPanel myParent;
 
-  public TargetsView(Project project, DependenciesComponent parent) {
+  public TargetsView(Project project, DependenciesPanel parent) {
     super(project, new ViewOptions(true, true, false, false, false, false));
     UsagesTree usagesTree = getTreeComponent().getTree();
     usagesTree.addTreeSelectionListener(new TargetsView.MyTreeSelectionListener(usagesTree, parent));
     myParent = parent;
     setCustomNodeRepresentator(new TargetsView.MyNodeRepresentator());
+    getTreeComponent().getTree().setSelectionRow(0);
   }
 
   public void close() {
@@ -65,9 +66,9 @@ public class TargetsView extends UsagesView {
 
   public class MyTreeSelectionListener implements TreeSelectionListener {
     private UsagesTree myTree;
-    private DependenciesComponent myDependenciesComponent;
+    private DependenciesPanel myDependenciesComponent;
 
-    public MyTreeSelectionListener(UsagesTree tree, DependenciesComponent parent) {
+    public MyTreeSelectionListener(UsagesTree tree, DependenciesPanel parent) {
       myTree = tree;
       myDependenciesComponent = parent;
     }

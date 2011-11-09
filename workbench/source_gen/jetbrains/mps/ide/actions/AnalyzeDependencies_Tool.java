@@ -5,7 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import jetbrains.mps.ide.dependencyViewer.DependenciesComponent;
+import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
 import jetbrains.mps.ide.findusages.INavigateableTool;
 import com.intellij.openapi.wm.ToolWindow;
 import jetbrains.mps.ide.findusages.INavigator;
@@ -19,7 +19,7 @@ import javax.swing.JComponent;
 public class AnalyzeDependencies_Tool extends GeneratedTool {
   private static final Icon ICON = new ImageIcon(AnalyzeDependencies_Tool.class.getResource("inspector.png"));
 
-  private DependenciesComponent myDependenciesComponent;
+  private DependenciesPanel myDependenciesPanel;
   private INavigateableTool myNavigateableTool = new INavigateableTool() {
     public int getPriority() {
       return 3;
@@ -31,7 +31,7 @@ public class AnalyzeDependencies_Tool extends GeneratedTool {
     }
 
     public INavigator getCurrentNavigateableView() {
-      return AnalyzeDependencies_Tool.this.myDependenciesComponent.getReferencesViewComponent();
+      return AnalyzeDependencies_Tool.this.myDependenciesPanel.getReferencesViewComponent();
     }
   };
 
@@ -41,8 +41,8 @@ public class AnalyzeDependencies_Tool extends GeneratedTool {
 
   public void init(Project project) {
     super.init(project);
-    AnalyzeDependencies_Tool.this.myDependenciesComponent = new DependenciesComponent(AnalyzeDependencies_Tool.this);
-    AnalyzeDependencies_Tool.this.myDependenciesComponent.setProject(project);
+    AnalyzeDependencies_Tool.this.myDependenciesPanel = new DependenciesPanel(AnalyzeDependencies_Tool.this);
+    AnalyzeDependencies_Tool.this.myDependenciesPanel.setProject(project);
   }
 
   public void dispose() {
@@ -50,8 +50,8 @@ public class AnalyzeDependencies_Tool extends GeneratedTool {
   }
 
   public void setContent(Scope scope, MPSProject project) {
-    AnalyzeDependencies_Tool.this.myDependenciesComponent.setContent(scope, project);
-    AnalyzeDependencies_Tool.this.myDependenciesComponent.revalidate();
+    AnalyzeDependencies_Tool.this.myDependenciesPanel.setContent(scope, project);
+    AnalyzeDependencies_Tool.this.myDependenciesPanel.revalidate();
   }
 
   protected void doRegister() {
@@ -63,6 +63,6 @@ public class AnalyzeDependencies_Tool extends GeneratedTool {
   }
 
   public JComponent getComponent() {
-    return AnalyzeDependencies_Tool.this.myDependenciesComponent;
+    return AnalyzeDependencies_Tool.this.myDependenciesPanel;
   }
 }

@@ -294,7 +294,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.Scope" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.INavigateableTool" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.INavigator" />
