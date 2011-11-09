@@ -33,7 +33,7 @@ public class IdeaModelFileWatcherProvider implements ModelFileWatcherProvider {
         if (!isEventFromSave(event)) {
           VirtualFile file = event.getFile();
           while (file != null) {
-            invalidate(file.getPath());
+            if (invalidate(file.getPath())) break;
             file = file.getParent();
           }
         }
