@@ -48,6 +48,10 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return result;
   }
 
+  public boolean createsModels() {
+    return true;
+  }
+
   public boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     return true;
   }

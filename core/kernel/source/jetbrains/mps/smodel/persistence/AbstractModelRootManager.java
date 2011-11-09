@@ -29,4 +29,8 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   public SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
   }
+
+  public boolean createsModels() {
+    return false;
+  }
 }

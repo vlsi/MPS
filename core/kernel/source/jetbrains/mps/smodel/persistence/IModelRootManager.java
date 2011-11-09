@@ -26,6 +26,8 @@ import java.util.Collection;
 public interface IModelRootManager {
   Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module);
 
+  boolean createsModels();
+
   boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName);
 
   SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName);
