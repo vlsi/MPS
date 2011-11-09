@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.actions.IconContainer" />
-<<<<<<< HEAD
-  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
-=======
-<<<<<<< HEAD
-  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
-=======
-  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
->>>>>>> submit to issue tracker -> j.m.ide.actions
->>>>>>> submit to issue tracker -> j.m.ide.actions
+  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
   <unitInfo fileName="Ide_ProjectPlugin.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
   <root nodeId="1204991215587">
     <nodeInfo nodeId="1204991215587" fileName="NodeActions_ActionGroup.java" startLine="11" startPosition="67" endLine="12" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -9366,29 +9358,6 @@
     <unitInfo nodeId="5022031745194873197" fileName="ReferencesFinder.java" startLine="48" startPosition="49" endLine="54" endPosition="9" unitName="jetbrains.mps.ide.actions.ReferencesFinder$1" />
     <unitInfo nodeId="1915846093791204785" fileName="ReferencesFinder.java" startLine="125" startPosition="45" endLine="137" endPosition="5" unitName="jetbrains.mps.ide.actions.ReferencesFinder$2" />
   </root>
-<<<<<<< HEAD
-  <root nodeId="484385057887943926">
-    <nodeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="8" startPosition="68" endLine="9" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="9" startPosition="79" endLine="10" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="12" startPosition="37" endLine="13" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="13" startPosition="30" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="484385057887944138" fileName="AnalyzeStack_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AnalyzeStack_ActionGroup#()V" />
-    <scopeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="100" />
-    <scopeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39">
-      <varInfo nodeId="484385057887943926" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
-    <scopeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="12" startPosition="37" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
-    <unitInfo nodeId="484385057887943926" fileName="AnalyzeStack_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeStack_ActionGroup" />
-  </root>
-=======
-<<<<<<< HEAD
-=======
   <root nodeId="484385057887943926">
     <nodeInfo nodeId="484385057887943926" fileName="MessagesViewActions_ActionGroup.java" startLine="8" startPosition="75" endLine="9" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="484385057887943926" fileName="MessagesViewActions_ActionGroup.java" startLine="9" startPosition="86" endLine="10" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -9409,8 +9378,6 @@
     <scopeInfo nodeId="484385057887943926" fileName="MessagesViewActions_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" />
     <unitInfo nodeId="484385057887943926" fileName="MessagesViewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.MessagesViewActions_ActionGroup" />
   </root>
->>>>>>> submit to issue tracker -> j.m.ide.actions
->>>>>>> submit to issue tracker -> j.m.ide.actions
   <root nodeId="5014390439885403930">
     <nodeInfo nodeId="5014390439885403930" fileName="GoToFile_Action.java" startLine="14" startPosition="54" endLine="15" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5014390439885403930" fileName="GoToFile_Action.java" startLine="15" startPosition="40" endLine="16" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -15407,6 +15374,8 @@
     </scopeInfo>
     <scopeInfo nodeId="9078697818357582146" fileName="SelectMembersDialog.java" startLine="46" startPosition="0" endLine="63" endPosition="0" />
     <unitInfo nodeId="9078697818357582253" fileName="SelectMembersDialog.java" startLine="101" startPosition="45" endLine="27" endPosition="0" />
+    <unitInfo nodeId="9078697818357582108" fileName="SelectMembersDialog.java" startLine="33" startPosition="31" endLine="37" endPosition="3" unitName="jetbrains.mps.ide.actions.SelectMembersDialog$1" />
+    <unitInfo nodeId="6708838774400334780" fileName="SelectMembersDialog.java" startLine="51" startPosition="30" endLine="57" endPosition="5" unitName="jetbrains.mps.ide.actions.SelectMembersDialog$2" />
   </root>
   <root nodeId="9164503229271455483">
     <nodeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="24" startPosition="72" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
