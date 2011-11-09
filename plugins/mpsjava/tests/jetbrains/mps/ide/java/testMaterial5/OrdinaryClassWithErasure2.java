@@ -18,11 +18,7 @@ package jetbrains.mps.ide.java.testMaterial5;
 import java.util.List;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 28.12.2009
- * Time: 16:30:29
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 28.12.2009
  */
 public class OrdinaryClassWithErasure2 {
   public void foo(Object value) {

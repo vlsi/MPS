@@ -16,11 +16,7 @@
 package jetbrains.mps.generator;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 4/11/11
- * Time: 5:13 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, 4/11/11
  */
 public interface IGenerationSettings {
   boolean isParallelGenerator();

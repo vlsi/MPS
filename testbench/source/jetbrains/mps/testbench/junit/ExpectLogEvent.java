@@ -21,15 +21,9 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.util.Arrays;
-import java.util.Collections;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Sep 22, 2010
- * Time: 4:03:20 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Sep 22, 2010
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})

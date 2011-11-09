@@ -18,11 +18,7 @@ package jetbrains.mps.nodeEditor;
 import org.jdom.Element;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.10.2010
- * Time: 18:02:40
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 09.10.2010
  */
 public class MementoPersistence {
   public static void saveMemento(Object o, Element e) {

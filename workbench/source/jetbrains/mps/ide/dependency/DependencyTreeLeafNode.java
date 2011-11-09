@@ -15,18 +15,13 @@
  */
 package jetbrains.mps.ide.dependency;
 
-import com.intellij.ui.Colors;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 
 import java.awt.Color;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 10/19/11
- * Time: 4:32 PM
- * To change this template use File | Settings | File Templates.
+ * Ilya.Lintsbakh, 10/19/11
  */
 public class DependencyTreeLeafNode extends DependencyTreeNode{
 

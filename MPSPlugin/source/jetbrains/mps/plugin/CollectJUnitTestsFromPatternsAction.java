@@ -53,11 +53,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Aug 3, 2010
- * Time: 3:05:37 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Aug 3, 2010
  */
 public class CollectJUnitTestsFromPatternsAction extends AnAction {
 

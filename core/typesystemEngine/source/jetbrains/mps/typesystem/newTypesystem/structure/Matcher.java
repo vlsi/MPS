@@ -19,13 +19,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 26.01.2010
- * Time: 14:32:12
- * To change this template use File | Settings | File Templates.
- */
 public class Matcher {
   public static <Meta, Target> MatchResult<Meta, Target> match(Type<Meta, Target> type1, Type<Meta, Target> type2) {
     MatchResult<Meta, Target> result = new MatchResult<Meta, Target>();

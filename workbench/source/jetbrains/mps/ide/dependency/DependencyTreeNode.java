@@ -17,18 +17,13 @@ package jetbrains.mps.ide.dependency;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 
 import java.awt.Color;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 10/19/11
- * Time: 11:50 AM
- * To change this template use File | Settings | File Templates.
+ * Ilya.Lintsbakh, 10/19/11
  */
 public class DependencyTreeNode extends MPSTreeNode {
   private IModule myModule;

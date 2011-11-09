@@ -23,12 +23,8 @@ import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.notification.StoppedByUserException;
 
 /**
-* Created by IntelliJ IDEA.
-* User: fyodor
-* Date: Aug 18, 2010
-* Time: 2:50:50 PM
-* To change this template use File | Settings | File Templates.
-*/
+ * fyodor, Aug 18, 2010
+ */
 class DelegatingRunNotifier extends RunNotifier {
   private final RunNotifier delegate;
 

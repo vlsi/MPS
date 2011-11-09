@@ -24,11 +24,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.12.2008
- * Time: 16:38:16
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 09.12.2008
  */
 public class SliceInfo {
   private SNode myNode;

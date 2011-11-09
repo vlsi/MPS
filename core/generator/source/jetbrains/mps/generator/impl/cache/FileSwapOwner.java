@@ -34,11 +34,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/10/11
- * Time: 10:42 AM
- * To change this template use File | Settings | File Templates.
+ * fyodor, 1/10/11
  */
 public abstract class FileSwapOwner implements TransientSwapOwner {
 

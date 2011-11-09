@@ -20,13 +20,6 @@ import jetbrains.mps.util.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 26.01.2010
- * Time: 17:58:50
- * To change this template use File | Settings | File Templates.
- */
 public class MatchResult<M, T> {
   private List<Pair<Type<M, T>, Type<M, T>>> myEquations = null;
   private boolean myIsCorrectMatch;

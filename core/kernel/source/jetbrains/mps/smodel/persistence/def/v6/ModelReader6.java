@@ -26,11 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: Oct 12, 2010
- * Time: 3:08:42 PM
- * To change this template use File | Settings | File Templates.
+ * Michael.Vlassiev, Oct 12, 2010
  */
 public class ModelReader6 implements IModelReader {
   private static final Logger LOG = Logger.getLogger(ModelReader6.class);

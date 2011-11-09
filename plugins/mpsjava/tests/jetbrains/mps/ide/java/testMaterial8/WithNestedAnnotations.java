@@ -16,11 +16,7 @@
 package jetbrains.mps.ide.java.testMaterial8;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 27.12.10
- * Time: 22:30
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 27.12.10
  */
 @Outer(inners = { @Inner("5") })
 @Marker

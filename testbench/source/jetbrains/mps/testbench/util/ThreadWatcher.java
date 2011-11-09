@@ -23,11 +23,7 @@ import java.lang.management.ThreadMXBean;
 import java.util.regex.Pattern;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Sep 8, 2010
- * Time: 5:17:32 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Sep 8, 2010
  */
 public class ThreadWatcher implements Output {
   private ThreadState base;

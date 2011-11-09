@@ -23,11 +23,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Computable;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 22.04.2010
- * Time: 20:25:34
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 22.04.2010
  */
 public class RuntimeSupport_Tracer extends RuntimeSupportNew {
   public RuntimeSupport_Tracer(TypeChecker typeChecker) {

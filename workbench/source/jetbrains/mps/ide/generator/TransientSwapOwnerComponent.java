@@ -25,11 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/10/11
- * Time: 10:30 AM
- * To change this template use File | Settings | File Templates.
+ * fyodor, 1/10/11
  */
 public class TransientSwapOwnerComponent extends FileSwapOwner implements ApplicationComponent, TransientSwapOwner {
 

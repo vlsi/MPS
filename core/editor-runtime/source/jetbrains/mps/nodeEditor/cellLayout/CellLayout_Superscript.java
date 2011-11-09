@@ -23,15 +23,8 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.ScriptKind;
 
-import java.awt.Font;
-import java.awt.FontMetrics;
-
 /**
- * Created by IntelliJ IDEA.
- * User: Sergey.Sinchuk
- * Date: Oct 29, 2009
- * Time: 4:44:35 PM
- * To change this template use File | Settings | File Templates.
+ * Sergey.Sinchuk, Oct 29, 2009
  */
 public class CellLayout_Superscript extends AbstractCellLayout {
 

@@ -16,11 +16,7 @@
 package jetbrains.mps.ide.java.testMaterial9;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: 6/9/11
- * Time: 5:04 PM
- * To change this template use File | Settings | File Templates.
+ * Michael.Vlassiev, 6/9/11
  */
 public class Comments {
   // test comment 1

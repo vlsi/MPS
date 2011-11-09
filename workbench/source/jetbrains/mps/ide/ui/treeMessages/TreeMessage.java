@@ -17,13 +17,6 @@ package jetbrains.mps.ide.ui.treeMessages;
 
 import java.awt.Color;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 19.02.2010
- * Time: 19:07:40
- * To change this template use File | Settings | File Templates.
- */
 public class TreeMessage {
   private Color myColor;
   private String myAdditionalText;

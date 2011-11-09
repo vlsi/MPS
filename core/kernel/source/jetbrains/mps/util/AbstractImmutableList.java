@@ -18,11 +18,7 @@ package jetbrains.mps.util;
 import java.util.*;
 
 /**
- * Created by IntelliJ IDEA.
- * User: evgeny
- * Date: Dec 4, 2009
- * Time: 9:50:38 PM
- * To change this impl use File | Settings | File Templates.
+ * evgeny, Dec 4, 2009
  */
 public abstract class AbstractImmutableList<T> extends AbstractCollection<T> implements List<T> {
 

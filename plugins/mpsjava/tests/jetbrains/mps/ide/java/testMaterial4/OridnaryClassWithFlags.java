@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.ide.java.testMaterial4;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 29.12.2009
- * Time: 18:16:04
- * To change this template use File | Settings | File Templates.
- */
 public class OridnaryClassWithFlags {
   public static final boolean FLAG = false;
 

@@ -26,11 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Aug 18, 2010
- * Time: 2:13:11 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Aug 18, 2010
  */
 public class CachingAppender extends AppenderSkeleton implements Output {
 

@@ -22,11 +22,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 01.12.2009
- * Time: 14:57:26
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 01.12.2009
  */
 public interface AdditionalPainter<Item> {
   public boolean paintsAbove();

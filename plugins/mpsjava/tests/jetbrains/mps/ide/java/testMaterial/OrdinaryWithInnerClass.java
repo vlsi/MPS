@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.ide.java.testMaterial;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 15.09.2009
- * Time: 16:37:50
- * To change this template use File | Settings | File Templates.
- */
 public class OrdinaryWithInnerClass {
   public void foo() {
     OrdinaryWithInnerClass newOc = new OrdinaryWithInnerClass();

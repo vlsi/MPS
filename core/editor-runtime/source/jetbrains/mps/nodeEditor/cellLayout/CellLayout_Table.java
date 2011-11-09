@@ -20,18 +20,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.TableComponent;
 import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
-import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 
-import java.awt.Font;
-import java.awt.FontMetrics;
-
 /**
- * Created by IntelliJ IDEA.
- * User: Sergey.Sinchuk
- * Date: Oct 30, 2009
- * Time: 5:33:02 PM
- * To change this template use File | Settings | File Templates.
+ * Sergey.Sinchuk, Oct 30, 2009
  */
 public class CellLayout_Table extends AbstractCellLayout {
 

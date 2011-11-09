@@ -18,11 +18,7 @@ package jetbrains.mps.lang.typesystem.runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 29.09.2010
- * Time: 18:59:52
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 29.09.2010
  */
 public class IsApplicableStatus {
   private boolean myIsApplicable;

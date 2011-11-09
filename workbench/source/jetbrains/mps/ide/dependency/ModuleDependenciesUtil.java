@@ -21,16 +21,11 @@ import jetbrains.mps.project.dependency.DependenciesTracer;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 10/21/11
- * Time: 12:08 PM
- * To change this template use File | Settings | File Templates.
+ * Ilya.Lintsbakh, 10/21/11
  */
 public class ModuleDependenciesUtil {
 

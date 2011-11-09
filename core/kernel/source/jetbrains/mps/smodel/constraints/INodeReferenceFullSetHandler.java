@@ -19,11 +19,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 14.10.2010
- * Time: 16:53:08
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 14.10.2010
  */
 public interface INodeReferenceFullSetHandler extends INodeReferentSetEventHandler {
   public boolean keepsOriginalReference(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope);

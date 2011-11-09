@@ -18,11 +18,7 @@ package jetbrains.mps.testbench.junit;
 import jetbrains.mps.testbench.util.Output;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Aug 18, 2010
- * Time: 2:33:37 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Aug 18, 2010
  */
 public class UncleanTestExecutionException extends Exception {
 

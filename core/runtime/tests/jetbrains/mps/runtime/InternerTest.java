@@ -30,14 +30,8 @@ import java.util.concurrent.CyclicBarrier;
 
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Dec 16, 2010
- * Time: 3:07:02 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Dec 16, 2010
  */
-
-
 public class InternerTest {
 
   private static final int MEAN_LENGTH = 50;
