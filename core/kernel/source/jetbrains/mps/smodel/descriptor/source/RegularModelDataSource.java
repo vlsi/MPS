@@ -198,7 +198,8 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     }
     IFile oldFile = dsm.getModelFile();
     SModelRoot root = ModelRootUtil.getSModelRoot(sm);
-    IFile newFile = createFileForModelUID(root.getModelRoot(), modelFqName);
+    ModelRoot mr = root.getModelRoot();
+    IFile newFile = createFileForModelUID(mr, modelFqName, isLanguageAspect(mr, sm.getModule(), modelFqName));
     newFile.getParent().mkdirs();
     newFile.createNewFile();
     dsm.changeModelFile(newFile);
@@ -206,10 +207,13 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     oldFile.delete();
   }
 
-  private static IFile createFileForModelUID(ModelRoot root, SModelFqName fqName) {
+  private static IFile createFileForModelUID(ModelRoot root, SModelFqName fqName, boolean languageModel) {
     String path = root.getPath();
 
     String filenameSuffix = fqName.getLongName();
+    if (languageModel) {
+      filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
+    }
     if (fqName.hasStereotype()) {
       filenameSuffix = filenameSuffix + '@' + fqName.getStereotype();
     }
@@ -217,8 +221,23 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT_MODEL);
   }
 
-  public static RegularModelDataSource createSourceForModelUID(ModelRoot root, SModelFqName fqName) {
-    IFile file = createFileForModelUID(root, fqName);
+  public static RegularModelDataSource createSourceForModelUID(ModelRoot root, SModelFqName fqName, IModule module) {
+    IFile file = createFileForModelUID(root, fqName, isLanguageAspect(root, module, fqName));
     return new RegularModelDataSource(file);
+  }
+
+  public static boolean isLanguageAspect(ModelRoot root, IModule module, SModelFqName modelFqName) {
+    //in language
+    if (!(module instanceof Language)) return false;
+    //is under languageModels
+    if (!FileSystem.getInstance().getFileByPath(root.getPath()).getName().equals(Language.LANGUAGE_MODELS)) return false;
+    //prefixed with language namespace
+    if (!NameUtil.namespaceFromLongName(modelFqName.getLongName()).equals(module.getModuleFqName())) return false;
+    //is aspect model name
+    if (LanguageAspect.valueOf(NameUtil.shortNameFromLongName(modelFqName.getLongName())) == null) return false;
+    //is non-stereotyped (? test models)
+    //if (modelFqName.getStereotype() != null && !modelFqName.getStereotype().equals("")) return false;
+
+    return true;
   }
 }

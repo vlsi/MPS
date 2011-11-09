@@ -35,13 +35,13 @@ import java.util.List;
 public class DefaultModelRootManager extends BaseMPSModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
-  public Collection<SModelDescriptor> load(@NotNull ModelRoot root,IModule module) {
+  public Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module) {
     List<ModelHandle> models = new ArrayList<ModelHandle>();
     ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, models);
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (ModelHandle handle : models) {
-      SModelDescriptor modelDescriptor = getInstance(module,new RegularModelDataSource(handle.getFile()), handle.getReference(), handle.getLoadResult());
+      SModelDescriptor modelDescriptor = getInstance(module, new RegularModelDataSource(handle.getFile()), handle.getReference(), handle.getLoadResult());
       LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + root.getPath());
       result.add(modelDescriptor);
     }
@@ -56,15 +56,15 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return true;
   }
 
-  public SModelDescriptor createModel(IModule module,@NotNull ModelRoot root, @NotNull SModelFqName fqName) {
+  public SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     if (SModelRepository.getInstance().getModelDescriptor(fqName) != null) {
       LOG.error("Couldn't create new model \"" + fqName.getLongName() + "\" because such model exists");
       return null;
     }
 
-    ModelDataSource modelSource = RegularModelDataSource.createSourceForModelUID(root, fqName);
+    ModelDataSource modelSource = RegularModelDataSource.createSourceForModelUID(root, fqName, module);
     SModelReference ref = new SModelReference(fqName, SModelId.generate());
-    return new DefaultSModelDescriptor(module,modelSource, ref, new DescriptorLoadResult());
+    return new DefaultSModelDescriptor(module, modelSource, ref, new DescriptorLoadResult());
   }
 
   private static SModelDescriptor getInstance(IModule module, RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
@@ -72,7 +72,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     SModelRepository modelRepository = SModelRepository.getInstance();
     SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelReference);
-    if (modelDescriptor == null) return new DefaultSModelDescriptor(module,source, modelReference, d);
+    if (modelDescriptor == null) return new DefaultSModelDescriptor(module, source, modelReference, d);
 
     //todo rewrite
     IFile newFile = source.getFile();
@@ -85,6 +85,5 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     //todo modelRepository.registerModelDescriptor(modelDescriptor);
     return modelDescriptor;
   }
-
 }
 
