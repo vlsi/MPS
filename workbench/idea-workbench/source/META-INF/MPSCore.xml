@@ -1,4 +1,8 @@
 <components>
+  <actions>
+    <group id="MPS.MessagesView" popup="false"></group>
+  </actions>
+
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.ide.project.WorkbenchPathMacros</implementation-class>
