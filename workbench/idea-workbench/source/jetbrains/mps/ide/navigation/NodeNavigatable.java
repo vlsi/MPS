@@ -22,6 +22,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * evgeny, 11/6/11
@@ -29,9 +30,10 @@ import jetbrains.mps.smodel.SNodePointer;
 public class NodeNavigatable extends BaseNavigatable {
   private static final Logger LOG = Logger.getLogger(NodeNavigatable.class);
 
+  @NotNull
   private SNodePointer nodePointer;
 
-  public NodeNavigatable(Project project, SNodePointer nodePointer) {
+  public NodeNavigatable(@NotNull Project project, @NotNull SNodePointer nodePointer) {
     super(project);
     this.nodePointer = nodePointer;
   }

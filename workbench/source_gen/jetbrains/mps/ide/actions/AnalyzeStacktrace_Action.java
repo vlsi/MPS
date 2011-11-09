@@ -6,10 +6,10 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.StringWriter;
 import java.io.PrintWriter;
@@ -30,9 +30,19 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
     this.setMnemonic("s".charAt(0));
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (MPSActionPlaces.MPS_MESSAGES_POPUP.equals(event.getPlace())) {
+      return ((Throwable) MapSequence.fromMap(_params).get("exception")) != null;
+    }
+    return true;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "AnalyzeStacktrace", t);

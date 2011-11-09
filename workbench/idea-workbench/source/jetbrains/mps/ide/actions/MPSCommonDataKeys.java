@@ -17,11 +17,13 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.messages.IMessage;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.List;
 
 /**
  * evgeny, 11/8/11
@@ -30,6 +32,8 @@ public class MPSCommonDataKeys extends PlatformDataKeys {
 
   @Description(description = "throwable in select message")
   public static final DataKey<Throwable> EXCEPTION = DataKey.create("MPS_Exception");
+  @Description(description = "selected messages")
+  public static final DataKey<List<IMessage>> MESSAGES = DataKey.create("MPS_IMessage_List");
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(ElementType.FIELD)

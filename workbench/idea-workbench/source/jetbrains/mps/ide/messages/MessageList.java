@@ -31,6 +31,7 @@ import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import com.intellij.usageView.UsageViewBundle;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.ide.actions.MPSActionPlaces;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
@@ -341,7 +342,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
 
     DefaultActionGroup group = createActionGroup();
 
-    JPopupMenu menu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
+    JPopupMenu menu = ActionManager.getInstance().createActionPopupMenu(MPSActionPlaces.MPS_MESSAGES_POPUP, group).getComponent();
     menu.show(myList, evt.getX(), evt.getY());
   }
 
