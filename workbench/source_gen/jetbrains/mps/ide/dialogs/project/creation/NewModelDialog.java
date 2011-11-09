@@ -77,7 +77,7 @@ public class NewModelDialog extends BaseDialog {
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (SModelRoot root : myModule.getSModelRoots()) {
       IModelRootManager manager = root.getManager();
-      if (manager != null && manager.createsModels()) {
+      if (manager != null && manager.canCreateModel(myModule, root.getModelRoot(), null)) {
         model.addElement(root);
       }
     }

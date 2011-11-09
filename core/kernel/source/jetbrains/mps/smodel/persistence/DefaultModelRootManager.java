@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -48,11 +49,9 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return result;
   }
 
-  public boolean createsModels() {
-    return true;
-  }
-
-  public boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
+  public boolean canCreateModel(IModule module, @Nullable ModelRoot root, @Nullable SModelFqName fqName) {
+    if (root == null) return true;
+    if (fqName == null) return !RegularModelDataSource.isUnderLanguageModels(module, root);
     return true;
   }
 

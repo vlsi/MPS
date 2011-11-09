@@ -20,15 +20,15 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 
 public interface IModelRootManager {
   Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module);
 
-  boolean createsModels();
-
-  boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName);
+  //null in parameter means "are you able to create with ANY parameter at this place?"
+  boolean canCreateModel(IModule module, @Nullable ModelRoot root, @Nullable SModelFqName fqName);
 
   SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName);
 }

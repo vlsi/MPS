@@ -227,10 +227,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
   }
 
   public static boolean isLanguageAspect(ModelRoot root, IModule module, SModelFqName modelFqName) {
-    //in language
-    if (!(module instanceof Language)) return false;
-    //is under languageModels
-    if (!FileSystem.getInstance().getFileByPath(root.getPath()).getName().equals(Language.LANGUAGE_MODELS)) return false;
+    if (!isUnderLanguageModels(module, root)) return false;
     //prefixed with language namespace
     if (!NameUtil.namespaceFromLongName(modelFqName.getLongName()).equals(module.getModuleFqName())) return false;
     //is aspect model name
@@ -238,6 +235,14 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     //is non-stereotyped (? test models)
     //if (modelFqName.getStereotype() != null && !modelFqName.getStereotype().equals("")) return false;
 
+    return true;
+  }
+
+  public static boolean isUnderLanguageModels(IModule module, ModelRoot root) {
+    //in language
+    if (!(module instanceof Language)) return false;
+    //is under languageModels
+    if (!FileSystem.getInstance().getFileByPath(root.getPath()).getName().equals(Language.LANGUAGE_MODELS)) return false;
     return true;
   }
 }
