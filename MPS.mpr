@@ -323,6 +323,8 @@
       <modulePath path="${project}/testbench/modules/miscTests/solutions/jetbrains.mps.refactoring.tests.msd" folder="testbench" />
       <modulePath path="${project}/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/jetbrains.mps.makeTest.msd" folder="core.make" />
       <modulePath path="${project}/testbench/modules/testMake/solutions/jetbrains.mps.testModels/jetbrains.mps.testModels.msd" folder="testbench" />
+      <modulePath path="${project}/testbench/modules/testRefactoring/languages/testRefactoring/testRefactoring.mpl" folder="test" />
+      <modulePath path="${project}/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/testRefactoringTargetLang.mpl" folder="test" />
       <modulePath path="${project}/workbench/baseLanguageIndex/jetbrains.mps.baseLanguage.index.msd" folder="baseLanguage" />
       <modulePath path="${project}/workbench/ideSolution/jetbrains.mps.ide.msd" folder="workbench" />
       <modulePath path="${project}/workbench/ideUiLanguage/uiLanguage.mpl" folder="languages.ui" />
