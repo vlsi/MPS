@@ -113,7 +113,7 @@ public class UsagesTree extends MPSTree {
 
     getActionMap().put(COMMAND_OPEN_NODE_IN_PROJECT, new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentNodeLink(false, !isUnstableWindow());
+        openCurrentNodeLink(false, false);
       }
     });
 

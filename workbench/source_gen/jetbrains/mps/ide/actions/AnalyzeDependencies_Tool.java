@@ -5,15 +5,17 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.ide.dependencyViewer.Scope;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.JComponent;
 
 public class AnalyzeDependencies_Tool extends GeneratedTool {
   private static final Icon ICON = new ImageIcon(AnalyzeDependencies_Tool.class.getResource("inspector.png"));
 
-  private DependenciesComponent myDependenciesComponent;
+  private DependenciesPanel myDependenciesPanel;
 
   public AnalyzeDependencies_Tool(Project project) {
     super(project, "Dependendies Viewer", -1, ICON, ToolWindowAnchor.BOTTOM, false);
@@ -21,8 +23,7 @@ public class AnalyzeDependencies_Tool extends GeneratedTool {
 
   public void init(Project project) {
     super.init(project);
-    AnalyzeDependencies_Tool.this.myDependenciesComponent = new DependenciesComponent();
-    AnalyzeDependencies_Tool.this.myDependenciesComponent.setProject(project);
+    AnalyzeDependencies_Tool.this.myDependenciesPanel = new DependenciesPanel(AnalyzeDependencies_Tool.this, project);
   }
 
   public void dispose() {
@@ -30,11 +31,11 @@ public class AnalyzeDependencies_Tool extends GeneratedTool {
   }
 
   public void setContent(Scope scope, MPSProject project) {
-    AnalyzeDependencies_Tool.this.myDependenciesComponent.setContent(scope, project);
-    AnalyzeDependencies_Tool.this.myDependenciesComponent.revalidate();
+    AnalyzeDependencies_Tool.this.myDependenciesPanel.setContent(scope, project);
+    AnalyzeDependencies_Tool.this.myDependenciesPanel.revalidate();
   }
 
   public JComponent getComponent() {
-    return AnalyzeDependencies_Tool.this.myDependenciesComponent;
+    return AnalyzeDependencies_Tool.this.myDependenciesPanel;
   }
 }
