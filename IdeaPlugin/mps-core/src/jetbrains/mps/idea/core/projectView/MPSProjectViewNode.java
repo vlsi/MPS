@@ -31,7 +31,7 @@ import java.util.Collections;
 /**
  * evgeny, 11/9/11
  */
-public class MPSProjectViewNode extends ProjectViewNode<Integer> {
+public class MPSProjectViewNode extends ProjectViewNode<String> {
 
     /**
      * Creates an instance of the project view node.
@@ -40,7 +40,7 @@ public class MPSProjectViewNode extends ProjectViewNode<Integer> {
      * @param value        the object represented by the project view node
      * @param viewSettings the settings of the project view.
      */
-    public MPSProjectViewNode(Project project, Integer value, ViewSettings viewSettings) {
+    public MPSProjectViewNode(Project project, String value, ViewSettings viewSettings) {
         super(project, value, viewSettings);
     }
 
@@ -57,8 +57,8 @@ public class MPSProjectViewNode extends ProjectViewNode<Integer> {
 
     @Override
     protected void update(PresentationData presentation) {
-        Integer value = getValue();
-        presentation.setPresentableText(value.toString());
+        String value = getValue();
+        presentation.setPresentableText(value);
         presentation.setIcons(Icons.INFORMATION_ICON);
     }
 }

@@ -33,6 +33,8 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.messages.MessageList.MessageListState;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JList;
@@ -319,5 +321,9 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
       });
 
     }
+  }
+
+  public static void log(Project p, MessageKind kind, String message) {
+    p.getComponent(MessagesViewTool.class).add(new Message(kind, message));
   }
 }

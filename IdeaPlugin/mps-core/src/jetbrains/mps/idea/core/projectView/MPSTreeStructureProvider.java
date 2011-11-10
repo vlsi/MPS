@@ -23,6 +23,9 @@ import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -33,16 +36,34 @@ import java.util.List;
  */
 public class MPSTreeStructureProvider implements TreeStructureProvider, DumbAware {
     @Override
-    public Collection<AbstractTreeNode> modify(AbstractTreeNode parent, Collection<AbstractTreeNode> children, ViewSettings settings) {
+    public Collection<AbstractTreeNode> modify(final AbstractTreeNode parent, final Collection<AbstractTreeNode> children, final ViewSettings settings) {
         if (parent instanceof PsiFileNode) {
             PsiFileNode fileNode = (PsiFileNode) parent;
             VirtualFile virtualFile = fileNode.getVirtualFile();
             if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MODEL_FILE_TYPE) return children;
 
-            List<AbstractTreeNode> newChildren = new ArrayList<AbstractTreeNode>();
-            newChildren.add(new MPSProjectViewNode(parent.getProject(), 1, settings));
-            newChildren.add(new MPSProjectViewNode(parent.getProject(), 2, settings));
-            newChildren.add(new MPSProjectViewNode(parent.getProject(), 3, settings));
+            final IFile modelFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+            final List<AbstractTreeNode> newChildren = new ArrayList<AbstractTreeNode>(children);
+            ModelAccess.instance().runReadAction(new Runnable() {
+                @Override
+                public void run() {
+                    SModelDescriptor descr = SModelRepository.getInstance().findModel(modelFile);
+                    if (descr == null) return;
+
+                    SModel model = descr.getSModel();
+                    if (model != null) {
+                        for (SNode root : model.roots()) {
+                            String name;
+                            try {
+                                name = root.getName();
+                            } catch (Exception ex) {
+                                name = "exc: " + ex.getMessage();
+                            }
+                            newChildren.add(new MPSProjectViewNode(parent.getProject(), name, settings));
+                        }
+                    }
+                }
+            });
             return newChildren;
         }
         return children;
