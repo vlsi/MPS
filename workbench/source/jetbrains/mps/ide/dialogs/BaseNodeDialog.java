@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.ui.Splitter;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -44,7 +45,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
 
   private IOperationContext myOperationContext;
   private UIEditorComponent myEditorComponent;
-  private JSplitPane mySplitter;
+  private Splitter mySplitter;
 
   protected BaseNodeDialog(String text, IOperationContext operationContext) throws HeadlessException {
     super(ProjectHelper.toMainFrame(operationContext.getProject()), text);
@@ -52,9 +53,9 @@ public abstract class BaseNodeDialog extends BaseDialog {
     InspectorEditorComponent inspector = new InspectorEditorComponent();
     myEditorComponent = new UIEditorComponent(getOperationContext(), inspector);
 
-    mySplitter = new JSplitPaneWithoutBorders(JSplitPane.VERTICAL_SPLIT, myEditorComponent.getExternalComponent(), inspector.getExternalComponent());
-    mySplitter.setDividerSize(6);
-    mySplitter.setResizeWeight(0.8);
+    mySplitter = new Splitter(true, 0.6f);
+    mySplitter.setFirstComponent(myEditorComponent.getExternalComponent());
+    mySplitter.setSecondComponent(inspector.getExternalComponent());
   }
 
   protected Icon getIcon() {

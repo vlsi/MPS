@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
+import com.intellij.openapi.ui.Splitter;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -29,7 +29,6 @@ import jetbrains.mps.util.Computable;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JSplitPane;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 
@@ -39,7 +38,7 @@ public class
   private SModel myModel;
   private final IErrorReporter myError;
   private boolean myWasRegistered = true;
-  private JSplitPane myMainComponent;
+  private Splitter myMainComponent;
   private JComponent mySupertypesViewComponent;
 
   public MyBaseNodeDialog(IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) throws HeadlessException {
@@ -48,9 +47,9 @@ public class
     SupertypesViewTool supertypesView = operationContext.getProject().getComponent(SupertypesViewTool.class);
 
     mySupertypesViewComponent = supertypesView.getComponent();
-    myMainComponent = new JSplitPaneWithoutBorders(JSplitPane.HORIZONTAL_SPLIT, getSuperMainComponent(), mySupertypesViewComponent);
-    myMainComponent.setDividerSize(6);
-    myMainComponent.setResizeWeight(0.8);
+    myMainComponent = new Splitter(false);
+    myMainComponent.setFirstComponent(getSuperMainComponent());
+    myMainComponent.setSecondComponent(mySupertypesViewComponent);
 
     myType = type;
     ModelAccess.instance().runReadAction(new Runnable() {
