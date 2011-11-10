@@ -11,7 +11,7 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
-  <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debug.apiLang)" />
+  <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debugger.api.lang)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
@@ -21,7 +21,7 @@
   <import index="tpcn" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
-  <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="2" />
+  <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" version="2" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" />
@@ -1351,8 +1351,8 @@
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="3410240535682315233">
                         <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3410240535682315234">
-                          <node role="quotedNode" roleId="tp3r.1196350785114" type=".jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem" id="3410240535682315235">
-                            <node role="createBreakpoint" type=".jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint" id="3410240535682315236">
+                          <node role="quotedNode" roleId="tp3r.1196350785114" type=".jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem" id="3410240535682315235">
+                            <node role="createBreakpoint" type=".jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint" id="3410240535682315236">
                               <node role="body" type="tpee.StatementList" typeId="tpee.1068580123136" id="3410240535682315237">
                                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="3410240535682315238">
                                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3410240535682315239">
@@ -1382,7 +1382,7 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="conceptsToCreateBreakpoint" type=".jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference" id="3410240535682315248">
+                            <node role="conceptsToCreateBreakpoint" type=".jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference" id="3410240535682315248">
                               <link role="conceptDeclaration" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
                               <node role="smodelAttribute" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3410240535682315249">
                                 <property name="label" nameId="tp3r.6489343236075007666" value="ConceptDeclarationReference" />
