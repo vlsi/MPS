@@ -22,7 +22,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <generator generatorUID="3df702fd-160b-4712-9dac-1f5e287fe3bb(jetbrains.mps.debug.apiLang#1270798772176052788)" />
+            <generator generatorUID="3df702fd-160b-4712-9dac-1f5e287fe3bb(jetbrains.mps.debugger.api.lang#1270798772176052788)" />
             <external-mapping>
               <all-local-mappings />
             </external-mapping>
