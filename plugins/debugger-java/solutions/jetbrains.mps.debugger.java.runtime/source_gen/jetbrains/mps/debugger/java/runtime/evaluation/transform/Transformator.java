@@ -747,6 +747,26 @@ public class Transformator extends TransformatorBuilder.AbstractTransformator {
     return order;
   }
 
+  public static void init() {
+    setInstance(new TransformatorBuilder() {
+      public TransformatorBuilder.AbstractTransformator build(SNode node, boolean insideTransformation) {
+        return new Transformator(node, insideTransformation);
+      }
+
+      public String getJniSignatureFromType(SNode type) {
+        return TransformationUtil.getJniSignatureFromType(type);
+      }
+
+      public SNode getProxyTypeFromType(SNode type) {
+        return TransformationUtil.getValueProxyTypeFromType(type);
+      }
+    });
+  }
+
+  public static void dispose() {
+    setInstance(null);
+  }
+
   public static class QuotationClass_rxfadt_a1a2a0a2a5 {
     public QuotationClass_rxfadt_a1a2a0a2a5() {
     }
@@ -2182,21 +2202,5 @@ public class Transformator extends TransformatorBuilder.AbstractTransformator {
       }
       return result;
     }
-  }
-
-  static {
-    setInstance(new TransformatorBuilder() {
-      public TransformatorBuilder.AbstractTransformator build(SNode node, boolean insideTransformation) {
-        return new Transformator(node, insideTransformation);
-      }
-
-      public String getJniSignatureFromType(SNode type) {
-        return TransformationUtil.getJniSignatureFromType(type);
-      }
-
-      public SNode getProxyTypeFromType(SNode type) {
-        return TransformationUtil.getValueProxyTypeFromType(type);
-      }
-    });
   }
 }

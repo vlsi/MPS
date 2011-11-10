@@ -14,8 +14,16 @@ import com.sun.jdi.ObjectReference;
 import com.sun.jdi.ArrayReference;
 import com.sun.jdi.StringReference;
 
-/*package*/ class ValueUtil extends AbstractValueUtil {
+public class ValueUtil extends AbstractValueUtil {
   public ValueUtil() {
+  }
+
+  public void init() {
+    INSTANCE = this;
+  }
+
+  public void dispose() {
+    INSTANCE = null;
   }
 
   public JavaValue fromJDIValue(Value value, @NotNull String classFQname, ThreadReference threadReference) {
@@ -56,9 +64,5 @@ import com.sun.jdi.StringReference;
     } else {
       return new JavaPrimitiveValue(value, classFQname, threadReference);
     }
-  }
-
-  static {
-    AbstractValueUtil.INSTANCE = new ValueUtil();
   }
 }
