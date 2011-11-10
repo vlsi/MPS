@@ -51,8 +51,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3106132936047065760">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3106132936047009291">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3106132936047009294">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cvs4.2476748692227884194" resolveInfo="Transformator" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cvs4.3106132936047009268" resolveInfo="init" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cdx8.4488105509765020119" resolveInfo="Transformator" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cdx8.4488105509765020512" resolveInfo="init" />
           </node>
         </node>
       </node>
@@ -64,8 +64,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3106132936047065774">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3106132936047065775">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3106132936047065783">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cvs4.3106132936047009280" resolveInfo="dispose" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cvs4.2476748692227884194" resolveInfo="Transformator" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cdx8.4488105509765020553" resolveInfo="dispose" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cdx8.4488105509765020119" resolveInfo="Transformator" />
           </node>
         </node>
       </node>
@@ -3718,8 +3718,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3106132936047066044">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3106132936047066045">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3106132936047066046">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cvs4.3106132936047009268" resolveInfo="init" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cvs4.2476748692227884194" resolveInfo="Transformator" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cdx8.4488105509765020512" resolveInfo="init" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cdx8.4488105509765020119" resolveInfo="Transformator" />
           </node>
         </node>
       </node>
@@ -3731,8 +3731,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3106132936047066050">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3106132936047066051">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3106132936047066052">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cvs4.3106132936047009280" resolveInfo="dispose" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cvs4.2476748692227884194" resolveInfo="Transformator" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cdx8.4488105509765020553" resolveInfo="dispose" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cdx8.4488105509765020119" resolveInfo="Transformator" />
           </node>
         </node>
       </node>

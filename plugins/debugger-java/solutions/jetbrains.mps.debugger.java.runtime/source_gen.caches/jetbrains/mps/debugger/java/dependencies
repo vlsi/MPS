@@ -56,7 +56,6 @@
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider" />
     <classNode dependClassName="jetbrains.mps.debugger.java.JavaBreakpointsProvider" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.VmCreator" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.transform.Transformator" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.proxies.ValueUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />

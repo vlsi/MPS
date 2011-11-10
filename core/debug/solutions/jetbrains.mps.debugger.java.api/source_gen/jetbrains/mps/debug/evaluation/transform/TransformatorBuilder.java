@@ -32,4 +32,8 @@ public abstract class TransformatorBuilder {
       TransformatorBuilder.INSTANCE = builder;
     }
   }
+
+  static {
+    Transformator.init();
+  }
 }
