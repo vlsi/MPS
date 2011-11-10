@@ -32,7 +32,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
-public class Transformator {
+public class Transformator extends TransformatorBuilder.AbstractTransformator {
   public static final String LTYPE = "_ltype";
   public static final String RTYPE = "_rtype";
   public static final String CTYPE = "_ctype";
@@ -2181,5 +2181,13 @@ public class Transformator {
       }
       return result;
     }
+  }
+
+  static {
+    TransformatorBuilder.INSTANCE = new TransformatorBuilder() {
+      public TransformatorBuilder.AbstractTransformator build(SNode node, boolean insideTransformation) {
+        return new Transformator(node, insideTransformation);
+      }
+    };
   }
 }
