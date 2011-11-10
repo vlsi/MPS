@@ -776,6 +776,12 @@
       <varInfo nodeId="4003657351907888028" varName="modules" />
     </scopeInfo>
     <unitInfo nodeId="4003657351907888740" fileName="MpsWorker.java" startLine="353" startPosition="17" endLine="65" endPosition="0" />
+    <unitInfo nodeId="4003657351907887269" fileName="MpsWorker.java" startLine="137" startPosition="41" endLine="140" endPosition="9" unitName="jetbrains.mps.build.ant.MpsWorker$1" />
+    <unitInfo nodeId="8638838189258332414" fileName="MpsWorker.java" startLine="149" startPosition="41" endLine="155" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$2" />
+    <unitInfo nodeId="4003657351907887444" fileName="MpsWorker.java" startLine="177" startPosition="46" endLine="183" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$3" />
+    <unitInfo nodeId="4003657351907887458" fileName="MpsWorker.java" startLine="187" startPosition="46" endLine="191" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$4" />
+    <unitInfo nodeId="4003657351907887806" fileName="MpsWorker.java" startLine="269" startPosition="46" endLine="273" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$5" />
+    <unitInfo nodeId="4003657351907888070" fileName="MpsWorker.java" startLine="339" startPosition="68" endLine="343" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$6" />
     <unitInfo nodeId="4003657351907888089" fileName="MpsWorker.java" startLine="347" startPosition="61" endLine="355" endPosition="7" unitName="jetbrains.mps.build.ant.MpsWorker$7" />
     <unitInfo nodeId="4003657351907886942" fileName="MpsWorker.java" startLine="508" startPosition="0" endLine="511" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$AntLogger" />
     <unitInfo nodeId="4003657351907886982" fileName="MpsWorker.java" startLine="537" startPosition="0" endLine="562" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$LogLogger" />
