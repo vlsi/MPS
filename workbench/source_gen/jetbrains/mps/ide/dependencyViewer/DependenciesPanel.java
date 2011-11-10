@@ -5,6 +5,7 @@ package jetbrains.mps.ide.dependencyViewer;
 import javax.swing.JPanel;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -13,7 +14,6 @@ import jetbrains.mps.workbench.tools.BaseTool;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.openapi.ui.Splitter;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
@@ -24,21 +24,31 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import javax.swing.JComponent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.ide.findusages.view.icons.Icons;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class DependenciesPanel extends JPanel {
   private DependencyTree myInitTree;
   private UsagesView myTargetsView;
   private UsagesView myReferencesView;
   private Project myProject;
+  private MPSProject myMPSProject;
   private Scope myScope;
+  private Scope myInitialScope;
   private List<SReference> myReferences = ListSequence.fromList(new ArrayList<SReference>());
   private BaseTool myTool;
   private ReferencesFinder myReferencesFinder = null;
 
-  public DependenciesPanel(BaseTool tool) {
+  public DependenciesPanel(BaseTool tool, Project project) {
     super(new BorderLayout());
     myTool = tool;
     myInitTree = new DependencyTree(this);
+    myProject = project;
     myTargetsView = new TargetsView(myProject, this);
     myReferencesView = new ReferencesView(myProject, this);
     myReferencesView.setRunOptions(null, null, new UsagesView.ButtonConfiguration(false, false, false));
@@ -51,8 +61,8 @@ public class DependenciesPanel extends JPanel {
     splitter.setSecondComponent(myReferencesView.getComponent());
     splitter.setDividerWidth(5);
     treeSplitter.setDividerWidth(5);
-    this.add(splitter);
-
+    add(splitter, BorderLayout.CENTER);
+    add(createToolbar(), BorderLayout.NORTH);
   }
 
   public void setContent(Scope scope, MPSProject project) {
@@ -60,15 +70,13 @@ public class DependenciesPanel extends JPanel {
     setVisible(true);
     myInitTree.setContent(scope, project);
     updateTargetsView(scope);
+    myInitialScope = scope;
+    myMPSProject = project;
     repaint();
   }
 
   public UsagesView getReferencesViewComponent() {
     return myReferencesView;
-  }
-
-  public void setProject(Project project) {
-    myProject = project;
   }
 
   public Scope getCurrentScope() {
@@ -111,5 +119,32 @@ public class DependenciesPanel extends JPanel {
 
   public void close() {
     myTool.close();
+  }
+
+  private JComponent createToolbar() {
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(new DependenciesPanel.CloseAction());
+    group.add(new DependenciesPanel.RerunAction());
+    return ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
+  }
+
+  private class CloseAction extends AnAction {
+    public CloseAction() {
+      super("Close", "Close dependencies viewer", Icons.CLOSE_ICON);
+    }
+
+    public void actionPerformed(AnActionEvent event) {
+      myTool.setAvailable(false);
+    }
+  }
+
+  private class RerunAction extends AnAction {
+    public RerunAction() {
+      super("Rerun", "Rerun dependencies viewer", Icons.RERUN_ICON);
+    }
+
+    public void actionPerformed(AnActionEvent event) {
+      setContent(myInitialScope, myMPSProject);
+    }
   }
 }
