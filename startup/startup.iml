@@ -23,7 +23,7 @@
     </orderEntry>
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
-    <orderEntry type="library" name="idea-extensions" level="project" />
+    <orderEntry type="library" name="Idea-extensions" level="project" />
   </component>
 </module>
 

@@ -15,9 +15,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="library" name="Beansbinding" level="project" />
-    <orderEntry type="library" name="httpclient" level="project" />
-    <orderEntry type="library" name="Commons-codec" level="project" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="editor-runtime" />
@@ -25,20 +22,13 @@
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="plugin-runtime" />
-    <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="module" module-name="runConfigurations" />
     <orderEntry type="module" module-name="actions-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="library" name="commons-logging" level="project" />
-    <orderEntry type="library" name="commons-lang" level="project" />
-    <orderEntry type="library" name="JUnit4" level="project" />
-    <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="typesystemEngine" />
-    <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="mpsmake" />
     <orderEntry type="module" module-name="migration" />
     <orderEntry type="module" module-name="baseLanguageIndex" />
@@ -47,6 +37,16 @@
     <orderEntry type="module" module-name="idea-workbench" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="baseLanguage-util" />
+    <orderEntry type="library" name="Httpclient" level="project" />
+    <orderEntry type="library" name="Commons-logging" level="project" />
+    <orderEntry type="library" name="JUnit4" level="project" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="library" name="Commons-lang" level="project" />
+    <orderEntry type="library" name="Trove" level="project" />
+    <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="library" name="Commons-codec" level="project" />
+    <orderEntry type="library" name="JDOM" level="project" />
   </component>
 </module>
 

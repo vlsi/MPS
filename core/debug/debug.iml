@@ -11,10 +11,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="library" exported="" name="tools" level="project" />
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
@@ -22,6 +20,8 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="idea-workbench" />
     <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="library" exported="" name="Tools" level="project" />
+    <orderEntry type="library" name="Commons-logging" level="project" />
   </component>
 </module>
 
