@@ -9,7 +9,7 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import java.util.Set;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debugger.java.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
 import org.jetbrains.annotations.NotNull;
 
 public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {

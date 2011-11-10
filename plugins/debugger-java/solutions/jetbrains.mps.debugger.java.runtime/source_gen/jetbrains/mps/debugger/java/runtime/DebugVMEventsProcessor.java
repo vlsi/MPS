@@ -13,7 +13,7 @@ import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.runtime.requests.LocatableEventRequestor;
 import com.sun.jdi.request.EventRequest;
-import jetbrains.mps.debugger.java.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.event.Event;

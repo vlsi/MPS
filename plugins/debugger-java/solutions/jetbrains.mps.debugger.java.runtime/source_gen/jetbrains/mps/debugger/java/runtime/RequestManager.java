@@ -17,7 +17,7 @@ import java.util.HashSet;
 import com.sun.jdi.request.InvalidRequestStateException;
 import com.sun.jdi.InternalException;
 import com.sun.jdi.request.BreakpointRequest;
-import jetbrains.mps.debugger.java.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
 import com.sun.jdi.Location;
 import com.sun.jdi.request.MethodEntryRequest;
 import com.sun.jdi.ReferenceType;
