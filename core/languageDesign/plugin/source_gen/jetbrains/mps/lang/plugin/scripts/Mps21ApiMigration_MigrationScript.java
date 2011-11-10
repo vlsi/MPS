@@ -6,21 +6,56 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
   public Mps21ApiMigration_MigrationScript(IOperationContext operationContext) {
     super("API Migration");
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "jetbrains.mps.baseLanguage.search -> MPS.Core";
+      }
+
+      public String getAdditionalInfo() {
+        return "jetbrains.mps.baseLanguage.search -> MPS.Core";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListSequence.fromList(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+          public boolean accept(SReference it) {
+            String longName = check_mq52ox_a0a0a0a0a0a0(it.getTargetSModelReference());
+            if (longName == null) {
+              return false;
+            }
+            // #f3061a53-9226-4cc5-a443-f952ceaf5816# is baseLanguage module id 
+            return it.getTargetSModelReference().getSModelId().toString().contains("#f3061a53-9226-4cc5-a443-f952ceaf5816#") && (longName.endsWith(".search") || longName.endsWith(".index") || longName.endsWith(".javastub"));
+          }
+        }).isNotEmpty();
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        MpsClasspathRefUtil.updateReferencesToMpsClasspath(node);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "MacrosUtil.expandPath()";
@@ -39,7 +74,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a1a0().createNode());
+        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a2a0().createNode());
       }
 
       public boolean isShowAsIntention() {
@@ -64,7 +99,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceNode(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a2a0().createNode(SLinkOperations.getTarget(node, "operand", true)));
+        StubRefUtil.replaceNode(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a3a0().createNode(SLinkOperations.getTarget(node, "operand", true)));
       }
 
       public boolean isShowAsIntention() {
@@ -89,7 +124,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceNode(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a3a0().createNode(SLinkOperations.getTarget(node, "operand", true)));
+        StubRefUtil.replaceNode(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a4a0().createNode(SLinkOperations.getTarget(node, "operand", true)));
       }
 
       public boolean isShowAsIntention() {
@@ -114,7 +149,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceNode(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a4a0().createNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(0)));
+        StubRefUtil.replaceNode(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a5a0().createNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(0)));
       }
 
       public boolean isShowAsIntention() {
@@ -139,7 +174,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0f0a().createNode(), "operation", true));
+        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0g0a().createNode(), "operation", true));
       }
 
       public boolean isShowAsIntention() {
@@ -164,7 +199,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0g0a().createNode(), "operation", true));
+        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0h0a().createNode(), "operation", true));
       }
 
       public boolean isShowAsIntention() {
@@ -189,7 +224,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0h0a().createNode(), "operation", true));
+        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0i0a().createNode(), "operation", true));
       }
 
       public boolean isShowAsIntention() {
@@ -214,7 +249,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceNode(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0i0a().createNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(0), ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(1), ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(1), ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(1), ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(2), ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(3)), "operation", true));
+        StubRefUtil.replaceNode(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0j0a().createNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(0), ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(1), ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(1), ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(1), ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(2), ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).getElement(3)), "operation", true));
       }
 
       public boolean isShowAsIntention() {
@@ -239,7 +274,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0j0a().createNode(), "operation", true));
+        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0k0a().createNode(), "operation", true));
       }
 
       public boolean isShowAsIntention() {
@@ -264,7 +299,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0k0a().createNode(), "operation", true));
+        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0l0a().createNode(), "operation", true));
       }
 
       public boolean isShowAsIntention() {
@@ -289,7 +324,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a11a0().createNode());
+        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a21a0().createNode());
       }
 
       public boolean isShowAsIntention() {
@@ -314,7 +349,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceNode(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0m0a().createNode(), "operation", true));
+        StubRefUtil.replaceNode(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0n0a().createNode(), "operation", true));
       }
 
       public boolean isShowAsIntention() {
@@ -339,7 +374,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a31a0().createNode());
+        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a41a0().createNode());
       }
 
       public boolean isShowAsIntention() {
@@ -364,7 +399,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a41a0().createNode());
+        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a51a0().createNode());
       }
 
       public boolean isShowAsIntention() {
@@ -389,7 +424,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a51a0().createNode());
+        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a61a0().createNode());
       }
 
       public boolean isShowAsIntention() {
@@ -414,7 +449,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0q0a().createNode(), "operation", true));
+        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0r0a().createNode(), "operation", true));
       }
 
       public boolean isShowAsIntention() {
@@ -439,7 +474,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0r0a().createNode(), "operation", true));
+        StubRefUtil.replaceRefs(node, SLinkOperations.getTarget(new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a0b0a0e0a0a0s0a().createNode(), "operation", true));
       }
 
       public boolean isShowAsIntention() {
@@ -464,7 +499,7 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a81a0().createNode());
+        StubRefUtil.replaceRefs(node, new Mps21ApiMigration_MigrationScript.QuotationClass_q3kr7y_a1a0a4a0a0a91a0().createNode());
       }
 
       public boolean isShowAsIntention() {
@@ -473,8 +508,15 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  public static class QuotationClass_q3kr7y_a1a0a4a0a0a1a0 {
-    public QuotationClass_q3kr7y_a1a0a4a0a0a1a0() {
+  private static String check_mq52ox_a0a0a0a0a0a0(SModelReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getLongName();
+    }
+    return null;
+  }
+
+  public static class QuotationClass_q3kr7y_a1a0a4a0a0a2a0 {
+    public QuotationClass_q3kr7y_a1a0a4a0a0a2a0() {
     }
 
     public SNode createNode() {
@@ -504,8 +546,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a1a0a4a0a0a2a0 {
-    public QuotationClass_q3kr7y_a1a0a4a0a0a2a0() {
+  public static class QuotationClass_q3kr7y_a1a0a4a0a0a3a0 {
+    public QuotationClass_q3kr7y_a1a0a4a0a0a3a0() {
     }
 
     public SNode createNode(Object parameter_12) {
@@ -553,8 +595,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a1a0a4a0a0a3a0 {
-    public QuotationClass_q3kr7y_a1a0a4a0a0a3a0() {
+  public static class QuotationClass_q3kr7y_a1a0a4a0a0a4a0 {
+    public QuotationClass_q3kr7y_a1a0a4a0a0a4a0() {
     }
 
     public SNode createNode(Object parameter_12) {
@@ -602,8 +644,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a1a0a4a0a0a4a0 {
-    public QuotationClass_q3kr7y_a1a0a4a0a0a4a0() {
+  public static class QuotationClass_q3kr7y_a1a0a4a0a0a5a0 {
+    public QuotationClass_q3kr7y_a1a0a4a0a0a5a0() {
     }
 
     public SNode createNode(Object parameter_9) {
@@ -648,8 +690,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0f0a {
-    public QuotationClass_q3kr7y_a0b0a0e0a0a0f0a() {
+  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0g0a {
+    public QuotationClass_q3kr7y_a0b0a0e0a0a0g0a() {
     }
 
     public SNode createNode() {
@@ -697,8 +739,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0g0a {
-    public QuotationClass_q3kr7y_a0b0a0e0a0a0g0a() {
+  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0h0a {
+    public QuotationClass_q3kr7y_a0b0a0e0a0a0h0a() {
     }
 
     public SNode createNode() {
@@ -746,8 +788,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0h0a {
-    public QuotationClass_q3kr7y_a0b0a0e0a0a0h0a() {
+  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0i0a {
+    public QuotationClass_q3kr7y_a0b0a0e0a0a0i0a() {
     }
 
     public SNode createNode() {
@@ -795,8 +837,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0i0a {
-    public QuotationClass_q3kr7y_a0b0a0e0a0a0i0a() {
+  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0j0a {
+    public QuotationClass_q3kr7y_a0b0a0e0a0a0j0a() {
     }
 
     public SNode createNode(Object parameter_60, Object parameter_61, Object parameter_62, Object parameter_63, Object parameter_64, Object parameter_65) {
@@ -1026,8 +1068,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0j0a {
-    public QuotationClass_q3kr7y_a0b0a0e0a0a0j0a() {
+  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0k0a {
+    public QuotationClass_q3kr7y_a0b0a0e0a0a0k0a() {
     }
 
     public SNode createNode() {
@@ -1093,8 +1135,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0k0a {
-    public QuotationClass_q3kr7y_a0b0a0e0a0a0k0a() {
+  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0l0a {
+    public QuotationClass_q3kr7y_a0b0a0e0a0a0l0a() {
     }
 
     public SNode createNode() {
@@ -1167,8 +1209,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a1a0a4a0a0a11a0 {
-    public QuotationClass_q3kr7y_a1a0a4a0a0a11a0() {
+  public static class QuotationClass_q3kr7y_a1a0a4a0a0a21a0 {
+    public QuotationClass_q3kr7y_a1a0a4a0a0a21a0() {
     }
 
     public SNode createNode() {
@@ -1191,8 +1233,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0m0a {
-    public QuotationClass_q3kr7y_a0b0a0e0a0a0m0a() {
+  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0n0a {
+    public QuotationClass_q3kr7y_a0b0a0e0a0a0n0a() {
     }
 
     public SNode createNode() {
@@ -1240,8 +1282,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a1a0a4a0a0a31a0 {
-    public QuotationClass_q3kr7y_a1a0a4a0a0a31a0() {
+  public static class QuotationClass_q3kr7y_a1a0a4a0a0a41a0 {
+    public QuotationClass_q3kr7y_a1a0a4a0a0a41a0() {
     }
 
     public SNode createNode() {
@@ -1278,8 +1320,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a1a0a4a0a0a41a0 {
-    public QuotationClass_q3kr7y_a1a0a4a0a0a41a0() {
+  public static class QuotationClass_q3kr7y_a1a0a4a0a0a51a0 {
+    public QuotationClass_q3kr7y_a1a0a4a0a0a51a0() {
     }
 
     public SNode createNode() {
@@ -1316,8 +1358,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a1a0a4a0a0a51a0 {
-    public QuotationClass_q3kr7y_a1a0a4a0a0a51a0() {
+  public static class QuotationClass_q3kr7y_a1a0a4a0a0a61a0 {
+    public QuotationClass_q3kr7y_a1a0a4a0a0a61a0() {
     }
 
     public SNode createNode() {
@@ -1334,8 +1376,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0q0a {
-    public QuotationClass_q3kr7y_a0b0a0e0a0a0q0a() {
+  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0r0a {
+    public QuotationClass_q3kr7y_a0b0a0e0a0a0r0a() {
     }
 
     public SNode createNode() {
@@ -1383,8 +1425,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0r0a {
-    public QuotationClass_q3kr7y_a0b0a0e0a0a0r0a() {
+  public static class QuotationClass_q3kr7y_a0b0a0e0a0a0s0a {
+    public QuotationClass_q3kr7y_a0b0a0e0a0a0s0a() {
     }
 
     public SNode createNode() {
@@ -1432,8 +1474,8 @@ public class Mps21ApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_q3kr7y_a1a0a4a0a0a81a0 {
-    public QuotationClass_q3kr7y_a1a0a4a0a0a81a0() {
+  public static class QuotationClass_q3kr7y_a1a0a4a0a0a91a0 {
+    public QuotationClass_q3kr7y_a1a0a4a0a0a91a0() {
     }
 
     public SNode createNode() {
