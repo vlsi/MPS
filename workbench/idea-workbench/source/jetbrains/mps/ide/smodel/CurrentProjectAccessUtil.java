@@ -22,7 +22,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 import java.awt.Component;
 import java.awt.Window;
@@ -58,6 +58,6 @@ class CurrentProjectAccessUtil {
 
   static jetbrains.mps.project.Project getMPSProjectFromUI() {
     Project ideaProject = getProjectFromUI();
-    return ideaProject != null ? ideaProject.getComponent(MPSProject.class) : null;
+    return ideaProject != null ? ProjectHelper.toMPSProject(ideaProject) : null;
   }
 }
