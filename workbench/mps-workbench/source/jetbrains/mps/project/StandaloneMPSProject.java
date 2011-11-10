@@ -234,14 +234,6 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   @Override
-  public void projectOpened() {
-  }
-
-  @Override
-  public void projectClosed() {
-  }
-
-  @Override
   public void dispose() {
     super.dispose();
     ModelAccess.instance().runWriteAction(new Runnable() {
