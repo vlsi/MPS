@@ -18,23 +18,10 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.GlobalOperationContext;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.project.ProjectHelper;
-import javax.swing.JFrame;
-import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.vcs.integration.ModelDiffTool;
+import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
-import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import javax.swing.SwingUtilities;
 
 public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
@@ -103,7 +90,8 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     if (options[result].equals(memoryVersion)) {
       return true;
     } else {
-      return DiskMemoryConflictResolverImpl.openDiffDialog(modelFile, inMemory);
+      openDiffDialog(modelFile, inMemory);
+      return true;
     }
   }
 
@@ -120,7 +108,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     return zipfile;
   }
 
-  private static boolean openDiffDialog(IFile modelFile, final SModel inMemory) {
+  private static void openDiffDialog(IFile modelFile, SModel inMemory) {
     SModel onDisk = new SModel(inMemory.getSModelReference());
     try {
       onDisk = ModelPersistence.readModel(modelFile, false);
@@ -129,46 +117,14 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
         log.error("Could not read model", e);
       }
     }
-    return showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
-  }
-
-  private static boolean showDiffDialog(final SModel diskModel, final SModel memoryModel, IFile modelFile, final Project project) {
-    final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
-    if (file == null) {
-      if (log.isErrorEnabled()) {
-        log.error("", new AssertionError());
-      }
-    }
-    final BaseDialog dialog = ModelAccess.instance().runReadAction(new Computable<BaseDialog>() {
-      public BaseDialog compute() {
-        SModelDescriptor modelDescriptor = diskModel.getModelDescriptor();
-        if (modelDescriptor == null) {
-          modelDescriptor = memoryModel.getModelDescriptor();
-          if (modelDescriptor == null) {
-            modelDescriptor = SModelRepository.getInstance().getModelDescriptor(diskModel.getSModelFqName());
-          }
-        }
-        IOperationContext context;
-        if (modelDescriptor == null) {
-          context = new GlobalOperationContext();
-        } else {
-          context = new ModuleContext(modelDescriptor.getModule(), ProjectHelper.toMPSProject(project));
-        }
-        JFrame frame = WindowManager.getInstance().getFrame(project);
-        if (ModelDiffTool.isNewDiffEnabled()) {
-          return new ModelDifferenceDialog(diskModel, memoryModel, new SimpleDiffRequest(project, "Filesystem version (Read-Only)", "Memory Version"));
-        } else {
-          return new OldModelDifferenceDialog(context, frame, diskModel, memoryModel, "Disk Memory Diff", true, new String[]{"Filesystem version (Read-Only)", "Memory Version"});
-        }
-      }
-    });
+    Project project = ProjectManager.getInstance().getOpenProjects()[0];
+    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, inMemory, new SimpleDiffRequest(project, "Filesystem version (Read-Only)", "Memory Version"));
     dialog.showDialog();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         dialog.toFront();
       }
     });
-    return true;
   }
 
   public static   enum DiskMemoryConflictVersion implements ModelVersion {
