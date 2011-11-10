@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class BuildGeneratorUtil {
@@ -82,7 +83,7 @@ public class BuildGeneratorUtil {
     mr.setPath(solutionDescriptorFile.getParent().getPath());
     descriptor.getModelRoots().add(mr);
     SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor);
-    return MPSModuleRepository.getInstance().registerModule(solutionDescriptorFile, mpsProject, Solution.class);
+    return MPSModuleRepository.getInstance().registerModule(new ModulesMiner.ModuleHandle(solutionDescriptorFile, descriptor), mpsProject);
   }
 
   public static ModuleReference getPackagingLanguageReference() {

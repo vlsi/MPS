@@ -21,6 +21,7 @@ import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSProject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -74,7 +75,8 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
     protected String getNamespace(@NotNull MPSTreeNode node) {
       String folder = "";
       if (node instanceof ModuleTreeNode) {
-        folder = myProject.getComponent(MPSProject.class).getFolderFor(((ModuleTreeNode) node).getModule());
+        StandaloneMPSProject mpsProject = (StandaloneMPSProject) myProject.getComponent(MPSProject.class);
+        folder = mpsProject.getFolderFor(((ModuleTreeNode) node).getModule());
       }
       if (folder == null) {
         return "";

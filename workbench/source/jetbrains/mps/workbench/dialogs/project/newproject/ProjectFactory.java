@@ -24,10 +24,7 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjectVersion;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -84,14 +81,14 @@ public class ProjectFactory {
       public void run() {
         if (myOptions.getCreateNewLanguage()) {
           myCreatedLanguage = createNewLanguage(mpsProject);
-          mpsProject.addProjectModule(myCreatedLanguage);
+          mpsProject.addModule(myCreatedLanguage.getModuleReference());
           myCreatedLanguage.save();
         }
 
         if (myOptions.getCreateNewSolution()) {
           myCreatedSolution = createNewSolution(mpsProject);
           myCreatedSolution.save();
-          mpsProject.addProjectModule(myCreatedSolution);
+          mpsProject.addModule(myCreatedSolution.getModuleReference());
         }
 
         if (myCreatedSolution != null && myCreatedLanguage != null) {
@@ -103,6 +100,9 @@ public class ProjectFactory {
             model.getSModel().addLanguage(myCreatedLanguage.getModuleReference());
             model.save();
           }
+        }
+        if(myOptions.getCreateNewSolution() || myOptions.getCreateNewLanguage()) {
+          ((StandaloneMPSProject) mpsProject).update();
         }
       }
     });

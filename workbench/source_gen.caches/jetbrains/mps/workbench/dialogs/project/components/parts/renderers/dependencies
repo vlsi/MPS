@@ -88,6 +88,7 @@
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.Path" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer" />
   </dependency>

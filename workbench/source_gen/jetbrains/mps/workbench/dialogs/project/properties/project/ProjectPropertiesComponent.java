@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.MPSProject;
 
 public class ProjectPropertiesComponent extends JPanel {
@@ -73,7 +74,7 @@ public class ProjectPropertiesComponent extends JPanel {
     }
   }
 
-  private MPSProject getMPSProject() {
-    return myProject.getComponent(MPSProject.class);
+  private StandaloneMPSProject getMPSProject() {
+    return (StandaloneMPSProject) myProject.getComponent(MPSProject.class);
   }
 }

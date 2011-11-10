@@ -30,6 +30,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
@@ -139,8 +140,9 @@ public class CheckProjectStructureHelper {
 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
-    MPSProject project = new MPSProject(ideaProject);
-    project.init(projectFile, new ProjectDescriptor());
+    StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
+    project.setProjectFile(projectFile);
+    project.init(new ProjectDescriptor());
     myErrors = 0;
     myWarnings = 0;
     return new PrivToken(project);

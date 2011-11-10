@@ -203,7 +203,8 @@
 
   <project-components>
     <component>
-      <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
+      <interface-class>jetbrains.mps.project.MPSProject</interface-class>
+      <implementation-class>jetbrains.mps.project.StandaloneMPSProject</implementation-class>
     </component>
 
     <component>

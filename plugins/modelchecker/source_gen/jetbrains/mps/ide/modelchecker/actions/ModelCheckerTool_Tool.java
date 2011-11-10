@@ -105,7 +105,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
 
   public ModelCheckerViewer checkProject(Project project, IOperationContext operationContext, boolean showTab) {
     MPSProject mpsProject = project.getComponent(MPSProject.class);
-    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(mpsProject.getModules(), mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(mpsProject.getModules(), mpsProject.getName(), Icons.PROJECT_ICON, operationContext, showTab);
   }
 
   public boolean checkModelsBeforeGenerationIfNeeded(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable regenerationRunnable) {

@@ -18,6 +18,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.project.StandaloneMPSProject;
 import com.intellij.openapi.application.ModalityState;
 import java.util.Arrays;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -74,7 +75,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         runnable = BuildGeneratorImpl.this.generate(((EditableSModelDescriptor) descriptor), projectName, projectBasedirPath, modules);
         runnable.run();
         final MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProject.class);
-        project.getProjectDescriptor().addModule(solution.getDescriptorFile().getPath());
+        project.addModule(solution.getModuleReference());
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             ProgressManager.getInstance().run(new Task.Modal(BuildGeneratorImpl.this.myProject, "Reloading Classes", false) {
@@ -83,7 +84,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 progressIndicator.setText("Reloading Classes... Please Wait");
                 ModelAccess.instance().runWriteAction(new Runnable() {
                   public void run() {
-                    project.update();
+                    ((StandaloneMPSProject) project).update();
                   }
                 });
               }
