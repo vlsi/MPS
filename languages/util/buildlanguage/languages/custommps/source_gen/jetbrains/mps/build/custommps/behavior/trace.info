@@ -71,12 +71,20 @@
       <varInfo nodeId="1233680283602" varName="currentComponent" />
     </scopeInfo>
     <scopeInfo nodeId="1238504189368" fileName="MPSBuild_Behavior.java" startLine="97" startPosition="60" endLine="100" endPosition="56" />
-    <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="34" startPosition="32" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="34" startPosition="32" endLine="38" endPosition="0">
+      <varInfo nodeId="1233155892819" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1233155892819" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="4738159245302641875" fileName="MPSBuild_Behavior.java" startLine="55" startPosition="78" endLine="59" endPosition="66" />
-    <scopeInfo nodeId="9164503229271367945" fileName="MPSBuild_Behavior.java" startLine="81" startPosition="138" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="104" startPosition="84" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="9164503229271367945" fileName="MPSBuild_Behavior.java" startLine="81" startPosition="138" endLine="85" endPosition="0">
+      <varInfo nodeId="9164503229271367945" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="104" startPosition="84" endLine="108" endPosition="0">
+      <varInfo nodeId="1238503942231" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
     <scopeInfo nodeId="1233680013342" fileName="MPSBuild_Behavior.java" startLine="43" startPosition="95" endLine="48" endPosition="16">
       <varInfo nodeId="1233680226707" varName="path" />
@@ -88,6 +96,7 @@
     <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="1233680076031" varName="folder" />
+      <varInfo nodeId="1233155892819" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1238504045862" fileName="MPSBuild_Behavior.java" startLine="77" startPosition="39" endLine="85" endPosition="12">
       <varInfo nodeId="1238504045864" varName="language" />
@@ -101,12 +110,16 @@
       <varInfo nodeId="1238403448975" varName="operationContext" />
     </scopeInfo>
     <scopeInfo nodeId="1238504015488" fileName="MPSBuild_Behavior.java" startLine="76" startPosition="63" endLine="86" endPosition="7" />
-    <scopeInfo nodeId="1238504015485" fileName="MPSBuild_Behavior.java" startLine="75" startPosition="82" endLine="87" endPosition="5" />
+    <scopeInfo nodeId="1238504015485" fileName="MPSBuild_Behavior.java" startLine="75" startPosition="82" endLine="87" endPosition="5">
+      <varInfo nodeId="1238504015485" varName="module" />
+    </scopeInfo>
     <scopeInfo nodeId="1238502072995" fileName="MPSBuild_Behavior.java" startLine="88" startPosition="68" endLine="102" endPosition="7">
       <varInfo nodeId="1238504189315" varName="moduleProperName" />
       <varInfo nodeId="1238504189320" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1238502072992" fileName="MPSBuild_Behavior.java" startLine="87" startPosition="5" endLine="103" endPosition="5" />
+    <scopeInfo nodeId="1238502072992" fileName="MPSBuild_Behavior.java" startLine="87" startPosition="5" endLine="103" endPosition="5">
+      <varInfo nodeId="1238502072992" varName="module" />
+    </scopeInfo>
     <scopeInfo nodeId="1238502072963" fileName="MPSBuild_Behavior.java" startLine="71" startPosition="82" endLine="108" endPosition="13">
       <varInfo nodeId="1238502072971" varName="dir" />
       <varInfo nodeId="1238504082420" varName="modulesInClasspath" />
@@ -131,12 +144,18 @@
     <nodeInfo nodeId="1238590347504" fileName="LibraryFolder_Behavior.java" startLine="15" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getLibraryPathRelativeToMPSBuild_1240408519032#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1238590347506" fileName="LibraryFolder_Behavior.java" startLine="12" startPosition="43" endLine="13" endPosition="66" />
     <scopeInfo nodeId="1240408618421" fileName="LibraryFolder_Behavior.java" startLine="18" startPosition="213" endLine="20" endPosition="18" />
-    <scopeInfo nodeId="1238590347504" fileName="LibraryFolder_Behavior.java" startLine="11" startPosition="37" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="1240408618410" fileName="LibraryFolder_Behavior.java" startLine="17" startPosition="21" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="1238590347504" fileName="LibraryFolder_Behavior.java" startLine="11" startPosition="37" endLine="15" endPosition="0">
+      <varInfo nodeId="1238590347504" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240408618410" fileName="LibraryFolder_Behavior.java" startLine="17" startPosition="21" endLine="21" endPosition="5">
+      <varInfo nodeId="1240408618410" varName="p" />
+    </scopeInfo>
     <scopeInfo nodeId="1240408519035" fileName="LibraryFolder_Behavior.java" startLine="16" startPosition="92" endLine="22" endPosition="16">
       <varInfo nodeId="1240408618406" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1238590347504" fileName="LibraryFolder_Behavior.java" startLine="15" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1238590347504" fileName="LibraryFolder_Behavior.java" startLine="15" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1238590347504" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1238590347504" fileName="LibraryFolder_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior" />
   </root>
   <root nodeId="8431776905956256044">
@@ -152,11 +171,22 @@
     <scopeInfo nodeId="8431776905956256046" fileName="MPSDistribution_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="4204903511793403793" fileName="MPSDistribution_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="46" />
     <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="26" startPosition="119" endLine="27" endPosition="266" />
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="21" startPosition="86" endLine="23" endPosition="221" />
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="21" startPosition="86" endLine="23" endPosition="221">
+      <varInfo nodeId="8431776905956256044" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="8431776905956256044" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="8431776905956256044" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="8431776905956256044" varName="callerConceptFqName" />
+      <varInfo nodeId="8431776905956256044" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="8431776905956256044" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" />
   </root>
   <root nodeId="8431776905956790251">
@@ -165,8 +195,12 @@
     <nodeInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getValue_1213877173054#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="8431776905956790265" fileName="UndeclaredVariableReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="8431776905956790253" fileName="UndeclaredVariableReference_Behavior.java" startLine="12" startPosition="71" endLine="13" endPosition="74" />
-    <scopeInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="8" startPosition="51" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="8" startPosition="51" endLine="11" endPosition="0">
+      <varInfo nodeId="8431776905956790251" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="8431776905956790251" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_Behavior" />
   </root>
 </debugInfo>

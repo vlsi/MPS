@@ -76,8 +76,12 @@
     <scopeInfo nodeId="1236440595177" fileName="MathSymbol_Behavior.java" startLine="19" startPosition="65" endLine="20" endPosition="98" />
     <scopeInfo nodeId="1236440677386" fileName="MathSymbol_Behavior.java" startLine="23" startPosition="21" endLine="24" endPosition="86" />
     <scopeInfo nodeId="1237828382994" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="34" />
-    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="12" startPosition="34" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="12" startPosition="34" endLine="15" endPosition="0">
+      <varInfo nodeId="1236440389435" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1236440389435" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1236440390784" fileName="MathSymbol_Behavior.java" startLine="16" startPosition="110" endLine="25" endPosition="5">
       <varInfo nodeId="1238334881763" varName="i" />
       <varInfo nodeId="1236440647504" varName="ms" />
@@ -86,13 +90,16 @@
     <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="15" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1236440623606" varName="indices" />
       <varInfo nodeId="1236440416647" varName="sender" />
+      <varInfo nodeId="1236440389435" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathSymbol_Behavior" />
   </root>
   <root nodeId="1238405584079">
     <nodeInfo nodeId="1238405584079" fileName="DecimalBinaryOperation_Behavior.java" startLine="7" startPosition="46" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1238405584081" fileName="DecimalBinaryOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1238405584079" fileName="DecimalBinaryOperation_Behavior.java" startLine="7" startPosition="46" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="1238405584079" fileName="DecimalBinaryOperation_Behavior.java" startLine="7" startPosition="46" endLine="10" endPosition="0">
+      <varInfo nodeId="1238405584079" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1238405584079" fileName="DecimalBinaryOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalBinaryOperation_Behavior" />
   </root>
   <root nodeId="1238406290274">
@@ -1250,50 +1257,134 @@
     <scopeInfo nodeId="1300076822026746792" fileName="MathUtil.java" startLine="184" startPosition="14" endLine="187" endPosition="161">
       <varInfo nodeId="1300076822026746794" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="304" startPosition="7" endLine="307" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="852" startPosition="7" endLine="855" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1239" startPosition="7" endLine="1242" endPosition="31" />
-    <scopeInfo nodeId="1238942028290" fileName="MathUtil.java" startLine="36" startPosition="9" endLine="40" endPosition="11" />
-    <scopeInfo nodeId="1238942028306" fileName="MathUtil.java" startLine="46" startPosition="11" endLine="50" endPosition="13" />
-    <scopeInfo nodeId="1238942028322" fileName="MathUtil.java" startLine="56" startPosition="13" endLine="60" endPosition="15" />
-    <scopeInfo nodeId="1238942028338" fileName="MathUtil.java" startLine="66" startPosition="15" endLine="70" endPosition="17" />
-    <scopeInfo nodeId="1238942053986" fileName="MathUtil.java" startLine="88" startPosition="9" endLine="92" endPosition="11" />
-    <scopeInfo nodeId="1238942054002" fileName="MathUtil.java" startLine="98" startPosition="11" endLine="102" endPosition="13" />
-    <scopeInfo nodeId="1238942054018" fileName="MathUtil.java" startLine="108" startPosition="13" endLine="112" endPosition="15" />
-    <scopeInfo nodeId="1238942054034" fileName="MathUtil.java" startLine="118" startPosition="15" endLine="122" endPosition="17" />
-    <scopeInfo nodeId="1300076822026748099" fileName="MathUtil.java" startLine="141" startPosition="9" endLine="145" endPosition="11" />
-    <scopeInfo nodeId="1904947163751468050" fileName="MathUtil.java" startLine="151" startPosition="11" endLine="155" endPosition="13" />
-    <scopeInfo nodeId="1904947163751468054" fileName="MathUtil.java" startLine="161" startPosition="13" endLine="165" endPosition="15" />
-    <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="219" startPosition="9" endLine="223" endPosition="11" />
-    <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="229" startPosition="11" endLine="233" endPosition="13" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1149" startPosition="7" endLine="1153" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1167" startPosition="7" endLine="1171" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1185" startPosition="7" endLine="1189" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1203" startPosition="7" endLine="1207" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1221" startPosition="7" endLine="1225" endPosition="31" />
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="304" startPosition="7" endLine="307" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="852" startPosition="7" endLine="855" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1239" startPosition="7" endLine="1242" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942028290" fileName="MathUtil.java" startLine="36" startPosition="9" endLine="40" endPosition="11">
+      <varInfo nodeId="1238942028290" varName="matchingNode_30uc9x_a0a1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942028306" fileName="MathUtil.java" startLine="46" startPosition="11" endLine="50" endPosition="13">
+      <varInfo nodeId="1238942028306" varName="matchingNode_30uc9x_b0a1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942028322" fileName="MathUtil.java" startLine="56" startPosition="13" endLine="60" endPosition="15">
+      <varInfo nodeId="1238942028322" varName="matchingNode_30uc9x_c0a1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942028338" fileName="MathUtil.java" startLine="66" startPosition="15" endLine="70" endPosition="17">
+      <varInfo nodeId="1238942028338" varName="matchingNode_30uc9x_d0a1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942053986" fileName="MathUtil.java" startLine="88" startPosition="9" endLine="92" endPosition="11">
+      <varInfo nodeId="1238942053986" varName="matchingNode_30uc9x_a0a2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942054002" fileName="MathUtil.java" startLine="98" startPosition="11" endLine="102" endPosition="13">
+      <varInfo nodeId="1238942054002" varName="matchingNode_30uc9x_b0a2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942054018" fileName="MathUtil.java" startLine="108" startPosition="13" endLine="112" endPosition="15">
+      <varInfo nodeId="1238942054018" varName="matchingNode_30uc9x_c0a2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942054034" fileName="MathUtil.java" startLine="118" startPosition="15" endLine="122" endPosition="17">
+      <varInfo nodeId="1238942054034" varName="matchingNode_30uc9x_d0a2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1300076822026748099" fileName="MathUtil.java" startLine="141" startPosition="9" endLine="145" endPosition="11">
+      <varInfo nodeId="1300076822026748099" varName="matchingNode_30uc9x_a1a3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1904947163751468050" fileName="MathUtil.java" startLine="151" startPosition="11" endLine="155" endPosition="13">
+      <varInfo nodeId="1904947163751468050" varName="matchingNode_30uc9x_b1a3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1904947163751468054" fileName="MathUtil.java" startLine="161" startPosition="13" endLine="165" endPosition="15">
+      <varInfo nodeId="1904947163751468054" varName="matchingNode_30uc9x_c1a3" />
+    </scopeInfo>
+    <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="219" startPosition="9" endLine="223" endPosition="11">
+      <varInfo nodeId="2705856473428697727" varName="matchingNode_30uc9x_a0a5" />
+    </scopeInfo>
+    <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="229" startPosition="11" endLine="233" endPosition="13">
+      <varInfo nodeId="2705856473428697736" varName="matchingNode_30uc9x_b0a5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1149" startPosition="7" endLine="1153" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1167" startPosition="7" endLine="1171" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1185" startPosition="7" endLine="1189" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1203" startPosition="7" endLine="1207" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1221" startPosition="7" endLine="1225" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="303" startPosition="32" endLine="308" endPosition="7" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="321" startPosition="7" endLine="326" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="340" startPosition="7" endLine="345" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="359" startPosition="7" endLine="364" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="378" startPosition="7" endLine="383" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="397" startPosition="7" endLine="402" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="416" startPosition="7" endLine="421" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="435" startPosition="7" endLine="440" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="454" startPosition="7" endLine="459" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="473" startPosition="7" endLine="478" endPosition="31" />
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="321" startPosition="7" endLine="326" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="340" startPosition="7" endLine="345" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="359" startPosition="7" endLine="364" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="378" startPosition="7" endLine="383" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="397" startPosition="7" endLine="402" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="416" startPosition="7" endLine="421" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="435" startPosition="7" endLine="440" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="454" startPosition="7" endLine="459" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="473" startPosition="7" endLine="478" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="851" startPosition="32" endLine="856" endPosition="7" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="869" startPosition="7" endLine="874" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="888" startPosition="7" endLine="893" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="907" startPosition="7" endLine="912" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="926" startPosition="7" endLine="931" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="997" startPosition="7" endLine="1002" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1016" startPosition="7" endLine="1021" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1035" startPosition="7" endLine="1040" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1054" startPosition="7" endLine="1059" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1073" startPosition="7" endLine="1078" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1092" startPosition="7" endLine="1097" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1111" startPosition="7" endLine="1116" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1130" startPosition="7" endLine="1135" endPosition="31" />
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="869" startPosition="7" endLine="874" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="888" startPosition="7" endLine="893" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="907" startPosition="7" endLine="912" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="926" startPosition="7" endLine="931" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="997" startPosition="7" endLine="1002" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1016" startPosition="7" endLine="1021" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1035" startPosition="7" endLine="1040" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1054" startPosition="7" endLine="1059" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1073" startPosition="7" endLine="1078" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1092" startPosition="7" endLine="1097" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1111" startPosition="7" endLine="1116" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1130" startPosition="7" endLine="1135" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1238" startPosition="32" endLine="1243" endPosition="7" />
     <scopeInfo nodeId="1238406301498" fileName="MathUtil.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1238406315361" varName="contextParent" />
@@ -1324,59 +1415,223 @@
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1091" startPosition="32" endLine="1098" endPosition="7" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1110" startPosition="32" endLine="1117" endPosition="7" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1129" startPosition="32" endLine="1136" endPosition="7" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="300" startPosition="31" endLine="309" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="848" startPosition="31" endLine="857" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1235" startPosition="31" endLine="1244" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1145" startPosition="31" endLine="1155" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1163" startPosition="31" endLine="1173" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1181" startPosition="31" endLine="1191" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1199" startPosition="31" endLine="1209" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1217" startPosition="31" endLine="1227" endPosition="20" />
-    <scopeInfo nodeId="1238942028338" fileName="MathUtil.java" startLine="64" startPosition="20" endLine="75" endPosition="26" />
-    <scopeInfo nodeId="1238942054034" fileName="MathUtil.java" startLine="116" startPosition="20" endLine="127" endPosition="26" />
-    <scopeInfo nodeId="1904947163751468054" fileName="MathUtil.java" startLine="159" startPosition="18" endLine="170" endPosition="86" />
-    <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="227" startPosition="16" endLine="238" endPosition="22" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="317" startPosition="31" endLine="328" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="336" startPosition="31" endLine="347" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="355" startPosition="31" endLine="366" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="374" startPosition="31" endLine="385" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="393" startPosition="31" endLine="404" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="412" startPosition="31" endLine="423" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="431" startPosition="31" endLine="442" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="450" startPosition="31" endLine="461" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="469" startPosition="31" endLine="480" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="497" startPosition="9" endLine="508" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="510" startPosition="9" endLine="521" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="542" startPosition="9" endLine="553" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="555" startPosition="9" endLine="566" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="587" startPosition="9" endLine="598" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="600" startPosition="9" endLine="611" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="632" startPosition="9" endLine="643" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="645" startPosition="9" endLine="656" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="677" startPosition="9" endLine="688" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="690" startPosition="9" endLine="701" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="722" startPosition="9" endLine="733" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="735" startPosition="9" endLine="746" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="767" startPosition="9" endLine="778" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="780" startPosition="9" endLine="791" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="812" startPosition="9" endLine="823" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="825" startPosition="9" endLine="836" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="865" startPosition="31" endLine="876" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="884" startPosition="31" endLine="895" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="903" startPosition="31" endLine="914" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="922" startPosition="31" endLine="933" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="955" startPosition="11" endLine="966" endPosition="13" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="968" startPosition="11" endLine="979" endPosition="13" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="993" startPosition="31" endLine="1004" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1012" startPosition="31" endLine="1023" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1031" startPosition="31" endLine="1042" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1050" startPosition="31" endLine="1061" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1069" startPosition="31" endLine="1080" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1088" startPosition="31" endLine="1099" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1107" startPosition="31" endLine="1118" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1126" startPosition="31" endLine="1137" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1265" startPosition="11" endLine="1276" endPosition="13" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1303" startPosition="11" endLine="1314" endPosition="13" />
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="300" startPosition="31" endLine="309" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="848" startPosition="31" endLine="857" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1235" startPosition="31" endLine="1244" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1145" startPosition="31" endLine="1155" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1163" startPosition="31" endLine="1173" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1181" startPosition="31" endLine="1191" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1199" startPosition="31" endLine="1209" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1217" startPosition="31" endLine="1227" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942028338" fileName="MathUtil.java" startLine="64" startPosition="20" endLine="75" endPosition="26">
+      <varInfo nodeId="1238942028338" varName="matches_30uc9x_d0a1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942054034" fileName="MathUtil.java" startLine="116" startPosition="20" endLine="127" endPosition="26">
+      <varInfo nodeId="1238942054034" varName="matches_30uc9x_d0a2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1904947163751468054" fileName="MathUtil.java" startLine="159" startPosition="18" endLine="170" endPosition="86">
+      <varInfo nodeId="1904947163751468054" varName="matches_30uc9x_c1a3" />
+    </scopeInfo>
+    <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="227" startPosition="16" endLine="238" endPosition="22">
+      <varInfo nodeId="2705856473428697736" varName="matches_30uc9x_b0a5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="317" startPosition="31" endLine="328" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="336" startPosition="31" endLine="347" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="355" startPosition="31" endLine="366" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="374" startPosition="31" endLine="385" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="393" startPosition="31" endLine="404" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="412" startPosition="31" endLine="423" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="431" startPosition="31" endLine="442" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="450" startPosition="31" endLine="461" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="469" startPosition="31" endLine="480" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="497" startPosition="9" endLine="508" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="510" startPosition="9" endLine="521" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="542" startPosition="9" endLine="553" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="555" startPosition="9" endLine="566" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="587" startPosition="9" endLine="598" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="600" startPosition="9" endLine="611" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="632" startPosition="9" endLine="643" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="645" startPosition="9" endLine="656" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="677" startPosition="9" endLine="688" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="690" startPosition="9" endLine="701" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="722" startPosition="9" endLine="733" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="735" startPosition="9" endLine="746" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="767" startPosition="9" endLine="778" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="780" startPosition="9" endLine="791" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="812" startPosition="9" endLine="823" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="825" startPosition="9" endLine="836" endPosition="11">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="865" startPosition="31" endLine="876" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="884" startPosition="31" endLine="895" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="903" startPosition="31" endLine="914" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="922" startPosition="31" endLine="933" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="955" startPosition="11" endLine="966" endPosition="13">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_7" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="968" startPosition="11" endLine="979" endPosition="13">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="993" startPosition="31" endLine="1004" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1012" startPosition="31" endLine="1023" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1031" startPosition="31" endLine="1042" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1050" startPosition="31" endLine="1061" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1069" startPosition="31" endLine="1080" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1088" startPosition="31" endLine="1099" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1107" startPosition="31" endLine="1118" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1126" startPosition="31" endLine="1137" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1265" startPosition="11" endLine="1276" endPosition="13">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1303" startPosition="11" endLine="1314" endPosition="13">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="299" startPosition="0" endLine="311" endPosition="0" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="847" startPosition="0" endLine="859" endPosition="0" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1234" startPosition="0" endLine="1246" endPosition="0" />
@@ -1426,8 +1681,12 @@
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1087" startPosition="0" endLine="1101" endPosition="0" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1106" startPosition="0" endLine="1120" endPosition="0" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1125" startPosition="0" endLine="1139" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1261" startPosition="9" endLine="1278" endPosition="58" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1299" startPosition="9" endLine="1316" endPosition="58" />
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1261" startPosition="9" endLine="1278" endPosition="58">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1299" startPosition="9" endLine="1316" endPosition="58">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
     <scopeInfo nodeId="2705856473428697859" fileName="MathUtil.java" startLine="275" startPosition="48" endLine="293" endPosition="5">
       <varInfo nodeId="2705856473428697861" varName="b1" />
       <varInfo nodeId="2705856473428697871" varName="b2" />
@@ -1439,34 +1698,78 @@
     <scopeInfo nodeId="2705856473428697856" fileName="MathUtil.java" startLine="274" startPosition="0" endLine="295" endPosition="0">
       <varInfo nodeId="2705856473428697973" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1238942028322" fileName="MathUtil.java" startLine="54" startPosition="18" endLine="76" endPosition="13" />
-    <scopeInfo nodeId="1238942054018" fileName="MathUtil.java" startLine="106" startPosition="18" endLine="128" endPosition="13" />
-    <scopeInfo nodeId="1904947163751468050" fileName="MathUtil.java" startLine="149" startPosition="16" endLine="171" endPosition="11" />
-    <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="217" startPosition="7" endLine="239" endPosition="9" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1258" startPosition="7" endLine="1280" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1296" startPosition="7" endLine="1318" endPosition="31" />
+    <scopeInfo nodeId="1238942028322" fileName="MathUtil.java" startLine="54" startPosition="18" endLine="76" endPosition="13">
+      <varInfo nodeId="1238942028322" varName="matches_30uc9x_c0a1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942054018" fileName="MathUtil.java" startLine="106" startPosition="18" endLine="128" endPosition="13">
+      <varInfo nodeId="1238942054018" varName="matches_30uc9x_c0a2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1904947163751468050" fileName="MathUtil.java" startLine="149" startPosition="16" endLine="171" endPosition="11">
+      <varInfo nodeId="1904947163751468050" varName="matches_30uc9x_b1a3" />
+    </scopeInfo>
+    <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="217" startPosition="7" endLine="239" endPosition="9">
+      <varInfo nodeId="2705856473428697727" varName="matches_30uc9x_a0a5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1258" startPosition="7" endLine="1280" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1296" startPosition="7" endLine="1318" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_4" />
+    </scopeInfo>
     <scopeInfo nodeId="1300076822026747996" fileName="MathUtil.java" startLine="190" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="1300076822026748055" varName="roundingMode" />
     </scopeInfo>
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1257" startPosition="32" endLine="1281" endPosition="7" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1295" startPosition="32" endLine="1319" endPosition="7" />
-    <scopeInfo nodeId="2705856473428697725" fileName="MathUtil.java" startLine="215" startPosition="5" endLine="240" endPosition="7" />
+    <scopeInfo nodeId="2705856473428697725" fileName="MathUtil.java" startLine="215" startPosition="5" endLine="240" endPosition="7">
+      <varInfo nodeId="2705856473428697725" varName="matchedNode_30uc9x_a0f" />
+    </scopeInfo>
     <scopeInfo nodeId="2705856473428697724" fileName="MathUtil.java" startLine="214" startPosition="54" endLine="241" endPosition="5" />
     <scopeInfo nodeId="2705856473428697753" fileName="MathUtil.java" startLine="244" startPosition="42" endLine="272" endPosition="13" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="494" startPosition="7" endLine="523" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="539" startPosition="7" endLine="568" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="584" startPosition="7" endLine="613" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="629" startPosition="7" endLine="658" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="674" startPosition="7" endLine="703" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="719" startPosition="7" endLine="748" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="764" startPosition="7" endLine="793" endPosition="31" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="809" startPosition="7" endLine="838" endPosition="31" />
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="494" startPosition="7" endLine="523" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="539" startPosition="7" endLine="568" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="584" startPosition="7" endLine="613" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="629" startPosition="7" endLine="658" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="674" startPosition="7" endLine="703" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="719" startPosition="7" endLine="748" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="764" startPosition="7" endLine="793" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="809" startPosition="7" endLine="838" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_4" />
+    </scopeInfo>
     <scopeInfo nodeId="2705856473428697721" fileName="MathUtil.java" startLine="213" startPosition="0" endLine="243" endPosition="0">
       <varInfo nodeId="2705856473428697747" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="951" startPosition="9" endLine="981" endPosition="58" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1252" startPosition="49" endLine="1282" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1290" startPosition="49" endLine="1320" endPosition="20" />
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="951" startPosition="9" endLine="981" endPosition="58">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1252" startPosition="49" endLine="1282" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1290" startPosition="49" endLine="1320" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2705856473428697749" fileName="MathUtil.java" startLine="243" startPosition="0" endLine="274" endPosition="0">
       <varInfo nodeId="2705856473428697750" varName="node" />
     </scopeInfo>
@@ -1479,36 +1782,140 @@
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="763" startPosition="32" endLine="794" endPosition="7" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="808" startPosition="32" endLine="839" endPosition="7" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="950" startPosition="43" endLine="982" endPosition="9" />
-    <scopeInfo nodeId="1238942028306" fileName="MathUtil.java" startLine="44" startPosition="16" endLine="77" endPosition="11" />
-    <scopeInfo nodeId="1238942054002" fileName="MathUtil.java" startLine="96" startPosition="16" endLine="129" endPosition="11" />
-    <scopeInfo nodeId="1300076822026748099" fileName="MathUtil.java" startLine="139" startPosition="7" endLine="172" endPosition="9" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1251" startPosition="0" endLine="1284" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1289" startPosition="0" endLine="1322" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="948" startPosition="7" endLine="983" endPosition="31" />
-    <scopeInfo nodeId="1300076822026748097" fileName="MathUtil.java" startLine="137" startPosition="5" endLine="173" endPosition="7" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="488" startPosition="69" endLine="525" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="533" startPosition="69" endLine="570" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="578" startPosition="69" endLine="615" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="623" startPosition="69" endLine="660" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="668" startPosition="69" endLine="705" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="713" startPosition="69" endLine="750" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="758" startPosition="69" endLine="795" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="803" startPosition="69" endLine="840" endPosition="20" />
+    <scopeInfo nodeId="1238942028306" fileName="MathUtil.java" startLine="44" startPosition="16" endLine="77" endPosition="11">
+      <varInfo nodeId="1238942028306" varName="matches_30uc9x_b0a1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942054002" fileName="MathUtil.java" startLine="96" startPosition="16" endLine="129" endPosition="11">
+      <varInfo nodeId="1238942054002" varName="matches_30uc9x_b0a2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1300076822026748099" fileName="MathUtil.java" startLine="139" startPosition="7" endLine="172" endPosition="9">
+      <varInfo nodeId="1300076822026748099" varName="matches_30uc9x_a1a3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1251" startPosition="0" endLine="1284" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_7" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1289" startPosition="0" endLine="1322" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_7" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="948" startPosition="7" endLine="983" endPosition="31">
+      <varInfo nodeId="1238406290274" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="1300076822026748097" fileName="MathUtil.java" startLine="137" startPosition="5" endLine="173" endPosition="7">
+      <varInfo nodeId="1300076822026748097" varName="matchedNode_30uc9x_b0d" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="488" startPosition="69" endLine="525" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="533" startPosition="69" endLine="570" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="578" startPosition="69" endLine="615" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="623" startPosition="69" endLine="660" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="668" startPosition="69" endLine="705" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="713" startPosition="69" endLine="750" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="758" startPosition="69" endLine="795" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="803" startPosition="69" endLine="840" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="947" startPosition="32" endLine="984" endPosition="7" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="487" startPosition="0" endLine="527" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="532" startPosition="0" endLine="572" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="577" startPosition="0" endLine="617" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="622" startPosition="0" endLine="662" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="667" startPosition="0" endLine="707" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="712" startPosition="0" endLine="752" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="757" startPosition="0" endLine="797" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="802" startPosition="0" endLine="842" endPosition="0" />
-    <scopeInfo nodeId="1238942028290" fileName="MathUtil.java" startLine="34" startPosition="7" endLine="78" endPosition="9" />
-    <scopeInfo nodeId="1238942053986" fileName="MathUtil.java" startLine="86" startPosition="7" endLine="130" endPosition="9" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="941" startPosition="70" endLine="985" endPosition="20" />
-    <scopeInfo nodeId="1238942028288" fileName="MathUtil.java" startLine="32" startPosition="5" endLine="79" endPosition="7" />
-    <scopeInfo nodeId="1238942053984" fileName="MathUtil.java" startLine="84" startPosition="5" endLine="131" endPosition="7" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="940" startPosition="0" endLine="987" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="487" startPosition="0" endLine="527" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_7" />
+      <varInfo nodeId="1238406290274" varName="parameter_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="532" startPosition="0" endLine="572" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_7" />
+      <varInfo nodeId="1238406290274" varName="parameter_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="577" startPosition="0" endLine="617" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_7" />
+      <varInfo nodeId="1238406290274" varName="parameter_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="622" startPosition="0" endLine="662" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_7" />
+      <varInfo nodeId="1238406290274" varName="parameter_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="667" startPosition="0" endLine="707" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_7" />
+      <varInfo nodeId="1238406290274" varName="parameter_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="712" startPosition="0" endLine="752" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_7" />
+      <varInfo nodeId="1238406290274" varName="parameter_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="757" startPosition="0" endLine="797" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_7" />
+      <varInfo nodeId="1238406290274" varName="parameter_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="802" startPosition="0" endLine="842" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_7" />
+      <varInfo nodeId="1238406290274" varName="parameter_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942028290" fileName="MathUtil.java" startLine="34" startPosition="7" endLine="78" endPosition="9">
+      <varInfo nodeId="1238942028290" varName="matches_30uc9x_a0a1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942053986" fileName="MathUtil.java" startLine="86" startPosition="7" endLine="130" endPosition="9">
+      <varInfo nodeId="1238942053986" varName="matches_30uc9x_a0a2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="941" startPosition="70" endLine="985" endPosition="20">
+      <varInfo nodeId="1238406290274" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_1" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_2" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_3" />
+      <varInfo nodeId="1238406290274" varName="quotedNode_4" />
+      <varInfo nodeId="1238406290274" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942028288" fileName="MathUtil.java" startLine="32" startPosition="5" endLine="79" endPosition="7">
+      <varInfo nodeId="1238942028288" varName="matchedNode_30uc9x_a0b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238942053984" fileName="MathUtil.java" startLine="84" startPosition="5" endLine="131" endPosition="7">
+      <varInfo nodeId="1238942053984" varName="matchedNode_30uc9x_a0c" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="940" startPosition="0" endLine="987" endPosition="0">
+      <varInfo nodeId="1238406290274" varName="parameter_10" />
+      <varInfo nodeId="1238406290274" varName="parameter_9" />
+    </scopeInfo>
     <scopeInfo nodeId="1238942002672" fileName="MathUtil.java" startLine="31" startPosition="43" endLine="80" endPosition="5" />
     <scopeInfo nodeId="1238942053983" fileName="MathUtil.java" startLine="83" startPosition="43" endLine="132" endPosition="5" />
     <scopeInfo nodeId="1238942002669" fileName="MathUtil.java" startLine="30" startPosition="0" endLine="82" endPosition="0">
@@ -1569,14 +1976,18 @@
     <nodeInfo nodeId="1904947163751563874" fileName="MathContext_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1904947163751563871" fileName="MathContext_Behavior.java" startLine="8" startPosition="35" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1904947163751563873" fileName="MathContext_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="59" />
-    <scopeInfo nodeId="1904947163751563871" fileName="MathContext_Behavior.java" startLine="8" startPosition="35" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="1904947163751563871" fileName="MathContext_Behavior.java" startLine="8" startPosition="35" endLine="12" endPosition="0">
+      <varInfo nodeId="1904947163751563871" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1904947163751563871" fileName="MathContext_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathContext_Behavior" />
   </root>
   <root nodeId="3498370411873438939">
     <nodeInfo nodeId="3498370411873438942" fileName="MatrixConstructor_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3498370411873438939" fileName="MatrixConstructor_Behavior.java" startLine="8" startPosition="41" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="3498370411873438941" fileName="MatrixConstructor_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="60" />
-    <scopeInfo nodeId="3498370411873438939" fileName="MatrixConstructor_Behavior.java" startLine="8" startPosition="41" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="3498370411873438939" fileName="MatrixConstructor_Behavior.java" startLine="8" startPosition="41" endLine="12" endPosition="0">
+      <varInfo nodeId="3498370411873438939" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="3498370411873438939" fileName="MatrixConstructor_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixConstructor_Behavior" />
   </root>
   <root nodeId="5217243589491051780">
@@ -1585,8 +1996,12 @@
     <nodeInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="5217243589491051782" fileName="MatrixType_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="5217243589491051786" fileName="MatrixType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="144" />
-    <scopeInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="9" startPosition="34" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="9" startPosition="34" endLine="12" endPosition="0">
+      <varInfo nodeId="5217243589491051780" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="5217243589491051780" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixType_Behavior" />
   </root>
 </debugInfo>

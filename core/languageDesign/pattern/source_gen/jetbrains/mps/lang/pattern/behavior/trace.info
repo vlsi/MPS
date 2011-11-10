@@ -32,31 +32,43 @@
     <scopeInfo nodeId="111677556049506424" fileName="ActionStatement_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="111677556049506432" fileName="ActionStatement_Behavior.java" startLine="13" startPosition="132" endLine="14" endPosition="127" />
     <scopeInfo nodeId="111677556049506574" fileName="ActionStatement_Behavior.java" startLine="21" startPosition="25" endLine="22" endPosition="47" />
-    <scopeInfo nodeId="111677556049506422" fileName="ActionStatement_Behavior.java" startLine="8" startPosition="39" endLine="11" endPosition="0" />
+    <scopeInfo nodeId="111677556049506422" fileName="ActionStatement_Behavior.java" startLine="8" startPosition="39" endLine="11" endPosition="0">
+      <varInfo nodeId="111677556049506422" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="111677556049506428" fileName="ActionStatement_Behavior.java" startLine="12" startPosition="80" endLine="16" endPosition="16" />
     <scopeInfo nodeId="111677556049506463" fileName="ActionStatement_Behavior.java" startLine="19" startPosition="71" endLine="24" endPosition="16">
       <varInfo nodeId="111677556049506604" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="111677556049506422" fileName="ActionStatement_Behavior.java" startLine="11" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="111677556049506422" fileName="ActionStatement_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="111677556049506422" fileName="ActionStatement_Behavior.java" startLine="11" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="111677556049506422" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="111677556049506422" fileName="ActionStatement_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="111677556049506422" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="111677556049506422" fileName="ActionStatement_Behavior.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.ActionStatement_Behavior" />
   </root>
   <root nodeId="1213877200307">
     <nodeInfo nodeId="1213877200307" fileName="PatternVariableDeclaration_Behavior.java" startLine="7" startPosition="50" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877200309" fileName="PatternVariableDeclaration_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877200307" fileName="PatternVariableDeclaration_Behavior.java" startLine="7" startPosition="50" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="1213877200307" fileName="PatternVariableDeclaration_Behavior.java" startLine="7" startPosition="50" endLine="10" endPosition="0">
+      <varInfo nodeId="1213877200307" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1213877200307" fileName="PatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_Behavior" />
   </root>
   <root nodeId="1213877241295">
     <nodeInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="58" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877241297" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="58" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="58" endLine="10" endPosition="0">
+      <varInfo nodeId="1213877241295" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_Behavior" />
   </root>
   <root nodeId="1213877344249">
     <nodeInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="54" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877344251" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="54" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="54" endLine="10" endPosition="0">
+      <varInfo nodeId="1213877344249" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_Behavior" />
   </root>
   <root nodeId="534621188390792429">
@@ -96,11 +108,17 @@
     <scopeInfo nodeId="8288845019109098017" fileName="PatternExpression_Behavior.java" startLine="53" startPosition="172" endLine="54" endPosition="54" />
     <scopeInfo nodeId="4855904478357073123" fileName="PatternExpression_Behavior.java" startLine="60" startPosition="78" endLine="61" endPosition="17" />
     <scopeInfo nodeId="4855904478357073064" fileName="PatternExpression_Behavior.java" startLine="41" startPosition="74" endLine="43" endPosition="62" />
-    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="15" startPosition="41" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="15" startPosition="41" endLine="18" endPosition="0">
+      <varInfo nodeId="534621188390792429" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8288845019109098015" fileName="PatternExpression_Behavior.java" startLine="52" startPosition="33" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="534621188390792429" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="4855904478357073057" fileName="PatternExpression_Behavior.java" startLine="40" startPosition="33" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="534621188390792429" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8288845019109098012" fileName="PatternExpression_Behavior.java" startLine="51" startPosition="48" endLine="56" endPosition="5">
       <varInfo nodeId="8288845019109098013" varName="var" />
     </scopeInfo>
@@ -119,9 +137,15 @@
       <varInfo nodeId="4855904478357073035" varName="result" />
       <varInfo nodeId="4855904478357073024" varName="variables" />
     </scopeInfo>
-    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="48" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="22" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="35" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="534621188390792429" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="22" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="534621188390792429" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="35" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="534621188390792429" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="534621188390792429" fileName="PatternExpression_Behavior.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior" />
   </root>
   <root nodeId="5830155447075815036">

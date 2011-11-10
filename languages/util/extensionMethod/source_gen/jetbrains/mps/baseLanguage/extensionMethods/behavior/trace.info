@@ -16,8 +16,12 @@
     <nodeInfo nodeId="1713017043373861885" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isInitializable_1213877517488#(Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="1713017043373861887" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1713017043373861889" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="16" />
-    <scopeInfo nodeId="1713017043373861885" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="7" startPosition="55" endLine="10" endPosition="0" />
-    <scopeInfo nodeId="1713017043373861885" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="1713017043373861885" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="7" startPosition="55" endLine="10" endPosition="0">
+      <varInfo nodeId="1713017043373861885" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1713017043373861885" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="1713017043373861885" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1713017043373861885" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionStaticFieldDeclaration_Behavior" />
   </root>
   <root nodeId="8022092943109893935">
@@ -43,14 +47,20 @@
     <scopeInfo nodeId="3386826992796747830" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="26" startPosition="100" endLine="27" endPosition="105" />
     <scopeInfo nodeId="3386826992796747841" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="28" startPosition="12" endLine="29" endPosition="189" />
     <scopeInfo nodeId="3386826992796747850" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="31" startPosition="33" endLine="32" endPosition="18" />
-    <scopeInfo nodeId="8022092943109893935" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="11" startPosition="50" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="8022092943109893935" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="11" startPosition="50" endLine="14" endPosition="0">
+      <varInfo nodeId="8022092943109893935" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8022092943109893941" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="15" startPosition="76" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="8022092943109893935" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8022092943109893935" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="8022092943109893935" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="7685333756920241021" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="23" startPosition="78" endLine="34" endPosition="74">
       <varInfo nodeId="3386826992796747827" varName="classifierType" />
       <varInfo nodeId="7685333756920241024" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="8022092943109893935" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="22" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8022092943109893935" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="22" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="8022092943109893935" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8022092943109893935" fileName="ExtensionMethodDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior" />
   </root>
   <root nodeId="8578055449697886098">
@@ -66,11 +76,22 @@
     <scopeInfo nodeId="8578055449697886100" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="8578055449697886103" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="65" />
     <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="28" startPosition="114" endLine="29" endPosition="288" />
-    <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="23" startPosition="81" endLine="25" endPosition="243" />
-    <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="23" startPosition="81" endLine="25" endPosition="243">
+      <varInfo nodeId="8578055449697886098" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="8578055449697886098" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="8578055449697886098" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="8578055449697886098" varName="callerConceptFqName" />
+      <varInfo nodeId="8578055449697886098" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="8578055449697886098" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.BaseExtensionMethodContainer_Behavior" />
   </root>
   <root nodeId="8872816273829182991">
@@ -79,8 +100,12 @@
     <nodeInfo nodeId="8872816273829182991" fileName="ExtensionMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_operandCanBeNull_323410281720656291#(Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="8872816273829182993" fileName="ExtensionMethodCall_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="8872816273829183000" fileName="ExtensionMethodCall_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" />
-    <scopeInfo nodeId="8872816273829182991" fileName="ExtensionMethodCall_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0" />
-    <scopeInfo nodeId="8872816273829182991" fileName="ExtensionMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="8872816273829182991" fileName="ExtensionMethodCall_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0">
+      <varInfo nodeId="8872816273829182991" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8872816273829182991" fileName="ExtensionMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="8872816273829182991" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8872816273829182991" fileName="ExtensionMethodCall_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodCall_Behavior" />
   </root>
 </debugInfo>

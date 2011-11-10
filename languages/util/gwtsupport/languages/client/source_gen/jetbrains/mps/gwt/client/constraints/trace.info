@@ -29,17 +29,28 @@
     <scopeInfo nodeId="6017889698595854368" fileName="Inherits_Constraints.java" startLine="61" startPosition="70" endLine="62" endPosition="127" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="68" startPosition="61" endLine="69" endPosition="58" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="3" />
-    <scopeInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="169" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="169" endLine="53" endPosition="0">
+      <varInfo nodeId="6017889698595854305" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="6017889698595854315" fileName="Inherits_Constraints.java" startLine="54" startPosition="59" endLine="58" endPosition="18" />
-    <scopeInfo nodeId="6017889698595854367" fileName="Inherits_Constraints.java" startLine="60" startPosition="70" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="6017889698595854367" fileName="Inherits_Constraints.java" startLine="60" startPosition="70" endLine="64" endPosition="0">
+      <varInfo nodeId="6017889698595854367" varName="smd" />
+    </scopeInfo>
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="37" startPosition="85" endLine="42" endPosition="0" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="66" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="6017889698595854314" fileName="Inherits_Constraints.java" startLine="53" startPosition="59" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="6017889698595854314" fileName="Inherits_Constraints.java" startLine="53" startPosition="59" endLine="60" endPosition="0">
+      <varInfo nodeId="6017889698595854314" varName="smd" />
+    </scopeInfo>
     <scopeInfo nodeId="2309001323587048083" fileName="Inherits_Constraints.java" startLine="48" startPosition="142" endLine="64" endPosition="15" />
-    <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="46" startPosition="49" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="46" startPosition="49" endLine="66" endPosition="0">
+      <varInfo nodeId="2309001323587048079" varName="_context" />
+      <varInfo nodeId="2309001323587048079" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="45" startPosition="56" endLine="71" endPosition="10" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="42" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="35" startPosition="83" endLine="74" endPosition="22" />
+    <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="35" startPosition="83" endLine="74" endPosition="22">
+      <varInfo nodeId="2309001323587048079" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="33" startPosition="0" endLine="76" endPosition="0" />
     <unitInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="27" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints" />
     <unitInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="37" startPosition="33" endLine="73" endPosition="5" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$1" />
@@ -77,10 +88,21 @@
     <scopeInfo nodeId="2968360207538181461" fileName="PatternFilter_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" />
     <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="30" startPosition="155" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="30" startPosition="155" endLine="37" endPosition="18">
+      <varInfo nodeId="2968360207537893572" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2968360207538140438" fileName="PatternFilter_Constraints.java" startLine="40" startPosition="123" endLine="50" endPosition="17" />
-    <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2968360207537893572" varName="checkingNodeContext" />
+      <varInfo nodeId="2968360207537893572" varName="node" />
+      <varInfo nodeId="2968360207537893572" varName="node1" />
+      <varInfo nodeId="2968360207537893572" varName="node2" />
+      <varInfo nodeId="2968360207537893572" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="39" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="2968360207537893572" varName="_context" />
+      <varInfo nodeId="2968360207537893572" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.PatternFilter_Constraints" />
   </root>
   <root nodeId="2968360207538563842">
@@ -112,10 +134,21 @@
     <scopeInfo nodeId="2968360207538563883" fileName="Public_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" />
     <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="30" startPosition="155" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="30" startPosition="155" endLine="37" endPosition="18">
+      <varInfo nodeId="2968360207538563842" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2968360207538563844" fileName="Public_Constraints.java" startLine="40" startPosition="123" endLine="50" endPosition="17" />
-    <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2968360207538563842" varName="checkingNodeContext" />
+      <varInfo nodeId="2968360207538563842" varName="node" />
+      <varInfo nodeId="2968360207538563842" varName="node1" />
+      <varInfo nodeId="2968360207538563842" varName="node2" />
+      <varInfo nodeId="2968360207538563842" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="39" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="2968360207538563842" varName="_context" />
+      <varInfo nodeId="2968360207538563842" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.Public_Constraints" />
   </root>
   <root nodeId="2968360207538563894">
@@ -147,10 +180,21 @@
     <scopeInfo nodeId="2968360207538563935" fileName="Source_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" />
     <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="30" startPosition="155" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="30" startPosition="155" endLine="37" endPosition="18">
+      <varInfo nodeId="2968360207538563894" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2968360207538563896" fileName="Source_Constraints.java" startLine="40" startPosition="123" endLine="50" endPosition="17" />
-    <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2968360207538563894" varName="checkingNodeContext" />
+      <varInfo nodeId="2968360207538563894" varName="node" />
+      <varInfo nodeId="2968360207538563894" varName="node1" />
+      <varInfo nodeId="2968360207538563894" varName="node2" />
+      <varInfo nodeId="2968360207538563894" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="39" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="2968360207538563894" varName="_context" />
+      <varInfo nodeId="2968360207538563894" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.Source_Constraints" />
   </root>
   <root nodeId="2968360207538563946">
@@ -182,10 +226,21 @@
     <scopeInfo nodeId="2968360207538563987" fileName="SuperSource_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" />
     <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="30" startPosition="155" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="30" startPosition="155" endLine="37" endPosition="18">
+      <varInfo nodeId="2968360207538563946" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2968360207538563948" fileName="SuperSource_Constraints.java" startLine="40" startPosition="123" endLine="50" endPosition="17" />
-    <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2968360207538563946" varName="checkingNodeContext" />
+      <varInfo nodeId="2968360207538563946" varName="node" />
+      <varInfo nodeId="2968360207538563946" varName="node1" />
+      <varInfo nodeId="2968360207538563946" varName="node2" />
+      <varInfo nodeId="2968360207538563946" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="39" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="2968360207538563946" varName="_context" />
+      <varInfo nodeId="2968360207538563946" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.SuperSource_Constraints" />
   </root>
   <root nodeId="2968360207538671955">
@@ -221,16 +276,34 @@
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="50" startPosition="37" endLine="51" endPosition="20" />
     <scopeInfo nodeId="2309001323587016402" fileName="GWTModule_Constraints.java" startLine="56" startPosition="44" endLine="57" endPosition="30" />
     <scopeInfo nodeId="2968360207538671960" fileName="GWTModule_Constraints.java" startLine="64" startPosition="127" endLine="65" endPosition="578" />
-    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="55" startPosition="56" endLine="57" endPosition="30" />
+    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="55" startPosition="56" endLine="57" endPosition="30">
+      <varInfo nodeId="2968360207538671955" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="2968360207538671957" fileName="GWTModule_Constraints.java" startLine="63" startPosition="123" endLine="67" endPosition="16" />
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="48" startPosition="94" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="53" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="35" startPosition="155" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="62" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="46" startPosition="82" endLine="60" endPosition="22" />
+    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="53" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="2968360207538671955" varName="node" />
+      <varInfo nodeId="2968360207538671955" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="35" startPosition="155" endLine="42" endPosition="18">
+      <varInfo nodeId="2968360207538671955" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="2968360207538671955" varName="_context" />
+      <varInfo nodeId="2968360207538671955" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="33" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="2968360207538671955" varName="checkingNodeContext" />
+      <varInfo nodeId="2968360207538671955" varName="node" />
+      <varInfo nodeId="2968360207538671955" varName="node1" />
+      <varInfo nodeId="2968360207538671955" varName="node2" />
+      <varInfo nodeId="2968360207538671955" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="46" startPosition="82" endLine="60" endPosition="22">
+      <varInfo nodeId="2968360207538671955" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="44" startPosition="0" endLine="62" endPosition="0" />
     <unitInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.GWTModule_Constraints" />
     <unitInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="48" startPosition="38" endLine="59" endPosition="5" unitName="jetbrains.mps.gwt.client.constraints.GWTModule_Constraints$1" />

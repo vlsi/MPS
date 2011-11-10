@@ -25,16 +25,23 @@
     <scopeInfo nodeId="1225096927393" fileName="MatchPropertyOperation_Constraints.java" startLine="47" startPosition="47" endLine="48" endPosition="110" />
     <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="54" startPosition="61" endLine="55" endPosition="58" />
     <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
-    <scopeInfo nodeId="1225096927390" fileName="MatchPropertyOperation_Constraints.java" startLine="46" startPosition="153" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1225096927390" fileName="MatchPropertyOperation_Constraints.java" startLine="46" startPosition="153" endLine="50" endPosition="0">
+      <varInfo nodeId="1225096927390" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="33" startPosition="89" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="52" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1213104836710" fileName="MatchPropertyOperation_Constraints.java" startLine="44" startPosition="142" endLine="50" endPosition="32">
       <varInfo nodeId="1213104836712" varName="nk" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="42" startPosition="49" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="42" startPosition="49" endLine="52" endPosition="0">
+      <varInfo nodeId="1213104836707" varName="_context" />
+      <varInfo nodeId="1213104836707" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="41" startPosition="56" endLine="57" endPosition="10" />
     <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="38" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="31" startPosition="83" endLine="60" endPosition="22" />
+    <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="31" startPosition="83" endLine="60" endPosition="22">
+      <varInfo nodeId="1213104836707" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="29" startPosition="0" endLine="62" endPosition="0" />
     <unitInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="23" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ypath.constraints.MatchPropertyOperation_Constraints" />
     <unitInfo nodeId="1213104836707" fileName="MatchPropertyOperation_Constraints.java" startLine="33" startPosition="35" endLine="59" endPosition="5" unitName="jetbrains.mps.ypath.constraints.MatchPropertyOperation_Constraints$1" />
@@ -63,11 +70,16 @@
     <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="45" startPosition="61" endLine="46" endPosition="58" />
     <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
     <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="29" startPosition="101" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="38" startPosition="49" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="38" startPosition="49" endLine="43" endPosition="0">
+      <varInfo nodeId="1213104837324" varName="_context" />
+      <varInfo nodeId="1213104837324" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="37" startPosition="56" endLine="48" endPosition="10" />
     <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="34" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="27" startPosition="83" endLine="51" endPosition="22" />
+    <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="27" startPosition="83" endLine="51" endPosition="22">
+      <varInfo nodeId="1213104837324" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="25" startPosition="0" endLine="53" endPosition="0" />
     <unitInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ypath.constraints.TreePathAspect_Constraints" />
     <unitInfo nodeId="1213104837324" fileName="TreePathAspect_Constraints.java" startLine="29" startPosition="41" endLine="50" endPosition="5" unitName="jetbrains.mps.ypath.constraints.TreePathAspect_Constraints$1" />
@@ -104,9 +116,17 @@
       <varInfo nodeId="1213104841250" varName="treepath" />
     </scopeInfo>
     <scopeInfo nodeId="1213104841246" fileName="TreeNodeKindProperty_Constraints.java" startLine="31" startPosition="40" endLine="40" endPosition="105" />
-    <scopeInfo nodeId="1213104841243" fileName="TreeNodeKindProperty_Constraints.java" startLine="30" startPosition="76" endLine="40" endPosition="105" />
-    <scopeInfo nodeId="1213104841243" fileName="TreeNodeKindProperty_Constraints.java" startLine="28" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="1213104841243" fileName="TreeNodeKindProperty_Constraints.java" startLine="21" startPosition="82" endLine="43" endPosition="22" />
+    <scopeInfo nodeId="1213104841243" fileName="TreeNodeKindProperty_Constraints.java" startLine="30" startPosition="76" endLine="40" endPosition="105">
+      <varInfo nodeId="1213104841243" varName="propertyName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104841243" fileName="TreeNodeKindProperty_Constraints.java" startLine="28" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1213104841243" varName="node" />
+      <varInfo nodeId="1213104841243" varName="propertyValue" />
+      <varInfo nodeId="1213104841243" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104841243" fileName="TreeNodeKindProperty_Constraints.java" startLine="21" startPosition="82" endLine="43" endPosition="22">
+      <varInfo nodeId="1213104841243" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104841243" fileName="TreeNodeKindProperty_Constraints.java" startLine="19" startPosition="0" endLine="45" endPosition="0" />
     <unitInfo nodeId="1213104841243" fileName="TreeNodeKindProperty_Constraints.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ypath.constraints.TreeNodeKindProperty_Constraints" />
     <unitInfo nodeId="1213104841243" fileName="TreeNodeKindProperty_Constraints.java" startLine="23" startPosition="34" endLine="42" endPosition="5" unitName="jetbrains.mps.ypath.constraints.TreeNodeKindProperty_Constraints$1" />
@@ -143,10 +163,15 @@
     <scopeInfo nodeId="1213104845583" fileName="IterateOperation_Constraints.java" startLine="45" startPosition="142" endLine="52" endPosition="330">
       <varInfo nodeId="1213104845585" varName="tpoe" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104845580" fileName="IterateOperation_Constraints.java" startLine="43" startPosition="49" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1213104845580" fileName="IterateOperation_Constraints.java" startLine="43" startPosition="49" endLine="54" endPosition="0">
+      <varInfo nodeId="1213104845580" varName="_context" />
+      <varInfo nodeId="1213104845580" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104845580" fileName="IterateOperation_Constraints.java" startLine="42" startPosition="56" endLine="59" endPosition="10" />
     <scopeInfo nodeId="1213104845580" fileName="IterateOperation_Constraints.java" startLine="39" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1213104845580" fileName="IterateOperation_Constraints.java" startLine="32" startPosition="83" endLine="62" endPosition="22" />
+    <scopeInfo nodeId="1213104845580" fileName="IterateOperation_Constraints.java" startLine="32" startPosition="83" endLine="62" endPosition="22">
+      <varInfo nodeId="1213104845580" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104845580" fileName="IterateOperation_Constraints.java" startLine="30" startPosition="0" endLine="64" endPosition="0" />
     <unitInfo nodeId="1213104845580" fileName="IterateOperation_Constraints.java" startLine="24" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ypath.constraints.IterateOperation_Constraints" />
     <unitInfo nodeId="1213104845580" fileName="IterateOperation_Constraints.java" startLine="34" startPosition="38" endLine="61" endPosition="5" unitName="jetbrains.mps.ypath.constraints.IterateOperation_Constraints$1" />
@@ -196,23 +221,40 @@
     <scopeInfo nodeId="1225096928357" fileName="IFeature_Constraints.java" startLine="76" startPosition="47" endLine="80" endPosition="19" />
     <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="36" startPosition="86" endLine="41" endPosition="0" />
     <scopeInfo nodeId="1213104846065" fileName="IFeature_Constraints.java" startLine="45" startPosition="62" endLine="50" endPosition="11" />
-    <scopeInfo nodeId="1213104846066" fileName="IFeature_Constraints.java" startLine="45" startPosition="62" endLine="50" endPosition="11" />
+    <scopeInfo nodeId="1213104846066" fileName="IFeature_Constraints.java" startLine="45" startPosition="62" endLine="50" endPosition="11">
+      <varInfo nodeId="1213104846066" varName="foo" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="61" startPosition="89" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="1225096928354" fileName="IFeature_Constraints.java" startLine="75" startPosition="226" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="1225096928354" fileName="IFeature_Constraints.java" startLine="75" startPosition="226" endLine="82" endPosition="0">
+      <varInfo nodeId="1225096928354" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104846062" fileName="IFeature_Constraints.java" startLine="44" startPosition="40" endLine="52" endPosition="108" />
-    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="43" startPosition="76" endLine="52" endPosition="108" />
+    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="43" startPosition="76" endLine="52" endPosition="108">
+      <varInfo nodeId="1213104846059" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104846096" fileName="IFeature_Constraints.java" startLine="72" startPosition="142" endLine="82" endPosition="32">
       <varInfo nodeId="1213104846098" varName="feature" />
       <varInfo nodeId="1213104846102" varName="isGeneric" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="41" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="70" startPosition="49" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="41" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1213104846059" varName="node" />
+      <varInfo nodeId="1213104846059" varName="propertyValue" />
+      <varInfo nodeId="1213104846059" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="70" startPosition="49" endLine="84" endPosition="0">
+      <varInfo nodeId="1213104846059" varName="_context" />
+      <varInfo nodeId="1213104846059" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="69" startPosition="56" endLine="89" endPosition="10" />
-    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="34" startPosition="82" endLine="55" endPosition="22" />
+    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="34" startPosition="82" endLine="55" endPosition="22">
+      <varInfo nodeId="1213104846059" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="32" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="66" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="59" startPosition="83" endLine="92" endPosition="22" />
+    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="59" startPosition="83" endLine="92" endPosition="22">
+      <varInfo nodeId="1213104846059" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="57" startPosition="0" endLine="94" endPosition="0" />
     <unitInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="26" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ypath.constraints.IFeature_Constraints" />
     <unitInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="36" startPosition="34" endLine="54" endPosition="5" unitName="jetbrains.mps.ypath.constraints.IFeature_Constraints$1" />
@@ -246,10 +288,15 @@
     <scopeInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
     <scopeInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="30" startPosition="101" endLine="35" endPosition="0" />
     <scopeInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="39" startPosition="49" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="39" startPosition="49" endLine="45" endPosition="0">
+      <varInfo nodeId="1213104858652" varName="_context" />
+      <varInfo nodeId="1213104858652" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="38" startPosition="56" endLine="50" endPosition="10" />
     <scopeInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="35" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="28" startPosition="83" endLine="53" endPosition="22" />
+    <scopeInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="28" startPosition="83" endLine="53" endPosition="22">
+      <varInfo nodeId="1213104858652" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="26" startPosition="0" endLine="55" endPosition="0" />
     <unitInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ypath.constraints.TreePathAdapterExpression_Constraints" />
     <unitInfo nodeId="1213104858652" fileName="TreePathAdapterExpression_Constraints.java" startLine="30" startPosition="41" endLine="52" endPosition="5" unitName="jetbrains.mps.ypath.constraints.TreePathAdapterExpression_Constraints$1" />
@@ -287,10 +334,15 @@
     <scopeInfo nodeId="1213104858821" fileName="TreeNodeKindReference_Constraints.java" startLine="42" startPosition="142" endLine="49" endPosition="31">
       <varInfo nodeId="1213104858823" varName="searchScope" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104858818" fileName="TreeNodeKindReference_Constraints.java" startLine="40" startPosition="49" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1213104858818" fileName="TreeNodeKindReference_Constraints.java" startLine="40" startPosition="49" endLine="51" endPosition="0">
+      <varInfo nodeId="1213104858818" varName="_context" />
+      <varInfo nodeId="1213104858818" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104858818" fileName="TreeNodeKindReference_Constraints.java" startLine="39" startPosition="56" endLine="56" endPosition="10" />
     <scopeInfo nodeId="1213104858818" fileName="TreeNodeKindReference_Constraints.java" startLine="36" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1213104858818" fileName="TreeNodeKindReference_Constraints.java" startLine="29" startPosition="83" endLine="59" endPosition="22" />
+    <scopeInfo nodeId="1213104858818" fileName="TreeNodeKindReference_Constraints.java" startLine="29" startPosition="83" endLine="59" endPosition="22">
+      <varInfo nodeId="1213104858818" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104858818" fileName="TreeNodeKindReference_Constraints.java" startLine="27" startPosition="0" endLine="61" endPosition="0" />
     <unitInfo nodeId="1213104858818" fileName="TreeNodeKindReference_Constraints.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ypath.constraints.TreeNodeKindReference_Constraints" />
     <unitInfo nodeId="1213104858818" fileName="TreeNodeKindReference_Constraints.java" startLine="31" startPosition="39" endLine="58" endPosition="5" unitName="jetbrains.mps.ypath.constraints.TreeNodeKindReference_Constraints$1" />
@@ -321,17 +373,24 @@
     <scopeInfo nodeId="1225096925368" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="48" startPosition="47" endLine="49" endPosition="102" />
     <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="55" startPosition="61" endLine="56" endPosition="58" />
     <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
-    <scopeInfo nodeId="1225096925365" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="47" startPosition="154" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1225096925365" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="47" startPosition="154" endLine="51" endPosition="0">
+      <varInfo nodeId="1225096925365" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="33" startPosition="89" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1213104859284" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="44" startPosition="142" endLine="51" endPosition="32">
       <varInfo nodeId="1213104859293" varName="tpa" />
       <varInfo nodeId="1213104859286" varName="tpoe" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="42" startPosition="49" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="42" startPosition="49" endLine="53" endPosition="0">
+      <varInfo nodeId="1213104859281" varName="_context" />
+      <varInfo nodeId="1213104859281" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="41" startPosition="56" endLine="58" endPosition="10" />
     <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="38" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="31" startPosition="83" endLine="61" endPosition="22" />
+    <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="31" startPosition="83" endLine="61" endPosition="22">
+      <varInfo nodeId="1213104859281" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="29" startPosition="0" endLine="63" endPosition="0" />
     <unitInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="23" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ypath.constraints.TreeNodeKindOccurrence_Constraints" />
     <unitInfo nodeId="1213104859281" fileName="TreeNodeKindOccurrence_Constraints.java" startLine="33" startPosition="35" endLine="60" endPosition="5" unitName="jetbrains.mps.ypath.constraints.TreeNodeKindOccurrence_Constraints$1" />
@@ -360,11 +419,16 @@
     <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="45" startPosition="61" endLine="46" endPosition="57" />
     <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
     <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="29" startPosition="97" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="38" startPosition="49" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="38" startPosition="49" endLine="43" endPosition="0">
+      <varInfo nodeId="1213104860501" varName="_context" />
+      <varInfo nodeId="1213104860501" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="37" startPosition="56" endLine="48" endPosition="10" />
     <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="34" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="27" startPosition="83" endLine="51" endPosition="22" />
+    <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="27" startPosition="83" endLine="51" endPosition="22">
+      <varInfo nodeId="1213104860501" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="25" startPosition="0" endLine="53" endPosition="0" />
     <unitInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ypath.constraints.NodeKindSpecificCase_Constraints" />
     <unitInfo nodeId="1213104860501" fileName="NodeKindSpecificCase_Constraints.java" startLine="29" startPosition="39" endLine="50" endPosition="5" unitName="jetbrains.mps.ypath.constraints.NodeKindSpecificCase_Constraints$1" />
@@ -386,11 +450,19 @@
     <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="14" startPosition="39" endLine="15" endPosition="58" />
     <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
     <scopeInfo nodeId="4581582910844587514" fileName="GenericFeature_Constraints.java" startLine="29" startPosition="41" endLine="30" endPosition="52" />
-    <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="28" startPosition="76" endLine="30" endPosition="52" />
+    <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="28" startPosition="76" endLine="30" endPosition="52">
+      <varInfo nodeId="4581582910844587511" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="13" startPosition="75" endLine="16" endPosition="3" />
     <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="21" startPosition="88" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="4581582910844587511" varName="node" />
+      <varInfo nodeId="4581582910844587511" varName="propertyValue" />
+      <varInfo nodeId="4581582910844587511" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
+      <varInfo nodeId="4581582910844587511" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="17" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.constraints.GenericFeature_Constraints" />
     <unitInfo nodeId="4581582910844587511" fileName="GenericFeature_Constraints.java" startLine="21" startPosition="35" endLine="32" endPosition="5" unitName="jetbrains.mps.ypath.constraints.GenericFeature_Constraints$1" />
@@ -411,11 +483,19 @@
     <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="14" startPosition="44" endLine="15" endPosition="63" />
     <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
     <scopeInfo nodeId="4581582910845094948" fileName="GenericParamFeature_Constraints.java" startLine="29" startPosition="41" endLine="30" endPosition="46" />
-    <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="28" startPosition="76" endLine="30" endPosition="46" />
+    <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="28" startPosition="76" endLine="30" endPosition="46">
+      <varInfo nodeId="4581582910845094945" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="13" startPosition="80" endLine="16" endPosition="3" />
     <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="21" startPosition="88" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="4581582910845094945" varName="node" />
+      <varInfo nodeId="4581582910845094945" varName="propertyValue" />
+      <varInfo nodeId="4581582910845094945" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
+      <varInfo nodeId="4581582910845094945" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="17" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.constraints.GenericParamFeature_Constraints" />
     <unitInfo nodeId="4581582910845094945" fileName="GenericParamFeature_Constraints.java" startLine="21" startPosition="35" endLine="32" endPosition="5" unitName="jetbrains.mps.ypath.constraints.GenericParamFeature_Constraints$1" />
@@ -440,10 +520,21 @@
     <scopeInfo nodeId="5626852792500016114" fileName="TreePathOperation_Constraints.java" startLine="31" startPosition="51" endLine="32" endPosition="67" />
     <scopeInfo nodeId="5626852792500016116" fileName="TreePathOperation_Constraints.java" startLine="38" startPosition="121" endLine="39" endPosition="264" />
     <scopeInfo nodeId="5626852792500016114" fileName="TreePathOperation_Constraints.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="5626852792500016114" fileName="TreePathOperation_Constraints.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="5626852792500016114" fileName="TreePathOperation_Constraints.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="5626852792500016114" varName="_context" />
+      <varInfo nodeId="5626852792500016114" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5626852792500016114" fileName="TreePathOperation_Constraints.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="5626852792500016114" fileName="TreePathOperation_Constraints.java" startLine="28" startPosition="166" endLine="35" endPosition="18" />
-    <scopeInfo nodeId="5626852792500016114" fileName="TreePathOperation_Constraints.java" startLine="26" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5626852792500016114" fileName="TreePathOperation_Constraints.java" startLine="28" startPosition="166" endLine="35" endPosition="18">
+      <varInfo nodeId="5626852792500016114" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5626852792500016114" fileName="TreePathOperation_Constraints.java" startLine="26" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5626852792500016114" varName="checkingNodeContext" />
+      <varInfo nodeId="5626852792500016114" varName="node" />
+      <varInfo nodeId="5626852792500016114" varName="node1" />
+      <varInfo nodeId="5626852792500016114" varName="node2" />
+      <varInfo nodeId="5626852792500016114" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="5626852792500016114" fileName="TreePathOperation_Constraints.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ypath.constraints.TreePathOperation_Constraints" />
   </root>
   <root nodeId="791534949580478508">
@@ -462,11 +553,19 @@
     <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="14" startPosition="36" endLine="15" endPosition="55" />
     <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
     <scopeInfo nodeId="791534949580478513" fileName="ListFeature_Constraints.java" startLine="29" startPosition="41" endLine="30" endPosition="41" />
-    <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="28" startPosition="76" endLine="30" endPosition="41" />
+    <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="28" startPosition="76" endLine="30" endPosition="41">
+      <varInfo nodeId="791534949580478508" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="13" startPosition="72" endLine="16" endPosition="3" />
     <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="21" startPosition="88" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="791534949580478508" varName="node" />
+      <varInfo nodeId="791534949580478508" varName="propertyValue" />
+      <varInfo nodeId="791534949580478508" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
+      <varInfo nodeId="791534949580478508" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="17" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.constraints.ListFeature_Constraints" />
     <unitInfo nodeId="791534949580478508" fileName="ListFeature_Constraints.java" startLine="21" startPosition="35" endLine="32" endPosition="5" unitName="jetbrains.mps.ypath.constraints.ListFeature_Constraints$1" />
@@ -487,11 +586,19 @@
     <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="14" startPosition="40" endLine="15" endPosition="59" />
     <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
     <scopeInfo nodeId="791534949580478626" fileName="SequenceFeature_Constraints.java" startLine="29" startPosition="41" endLine="30" endPosition="41" />
-    <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="28" startPosition="76" endLine="30" endPosition="41" />
+    <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="28" startPosition="76" endLine="30" endPosition="41">
+      <varInfo nodeId="791534949580478619" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="13" startPosition="76" endLine="16" endPosition="3" />
     <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="21" startPosition="88" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="791534949580478619" varName="node" />
+      <varInfo nodeId="791534949580478619" varName="propertyValue" />
+      <varInfo nodeId="791534949580478619" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
+      <varInfo nodeId="791534949580478619" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="17" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.constraints.SequenceFeature_Constraints" />
     <unitInfo nodeId="791534949580478619" fileName="SequenceFeature_Constraints.java" startLine="21" startPosition="35" endLine="32" endPosition="5" unitName="jetbrains.mps.ypath.constraints.SequenceFeature_Constraints$1" />

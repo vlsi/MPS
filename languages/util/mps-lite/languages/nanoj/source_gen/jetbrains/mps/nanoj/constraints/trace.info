@@ -37,7 +37,9 @@
     <scopeInfo nodeId="689680155165915437" fileName="VarDeclReference_Constraints.java" startLine="57" startPosition="52" endLine="58" endPosition="24" />
     <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="68" startPosition="61" endLine="69" endPosition="58" />
     <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
-    <scopeInfo nodeId="689680155165915451" fileName="VarDeclReference_Constraints.java" startLine="52" startPosition="135" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="689680155165915451" fileName="VarDeclReference_Constraints.java" startLine="52" startPosition="135" endLine="56" endPosition="0">
+      <varInfo nodeId="689680155165915451" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="689680155165915432" fileName="VarDeclReference_Constraints.java" startLine="56" startPosition="19" endLine="60" endPosition="188" />
     <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="33" startPosition="95" endLine="38" endPosition="0" />
     <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="66" startPosition="0" endLine="71" endPosition="0" />
@@ -51,10 +53,15 @@
       <varInfo nodeId="689680155165915404" varName="currentStatement" />
       <varInfo nodeId="689680155165915397" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="42" startPosition="49" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="42" startPosition="49" endLine="66" endPosition="0">
+      <varInfo nodeId="689680155165915392" varName="_context" />
+      <varInfo nodeId="689680155165915392" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="41" startPosition="56" endLine="71" endPosition="10" />
     <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="38" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="31" startPosition="83" endLine="74" endPosition="22" />
+    <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="31" startPosition="83" endLine="74" endPosition="22">
+      <varInfo nodeId="689680155165915392" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="29" startPosition="0" endLine="76" endPosition="0" />
     <unitInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints" />
     <unitInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="33" startPosition="38" endLine="73" endPosition="5" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$1" />

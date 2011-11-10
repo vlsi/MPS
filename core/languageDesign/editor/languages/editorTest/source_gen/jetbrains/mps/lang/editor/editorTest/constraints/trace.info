@@ -30,7 +30,9 @@
     <scopeInfo nodeId="4965160547087600900" fileName="NotEditableVaraileReference_Constraints.java" startLine="46" startPosition="93" endLine="49" endPosition="17" />
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="32" startPosition="111" endLine="37" endPosition="0" />
     <scopeInfo nodeId="4965160547087600897" fileName="NotEditableVaraileReference_Constraints.java" startLine="45" startPosition="161" endLine="50" endPosition="15" />
-    <scopeInfo nodeId="4965160547087600898" fileName="NotEditableVaraileReference_Constraints.java" startLine="45" startPosition="161" endLine="50" endPosition="15" />
+    <scopeInfo nodeId="4965160547087600898" fileName="NotEditableVaraileReference_Constraints.java" startLine="45" startPosition="161" endLine="50" endPosition="15">
+      <varInfo nodeId="4965160547087600898" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="4965160547087600896" fileName="NotEditableVaraileReference_Constraints.java" startLine="44" startPosition="56" endLine="51" endPosition="13">
       <varInfo nodeId="4965160547087600916" varName="block" />
@@ -38,10 +40,15 @@
     <scopeInfo nodeId="4965160547087600889" fileName="NotEditableVaraileReference_Constraints.java" startLine="43" startPosition="142" endLine="52" endPosition="26">
       <varInfo nodeId="4965160547087600891" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="41" startPosition="49" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="41" startPosition="49" endLine="54" endPosition="0">
+      <varInfo nodeId="4965160547087600886" varName="_context" />
+      <varInfo nodeId="4965160547087600886" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="40" startPosition="56" endLine="59" endPosition="10" />
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="37" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="30" startPosition="83" endLine="62" endPosition="22" />
+    <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="30" startPosition="83" endLine="62" endPosition="22">
+      <varInfo nodeId="4965160547087600886" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="28" startPosition="0" endLine="64" endPosition="0" />
     <unitInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="22" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints" />
     <unitInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="32" startPosition="46" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$1" />
@@ -76,7 +83,9 @@
     <scopeInfo nodeId="2340678293597469831" fileName="VariableDeclarationReference_Constraints.java" startLine="46" startPosition="93" endLine="49" endPosition="17" />
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="32" startPosition="79" endLine="37" endPosition="0" />
     <scopeInfo nodeId="2340678293597344738" fileName="VariableDeclarationReference_Constraints.java" startLine="45" startPosition="161" endLine="50" endPosition="15" />
-    <scopeInfo nodeId="2340678293597469828" fileName="VariableDeclarationReference_Constraints.java" startLine="45" startPosition="161" endLine="50" endPosition="15" />
+    <scopeInfo nodeId="2340678293597469828" fileName="VariableDeclarationReference_Constraints.java" startLine="45" startPosition="161" endLine="50" endPosition="15">
+      <varInfo nodeId="2340678293597469828" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="2340678293597344737" fileName="VariableDeclarationReference_Constraints.java" startLine="44" startPosition="56" endLine="51" endPosition="13">
       <varInfo nodeId="2340678293597344760" varName="block" />
@@ -84,10 +93,15 @@
     <scopeInfo nodeId="2340678293597344727" fileName="VariableDeclarationReference_Constraints.java" startLine="43" startPosition="142" endLine="52" endPosition="26">
       <varInfo nodeId="2340678293597344732" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="41" startPosition="49" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="41" startPosition="49" endLine="54" endPosition="0">
+      <varInfo nodeId="7428162988805013921" varName="_context" />
+      <varInfo nodeId="7428162988805013921" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="40" startPosition="56" endLine="59" endPosition="10" />
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="37" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="30" startPosition="83" endLine="62" endPosition="22" />
+    <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="30" startPosition="83" endLine="62" endPosition="22">
+      <varInfo nodeId="7428162988805013921" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="28" startPosition="0" endLine="64" endPosition="0" />
     <unitInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="22" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints" />
     <unitInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="32" startPosition="30" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$1" />

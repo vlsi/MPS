@@ -68,18 +68,36 @@
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="32" startPosition="81" endLine="37" endPosition="0" />
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="41" startPosition="49" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="46" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="46" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="8758390115029091794" varName="_context" />
+      <varInfo nodeId="8758390115029091794" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="51" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="8758390115029091794" varName="_context" />
+      <varInfo nodeId="8758390115029091794" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="64" startPosition="93" endLine="69" endPosition="0" />
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="73" startPosition="49" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="78" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="8758390115029091794" varName="_context" />
+      <varInfo nodeId="8758390115029091794" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="83" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="8758390115029091794" varName="_context" />
+      <varInfo nodeId="8758390115029091794" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="88" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="96" startPosition="91" endLine="101" endPosition="0" />
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="105" startPosition="49" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="110" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="115" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="110" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="8758390115029091794" varName="_context" />
+      <varInfo nodeId="8758390115029091794" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="115" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="8758390115029091794" varName="_context" />
+      <varInfo nodeId="8758390115029091794" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="120" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="40" startPosition="56" endLine="61" endPosition="10" />
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="72" startPosition="56" endLine="93" endPosition="10" />
@@ -87,7 +105,9 @@
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="37" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="69" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="101" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="30" startPosition="83" endLine="128" endPosition="22" />
+    <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="30" startPosition="83" endLine="128" endPosition="22">
+      <varInfo nodeId="8758390115029091794" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="28" startPosition="0" endLine="130" endPosition="0" />
     <unitInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="20" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints" />
     <unitInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="32" startPosition="31" endLine="63" endPosition="5" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$1" />

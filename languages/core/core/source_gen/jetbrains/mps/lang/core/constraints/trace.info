@@ -32,14 +32,27 @@
     <scopeInfo nodeId="1213104856827" fileName="IResolveInfo_Constraints.java" startLine="29" startPosition="44" endLine="30" endPosition="30" />
     <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="34" startPosition="37" endLine="35" endPosition="20" />
     <scopeInfo nodeId="1213104856834" fileName="IResolveInfo_Constraints.java" startLine="40" startPosition="44" endLine="41" endPosition="46" />
-    <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="28" startPosition="56" endLine="30" endPosition="30" />
-    <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="39" startPosition="76" endLine="41" endPosition="46" />
+    <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="28" startPosition="56" endLine="30" endPosition="30">
+      <varInfo nodeId="1213104856824" varName="propertyName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="39" startPosition="76" endLine="41" endPosition="46">
+      <varInfo nodeId="1213104856824" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="13" startPosition="73" endLine="16" endPosition="3" />
     <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="21" startPosition="94" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="37" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="19" startPosition="82" endLine="44" endPosition="22" />
+    <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1213104856824" varName="node" />
+      <varInfo nodeId="1213104856824" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1213104856824" varName="node" />
+      <varInfo nodeId="1213104856824" varName="propertyValue" />
+      <varInfo nodeId="1213104856824" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="19" startPosition="82" endLine="44" endPosition="22">
+      <varInfo nodeId="1213104856824" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="17" startPosition="0" endLine="46" endPosition="0" />
     <unitInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints" />
     <unitInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="21" startPosition="38" endLine="43" endPosition="5" unitName="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints$1" />

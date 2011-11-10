@@ -29,19 +29,39 @@
     <scopeInfo nodeId="4666195181811081450" fileName="IMainClass_Behavior.java" startLine="31" startPosition="84" endLine="32" endPosition="16" />
     <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="45" startPosition="110" endLine="46" endPosition="257" />
     <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="49" startPosition="114" endLine="50" endPosition="262" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="35" startPosition="77" endLine="37" endPosition="212" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="40" startPosition="81" endLine="42" endPosition="217" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="35" startPosition="77" endLine="37" endPosition="212">
+      <varInfo nodeId="4666195181811081430" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="40" startPosition="81" endLine="42" endPosition="217">
+      <varInfo nodeId="4666195181811081430" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="4666195181811081430" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="4666195181811081439" fileName="IMainClass_Behavior.java" startLine="23" startPosition="57" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="4666195181811081430" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="4666195181811081430" varName="callerConceptFqName" />
+      <varInfo nodeId="4666195181811081430" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="4666195181811081430" varName="callerConceptFqName" />
+      <varInfo nodeId="4666195181811081430" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="4666195181811081430" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="39" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4666195181811081430" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="4666195181811081434" fileName="IMainClass_Behavior.java" startLine="21" startPosition="86" endLine="28" endPosition="26">
       <varInfo nodeId="4666195181811081436" varName="unitName" />
     </scopeInfo>
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="20" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="20" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4666195181811081430" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.IMainClass_Behavior" />
     <unitInfo nodeId="4666195181811081439" fileName="IMainClass_Behavior.java" startLine="23" startPosition="45" endLine="27" endPosition="5" unitName="jetbrains.mps.execution.util.behavior.IMainClass_Behavior$1" />
   </root>

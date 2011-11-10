@@ -11,7 +11,9 @@
   <root nodeId="4900430935921348065">
     <nodeInfo nodeId="4900430935921348065" fileName="Root_Behavior.java" startLine="7" startPosition="28" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="4900430935921348067" fileName="Root_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="4900430935921348065" fileName="Root_Behavior.java" startLine="7" startPosition="28" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="4900430935921348065" fileName="Root_Behavior.java" startLine="7" startPosition="28" endLine="10" endPosition="0">
+      <varInfo nodeId="4900430935921348065" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="4900430935921348065" fileName="Root_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.behavior.Root_Behavior" />
   </root>
 </debugInfo>

@@ -17,11 +17,18 @@
     <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="15" startPosition="34" endLine="16" endPosition="69" />
     <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" />
     <scopeInfo nodeId="1213104846871" fileName="BTestCase_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="77" />
-    <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="29" startPosition="56" endLine="31" endPosition="77" />
+    <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="29" startPosition="56" endLine="31" endPosition="77">
+      <varInfo nodeId="1213104846868" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="14" startPosition="70" endLine="17" endPosition="3" />
     <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="22" startPosition="80" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1213104846868" varName="node" />
+      <varInfo nodeId="1213104846868" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
+      <varInfo nodeId="1213104846868" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_Constraints" />
     <unitInfo nodeId="1213104846868" fileName="BTestCase_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_Constraints$1" />
@@ -42,11 +49,18 @@
     <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="15" startPosition="35" endLine="16" endPosition="70" />
     <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" />
     <scopeInfo nodeId="1213104847599" fileName="TestMethod_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="75" />
-    <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="29" startPosition="56" endLine="31" endPosition="75" />
+    <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="29" startPosition="56" endLine="31" endPosition="75">
+      <varInfo nodeId="1213104847596" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="14" startPosition="71" endLine="17" endPosition="3" />
     <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="22" startPosition="80" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1213104847596" varName="node" />
+      <varInfo nodeId="1213104847596" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
+      <varInfo nodeId="1213104847596" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.constraints.TestMethod_Constraints" />
     <unitInfo nodeId="1213104847596" fileName="TestMethod_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.constraints.TestMethod_Constraints$1" />

@@ -53,17 +53,28 @@
     <scopeInfo nodeId="1594211126127708808" fileName="StartProcessHandlerStatement_Behavior.java" startLine="24" startPosition="76" endLine="25" endPosition="115" />
     <scopeInfo nodeId="1594211126127708854" fileName="StartProcessHandlerStatement_Behavior.java" startLine="29" startPosition="70" endLine="30" endPosition="18" />
     <scopeInfo nodeId="5252685582974485579" fileName="StartProcessHandlerStatement_Behavior.java" startLine="34" startPosition="41" endLine="35" endPosition="130" />
-    <scopeInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="12" startPosition="52" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5252685582974485578" fileName="StartProcessHandlerStatement_Behavior.java" startLine="33" startPosition="267" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="12" startPosition="52" endLine="15" endPosition="0">
+      <varInfo nodeId="1594211126127708540" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1594211126127708540" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="1594211126127708540" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1594211126127708540" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5252685582974485578" fileName="StartProcessHandlerStatement_Behavior.java" startLine="33" startPosition="267" endLine="37" endPosition="0">
+      <varInfo nodeId="5252685582974485578" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="7236226861153318811" fileName="StartProcessHandlerStatement_Behavior.java" startLine="32" startPosition="155" endLine="38" endPosition="61">
       <varInfo nodeId="5252685582974485568" varName="first" />
     </scopeInfo>
     <scopeInfo nodeId="1594211126127708852" fileName="StartProcessHandlerStatement_Behavior.java" startLine="28" startPosition="102" endLine="40" endPosition="16" />
     <scopeInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="27" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1594211126127708847" varName="name" />
+      <varInfo nodeId="1594211126127708540" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_Behavior" />
     <unitInfo nodeId="5252685582974485578" fileName="StartProcessHandlerStatement_Behavior.java" startLine="33" startPosition="244" endLine="37" endPosition="7" unitName="jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_Behavior$1" />
@@ -74,8 +85,12 @@
     <nodeInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAbstractCreator_1213877337340#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1594211126127855070" fileName="ConsoleType_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="1594211126127855073" fileName="ConsoleType_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="117" />
-    <scopeInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="8" startPosition="35" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="8" startPosition="35" endLine="11" endPosition="0">
+      <varInfo nodeId="1594211126127855068" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1594211126127855068" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ConsoleType_Behavior" />
   </root>
   <root nodeId="3642991921658055425">
@@ -84,8 +99,12 @@
     <nodeInfo nodeId="3642991921658055425" fileName="Create_ConceptFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="3642991921658055427" fileName="Create_ConceptFunction_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="3642991921658055430" fileName="Create_ConceptFunction_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="190" />
-    <scopeInfo nodeId="3642991921658055425" fileName="Create_ConceptFunction_Behavior.java" startLine="9" startPosition="46" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="3642991921658055425" fileName="Create_ConceptFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3642991921658055425" fileName="Create_ConceptFunction_Behavior.java" startLine="9" startPosition="46" endLine="12" endPosition="0">
+      <varInfo nodeId="3642991921658055425" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3642991921658055425" fileName="Create_ConceptFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="3642991921658055425" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="3642991921658055425" fileName="Create_ConceptFunction_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.Create_ConceptFunction_Behavior" />
   </root>
   <root nodeId="3754890006475666593">
@@ -106,15 +125,28 @@
     <scopeInfo nodeId="3754890006475713442" fileName="RunConfiguration_Behavior.java" startLine="21" startPosition="39" endLine="22" endPosition="81" />
     <scopeInfo nodeId="4042467058397505381" fileName="RunConfiguration_Behavior.java" startLine="28" startPosition="84" endLine="29" endPosition="19" />
     <scopeInfo nodeId="2256484787298832739" fileName="RunConfiguration_Behavior.java" startLine="34" startPosition="89" endLine="35" endPosition="107" />
-    <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="14" startPosition="40" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="3754890006475713441" fileName="RunConfiguration_Behavior.java" startLine="20" startPosition="218" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="14" startPosition="40" endLine="17" endPosition="0">
+      <varInfo nodeId="3754890006475666593" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3754890006475713441" fileName="RunConfiguration_Behavior.java" startLine="20" startPosition="218" endLine="24" endPosition="0">
+      <varInfo nodeId="3754890006475713441" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="4042467058397504914" fileName="RunConfiguration_Behavior.java" startLine="27" startPosition="76" endLine="31" endPosition="155" />
-    <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="3754890006475666593" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="38" startPosition="63" endLine="42" endPosition="7" />
     <scopeInfo nodeId="3754890006475713430" fileName="RunConfiguration_Behavior.java" startLine="19" startPosition="82" endLine="24" endPosition="7" />
-    <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="26" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="3754890006475666593" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="3754890006475666593" varName="a" />
+      <varInfo nodeId="3754890006475666593" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="3754890006475666593" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="3754890006475666593" fileName="RunConfiguration_Behavior.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfiguration_Behavior" />
     <unitInfo nodeId="3754890006475713441" fileName="RunConfiguration_Behavior.java" startLine="20" startPosition="195" endLine="24" endPosition="5" unitName="jetbrains.mps.execution.configurations.behavior.RunConfiguration_Behavior$1" />
   </root>
@@ -124,8 +156,12 @@
     <nodeInfo nodeId="3754890006475720277" fileName="RunConfigurationKind_Behavior.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSuffix_946964771156905483#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="3754890006475720279" fileName="RunConfigurationKind_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="2309921853483609843" fileName="RunConfigurationKind_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="18" />
-    <scopeInfo nodeId="3754890006475720277" fileName="RunConfigurationKind_Behavior.java" startLine="8" startPosition="44" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="3754890006475720277" fileName="RunConfigurationKind_Behavior.java" startLine="11" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3754890006475720277" fileName="RunConfigurationKind_Behavior.java" startLine="8" startPosition="44" endLine="11" endPosition="0">
+      <varInfo nodeId="3754890006475720277" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3754890006475720277" fileName="RunConfigurationKind_Behavior.java" startLine="11" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="3754890006475720277" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="3754890006475720277" fileName="RunConfigurationKind_Behavior.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationKind_Behavior" />
   </root>
   <root nodeId="4366236229294143328">
@@ -147,13 +183,23 @@
     <scopeInfo nodeId="4366236229294148970" fileName="RunConfigurationProducer_Behavior.java" startLine="19" startPosition="77" endLine="20" endPosition="22" />
     <scopeInfo nodeId="4366236229294149000" fileName="RunConfigurationProducer_Behavior.java" startLine="24" startPosition="79" endLine="25" endPosition="23" />
     <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="31" startPosition="36" endLine="32" endPosition="96" />
-    <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="10" startPosition="48" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="10" startPosition="48" endLine="13" endPosition="0">
+      <varInfo nodeId="4366236229294143328" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="4366236229294143328" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="4366236229294148988" fileName="RunConfigurationProducer_Behavior.java" startLine="23" startPosition="80" endLine="27" endPosition="150" />
     <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="30" startPosition="68" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="22" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="4366236229294143328" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="22" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="4366236229294143328" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4366236229294143328" varName="checkedDotOperand" />
+    </scopeInfo>
     <unitInfo nodeId="4366236229294143328" fileName="RunConfigurationProducer_Behavior.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationProducer_Behavior" />
   </root>
   <root nodeId="529406319400457832">
@@ -164,9 +210,13 @@
     <nodeInfo nodeId="529406319400457832" fileName="RunConfigurationProducerPart_Behavior.java" startLine="16" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSuffix_946964771156905483#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="529406319400457834" fileName="RunConfigurationProducerPart_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="2572811016744645305" fileName="RunConfigurationProducerPart_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="529406319400457832" fileName="RunConfigurationProducerPart_Behavior.java" startLine="13" startPosition="52" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="529406319400457832" fileName="RunConfigurationProducerPart_Behavior.java" startLine="13" startPosition="52" endLine="16" endPosition="0">
+      <varInfo nodeId="529406319400457832" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="529406319400457838" fileName="RunConfigurationProducerPart_Behavior.java" startLine="18" startPosition="77" endLine="22" endPosition="309" />
-    <scopeInfo nodeId="529406319400457832" fileName="RunConfigurationProducerPart_Behavior.java" startLine="16" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="529406319400457832" fileName="RunConfigurationProducerPart_Behavior.java" startLine="16" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="529406319400457832" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="529406319400457832" fileName="RunConfigurationProducerPart_Behavior.java" startLine="13" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationProducerPart_Behavior" />
   </root>
   <root nodeId="6538811202682334474">
@@ -222,25 +272,59 @@
     <scopeInfo nodeId="1810236057992684681" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="42" startPosition="83" endLine="43" endPosition="97" />
     <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="56" startPosition="128" endLine="57" endPosition="298" />
     <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="60" startPosition="117" endLine="61" endPosition="287" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="46" startPosition="95" endLine="48" endPosition="253" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="51" startPosition="84" endLine="53" endPosition="242" />
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="46" startPosition="95" endLine="48" endPosition="253">
+      <varInfo nodeId="6538811202682334474" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="51" startPosition="84" endLine="53" endPosition="242">
+      <varInfo nodeId="6538811202682334474" varName="descriptor" />
+    </scopeInfo>
     <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="64" startPosition="51" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="77" startPosition="9" endLine="80" endPosition="59" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="6538811202682334474" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="77" startPosition="9" endLine="80" endPosition="59">
+      <varInfo nodeId="6538811202682334474" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="6538811202682334474" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="3091009652595815826" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="35" startPosition="81" endLine="39" endPosition="171" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="82" startPosition="9" endLine="86" endPosition="59" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="50" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="6538811202682334474" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="6538811202682334474" varName="callerConceptFqName" />
+      <varInfo nodeId="6538811202682334474" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="6538811202682334474" varName="callerConceptFqName" />
+      <varInfo nodeId="6538811202682334474" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="82" startPosition="9" endLine="86" endPosition="59">
+      <varInfo nodeId="6538811202682334474" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="45" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="6538811202682334474" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="50" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="6538811202682334474" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="76" startPosition="43" endLine="81" endPosition="9" />
     <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="81" startPosition="9" endLine="87" endPosition="9" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="74" startPosition="7" endLine="88" endPosition="31" />
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="6538811202682334474" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="74" startPosition="7" endLine="88" endPosition="31">
+      <varInfo nodeId="6538811202682334474" varName="quotedNode1_4" />
+    </scopeInfo>
     <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="73" startPosition="32" endLine="89" endPosition="7" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="68" startPosition="31" endLine="90" endPosition="20" />
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="68" startPosition="31" endLine="90" endPosition="20">
+      <varInfo nodeId="6538811202682334474" varName="_parameterValues_129834374" />
+      <varInfo nodeId="6538811202682334474" varName="quotedNode_1" />
+      <varInfo nodeId="6538811202682334474" varName="quotedNode_2" />
+      <varInfo nodeId="6538811202682334474" varName="quotedNode_3" />
+      <varInfo nodeId="6538811202682334474" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="67" startPosition="0" endLine="92" endPosition="0" />
     <unitInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="24" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ExecuteConfiguration_Function_Behavior" />
     <unitInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="64" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ExecuteConfiguration_Function_Behavior$QuotationClass_cw5ucd_a0a0d" />
@@ -251,8 +335,12 @@
     <nodeInfo nodeId="6550182048787562685" fileName="BeforeTaskParameter_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isInitializable_1213877517488#(Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="6550182048787562687" fileName="BeforeTaskParameter_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="6550182048787568263" fileName="BeforeTaskParameter_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="16" />
-    <scopeInfo nodeId="6550182048787562685" fileName="BeforeTaskParameter_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0" />
-    <scopeInfo nodeId="6550182048787562685" fileName="BeforeTaskParameter_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="6550182048787562685" fileName="BeforeTaskParameter_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0">
+      <varInfo nodeId="6550182048787562685" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6550182048787562685" fileName="BeforeTaskParameter_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="6550182048787562685" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="6550182048787562685" fileName="BeforeTaskParameter_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTaskParameter_Behavior" />
   </root>
   <root nodeId="7037083547576032051">
@@ -261,8 +349,12 @@
     <nodeInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSuffix_946964771156905483#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="7037083547576032053" fileName="BeforeTask_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="7037083547576036549" fileName="BeforeTask_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="24" />
-    <scopeInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="8" startPosition="34" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="11" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="8" startPosition="34" endLine="11" endPosition="0">
+      <varInfo nodeId="7037083547576032051" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="11" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="7037083547576032051" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTask_Behavior" />
   </root>
   <root nodeId="7806358006983709805">
@@ -300,18 +392,37 @@
     <scopeInfo nodeId="6226796386650421100" fileName="RunConfigurationExecutor_Behavior.java" startLine="29" startPosition="75" endLine="30" endPosition="172" />
     <scopeInfo nodeId="6226796386650434704" fileName="RunConfigurationExecutor_Behavior.java" startLine="39" startPosition="103" endLine="40" endPosition="96" />
     <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="48" startPosition="53" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="17" startPosition="48" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="17" startPosition="48" endLine="20" endPosition="0">
+      <varInfo nodeId="7806358006983709805" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="6226796386650434685" fileName="RunConfigurationExecutor_Behavior.java" startLine="38" startPosition="43" endLine="41" endPosition="9" />
-    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="56" startPosition="7" endLine="59" endPosition="31" />
-    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="56" startPosition="7" endLine="59" endPosition="31">
+      <varInfo nodeId="7806358006983709805" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7806358006983709805" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="7806358006983709805" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="7806358006983709805" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="55" startPosition="32" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="6226796386650434682" fileName="RunConfigurationExecutor_Behavior.java" startLine="35" startPosition="5" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="52" startPosition="31" endLine="61" endPosition="20" />
+    <scopeInfo nodeId="6226796386650434682" fileName="RunConfigurationExecutor_Behavior.java" startLine="35" startPosition="5" endLine="43" endPosition="7">
+      <varInfo nodeId="6226796386650434682" varName="coercedNode_wnz9gp_a0d" />
+      <varInfo nodeId="6226796386650434682" varName="pattern_wnz9gp_a0d" />
+    </scopeInfo>
+    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="52" startPosition="31" endLine="61" endPosition="20">
+      <varInfo nodeId="7806358006983709805" varName="_parameterValues_129834374" />
+      <varInfo nodeId="7806358006983709805" varName="quotedNode_1" />
+      <varInfo nodeId="7806358006983709805" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="6226796386650434675" fileName="RunConfigurationExecutor_Behavior.java" startLine="34" startPosition="75" endLine="45" endPosition="16" />
     <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="51" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="32" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="32" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="7806358006983709805" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior" />
     <unitInfo nodeId="7806358006983709805" fileName="RunConfigurationExecutor_Behavior.java" startLine="48" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior$QuotationClass_wnz9gp_a1a0a0c" />
   </root>
@@ -321,8 +432,12 @@
     <nodeInfo nodeId="7806358006983757881" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getExecutor_7806358006983757897#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="7806358006983757883" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="7806358006983757900" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="12" startPosition="76" endLine="13" endPosition="162" />
-    <scopeInfo nodeId="7806358006983757881" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="8" startPosition="58" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="7806358006983757881" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="7806358006983757881" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="8" startPosition="58" endLine="11" endPosition="0">
+      <varInfo nodeId="7806358006983757881" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7806358006983757881" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="7806358006983757881" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="7806358006983757881" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_Behavior" />
   </root>
   <root nodeId="8265043642382454448">
@@ -339,10 +454,18 @@
     <scopeInfo nodeId="2309921853483580889" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="22" startPosition="77" endLine="23" endPosition="154" />
     <scopeInfo nodeId="7594697556933223296" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="26" startPosition="89" endLine="27" endPosition="194" />
     <scopeInfo nodeId="8265043642382454450" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="12" startPosition="43" endLine="14" endPosition="81" />
-    <scopeInfo nodeId="8265043642382454448" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8265043642382454448" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="8265043642382454448" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="11" startPosition="56" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="8265043642382454448" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="8265043642382454448" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="8265043642382454448" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8265043642382454448" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="8265043642382454448" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8265043642382454448" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="11" startPosition="56" endLine="16" endPosition="0">
+      <varInfo nodeId="8265043642382454448" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8265043642382454448" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="8265043642382454448" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8265043642382454448" fileName="AbstractRunConfigurationExecutor_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.AbstractRunConfigurationExecutor_Behavior" />
   </root>
 </debugInfo>

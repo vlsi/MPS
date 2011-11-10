@@ -23,11 +23,16 @@
     <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="44" startPosition="61" endLine="45" endPosition="58" />
     <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
     <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="28" startPosition="89" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="37" startPosition="49" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="37" startPosition="49" endLine="42" endPosition="0">
+      <varInfo nodeId="1569627462441400262" varName="_context" />
+      <varInfo nodeId="1569627462441400262" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="36" startPosition="56" endLine="47" endPosition="10" />
     <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="33" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="26" startPosition="83" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="26" startPosition="83" endLine="50" endPosition="22">
+      <varInfo nodeId="1569627462441400262" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="24" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints" />
     <unitInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="28" startPosition="35" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints$1" />
@@ -62,7 +67,9 @@
     <scopeInfo nodeId="5759597392385038499" fileName="BinaryOperationReference_Constraints.java" startLine="57" startPosition="49" endLine="58" endPosition="189" />
     <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="66" startPosition="61" endLine="67" endPosition="58" />
     <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="3" />
-    <scopeInfo nodeId="5759597392385038498" fileName="BinaryOperationReference_Constraints.java" startLine="56" startPosition="211" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="5759597392385038498" fileName="BinaryOperationReference_Constraints.java" startLine="56" startPosition="211" endLine="60" endPosition="0">
+      <varInfo nodeId="5759597392385038498" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="39" startPosition="103" endLine="44" endPosition="0" />
     <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="5759597392385038466" fileName="BinaryOperationReference_Constraints.java" startLine="53" startPosition="89" endLine="60" endPosition="18">
@@ -75,10 +82,15 @@
     <scopeInfo nodeId="2838654975957288977" fileName="BinaryOperationReference_Constraints.java" startLine="50" startPosition="142" endLine="62" endPosition="26">
       <varInfo nodeId="2838654975957288979" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="48" startPosition="49" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="48" startPosition="49" endLine="64" endPosition="0">
+      <varInfo nodeId="2838654975957288939" varName="_context" />
+      <varInfo nodeId="2838654975957288939" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="47" startPosition="56" endLine="69" endPosition="10" />
     <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="44" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="37" startPosition="83" endLine="72" endPosition="22" />
+    <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="37" startPosition="83" endLine="72" endPosition="22">
+      <varInfo nodeId="2838654975957288939" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="35" startPosition="0" endLine="74" endPosition="0" />
     <unitInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="29" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints" />
     <unitInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="39" startPosition="42" endLine="71" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints$1" />
@@ -107,11 +119,16 @@
     <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="44" startPosition="61" endLine="45" endPosition="58" />
     <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
     <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="28" startPosition="95" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="37" startPosition="49" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="37" startPosition="49" endLine="42" endPosition="0">
+      <varInfo nodeId="2838654975957402179" varName="_context" />
+      <varInfo nodeId="2838654975957402179" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="36" startPosition="56" endLine="47" endPosition="10" />
     <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="33" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="26" startPosition="83" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="26" startPosition="83" endLine="50" endPosition="22">
+      <varInfo nodeId="2838654975957402179" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="24" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperator_Constraints" />
     <unitInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="28" startPosition="38" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperator_Constraints$1" />

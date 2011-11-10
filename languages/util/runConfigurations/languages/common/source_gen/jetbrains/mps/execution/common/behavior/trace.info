@@ -104,39 +104,94 @@
     <scopeInfo nodeId="946964771156905491" fileName="IGeneratedToClass_Behavior.java" startLine="30" startPosition="89" endLine="32" endPosition="100">
       <varInfo nodeId="946964771156905493" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="58" startPosition="74" endLine="60" endPosition="217" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="63" startPosition="86" endLine="65" endPosition="229" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="68" startPosition="76" endLine="70" endPosition="219" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="73" startPosition="77" endLine="75" endPosition="221" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="58" startPosition="74" endLine="60" endPosition="217">
+      <varInfo nodeId="946964771156905389" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="63" startPosition="86" endLine="65" endPosition="229">
+      <varInfo nodeId="946964771156905389" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="68" startPosition="76" endLine="70" endPosition="219">
+      <varInfo nodeId="946964771156905389" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="73" startPosition="77" endLine="75" endPosition="221">
+      <varInfo nodeId="946964771156905389" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="946964771156905407" fileName="IGeneratedToClass_Behavior.java" startLine="96" startPosition="37" endLine="99" endPosition="90">
       <varInfo nodeId="946964771156905409" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0r.java" startLine="11" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0r.java" startLine="11" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0r.java" startLine="11" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0r.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0r.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0r.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0r.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="3754131050835940505" varName="closureContext" />
+      <varInfo nodeId="3754131050835940505" varName="enclosingClass" />
+    </scopeInfo>
+    <scopeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0r.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="3754131050835940526" varName="closureContext" />
+      <varInfo nodeId="3754131050835940526" varName="enclosingClass" />
+    </scopeInfo>
+    <scopeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0r.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="3754131050835956028" varName="closureContext" />
+      <varInfo nodeId="3754131050835956028" varName="enclosingClass" />
+    </scopeInfo>
+    <scopeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0r.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="3754131050835940505" varName="matcher" />
+    </scopeInfo>
+    <scopeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0r.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="3754131050835940526" varName="matcher" />
+    </scopeInfo>
+    <scopeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0r.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="3754131050835956028" varName="matcher" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="2572811016744662271" varName="name" />
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156905521" fileName="IGeneratedToClass_Behavior.java" startLine="43" startPosition="99" endLine="47" endPosition="176" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="57" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="62" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="67" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="72" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="callerConceptFqName" />
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="callerConceptFqName" />
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="callerConceptFqName" />
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="89" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="callerConceptFqName" />
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="57" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="62" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="67" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="72" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="946964771156905439" fileName="IGeneratedToClass_Behavior.java" startLine="104" startPosition="91" endLine="109" endPosition="7" />
     <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="946964771156905519" varName="name" />
+      <varInfo nodeId="946964771156905389" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156905397" fileName="IGeneratedToClass_Behavior.java" startLine="94" startPosition="95" endLine="101" endPosition="18">
       <varInfo nodeId="946964771156905399" varName="result" />
