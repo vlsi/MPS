@@ -210,6 +210,7 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
     <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />

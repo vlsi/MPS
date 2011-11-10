@@ -176,7 +176,9 @@
     <classNode dependClassName="jetbrains.mps.generator.DefaultGenerationParametersProvider" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.generator.IGenerationTracer" />
+    <classNode dependClassName="jetbrains.mps.generator.IModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.generator.NullGenerationTracer" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />

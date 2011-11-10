@@ -18,6 +18,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.resources.IResource;
@@ -52,7 +54,6 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IProgress;
@@ -81,9 +82,11 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     INSTANCE = this;
     IMakeService.INSTANCE.set(this);
     pluginReloader.setMakeService(this);
+    GenerationSettingsProvider.getInstance().setGenerationSettings(GenerationSettings.getInstance());
   }
 
   public void disposeComponent() {
+    GenerationSettingsProvider.getInstance().setGenerationSettings(null);
     pluginReloader.setMakeService(null);
     IMakeService.INSTANCE.set(null);
     INSTANCE = null;

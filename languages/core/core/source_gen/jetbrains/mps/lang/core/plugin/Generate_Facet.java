@@ -24,7 +24,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.progress.ProgressMonitor;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.facet.plugin.MakeGenerationStrategy;
 import jetbrains.mps.ide.generator.GeneratorCacheComponent;
@@ -32,6 +33,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
 import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.resources.MResource;
@@ -319,7 +321,7 @@ public class Generate_Facet extends IFacet.Stub {
           Iterable<IResource> _output_fi61u2_a0c = null;
           switch (0) {
             case 0:
-              GenerationSettings settings = GenerationSettings.getInstance();
+              IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
               pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions((pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() != null ?
                 pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() :
                 GenerationOptions.fromSettings(settings)
