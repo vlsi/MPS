@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="ASM_">
+  <library name="Idea-extensions">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/asm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/extensions.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
