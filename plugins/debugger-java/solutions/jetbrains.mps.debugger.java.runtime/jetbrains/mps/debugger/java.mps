@@ -5,11 +5,11 @@
   <import index="ilei" modelUID="r:0bb5e892-3294-41a6-b5db-b1bdf3480f53(jetbrains.mps.debugger.java.runtime.ui.breakpoints)" version="-1" />
   <import index="zei6" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.util.xmlb(MPS.Workbench/com.intellij.util.xmlb@java_stub)" version="-1" />
   <import index="i264" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.api.breakpoints(MPS.Workbench/jetbrains.mps.debug.api.breakpoints@java_stub)" version="-1" />
-  <import index="zju4" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.integration.ui.icons(MPS.Workbench/jetbrains.mps.debug.integration.ui.icons@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="zwkq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(MPS.Core/org.jdom@java_stub)" version="-1" />
   <import index="mzqo" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.dialogs(MPS.Workbench/jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="1bi5" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.components(MPS.Workbench/com.intellij.openapi.components@java_stub)" version="-1" />
+  <import index="vjwt" modelUID="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debug.integration.ui.icons)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="buss" modelUID="f:java_stub#fcffe3cf-3ebc-4d3d-989b-2f30533bc904#jetbrains.mps.debugger.api.ui.icons(jetbrains.mps.debugger.api.ui.icons@java_stub)" version="-1" implicit="yes" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" implicit="yes" />
@@ -2657,12 +2657,12 @@
                     </node>
                   </node>
                   <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2891782949125172624">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zju4.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zju4.~Icons%dEXCEPTION_BREAKPOINT" resolveInfo="EXCEPTION_BREAKPOINT" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="vjwt.3432969378036014082" resolveInfo="Icons" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vjwt.1247371618987935913" resolveInfo="EXCEPTION_BREAKPOINT" />
                   </node>
                   <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2891782949125172625">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zju4.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zju4.~Icons%dDISABLED_EXCEPTION_BREAKPOINT" resolveInfo="DISABLED_EXCEPTION_BREAKPOINT" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="vjwt.3432969378036014082" resolveInfo="Icons" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vjwt.1247371618987935904" resolveInfo="DISABLED_EXCEPTION_BREAKPOINT" />
                   </node>
                 </node>
               </node>
@@ -2739,12 +2739,12 @@
                         </node>
                       </node>
                       <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2891782949125172655">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zju4.~Icons" resolveInfo="Icons" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zju4.~Icons%dMETHOD_BREAKPOINT" resolveInfo="METHOD_BREAKPOINT" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="vjwt.3432969378036014082" resolveInfo="Icons" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vjwt.1247371618987935895" resolveInfo="METHOD_BREAKPOINT" />
                       </node>
                       <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2891782949125172656">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zju4.~Icons" resolveInfo="Icons" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zju4.~Icons%dDISABLED_METHOD_BREAKPOINT" resolveInfo="DISABLED_METHOD_BREAKPOINT" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="vjwt.3432969378036014082" resolveInfo="Icons" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vjwt.1247371618987935886" resolveInfo="DISABLED_METHOD_BREAKPOINT" />
                       </node>
                     </node>
                   </node>
@@ -2783,12 +2783,12 @@
                         </node>
                       </node>
                       <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2891782949125172671">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zju4.~Icons" resolveInfo="Icons" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zju4.~Icons%dFIELD_BREAKPOINT" resolveInfo="FIELD_BREAKPOINT" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="vjwt.3432969378036014082" resolveInfo="Icons" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vjwt.1247371618987935877" resolveInfo="FIELD_BREAKPOINT" />
                       </node>
                       <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2891782949125172672">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zju4.~Icons" resolveInfo="Icons" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zju4.~Icons%dDISABLED_FIELD_BREAKPOINT" resolveInfo="DISABLED_FIELD_BREAKPOINT" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="vjwt.3432969378036014082" resolveInfo="Icons" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vjwt.1247371618987935868" resolveInfo="DISABLED_FIELD_BREAKPOINT" />
                       </node>
                     </node>
                   </node>

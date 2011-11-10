@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.debug.customViewers" uuid="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.debugger.java.customViewers" uuid="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.debug.customViewers" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.debugger.java.customViewers" />
   </models>
   <accessoryModels />
   <generators>
-    <generator name="main" generatorUID="jetbrains.mps.debug.customViewers#4089989733346806812" uuid="2f4c5ebf-446e-468d-9e74-a64cbeb906c0">
+    <generator name="main" generatorUID="jetbrains.mps.debugger.java.customViewers#4089989733346806812" uuid="2f4c5ebf-446e-468d-9e74-a64cbeb906c0">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.debug.customViewers.generator.template" />
+        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.debugger.java.customViewers.generator.template" />
       </models>
       <external-templates>
         <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
@@ -32,9 +32,9 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <generator generatorUID="2f4c5ebf-446e-468d-9e74-a64cbeb906c0(jetbrains.mps.debug.customViewers#4089989733346806812)" />
+            <generator generatorUID="2f4c5ebf-446e-468d-9e74-a64cbeb906c0(jetbrains.mps.debugger.java.customViewers#4089989733346806812)" />
             <external-mapping>
-              <mapping-node modelUID="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debug.customViewers.generator.template.main@generator)" nodeID="4089989733346806813" />
+              <mapping-node modelUID="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main@generator)" nodeID="4089989733346806813" />
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
@@ -46,9 +46,9 @@
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <generator generatorUID="2f4c5ebf-446e-468d-9e74-a64cbeb906c0(jetbrains.mps.debug.customViewers#4089989733346806812)" />
+            <generator generatorUID="2f4c5ebf-446e-468d-9e74-a64cbeb906c0(jetbrains.mps.debugger.java.customViewers#4089989733346806812)" />
             <external-mapping>
-              <mapping-node modelUID="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debug.customViewers.generator.template.main@generator)" nodeID="7570572250661235214" />
+              <mapping-node modelUID="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main@generator)" nodeID="7570572250661235214" />
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
@@ -60,9 +60,9 @@
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <generator generatorUID="2f4c5ebf-446e-468d-9e74-a64cbeb906c0(jetbrains.mps.debug.customViewers#4089989733346806812)" />
+            <generator generatorUID="2f4c5ebf-446e-468d-9e74-a64cbeb906c0(jetbrains.mps.debugger.java.customViewers#4089989733346806812)" />
             <external-mapping>
-              <mapping-node modelUID="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debug.customViewers.generator.template.main@generator)" nodeID="4089989733346806813" />
+              <mapping-node modelUID="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main@generator)" nodeID="4089989733346806813" />
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
@@ -74,9 +74,9 @@
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <generator generatorUID="2f4c5ebf-446e-468d-9e74-a64cbeb906c0(jetbrains.mps.debug.customViewers#4089989733346806812)" />
+            <generator generatorUID="2f4c5ebf-446e-468d-9e74-a64cbeb906c0(jetbrains.mps.debugger.java.customViewers#4089989733346806812)" />
             <external-mapping>
-              <mapping-node modelUID="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debug.customViewers.generator.template.main@generator)" nodeID="7570572250661235214" />
+              <mapping-node modelUID="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main@generator)" nodeID="7570572250661235214" />
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>

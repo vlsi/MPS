@@ -40,8 +40,8 @@
   <property name="jetbrains.mps.build.packaging.classes" value="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
   <property name="jetbrains.mps.build.property.classes" value="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
   <property name="jetbrains.mps.buildlanguage.classes" value="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
-  <property name="jetbrains.mps.debug.apiLang.classes" value="${base_dir}/core/debug-api/languages/api/classes_gen" />
-  <property name="jetbrains.mps.debug.customViewers.classes" value="${base_dir}/core/debug/languages/customViewers/classes_gen" />
+  <property name="jetbrains.mps.debugger.api.lang.classes" value="${base_dir}/core/debug-api/languages/api/classes_gen" />
+  <property name="jetbrains.mps.debugger.java.customViewers.classes" value="${base_dir}/core/debug/languages/customViewers/classes_gen" />
   <property name="jetbrains.mps.debugger.java.evaluation.classes" value="${base_dir}/core/debug/languages/evaluation/classes_gen" />
   <property name="jetbrains.mps.debugger.java.privateMembers.classes" value="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
   <property name="jetbrains.mps.execution.commands.classes" value="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
@@ -354,7 +354,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/source_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.debug.customViewers_tjc.src">
+  <path id="cycle.jetbrains.mps.debugger.java.customViewers_tjc.src">
     <path path="${base_dir}/core/debug/languages/customViewers/source_gen" />
     <path path="${base_dir}/core/debug/languages/customViewers/test_gen" />
   </path>
@@ -3544,7 +3544,7 @@
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.debug.customViewers_tjc.classpaths">
+  <path id="cycle.jetbrains.mps.debugger.java.customViewers_tjc.classpaths">
     <path path="${base_dir}/core/debug/languages/customViewers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/actions-runtime/classes" />
@@ -8234,7 +8234,7 @@
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.gentest_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.debug.customViewers_tjc,compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc,compile.cycle.jetbrains.mps.debugger.java.privateMembers_tjc,compile.cycle.jetbrains.mps.execution.lib.startup_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlSchema_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.gentest_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc,compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc,compile.cycle.jetbrains.mps.debugger.java.privateMembers_tjc,compile.cycle.jetbrains.mps.execution.lib.startup_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlSchema_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -8366,7 +8366,7 @@
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.runtime.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguageInternal.classes}" />
-    <mkdir dir="${jetbrains.mps.debug.apiLang.classes}" />
+    <mkdir dir="${jetbrains.mps.debugger.api.lang.classes}" />
     <mkdir dir="${jetbrains.mps.execution.commands.classes}" />
     <mkdir dir="${jetbrains.mps.execution.common.classes}" />
     <mkdir dir="${jetbrains.mps.execution.configurations.classes}" />
@@ -8454,7 +8454,7 @@
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/baseLanguageInternal/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/baseLanguageInternal/test_gen" />
     </copy>
-    <copy todir="${jetbrains.mps.debug.apiLang.classes}">
+    <copy todir="${jetbrains.mps.debugger.api.lang.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/debug-api/languages/api/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/core/debug-api/languages/api/test_gen" />
     </copy>
@@ -8664,7 +8664,7 @@
         <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/test_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.apiLang.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debugger.api.lang.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
         <path path="${base_dir}/core/debug-api/languages/api/source_gen" />
         <path path="${base_dir}/core/debug-api/languages/api/test_gen" />
@@ -9409,21 +9409,21 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.debug.customViewers_tjc" depends="compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc">
-    <property name="classes.dump" value="${jetbrains.mps.debug.customViewers.classes}.tmp" />
+  <target name="compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc" depends="compile.cycle.jetbrains.mps.debugger.java.evaluation_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.debugger.java.customViewers.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/core/debug/languages/customViewers/source_gen" />
     <mkdir dir="${base_dir}/core/debug/languages/customViewers/test_gen" />
     <mkdir dir="${classes.dump}" />
-    <mkdir dir="${jetbrains.mps.debug.customViewers.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.debug.customViewers_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
-      <src refid="cycle.jetbrains.mps.debug.customViewers_tjc.src" />
+    <mkdir dir="${jetbrains.mps.debugger.java.customViewers.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.debugger.java.customViewers_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
+      <src refid="cycle.jetbrains.mps.debugger.java.customViewers_tjc.src" />
     </javac>
-    <copy todir="${jetbrains.mps.debug.customViewers.classes}">
+    <copy todir="${jetbrains.mps.debugger.java.customViewers.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/debug/languages/customViewers/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/core/debug/languages/customViewers/test_gen" />
     </copy>
-    <javac classpathref="cycle.jetbrains.mps.debug.customViewers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.customViewers.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+    <javac classpathref="cycle.jetbrains.mps.debugger.java.customViewers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debugger.java.customViewers.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
         <path path="${base_dir}/core/debug/languages/customViewers/source_gen" />
         <path path="${base_dir}/core/debug/languages/customViewers/test_gen" />
@@ -9541,7 +9541,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gwt.client_tjc" depends="compile.cycle.jetbrains.mps.debug.customViewers_tjc">
+  <target name="compile.cycle.jetbrains.mps.gwt.client_tjc" depends="compile.cycle.jetbrains.mps.debugger.java.customViewers_tjc">
     <property name="classes.dump" value="${jetbrains.mps.gwt.client.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/gwtsupport/languages/client/source_gen" />
@@ -10264,7 +10264,7 @@
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.runtime.classes}" />
     <delete dir="${jetbrains.mps.baseLanguageInternal.classes}" />
-    <delete dir="${jetbrains.mps.debug.apiLang.classes}" />
+    <delete dir="${jetbrains.mps.debugger.api.lang.classes}" />
     <delete dir="${jetbrains.mps.execution.commands.classes}" />
     <delete dir="${jetbrains.mps.execution.common.classes}" />
     <delete dir="${jetbrains.mps.execution.configurations.classes}" />
@@ -10323,7 +10323,7 @@
     <delete dir="${jetbrains.mps.buildlanguage.classes}" />
     <delete dir="${jetbrains.mps.build.gentest.classes}" />
     <delete dir="${jetbrains.mps.build.packaging.classes}" />
-    <delete dir="${jetbrains.mps.debug.customViewers.classes}" />
+    <delete dir="${jetbrains.mps.debugger.java.customViewers.classes}" />
     <delete dir="${jetbrains.mps.debugger.java.evaluation.classes}" />
     <delete dir="${jetbrains.mps.debugger.java.privateMembers.classes}" />
     <delete dir="${jetbrains.mps.execution.lib.startup.classes}" />
