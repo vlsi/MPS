@@ -256,7 +256,6 @@
   <root id="8321799582437916610">
     <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="8321799582437916612">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8321799582437927607">
-        <property name="right_transform_hint" value="true" />
         <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8321799582437927611">
           <property name="value" nameId="tpee.1068580123138" value="true" />
         </node>
