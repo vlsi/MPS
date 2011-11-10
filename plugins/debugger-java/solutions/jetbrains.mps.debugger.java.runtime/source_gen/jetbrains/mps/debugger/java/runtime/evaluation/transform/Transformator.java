@@ -2185,7 +2185,7 @@ public class Transformator extends TransformatorBuilder.AbstractTransformator {
   }
 
   static {
-    TransformatorBuilder.INSTANCE = new TransformatorBuilder() {
+    setInstance(new TransformatorBuilder() {
       public TransformatorBuilder.AbstractTransformator build(SNode node, boolean insideTransformation) {
         return new Transformator(node, insideTransformation);
       }
@@ -2197,6 +2197,6 @@ public class Transformator extends TransformatorBuilder.AbstractTransformator {
       public SNode getProxyTypeFromType(SNode type) {
         return TransformationUtil.getValueProxyTypeFromType(type);
       }
-    };
+    });
   }
 }

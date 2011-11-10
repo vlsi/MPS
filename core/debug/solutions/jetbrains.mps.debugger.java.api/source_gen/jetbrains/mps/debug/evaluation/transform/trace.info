@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4871586248217809898">
-    <nodeInfo nodeId="4871586248217809912" fileName="TransformatorBuilder.java" startLine="7" startPosition="44" endLine="8" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="4871586248217809912" fileName="TransformatorBuilder.java" startLine="7" startPosition="44" endLine="8" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="4871586248217809917" fileName="TransformatorBuilder.java" startLine="19" startPosition="52" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2476748692227960196" fileName="TransformatorBuilder.java" startLine="31" startPosition="69" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4871586248217809900" fileName="TransformatorBuilder.java" startLine="9" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransformatorBuilder#()V" />
     <nodeInfo nodeId="8321799582438650785" fileName="TransformatorBuilder.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/debug/evaluation/transform/TransformatorBuilder/AbstractTransformator;" />
     <nodeInfo nodeId="2176810104473232861" fileName="TransformatorBuilder.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJniSignatureFromType#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
@@ -11,9 +12,11 @@
     <nodeInfo nodeId="8321799582438650762" fileName="TransformatorBuilder.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="transform#()V" />
     <nodeInfo nodeId="8321799582438670187" fileName="TransformatorBuilder.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="transformEvaluator#()V" />
     <nodeInfo nodeId="4871586248217809907" fileName="TransformatorBuilder.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/debug/evaluation/transform/TransformatorBuilder;" />
+    <nodeInfo nodeId="2476748692227960249" fileName="TransformatorBuilder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setInstance#(Ljetbrains/mps/debug/evaluation/transform/TransformatorBuilder;)V" />
     <scopeInfo nodeId="4871586248217809903" fileName="TransformatorBuilder.java" startLine="10" startPosition="33" endLine="10" endPosition="33" />
     <scopeInfo nodeId="8321799582438650768" fileName="TransformatorBuilder.java" startLine="24" startPosition="36" endLine="24" endPosition="36" />
     <scopeInfo nodeId="4871586248217809910" fileName="TransformatorBuilder.java" startLine="19" startPosition="52" endLine="20" endPosition="20" />
+    <scopeInfo nodeId="2476748692227960191" fileName="TransformatorBuilder.java" startLine="31" startPosition="69" endLine="32" endPosition="46" />
     <scopeInfo nodeId="4871586248217809900" fileName="TransformatorBuilder.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
     <scopeInfo nodeId="8321799582438650785" fileName="TransformatorBuilder.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="8321799582438650792" varName="insideTransformation" />
@@ -29,8 +32,11 @@
     <scopeInfo nodeId="8321799582438650762" fileName="TransformatorBuilder.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="8321799582438670187" fileName="TransformatorBuilder.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="4871586248217809907" fileName="TransformatorBuilder.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <unitInfo nodeId="4871586248217809898" fileName="TransformatorBuilder.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
-    <unitInfo nodeId="8321799582438650756" fileName="TransformatorBuilder.java" startLine="23" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder$AbstractTransformator" />
+    <scopeInfo nodeId="2476748692227960249" fileName="TransformatorBuilder.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="2476748692227960192" varName="builder" />
+    </scopeInfo>
+    <unitInfo nodeId="4871586248217809898" fileName="TransformatorBuilder.java" startLine="7" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
+    <unitInfo nodeId="8321799582438650756" fileName="TransformatorBuilder.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder$AbstractTransformator" />
   </root>
 </debugInfo>
 

@@ -5,7 +5,7 @@ package jetbrains.mps.debug.evaluation.transform;
 import jetbrains.mps.smodel.SNode;
 
 public abstract class TransformatorBuilder {
-  protected static TransformatorBuilder INSTANCE;
+  private static TransformatorBuilder INSTANCE;
 
   public TransformatorBuilder() {
   }
@@ -27,5 +27,9 @@ public abstract class TransformatorBuilder {
     public abstract void transform();
 
     public abstract void transformEvaluator();
+
+    protected static void setInstance(TransformatorBuilder builder) {
+      TransformatorBuilder.INSTANCE = builder;
+    }
   }
 }
