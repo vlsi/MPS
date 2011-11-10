@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.sharedConcepts" uuid="13744753-c81f-424a-9c1b-cf8943bf4e86" generatorOutputPath="${language_descriptor}/source_gen" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.sharedConcepts" />
-    <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
+    <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot path="${language_descriptor}/classes_gen">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
   </models>
@@ -10,8 +10,8 @@
   <generators>
     <generator generatorUID="jetbrains.mps.lang.sharedConcepts#1161623873951" uuid="51736086-833e-4b0d-b9a6-a1dbbfda2131">
       <models>
-        <modelRoot path="${language_descriptor}/generators/baseLanguage/templates" namespacePrefix="jetbrains.mps.lang.sharedConcepts.generator.baseLanguage.template" />
-        <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
+        <modelRoot path="${language_descriptor}/generators/baseLanguage/templates" />
+        <modelRoot path="${language_descriptor}/classes_gen">
           <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
         </modelRoot>
       </models>

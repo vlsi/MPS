@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="collections.runtime.gwt" uuid="86abb39a-11fb-4a1e-ae95-ea43cc94ae42" pluginKind="PLUGIN_CORE" compileInMPS="false" generatorOutputPath="${mps_home}/core/baseLanguage/collections/runtime/source_gen.gwt">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" />
   </models>
   <sourcePath />
   <usedLanguages>

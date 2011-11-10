@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.smodel" uuid="7866978e-a0f0-4cc7-81bc-4d213d9375e1" generatorOutputPath="${language_descriptor}/source_gen" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.smodel" />
-    <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
+    <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot path="${language_descriptor}/classes_gen">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
   </models>
@@ -15,12 +12,9 @@
   <generators>
     <generator name="BL" generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090">
       <models>
-        <modelRoot path="${language_descriptor}/generator" namespacePrefix="jetbrains.mps.lang.smodel.generator" />
-        <modelRoot path="${language_descriptor}/generator/baseLanguage" namespacePrefix="jetbrains.mps.lang.smodel.generator.baseLanguage" />
-        <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
-          <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-        </modelRoot>
-        <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
+        <modelRoot path="${language_descriptor}/generator" />
+        <modelRoot path="${language_descriptor}/generator/baseLanguage" />
+        <modelRoot path="${language_descriptor}/classes_gen">
           <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
         </modelRoot>
       </models>

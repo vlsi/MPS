@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="collections_unittest" uuid="39a1a79d-8ae2-4e54-a86a-8f7b9e17e2fe" compileInMPS="true" generatorOutputPath="${mps_home}/core/baseLanguage/collections/tests_gen">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.baseLanguage.collections.unittest" />
+    <modelRoot path="${solution_descriptor}/" />
   </models>
   <sourcePath />
   <dependencies>

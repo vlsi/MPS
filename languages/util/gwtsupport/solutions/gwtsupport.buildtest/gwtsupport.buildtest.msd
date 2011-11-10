@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="gwtsupport.buildtest" uuid="04462093-4c58-4a21-85b6-bef85bbb0577" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" />
   </models>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)</dependency>
     <dependency reexport="false">4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)</dependency>

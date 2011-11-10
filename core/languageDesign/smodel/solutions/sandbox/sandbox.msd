@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="smodel.sandbox" uuid="7ae94a06-e750-4b97-a7f6-ba0c5c4123e9" compileInMPS="false">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" />
   </models>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
   </dependencies>

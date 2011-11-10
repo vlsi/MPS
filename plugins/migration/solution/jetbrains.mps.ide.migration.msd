@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.migration" uuid="f79b80ff-2fee-4243-9291-a156ab1cfc01" compileInMPS="false" generatorOutputPath="${mps_home}/plugins/migration/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.ide.migration" />
-    <modelRoot path="${mps_home}/plugins/migration" namespacePrefix="">
+    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${mps_home}/plugins/migration">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/migration/classes" namespacePrefix="">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/plugins/migration" namespacePrefix="">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/plugins/migration/classes" namespacePrefix="">
+    <modelRoot path="${mps_home}/plugins/migration/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
   </models>

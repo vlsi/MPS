@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.lang.editor.table.runtime" uuid="258bd2f6-0d02-411d-86b2-5a5ea083e6d2" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" />
   </models>
   <sourcePath />
   <dependencies>

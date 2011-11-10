@@ -1,41 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.kernel" uuid="2d3c70e9-aab2-4870-8d8d-6036800e4103" pluginKind="PLUGIN_CORE" compileInMPS="false" generatorOutputPath="${mps_home}/core/kernel/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
-    <modelRoot path="${mps_home}/lib/platform.jar" namespacePrefix="">
+    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${mps_home}/lib/platform.jar">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/lib/resources.jar" namespacePrefix="">
+    <modelRoot path="${mps_home}/lib/resources.jar">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/workbench/source" namespacePrefix="">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/lib/platform.jar" namespacePrefix="">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/lib/resources.jar" namespacePrefix="">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/workbench/source" namespacePrefix="">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/lib/platform.jar" namespacePrefix="">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/lib/resources.jar" namespacePrefix="">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/workbench/source" namespacePrefix="">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/lib/platform.jar" namespacePrefix="">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/lib/resources.jar" namespacePrefix="">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/workbench/source" namespacePrefix="">
+    <modelRoot path="${mps_home}/workbench/source">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </modelRoot>
   </models>

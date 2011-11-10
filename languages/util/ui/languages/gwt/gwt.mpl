@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.ui.gwt" uuid="e5c2a44a-6085-4aeb-a5b6-851cecd2d926" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.ui.gwt" />
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.ui.gwt" />
+    <modelRoot path="${language_descriptor}/languageAccessories" />
+    <modelRoot path="${language_descriptor}/languageModels" />
   </models>
   <accessoryModels>
     <model modelUID="r:6e5f3f83-4279-433d-9603-0c8b89b682e3(jetbrains.mps.ui.gwt.events)" />
@@ -11,8 +11,8 @@
   <generators>
     <generator name="ui" generatorUID="jetbrains.mps.ui.gwt#9106854556042091019" uuid="a5a5d5ab-3987-4848-9421-998f92430773">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.ui.gwt.generator.template" />
-        <modelRoot path="${language_descriptor}/lib/gwt-user.jar" namespacePrefix="">
+        <modelRoot path="${language_descriptor}/generator/template" />
+        <modelRoot path="${language_descriptor}/lib/gwt-user.jar">
           <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
         </modelRoot>
       </models>

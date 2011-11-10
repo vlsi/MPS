@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.transformation.test.errorReporting" uuid="99a58581-8518-40c8-81f1-e364306f5ffc" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.transformation.test.errorReporting" />
+    <modelRoot path="${language_descriptor}/languageModels" />
   </models>
   <accessoryModels />
   <generators>
     <generator name="generator" generatorUID="jetbrains.mps.transformation.test.errorReporting#7287346816896111110" uuid="c8f0806e-aaf9-46ca-bf04-85538f65af1d">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.transformation.test.errorReporting.generator.template" />
+        <modelRoot path="${language_descriptor}/generator/template" />
       </models>
       <external-templates />
       <usedDevKits>

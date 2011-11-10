@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.ui.swing" uuid="51805413-e01e-4f51-bf62-a054ab51eb54" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.ui.swing" />
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.ui.swing" />
+    <modelRoot path="${language_descriptor}/languageAccessories" />
+    <modelRoot path="${language_descriptor}/languageModels" />
   </models>
   <accessoryModels>
     <model modelUID="r:e8762dad-daad-468e-8f14-8910b1a06775(jetbrains.mps.ui.swing.events)" />
@@ -11,7 +11,7 @@
   <generators>
     <generator name="ui" generatorUID="jetbrains.mps.ui.swing#5725024602606914374" uuid="feb13c42-6479-4631-bedd-7524f34b91c0">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.ui.swing.generator.template" />
+        <modelRoot path="${language_descriptor}/generator/template" />
       </models>
       <external-templates>
         <generator generatorUID="da5e4290-fe8f-4051-99eb-423e4107c1b4(jetbrains.mps.ui#5725024602606565468)" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.baseLanguage.collections.samples" uuid="927a8eff-b060-4b84-9bf9-95534382f566" compileInMPS="false">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.baseLanguage.collections.samples" />
+    <modelRoot path="${solution_descriptor}/" />
   </models>
   <sourcePath />
   <dependencies>

@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.build.antsupport" uuid="77c9a130-703f-4530-bf21-6580757768d0" compileInMPS="false" generatorOutputPath="${mps_home}/languages/util/buildlanguage/ant/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
-    <modelRoot path="${mps_home}/languages/util/buildlanguage/ant/classes" namespacePrefix="">
+    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${mps_home}/languages/util/buildlanguage/ant/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/lib/java-diff-utils-1.2.jar" namespacePrefix="">
+    <modelRoot path="${mps_home}/lib/java-diff-utils-1.2.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/lib/bootstrap.jar" namespacePrefix="">
+    <modelRoot path="${mps_home}/lib/bootstrap.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/languages/util/buildlanguage/ant/classes" namespacePrefix="">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/lib/diffutils-1.2.1.jar" namespacePrefix="">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/lib/bootstrap.jar" namespacePrefix="">
+    <modelRoot path="${mps_home}/lib/diffutils-1.2.1.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
   </models>

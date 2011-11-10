@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="typesystemIntegration" uuid="a47a7608-84cc-4f1d-800f-301c16bc1595" pluginKind="PLUGIN_EDITOR" compileInMPS="false">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
-    <modelRoot path="${solution_descriptor}/models" namespacePrefix="typesystemIntegration" />
+    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${solution_descriptor}/models" />
   </models>
   <sourcePath />
   <dependencies>

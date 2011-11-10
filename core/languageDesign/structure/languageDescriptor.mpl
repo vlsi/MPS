@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.structure" uuid="c72da2b9-7cce-4447-8389-f407dc1158b7" generatorOutputPath="${language_descriptor}/source_gen" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.structure" />
-    <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
+    <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot path="${language_descriptor}/classes_gen">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
   </models>
@@ -15,17 +12,11 @@
   <generators>
     <generator generatorUID="jetbrains.mps.lang.structure#1170324972255" uuid="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc">
       <models>
-        <modelRoot path="${language_descriptor}/generator_new" namespacePrefix="jetbrains.mps.lang.structure.generator_new" />
-        <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
+        <modelRoot path="${language_descriptor}/generator_new" />
+        <modelRoot path="${language_descriptor}/classes_gen">
           <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
         </modelRoot>
-        <modelRoot path="${mps_home}/lib/guava-r06.jar" namespacePrefix="">
-          <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-        </modelRoot>
-        <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
-          <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-        </modelRoot>
-        <modelRoot path="${mps_home}/lib/guava-r06.jar" namespacePrefix="">
+        <modelRoot path="${mps_home}/lib/guava-r06.jar">
           <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
         </modelRoot>
       </models>

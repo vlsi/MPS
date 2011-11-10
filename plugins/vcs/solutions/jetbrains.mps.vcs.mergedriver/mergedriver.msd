@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.vcs.mergedriver" uuid="edc02585-9f0c-4060-aa1a-e0b2b8ed17f8" compileInMPS="false">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
-    <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar" namespacePrefix="">
+    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svn4idea.jar" namespacePrefix="">
+    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svn4idea.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svnkit.jar" namespacePrefix="">
+    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svnkit.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
   </models>
