@@ -116,6 +116,12 @@
     <classNode extendsClassName="org.apache.tools.ant.Task" />
     <classNode extendsClassName="org.apache.tools.ant.types.EnumeratedAttribute" />
   </dependency>
+  <dependency className="jetbrains.mps.build.ant.MpsPlatform" file="MpsPlatform.java">
+    <classNode dependClassName="jetbrains.mps.MPSCore" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.search.MPSBaseLanguage" />
+    <classNode dependClassName="jetbrains.mps.generator.MPSGenerator" />
+    <classNode dependClassName="jetbrains.mps.typesystem.MPSTypesystem" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.MpsWorker" file="MpsWorker.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.PrintWriter" />
@@ -141,6 +147,7 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.build.ant.FileMPSProject" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsPlatform" />
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
     <classNode dependClassName="jetbrains.mps.build.ant.util.MapPathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.build.ant.util.PathManager" />

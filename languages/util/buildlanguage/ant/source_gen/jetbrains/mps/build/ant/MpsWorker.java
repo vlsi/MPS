@@ -142,6 +142,7 @@ public abstract class MpsWorker {
         e.printStackTrace();
       }
     }
+    MpsPlatform.dispose();
     jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
   }
 
@@ -160,6 +161,7 @@ public abstract class MpsWorker {
     Logger.getRootLogger().setLevel(getLog4jLevel());
     jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
     // <node> 
+    MpsPlatform.init();
     MPSCore.getInstance().setTestMode();
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
     try {
