@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.debug.evaluation.transform.TransformationUtil;
+import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
 import jetbrains.mps.debugger.java.customViewers.behavior.HighLevelCustomViewer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -56,7 +55,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5493844864801812961(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TransformationUtil.getJniSignatureFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+    return TransformatorBuilder.getInstance().getJniSignatureFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_264293128390879201(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -96,7 +95,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3798344557789646276(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+    return TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_6588495380858422615(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -104,15 +103,15 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6588495380858423210(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+    return TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_7785669630792626876(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+    return TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_7785669630792594432(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+    return TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_7785669630792594457(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -120,11 +119,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5493844864801812976(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+    return TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_2685024263846491797(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+    return TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_2685024263846491806(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -215,7 +214,7 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_4599835250971319477(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode viewer : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer"))) {
-      SNode valueProxyType = TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(viewer));
+      SNode valueProxyType = TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(viewer));
       for (SNode valueParameter : ListSequence.fromList(SNodeOperations.getDescendants(viewer, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter", false, new String[]{}))) {
         SLinkOperations.setTarget(valueParameter, "valueProxyType", SNodeOperations.copyNode(valueProxyType), true);
       }

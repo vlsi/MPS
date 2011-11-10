@@ -12,6 +12,10 @@ public abstract class TransformatorBuilder {
 
   public abstract TransformatorBuilder.AbstractTransformator build(SNode node, boolean insideTransformation);
 
+  public abstract String getJniSignatureFromType(SNode type);
+
+  public abstract SNode getProxyTypeFromType(SNode type);
+
   public static TransformatorBuilder getInstance() {
     return INSTANCE;
   }

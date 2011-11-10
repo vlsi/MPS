@@ -2188,6 +2188,14 @@ public class Transformator extends TransformatorBuilder.AbstractTransformator {
       public TransformatorBuilder.AbstractTransformator build(SNode node, boolean insideTransformation) {
         return new Transformator(node, insideTransformation);
       }
+
+      public String getJniSignatureFromType(SNode type) {
+        return TransformationUtil.getJniSignatureFromType(type);
+      }
+
+      public SNode getProxyTypeFromType(SNode type) {
+        return TransformationUtil.getValueProxyTypeFromType(type);
+      }
     };
   }
 }
