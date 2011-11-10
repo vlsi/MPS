@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.ide.java.testMaterial;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 15.09.2009
- * Time: 16:12:21
- * To change this template use File | Settings | File Templates.
- */
 public enum OrdinaryEnum {
   ONE, TWO, THREE(2), FOUR;
 

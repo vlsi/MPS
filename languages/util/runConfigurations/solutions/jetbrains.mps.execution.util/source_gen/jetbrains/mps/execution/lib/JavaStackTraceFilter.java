@@ -56,6 +56,10 @@ public class JavaStackTraceFilter implements Filter {
       }
     });
 
+    if (nodeToShow == null) {
+      return null;
+    }
+
     return new Filter.Result(start + parenIndex + 1 + offset, start + closingParenIndex + offset, new HyperlinkInfo() {
       public void navigate(Project project) {
         new NodeNavigatable(ProjectHelper.toMPSProject(project), nodeToShow).navigate(true);

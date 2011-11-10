@@ -70,7 +70,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MoveFileOrDirectory_Action());
     addAction(new NewDirectory_Action());
     addAction(new NewFile_Action());
-    addAction(new NewLibrary_Action());
     addAction(new NewModel_Action());
     addAction(new NewRuntimeModule_Action());
     addAction(new NewSolution_Action());
@@ -108,6 +107,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowNodeInfo_Action());
     addAction(new ShowParameters_Action());
     addAction(new ShowStructure_Action());
+    addAction(new SubmitToTracker_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
     addGroup(new AddToFavoritesGroup_ActionGroup());
@@ -143,6 +143,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new LanguageActions_ActionGroup());
     addGroup(new LanguageNewActions_ActionGroup());
     addGroup(new LibraryActions_ActionGroup());
+    addGroup(new MessagesViewActions_ActionGroup());
     addGroup(new ModelActionsInternal_ActionGroup());
     addGroup(new ModelActions_ActionGroup());
     addGroup(new ModelNewActions_ActionGroup());
@@ -226,6 +227,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_commonModule);
+    insertGroupIntoAnother(MessagesViewActions_ActionGroup.ID, "MPS.MessagesView", null);
     insertGroupIntoAnother(PrintNodePosition_Addition_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(Search_ActionGroup.ID, "SearchMenu", null);
     insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);

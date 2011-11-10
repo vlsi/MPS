@@ -18,11 +18,7 @@ package jetbrains.mps.lang.typesystem.runtime;
 import jetbrains.mps.smodel.SNode;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 12.02.2010
- * Time: 16:45:44
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 12.02.2010
  */
 public abstract class AbstractDependentComputation_Runtime implements IApplicableToConcept {
   private DependentComputationWrapper myWrapper = null;

@@ -18,11 +18,7 @@ package jetbrains.mps.nodeEditor.leftHighlighter;
 import jetbrains.mps.smodel.SNode;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 12.10.2010
- * Time: 20:39:19
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 12.10.2010
  */
 public interface NodeTextElement extends Comparable<NodeTextElement> {
   public String getText();

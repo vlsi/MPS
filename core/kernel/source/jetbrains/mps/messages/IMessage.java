@@ -16,11 +16,7 @@
 package jetbrains.mps.messages;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 3/22/11
- * Time: 3:50 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, 3/22/11
  */
 public interface IMessage {
   MessageKind getKind();

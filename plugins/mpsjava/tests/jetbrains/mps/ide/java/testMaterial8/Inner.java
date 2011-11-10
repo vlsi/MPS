@@ -16,11 +16,7 @@
 package jetbrains.mps.ide.java.testMaterial8;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 27.12.10
- * Time: 22:29
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 27.12.10
  */
 public @interface Inner {
   String value();

@@ -25,7 +25,7 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
       {
         LabelledAnchor action = new LabelledAnchor(DebugTool_ActionGroup.LABEL_ID_StopAction);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.debugger.api"));
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.debugger.api.runtime"));
         DebugTool_ActionGroup.this.addAction(action);
       }
       DebugTool_ActionGroup.this.addSeparator();
@@ -35,7 +35,7 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
       {
         LabelledAnchor action = new LabelledAnchor(DebugTool_ActionGroup.LABEL_ID_MuteAction);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.debugger.api"));
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.debugger.api.runtime"));
         DebugTool_ActionGroup.this.addAction(action);
       }
       DebugTool_ActionGroup.this.addSeparator();

@@ -31,12 +31,17 @@ import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import com.intellij.usageView.UsageViewBundle;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.ide.actions.MPSActionPlaces;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -313,7 +318,18 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
     });
   }
 
-  protected abstract void openCurrentMessageIfPossible();
+  protected void openCurrentMessageIfPossible() {
+    final Message selectedMessage = (Message) myList.getSelectedValue();
+    if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
+
+    /* temp hack: write action instead of read, TODO remove lock*/
+    final Project project = getProject();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        NavigationManager.getInstance().navigateTo(project, selectedMessage.getHintObject(), true, true);
+      }
+    });
+  }
 
   protected abstract void setDisplayInfo(String name);
 
@@ -326,7 +342,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
 
     DefaultActionGroup group = createActionGroup();
 
-    JPopupMenu menu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
+    JPopupMenu menu = ActionManager.getInstance().createActionPopupMenu(MPSActionPlaces.MPS_MESSAGES_POPUP, group).getComponent();
     menu.show(myList, evt.getX(), evt.getY());
   }
 
@@ -608,7 +624,32 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
     }
   }
 
-  private class RootPanel extends JPanel implements OccurenceNavigator {
+  private class RootPanel extends JPanel implements OccurenceNavigator, DataProvider {
+    @Override
+    public Object getData(@NonNls String id) {
+      if (MPSCommonDataKeys.EXCEPTION.getName().equals(id)) {
+        Throwable exc = null;
+        for (Object message : myList.getSelectedValues()) {
+          exc = ((Message) message).getException();
+          if(exc != null) break;
+        }
+        return exc;
+      }
+      if(MPSCommonDataKeys.MESSAGES.getName().equals(id)) {
+        Object[] selectedValues = myList.getSelectedValues();
+        if(selectedValues == null || selectedValues.length == 0) {
+          return null;
+        }
+
+        List<IMessage> messages = new ArrayList<IMessage>(selectedValues.length);
+        for (Object message : selectedValues) {
+          messages.add((IMessage) message);
+        }
+        return messages;
+      }
+      return null;
+
+    }
 
     @Override
     public boolean hasNextOccurence() {

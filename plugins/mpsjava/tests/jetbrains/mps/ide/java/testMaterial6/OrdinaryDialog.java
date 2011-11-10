@@ -24,11 +24,7 @@ import java.awt.Frame;
 import java.awt.HeadlessException;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 12.01.2010
- * Time: 17:21:15
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 12.01.2010
  */
 public class OrdinaryDialog extends BaseDialog {
 

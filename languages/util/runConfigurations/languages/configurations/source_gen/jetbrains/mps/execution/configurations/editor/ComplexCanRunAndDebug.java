@@ -237,7 +237,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNodeFactoryOperations.setNewChild(node, "debuggerConfiguration", "jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration");
+      SNodeFactoryOperations.setNewChild(node, "debuggerConfiguration", "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration");
     }
 
     public String getMatchingText() {

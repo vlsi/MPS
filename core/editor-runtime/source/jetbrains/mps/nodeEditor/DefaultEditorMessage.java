@@ -29,12 +29,8 @@ import java.util.Map;
 import java.util.HashMap;
 
 /**
- * Created by IntelliJ IDEA.
-* User: Cyril.Konopko
-* Date: 01.04.2008
-* Time: 14:01:25
-* To change this template use File | Settings | File Templates.
-*/
+ * Cyril.Konopko, 01.04.2008
+ */
 public class DefaultEditorMessage implements EditorMessage {
   private static final int DEFAULT_MESSAGE_PRIORITY = 0;
 

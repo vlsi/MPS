@@ -15,19 +15,14 @@
  */
 package jetbrains.mps.testbench.junit;
 
-import jetbrains.mps.testbench.junit.Order;
 import org.junit.runner.Description;
 
 import java.lang.reflect.Method;
 import java.util.Comparator;
 
 /**
-* Created by IntelliJ IDEA.
-* User: fyodor
-* Date: Sep 6, 2010
-* Time: 3:57:45 PM
-* To change this template use File | Settings | File Templates.
-*/
+ * fyodor, Sep 6, 2010
+ */
 public class OrderComparator implements Comparator<Description> {
   @Override
   public int compare(Description a, Description b) {

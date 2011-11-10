@@ -29,11 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Aug 18, 2010
- * Time: 2:52:25 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Aug 18, 2010
  */
 public class WatchingRunNotifier extends DelegatingRunNotifier {
   private static final Level WATCH_LEVEL = Level.ERROR;

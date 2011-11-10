@@ -18,13 +18,6 @@ package jetbrains.mps.ide.java.testMaterial;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 14.09.2009
- * Time: 19:53:14
- * To change this template use File | Settings | File Templates.
- */
 public class OrdinaryClass6 {
   {
     String s = new String();

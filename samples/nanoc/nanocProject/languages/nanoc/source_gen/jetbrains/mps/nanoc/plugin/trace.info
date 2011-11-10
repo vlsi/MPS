@@ -37,13 +37,23 @@
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="39" startPosition="71" endLine="43" endPosition="16" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="46" startPosition="77" endLine="50" endPosition="16" />
-    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="2098491881345802123" varName="executable" />
+    </scopeInfo>
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="21" startPosition="66" endLine="26" endPosition="16" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="31" startPosition="70" endLine="36" endPosition="16" />
-    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="18" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="2098491881345802123" varName="workingDirectory" />
+    </scopeInfo>
+    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="2098491881345802123" varName="programParameters" />
+    </scopeInfo>
+    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="18" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="2098491881345802123" varName="workingDirectory" />
+    </scopeInfo>
+    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="2098491881345802123" varName="programParameters" />
+    </scopeInfo>
     <unitInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.Exec_Command" />
   </root>
   <root nodeId="226334238991953693">
@@ -66,14 +76,25 @@
     <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="18" startPosition="54" endLine="18" endPosition="54" />
     <scopeInfo nodeId="226334238991953738" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="26" startPosition="15" endLine="27" endPosition="137" />
     <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="17" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="28" startPosition="0" endLine="30" endPosition="24" />
+    <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="28" startPosition="0" endLine="30" endPosition="24">
+      <varInfo nodeId="226334238991953693" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="28" startPosition="51" endLine="30" endPosition="24" />
-    <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="39" startPosition="27" endLine="41" endPosition="87" />
+    <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="39" startPosition="27" endLine="41" endPosition="87">
+      <varInfo nodeId="226334238991953693" varName="manager" />
+    </scopeInfo>
     <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="25" startPosition="81" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="113" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="23" startPosition="5" endLine="35" endPosition="95" />
-    <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="21" startPosition="24" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="113" endLine="34" endPosition="0">
+      <varInfo nodeId="226334238991953693" varName="debuggableNode" />
+      <varInfo nodeId="226334238991953693" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="23" startPosition="5" endLine="35" endPosition="95">
+      <varInfo nodeId="226334238991953693" varName="creator" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="21" startPosition="24" endLine="36" endPosition="5">
+      <varInfo nodeId="226334238991953693" varName="manager" />
+    </scopeInfo>
     <scopeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="20" startPosition="0" endLine="38" endPosition="0" />
     <unitInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.DebugInfoProvider_CustomApplicationPlugin" />
     <unitInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="65" endLine="34" endPosition="7" unitName="jetbrains.mps.nanoc.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
@@ -155,7 +176,9 @@
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#()Ljavax/swing/JComponent;" />
     <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="25" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadState#(Lorg/jdom/Element;)V" />
     <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="33" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#()Lorg/jdom/Element;" />
-    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="38" startPosition="0" endLine="38" endPosition="42" />
+    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="38" startPosition="0" endLine="38" endPosition="42">
+      <varInfo nodeId="2617013732192775193" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="38" startPosition="42" endLine="38" endPosition="42" />
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="63" startPosition="22" endLine="63" endPosition="22" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="19" startPosition="123" endLine="20" endPosition="35" />
@@ -176,11 +199,20 @@
     <scopeInfo nodeId="6052833210962094409" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="44" startPosition="45" endLine="46" endPosition="124" />
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="62" startPosition="0" endLine="64" endPosition="5" />
     <scopeInfo nodeId="2617013732192790796" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="69" startPosition="73" endLine="71" endPosition="218" />
-    <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="28" startPosition="41" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="2617013732192790791" varName="prefsComponent" />
+      <varInfo nodeId="2617013732192790791" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="2617013732192775193" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="28" startPosition="41" endLine="31" endPosition="5">
+      <varInfo nodeId="2617013732192775193" varName="page" />
+    </scopeInfo>
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="35" startPosition="53" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="53" startPosition="44" endLine="56" endPosition="18" />
+    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="53" startPosition="44" endLine="56" endPosition="18">
+      <varInfo nodeId="2617013732192775193" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="63" startPosition="23" endLine="66" endPosition="5" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
@@ -189,20 +221,35 @@
     <scopeInfo nodeId="2617013732192790798" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="41" startPosition="74" endLine="45" endPosition="202" />
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="48" startPosition="39" endLine="52" endPosition="28" />
-    <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="2617013732192790791" varName="component" />
+      <varInfo nodeId="2617013732192790791" varName="project" />
+    </scopeInfo>
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="26" startPosition="40" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="68" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="43" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="2617013732192775193" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="68" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="2617013732192790791" varName="component" />
+      <varInfo nodeId="2617013732192790791" varName="project" />
+    </scopeInfo>
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="73" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="34" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="34" startPosition="29" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="34" startPosition="29" endLine="40" endPosition="5">
+      <varInfo nodeId="2617013732192775193" varName="page" />
+    </scopeInfo>
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="52" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="62" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="34" startPosition="29" endLine="41" endPosition="49" />
-    <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="2617013732192790791" varName="component" />
+      <varInfo nodeId="2617013732192790791" varName="project" />
+    </scopeInfo>
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="47" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="25" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="2617013732192775193" varName="state" />
+    </scopeInfo>
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="33" startPosition="0" endLine="43" endPosition="0" />
     <unitInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="15" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.ProgramsLocationComponent_GDBLocation_PreferencesPage" />
     <unitInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.ProgramsLocationComponent_PreferencesComponent" />
@@ -237,11 +284,15 @@
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="66" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="54" startPosition="51" endLine="55" endPosition="114" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="84" />
+    <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="84">
+      <varInfo nodeId="3968096696026358789" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="3968096696026358789" varName="factory" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
@@ -346,7 +397,9 @@
     <scopeInfo nodeId="3968096696026374686" fileName="NanoCFile_Configuration.java" startLine="55" startPosition="73" endLine="56" endPosition="40" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="71" startPosition="26" endLine="72" endPosition="81" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="81" startPosition="39" endLine="82" endPosition="18" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="93" startPosition="0" endLine="94" endPosition="44" />
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="93" startPosition="0" endLine="94" endPosition="44">
+      <varInfo nodeId="3968096696026358791" varName="ex" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="93" startPosition="45" endLine="94" endPosition="44" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="100" startPosition="132" endLine="101" endPosition="84" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="105" startPosition="91" endLine="106" endPosition="16" />
@@ -357,42 +410,79 @@
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="126" startPosition="48" endLine="127" endPosition="74" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="130" startPosition="48" endLine="131" endPosition="119" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="134" startPosition="46" endLine="135" endPosition="110" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="75" startPosition="5" endLine="77" endPosition="40" />
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="75" startPosition="5" endLine="77" endPosition="40">
+      <varInfo nodeId="3968096696026358791" varName="fieldElement" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="138" startPosition="24" endLine="140" endPosition="5" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="143" startPosition="61" endLine="145" endPosition="19" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Factory.java" startLine="9" startPosition="75" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="50" startPosition="0" endLine="53" endPosition="3" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="62" startPosition="5" endLine="65" endPosition="39" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Factory.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="143" startPosition="61" endLine="145" endPosition="19">
+      <varInfo nodeId="3968096696026358791" varName="state" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Factory.java" startLine="9" startPosition="75" endLine="12" endPosition="3">
+      <varInfo nodeId="3968096696026358791" varName="type" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="3968096696026358791" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="50" startPosition="0" endLine="53" endPosition="3">
+      <varInfo nodeId="3968096696026358791" varName="factory" />
+      <varInfo nodeId="3968096696026358791" varName="name" />
+      <varInfo nodeId="3968096696026358791" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="62" startPosition="5" endLine="65" endPosition="39">
+      <varInfo nodeId="3968096696026358791" varName="fieldElement" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Factory.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="3968096696026358791" varName="project" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Editor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="3968096696026358794" fileName="NanoCFile_Configuration_Editor.java" startLine="27" startPosition="32" endLine="31" endPosition="17">
       <varInfo nodeId="3968096696026394239" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Editor.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Editor.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Editor.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="3968096696026358791" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Editor.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="3968096696026358791" varName="configuration" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026394178" fileName="NanoCFile_Configuration.java" startLine="41" startPosition="123" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="3968096696026394180" fileName="NanoCFile_Configuration.java" startLine="45" startPosition="58" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="3968096696026394180" fileName="NanoCFile_Configuration.java" startLine="45" startPosition="58" endLine="49" endPosition="0">
+      <varInfo nodeId="3968096696026394180" varName="file" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="88" startPosition="9" endLine="92" endPosition="19" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="108" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="3968096696026358791" varName="provider" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Factory.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="98" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="103" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="124" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="98" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="3968096696026358791" varName="environment" />
+      <varInfo nodeId="3968096696026358791" varName="executor" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="103" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="3968096696026358791" varName="runner" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="124" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="3968096696026358791" varName="executorId" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="60" startPosition="76" endLine="66" endPosition="5" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="141" startPosition="0" endLine="147" endPosition="0" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration_Editor.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="70" startPosition="73" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="58" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="86" startPosition="42" endLine="96" endPosition="17" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="68" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="58" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="3968096696026358791" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="86" startPosition="42" endLine="96" endPosition="17">
+      <varInfo nodeId="3968096696026358791" varName="clone" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="68" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="3968096696026358791" varName="element" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="84" startPosition="0" endLine="98" endPosition="0" />
     <unitInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="36" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.NanoCFile_Configuration" />
     <unitInfo nodeId="3968096696026394178" fileName="NanoCFile_Configuration.java" startLine="41" startPosition="102" endLine="45" endPosition="3" unitName="jetbrains.mps.nanoc.plugin.NanoCFile_Configuration$1" />
@@ -455,7 +545,11 @@
     <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="105" startPosition="60" endLine="106" endPosition="18" />
     <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="108" startPosition="62" endLine="109" endPosition="18" />
     <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="42" startPosition="169" endLine="44" endPosition="32" />
-    <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="41" startPosition="0" endLine="45" endPosition="3" />
+    <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="41" startPosition="0" endLine="45" endPosition="3">
+      <varInfo nodeId="3968096696026399442" varName="configuration" />
+      <varInfo nodeId="3968096696026399442" varName="environment" />
+      <varInfo nodeId="3968096696026399442" varName="executor" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="5894693213360906213" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="64" startPosition="150" endLine="68" endPosition="0" />
@@ -466,18 +560,30 @@
       <varInfo nodeId="2692169166603264037" varName="settings" />
     </scopeInfo>
     <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="104" startPosition="55" endLine="111" endPosition="17" />
-    <scopeInfo nodeId="5894693213360906213" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="60" startPosition="7" endLine="68" endPosition="12" />
-    <scopeInfo nodeId="2692169166603286008" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="71" startPosition="7" endLine="79" endPosition="12" />
+    <scopeInfo nodeId="5894693213360906213" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="60" startPosition="7" endLine="68" endPosition="12">
+      <varInfo nodeId="5894693213360906213" varName="_consoleView" />
+      <varInfo nodeId="5894693213360906213" varName="_processHandler" />
+    </scopeInfo>
+    <scopeInfo nodeId="2692169166603286008" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="71" startPosition="7" endLine="79" endPosition="12">
+      <varInfo nodeId="2692169166603286008" varName="_consoleView" />
+      <varInfo nodeId="2692169166603286008" varName="_processHandler" />
+    </scopeInfo>
     <scopeInfo nodeId="2692169166603285997" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="59" startPosition="39" endLine="69" endPosition="7" />
     <scopeInfo nodeId="2692169166603286007" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="70" startPosition="12" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="103" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="103" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="3968096696026399442" varName="executorId" />
+    </scopeInfo>
     <scopeInfo nodeId="3968096696026399443" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="86" startPosition="41" endLine="97" endPosition="0" />
     <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="85" startPosition="60" endLine="101" endPosition="6" />
     <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="83" startPosition="0" endLine="103" endPosition="0" />
     <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="56" startPosition="110" endLine="81" endPosition="5">
       <varInfo nodeId="2692169166603298946" varName="file" />
+      <varInfo nodeId="3968096696026399442" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="54" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="54" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="3968096696026399442" varName="executor" />
+      <varInfo nodeId="3968096696026399442" varName="runner" />
+    </scopeInfo>
     <unitInfo nodeId="3968096696026399442" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="36" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.NanoCFile_Configuration_RunProfileState" />
     <unitInfo nodeId="5894693213360906213" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="64" startPosition="120" endLine="68" endPosition="9" unitName="jetbrains.mps.nanoc.plugin.NanoCFile_Configuration_RunProfileState$1" />
     <unitInfo nodeId="2692169166603286008" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="75" startPosition="120" endLine="79" endPosition="9" unitName="jetbrains.mps.nanoc.plugin.NanoCFile_Configuration_RunProfileState$2" />
@@ -513,9 +619,16 @@
       <varInfo nodeId="3990508698139426501" varName="gdbFile" />
       <varInfo nodeId="3495025700496048599" varName="process" />
     </scopeInfo>
-    <scopeInfo nodeId="4781887771024683619" fileName="Gdb_Command.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4781887771024683619" fileName="Gdb_Command.java" startLine="36" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="4781887771024683619" fileName="Gdb_Command.java" startLine="19" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4781887771024683619" fileName="Gdb_Command.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4781887771024683619" varName="gdbLocation" />
+    </scopeInfo>
+    <scopeInfo nodeId="4781887771024683619" fileName="Gdb_Command.java" startLine="36" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="4781887771024683619" varName="executable" />
+      <varInfo nodeId="4781887771024683619" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="4781887771024683619" fileName="Gdb_Command.java" startLine="19" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="4781887771024683619" varName="gdbLocation" />
+    </scopeInfo>
     <unitInfo nodeId="4781887771024683619" fileName="Gdb_Command.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.Gdb_Command" />
   </root>
   <root nodeId="8709806323640688876">
@@ -562,7 +675,9 @@
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="40" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="8709806323640688876" varName="file" />
+    </scopeInfo>
     <scopeInfo nodeId="578690696022989822" fileName="CompileWithGcc_BeforeTask.java" startLine="50" startPosition="68" endLine="55" endPosition="13" />
     <scopeInfo nodeId="578690696022989815" fileName="CompileWithGcc_BeforeTask.java" startLine="48" startPosition="122" endLine="57" endPosition="0">
       <varInfo nodeId="578690696022989818" varName="event" />
@@ -573,7 +688,9 @@
       <varInfo nodeId="578690696022989797" varName="process" />
     </scopeInfo>
     <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="46" startPosition="45" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="45" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="45" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="8709806323640688876" varName="project" />
+    </scopeInfo>
     <unitInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.CompileWithGcc_BeforeTask" />
     <unitInfo nodeId="578690696022989802" fileName="CompileWithGcc_BeforeTask.java" startLine="48" startPosition="104" endLine="57" endPosition="9" unitName="jetbrains.mps.nanoc.plugin.CompileWithGcc_BeforeTask$1" />
     <unitInfo nodeId="8709806323640688876" fileName="CompileWithGcc_BeforeTask.java" startLine="35" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.CompileWithGcc_BeforeTask$CompileWithGcc_BeforeTask_RunTask" />
@@ -654,12 +771,16 @@
     </scopeInfo>
     <scopeInfo nodeId="8709806323640801085" fileName="Gcc_Command.java" startLine="83" startPosition="57" endLine="89" endPosition="0" />
     <scopeInfo nodeId="5894693213360969323" fileName="Gcc_Command.java" startLine="97" startPosition="57" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="8709806323640733467" varName="gccLocation" />
+    </scopeInfo>
     <scopeInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8709806323640733649" varName="rawString" />
     </scopeInfo>
     <scopeInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="70" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="25" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="25" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="8709806323640733467" varName="gccLocation" />
+    </scopeInfo>
     <scopeInfo nodeId="8709806323640771920" fileName="Gcc_Command.java" startLine="79" startPosition="59" endLine="90" endPosition="140">
       <varInfo nodeId="8709806323640801076" varName="module" />
       <varInfo nodeId="8709806323640801082" varName="packageName" />
@@ -680,7 +801,9 @@
     <scopeInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="92" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="5894693213360969308" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="42" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="42" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="8709806323640733467" varName="file" />
+    </scopeInfo>
     <unitInfo nodeId="8709806323640733467" fileName="Gcc_Command.java" startLine="20" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.Gcc_Command" />
     <unitInfo nodeId="8709806323640801085" fileName="Gcc_Command.java" startLine="83" startPosition="45" endLine="89" endPosition="5" unitName="jetbrains.mps.nanoc.plugin.Gcc_Command$1" />
     <unitInfo nodeId="5894693213360969323" fileName="Gcc_Command.java" startLine="97" startPosition="45" endLine="103" endPosition="5" unitName="jetbrains.mps.nanoc.plugin.Gcc_Command$2" />

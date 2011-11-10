@@ -19,11 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 11.06.2010
- * Time: 10:06:47
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 11.06.2010
  */
 public class OrdinaryClassWithEscapeCharacters {
   private static Map<Character, String> escapeMap = new HashMap<Character, String>();

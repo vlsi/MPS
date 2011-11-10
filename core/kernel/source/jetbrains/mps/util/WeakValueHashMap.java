@@ -16,11 +16,7 @@
 package jetbrains.mps.util;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 22.09.2005
- * Time: 15:51:52
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 22.09.2005
  */
 
 import java.lang.ref.ReferenceQueue;

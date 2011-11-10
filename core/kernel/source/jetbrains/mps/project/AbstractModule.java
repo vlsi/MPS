@@ -192,10 +192,6 @@ public abstract class AbstractModule implements IModule {
 
   //----stubs
 
-  public boolean areJavaStubsEnabled() {
-    return false;
-  }
-
   public List<StubPath> getAllStubPaths() {
     LinkedHashSet<StubPath> result = new LinkedHashSet<StubPath>();
     result.addAll(getStubPaths());
@@ -219,8 +215,19 @@ public abstract class AbstractModule implements IModule {
 
   public List<StubPath> getStubPaths() {
     ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return Collections.emptyList();
+
+    List<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
+    ArrayList<StubPath> result = new ArrayList<StubPath>(stubModelEntries.size());
+    for (ModelRoot entry : stubModelEntries) {
+      result.add(new StubPath(entry.getPath(), entry.getManager()));
+    }
+    return result;
+  }
+
+  public static List<StubPath> getStubPaths(ModuleDescriptor descriptor) {
     if (descriptor != null) {
-      List<ModelRoot> stubModelEntries = getModuleDescriptor().getStubModelEntries();
+      List<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
       ArrayList<StubPath> result = new ArrayList<StubPath>(stubModelEntries.size());
       for (ModelRoot entry : stubModelEntries) {
         result.add(new StubPath(entry.getPath(), entry.getManager()));
@@ -363,10 +370,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public boolean isPackaged() {
-    if (getDescriptorFile() == null) {
-      return false;
-    }
-    return FileSystem.getInstance().isPackaged(getDescriptorFile());
+    return getDescriptorFile() != null && FileSystem.getInstance().isPackaged(getDescriptorFile());
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
@@ -456,10 +460,6 @@ public abstract class AbstractModule implements IModule {
 
   protected void fireModuleInitialized() {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
-  }
-
-  public boolean canLoadClasses() {
-    return ClassLoaderManager.getInstance().canLoadClasses(this);
   }
 
   public Class getClass(String fqName) {
@@ -597,6 +597,9 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected class ModuleBytecodeLocator implements BytecodeLocator {
+    public ModuleBytecodeLocator() {
+    }
+
     public byte[] find(String fqName) {
       return getClassPathItem().getClass(fqName);
     }

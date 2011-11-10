@@ -26,11 +26,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Aug 27, 2010
- * Time: 2:56:02 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Aug 27, 2010
  */
 public class FilesCollector {
 

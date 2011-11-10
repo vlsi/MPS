@@ -70,7 +70,9 @@ public abstract class AbstractSearchPanel extends JPanel {
     group.add(new ShowHistoryAction());
     group.add(new PrevOccurenceAction());
     group.add(new NextOccurenceAction());
-    group.add(new FindAllAction());
+    if(showExportToFindTool()) {
+      group.add(new FindAllAction());
+    }
 
     final ActionToolbar tb = ActionManager.getInstance().createActionToolbar("SearchBar", group, true);
     tb.setLayoutPolicy(ActionToolbar.NOWRAP_LAYOUT_POLICY);
@@ -186,6 +188,10 @@ public abstract class AbstractSearchPanel extends JPanel {
     } else {
       return SearchConditions.containsString(myText.getText(), myIsCaseSensitive.isSelected());
     }
+  }
+
+  protected boolean showExportToFindTool() {
+    return false;
   }
 
   protected boolean canExportToFindTool() {
@@ -409,9 +415,7 @@ public abstract class AbstractSearchPanel extends JPanel {
 
     public void update(AnActionEvent e) {
       super.update(e);
-      boolean enabled = canExportToFindTool();
-      e.getPresentation().setEnabled(enabled);
-      e.getPresentation().setVisible(enabled);
+      e.getPresentation().setEnabled(canExportToFindTool());
     }
 
     public void actionPerformed(AnActionEvent e) {

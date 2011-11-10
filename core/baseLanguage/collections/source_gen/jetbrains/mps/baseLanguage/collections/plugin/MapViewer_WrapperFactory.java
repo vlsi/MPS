@@ -15,7 +15,7 @@ import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
+import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
 
 public class MapViewer_WrapperFactory extends ValueWrapperFactory {
   public MapViewer_WrapperFactory() {
@@ -58,11 +58,11 @@ public class MapViewer_WrapperFactory extends ValueWrapperFactory {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
 
       PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I"));
-      result.add(new CollectionsWatchables.MyWatchable_size(JavaObjectValue.fromJDIValue(size.getJDIValue(), getThreadReference()), "size"));
+      result.add(new CollectionsWatchables.MyWatchable_size(AbstractValueUtil.getInstance().fromJDIValue(size.getJDIValue(), getThreadReference()), "size"));
 
       IObjectValueProxy entries = ((IObjectValueProxy) value.invokeMethod("entrySet", "()Ljava/util/Set;"));
       for (IObjectValueProxy entry : EvaluationUtils.<IObjectValueProxy>toIterable(entries)) {
-        result.add(new CollectionsWatchables.MyWatchable_entry(JavaObjectValue.fromJDIValue(entry.getJDIValue(), getThreadReference()), "entry"));
+        result.add(new CollectionsWatchables.MyWatchable_entry(AbstractValueUtil.getInstance().fromJDIValue(entry.getJDIValue(), getThreadReference()), "entry"));
       }
 
       return result;

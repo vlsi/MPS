@@ -30,11 +30,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Aug 24, 2010
- * Time: 10:43:42 AM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Aug 24, 2010
  */
 public class MpsMakeHelper {
 

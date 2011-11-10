@@ -16,11 +16,7 @@
 package jetbrains.mps.testbench.util;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Aug 24, 2010
- * Time: 4:24:11 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Aug 24, 2010
  */
 public interface Output {
 

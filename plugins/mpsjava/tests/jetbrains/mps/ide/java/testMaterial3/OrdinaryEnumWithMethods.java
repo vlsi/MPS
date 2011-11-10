@@ -16,11 +16,7 @@
 package jetbrains.mps.ide.java.testMaterial3;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 25.11.2009
- * Time: 16:56:26
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 25.11.2009
  */
 public enum OrdinaryEnumWithMethods {
   A {

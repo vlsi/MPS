@@ -264,7 +264,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
+      <implementation-class>jetbrains.mps.ide.messages.MessageViewLoggingHandler</implementation-class>
       <skipForDummyProject/>
     </component>
 

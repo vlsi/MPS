@@ -58,7 +58,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
         }
         SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(uid);
         if (scope.getModelDescriptor(uid) == null && descriptor != null) {
-          addIssue(results, node, "Target module " + descriptor.getModule() + " should be imported", ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
+          addIssue(results, node, "Target module " + descriptor.getModule() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new IModelCheckerFix() {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
                 SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);

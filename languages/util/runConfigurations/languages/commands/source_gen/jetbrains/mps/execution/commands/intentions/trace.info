@@ -54,19 +54,38 @@
     <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="2168104298250372811" varName="editorContext" />
+      <varInfo nodeId="2168104298250372811" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="2168104298250372811" varName="childNode" />
+      <varInfo nodeId="2168104298250372811" varName="editorContext" />
+      <varInfo nodeId="2168104298250372811" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="70" startPosition="62" endLine="74" endPosition="6" />
     <scopeInfo nodeId="2168104298250373542" fileName="ConvertToItems_Intention.java" startLine="47" startPosition="90" endLine="53" endPosition="319">
       <varInfo nodeId="2168104298250373648" varName="creator" />
       <varInfo nodeId="2168104298250373611" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="2168104298250372811" varName="editorContext" />
+      <varInfo nodeId="2168104298250372811" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="37" startPosition="84" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="69" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="46" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="36" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="69" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="2168104298250372811" varName="a" />
+      <varInfo nodeId="2168104298250372811" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="46" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="2168104298250372811" varName="editorContext" />
+      <varInfo nodeId="2168104298250372811" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="36" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="2168104298250372811" varName="editorContext" />
+      <varInfo nodeId="2168104298250372811" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.execution.commands.intentions.ConvertToItems_Intention" />
   </root>
   <root nodeId="2168104298250389155">
@@ -140,32 +159,69 @@
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="101" startPosition="39" endLine="102" endPosition="79" />
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="20" startPosition="81" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="83" startPosition="53" endLine="85" endPosition="5" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="100" startPosition="58" endLine="103" endPosition="13" />
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="100" startPosition="58" endLine="103" endPosition="13">
+      <varInfo nodeId="2168104298250389155" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="2168104298250401831" fileName="ConvertToList_Intention.java" startLine="64" startPosition="65" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="2168104298250389155" varName="editorContext" />
+      <varInfo nodeId="2168104298250389155" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="2168104298250389155" varName="editorContext" />
+      <varInfo nodeId="2168104298250389155" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="2168104298250389155" varName="childNode" />
+      <varInfo nodeId="2168104298250389155" varName="editorContext" />
+      <varInfo nodeId="2168104298250389155" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2168104298250401831" fileName="ConvertToList_Intention.java" startLine="64" startPosition="65" endLine="68" endPosition="0">
+      <varInfo nodeId="2168104298250401831" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="76" startPosition="62" endLine="80" endPosition="6" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="99" startPosition="11" endLine="103" endPosition="13" />
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="99" startPosition="11" endLine="103" endPosition="13">
+      <varInfo nodeId="2168104298250389155" varName="nodes" />
+    </scopeInfo>
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="98" startPosition="45" endLine="104" endPosition="11" />
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="44" startPosition="84" endLine="51" endPosition="16" />
     <scopeInfo nodeId="2168104298250389161" fileName="ConvertToList_Intention.java" startLine="62" startPosition="76" endLine="69" endPosition="129">
       <varInfo nodeId="2168104298250401817" varName="items" />
     </scopeInfo>
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="75" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="96" startPosition="9" endLine="105" endPosition="58" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="43" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="61" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="75" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="2168104298250389155" varName="a" />
+      <varInfo nodeId="2168104298250389155" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="96" startPosition="9" endLine="105" endPosition="58">
+      <varInfo nodeId="2168104298250389155" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="43" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="2168104298250389155" varName="editorContext" />
+      <varInfo nodeId="2168104298250389155" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="61" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="2168104298250389155" varName="editorContext" />
+      <varInfo nodeId="2168104298250389155" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="95" startPosition="43" endLine="106" endPosition="9" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="93" startPosition="7" endLine="107" endPosition="31" />
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="93" startPosition="7" endLine="107" endPosition="31">
+      <varInfo nodeId="2168104298250389155" varName="quotedNode1_4" />
+    </scopeInfo>
     <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="92" startPosition="32" endLine="108" endPosition="7" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="87" startPosition="49" endLine="109" endPosition="20" />
-    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="86" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="87" startPosition="49" endLine="109" endPosition="20">
+      <varInfo nodeId="2168104298250389155" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2168104298250389155" varName="quotedNode_1" />
+      <varInfo nodeId="2168104298250389155" varName="quotedNode_2" />
+      <varInfo nodeId="2168104298250389155" varName="quotedNode_3" />
+      <varInfo nodeId="2168104298250389155" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="86" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="2168104298250389155" varName="parameter_6" />
+    </scopeInfo>
     <unitInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="20" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.execution.commands.intentions.ConvertToList_Intention" />
     <unitInfo nodeId="2168104298250401831" fileName="ConvertToList_Intention.java" startLine="64" startPosition="46" endLine="68" endPosition="5" unitName="jetbrains.mps.execution.commands.intentions.ConvertToList_Intention$1" />
     <unitInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="83" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.execution.commands.intentions.ConvertToList_Intention$QuotationClass_63cojg_a0a0c0i" />

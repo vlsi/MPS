@@ -21,11 +21,7 @@ import jetbrains.mps.util.misc.hash.HashMap;
 import java.util.*;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 7/13/11
- * Time: 9:54 AM
- * To change this template use File | Settings | File Templates.
+ * fyodor, 7/13/11
  */
 public class DefaultGenerationParametersProvider implements GenerationParametersProvider {
 

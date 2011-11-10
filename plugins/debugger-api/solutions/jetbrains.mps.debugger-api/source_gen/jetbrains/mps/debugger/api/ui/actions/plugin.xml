@@ -11,7 +11,7 @@
 <idea-version since-build="3000"></idea-version>
 
 
-<application-components><component><implementation-class>jetbrains.mps.debugger.api.ui.actions.Api_PluginInitializer</implementation-class>
+<application-components><component><implementation-class>jetbrains.mps.debugger.api.ui.actions.Runtime_PluginInitializer</implementation-class>
 </component>
 </application-components>
 </idea-plugin>

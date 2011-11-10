@@ -16,11 +16,7 @@
 package jetbrains.mps.ide.java.testMaterial;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 11.09.2009
- * Time: 20:12:43
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 11.09.2009
  */
 public class OrdinaryClass2 {
   OrdinaryClass2 myOrdinaryClass2;

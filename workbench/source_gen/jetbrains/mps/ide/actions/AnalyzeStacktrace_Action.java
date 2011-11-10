@@ -6,11 +6,15 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import java.io.StringWriter;
+import java.io.PrintWriter;
+import java.awt.datatransfer.StringSelection;
+import com.intellij.ide.CopyPasteManagerEx;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
@@ -26,9 +30,19 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
     this.setMnemonic("s".charAt(0));
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (MPSActionPlaces.MPS_MESSAGES_POPUP.equals(event.getPlace())) {
+      return ((Throwable) MapSequence.fromMap(_params).get("exception")) != null;
+    }
+    return true;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "AnalyzeStacktrace", t);
@@ -53,11 +67,19 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("exception", event.getData(MPSDataKeys.EXCEPTION));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      Throwable exc = ((Throwable) MapSequence.fromMap(_params).get("exception"));
+      if (exc != null) {
+        StringWriter writer = new StringWriter();
+        exc.printStackTrace(new PrintWriter(writer));
+        StringSelection contents = new StringSelection(writer.toString());
+        CopyPasteManagerEx.getInstanceEx().setContents(contents);
+      }
       AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       dialog.showDialog();
     } catch (Throwable t) {

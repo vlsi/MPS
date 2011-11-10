@@ -24,13 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 26.01.2010
- * Time: 13:35:28
- * To change this template use File | Settings | File Templates.
- */
 public class Type<Meta, Target> {
   private static Logger LOG = Logger.getLogger(Type.class);
 

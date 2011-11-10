@@ -15,28 +15,69 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.descriptor.source.changes.FileSourceChangeWatcher;
-import jetbrains.mps.smodel.descriptor.source.changes.SourceChangeWatcher;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.SubProgressKind;
+import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public abstract class FileBasedModelDataSource implements ModelDataSource {
-  private FileSourceChangeWatcher mySourceChangeWatcher = null;
+  private final Object LOCK = new Object();
+  private List<ChangeListener> myListeners = new ArrayList<ChangeListener>();
+  private boolean myInvalidated = false;
 
-  public SourceChangeWatcher getChangeWatcher() {
-    if (mySourceChangeWatcher == null) {
-      mySourceChangeWatcher = new FileSourceChangeWatcher() {
-        public boolean containFile(IFile file) {
-          return FileBasedModelDataSource.this.containFile(file);
-        }
-      };
+  public void startListening(ChangeListener l) {
+    synchronized (LOCK) {
+      if (myListeners.isEmpty()) {
+        ModelFileWatcher.getInstance().startListening(this);
+        ReloadableSources.getInstance().addSource(this);
+      }
+      myListeners.add(l);
     }
-    return mySourceChangeWatcher;
   }
 
-  protected void sourcesSetChanged() {
-    mySourceChangeWatcher.changed(new EmptyProgressMonitor());
+  public void stopListening(ChangeListener l) {
+    synchronized (LOCK) {
+      myListeners.remove(l);
+      if (myListeners.isEmpty()) {
+        ReloadableSources.getInstance().removeSource(this);
+        ModelFileWatcher.getInstance().stopListening(this);
+      }
+    }
   }
 
-  public abstract boolean containFile(IFile file);
+  public void reload(ProgressMonitor monitor) {
+    myInvalidated = false;
+
+    List<ChangeListener> listeners;
+    synchronized (LOCK) {
+      listeners = new ArrayList<ChangeListener>(myListeners);
+    }
+    monitor.start("", listeners.size());
+    try {
+      for (ChangeListener l : listeners) {
+        l.changed(monitor.subTask(1, SubProgressKind.AS_COMMENT));
+      }
+    } finally {
+      monitor.done();
+    }
+  }
+
+  public abstract Collection<String> getFilesToListen();
+
+  public boolean isInvalidated(){
+    return myInvalidated;
+  }
+
+  public void invalidate() {
+    myInvalidated = true;
+  }
+
+  protected void sourceFilesChanged(){
+    invalidate();
+    ModelFileWatcher.getInstance().stopListening(this);
+    ModelFileWatcher.getInstance().startListening(this);
+  }
 }

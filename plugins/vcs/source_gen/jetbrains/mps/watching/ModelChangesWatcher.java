@@ -62,16 +62,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   };
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new ModelChangesWatcher.BulkFileChangesListener();
-  private IMakeNotificationListener myMakeListener = new IMakeNotificationListener() {
-    public void handleNotification(MakeNotification notification) {
-    }
-
-    public void scriptAboutToStart(MakeNotification notification) {
-    }
-
-    public void scriptFinished(MakeNotification notification) {
-    }
-
+  private IMakeNotificationListener myMakeListener = new IMakeNotificationListener.Stub() {
     public void sessionOpened(MakeNotification notification) {
       suspendTasksProcessing();
     }
@@ -108,9 +99,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
         return;
       }
       if (myReloadSession == null) {
-        return;
-      }
-      if (!(myReloadSession.hasAnythingToDo())) {
         return;
       }
       for (Project project : myProjectManager.getOpenProjects()) {
@@ -157,13 +145,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private void doReload() {
     final ReloadSession session = myReloadSession;
     myReloadSession = null;
-    if (session.hasAnythingToDo()) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          session.doReload();
-        }
-      }, ModalityState.NON_MODAL);
-    }
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        session.doReload();
+      }
+    }, ModalityState.NON_MODAL);
   }
 
   public Set<VirtualFile> getSignificantRoots() {

@@ -15,11 +15,8 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
-import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.descriptor.source.changes.FileSourceChangeWatcher;
-import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,48 +36,39 @@ public class ReloadableSources {
 
   //--------------
 
-  private final List<FileSourceChangeWatcher> mySources = new ArrayList<FileSourceChangeWatcher>();
-  private final List<FileSourceChangeWatcher> myInvalidatedSources = new ArrayList<FileSourceChangeWatcher>();
+  private final List<FileBasedModelDataSource> mySources = new ArrayList<FileBasedModelDataSource>();
 
-  public void addSource(FileSourceChangeWatcher source) {
+  public void addSource(FileBasedModelDataSource source) {
     mySources.add(source);
   }
 
-  public void removeSource(FileSourceChangeWatcher source) {
+  public void removeSource(FileBasedModelDataSource source) {
     mySources.remove(source);
   }
 
   //--------------
 
-  public void invalidate(IFile file) {
-    THashSet<FileSourceChangeWatcher> validSources = new THashSet<FileSourceChangeWatcher>(mySources);
-    validSources.removeAll(myInvalidatedSources);
-
-    for (FileSourceChangeWatcher source : validSources) {
-      if (source.containFile(file)) {
-        myInvalidatedSources.add(source);
-      }
+  public boolean needsReloading() {
+    for (FileBasedModelDataSource source : mySources) {
+      if (source.isInvalidated()) return true;
     }
+    return false;
   }
 
   public void reload(ProgressMonitor monitor) {
-    final ArrayList<FileSourceChangeWatcher> fileSourceChangeWatchers = new ArrayList<FileSourceChangeWatcher>(myInvalidatedSources);
+    final ArrayList<FileBasedModelDataSource> fileSourceChangeWatchers = new ArrayList<FileBasedModelDataSource>(mySources);
     monitor.start("", fileSourceChangeWatchers.size());
     try {
-      for (FileSourceChangeWatcher source : fileSourceChangeWatchers) {
+      for (FileBasedModelDataSource source : fileSourceChangeWatchers) {
         try {
-          source.changed(monitor.subTask(1));
+          if (!source.isInvalidated()) continue;
+          source.reload(monitor.subTask(1));
         } catch (RuntimeException e) {
           LOG.error("error on reloading model", e);
         }
       }
-      myInvalidatedSources.clear();
     } finally {
       monitor.done();
     }
-  }
-
-  public boolean hasInvalidated() {
-    return !myInvalidatedSources.isEmpty();
   }
 }

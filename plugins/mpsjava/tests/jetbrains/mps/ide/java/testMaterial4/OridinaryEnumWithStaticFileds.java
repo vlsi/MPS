@@ -16,11 +16,7 @@
 package jetbrains.mps.ide.java.testMaterial4;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 03.12.2009
- * Time: 19:01:48
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 03.12.2009
  */
 public enum OridinaryEnumWithStaticFileds {
   A, B, C;

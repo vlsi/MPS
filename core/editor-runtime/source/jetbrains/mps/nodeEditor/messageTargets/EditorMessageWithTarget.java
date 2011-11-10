@@ -31,11 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Color;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 18.02.2010
- * Time: 18:46:17
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 18.02.2010
  */
 public class EditorMessageWithTarget extends DefaultEditorMessage {
   protected MessageTarget myMessageTarget;

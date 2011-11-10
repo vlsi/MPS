@@ -15,7 +15,7 @@ import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
+import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
 
 public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
   public IndexedTupleViewer_WrapperFactory() {
@@ -58,7 +58,7 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
       IArrayValueProxy values = ((IArrayValueProxy) value.getFieldValue("values"));
       for (int i = 0; i < ((IArrayValueProxy) values).getLength(); i++) {
-        result.add(new TuplesWatchables.MyWatchable_element(JavaObjectValue.fromJDIValue(((IObjectValueProxy) values.getElementAt(i)).getJDIValue(), getThreadReference()), "element"));
+        result.add(new TuplesWatchables.MyWatchable_element(AbstractValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) values.getElementAt(i)).getJDIValue(), getThreadReference()), "element"));
       }
       return result;
     }

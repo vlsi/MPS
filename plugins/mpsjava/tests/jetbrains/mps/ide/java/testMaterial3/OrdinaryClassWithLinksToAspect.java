@@ -19,11 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 08.12.2009
- * Time: 18:19:33
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 08.12.2009
  */
 public class OrdinaryClassWithLinksToAspect extends SNodePointer {
   public OrdinaryClassWithLinksToAspect(SNode node) {

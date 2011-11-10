@@ -55,6 +55,7 @@ public class ViewOptions implements IExternalizeable {
   public boolean myShowPopupMenu = true;
 
   public boolean mySearchedNodesButtonsVisible = true;
+  public boolean myAdditionalInfoButtonVisible = true;
 
   public ViewOptions() {
 
@@ -66,6 +67,11 @@ public class ViewOptions implements IExternalizeable {
     myShowSearchedNodes = showSearchedNodes;
     myGroupSearchedNodes = groupSearchedNodes;
     mySearchedNodesButtonsVisible = searchedNodesButtonsVisible;
+  }
+
+  public ViewOptions(boolean count, boolean info, boolean showSearchedNodes, boolean groupSearchedNodes, boolean searchedNodesButtonsVisible, boolean additionalInfoButtonNeeded) {
+    this(count, info, showSearchedNodes, groupSearchedNodes, searchedNodesButtonsVisible);
+    myAdditionalInfoButtonVisible = additionalInfoButtonNeeded;
   }
 
   public void read(Element element, Project project) {
@@ -126,5 +132,6 @@ public class ViewOptions implements IExternalizeable {
     myShowPopupMenu = options.myShowPopupMenu;
 
     mySearchedNodesButtonsVisible = options.mySearchedNodesButtonsVisible;
+    myAdditionalInfoButtonVisible = options.myAdditionalInfoButtonVisible;
   }
 }

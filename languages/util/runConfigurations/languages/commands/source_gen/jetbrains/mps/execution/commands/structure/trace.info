@@ -50,20 +50,38 @@
     <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="78" />
     <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="70" startPosition="81" endLine="71" endPosition="208" />
     <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="74" startPosition="67" endLine="75" endPosition="61" />
-    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="1616228152992023913" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1616228152992023913" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1616228152992023913" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1616228152992023913" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1616228152992023913" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1616228152992023913" varName="node" />
+      <varInfo nodeId="1616228152992023913" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1616228152992023913" varName="init" />
+      <varInfo nodeId="1616228152992023913" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1616228152992023913" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandPartLengthOperation" />
   </root>
   <root nodeId="2343546112398330898">
@@ -100,16 +118,30 @@
     <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="46" startPosition="67" endLine="47" endPosition="75" />
     <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="50" startPosition="82" endLine="51" endPosition="210" />
     <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="54" startPosition="68" endLine="55" endPosition="62" />
-    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="2343546112398330898" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="2343546112398330898" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="2343546112398330898" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="2343546112398330898" varName="node" />
+      <varInfo nodeId="2343546112398330898" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="2343546112398330898" varName="init" />
+      <varInfo nodeId="2343546112398330898" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="2343546112398330898" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression" />
   </root>
   <root nodeId="2459753140357918802">
@@ -167,22 +199,42 @@
     <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="76" startPosition="69" endLine="77" endPosition="73" />
     <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="80" startPosition="76" endLine="81" endPosition="198" />
     <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="84" startPosition="62" endLine="85" endPosition="56" />
-    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="2459753140357918802" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="2459753140357918802" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="2459753140357918802" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2459753140357918802" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="2459753140357918802" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="2459753140357918802" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="2459753140357918802" varName="node" />
+      <varInfo nodeId="2459753140357918802" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="2459753140357918802" varName="init" />
+      <varInfo nodeId="2459753140357918802" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="2459753140357918802" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StartAndWaitOperation" />
   </root>
   <root nodeId="612376536074296995">
@@ -203,11 +255,20 @@
     <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="22" startPosition="62" endLine="23" endPosition="68" />
     <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="26" startPosition="73" endLine="27" endPosition="192" />
     <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="30" startPosition="59" endLine="31" endPosition="53" />
-    <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="612376536074296995" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="612376536074296995" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="612376536074296995" varName="init" />
+      <varInfo nodeId="612376536074296995" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="612376536074296995" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandProcessType" />
   </root>
   <root nodeId="6129022259108579244">
@@ -288,29 +349,56 @@
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="108" startPosition="69" endLine="109" endPosition="70" />
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="112" startPosition="73" endLine="113" endPosition="192" />
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="116" startPosition="59" endLine="117" endPosition="53" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="27" startPosition="0" endLine="30" endPosition="3" />
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="27" startPosition="0" endLine="30" endPosition="3">
+      <varInfo nodeId="6129022259108579244" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="node" />
+      <varInfo nodeId="6129022259108579244" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="node" />
+      <varInfo nodeId="6129022259108579244" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="init" />
+      <varInfo nodeId="6129022259108579244" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="6129022259108579244" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="6129022259108579244" fileName="ExecuteCommandPart.java" startLine="18" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ExecuteCommandPart" />
   </root>
   <root nodeId="6868250101935610313">
@@ -354,18 +442,34 @@
     <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="55" startPosition="61" endLine="56" endPosition="56" />
     <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="59" startPosition="70" endLine="60" endPosition="186" />
     <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="63" startPosition="56" endLine="64" endPosition="50" />
-    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="6868250101935610313" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="6868250101935610313" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="6868250101935610313" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="6868250101935610313" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6868250101935610313" varName="node" />
+      <varInfo nodeId="6868250101935610313" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="6868250101935610313" varName="init" />
+      <varInfo nodeId="6868250101935610313" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="6868250101935610313" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="6868250101935610313" fileName="ListCommandPart.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ListCommandPart" />
   </root>
   <root nodeId="7327337331549086040">
@@ -379,9 +483,16 @@
     <scopeInfo nodeId="7327337331549086040" fileName="CommandParameterDeclaration.java" startLine="14" startPosition="50" endLine="15" endPosition="16" />
     <scopeInfo nodeId="7327337331549086040" fileName="CommandParameterDeclaration.java" startLine="18" startPosition="82" endLine="19" endPosition="210" />
     <scopeInfo nodeId="7327337331549086040" fileName="CommandParameterDeclaration.java" startLine="22" startPosition="68" endLine="23" endPosition="62" />
-    <scopeInfo nodeId="7327337331549086040" fileName="CommandParameterDeclaration.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="7327337331549086040" fileName="CommandParameterDeclaration.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="7327337331549086040" fileName="CommandParameterDeclaration.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="7327337331549086040" fileName="CommandParameterDeclaration.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="7327337331549086040" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7327337331549086040" fileName="CommandParameterDeclaration.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="7327337331549086040" varName="init" />
+      <varInfo nodeId="7327337331549086040" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="7327337331549086040" fileName="CommandParameterDeclaration.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="7327337331549086040" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="7327337331549086040" fileName="CommandParameterDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandParameterDeclaration" />
   </root>
   <root nodeId="8234001627573935224">
@@ -432,20 +543,38 @@
     <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="78" />
     <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="70" startPosition="81" endLine="71" endPosition="208" />
     <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="74" startPosition="67" endLine="75" endPosition="61" />
-    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="8234001627573935224" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="8234001627573935224" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="8234001627573935224" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="8234001627573935224" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="8234001627573935224" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="8234001627573935224" varName="node" />
+      <varInfo nodeId="8234001627573935224" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="8234001627573935224" varName="init" />
+      <varInfo nodeId="8234001627573935224" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="8234001627573935224" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="8234001627573935224" fileName="CommandPartToListOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandPartToListOperation" />
   </root>
   <root nodeId="8234001627574071406">
@@ -473,13 +602,24 @@
     <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="32" startPosition="41" endLine="33" endPosition="52" />
     <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="36" startPosition="74" endLine="37" endPosition="194" />
     <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="40" startPosition="60" endLine="41" endPosition="54" />
-    <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="8234001627574071406" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="8234001627574071406" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="8234001627574071406" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="8234001627574071406" varName="init" />
+      <varInfo nodeId="8234001627574071406" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="8234001627574071406" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="8234001627574071406" fileName="PropertyCommandPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.PropertyCommandPart" />
   </root>
   <root nodeId="8478830098674460022">
@@ -493,9 +633,16 @@
     <scopeInfo nodeId="8478830098674460022" fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="13" startPosition="66" endLine="14" endPosition="16" />
     <scopeInfo nodeId="8478830098674460022" fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="17" startPosition="98" endLine="18" endPosition="242" />
     <scopeInfo nodeId="8478830098674460022" fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="21" startPosition="84" endLine="22" endPosition="78" />
-    <scopeInfo nodeId="8478830098674460022" fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="8478830098674460022" fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8478830098674460022" fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="8478830098674460022" fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="8478830098674460022" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8478830098674460022" fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="8478830098674460022" varName="init" />
+      <varInfo nodeId="8478830098674460022" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="8478830098674460022" fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="8478830098674460022" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="8478830098674460022" fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration" />
   </root>
   <root nodeId="856705193941281750">
@@ -515,11 +662,20 @@
     <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="22" startPosition="51" endLine="23" endPosition="29" />
     <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="26" startPosition="66" endLine="27" endPosition="178" />
     <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="30" startPosition="52" endLine="31" endPosition="46" />
-    <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="856705193941281750" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="856705193941281750" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="856705193941281750" varName="init" />
+      <varInfo nodeId="856705193941281750" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="856705193941281750" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281750" fileName="CommandType.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandType" />
   </root>
   <root nodeId="856705193941281753">
@@ -540,11 +696,20 @@
     <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="23" startPosition="51" endLine="24" endPosition="64" />
     <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="27" startPosition="81" endLine="28" endPosition="208" />
     <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="31" startPosition="67" endLine="32" endPosition="61" />
-    <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="856705193941281753" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="856705193941281753" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="856705193941281753" varName="init" />
+      <varInfo nodeId="856705193941281753" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="856705193941281753" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281753" fileName="CommandReferenceExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandReferenceExpression" />
   </root>
   <root nodeId="856705193941281756">
@@ -572,13 +737,24 @@
     <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="32" startPosition="62" endLine="33" endPosition="65" />
     <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="36" startPosition="80" endLine="37" endPosition="206" />
     <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="40" startPosition="66" endLine="41" endPosition="60" />
-    <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="856705193941281756" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="856705193941281756" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="856705193941281756" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="856705193941281756" varName="init" />
+      <varInfo nodeId="856705193941281756" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="856705193941281756" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281756" fileName="CommandParameterReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandParameterReference" />
   </root>
   <root nodeId="856705193941281762">
@@ -599,11 +775,20 @@
     <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="22" startPosition="44" endLine="23" endPosition="84" />
     <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="26" startPosition="90" endLine="27" endPosition="226" />
     <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="30" startPosition="76" endLine="31" endPosition="70" />
-    <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="856705193941281762" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="856705193941281762" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="856705193941281762" varName="init" />
+      <varInfo nodeId="856705193941281762" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="856705193941281762" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281762" fileName="ExplicitCommandParameterDeclaration.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration" />
   </root>
   <root nodeId="856705193941281764">
@@ -631,13 +816,24 @@
     <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="33" startPosition="41" endLine="34" endPosition="59" />
     <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="37" startPosition="81" endLine="38" endPosition="208" />
     <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="41" startPosition="67" endLine="42" endPosition="61" />
-    <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="856705193941281764" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="856705193941281764" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="856705193941281764" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="856705193941281764" varName="init" />
+      <varInfo nodeId="856705193941281764" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="856705193941281764" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281764" fileName="CommandParameterAssignment.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandParameterAssignment" />
   </root>
   <root nodeId="856705193941281767">
@@ -651,9 +847,16 @@
     <scopeInfo nodeId="856705193941281767" fileName="CommandMethod.java" startLine="14" startPosition="36" endLine="15" endPosition="16" />
     <scopeInfo nodeId="856705193941281767" fileName="CommandMethod.java" startLine="18" startPosition="68" endLine="19" endPosition="182" />
     <scopeInfo nodeId="856705193941281767" fileName="CommandMethod.java" startLine="22" startPosition="54" endLine="23" endPosition="48" />
-    <scopeInfo nodeId="856705193941281767" fileName="CommandMethod.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="856705193941281767" fileName="CommandMethod.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="856705193941281767" fileName="CommandMethod.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="856705193941281767" fileName="CommandMethod.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="856705193941281767" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281767" fileName="CommandMethod.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="856705193941281767" varName="init" />
+      <varInfo nodeId="856705193941281767" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281767" fileName="CommandMethod.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="856705193941281767" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281767" fileName="CommandMethod.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandMethod" />
   </root>
   <root nodeId="856705193941281768">
@@ -757,36 +960,70 @@
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="138" startPosition="69" endLine="139" endPosition="70" />
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="142" startPosition="73" endLine="143" endPosition="192" />
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="146" startPosition="59" endLine="147" endPosition="53" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="29" startPosition="0" endLine="32" endPosition="3" />
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="29" startPosition="0" endLine="32" endPosition="3">
+      <varInfo nodeId="856705193941281768" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="node" />
+      <varInfo nodeId="856705193941281768" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="node" />
+      <varInfo nodeId="856705193941281768" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
     <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="137" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="145" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="133" startPosition="0" endLine="137" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="137" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="node" />
+      <varInfo nodeId="856705193941281768" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="141" startPosition="0" endLine="145" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="init" />
+      <varInfo nodeId="856705193941281768" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
+      <varInfo nodeId="856705193941281768" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281768" fileName="CommandDeclaration.java" startLine="18" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandDeclaration" />
   </root>
   <root nodeId="856705193941281777">
@@ -837,20 +1074,38 @@
     <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="76" />
     <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="70" startPosition="79" endLine="71" endPosition="204" />
     <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="74" startPosition="65" endLine="75" endPosition="59" />
-    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="856705193941281777" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="856705193941281777" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="856705193941281777" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="856705193941281777" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="856705193941281777" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="856705193941281777" varName="node" />
+      <varInfo nodeId="856705193941281777" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="856705193941281777" varName="init" />
+      <varInfo nodeId="856705193941281777" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="856705193941281777" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281777" fileName="CommandDebuggerOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandDebuggerOperation" />
   </root>
   <root nodeId="856705193941281780">
@@ -887,16 +1142,30 @@
     <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="46" startPosition="96" endLine="47" endPosition="68" />
     <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="50" startPosition="79" endLine="51" endPosition="204" />
     <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="54" startPosition="65" endLine="55" endPosition="59" />
-    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="856705193941281780" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="856705193941281780" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="856705193941281780" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="856705193941281780" varName="node" />
+      <varInfo nodeId="856705193941281780" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="856705193941281780" varName="init" />
+      <varInfo nodeId="856705193941281780" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="856705193941281780" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281780" fileName="CommandBuilderExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandBuilderExpression" />
   </root>
   <root nodeId="856705193941281784">
@@ -910,9 +1179,16 @@
     <scopeInfo nodeId="856705193941281784" fileName="BuilderBlockStatement.java" startLine="14" startPosition="44" endLine="15" endPosition="16" />
     <scopeInfo nodeId="856705193941281784" fileName="BuilderBlockStatement.java" startLine="18" startPosition="76" endLine="19" endPosition="198" />
     <scopeInfo nodeId="856705193941281784" fileName="BuilderBlockStatement.java" startLine="22" startPosition="62" endLine="23" endPosition="56" />
-    <scopeInfo nodeId="856705193941281784" fileName="BuilderBlockStatement.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="856705193941281784" fileName="BuilderBlockStatement.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="856705193941281784" fileName="BuilderBlockStatement.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="856705193941281784" fileName="BuilderBlockStatement.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="856705193941281784" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281784" fileName="BuilderBlockStatement.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="856705193941281784" varName="init" />
+      <varInfo nodeId="856705193941281784" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281784" fileName="BuilderBlockStatement.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="856705193941281784" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281784" fileName="BuilderBlockStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.BuilderBlockStatement" />
   </root>
   <root nodeId="856705193941281787">
@@ -926,9 +1202,16 @@
     <scopeInfo nodeId="856705193941281787" fileName="BuilderParameter.java" startLine="14" startPosition="39" endLine="15" endPosition="16" />
     <scopeInfo nodeId="856705193941281787" fileName="BuilderParameter.java" startLine="18" startPosition="71" endLine="19" endPosition="188" />
     <scopeInfo nodeId="856705193941281787" fileName="BuilderParameter.java" startLine="22" startPosition="57" endLine="23" endPosition="51" />
-    <scopeInfo nodeId="856705193941281787" fileName="BuilderParameter.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="856705193941281787" fileName="BuilderParameter.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="856705193941281787" fileName="BuilderParameter.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="856705193941281787" fileName="BuilderParameter.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="856705193941281787" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281787" fileName="BuilderParameter.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="856705193941281787" varName="init" />
+      <varInfo nodeId="856705193941281787" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281787" fileName="BuilderParameter.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="856705193941281787" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281787" fileName="BuilderParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.BuilderParameter" />
   </root>
   <root nodeId="856705193941281790">
@@ -942,9 +1225,16 @@
     <scopeInfo nodeId="856705193941281790" fileName="ReportExecutionError.java" startLine="13" startPosition="43" endLine="14" endPosition="16" />
     <scopeInfo nodeId="856705193941281790" fileName="ReportExecutionError.java" startLine="17" startPosition="75" endLine="18" endPosition="196" />
     <scopeInfo nodeId="856705193941281790" fileName="ReportExecutionError.java" startLine="21" startPosition="61" endLine="22" endPosition="55" />
-    <scopeInfo nodeId="856705193941281790" fileName="ReportExecutionError.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="856705193941281790" fileName="ReportExecutionError.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="856705193941281790" fileName="ReportExecutionError.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="856705193941281790" fileName="ReportExecutionError.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="856705193941281790" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281790" fileName="ReportExecutionError.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="856705193941281790" varName="init" />
+      <varInfo nodeId="856705193941281790" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281790" fileName="ReportExecutionError.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="856705193941281790" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281790" fileName="ReportExecutionError.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ReportExecutionError" />
   </root>
   <root nodeId="856705193941281792">
@@ -972,13 +1262,24 @@
     <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="33" startPosition="45" endLine="34" endPosition="57" />
     <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="37" startPosition="75" endLine="38" endPosition="196" />
     <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="41" startPosition="61" endLine="42" endPosition="55" />
-    <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="856705193941281792" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="856705193941281792" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="856705193941281792" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="856705193941281792" varName="init" />
+      <varInfo nodeId="856705193941281792" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="856705193941281792" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281792" fileName="ReportErrorStatement.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ReportErrorStatement" />
   </root>
   <root nodeId="856705193941281797">
@@ -992,9 +1293,16 @@
     <scopeInfo nodeId="856705193941281797" fileName="AbstractProcessBuilderPart.java" startLine="14" startPosition="49" endLine="15" endPosition="16" />
     <scopeInfo nodeId="856705193941281797" fileName="AbstractProcessBuilderPart.java" startLine="18" startPosition="81" endLine="19" endPosition="208" />
     <scopeInfo nodeId="856705193941281797" fileName="AbstractProcessBuilderPart.java" startLine="22" startPosition="67" endLine="23" endPosition="61" />
-    <scopeInfo nodeId="856705193941281797" fileName="AbstractProcessBuilderPart.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="856705193941281797" fileName="AbstractProcessBuilderPart.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="856705193941281797" fileName="AbstractProcessBuilderPart.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="856705193941281797" fileName="AbstractProcessBuilderPart.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="856705193941281797" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281797" fileName="AbstractProcessBuilderPart.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="856705193941281797" varName="init" />
+      <varInfo nodeId="856705193941281797" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281797" fileName="AbstractProcessBuilderPart.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="856705193941281797" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281797" fileName="AbstractProcessBuilderPart.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.AbstractProcessBuilderPart" />
   </root>
   <root nodeId="856705193941281799">
@@ -1031,16 +1339,30 @@
     <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="46" startPosition="92" endLine="47" endPosition="64" />
     <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="50" startPosition="79" endLine="51" endPosition="204" />
     <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="54" startPosition="65" endLine="55" endPosition="59" />
-    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="856705193941281799" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="856705193941281799" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="856705193941281799" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="856705193941281799" varName="node" />
+      <varInfo nodeId="856705193941281799" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="856705193941281799" varName="init" />
+      <varInfo nodeId="856705193941281799" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="856705193941281799" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281799" fileName="ProcessBuilderExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderExpression" />
   </root>
   <root nodeId="856705193941281803">
@@ -1068,13 +1390,24 @@
     <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="32" startPosition="41" endLine="33" endPosition="54" />
     <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="36" startPosition="76" endLine="37" endPosition="198" />
     <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="40" startPosition="62" endLine="41" endPosition="56" />
-    <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="856705193941281803" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="856705193941281803" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="856705193941281803" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="856705193941281803" varName="init" />
+      <varInfo nodeId="856705193941281803" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="856705193941281803" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281803" fileName="ProcessBuilderKeyPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart" />
   </root>
   <root nodeId="856705193941281807">
@@ -1095,11 +1428,20 @@
     <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="23" startPosition="46" endLine="24" endPosition="56" />
     <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="27" startPosition="73" endLine="28" endPosition="192" />
     <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="31" startPosition="59" endLine="32" endPosition="53" />
-    <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="856705193941281807" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="856705193941281807" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="856705193941281807" varName="init" />
+      <varInfo nodeId="856705193941281807" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="856705193941281807" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281807" fileName="ProcessBuilderPart.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderPart" />
   </root>
   <root nodeId="856705193941281810">
@@ -1113,9 +1455,16 @@
     <scopeInfo nodeId="856705193941281810" fileName="ProcessType.java" startLine="14" startPosition="34" endLine="15" endPosition="16" />
     <scopeInfo nodeId="856705193941281810" fileName="ProcessType.java" startLine="18" startPosition="66" endLine="19" endPosition="178" />
     <scopeInfo nodeId="856705193941281810" fileName="ProcessType.java" startLine="22" startPosition="52" endLine="23" endPosition="46" />
-    <scopeInfo nodeId="856705193941281810" fileName="ProcessType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="856705193941281810" fileName="ProcessType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="856705193941281810" fileName="ProcessType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="856705193941281810" fileName="ProcessType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="856705193941281810" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281810" fileName="ProcessType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="856705193941281810" varName="init" />
+      <varInfo nodeId="856705193941281810" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281810" fileName="ProcessType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="856705193941281810" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281810" fileName="ProcessType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessType" />
   </root>
   <root nodeId="856705193941281812">
@@ -1143,13 +1492,24 @@
     <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="32" startPosition="44" endLine="33" endPosition="60" />
     <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="36" startPosition="79" endLine="37" endPosition="204" />
     <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="40" startPosition="65" endLine="41" endPosition="59" />
-    <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="856705193941281812" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="856705193941281812" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="856705193941281812" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="856705193941281812" varName="init" />
+      <varInfo nodeId="856705193941281812" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="856705193941281812" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.RedirectOutputExpression" />
   </root>
   <root nodeId="889694274152177535">
@@ -1184,15 +1544,28 @@
     <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="41" startPosition="41" endLine="42" endPosition="52" />
     <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="45" startPosition="74" endLine="46" endPosition="194" />
     <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="49" startPosition="60" endLine="50" endPosition="54" />
-    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="889694274152177535" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="889694274152177535" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="889694274152177535" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="889694274152177535" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="889694274152177535" varName="init" />
+      <varInfo nodeId="889694274152177535" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="889694274152177535" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.KeyValueCommandPart" />
   </root>
   <root nodeId="889694274152177536">
@@ -1206,9 +1579,16 @@
     <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="14" startPosition="48" endLine="15" endPosition="16" />
     <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="18" startPosition="80" endLine="19" endPosition="206" />
     <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="22" startPosition="66" endLine="23" endPosition="60" />
-    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="889694274152177536" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="889694274152177536" varName="init" />
+      <varInfo nodeId="889694274152177536" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="889694274152177536" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart" />
   </root>
   <root nodeId="889694274152216058">
@@ -1222,9 +1602,16 @@
     <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="14" startPosition="52" endLine="15" endPosition="16" />
     <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="18" startPosition="84" endLine="19" endPosition="214" />
     <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="22" startPosition="70" endLine="23" endPosition="64" />
-    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="889694274152216058" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="889694274152216058" varName="init" />
+      <varInfo nodeId="889694274152216058" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="889694274152216058" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType" />
   </root>
 </debugInfo>

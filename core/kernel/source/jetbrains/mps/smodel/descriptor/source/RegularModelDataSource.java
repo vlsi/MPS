@@ -25,7 +25,10 @@ import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
-import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
@@ -37,6 +40,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Set;
 
 public class RegularModelDataSource extends FileBasedModelDataSource {
@@ -57,8 +62,8 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return myFile.toString();
   }
 
-  public boolean containFile(IFile file) {
-    return myFile.getPath().equals(file.getPath());
+  public Collection<String> getFilesToListen() {
+    return Collections.singleton(myFile.getPath());
   }
 
   public boolean isReadOnly() {
@@ -182,6 +187,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
   public void setFile(IFile file) {
     myFile = file;
+    sourceFilesChanged();
   }
 
   public void rename(SModelDescriptor sm, SModelFqName modelFqName, boolean changeFile) {

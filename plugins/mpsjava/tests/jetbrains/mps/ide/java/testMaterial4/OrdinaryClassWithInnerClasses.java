@@ -19,11 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 04.12.2009
- * Time: 20:02:01
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 04.12.2009
  */
 public class OrdinaryClassWithInnerClasses extends SNodePointer {
   protected int myProtected;

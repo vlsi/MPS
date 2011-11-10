@@ -27,12 +27,12 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="${mps_home}/core/debug-api/languages/api/api.mpl" folder="api" />
-      <modulePath path="${mps_home}/core/debug/languages/customViewers/customViewers.mpl" />
-      <modulePath path="${mps_home}/core/debug/languages/evaluation/evaluation.mpl" folder="evaluation" />
-      <modulePath path="${mps_home}/core/debug/languages/privateMembers/privateMembers.mpl" folder="evaluation" />
-      <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" />
-      <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.tests/jetbrains.mps.debug.tests.msd" />
-      <modulePath path="${mps_home}/core/generator/solutions/traceInfo/jetbrains.mps.traceInfo.test.msd" />
+      <modulePath path="${mps_home}/core/debug-api/solutions/jetbrains.mps.debugger.api.api/api.msd" folder="api" />
+      <modulePath path="${mps_home}/core/debug/languages/customViewers/customViewers.mpl" folder="java.languages" />
+      <modulePath path="${mps_home}/core/debug/languages/evaluation/evaluation.mpl" folder="java.languages" />
+      <modulePath path="${mps_home}/core/debug/languages/privateMembers/privateMembers.mpl" folder="java.languages" />
+      <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debugger.java.api/jetbrains.mps.debugger.java.api.msd" folder="java" />
+      <modulePath path="${mps_home}/core/generator/solutions/traceInfo/jetbrains.mps.traceInfo.test.msd" folder="trace" />
       <modulePath path="${mps_home}/core/generator/solutions/traceInfo/util/cache.msd" folder="trace" />
       <modulePath path="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="trace" />
       <modulePath path="${mps_home}/core/languageDesign/textGen/textGen.mpl" folder="trace" />
@@ -42,7 +42,8 @@
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="usages" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="usages" />
       <modulePath path="${project}/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
-      <modulePath path="${project}/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.debugger.java.runtime.tests/jetbrains.mps.debugger.java.runtime.tests.msd" folder="java" />
+      <modulePath path="${project}/solutions/jetbrains.mps.debugger.java.runtime/jetbrains.mps.debugger.java.runtime.msd" folder="java" />
     </projectModules>
     <genConfs>
       <genConfModule name="customViewers" moduleRef="jetbrains.mps.debug.customViewers" />

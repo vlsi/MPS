@@ -18,11 +18,7 @@ package jetbrains.mps.testbench.util;
 import java.io.*;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Aug 18, 2010
- * Time: 1:07:22 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, Aug 18, 2010
  */
 public class CachingPrintStream extends PrintStream implements Output {
 

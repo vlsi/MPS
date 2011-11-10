@@ -22,7 +22,6 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class RuntimeEnvironment<T> {
-  private static final ClassHolder NULL_CLASS_HOLDER = new ClassHolder(null);
   private final Object myLock = new Object();
 
   private Map<T, RBundle<T>> myBundles = new HashMap<T, RBundle<T>>();
@@ -220,13 +219,5 @@ public class RuntimeEnvironment<T> {
     if (o1 == o2) return true;
     if (o1 == null || o2 == null) return false;
     return o1.equals(o2);
-  }
-
-  private static class ClassHolder<T> {
-    private Class<T> myClass;
-
-    public ClassHolder(Class<T> cls) {
-      this.myClass = cls;
-    }
   }
 }

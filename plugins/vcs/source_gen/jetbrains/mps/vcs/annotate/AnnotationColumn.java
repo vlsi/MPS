@@ -31,8 +31,13 @@ import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import javax.swing.SwingUtilities;
+import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.vcs.changes.ui.ChangesViewContentManager;
+import com.intellij.openapi.ui.MessageType;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.actions.AnnotationColors;
@@ -55,7 +60,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import java.util.Collections;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -73,7 +77,6 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import javax.swing.SwingUtilities;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.util.Pair;
@@ -88,7 +91,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.CommittedChangesProvider;
 import com.intellij.openapi.vcs.FilePathImpl;
 import com.intellij.openapi.vcs.ui.VcsBalloonProblemNotifier;
-import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.vcs.changes.Change;
 import com.intellij.openapi.vcs.changes.ChangesUtil;
 import java.io.File;
@@ -131,7 +133,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private boolean myShowAdditionalInfo = false;
   private MessageBusConnection myMessageBusConnection;
 
-  public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
+  public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, final AbstractVcs vcs, VirtualFile modelVirtualFile) {
     super(leftEditorHighlighter);
     Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
@@ -143,12 +145,23 @@ public class AnnotationColumn extends AbstractLeftColumn {
     for (VcsFileRevision rev : ListSequence.fromList(fileAnnotation.getRevisions())) {
       MapSequence.fromMap(myRevisionNumberToRevision).put(rev.getRevisionNumber(), rev);
     }
+    final Wrappers._T<ModelReadException> mre = new Wrappers._T<ModelReadException>(null);
     try {
       myFileLineToContent = ModelPersistence.getLineToContentMap(myFileAnnotation.getAnnotatedContent());
     } catch (ModelReadException e) {
-      return;
+      mre.value = e;
     }
     if (myFileLineToContent == null) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          String msg = "Couldn't show annotation";
+          if (mre.value != null && mre.value.getCause() != null) {
+            msg += ": " + mre.value.getCause().getMessage();
+          }
+          ToolWindowManager.getInstance(vcs.getProject()).notifyByBalloon(ChangesViewContentManager.TOOLWINDOW_ID, MessageType.WARNING, msg);
+          close();
+        }
+      });
       return;
     }
     myFileAnnotation.addListener(myAnnotationListener);
@@ -160,7 +173,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     Map<SNodeId, Integer> nodeIdToFileLine = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
     for (int line = 0; line < ListSequence.fromList(myFileLineToContent).count(); line++) {
       SNode node = null;
-      SNodeId id = check_5mnya_a0b0k0a(ListSequence.fromList(myFileLineToContent).getElement(line));
+      SNodeId id = check_5mnya_a0b0l0a(ListSequence.fromList(myFileLineToContent).getElement(line));
       if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
         node = model.getNodeById(id);
       }
@@ -286,18 +299,21 @@ public class AnnotationColumn extends AbstractLeftColumn {
   }
 
   public int getWidth() {
-    return ListSequence.fromList(myAspectSubcolumns).select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
-      public Integer select(AnnotationAspectSubcolumn s) {
-        return (s.isEnabled() || myShowAdditionalInfo ?
-          s.getWidth() :
-          0
-        );
-      }
-    }).reduceLeft(new ILeftCombinator<Integer, Integer>() {
-      public Integer combine(Integer a, Integer b) {
-        return a + mySubcolumnInterval + b;
-      }
-    }) + 1 + mySubcolumnInterval / 2;
+    return (ListSequence.fromList(myAspectSubcolumns).isEmpty() ?
+      0 :
+      ListSequence.fromList(myAspectSubcolumns).select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
+        public Integer select(AnnotationAspectSubcolumn s) {
+          return (s.isEnabled() || myShowAdditionalInfo ?
+            s.getWidth() :
+            0
+          );
+        }
+      }).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+        public Integer combine(Integer a, Integer b) {
+          return a + mySubcolumnInterval + b;
+        }
+      }) + 1 + mySubcolumnInterval / 2
+    );
   }
 
   @Nullable
@@ -579,7 +595,7 @@ __switch__:
     return myVcs.getProject();
   }
 
-  private static SNodeId check_5mnya_a0b0k0a(LineContent checkedDotOperand) {
+  private static SNodeId check_5mnya_a0b0l0a(LineContent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }

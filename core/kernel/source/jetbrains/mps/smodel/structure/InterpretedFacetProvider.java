@@ -20,11 +20,7 @@ import jetbrains.mps.make.facet.IFacet.Name;
 import jetbrains.mps.make.facet.IFacetManifest;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 6/14/11
- * Time: 12:46 PM
- * To change this template use File | Settings | File Templates.
+ * fyodor, 6/14/11
  */
 public class InterpretedFacetProvider extends DescriptorProvider<FacetDescriptor> {
 

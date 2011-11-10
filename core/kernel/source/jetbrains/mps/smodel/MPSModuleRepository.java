@@ -159,8 +159,6 @@ public class MPSModuleRepository implements CoreComponent {
         module = Language.createLanguage(null, handle, owner);
       } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
         module = Solution.newInstance(handle, owner);
-      } else if (handle.getDescriptor() instanceof LibraryDescriptor) {
-        module = Library.newInstance(handle, owner);
       } else if (handle.getDescriptor() instanceof DevkitDescriptor) {
         module = DevKit.newInstance(handle, owner);
       } else {
@@ -337,10 +335,6 @@ public class MPSModuleRepository implements CoreComponent {
 
   public Language getLanguage(ModuleReference ref) {
     return (Language) getModule(ref);
-  }
-
-  public Library getLibrary(ModuleReference ref) {
-    return (Library) getModule(ref);
   }
 
   public Generator getGenerator(ModuleReference ref) {

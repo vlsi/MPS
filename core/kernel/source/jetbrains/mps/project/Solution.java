@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
@@ -24,11 +25,15 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.BytecodeLocator;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 
+import java.net.URL;
 import java.util.UUID;
 
 /**
@@ -104,7 +109,7 @@ public class Solution extends AbstractModule {
   @Deprecated
   public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     ModuleDescriptor desciptor = null;
-    if(descriptorFile.exists()) {
+    if (descriptorFile.exists()) {
       desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
     }
     return newInstance(new ModuleHandle(descriptorFile, desciptor), moduleOwner);
@@ -205,10 +210,6 @@ public class Solution extends AbstractModule {
     return false;
   }
 
-  public boolean areJavaStubsEnabled() {
-    return getModuleDescriptor().getEnableJavaStubs() || !getModuleDescriptor().getSourcePaths().isEmpty();
-  }
-
   @Override
   protected SolutionDescriptor loadDescriptor() {
     IFile file = getDescriptorFile();
@@ -222,7 +223,7 @@ public class Solution extends AbstractModule {
     descriptor.setUUID(UUID.randomUUID().toString());
 
     IFile modelsDir = descriptorFile.getParent().getDescendant(SOLUTION_MODELS);
-    if (modelsDir.exists()) {
+    if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
       throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
     }
 
@@ -237,8 +238,22 @@ public class Solution extends AbstractModule {
   public BytecodeLocator getBytecodeLocator() {
     return new ModuleBytecodeLocator() {
       public byte[] find(String fqName) {
-        if (!getModuleDescriptor().getCompileInMPS()) return null;
+        if (!canLoad()) return null;
         return super.find(fqName);
+      }
+
+      public URL findResource(String name) {
+        if (!canLoad()) return null;
+        return super.findResource(name);
+      }
+
+      private boolean canLoad() {
+        return
+          getModuleDescriptor().getCompileInMPS() &&
+            (
+              MPSCore.getInstance().isTestMode() ||
+                getModuleDescriptor().getKind() != SolutionKind.NONE
+            );
       }
     };
   }

@@ -21,7 +21,6 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.ide.IEditor;
@@ -135,10 +134,9 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         public void run() {
           mySortedPlugins = new ArrayList<BaseProjectPlugin>();
 
-          Collection bootstrapPlugins = PluginUtil.getBootstrapPluginModules();
-          if (!bootstrapPlugins.isEmpty()) {
-            mySortedPlugins.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ProjectPluginCreator()));
-          }
+          Set<IModule> modules = new HashSet<IModule>();
+          modules.addAll(PluginUtil.collectPluginModules());
+          mySortedPlugins.addAll(PluginUtil.createPlugins(modules, new ProjectPluginCreator()));
 
           Collection<PluginContributor> pluginContributors = PluginUtil.getPluginContributors();
           for (PluginContributor c : pluginContributors) {
@@ -146,12 +144,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
             if (plugin == null) continue;
             mySortedPlugins.add(plugin);
           }
-
-          Set<IModule> modules = new HashSet<IModule>();
-          for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-            modules.addAll(PluginUtil.collectPluginModules(p));
-          }
-          mySortedPlugins.addAll(PluginUtil.createPlugins(modules, new ProjectPluginCreator()));
 
           for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {

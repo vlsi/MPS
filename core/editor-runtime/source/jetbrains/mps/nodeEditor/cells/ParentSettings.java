@@ -16,11 +16,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 30.11.10
- * Time: 14:58
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 30.11.10
  */
 public class ParentSettings {
   private boolean mySkipBackground = false;

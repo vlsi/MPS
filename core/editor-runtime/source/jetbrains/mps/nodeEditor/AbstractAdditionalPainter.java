@@ -20,13 +20,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import java.awt.Color;
 import java.awt.Rectangle;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 09.12.2009
- * Time: 22:46:48
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractAdditionalPainter<T> implements AdditionalPainter<T> {
 
   public void afterAdding(EditorComponent editorComponent) {

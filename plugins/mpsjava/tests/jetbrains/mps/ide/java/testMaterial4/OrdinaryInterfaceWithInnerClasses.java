@@ -16,11 +16,7 @@
 package jetbrains.mps.ide.java.testMaterial4;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 04.12.2009
- * Time: 20:02:01
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 04.12.2009
  */
 public interface OrdinaryInterfaceWithInnerClasses {
   public void foo();

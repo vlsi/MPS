@@ -18,7 +18,12 @@ package jetbrains.mps.idea.core.actions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.fileTypes.FileIcons;
+import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 
 /**
  * evgeny, 11/1/11
@@ -31,6 +36,8 @@ public class TestRepository extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent anActionEvent) {
+        Project data = anActionEvent.getData(PlatformDataKeys.PROJECT);
+        DefaultMessageHandler handler = new DefaultMessageHandler(data);
+        handler.handle(new Message(MessageKind.INFORMATION, "Works!"));
     }
-
 }

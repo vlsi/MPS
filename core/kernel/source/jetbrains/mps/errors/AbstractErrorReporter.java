@@ -22,11 +22,7 @@ import java.util.List;
 import java.util.Collections;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.02.2010
- * Time: 21:31:59
- * To change this template use File | Settings | File Templates.
+ * Cyril.Konopko, 10.02.2010
  */
 public abstract class AbstractErrorReporter implements IErrorReporter {
   private List<Pair<String, String>> myAdditionalRuleIds = null;

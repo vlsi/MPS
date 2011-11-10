@@ -88,6 +88,11 @@ public class SearchPanel extends AbstractSearchPanel {
     return new Pair<List<EditorCell_Label>, String>(cells, sb.toString());
   }
 
+  @Override
+  protected boolean showExportToFindTool() {
+    return true;
+  }
+
   protected boolean canExportToFindTool() {
     return !getMessages().isEmpty();
   }

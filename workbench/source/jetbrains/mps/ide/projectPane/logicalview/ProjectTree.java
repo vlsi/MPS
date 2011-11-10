@@ -64,7 +64,7 @@ public class ProjectTree extends MPSTree {
     setRootVisible(false);
     List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
-    for (Class<? extends IModule> cl: new Class[]{Solution.class,Language.class,Library.class,DevKit.class}){
+    for (Class<? extends IModule> cl: new Class[]{Solution.class,Language.class,DevKit.class}){
       for (IModule module : project.getProjectModules(cl)) {
         moduleNodes.add(ProjectModuleTreeNode.createFor(project,module,false));
       }

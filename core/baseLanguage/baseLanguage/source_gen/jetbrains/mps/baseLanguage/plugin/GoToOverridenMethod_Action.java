@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
@@ -27,9 +28,11 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class GoToOverridenMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -91,9 +94,9 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<Set<Tuples._2<SNode, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNode, SNode>>>();
+      final Wrappers._T<Set<Tuples._2<SNodePointer, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNodePointer, SNode>>>();
       final String[] methodName = new String[1];
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searchig...", true) {
+      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
         public void run(@NotNull ProgressIndicator p0) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -107,11 +110,11 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
       Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
       RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
 
-      GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
-        public SNode select(Tuples._2<SNode, SNode> it) {
+      GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNodePointer, SNode>, SNodePointer>() {
+        public SNodePointer select(Tuples._2<SNodePointer, SNode> it) {
           return it._0();
         }
-      }).toListSequence(), relPoint, ((Project) MapSequence.fromMap(_params).get("project")), methodName[0]);
+      }).toListSequence(), relPoint, ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))), methodName[0]);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
     }
@@ -125,13 +128,16 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
     return SNodeOperations.getAncestor(GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
   }
 
-  private Set<Tuples._2<SNode, SNode>> getOverridenMethod(final Map<String, Object> _params) {
+  private Set<Tuples._2<SNodePointer, SNode>> getOverridenMethod(final Map<String, Object> _params) {
     SNode method = GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params);
     SNode classifier = GoToOverridenMethod_Action.this.getClassifier(_params);
     Set<Tuples._2<SNode, SNode>> overridenMethods = new OverridingMethodsFinder(classifier, Sequence.<SNode>singleton(method)).getOverridenMethods(method);
-    return (overridenMethods == null ?
-      SetSequence.fromSet(new HashSet<Tuples._2<SNode, SNode>>()) :
-      overridenMethods
-    );
+    Set<Tuples._2<SNodePointer, SNode>> result = SetSequence.fromSet(new HashSet<Tuples._2<SNodePointer, SNode>>());
+    if (overridenMethods != null) {
+      for (Tuples._2<SNode, SNode> entry : overridenMethods) {
+        SetSequence.fromSet(result).addElement(MultiTuple.<SNodePointer,SNode>from(new SNodePointer(entry._0()), entry._1()));
+      }
+    }
+    return result;
   }
 }
