@@ -56,7 +56,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.structure.IClassifier" />
-    <classNode dependClassName="jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration" />
     <classNode dependClassName="jetbrains.mps.execution.commands.structure.CommandMethod" />
     <classNode dependClassName="jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration" />
     <classNode dependClassName="jetbrains.mps.execution.commands.structure.ExecuteCommandPart" />

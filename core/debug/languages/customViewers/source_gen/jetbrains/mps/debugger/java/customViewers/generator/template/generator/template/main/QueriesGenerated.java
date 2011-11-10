@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.debug.evaluation.transform.Transformator;
+import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -207,7 +207,7 @@ public class QueriesGenerated {
           if ((method == null)) {
             continue;
           }
-          new Transformator(method, false).transform();
+          TransformatorBuilder.getInstance().build(method, false).transform();
         }
       }
     }

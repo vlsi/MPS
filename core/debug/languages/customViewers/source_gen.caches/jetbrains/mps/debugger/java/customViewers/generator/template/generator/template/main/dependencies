@@ -7,7 +7,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.TransformationUtil" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.Transformator" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
     <classNode dependClassName="jetbrains.mps.debugger.java.customViewers.behavior.HighLevelCustomViewer_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />

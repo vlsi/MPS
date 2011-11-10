@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.debug.evaluation.transform.Transformator;
+import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
 
 /*package*/ class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {
   protected static Log log = LogFactory.getLog(MyInMemoryJavaGenerationHandler.class);
@@ -65,7 +65,7 @@ import jetbrains.mps.debug.evaluation.transform.Transformator;
 
       if (evaluator != null) {
         try {
-          new Transformator(evaluator, true).transformEvaluator();
+          TransformatorBuilder.getInstance().build(evaluator, true).transformEvaluator();
           if (AbstractEvaluationModel.IS_DEVELOPER_MODE) {
             for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.fromList(myGenerationListeners)) {
               listener.invoke(evaluator);
