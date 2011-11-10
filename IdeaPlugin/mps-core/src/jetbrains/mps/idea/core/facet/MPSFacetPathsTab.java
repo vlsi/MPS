@@ -16,7 +16,23 @@
 
 package jetbrains.mps.idea.core.facet;
 
+import com.intellij.facet.ui.FacetEditorContext;
+import com.intellij.ide.util.BrowseFilesListener;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.openapi.fileChooser.FileChooserFactory;
+import com.intellij.openapi.roots.ContentEntry;
+import com.intellij.openapi.roots.SourceFolder;
+import com.intellij.ui.DocumentAdapter;
+import com.intellij.ui.FieldPanel;
+import com.intellij.ui.IdeBorderFactory;
+import com.intellij.ui.InsertPathAction;
+import jetbrains.mps.idea.core.MPSBundle;
+
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,20 +43,169 @@ import javax.swing.*;
  */
 public class MPSFacetPathsTab {
     private JPanel myRootPanel;
+    private JRadioButton myUseModuleSourceFolderRadioButton;
+    private JRadioButton myUseCustomFolderRadioButton;
+    private JComboBox myModuleReferenceCompo;
+    private JLabel mySourceFolderLabel;
+    private JLabel myOutputFolderLabel;
+    private CommitableFieldPanel myFieldPanel;
+    private JPanel myGeneratorOutputPathPanel;
+
+    private FacetEditorContext myContext;
+
+    public MPSFacetPathsTab(FacetEditorContext context) {
+        ActionListener listener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleUseModuleSourceFolderSwitched(isUseModuleSourceFolder());
+            }
+        };
+        myUseModuleSourceFolderRadioButton.addActionListener(listener);
+        myUseCustomFolderRadioButton.addActionListener(listener);
+        myContext = context;
+    }
+
+    private boolean isUseModuleSourceFolder() {
+        return myUseModuleSourceFolderRadioButton.isSelected();
+    }
+
+    private String getGeneratorOutputPath() {
+        return isUseModuleSourceFolder() ? (String) myModuleReferenceCompo.getSelectedItem() : myFieldPanel.getText();
+    }
+
+    private void handleUseModuleSourceFolderSwitched(boolean useModuleSourceFolder) {
+        myModuleReferenceCompo.setEnabled(useModuleSourceFolder);
+        mySourceFolderLabel.setEnabled(useModuleSourceFolder);
+        myFieldPanel.setEnabled(!useModuleSourceFolder);
+        myOutputFolderLabel.setEnabled(!useModuleSourceFolder);
+    }
 
     public JPanel getRootPanel() {
         return myRootPanel;
     }
 
     public void setData(MPSConfigurationBean data) {
-        //To change body of created methods use File | Settings | File Templates.
+        if (data.isUseModuleSourceFolder()) {
+            myUseModuleSourceFolderRadioButton.doClick();
+        } else {
+            myUseCustomFolderRadioButton.doClick();
+        }
+        myFieldPanel.setText(data.getGeneratorOutputPath());
     }
 
     public void getData(MPSConfigurationBean data) {
-        //To change body of created methods use File | Settings | File Templates.
+        data.setUseModuleSourceFolder(isUseModuleSourceFolder());
+        data.setGeneratorOutputPath(getGeneratorOutputPath());
     }
 
     public boolean isModified(MPSConfigurationBean data) {
-        return false;  //To change body of created methods use File | Settings | File Templates.
+        if (data.isUseModuleSourceFolder() != isUseModuleSourceFolder()) {
+            return true;
+        }
+        if (!data.getGeneratorOutputPath().equals(getGeneratorOutputPath())) {
+            return true;
+        }
+        return false;
+    }
+
+    public void onTabEntering() {
+        String oldSelection = null;
+        if (isUseModuleSourceFolder()) {
+            oldSelection = myModuleReferenceCompo.getItemCount() == 0 ? myFieldPanel.getText() : (String) myModuleReferenceCompo.getSelectedItem();
+        }
+
+        boolean hasOldItem = false;
+        myModuleReferenceCompo.removeAllItems();
+        for (ContentEntry entry : myContext.getRootModel().getContentEntries()) {
+            for (SourceFolder sourceFolder : entry.getSourceFolders()) {
+                String path = sourceFolder.getFile().getPath();
+                myModuleReferenceCompo.addItem(path);
+                if (path.equals(oldSelection)) {
+                    hasOldItem = true;
+                }
+            }
+        }
+
+        if (oldSelection != null) {
+            if (hasOldItem) {
+                myModuleReferenceCompo.setSelectedItem(oldSelection);
+            } else {
+                myUseCustomFolderRadioButton.doClick();
+                myFieldPanel.setText(oldSelection);
+            }
+        }
+    }
+
+    private void createUIComponents() {
+        initGeneratorOutputPathPanel();
+
+        initFieldPanel();
+    }
+
+    private void initFieldPanel() {
+        final JTextField textField = new JTextField();
+        final FileChooserDescriptor outputPathsChooserDescriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
+        outputPathsChooserDescriptor.setHideIgnored(false);
+        InsertPathAction.addTo(textField, outputPathsChooserDescriptor);
+        FileChooserFactory.getInstance().installFileCompletion(textField, outputPathsChooserDescriptor, true, null);
+        final Runnable commitRunnable = new Runnable() {
+            public void run() {
+//            if (!getModel().isWritable()) {
+//              return;
+//            }
+//            final String path = textField.getText().trim();
+//            if (path.length() == 0) {
+//              commitPathRunnable.saveUrl(null);
+//            }
+//            else {
+//              // should set only absolute paths
+//              String canonicalPath;
+//              try {
+//                canonicalPath = FileUtil.resolveShortWindowsName(path);
+//              }
+//              catch (IOException e) {
+//                canonicalPath = path;
+//              }
+//              commitPathRunnable.saveUrl(VfsUtil.pathToUrl(FileUtil.toSystemIndependentName(canonicalPath)));
+//            }
+            }
+        };
+
+        textField.getDocument().addDocumentListener(new DocumentAdapter() {
+            protected void textChanged(DocumentEvent e) {
+                commitRunnable.run();
+            }
+        });
+
+        myFieldPanel = new CommitableFieldPanel(textField, null, null, new BrowseFilesListener(textField, MPSBundle.message("facet.paths.tab.generator.output.select.generator.output.folder"), "", outputPathsChooserDescriptor) {
+            public void actionPerformed(ActionEvent e) {
+                super.actionPerformed(e);
+                commitRunnable.run();
+            }
+        }, null, commitRunnable);
+
+    }
+
+    private void initGeneratorOutputPathPanel() {
+        myGeneratorOutputPathPanel = new JPanel();
+        myGeneratorOutputPathPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4), IdeBorderFactory.createTitledBorder(MPSBundle.message("facet.paths.tab.generator.output.title"))));
+    }
+
+    public static class CommitableFieldPanel extends FieldPanel {
+        private final Runnable myCommitRunnable;
+
+        public CommitableFieldPanel(final JTextField textField,
+                                    String labelText,
+                                    final String viewerDialogTitle,
+                                    ActionListener browseButtonActionListener,
+                                    final Runnable documentListener,
+                                    final Runnable commitPathRunnable) {
+            super(textField, labelText, viewerDialogTitle, browseButtonActionListener, documentListener);
+            myCommitRunnable = commitPathRunnable;
+        }
+
+        public void commit() {
+            myCommitRunnable.run();
+        }
     }
 }

@@ -1,12 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="jetbrains.mps.idea.core.facet.MPSFacetPathsTab">
-  <grid id="27dc6" binding="myRootPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="0" left="0" bottom="0" right="0"/>
+  <grid id="27dc6" binding="myRootPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="569" height="400"/>
     </constraints>
     <properties/>
-    <border type="none"/>
-    <children/>
+    <border type="none">
+      <size top="4" left="4" bottom="4" right="4"/>
+    </border>
+    <children>
+      <grid id="34717" binding="myGeneratorOutputPathPanel" custom-create="true" layout-manager="FormLayout">
+        <rowspec value="center:max(d;4px):noGrow"/>
+        <rowspec value="top:3dlu:noGrow"/>
+        <rowspec value="center:d:noGrow"/>
+        <rowspec value="top:3dlu:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
+        <rowspec value="top:3dlu:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
+        <colspec value="left:max(p;16px):noGrow"/>
+        <colspec value="left:0px:noGrow"/>
+        <colspec value="left:p:noGrow"/>
+        <colspec value="left:8px:noGrow"/>
+        <colspec value="left:p:grow"/>
+        <colspec value="left:4dlu:noGrow"/>
+        <colspec value="left:4dlu:noGrow"/>
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none">
+          <size top="4" left="4" bottom="4" right="4"/>
+        </border>
+        <children>
+          <component id="a591a" class="javax.swing.JRadioButton" binding="myUseCustomFolderRadioButton">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <text resource-bundle="jetbrains/mps/idea/core/MPSBundle" key="facet.paths.tab.generator.output.use.custom.folder"/>
+            </properties>
+          </component>
+          <component id="e664c" class="javax.swing.JComboBox" binding="myModuleReferenceCompo">
+            <constraints>
+              <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <forms defaultalign-horz="false"/>
+            </constraints>
+            <properties>
+              <model/>
+            </properties>
+          </component>
+          <component id="d41b4" class="javax.swing.JLabel" binding="myOutputFolderLabel">
+            <constraints>
+              <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+              <forms defaultalign-horz="false"/>
+            </constraints>
+            <properties>
+              <text resource-bundle="jetbrains/mps/idea/core/MPSBundle" key="facet.paths.tab.generator.output.folder"/>
+            </properties>
+          </component>
+          <component id="5a93f" class="javax.swing.JRadioButton" binding="myUseModuleSourceFolderRadioButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <horizontalAlignment value="10"/>
+              <horizontalTextPosition value="11"/>
+              <selected value="true"/>
+              <text resource-bundle="jetbrains/mps/idea/core/MPSBundle" key="facet.paths.tab.generator.output.use.module.source"/>
+            </properties>
+          </component>
+          <component id="3812a" class="javax.swing.JLabel" binding="mySourceFolderLabel">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <text resource-bundle="jetbrains/mps/idea/core/MPSBundle" key="facet.paths.tab.generator.output.source.folder"/>
+            </properties>
+          </component>
+          <component id="5e51f" class="jetbrains.mps.idea.core.facet.MPSFacetPathsTab$CommitableFieldPanel" binding="myFieldPanel" custom-create="true">
+            <constraints>
+              <grid row="6" column="4" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties/>
+          </component>
+        </children>
+      </grid>
+    </children>
   </grid>
+  <buttonGroups>
+    <group name="GeneratorOutputGroup">
+      <member id="689b6"/>
+      <member id="689b6"/>
+      <member id="f9e2b"/>
+      <member id="a591a"/>
+      <member id="5a93f"/>
+    </group>
+  </buttonGroups>
 </form>

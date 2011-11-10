@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.facet;
 
+import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -50,10 +51,10 @@ public class MPSFacetSourcesTab {
 
     private JPanel myRootPanel;
     private ToolbarPanel myToolbarPanel;
-    private MPSFacetConfiguration myConfiguration;
+    private FacetEditorContext myContext;
 
-    public MPSFacetSourcesTab(MPSFacetConfiguration configuration) {
-        myConfiguration = configuration;
+    public MPSFacetSourcesTab(FacetEditorContext context) {
+        myContext = context;
     }
 
     public JPanel getRootPanel() {
@@ -74,7 +75,7 @@ public class MPSFacetSourcesTab {
 
     private void createUIComponents() {
         myRootPanel = new JPanel();
-        myRootPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4), IdeBorderFactory.createTitledBorder("Model Roots")));
+        myRootPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4), IdeBorderFactory.createTitledBorder(MPSBundle.message("facet.sources.tab.model.roots.title"))));
 
         DefaultActionGroup group = new DefaultActionGroup();
         AddModelRootAction action = new AddModelRootAction();
@@ -93,15 +94,15 @@ public class MPSFacetSourcesTab {
         private VirtualFile myLastSelectedDir;
 
         public AddModelRootAction() {
-            super(MPSBundle.message("facet.source.tab.add.model.root.action"), MPSBundle.message("facet.source.tab.add.model.root.description"), MPSIcons.ADD_MODEL_ROOT_ICON);
+            super(MPSBundle.message("facet.sources.tab.add.model.root.action"), MPSBundle.message("facet.sources.tab.add.model.root.description"), MPSIcons.ADD_MODEL_ROOT_ICON);
             myDescriptor = new FileChooserDescriptor(false, true, true, false, true, true) {
                 public void validateSelectedFiles(VirtualFile[] files) throws Exception {
                     validateContentEntriesCandidates(files);
                 }
             };
-            myDescriptor.putUserData(LangDataKeys.MODULE_CONTEXT, myConfiguration.getFacet().getModule());
-            myDescriptor.setTitle(MPSBundle.message("facet.source.tab.add.model.root.directory.title"));
-            myDescriptor.setDescription(MPSBundle.message("facet.source.tab.add.model.root.directory.description"));
+            myDescriptor.putUserData(LangDataKeys.MODULE_CONTEXT, myContext.getModule());
+            myDescriptor.setTitle(MPSBundle.message("facet.sources.tab.add.model.root.directory.title"));
+            myDescriptor.setDescription(MPSBundle.message("facet.sources.tab.add.model.root.directory.description"));
             myDescriptor.putUserData(FileChooserKeys.DELETE_ACTION_AVAILABLE, false);
         }
 
@@ -110,7 +111,7 @@ public class MPSFacetSourcesTab {
 
         @Override
         public void actionPerformed(AnActionEvent anActionEvent) {
-            VirtualFile[] files = FileChooser.chooseFiles(myConfiguration.getFacet().getModule().getProject(), myDescriptor, myLastSelectedDir);
+            VirtualFile[] files = FileChooser.chooseFiles(myContext.getProject(), myDescriptor, myLastSelectedDir);
             if (files.length > 0) {
                 myLastSelectedDir = files[0];
 //              addContentEntries(files);

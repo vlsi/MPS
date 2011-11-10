@@ -22,13 +22,30 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
  * evgeny, 10/26/11
  */
 public class MPSConfigurationBean {
-    private final SolutionDescriptor descriptor = new SolutionDescriptor();
+    private final SolutionDescriptor myDescriptor = new SolutionDescriptor();
+    private boolean myUseModuleSourceFolder;
 
     public String getNamespace() {
-      return descriptor.getNamespace();
+        return myDescriptor.getNamespace();
     }
 
     public void setNamespace(String namespace) {
-      descriptor.setNamespace(namespace);
+        myDescriptor.setNamespace(namespace);
+    }
+
+    public void setUseModuleSourceFolder(boolean use) {
+        myUseModuleSourceFolder = use;
+    }
+
+    public boolean isUseModuleSourceFolder() {
+        return myUseModuleSourceFolder;
+    }
+
+    public String getGeneratorOutputPath() {
+        return myDescriptor.getOutputPath();
+    }
+
+    public void setGeneratorOutputPath(String outputPath) {
+        myDescriptor.setOutputPath(outputPath);
     }
 }

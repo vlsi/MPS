@@ -32,6 +32,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
+import java.io.File;
 
 /**
  * evgeny, 10/26/11
@@ -58,11 +59,19 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     }
 
     public FacetEditorTab[] createEditorTabs(FacetEditorContext facetEditorContext, FacetValidatorsManager facetValidatorsManager) {
-        return new FacetEditorTab[]{new MPSFacetCommonTab()};
+        return new FacetEditorTab[]{new MPSFacetCommonTab(facetEditorContext)};
     }
 
     public void setFacet(MPSFacet mpsFacet) {
         myMpsFacet = mpsFacet;
+        setConfigurationDefaults();
+    }
+
+    private void setConfigurationDefaults() {
+        if (configurationBean.getGeneratorOutputPath() == null) {
+            configurationBean.setGeneratorOutputPath(myMpsFacet.getModule().getModuleFile().getParent().getPath() + File.separator + "source_gen");
+            configurationBean.setUseModuleSourceFolder(false);
+        }
     }
 
     public MPSFacet getFacet() {
@@ -72,6 +81,11 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     public class MPSFacetCommonTab extends FacetEditorTab implements Disposable {
 
         private MPSFacetCommonTabUI form;
+        private FacetEditorContext myContext;
+
+        public MPSFacetCommonTab(FacetEditorContext context) {
+            myContext = context;
+        }
 
         @Override
         public Icon getIcon() {
@@ -85,7 +99,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
 
         public JComponent createComponent() {
             if (form == null) {
-                form = new MPSFacetCommonTabUI(MPSFacetConfiguration.this, this);
+                form = new MPSFacetCommonTabUI(myContext, this);
             }
             return form.getRootPanel();
         }
@@ -110,6 +124,11 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
         public void disposeUIResources() {
             Disposer.dispose(this);
             form = null;
+        }
+
+        @Override
+        public void onTabEntering() {
+            form.onTabEntering();
         }
 
         @Override

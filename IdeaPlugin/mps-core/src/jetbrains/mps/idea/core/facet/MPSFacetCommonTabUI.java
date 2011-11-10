@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.facet;
 
+import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.Disposable;
 import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -35,11 +36,11 @@ public class MPSFacetCommonTabUI {
     private Disposable myParentDisposable;
     private MPSFacetSourcesTab mySourcesTab;
     private MPSFacetPathsTab myPathsTab;
-    private MPSFacetConfiguration myConfiguration;
+    private FacetEditorContext myContext;
 
-    public MPSFacetCommonTabUI(MPSFacetConfiguration configuration, Disposable parentDisposable) {
+    public MPSFacetCommonTabUI(FacetEditorContext context, Disposable parentDisposable) {
         myParentDisposable = parentDisposable;
-        myConfiguration = configuration;
+        myContext = context;
     }
 
     public void setData(MPSConfigurationBean data) {
@@ -70,8 +71,12 @@ public class MPSFacetCommonTabUI {
 
     private void createCentralComponent() {
         TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(myParentDisposable);
-        tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, (mySourcesTab = new MPSFacetSourcesTab(myConfiguration)).getRootPanel(), null);
-        tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, (myPathsTab = new MPSFacetPathsTab()).getRootPanel(), null);
+        tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, (mySourcesTab = new MPSFacetSourcesTab(myContext)).getRootPanel(), null);
+        tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, (myPathsTab = new MPSFacetPathsTab(myContext)).getRootPanel(), null);
         myCentralComponent = tabbedPane.getComponent();
+    }
+
+    public void onTabEntering() {
+        myPathsTab.onTabEntering();
     }
 }

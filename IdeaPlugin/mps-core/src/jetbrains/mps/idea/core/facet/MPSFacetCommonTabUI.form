@@ -20,7 +20,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Namespace:"/>
+              <text resource-bundle="jetbrains/mps/idea/core/MPSBundle" key="facet.common.tab.namespace"/>
             </properties>
           </component>
           <component id="13e15" class="javax.swing.JTextField" binding="namespace">
