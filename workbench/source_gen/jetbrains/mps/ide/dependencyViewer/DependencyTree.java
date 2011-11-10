@@ -18,6 +18,7 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import jetbrains.mps.ide.ui.smodel.PackageNode;
 
 public class DependencyTree extends MPSTree {
   private Scope myScope;
@@ -85,6 +86,11 @@ public class DependencyTree extends MPSTree {
           }
           for (SModelDescriptor model : ((NamespaceTextNode) node).getModelsUnder()) {
             scope.add(model);
+          }
+        }
+        if (node instanceof PackageNode) {
+          for (SNode nodeUnder : ((PackageNode) node).getNodesUnderPackage()) {
+            scope.add(nodeUnder);
           }
         }
 

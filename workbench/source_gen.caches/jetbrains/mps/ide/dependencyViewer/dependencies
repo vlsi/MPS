@@ -48,6 +48,7 @@
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.TextMPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PackageNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SModelTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SNodeTreeNode" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
