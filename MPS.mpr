@@ -188,8 +188,8 @@
       <modulePath path="${project}/languages/util/buildlanguage/languages/property/property.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="languages.build" />
-      <modulePath path="${project}/languages/util/conf/languages/conf/conf.mpl" folder="languages.platform" />
-      <modulePath path="${project}/languages/util/conf/solutions/jetbrains.mps.platform.conf.sandbox/jetbrains.mps.platform.conf.sandbox.msd" folder="languages.platform" />
+      <modulePath path="${project}/languages/util/conf/languages/conf/conf.mpl" folder="languages" />
+      <modulePath path="${project}/languages/util/conf/solutions/jetbrains.mps.platform.conf.sandbox/jetbrains.mps.platform.conf.sandbox.msd" folder="languages" />
       <modulePath path="${project}/languages/util/contracts/languages/contracts/contracts.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/util/dates/dates.mpl" folder="baseLanguage.dates" />
       <modulePath path="${project}/languages/util/dates/internal/internal.mpl" folder="baseLanguage.dates" />
