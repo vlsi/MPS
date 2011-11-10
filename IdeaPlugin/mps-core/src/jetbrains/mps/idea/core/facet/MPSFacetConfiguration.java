@@ -20,8 +20,10 @@ import com.intellij.facet.FacetConfiguration;
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.facet.ui.FacetEditorTab;
 import com.intellij.facet.ui.FacetValidatorsManager;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializerUtil;
@@ -67,7 +69,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
         return myMpsFacet;
     }
 
-    public class MPSFacetCommonTab extends FacetEditorTab {
+    public class MPSFacetCommonTab extends FacetEditorTab implements Disposable {
 
         private MPSFacetCommonTabUI form;
 
@@ -83,7 +85,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
 
         public JComponent createComponent() {
             if (form == null) {
-                form = new MPSFacetCommonTabUI(MPSFacetConfiguration.this);
+                form = new MPSFacetCommonTabUI(MPSFacetConfiguration.this, this);
             }
             return form.getRootPanel();
         }
@@ -106,7 +108,12 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
         }
 
         public void disposeUIResources() {
+            Disposer.dispose(this);
             form = null;
+        }
+
+        @Override
+        public void dispose() {
         }
     }
 

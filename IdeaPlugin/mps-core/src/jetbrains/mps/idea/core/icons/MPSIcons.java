@@ -26,4 +26,6 @@ import javax.swing.*;
 public class MPSIcons {
     public static final Icon MPS_ICON = IconLoader.findIcon("/icons/mps.png");
     public static final Icon ADD_MODEL_ROOT_ICON = IconLoader.findIcon("/icons/addModelRoot.png");
+    public static Icon SOURCES_TAB_ICON = IconLoader.findIcon("/icons/sourcesTab.png");
+    public static Icon PATHS_TAB_ICON = IconLoader.findIcon("/icons/pathsTab.png");
 }

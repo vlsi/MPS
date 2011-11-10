@@ -16,57 +16,48 @@
 
 package jetbrains.mps.idea.core.facet;
 
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.fileChooser.FileChooser;
-import com.intellij.openapi.fileChooser.FileChooserDescriptor;
-import com.intellij.openapi.fileChooser.ex.FileChooserKeys;
-import com.intellij.openapi.project.DumbAware;
-import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
-import com.intellij.openapi.roots.ui.componentsList.layout.VerticalStackLayout;
-import com.intellij.openapi.roots.ui.configuration.actions.IconWithTextAction;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.ui.ScrollPaneFactory;
-import com.intellij.ui.roots.ToolbarPanel;
-import com.intellij.util.ui.UIUtil;
+import com.intellij.openapi.Disposable;
+import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.KeyEvent;
 
 /**
  * evgeny, 10/26/11
  */
 public class MPSFacetCommonTabUI {
-    private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
     private JTextField namespace;
     private JPanel rootPanel;
-    private ToolbarPanel myToolbarPanel;
-    private JComboBox generatorOutputPathComboBox;
-    private JTable modelRoots;
-    private JButton mySelectButton;
+    private JComponent myCentralComponent;
+
+    private Disposable myParentDisposable;
+    private MPSFacetSourcesTab mySourcesTab;
+    private MPSFacetPathsTab myPathsTab;
     private MPSFacetConfiguration myConfiguration;
 
-    public MPSFacetCommonTabUI(MPSFacetConfiguration configuration) {
+    public MPSFacetCommonTabUI(MPSFacetConfiguration configuration, Disposable parentDisposable) {
+        myParentDisposable = parentDisposable;
         myConfiguration = configuration;
     }
 
     public void setData(MPSConfigurationBean data) {
         namespace.setText(data.getNamespace());
+        mySourcesTab.setData(data);
+        myPathsTab.setData(data);
     }
 
     public void getData(MPSConfigurationBean data) {
         data.setNamespace(namespace.getText());
+        mySourcesTab.getData(data);
+        myPathsTab.getData(data);
     }
 
     public boolean isModified(MPSConfigurationBean data) {
         if (namespace.getText() != null ? !namespace.getText().equals(data.getNamespace()) : data.getNamespace() != null)
             return true;
-        return false;
+        return mySourcesTab.isModified(data) || myPathsTab.isModified(data);
     }
 
     public JPanel getRootPanel() {
@@ -74,48 +65,13 @@ public class MPSFacetCommonTabUI {
     }
 
     private void createUIComponents() {
-        createToolbarPanel();
+        createCentralComponent();
     }
 
-    private void createToolbarPanel() {
-        DefaultActionGroup group = new DefaultActionGroup();
-        AddModelRootAction action = new AddModelRootAction();
-        action.registerCustomShortcutSet(KeyEvent.VK_C, KeyEvent.ALT_DOWN_MASK, rootPanel);
-        group.add(action);
-
-        ScrollablePanel modelRootsPanel = new ScrollablePanel(new VerticalStackLayout());
-        modelRootsPanel.setBackground(BACKGROUND_COLOR);
-        JScrollPane myScrollPane = ScrollPaneFactory.createScrollPane(modelRootsPanel);
-        myToolbarPanel = new ToolbarPanel(myScrollPane, group);
-    }
-
-    private class AddModelRootAction extends IconWithTextAction implements DumbAware {
-        private FileChooserDescriptor myDescriptor;
-        private VirtualFile myLastSelectedDir;
-
-        public AddModelRootAction() {
-            super(MPSBundle.message("facet.paths.add.model.root.action"), MPSBundle.message("facet.paths.add.model.root.action.description"), MPSIcons.ADD_MODEL_ROOT_ICON);
-            myDescriptor = new FileChooserDescriptor(false, true, true, false, true, true) {
-                public void validateSelectedFiles(VirtualFile[] files) throws Exception {
-                    validateContentEntriesCandidates(files);
-                }
-            };
-            myDescriptor.putUserData(LangDataKeys.MODULE_CONTEXT, myConfiguration.getFacet().getModule());
-            myDescriptor.setTitle(MPSBundle.message("facet.paths.add.model.root.directory.title"));
-            myDescriptor.setDescription(MPSBundle.message("facet.paths.add.model.root.directory.description"));
-            myDescriptor.putUserData(FileChooserKeys.DELETE_ACTION_AVAILABLE, false);
-        }
-
-        private void validateContentEntriesCandidates(VirtualFile[] files) {
-        }
-
-        @Override
-        public void actionPerformed(AnActionEvent anActionEvent) {
-            VirtualFile[] files = FileChooser.chooseFiles(myConfiguration.getFacet().getModule().getProject(), myDescriptor, myLastSelectedDir);
-            if (files.length > 0) {
-              myLastSelectedDir = files[0];
-//              addContentEntries(files);
-            }
-        }
+    private void createCentralComponent() {
+        TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(myParentDisposable);
+        tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, (mySourcesTab = new MPSFacetSourcesTab(myConfiguration)).getRootPanel(), null);
+        tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, (myPathsTab = new MPSFacetPathsTab()).getRootPanel(), null);
+        myCentralComponent = tabbedPane.getComponent();
     }
 }
