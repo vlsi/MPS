@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import jetbrains.mps.debugger.java.runtime.evaluation.transform.Transformator;
+import jetbrains.mps.debug.evaluation.transform.Transformator;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
