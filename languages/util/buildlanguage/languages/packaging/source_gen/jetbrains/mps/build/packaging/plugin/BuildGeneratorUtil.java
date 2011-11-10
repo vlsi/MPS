@@ -79,7 +79,6 @@ public class BuildGeneratorUtil {
     String fileName = solutionDescriptorFile.getName();
     descriptor.setNamespace(fileName.substring(0, fileName.length() - 4));
     ModelRoot mr = new ModelRoot();
-    mr.setPrefix("");
     mr.setPath(solutionDescriptorFile.getParent().getPath());
     descriptor.getModelRoots().add(mr);
     SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor);

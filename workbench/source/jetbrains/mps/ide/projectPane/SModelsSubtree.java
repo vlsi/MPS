@@ -78,11 +78,7 @@ public class SModelsSubtree {
           currentRootNode = rootTreeNode;
         } else {
           IModule contextModule = operationContext.getModule();
-          List<SModelRoot> modelRoots = contextModule.getSModelRoots();
-          String namespace = (modelRoots.isEmpty()) ? "" : contextModule.getSModelRoots().get(0).getPrefix();
-          if (namespace == null || namespace.length() == 0) {
-            namespace = contextModule.getModuleFqName();
-          }
+          String namespace = contextModule.getModuleFqName();
           currentRootNode = new NamespaceTextNode((namespace == null) ? "" : namespace, operationContext);
         }
         for (SModelTreeNode treeNode : regularModelNodes) {

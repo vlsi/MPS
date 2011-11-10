@@ -162,7 +162,6 @@ public class ProjectFactory {
     SolutionDescriptor solutionDescriptor = solution.getModuleDescriptor();
 
     ModelRoot modelRoot = new ModelRoot();
-    modelRoot.setPrefix("");
     modelRoot.setPath(descriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRoots().add(modelRoot);

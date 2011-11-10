@@ -198,7 +198,8 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     }
     IFile oldFile = dsm.getModelFile();
     SModelRoot root = ModelRootUtil.getSModelRoot(sm);
-    IFile newFile = createFileForModelUID(root.getModelRoot(), modelFqName);
+    ModelRoot mr = root.getModelRoot();
+    IFile newFile = createFileForModelUID(mr, modelFqName, isLanguageAspect(mr, sm.getModule(), modelFqName));
     newFile.getParent().mkdirs();
     newFile.createNewFile();
     dsm.changeModelFile(newFile);
@@ -206,16 +207,13 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     oldFile.delete();
   }
 
-  private static IFile createFileForModelUID(ModelRoot root, SModelFqName fqName) {
-    String pathPrefix = root.getPrefix();
+  private static IFile createFileForModelUID(ModelRoot root, SModelFqName fqName, boolean languageModel) {
     String path = root.getPath();
 
-    if (pathPrefix == null) pathPrefix = "";
-    if (pathPrefix.length() > 0 && !fqName.getLongName().startsWith(pathPrefix)) {
-      LOG.error("Model fqName \"" + fqName + "\" doesn't match name prefix \"" + pathPrefix + "\"");
+    String filenameSuffix = fqName.getLongName();
+    if (languageModel) {
+      filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
     }
-
-    String filenameSuffix = fqName.getLongName().substring(pathPrefix.length());
     if (fqName.hasStereotype()) {
       filenameSuffix = filenameSuffix + '@' + fqName.getStereotype();
     }
@@ -223,8 +221,30 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT_MODEL);
   }
 
-  public static RegularModelDataSource createSourceForModelUID(ModelRoot root, SModelFqName fqName) {
-    IFile file = createFileForModelUID(root, fqName);
+  public static RegularModelDataSource createSourceForModelUID(ModelRoot root, SModelFqName fqName, IModule module) {
+    IFile file = createFileForModelUID(root, fqName, isLanguageAspect(root, module, fqName));
     return new RegularModelDataSource(file);
+  }
+
+  public static boolean isLanguageAspect(ModelRoot root, IModule module, SModelFqName modelFqName) {
+    if (!isUnderLanguageModels(module, root)) return false;
+    //prefixed with language namespace
+    if (!NameUtil.namespaceFromLongName(modelFqName.getLongName()).equals(module.getModuleFqName())) return false;
+    //is aspect model name
+    String name = NameUtil.shortNameFromLongName(modelFqName.getLongName());
+    for (LanguageAspect la:LanguageAspect.values()){
+      if (la.getName().equals(name)) return true;
+    }
+    return false;
+    //is non-stereotyped (? test models)
+    //if (modelFqName.getStereotype() != null && !modelFqName.getStereotype().equals("")) return false;
+  }
+
+  public static boolean isUnderLanguageModels(IModule module, ModelRoot root) {
+    //in language
+    if (!(module instanceof Language)) return false;
+    //is under languageModels
+    if (!FileSystem.getInstance().getFileByPath(root.getPath()).getName().equals(Language.LANGUAGE_MODELS)) return false;
+    return true;
   }
 }

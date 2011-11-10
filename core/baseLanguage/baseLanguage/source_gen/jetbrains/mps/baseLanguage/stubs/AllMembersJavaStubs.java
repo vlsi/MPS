@@ -31,10 +31,7 @@ public class AllMembersJavaStubs extends AbstractModelRootManager {
   public Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module) {
     List<SModelDescriptor> result = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     IClassPathItem cp = AllMembersJavaStubs.this.create(root.getPath());
-    AllMembersJavaStubs.this.getModelDescriptors(result, root.getPath(), cp, (root.getPrefix() == null ?
-      "" :
-      root.getPrefix()
-    ), LanguageID.JAVA, module);
+    AllMembersJavaStubs.this.getModelDescriptors(result, root.getPath(), cp, "", LanguageID.JAVA, module);
     return result;
   }
 

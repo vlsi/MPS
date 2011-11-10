@@ -157,7 +157,6 @@ public abstract class ProjectStructureBuilder {
   private SNode convert(ModelRoot source) {
     SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelRoot", null);
     SPropertyOperations.set(result, "path", source.getPath());
-    SPropertyOperations.set(result, "prefix", source.getPrefix());
     SLinkOperations.setTarget(result, "manager", convert(source.getManager()), true);
     return result;
   }

@@ -92,7 +92,6 @@ public class LanguageDescriptorPersistence {
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "stubModelEntries")).isNotEmpty()) {
             List<ModelRoot> roots = ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(languageElement, "stubModelEntries"), file, macros);
-            result_v3r4p8_a0a0d0d0a.getModelRoots().addAll(roots);
             result_v3r4p8_a0a0d0d0a.getStubModelEntries().addAll(roots);
           }
 

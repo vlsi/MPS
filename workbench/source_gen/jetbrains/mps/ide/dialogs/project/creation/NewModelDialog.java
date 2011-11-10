@@ -16,18 +16,25 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
+import javax.swing.DefaultListCellRenderer;
+import java.awt.Component;
+import javax.swing.JList;
+import jetbrains.mps.util.NameUtil;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import javax.lang.model.SourceVersion;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.ide.properties.StandardDialogs;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.ide.properties.StandardDialogs;
+import javax.lang.model.SourceVersion;
 import javax.swing.JComponent;
 
 public class NewModelDialog extends BaseDialog {
@@ -44,7 +51,10 @@ public class NewModelDialog extends BaseDialog {
     super(ProjectHelper.toMainFrame(context.getProject()), "New Model");
     myContext = context;
     myModule = module;
-    myNamespace = namespace;
+    myNamespace = (namespace == null ?
+      "" :
+      namespace
+    );
     assert myModule.getSModelRoots().size() > 0 : "Can't create a model in solution with no model roots";
     initContentPane();
     if (stereotype != null) {
@@ -63,104 +73,90 @@ public class NewModelDialog extends BaseDialog {
 
   private void initContentPane() {
     JPanel mainPanel = new JPanel(new GridLayout(0, 1));
-    mainPanel.add(new JLabel("Model name:"));
-    mainPanel.add(myModelName);
-    mainPanel.add(new JLabel("Stereotype:"));
-    myModelStereotype.setEditable(true);
-    myModelStereotype.setModel(new DefaultComboBoxModel(SModelStereotype.values));
-    mainPanel.add(myModelStereotype);
+
     mainPanel.add(new JLabel("Model root:"));
     mainPanel.add(myModelRoots);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (SModelRoot root : myModule.getSModelRoots()) {
-      if (myNamespace == null || myNamespace.startsWith(root.getPrefix())) {
-        model.addElement(new NewModelDialog.ModelRootWrapper(root));
+      IModelRootManager manager = root.getManager();
+      if (manager != null && manager.canCreateModel(myModule, root.getModelRoot(), null)) {
+        model.addElement(root);
       }
     }
+
     if (model.getSize() == 0) {
       model.addElement("<NO MODEL ROOTS FOR SELECTED NAMESPACE>");
     }
+    myModelRoots.setRenderer(new DefaultListCellRenderer() {
+      @Override
+      public Component getListCellRendererComponent(JList list, Object object, int i, boolean b, boolean b1) {
+        if (object instanceof SModelRoot) {
+          SModelRoot mr = (SModelRoot) object;
+          String manager = NameUtil.shortNameFromLongName(mr.getManager().getClass().getName());
+          object = mr.getModelRoot().getPath() + " (" + manager + ")";
+        }
+        return super.getListCellRendererComponent(list, object, i, b, b1);
+      }
+    });
     myModelRoots.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
-        completePrefix();
+        check();
       }
     });
     myModelRoots.setModel(model);
-    completePrefix();
+
+    myModelName.setText((myNamespace.length() == 0 ?
+      myNamespace :
+      myNamespace + "."
+    ));
+    mainPanel.add(new JLabel("Model name:"));
+    mainPanel.add(myModelName);
+    myModelName.addKeyListener(new KeyAdapter() {
+      public void keyReleased(KeyEvent event) {
+        check();
+      }
+    });
+
+    mainPanel.add(new JLabel("Stereotype:"));
+    myModelStereotype.setEditable(true);
+    myModelStereotype.setModel(new DefaultComboBoxModel(SModelStereotype.values));
+    myModelStereotype.addKeyListener(new KeyAdapter() {
+      public void keyReleased(KeyEvent event) {
+        check();
+      }
+    });
+    myModelStereotype.addItemListener(new ItemListener() {
+      public void itemStateChanged(ItemEvent p0) {
+        check();
+      }
+    });
+    mainPanel.add(myModelStereotype);
+
     myContentPane.add(mainPanel, BorderLayout.NORTH);
     myContentPane.add(new JPanel(), BorderLayout.CENTER);
   }
 
-  private void completePrefix() {
-    Object selected = myModelRoots.getSelectedItem();
-    if (!((selected instanceof NewModelDialog.ModelRootWrapper))) {
-      return;
-    }
-    NewModelDialog.ModelRootWrapper wrapper = (NewModelDialog.ModelRootWrapper) selected;
-    myModelName.setText((myNamespace == null ?
-      wrapper.getNamespace() :
-      myNamespace
-    ));
-  }
-
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOk() {
-    if (!((myModelRoots.getSelectedItem() instanceof NewModelDialog.ModelRootWrapper))) {
-      String message;
-      if (myNamespace == null) {
-        message = "At least one module root should be added to module to create models in this module";
-      } else {
-        message = "At least one module root with prefix " + myNamespace + " should be added to module to create models with this namespace";
-      }
-      setErrorText(message);
+    if (!(check())) {
       return;
     }
+
     myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
       public SModelDescriptor compute() {
-        String modelName = myModelName.getText();
-        if (modelName.length() == 0) {
-          setErrorText("Empty model name isn't allowed");
-          return null;
-        }
-        if (!(SourceVersion.isName(modelName))) {
-          setErrorText("Model name should be valid Java package");
-          return null;
-        }
-        SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
-        if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
-          setErrorText("Model with an uid " + modelName + " already exists");
-          return null;
-        }
-        NewModelDialog.ModelRootWrapper wrapper = (NewModelDialog.ModelRootWrapper) myModelRoots.getSelectedItem();
-        String modelPrefix = (wrapper.getNamespace().length() > 0 ?
-          wrapper.getNamespace() + '.' :
-          ""
-        );
-        if (!((modelName.startsWith(modelPrefix)))) {
-          setErrorText("Model name should have a prefix " + wrapper.getNamespace());
-          return null;
-        }
-        if (modelName.length() - modelPrefix.length() == 0) {
-          setErrorText("Empty model short name isn't allowed");
-          return null;
-        }
-        if (myModule instanceof Language) {
-          for (LanguageAspect aspect : LanguageAspect.values()) {
-            String shortName = modelName.substring(modelPrefix.length());
-            if (shortName.equals(aspect.getName())) {
-              setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
-              return null;
-            }
-          }
-        }
-        return myModule.createModel(modelUID, wrapper.getModelRoot(), null);
+        SModelFqName fqName = getFqName();
+        SModelRoot mr = (SModelRoot) myModelRoots.getSelectedItem();
+        return myModule.createModel(fqName, mr, null);
       }
     }, myContext.getProject());
-    if (myResult == null) {
-      return;
-    }
+
+    assert myResult != null;
     StandardDialogs.createModelPropertiesDialog(myResult, myContext).showDialog();
     dispose();
+  }
+
+  private SModelFqName getFqName() {
+    return new SModelFqName(myModelName.getText(), myModelStereotype.getSelectedItem().toString());
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
@@ -168,38 +164,62 @@ public class NewModelDialog extends BaseDialog {
     dispose();
   }
 
-  protected JComponent getMainComponent() {
-    return myContentPane;
+  private boolean check() {
+    Object selected = myModelRoots.getSelectedItem();
+    if (!((selected instanceof SModelRoot))) {
+      setErrorText("Model root is not selected");
+      return false;
+    }
+
+    SModelRoot mr = ((SModelRoot) selected);
+    IModelRootManager manager = mr.getManager();
+    if (manager == null) {
+      setErrorText("Can't create manager class");
+      return false;
+    }
+
+    String modelName = myModelName.getText();
+    if (modelName.length() == 0) {
+      setErrorText("Empty model name isn't allowed");
+      return false;
+    }
+
+    SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
+    if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
+      setErrorText("Model with an uid " + modelName + " already exists");
+      return false;
+    }
+
+    if (modelName.lastIndexOf(".") == modelName.length()) {
+      setErrorText("Empty model short name isn't allowed");
+      return false;
+    }
+
+    if (myModule instanceof Language) {
+      for (LanguageAspect aspect : LanguageAspect.values()) {
+        String shortName = modelName.substring(modelName.lastIndexOf(".") + 1);
+        if (shortName.equals(aspect.getName())) {
+          setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
+          return false;
+        }
+      }
+    }
+
+    if (!(SourceVersion.isName(modelName))) {
+      setErrorText("Model name should be valid Java package");
+      return false;
+    }
+
+    if (!(manager.canCreateModel(myModule, mr.getModelRoot(), getFqName()))) {
+      setErrorText("Can't create a model with this name under this model root");
+      return false;
+    }
+
+    setErrorText("");
+    return true;
   }
 
-  private static class ModelRootWrapper {
-    private SModelRoot myModelRoot;
-    private String myNamespace;
-    private String myText;
-
-    private ModelRootWrapper(SModelRoot modelRoot) {
-      myModelRoot = modelRoot;
-      myNamespace = myModelRoot.getPrefix();
-      if (myNamespace == null) {
-        myNamespace = "";
-      }
-      boolean needsNamespace = !(myNamespace.equals(""));
-      myText = myModelRoot.getPath() + ((needsNamespace ?
-        " (" + myNamespace + ")" :
-        ""
-      ));
-    }
-
-    public String toString() {
-      return myText;
-    }
-
-    public String getNamespace() {
-      return myNamespace;
-    }
-
-    public SModelRoot getModelRoot() {
-      return myModelRoot;
-    }
+  protected JComponent getMainComponent() {
+    return myContentPane;
   }
 }

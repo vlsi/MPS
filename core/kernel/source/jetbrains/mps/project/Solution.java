@@ -230,7 +230,6 @@ public class Solution extends AbstractModule {
     // default descriptorModel roots
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPath(modelsDir.getPath());
-    modelRoot.setPrefix(namespace);
     descriptor.getModelRoots().add(modelRoot);
     return descriptor;
   }

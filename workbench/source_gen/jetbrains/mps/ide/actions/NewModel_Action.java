@@ -165,6 +165,6 @@ public class NewModel_Action extends GeneratedAction {
   }
 
   protected String getNamespace(final Map<String, Object> _params) {
-    return null;
+    return ((IModule) MapSequence.fromMap(_params).get("module")).getModuleFqName();
   }
 }

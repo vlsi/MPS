@@ -17,7 +17,6 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
@@ -55,12 +54,9 @@ public class ModelsMiner {
       }
 
       SModelReference modelReference;
-      if (dr.getUID() != null) {
-        modelReference = SModelReference.fromString(dr.getUID());
-      } else {
-        modelReference = createModelReference(file, FileSystem.getInstance().getFileByPath(modelRoot.getPath()), modelRoot.getPrefix());
-      }
+      assert dr.getUID() != null;
 
+      modelReference = SModelReference.fromString(dr.getUID());
 
       //this code is for migration from old models (with no IDS)
       if (modelReference.getSModelId() == null) {
@@ -74,36 +70,6 @@ public class ModelsMiner {
         collectModelDescriptors(childDir, modelRoot, models);
       }
     }
-  }
-
-  private static SModelReference createModelReference(IFile modelFile, IFile root, String namespacePrefix) {
-    String rawLongName = getModelReferenceString(modelFile, root, namespacePrefix);
-    return SModelReference.fromString(rawLongName);
-  }
-
-  private static String getModelReferenceString(IFile modelFile, IFile root, String namespacePrefix) {
-    String longName = cropModelPath(modelFile, root);
-    if (longName == null) return null;
-
-    String namespace = NameUtil.namespaceFromLongName(longName);
-    namespace = NameUtil.namespaceFromPath(namespace);
-
-    if (namespacePrefix != null && namespacePrefix.length() > 0) {
-      namespace = namespacePrefix + ((namespace.length() > 0) ? "." + namespace : "");
-    }
-    return namespace;
-  }
-
-  private static String cropModelPath(IFile modelFile, IFile root) {
-    String modelPath = IFileUtils.getCanonicalPath(modelFile);
-    String rootPath = IFileUtils.getCanonicalPath(root);
-    if (!modelPath.startsWith(rootPath)) return null;
-
-    int length = rootPath.length();
-    if (rootPath.endsWith(File.separator) || rootPath.endsWith("!")) {
-      length--;
-    }
-    return modelPath.substring(length + 1);
   }
 
   public static class ModelHandle {

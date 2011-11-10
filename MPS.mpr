@@ -274,6 +274,7 @@
       <modulePath path="${project}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.runtime/jetbrains.mps.debugger.java.runtime.msd" folder="debug.java" />
       <modulePath path="${project}/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="workbench" />
       <modulePath path="${project}/plugins/migration/solution/jetbrains.mps.ide.migration.msd" folder="plugins" />
+      <modulePath path="${project}/plugins/migration21/solution/migration21.msd" folder="plugins" />
       <modulePath path="${project}/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpseditor/jetbrains.mps.ide.editor.msd" folder="plugins" />
