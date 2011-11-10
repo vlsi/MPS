@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
@@ -28,6 +29,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       SubtypingRule_Runtime subtypingRule = new DebuggerTypeIsDebuggerType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      ComparisonRule_Runtime comparisonRule = new DebuggerIsDebugger_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
     }
   }
 }
