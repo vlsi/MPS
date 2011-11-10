@@ -37,6 +37,7 @@ import javax.swing.*;
 public class MPSFacetConfiguration implements FacetConfiguration, PersistentStateComponent<MPSConfigurationBean> {
 
     private MPSConfigurationBean configurationBean = new MPSConfigurationBean();
+    private MPSFacet myMpsFacet;
 
     public void readExternal(Element element) throws InvalidDataException {
         // ignore
@@ -55,7 +56,15 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     }
 
     public FacetEditorTab[] createEditorTabs(FacetEditorContext facetEditorContext, FacetValidatorsManager facetValidatorsManager) {
-        return new FacetEditorTab[]{ new MPSFacetCommonTab() };
+        return new FacetEditorTab[]{new MPSFacetCommonTab()};
+    }
+
+    public void setFacet(MPSFacet mpsFacet) {
+        myMpsFacet = mpsFacet;
+    }
+
+    public MPSFacet getFacet() {
+        return myMpsFacet;
     }
 
     public class MPSFacetCommonTab extends FacetEditorTab {
@@ -74,7 +83,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
 
         public JComponent createComponent() {
             if (form == null) {
-                form = new MPSFacetCommonTabUI();
+                form = new MPSFacetCommonTabUI(MPSFacetConfiguration.this);
             }
             return form.getRootPanel();
         }

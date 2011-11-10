@@ -46,6 +46,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
     public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
         super(facetType, module, name, configuration, underlyingFacet);
+        configuration.setFacet(this);
     }
 
     @Override
