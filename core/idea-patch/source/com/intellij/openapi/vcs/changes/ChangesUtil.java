@@ -16,6 +16,7 @@
 
 package com.intellij.openapi.vcs.changes;
 
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.progress.ProcessCanceledException;
@@ -279,6 +280,23 @@ public class ChangesUtil {
   }
 
   @Nullable
+  public static VirtualFile findValidParentUnderReadAction(final FilePath file) {
+    if (file.getVirtualFile() != null) return file.getVirtualFile();
+    final Computable<VirtualFile> computable = new Computable<VirtualFile>() {
+      @Override
+      public VirtualFile compute() {
+        return findValidParent(file);
+      }
+    };
+    final Application application = ApplicationManager.getApplication();
+    if (application.isReadAccessAllowed()) {
+      return computable.compute();
+    } else {
+      return application.runReadAction(computable);
+    }
+  }
+
+  @Nullable
   public static VirtualFile findValidParent(FilePath file) {
     ApplicationManager.getApplication().assertReadAccessAllowed();
     VirtualFile parent = file.getVirtualFile();
@@ -314,6 +332,16 @@ public class ChangesUtil {
 
   public static boolean isBinaryChange(final Change change) {
     return isBinaryContentRevision(change.getBeforeRevision()) || isBinaryContentRevision(change.getAfterRevision());
+  }
+
+  public static boolean isTextConflictingChange(final Change change) {
+    final FileStatus status = change.getFileStatus();
+    return FileStatus.MERGED_WITH_CONFLICTS.equals(status) || FileStatus.MERGED_WITH_BOTH_CONFLICTS.equals(status);
+  }
+
+  public static boolean isPropertyConflictingChange(final Change change) {
+    final FileStatus status = change.getFileStatus();
+    return FileStatus.MERGED_WITH_PROPERTY_CONFLICTS.equals(status) || FileStatus.MERGED_WITH_BOTH_CONFLICTS.equals(status);
   }
 
   public interface PerVcsProcessor<T> {
