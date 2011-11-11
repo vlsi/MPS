@@ -181,7 +181,6 @@
     <classNode dependClassName="jetbrains.mps.generator.IModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.generator.NullGenerationTracer" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorCacheComponent" />
     <classNode dependClassName="jetbrains.mps.ide.generator.TransientModelsComponent" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />

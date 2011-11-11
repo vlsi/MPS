@@ -33,7 +33,6 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
 import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.resources.MResource;
@@ -351,7 +350,7 @@ public class Generate_Facet extends IFacet.Stub {
         public boolean configure(final IConfigMonitor cmonitor, final IPropertiesAccessor pa) {
           switch (0) {
             case 0:
-              GenerationSettings settings = GenerationSettings.getInstance();
+              IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
               if (pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() != null) {
                 return true;
               }
