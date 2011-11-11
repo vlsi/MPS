@@ -28,14 +28,7 @@ import com.intellij.openapi.vcs.changes.ChangeList;
 import com.intellij.openapi.vcs.ui.Refreshable;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.annotation.Patch;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -45,15 +38,22 @@ public class VcsContextWrapper implements VcsContext {
   protected final DataContext myContext;
   protected final int myModifiers;
   private final String myPlace;
+  private final String myActionName;
 
-  public VcsContextWrapper(DataContext context, int modifiers, String place) {
+  public VcsContextWrapper(DataContext context, int modifiers, String place, String actionName) {
     myContext = context;
     myModifiers = modifiers;
     myPlace = place;
+    myActionName = actionName;
   }
 
   public String getPlace() {
     return myPlace;
+  }
+
+  @Override
+  public String getActionName() {
+    return myActionName;
   }
 
   public static VcsContext createCachedInstanceOn(AnActionEvent event) {
@@ -61,7 +61,7 @@ public class VcsContextWrapper implements VcsContext {
   }
 
   public static VcsContextWrapper createInstanceOn(final AnActionEvent event) {
-    return new VcsContextWrapper(event.getDataContext(), event.getModifiers(), event.getPlace());
+    return new VcsContextWrapper(event.getDataContext(), event.getModifiers(), event.getPlace(), event.getPresentation().getText());
   }
 
   public Project getProject() {
@@ -97,32 +97,12 @@ public class VcsContextWrapper implements VcsContext {
     return virtualFile.isInLocalFileSystem();
   }
 
-  @Patch
-  //patched to fix VCS actions
-  //this can be removed when there's one file per root node in MPS
   private static VirtualFile[] filterLocalFiles(VirtualFile[] fileArray) {
-    final ArrayList<VirtualFile> result = new ArrayList<VirtualFile>();
-    for (final VirtualFile virtualFile : fileArray) {
+    ArrayList<VirtualFile> result = new ArrayList<VirtualFile>();
+    for (VirtualFile virtualFile : fileArray) {
       if (isLocal(virtualFile)) {
         result.add(virtualFile);
       }
-      // MPS patch begin
-      if (virtualFile instanceof MPSNodeVirtualFile) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SNode node = ((MPSNodeVirtualFile) virtualFile).getNode();
-            if (node == null) return;
-            SModelDescriptor md = node.getModel().getModelDescriptor();
-            if (!(md instanceof EditableSModelDescriptor)) return;
-            IFile ifile = ((EditableSModelDescriptor) md).getModelFile();
-            if (ifile == null || !ifile.exists()) return;
-            VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
-            if (vfile == null) return;
-            result.add(vfile);
-          }
-        });
-      }
-      // MPS patch end
     }
     return VfsUtil.toVirtualFileArray(result);
   }
