@@ -142,7 +142,7 @@
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- idea-workbench -->
-                <path path="${base_dir}/workbench/idea-workbench/source"/>
+                <path path="${base_dir}/workbench/mps-platform/source"/>
             </src>
             <classpath>
                 <fileset dir="${artifacts}" includes="*.jar"/>
@@ -150,8 +150,8 @@
             </classpath>
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
-            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="META-INF/*"/>
-            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
         </copy>
         <jar destfile="${artifacts}/mps-workbench.jar">
             <fileset dir="${build_dir}/mpsworkbench_jar"/>
@@ -166,7 +166,7 @@
         <!-- IDEA workbench sources -->
         <mkdir dir="${build_dir}/mpsworkbench-src_jar"/>
         <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench-src_jar">
-            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="**/*.java"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.java"/>
         </copy>
         <jar destfile="${artifacts}/mps-workbench-src.jar">
             <fileset dir="${build_dir}/mpsworkbench-src_jar"/>

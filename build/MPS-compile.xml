@@ -154,7 +154,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
   </path>
@@ -647,7 +647,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -838,7 +838,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -984,7 +984,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1130,7 +1130,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1276,7 +1276,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1423,7 +1423,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1580,7 +1580,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1726,7 +1726,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1872,7 +1872,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2017,7 +2017,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2163,7 +2163,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2330,7 +2330,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2483,7 +2483,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2658,7 +2658,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2804,7 +2804,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2954,7 +2954,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3100,7 +3100,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3247,7 +3247,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3392,7 +3392,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3539,7 +3539,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3689,7 +3689,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3836,7 +3836,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3982,7 +3982,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4033,7 +4033,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4178,7 +4178,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4332,7 +4332,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4478,7 +4478,7 @@
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
     <path path="${base_dir}/workbench/ideUiLanguage/classes_gen" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4624,7 +4624,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4770,7 +4770,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4916,7 +4916,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5061,7 +5061,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5207,7 +5207,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5352,7 +5352,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5498,7 +5498,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5643,7 +5643,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5789,7 +5789,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5934,7 +5934,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5984,7 +5984,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6130,7 +6130,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6279,7 +6279,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6428,7 +6428,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6574,7 +6574,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6724,7 +6724,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6886,7 +6886,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7040,7 +7040,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7186,7 +7186,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7331,7 +7331,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7478,7 +7478,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7623,7 +7623,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7769,7 +7769,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7936,7 +7936,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -8082,7 +8082,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -8229,7 +8229,7 @@
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/idea-workbench/classes" />
+    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
     <path refid="common.classpath" />

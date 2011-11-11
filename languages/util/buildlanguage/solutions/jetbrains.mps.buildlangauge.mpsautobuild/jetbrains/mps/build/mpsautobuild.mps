@@ -2707,7 +2707,7 @@
               <property name="path" nameId="tps4.1220974398640" value="workbench" />
             </node>
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7443800094724152313">
-              <property name="path" nameId="tps4.1220974398640" value="idea-workbench" />
+              <property name="path" nameId="tps4.1220974398640" value="mps-platform" />
             </node>
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7443800094724152324">
               <property name="path" nameId="tps4.1220974398640" value="classes" />
