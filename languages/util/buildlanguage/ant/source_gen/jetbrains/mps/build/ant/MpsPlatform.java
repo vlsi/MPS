@@ -19,9 +19,9 @@ public class MpsPlatform {
   }
 
   public static void dispose() {
-    MPSBaseLanguage.getInstance().init();
-    MPSGenerator.getInstance().init();
-    MPSTypesystem.getInstance().init();
-    MPSCore.getInstance().init();
+    MPSBaseLanguage.getInstance().dispose();
+    MPSGenerator.getInstance().dispose();
+    MPSTypesystem.getInstance().dispose();
+    MPSCore.getInstance().dispose();
   }
 }

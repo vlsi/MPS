@@ -32,8 +32,9 @@ public class FileMPSProject extends Project {
       Element root = document.getRootElement();
       if ("project".equals(root.getName())) {
         for (Object ch : root.getChildren("component")) {
-          if (ch instanceof Element && "MPSProject".equals(((Element) ch).getAttribute("name"))) {
+          if (ch instanceof Element && "MPSProject".equals(((Element) ch).getAttributeValue("name"))) {
             projectElement = (Element) ch;
+            break;
           }
         }
       }

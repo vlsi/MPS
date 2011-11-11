@@ -36,6 +36,7 @@ import java.util.HashMap;
 import jetbrains.mps.build.ant.util.PathUtil;
 import jetbrains.mps.build.ant.util.MapPathMacrosProvider;
 import java.util.HashSet;
+import jetbrains.mps.build.ant.util.PathManager;
 import jetbrains.mps.project.MPSExtentions;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -56,7 +57,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.build.ant.util.PathManager;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.logging.ILoggingHandler;
@@ -262,6 +262,8 @@ public abstract class MpsWorker {
   private void loadLibraries() {
     if (myLibraryContibutor == null) {
       Set<String> libraryPaths = new HashSet<String>();
+      libraryPaths.addAll(PathManager.getBootstrapPaths());
+      libraryPaths.add(PathManager.getLanguagesPath());
       for (String libName : myWhatToDo.getLibraries().keySet()) {
         libraryPaths.add(myWhatToDo.getLibraries().get(libName).getAbsolutePath());
       }

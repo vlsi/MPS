@@ -42,7 +42,7 @@ import jetbrains.mps.make.facet.IFacet;
 import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
-import java.lang.reflect.Method;
+import jetbrains.mps.build.ant.FileMPSProject;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -222,6 +222,7 @@ public class TestGenerationWorker extends MpsWorker {
         myReporter.startRun("Module cluster " + String.valueOf(count[0]++));
       }
     };
+    myReporter.startRun("Initializing");
     final Wrappers._T<IResult> result = new Wrappers._T<IResult>();
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -265,14 +266,7 @@ public class TestGenerationWorker extends MpsWorker {
       if (!(file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
         continue;
       }
-      Project p;
-      try {
-        Class<?> cls = Class.forName("jetbrains.mps.TestMain");
-        Method meth = cls.getMethod("loadProject", File.class);
-        p = (Project) meth.invoke(null, file);
-      } catch (Exception ex) {
-        throw new RuntimeException(ex);
-      }
+      Project p = new FileMPSProject(file);
       info("Loaded project " + p);
       executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<IModule>(), new HashSet<SModelDescriptor>()));
       disposeProject(p);
