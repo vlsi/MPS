@@ -16,8 +16,8 @@
 <project name="IDEA-plugin-compile" default="compile" basedir=".">
 
     <property name="base_dir" value=".."/>
-    <property name="artifacts" value="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <property name="build_dir" value="${base_dir}/IdeaPlugin/build"/>
+    <property name="artifacts" value="${base_dir}/IdeaPlugin/build/artifacts"/>
     <property file="build.properties"/>
     <property name="ideaPath" value="${home.idea_ce}"/>
 
@@ -43,6 +43,19 @@
         <path path="${base_dir}/lib/asm.jar"/>
         <path path="${base_dir}/lib/diffutils-1.2.1.jar"/>
     </path>
+
+    <target name="prepare">
+        <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
+        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
+        <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
+            <resources>
+                <file file="${base_dir}/lib/asm.jar"/>
+                <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
+            </resources>
+        </copy>
+        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
+        <!-- TODO build languages -->
+    </target>
 
     <target name="clean">
         <delete dir="${artifacts}"/>

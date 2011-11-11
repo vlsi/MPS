@@ -23,10 +23,12 @@ import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -59,7 +61,8 @@ public class MPSTreeStructureProvider implements TreeStructureProvider, DumbAwar
                             } catch (Exception ex) {
                                 name = "exc: " + ex.getMessage();
                             }
-                            newChildren.add(new MPSProjectViewNode(parent.getProject(), name, settings));
+                            Icon rootIcon = IconManager.getIconFor(root);
+                            newChildren.add(new MPSProjectViewNode(parent.getProject(), name, rootIcon, new SNodePointer(root), settings));
                         }
                     }
                 }

@@ -22,9 +22,10 @@ import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.messages.Icons;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.*;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -33,6 +34,8 @@ import java.util.Collections;
  */
 public class MPSProjectViewNode extends ProjectViewNode<String> {
 
+    private Icon icon;
+
     /**
      * Creates an instance of the project view node.
      *
@@ -40,8 +43,9 @@ public class MPSProjectViewNode extends ProjectViewNode<String> {
      * @param value        the object represented by the project view node
      * @param viewSettings the settings of the project view.
      */
-    public MPSProjectViewNode(Project project, String value, ViewSettings viewSettings) {
+    public MPSProjectViewNode(Project project, String value, Icon icon, SNodePointer nodePointer, ViewSettings viewSettings) {
         super(project, value, viewSettings);
+        this.icon = icon;
     }
 
     @Override
@@ -59,6 +63,6 @@ public class MPSProjectViewNode extends ProjectViewNode<String> {
     protected void update(PresentationData presentation) {
         String value = getValue();
         presentation.setPresentableText(value);
-        presentation.setIcons(Icons.INFORMATION_ICON);
+        presentation.setIcons(icon);
     }
 }
