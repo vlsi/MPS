@@ -21,7 +21,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
+import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;

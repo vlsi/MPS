@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.diff.changes;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;

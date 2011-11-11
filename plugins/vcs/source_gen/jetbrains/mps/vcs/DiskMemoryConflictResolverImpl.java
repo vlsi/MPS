@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
+import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import javax.swing.SwingUtilities;
 
 public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
