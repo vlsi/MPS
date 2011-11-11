@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -71,6 +72,31 @@ public class FunctionTypeUtil {
     }
   }
 
+  public static List<SNode> normalizeThrowsTypes(List<SNode> ttypes) {
+    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> visited = new ArrayList<SNode>();
+with_throws:
+    for (SNode tt : ttypes) {
+      SNode clstt = SNodeOperations.as(tt, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      if (clstt != null) {
+        if (!(Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(clstt, "classifier", false), SLinkOperations.getTarget(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0a0a0b0c0d().createNode(), "classifier", false)))) {
+          for (int i = 0; i < ListSequence.fromList(visited).count(); ++i) {
+            SNode restt = ListSequence.fromList(visited).getElement(i);
+            if (Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(restt, "classifier", false), SLinkOperations.getTarget(clstt, "classifier", false))) {
+              ListSequence.fromList(visited).setElement(i, clstt);
+              continue with_throws;
+            }
+          }
+          ListSequence.fromList(visited).addElement(clstt);
+        }
+      } else {
+        ListSequence.fromList(result).addElement(tt);
+      }
+    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(visited));
+    return result;
+  }
+
   private static SNode getFunctionMethod(SNode functionTypeOrClassifier) {
     List<SNode> methods = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "method", true);
     return ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
@@ -125,7 +151,7 @@ with_meet:
           continue with_meet;
         }
       }
-      return new FunctionTypeUtil.QuotationClass_2t0coq_a0b0b0g().createNode();
+      return new FunctionTypeUtil.QuotationClass_2t0coq_a0b0b0h().createNode();
     }
     if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
@@ -221,7 +247,7 @@ with_meet:
       Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType), "classifier", false)));
     } else
     if ((lFType != null) && (rFType != null)) {
-      final SNode adapterAnn = SLinkOperations.getTarget(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0a0a0j0j().createNode(), "annotation", false);
+      final SNode adapterAnn = SLinkOperations.getTarget(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0a0a0j0k().createNode(), "annotation", false);
       final SNode annInst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rexpr), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(rexpr)), "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode ann) {
           return SLinkOperations.getTarget(ann, "annotation", false) == adapterAnn;
@@ -253,7 +279,7 @@ with_tvd:
               }
             }
           }
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0b0e0c0a0j0j().createNode(tvd));
+          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0b0e0c0a0j0k().createNode(tvd));
         }
         ClosureLiteralUtil.addAdaptableClosureLiteralTarget(genContext, SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), ct);
       } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
@@ -337,8 +363,26 @@ with_tvd:
     }
   }
 
-  public static class QuotationClass_2t0coq_a0b0b0g {
-    public QuotationClass_2t0coq_a0b0b0g() {
+  public static class QuotationClass_2t0coq_a0a0a0a0b0c0d {
+    public QuotationClass_2t0coq_a0a0a0a0b0c0d() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_2t0coq_a0b0b0h {
+    public QuotationClass_2t0coq_a0b0b0h() {
     }
 
     public SNode createNode() {
@@ -354,8 +398,8 @@ with_tvd:
     }
   }
 
-  public static class QuotationClass_2t0coq_a0a0a0a0j0j {
-    public QuotationClass_2t0coq_a0a0a0a0j0j() {
+  public static class QuotationClass_2t0coq_a0a0a0a0j0k {
+    public QuotationClass_2t0coq_a0a0a0a0j0k() {
     }
 
     public SNode createNode() {
@@ -372,8 +416,8 @@ with_tvd:
     }
   }
 
-  public static class QuotationClass_2t0coq_a0a0b0e0c0a0j0j {
-    public QuotationClass_2t0coq_a0a0b0e0c0a0j0j() {
+  public static class QuotationClass_2t0coq_a0a0b0e0c0a0j0k {
+    public QuotationClass_2t0coq_a0a0b0e0c0a0j0k() {
     }
 
     public SNode createNode(Object parameter_3) {

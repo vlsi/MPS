@@ -453,6 +453,7 @@ public class GenerationSession {
         TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentInputModel, myDependenciesBuilder);
         myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
+      SModelOperations.validateLanguagesAndImports(currentInputModel, false, false);
       recycleWasteModel(toRecycle);
     }
     if (myLogger.needsInfo() && preProcessed) {
@@ -509,6 +510,7 @@ public class GenerationSession {
         TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentModel, myDependenciesBuilder);
         myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
+      SModelOperations.validateLanguagesAndImports(currentModel, false, false);
       recycleWasteModel(toRecycle);
     }
     if (myLogger.needsInfo() && postProcessed) {

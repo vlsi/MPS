@@ -27,7 +27,7 @@ public class Interface_Behavior {
       LOG.error("circular hierarchy in interface " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
       return false;
     }
-    if (nodeToCompare == thisNode) {
+    if (Classifier_Behavior.call_isSame_4855996797771684010(thisNode, nodeToCompare)) {
       return true;
     }
     SetSequence.fromSet(visited).addElement(thisNode);
