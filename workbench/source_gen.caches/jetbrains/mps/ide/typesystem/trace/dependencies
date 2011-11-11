@@ -129,6 +129,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode dependClassName="jetbrains.mps.workbench.tools.BaseTool" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree" file="TypeSystemTraceTree.java">
