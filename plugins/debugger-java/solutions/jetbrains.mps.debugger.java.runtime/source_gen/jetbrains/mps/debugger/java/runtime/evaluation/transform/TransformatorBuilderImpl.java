@@ -10,11 +10,15 @@ public class TransformatorBuilderImpl extends TransformatorBuilder {
   }
 
   public void init() {
-    INSTANCE = this;
+    synchronized (LOCK) {
+      INSTANCE = this;
+    }
   }
 
   public void dispose() {
-    INSTANCE = null;
+    synchronized (LOCK) {
+      INSTANCE = null;
+    }
   }
 
   public TransformatorBuilder.Transformator build(SNode node, boolean insideTransformation) {

@@ -155,10 +155,14 @@ public class MirrorUtilImpl extends MirrorUtil {
   }
 
   public void dispose() {
-    INSTANCE = null;
+    synchronized (LOCK) {
+      INSTANCE = null;
+    }
   }
 
   public void init() {
-    INSTANCE = this;
+    synchronized (LOCK) {
+      INSTANCE = this;
+    }
   }
 }

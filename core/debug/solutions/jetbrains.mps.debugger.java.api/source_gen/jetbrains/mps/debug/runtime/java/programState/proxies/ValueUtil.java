@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class ValueUtil {
   protected static ValueUtil INSTANCE;
+  protected static final Object LOCK = new Object();
 
   public ValueUtil() {
   }
@@ -24,7 +25,9 @@ public abstract class ValueUtil {
   public abstract void dispose();
 
   public static ValueUtil getInstance() {
-    return INSTANCE;
+    synchronized (LOCK) {
+      return INSTANCE;
+    }
   }
 
   public static JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {

@@ -317,8 +317,8 @@
     <nodeInfo nodeId="3102837338444217653" fileName="MirrorUtilImpl.java" startLine="149" startPosition="14" endLine="150" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3102837338444217671" fileName="MirrorUtilImpl.java" startLine="151" startPosition="7" endLine="152" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3102837338444217676" fileName="MirrorUtilImpl.java" startLine="153" startPosition="5" endLine="154" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217685" fileName="MirrorUtilImpl.java" startLine="157" startPosition="25" endLine="158" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3102837338444217693" fileName="MirrorUtilImpl.java" startLine="161" startPosition="22" endLine="162" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3102837338444217685" fileName="MirrorUtilImpl.java" startLine="158" startPosition="25" endLine="159" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3102837338444217693" fileName="MirrorUtilImpl.java" startLine="164" startPosition="25" endLine="165" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3102837338444217169" fileName="MirrorUtilImpl.java" startLine="32" startPosition="48" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MirrorUtilImpl#()V" />
     <nodeInfo nodeId="3102837338444217224" fileName="MirrorUtilImpl.java" startLine="67" startPosition="10" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3102837338444217592" fileName="MirrorUtilImpl.java" startLine="137" startPosition="10" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -335,13 +335,15 @@
     <nodeInfo nodeId="3102837338444217517" fileName="MirrorUtilImpl.java" startLine="99" startPosition="7" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3102837338444217562" fileName="MirrorUtilImpl.java" startLine="122" startPosition="101" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3102837338444217570" fileName="MirrorUtilImpl.java" startLine="125" startPosition="5" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217681" fileName="MirrorUtilImpl.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="3102837338444217689" fileName="MirrorUtilImpl.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="7494124042451491854" fileName="MirrorUtilImpl.java" startLine="157" startPosition="25" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="7494124042451491849" fileName="MirrorUtilImpl.java" startLine="163" startPosition="22" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="3102837338444217220" fileName="MirrorUtilImpl.java" startLine="64" startPosition="10" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3102837338444217365" fileName="MirrorUtilImpl.java" startLine="105" startPosition="76" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3102837338444217588" fileName="MirrorUtilImpl.java" startLine="134" startPosition="10" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3102837338444217647" fileName="MirrorUtilImpl.java" startLine="146" startPosition="14" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3102837338444217531" fileName="MirrorUtilImpl.java" startLine="114" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueProxyFromJava#(Ljava/lang/Object;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
+    <nodeInfo nodeId="3102837338444217681" fileName="MirrorUtilImpl.java" startLine="156" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="3102837338444217689" fileName="MirrorUtilImpl.java" startLine="162" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <nodeInfo nodeId="3102837338444217216" fileName="MirrorUtilImpl.java" startLine="61" startPosition="10" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3102837338444217349" fileName="MirrorUtilImpl.java" startLine="103" startPosition="10" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3102837338444217584" fileName="MirrorUtilImpl.java" startLine="131" startPosition="10" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -388,8 +390,8 @@
     <scopeInfo nodeId="3102837338444217593" fileName="MirrorUtilImpl.java" startLine="137" startPosition="12" endLine="138" endPosition="48" />
     <scopeInfo nodeId="3102837338444217661" fileName="MirrorUtilImpl.java" startLine="147" startPosition="38" endLine="148" endPosition="46" />
     <scopeInfo nodeId="3102837338444217652" fileName="MirrorUtilImpl.java" startLine="149" startPosition="14" endLine="150" endPosition="70" />
-    <scopeInfo nodeId="3102837338444217684" fileName="MirrorUtilImpl.java" startLine="157" startPosition="25" endLine="158" endPosition="20" />
-    <scopeInfo nodeId="3102837338444217692" fileName="MirrorUtilImpl.java" startLine="161" startPosition="22" endLine="162" endPosition="20" />
+    <scopeInfo nodeId="7494124042451491856" fileName="MirrorUtilImpl.java" startLine="158" startPosition="25" endLine="159" endPosition="22" />
+    <scopeInfo nodeId="7494124042451491851" fileName="MirrorUtilImpl.java" startLine="164" startPosition="25" endLine="165" endPosition="22" />
     <scopeInfo nodeId="3102837338444217169" fileName="MirrorUtilImpl.java" startLine="32" startPosition="48" endLine="34" endPosition="3" />
     <scopeInfo nodeId="3102837338444217538" fileName="MirrorUtilImpl.java" startLine="116" startPosition="105" endLine="118" endPosition="45">
       <varInfo nodeId="3102837338444217540" varName="v" />
@@ -398,8 +400,8 @@
       <varInfo nodeId="3102837338444217423" varName="f" />
       <varInfo nodeId="3102837338444217435" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3102837338444217681" fileName="MirrorUtilImpl.java" startLine="156" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="3102837338444217689" fileName="MirrorUtilImpl.java" startLine="160" startPosition="0" endLine="164" endPosition="0" />
+    <scopeInfo nodeId="3102837338444217684" fileName="MirrorUtilImpl.java" startLine="157" startPosition="25" endLine="160" endPosition="5" />
+    <scopeInfo nodeId="3102837338444217692" fileName="MirrorUtilImpl.java" startLine="163" startPosition="22" endLine="166" endPosition="5" />
     <scopeInfo nodeId="3102837338444217353" fileName="MirrorUtilImpl.java" startLine="104" startPosition="46" endLine="110" endPosition="7">
       <varInfo nodeId="3102837338444217355" varName="typename" />
     </scopeInfo>
@@ -407,6 +409,8 @@
       <varInfo nodeId="3102837338444217533" varName="javaValue" />
       <varInfo nodeId="3102837338444217536" varName="threadReference" />
     </scopeInfo>
+    <scopeInfo nodeId="3102837338444217681" fileName="MirrorUtilImpl.java" startLine="156" startPosition="0" endLine="162" endPosition="0" />
+    <scopeInfo nodeId="3102837338444217689" fileName="MirrorUtilImpl.java" startLine="162" startPosition="0" endLine="168" endPosition="0" />
     <scopeInfo nodeId="3102837338444217643" fileName="MirrorUtilImpl.java" startLine="145" startPosition="29" endLine="152" endPosition="23">
       <varInfo nodeId="3102837338444217645" varName="v" />
     </scopeInfo>
@@ -437,7 +441,7 @@
     <scopeInfo nodeId="3102837338444217327" fileName="MirrorUtilImpl.java" startLine="71" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="3102837338444217329" varName="jdiValue" />
     </scopeInfo>
-    <unitInfo nodeId="3102837338444217168" fileName="MirrorUtilImpl.java" startLine="32" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.MirrorUtilImpl" />
+    <unitInfo nodeId="3102837338444217168" fileName="MirrorUtilImpl.java" startLine="32" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.MirrorUtilImpl" />
   </root>
 </debugInfo>
 

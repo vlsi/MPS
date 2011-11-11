@@ -19,11 +19,15 @@ public class ValueUtilImpl extends ValueUtil {
   }
 
   public void init() {
-    INSTANCE = this;
+    synchronized (LOCK) {
+      INSTANCE = this;
+    }
   }
 
   public void dispose() {
-    INSTANCE = null;
+    synchronized (LOCK) {
+      INSTANCE = null;
+    }
   }
 
   public JavaValue fromJDI(Value value, @NotNull String classFQname, ThreadReference threadReference) {

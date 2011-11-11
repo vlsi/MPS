@@ -43,10 +43,22 @@ import com.sun.jdi.FloatValue;
 import com.sun.jdi.IntegerValue;
 import com.sun.jdi.LongValue;
 
-public class EvaluationUtils {
+public abstract class EvaluationUtils {
+  protected static EvaluationUtils INSTANCE;
+  protected static final Object LOCK = new Object();
   protected static Log log = LogFactory.getLog(EvaluationUtils.class);
 
   public EvaluationUtils() {
+  }
+
+  public abstract void init();
+
+  public abstract void dispose();
+
+  public static EvaluationUtils getInstance() {
+    synchronized (LOCK) {
+      return INSTANCE;
+    }
   }
 
   public static Value getElementAt(ArrayReference array, int index) {

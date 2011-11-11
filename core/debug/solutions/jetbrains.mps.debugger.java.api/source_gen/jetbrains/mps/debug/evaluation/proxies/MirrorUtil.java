@@ -10,6 +10,7 @@ import java.util.List;
 
 public abstract class MirrorUtil {
   protected static MirrorUtil INSTANCE;
+  protected static final Object LOCK = new Object();
 
   public MirrorUtil() {
   }
@@ -31,7 +32,9 @@ public abstract class MirrorUtil {
   public abstract void dispose();
 
   public static MirrorUtil getInstance() {
-    return INSTANCE;
+    synchronized (LOCK) {
+      return INSTANCE;
+    }
   }
 
   @NotNull

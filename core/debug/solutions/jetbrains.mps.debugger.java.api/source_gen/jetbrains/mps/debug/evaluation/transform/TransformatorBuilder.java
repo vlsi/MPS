@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 
 public abstract class TransformatorBuilder {
   protected static TransformatorBuilder INSTANCE;
+  protected static final Object LOCK = new Object();
 
   public TransformatorBuilder() {
   }
@@ -21,7 +22,9 @@ public abstract class TransformatorBuilder {
   public abstract void dispose();
 
   public static TransformatorBuilder getInstance() {
-    return INSTANCE;
+    synchronized (LOCK) {
+      return INSTANCE;
+    }
   }
 
   public static abstract class Transformator {
@@ -31,9 +34,5 @@ public abstract class TransformatorBuilder {
     public abstract void transform();
 
     public abstract void transformEvaluator();
-
-    protected static void setInstance(TransformatorBuilder builder) {
-      TransformatorBuilder.INSTANCE = builder;
-    }
   }
 }
