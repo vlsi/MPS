@@ -8,7 +8,7 @@
     <nodeInfo nodeId="6957207478384132548" fileName="JavaPrimitiveValue.java" startLine="45" startPosition="26" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132550" fileName="JavaPrimitiveValue.java" startLine="47" startPosition="5" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132564" fileName="JavaPrimitiveValue.java" startLine="52" startPosition="26" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6957207478384132566" fileName="JavaPrimitiveValue.java" startLine="54" startPosition="5" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157912897227783171" fileName="JavaPrimitiveValue.java" startLine="54" startPosition="5" endLine="55" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132501" fileName="JavaPrimitiveValue.java" startLine="23" startPosition="56" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaPrimitiveValue#(Lcom/sun/jdi/Value;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)V" />
     <nodeInfo nodeId="6957207478384132543" fileName="JavaPrimitiveValue.java" startLine="44" startPosition="40" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6957207478384132559" fileName="JavaPrimitiveValue.java" startLine="51" startPosition="32" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -29,7 +29,7 @@
       <varInfo nodeId="6957207478384132504" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="6957207478384132542" fileName="JavaPrimitiveValue.java" startLine="44" startPosition="40" endLine="48" endPosition="30" />
-    <scopeInfo nodeId="6957207478384132558" fileName="JavaPrimitiveValue.java" startLine="51" startPosition="32" endLine="55" endPosition="44" />
+    <scopeInfo nodeId="6957207478384132558" fileName="JavaPrimitiveValue.java" startLine="51" startPosition="32" endLine="55" endPosition="58" />
     <scopeInfo nodeId="6957207478384132515" fileName="JavaPrimitiveValue.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="6957207478384132525" fileName="JavaPrimitiveValue.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="6957207478384132532" fileName="JavaPrimitiveValue.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
@@ -58,7 +58,7 @@
     <nodeInfo nodeId="6957207478384132770" fileName="JavaObjectValue.java" startLine="90" startPosition="57" endLine="91" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6957207478384132782" fileName="JavaObjectValue.java" startLine="92" startPosition="31" endLine="93" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6957207478384132795" fileName="JavaObjectValue.java" startLine="94" startPosition="5" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6957207478384132801" fileName="JavaObjectValue.java" startLine="99" startPosition="48" endLine="100" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157912897227781602" fileName="JavaObjectValue.java" startLine="99" startPosition="48" endLine="100" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132827" fileName="JavaObjectValue.java" startLine="105" startPosition="9" endLine="106" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132822" fileName="JavaObjectValue.java" startLine="107" startPosition="37" endLine="108" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132846" fileName="JavaObjectValue.java" startLine="112" startPosition="34" endLine="113" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -92,7 +92,7 @@
     <scopeInfo nodeId="6957207478384132682" fileName="JavaObjectValue.java" startLine="67" startPosition="32" endLine="68" endPosition="16" />
     <scopeInfo nodeId="6957207478384132689" fileName="JavaObjectValue.java" startLine="72" startPosition="40" endLine="73" endPosition="71" />
     <scopeInfo nodeId="6957207478384132781" fileName="JavaObjectValue.java" startLine="92" startPosition="31" endLine="93" endPosition="109" />
-    <scopeInfo nodeId="6957207478384132800" fileName="JavaObjectValue.java" startLine="99" startPosition="48" endLine="100" endPosition="84" />
+    <scopeInfo nodeId="6957207478384132800" fileName="JavaObjectValue.java" startLine="99" startPosition="48" endLine="100" endPosition="98" />
     <scopeInfo nodeId="6957207478384132826" fileName="JavaObjectValue.java" startLine="105" startPosition="9" endLine="106" endPosition="166" />
     <scopeInfo nodeId="6957207478384132820" fileName="JavaObjectValue.java" startLine="107" startPosition="0" endLine="108" endPosition="18">
       <varInfo nodeId="6957207478384132824" varName="e" />

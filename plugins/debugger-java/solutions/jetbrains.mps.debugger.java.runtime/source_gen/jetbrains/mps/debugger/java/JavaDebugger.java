@@ -13,6 +13,8 @@ import jetbrains.mps.debugger.java.runtime.VmCreator;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorBuilderImpl;
 import jetbrains.mps.debugger.java.runtime.proxies.ValueUtilImpl;
+import jetbrains.mps.debug.evaluation.proxies.MirrorUtilImpl;
+import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 
@@ -47,10 +49,12 @@ public class JavaDebugger extends AbstractDebugger implements ApplicationCompone
     myJavaBreakpointsProvider.init();
     new TransformatorBuilderImpl().init();
     new ValueUtilImpl().init();
+    new MirrorUtilImpl().init();
   }
 
   @Override
   public void disposeComponent() {
+    MirrorUtil.getInstance().dispose();
     TransformatorBuilder.getInstance().dispose();
     ValueUtil.getInstance().dispose();
     myJavaBreakpointsProvider.dispose();

@@ -68,6 +68,15 @@
     <classNode extendsClassName="java.util.Iterator" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.proxies.MirrorUtil" file="MirrorUtil.java">
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.MirrorUtilImpl" file="MirrorUtilImpl.java">
     <classNode dependClassName="com.sun.jdi.ArrayReference" />
     <classNode dependClassName="com.sun.jdi.BooleanValue" />
     <classNode dependClassName="com.sun.jdi.ByteValue" />
@@ -107,6 +116,7 @@
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.VoidValueProxy" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.MirrorUtil" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.proxies.NullValueProxy" file="NullValueProxy.java">
     <classNode dependClassName="com.sun.jdi.Value" />

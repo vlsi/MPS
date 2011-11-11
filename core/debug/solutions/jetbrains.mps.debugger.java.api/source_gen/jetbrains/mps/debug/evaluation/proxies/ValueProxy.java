@@ -28,6 +28,6 @@ import org.jetbrains.annotations.Nullable;
   @Override
   @Nullable
   public Object getJavaValue() {
-    return MirrorUtil.getJavaValue(myValue);
+    return MirrorUtil.getInstance().getJavaValue(myValue);
   }
 }

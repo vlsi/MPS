@@ -29,7 +29,7 @@ public class TargetVMEvaluationException extends EvaluationException {
       return;
     }
     try {
-      IObjectValueProxy exceptionProxy = (IObjectValueProxy) MirrorUtil.getValueProxy(e.exception(), threadReference);
+      IObjectValueProxy exceptionProxy = (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(e.exception(), threadReference);
       IArrayValueProxy stackTrace = (IArrayValueProxy) exceptionProxy.invokeMethod("getStackTrace", "()[Ljava/lang/StackTraceElement;");
       int length = stackTrace.getLength();
       StackTraceElement[] newStackTrace = new StackTraceElement[length];

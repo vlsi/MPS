@@ -97,7 +97,7 @@ import jetbrains.mps.util.NameUtil;
 
   @NotNull
   private IObjectValueProxy createValueProxy() {
-    return (IObjectValueProxy) MirrorUtil.getValueProxy(myValue, myThreadReference);
+    return (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(myValue, myThreadReference);
   }
 
   @Nullable

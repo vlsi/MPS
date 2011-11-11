@@ -56,7 +56,7 @@ public class EvaluationUtils {
   private static Value invokeStaticInternal(String className, String methodName, String jniSignature, @NotNull final ThreadReference threadReference, Object... args) throws EvaluationException {
     final ClassType referenceType = (ClassType) EvaluationUtils.findClassType(className, threadReference.virtualMachine());
     final Method method = EvaluationUtils.findMethod(referenceType, methodName, jniSignature);
-    final List<Value> argValues = MirrorUtil.getValues(threadReference, args);
+    final List<Value> argValues = MirrorUtil.getInstance().getValues(threadReference, args);
     return EvaluationUtils.handleInvocationExceptions(new EvaluationUtils.ThreadInvocatable<Value>(threadReference) {
       @Override
       public Value invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
@@ -76,7 +76,7 @@ public class EvaluationUtils {
     // TODO duplication in code 
     final ClassType referenceType = (ClassType) EvaluationUtils.findClassType(className, threadReference.virtualMachine());
     final Method constructor = EvaluationUtils.findConstructor(referenceType, jniSignature);
-    final List<Value> argValues = MirrorUtil.getValues(threadReference, args);
+    final List<Value> argValues = MirrorUtil.getInstance().getValues(threadReference, args);
     return EvaluationUtils.handleInvocationExceptions(new EvaluationUtils.ThreadInvocatable<Value>(threadReference) {
       @Override
       public Value invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
@@ -200,7 +200,7 @@ public class EvaluationUtils {
       throw new EvaluationException("variable not found: " + varName);
     }
     Value v = stackFrame.getValue(localVariable);
-    return MirrorUtil.getValueProxy(v, reference);
+    return MirrorUtil.getInstance().getValueProxy(v, reference);
   }
 
   @NotNull
@@ -215,17 +215,17 @@ public class EvaluationUtils {
 
   @NotNull
   public static IValueProxy invokeStatic(String className, String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
-    return MirrorUtil.getValueProxy(EvaluationUtils.invokeStaticInternal(className, name, jniSignature, threadReference, args), threadReference);
+    return MirrorUtil.getInstance().getValueProxy(EvaluationUtils.invokeStaticInternal(className, name, jniSignature, threadReference, args), threadReference);
   }
 
   @NotNull
   public static IValueProxy getStaticFieldValue(String className, String fieldName, ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
-    return MirrorUtil.getValueProxy(EvaluationUtils.getStaticFieldValueInternal(className, fieldName, threadReference), threadReference);
+    return MirrorUtil.getInstance().getValueProxy(EvaluationUtils.getStaticFieldValueInternal(className, fieldName, threadReference), threadReference);
   }
 
   @NotNull
   public static IObjectValueProxy invokeConstructor(String className, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
-    return (IObjectValueProxy) MirrorUtil.getValueProxy(EvaluationUtils.invokeConstructorInternal(className, jniSignature, threadReference, args), threadReference);
+    return (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(EvaluationUtils.invokeConstructorInternal(className, jniSignature, threadReference, args), threadReference);
   }
 
   public static IArrayValueProxy createArray(String className, ThreadReference threadReference, int size) throws EvaluationException {
@@ -244,12 +244,12 @@ public class EvaluationUtils {
       throw new EvaluationException("Could not find type " + className + "[]");
     }
     ArrayReference arrayReference = arrayType.newInstance(size);
-    return (IArrayValueProxy) MirrorUtil.getValueProxy(arrayReference, threadReference);
+    return (IArrayValueProxy) MirrorUtil.getInstance().getValueProxy(arrayReference, threadReference);
   }
 
   public static IArrayValueProxy createArrayFromValues(String className, ThreadReference threadReference, Object... args) throws EvaluationException {
     IArrayValueProxy array = EvaluationUtils.createArray(className, threadReference, args.length);
-    List<Value> values = MirrorUtil.getValues(threadReference, args);
+    List<Value> values = MirrorUtil.getInstance().getValues(threadReference, args);
     for (int i = 0; i < values.size(); i++) {
       array.setElement(values.get(i), i);
     }
@@ -260,7 +260,7 @@ public class EvaluationUtils {
   public static IValueProxy getClassValue(String className, ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
     ClassType referenceType = (ClassType) EvaluationUtils.findClassType(className, threadReference.virtualMachine());
     ClassObjectReference classObject = referenceType.classObject();
-    return MirrorUtil.getValueProxy(classObject, threadReference);
+    return MirrorUtil.getInstance().getValueProxy(classObject, threadReference);
   }
 
   @NotNull

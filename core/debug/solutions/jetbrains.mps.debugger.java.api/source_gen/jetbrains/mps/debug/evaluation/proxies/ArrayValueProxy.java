@@ -35,7 +35,7 @@ import com.sun.jdi.IncompatibleThreadStateException;
   @NotNull
   @Override
   public IValueProxy getElementAt(int index) {
-    return MirrorUtil.getValueProxy(EvaluationUtils.getElementAt(getArrayValue(), index), myThreadReference);
+    return MirrorUtil.getInstance().getValueProxy(EvaluationUtils.getElementAt(getArrayValue(), index), myThreadReference);
   }
 
   @Override
@@ -59,12 +59,12 @@ import com.sun.jdi.IncompatibleThreadStateException;
     // we can't use Evaluators similar method cause we find methods in Object, but invoke them for Array 
     ClassType objectType = (ClassType) EvaluationUtils.findClassType("java.lang.Object", myThreadReference.virtualMachine());
     final Method method = EvaluationUtils.findMethod(objectType, name, jniSignature);
-    final List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
+    final List<Value> argValues = MirrorUtil.getInstance().getValues(myThreadReference, args);
     return EvaluationUtils.handleInvocationExceptions(new EvaluationUtils.ThreadInvocatable<IValueProxy>(myThreadReference) {
       @Override
       public IValueProxy invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
         Value result = getArrayValue().invokeMethod(myThreadReference, method, argValues, 0);
-        return MirrorUtil.getValueProxy(result, myThreadReference);
+        return MirrorUtil.getInstance().getValueProxy(result, myThreadReference);
       }
     });
   }

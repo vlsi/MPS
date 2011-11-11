@@ -37,14 +37,14 @@ import com.sun.jdi.IncompatibleThreadStateException;
     ObjectReference value = getObjectValue();
     Field f = EvaluationUtils.findField(myReferenceType, fieldName);
     Value result = value.getValue(f);
-    return MirrorUtil.getValueProxy(result, myThreadReference);
+    return MirrorUtil.getInstance().getValueProxy(result, myThreadReference);
   }
 
   public List<IValueProxy> getFieldValues() {
     List<Field> fields = EvaluationUtils.findFields(myReferenceType);
     List<IValueProxy> fieldValues = new ArrayList<IValueProxy>();
     for (Field field : fields) {
-      fieldValues.add(MirrorUtil.getValueProxy(getObjectValue().getValue(field), myThreadReference));
+      fieldValues.add(MirrorUtil.getInstance().getValueProxy(getObjectValue().getValue(field), myThreadReference));
     }
     return fieldValues;
   }
@@ -78,12 +78,12 @@ import com.sun.jdi.IncompatibleThreadStateException;
     if (method == null) {
       throw new InvalidEvaluatedExpressionException("Concrete method " + name + " with signature " + jniSignature + " not found in " + classType + ".");
     }
-    final List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
+    final List<Value> argValues = MirrorUtil.getInstance().getValues(myThreadReference, args);
     return EvaluationUtils.handleInvocationExceptions(new EvaluationUtils.ThreadInvocatable<IValueProxy>(myThreadReference) {
       @Override
       public IValueProxy invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
         Value result = getObjectValue().invokeMethod(myThreadReference, method, argValues, options);
-        return MirrorUtil.getValueProxy(result, myThreadReference);
+        return MirrorUtil.getInstance().getValueProxy(result, myThreadReference);
       }
     });
   }

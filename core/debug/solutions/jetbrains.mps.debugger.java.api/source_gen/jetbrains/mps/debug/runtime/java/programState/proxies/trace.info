@@ -59,7 +59,7 @@
     <nodeInfo nodeId="3432969378036014412" fileName="ValueWrapper.java" startLine="24" startPosition="72" endLine="25" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWrappedValue" />
     <nodeInfo nodeId="3432969378036014425" fileName="ValueWrapper.java" startLine="29" startPosition="40" endLine="30" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3432969378036014435" fileName="ValueWrapper.java" startLine="30" startPosition="77" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036014439" fileName="ValueWrapper.java" startLine="31" startPosition="27" endLine="32" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7157912897227775582" fileName="ValueWrapper.java" startLine="31" startPosition="27" endLine="32" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3432969378036014453" fileName="ValueWrapper.java" startLine="36" startPosition="37" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036014462" fileName="ValueWrapper.java" startLine="41" startPosition="40" endLine="42" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036014472" fileName="ValueWrapper.java" startLine="46" startPosition="42" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -82,7 +82,7 @@
     <scopeInfo nodeId="3432969378036014500" fileName="ValueWrapper.java" startLine="57" startPosition="32" endLine="58" endPosition="16" />
     <scopeInfo nodeId="3432969378036014507" fileName="ValueWrapper.java" startLine="61" startPosition="47" endLine="62" endPosition="29" />
     <scopeInfo nodeId="3432969378036014492" fileName="ValueWrapper.java" startLine="53" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="3432969378036014424" fileName="ValueWrapper.java" startLine="29" startPosition="40" endLine="32" endPosition="87" />
+    <scopeInfo nodeId="3432969378036014424" fileName="ValueWrapper.java" startLine="29" startPosition="40" endLine="32" endPosition="101" />
     <scopeInfo nodeId="3432969378036014479" fileName="ValueWrapper.java" startLine="47" startPosition="58" endLine="50" endPosition="5">
       <varInfo nodeId="3432969378036014481" varName="watchable" />
     </scopeInfo>
