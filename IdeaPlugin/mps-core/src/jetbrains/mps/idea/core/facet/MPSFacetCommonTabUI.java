@@ -71,7 +71,7 @@ public class MPSFacetCommonTabUI {
 
     private void createCentralComponent() {
         TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(myParentDisposable);
-        tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, (mySourcesTab = new MPSFacetSourcesTab(myContext)).getRootPanel(), null);
+        tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, (mySourcesTab = new MPSFacetSourcesTab(myContext, myParentDisposable)).getRootPanel(), null);
         tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, (myPathsTab = new MPSFacetPathsTab(myContext)).getRootPanel(), null);
         myCentralComponent = tabbedPane.getComponent();
     }

@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.facet;
 
 import com.intellij.facet.ui.FacetEditorContext;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -26,6 +27,7 @@ import com.intellij.openapi.fileChooser.ex.FileChooserKeys;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
 import com.intellij.openapi.roots.ui.componentsList.layout.VerticalStackLayout;
+import com.intellij.openapi.roots.ui.configuration.ContentEntryEditor;
 import com.intellij.openapi.roots.ui.configuration.actions.IconWithTextAction;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.IdeBorderFactory;
@@ -36,6 +38,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -51,10 +54,14 @@ public class MPSFacetSourcesTab {
 
     private JPanel myRootPanel;
     private ToolbarPanel myToolbarPanel;
-    private FacetEditorContext myContext;
 
-    public MPSFacetSourcesTab(FacetEditorContext context) {
+    private FacetEditorContext myContext;
+    private Disposable myParentDisposable;
+    private ScrollablePanel myModelRootsPanel;
+
+    public MPSFacetSourcesTab(FacetEditorContext context, Disposable parentDisposable) {
         myContext = context;
+        myParentDisposable = parentDisposable;
     }
 
     public JPanel getRootPanel() {
@@ -82,11 +89,40 @@ public class MPSFacetSourcesTab {
         action.registerCustomShortcutSet(KeyEvent.VK_M, KeyEvent.ALT_DOWN_MASK, myRootPanel);
         group.add(action);
 
-        ScrollablePanel modelRootsPanel = new ScrollablePanel(new VerticalStackLayout());
-        modelRootsPanel.setBackground(BACKGROUND_COLOR);
-        JScrollPane myScrollPane = ScrollPaneFactory.createScrollPane(modelRootsPanel);
+        myModelRootsPanel = new ScrollablePanel(new VerticalStackLayout());
+        myModelRootsPanel.setBackground(BACKGROUND_COLOR);
+        JScrollPane myScrollPane = ScrollPaneFactory.createScrollPane(myModelRootsPanel);
         myToolbarPanel = new ToolbarPanel(myScrollPane, group);
         myToolbarPanel.setBorder(null);
+    }
+
+    private void addModelRoots(VirtualFile[] files) {
+        ContentEntryEditor lastEditor = null;
+        for (VirtualFile file : files) {
+            ContentEntryEditor contentEntryEditor = new ModelSourceContentEntryEditor(file.getUrl(), myParentDisposable);
+            contentEntryEditor.initUI();
+//            contentEntryEditor.addContentEntryEditorListener(myContentEntryEditorListener);
+//            registerDisposable(new Disposable() {
+//              public void dispose() {
+//                contentEntryEditor.removeContentEntryEditorListener(myContentEntryEditorListener);
+//              }
+//            });
+//            myEntryToEditorMap.put(contentEntry, contentEntryEditor);
+            Border border = BorderFactory.createEmptyBorder(2, 2, 0, 2);
+            final JComponent component = contentEntryEditor.getComponent();
+            final Border componentBorder = component.getBorder();
+            if (componentBorder != null) {
+                border = BorderFactory.createCompoundBorder(border, componentBorder);
+            }
+            component.setBorder(border);
+            myModelRootsPanel.add(component);
+            lastEditor = contentEntryEditor;
+        }
+        if (lastEditor != null) {
+            lastEditor.setSelected(true);
+        }
+        myModelRootsPanel.revalidate();
+        myModelRootsPanel.repaint();
     }
 
     private class AddModelRootAction extends IconWithTextAction implements DumbAware {
@@ -114,7 +150,7 @@ public class MPSFacetSourcesTab {
             VirtualFile[] files = FileChooser.chooseFiles(myContext.getProject(), myDescriptor, myLastSelectedDir);
             if (files.length > 0) {
                 myLastSelectedDir = files[0];
-//              addContentEntries(files);
+                addModelRoots(files);
             }
         }
     }

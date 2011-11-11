@@ -30,6 +30,7 @@ import com.intellij.util.xmlb.XmlSerializerUtil;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NonNls;
 
 import javax.swing.*;
 import java.io.File;
@@ -38,7 +39,8 @@ import java.io.File;
  * evgeny, 10/26/11
  */
 public class MPSFacetConfiguration implements FacetConfiguration, PersistentStateComponent<MPSConfigurationBean> {
-
+    @NonNls
+    private static final String SOURCE_GEN = "source_gen";
     private MPSConfigurationBean configurationBean = new MPSConfigurationBean();
     private MPSFacet myMpsFacet;
 
@@ -69,7 +71,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
 
     private void setConfigurationDefaults() {
         if (configurationBean.getGeneratorOutputPath() == null) {
-            configurationBean.setGeneratorOutputPath(myMpsFacet.getModule().getModuleFile().getParent().getPath() + File.separator + "source_gen");
+            configurationBean.setGeneratorOutputPath(myMpsFacet.getModule().getModuleFile().getParent().getPath() + File.separator + SOURCE_GEN);
             configurationBean.setUseModuleSourceFolder(false);
         }
     }
