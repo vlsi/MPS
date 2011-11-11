@@ -6,7 +6,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorImpl" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorBuilderImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
@@ -26,7 +26,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorImpl" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorBuilderImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
