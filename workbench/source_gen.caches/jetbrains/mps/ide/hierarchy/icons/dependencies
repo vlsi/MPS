@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.hierarchy.icons.Icons" file="Icons.java">
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
   </dependency>
 </dependenciesRoot>
 

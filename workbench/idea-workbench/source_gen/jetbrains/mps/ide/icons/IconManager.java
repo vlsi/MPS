@@ -15,13 +15,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNodeOperations;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.ui.LayeredIcon;
+import com.intellij.util.Icons;
 import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.List;
@@ -83,7 +83,7 @@ public class IconManager {
       public Icon compute() {
         Icon mainIcon = null;
         if (SNodeOperations.isUnknown(node)) {
-          return Icons.UNKNOWN_ICON;
+          return IdeIcons.UNKNOWN_ICON;
         }
         SNode concept = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(node);
         if ((concept != null)) {
@@ -103,9 +103,9 @@ public class IconManager {
         }
         if (mainIcon == null) {
           if (node.isRoot()) {
-            return Icons.DEFAULT_ROOT_ICON;
+            return IdeIcons.DEFAULT_ROOT_ICON;
           } else {
-            return Icons.DEFAULT_NODE_ICON;
+            return IdeIcons.DEFAULT_NODE_ICON;
           }
         }
         SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
@@ -113,7 +113,7 @@ public class IconManager {
           return mainIcon;
         }
         if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) model.getModelDescriptor()).isReadOnly()) {
-          mainIcon = new LayeredIcon(mainIcon, com.intellij.util.Icons.LOCKED_ICON);
+          mainIcon = new LayeredIcon(mainIcon, Icons.LOCKED_ICON);
         }
         RowIcon result = new RowIcon(2);
         result.setIcon(mainIcon, 0);
@@ -169,9 +169,9 @@ public class IconManager {
     }
     if (icon == null) {
       if (cd != null && cd.isRoot()) {
-        return Icons.DEFAULT_ROOT_ICON;
+        return IdeIcons.DEFAULT_ROOT_ICON;
       } else {
-        return Icons.DEFAULT_NODE_ICON;
+        return IdeIcons.DEFAULT_NODE_ICON;
       }
     }
     return icon;
@@ -211,42 +211,42 @@ public class IconManager {
         return getIconForAspect(aspect);
       } else
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
-        return Icons.TEMPLATES_MODEL_ICON;
+        return IdeIcons.TEMPLATES_MODEL_ICON;
       } else
       if (Language.isLanguageOwnedAccessoryModel(modelDescriptor)) {
-        return Icons.ACCESSORY_MODEL_ICON;
+        return IdeIcons.ACCESSORY_MODEL_ICON;
       } else
       if (SModelStereotype.isTestModel(modelDescriptor)) {
-        return Icons.TEST_MODEL_ICON;
+        return IdeIcons.TEST_MODEL_ICON;
       }
     }
-    return Icons.MODEL_ICON;
+    return IdeIcons.MODEL_ICON;
   }
 
   public static Icon getIconFor(IModule module) {
     if (module instanceof Generator) {
-      return Icons.GENERATOR_ICON;
+      return IdeIcons.GENERATOR_ICON;
     }
     if (module instanceof Language) {
-      return Icons.PROJECT_LANGUAGE_ICON;
+      return IdeIcons.PROJECT_LANGUAGE_ICON;
     }
     if (module instanceof Solution) {
-      return Icons.SOLUTION_ICON;
+      return IdeIcons.SOLUTION_ICON;
     }
     if (module instanceof DevKit) {
-      return Icons.DEVKIT_ICON;
+      return IdeIcons.DEVKIT_ICON;
     }
-    return Icons.DEFAULT_ICON;
+    return IdeIcons.DEFAULT_ICON;
   }
 
   public static Icon getIconFor(MPSModuleOwner owner) {
     if (owner instanceof MPSProject) {
-      return Icons.PROJECT_ICON;
+      return IdeIcons.PROJECT_ICON;
     }
     if (owner instanceof IModule) {
       return getIconFor((IModule) owner);
     }
-    return Icons.DEFAULT_ICON;
+    return IdeIcons.DEFAULT_ICON;
   }
 
   public static Icon getIconFor(IFile file) {
@@ -299,27 +299,27 @@ public class IconManager {
   public static Icon getIconForAspect(LanguageAspect aspect) {
     Icon icon = MapSequence.fromMap(ourAspectsToIcons).get(aspect);
     if (icon == null) {
-      return Icons.MODEL_ICON;
+      return IdeIcons.MODEL_ICON;
     }
     return icon;
   }
 
   static {
     ourAspectsToIcons = new EnumMap<LanguageAspect, Icon>(LanguageAspect.class);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.ACTIONS, Icons.ACTIONS_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.BEHAVIOR, Icons.BEHAVIOR_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.CONSTRAINTS, Icons.CONSTRAINTS_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.DATA_FLOW, Icons.DATA_FLOW_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.EDITOR, Icons.EDITOR_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.FIND_USAGES, Icons.FIND_USAGES_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.INTENTIONS, Icons.INTENTIONS_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.PLUGIN, Icons.PLUGIN_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.REFACTORINGS, Icons.REFACTORINGS_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.SCRIPTS, Icons.MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.STRUCTURE, Icons.STRUCTURE_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.STUBS, Icons.STUBS_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TEST, Icons.TEST_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TEXT_GEN, Icons.TEXT_GEN_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TYPESYSTEM, Icons.TYPESYSTEM_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.ACTIONS, IdeIcons.ACTIONS_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.BEHAVIOR, IdeIcons.BEHAVIOR_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.CONSTRAINTS, IdeIcons.CONSTRAINTS_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.DATA_FLOW, IdeIcons.DATA_FLOW_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.EDITOR, IdeIcons.EDITOR_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.FIND_USAGES, IdeIcons.FIND_USAGES_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.INTENTIONS, IdeIcons.INTENTIONS_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.PLUGIN, IdeIcons.PLUGIN_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.REFACTORINGS, IdeIcons.REFACTORINGS_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.SCRIPTS, IdeIcons.MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.STRUCTURE, IdeIcons.STRUCTURE_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.STUBS, IdeIcons.STUBS_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TEST, IdeIcons.TEST_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TEXT_GEN, IdeIcons.TEXT_GEN_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TYPESYSTEM, IdeIcons.TYPESYSTEM_MODEL_ICON);
   }
 }

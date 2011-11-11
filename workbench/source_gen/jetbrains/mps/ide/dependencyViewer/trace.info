@@ -466,7 +466,7 @@
     <nodeInfo nodeId="8294989614925457995" fileName="ReferencesView.java" startLine="39" startPosition="50" endLine="40" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294989614925458003" fileName="ReferencesView.java" startLine="43" startPosition="48" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294989614925458015" fileName="ReferencesView.java" startLine="47" startPosition="82" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8294989614925458021" fileName="ReferencesView.java" startLine="51" startPosition="34" endLine="52" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294989614925458021" fileName="ReferencesView.java" startLine="51" startPosition="34" endLine="52" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294989614925458029" fileName="ReferencesView.java" startLine="55" startPosition="55" endLine="56" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294989614925458038" fileName="ReferencesView.java" startLine="60" startPosition="47" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294989614925457984" fileName="ReferencesView.java" startLine="35" startPosition="73" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyNodeRepresentator#()V" />
@@ -487,7 +487,7 @@
     <scopeInfo nodeId="8294989614925457994" fileName="ReferencesView.java" startLine="39" startPosition="50" endLine="40" endPosition="37" />
     <scopeInfo nodeId="8294989614925458002" fileName="ReferencesView.java" startLine="43" startPosition="48" endLine="44" endPosition="18" />
     <scopeInfo nodeId="8294989614925458014" fileName="ReferencesView.java" startLine="47" startPosition="82" endLine="48" endPosition="26" />
-    <scopeInfo nodeId="8294989614925458020" fileName="ReferencesView.java" startLine="51" startPosition="34" endLine="52" endPosition="32" />
+    <scopeInfo nodeId="8294989614925458020" fileName="ReferencesView.java" startLine="51" startPosition="34" endLine="52" endPosition="35" />
     <scopeInfo nodeId="8294989614925458028" fileName="ReferencesView.java" startLine="55" startPosition="55" endLine="56" endPosition="89" />
     <scopeInfo nodeId="8294989614925458037" fileName="ReferencesView.java" startLine="60" startPosition="47" endLine="61" endPosition="36" />
     <scopeInfo nodeId="8294989614925457984" fileName="ReferencesView.java" startLine="35" startPosition="73" endLine="37" endPosition="5" />

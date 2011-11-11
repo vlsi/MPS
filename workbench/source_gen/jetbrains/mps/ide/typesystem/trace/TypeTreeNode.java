@@ -6,7 +6,7 @@ import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public class TypeTreeNode extends TypeSystemStateTreeNode {
   private static Color color = new Color(30464);
@@ -15,7 +15,7 @@ public class TypeTreeNode extends TypeSystemStateTreeNode {
     super(operationContext);
     myNode = node;
     setNodeIdentifier(PresentationUtil.getNodePresentation(editorComponent, node) + " : " + type);
-    setIcon(Icons.DEFAULT_ICON);
+    setIcon(IdeIcons.DEFAULT_ICON);
   }
 
   @Override

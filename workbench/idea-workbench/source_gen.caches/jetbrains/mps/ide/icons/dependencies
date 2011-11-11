@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.icons.IconManager" file="IconManager.java">
     <classNode dependClassName="com.intellij.ui.LayeredIcon" />
     <classNode dependClassName="com.intellij.ui.RowIcon" />
+    <classNode dependClassName="com.intellij.util.Icons" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.MediaTracker" />
@@ -20,7 +21,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

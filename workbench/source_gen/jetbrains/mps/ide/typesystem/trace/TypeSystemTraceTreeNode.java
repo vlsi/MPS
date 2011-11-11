@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.HashMap;
@@ -22,7 +22,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
     super(userObject, operationContext);
     AbstractOperation operation = (AbstractOperation) userObject;
     this.setAutoExpandable(true);
-    this.setIcon(Icons.DEFAULT_ICON);
+    this.setIcon(IdeIcons.DEFAULT_ICON);
     List<SNode> variables = operation.getVariables();
     if (variables != null) {
       setTooltipText(PresentationUtil.getVariablesTooltipPresentation(editorComponent, variables, state));
@@ -43,7 +43,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
     AbstractOperation operation = (AbstractOperation) userObject;
     setNodeIdentifier(operation.getPresentation());
     this.setAutoExpandable(true);
-    this.setIcon(Icons.DEFAULT_ICON);
+    this.setIcon(IdeIcons.DEFAULT_ICON);
   }
 
   public void doUpdatePresentation() {

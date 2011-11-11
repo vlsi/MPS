@@ -8,7 +8,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nls;
 import javax.swing.Icon;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import javax.swing.JComponent;
 import com.intellij.openapi.options.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +27,7 @@ public final class ProjectPropertiesPrefsPage implements SearchableConfigurable,
   }
 
   public Icon getIcon() {
-    return Icons.PROJECT_ICON;
+    return IdeIcons.PROJECT_ICON;
   }
 
   public String getHelpTopic() {

@@ -643,7 +643,7 @@
     <nodeInfo nodeId="3201642974933586131" fileName="ProjectPropertiesPrefsPage.java" startLine="17" startPosition="28" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="3201642974933586139" fileName="ProjectPropertiesPrefsPage.java" startLine="20" startPosition="54" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933586149" fileName="ProjectPropertiesPrefsPage.java" startLine="25" startPosition="34" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3201642974933586158" fileName="ProjectPropertiesPrefsPage.java" startLine="29" startPosition="25" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3201642974933586158" fileName="ProjectPropertiesPrefsPage.java" startLine="29" startPosition="25" endLine="30" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3201642974933586164" fileName="ProjectPropertiesPrefsPage.java" startLine="33" startPosition="32" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3201642974933586170" fileName="ProjectPropertiesPrefsPage.java" startLine="37" startPosition="39" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933586180" fileName="ProjectPropertiesPrefsPage.java" startLine="38" startPosition="60" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -676,7 +676,7 @@
     <scopeInfo nodeId="3201642974933586247" fileName="ProjectPropertiesPrefsPage.java" startLine="72" startPosition="34" endLine="72" endPosition="34" />
     <scopeInfo nodeId="3201642974933586138" fileName="ProjectPropertiesPrefsPage.java" startLine="20" startPosition="54" endLine="21" endPosition="24" />
     <scopeInfo nodeId="3201642974933586148" fileName="ProjectPropertiesPrefsPage.java" startLine="25" startPosition="34" endLine="26" endPosition="30" />
-    <scopeInfo nodeId="3201642974933586157" fileName="ProjectPropertiesPrefsPage.java" startLine="29" startPosition="25" endLine="30" endPosition="30" />
+    <scopeInfo nodeId="3201642974933586157" fileName="ProjectPropertiesPrefsPage.java" startLine="29" startPosition="25" endLine="30" endPosition="33" />
     <scopeInfo nodeId="3201642974933586163" fileName="ProjectPropertiesPrefsPage.java" startLine="33" startPosition="32" endLine="34" endPosition="31" />
     <scopeInfo nodeId="3201642974933586187" fileName="ProjectPropertiesPrefsPage.java" startLine="42" startPosition="31" endLine="43" endPosition="36" />
     <scopeInfo nodeId="3201642974933586197" fileName="ProjectPropertiesPrefsPage.java" startLine="46" startPosition="53" endLine="47" endPosition="24" />
