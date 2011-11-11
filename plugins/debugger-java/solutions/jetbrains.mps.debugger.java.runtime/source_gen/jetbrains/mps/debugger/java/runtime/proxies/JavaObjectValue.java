@@ -18,7 +18,7 @@ import jetbrains.mps.debug.integration.ui.icons.Icons;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import com.sun.jdi.ClassType;
-import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
@@ -78,7 +78,7 @@ import jetbrains.mps.util.NameUtil;
     try {
       ObjectReference ref = (ObjectReference) myValue;
       Field field = EvaluationUtils.findField((ClassType) ref.referenceType(), fieldName);
-      return AbstractValueUtil.getInstance().fromJDIValueRaw(ref.getValue(field), myClassFQName, myThreadReference);
+      return ValueUtil.getInstance().fromJDIValueRaw(ref.getValue(field), myClassFQName, myThreadReference);
     } catch (InvalidEvaluatedExpressionException e) {
       //  we get NPE instead 
       return null;
@@ -90,7 +90,7 @@ import jetbrains.mps.util.NameUtil;
     List<Field> fieldList = ref.referenceType().fields();
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Field f : fieldList) {
-      result.add(AbstractValueUtil.getInstance().fromJDIValueRaw(ref.getValue(f), myClassFQName, myThreadReference));
+      result.add(ValueUtil.getInstance().fromJDIValueRaw(ref.getValue(f), myClassFQName, myThreadReference));
     }
     return result;
   }
@@ -103,7 +103,7 @@ import jetbrains.mps.util.NameUtil;
   @Nullable
   public JavaValue executeMethod(String methodName, String jniSignature, Object... args) {
     try {
-      return AbstractValueUtil.getInstance().fromJDIValueRaw(createValueProxy().invokeMethod(methodName, jniSignature, args).getJDIValue(), myClassFQName, myThreadReference);
+      return ValueUtil.getInstance().fromJDIValueRaw(createValueProxy().invokeMethod(methodName, jniSignature, args).getJDIValue(), myClassFQName, myThreadReference);
     } catch (EvaluationException e) {
       return null;
     }

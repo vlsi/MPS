@@ -12,7 +12,7 @@ import com.sun.jdi.ArrayReference;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaArrayItem;
 import javax.swing.Icon;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
-import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
 
 
@@ -64,7 +64,7 @@ import jetbrains.mps.debug.evaluation.EvaluationUtils;
   }
 
   public JavaValue getElementValue(int index) {
-    return AbstractValueUtil.getInstance().fromJDIValueRaw(EvaluationUtils.getElementAt((ArrayReference) myValue, index), myClassFQName, myThreadReference);
+    return ValueUtil.getInstance().fromJDIValueRaw(EvaluationUtils.getElementAt((ArrayReference) myValue, index), myClassFQName, myThreadReference);
   }
 
   public int getSize() {
@@ -76,7 +76,7 @@ import jetbrains.mps.debug.evaluation.EvaluationUtils;
     List<Value> valueList = arrayReference.getValues();
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Value v : valueList) {
-      result.add(AbstractValueUtil.getInstance().fromJDIValueRaw(v, myClassFQName, myThreadReference));
+      result.add(ValueUtil.getInstance().fromJDIValueRaw(v, myClassFQName, myThreadReference));
     }
     return result;
   }
@@ -93,7 +93,7 @@ import jetbrains.mps.debug.evaluation.EvaluationUtils;
     List<Value> valueList = arrayReference.getValues(startIndex, endIndex);
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Value v : valueList) {
-      result.add(AbstractValueUtil.getInstance().fromJDIValueRaw(v, myClassFQName, myThreadReference));
+      result.add(ValueUtil.getInstance().fromJDIValueRaw(v, myClassFQName, myThreadReference));
     }
     return result;
   }

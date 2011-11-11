@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import jetbrains.mps.debugger.java.runtime.evaluation.transform.Transformator;
+import jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorImpl;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -1932,11 +1932,11 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
     }
 
     public void init() {
-      Transformator.init();
+      TransformatorImpl.init();
     }
 
     public void dispose() {
-      Transformator.dispose();
+      TransformatorImpl.dispose();
     }
 
     public static class QuotationClass_n7zrdh_a0a55a21a {

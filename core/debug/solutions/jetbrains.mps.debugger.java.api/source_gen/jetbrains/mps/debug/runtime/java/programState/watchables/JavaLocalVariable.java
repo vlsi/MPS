@@ -9,7 +9,7 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.StackFrame;
-import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
@@ -40,7 +40,7 @@ public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatch
     myStackFrame = stackFrame;
     StackFrame javaStackFrame = myStackFrame.getStackFrame();
     if (javaStackFrame != null) {
-      myCachedValue = AbstractValueUtil.getInstance().fromJDIValue(javaStackFrame.getValue(myLocalVariable), classFqName, threadReference);
+      myCachedValue = ValueUtil.getInstance().fromJDIValue(javaStackFrame.getValue(myLocalVariable), classFqName, threadReference);
     }
   }
 

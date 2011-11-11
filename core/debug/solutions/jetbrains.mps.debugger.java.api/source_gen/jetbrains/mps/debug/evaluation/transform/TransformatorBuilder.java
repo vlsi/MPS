@@ -5,23 +5,27 @@ package jetbrains.mps.debug.evaluation.transform;
 import jetbrains.mps.smodel.SNode;
 
 public abstract class TransformatorBuilder {
-  private static TransformatorBuilder INSTANCE;
+  protected static TransformatorBuilder INSTANCE;
 
   public TransformatorBuilder() {
   }
 
-  public abstract TransformatorBuilder.AbstractTransformator build(SNode node, boolean insideTransformation);
+  public abstract TransformatorBuilder.Transformator build(SNode node, boolean insideTransformation);
 
   public abstract String getJniSignatureFromType(SNode type);
 
   public abstract SNode getProxyTypeFromType(SNode type);
 
+  public abstract void init();
+
+  public abstract void dispose();
+
   public static TransformatorBuilder getInstance() {
     return INSTANCE;
   }
 
-  public static abstract class AbstractTransformator {
-    public AbstractTransformator() {
+  public static abstract class Transformator {
+    public Transformator() {
     }
 
     public abstract void transform();

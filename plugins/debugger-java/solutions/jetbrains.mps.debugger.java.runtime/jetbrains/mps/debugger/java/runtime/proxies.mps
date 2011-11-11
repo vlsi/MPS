@@ -41,7 +41,7 @@
       <property name="name" nameId="tpck.1169194664001" value="JavaArrayValue" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6957207478384133213">
-      <property name="name" nameId="tpck.1169194664001" value="ValueUtil" />
+      <property name="name" nameId="tpck.1169194664001" value="ValueUtilImpl" />
     </node>
   </roots>
   <root id="6957207478384132498">

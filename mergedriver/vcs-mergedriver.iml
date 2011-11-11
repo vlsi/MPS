@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file://$MPS_HOME$/plugins/vcs/classes" />
-    <output-test url="file://$MPS_HOME$/plugins/vcs/testclasses" />
+    <output url="file://$APPLICATION_HOME_DIR$/bin/$MPS_HOME$/plugins/vcs/classes" />
+    <output-test url="file://$APPLICATION_HOME_DIR$/bin/$MPS_HOME$/plugins/vcs/testclasses" />
     <exclude-output />
     <content url="file://$MPS_HOME$/plugins/vcs/solutions/jetbrains.mps.vcs.mergedriver">
       <sourceFolder url="file://$MPS_HOME$/plugins/vcs/solutions/jetbrains.mps.vcs.mergedriver/source_gen" isTestSource="false" />

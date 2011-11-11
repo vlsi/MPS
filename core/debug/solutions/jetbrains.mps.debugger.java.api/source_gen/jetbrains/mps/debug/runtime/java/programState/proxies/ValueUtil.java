@@ -7,10 +7,10 @@ import com.sun.jdi.ThreadReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class AbstractValueUtil {
-  protected static AbstractValueUtil INSTANCE;
+public abstract class ValueUtil {
+  protected static ValueUtil INSTANCE;
 
-  public AbstractValueUtil() {
+  public ValueUtil() {
   }
 
   public abstract JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference);
@@ -19,7 +19,11 @@ public abstract class AbstractValueUtil {
 
   public abstract JavaValue fromJDIValue(@Nullable Value value, ThreadReference threadReference);
 
-  public static AbstractValueUtil getInstance() {
+  public abstract void init();
+
+  public abstract void dispose();
+
+  public static ValueUtil getInstance() {
     return INSTANCE;
   }
 }

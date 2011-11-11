@@ -7,7 +7,7 @@ import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
-import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import javax.swing.Icon;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 import jetbrains.mps.smodel.SNode;
@@ -32,7 +32,7 @@ public class JavaExceptionWatchable extends JavaBreakpointWatchable {
 
   @Override
   public IValue getValue() {
-    return AbstractValueUtil.getInstance().fromJDIValue(myException, myClassFQName, myThreadReference);
+    return ValueUtil.getInstance().fromJDIValue(myException, myClassFQName, myThreadReference);
   }
 
   @Override

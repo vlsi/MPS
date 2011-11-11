@@ -11,8 +11,10 @@ import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.VmCreator;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
-import jetbrains.mps.debugger.java.runtime.evaluation.transform.Transformator;
-import jetbrains.mps.debugger.java.runtime.proxies.ValueUtil;
+import jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorBuilderImpl;
+import jetbrains.mps.debugger.java.runtime.proxies.ValueUtilImpl;
+import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 
 public class JavaDebugger extends AbstractDebugger implements ApplicationComponent {
   private final JavaBreakpointsProvider myJavaBreakpointsProvider = new JavaBreakpointsProvider();
@@ -43,14 +45,14 @@ public class JavaDebugger extends AbstractDebugger implements ApplicationCompone
   public void initComponent() {
     super.init();
     myJavaBreakpointsProvider.init();
-    Transformator.init();
-    new ValueUtil().init();
+    new TransformatorBuilderImpl().init();
+    new ValueUtilImpl().init();
   }
 
   @Override
   public void disposeComponent() {
-    new ValueUtil().dispose();
-    Transformator.dispose();
+    TransformatorBuilder.getInstance().dispose();
+    ValueUtil.getInstance().dispose();
     myJavaBreakpointsProvider.dispose();
     super.dispose();
   }

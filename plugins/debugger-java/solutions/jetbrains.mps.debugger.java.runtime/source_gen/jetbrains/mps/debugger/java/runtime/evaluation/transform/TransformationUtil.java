@@ -68,8 +68,8 @@ public class TransformationUtil {
 
   public static void replaceAssignment(SNode baseAssignment) {
     // todo get rid of copy & paste 
-    SNode lvalueType = baseAssignment.getChild(Transformator.LTYPE);
-    SNode rvalueType = baseAssignment.getChild(Transformator.RTYPE);
+    SNode lvalueType = baseAssignment.getChild(TransformatorImpl.LTYPE);
+    SNode rvalueType = baseAssignment.getChild(TransformatorImpl.RTYPE);
 
     SNode rightExpression;
     if (SNodeOperations.isInstanceOf(baseAssignment, "jetbrains.mps.baseLanguage.structure.AndAssignmentExpression")) {
@@ -96,8 +96,8 @@ public class TransformationUtil {
       return;
     }
     SNodeOperations.replaceWithAnother(baseAssignment, new TransformationUtil.QuotationClass_crriw5_a0a0g0f().createNode(SLinkOperations.getTarget(baseAssignment, "lValue", true), rightExpression));
-    rightExpression.addChild(Transformator.LTYPE, SNodeOperations.copyNode(lvalueType));
-    rightExpression.addChild(Transformator.RTYPE, SNodeOperations.copyNode(rvalueType));
+    rightExpression.addChild(TransformatorImpl.LTYPE, SNodeOperations.copyNode(lvalueType));
+    rightExpression.addChild(TransformatorImpl.RTYPE, SNodeOperations.copyNode(rvalueType));
     AttributeOperations.createAndSetAttrbiute(rightExpression, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
     AttributeOperations.createAndSetAttrbiute(baseAssignment, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
   }
