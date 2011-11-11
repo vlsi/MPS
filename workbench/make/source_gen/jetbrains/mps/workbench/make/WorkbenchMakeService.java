@@ -25,6 +25,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import com.intellij.openapi.project.DumbService;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.concurrent.ExecutionException;
@@ -35,7 +37,6 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
@@ -127,6 +128,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   public boolean openNewSession(MakeSession session) {
     this.checkValidUsage();
+    if (DumbService.getInstance(ProjectHelper.toIdeaProject(session.getContext().getProject())).isDumb()) {
+      DumbService.getInstance(ProjectHelper.toIdeaProject(session.getContext().getProject())).showDumbModeNotification("Generation is not available until indices are built.");
+      return false;
+    }
     if (!(currentSessionStickyMark.compareAndSet(null, session, false, session.isSticky()))) {
       return false;
     }
