@@ -20,11 +20,9 @@ core/intentions-runtime/classes
 editor/typesystemIntegration/classes
 :workbench
 core/plugin-runtime/classes
-workbench/baseLanguageIndex/classes_gen
 core/baseLanguage/runConfigurations/runtime/classes
 core/languageDesign/test/classes_gen
 workbench/classes
-workbench/mps-platform/classes
 workbench/mps-workbench/classes
 languages/util/runConfigurations/classes
 workbench/typesystemUi/classes
@@ -32,3 +30,5 @@ languages/util/uiLanguage/runtime/classes
 MPSPlugin/apiclasses
 core/debug/classes
 core/debug-api/classes
+workbench/baseLanguageIndex/classes_gen
+workbench/mps-platform/classes

@@ -154,6 +154,7 @@ public class CommonPaths {
   }
 
   private static void addIdeaJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-platform.jar");
     addIfExists(result, "/lib/mps-workbench.jar");
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");

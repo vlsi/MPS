@@ -90,35 +90,51 @@
     <scopeInfo nodeId="3583849467508042531" fileName="CheckUtil.java" startLine="48" startPosition="39" endLine="52" endPosition="9">
       <varInfo nodeId="3583849467508042533" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="3583849467508049041" fileName="CheckUtil.java" startLine="69" startPosition="114" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="3583849467508049052" fileName="CheckUtil.java" startLine="73" startPosition="47" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="3583849467508049041" fileName="CheckUtil.java" startLine="69" startPosition="114" endLine="73" endPosition="0">
+      <varInfo nodeId="3583849467508049041" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3583849467508049052" fileName="CheckUtil.java" startLine="73" startPosition="47" endLine="77" endPosition="0">
+      <varInfo nodeId="3583849467508049052" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="3583849467508049141" fileName="CheckUtil.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="3583849467508049145" varName="smodel" />
     </scopeInfo>
-    <scopeInfo nodeId="3583849467508048977" fileName="CheckUtil.java" startLine="118" startPosition="5" endLine="123" endPosition="5" />
+    <scopeInfo nodeId="3583849467508048977" fileName="CheckUtil.java" startLine="118" startPosition="5" endLine="123" endPosition="5">
+      <varInfo nodeId="3583849467508048977" varName="l" />
+    </scopeInfo>
     <scopeInfo nodeId="3583849467508042525" fileName="CheckUtil.java" startLine="47" startPosition="65" endLine="53" endPosition="7" />
     <scopeInfo nodeId="3583849467508048949" fileName="CheckUtil.java" startLine="107" startPosition="279" endLine="113" endPosition="27">
       <varInfo nodeId="3583849467508048951" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="3583849467508042522" fileName="CheckUtil.java" startLine="46" startPosition="146" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="3583849467508048947" fileName="CheckUtil.java" startLine="106" startPosition="79" endLine="114" endPosition="5" />
+    <scopeInfo nodeId="3583849467508042522" fileName="CheckUtil.java" startLine="46" startPosition="146" endLine="54" endPosition="5">
+      <varInfo nodeId="3583849467508042522" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="3583849467508048947" fileName="CheckUtil.java" startLine="106" startPosition="79" endLine="114" endPosition="5">
+      <varInfo nodeId="3583849467508048947" varName="moduleNode" />
+    </scopeInfo>
     <scopeInfo nodeId="3583849467508049090" fileName="CheckUtil.java" startLine="89" startPosition="98" endLine="99" endPosition="11">
       <varInfo nodeId="9164503229271576232" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="3583849467508049087" fileName="CheckUtil.java" startLine="88" startPosition="110" endLine="100" endPosition="9" />
-    <scopeInfo nodeId="3583849467508049088" fileName="CheckUtil.java" startLine="88" startPosition="110" endLine="100" endPosition="9" />
+    <scopeInfo nodeId="3583849467508049088" fileName="CheckUtil.java" startLine="88" startPosition="110" endLine="100" endPosition="9">
+      <varInfo nodeId="3583849467508049088" varName="mr" />
+    </scopeInfo>
     <scopeInfo nodeId="3583849467508042424" fileName="CheckUtil.java" startLine="40" startPosition="37" endLine="54" endPosition="5">
       <varInfo nodeId="3583849467508042512" varName="sampleModules" />
       <varInfo nodeId="3583849467508042504" varName="samplesPath" />
     </scopeInfo>
-    <scopeInfo nodeId="3583849467508049085" fileName="CheckUtil.java" startLine="87" startPosition="72" endLine="101" endPosition="7" />
+    <scopeInfo nodeId="3583849467508049085" fileName="CheckUtil.java" startLine="87" startPosition="72" endLine="101" endPosition="7">
+      <varInfo nodeId="3583849467508049085" varName="language" />
+    </scopeInfo>
     <scopeInfo nodeId="3583849467508042421" fileName="CheckUtil.java" startLine="39" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="3583849467508042438" fileName="CheckUtil.java" startLine="105" startPosition="46" endLine="123" endPosition="5">
       <varInfo nodeId="3583849467508048941" varName="langs" />
     </scopeInfo>
     <scopeInfo nodeId="3583849467508042435" fileName="CheckUtil.java" startLine="104" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="3583849467508049066" fileName="CheckUtil.java" startLine="79" startPosition="106" endLine="101" endPosition="7" />
-    <scopeInfo nodeId="3583849467508049061" fileName="CheckUtil.java" startLine="78" startPosition="0" endLine="102" endPosition="5" />
+    <scopeInfo nodeId="3583849467508049061" fileName="CheckUtil.java" startLine="78" startPosition="0" endLine="102" endPosition="5">
+      <varInfo nodeId="3583849467508049061" varName="solution" />
+    </scopeInfo>
     <scopeInfo nodeId="3583849467508042434" fileName="CheckUtil.java" startLine="57" startPosition="45" endLine="102" endPosition="5">
       <varInfo nodeId="3583849467508048997" varName="coreBlocks" />
       <varInfo nodeId="3583849467508049034" varName="coreModules" />

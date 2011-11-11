@@ -257,6 +257,28 @@
       <fileset dir="${base_dir}/core/editor-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
+  <target name="pack.jetbrains.mps.ide.platform">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules/jetbrains.mps.ide.platform" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules/jetbrains.mps.ide.platform">
+      <fileset file="${base_dir}/workbench/mps-platform/base.msd" />
+      <fileset dir="${base_dir}/workbench/mps-platform" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules/jetbrains.mps.ide.platform/models">
+      <fileset dir="${base_dir}/workbench/mps-platform/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.index">
+    <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules/jetbrains.mps.baseLanguage.index" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules/jetbrains.mps.baseLanguage.index">
+      <fileset file="${base_dir}/workbench/baseLanguageIndex/jetbrains.mps.baseLanguage.index.msd" />
+      <fileset dir="${base_dir}/workbench/baseLanguageIndex" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules/jetbrains.mps.baseLanguage.index">
+      <fileset dir="${base_dir}/workbench/baseLanguageIndex" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
   <target name="pack.jetbrains.mps.plugin.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.plugin.runtime" />
@@ -310,17 +332,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.workbench.make">
       <fileset dir="${base_dir}/workbench/make" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-  </target>
-  <target name="pack.jetbrains.mps.baseLanguage.index">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.baseLanguage.index" />
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.baseLanguage.index">
-      <fileset file="${base_dir}/workbench/baseLanguageIndex/jetbrains.mps.baseLanguage.index.msd" />
-      <fileset dir="${base_dir}/workbench/baseLanguageIndex" includes="icons/**, resources/**" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.baseLanguage.index">
-      <fileset dir="${base_dir}/workbench/baseLanguageIndex" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.ide.mpsdevkit">
