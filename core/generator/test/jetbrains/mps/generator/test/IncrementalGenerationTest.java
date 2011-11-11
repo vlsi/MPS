@@ -77,17 +77,17 @@ public class IncrementalGenerationTest extends GenerationTestBase {
   }
 
   @Test
-  public void testPluginStructure() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/languageDesign/plugin/plugin.mpr"));
-    SModelDescriptor descr = findModel(p, "jetbrains.mps.lang.plugin.structure");
+  public void testGeneratorStructure() throws IOException {
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/baseLanguage/baseLanguage/baseLanguage.mpr"));
+    SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.structure");
 
     doTestIncrementalGeneration(p, descr,
       new ModelChangeRunnable() {
         public void run(SModelDescriptor descr) {
           SModel model = descr.getSModel();
-          SNode root = SModelOperations.getRootByName(model,"ActionGroupDeclaration");
+          SNode root = SModelOperations.getRootByName(model,"Expression");
           Assert.assertNotNull("No root in model", root);
-          root.setName("ActionGroupRedeclaration");
+          root.setName("ReExpression");
         }
       });
 
