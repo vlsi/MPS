@@ -545,6 +545,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -643,6 +645,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -736,6 +740,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -834,6 +840,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -881,6 +889,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -980,6 +990,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1028,6 +1040,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1126,6 +1140,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1173,6 +1189,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1272,6 +1290,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1319,6 +1339,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1419,6 +1441,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1477,6 +1501,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1576,6 +1602,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1623,6 +1651,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1722,6 +1752,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1770,6 +1802,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -1868,6 +1902,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -1915,6 +1951,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2013,6 +2051,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2060,6 +2100,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2159,6 +2201,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2227,6 +2271,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2326,6 +2372,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2381,6 +2429,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2479,6 +2529,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2556,6 +2608,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2654,6 +2708,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2701,6 +2757,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2800,6 +2858,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2848,6 +2908,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -2950,6 +3012,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -2997,6 +3061,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3096,6 +3162,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3145,6 +3213,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3243,6 +3313,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3290,6 +3362,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3388,6 +3462,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3435,6 +3511,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -3535,6 +3613,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3832,6 +3912,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -3879,6 +3961,7 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
     <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -3978,6 +4061,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4076,6 +4161,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4174,6 +4261,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4230,6 +4319,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4328,6 +4419,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4375,6 +4468,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4473,6 +4568,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4521,6 +4618,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4620,6 +4719,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4667,6 +4768,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4766,6 +4869,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4813,6 +4918,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -4912,6 +5019,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -4959,6 +5068,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5057,6 +5168,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5104,6 +5217,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5203,6 +5318,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5250,6 +5367,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5348,6 +5467,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5395,6 +5516,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5494,6 +5617,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5541,6 +5666,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5639,6 +5766,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5686,6 +5815,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5785,6 +5916,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -5832,6 +5965,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -5930,6 +6065,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6027,6 +6164,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6126,6 +6265,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6174,6 +6315,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6275,6 +6418,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6322,6 +6467,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6424,6 +6571,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6471,6 +6620,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6570,6 +6721,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6617,6 +6770,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6720,6 +6875,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6776,6 +6933,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -6882,6 +7041,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -6938,6 +7099,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7036,6 +7199,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7084,6 +7249,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7182,6 +7349,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7229,6 +7398,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7327,6 +7498,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7374,6 +7547,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7474,6 +7649,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7521,6 +7698,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7619,6 +7798,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7666,6 +7847,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7765,6 +7948,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7833,6 +8018,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -7932,6 +8119,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -7979,6 +8168,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -8078,6 +8269,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
@@ -8125,6 +8318,8 @@
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/classes" />
+    <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
+    <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/core/editor-runtime/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
@@ -8225,6 +8420,8 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
+    <path path="${base_dir}/plugins/debugger-api/classes" />
+    <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
