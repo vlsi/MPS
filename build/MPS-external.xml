@@ -267,12 +267,6 @@
     <copy todir="${deploy.dir}/MPS/lib/mps-test.jar.tmp">
       <fileset dir="${mps_home}/testbench/classes" />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-test.jar.tmp">
-      <fileset dir="${mps_home}/testbench/modules/miscTests/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-test.jar.tmp">
-      <fileset dir="${mps_home}/workbench/uiTests/classes" />
-    </copy>
     <jar destfile="${deploy.dir}/MPS/lib/mps-test.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
     </jar>
