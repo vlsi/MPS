@@ -15,8 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MPSTreeUtils {
-  public MPSTreeUtils() {
+public class MPSTreeUtil {
+  public MPSTreeUtil() {
   }
 
   /*package*/ static PropertiesTreeNode findPropertiesTreeNode(final SNodeTreeNode _this) {
@@ -29,7 +29,7 @@ public class MPSTreeUtils {
   }
 
   /*package*/ static PropertyTreeNode findPropertyTreeNode(final SNodeTreeNode _this, String propertyName) {
-    for (MPSTreeNode child : Sequence.fromIterable(MPSTreeUtils.findPropertiesTreeNode(_this))) {
+    for (MPSTreeNode child : Sequence.fromIterable(MPSTreeUtil.findPropertiesTreeNode(_this))) {
       if (child instanceof PropertyTreeNode && ObjectUtils.equals(((PropertyTreeNode) child).getProperty(), propertyName)) {
         return ((PropertyTreeNode) child);
       }
@@ -47,7 +47,7 @@ public class MPSTreeUtils {
   }
 
   /*package*/ static ReferenceTreeNode findReferenceTreeNode(final SNodeTreeNode _this, String role) {
-    for (MPSTreeNode child : Sequence.fromIterable(MPSTreeUtils.findReferencesTreeNode(_this))) {
+    for (MPSTreeNode child : Sequence.fromIterable(MPSTreeUtil.findReferencesTreeNode(_this))) {
       if (child instanceof ReferenceTreeNode && ObjectUtils.equals(((ReferenceTreeNode) child).getRef().getRole(), role)) {
         return ((ReferenceTreeNode) child);
       }
@@ -60,7 +60,7 @@ public class MPSTreeUtils {
     Iterable<MPSTreeNode> descendants = Sequence.fromIterable(Collections.<MPSTreeNode>emptyList());
     for (MPSTreeNode child : Sequence.fromIterable(_this)) {
       ListSequence.fromList(children).addElement(child);
-      descendants = Sequence.fromIterable(descendants).concat(Sequence.fromIterable(MPSTreeUtils.getDescendants(child)));
+      descendants = Sequence.fromIterable(descendants).concat(Sequence.fromIterable(MPSTreeUtil.getDescendants(child)));
     }
     return ListSequence.fromList(children).concat(Sequence.fromIterable(descendants));
   }

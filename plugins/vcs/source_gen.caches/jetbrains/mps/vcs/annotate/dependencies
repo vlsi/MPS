@@ -114,7 +114,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.annotate._Adapters" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldModelChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange" />

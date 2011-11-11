@@ -105,7 +105,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           public void run() {
             if (!(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).containsKey(modelDescriptor))) {
               MapSequence.fromMap(mySModelDescriptorsToTreeNodes).put(modelDescriptor, ListSequence.fromList(new ArrayList<SModelTreeNode>()));
-              ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor);
+              OldModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor);
               for (OldChange change : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 highlightChange(change, sModelTreeNode.getSModel());
               }
@@ -140,7 +140,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
             if (model.value.getModelDescriptor() == null) {
               return;
             }
-            ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(model.value);
+            OldModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(model.value);
             if (modelChangesManager != null) {
               modelChangesManager.setEnabled(true);
             }
@@ -152,7 +152,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
 
   private void unregisterTreeNode(@NotNull MPSTreeNode treeNode) {
     if (EXTRA_CHECKS_ENABLED && treeNode.isRoot()) {
-      for (MPSTreeNode descendant : Sequence.fromIterable(MPSTreeUtils.getDescendants(treeNode))) {
+      for (MPSTreeNode descendant : Sequence.fromIterable(MPSTreeUtil.getDescendants(treeNode))) {
         if (MapSequence.fromMap(myPrimaryMessageForTreeNode).containsKey(descendant)) {
           MapSequence.fromMap(myPrimaryMessageForTreeNode).removeKey(descendant);
         }
@@ -168,7 +168,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
               ListSequence.fromList(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).get(modelDescriptor)).removeElement(sModelTreeNode);
               if (ListSequence.fromList(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).get(modelDescriptor)).isEmpty()) {
                 MapSequence.fromMap(mySModelDescriptorsToTreeNodes).removeKey(modelDescriptor);
-                ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor);
+                OldModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor);
                 modelChangesManager.removeChangeListener(myChangeListener);
               }
             }
@@ -225,7 +225,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           myReferenceChangeCountForNode.increment(node);
         }
         if (change instanceof NewNodeChange) {
-          ModelChangesManager changesManager = myChangesManager.getModelChangesManager(model);
+          OldModelChangesManager changesManager = myChangesManager.getModelChangesManager(model);
           if (changesManager == null) {
             return;
           }
@@ -235,7 +235,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         } else if (change instanceof OldSetPropertyChange) {
           String propertyName = ((OldSetPropertyChange) change).getProperty();
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
-            PropertyTreeNode propertyTreeNode = MPSTreeUtils.findPropertyTreeNode(treeNode, propertyName);
+            PropertyTreeNode propertyTreeNode = MPSTreeUtil.findPropertyTreeNode(treeNode, propertyName);
             if (propertyTreeNode != null) {
               highlightTreeNodeWithMessage(propertyTreeNode, new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(change)));
             }
@@ -243,7 +243,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         } else if (change instanceof OldSetReferenceChange) {
           String role = ((OldSetReferenceChange) change).getRole();
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
-            ReferenceTreeNode referenceTreeNode = MPSTreeUtils.findReferenceTreeNode(treeNode, role);
+            ReferenceTreeNode referenceTreeNode = MPSTreeUtil.findReferenceTreeNode(treeNode, role);
             if (referenceTreeNode != null) {
               highlightTreeNodeWithMessage(referenceTreeNode, new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(change)));
             }
@@ -255,7 +255,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
 
   private SNode findNearestBaseAncestor(@NotNull SNodeId nodeId, @NotNull SModel model) {
     // this should be executed inside read action 
-    ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(model);
+    OldModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(model);
     SNodeId currentNodeId = nodeId;
     while (currentNodeId != null && model.getNodeById(currentNodeId) == null) {
       currentNodeId = modelChangesManager.getBaseParentId(currentNodeId);
@@ -324,7 +324,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         } else if (change instanceof OldSetPropertyChange) {
           String propertyName = ((OldSetPropertyChange) change).getProperty();
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
-            PropertyTreeNode propertyTreeNode = MPSTreeUtils.findPropertyTreeNode(treeNode, propertyName);
+            PropertyTreeNode propertyTreeNode = MPSTreeUtil.findPropertyTreeNode(treeNode, propertyName);
             if (propertyTreeNode != null) {
               unhighlightTreeNode(propertyTreeNode);
             }
@@ -332,7 +332,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         } else if (change instanceof OldSetReferenceChange) {
           String role = ((OldSetReferenceChange) change).getRole();
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
-            ReferenceTreeNode referenceTreeNode = MPSTreeUtils.findReferenceTreeNode(treeNode, role);
+            ReferenceTreeNode referenceTreeNode = MPSTreeUtil.findReferenceTreeNode(treeNode, role);
             if (referenceTreeNode != null) {
               unhighlightTreeNode(referenceTreeNode);
             }
@@ -348,7 +348,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     }
     treeNode.addTreeMessage(primaryMessage);
     MapSequence.fromMap(myPrimaryMessageForTreeNode).put(treeNode, primaryMessage);
-    for (MPSTreeNode descendant : Sequence.fromIterable(MPSTreeUtils.getDescendants(treeNode))) {
+    for (MPSTreeNode descendant : Sequence.fromIterable(MPSTreeUtil.getDescendants(treeNode))) {
       descendant.addTreeMessage(primaryMessage.getDescendantSecondaryMessage());
     }
   }
@@ -360,7 +360,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     }
     MapSequence.fromMap(myPrimaryMessageForTreeNode).removeKey(treeNode);
     treeNode.removeTreeMessage(primaryMessage);
-    for (MPSTreeNode descendant : Sequence.fromIterable(MPSTreeUtils.getDescendants(treeNode))) {
+    for (MPSTreeNode descendant : Sequence.fromIterable(MPSTreeUtil.getDescendants(treeNode))) {
       descendant.removeTreeMessage(primaryMessage.getDescendantSecondaryMessage());
     }
   }
@@ -388,7 +388,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
               if (check_ybywwq_a0a0a2a5a0a0a0j(SNodeOperations.getModel(node)) == null) {
                 return;
               }
-              ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
+              OldModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
               if (modelChangesManager == null) {
                 return;
               }
@@ -415,7 +415,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           }
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
+              OldModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
               if (modelChangesManager == null) {
                 return;
               }
@@ -434,7 +434,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           }
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
+              OldModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
               if (modelChangesManager == null) {
                 return;
               }
@@ -621,7 +621,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
 
     public void counterZero(@NotNull SNode key) {
       for (SNodeTreeNode sNodeTreeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(key))) {
-        PropertiesTreeNode propertiesTreeNode = MPSTreeUtils.findPropertiesTreeNode(sNodeTreeNode);
+        PropertiesTreeNode propertiesTreeNode = MPSTreeUtil.findPropertiesTreeNode(sNodeTreeNode);
         if (propertiesTreeNode != null) {
           propertiesTreeNode.removeTreeMessage(myDefaultTreeMessage);
         }
@@ -630,7 +630,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
 
     public void counterNonZero(@NotNull SNode key) {
       for (SNodeTreeNode sNodeTreeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(key))) {
-        PropertiesTreeNode propertiesTreeNode = MPSTreeUtils.findPropertiesTreeNode(sNodeTreeNode);
+        PropertiesTreeNode propertiesTreeNode = MPSTreeUtil.findPropertiesTreeNode(sNodeTreeNode);
         if (propertiesTreeNode != null) {
           propertiesTreeNode.addTreeMessage(myDefaultTreeMessage);
         }
@@ -644,7 +644,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
 
     public void counterZero(@NotNull SNode key) {
       for (SNodeTreeNode sNodeTreeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(key))) {
-        ReferencesTreeNode referencesTreeNode = MPSTreeUtils.findReferencesTreeNode(sNodeTreeNode);
+        ReferencesTreeNode referencesTreeNode = MPSTreeUtil.findReferencesTreeNode(sNodeTreeNode);
         if (referencesTreeNode != null) {
           referencesTreeNode.removeTreeMessage(myDefaultTreeMessage);
         }
@@ -653,7 +653,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
 
     public void counterNonZero(@NotNull SNode key) {
       for (SNodeTreeNode sNodeTreeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(key))) {
-        ReferencesTreeNode referencesTreeNode = MPSTreeUtils.findReferencesTreeNode(sNodeTreeNode);
+        ReferencesTreeNode referencesTreeNode = MPSTreeUtil.findReferencesTreeNode(sNodeTreeNode);
         if (referencesTreeNode != null) {
           referencesTreeNode.addTreeMessage(myDefaultTreeMessage);
         }

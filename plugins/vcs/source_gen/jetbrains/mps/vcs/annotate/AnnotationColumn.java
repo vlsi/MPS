@@ -42,7 +42,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.actions.AnnotationColors;
 import jetbrains.mps.vcs.changesmanager.ChangesManager;
-import jetbrains.mps.vcs.changesmanager.ModelChangesManager;
+import jetbrains.mps.vcs.changesmanager.OldModelChangesManager;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
@@ -199,7 +199,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     final ChangesManager changesManager = ChangesManager.getInstance(getProject());
     changesManager.getCommandQueue().runTask(new Runnable() {
       public void run() {
-        ModelChangesManager modelChangesManager = changesManager.getModelChangesManager(myModelDescriptor);
+        OldModelChangesManager modelChangesManager = changesManager.getModelChangesManager(myModelDescriptor);
         ListSequence.fromList(modelChangesManager.getChangeList()).visitAll(new IVisitor<OldChange>() {
           public void visit(OldChange ch) {
             saveChange(ch);

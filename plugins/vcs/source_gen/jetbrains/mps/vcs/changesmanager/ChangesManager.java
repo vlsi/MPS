@@ -47,7 +47,7 @@ import jetbrains.mps.ide.ThreadUtils;
 public class ChangesManager extends AbstractProjectComponent {
   private SModelListener myGlobalModelListener = new ChangesManager.MyGlobalSModelListener();
   private ChangeListListener myChangeListListener = new ChangesManager.MyChangeListListener();
-  private final Map<SModelReference, ModelChangesManager> myModelChanges = MapSequence.fromMap(new HashMap<SModelReference, ModelChangesManager>());
+  private final Map<SModelReference, OldModelChangesManager> myModelChanges = MapSequence.fromMap(new HashMap<SModelReference, OldModelChangesManager>());
   private ReloadListener myReloadListener = new ChangesManager.MyReloadListener();
   private SModelRepositoryListener myModelRepositoryListener = new ChangesManager.MySModelRepositoryListener();
   private SimpleCommandQueue myCommandQueue = new SimpleCommandQueue("ChangesManager command queue");
@@ -71,7 +71,7 @@ public class ChangesManager extends AbstractProjectComponent {
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
 
-    for (ModelChangesManager modelChangesManager : Sequence.fromIterable(MapSequence.fromMap(myModelChanges).values())) {
+    for (OldModelChangesManager modelChangesManager : Sequence.fromIterable(MapSequence.fromMap(myModelChanges).values())) {
       modelChangesManager.dispose(false);
     }
     MapSequence.fromMap(myModelChanges).clear();
@@ -89,7 +89,7 @@ public class ChangesManager extends AbstractProjectComponent {
           MapSequence.fromMap(myModelChanges).get(modelRef).update(fileStatus);
           return;
         }
-        ModelChangesManager modelChangesManager = new ModelChangesManager(myProject, modelDescriptor);
+        OldModelChangesManager modelChangesManager = new OldModelChangesManager(myProject, modelDescriptor);
         MapSequence.fromMap(myModelChanges).put(modelRef, modelChangesManager);
 
       }
@@ -131,17 +131,17 @@ public class ChangesManager extends AbstractProjectComponent {
   }
 
   @NotNull
-  public ModelChangesManager getModelChangesManager(@NotNull EditableSModelDescriptor modelDescriptor) {
+  public OldModelChangesManager getModelChangesManager(@NotNull EditableSModelDescriptor modelDescriptor) {
     myCommandQueue.assertSoftlyIsCommandThread();
     SModelReference modelRef = modelDescriptor.getSModelReference();
     if (!(MapSequence.fromMap(myModelChanges).containsKey(modelRef))) {
-      MapSequence.fromMap(myModelChanges).put(modelRef, new ModelChangesManager(myProject, modelDescriptor));
+      MapSequence.fromMap(myModelChanges).put(modelRef, new OldModelChangesManager(myProject, modelDescriptor));
     }
     return MapSequence.fromMap(myModelChanges).get(modelRef);
   }
 
   @Nullable
-  public ModelChangesManager getModelChangesManager(@NotNull SModel model) {
+  public OldModelChangesManager getModelChangesManager(@NotNull SModel model) {
     SModelDescriptor descriptor = model.getModelDescriptor();
     if (!(descriptor instanceof EditableSModelDescriptor)) {
       return null;
@@ -156,8 +156,8 @@ public class ChangesManager extends AbstractProjectComponent {
           public void run() {
             PrintStream out = System.out;
 
-            for (IMapping<SModelReference, ModelChangesManager> smrMcmPair : MapSequence.fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, ModelChangesManager>>() {
-              public boolean accept(IMapping<SModelReference, ModelChangesManager> m) {
+            for (IMapping<SModelReference, OldModelChangesManager> smrMcmPair : MapSequence.fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, OldModelChangesManager>>() {
+              public boolean accept(IMapping<SModelReference, OldModelChangesManager> m) {
                 return !(ListSequence.fromList(m.value().getChangeList()).isEmpty());
               }
             })) {
@@ -171,16 +171,16 @@ public class ChangesManager extends AbstractProjectComponent {
             }
             out.println();
             out.println("==Unchanged models==");
-            for (IMapping<SModelReference, ModelChangesManager> smrMcmPair : MapSequence.fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, ModelChangesManager>>() {
-              public boolean accept(IMapping<SModelReference, ModelChangesManager> m) {
+            for (IMapping<SModelReference, OldModelChangesManager> smrMcmPair : MapSequence.fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, OldModelChangesManager>>() {
+              public boolean accept(IMapping<SModelReference, OldModelChangesManager> m) {
                 return ListSequence.fromList(m.value().getChangeList()).isEmpty() && m.value().isEnabled();
               }
             })) {
               out.println("- " + smrMcmPair.key());
             }
             out.println();
-            out.println(MapSequence.fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, ModelChangesManager>>() {
-              public boolean accept(IMapping<SModelReference, ModelChangesManager> m) {
+            out.println(MapSequence.fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, OldModelChangesManager>>() {
+              public boolean accept(IMapping<SModelReference, OldModelChangesManager> m) {
                 return ListSequence.fromList(m.value().getChangeList()).isEmpty() && !(m.value().isEnabled());
               }
             }).count() + " disabled models");

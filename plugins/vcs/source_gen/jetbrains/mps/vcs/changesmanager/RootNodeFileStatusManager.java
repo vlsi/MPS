@@ -89,7 +89,7 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
       public void run() {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
         if (modelDescriptor instanceof EditableSModelDescriptor) {
-          ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor);
+          OldModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor);
           if (modelChangesManager != null) {
             if (modelChangesManager.isAddedNode(root)) {
               if (modelChangesManager.isNewModel()) {
@@ -128,7 +128,7 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
               }
             });
             if (modelDescriptor.value instanceof EditableSModelDescriptor) {
-              ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor.value);
+              OldModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor.value);
               modelChangesManager.setEnabled(true);
             }
           }

@@ -61,7 +61,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   private final Map<OldChange, EditorComponentChangesHighligher.ChangeEditorMessage> myChangesMessages = MapSequence.fromMap(new HashMap<OldChange, EditorComponentChangesHighligher.ChangeEditorMessage>());
   private ChangeListener myChangeListener;
   private ChangesFoldingAreaPainter myFoldingAreaPainter;
-  private ModelChangesManager myModelChangesManager;
+  private OldModelChangesManager myModelChangesManager;
   private boolean myEnabled;
   private boolean myDisposed = false;
   private final Object myDisposedLock = new Object();
