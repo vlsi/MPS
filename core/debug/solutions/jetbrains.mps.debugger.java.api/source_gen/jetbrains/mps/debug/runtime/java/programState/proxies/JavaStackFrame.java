@@ -78,7 +78,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       if (stackFrame != null) {
         Map<LocalVariable, Value> map = stackFrame.getValues(stackFrame.visibleVariables());
         for (LocalVariable variable : map.keySet()) {
-          result.put(new JavaLocalVariable(variable, this, myClassFqName, stackFrame.thread()), ValueUtil.getInstance().fromJDIValue(map.get(variable), myClassFqName, stackFrame.thread()));
+          result.put(new JavaLocalVariable(variable, this, myClassFqName, stackFrame.thread()), ValueUtil.getInstance().fromJDI(map.get(variable), myClassFqName, stackFrame.thread()));
         }
         ObjectReference thisObject = stackFrame.thisObject();
         if (thisObject != null) {
@@ -124,7 +124,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   public IValue getValue(IWatchable watchable) {
     if (watchable instanceof JavaLocalVariable) {
       JavaLocalVariable localVariable = (JavaLocalVariable) watchable;
-      return ValueUtil.getInstance().fromJDIValue(getStackFrame().getValue(localVariable.getLocalVariable()), myClassFqName, myThreadReference);
+      return ValueUtil.getInstance().fromJDI(getStackFrame().getValue(localVariable.getLocalVariable()), myClassFqName, myThreadReference);
     }
     return null;
   }

@@ -64,7 +64,7 @@ import jetbrains.mps.debug.evaluation.EvaluationUtils;
   }
 
   public JavaValue getElementValue(int index) {
-    return ValueUtil.getInstance().fromJDIValueRaw(EvaluationUtils.getElementAt((ArrayReference) myValue, index), myClassFQName, myThreadReference);
+    return ValueUtil.getInstance().fromJDIRaw(EvaluationUtils.getElementAt((ArrayReference) myValue, index), myClassFQName, myThreadReference);
   }
 
   public int getSize() {
@@ -76,7 +76,7 @@ import jetbrains.mps.debug.evaluation.EvaluationUtils;
     List<Value> valueList = arrayReference.getValues();
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Value v : valueList) {
-      result.add(ValueUtil.getInstance().fromJDIValueRaw(v, myClassFQName, myThreadReference));
+      result.add(ValueUtil.getInstance().fromJDIRaw(v, myClassFQName, myThreadReference));
     }
     return result;
   }
@@ -93,7 +93,7 @@ import jetbrains.mps.debug.evaluation.EvaluationUtils;
     List<Value> valueList = arrayReference.getValues(startIndex, endIndex);
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Value v : valueList) {
-      result.add(ValueUtil.getInstance().fromJDIValueRaw(v, myClassFQName, myThreadReference));
+      result.add(ValueUtil.getInstance().fromJDIRaw(v, myClassFQName, myThreadReference));
     }
     return result;
   }

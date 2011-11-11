@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a6quryteih5fcvk3vyahd8na099wvbw">
+<dependencies version="2" modelHash="-10uo7guryvrv9etnp24gemo7gkj61zs">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="c8w34ecdfwjr8bgl4l1u8jgdbwvii8c" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="4592mc0c92ee86m4hdnk27h6ntxlxqu" />
@@ -14,7 +14,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaPrimitiveValue.java" />
   </source>
-  <source id="6957207478384132580" name="JavaObjectValue" hash="-5whasssjbioz5bx2lcx0nmxskqom7q6">
+  <source id="6957207478384132580" name="JavaObjectValue" hash="e99y2p0hid6qpc3ply2cxjy3u89i6xz">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -30,7 +30,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaStringValue.java" />
   </source>
-  <source id="6957207478384132938" name="JavaArrayValue" hash="6w2imzy16j0o83lguhpdna9o0gy3fwl">
+  <source id="6957207478384132938" name="JavaArrayValue" hash="-7jr03ip6w0h2dcuq7a9tyjcmw695dt7">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -38,7 +38,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaArrayValue.java" />
   </source>
-  <source id="6957207478384133213" name="ValueUtilImpl" hash="5fn08puio2ev90yuxic31ak8ia4pesj">
+  <source id="6957207478384133213" name="ValueUtilImpl" hash="ak6upzh5l9dfr4pi2l1ctb72shb9g3c">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

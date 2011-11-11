@@ -26,17 +26,17 @@ public class ValueUtilImpl extends ValueUtil {
     INSTANCE = null;
   }
 
-  public JavaValue fromJDIValue(Value value, @NotNull String classFQname, ThreadReference threadReference) {
+  public JavaValue fromJDI(Value value, @NotNull String classFQname, ThreadReference threadReference) {
     //  could not we, like, get fqName from the value? 
-    JavaValue javaValue = fromJDIValueRaw(value, classFQname, threadReference);
+    JavaValue javaValue = fromJDIRaw(value, classFQname, threadReference);
     return tryToWrap(classFQname, javaValue);
   }
 
-  public JavaValue fromJDIValue(@Nullable Value value, ThreadReference threadReference) {
+  public JavaValue fromJDI(@Nullable Value value, ThreadReference threadReference) {
     if (value == null) {
-      return fromJDIValueRaw(value, "java.lang.Object", threadReference);
+      return fromJDIRaw(value, "java.lang.Object", threadReference);
     }
-    JavaValue javaValue = fromJDIValueRaw(value, value.type().name(), threadReference);
+    JavaValue javaValue = fromJDIRaw(value, value.type().name(), threadReference);
     return tryToWrap(value.type().name(), javaValue);
   }
 
@@ -48,7 +48,7 @@ public class ValueUtilImpl extends ValueUtil {
     return wrapper;
   }
 
-  public JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
+  public JavaValue fromJDIRaw(Value value, String classFQname, ThreadReference threadReference) {
     if (value == null) {
       return new JavaPrimitiveValue(value, classFQname, threadReference);
     }

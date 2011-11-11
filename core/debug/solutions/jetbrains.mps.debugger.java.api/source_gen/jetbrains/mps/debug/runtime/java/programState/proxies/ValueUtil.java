@@ -13,11 +13,11 @@ public abstract class ValueUtil {
   public ValueUtil() {
   }
 
-  public abstract JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference);
+  public abstract JavaValue fromJDIRaw(Value value, String classFQname, ThreadReference threadReference);
 
-  public abstract JavaValue fromJDIValue(Value value, @NotNull String classFQname, ThreadReference threadReference);
+  public abstract JavaValue fromJDI(Value value, @NotNull String classFQname, ThreadReference threadReference);
 
-  public abstract JavaValue fromJDIValue(@Nullable Value value, ThreadReference threadReference);
+  public abstract JavaValue fromJDI(@Nullable Value value, ThreadReference threadReference);
 
   public abstract void init();
 
@@ -25,5 +25,17 @@ public abstract class ValueUtil {
 
   public static ValueUtil getInstance() {
     return INSTANCE;
+  }
+
+  public static JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
+    return ValueUtil.getInstance().fromJDIRaw(value, classFQname, threadReference);
+  }
+
+  public static JavaValue fromJDIValue(@Nullable Value value, ThreadReference threadReference) {
+    return ValueUtil.getInstance().fromJDI(value, threadReference);
+  }
+
+  public static JavaValue fromJDIValue(Value value, @NotNull String classFQname, ThreadReference threadReference) {
+    return fromJDIValue(value, classFQname, threadReference);
   }
 }

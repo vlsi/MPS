@@ -2772,7 +2772,7 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3102837338444217531">
-      <property name="name" nameId="tpck.1169194664001" value="getValueProxyFromJavaValue" />
+      <property name="name" nameId="tpck.1169194664001" value="getValueProxyFromJava" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444217532">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070560812" resolveInfo="IValueProxy" />

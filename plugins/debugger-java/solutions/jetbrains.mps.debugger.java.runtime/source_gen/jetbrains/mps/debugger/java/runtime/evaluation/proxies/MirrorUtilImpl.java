@@ -113,7 +113,7 @@ public class MirrorUtilImpl extends MirrorUtil {
   }
 
   @NotNull
-  public IValueProxy getValueProxyFromJavaValue(@Nullable Object javaValue, ThreadReference threadReference) {
+  public IValueProxy getValueProxyFromJava(@Nullable Object javaValue, ThreadReference threadReference) {
     Value v = getJDIValueFromRaw(javaValue, threadReference.virtualMachine());
     return getValueProxy(v, threadReference);
   }

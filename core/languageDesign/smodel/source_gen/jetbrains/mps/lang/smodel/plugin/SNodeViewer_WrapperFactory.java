@@ -98,9 +98,9 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
       IObjectValueProxy containingRole = ((IObjectValueProxy) value.getFieldValue("myRoleInParent"));
       if (!(ProxyEqualsUtil.javaEquals(containingRole, null))) {
-        containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJavaValue(" in role: " + (String) (containingRole).getJavaValue(), getThreadReference()));
+        containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava(" in role: " + (String) (containingRole).getJavaValue(), getThreadReference()));
       } else {
-        containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJavaValue("", getThreadReference()));
+        containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava("", getThreadReference()));
       }
       return "node<" + (String) (((IObjectValueProxy) value.getFieldValue("myConceptFqName"))).getJavaValue() + ">" + (String) (containingRole).getJavaValue();
     }

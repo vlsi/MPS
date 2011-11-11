@@ -78,7 +78,7 @@ import jetbrains.mps.util.NameUtil;
     try {
       ObjectReference ref = (ObjectReference) myValue;
       Field field = EvaluationUtils.findField((ClassType) ref.referenceType(), fieldName);
-      return ValueUtil.getInstance().fromJDIValueRaw(ref.getValue(field), myClassFQName, myThreadReference);
+      return ValueUtil.getInstance().fromJDIRaw(ref.getValue(field), myClassFQName, myThreadReference);
     } catch (InvalidEvaluatedExpressionException e) {
       //  we get NPE instead 
       return null;
@@ -90,7 +90,7 @@ import jetbrains.mps.util.NameUtil;
     List<Field> fieldList = ref.referenceType().fields();
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Field f : fieldList) {
-      result.add(ValueUtil.getInstance().fromJDIValueRaw(ref.getValue(f), myClassFQName, myThreadReference));
+      result.add(ValueUtil.getInstance().fromJDIRaw(ref.getValue(f), myClassFQName, myThreadReference));
     }
     return result;
   }
@@ -103,7 +103,7 @@ import jetbrains.mps.util.NameUtil;
   @Nullable
   public JavaValue executeMethod(String methodName, String jniSignature, Object... args) {
     try {
-      return ValueUtil.getInstance().fromJDIValueRaw(createValueProxy().invokeMethod(methodName, jniSignature, args).getJDIValue(), myClassFQName, myThreadReference);
+      return ValueUtil.getInstance().fromJDIRaw(createValueProxy().invokeMethod(methodName, jniSignature, args).getJDIValue(), myClassFQName, myThreadReference);
     } catch (EvaluationException e) {
       return null;
     }
