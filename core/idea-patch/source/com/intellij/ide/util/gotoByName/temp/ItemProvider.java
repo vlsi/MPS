@@ -15,7 +15,7 @@
  */
 package com.intellij.ide.util.gotoByName.temp;
 
-import jetbrains.mps.util.Computable;
+import com.intellij.openapi.util.Computable;
 
 import java.util.List;
 
