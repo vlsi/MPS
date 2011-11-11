@@ -23,6 +23,9 @@ public abstract class MirrorUtil {
   @NotNull
   public abstract Object getJavaValue(@NotNull Value jdiValue);
 
+  @NotNull
+  public abstract IValueProxy getValueProxyFromJavaValue(@Nullable Object javaValue, ThreadReference threadReference);
+
   public abstract void init();
 
   public abstract void dispose();
