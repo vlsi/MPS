@@ -16,6 +16,7 @@ import java.util.LinkedList;
 import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import java.util.ArrayList;
 import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
@@ -110,7 +111,10 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (TraceSettings.isTraceForSelectedNode() && mySelectedNode != null) {
       getSliceVars(myOperation);
     }
-    TypeSystemTraceTreeNode result = create(myOperation, false);
+    MPSTreeNode result = create(myOperation, false);
+    if (result == null) {
+      result = new TextTreeNode("Empty type system trace");
+    }
     setRootVisible(true);
     return result;
   }
