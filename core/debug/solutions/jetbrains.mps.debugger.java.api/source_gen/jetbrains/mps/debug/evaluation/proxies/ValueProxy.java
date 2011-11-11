@@ -7,7 +7,7 @@ import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
 import org.jetbrains.annotations.Nullable;
 
-/*package*/ abstract class ValueProxy implements IValueProxy {
+public abstract class ValueProxy implements IValueProxy {
   @NotNull
   protected final Value myValue;
   @NotNull

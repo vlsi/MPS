@@ -34,7 +34,7 @@ public class MirrorUtilImpl extends MirrorUtil {
   }
 
   @Nullable
-  public Value getJDIValueFromRaw(@Nullable Object value, VirtualMachine vm) {
+  private Value getJDIValueFromRaw(@Nullable Object value, VirtualMachine vm) {
     if (value == null) {
       return null;
     }
@@ -110,12 +110,6 @@ public class MirrorUtilImpl extends MirrorUtil {
       }
     }
     throw new UnsupportedOperationException();
-  }
-
-  @NotNull
-  public IValueProxy getValueProxyFromJavaValue(@Nullable Object javaValue, ThreadReference threadReference) {
-    Value v = getJDIValueFromRaw(javaValue, threadReference.virtualMachine());
-    return getValueProxy(v, threadReference);
   }
 
   @NotNull
