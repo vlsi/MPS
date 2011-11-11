@@ -38,7 +38,7 @@ public class NullableAnalyzerRules {
       myApplicableMap.get(conceptName).add(rule);
     }
     {
-      DataFlowConstructor rule = new RuleAssertNull();
+      DataFlowConstructor rule = new RuleAssertNotNull();
       String conceptName = "jetbrains.mps.baseLanguage.structure.AssertStatement";
       if (!(myApplicableMap.containsKey(conceptName))) {
         myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
