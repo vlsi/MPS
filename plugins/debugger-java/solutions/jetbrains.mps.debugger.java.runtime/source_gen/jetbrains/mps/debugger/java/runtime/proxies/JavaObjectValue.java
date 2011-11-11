@@ -77,7 +77,7 @@ import jetbrains.mps.util.NameUtil;
   public JavaValue getFieldValue(String fieldName) {
     try {
       ObjectReference ref = (ObjectReference) myValue;
-      Field field = EvaluationUtils.findField((ClassType) ref.referenceType(), fieldName);
+      Field field = EvaluationUtils.getInstance().findField((ClassType) ref.referenceType(), fieldName);
       return ValueUtil.getInstance().fromJDIRaw(ref.getValue(field), myClassFQName, myThreadReference);
     } catch (InvalidEvaluatedExpressionException e) {
       //  we get NPE instead 

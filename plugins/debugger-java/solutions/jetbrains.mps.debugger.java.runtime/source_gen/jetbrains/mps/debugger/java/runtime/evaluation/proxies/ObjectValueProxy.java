@@ -39,13 +39,13 @@ import com.sun.jdi.IncompatibleThreadStateException;
   @NotNull
   public IValueProxy getFieldValue(String fieldName) throws InvalidEvaluatedExpressionException {
     ObjectReference value = getObjectValue();
-    Field f = EvaluationUtils.findField(myReferenceType, fieldName);
+    Field f = EvaluationUtils.getInstance().findField(myReferenceType, fieldName);
     Value result = value.getValue(f);
     return MirrorUtil.getInstance().getValueProxy(result, myThreadReference);
   }
 
   public List<IValueProxy> getFieldValues() {
-    List<Field> fields = EvaluationUtils.findFields(myReferenceType);
+    List<Field> fields = EvaluationUtils.getInstance().findFields(myReferenceType);
     List<IValueProxy> fieldValues = new ArrayList<IValueProxy>();
     for (Field field : fields) {
       fieldValues.add(MirrorUtil.getInstance().getValueProxy(getObjectValue().getValue(field), myThreadReference));

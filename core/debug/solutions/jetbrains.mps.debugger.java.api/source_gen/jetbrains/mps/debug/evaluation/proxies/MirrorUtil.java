@@ -7,6 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
 import java.util.List;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public abstract class MirrorUtil {
   protected static MirrorUtil INSTANCE;
@@ -38,6 +39,8 @@ public abstract class MirrorUtil {
   }
 
   @NotNull
+  @Deprecated
+  @ToRemove(version = 2.1)
   public static IValueProxy getValueProxyFromJavaValue(@Nullable Object javaValue, ThreadReference threadReference) {
     return MirrorUtil.getInstance().getValueProxyFromJava(javaValue, threadReference);
   }

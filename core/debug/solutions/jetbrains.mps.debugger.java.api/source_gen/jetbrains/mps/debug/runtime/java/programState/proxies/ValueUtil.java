@@ -6,6 +6,7 @@ import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public abstract class ValueUtil {
   protected static ValueUtil INSTANCE;
@@ -30,15 +31,21 @@ public abstract class ValueUtil {
     }
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public static JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
     return ValueUtil.getInstance().fromJDIRaw(value, classFQname, threadReference);
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public static JavaValue fromJDIValue(@Nullable Value value, ThreadReference threadReference) {
     return ValueUtil.getInstance().fromJDI(value, threadReference);
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public static JavaValue fromJDIValue(Value value, @NotNull String classFQname, ThreadReference threadReference) {
-    return fromJDIValue(value, classFQname, threadReference);
+    return ValueUtil.getInstance().fromJDI(value, classFQname, threadReference);
   }
 }
