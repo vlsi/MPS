@@ -12,7 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS-platform" />
-    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="uiTests" scope="TEST" />

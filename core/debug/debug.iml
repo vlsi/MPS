@@ -18,7 +18,7 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="Closures-runtime" />
-    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="library" exported="" name="Tools" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />

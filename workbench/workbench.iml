@@ -34,7 +34,7 @@
     <orderEntry type="module" module-name="baseLanguageIndex" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="typesystemIntegration" />
-    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="baseLanguage-util" />
     <orderEntry type="library" name="Httpclient" level="project" />
