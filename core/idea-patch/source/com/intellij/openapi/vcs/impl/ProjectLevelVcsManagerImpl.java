@@ -24,24 +24,25 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.EditorFactory;
 import com.intellij.openapi.editor.EditorSettings;
 import com.intellij.openapi.editor.markup.TextAttributes;
-import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.DumbAwareRunnable;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectEx;
+import com.intellij.openapi.roots.FileIndexFacade;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.*;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.util.registry.Registry;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.changes.ChangesUtil;
-import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import com.intellij.openapi.vcs.checkout.CompositeCheckoutListener;
 import com.intellij.openapi.vcs.ex.ProjectLevelVcsManagerEx;
+import com.intellij.openapi.vcs.history.VcsHistoryCache;
 import com.intellij.openapi.vcs.impl.projectlevelman.*;
 import com.intellij.openapi.vcs.update.ActionInfo;
 import com.intellij.openapi.vcs.update.UpdateInfoTree;
 import com.intellij.openapi.vcs.update.UpdatedFiles;
+import com.intellij.openapi.vcs.update.UpdatedFilesListener;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -53,7 +54,8 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.util.ContentsUtil;
-import com.intellij.util.Icons;
+import com.intellij.util.PairProcessor;
+import com.intellij.util.PlatformIcons;
 import com.intellij.util.Processor;
 import com.intellij.util.containers.Convertor;
 import com.intellij.util.messages.MessageBus;
@@ -96,11 +98,8 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   @NonNls private static final String ELEMENT_ROOT_SETTINGS = "rootSettings";
   @NonNls private static final String ATTRIBUTE_CLASS = "class";
 
-  private final List<CheckinHandlerFactory> myRegisteredBeforeCheckinHandlers = new ArrayList<CheckinHandlerFactory>();
-
   private boolean myMappingsLoaded = false;
   private boolean myHaveLegacyVcsConfiguration = false;
-  private boolean myCheckinHandlerFactoriesLoaded = false;
   private final DefaultVcsRootPolicy myDefaultVcsRootPolicy;
 
   private volatile int myBackgroundOperationCounter = 0;
@@ -110,7 +109,14 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   private final List<Pair<String, TextAttributes>> myPendingOutput = new ArrayList<Pair<String, TextAttributes>>();
   private VcsEventsListenerManagerImpl myVcsEventListenerManager;
 
-  public ProjectLevelVcsManagerImpl(Project project, final FileStatusManager manager, MessageBus messageBus) {
+  private final VcsHistoryCache myVcsHistoryCache;
+  private final ContentRevisionCache myContentRevisionCache;
+  private MessageBusConnection myConnect;
+  private VcsListener myVcsListener;
+  private final FileIndexFacade myExcludedIndex;
+  private final VcsFileListenerContextHelper myVcsFileListenerContextHelper;
+
+  public ProjectLevelVcsManagerImpl(Project project, final FileStatusManager manager, MessageBus messageBus, final FileIndexFacade excludedFileIndex) {
     myProject = project;
     myMessageBus = messageBus;
     mySerialization = new ProjectLevelVcsManagerSerialization();
@@ -126,6 +132,26 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     if (! myProject.isDefault()) {
       myVcsEventListenerManager = new VcsEventsListenerManagerImpl();
     }
+
+    myVcsHistoryCache = new VcsHistoryCache();
+    myContentRevisionCache = new ContentRevisionCache();
+    myConnect = myMessageBus.connect();
+    myVcsFileListenerContextHelper = VcsFileListenerContextHelper.getInstance(myProject);
+    myVcsListener = new VcsListener() {
+      @Override
+      public void directoryMappingChanged() {
+        myVcsHistoryCache.clear();
+        myVcsFileListenerContextHelper.possiblySwitchActivation(hasActiveVcss());
+      }
+    };
+    myConnect.subscribe(ProjectLevelVcsManager.VCS_CONFIGURATION_CHANGED, myVcsListener);
+    myConnect.subscribe(UpdatedFilesListener.UPDATED_FILES, new UpdatedFilesListener() {
+      @Override
+      public void consume(Set<String> strings) {
+        myContentRevisionCache.clearCurrent(strings);
+      }
+    });
+    myExcludedIndex = excludedFileIndex;
   }
 
   public void initComponent() {
@@ -170,6 +196,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
       }
     }
     myMappings.disposeMe();
+    myConnect.disconnect();
     myContentManager = null;
 
     ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(myProject);
@@ -187,7 +214,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
           ToolWindow toolWindow =
             toolWindowManager.registerToolWindow(ToolWindowId.VCS, true, ToolWindowAnchor.BOTTOM, myProject, true);
           myContentManager = toolWindow.getContentManager();
-          toolWindow.setIcon(Icons.VCS_SMALL_TAB);
+          toolWindow.setIcon(PlatformIcons.VCS_SMALL_TAB);
           toolWindow.installWatcher(myContentManager);
         } else {
           myContentManager = ContentFactory.SERVICE.getInstance().createContentManager(true, myProject);
@@ -240,7 +267,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   @Nullable
-  public VirtualFile getVcsRootFor(final VirtualFile file) {
+  public VirtualFile getVcsRootFor(final @Nullable VirtualFile file) {
     final VcsDirectoryMapping mapping = myMappings.getMappingFor(file);
     if (mapping == null) {
       return null;
@@ -338,8 +365,7 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
         final ContentManager contentManager = getContentManager();
         if (contentManager == null) {
           myPendingOutput.add(new Pair<String, TextAttributes>(message, attributes));
-        }
-        else {
+        } else {
           getOrCreateConsoleContent(contentManager);
           myEditorAdapter.appendString(message, attributes);
         }
@@ -396,18 +422,19 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
   }
 
   public void showProjectOperationInfo(final UpdatedFiles updatedFiles, String displayActionName) {
-    showUpdateProjectInfo(updatedFiles, displayActionName, ActionInfo.STATUS);
+    showUpdateProjectInfo(updatedFiles, displayActionName, ActionInfo.STATUS, false);
   }
 
-  public UpdateInfoTree showUpdateProjectInfo(UpdatedFiles updatedFiles, String displayActionName, ActionInfo actionInfo) {
+  public UpdateInfoTree showUpdateProjectInfo(UpdatedFiles updatedFiles, String displayActionName, ActionInfo actionInfo, boolean canceled) {
     if (! myProject.isOpen() || myProject.isDisposed()) return null;
     ContentManager contentManager = getContentManager();
     if (contentManager == null) {
       return null;  // content manager is made null during dispose; flag is set later
     }
     final UpdateInfoTree updateInfoTree = new UpdateInfoTree(contentManager, myProject, updatedFiles, displayActionName, actionInfo);
-    Content content = ContentFactory.SERVICE.getInstance().createContent(updateInfoTree, VcsBundle.message(
-      "toolwindow.title.update.action.info", displayActionName), true);
+    Content content = ContentFactory.SERVICE.getInstance().createContent(updateInfoTree, canceled ?
+      VcsBundle.message("toolwindow.title.update.action.canceled.info", displayActionName) :
+      VcsBundle.message("toolwindow.title.update.action.info", displayActionName), true);
     Disposer.register(content, updateInfoTree);
     ContentsUtil.addContent(contentManager, content, true);
     ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.VCS).activate(null);
@@ -450,7 +477,7 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
   @Patch
   public boolean hasExplicitMapping(final VirtualFile vFile) {
     final VcsDirectoryMapping mapping = myMappings.getMappingFor(vFile);
-
+    
     // Original code
     // return mapping != null && ! mapping.isDefaultMapping();
 
@@ -484,6 +511,13 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
 
   public void iterateVcsRoot(final VirtualFile root, final Processor<FilePath> iterator) {
     VcsRootIterator.iterateVcsRoot(myProject, root, iterator);
+  }
+
+  @Override
+  public void iterateVcsRoot(VirtualFile root,
+                             Processor<FilePath> iterator,
+                             @Nullable PairProcessor<VirtualFile, VirtualFile[]> directoryFilter) {
+    VcsRootIterator.iterateVcsRoot(myProject, root, iterator, directoryFilter);
   }
 
   public void readExternal(Element element) throws InvalidDataException {
@@ -521,22 +555,6 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
     return myOptionsAndConfirmations.getConfirmation(option);
   }
 
-  public List<CheckinHandlerFactory> getRegisteredCheckinHandlerFactories() {
-    if (!myCheckinHandlerFactoriesLoaded) {
-      myCheckinHandlerFactoriesLoaded = true;
-      Collections.addAll(myRegisteredBeforeCheckinHandlers, Extensions.getExtensions(CheckinHandlerFactory.EP_NAME, myProject));
-    }
-    return Collections.unmodifiableList(myRegisteredBeforeCheckinHandlers);
-  }
-
-  public void registerCheckinHandlerFactory(CheckinHandlerFactory factory) {
-    myRegisteredBeforeCheckinHandlers.add(factory);
-  }
-
-  public void unregisterCheckinHandlerFactory(CheckinHandlerFactory handler) {
-    myRegisteredBeforeCheckinHandlers.remove(handler);
-  }
-
   private final Map<VcsListener, MessageBusConnection> myAdapters = new HashMap<VcsListener, MessageBusConnection>();
 
   public void addVcsListener(VcsListener listener) {
@@ -567,8 +585,17 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
     return myBackgroundOperationCounter > 0;
   }
 
+  public List<VirtualFile> getRootsUnderVcsWithoutFiltering(final AbstractVcs vcs) {
+    return myMappings.getMappingsAsFilesUnderVcs(vcs);
+  }
+
+  @NotNull
   public VirtualFile[] getRootsUnderVcs(AbstractVcs vcs) {
     return myMappingsToRoots.getRootsUnderVcs(vcs);
+  }
+
+  public List<VirtualFile> getDetailedVcsMappings(final AbstractVcs vcs) {
+    return myMappingsToRoots.getDetailedVcsMappings(vcs);
   }
 
   public VirtualFile[] getAllVersionedRoots() {
@@ -731,9 +758,19 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
   }
 
   public boolean isFileInContent(final VirtualFile vf) {
-    final ExcludedFileIndex excludedIndex = ExcludedFileIndex.getInstance(myProject);
-    return vf != null && (excludedIndex.isInContent(vf) || isFileInBaseDir(vf) || vf.equals(myProject.getBaseDir()) ||
-                            hasExplicitMapping(vf) || isInDirectoryBasedRoot(vf)) && ! excludedIndex.isExcludedFile(vf);
+    return vf != null && (myExcludedIndex.isInContent(vf) || isFileInBaseDir(vf) || vf.equals(myProject.getBaseDir()) ||
+                            hasExplicitMapping(vf) || isInDirectoryBasedRoot(vf)) && ! myExcludedIndex.isExcludedFile(vf);
+  }
+
+  @Override
+  public boolean dvcsUsedInProject() {
+    AbstractVcs[] allActiveVcss = getAllActiveVcss();
+    for (AbstractVcs activeVcs : allActiveVcss) {
+      if (VcsType.distibuted.equals(activeVcs.getType())) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private boolean isInDirectoryBasedRoot(final VirtualFile file) {
@@ -762,5 +799,14 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
       }
     }
     return result;
+  }
+
+  public VcsHistoryCache getVcsHistoryCache() {
+    return myVcsHistoryCache;
+  }
+
+  @Override
+  public ContentRevisionCache getContentRevisionCache() {
+    return myContentRevisionCache;
   }
 }
