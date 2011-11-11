@@ -4,6 +4,7 @@ package jetbrains.mps.ide.typesystem.trace;
 
 import javax.swing.JPanel;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.workbench.tools.BaseTool;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.SwingUtilities;
@@ -31,8 +32,9 @@ public class TypeSystemTracePanel extends JPanel {
   private TypeSystemStateTree myStateTree;
   private JPanel myButtons;
   private EditorComponent myEditorComponent;
+  private BaseTool myTool;
 
-  public TypeSystemTracePanel() {
+  public TypeSystemTracePanel(BaseTool tool) {
     this.setLayout(new BorderLayout());
     myButtons = new JPanel(new BorderLayout());
     this.setMinimumSize(new Dimension(700, 700));
@@ -42,7 +44,7 @@ public class TypeSystemTracePanel extends JPanel {
         myButtons.add(buttonsPanel, BorderLayout.WEST);
       }
     });
-
+    myTool = tool;
   }
 
   public Color getBackground() {
@@ -154,8 +156,13 @@ public class TypeSystemTracePanel extends JPanel {
         myTraceTree.goToNextError();
       }
     };
+    BaseAction closeAction = new BaseAction("Close", "Close type system trace tool", Icons.CLOSE) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+        myTool.setAvailable(false);
+      }
+    };
 
-    return ActionUtils.groupFromActions(showApplyRuleAction, showGenerationModeAction, showTraceForSelectedNode, showTypesExpansion, showBlockDependencies, refreshAction, nextErrorAction);
+    return ActionUtils.groupFromActions(closeAction, showApplyRuleAction, showGenerationModeAction, showTraceForSelectedNode, showTypesExpansion, showBlockDependencies, refreshAction, nextErrorAction);
   }
 
   public void refresh(final boolean checkRoot) {

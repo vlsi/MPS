@@ -34,5 +34,5 @@ public class Icons {
   public static final Icon REMOVE = new ImageIcon(Icons.class.getResource("remove.png"));
   public static final Icon RULE = new ImageIcon(Icons.class.getResource("rule.png"));
   public static final Icon TYPES = new ImageIcon(Icons.class.getResource("types.png"));
-
+  public static final Icon CLOSE = new ImageIcon(Icons.class.getResource("close.png"));
 }
