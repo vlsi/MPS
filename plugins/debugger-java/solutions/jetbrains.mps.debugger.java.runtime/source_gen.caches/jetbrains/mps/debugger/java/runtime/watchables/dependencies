@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.watchables.JavaArrayItem" file="JavaArrayItem.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.watchables.JavaArrayItemWatchable" file="JavaArrayItemWatchable.java">
     <classNode dependClassName="com.sun.jdi.ArrayReference" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.Override" />

@@ -21,7 +21,7 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3187167456722645007">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
       <property name="isFinal" nameId="tpee.1221565133444" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="JavaArrayItem" />
+      <property name="name" nameId="tpck.1169194664001" value="JavaArrayItemWatchable" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3187167456722649969">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />

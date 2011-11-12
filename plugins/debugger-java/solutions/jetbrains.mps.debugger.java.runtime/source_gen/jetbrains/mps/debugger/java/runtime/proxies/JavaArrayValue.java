@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;
 import com.sun.jdi.ArrayReference;
-import jetbrains.mps.debugger.java.runtime.watchables.JavaArrayItem;
+import jetbrains.mps.debugger.java.runtime.watchables.JavaArrayItemWatchable;
 import javax.swing.Icon;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
@@ -41,7 +41,7 @@ import jetbrains.mps.debug.evaluation.EvaluationUtils;
           len = MAX_ARRAY_VALUES;
         }
         for (int i = 0; i < len; i++) {
-          watchables.add(new JavaArrayItem(arrayRef, i, myClassFQName, myThreadReference));
+          watchables.add(new JavaArrayItemWatchable(arrayRef, i, myClassFQName, myThreadReference));
         }
       }
     }

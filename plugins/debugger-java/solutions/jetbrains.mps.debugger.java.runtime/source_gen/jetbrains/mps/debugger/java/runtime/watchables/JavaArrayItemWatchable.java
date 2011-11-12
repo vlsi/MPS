@@ -20,11 +20,11 @@ import jetbrains.mps.debug.api.programState.WatchablesCategory;
  * * Time: 18:39:04
  * * To change this template use File | Settings | File Templates.
  */
-public class JavaArrayItem extends JavaWatchable implements IWatchable {
+public class JavaArrayItemWatchable extends JavaWatchable implements IWatchable {
   private final ArrayReference myArray;
   private final int myIndex;
 
-  public JavaArrayItem(ArrayReference arrayReference, int index, String classFqName, ThreadReference threadReference) {
+  public JavaArrayItemWatchable(ArrayReference arrayReference, int index, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myArray = arrayReference;
     myIndex = index;
