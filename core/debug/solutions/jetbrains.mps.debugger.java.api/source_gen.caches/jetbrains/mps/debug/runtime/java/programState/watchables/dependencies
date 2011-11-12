@@ -26,20 +26,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.runtime.java.programState.watchables.JavaExceptionWatchable" file="JavaExceptionWatchable.java">
-    <classNode dependClassName="com.sun.jdi.ObjectReference" />
-    <classNode dependClassName="com.sun.jdi.ThreadReference" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.integration.ui.icons.Icons" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchable" />
-  </dependency>
   <dependency className="jetbrains.mps.debug.runtime.java.programState.watchables.JavaField" file="JavaField.java">
     <classNode dependClassName="com.sun.jdi.Field" />
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
@@ -76,36 +62,6 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchable" />
-  </dependency>
-  <dependency className="jetbrains.mps.debug.runtime.java.programState.watchables.JavaMethodWatchable" file="JavaMethodWatchable.java">
-    <classNode dependClassName="com.sun.jdi.Method" />
-    <classNode dependClassName="com.sun.jdi.ThreadReference" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.integration.ui.icons.Icons" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.programState.IValue" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchable" />
-  </dependency>
-  <dependency className="jetbrains.mps.debug.runtime.java.programState.watchables.JavaReturnWatchable" file="JavaReturnWatchable.java">
-    <classNode dependClassName="com.sun.jdi.ThreadReference" />
-    <classNode dependClassName="com.sun.jdi.Value" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchable" />
   </dependency>
   <dependency className="jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext" file="JavaStaticContext.java">
@@ -163,38 +119,6 @@
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
-  </dependency>
-  <dependency className="jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchpointValue" file="JavaWatchpointValue.java">
-    <classNode dependClassName="com.sun.jdi.ThreadReference" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchable" />
-  </dependency>
-  <dependency className="jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchpointWatchable" file="JavaWatchpointWatchable.java">
-    <classNode dependClassName="com.sun.jdi.Field" />
-    <classNode dependClassName="com.sun.jdi.ThreadReference" />
-    <classNode dependClassName="com.sun.jdi.Value" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.integration.ui.icons.Icons" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchpointValue" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.programState.IValue" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchable" />
   </dependency>
 </dependenciesRoot>
 

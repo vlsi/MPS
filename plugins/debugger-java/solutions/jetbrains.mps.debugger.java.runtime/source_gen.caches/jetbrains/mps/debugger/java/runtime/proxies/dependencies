@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.debugger.java.runtime.proxies.FieldWatchpointValue" file="FieldWatchpointValue.java">
+    <classNode dependClassName="com.sun.jdi.Field" />
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
+    <classNode dependClassName="jetbrains.mps.debug.integration.ui.icons.Icons" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.watchables.JavaWatchpointValueWatchable" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.programState.IValue" />
+    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.proxies.JavaArrayValue" file="JavaArrayValue.java">
     <classNode dependClassName="com.sun.jdi.ArrayReference" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
