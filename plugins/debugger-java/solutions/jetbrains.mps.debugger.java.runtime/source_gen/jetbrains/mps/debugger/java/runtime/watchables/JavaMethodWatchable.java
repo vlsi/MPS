@@ -9,7 +9,7 @@ import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import jetbrains.mps.debug.integration.ui.icons.Icons;
+import jetbrains.mps.debugger.java.runtime.ui.Icons;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;

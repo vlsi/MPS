@@ -7,7 +7,7 @@ import jetbrains.mps.debug.api.programState.IValue;
 import com.sun.jdi.Field;
 import com.sun.jdi.ThreadReference;
 import javax.swing.Icon;
-import jetbrains.mps.debug.integration.ui.icons.Icons;
+import jetbrains.mps.debugger.java.runtime.ui.Icons;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;

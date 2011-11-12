@@ -10,7 +10,7 @@ import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import javax.swing.Icon;
-import jetbrains.mps.debug.integration.ui.icons.Icons;
+import jetbrains.mps.debugger.java.runtime.ui.Icons;
 import jetbrains.mps.smodel.SNode;
 
 /*package*/ class JavaExceptionWatchable extends JavaWatchable {
