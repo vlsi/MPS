@@ -23,7 +23,7 @@ public class AssignmentTest_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1230058635670", "1230058635678");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "=0");
+      BaseEditorTestBody.typeString(editorComponent, "=1");
     }
   }
 }

@@ -6,6 +6,7 @@ import jetbrains.mps.project.MPSProject;
 import java.awt.Component;
 import javax.swing.JList;
 import jetbrains.mps.project.structure.project.Path;
+import jetbrains.mps.project.StandaloneMPSProject;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.awt.Color;
@@ -24,7 +25,7 @@ public class ProjectPathRenderer extends PathRenderer {
       return result;
     }
     boolean isContained = false;
-    for (Path p : myProject.getAllModulePaths()) {
+    for (Path p : ((StandaloneMPSProject) myProject).getAllModulePaths()) {
       if (p.isSamePath(path)) {
         isContained = true;
         break;

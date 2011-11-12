@@ -8,6 +8,7 @@ import java.util.List;
 import com.intellij.util.PathUtil;
 import java.io.File;
 import com.intellij.openapi.application.PathMacros;
+import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
@@ -325,7 +326,7 @@ public class ProjectTestHelper {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       BufferedReader in = null;
       try {
-        in = new BufferedReader(new InputStreamReader(new FileInputStream(f), "utf-8"));
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(f), FileUtil.DEFAULT_CHARSET));
         String line;
         while ((line = in.readLine()) != null) {
           ListSequence.fromList(result).addElement(line);

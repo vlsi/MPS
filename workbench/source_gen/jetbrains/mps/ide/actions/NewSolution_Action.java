@@ -16,6 +16,7 @@ import java.awt.Frame;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import javax.swing.ImageIcon;
@@ -74,7 +75,7 @@ public class NewSolution_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(s, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
+          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(s, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
             "" :
             ((String) MapSequence.fromMap(_params).get("namespace"))
           ));

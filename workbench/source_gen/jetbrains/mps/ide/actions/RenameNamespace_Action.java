@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
@@ -83,7 +84,7 @@ public class RenameNamespace_Action extends GeneratedAction {
         newFolder = null;
       }
       for (IModule module : ListSequence.fromList(node.getModulesUnder())) {
-        ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(module, newFolder);
+        ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(module, newFolder);
       }
       RenameNamespace_Action.this.getProjectPane(_params).rebuild();
     } catch (Throwable t) {

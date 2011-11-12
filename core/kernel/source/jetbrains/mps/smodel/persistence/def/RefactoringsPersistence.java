@@ -20,6 +20,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.HistoryReaderHandler;
 import jetbrains.mps.refactoring.HistoryWriter;
 import jetbrains.mps.refactoring.StructureModificationLog;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -71,7 +72,7 @@ public class RefactoringsPersistence {
     try {
       HistoryReaderHandler handler = new HistoryReaderHandler();
       in = refactoringsFile.openInputStream();
-      InputSource source = new InputSource(new InputStreamReader(in, "UTF-8"));
+      InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
       JDOMUtil.createSAXParser().parse(source, handler);
       return handler.getResult();
     } catch (SAXParseException e) {

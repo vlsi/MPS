@@ -23,6 +23,7 @@ import javax.swing.border.EtchedBorder;
 import java.awt.GridBagConstraints;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.project.StandaloneMPSProject;
 
 public class LanguagesStep extends AbstractStep {
   private final Project myProject;
@@ -167,7 +168,7 @@ public class LanguagesStep extends AbstractStep {
       String namespace = "";
       if (data instanceof ModuleData) {
         ModuleData moduleData = (ModuleData) data;
-        namespace = this.myMpsProject.getFolderFor(moduleData.getModule());
+        namespace = ((StandaloneMPSProject) this.myMpsProject).getFolderFor(moduleData.getModule());
       }
       if (namespace == null) {
         return "";

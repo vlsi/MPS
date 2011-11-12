@@ -23,7 +23,7 @@
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.PresentationUtil" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
@@ -91,7 +91,7 @@
   <dependency className="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTreeNode" file="TypeSystemStateTreeNode.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -187,7 +187,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.PresentationUtil" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.operation.AbstractOperation" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.operation.PresentationKind" />
@@ -200,7 +200,7 @@
   <dependency className="jetbrains.mps.ide.typesystem.trace.TypeTreeNode" file="TypeTreeNode.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.PresentationUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

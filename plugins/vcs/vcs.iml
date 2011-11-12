@@ -23,7 +23,7 @@
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="library" name="OROMatcher" level="project" />
     <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />

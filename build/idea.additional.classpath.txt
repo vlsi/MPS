@@ -24,7 +24,7 @@ workbench/baseLanguageIndex/classes_gen
 core/baseLanguage/runConfigurations/runtime/classes
 core/languageDesign/test/classes_gen
 workbench/classes
-workbench/idea-workbench/classes
+workbench/mps-platform/classes
 workbench/mps-workbench/classes
 languages/util/runConfigurations/classes
 workbench/typesystemUi/classes

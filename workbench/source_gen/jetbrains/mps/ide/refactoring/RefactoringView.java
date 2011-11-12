@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.view.TabbedUsagesTool;
 import java.util.List;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -17,7 +17,7 @@ public class RefactoringView extends TabbedUsagesTool {
   private List<RefactoringViewItem> myRefactoringViews = new ArrayList<RefactoringViewItem>();
 
   protected RefactoringView(Project project) {
-    super(project, "RefactoringView", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "RefactoringView", -1, IdeIcons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   protected UsagesView getUsagesView(int index) {

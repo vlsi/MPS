@@ -129,9 +129,6 @@ public class ModelPersistence {
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
 
       loadDescriptor(result, source);
-    } catch (UnsupportedEncodingException e) {
-      LOG.error(e);
-      throw new ModelReadException("UTF-8 is unsupported", e);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read descriptor from " + file.getPath() + ": " + e.getMessage(), e);
     } finally {
@@ -203,9 +200,6 @@ public class ModelPersistence {
       in = file.openInputStream();
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
       return readModel(header, source, state);
-    } catch (UnsupportedEncodingException e) {
-      LOG.error(e);
-      throw new ModelReadException("UTF-8 is not supported", e, header);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(),  e, header);
     } finally {

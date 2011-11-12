@@ -329,6 +329,8 @@
       <modulePath path="${project}/workbench/ideSolution/jetbrains.mps.ide.msd" folder="workbench" />
       <modulePath path="${project}/workbench/ideUiLanguage/uiLanguage.mpl" folder="languages.ui" />
       <modulePath path="${project}/workbench/make/jetbrains.mps.workbench.make.msd" folder="workbench" />
+      <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench" />
+      <modulePath path="${project}/workbench/mps-workbench/mps.msd" folder="workbench" />
     </projectModules>
     <genConfs />
   </component>

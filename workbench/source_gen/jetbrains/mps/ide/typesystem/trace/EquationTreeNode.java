@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.Set;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public class EquationTreeNode extends TypeSystemStateTreeNode {
   private List<SNode> myVariables = new LinkedList();
@@ -25,7 +25,7 @@ public class EquationTreeNode extends TypeSystemStateTreeNode {
     setNodeIdentifier(sb.toString());
     variables.add(representative);
     myVariables.addAll(variables);
-    setIcon(Icons.DEFAULT_ICON);
+    setIcon(IdeIcons.DEFAULT_ICON);
     setTooltipText(PresentationUtil.getVariablesTooltipPresentation(editorComponent, variables, state));
   }
 

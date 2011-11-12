@@ -18,10 +18,7 @@ package jetbrains.mps.workbench.actions.module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -48,7 +45,8 @@ public class DeleteModuleHelper {
 
     //remove from project
     if (mpsProject.isProjectModule(module)) {
-      mpsProject.removeProjectModule( module);
+      mpsProject.removeModule(module.getModuleReference());
+      ((StandaloneMPSProject)mpsProject).update();
       project.save();
     }
 

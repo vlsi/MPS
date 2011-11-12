@@ -26,7 +26,7 @@
     <orderEntry type="module" module-name="javaRunConfigurations-runtime" />
     <orderEntry type="module" module-name="baseLanguageIndex" />
     <orderEntry type="module" module-name="baseLanguage-search" />
-    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="library" name="JDOM" level="project" />

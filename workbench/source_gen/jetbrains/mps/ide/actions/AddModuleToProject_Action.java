@@ -14,9 +14,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.StandaloneMPSProject;
 
 public class AddModuleToProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -68,13 +67,12 @@ public class AddModuleToProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ProjectDescriptor descriptor = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectDescriptor();
       for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
-        IFile descriptorFile = module.getDescriptorFile();
-        assert descriptorFile != null;
-        descriptor.addModule(descriptorFile.getPath());
+        ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addModule(module.getModuleReference());
       }
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).setProjectDescriptor(descriptor);
+      if (((MPSProject) MapSequence.fromMap(_params).get("mpsProject")) instanceof StandaloneMPSProject) {
+        ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).update();
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddModuleToProject", t);

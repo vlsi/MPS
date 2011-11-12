@@ -21,6 +21,7 @@ import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
@@ -94,7 +95,7 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
   }
 
   protected void visitProjectNode(final ProjectTreeNode node) {
-    String errors = node.getProject().getErrors();
+    String errors = ((StandaloneMPSProject)node.getProject()).getErrors();
     updateNodeLater(node, errors, false);
   }
 

@@ -223,7 +223,7 @@
       <fileset dir="${mps_home}/workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/workbench/idea-workbench/classes" />
+      <fileset dir="${mps_home}/workbench/mps-platform/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/workbench/mps-workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
@@ -266,9 +266,6 @@
     <delete dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-test.jar.tmp">
       <fileset dir="${mps_home}/testbench/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-test.jar.tmp">
-      <fileset dir="${mps_home}/classes" excludes="production/, test/, " />
     </copy>
     <jar destfile="${deploy.dir}/MPS/lib/mps-test.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />

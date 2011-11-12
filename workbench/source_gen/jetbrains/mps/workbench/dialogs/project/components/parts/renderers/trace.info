@@ -59,48 +59,48 @@
     <unitInfo nodeId="1560298786499489478" fileName="RuleTypeRenderer.java" startLine="16" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleTypeRenderer" />
   </root>
   <root nodeId="1560298786499490098">
-    <nodeInfo nodeId="1560298786499490101" fileName="ProjectPathRenderer.java" startLine="13" startPosition="55" endLine="14" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="1560298786499490109" fileName="ProjectPathRenderer.java" startLine="16" startPosition="50" endLine="17" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499490129" fileName="ProjectPathRenderer.java" startLine="20" startPosition="134" endLine="21" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499490135" fileName="ProjectPathRenderer.java" startLine="21" startPosition="29" endLine="22" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499490147" fileName="ProjectPathRenderer.java" startLine="23" startPosition="21" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499490149" fileName="ProjectPathRenderer.java" startLine="25" startPosition="5" endLine="26" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499490168" fileName="ProjectPathRenderer.java" startLine="28" startPosition="31" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499490172" fileName="ProjectPathRenderer.java" startLine="29" startPosition="27" endLine="30" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1560298786499490173" fileName="ProjectPathRenderer.java" startLine="32" startPosition="5" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499490192" fileName="ProjectPathRenderer.java" startLine="34" startPosition="58" endLine="35" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499490201" fileName="ProjectPathRenderer.java" startLine="36" startPosition="5" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499490104" fileName="ProjectPathRenderer.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPathRenderer#(Ljetbrains/mps/project/MPSProject;)V" />
-    <nodeInfo nodeId="1560298786499490144" fileName="ProjectPathRenderer.java" startLine="22" startPosition="103" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499490180" fileName="ProjectPathRenderer.java" startLine="33" startPosition="71" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499490162" fileName="ProjectPathRenderer.java" startLine="27" startPosition="50" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499490153" fileName="ProjectPathRenderer.java" startLine="26" startPosition="32" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1560298786499490115" fileName="ProjectPathRenderer.java" startLine="19" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
-    <scopeInfo nodeId="1560298786499490108" fileName="ProjectPathRenderer.java" startLine="16" startPosition="50" endLine="17" endPosition="24" />
-    <scopeInfo nodeId="1560298786499490146" fileName="ProjectPathRenderer.java" startLine="23" startPosition="21" endLine="24" endPosition="20" />
-    <scopeInfo nodeId="1560298786499490191" fileName="ProjectPathRenderer.java" startLine="34" startPosition="58" endLine="35" endPosition="44" />
-    <scopeInfo nodeId="1560298786499490167" fileName="ProjectPathRenderer.java" startLine="28" startPosition="31" endLine="30" endPosition="14" />
-    <scopeInfo nodeId="1560298786499490104" fileName="ProjectPathRenderer.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+    <nodeInfo nodeId="1560298786499490101" fileName="ProjectPathRenderer.java" startLine="14" startPosition="55" endLine="15" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="1560298786499490109" fileName="ProjectPathRenderer.java" startLine="17" startPosition="50" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499490129" fileName="ProjectPathRenderer.java" startLine="21" startPosition="134" endLine="22" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499490135" fileName="ProjectPathRenderer.java" startLine="22" startPosition="29" endLine="23" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499490147" fileName="ProjectPathRenderer.java" startLine="24" startPosition="21" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499490149" fileName="ProjectPathRenderer.java" startLine="26" startPosition="5" endLine="27" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499490168" fileName="ProjectPathRenderer.java" startLine="29" startPosition="31" endLine="30" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499490172" fileName="ProjectPathRenderer.java" startLine="30" startPosition="27" endLine="31" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1560298786499490173" fileName="ProjectPathRenderer.java" startLine="33" startPosition="5" endLine="34" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499490192" fileName="ProjectPathRenderer.java" startLine="35" startPosition="58" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499490201" fileName="ProjectPathRenderer.java" startLine="37" startPosition="5" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499490104" fileName="ProjectPathRenderer.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPathRenderer#(Ljetbrains/mps/project/MPSProject;)V" />
+    <nodeInfo nodeId="1560298786499490144" fileName="ProjectPathRenderer.java" startLine="23" startPosition="103" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499490180" fileName="ProjectPathRenderer.java" startLine="34" startPosition="71" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499490162" fileName="ProjectPathRenderer.java" startLine="28" startPosition="75" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499490153" fileName="ProjectPathRenderer.java" startLine="27" startPosition="32" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1560298786499490115" fileName="ProjectPathRenderer.java" startLine="20" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+    <scopeInfo nodeId="1560298786499490108" fileName="ProjectPathRenderer.java" startLine="17" startPosition="50" endLine="18" endPosition="24" />
+    <scopeInfo nodeId="1560298786499490146" fileName="ProjectPathRenderer.java" startLine="24" startPosition="21" endLine="25" endPosition="20" />
+    <scopeInfo nodeId="1560298786499490191" fileName="ProjectPathRenderer.java" startLine="35" startPosition="58" endLine="36" endPosition="44" />
+    <scopeInfo nodeId="1560298786499490167" fileName="ProjectPathRenderer.java" startLine="29" startPosition="31" endLine="31" endPosition="14" />
+    <scopeInfo nodeId="1560298786499490104" fileName="ProjectPathRenderer.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
       <varInfo nodeId="1560298786499490106" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490161" fileName="ProjectPathRenderer.java" startLine="27" startPosition="50" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1560298786499490153" fileName="ProjectPathRenderer.java" startLine="26" startPosition="32" endLine="32" endPosition="5">
+    <scopeInfo nodeId="1560298786499490161" fileName="ProjectPathRenderer.java" startLine="28" startPosition="75" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="1560298786499490153" fileName="ProjectPathRenderer.java" startLine="27" startPosition="32" endLine="33" endPosition="5">
       <varInfo nodeId="1560298786499490159" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490128" fileName="ProjectPathRenderer.java" startLine="20" startPosition="134" endLine="37" endPosition="18">
+    <scopeInfo nodeId="1560298786499490128" fileName="ProjectPathRenderer.java" startLine="21" startPosition="134" endLine="38" endPosition="18">
       <varInfo nodeId="1560298786499490174" varName="file" />
       <varInfo nodeId="1560298786499490150" varName="isContained" />
       <varInfo nodeId="1560298786499490130" varName="path" />
       <varInfo nodeId="1560298786499490136" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490115" fileName="ProjectPathRenderer.java" startLine="19" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="1560298786499490115" fileName="ProjectPathRenderer.java" startLine="20" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1560298786499490126" varName="cellHasFocus" />
       <varInfo nodeId="1560298786499490122" varName="index" />
       <varInfo nodeId="1560298786499490124" varName="isSelected" />
       <varInfo nodeId="1560298786499490118" varName="list" />
       <varInfo nodeId="1560298786499490120" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499490098" fileName="ProjectPathRenderer.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectPathRenderer" />
+    <unitInfo nodeId="1560298786499490098" fileName="ProjectPathRenderer.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectPathRenderer" />
   </root>
   <root nodeId="1560298786499492721">
     <nodeInfo nodeId="1560298786499492724" fileName="ProjectLevelRenderer.java" startLine="9" startPosition="67" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleScope" />

@@ -694,7 +694,7 @@
             <property name="name" nameId="tpck.1169194664001" value="a" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230058635684" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230058635685">
-              <property name="value" nameId="tpee.1068580320021" value="0" />
+              <property name="value" nameId="tpee.1068580320021" value="1" />
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1932269937152533949">
                 <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
                 <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
@@ -708,7 +708,7 @@
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230058635687">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="1230058635688">
-        <property name="keys" nameId="tp5g.1227184461946" value="=0" />
+        <property name="keys" nameId="tp5g.1227184461946" value="=1" />
       </node>
     </node>
   </root>

@@ -11,7 +11,7 @@ import jetbrains.mps.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.ThreadUtils;
@@ -130,8 +130,9 @@ public abstract class MpsWorker {
   protected Project createDummyProject() {
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
-    final Project project = new MPSProject(ideaProject);
-    project.init(projectFile, new ProjectDescriptor());
+    final StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
+    project.setProjectFile(projectFile);
+    project.init(new ProjectDescriptor());
     projectFile.deleteOnExit();
     return project;
   }

@@ -23,6 +23,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
+import jetbrains.mps.project.StandaloneMPSProject;
 
 public class RemoveModuleFromProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -99,7 +100,8 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
       if (!(dialogWrapper.isOK())) {
         return;
       }
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeProjectModule(module);
+      ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeModule(module.getModuleReference());
+      ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsproject"))).update();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);

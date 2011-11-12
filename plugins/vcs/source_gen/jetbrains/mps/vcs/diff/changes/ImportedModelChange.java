@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.diff.changes;
 
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.smodel.SModel;
 
 public class ImportedModelChange extends DependencyChange {

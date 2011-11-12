@@ -43,7 +43,7 @@ import com.sun.jdi.FloatType;
 import com.sun.jdi.CharType;
 import com.sun.jdi.ArrayType;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformationUtil;
+import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.Set;
@@ -297,7 +297,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       public Boolean invoke(LocalVariable variable) {
         if (eq_4zsmpx_a0a0a0a0a1a21(variable.name(), variableName)) {
           try {
-            String variableTypeSignature = TransformationUtil.getJniSignatureFromType(variableType);
+            String variableTypeSignature = TransformatorBuilder.getInstance().getJniSignatureFromType(variableType);
             if (eq_4zsmpx_a0b0a0a0a0a0a1a21(variableTypeSignature, variable.type().signature())) {
               visible.value = true;
               return true;
@@ -319,7 +319,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if (thisObject == null) {
       return false;
     }
-    return eq_4zsmpx_a0c0n(thisObject.referenceType().signature(), TransformationUtil.getJniSignatureFromType(thisType));
+    return eq_4zsmpx_a0c0n(thisObject.referenceType().signature(), TransformatorBuilder.getInstance().getJniSignatureFromType(thisType));
   }
 
   public boolean isStaticContextTypeValid(SNode staticContextType) {

@@ -163,7 +163,7 @@
   </root>
   <root nodeId="2482360940803570809">
     <nodeInfo nodeId="2482360940803570840" fileName="RefactoringView.java" startLine="16" startPosition="55" endLine="17" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactoringViews" />
-    <nodeInfo nodeId="2482360940803570853" fileName="RefactoringView.java" startLine="19" startPosition="46" endLine="20" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2482360940803570853" fileName="RefactoringView.java" startLine="19" startPosition="46" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2482360940803570867" fileName="RefactoringView.java" startLine="23" startPosition="49" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2482360940803570880" fileName="RefactoringView.java" startLine="27" startPosition="38" endLine="28" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2482360940803570889" fileName="RefactoringView.java" startLine="31" startPosition="42" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -192,7 +192,7 @@
     <nodeInfo nodeId="2482360940803570837" fileName="RefactoringView.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
     <nodeInfo nodeId="2482360940803570891" fileName="RefactoringView.java" startLine="34" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showRefactoringView#(Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/ide/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;Z)V" />
     <nodeInfo nodeId="2482360940803570937" fileName="RefactoringView.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showRefactoringView#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;Z)V" />
-    <scopeInfo nodeId="2482360940803570852" fileName="RefactoringView.java" startLine="19" startPosition="46" endLine="20" endPosition="93" />
+    <scopeInfo nodeId="2482360940803570852" fileName="RefactoringView.java" startLine="19" startPosition="46" endLine="20" endPosition="96" />
     <scopeInfo nodeId="2482360940803570866" fileName="RefactoringView.java" startLine="23" startPosition="49" endLine="24" endPosition="57" />
     <scopeInfo nodeId="2482360940803570879" fileName="RefactoringView.java" startLine="27" startPosition="38" endLine="28" endPosition="37" />
     <scopeInfo nodeId="2482360940803570888" fileName="RefactoringView.java" startLine="31" startPosition="42" endLine="32" endPosition="16" />
