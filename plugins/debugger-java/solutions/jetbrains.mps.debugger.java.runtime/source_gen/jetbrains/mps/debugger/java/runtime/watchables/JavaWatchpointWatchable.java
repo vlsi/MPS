@@ -16,7 +16,7 @@ import javax.swing.Icon;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 import jetbrains.mps.smodel.SNode;
 
-public class JavaWatchpointWatchable extends JavaWatchable {
+/*package*/ class JavaWatchpointWatchable extends JavaWatchable {
   private final Field myField;
   private final JavaValue myCurrentValue;
   private final JavaValue myNewValue;

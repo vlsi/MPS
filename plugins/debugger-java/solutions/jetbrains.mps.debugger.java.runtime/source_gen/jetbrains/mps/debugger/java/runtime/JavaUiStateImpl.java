@@ -22,18 +22,8 @@ import com.sun.jdi.Value;
 import com.sun.jdi.LocalVariable;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import com.sun.jdi.event.EventSet;
+import jetbrains.mps.debugger.java.runtime.watchables.EventWatchablesCreator;
 import com.sun.jdi.event.Event;
-import com.sun.jdi.event.ExceptionEvent;
-import jetbrains.mps.debugger.java.runtime.watchables.JavaExceptionWatchable;
-import com.sun.jdi.event.MethodEntryEvent;
-import com.sun.jdi.Method;
-import jetbrains.mps.debugger.java.runtime.watchables.JavaMethodWatchable;
-import com.sun.jdi.event.MethodExitEvent;
-import jetbrains.mps.debugger.java.runtime.watchables.JavaReturnWatchable;
-import com.sun.jdi.event.AccessWatchpointEvent;
-import com.sun.jdi.Field;
-import jetbrains.mps.debugger.java.runtime.watchables.JavaWatchpointWatchable;
-import com.sun.jdi.event.ModificationWatchpointEvent;
 
 public class JavaUiStateImpl extends JavaUiState {
   private static Logger LOG = Logger.getLogger(JavaUiStateImpl.class);
@@ -250,40 +240,15 @@ public class JavaUiStateImpl extends JavaUiState {
     if (myContext != null) {
       EventSet eventSet = myContext.getEventSet();
       if (eventSet != null) {
+        String classFqName = getStackFrame().getClassFqName();
+        ThreadReference threadReference = getThread().getThread();
+        EventWatchablesCreator watchablesCreator = new EventWatchablesCreator();
         for (Event event : eventSet) {
-          this.addWatchablesFromEvent(event, watchables, getStackFrame().getClassFqName(), getThread().getThread());
+          watchablesCreator.addWatchablesFromEvent(event, watchables, classFqName, threadReference);
         }
       }
     }
     return watchables;
-  }
-
-  private void addWatchablesFromEvent(Event event, List<IWatchable> watchables, String classFqName, ThreadReference threadReference) {
-    if (event instanceof ExceptionEvent) {
-      ObjectReference exception = ((ExceptionEvent) event).exception();
-      watchables.add(new JavaExceptionWatchable(exception, classFqName, threadReference));
-    } else
-    if (event instanceof MethodEntryEvent) {
-      Method method = ((MethodEntryEvent) event).method();
-      watchables.add(new JavaMethodWatchable(method, true, classFqName, threadReference));
-    } else
-    if (event instanceof MethodExitEvent) {
-      Method method = ((MethodExitEvent) event).method();
-      Value value = ((MethodExitEvent) event).returnValue();
-      watchables.add(new JavaMethodWatchable(method, false, classFqName, threadReference));
-      watchables.add(new JavaReturnWatchable(value, classFqName, threadReference));
-    } else
-    if (event instanceof AccessWatchpointEvent) {
-      Field field = ((AccessWatchpointEvent) event).field();
-      Value value = ((AccessWatchpointEvent) event).valueCurrent();
-      watchables.add(new JavaWatchpointWatchable(field, value, classFqName, threadReference));
-    } else
-    if (event instanceof ModificationWatchpointEvent) {
-      Field field = ((ModificationWatchpointEvent) event).field();
-      Value currentValue = ((ModificationWatchpointEvent) event).valueCurrent();
-      Value valueToBe = ((ModificationWatchpointEvent) event).valueToBe();
-      watchables.add(new JavaWatchpointWatchable(field, currentValue, valueToBe, classFqName, threadReference));
-    }
   }
 
   @NotNull

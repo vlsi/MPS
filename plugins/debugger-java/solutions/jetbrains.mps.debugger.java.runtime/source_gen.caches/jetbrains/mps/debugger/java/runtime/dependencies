@@ -85,19 +85,12 @@
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.JavaUiStateImpl" file="JavaUiStateImpl.java">
-    <classNode dependClassName="com.sun.jdi.Field" />
     <classNode dependClassName="com.sun.jdi.LocalVariable" />
-    <classNode dependClassName="com.sun.jdi.Method" />
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
-    <classNode dependClassName="com.sun.jdi.event.AccessWatchpointEvent" />
     <classNode dependClassName="com.sun.jdi.event.Event" />
     <classNode dependClassName="com.sun.jdi.event.EventSet" />
-    <classNode dependClassName="com.sun.jdi.event.ExceptionEvent" />
-    <classNode dependClassName="com.sun.jdi.event.MethodEntryEvent" />
-    <classNode dependClassName="com.sun.jdi.event.MethodExitEvent" />
-    <classNode dependClassName="com.sun.jdi.event.ModificationWatchpointEvent" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -115,10 +108,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendManager" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.watchables.JavaExceptionWatchable" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.watchables.JavaMethodWatchable" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.watchables.JavaReturnWatchable" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.watchables.JavaWatchpointWatchable" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.watchables.EventWatchablesCreator" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

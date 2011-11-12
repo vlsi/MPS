@@ -13,7 +13,7 @@ import javax.swing.Icon;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 import jetbrains.mps.smodel.SNode;
 
-public class JavaExceptionWatchable extends JavaWatchable {
+/*package*/ class JavaExceptionWatchable extends JavaWatchable {
   private final ObjectReference myException;
 
   public JavaExceptionWatchable(ObjectReference exception, String classFQName, ThreadReference threadReference) {
