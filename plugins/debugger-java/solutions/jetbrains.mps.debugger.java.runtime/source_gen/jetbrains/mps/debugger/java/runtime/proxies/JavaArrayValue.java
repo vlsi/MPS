@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;
 import com.sun.jdi.ArrayReference;
-import jetbrains.mps.debug.runtime.java.programState.watchables.JavaArrayItem;
+import jetbrains.mps.debugger.java.runtime.watchables.JavaArrayItem;
 import javax.swing.Icon;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;

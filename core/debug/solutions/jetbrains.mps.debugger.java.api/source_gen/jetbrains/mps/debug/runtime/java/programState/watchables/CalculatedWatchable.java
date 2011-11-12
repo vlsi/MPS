@@ -14,14 +14,14 @@ import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 
-public class CalculatedWatchable extends JavaBreakpointWatchable implements IWatchable {
+public class CalculatedWatchable extends JavaWatchable implements IWatchable {
   private final JavaValue myValue;
   private final String myName;
 
   public CalculatedWatchable(String name, Value value, @NotNull String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myName = name;
-    myValue = ValueUtil.getInstance().fromJDIValue(value, myClassFQName, threadReference);
+    myValue = ValueUtil.getInstance().fromJDI(value, myClassFQName, threadReference);
   }
 
   @Override

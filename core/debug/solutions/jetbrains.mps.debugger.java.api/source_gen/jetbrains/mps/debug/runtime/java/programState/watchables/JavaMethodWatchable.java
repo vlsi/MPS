@@ -14,7 +14,7 @@ import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.Collections;
 
-public class JavaMethodWatchable extends JavaBreakpointWatchable {
+public class JavaMethodWatchable extends JavaWatchable {
   private final Method myMethod;
   private final boolean myIsEnter;
 

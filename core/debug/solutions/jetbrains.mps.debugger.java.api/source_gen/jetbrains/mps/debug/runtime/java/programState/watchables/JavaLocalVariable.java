@@ -27,7 +27,7 @@ import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
  * * Time: 18:43:09
  * * To change this template use File | Settings | File Templates.
  */
-public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatchable {
+public class JavaLocalVariable extends JavaWatchable implements IWatchable {
   private static final Logger LOG = Logger.getLogger(JavaLocalVariable.class);
 
   private final LocalVariable myLocalVariable;
@@ -40,7 +40,7 @@ public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatch
     myStackFrame = stackFrame;
     StackFrame javaStackFrame = myStackFrame.getStackFrame();
     if (javaStackFrame != null) {
-      myCachedValue = ValueUtil.getInstance().fromJDIValue(javaStackFrame.getValue(myLocalVariable), classFqName, threadReference);
+      myCachedValue = ValueUtil.getInstance().fromJDI(javaStackFrame.getValue(myLocalVariable), classFqName, threadReference);
     }
   }
 

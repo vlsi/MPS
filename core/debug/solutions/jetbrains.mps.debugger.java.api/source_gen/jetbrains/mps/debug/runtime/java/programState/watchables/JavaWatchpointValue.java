@@ -10,7 +10,7 @@ import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 
-public class JavaWatchpointValue extends JavaBreakpointWatchable implements IWatchable {
+public class JavaWatchpointValue extends JavaWatchable implements IWatchable {
   private final JavaValue myCachedValue;
   private final boolean myIsOld;
 

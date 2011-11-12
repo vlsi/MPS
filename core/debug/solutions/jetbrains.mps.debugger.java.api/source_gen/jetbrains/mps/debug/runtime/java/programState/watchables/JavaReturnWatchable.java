@@ -12,12 +12,12 @@ import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 
-public class JavaReturnWatchable extends JavaBreakpointWatchable {
+public class JavaReturnWatchable extends JavaWatchable {
   private final JavaValue myValue;
 
   public JavaReturnWatchable(Value value, String classFQName, ThreadReference threadReference) {
     super(classFQName, threadReference);
-    myValue = ValueUtil.getInstance().fromJDIValue(value, myClassFQName, threadReference);
+    myValue = ValueUtil.getInstance().fromJDI(value, myClassFQName, threadReference);
   }
 
   @Override

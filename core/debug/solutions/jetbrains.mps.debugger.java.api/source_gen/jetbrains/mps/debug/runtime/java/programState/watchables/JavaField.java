@@ -15,7 +15,7 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
-public class JavaField extends JavaBreakpointWatchable implements IWatchable {
+public class JavaField extends JavaWatchable implements IWatchable {
   private static Logger LOG = Logger.getLogger(ProxyForJava.class);
 
   private final Field myField;
@@ -26,7 +26,7 @@ public class JavaField extends JavaBreakpointWatchable implements IWatchable {
     super(classFqName, threadReference);
     myField = field;
     myParent = parent;
-    myCachedValue = ValueUtil.getInstance().fromJDIValue(myParent.getValue(myField), classFqName, threadReference);
+    myCachedValue = ValueUtil.getInstance().fromJDI(myParent.getValue(myField), classFqName, threadReference);
   }
 
   public Field getField() {

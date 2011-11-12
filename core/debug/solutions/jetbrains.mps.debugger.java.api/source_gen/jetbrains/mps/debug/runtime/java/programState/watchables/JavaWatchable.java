@@ -5,11 +5,11 @@ package jetbrains.mps.debug.runtime.java.programState.watchables;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import com.sun.jdi.ThreadReference;
 
-public abstract class JavaBreakpointWatchable implements IWatchable {
+public abstract class JavaWatchable implements IWatchable {
   protected String myClassFQName;
   protected ThreadReference myThreadReference;
 
-  public JavaBreakpointWatchable(String classFQName, ThreadReference threadReference) {
+  public JavaWatchable(String classFQName, ThreadReference threadReference) {
     myClassFQName = classFQName;
     myThreadReference = threadReference;
   }

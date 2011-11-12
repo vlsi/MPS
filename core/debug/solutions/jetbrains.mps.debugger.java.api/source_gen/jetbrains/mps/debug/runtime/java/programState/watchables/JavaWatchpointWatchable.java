@@ -17,7 +17,7 @@ import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;
 
-public class JavaWatchpointWatchable extends JavaBreakpointWatchable {
+public class JavaWatchpointWatchable extends JavaWatchable {
   private final Field myField;
   private final JavaValue myCurrentValue;
   private final JavaValue myNewValue;
@@ -26,15 +26,15 @@ public class JavaWatchpointWatchable extends JavaBreakpointWatchable {
   public JavaWatchpointWatchable(Field field, Value currentValue, Value newValue, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myField = field;
-    myCurrentValue = ValueUtil.getInstance().fromJDIValue(currentValue, myClassFQName, threadReference);
-    myNewValue = ValueUtil.getInstance().fromJDIValue(newValue, myClassFQName, threadReference);
+    myCurrentValue = ValueUtil.getInstance().fromJDI(currentValue, myClassFQName, threadReference);
+    myNewValue = ValueUtil.getInstance().fromJDI(newValue, myClassFQName, threadReference);
     myAccess = false;
   }
 
   public JavaWatchpointWatchable(Field field, Value currentValue, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myField = field;
-    myCurrentValue = ValueUtil.getInstance().fromJDIValue(currentValue, myClassFQName, threadReference);
+    myCurrentValue = ValueUtil.getInstance().fromJDI(currentValue, myClassFQName, threadReference);
     myNewValue = null;
     myAccess = true;
   }
@@ -51,7 +51,7 @@ public class JavaWatchpointWatchable extends JavaBreakpointWatchable {
 
   @Override
   public IValue getValue() {
-    return new JavaWatchpointWatchable.FieldWatchpointValue();
+    return new JavaWatchpointWatchable.FieldWatchpointValue(myField, myAccess, myCurrentValue, myNewValue, myClassFQName, myThreadReference);
   }
 
   @Override
@@ -64,8 +64,18 @@ public class JavaWatchpointWatchable extends JavaBreakpointWatchable {
     return null;
   }
 
-  private class FieldWatchpointValue implements IValue {
-    private FieldWatchpointValue() {
+  public static class FieldWatchpointValue extends JavaValue implements IValue {
+    private final Field myField;
+    private final JavaValue myCurrentValue;
+    private final JavaValue myNewValue;
+    private final boolean myAccess;
+
+    private FieldWatchpointValue(Field field, boolean access, JavaValue currentValue, JavaValue newValue, String classFqName, ThreadReference threadReference) {
+      super(currentValue.getValue(), classFqName, threadReference);
+      myField = field;
+      myCurrentValue = currentValue;
+      myNewValue = newValue;
+      myAccess = access;
     }
 
     @Override

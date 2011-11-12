@@ -12,7 +12,7 @@ import javax.swing.Icon;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 import jetbrains.mps.smodel.SNode;
 
-public class JavaExceptionWatchable extends JavaBreakpointWatchable {
+public class JavaExceptionWatchable extends JavaWatchable {
   private final ObjectReference myException;
 
   public JavaExceptionWatchable(ObjectReference exception, String classFQName, ThreadReference threadReference) {
@@ -32,7 +32,7 @@ public class JavaExceptionWatchable extends JavaBreakpointWatchable {
 
   @Override
   public IValue getValue() {
-    return ValueUtil.getInstance().fromJDIValue(myException, myClassFQName, myThreadReference);
+    return ValueUtil.getInstance().fromJDI(myException, myClassFQName, myThreadReference);
   }
 
   @Override
