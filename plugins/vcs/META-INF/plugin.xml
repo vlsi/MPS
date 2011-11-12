@@ -91,9 +91,6 @@
       <action id="ShowInFileView" class="jetbrains.mps.vcs.actions.ShowInFileView"
               text="Show In File System View"/>
       <separator/>
-      <action id="GenerateFilesFromChangeListAction"
-              class="jetbrains.mps.vcs.actions.GenerateFilesFromChangeListAction"
-              text="Generate Files"/>
       <action id="GenerateTextFromChangeListAction"
               class="jetbrains.mps.vcs.actions.GenerateTextFromChangeListAction"
               text="Generate Text"/>

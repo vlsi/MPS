@@ -144,16 +144,19 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.MakeFromChangesView_ActionGroup" file="MakeFromChangesView_ActionGroup.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.MakeModelsFromChangeList_Action" file="MakeModelsFromChangeList_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action" file="MakeOrRebuildModelsFromChangeList_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
@@ -364,7 +367,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.plugin.InstalVcsAddons_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.InstallVcsAddons_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.MakeFromChangesView_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.plugin.MakeModelsFromChangeList_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ModuleVcsActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.RollbackChanges_Action" />

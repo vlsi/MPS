@@ -29,7 +29,6 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GoToPreviousChange_Action());
     addAction(new IgnoreModuleInVcs_Action());
     addAction(new InstalVcsAddons_Action());
-    addAction(new MakeModelsFromChangeList_Action());
     addAction(new ReRunMergeFromBackup_Action());
     addAction(new RollbackChanges_Action());
     addAction(new ShowDifferencesWithModelOnDisk_Action());

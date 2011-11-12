@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.extensions.PluginId;
 
 public class MakeFromChangesView_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(MakeFromChangesView_ActionGroup.class);
@@ -15,7 +16,8 @@ public class MakeFromChangesView_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       MakeFromChangesView_ActionGroup.this.addSeparator();
-      MakeFromChangesView_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.MakeModelsFromChangeList_Action");
+      MakeFromChangesView_ActionGroup.this.addParameterizedAction(new MakeOrRebuildModelsFromChangeList_Action(false), PluginId.getId("jetbrains.mps.vcs"), false);
+      MakeFromChangesView_ActionGroup.this.addParameterizedAction(new MakeOrRebuildModelsFromChangeList_Action(true), PluginId.getId("jetbrains.mps.vcs"), true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

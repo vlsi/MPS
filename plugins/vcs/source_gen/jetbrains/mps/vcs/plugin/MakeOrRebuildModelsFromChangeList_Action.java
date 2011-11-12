@@ -20,12 +20,15 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 
-public class MakeModelsFromChangeList_Action extends GeneratedAction {
+public class MakeOrRebuildModelsFromChangeList_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(MakeModelsFromChangeList_Action.class);
+  protected static Log log = LogFactory.getLog(MakeOrRebuildModelsFromChangeList_Action.class);
 
-  public MakeModelsFromChangeList_Action() {
+  private boolean rebuild;
+
+  public MakeOrRebuildModelsFromChangeList_Action(boolean rebuild_par) {
     super("Make Models", "", ICON);
+    this.rebuild = rebuild_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -35,7 +38,7 @@ public class MakeModelsFromChangeList_Action extends GeneratedAction {
     if (!(VcsActionsUtil.isMakePluginInstalled()) || IMakeService.INSTANCE.get().isSessionActive() || ListSequence.fromList(models).isEmpty()) {
       return false;
     }
-    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ListSequence.fromList(models).first(), null, null).actionText(false);
+    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ListSequence.fromList(models).first(), null, null).actionText(MakeOrRebuildModelsFromChangeList_Action.this.rebuild);
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -51,7 +54,7 @@ public class MakeModelsFromChangeList_Action extends GeneratedAction {
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MakeModelsFromChangeList", t);
+        log.error("User's action doUpdate method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);
       }
       this.disable(event.getPresentation());
     }
@@ -66,17 +69,30 @@ public class MakeModelsFromChangeList_Action extends GeneratedAction {
       return false;
     }
     MapSequence.fromMap(_params).put("virtualFiles", event.getData(MPSDataKeys.VIRTUAL_FILE_ARRAY));
+    if (MapSequence.fromMap(_params).get("virtualFiles") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModelDescriptor> models = VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles")));
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ListSequence.fromList(models).first(), null, null), false).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ListSequence.fromList(models).first(), null, null), MakeOrRebuildModelsFromChangeList_Action.this.rebuild).executeAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MakeModelsFromChangeList", t);
+        log.error("User's action execute method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);
       }
     }
+  }
+
+  @NotNull
+  public String getActionId() {
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
+    res.append("#");
+    res.append(((Object) this.rebuild).toString());
+    res.append("!");
+    return res.toString();
   }
 }
