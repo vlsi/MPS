@@ -81,119 +81,38 @@
     <content url="file://$MODULE_DIR$/../../core/dependencies/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/dependencies/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/actions/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/actions/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/behavior/languages/behavior/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/behavior/languages/behavior/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/constraints/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/constraints/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/dataFlow/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/dataFlow/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/editor/languages/editorTest/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/editor/languages/editorTest/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/editor/languages/table/runtime/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/editor/languages/table/runtime/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/editor/languages/table/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/editor/languages/table/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/editor/languages/tableTests/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/editor/languages/tableTests/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/editor/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/editor/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/findUsages/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/findUsages/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/intentions/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/intentions/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/make/languages/facet/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/make/languages/facet/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/make/languages/outlook/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/make/languages/outlook/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/make/languages/script/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/make/languages/script/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/make/solutions/jetbrains.mps.make.sandbox/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/make/solutions/jetbrains.mps.make.sandbox/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/make/solutions/jetbrains.mps.make.tests/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/make/solutions/jetbrains.mps.make.tests/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/pattern/languages/testLang/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/pattern/languages/testLang/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/pattern/solutions/test/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/pattern/solutions/test/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/pattern/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/pattern/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/plugin/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/plugin/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/project/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/project/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/quotation/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/quotation/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/refactoring/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/refactoring/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/script/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/script/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/sharedConcepts/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/sharedConcepts/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/smodel/languages/smodelTests/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/smodel/languages/smodelTests/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/smodel/solutions/samples/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/smodel/solutions/samples/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/smodel/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/smodel/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/structure/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/structure/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/stubs/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/stubs/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/test/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/test/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/test/tests">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/test/tests" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/textGen/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/textGen/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/traceable/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/traceable/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/typesystem/languages/test/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/typesystem/languages/test/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/languageDesign/typesystem/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/languageDesign/typesystem/source_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../languages/core/core/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/core/core/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/actions/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/actions/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/behavior/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/behavior/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/constraints/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/constraints/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/dataFlow/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/dataFlow/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/editor/languages/editorTest/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/languages/editorTest/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/editor/languages/table/runtime/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/languages/table/runtime/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/editor/languages/table/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/languages/table/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/editor/languages/tableTests/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/languages/tableTests/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/editor/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/findUsages/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/findUsages/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/descriptor/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/descriptor/source_gen" isTestSource="false" />
@@ -224,6 +143,87 @@
     </content>
     <content url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/sandbox/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/sandbox/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/outlook/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/outlook/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/script/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/script/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/make/solutions/jetbrains.mps.make.sandbox/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/solutions/jetbrains.mps.make.sandbox/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/make/solutions/jetbrains.mps.make.tests/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/solutions/jetbrains.mps.make.tests/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/languages/testLang/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/languages/testLang/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/solutions/test/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/solutions/test/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/plugin/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/plugin/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/project/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/project/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/quotation/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/quotation/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/refactoring/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/refactoring/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/script/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/languages/smodelTests/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/languages/smodelTests/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/samples/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/samples/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/structure/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/structure/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/stubs/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/stubs/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/test/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/test/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/test/tests">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/test/tests" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/textGen/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/textGen/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/traceable/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceable/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/languages/test/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/languages/test/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../languages/util/bash/languages/bash/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/bash/languages/bash/source_gen" isTestSource="false" />
