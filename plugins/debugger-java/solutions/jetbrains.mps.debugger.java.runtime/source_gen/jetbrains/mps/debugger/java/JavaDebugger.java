@@ -14,7 +14,7 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorBuilderImpl;
 import jetbrains.mps.debugger.java.runtime.proxies.ValueUtilImpl;
 import jetbrains.mps.debugger.java.runtime.evaluation.proxies.MirrorUtilImpl;
-import jetbrains.mps.debug.evaluation.EvaluationUtilsImpl;
+import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationUtilsImpl;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
