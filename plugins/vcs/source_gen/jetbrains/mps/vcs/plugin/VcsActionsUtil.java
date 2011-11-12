@@ -38,11 +38,21 @@ import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelRepository;
+import java.util.ArrayList;
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
+import com.intellij.ide.plugins.PluginManager;
+import com.intellij.openapi.extensions.PluginId;
+import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
 
-public class VcsActionsHelper {
-  protected static Log log = LogFactory.getLog(VcsActionsHelper.class);
+public class VcsActionsUtil {
+  protected static Log log = LogFactory.getLog(VcsActionsUtil.class);
 
-  public VcsActionsHelper() {
+  private VcsActionsUtil() {
   }
 
   public static void showRootDifference(Frame frame, IOperationContext context, final SModel model, final SNode node, final Project project) {
@@ -80,8 +90,8 @@ public class VcsActionsHelper {
               private int __CP__ = 0;
               private VirtualFile _5_child;
               private Iterator<VirtualFile> _5_child_it;
-              private VirtualFile _8__yield_deu5rm_a0b0a0a0b;
-              private Iterator<VirtualFile> _8__yield_deu5rm_a0b0a0a0b_it;
+              private VirtualFile _8__yield_brpb5o_a0b0a0a0b;
+              private Iterator<VirtualFile> _8__yield_brpb5o_a0b0a0a0b_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -102,13 +112,13 @@ __switch__:
                       this.__CP__ = 7;
                       break;
                     case 8:
-                      this._8__yield_deu5rm_a0b0a0a0b_it = Sequence.fromIterable(collectUnversionedFiles(fileStatusProvider, _5_child)).iterator();
+                      this._8__yield_brpb5o_a0b0a0a0b_it = Sequence.fromIterable(collectUnversionedFiles(fileStatusProvider, _5_child)).iterator();
                     case 9:
-                      if (!(this._8__yield_deu5rm_a0b0a0a0b_it.hasNext())) {
+                      if (!(this._8__yield_brpb5o_a0b0a0a0b_it.hasNext())) {
                         this.__CP__ = 6;
                         break;
                       }
-                      this._8__yield_deu5rm_a0b0a0a0b = this._8__yield_deu5rm_a0b0a0a0b_it.next();
+                      this._8__yield_brpb5o_a0b0a0a0b = this._8__yield_brpb5o_a0b0a0a0b_it.next();
                       this.__CP__ = 10;
                       break;
                     case 2:
@@ -124,7 +134,7 @@ __switch__:
                       return true;
                     case 11:
                       this.__CP__ = 9;
-                      this.yield(_8__yield_deu5rm_a0b0a0a0b);
+                      this.yield(_8__yield_brpb5o_a0b0a0a0b);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -167,5 +177,30 @@ __switch__:
         return getUnversionedFilesForModule(project, m);
       }
     }).toListSequence();
+  }
+
+  public static List<SModelDescriptor> getModels(@Nullable VirtualFile[] virtualFiles) {
+    if (virtualFiles != null) {
+      return Sequence.fromIterable(Sequence.fromArray(virtualFiles)).where(new IWhereFilter<VirtualFile>() {
+        public boolean accept(VirtualFile vf) {
+          return vf.isInLocalFileSystem() && vf.exists() && !(vf.isDirectory());
+        }
+      }).select(new ISelector<VirtualFile, SModelDescriptor>() {
+        public SModelDescriptor select(VirtualFile vf) {
+          return ((SModelDescriptor) SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(vf)));
+        }
+      }).where(new IWhereFilter<SModelDescriptor>() {
+        public boolean accept(SModelDescriptor m) {
+          return m != null;
+        }
+      }).toListSequence();
+    } else {
+      return ListSequence.fromList(new ArrayList<SModelDescriptor>());
+    }
+  }
+
+  public static boolean isMakePluginInstalled() {
+    IdeaPluginDescriptor p = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.ide.make"));
+    return p instanceof IdeaPluginDescriptorImpl && ((IdeaPluginDescriptorImpl) p).isEnabled();
   }
 }
