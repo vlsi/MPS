@@ -31,12 +31,12 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -132,11 +132,11 @@ public class MergeRootsDialog extends BaseDialog {
     myResultEditor.unhighlightAllChanges();
     myRepositoryEditor.unhighlightAllChanges();
 
-    if (myResultEditor.getMainEditor().getEditedNode() == null) {
+    if (myResultEditor.getEditedNode() == null) {
       SModel resultModel = myMergeContext.getResultModel();
-      SNode node = getRootNode(resultModel);
-      if (node != null) {
-        myResultEditor.getMainEditor().editNode(node, DiffTemporaryModule.getOperationContext(myModelsDialog.getProject(), resultModel));
+      SNodeId nodeId = getRootNodeId(resultModel);
+      if (nodeId != null) {
+        myResultEditor.editRoot(myModelsDialog.getProject(), nodeId, resultModel);
       }
     }
 
@@ -202,22 +202,19 @@ public class MergeRootsDialog extends BaseDialog {
     ), changeGroupBuilder, inspector);
   }
 
-  private SNode getRootNode(SModel model) {
+  private SNodeId getRootNodeId(SModel model) {
     SNode node = model.getNodeById(myRootId);
     if (node != null && node.getParent() == null) {
-      return node;
+      return myRootId;
     }
     if (model == myMergeContext.getResultModel()) {
-      SNodeId replacement = myMergeContext.getReplacementId(myRootId);
-      if (replacement != null) {
-        return model.getNodeById(replacement);
-      }
+      return myMergeContext.getReplacementId(myRootId);
     }
     return null;
   }
 
   private DiffEditor addEditor(int index, SModel model) {
-    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myModelsDialog.getProject(), model), getRootNode(model), myModelsDialog.getContentTitles()[index], index == 0);
+    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myModelsDialog.getProject(), model), model.getNodeById(getRootNodeId(model)), myModelsDialog.getContentTitles()[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :

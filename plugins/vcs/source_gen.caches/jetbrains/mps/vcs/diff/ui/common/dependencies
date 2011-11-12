@@ -182,6 +182,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.tooltips.TooltipComponent" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffEditor" file="DiffEditor.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -204,9 +205,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
   </dependency>
