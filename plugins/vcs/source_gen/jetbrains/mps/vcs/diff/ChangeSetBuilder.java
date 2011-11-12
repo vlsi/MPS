@@ -46,13 +46,13 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 public class ChangeSetBuilder {
   private SModel myOldModel;
   private SModel myNewModel;
-  private ChangeSet myChangeSet;
+  private ChangeSetImpl myChangeSet;
 
   private ChangeSetBuilder(SModel oldModel, SModel newModel) {
-    this(new ChangeSet(oldModel, newModel));
+    this(new ChangeSetImpl(oldModel, newModel));
   }
 
-  private ChangeSetBuilder(ChangeSet changeSet) {
+  private ChangeSetBuilder(ChangeSetImpl changeSet) {
     myOldModel = changeSet.getOldModel();
     myNewModel = changeSet.getNewModel();
     myChangeSet = changeSet;
@@ -301,9 +301,10 @@ public class ChangeSetBuilder {
   }
 
   public static void rebuildChangeSet(ChangeSet changeSet) {
-    ListSequence.fromList(changeSet.getModelChanges()).clear();
-    changeSet.clearOppositeChangeSet();
-    new ChangeSetBuilder(changeSet).buildChanges(true);
+    ChangeSetImpl impl = ((ChangeSetImpl) changeSet);
+    impl.clear();
+    impl.clearOppositeChangeSet();
+    new ChangeSetBuilder(impl).buildChanges(true);
   }
 
   private static SNodeId check_nbyrtw_a0a2a4a1(SReference checkedDotOperand) {
