@@ -17,6 +17,7 @@ package jetbrains.mps.util;
 
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.List;
 import java.util.jar.JarOutputStream;
@@ -29,7 +30,8 @@ import java.util.zip.ZipOutputStream;
  */
 public class FileUtil {
   private static final String[] IGNORED_DIRS = new String[]{".svn", ".git", "_svn"};
-  public static final String DEFAULT_CHARSET = "UTF-8";
+  public static final String DEFAULT_CHARSET_NAME = "UTF-8";
+  public static final Charset DEFAULT_CHARSET = Charset.forName(DEFAULT_CHARSET_NAME);
 
   public static File createTmpDir() {
     File tmp = getTempDir();
@@ -266,7 +268,7 @@ public class FileUtil {
   public static void write(File file, String content) {
     PrintWriter writer = null;
     try {
-      writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(file), "utf-8"));
+      writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(file), FileUtil.DEFAULT_CHARSET));
       writer.print(content);
       writer.flush();
     } catch (IOException e) {

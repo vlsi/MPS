@@ -9,6 +9,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -64,7 +65,7 @@ public class TextPreviewFile extends StubVirtualFile {
 
   @Override
   public Charset getCharset() {
-    return Charset.forName("utf-8");
+    return FileUtil.DEFAULT_CHARSET;
   }
 
   @NotNull

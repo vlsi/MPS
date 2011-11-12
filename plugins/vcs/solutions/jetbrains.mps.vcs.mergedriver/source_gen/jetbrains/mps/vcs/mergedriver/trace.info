@@ -110,8 +110,8 @@
     <nodeInfo nodeId="1016968294606558811" fileName="FileType.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1016968294606560157" fileName="FileType.java" startLine="48" startPosition="0" endLine="49" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1016968294606554320" fileName="FileType.java" startLine="49" startPosition="31" endLine="50" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1016968294606558838" fileName="FileType.java" startLine="51" startPosition="9" endLine="52" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1016968294606640020" fileName="FileType.java" startLine="52" startPosition="73" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1016968294606558838" fileName="FileType.java" startLine="51" startPosition="9" endLine="52" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1016968294606640020" fileName="FileType.java" startLine="52" startPosition="90" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1016968294606640044" fileName="FileType.java" startLine="54" startPosition="23" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1016968294606639862" fileName="FileType.java" startLine="56" startPosition="7" endLine="57" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1323335415618936247" fileName="FileType.java" startLine="59" startPosition="43" endLine="60" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -403,125 +403,110 @@
     <unitInfo nodeId="551373697086506846" fileName="InternalRuntimePacker.java" startLine="31" startPosition="109" endLine="35" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.InternalRuntimePacker$1" />
   </root>
   <root nodeId="4398460844209836155">
-    <nodeInfo nodeId="3562544874609615768" fileName="SimpleMerger.java" startLine="18" startPosition="59" endLine="19" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINE_SEPARATOR" />
-    <nodeInfo nodeId="1472882144720023794" fileName="SimpleMerger.java" startLine="19" startPosition="89" endLine="20" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UTF_PANIC_MESSAGE" />
-    <nodeInfo nodeId="4398460844209836453" fileName="SimpleMerger.java" startLine="25" startPosition="76" endLine="26" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4398460844209836460" fileName="SimpleMerger.java" startLine="26" startPosition="34" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4398460844209836470" fileName="SimpleMerger.java" startLine="27" startPosition="35" endLine="28" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3562544874609320812" fileName="SimpleMerger.java" startLine="28" startPosition="36" endLine="29" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4398460844209836479" fileName="SimpleMerger.java" startLine="30" startPosition="9" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4398460844209836482" fileName="SimpleMerger.java" startLine="31" startPosition="45" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4398460844209836485" fileName="SimpleMerger.java" startLine="32" startPosition="47" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609320795" fileName="SimpleMerger.java" startLine="33" startPosition="49" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1472882144720022872" fileName="SimpleMerger.java" startLine="34" startPosition="0" endLine="35" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3562544874609320797" fileName="SimpleMerger.java" startLine="35" startPosition="49" endLine="36" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1472882144720022879" fileName="SimpleMerger.java" startLine="36" startPosition="51" endLine="37" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3562544874609367429" fileName="SimpleMerger.java" startLine="37" startPosition="53" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609320807" fileName="SimpleMerger.java" startLine="38" startPosition="38" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3562544874609320817" fileName="SimpleMerger.java" startLine="39" startPosition="0" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1357719210625717101" fileName="SimpleMerger.java" startLine="40" startPosition="39" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1472882144720022924" fileName="SimpleMerger.java" startLine="41" startPosition="0" endLine="42" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1472882144720023823" fileName="SimpleMerger.java" startLine="42" startPosition="57" endLine="43" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1472882144720023828" fileName="SimpleMerger.java" startLine="43" startPosition="59" endLine="44" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1472882144720022922" fileName="SimpleMerger.java" startLine="44" startPosition="61" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4135266987569896710" fileName="SimpleMerger.java" startLine="46" startPosition="47" endLine="47" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4135266987569896721" fileName="SimpleMerger.java" startLine="47" startPosition="33" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4135266987569896727" fileName="SimpleMerger.java" startLine="50" startPosition="88" endLine="51" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4135266987569896732" fileName="SimpleMerger.java" startLine="51" startPosition="32" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="798802527642127142" fileName="SimpleMerger.java" startLine="53" startPosition="7" endLine="54" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1357719210625717103" fileName="SimpleMerger.java" startLine="54" startPosition="85" endLine="55" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609367354" fileName="SimpleMerger.java" startLine="55" startPosition="45" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3562544874609367364" fileName="SimpleMerger.java" startLine="56" startPosition="0" endLine="57" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609615812" fileName="SimpleMerger.java" startLine="57" startPosition="33" endLine="58" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609615811" fileName="SimpleMerger.java" startLine="58" startPosition="32" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3562544874609367369" fileName="SimpleMerger.java" startLine="59" startPosition="0" endLine="60" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3562544874609367371" fileName="SimpleMerger.java" startLine="60" startPosition="17" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609367378" fileName="SimpleMerger.java" startLine="61" startPosition="30" endLine="62" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609615788" fileName="SimpleMerger.java" startLine="62" startPosition="29" endLine="63" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609615810" fileName="SimpleMerger.java" startLine="63" startPosition="32" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3562544874609367383" fileName="SimpleMerger.java" startLine="64" startPosition="0" endLine="65" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3562544874609367385" fileName="SimpleMerger.java" startLine="65" startPosition="14" endLine="66" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609367392" fileName="SimpleMerger.java" startLine="66" startPosition="29" endLine="67" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609615797" fileName="SimpleMerger.java" startLine="67" startPosition="29" endLine="68" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609615796" fileName="SimpleMerger.java" startLine="68" startPosition="32" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3562544874609367397" fileName="SimpleMerger.java" startLine="69" startPosition="0" endLine="70" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3562544874609367399" fileName="SimpleMerger.java" startLine="70" startPosition="15" endLine="71" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609367406" fileName="SimpleMerger.java" startLine="71" startPosition="31" endLine="72" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609615804" fileName="SimpleMerger.java" startLine="72" startPosition="31" endLine="73" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609615803" fileName="SimpleMerger.java" startLine="73" startPosition="32" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3562544874609367448" fileName="SimpleMerger.java" startLine="74" startPosition="0" endLine="75" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5985671663020905403" fileName="SimpleMerger.java" startLine="76" startPosition="29" endLine="77" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609367444" fileName="SimpleMerger.java" startLine="77" startPosition="26" endLine="78" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3562544874609320774" fileName="SimpleMerger.java" startLine="79" startPosition="15" endLine="80" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609320786" fileName="SimpleMerger.java" startLine="80" startPosition="37" endLine="81" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609320789" fileName="SimpleMerger.java" startLine="81" startPosition="38" endLine="82" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3562544874609367359" fileName="SimpleMerger.java" startLine="82" startPosition="39" endLine="83" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1472882144720023811" fileName="SimpleMerger.java" startLine="88" startPosition="9" endLine="89" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1472882144720023785" fileName="SimpleMerger.java" startLine="90" startPosition="46" endLine="91" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1357719210625713445" fileName="SimpleMerger.java" startLine="96" startPosition="9" endLine="97" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1357719210625715278" fileName="SimpleMerger.java" startLine="97" startPosition="63" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1357719210625715252" fileName="SimpleMerger.java" startLine="98" startPosition="0" endLine="99" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1357719210625715283" fileName="SimpleMerger.java" startLine="99" startPosition="86" endLine="100" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1357719210625716907" fileName="SimpleMerger.java" startLine="101" startPosition="27" endLine="102" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="798802527642133750" fileName="SimpleMerger.java" startLine="102" startPosition="32" endLine="103" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1357719210625717048" fileName="SimpleMerger.java" startLine="104" startPosition="122" endLine="105" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1357719210625717074" fileName="SimpleMerger.java" startLine="106" startPosition="30" endLine="107" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1357719210625717092" fileName="SimpleMerger.java" startLine="107" startPosition="112" endLine="108" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1357719210625713271" fileName="SimpleMerger.java" startLine="112" startPosition="46" endLine="113" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1357719210625715228" fileName="SimpleMerger.java" startLine="114" startPosition="5" endLine="115" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4398460844209836157" fileName="SimpleMerger.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleMerger#()V" />
-    <nodeInfo nodeId="1472882144720022891" fileName="SimpleMerger.java" startLine="45" startPosition="0" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4135266987569896725" fileName="SimpleMerger.java" startLine="49" startPosition="7" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1357719210625717028" fileName="SimpleMerger.java" startLine="105" startPosition="61" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1472882144720023149" fileName="SimpleMerger.java" startLine="87" startPosition="55" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1357719210625717010" fileName="SimpleMerger.java" startLine="103" startPosition="69" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1472882144720023112" fileName="SimpleMerger.java" startLine="86" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="contentAsString#([B)Ljava/lang/String;" />
-    <nodeInfo nodeId="1357719210625716827" fileName="SimpleMerger.java" startLine="100" startPosition="154" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1357719210625713264" fileName="SimpleMerger.java" startLine="95" startPosition="58" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1357719210625712550" fileName="SimpleMerger.java" startLine="94" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="extractHeader#([B)[B" />
-    <nodeInfo nodeId="3562544874609320772" fileName="SimpleMerger.java" startLine="29" startPosition="28" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4398460844209836245" fileName="SimpleMerger.java" startLine="24" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeFiles#(Ljava/io/File;Ljava/io/File;Ljava/io/File;)I" />
-    <scopeInfo nodeId="4398460844209836160" fileName="SimpleMerger.java" startLine="22" startPosition="30" endLine="22" endPosition="30" />
-    <scopeInfo nodeId="1472882144720023150" fileName="SimpleMerger.java" startLine="88" startPosition="9" endLine="89" endPosition="62" />
-    <scopeInfo nodeId="1472882144720023151" fileName="SimpleMerger.java" startLine="90" startPosition="0" endLine="91" endPosition="50">
-      <varInfo nodeId="1472882144720023152" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1472882144720023154" fileName="SimpleMerger.java" startLine="90" startPosition="46" endLine="91" endPosition="50" />
-    <scopeInfo nodeId="1357719210625713266" fileName="SimpleMerger.java" startLine="112" startPosition="0" endLine="113" endPosition="50">
-      <varInfo nodeId="1357719210625713267" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1357719210625713269" fileName="SimpleMerger.java" startLine="112" startPosition="46" endLine="113" endPosition="50" />
-    <scopeInfo nodeId="4398460844209836157" fileName="SimpleMerger.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="1472882144720022892" fileName="SimpleMerger.java" startLine="46" startPosition="47" endLine="48" endPosition="22" />
-    <scopeInfo nodeId="4135266987569896726" fileName="SimpleMerger.java" startLine="50" startPosition="88" endLine="52" endPosition="22" />
-    <scopeInfo nodeId="3562544874609320765" fileName="SimpleMerger.java" startLine="76" startPosition="0" endLine="78" endPosition="25">
+    <nodeInfo nodeId="3562544874609615768" fileName="SimpleMerger.java" startLine="17" startPosition="59" endLine="18" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINE_SEPARATOR" />
+    <nodeInfo nodeId="4398460844209836453" fileName="SimpleMerger.java" startLine="23" startPosition="76" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4398460844209836460" fileName="SimpleMerger.java" startLine="24" startPosition="34" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4398460844209836470" fileName="SimpleMerger.java" startLine="25" startPosition="35" endLine="26" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3562544874609320812" fileName="SimpleMerger.java" startLine="26" startPosition="36" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4398460844209836479" fileName="SimpleMerger.java" startLine="28" startPosition="9" endLine="29" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4398460844209836482" fileName="SimpleMerger.java" startLine="29" startPosition="45" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4398460844209836485" fileName="SimpleMerger.java" startLine="30" startPosition="47" endLine="31" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609320795" fileName="SimpleMerger.java" startLine="31" startPosition="49" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1472882144720022872" fileName="SimpleMerger.java" startLine="32" startPosition="0" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3562544874609320797" fileName="SimpleMerger.java" startLine="33" startPosition="49" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1472882144720022879" fileName="SimpleMerger.java" startLine="34" startPosition="51" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3562544874609367429" fileName="SimpleMerger.java" startLine="35" startPosition="53" endLine="36" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609320807" fileName="SimpleMerger.java" startLine="36" startPosition="38" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3562544874609320817" fileName="SimpleMerger.java" startLine="37" startPosition="0" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1357719210625717101" fileName="SimpleMerger.java" startLine="38" startPosition="39" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1472882144720022924" fileName="SimpleMerger.java" startLine="39" startPosition="0" endLine="40" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1472882144720023823" fileName="SimpleMerger.java" startLine="40" startPosition="57" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1472882144720023828" fileName="SimpleMerger.java" startLine="41" startPosition="59" endLine="42" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1472882144720022922" fileName="SimpleMerger.java" startLine="42" startPosition="61" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4135266987569896710" fileName="SimpleMerger.java" startLine="44" startPosition="47" endLine="45" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4135266987569896721" fileName="SimpleMerger.java" startLine="45" startPosition="33" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4135266987569896727" fileName="SimpleMerger.java" startLine="48" startPosition="88" endLine="49" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4135266987569896732" fileName="SimpleMerger.java" startLine="49" startPosition="32" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="798802527642127142" fileName="SimpleMerger.java" startLine="51" startPosition="7" endLine="52" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1357719210625717103" fileName="SimpleMerger.java" startLine="52" startPosition="85" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609367354" fileName="SimpleMerger.java" startLine="53" startPosition="45" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3562544874609367364" fileName="SimpleMerger.java" startLine="54" startPosition="0" endLine="55" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609615812" fileName="SimpleMerger.java" startLine="55" startPosition="33" endLine="56" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609615811" fileName="SimpleMerger.java" startLine="56" startPosition="32" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3562544874609367369" fileName="SimpleMerger.java" startLine="57" startPosition="0" endLine="58" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3562544874609367371" fileName="SimpleMerger.java" startLine="58" startPosition="17" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609367378" fileName="SimpleMerger.java" startLine="59" startPosition="30" endLine="60" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609615788" fileName="SimpleMerger.java" startLine="60" startPosition="29" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609615810" fileName="SimpleMerger.java" startLine="61" startPosition="32" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3562544874609367383" fileName="SimpleMerger.java" startLine="62" startPosition="0" endLine="63" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3562544874609367385" fileName="SimpleMerger.java" startLine="63" startPosition="14" endLine="64" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609367392" fileName="SimpleMerger.java" startLine="64" startPosition="29" endLine="65" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609615797" fileName="SimpleMerger.java" startLine="65" startPosition="29" endLine="66" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609615796" fileName="SimpleMerger.java" startLine="66" startPosition="32" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3562544874609367397" fileName="SimpleMerger.java" startLine="67" startPosition="0" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3562544874609367399" fileName="SimpleMerger.java" startLine="68" startPosition="15" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609367406" fileName="SimpleMerger.java" startLine="69" startPosition="31" endLine="70" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609615804" fileName="SimpleMerger.java" startLine="70" startPosition="31" endLine="71" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609615803" fileName="SimpleMerger.java" startLine="71" startPosition="32" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3562544874609367448" fileName="SimpleMerger.java" startLine="72" startPosition="0" endLine="73" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5985671663020905403" fileName="SimpleMerger.java" startLine="74" startPosition="29" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609367444" fileName="SimpleMerger.java" startLine="75" startPosition="26" endLine="76" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3562544874609320774" fileName="SimpleMerger.java" startLine="77" startPosition="15" endLine="78" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609320786" fileName="SimpleMerger.java" startLine="78" startPosition="37" endLine="79" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609320789" fileName="SimpleMerger.java" startLine="79" startPosition="38" endLine="80" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3562544874609367359" fileName="SimpleMerger.java" startLine="80" startPosition="39" endLine="81" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1472882144720023811" fileName="SimpleMerger.java" startLine="85" startPosition="55" endLine="86" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1357719210625713445" fileName="SimpleMerger.java" startLine="89" startPosition="58" endLine="90" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1357719210625715278" fileName="SimpleMerger.java" startLine="90" startPosition="78" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1357719210625715252" fileName="SimpleMerger.java" startLine="91" startPosition="0" endLine="92" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1357719210625715283" fileName="SimpleMerger.java" startLine="92" startPosition="84" endLine="93" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1357719210625716907" fileName="SimpleMerger.java" startLine="94" startPosition="25" endLine="95" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="798802527642133750" fileName="SimpleMerger.java" startLine="95" startPosition="30" endLine="96" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1357719210625717048" fileName="SimpleMerger.java" startLine="97" startPosition="120" endLine="98" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1357719210625717074" fileName="SimpleMerger.java" startLine="99" startPosition="28" endLine="100" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1357719210625717092" fileName="SimpleMerger.java" startLine="100" startPosition="110" endLine="101" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1357719210625715228" fileName="SimpleMerger.java" startLine="104" startPosition="5" endLine="105" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4398460844209836157" fileName="SimpleMerger.java" startLine="19" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleMerger#()V" />
+    <nodeInfo nodeId="1472882144720022891" fileName="SimpleMerger.java" startLine="43" startPosition="0" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4135266987569896725" fileName="SimpleMerger.java" startLine="47" startPosition="7" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1472882144720023112" fileName="SimpleMerger.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="contentAsString#([B)Ljava/lang/String;" />
+    <nodeInfo nodeId="1357719210625717028" fileName="SimpleMerger.java" startLine="98" startPosition="59" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1357719210625717010" fileName="SimpleMerger.java" startLine="96" startPosition="67" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1357719210625716827" fileName="SimpleMerger.java" startLine="93" startPosition="152" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1357719210625712550" fileName="SimpleMerger.java" startLine="88" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="extractHeader#([B)[B" />
+    <nodeInfo nodeId="3562544874609320772" fileName="SimpleMerger.java" startLine="27" startPosition="28" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4398460844209836245" fileName="SimpleMerger.java" startLine="22" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeFiles#(Ljava/io/File;Ljava/io/File;Ljava/io/File;)I" />
+    <scopeInfo nodeId="4398460844209836160" fileName="SimpleMerger.java" startLine="20" startPosition="30" endLine="20" endPosition="30" />
+    <scopeInfo nodeId="1472882144720023114" fileName="SimpleMerger.java" startLine="85" startPosition="55" endLine="86" endPosition="77" />
+    <scopeInfo nodeId="4398460844209836157" fileName="SimpleMerger.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="1472882144720022892" fileName="SimpleMerger.java" startLine="44" startPosition="47" endLine="46" endPosition="22" />
+    <scopeInfo nodeId="4135266987569896726" fileName="SimpleMerger.java" startLine="48" startPosition="88" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="3562544874609320765" fileName="SimpleMerger.java" startLine="74" startPosition="0" endLine="76" endPosition="25">
       <varInfo nodeId="3562544874609320766" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3562544874609320768" fileName="SimpleMerger.java" startLine="76" startPosition="29" endLine="78" endPosition="25" />
-    <scopeInfo nodeId="1357719210625717030" fileName="SimpleMerger.java" startLine="106" startPosition="30" endLine="108" endPosition="44" />
-    <scopeInfo nodeId="3562544874609320773" fileName="SimpleMerger.java" startLine="79" startPosition="15" endLine="83" endPosition="34" />
-    <scopeInfo nodeId="1472882144720023114" fileName="SimpleMerger.java" startLine="87" startPosition="55" endLine="92" endPosition="5" />
-    <scopeInfo nodeId="1357719210625717013" fileName="SimpleMerger.java" startLine="104" startPosition="122" endLine="109" endPosition="11">
-      <varInfo nodeId="1357719210625717049" varName="indexOf" />
-    </scopeInfo>
-    <scopeInfo nodeId="1357719210625717010" fileName="SimpleMerger.java" startLine="103" startPosition="69" endLine="110" endPosition="9">
-      <varInfo nodeId="1357719210625717010" varName="possibleEnd" />
-    </scopeInfo>
-    <scopeInfo nodeId="1472882144720023112" fileName="SimpleMerger.java" startLine="86" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="3562544874609320768" fileName="SimpleMerger.java" startLine="74" startPosition="29" endLine="76" endPosition="25" />
+    <scopeInfo nodeId="1357719210625717030" fileName="SimpleMerger.java" startLine="99" startPosition="28" endLine="101" endPosition="59" />
+    <scopeInfo nodeId="3562544874609320773" fileName="SimpleMerger.java" startLine="77" startPosition="15" endLine="81" endPosition="34" />
+    <scopeInfo nodeId="1472882144720023112" fileName="SimpleMerger.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="1472882144720023133" varName="bytes" />
     </scopeInfo>
-    <scopeInfo nodeId="1357719210625716828" fileName="SimpleMerger.java" startLine="101" startPosition="27" endLine="110" endPosition="9">
+    <scopeInfo nodeId="1357719210625717013" fileName="SimpleMerger.java" startLine="97" startPosition="120" endLine="102" endPosition="9">
+      <varInfo nodeId="1357719210625717049" varName="indexOf" />
+    </scopeInfo>
+    <scopeInfo nodeId="1357719210625717010" fileName="SimpleMerger.java" startLine="96" startPosition="67" endLine="103" endPosition="7">
+      <varInfo nodeId="1357719210625717010" varName="possibleEnd" />
+    </scopeInfo>
+    <scopeInfo nodeId="1357719210625716828" fileName="SimpleMerger.java" startLine="94" startPosition="25" endLine="103" endPosition="7">
       <varInfo nodeId="1357719210625716908" varName="end" />
     </scopeInfo>
-    <scopeInfo nodeId="1357719210625713265" fileName="SimpleMerger.java" startLine="96" startPosition="9" endLine="111" endPosition="7">
+    <scopeInfo nodeId="1357719210625712552" fileName="SimpleMerger.java" startLine="89" startPosition="58" endLine="105" endPosition="23">
       <varInfo nodeId="1357719210625713446" varName="header" />
       <varInfo nodeId="1357719210625715284" varName="matcher" />
     </scopeInfo>
-    <scopeInfo nodeId="1357719210625712552" fileName="SimpleMerger.java" startLine="95" startPosition="58" endLine="115" endPosition="23" />
-    <scopeInfo nodeId="1357719210625712550" fileName="SimpleMerger.java" startLine="94" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="1357719210625712550" fileName="SimpleMerger.java" startLine="88" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="1357719210625712555" varName="xmlContent" />
     </scopeInfo>
-    <scopeInfo nodeId="3562544874609320763" fileName="SimpleMerger.java" startLine="30" startPosition="9" endLine="75" endPosition="23">
+    <scopeInfo nodeId="3562544874609320763" fileName="SimpleMerger.java" startLine="28" startPosition="9" endLine="73" endPosition="23">
       <varInfo nodeId="1472882144720022925" varName="baseAsString" />
       <varInfo nodeId="1472882144720022873" varName="baseContent" />
       <varInfo nodeId="1472882144720023829" varName="latestAsString" />
@@ -529,18 +514,18 @@
       <varInfo nodeId="1472882144720023824" varName="localAsString" />
       <varInfo nodeId="3562544874609320798" varName="localContent" />
     </scopeInfo>
-    <scopeInfo nodeId="4398460844209836265" fileName="SimpleMerger.java" startLine="25" startPosition="76" endLine="84" endPosition="5">
+    <scopeInfo nodeId="4398460844209836265" fileName="SimpleMerger.java" startLine="23" startPosition="76" endLine="82" endPosition="5">
       <varInfo nodeId="4398460844209836454" varName="baseIS" />
       <varInfo nodeId="4398460844209836471" varName="latestIS" />
       <varInfo nodeId="4398460844209836461" varName="localIS" />
       <varInfo nodeId="3562544874609320813" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="4398460844209836245" fileName="SimpleMerger.java" startLine="24" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="4398460844209836245" fileName="SimpleMerger.java" startLine="22" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="4398460844209836246" varName="baseFile" />
       <varInfo nodeId="4398460844209836250" varName="latestFile" />
       <varInfo nodeId="4398460844209836248" varName="localFile" />
     </scopeInfo>
-    <unitInfo nodeId="4398460844209836155" fileName="SimpleMerger.java" startLine="18" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.SimpleMerger" />
+    <unitInfo nodeId="4398460844209836155" fileName="SimpleMerger.java" startLine="17" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.SimpleMerger" />
   </root>
   <root nodeId="4405032066816070190">
     <nodeInfo nodeId="6989360587248012883" fileName="MergeDriverInstaller.java" startLine="19" startPosition="55" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

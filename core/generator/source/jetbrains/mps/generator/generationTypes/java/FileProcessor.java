@@ -18,6 +18,7 @@ package jetbrains.mps.generator.generationTypes.java;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -113,7 +114,7 @@ class FileProcessor {
 
       OutputStreamWriter writer = null;
       try {
-        writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), "utf-8");
+        writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), FileUtil.DEFAULT_CHARSET);
         writer.write(myContent);
       } catch (IOException e) {
         LOG.error(e);
@@ -131,7 +132,7 @@ class FileProcessor {
       BufferedReader reader = null;
       StringBuilder res = new StringBuilder();
       try {
-        reader = new BufferedReader(new InputStreamReader(file.openInputStream(), "utf-8"));
+        reader = new BufferedReader(new InputStreamReader(file.openInputStream(), FileUtil.DEFAULT_CHARSET));
         String line;
         while ((line = reader.readLine()) != null) {
           res.append(line).append('\n');

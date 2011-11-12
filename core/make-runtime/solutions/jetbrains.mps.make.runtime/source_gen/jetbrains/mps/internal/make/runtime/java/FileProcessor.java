@@ -12,6 +12,7 @@ import java.util.Collection;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import java.io.OutputStreamWriter;
 import java.io.BufferedOutputStream;
+import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -105,7 +106,7 @@ import org.jdom.Document;
 
       OutputStreamWriter writer = null;
       try {
-        writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), "utf-8");
+        writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), FileUtil.DEFAULT_CHARSET);
         writer.write(myContent);
       } catch (IOException e) {
         FileProcessor.LOG.error(e);
@@ -123,7 +124,7 @@ import org.jdom.Document;
       BufferedReader reader = null;
       StringBuilder res = new StringBuilder();
       try {
-        reader = new BufferedReader(new InputStreamReader(file.openInputStream(), "utf-8"));
+        reader = new BufferedReader(new InputStreamReader(file.openInputStream(), FileUtil.DEFAULT_CHARSET));
         String line;
         while ((line = reader.readLine()) != null) {
           res.append(line).append('\n');

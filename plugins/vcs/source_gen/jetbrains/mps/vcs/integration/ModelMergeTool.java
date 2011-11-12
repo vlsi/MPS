@@ -15,6 +15,7 @@ import jetbrains.mps.vcs.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
@@ -22,7 +23,6 @@ import java.io.IOException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 import java.lang.reflect.Method;
 
@@ -53,8 +53,8 @@ public class ModelMergeTool extends MergeTool {
       final SModel newModel;
       try {
         baseModel = ModelPersistence.readModel(contents[ORIGINAL].getDocument().getText(), false);
-        mineModel = ModelPersistence.readModel(new String(contents[CURRENT].getBytes(), "UTF-8"), false);
-        newModel = ModelPersistence.readModel(new String(contents[LAST_REVISION].getBytes(), "UTF-8"), false);
+        mineModel = ModelPersistence.readModel(new String(contents[CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), false);
+        newModel = ModelPersistence.readModel(new String(contents[LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), false);
       } catch (ModelReadException e) {
         if (log.isWarnEnabled()) {
           log.warn("Couldn't read model, invoking text merge", e);

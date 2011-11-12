@@ -17,6 +17,7 @@ import difflib.DiffUtils;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.FileInputStream;
+import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -131,7 +132,7 @@ import java.util.Arrays;
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     BufferedReader in = null;
     try {
-      in = new BufferedReader(new InputStreamReader(new FileInputStream(f), "utf-8"));
+      in = new BufferedReader(new InputStreamReader(new FileInputStream(f), FileUtil.DEFAULT_CHARSET));
       String line;
       while ((line = in.readLine()) != null) {
         ListSequence.fromList(result).addElement(line);
