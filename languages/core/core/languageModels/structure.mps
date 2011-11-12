@@ -69,7 +69,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5169995583184591161">
       <property name="name" nameId="1169194664001" value="Attribute" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/core/languageDesign/structure/icons/annotationLink.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/languages/languageDesign/structure/icons/annotationLink.png" />
       <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
     </node>

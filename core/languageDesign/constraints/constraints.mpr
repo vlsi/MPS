@@ -41,9 +41,9 @@
       <solutionPath path="${project}/solutions/constraintLanguageSandbox/constraintLanguageSandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${mps_home}/core/languageDesign/actions/languageDescriptor.mpl" />
+      <languagePath path="${mps_home}/languages/languageDesign/actions/languageDescriptor.mpl" />
       <languagePath path="${project}/constraints.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/structure/languageDescriptor.mpl" />
+      <languagePath path="${mps_home}/languages/languageDesign/structure/languageDescriptor.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

@@ -6875,7 +6875,7 @@
       </node>
     </node>
     <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8513716958726547094">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/languageDesign/typesystem/icons/types.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/languages/languageDesign/typesystem/icons/types.png" />
     </node>
   </root>
   <root id="8513716958726604212">

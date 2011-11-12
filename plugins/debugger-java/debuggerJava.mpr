@@ -35,8 +35,8 @@
       <modulePath path="${mps_home}/core/generator/solutions/traceInfo/jetbrains.mps.traceInfo.test.msd" folder="trace" />
       <modulePath path="${mps_home}/core/generator/solutions/traceInfo/util/cache.msd" folder="trace" />
       <modulePath path="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="trace" />
-      <modulePath path="${mps_home}/core/languageDesign/textGen/textGen.mpl" folder="trace" />
-      <modulePath path="${mps_home}/core/languageDesign/traceable/traceable.mpl" folder="trace" />
+      <modulePath path="${mps_home}/languages/languageDesign/textGen/textGen.mpl" folder="trace" />
+      <modulePath path="${mps_home}/languages/languageDesign/traceable/traceable.mpl" folder="trace" />
       <modulePath path="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
       <modulePath path="${mps_home}/plugins/debugger-api/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" folder="api" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="usages" />

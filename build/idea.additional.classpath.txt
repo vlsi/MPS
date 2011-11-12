@@ -21,7 +21,7 @@ editor/typesystemIntegration/classes
 :workbench
 core/plugin-runtime/classes
 core/baseLanguage/runConfigurations/runtime/classes
-core/languageDesign/test/classes_gen
+languages/languageDesign/test/classes_gen
 workbench/classes
 workbench/mps-workbench/classes
 languages/util/runConfigurations/classes

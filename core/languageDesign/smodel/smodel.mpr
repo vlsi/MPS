@@ -44,10 +44,10 @@
       <modulePath path="${project}/solutions/sandbox/sandbox.msd" />
       <modulePath path="${project}/solutions/typetest/smodelLanguage_typetest.msd" />
       <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
-      <modulePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
+      <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" />
       <modulePath path="${project}/languages/smodelTests/smodelTests.mpl" />
       <modulePath path="${project}/smodel.mpl" />
-      <modulePath path="${mps_home}/core/languageDesign/structure/languageDescriptor.mpl" />
+      <modulePath path="${mps_home}/languages/languageDesign/structure/languageDescriptor.mpl" />
     </projectModules>
     <genConfs>
       <genConfModule name="smodel language" moduleRef="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
