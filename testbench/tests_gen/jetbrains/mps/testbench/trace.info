@@ -198,7 +198,9 @@
     <scopeInfo nodeId="6214179127578268850" fileName="TestMakeService.java" startLine="89" startPosition="127" endLine="98" endPosition="112">
       <varInfo nodeId="6214179127578269363" varName="scrName" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269043" fileName="TestMakeService.java" startLine="130" startPosition="85" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="6214179127578269043" fileName="TestMakeService.java" startLine="130" startPosition="85" endLine="139" endPosition="0">
+      <varInfo nodeId="6214179127578269043" varName="c" />
+    </scopeInfo>
     <scopeInfo nodeId="2857879851034056849" fileName="TestMakeService.java" startLine="191" startPosition="0" endLine="200" endPosition="0">
       <varInfo nodeId="2857879851034056850" varName="clustRes" />
       <varInfo nodeId="2857879851034056858" varName="controller" />
@@ -580,11 +582,21 @@
       <varInfo nodeId="8597743085639790337" varName="tok" />
     </scopeInfo>
     <scopeInfo nodeId="2892614774105532290" fileName="ProjectTestHelper.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="3767231643656643804" fileName="ProjectTestHelper.java" startLine="130" startPosition="115" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="3767231643656643813" fileName="ProjectTestHelper.java" startLine="134" startPosition="55" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="3730996872184513713" fileName="ProjectTestHelper.java" startLine="146" startPosition="195" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="3037398679707992881" fileName="ProjectTestHelper.java" startLine="154" startPosition="122" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="5294074698114021992" fileName="ProjectTestHelper.java" startLine="202" startPosition="75" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="3767231643656643804" fileName="ProjectTestHelper.java" startLine="130" startPosition="115" endLine="134" endPosition="0">
+      <varInfo nodeId="3767231643656643804" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3767231643656643813" fileName="ProjectTestHelper.java" startLine="134" startPosition="55" endLine="138" endPosition="0">
+      <varInfo nodeId="3767231643656643813" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3730996872184513713" fileName="ProjectTestHelper.java" startLine="146" startPosition="195" endLine="150" endPosition="0">
+      <varInfo nodeId="3730996872184513713" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3037398679707992881" fileName="ProjectTestHelper.java" startLine="154" startPosition="122" endLine="158" endPosition="0">
+      <varInfo nodeId="3037398679707992881" varName="smd" />
+    </scopeInfo>
+    <scopeInfo nodeId="5294074698114021992" fileName="ProjectTestHelper.java" startLine="202" startPosition="75" endLine="206" endPosition="0">
+      <varInfo nodeId="5294074698114021992" varName="path" />
+    </scopeInfo>
     <scopeInfo nodeId="7352662836539757550" fileName="ProjectTestHelper.java" startLine="230" startPosition="0" endLine="234" endPosition="0" />
     <scopeInfo nodeId="7352662836539757568" fileName="ProjectTestHelper.java" startLine="234" startPosition="0" endLine="238" endPosition="0" />
     <scopeInfo nodeId="3416062119153994972" fileName="ProjectTestHelper.java" startLine="281" startPosition="40" endLine="285" endPosition="86" />
@@ -618,8 +630,12 @@
       <varInfo nodeId="5031229775986953946" varName="context" />
       <varInfo nodeId="5031229775986953937" varName="scr" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153994971" fileName="ProjectTestHelper.java" startLine="280" startPosition="111" endLine="287" endPosition="0" />
-    <scopeInfo nodeId="3416062119153995013" fileName="ProjectTestHelper.java" startLine="288" startPosition="111" endLine="295" endPosition="0" />
+    <scopeInfo nodeId="3416062119153994971" fileName="ProjectTestHelper.java" startLine="280" startPosition="111" endLine="287" endPosition="0">
+      <varInfo nodeId="3416062119153994971" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3416062119153995013" fileName="ProjectTestHelper.java" startLine="288" startPosition="111" endLine="295" endPosition="0">
+      <varInfo nodeId="3416062119153995013" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="4128185861943386001" fileName="ProjectTestHelper.java" startLine="349" startPosition="27" endLine="356" endPosition="9">
       <varInfo nodeId="4128185861943386004" varName="f" />
     </scopeInfo>
