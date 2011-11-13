@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.ArrayList;
 import com.sun.jdi.Field;
 
-public class JavaStaticContext extends JavaBreakpointWatchable implements IWatchable {
+public class JavaStaticContext extends JavaWatchable implements IWatchable {
   private final ReferenceType myStaticType;
 
   public JavaStaticContext(ReferenceType staticType, String classFqName, ThreadReference threadReference) {

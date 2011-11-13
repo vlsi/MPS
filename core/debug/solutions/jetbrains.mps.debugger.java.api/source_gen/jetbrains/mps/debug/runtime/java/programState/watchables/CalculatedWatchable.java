@@ -7,21 +7,21 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import com.sun.jdi.Value;
 import org.jetbrains.annotations.NotNull;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 
-public class CalculatedWatchable extends JavaBreakpointWatchable implements IWatchable {
+public class CalculatedWatchable extends JavaWatchable implements IWatchable {
   private final JavaValue myValue;
   private final String myName;
 
   public CalculatedWatchable(String name, Value value, @NotNull String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myName = name;
-    myValue = AbstractValueUtil.getInstance().fromJDIValue(value, myClassFQName, threadReference);
+    myValue = ValueUtil.getInstance().fromJDI(value, myClassFQName, threadReference);
   }
 
   @Override

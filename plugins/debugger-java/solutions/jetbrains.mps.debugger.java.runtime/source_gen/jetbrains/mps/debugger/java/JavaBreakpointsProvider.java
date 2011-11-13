@@ -232,8 +232,8 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
     switch (breakpoint.getKind()) {
       case EXCEPTION_BREAKPOINT:
         return (breakpoint.isEnabled() ?
-          jetbrains.mps.debug.integration.ui.icons.Icons.EXCEPTION_BREAKPOINT :
-          jetbrains.mps.debug.integration.ui.icons.Icons.DISABLED_EXCEPTION_BREAKPOINT
+          jetbrains.mps.debugger.java.runtime.ui.Icons.EXCEPTION_BREAKPOINT :
+          jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_EXCEPTION_BREAKPOINT
         );
       case LINE_BREAKPOINT:
         return (breakpoint.isValid() ?
@@ -246,16 +246,16 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
       case METHOD_BREAKPOINT:
         return (breakpoint.isValid() ?
           ((breakpoint.isEnabled() ?
-            jetbrains.mps.debug.integration.ui.icons.Icons.METHOD_BREAKPOINT :
-            jetbrains.mps.debug.integration.ui.icons.Icons.DISABLED_METHOD_BREAKPOINT
+            jetbrains.mps.debugger.java.runtime.ui.Icons.METHOD_BREAKPOINT :
+            jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_METHOD_BREAKPOINT
           )) :
           Icons.INV_BREAKPOINT
         );
       case FIELD_BREAKPOINT:
         return (breakpoint.isValid() ?
           ((breakpoint.isEnabled() ?
-            jetbrains.mps.debug.integration.ui.icons.Icons.FIELD_BREAKPOINT :
-            jetbrains.mps.debug.integration.ui.icons.Icons.DISABLED_FIELD_BREAKPOINT
+            jetbrains.mps.debugger.java.runtime.ui.Icons.FIELD_BREAKPOINT :
+            jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_FIELD_BREAKPOINT
           )) :
           Icons.INV_BREAKPOINT
         );

@@ -13,7 +13,6 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.debug.evaluation.transform.Transformator;
 
 @MPSLaunch
 public class TransformationUtil_Complex_Test extends BaseTransformationTest {
@@ -2925,11 +2924,11 @@ public class TransformationUtil_Complex_Test extends BaseTransformationTest {
     }
 
     public void init() {
-      Transformator.init();
+      DebuggerInitializer.init();
     }
 
     public void dispose() {
-      Transformator.dispose();
+      DebuggerInitializer.dispose();
     }
   }
 }

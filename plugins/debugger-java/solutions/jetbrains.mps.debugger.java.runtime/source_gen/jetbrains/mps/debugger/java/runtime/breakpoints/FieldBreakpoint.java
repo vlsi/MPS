@@ -73,7 +73,7 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
       return;
     }
     try {
-      Field field = EvaluationUtils.findField((ClassType) classType, myFieldName);
+      Field field = EvaluationUtils.getInstance().findField((ClassType) classType, myFieldName);
       AccessWatchpointRequest fieldAccessRequest = requestManager.createFieldAccessRequest(this, field);
       ModificationWatchpointRequest fieldModificationRequest = requestManager.createFieldModificationRequest(this, field);
       requestManager.enableRequest(fieldAccessRequest);

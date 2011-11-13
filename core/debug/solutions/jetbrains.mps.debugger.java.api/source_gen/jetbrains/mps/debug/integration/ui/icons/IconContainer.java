@@ -8,14 +8,8 @@ import javax.swing.ImageIcon;
 public class IconContainer {
   protected static Icon ICON_a0 = new ImageIcon(IconContainer.class.getResource("db_primitive.png"));
   protected static Icon ICON_a1 = new ImageIcon(IconContainer.class.getResource("db_object.png"));
-  protected static Icon ICON_a2 = new ImageIcon(IconContainer.class.getResource("db_exception_breakpoint.png"));
-  protected static Icon ICON_a3 = new ImageIcon(IconContainer.class.getResource("db_disabled_exception_breakpoint.png"));
-  protected static Icon ICON_a4 = new ImageIcon(IconContainer.class.getResource("db_method_breakpoint.png"));
-  protected static Icon ICON_a5 = new ImageIcon(IconContainer.class.getResource("db_disabled_method_breakpoint.png"));
-  protected static Icon ICON_a6 = new ImageIcon(IconContainer.class.getResource("db_field_breakpoint.png"));
-  protected static Icon ICON_a7 = new ImageIcon(IconContainer.class.getResource("db_disabled_field_breakpoint.png"));
-  protected static Icon ICON_a8 = new ImageIcon(IconContainer.class.getResource("db_watch.png"));
-  protected static Icon ICON_a9 = new ImageIcon(IconContainer.class.getResource("db_thread_running.png"));
-  protected static Icon ICON_a01 = new ImageIcon(IconContainer.class.getResource("db_thread_suspended.png"));
-  protected static Icon ICON_a11 = new ImageIcon(IconContainer.class.getResource("db_thread_at_breakpoint.png"));
+  protected static Icon ICON_a2 = new ImageIcon(IconContainer.class.getResource("db_watch.png"));
+  protected static Icon ICON_a3 = new ImageIcon(IconContainer.class.getResource("db_thread_running.png"));
+  protected static Icon ICON_a4 = new ImageIcon(IconContainer.class.getResource("db_thread_suspended.png"));
+  protected static Icon ICON_a5 = new ImageIcon(IconContainer.class.getResource("db_thread_at_breakpoint.png"));
 }

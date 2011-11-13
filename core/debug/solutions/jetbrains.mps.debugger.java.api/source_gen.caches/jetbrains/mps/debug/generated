@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6wtn649ewy2rxj9bhdxc68govnjceo2">
+<dependencies version="2" modelHash="9xx36gr2gcr82inu4s35hltyidzqr48">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <common hash="-d30qxp0nzxudnms3674isqqv51u40uk" />
-  <source id="3432969378036017734" name="DebuggerKeys" hash="duuuoqd03y3euht9cu7tl7dg2s136bq">
+  <source id="3432969378036017734" name="DebuggerKeys" hash="aamsjsyks6dozwp7hr8yklvh5wr4j4y">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="DebuggerKeys.java" />
   </source>

@@ -1340,8 +1340,8 @@
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4089989733346843248" resolveInfo="map_CustomWatchablesContainer.MyWatchable" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4838833313499857404">
         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4838833313499857346">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5yn.~AbstractValueUtil%dgetInstance()%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dAbstractValueUtil" resolveInfo="getInstance" />
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="v5yn.~AbstractValueUtil" resolveInfo="AbstractValueUtil" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="v5yn.~ValueUtil" resolveInfo="ValueUtil" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5yn.~ValueUtil%dgetInstance()%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dValueUtil" resolveInfo="getInstance" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="4838833313499857390">
             <node role="postMapperFunction" roleId="tpf8.1225229330048" type="tpf8.MapSrcMacro_PostMapperFunction" typeId="tpf8.1225228973247" id="4838833313499857391">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4838833313499857392">
@@ -1363,7 +1363,7 @@
           </node>
         </node>
         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4838833313499857412">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5yn.~AbstractValueUtil%dfromJDIValue(com%dsun%djdi%dValue,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaValue" resolveInfo="fromJDIValue" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5yn.~ValueUtil%dfromJDIValue(com%dsun%djdi%dValue,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaValue" resolveInfo="fromJDIValue" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4838833313499857347">
             <property name="methodName" nameId="tp68.1174294288199" value="getJDIValue" />
             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4838833313499857348">
