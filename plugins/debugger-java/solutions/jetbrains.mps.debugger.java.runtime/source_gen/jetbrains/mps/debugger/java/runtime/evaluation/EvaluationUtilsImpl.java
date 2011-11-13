@@ -48,15 +48,15 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
   public EvaluationUtilsImpl() {
   }
 
-  public synchronized void dispose() {
+  public void dispose() {
     synchronized (LOCK) {
-      INSTANCE = this;
+      INSTANCE = null;
     }
   }
 
-  public synchronized void init() {
+  public void init() {
     synchronized (LOCK) {
-      INSTANCE = null;
+      INSTANCE = this;
     }
   }
 
