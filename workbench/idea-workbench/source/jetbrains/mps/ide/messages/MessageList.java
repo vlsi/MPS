@@ -682,10 +682,20 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
           myList.setSelectedIndex(current);
           myList.ensureIndexIsVisible(current);
         }
-        return new OccurenceInfo(new Navigatable.Adapter() {
+        return new OccurenceInfo(new Navigatable() {
           @Override
           public void navigate(boolean requestFocus) {
             openCurrentMessageIfPossible();
+          }
+
+          @Override
+          public boolean canNavigate() {
+            return true;
+          }
+
+          @Override
+          public boolean canNavigateToSource() {
+            return false;
           }
         }, current, myModel.getSize());
       }

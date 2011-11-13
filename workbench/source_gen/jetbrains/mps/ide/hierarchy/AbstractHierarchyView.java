@@ -202,7 +202,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
             final IOperationContext operationContext = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
             showItemInHierarchy(node, operationContext);
           }
-        });
+        }, false);
       }
     };
     return ActionUtils.groupFromActions(action);

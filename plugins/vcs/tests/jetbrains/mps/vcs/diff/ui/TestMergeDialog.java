@@ -17,7 +17,11 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.idea.IdeaTestApplication;
 import com.intellij.mock.MockProject;
+import com.intellij.mock.MockProjectEx;
+import com.intellij.openapi.Disposable;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
@@ -45,7 +49,8 @@ import java.lang.reflect.Field;
 
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();
-  private static Project ourProject = new MockProject() {
+  private static Disposable myParentDisposable = Disposer.newDisposable();
+  private static Project ourProject = new MockProjectEx(myParentDisposable) {
     @Override
     public <T> T getComponent(Class<T> interfaceClass) {
       if (interfaceClass == EditorManager.class) {
@@ -127,6 +132,7 @@ public class TestMergeDialog {
           }
         });
         dialog.dispose();
+        Disposer.dispose(myParentDisposable);
         System.exit(0);
       }
     });

@@ -26,15 +26,15 @@ public abstract class MpsPopupFactory {
   private static final FakePsiContext CONTEXT = new FakePsiContext();
 
   public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m) {
-    return ChooseByNamePopup.createPopup(p, m, nodeProvider(), CONTEXT);
+    return ChooseByNamePopup.createPopup(p, m, nodeProvider());
   }
 
   public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m, String initialText) {
-    return ChooseByNamePopup.createPopup(p, m, nodeProvider(), CONTEXT, initialText);
+    return ChooseByNamePopup.createPopup(p, m, nodeProvider(), initialText);
   }
 
   public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m) {
-    return ChooseByNamePopup.createPopup(p, m, packageProvider(), CONTEXT);
+    return ChooseByNamePopup.createPopup(p, m, packageProvider());
   }
 
   public static ChooseByNamePanel createPanelForNode(ChooseByNameModel model, boolean checkboxVisible) {

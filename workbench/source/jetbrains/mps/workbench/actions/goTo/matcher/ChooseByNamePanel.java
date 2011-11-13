@@ -21,7 +21,6 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.temp.ItemProvider;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -35,7 +34,7 @@ public class ChooseByNamePanel extends ChooseByNamePopup {
   private boolean myCheckboxVisible = false;
 
   ChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, ItemProvider provider) {
-    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, provider, null, new FakePsiContext(), "");
+    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, provider, null, "", false, 0);
     myCheckboxVisible = checkboxVisible;
   }
 

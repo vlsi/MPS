@@ -20,6 +20,7 @@ import com.intellij.ide.util.gotoByName.CustomMatcherModel;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.util.Comparing;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.psi.PsiElement;
@@ -29,7 +30,6 @@ import com.intellij.psi.util.proximity.PsiProximityComparator;
 import com.intellij.util.Function;
 import com.intellij.util.SmartList;
 import com.intellij.util.containers.ContainerUtil;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.ref.WeakReference;

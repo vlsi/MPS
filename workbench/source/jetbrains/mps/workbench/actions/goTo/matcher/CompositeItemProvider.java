@@ -43,7 +43,7 @@ public class CompositeItemProvider implements ItemProvider {
     return res;
   }
 
-  public List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra) {
+  public List<Object> filterElements(String pattern, boolean everywhere, com.intellij.openapi.util.Computable<Boolean> cancelled, int maxListSize, String extra) {
     List<Object> res = new ArrayList<Object>();
     for (ItemProvider matcher : myProviders) {
       res.addAll(matcher.filterElements(pattern, everywhere, cancelled, maxListSize, extra));
