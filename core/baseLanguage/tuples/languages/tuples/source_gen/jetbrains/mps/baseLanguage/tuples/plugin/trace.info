@@ -7,7 +7,7 @@
     <nodeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="31" startPosition="58" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="33" startPosition="28" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="36" startPosition="142" endLine="37" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="36" startPosition="154" endLine="37" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="38" startPosition="9" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="45" startPosition="55" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="51" startPosition="78" endLine="52" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -37,7 +37,7 @@
     <scopeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="21" startPosition="46" endLine="21" endPosition="46" />
     <scopeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="82" />
     <scopeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="33" startPosition="28" endLine="34" endPosition="23" />
-    <scopeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="36" startPosition="142" endLine="37" endPosition="23" />
+    <scopeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="36" startPosition="154" endLine="37" endPosition="23" />
     <scopeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="45" startPosition="55" endLine="46" endPosition="19" />
     <scopeInfo nodeId="2603491487853694400" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="51" startPosition="78" endLine="52" endPosition="68" />
     <scopeInfo nodeId="5639218245806441387" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="60" startPosition="73" endLine="61" endPosition="192" />

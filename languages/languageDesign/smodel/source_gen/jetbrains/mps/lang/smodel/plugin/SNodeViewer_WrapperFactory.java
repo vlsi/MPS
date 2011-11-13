@@ -35,7 +35,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
         if (value == null) {
           return false;
         }
-        if (!(EvaluationUtils.isInstanceOf(value.type(), "Ljetbrains/mps/smodel/SNode;", value.virtualMachine()))) {
+        if (!(EvaluationUtils.getInstance().instanceOf(value.type(), "Ljetbrains/mps/smodel/SNode;", value.virtualMachine()))) {
           return false;
         }
         return true;

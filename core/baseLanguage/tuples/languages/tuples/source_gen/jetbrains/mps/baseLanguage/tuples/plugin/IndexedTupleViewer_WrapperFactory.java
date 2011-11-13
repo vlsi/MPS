@@ -33,7 +33,7 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
         if (value == null) {
           return false;
         }
-        if (!(EvaluationUtils.isInstanceOf(value.type(), "Ljetbrains/mps/baseLanguage/tuples/runtime/MultiTuple;", value.virtualMachine()))) {
+        if (!(EvaluationUtils.getInstance().instanceOf(value.type(), "Ljetbrains/mps/baseLanguage/tuples/runtime/MultiTuple;", value.virtualMachine()))) {
           return false;
         }
         return true;

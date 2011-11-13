@@ -33,7 +33,7 @@ public class SetViewer_WrapperFactory extends ValueWrapperFactory {
         if (value == null) {
           return false;
         }
-        if (!(EvaluationUtils.isInstanceOf(value.type(), "Ljava/util/Set;", value.virtualMachine()))) {
+        if (!(EvaluationUtils.getInstance().instanceOf(value.type(), "Ljava/util/Set;", value.virtualMachine()))) {
           return false;
         }
         return true;

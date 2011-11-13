@@ -149,7 +149,7 @@
     <nodeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="26" startPosition="59" endLine="27" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="33" startPosition="58" endLine="34" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="35" startPosition="28" endLine="36" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="38" startPosition="116" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="38" startPosition="128" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="40" startPosition="9" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="47" startPosition="48" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="53" startPosition="78" endLine="54" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -202,7 +202,7 @@
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="23" startPosition="39" endLine="23" endPosition="39" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="26" startPosition="59" endLine="27" endPosition="68" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="35" startPosition="28" endLine="36" endPosition="23" />
-    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="38" startPosition="116" endLine="39" endPosition="23" />
+    <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="38" startPosition="128" endLine="39" endPosition="23" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="47" startPosition="48" endLine="48" endPosition="19" />
     <scopeInfo nodeId="2647935289680925237" fileName="SNodeViewer_WrapperFactory.java" startLine="53" startPosition="78" endLine="54" endPosition="68" />
     <scopeInfo nodeId="4322674958982425530" fileName="SNodeViewer_WrapperFactory.java" startLine="69" startPosition="257" endLine="70" endPosition="159" />

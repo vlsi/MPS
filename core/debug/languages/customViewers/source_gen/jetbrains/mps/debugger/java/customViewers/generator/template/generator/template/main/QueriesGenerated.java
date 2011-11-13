@@ -54,7 +54,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name") + "Wrapper";
   }
 
-  public static Object propertyMacro_GetPropertyValue_5493844864801812961(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6446777246631435404(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return TransformatorBuilder.getInstance().getJniSignatureFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
