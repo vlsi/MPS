@@ -2640,8 +2640,8 @@
             <property name="name" nameId="tps4.1220976068141" value="mps_home" />
           </node>
           <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="3215189890787254352">
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3215189890787254353">
-              <property name="path" nameId="tps4.1220974398640" value="core" />
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1800817768637388710">
+              <property name="path" nameId="tps4.1220974398640" value="languages" />
             </node>
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3215189890787254356">
               <property name="path" nameId="tps4.1220974398640" value="languageDesign" />
@@ -2649,7 +2649,7 @@
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3215189890787254358">
               <property name="path" nameId="tps4.1220974398640" value="test" />
             </node>
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1896512888271746912">
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="1800817768637388711">
               <property name="path" nameId="tps4.1220974398640" value="classes_gen" />
             </node>
           </node>
