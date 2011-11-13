@@ -60,7 +60,7 @@ public class ListViewer_WrapperFactory extends ValueWrapperFactory {
       PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I"));
       watchables.add(new CollectionsWatchables.MyWatchable_size(ValueUtil.getInstance().fromJDIValue(size.getJDIValue(), getThreadReference()), "size"));
 
-      for (IObjectValueProxy element : EvaluationUtils.<IObjectValueProxy>toIterable(value)) {
+      for (IObjectValueProxy element : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(value)) {
         watchables.add(new CollectionsWatchables.MyWatchable_element(ValueUtil.getInstance().fromJDIValue(element.getJDIValue(), getThreadReference()), "element"));
       }
 

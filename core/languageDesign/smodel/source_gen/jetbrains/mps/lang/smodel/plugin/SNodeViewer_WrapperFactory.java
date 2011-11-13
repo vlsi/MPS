@@ -62,11 +62,11 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
       result.add(new SNodeWatchables.MyWatchable_text(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;")).getJDIValue(), getThreadReference()), "text"));
       result.add(new SNodeWatchables.MyWatchable_id(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) value.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
       result.add(new SNodeWatchables.MyWatchable_model(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) value.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
-      result.add(new SNodeWatchables.MyWatchable_concept(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
+      result.add(new SNodeWatchables.MyWatchable_concept(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) EvaluationUtils.getInstance().invokeStaticMethod("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
 
       IArrayValueProxy properties = ((IArrayValueProxy) value.getFieldValue("myProperties"));
       if (!(ProxyEqualsUtil.javaEquals(properties, null))) {
-        for (IObjectValueProxy property : EvaluationUtils.<IObjectValueProxy>toIterable(((IObjectValueProxy) ((IObjectValueProxy) value.invokeMethod("getProperties", "()Ljava/util/Map;")).invokeMethod("entrySet", "()Ljava/util/Set;")))) {
+        for (IObjectValueProxy property : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(((IObjectValueProxy) ((IObjectValueProxy) value.invokeMethod("getProperties", "()Ljava/util/Map;")).invokeMethod("entrySet", "()Ljava/util/Set;")))) {
           result.add(new SNodeWatchables.MyWatchable_property(ValueUtil.getInstance().fromJDIValue(property.getJDIValue(), getThreadReference()), "property"));
         }
       }

@@ -61,7 +61,7 @@ public class MapViewer_WrapperFactory extends ValueWrapperFactory {
       result.add(new CollectionsWatchables.MyWatchable_size(ValueUtil.getInstance().fromJDIValue(size.getJDIValue(), getThreadReference()), "size"));
 
       IObjectValueProxy entries = ((IObjectValueProxy) value.invokeMethod("entrySet", "()Ljava/util/Set;"));
-      for (IObjectValueProxy entry : EvaluationUtils.<IObjectValueProxy>toIterable(entries)) {
+      for (IObjectValueProxy entry : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(entries)) {
         result.add(new CollectionsWatchables.MyWatchable_entry(ValueUtil.getInstance().fromJDIValue(entry.getJDIValue(), getThreadReference()), "entry"));
       }
 
