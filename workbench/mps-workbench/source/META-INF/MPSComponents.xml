@@ -33,15 +33,12 @@
     <component>
       <implementation-class>jetbrains.mps.ide.generator.TransientSwapOwnerComponent</implementation-class>
     </component>
-    <component>
-      <interface-class>com.intellij.psi.stubs.SerializationManager</interface-class>
-      <implementation-class>com.intellij.psi.stubs.SerializationManagerImpl</implementation-class>
-    </component>
   </application-components>
 
   <project-components>
     <component>
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
+      <loadForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.project.MPSProjectVersion</implementation-class>
