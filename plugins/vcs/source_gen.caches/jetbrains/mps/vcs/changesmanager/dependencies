@@ -17,6 +17,51 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager.ChangesManager" file="ChangesManager.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeList" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListListener" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManager" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.reloading.ReloadListener" />
+    <classNode dependClassName="jetbrains.mps.smodel.GlobalSModelEventsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelLoadingState" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepositoryListener" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelListener" />
+    <classNode dependClassName="jetbrains.mps.vcs.MPSVcsManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
+    <classNode extendsClassName="com.intellij.openapi.vcs.changes.ChangeListAdapter" />
+    <classNode extendsClassName="jetbrains.mps.reloading.ReloadAdapter" />
+    <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
+    <classNode extendsClassName="jetbrains.mps.smodel.SModelRepositoryAdapter" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifference" file="CurrentDifference.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.MPSTreeUtil" file="MPSTreeUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
