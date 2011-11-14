@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.ide.util;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -54,17 +52,6 @@ public class ColorAndGraphicsUtil {
   public static BasicStroke dottedStroke() {
     float[] dash = new float[]{1.0f, 3.0f};
     return new BasicStroke(1.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f, dash, 0.0f);
-  }
-
-  public static void drawWaveUnderCell(Graphics g, Color c, EditorCell cell) {
-    if (cell == null) return;
-    int x = cell.getX();
-    int y = cell.getY();
-    int height = cell.getHeight();
-    int leftInternalInset = cell.getLeftInset();
-    int effectiveWidth = cell.getEffectiveWidth();
-    g.setColor(c);
-    ColorAndGraphicsUtil.drawWave(g, x + leftInternalInset, x + leftInternalInset + effectiveWidth, y + height - ColorAndGraphicsUtil.WAVE_HEIGHT);
   }
 
   public static void drawWave(Graphics g, int xStart, int xEnd, int y) {
