@@ -26,6 +26,9 @@
   </component>
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="${mps_home}/core/baseLanguage/collections/collections.mpl" folder="java.languages.usages" />
+      <modulePath path="${mps_home}/core/baseLanguage/collections/solutions/customViewers/customViewers.msd" folder="java.languages.usages" />
+      <modulePath path="${mps_home}/core/baseLanguage/tuples/languages/tuples/tuples.mpl" folder="java.languages.usages" />
       <modulePath path="${mps_home}/core/debug-api/languages/api/api.mpl" folder="api" />
       <modulePath path="${mps_home}/core/debug-api/solutions/jetbrains.mps.debugger.api.api/api.msd" folder="api" />
       <modulePath path="${mps_home}/core/debug/languages/customViewers/customViewers.mpl" folder="java.languages" />
@@ -36,6 +39,7 @@
       <modulePath path="${mps_home}/core/generator/solutions/traceInfo/util/cache.msd" folder="trace" />
       <modulePath path="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="trace" />
       <modulePath path="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
+      <modulePath path="${mps_home}/languages/languageDesign/smodel/smodel.mpl" folder="java.languages.usages" />
       <modulePath path="${mps_home}/languages/languageDesign/textGen/textGen.mpl" folder="trace" />
       <modulePath path="${mps_home}/languages/languageDesign/traceable/traceable.mpl" folder="trace" />
       <modulePath path="${mps_home}/languages/util/ideaPlugin/plugin.mpl" folder="" />
