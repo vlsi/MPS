@@ -112,7 +112,7 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   private ChangeGroupBuilder createChangeGroupBuilder(boolean mine, boolean inspector) {
-    return new ChangeGroupBuilder(myMergeContext, (mine ?
+    return new ChangeGroupBuilder(myConflictChecker, (mine ?
       myMergeContext.getMyChangeSet() :
       myMergeContext.getRepositoryChangeSet()
     ), (mine ?

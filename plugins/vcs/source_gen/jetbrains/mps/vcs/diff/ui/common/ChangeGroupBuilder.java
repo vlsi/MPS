@@ -7,17 +7,16 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.vcs.diff.merge.MergeContext;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Set;
 import jetbrains.mps.util.DisjointSets;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -32,12 +31,8 @@ public class ChangeGroupBuilder {
   private List<ChangeGroup> myChangeGroups = null;
   private List<ChangeGroupInvalidateListener> myInvalidateListeners = ListSequence.fromList(new ArrayList<ChangeGroupInvalidateListener>());
 
-  public ChangeGroupBuilder(@Nullable final MergeContext mergeContext, @NotNull ChangeSet changeSet, @NotNull DiffEditor leftEditor, @NotNull DiffEditor rightEditor, boolean inspector) {
-    myConflictChecker = new ChangeEditorMessage.ConflictChecker() {
-      public boolean isChangeConflicted(ModelChange ch) {
-        return Sequence.fromIterable(mergeContext.getConflictedWith(ch)).isNotEmpty();
-      }
-    };
+  public ChangeGroupBuilder(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, @NotNull ChangeSet changeSet, @NotNull DiffEditor leftEditor, @NotNull DiffEditor rightEditor, boolean inspector) {
+    myConflictChecker = conflictChecker;
     myChangeSet = changeSet;
     myLeftEditor = leftEditor;
     myRightEditor = rightEditor;

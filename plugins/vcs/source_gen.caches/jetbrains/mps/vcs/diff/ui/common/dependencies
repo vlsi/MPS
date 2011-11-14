@@ -136,7 +136,6 @@
     <classNode dependClassName="jetbrains.mps.util.DisjointSets" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContext" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
