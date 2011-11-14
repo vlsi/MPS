@@ -75,7 +75,7 @@ public class ChangesManager extends AbstractProjectComponent {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = modelDescriptor.getSModelReference();
       if (MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef)) {
-        // TODO full update 
+        MapSequence.fromMap(myCurrentDifferences).get(modelRef).getChangesTracker().scheduleFullUpdate();
         return;
       }
       CurrentDifference cd = new CurrentDifference(myProject, modelDescriptor);

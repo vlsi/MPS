@@ -4,33 +4,34 @@ package jetbrains.mps.vcs.changesmanager;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 
 public class CurrentDifference {
   protected static Log log = LogFactory.getLog(CurrentDifference.class);
 
-  private Project myProject;
   private SimpleCommandQueue myCommandQueue;
   private EditableSModelDescriptor myModelDescriptor;
+  private ChangesTracker myChangesTracker;
   private ChangeSet myChangeSet;
   private List<CurrentDifferenceListener> myListeners = ListSequence.fromList(new ArrayList<CurrentDifferenceListener>());
-  private boolean myEnabled = false;
+  private boolean myEnabled = true;
 
   public CurrentDifference(@NotNull Project project, @NotNull EditableSModelDescriptor modelDescriptor) {
-    myProject = project;
     myCommandQueue = ChangesManager.getInstance(project).getCommandQueue();
     myModelDescriptor = modelDescriptor;
+    myChangesTracker = new ChangesTracker(project, this);
   }
 
   public void dispose() {
+    myChangesTracker.dispose();
   }
 
   public void addDifferenceListener(@NotNull CurrentDifferenceListener listener) {
@@ -95,5 +96,13 @@ public class CurrentDifference {
         listener.changeUpdateFinished();
       }
     });
+  }
+
+  /*package*/ EditableSModelDescriptor getModelDescriptor() {
+    return myModelDescriptor;
+  }
+
+  /*package*/ ChangesTracker getChangesTracker() {
+    return myChangesTracker;
   }
 }
