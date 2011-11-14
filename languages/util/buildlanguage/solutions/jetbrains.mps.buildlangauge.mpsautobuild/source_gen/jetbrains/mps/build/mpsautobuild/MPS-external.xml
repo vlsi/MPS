@@ -483,6 +483,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mpslite" />
     <antcall target="MPS-languages.pack.jetbrains.mps.nanoj" />
     <antcall target="MPS-languages.pack.collections_trove.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.idea.plugin" />
     <mkdir dir="${deploy.dir}/MPS/languages/util" />
     <copy todir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp">
       <fileset dir="${mps_home}/languages/util/buildlanguage/ant/classes" includes="**/*.class, **/*.xml, " />

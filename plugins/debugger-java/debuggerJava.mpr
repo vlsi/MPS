@@ -38,6 +38,7 @@
       <modulePath path="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
       <modulePath path="${mps_home}/languages/languageDesign/textGen/textGen.mpl" folder="trace" />
       <modulePath path="${mps_home}/languages/languageDesign/traceable/traceable.mpl" folder="trace" />
+      <modulePath path="${mps_home}/languages/util/ideaPlugin/plugin.mpl" folder="" />
       <modulePath path="${mps_home}/plugins/debugger-api/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" folder="api" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="usages" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="usages" />
