@@ -35,9 +35,7 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
-import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
+import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
@@ -104,8 +102,7 @@ import java.util.List;
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent {
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   private static final boolean TRACE_ENABLED = false;
-  public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
-  public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
+  public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
   public static final Color CARET_ROW_COLOR = new Color(255, 255, 215);
 
   private static final int SCROLL_GAP = 15;
@@ -1685,9 +1682,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final DataContext dataContext = DataManager.getInstance().getDataContext(this);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        AnAction action = ActionManager.getInstance().getAction(GoByCurrentReference_Action.class.getName());
-        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
-        ActionUtils.updateAndPerformAction(action, event);
+        AnAction action = ActionManager.getInstance().getAction(MPSActions.EDITOR_GOTO_DECLARATION);
+        if(action != null) {
+          AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
+          ActionUtils.updateAndPerformAction(action, event);
+        }
       }
     });
   }

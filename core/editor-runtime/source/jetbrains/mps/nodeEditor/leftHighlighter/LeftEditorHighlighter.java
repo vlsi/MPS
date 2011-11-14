@@ -21,7 +21,7 @@ import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TIntObjectProcedure;
-import jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup;
+import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -584,7 +584,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
           mousePressedInIconsArea(e);
         }
         if (!e.isConsumed() && e.getButton() == MouseEvent.BUTTON3 && e.getID() == MouseEvent.MOUSE_PRESSED) {
-          BaseGroup actionGroup = ActionUtils.getGroup(EditorLeftPanelMenu_ActionGroup.ID);
+          BaseGroup actionGroup = ActionUtils.getGroup(MPSActions.EDITOR_LEFTPANEL_GROUP);
           if (actionGroup != null) {
             ActionPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, actionGroup);
             popupMenu.getComponent().show(e.getComponent(), e.getX(), e.getY());

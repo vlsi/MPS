@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.cellExplorer;
+package jetbrains.mps.ide.devkit.cellExplorer;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -21,28 +21,29 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.EditorCellKeyMap;
+import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.BorderLayout;
 import java.util.*;
@@ -156,7 +157,7 @@ public class CellExplorerView extends BaseProjectTool {
   }
 
   public Icon getIcon() {
-    return Icons.CELL_EXPLORER_ICON;
+    return CellIcons.CELL_EXPLORER_ICON;
   }
 
   public JComponent getComponent() {
@@ -168,13 +169,13 @@ public class CellExplorerView extends BaseProjectTool {
       if (myCurrentEditor == null) {
         return new TextTreeNode("No editor selected") {
           {
-            setIcon(Icons.CELL_EXPLORER_ICON);
+            setIcon(CellIcons.CELL_EXPLORER_ICON);
           }
         };
       } else {
         TextTreeNode root = new TextTreeNode("CELLS") {
           {
-            setIcon(Icons.CELL_EXPLORER_ICON);
+            setIcon(CellIcons.CELL_EXPLORER_ICON);
           }
         };
         root.add(new CellTreeNode(myCurrentEditor.getRootCell()));
@@ -195,19 +196,19 @@ public class CellExplorerView extends BaseProjectTool {
 
     protected void doUpdatePresentation() {
       if (myCell.isErrorState()) {
-        setIcon(Icons.CELL_ERROR_ICON);
+        setIcon(CellIcons.CELL_ERROR_ICON);
       } else if (myCell instanceof EditorCell_Collection) {
-        setIcon(Icons.CELLS_ICON);
+        setIcon(CellIcons.CELLS_ICON);
       } else if (myCell instanceof EditorCell_Constant) {
-        setIcon(Icons.CELL_CONSTANT_ICON);
+        setIcon(CellIcons.CELL_CONSTANT_ICON);
       } else if (myCell instanceof EditorCell_Error) {
-        setIcon(Icons.CELL_ERROR_ICON);
+        setIcon(CellIcons.CELL_ERROR_ICON);
       } else if (myCell instanceof EditorCell_Component) {
-        setIcon(Icons.CELL_COMPONENT_ICON);
+        setIcon(CellIcons.CELL_COMPONENT_ICON);
       } else if (myCell instanceof EditorCell_Property) {
-        setIcon(Icons.CELL_PROPERTY_ICON);
+        setIcon(CellIcons.CELL_PROPERTY_ICON);
       } else {
-        setIcon(Icons.CELL_DEFAULT_ICON);
+        setIcon(CellIcons.CELL_DEFAULT_ICON);
       }
 
       setAdditionalText("[" + myCell.getX() + ", " + myCell.getY() + ", " + myCell.getWidth() + ", " + myCell.getHeight() + "], baseLine = " + myCell.getBaseline() + ", ascent = " + myCell.getAscent() + ", descent = " + myCell.getDescent());
@@ -232,7 +233,7 @@ public class CellExplorerView extends BaseProjectTool {
           new CellPropertiesWindow(myCell, e.getData(MPSDataKeys.FRAME));
         }
       };
-      return ActionUtils.groupFromActions(selectInEditorAction,propertiesAction);
+      return ActionUtils.groupFromActions(selectInEditorAction, propertiesAction);
     }
 
     private void showCell() {
@@ -352,7 +353,7 @@ public class CellExplorerView extends BaseProjectTool {
 
         add(new TextTreeNode(text) {
           {
-            setIcon(Icons.CELL_ACTION_KEY_ICON);
+            setIcon(CellIcons.CELL_ACTION_KEY_ICON);
           }
 
           public boolean isLeaf() {
@@ -360,7 +361,7 @@ public class CellExplorerView extends BaseProjectTool {
           }
         });
 
-        setIcon(Icons.CELL_KEY_MAP_ICON);
+        setIcon(CellIcons.CELL_KEY_MAP_ICON);
         setNodeIdentifier("Keymap");
       }
     }

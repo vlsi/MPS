@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.cellExplorer;
+package jetbrains.mps.ide.devkit.cellExplorer;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cellExplorer.CellProperties;
 import jetbrains.mps.ide.icons.IconManager;
 
 import javax.swing.*;
