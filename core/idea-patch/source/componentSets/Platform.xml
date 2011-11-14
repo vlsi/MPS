@@ -157,12 +157,6 @@
     </component>
     
     <component>
-      <interface-class>com.intellij.openapi.vfs.encoding.EncodingProjectManager</interface-class>
-      <implementation-class>com.intellij.openapi.vfs.encoding.EncodingProjectManagerImpl</implementation-class>
-      <loadForDefaultProject/>
-    </component>
-
-    <component>
       <interface-class>com.intellij.ui.docking.DockManager</interface-class>
       <implementation-class>com.intellij.ui.docking.impl.DockManagerImpl</implementation-class>
     </component>
