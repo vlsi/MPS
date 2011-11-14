@@ -67,7 +67,7 @@ public class MergeButtonsPainter extends ButtonsPainter {
     public void performAction() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          myAction.invoke(getChangeGroupBuilder().getMergeContext(), getChangeGroup().getChanges());
+          myAction.invoke(myDialog.getMergeContext(), getChangeGroup().getChanges());
           myDialog.rehighlight();
         }
       });
