@@ -44,7 +44,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 
-public class MergeContext {
+public class MergeSession {
   private ChangeSet myMineChangeSet;
   private ChangeSet myRepositoryChangeSet;
   private Map<ModelChange, List<ModelChange>> myConflictingChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
@@ -55,10 +55,10 @@ public class MergeContext {
   private SModel myResultModel;
   private Set<ModelChange> myResolvedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private NodeCopier myNodeCopier;
-  private MergeContext.MyResultModelListener myModelListener = new MergeContext.MyResultModelListener();
-  private MergeContext.ChangesInvalidateHandler myChangesInvalidateHandler;
+  private MergeSession.MyResultModelListener myModelListener = new MergeSession.MyResultModelListener();
+  private MergeSession.ChangesInvalidateHandler myChangesInvalidateHandler;
 
-  public MergeContext(final SModel base, final SModel mine, final SModel repository) {
+  public MergeSession(final SModel base, final SModel mine, final SModel repository) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         MergeConflictsBuilder conflictsBuilder = new MergeConflictsBuilder(base, mine, repository);
@@ -260,12 +260,12 @@ public class MergeContext {
     return change.getChangeSet() == myMineChangeSet;
   }
 
-  public MergeContextState getCurrentState() {
-    return new MergeContextState(myResultModel, myResolvedChanges, myNodeCopier.getState());
+  public MergeSessionState getCurrentState() {
+    return new MergeSessionState(myResultModel, myResolvedChanges, myNodeCopier.getState());
   }
 
-  public void restoreState(MergeContextState state) {
-    MergeContextState stateCopy = new MergeContextState(state);
+  public void restoreState(MergeSessionState state) {
+    MergeSessionState stateCopy = new MergeSessionState(state);
     ListSequence.fromList(SModelOperations.getRoots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SNodeOperations.deleteNode(r);
@@ -283,32 +283,32 @@ public class MergeContext {
     myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel);
   }
 
-  public void setChangesInvalidateHandler(MergeContext.ChangesInvalidateHandler changesInvalidateHandler) {
+  public void setChangesInvalidateHandler(MergeSession.ChangesInvalidateHandler changesInvalidateHandler) {
     myChangesInvalidateHandler = changesInvalidateHandler;
   }
 
   private void invalidateChanges(Iterable<ModelChange> changes) {
     if (Sequence.fromIterable(changes).isNotEmpty()) {
       SetSequence.fromSet(myResolvedChanges).addSequence(Sequence.fromIterable(changes));
-      check_358wfv_a1a0a92(myChangesInvalidateHandler);
+      check_bow6nj_a1a0a92(myChangesInvalidateHandler);
     }
   }
 
-  private static void check_358wfv_a1a0a92(MergeContext.ChangesInvalidateHandler checkedDotOperand) {
+  private static void check_bow6nj_a1a0a92(MergeSession.ChangesInvalidateHandler checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.someChangesInvalidated();
     }
 
   }
 
-  private static boolean eq_358wfv_a0a0a0a0a0a0b0c1(Object a, Object b) {
+  private static boolean eq_bow6nj_a0a0a0a0a0a0b0c1(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_358wfv_a0a0a0a0a0a0b0k1(Object a, Object b) {
+  private static boolean eq_bow6nj_a0a0a0a0a0a0b0k1(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
@@ -346,7 +346,7 @@ public class MergeContext {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getSNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
-          return ch instanceof SetReferenceChange && eq_358wfv_a0a0a0a0a0a0b0c1(((SetReferenceChange) ch).getRole(), event.getReference().getRole());
+          return ch instanceof SetReferenceChange && eq_bow6nj_a0a0a0a0a0a0b0c1(((SetReferenceChange) ch).getRole(), event.getReference().getRole());
         }
       }));
       invalidateDeletedRoot(event);
@@ -456,7 +456,7 @@ public class MergeContext {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getNode().getSNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
-          return ch instanceof SetPropertyChange && eq_358wfv_a0a0a0a0a0a0b0k1(((SetPropertyChange) ch).getPropertyName(), event.getPropertyName());
+          return ch instanceof SetPropertyChange && eq_bow6nj_a0a0a0a0a0a0b0k1(((SetPropertyChange) ch).getPropertyName(), event.getPropertyName());
         }
       }));
       invalidateDeletedRoot(event);

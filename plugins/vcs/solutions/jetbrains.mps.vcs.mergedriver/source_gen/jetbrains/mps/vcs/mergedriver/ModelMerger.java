@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.IOException;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.vcs.diff.merge.MergeContext;
+import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -87,28 +87,28 @@ import jetbrains.mps.util.FileUtil;
         if (log.isInfoEnabled()) {
           log.info("Merging " + baseModel.getSModelReference() + "...");
         }
-        final MergeContext mergeContext = new MergeContext(baseModel, localModel, latestModel);
-        int conflictingChangesCount = Sequence.fromIterable(mergeContext.getAllChanges()).where(new IWhereFilter<ModelChange>() {
+        final MergeSession mergeSession = new MergeSession(baseModel, localModel, latestModel);
+        int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange c) {
-            return Sequence.fromIterable(mergeContext.getConflictedWith(c)).isNotEmpty();
+            return Sequence.fromIterable(mergeSession.getConflictedWith(c)).isNotEmpty();
           }
         }).count();
         if (conflictingChangesCount == 0) {
           if (log.isInfoEnabled()) {
-            log.info(String.format("%s: %d changes detected: %d local and %d latest.", modelFqName, Sequence.fromIterable(mergeContext.getAllChanges()).count(), ListSequence.fromList(mergeContext.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeContext.getRepositoryChangeSet().getModelChanges()).count()));
+            log.info(String.format("%s: %d changes detected: %d local and %d latest.", modelFqName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), ListSequence.fromList(mergeSession.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.getRepositoryChangeSet().getModelChanges()).count()));
           }
           Runnable applyAction = new Runnable() {
             public void run() {
-              mergeContext.applyChanges(mergeContext.getAllChanges());
+              mergeSession.applyChanges(mergeSession.getAllChanges());
             }
           };
           ModelAccess.instance().runReadAction(applyAction);
-          if (mergeContext.hasIdsToRestore()) {
+          if (mergeSession.hasIdsToRestore()) {
             if (log.isInfoEnabled()) {
               log.info(String.format("%s: node id duplication detected, should merge in UI.", modelFqName));
             }
           } else {
-            String resultString = ModelPersistence.modelToString(mergeContext.getResultModel());
+            String resultString = ModelPersistence.modelToString(mergeSession.getResultModel());
             if (log.isInfoEnabled()) {
               log.info(String.format("%s: merged successfully.", modelFqName));
             }
@@ -126,7 +126,7 @@ import jetbrains.mps.util.FileUtil;
           }
         } else {
           if (log.isInfoEnabled()) {
-            log.info(String.format("%s: %d changes detected, %d of them are conflicting", modelFqName, Sequence.fromIterable(mergeContext.getAllChanges()).count(), conflictingChangesCount));
+            log.info(String.format("%s: %d changes detected, %d of them are conflicting", modelFqName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), conflictingChangesCount));
           }
         }
       } catch (Throwable e) {

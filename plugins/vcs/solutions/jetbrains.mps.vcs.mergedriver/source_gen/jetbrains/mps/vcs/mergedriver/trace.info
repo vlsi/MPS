@@ -1702,7 +1702,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6442525078792101288" fileName="ModelMerger.java" startLine="86" startPosition="11" endLine="131" endPosition="9">
       <varInfo nodeId="7105113518416389206" varName="conflictingChangesCount" />
-      <varInfo nodeId="6564671247051204734" varName="mergeContext" />
+      <varInfo nodeId="6564671247051204734" varName="mergeSession" />
     </scopeInfo>
     <scopeInfo nodeId="6564671247051202636" fileName="ModelMerger.java" startLine="35" startPosition="9" endLine="139" endPosition="63">
       <varInfo nodeId="6564671247051202613" varName="baseModel" />

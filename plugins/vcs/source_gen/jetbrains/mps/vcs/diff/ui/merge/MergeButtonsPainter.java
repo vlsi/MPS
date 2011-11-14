@@ -9,7 +9,7 @@ import jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.vcs.diff.merge.MergeContext;
+import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Arrays;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
@@ -36,14 +36,14 @@ public class MergeButtonsPainter extends ButtonsPainter {
     FoldingAreaButton apply = new MergeButtonsPainter.MyButton(changeGroup, applyX, y, "Apply", (isHighlightLeft() ?
       MIRRORED_APPLY_ICON :
       Icons.APPLY
-    ), new _FunctionTypes._void_P2_E0<MergeContext, Iterable<ModelChange>>() {
-      public void invoke(MergeContext context, Iterable<ModelChange> changes) {
-        context.applyChanges(changes);
+    ), new _FunctionTypes._void_P2_E0<MergeSession, Iterable<ModelChange>>() {
+      public void invoke(MergeSession session, Iterable<ModelChange> changes) {
+        session.applyChanges(changes);
       }
     });
-    FoldingAreaButton exclude = new MergeButtonsPainter.MyButton(changeGroup, excludeX, y, "Exclude", Icons.EXCLUDE, new _FunctionTypes._void_P2_E0<MergeContext, Iterable<ModelChange>>() {
-      public void invoke(MergeContext context, Iterable<ModelChange> changes) {
-        context.excludeChanges(changes);
+    FoldingAreaButton exclude = new MergeButtonsPainter.MyButton(changeGroup, excludeX, y, "Exclude", Icons.EXCLUDE, new _FunctionTypes._void_P2_E0<MergeSession, Iterable<ModelChange>>() {
+      public void invoke(MergeSession session, Iterable<ModelChange> changes) {
+        session.excludeChanges(changes);
       }
     });
     return Arrays.asList(apply, exclude);
@@ -57,9 +57,9 @@ public class MergeButtonsPainter extends ButtonsPainter {
   }
 
   private class MyButton extends FoldingAreaButton {
-    private _FunctionTypes._void_P2_E0<? super MergeContext, ? super Iterable<ModelChange>> myAction;
+    private _FunctionTypes._void_P2_E0<? super MergeSession, ? super Iterable<ModelChange>> myAction;
 
-    private MyButton(ChangeGroup changeGroup, int x, int y, String name, Icon icon, _FunctionTypes._void_P2_E0<? super MergeContext, ? super Iterable<ModelChange>> action) {
+    private MyButton(ChangeGroup changeGroup, int x, int y, String name, Icon icon, _FunctionTypes._void_P2_E0<? super MergeSession, ? super Iterable<ModelChange>> action) {
       super(changeGroup, x, y, name, icon);
       myAction = action;
     }
@@ -67,7 +67,7 @@ public class MergeButtonsPainter extends ButtonsPainter {
     public void performAction() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          myAction.invoke(myDialog.getMergeContext(), getChangeGroup().getChanges());
+          myAction.invoke(myDialog.getMergeSession(), getChangeGroup().getChanges());
           myDialog.rehighlight();
         }
       });

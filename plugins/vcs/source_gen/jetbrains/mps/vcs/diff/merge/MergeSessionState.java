@@ -15,12 +15,12 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 
-public class MergeContextState {
+public class MergeSessionState {
   /*package*/ SModel myResultModel;
   /*package*/ Set<ModelChange> myResolvedChanges;
   /*package*/ Map<SNodeId, SNodeId> myIdReplacementCache;
 
-  /*package*/ MergeContextState(SModel resultModel, Set<ModelChange> resolvedChanges, Map<SNodeId, SNodeId> idReplacementCache) {
+  /*package*/ MergeSessionState(SModel resultModel, Set<ModelChange> resolvedChanges, Map<SNodeId, SNodeId> idReplacementCache) {
     myResultModel = CopyUtil.copyModel(resultModel);
     myResolvedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), resolvedChanges);
     myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>(MapSequence.fromMap(idReplacementCache).count()));
@@ -31,7 +31,7 @@ public class MergeContextState {
     });
   }
 
-  /*package*/ MergeContextState(MergeContextState copy) {
+  /*package*/ MergeSessionState(MergeSessionState copy) {
     this(copy.myResultModel, copy.myResolvedChanges, copy.myIdReplacementCache);
   }
 }
