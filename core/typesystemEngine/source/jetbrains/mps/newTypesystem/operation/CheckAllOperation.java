@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.operation;
 
-@Deprecated
 public class CheckAllOperation extends AbstractOperation {
   public String getPresentation() {
     return "Type system trace";
