@@ -43,8 +43,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.build.ant.FileMPSProject;
-import java.util.Collections;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.make.ModuleMaker;
 import java.util.HashSet;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -266,10 +270,27 @@ public class TestGenerationWorker extends MpsWorker {
       if (!(file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
         continue;
       }
+
       FileMPSProject p = new FileMPSProject(file);
       p.init(new FileMPSProject.ProjectDescriptor(file));
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().updateClassPath();
+          new ModuleMaker().make(new HashSet(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+        }
+      });
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+        }
+      });
+      p.projectOpened();
+
       info("Loaded project " + p);
+
       executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<IModule>(), new HashSet<SModelDescriptor>()));
+
+      p.projectClosed();
       disposeProject(p);
       dispose();
     }

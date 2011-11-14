@@ -5,6 +5,12 @@ package jetbrains.mps.build.ant;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.logging.Logger;
 import java.io.File;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.project.ProjectManager;
 import java.util.Set;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
@@ -13,8 +19,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
@@ -47,9 +51,35 @@ public class FileMPSProject extends Project {
     return getProjectFile().getName();
   }
 
+  @Override
+  public void projectOpened() {
+    super.projectOpened();
+  }
+
+  @Override
+  public void projectClosed() {
+    super.projectClosed();
+  }
+
   @Deprecated
   public <T> T getComponent(Class<T> cls) {
     return null;
+  }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
+        MPSModuleRepository.getInstance().unRegisterModules(FileMPSProject.this);
+        CleanupManager.getInstance().cleanup();
+        if (ProjectManager.getInstance().getOpenProjects().length > 0) {
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+        }
+        ClassLoaderManager.getInstance().updateClassPath();
+      }
+    });
   }
 
   protected void readModules(FileMPSProject.ProjectDescriptor projDesc) {
