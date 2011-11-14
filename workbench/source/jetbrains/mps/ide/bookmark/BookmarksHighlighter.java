@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.bookmark;
+package jetbrains.mps.ide.bookmark;
 
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
+import jetbrains.mps.ide.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;

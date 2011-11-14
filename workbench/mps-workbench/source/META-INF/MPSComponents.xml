@@ -285,7 +285,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.nodeEditor.bookmark.BookmarksTool</implementation-class>
+      <implementation-class>jetbrains.mps.ide.bookmark.BookmarksTool</implementation-class>
       <skipForDummyProject/>
     </component>
 
@@ -308,7 +308,12 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.nodeEditor.bookmark.BookmarkManager</implementation-class>
+      <implementation-class>jetbrains.mps.ide.bookmark.BookmarkManager</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.bookmark.BookmarksUIComponent</implementation-class>
       <skipForDummyProject/>
     </component>
 

@@ -13,16 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.bookmark;
+package jetbrains.mps.ide.bookmark;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
+import jetbrains.mps.ide.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -75,7 +76,7 @@ public class BookmarksTree extends MPSTree {
         return ActionUtils.groupFromActions(hierarchyAction);
       }
     };
-    root.setIcon(Icons.DEFAULT_ICON);
+    root.setIcon(IdeIcons.DEFAULT_ICON);
     List<SNodePointer> nodePointers = myBookmarkManager.getAllNumberedBookmarks();
     boolean hasBookmarks = false;
     for (int i = 0; i < nodePointers.size(); i++) {
@@ -105,9 +106,14 @@ public class BookmarksTree extends MPSTree {
   }
 
   public void gotoSelectedBookmark() {
-    BookmarkNode node = getSelectedBookmarkNode();
+    final BookmarkNode node = getSelectedBookmarkNode();
     if (node != null) {
-      node.navigateToBookmark();
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
+        public void run() {
+          node.navigateToBookmark();
+        }
+      });
     }
   }
 
@@ -182,7 +188,10 @@ public class BookmarksTree extends MPSTree {
     }
 
     public void navigateToBookmark() {
-      myProject.getComponent(MPSEditorOpener.class).openNode(myNodePointer.getNode());
+      SNode targetNode = myNodePointer.getNode();
+      if (targetNode != null) {
+        NavigationSupport.getInstance().openNode(new ProjectOperationContext(myProject), targetNode, true, true);
+      }
     }
 
     public ActionGroup getActionGroup() {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.bookmark;
+package jetbrains.mps.ide.bookmark;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
@@ -21,6 +21,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
 import java.awt.GridBagConstraints;
@@ -69,14 +70,24 @@ public class BookmarksDialog extends BaseDialog {
     constraints.gridy = 2;
     rightPanel.add(new JButton(new AbstractAction("Remove") {
       public void actionPerformed(ActionEvent e) {
-        myTree.removeSelectedBookmark();
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          @Override
+          public void run() {
+            myTree.removeSelectedBookmark();
+          }
+        });
       }
     }), constraints);
 
     constraints.gridy = 3;
     rightPanel.add(new JButton(new AbstractAction("Remove All") {
       public void actionPerformed(ActionEvent e) {
-        myBookmarkManager.clearBookmarks();
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          @Override
+          public void run() {
+            myBookmarkManager.clearBookmarks();
+          }
+        });
       }
     }), constraints);
 

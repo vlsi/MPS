@@ -13,23 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.bookmark;
+package jetbrains.mps.ide.bookmark;
 
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.bookmark.BookmarkManager.MyState;
+import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.MyState;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -246,12 +248,12 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   }
 
   public void navigateToBookmark(int number) {
-    if (number > 9) return;
+    if (number < 0 || number > 9) return;
     SNodePointer pointer = myBookmarks[number];
     if (pointer == null) return;
     SNode targetNode = pointer.getNode();
     if (targetNode != null) {
-      myProject.getComponent(MPSEditorOpener.class).openNode(targetNode);
+      NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), targetNode, true, true);
     }
   }
 

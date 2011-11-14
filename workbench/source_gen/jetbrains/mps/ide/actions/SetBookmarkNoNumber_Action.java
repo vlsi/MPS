@@ -11,7 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
+import jetbrains.mps.ide.bookmark.BookmarkManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
 

@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.ide.ChooseItemComponent;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -126,7 +126,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (myParameterObject instanceof INodeAdapter) {
       return NodeIconUtil.getIcon(((INodeAdapter) myParameterObject).getNode(), referent_presentation);
     }
-    return Icons.DEFAULT_ICON;
+    return IdeIcons.DEFAULT_ICON;
   }
 
   public boolean canSubstituteStrictly(String pattern) {
