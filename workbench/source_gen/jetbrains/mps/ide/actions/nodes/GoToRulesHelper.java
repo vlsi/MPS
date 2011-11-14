@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -37,7 +37,10 @@ public class GoToRulesHelper {
   public static void go(Frame frame, EditorCell cell, IOperationContext context, SNode concept) {
     List<SNode> rules = getRules(concept, false);
     if (rules.size() == 1) {
-      context.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
+      SNode nodeToSelect = rules.get(0);
+      if ((nodeToSelect != null)) {
+        NavigationSupport.getInstance().openNode(context, nodeToSelect, true, !(nodeToSelect.isRoot()));
+      }
       return;
     }
     GoToRulesHelper.MyMenu m = new GoToRulesHelper.MyMenu(rules, context);
@@ -142,7 +145,7 @@ public class GoToRulesHelper {
           }
 
           public void actionPerformed(ActionEvent e) {
-            operationContext.getComponent(MPSEditorOpener.class).openNode(node);
+            NavigationSupport.getInstance().openNode(operationContext, node, true, !(node.isRoot()));
           }
         }).setBackground(Color.WHITE);
       }

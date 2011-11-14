@@ -23,8 +23,8 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.intentions.*;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
 import jetbrains.mps.intentions.icons.Icons;
@@ -38,7 +38,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
@@ -263,8 +262,8 @@ public class IntentionsSupport {
                 "Could not find declaration for " + intention.getClass().getSimpleName()
                   + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
             } else {
-              myEditor.getOperationContext().getComponent(MPSEditorOpener.class).editNode(intentionNode, myEditor.getOperationContext());
-              ProjectPane.getInstance(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject())).selectNode(intentionNode, false);
+              NavigationSupport.getInstance().openNode(myEditor.getOperationContext(), intentionNode, true, true);
+              NavigationSupport.getInstance().selectInTree(myEditor.getOperationContext(), intentionNode, false);
             }
           }
         });

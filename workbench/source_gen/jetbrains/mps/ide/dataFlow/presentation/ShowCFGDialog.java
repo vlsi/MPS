@@ -12,7 +12,8 @@ import com.intellij.ui.ScrollPaneFactory;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import java.awt.Color;
 import javax.swing.JComponent;
 import javax.swing.Scrollable;
@@ -42,8 +43,12 @@ public class ShowCFGDialog extends JDialog {
         Instruction cfgInstruction = instructionWrapper.getInstruction();
         Object source = cfgInstruction.getSource();
         if (source instanceof SNode) {
-          SNode node = (SNode) source;
-          operationContext.getComponent(MPSEditorOpener.class).editNode(node, operationContext);
+          final SNode node = (SNode) source;
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            public void run() {
+              NavigationSupport.getInstance().openNode(operationContext, node, true, true);
+            }
+          });
         }
       }
     });

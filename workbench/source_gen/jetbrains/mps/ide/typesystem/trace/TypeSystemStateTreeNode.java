@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import java.util.List;
 
 public class TypeSystemStateTreeNode extends MPSTreeNode {
@@ -37,7 +37,7 @@ public class TypeSystemStateTreeNode extends MPSTreeNode {
 
   public void goToNode() {
     if (myNode != null && myNode.isRegistered()) {
-      getOperationContext().getComponent(MPSEditorOpener.class).editNode(myNode, getOperationContext());
+      NavigationSupport.getInstance().openNode(getOperationContext(), myNode, true, true);
     }
   }
 

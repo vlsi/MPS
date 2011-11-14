@@ -18,7 +18,7 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -67,9 +67,8 @@ public class MappingDialog extends BaseDialog {
         if (!(node instanceof SNodeTreeNode)) {
           return;
         }
-        MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
         SNodeTreeNode treeNode = (SNodeTreeNode) node;
-        opener.editNode(treeNode.getSNode(), treeNode.getOperationContext());
+        NavigationSupport.getInstance().openNode(treeNode.getOperationContext(), treeNode.getSNode(), true, true);
       }
     });
     myTree.rebuildNow();

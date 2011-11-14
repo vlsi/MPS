@@ -17,11 +17,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
-import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class CloneRoot_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -84,10 +82,10 @@ public class CloneRoot_Action extends GeneratedAction {
         SNode root = SNodeOperations.getContainingRoot(node);
         final SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(copy, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-        SwingUtilities.invokeLater(new Runnable() {
+        ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
-            ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectNode(copy, false);
+            NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), copy, true, true);
+            NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), copy, false);
           }
         });
       }

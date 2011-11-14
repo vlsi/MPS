@@ -12,8 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 
 public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseIntention implements Intention {
   public ConvertInferenceRuleToNonTypesystemRule_Intention() {
@@ -63,8 +62,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
       }
     }
     SNodeOperations.deleteNode(node);
-    IOperationContext operationContext = editorContext.getOperationContext();
-    operationContext.getComponent(MPSEditorOpener.class).openNode(nonTypesystemRule);
+    NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), nonTypesystemRule, true, !(nonTypesystemRule.isRoot()));
   }
 
   public String getLocationString() {

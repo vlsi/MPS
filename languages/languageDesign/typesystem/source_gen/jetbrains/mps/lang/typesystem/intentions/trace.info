@@ -2,70 +2,80 @@
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.IntentionsDescriptor" />
   <root nodeId="1195490883262">
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="26" startPosition="36" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="34" startPosition="44" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195491061285" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="43" startPosition="58" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195491639092" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="438" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195491701530" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="50" startPosition="438" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195491745931" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="54" startPosition="76" endLine="55" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195491895679" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="55" startPosition="170" endLine="56" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195491933492" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="56" startPosition="118" endLine="57" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195492037009" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="57" startPosition="100" endLine="58" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195493218172" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="58" startPosition="136" endLine="59" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195493336061" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="61" startPosition="147" endLine="62" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195492055823" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1211467783727" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="65" startPosition="37" endLine="66" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1211467791945" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="66" startPosition="77" endLine="67" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="18" startPosition="107" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertInferenceRuleToNonTypesystemRule_Intention#()V" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="42" startPosition="84" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1195493308935" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="60" startPosition="224" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1195493283730" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="59" startPosition="156" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="53" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="19" startPosition="62" endLine="19" endPosition="62" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="67" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="26" startPosition="36" endLine="27" endPosition="17" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="17" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="34" startPosition="44" endLine="35" endPosition="17" />
-    <scopeInfo nodeId="1195490883264" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="44" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="43" startPosition="58" endLine="44" endPosition="19" />
-    <scopeInfo nodeId="1195493308936" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="61" startPosition="147" endLine="62" endPosition="154" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="54" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="18" startPosition="107" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="1195490883266" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="49" startPosition="90" endLine="51" endPosition="56">
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="33" startPosition="44" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195491061285" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="42" startPosition="58" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="44" startPosition="5" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195491639092" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="438" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195491701530" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="49" startPosition="438" endLine="50" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195491745931" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195491895679" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="54" startPosition="170" endLine="55" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195491933492" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="55" startPosition="118" endLine="56" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195492037009" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="56" startPosition="100" endLine="57" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195493218172" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="57" startPosition="136" endLine="58" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195493336061" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="60" startPosition="147" endLine="61" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195492055823" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="63" startPosition="5" endLine="64" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1071422968910417425" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="64" startPosition="37" endLine="65" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="17" startPosition="107" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertInferenceRuleToNonTypesystemRule_Intention#()V" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="41" startPosition="84" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1195493308935" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="59" startPosition="224" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1195493283730" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="58" startPosition="156" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="52" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="18" startPosition="62" endLine="18" endPosition="62" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="67" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="33" startPosition="44" endLine="34" endPosition="17" />
+    <scopeInfo nodeId="1195490883264" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="44" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="42" startPosition="58" endLine="43" endPosition="19" />
+    <scopeInfo nodeId="1195493308936" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="60" startPosition="147" endLine="61" endPosition="154" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="54" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="17" startPosition="107" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="1195490883266" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="48" startPosition="90" endLine="50" endPosition="56">
       <varInfo nodeId="1195491639093" varName="descendants" />
     </scopeInfo>
-    <scopeInfo nodeId="1195493283731" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="60" startPosition="224" endLine="63" endPosition="7" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="42" startPosition="84" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1195493283730" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="59" startPosition="156" endLine="64" endPosition="5">
+    <scopeInfo nodeId="1195493283731" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="59" startPosition="224" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1195490883262" varName="editorContext" />
+      <varInfo nodeId="1195490883262" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="41" startPosition="84" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="47" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1195490883262" varName="editorContext" />
+      <varInfo nodeId="1195490883262" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1195493283730" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="58" startPosition="156" endLine="63" endPosition="5">
       <varInfo nodeId="1195493283734" varName="applicableNodeReference" />
     </scopeInfo>
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1195490883268" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="54" startPosition="76" endLine="67" endPosition="85">
-      <varInfo nodeId="1195491745932" varName="nonTypesystemRule" />
-      <varInfo nodeId="1211467783728" varName="operationContext" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1195490883262" varName="editorContext" />
+      <varInfo nodeId="1195490883262" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="53" startPosition="0" endLine="69" endPosition="0" />
-    <unitInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention" />
+    <scopeInfo nodeId="1195490883268" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="53" startPosition="76" endLine="65" endPosition="138">
+      <varInfo nodeId="1195491745932" varName="nonTypesystemRule" />
+    </scopeInfo>
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="52" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1195490883262" varName="editorContext" />
+      <varInfo nodeId="1195490883262" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="17" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention" />
   </root>
   <root nodeId="3302086321380606109">
     <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -154,34 +164,69 @@
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="18" startPosition="93" endLine="20" endPosition="3" />
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="69" startPosition="52" endLine="71" endPosition="5" />
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="107" startPosition="52" endLine="109" endPosition="5" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="87" startPosition="11" endLine="90" endPosition="57" />
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="87" startPosition="11" endLine="90" endPosition="57">
+      <varInfo nodeId="3302086321380606109" varName="quotedNode1_7" />
+    </scopeInfo>
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="3302086321380606109" varName="editorContext" />
+      <varInfo nodeId="3302086321380606109" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="42" startPosition="84" endLine="46" endPosition="16" />
     <scopeInfo nodeId="3302086321380616650" fileName="CreateTypesystemIntention_Intention.java" startLine="49" startPosition="90" endLine="53" endPosition="103" />
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="115" startPosition="7" endLine="119" endPosition="31" />
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="115" startPosition="7" endLine="119" endPosition="31">
+      <varInfo nodeId="3302086321380606109" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="86" startPosition="45" endLine="91" endPosition="11" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="94" startPosition="9" endLine="99" endPosition="66" />
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="94" startPosition="9" endLine="99" endPosition="66">
+      <varInfo nodeId="3302086321380606109" varName="quotedNode1_8" />
+    </scopeInfo>
     <scopeInfo nodeId="3302086321380606113" fileName="CreateTypesystemIntention_Intention.java" startLine="56" startPosition="76" endLine="62" endPosition="111">
       <varInfo nodeId="3302086321380616788" varName="quickFixCall" />
       <varInfo nodeId="3302086321380616755" varName="quickFixNode" />
     </scopeInfo>
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="114" startPosition="32" endLine="120" endPosition="7" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="48" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="3302086321380606109" varName="editorContext" />
+      <varInfo nodeId="3302086321380606109" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="3302086321380606109" varName="editorContext" />
+      <varInfo nodeId="3302086321380606109" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="93" startPosition="9" endLine="100" endPosition="9" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="84" startPosition="9" endLine="92" endPosition="63" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="55" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="84" startPosition="9" endLine="92" endPosition="63">
+      <varInfo nodeId="3302086321380606109" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="55" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="3302086321380606109" varName="editorContext" />
+      <varInfo nodeId="3302086321380606109" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="83" startPosition="50" endLine="93" endPosition="9" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="111" startPosition="49" endLine="121" endPosition="20" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="110" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="80" startPosition="7" endLine="101" endPosition="31" />
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="111" startPosition="49" endLine="121" endPosition="20">
+      <varInfo nodeId="3302086321380606109" varName="_parameterValues_129834374" />
+      <varInfo nodeId="3302086321380606109" varName="quotedNode_1" />
+      <varInfo nodeId="3302086321380606109" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="110" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="3302086321380606109" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="80" startPosition="7" endLine="101" endPosition="31">
+      <varInfo nodeId="3302086321380606109" varName="quotedNode1_5" />
+    </scopeInfo>
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="79" startPosition="32" endLine="102" endPosition="7" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="73" startPosition="31" endLine="103" endPosition="20" />
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="73" startPosition="31" endLine="103" endPosition="20">
+      <varInfo nodeId="3302086321380606109" varName="_parameterValues_129834374" />
+      <varInfo nodeId="3302086321380606109" varName="quotedNode_1" />
+      <varInfo nodeId="3302086321380606109" varName="quotedNode_2" />
+      <varInfo nodeId="3302086321380606109" varName="quotedNode_3" />
+      <varInfo nodeId="3302086321380606109" varName="quotedNode_4" />
+      <varInfo nodeId="3302086321380606109" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="72" startPosition="0" endLine="105" endPosition="0" />
     <unitInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="18" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" />
     <unitInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="69" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a0a7" />
@@ -242,12 +287,18 @@
     <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="6840209722389643031" varName="editorContext" />
+      <varInfo nodeId="6840209722389643031" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="6840209722389643035" fileName="FlipInequality_Intention.java" startLine="39" startPosition="76" endLine="66" endPosition="54">
       <varInfo nodeId="6840209722389709865" varName="newNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="38" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="38" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="6840209722389643031" varName="editorContext" />
+      <varInfo nodeId="6840209722389643031" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="15" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.FlipInequality_Intention" />
   </root>
   <root nodeId="6840209722389750234">
@@ -283,10 +334,16 @@
     <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="6840209722389750234" varName="editorContext" />
+      <varInfo nodeId="6840209722389750234" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="6840209722389750236" fileName="MakeInequalityCheckOnly_Intention.java" startLine="31" startPosition="85" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="6840209722389750234" varName="editorContext" />
+      <varInfo nodeId="6840209722389750234" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MakeInequalityCheckOnly_Intention" />
   </root>
   <root nodeId="8293956702610699517">
@@ -414,43 +471,99 @@
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="112" startPosition="53" endLine="114" endPosition="5" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="138" startPosition="18" endLine="140" endPosition="41" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="152" startPosition="57" endLine="154" endPosition="5" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="128" startPosition="56" endLine="131" endPosition="11" />
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="128" startPosition="56" endLine="131" endPosition="11">
+      <varInfo nodeId="8293956702610699517" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="8293956702610709745" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="48" startPosition="145" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="8293956702610709912" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="54" startPosition="144" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="8293956702610709849" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="59" startPosition="182" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="8293956702610709946" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="63" startPosition="56" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="8293956702610699517" varName="editorContext" />
+      <varInfo nodeId="8293956702610699517" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610709745" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="48" startPosition="145" endLine="52" endPosition="0">
+      <varInfo nodeId="8293956702610709745" varName="lv" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610709912" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="54" startPosition="144" endLine="58" endPosition="0">
+      <varInfo nodeId="8293956702610709912" varName="lv" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610709849" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="59" startPosition="182" endLine="63" endPosition="0">
+      <varInfo nodeId="8293956702610709849" varName="lvr" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610709946" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="63" startPosition="56" endLine="67" endPosition="0">
+      <varInfo nodeId="8293956702610709946" varName="lvr" />
+    </scopeInfo>
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="87" startPosition="9" endLine="91" endPosition="59" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="127" startPosition="9" endLine="131" endPosition="11" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="160" startPosition="7" endLine="164" endPosition="31" />
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="87" startPosition="9" endLine="91" endPosition="59">
+      <varInfo nodeId="8293956702610699517" varName="quotedNode1_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="127" startPosition="9" endLine="131" endPosition="11">
+      <varInfo nodeId="8293956702610699517" varName="nodes" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="160" startPosition="7" endLine="164" endPosition="31">
+      <varInfo nodeId="8293956702610699517" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="86" startPosition="43" endLine="92" endPosition="9" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="126" startPosition="43" endLine="132" endPosition="9" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="159" startPosition="32" endLine="165" endPosition="7" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="156" startPosition="49" endLine="166" endPosition="20" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="93" startPosition="9" endLine="104" endPosition="11" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="133" startPosition="9" endLine="144" endPosition="11" />
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="156" startPosition="49" endLine="166" endPosition="20">
+      <varInfo nodeId="8293956702610699517" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8293956702610699517" varName="quotedNode_1" />
+      <varInfo nodeId="8293956702610699517" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="93" startPosition="9" endLine="104" endPosition="11">
+      <varInfo nodeId="8293956702610699517" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="133" startPosition="9" endLine="144" endPosition="11">
+      <varInfo nodeId="8293956702610699517" varName="quotedNode1_7" />
+    </scopeInfo>
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="92" startPosition="9" endLine="105" endPosition="9" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="132" startPosition="9" endLine="145" endPosition="9" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="155" startPosition="0" endLine="168" endPosition="0" />
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="155" startPosition="0" endLine="168" endPosition="0">
+      <varInfo nodeId="8293956702610699517" varName="parameter_3" />
+    </scopeInfo>
     <scopeInfo nodeId="8293956702610699521" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="47" startPosition="76" endLine="67" endPosition="7">
       <varInfo nodeId="8293956702610709903" varName="lvs" />
       <varInfo nodeId="8293956702610709736" varName="mfps" />
       <varInfo nodeId="8293956702610709798" varName="mfs" />
     </scopeInfo>
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="84" startPosition="7" endLine="106" endPosition="31" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="124" startPosition="7" endLine="146" endPosition="31" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="46" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="84" startPosition="7" endLine="106" endPosition="31">
+      <varInfo nodeId="8293956702610699517" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="124" startPosition="7" endLine="146" endPosition="31">
+      <varInfo nodeId="8293956702610699517" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="46" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="8293956702610699517" varName="editorContext" />
+      <varInfo nodeId="8293956702610699517" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="83" startPosition="32" endLine="107" endPosition="7" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="123" startPosition="32" endLine="147" endPosition="7" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="78" startPosition="69" endLine="108" endPosition="20" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="116" startPosition="69" endLine="148" endPosition="20" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="77" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="115" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="78" startPosition="69" endLine="108" endPosition="20">
+      <varInfo nodeId="8293956702610699517" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8293956702610699517" varName="quotedNode_1" />
+      <varInfo nodeId="8293956702610699517" varName="quotedNode_2" />
+      <varInfo nodeId="8293956702610699517" varName="quotedNode_3" />
+      <varInfo nodeId="8293956702610699517" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="116" startPosition="69" endLine="148" endPosition="20">
+      <varInfo nodeId="8293956702610699517" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8293956702610699517" varName="quotedNode_1" />
+      <varInfo nodeId="8293956702610699517" varName="quotedNode_2" />
+      <varInfo nodeId="8293956702610699517" varName="quotedNode_3" />
+      <varInfo nodeId="8293956702610699517" varName="quotedNode_4" />
+      <varInfo nodeId="8293956702610699517" varName="quotedNode_5" />
+      <varInfo nodeId="8293956702610699517" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="77" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="8293956702610699517" varName="parameter_7" />
+      <varInfo nodeId="8293956702610699517" varName="parameter_8" />
+    </scopeInfo>
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="115" startPosition="0" endLine="150" endPosition="0">
+      <varInfo nodeId="8293956702610699517" varName="parameter_8" />
+      <varInfo nodeId="8293956702610699517" varName="parameter_9" />
+    </scopeInfo>
     <unitInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="23" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention" />
     <unitInfo nodeId="8293956702610709745" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="48" startPosition="118" endLine="52" endPosition="5" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention$1" />
     <unitInfo nodeId="8293956702610709912" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="54" startPosition="117" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention$2" />

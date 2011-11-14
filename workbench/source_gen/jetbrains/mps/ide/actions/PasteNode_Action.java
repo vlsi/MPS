@@ -24,10 +24,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.ide.resolve.Resolver;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
@@ -112,12 +109,12 @@ public class PasteNode_Action extends GeneratedAction {
           }
           Resolver.resolveReferences(refsToResolve, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           // make sure editor will be open 
-          SNode root = pasteNodes.get(0).getContainingRoot();
+          final SNode root = pasteNodes.get(0).getContainingRoot();
           assert root != null;
-          ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).editNode(root, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          SwingUtilities.invokeLater(new Runnable() {
+          ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
-              ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectNode(pasteNodes.get(0), false);
+              NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, true, true);
+              NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, false);
             }
           });
         }

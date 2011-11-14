@@ -4,6 +4,7 @@ package jetbrains.mps.build.custommps.plugin;
 
 import jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import org.apache.commons.lang.StringUtils;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -25,8 +26,8 @@ import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
   private String myPathToBuildTools = "";
 
-  public CustomMPSBuildGenerator(Project project) {
-    super(project);
+  public CustomMPSBuildGenerator(Project project, IOperationContext operationContext) {
+    super(project, operationContext);
   }
 
   public void setPathToBuildTools(String path) {

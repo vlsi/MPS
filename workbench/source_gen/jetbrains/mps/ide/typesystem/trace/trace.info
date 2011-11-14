@@ -301,7 +301,7 @@
     <nodeInfo nodeId="866755926374576182" fileName="TypeSystemStateTree.java" startLine="163" startPosition="46" endLine="164" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="866755926374576191" fileName="TypeSystemStateTree.java" startLine="165" startPosition="27" endLine="166" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="866755926374576197" fileName="TypeSystemStateTree.java" startLine="168" startPosition="32" endLine="169" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374576230" fileName="TypeSystemStateTree.java" startLine="172" startPosition="83" endLine="173" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1071422968910416991" fileName="TypeSystemStateTree.java" startLine="172" startPosition="83" endLine="173" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="866755926374576245" fileName="TypeSystemStateTree.java" startLine="179" startPosition="7" endLine="180" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1699702947845371516" fileName="TypeSystemStateTree.java" startLine="184" startPosition="44" endLine="185" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1699702947845371557" fileName="TypeSystemStateTree.java" startLine="186" startPosition="61" endLine="187" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -367,7 +367,7 @@
     <scopeInfo nodeId="866755926374576046" fileName="TypeSystemStateTree.java" startLine="142" startPosition="36" endLine="143" endPosition="23" />
     <scopeInfo nodeId="866755926374576066" fileName="TypeSystemStateTree.java" startLine="150" startPosition="99" endLine="151" endPosition="137" />
     <scopeInfo nodeId="866755926374576190" fileName="TypeSystemStateTree.java" startLine="165" startPosition="27" endLine="166" endPosition="17" />
-    <scopeInfo nodeId="866755926374576229" fileName="TypeSystemStateTree.java" startLine="172" startPosition="83" endLine="173" endPosition="106" />
+    <scopeInfo nodeId="866755926374576229" fileName="TypeSystemStateTree.java" startLine="172" startPosition="83" endLine="173" endPosition="95" />
     <scopeInfo nodeId="1699702947845371556" fileName="TypeSystemStateTree.java" startLine="186" startPosition="61" endLine="187" endPosition="32" />
     <scopeInfo nodeId="1699702947845371632" fileName="TypeSystemStateTree.java" startLine="192" startPosition="48" endLine="193" endPosition="20" />
     <scopeInfo nodeId="866755926374575616" fileName="TypeSystemStateTree.java" startLine="201" startPosition="36" endLine="202" endPosition="44" />
@@ -514,7 +514,7 @@
     <nodeInfo nodeId="866755926374576293" fileName="TypeSystemStateTreeNode.java" startLine="27" startPosition="45" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="866755926374576296" fileName="TypeSystemStateTreeNode.java" startLine="28" startPosition="35" endLine="29" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="866755926374576314" fileName="TypeSystemStateTreeNode.java" startLine="33" startPosition="50" endLine="34" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576336" fileName="TypeSystemStateTreeNode.java" startLine="39" startPosition="50" endLine="40" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1071422968910417008" fileName="TypeSystemStateTreeNode.java" startLine="39" startPosition="50" endLine="40" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="866755926374576348" fileName="TypeSystemStateTreeNode.java" startLine="44" startPosition="37" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="866755926374576356" fileName="TypeSystemStateTreeNode.java" startLine="48" startPosition="32" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="866755926374576362" fileName="TypeSystemStateTreeNode.java" startLine="52" startPosition="29" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -531,7 +531,7 @@
     <nodeInfo nodeId="866755926374576323" fileName="TypeSystemStateTreeNode.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToNode#()V" />
     <scopeInfo nodeId="866755926374576274" fileName="TypeSystemStateTreeNode.java" startLine="21" startPosition="70" endLine="22" endPosition="28" />
     <scopeInfo nodeId="866755926374576313" fileName="TypeSystemStateTreeNode.java" startLine="33" startPosition="50" endLine="34" endPosition="113" />
-    <scopeInfo nodeId="866755926374576335" fileName="TypeSystemStateTreeNode.java" startLine="39" startPosition="50" endLine="40" endPosition="104" />
+    <scopeInfo nodeId="866755926374576335" fileName="TypeSystemStateTreeNode.java" startLine="39" startPosition="50" endLine="40" endPosition="90" />
     <scopeInfo nodeId="866755926374576347" fileName="TypeSystemStateTreeNode.java" startLine="44" startPosition="37" endLine="45" endPosition="16" />
     <scopeInfo nodeId="866755926374576355" fileName="TypeSystemStateTreeNode.java" startLine="48" startPosition="32" endLine="49" endPosition="23" />
     <scopeInfo nodeId="866755926374576361" fileName="TypeSystemStateTreeNode.java" startLine="52" startPosition="29" endLine="53" endPosition="20" />

@@ -12,8 +12,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class EditGivenNode_Action extends GeneratedAction {
@@ -59,7 +58,7 @@ public class EditGivenNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(EditGivenNode_Action.this.targetNode.getNode(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), EditGivenNode_Action.this.targetNode.getNode(), true, true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "EditGivenNode", t);

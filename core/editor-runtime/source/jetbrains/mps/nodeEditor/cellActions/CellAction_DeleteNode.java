@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +47,8 @@ public class CellAction_DeleteNode extends EditorCellAction {
   public void execute(EditorContext context) {
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(CellUtil.getNodeToDelete(mySemanticNode));
-    new DeleteNodesHelper(nodes, context.getOperationContext(), false).deleteNodes(false);
+    for (SNode node : nodes) {
+      node.delete();
+    }
   }
 }

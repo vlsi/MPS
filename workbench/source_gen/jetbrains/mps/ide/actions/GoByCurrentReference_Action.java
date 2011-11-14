@@ -24,8 +24,8 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.navigation.NavigationProvider;
@@ -135,7 +135,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   }
 
   private void open(SNode targetNode, final Map<String, Object> _params) {
-    ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).openNode(targetNode, ((IOperationContext) MapSequence.fromMap(_params).get("context")), true, !(targetNode.isRoot()));
+    NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), targetNode, true, !(targetNode.isRoot()));
   }
 
   private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode, final Map<String, Object> _params) {

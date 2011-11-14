@@ -20,8 +20,7 @@ import jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper;
 import jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 
 public class RunMigrationScripts_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -83,7 +82,8 @@ public class RunMigrationScripts_Action extends GeneratedAction {
       if (dialog.isRunChecked()) {
         AbstractMigrationScriptHelper.doRunScripts(dialog.getCheckedScripts(), scope, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       } else if (dialog.isOpenSelected()) {
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(dialog.getSelectedScripts().get(0), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+        SNode selectedScript = dialog.getSelectedScripts().get(0);
+        NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), selectedScript, true, true);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RunMigrationScripts", t);

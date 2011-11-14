@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 
 public class CreateNewTarget_Intention extends BaseIntention implements Intention {
   public CreateNewTarget_Intention() {
@@ -50,8 +50,8 @@ public class CreateNewTarget_Intention extends BaseIntention implements Intentio
     SNode targetDeclaration = SNodeFactoryOperations.createNewNode("jetbrains.mps.buildlanguage.structure.TargetDeclaration", null);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "project", false), "target", true)).addElement(targetDeclaration);
     SLinkOperations.setTarget(node, "targetDeclaration", targetDeclaration, false);
-    MPSEditorOpener opener = editorContext.getOperationContext().getProject().getComponent(MPSEditorOpener.class);
-    opener.openNode(targetDeclaration);
+
+    NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), targetDeclaration, true, true);
   }
 
   public String getLocationString() {
