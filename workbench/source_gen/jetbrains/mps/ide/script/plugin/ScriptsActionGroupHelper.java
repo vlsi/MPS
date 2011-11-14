@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
+import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.Map;
 import java.util.HashMap;

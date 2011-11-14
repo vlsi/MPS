@@ -22,7 +22,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.migration.actions.ScriptsFinder;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder;
-import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
+import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSProject;

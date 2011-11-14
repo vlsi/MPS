@@ -101,8 +101,8 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.TreeSet" />
     <classNode dependClassName="jetbrains.mps.ide.script.plugin.RunMigrationScriptAction" />
-    <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.MigrationScriptUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
