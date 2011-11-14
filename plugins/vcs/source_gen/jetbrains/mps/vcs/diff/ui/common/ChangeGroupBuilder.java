@@ -22,51 +22,30 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
-public class ChangeGroupBuilder {
+public abstract class ChangeGroupBuilder {
   private ChangeEditorMessage.ConflictChecker myConflictChecker;
   private ChangeSet myChangeSet;
-  private boolean myInspector = false;
-  private DiffEditor myLeftEditor;
-  private DiffEditor myRightEditor;
+  protected boolean myInspector = false;
   private List<ChangeGroup> myChangeGroups = null;
   private List<ChangeGroupInvalidateListener> myInvalidateListeners = ListSequence.fromList(new ArrayList<ChangeGroupInvalidateListener>());
 
-  public ChangeGroupBuilder(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, @NotNull ChangeSet changeSet, @NotNull DiffEditor leftEditor, @NotNull DiffEditor rightEditor, boolean inspector) {
+  public ChangeGroupBuilder(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, @NotNull ChangeSet changeSet, boolean inspector) {
     myConflictChecker = conflictChecker;
     myChangeSet = changeSet;
-    myLeftEditor = leftEditor;
-    myRightEditor = rightEditor;
     myInspector = inspector;
-    if (myInspector) {
-      EditorComponent.RebuildListener rebuildListener = new EditorComponent.RebuildListener() {
-        public void editorRebuilt(EditorComponent editor) {
-          invalidate();
-        }
-      };
-      myLeftEditor.getInspector().addRebuildListener(rebuildListener);
-      myRightEditor.getInspector().addRebuildListener(rebuildListener);
-    }
   }
 
   @NotNull
-  public EditorComponent getLeftComponent() {
-    return myLeftEditor.getEditorComponent(myInspector);
-  }
+  public abstract EditorComponent getLeftComponent();
 
   @NotNull
-  public EditorComponent getRightComponent() {
-    return myRightEditor.getEditorComponent(myInspector);
-  }
+  public abstract EditorComponent getRightComponent();
 
   @NotNull
-  protected List<ChangeEditorMessage> getLeftMessages(ModelChange change) {
-    return myLeftEditor.getMessagesForChange(change);
-  }
+  protected abstract List<ChangeEditorMessage> getLeftMessages(ModelChange change);
 
   @NotNull
-  protected List<ChangeEditorMessage> getRightMessages(ModelChange change) {
-    return myLeftEditor.getMessagesForChange(change);
-  }
+  protected abstract List<ChangeEditorMessage> getRightMessages(ModelChange change);
 
   private void calculateChangeGroups() {
     final Map<ModelChange, Bounds> left = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());

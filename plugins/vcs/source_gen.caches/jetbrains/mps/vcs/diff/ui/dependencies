@@ -143,6 +143,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeTrapeciumStrip" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" />

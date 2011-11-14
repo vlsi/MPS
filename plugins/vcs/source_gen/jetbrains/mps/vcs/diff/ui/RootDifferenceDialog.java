@@ -34,6 +34,7 @@ import java.awt.Insets;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupBuilder;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.Nullable;
@@ -150,7 +151,7 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
   private void linkEditors(boolean inspector) {
     // create change group builder, trapecium strip and merge buttons painter 
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
-    ChangeGroupBuilder changeGroupBuilder = new ChangeGroupBuilder(null, myModelDialog.getChangeSet(), myOldEditor, myNewEditor, inspector);
+    ChangeGroupBuilder changeGroupBuilder = new DiffChangeGroupBuilder(null, myModelDialog.getChangeSet(), myOldEditor, myNewEditor, inspector);
     ListSequence.fromList(myChangeGroupBuilders).addElement(changeGroupBuilder);
     ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(changeGroupBuilder);
     GridBagConstraints gbc = new GridBagConstraints(1, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);

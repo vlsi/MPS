@@ -140,7 +140,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupInvalidateListener" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
@@ -178,6 +177,17 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupInvalidateListener" />
     <classNode extendsClassName="javax.swing.JComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.tooltips.TooltipComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupBuilder" file="DiffChangeGroupBuilder.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffEditor" file="DiffEditor.java">
     <classNode dependClassName="java.awt.BorderLayout" />

@@ -30,6 +30,7 @@ import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupBuilder;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
@@ -112,7 +113,7 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   private ChangeGroupBuilder createChangeGroupBuilder(boolean mine, boolean inspector) {
-    return new ChangeGroupBuilder(myConflictChecker, (mine ?
+    return new DiffChangeGroupBuilder(myConflictChecker, (mine ?
       myMergeContext.getMyChangeSet() :
       myMergeContext.getRepositoryChangeSet()
     ), (mine ?
