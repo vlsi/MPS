@@ -22,10 +22,15 @@ import com.intellij.openapi.roots.ExcludeFolder;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.roots.ui.configuration.ContentEntryEditor;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.pointers.VirtualFilePointer;
 import com.intellij.openapi.vfs.pointers.VirtualFilePointerManager;
+import jetbrains.mps.idea.core.MPSBundle;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.File;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,22 +39,27 @@ import org.jetbrains.annotations.NotNull;
  * Time: 7:09 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ModelSourceContentEntryEditor extends ContentEntryEditor {
+public class ModelRootContentEntryEditor extends ContentEntryEditor {
     private DummyContentEntry myContentEntry;
 
-    public ModelSourceContentEntryEditor(String contentEntryUrl, Disposable disposable) {
+    public ModelRootContentEntryEditor(String contentEntryUrl, Disposable disposable) {
         super(contentEntryUrl, false, false);
         myContentEntry = new DummyContentEntry(contentEntryUrl, disposable);
     }
 
     @Override
-    protected ContentEntry getContentEntry() {
+    public ContentEntry getContentEntry() {
         return myContentEntry;
     }
 
     @Override
     public void deleteContentEntry() {
-        //To change body of overridden methods use File | Settings | File Templates.
+        final int answer = Messages.showYesNoDialog(MPSBundle.message("model.roots.remove.content.prompt", VirtualFileManager.extractPath(myContentEntry.getUrl()).replace('/', File.separatorChar)),
+                MPSBundle.message("model.roots.remove.content.title"), Messages.getQuestionIcon());
+        if (answer != 0) { // no
+            return;
+        }
+        myEventDispatcher.getMulticaster().beforeEntryDeleted(this);
     }
 
     @Override

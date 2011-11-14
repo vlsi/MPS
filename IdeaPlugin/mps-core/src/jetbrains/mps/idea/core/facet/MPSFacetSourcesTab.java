@@ -25,11 +25,17 @@ import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.ex.FileChooserKeys;
 import com.intellij.openapi.project.DumbAware;
+import com.intellij.openapi.roots.ContentEntry;
 import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
 import com.intellij.openapi.roots.ui.componentsList.layout.VerticalStackLayout;
 import com.intellij.openapi.roots.ui.configuration.ContentEntryEditor;
+import com.intellij.openapi.roots.ui.configuration.ContentEntryEditorListenerAdapter;
 import com.intellij.openapi.roots.ui.configuration.actions.IconWithTextAction;
+import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.roots.ToolbarPanel;
@@ -41,6 +47,9 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -58,6 +67,9 @@ public class MPSFacetSourcesTab {
     private FacetEditorContext myContext;
     private Disposable myParentDisposable;
     private ScrollablePanel myModelRootsPanel;
+    private ContentEntryEditor mySelectedModelRootEditor;
+    private ModelRootContentEntryEditorListener myModelRootEditorListener;
+    private List<ModelRootContentEntryEditor> myModelRootEditors;
 
     public MPSFacetSourcesTab(FacetEditorContext context, Disposable parentDisposable) {
         myContext = context;
@@ -69,15 +81,35 @@ public class MPSFacetSourcesTab {
     }
 
     public void setData(MPSConfigurationBean data) {
-        //To change body of created methods use File | Settings | File Templates.
+        for (String modelRootPath : data.getModelRootPaths()) {
+            addModelRoot(VirtualFileManager.constructUrl(LocalFileSystem.PROTOCOL, modelRootPath));
+        }
     }
 
     public void getData(MPSConfigurationBean data) {
-        //To change body of created methods use File | Settings | File Templates.
+        data.setModelRootPaths(getModelRootPaths());
     }
 
     public boolean isModified(MPSConfigurationBean data) {
-        return false;  //To change body of created methods use File | Settings | File Templates.
+        return !Arrays.equals(getModelRootPaths(), data.getModelRootPaths());
+    }
+
+    private String[] getModelRootPaths() {
+        List<String> modelRoots = new ArrayList<String>();
+        for (ModelRootContentEntryEditor modelRootEditor : myModelRootEditors) {
+            ContentEntry contentEntry = modelRootEditor.getContentEntry();
+            if (contentEntry == null) {
+                continue;
+            }
+            VirtualFile file = contentEntry.getFile();
+            if (file == null) {
+                continue;
+            }
+            String url = file.getUrl();
+            assert LocalFileSystem.PROTOCOL.equals(VirtualFileManager.extractProtocol(url));
+            modelRoots.add(VirtualFileManager.extractPath(url));
+        }
+        return modelRoots.toArray(new String[modelRoots.size()]);
     }
 
     private void createUIComponents() {
@@ -94,33 +126,67 @@ public class MPSFacetSourcesTab {
         JScrollPane myScrollPane = ScrollPaneFactory.createScrollPane(myModelRootsPanel);
         myToolbarPanel = new ToolbarPanel(myScrollPane, group);
         myToolbarPanel.setBorder(null);
+
+        myModelRootEditors = new ArrayList<ModelRootContentEntryEditor>();
+        myModelRootEditorListener = new ModelRootContentEntryEditorListener();
+    }
+
+    private void selectModelRoot(ContentEntryEditor modelRootEditor) {
+        if (mySelectedModelRootEditor != null) {
+            mySelectedModelRootEditor.setSelected(false);
+        }
+        mySelectedModelRootEditor = modelRootEditor;
+        if (mySelectedModelRootEditor != null) {
+            mySelectedModelRootEditor.setSelected(true);
+        }
+    }
+
+    private void removeModelRoot(ContentEntryEditor contentEntryEditor) {
+        assert contentEntryEditor instanceof ModelRootContentEntryEditor;
+        ModelRootContentEntryEditor modelRootEditor = (ModelRootContentEntryEditor) contentEntryEditor;
+        if (mySelectedModelRootEditor == modelRootEditor) {
+            ModelRootContentEntryEditor entryToSelect = null;
+            int currentSelectionIndex = myModelRootEditors.indexOf(modelRootEditor);
+            if (currentSelectionIndex > 0) {
+                entryToSelect = myModelRootEditors.get(currentSelectionIndex - 1);
+            } else if (currentSelectionIndex < myModelRootEditors.size() - 1) {
+                entryToSelect = myModelRootEditors.get(currentSelectionIndex + 1);
+            }
+            selectModelRoot(entryToSelect);
+        }
+        myModelRootsPanel.remove(modelRootEditor.getComponent());
+        myModelRootEditors.remove(modelRootEditor);
+        myModelRootsPanel.revalidate();
+        myModelRootsPanel.repaint();
+    }
+
+    private ContentEntryEditor addModelRoot(String url) {
+        final ModelRootContentEntryEditor contentEntryEditor = new ModelRootContentEntryEditor(url, myParentDisposable);
+        contentEntryEditor.initUI();
+        contentEntryEditor.addContentEntryEditorListener(myModelRootEditorListener);
+        Disposer.register(myParentDisposable, new Disposable() {
+            public void dispose() {
+                contentEntryEditor.removeContentEntryEditorListener(myModelRootEditorListener);
+            }
+        });
+        myModelRootEditors.add(contentEntryEditor);
+        Border border = BorderFactory.createEmptyBorder(2, 2, 0, 2);
+        final JComponent component = contentEntryEditor.getComponent();
+        final Border componentBorder = component.getBorder();
+        if (componentBorder != null) {
+            border = BorderFactory.createCompoundBorder(border, componentBorder);
+        }
+        component.setBorder(border);
+        myModelRootsPanel.add(component);
+        return contentEntryEditor;
     }
 
     private void addModelRoots(VirtualFile[] files) {
         ContentEntryEditor lastEditor = null;
         for (VirtualFile file : files) {
-            ContentEntryEditor contentEntryEditor = new ModelSourceContentEntryEditor(file.getUrl(), myParentDisposable);
-            contentEntryEditor.initUI();
-//            contentEntryEditor.addContentEntryEditorListener(myContentEntryEditorListener);
-//            registerDisposable(new Disposable() {
-//              public void dispose() {
-//                contentEntryEditor.removeContentEntryEditorListener(myContentEntryEditorListener);
-//              }
-//            });
-//            myEntryToEditorMap.put(contentEntry, contentEntryEditor);
-            Border border = BorderFactory.createEmptyBorder(2, 2, 0, 2);
-            final JComponent component = contentEntryEditor.getComponent();
-            final Border componentBorder = component.getBorder();
-            if (componentBorder != null) {
-                border = BorderFactory.createCompoundBorder(border, componentBorder);
-            }
-            component.setBorder(border);
-            myModelRootsPanel.add(component);
-            lastEditor = contentEntryEditor;
+            lastEditor = addModelRoot(file.getUrl());
         }
-        if (lastEditor != null) {
-            lastEditor.setSelected(true);
-        }
+        selectModelRoot(lastEditor);
         myModelRootsPanel.revalidate();
         myModelRootsPanel.repaint();
     }
@@ -131,7 +197,7 @@ public class MPSFacetSourcesTab {
 
         public AddModelRootAction() {
             super(MPSBundle.message("facet.sources.tab.add.model.root.action"), MPSBundle.message("facet.sources.tab.add.model.root.description"), MPSIcons.ADD_MODEL_ROOT_ICON);
-            myDescriptor = new FileChooserDescriptor(false, true, true, false, true, true) {
+            myDescriptor = new FileChooserDescriptor(false, true, false, false, false, true) {
                 public void validateSelectedFiles(VirtualFile[] files) throws Exception {
                     validateContentEntriesCandidates(files);
                 }
@@ -140,9 +206,58 @@ public class MPSFacetSourcesTab {
             myDescriptor.setTitle(MPSBundle.message("facet.sources.tab.add.model.root.directory.title"));
             myDescriptor.setDescription(MPSBundle.message("facet.sources.tab.add.model.root.directory.description"));
             myDescriptor.putUserData(FileChooserKeys.DELETE_ACTION_AVAILABLE, false);
+            VirtualFile moduleFile = myContext.getModule().getModuleFile();
+            if (moduleFile != null) {
+                myLastSelectedDir = moduleFile.getParent();
+            }
         }
 
-        private void validateContentEntriesCandidates(VirtualFile[] files) {
+        private void validateContentEntriesCandidates(VirtualFile[] files) throws Exception {
+            for (VirtualFile file : files) {
+                String protocol = VirtualFileManager.extractProtocol(file.getUrl());
+                if (!LocalFileSystem.PROTOCOL.equals(protocol)) {
+                    throw new Exception(MPSBundle.message("facet.sources.tab.add.unsupported.vfs.protocol", file.getPresentableUrl(), protocol));
+                }
+                for (ModelRootContentEntryEditor modelRootEditor : myModelRootEditors) {
+                    ContentEntry contentEntry = modelRootEditor.getContentEntry();
+                    if (contentEntry == null) {
+                        continue;
+                    }
+                    VirtualFile modelRootFile = contentEntry.getFile();
+                    if (modelRootFile == null) {
+                        continue;
+                    }
+                    if (modelRootFile.equals(file)) {
+                        throw new Exception(MPSBundle.message("facet.sources.tab.add.already.exists.root", file.getPresentableUrl()));
+                    }
+                    if (VfsUtil.isAncestor(modelRootFile, file, true)) {
+                        // intersection not allowed
+                        throw new Exception(
+                                MPSBundle.message("facet.sources.tab.add.content.intersect.error", file.getPresentableUrl(),
+                                        modelRootFile.getPresentableUrl()));
+                    }
+                    if (VfsUtil.isAncestor(file, modelRootFile, true)) {
+                        // intersection not allowed
+                        throw new Exception(
+                                MPSBundle.message("facet.sources.tab.add.content.dominate.error", file.getPresentableUrl(),
+                                        modelRootFile.getPresentableUrl()));
+                    }
+                }
+            }
+// TODO: check similar conditions for other mudule's MPS facets
+//            ModulesProvider modulesProvider = myContext.getModulesProvider();
+//            Module[] modules = modulesProvider.getModules();
+//            for (Module module : modules) {
+//                if (module == myContext.getModule()) {
+//                    continue;
+//                }
+//                FacetModel facetModel = modulesProvider.getFacetModel(module);
+//                MPSFacet mpsFacet = facetModel.getFacetByType(MPSFacetType.ID);
+//                if (mpsFacet == null) {
+//                    continue;
+//                }
+//                mpsFacet.getConfiguration().getState().
+//            }
         }
 
         @Override
@@ -152,6 +267,19 @@ public class MPSFacetSourcesTab {
                 myLastSelectedDir = files[0];
                 addModelRoots(files);
             }
+        }
+    }
+
+    private class ModelRootContentEntryEditorListener extends ContentEntryEditorListenerAdapter {
+        @Override
+        public void editingStarted(ContentEntryEditor editor) {
+            selectModelRoot(editor);
+        }
+
+        @Override
+        public void beforeEntryDeleted(ContentEntryEditor editor) {
+            removeModelRoot(editor);
+            editor.removeContentEntryEditorListener(this);
         }
     }
 }

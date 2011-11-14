@@ -26,16 +26,12 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.UUID;
 
 /**
  * evgeny, 10/26/11
@@ -57,20 +53,13 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
                 ModelAccess.instance().runWriteAction(new Runnable() {
                     @Override
                     public void run() {
-                        IFile imlFile = FileSystem.getInstance().getFileByPath(getModule().getModuleFilePath());
-                        SolutionDescriptor dsd = new SolutionDescriptor();
-                        dsd.setUUID(UUID.randomUUID().toString());
-                        dsd.setNamespace(getModule().getName());
-                        dsd.getUsedLanguages().add(BootstrapLanguages.BASE_LANGUAGE);
+                        SolutionDescriptor solutionDescriptor = getConfiguration().getState().myDescriptor;
 
-                        // model root
+                        IFile imlFile = FileSystem.getInstance().getFileByPath(getModule().getModuleFilePath());
                         IFile models = imlFile.getParent().getDescendant("models");
-                        ModelRoot modelRoot = new ModelRoot();
-                        modelRoot.setPath(models.getPath());
-                        dsd.getModelRoots().add(modelRoot);
 
                         Project project = ProjectHelper.toMPSProject(getModule().getProject());
-                        mySolution = Solution.newInstance(new ModulesMiner.ModuleHandle(imlFile, dsd), project);
+                        mySolution = Solution.newInstance(new ModulesMiner.ModuleHandle(imlFile, solutionDescriptor), project);
 
                         MessagesViewTool.log(getModule().getProject(), MessageKind.INFORMATION, "module loaded: " + mySolution.getModuleFqName());
                     }

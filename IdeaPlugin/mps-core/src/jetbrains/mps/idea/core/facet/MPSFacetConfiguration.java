@@ -26,6 +26,7 @@ import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import org.jdom.Element;
@@ -71,8 +72,17 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
 
     private void setConfigurationDefaults() {
         if (configurationBean.getGeneratorOutputPath() == null) {
-            configurationBean.setGeneratorOutputPath(myMpsFacet.getModule().getModuleFile().getParent().getPath() + File.separator + SOURCE_GEN);
-            configurationBean.setUseModuleSourceFolder(false);
+            VirtualFile moduleFile = myMpsFacet.getModule().getModuleFile();
+            if (moduleFile != null) {
+                VirtualFile moduleFolder = moduleFile.getParent();
+                if (moduleFolder != null) {
+                    configurationBean.setGeneratorOutputPath(moduleFolder.getPath() + File.separator + SOURCE_GEN);
+                    configurationBean.setUseModuleSourceFolder(false);
+                }
+            }
+        }
+        if (configurationBean.getNamespace() == null || configurationBean.getNamespace().isEmpty()) {
+            configurationBean.setNamespace(myMpsFacet.getModule().getName());
         }
     }
 

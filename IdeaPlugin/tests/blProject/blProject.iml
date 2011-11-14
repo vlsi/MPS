@@ -2,7 +2,17 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="MPS" name="MPS">
-      <configuration />
+      <configuration>
+        <option name="UUID" value="648f16ff-cde3-44e7-ac17-6e597e40f922" />
+        <option name="generatorOutputPath" value="$MODULE_DIR$/source_gen" />
+        <option name="modelRootPaths">
+          <array>
+            <option value="$MODULE_DIR$/models" />
+          </array>
+        </option>
+        <option name="namespace" value="blProject" />
+        <option name="useModuleSourceFolder" value="false" />
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
