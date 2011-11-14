@@ -36,17 +36,17 @@ public class DependencyPathTree extends MPSTree {
     ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<IModule>,Set<IModule>,Set<Language>>from(SetSequence.fromSetWithValues(new HashSet<IModule>(), from), SetSequence.fromSetWithValues(new HashSet<IModule>(), to), SetSequence.fromSetWithValues(new HashSet<Language>(), usedLanguage)));
   }
 
-  private void addChildDep(MPSTreeNode parent, IModule m, DependencyPathTree.DepType type, Set<IModule> dep, Set<Language> ulang, Set<DependencyPathTree.Dep> visited) {
-    MPSTreeNode child = buildDependency(m, type, dep, ulang, visited);
+  private void addChildDep(MPSTreeNode parent, IModule m, DependencyPathTree.DepType type, String role, Set<IModule> dep, Set<Language> ulang, Set<DependencyPathTree.Dep> visited) {
+    MPSTreeNode child = buildDependency(m, type, role, dep, ulang, visited);
     if (child != null) {
       parent.add(child);
     }
   }
 
   @Nullable
-  private MPSTreeNode buildDependency(IModule from, DependencyPathTree.DepType type, Set<IModule> dependency, Set<Language> usedlangauge, Set<DependencyPathTree.Dep> visited) {
+  private MPSTreeNode buildDependency(IModule from, DependencyPathTree.DepType type, String role, Set<IModule> dependency, Set<Language> usedlangauge, Set<DependencyPathTree.Dep> visited) {
     if (SetSequence.fromSet(dependency).contains(from)) {
-      return new DependencyTreeLeafNode(from, null);
+      return new DependencyTreeLeafNode(from, role, null);
     }
     DependencyPathTree.Dep dep = new DependencyPathTree.Dep(from, type);
     if (SetSequence.fromSet(visited).contains(dep)) {
@@ -54,49 +54,50 @@ public class DependencyPathTree extends MPSTree {
     }
     SetSequence.fromSet(visited).addElement(dep);
 
-    MPSTreeNode result = new DependencyTreeNode(from, null);
+    MPSTreeNode result = new DependencyTreeNode(from, role, null);
 
     switch (type) {
       case M:
         for (Dependency d : ListSequence.fromList(from.getDependencies())) {
-          addChildDep(result, MPSModuleRepository.getInstance().getModule(d.getModuleRef()), DependencyPathTree.DepType.D, dependency, usedlangauge, visited);
+          addChildDep(result, MPSModuleRepository.getInstance().getModule(d.getModuleRef()), DependencyPathTree.DepType.D, "depends on ", dependency, usedlangauge, visited);
         }
         if (from instanceof Language) {
           for (Language l : ListSequence.fromList(((Language) from).getExtendedLanguages())) {
-            addChildDep(result, l, DependencyPathTree.DepType.D, dependency, usedlangauge, visited);
+            addChildDep(result, l, DependencyPathTree.DepType.D, "extends language ", dependency, usedlangauge, visited);
           }
         }
         for (ModuleReference devkit : ListSequence.fromList(from.getUsedDevkitReferences())) {
-          addChildDep(result, MPSModuleRepository.getInstance().getModule(devkit), DependencyPathTree.DepType.DK, dependency, usedlangauge, visited);
+          addChildDep(result, MPSModuleRepository.getInstance().getModule(devkit), DependencyPathTree.DepType.DK, "uses devkit ", dependency, usedlangauge, visited);
         }
         for (ModuleReference l : ListSequence.fromList(from.getUsedLanguagesReferences())) {
-          addChildDep(result, MPSModuleRepository.getInstance().getModule(l), DependencyPathTree.DepType.UL, dependency, usedlangauge, visited);
+          addChildDep(result, MPSModuleRepository.getInstance().getModule(l), DependencyPathTree.DepType.UL, "uses language ", dependency, usedlangauge, visited);
         }
         break;
 
       case DK:
         DevKit dk = (DevKit) from;
         for (DevKit devkit : ListSequence.fromList(dk.getExtendedDevKits())) {
-          addChildDep(result, devkit, DependencyPathTree.DepType.DK, dependency, usedlangauge, visited);
+          addChildDep(result, devkit, DependencyPathTree.DepType.DK, "extends devkit ", dependency, usedlangauge, visited);
         }
         for (Language l : ListSequence.fromList(dk.getExportedLanguages())) {
-          addChildDep(result, l, DependencyPathTree.DepType.UL, dependency, usedlangauge, visited);
+          addChildDep(result, l, DependencyPathTree.DepType.UL, "exports language ", dependency, usedlangauge, visited);
         }
         for (Solution s : ListSequence.fromList(dk.getExportedSolutions())) {
-          addChildDep(result, s, DependencyPathTree.DepType.D, dependency, usedlangauge, visited);
+          addChildDep(result, s, DependencyPathTree.DepType.D, "exports solution ", dependency, usedlangauge, visited);
         }
         break;
+
       case UL:
         Language ul = (Language) from;
         for (Language l : ListSequence.fromList(ul.getExtendedLanguages())) {
-          addChildDep(result, l, DependencyPathTree.DepType.UL, dependency, usedlangauge, visited);
+          addChildDep(result, l, DependencyPathTree.DepType.UL, "extends language ", dependency, usedlangauge, visited);
         }
         for (ModuleReference m : ListSequence.fromList(ul.getRuntimeModulesReferences())) {
-          addChildDep(result, MPSModuleRepository.getInstance().getModule(m), DependencyPathTree.DepType.R, dependency, usedlangauge, visited);
+          addChildDep(result, MPSModuleRepository.getInstance().getModule(m), DependencyPathTree.DepType.R, "exports runtime ", dependency, usedlangauge, visited);
         }
         for (Dependency d : ListSequence.fromList(ul.getDependencies())) {
           if (d.isReexport()) {
-            addChildDep(result, MPSModuleRepository.getInstance().getModule(d.getModuleRef()), DependencyPathTree.DepType.D, dependency, usedlangauge, visited);
+            addChildDep(result, MPSModuleRepository.getInstance().getModule(d.getModuleRef()), DependencyPathTree.DepType.D, "re-exports dependency on ", dependency, usedlangauge, visited);
           }
         }
         break;
@@ -106,19 +107,22 @@ public class DependencyPathTree extends MPSTree {
           addChildDep(result, MPSModuleRepository.getInstance().getModule(d.getModuleRef()), (d.isReexport() ?
             DependencyPathTree.DepType.D :
             DependencyPathTree.DepType.R
+          ), (d.isReexport() ?
+            "re-exports dependency on " :
+            "depends on "
           ), dependency, usedlangauge, visited);
 
         }
         if (from instanceof Language) {
           for (Language l : ListSequence.fromList(((Language) from).getExtendedLanguages())) {
-            addChildDep(result, l, DependencyPathTree.DepType.D, dependency, usedlangauge, visited);
+            addChildDep(result, l, DependencyPathTree.DepType.D, "extends language ", dependency, usedlangauge, visited);
           }
         }
         break;
 
       case R:
         for (Dependency d : ListSequence.fromList(from.getDependencies())) {
-          addChildDep(result, MPSModuleRepository.getInstance().getModule(d.getModuleRef()), DependencyPathTree.DepType.R, dependency, usedlangauge, visited);
+          addChildDep(result, MPSModuleRepository.getInstance().getModule(d.getModuleRef()), DependencyPathTree.DepType.R, "depends on ", dependency, usedlangauge, visited);
         }
       default:
     }
@@ -136,7 +140,7 @@ public class DependencyPathTree extends MPSTree {
     ), null);
     for (Tuples._3<Set<IModule>, Set<IModule>, Set<Language>> dep : ListSequence.fromList(myAllDependencies)) {
       for (IModule m : SetSequence.fromSet(dep._0())) {
-        addChildDep(result, m, DependencyPathTree.DepType.M, dep._1(), dep._2(), SetSequence.fromSet(new HashSet<DependencyPathTree.Dep>()));
+        addChildDep(result, m, DependencyPathTree.DepType.M, "", dep._1(), dep._2(), SetSequence.fromSet(new HashSet<DependencyPathTree.Dep>()));
       }
     }
     setRootVisible(ListSequence.fromList(myAllDependencies).isEmpty());

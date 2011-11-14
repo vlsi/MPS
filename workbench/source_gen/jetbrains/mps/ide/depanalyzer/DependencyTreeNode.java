@@ -20,18 +20,15 @@ public class DependencyTreeNode extends MPSTreeNode {
   private IModule myModule;
   private Color myColor;
 
-  public DependencyTreeNode(IModule module, IOperationContext operationContext) {
+  public DependencyTreeNode(IModule module, String role, IOperationContext operationContext) {
     super(module, operationContext);
     myModule = module;
     setIcon(IconManager.getIconFor(myModule));
-    setNodeIdentifier(module.getModuleFqName());
+    setNodeIdentifier(role + module.getModuleFqName());
   }
 
-  public DependencyTreeNode(IModule module, IOperationContext operationContext, Color color) {
-    super(module, operationContext);
-    myModule = module;
-    setIcon(IconManager.getIconFor(myModule));
-    setNodeIdentifier(module.getModuleFqName());
+  public DependencyTreeNode(IModule module, String role, IOperationContext operationContext, Color color) {
+    this(module, role, operationContext);
     myColor = color;
   }
 

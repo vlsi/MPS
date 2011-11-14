@@ -15,12 +15,12 @@ import java.awt.Color;
  * * To change this template use File | Settings | File Templates.
  */
 public class DependencyTreeLeafNode extends DependencyTreeNode {
-  public DependencyTreeLeafNode(IModule module, IOperationContext operationContext) {
-    super(module, operationContext);
+  public DependencyTreeLeafNode(IModule module, String role, IOperationContext operationContext) {
+    super(module, role, operationContext);
   }
 
-  public DependencyTreeLeafNode(IModule module, IOperationContext operationContext, Color color) {
-    super(module, operationContext, color);
+  public DependencyTreeLeafNode(IModule module, String role, IOperationContext operationContext, Color color) {
+    super(module, role, operationContext, color);
   }
 
   @Override
