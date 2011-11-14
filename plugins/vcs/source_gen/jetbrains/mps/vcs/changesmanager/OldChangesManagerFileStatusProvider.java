@@ -15,11 +15,11 @@ import jetbrains.mps.workbench.editors.MPSEditorUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.editor.Document;
 
-public class ChangesManagerFileStatusProvider implements FileStatusProvider {
+public class OldChangesManagerFileStatusProvider implements FileStatusProvider {
   private Project myProject;
-  private RootNodeFileStatusManager myRootNodeFileStatusProvider;
+  private OldRootNodeFileStatusManager myRootNodeFileStatusProvider;
 
-  public ChangesManagerFileStatusProvider(@NotNull Project project, @NotNull RootNodeFileStatusManager rootNodeFileStatusProvider) {
+  public OldChangesManagerFileStatusProvider(@NotNull Project project, @NotNull OldRootNodeFileStatusManager rootNodeFileStatusProvider) {
     myProject = project;
     myRootNodeFileStatusProvider = rootNodeFileStatusProvider;
   }

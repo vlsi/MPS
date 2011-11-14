@@ -9,7 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter;
+import jetbrains.mps.vcs.changesmanager.OldEditorChangesHighlighter;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -31,7 +31,7 @@ public class GoToNextChange_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setVisible(true);
-      event.getPresentation().setEnabled(EditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).isNextChangeAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
+      event.getPresentation().setEnabled(OldEditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).isNextChangeAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GoToNextChange", t);
@@ -57,7 +57,7 @@ public class GoToNextChange_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      EditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).goToNextChange(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+      OldEditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).goToNextChange(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToNextChange", t);

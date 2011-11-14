@@ -112,8 +112,8 @@
     <classNode dependClassName="jetbrains.mps.vcs.annotate.ViewAction" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate.ViewActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate._Adapters" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldChangeListener" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldModelChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange" />
@@ -162,7 +162,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.OldRootNodeFileStatusManager" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

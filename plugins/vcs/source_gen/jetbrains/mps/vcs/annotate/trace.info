@@ -105,7 +105,7 @@
     <nodeInfo nodeId="5841940560826281101" fileName="AnnotationColumn.java" startLine="195" startPosition="112" endLine="196" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7590932940322163674" fileName="AnnotationColumn.java" startLine="196" startPosition="42" endLine="197" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8109277724594929530" fileName="AnnotationColumn.java" startLine="197" startPosition="78" endLine="198" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8595271971828691752" fileName="AnnotationColumn.java" startLine="198" startPosition="16" endLine="199" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8595271971828691752" fileName="AnnotationColumn.java" startLine="198" startPosition="16" endLine="199" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8595271971828756379" fileName="AnnotationColumn.java" startLine="201" startPosition="25" endLine="202" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8595271971828756572" fileName="AnnotationColumn.java" startLine="204" startPosition="43" endLine="205" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8595271971828756388" fileName="AnnotationColumn.java" startLine="207" startPosition="11" endLine="208" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -202,7 +202,7 @@
     <nodeInfo nodeId="775786118952886444" fileName="AnnotationColumn.java" startLine="472" startPosition="25" endLine="473" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5475827956326265626" fileName="AnnotationColumn.java" startLine="473" startPosition="40" endLine="474" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5475827956326259658" fileName="AnnotationColumn.java" startLine="474" startPosition="58" endLine="475" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8054337884878034869" fileName="AnnotationColumn.java" startLine="475" startPosition="31" endLine="476" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8054337884878034869" fileName="AnnotationColumn.java" startLine="475" startPosition="31" endLine="476" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5475827956326259662" fileName="AnnotationColumn.java" startLine="478" startPosition="25" endLine="479" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4277709331644247117" fileName="AnnotationColumn.java" startLine="484" startPosition="23" endLine="485" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4277709331644247126" fileName="AnnotationColumn.java" startLine="485" startPosition="54" endLine="486" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -317,7 +317,7 @@
     <nodeInfo nodeId="1017050162851028162" fileName="AnnotationColumn.java" startLine="446" startPosition="10" endLine="448" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6964398208146163427" fileName="AnnotationColumn.java" startLine="466" startPosition="10" endLine="468" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7933049429684757613" fileName="AnnotationColumn.java" startLine="625" startPosition="68" endLine="627" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyAnnotationListener#()V" />
-    <nodeInfo nodeId="8595271971828756399" fileName="AnnotationColumn.java" startLine="640" startPosition="71" endLine="642" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyChangeListener#()V" />
+    <nodeInfo nodeId="8595271971828756399" fileName="AnnotationColumn.java" startLine="640" startPosition="74" endLine="642" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyChangeListener#()V" />
     <nodeInfo nodeId="3232057114993246767" fileName="AnnotationColumn.java" startLine="717" startPosition="22" endLine="719" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="775786118952886433" fileName="AnnotationColumn.java" startLine="784" startPosition="90" endLine="786" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyEditorComponentCreateListener#()V" />
     <nodeInfo nodeId="5838713064222200838" fileName="AnnotationColumn.java" startLine="136" startPosition="38" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -405,7 +405,7 @@
     <nodeInfo nodeId="3044230244124376983" fileName="AnnotationColumn.java" startLine="411" startPosition="8" endLine="416" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4207419944012141821" fileName="AnnotationColumn.java" startLine="417" startPosition="79" endLine="422" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7105003223552574923" fileName="AnnotationColumn.java" startLine="443" startPosition="49" endLine="448" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8054337884878053825" fileName="AnnotationColumn.java" startLine="476" startPosition="83" endLine="481" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8054337884878053825" fileName="AnnotationColumn.java" startLine="476" startPosition="89" endLine="481" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4277709331644247113" fileName="AnnotationColumn.java" startLine="483" startPosition="0" endLine="488" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
     <nodeInfo nodeId="1017050162851028106" fileName="AnnotationColumn.java" startLine="504" startPosition="10" endLine="509" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8411107316628743204" fileName="AnnotationColumn.java" startLine="515" startPosition="55" endLine="520" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -452,7 +452,7 @@
     <nodeInfo nodeId="7933049429684782714" fileName="AnnotationColumn.java" startLine="628" startPosition="0" endLine="638" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onAnnotationChanged#()V" />
     <nodeInfo nodeId="4450614678073852809" fileName="AnnotationColumn.java" startLine="730" startPosition="144" endLine="740" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8787943709088576943" fileName="AnnotationColumn.java" startLine="753" startPosition="22" endLine="763" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8595271971828691731" fileName="AnnotationColumn.java" startLine="199" startPosition="83" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8595271971828691731" fileName="AnnotationColumn.java" startLine="199" startPosition="89" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6964398208146163399" fileName="AnnotationColumn.java" startLine="459" startPosition="0" endLine="470" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
     <nodeInfo nodeId="6964398208146163437" fileName="AnnotationColumn.java" startLine="488" startPosition="0" endLine="499" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findPseudoLineByY#(I)I" />
     <nodeInfo nodeId="4450614678073852808" fileName="AnnotationColumn.java" startLine="729" startPosition="73" endLine="740" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -592,7 +592,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8821895807217429767" fileName="AnnotationColumn.java" startLine="577" startPosition="65" endLine="579" endPosition="23" />
     <scopeInfo nodeId="7933049429684757613" fileName="AnnotationColumn.java" startLine="625" startPosition="68" endLine="627" endPosition="5" />
-    <scopeInfo nodeId="8595271971828756399" fileName="AnnotationColumn.java" startLine="640" startPosition="71" endLine="642" endPosition="5" />
+    <scopeInfo nodeId="8595271971828756399" fileName="AnnotationColumn.java" startLine="640" startPosition="74" endLine="642" endPosition="5" />
     <scopeInfo nodeId="5841940560826277246" fileName="AnnotationColumn.java" startLine="660" startPosition="55" endLine="662" endPosition="28" />
     <scopeInfo nodeId="3087146731607851335" fileName="AnnotationColumn.java" startLine="683" startPosition="31" endLine="685" endPosition="23" />
     <scopeInfo nodeId="775786118952886433" fileName="AnnotationColumn.java" startLine="784" startPosition="90" endLine="786" endPosition="5" />
@@ -1380,7 +1380,7 @@
     <nodeInfo nodeId="700892246829418075" fileName="AnnotationHelper.java" startLine="74" startPosition="5" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="700892246829418085" fileName="AnnotationHelper.java" startLine="77" startPosition="44" endLine="78" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="700892246829418099" fileName="AnnotationHelper.java" startLine="81" startPosition="89" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="700892246829418110" fileName="AnnotationHelper.java" startLine="84" startPosition="97" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="700892246829418110" fileName="AnnotationHelper.java" startLine="84" startPosition="100" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="700892246829418119" fileName="AnnotationHelper.java" startLine="86" startPosition="5" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="700892246829418120" fileName="AnnotationHelper.java" startLine="87" startPosition="0" endLine="88" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="700892246829418131" fileName="AnnotationHelper.java" startLine="89" startPosition="37" endLine="90" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1442,7 +1442,7 @@
     <scopeInfo nodeId="700892246829418072" fileName="AnnotationHelper.java" startLine="72" startPosition="22" endLine="73" endPosition="19" />
     <scopeInfo nodeId="700892246829418084" fileName="AnnotationHelper.java" startLine="77" startPosition="44" endLine="78" endPosition="94" />
     <scopeInfo nodeId="700892246829418098" fileName="AnnotationHelper.java" startLine="81" startPosition="89" endLine="82" endPosition="19" />
-    <scopeInfo nodeId="700892246829418109" fileName="AnnotationHelper.java" startLine="84" startPosition="97" endLine="85" endPosition="19" />
+    <scopeInfo nodeId="700892246829418109" fileName="AnnotationHelper.java" startLine="84" startPosition="100" endLine="85" endPosition="19" />
     <scopeInfo nodeId="700892246829418130" fileName="AnnotationHelper.java" startLine="89" startPosition="37" endLine="90" endPosition="19" />
     <scopeInfo nodeId="700892246829418135" fileName="AnnotationHelper.java" startLine="93" startPosition="17" endLine="94" endPosition="18" />
     <scopeInfo nodeId="700892246829418154" fileName="AnnotationHelper.java" startLine="101" startPosition="13" endLine="102" endPosition="63" />

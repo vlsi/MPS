@@ -41,7 +41,7 @@ import com.intellij.openapi.ui.MessageType;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.actions.AnnotationColors;
-import jetbrains.mps.vcs.changesmanager.ChangesManager;
+import jetbrains.mps.vcs.changesmanager.OldChangesManager;
 import jetbrains.mps.vcs.changesmanager.OldModelChangesManager;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
@@ -82,7 +82,7 @@ import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
 import com.intellij.openapi.vcs.annotate.AnnotationListener;
-import jetbrains.mps.vcs.changesmanager.ChangeListener;
+import jetbrains.mps.vcs.changesmanager.OldChangeListener;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -196,7 +196,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = (EditableSModelDescriptor) model.getModelDescriptor();
     myVcs = vcs;
-    final ChangesManager changesManager = ChangesManager.getInstance(getProject());
+    final OldChangesManager changesManager = OldChangesManager.getInstance(getProject());
     changesManager.getCommandQueue().runTask(new Runnable() {
       public void run() {
         OldModelChangesManager modelChangesManager = changesManager.getModelChangesManager(myModelDescriptor);
@@ -473,7 +473,7 @@ __switch__:
     myMessageBusConnection.disconnect();
     myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
-    final ChangesManager changesManager = ChangesManager.getInstance(getProject());
+    final OldChangesManager changesManager = OldChangesManager.getInstance(getProject());
     changesManager.getCommandQueue().runTask(new Runnable() {
       public void run() {
         changesManager.getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
@@ -637,7 +637,7 @@ __switch__:
     }
   }
 
-  private class MyChangeListener extends ChangeListener.ChangeAdapter {
+  private class MyChangeListener extends OldChangeListener.ChangeAdapter {
     public MyChangeListener() {
     }
 

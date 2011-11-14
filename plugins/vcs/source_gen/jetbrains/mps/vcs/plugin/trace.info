@@ -116,7 +116,7 @@
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="26" startPosition="52" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="27" startPosition="35" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363045" fileName="GoToNextChange_Action.java" startLine="32" startPosition="9" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6763225944573363052" fileName="GoToNextChange_Action.java" startLine="33" startPosition="47" endLine="34" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6763225944573363052" fileName="GoToNextChange_Action.java" startLine="33" startPosition="47" endLine="34" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="36" startPosition="33" endLine="37" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="38" startPosition="7" endLine="39" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="44" startPosition="53" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -125,12 +125,12 @@
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="50" startPosition="5" endLine="51" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="52" startPosition="62" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6763225944573363030" fileName="GoToNextChange_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6763225944573363030" fileName="GoToNextChange_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="62" startPosition="33" endLine="63" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="72" startPosition="32" endLine="73" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="74" startPosition="7" endLine="75" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="35" startPosition="27" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="35" startPosition="27" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="43" startPosition="95" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -154,12 +154,12 @@
     <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="44" startPosition="53" endLine="45" endPosition="19" />
     <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="48" startPosition="68" endLine="49" endPosition="19" />
     <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="52" startPosition="62" endLine="53" endPosition="19" />
-    <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="184" />
+    <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="187" />
     <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="62" startPosition="33" endLine="63" endPosition="88" />
     <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="124" />
     <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="72" startPosition="32" endLine="73" endPosition="61" />
-    <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="227" />
-    <scopeInfo nodeId="6763225944573363044" fileName="GoToNextChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="227" />
+    <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="230" />
+    <scopeInfo nodeId="6763225944573363044" fileName="GoToNextChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="230" />
     <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="25" startPosition="34" endLine="28" endPosition="40" />
     <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="35" startPosition="27" endLine="38" endPosition="7" />
     <scopeInfo nodeId="6763225944573363027" fileName="GoToNextChange_Action.java" startLine="61" startPosition="0" endLine="64" endPosition="7">
@@ -204,7 +204,7 @@
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="26" startPosition="60" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="27" startPosition="35" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363085" fileName="GoToPreviousChange_Action.java" startLine="32" startPosition="9" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6763225944573363092" fileName="GoToPreviousChange_Action.java" startLine="33" startPosition="47" endLine="34" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6763225944573363092" fileName="GoToPreviousChange_Action.java" startLine="33" startPosition="47" endLine="34" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="36" startPosition="33" endLine="37" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="38" startPosition="7" endLine="39" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="44" startPosition="53" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -213,12 +213,12 @@
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="50" startPosition="5" endLine="51" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="52" startPosition="62" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6763225944573363072" fileName="GoToPreviousChange_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6763225944573363072" fileName="GoToPreviousChange_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="62" startPosition="33" endLine="63" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="72" startPosition="32" endLine="73" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="74" startPosition="7" endLine="75" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="35" startPosition="27" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="35" startPosition="27" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="43" startPosition="95" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -242,12 +242,12 @@
     <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="44" startPosition="53" endLine="45" endPosition="19" />
     <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="48" startPosition="68" endLine="49" endPosition="19" />
     <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="52" startPosition="62" endLine="53" endPosition="19" />
-    <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="188" />
+    <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="191" />
     <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="62" startPosition="33" endLine="63" endPosition="92" />
     <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="132" />
     <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="72" startPosition="32" endLine="73" endPosition="65" />
-    <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="231" />
-    <scopeInfo nodeId="6763225944573363084" fileName="GoToPreviousChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="231" />
+    <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="234" />
+    <scopeInfo nodeId="6763225944573363084" fileName="GoToPreviousChange_Action.java" startLine="32" startPosition="9" endLine="34" endPosition="234" />
     <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="25" startPosition="38" endLine="28" endPosition="40" />
     <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="35" startPosition="27" endLine="38" endPosition="7" />
     <scopeInfo nodeId="6763225944573363067" fileName="GoToPreviousChange_Action.java" startLine="61" startPosition="0" endLine="64" endPosition="7">
@@ -302,7 +302,7 @@
     <nodeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="51" startPosition="5" endLine="52" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="53" startPosition="62" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6763225944573363112" fileName="RollbackChanges_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6763225944573363112" fileName="RollbackChanges_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="63" startPosition="33" endLine="64" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="70" startPosition="9" endLine="71" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="73" startPosition="32" endLine="74" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -331,7 +331,7 @@
     <scopeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="45" startPosition="53" endLine="46" endPosition="19" />
     <scopeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="49" startPosition="68" endLine="50" endPosition="19" />
     <scopeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="53" startPosition="62" endLine="54" endPosition="19" />
-    <scopeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="185" />
+    <scopeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="188" />
     <scopeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="63" startPosition="33" endLine="64" endPosition="89" />
     <scopeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="70" startPosition="9" endLine="71" endPosition="117" />
     <scopeInfo nodeId="6763225944573363107" fileName="RollbackChanges_Action.java" startLine="73" startPosition="32" endLine="74" endPosition="62" />

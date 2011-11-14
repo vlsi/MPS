@@ -48,22 +48,22 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import javax.swing.tree.TreeNode;
 
-public class ProjectTreeChangesHighlighter extends AbstractProjectComponent implements TreeMessageOwner {
+public class OldProjectTreeChangesHighlighter extends AbstractProjectComponent implements TreeMessageOwner {
   private static final boolean EXTRA_CHECKS_ENABLED = true;
 
   private TreeMessage myDefaultTreeMessage = new TreeMessage(FileStatus.COLOR_MODIFIED, null, this);
-  private ChangesManager myChangesManager;
+  private OldChangesManager myChangesManager;
   private SimpleCommandQueue myCommandQueue;
-  private Map<MPSTreeNode, ProjectTreeChangesHighlighter.PrimaryMessage> myPrimaryMessageForTreeNode = MapSequence.fromMap(new HashMap<MPSTreeNode, ProjectTreeChangesHighlighter.PrimaryMessage>());
-  private CounterMap<SNode> myChangeCountForNode = new CounterMap<SNode>(new ProjectTreeChangesHighlighter.MyChangeCountForNodeHandler());
-  private CounterMap<SNode> myPropertyChangeCountForNode = new CounterMap<SNode>(new ProjectTreeChangesHighlighter.MyPropertyChangeCountForNodeHandler());
-  private CounterMap<SNode> myReferenceChangeCountForNode = new CounterMap<SNode>(new ProjectTreeChangesHighlighter.MyReferenceChangeCountForNodeHandler());
+  private Map<MPSTreeNode, OldProjectTreeChangesHighlighter.PrimaryMessage> myPrimaryMessageForTreeNode = MapSequence.fromMap(new HashMap<MPSTreeNode, OldProjectTreeChangesHighlighter.PrimaryMessage>());
+  private CounterMap<SNode> myChangeCountForNode = new CounterMap<SNode>(new OldProjectTreeChangesHighlighter.MyChangeCountForNodeHandler());
+  private CounterMap<SNode> myPropertyChangeCountForNode = new CounterMap<SNode>(new OldProjectTreeChangesHighlighter.MyPropertyChangeCountForNodeHandler());
+  private CounterMap<SNode> myReferenceChangeCountForNode = new CounterMap<SNode>(new OldProjectTreeChangesHighlighter.MyReferenceChangeCountForNodeHandler());
   private Map<SNode, List<SNodeTreeNode>> mySNodesToTreeNodes = MapSequence.fromMap(new HashMap<SNode, List<SNodeTreeNode>>());
   private Map<SModelDescriptor, List<SModelTreeNode>> mySModelDescriptorsToTreeNodes = MapSequence.fromMap(new HashMap<SModelDescriptor, List<SModelTreeNode>>());
-  private ChangeListener myChangeListener = new ProjectTreeChangesHighlighter.MyChangeListener();
-  private MPSTreeNodeListener myTreeNodeListener = new ProjectTreeChangesHighlighter.MyMPSTreeNodeListener();
+  private OldChangeListener myChangeListener = new OldProjectTreeChangesHighlighter.MyChangeListener();
+  private MPSTreeNodeListener myTreeNodeListener = new OldProjectTreeChangesHighlighter.MyMPSTreeNodeListener();
 
-  public ProjectTreeChangesHighlighter(@NotNull Project project, @NotNull ChangesManager changesManager) {
+  public OldProjectTreeChangesHighlighter(@NotNull Project project, @NotNull OldChangesManager changesManager) {
     super(project);
     myChangesManager = changesManager;
     myCommandQueue = myChangesManager.getCommandQueue();
@@ -230,14 +230,14 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
             return;
           }
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
-            highlightTreeNodeWithMessage(treeNode, new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(change, changesManager.getFileStatus())));
+            highlightTreeNodeWithMessage(treeNode, new OldProjectTreeChangesHighlighter.PrimaryMessage(getColor(change, changesManager.getFileStatus())));
           }
         } else if (change instanceof OldSetPropertyChange) {
           String propertyName = ((OldSetPropertyChange) change).getProperty();
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
             PropertyTreeNode propertyTreeNode = MPSTreeUtil.findPropertyTreeNode(treeNode, propertyName);
             if (propertyTreeNode != null) {
-              highlightTreeNodeWithMessage(propertyTreeNode, new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(change)));
+              highlightTreeNodeWithMessage(propertyTreeNode, new OldProjectTreeChangesHighlighter.PrimaryMessage(getColor(change)));
             }
           }
         } else if (change instanceof OldSetReferenceChange) {
@@ -245,7 +245,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
             ReferenceTreeNode referenceTreeNode = MPSTreeUtil.findReferenceTreeNode(treeNode, role);
             if (referenceTreeNode != null) {
-              highlightTreeNodeWithMessage(referenceTreeNode, new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(change)));
+              highlightTreeNodeWithMessage(referenceTreeNode, new OldProjectTreeChangesHighlighter.PrimaryMessage(getColor(change)));
             }
           }
         }
@@ -342,7 +342,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     });
   }
 
-  private void highlightTreeNodeWithMessage(@NotNull MPSTreeNode treeNode, @NotNull ProjectTreeChangesHighlighter.PrimaryMessage primaryMessage) {
+  private void highlightTreeNodeWithMessage(@NotNull MPSTreeNode treeNode, @NotNull OldProjectTreeChangesHighlighter.PrimaryMessage primaryMessage) {
     if (MapSequence.fromMap(myPrimaryMessageForTreeNode).containsKey(treeNode)) {
       unhighlightTreeNode(treeNode);
     }
@@ -354,7 +354,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
   }
 
   private void unhighlightTreeNode(@NotNull MPSTreeNode treeNode) {
-    ProjectTreeChangesHighlighter.PrimaryMessage primaryMessage = MapSequence.fromMap(myPrimaryMessageForTreeNode).get(treeNode);
+    OldProjectTreeChangesHighlighter.PrimaryMessage primaryMessage = MapSequence.fromMap(myPrimaryMessageForTreeNode).get(treeNode);
     if (EXTRA_CHECKS_ENABLED && primaryMessage == null) {
       return;
     }
@@ -377,7 +377,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           updateModelHighlighting(((SModelTreeNode) treeNode).getSModelDescriptor());
           return;
         }
-        final Wrappers._T<ProjectTreeChangesHighlighter.PrimaryMessage> primaryMessage = new Wrappers._T<ProjectTreeChangesHighlighter.PrimaryMessage>(null);
+        final Wrappers._T<OldProjectTreeChangesHighlighter.PrimaryMessage> primaryMessage = new Wrappers._T<OldProjectTreeChangesHighlighter.PrimaryMessage>(null);
         if (treeNode instanceof SNodeTreeNode) {
           final SNode node = ((SNodeTreeNode) treeNode).getSNode();
           if (node == null) {
@@ -385,7 +385,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           }
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              if (check_ybywwq_a0a0a2a5a0a0a0j(SNodeOperations.getModel(node)) == null) {
+              if (check_2ryzlz_a0a0a2a5a0a0a0j(SNodeOperations.getModel(node)) == null) {
                 return;
               }
               OldModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
@@ -395,7 +395,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
               for (OldChange c : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 if ((c instanceof NewNodeChange) && node.getSNodeId().equals(c.getAffectedNodeId())) {
                   assert primaryMessage.value == null;
-                  primaryMessage.value = new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(c, modelChangesManager.getFileStatus()));
+                  primaryMessage.value = new OldProjectTreeChangesHighlighter.PrimaryMessage(getColor(c, modelChangesManager.getFileStatus()));
                 }
               }
             }
@@ -409,7 +409,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
             treeNode.addTreeMessage(myDefaultTreeMessage);
           }
         } else if (treeNode instanceof PropertyTreeNode) {
-          final SNode node = check_ybywwq_a0a0c5a0a0a0j(((PropertiesTreeNode) check_ybywwq_a0a0a0a2f0a0a0a9(treeNode)));
+          final SNode node = check_2ryzlz_a0a0c5a0a0a0j(((PropertiesTreeNode) check_2ryzlz_a0a0a0a2f0a0a0a9(treeNode)));
           if (node == null) {
             return;
           }
@@ -422,7 +422,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
               for (OldChange c : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 if (c instanceof OldSetPropertyChange && node.getSNodeId().equals(c.getAffectedNodeId()) && ObjectUtils.equals(((OldSetPropertyChange) c).getProperty(), ((PropertyTreeNode) treeNode).getProperty())) {
                   assert primaryMessage.value == null;
-                  primaryMessage.value = new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(c));
+                  primaryMessage.value = new OldProjectTreeChangesHighlighter.PrimaryMessage(getColor(c));
                 }
               }
             }
@@ -441,7 +441,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
               for (OldChange c : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 if (c instanceof OldSetReferenceChange && node.getSNodeId().equals(c.getAffectedNodeId()) && ObjectUtils.equals(((OldSetReferenceChange) c).getRole(), ((ReferenceTreeNode) treeNode).getRef().getRole())) {
                   assert primaryMessage.value == null;
-                  primaryMessage.value = new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(c));
+                  primaryMessage.value = new OldProjectTreeChangesHighlighter.PrimaryMessage(getColor(c));
                 }
               }
             }
@@ -483,9 +483,9 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     myCommandQueue.runTask(new Runnable() {
       public void run() {
         FileStatus fileStatus = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor).getFileStatus();
-        Color color = check_ybywwq_a0b0a0a2a01(fileStatus);
+        Color color = check_2ryzlz_a0b0a0a2a01(fileStatus);
         for (SModelTreeNode modelTreeNode : ListSequence.fromList(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).get(modelDescriptor))) {
-          Set<TreeMessage> wereMessages = modelTreeNode.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
+          Set<TreeMessage> wereMessages = modelTreeNode.removeTreeMessages(OldProjectTreeChangesHighlighter.this, true);
           if (EXTRA_CHECKS_ENABLED && !(wereMessages.isEmpty()) && fileStatus == FileStatus.NOT_CHANGED) {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
@@ -499,7 +499,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
                       public void run() {
                         ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node)).visitAll(new IVisitor<SNodeTreeNode>() {
                           public void visit(SNodeTreeNode tn) {
-                            tn.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
+                            tn.removeTreeMessages(OldProjectTreeChangesHighlighter.this, true);
                           }
                         });
                       }
@@ -510,7 +510,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
             });
           }
           if (color != null) {
-            modelTreeNode.addTreeMessage(new TreeMessage(color, null, ProjectTreeChangesHighlighter.this));
+            modelTreeNode.addTreeMessage(new TreeMessage(color, null, OldProjectTreeChangesHighlighter.this));
           }
         }
       }
@@ -546,28 +546,28 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     }
   }
 
-  private static SModelDescriptor check_ybywwq_a0a0a2a5a0a0a0j(SModel checkedDotOperand) {
+  private static SModelDescriptor check_2ryzlz_a0a0a2a5a0a0a0j(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SNode check_ybywwq_a0a0c5a0a0a0j(PropertiesTreeNode checkedDotOperand) {
+  private static SNode check_2ryzlz_a0a0c5a0a0a0j(PropertiesTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
 
-  private static TreeNode check_ybywwq_a0a0a0a2f0a0a0a9(MPSTreeNode checkedDotOperand) {
+  private static TreeNode check_2ryzlz_a0a0a0a2f0a0a0a9(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getParent();
     }
     return null;
   }
 
-  private static Color check_ybywwq_a0b0a0a2a01(FileStatus checkedDotOperand) {
+  private static Color check_2ryzlz_a0b0a0a2a01(FileStatus checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getColor();
     }
@@ -578,8 +578,8 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     private TreeMessage myDescendantSecondaryMessage;
 
     public PrimaryMessage(@Nullable Color color) {
-      super(color, null, ProjectTreeChangesHighlighter.this);
-      myDescendantSecondaryMessage = new TreeMessage(color, null, ProjectTreeChangesHighlighter.this) {
+      super(color, null, OldProjectTreeChangesHighlighter.this);
+      myDescendantSecondaryMessage = new TreeMessage(color, null, OldProjectTreeChangesHighlighter.this) {
         @Override
         public int getPriority() {
           return 1;
@@ -661,7 +661,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     }
   }
 
-  private class MyChangeListener implements ChangeListener {
+  private class MyChangeListener implements OldChangeListener {
     public MyChangeListener() {
     }
 

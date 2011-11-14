@@ -49,7 +49,7 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.FileStatus;
 
-public class EditorComponentChangesHighligher implements EditorMessageOwner {
+public class OldEditorComponentChangesHighligher implements EditorMessageOwner {
   private static final Color HIGHLIGHT_COLOR_ADDED = new Color(214, 245, 214);
   private static final Color HIGHLIGHT_COLOR_CHANGED = new Color(216, 227, 251);
   private static final Color HIGHLIGHT_COLOR_CHANGED_FRAME = new Color(188, 207, 249);
@@ -58,21 +58,21 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   private static final Color TRANSPARENT_COLOR = new Color(0, 0, 0, 0);
 
   private EditorComponent myEditorComponent;
-  private final Map<OldChange, EditorComponentChangesHighligher.ChangeEditorMessage> myChangesMessages = MapSequence.fromMap(new HashMap<OldChange, EditorComponentChangesHighligher.ChangeEditorMessage>());
-  private ChangeListener myChangeListener;
-  private ChangesFoldingAreaPainter myFoldingAreaPainter;
+  private final Map<OldChange, OldEditorComponentChangesHighligher.ChangeEditorMessage> myChangesMessages = MapSequence.fromMap(new HashMap<OldChange, OldEditorComponentChangesHighligher.ChangeEditorMessage>());
+  private OldChangeListener myChangeListener;
+  private OldChangesFoldingAreaPainter myFoldingAreaPainter;
   private OldModelChangesManager myModelChangesManager;
   private boolean myEnabled;
   private boolean myDisposed = false;
   private final Object myDisposedLock = new Object();
 
-  public EditorComponentChangesHighligher(final Project project, @NotNull final EditorComponent editorComponent, boolean enabled) {
+  public OldEditorComponentChangesHighligher(final Project project, @NotNull final EditorComponent editorComponent, boolean enabled) {
     myEditorComponent = editorComponent;
-    myFoldingAreaPainter = new ChangesFoldingAreaPainter(this);
+    myFoldingAreaPainter = new OldChangesFoldingAreaPainter(this);
     myEditorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(myFoldingAreaPainter);
     myEnabled = enabled;
 
-    ChangesManager.getInstance(project).getCommandQueue().runTask(new Runnable() {
+    OldChangesManager.getInstance(project).getCommandQueue().runTask(new Runnable() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
@@ -90,15 +90,15 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
                 null
               );
               if (descriptor instanceof EditableSModelDescriptor) {
-                myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager((EditableSModelDescriptor) descriptor);
-                myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
+                myModelChangesManager = OldChangesManager.getInstance(project).getModelChangesManager((EditableSModelDescriptor) descriptor);
+                myChangeListener = new OldEditorComponentChangesHighligher.MyChangeListener();
               }
               if (myChangeListener != null) {
                 for (OldChange change : ListSequence.fromList(myModelChangesManager.getChangeList())) {
                   highlightChange(change);
                 }
                 synchronized (myChangesMessages) {
-                  for (EditorComponentChangesHighligher.ChangeEditorMessage message : Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values())) {
+                  for (OldEditorComponentChangesHighligher.ChangeEditorMessage message : Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values())) {
                     getHighlightManager().mark(message);
                   }
                 }
@@ -180,12 +180,12 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       // don't highlight added roots 
       return null;
     }
-    EditorComponentChangesHighligher.ChangeEditorMessage message;
+    OldEditorComponentChangesHighligher.ChangeEditorMessage message;
     synchronized (myChangesMessages) {
       if (MapSequence.fromMap(myChangesMessages).containsKey(change)) {
         return null;
       }
-      message = new EditorComponentChangesHighligher.ChangeEditorMessage(change, node.value, c, messageTarget.value);
+      message = new OldEditorComponentChangesHighligher.ChangeEditorMessage(change, node.value, c, messageTarget.value);
       if (myEditorComponent == null) {
         return null;
       }
@@ -219,7 +219,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
                 }
               });
             }
-            getHighlightManager().clearForOwner(EditorComponentChangesHighligher.this);
+            getHighlightManager().clearForOwner(OldEditorComponentChangesHighligher.this);
             myEditorComponent.getLeftEditorHighlighter().removeFoldingAreaPainter(myFoldingAreaPainter);
           } finally {
             if (myModelChangesManager != null) {
@@ -238,7 +238,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   @NotNull
-  /*package*/ List<EditorComponentChangesHighligher.ChangeEditorMessage> getEditorMessages() {
+  /*package*/ List<OldEditorComponentChangesHighligher.ChangeEditorMessage> getEditorMessages() {
     synchronized (myChangesMessages) {
       return Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values()).toListSequence();
     }
@@ -250,32 +250,32 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   @Nullable
-  private ChangesFoldingAreaPainter.MessageGroup getPreviousMessageGroup(@NotNull EditorContext editorContext) {
+  private OldChangesFoldingAreaPainter.MessageGroup getPreviousMessageGroup(@NotNull EditorContext editorContext) {
     if (editorContext.getContextCell() == null) {
       return null;
     }
     final int topY = editorContext.getContextCell().getY();
-    return ListSequence.fromList(myFoldingAreaPainter.getMessageGroups()).findLast(new IWhereFilter<ChangesFoldingAreaPainter.MessageGroup>() {
-      public boolean accept(ChangesFoldingAreaPainter.MessageGroup mg) {
+    return ListSequence.fromList(myFoldingAreaPainter.getMessageGroups()).findLast(new IWhereFilter<OldChangesFoldingAreaPainter.MessageGroup>() {
+      public boolean accept(OldChangesFoldingAreaPainter.MessageGroup mg) {
         return topY > mg.getY() + mg.getHeight();
       }
     });
   }
 
   @Nullable
-  private ChangesFoldingAreaPainter.MessageGroup getNextMessageGroup(@NotNull EditorContext editorContext) {
+  private OldChangesFoldingAreaPainter.MessageGroup getNextMessageGroup(@NotNull EditorContext editorContext) {
     if (editorContext.getContextCell() == null) {
       return null;
     }
     final int bottomY = editorContext.getContextCell().getY() + editorContext.getContextCell().getHeight();
-    return ListSequence.fromList(myFoldingAreaPainter.getMessageGroups()).findFirst(new IWhereFilter<ChangesFoldingAreaPainter.MessageGroup>() {
-      public boolean accept(ChangesFoldingAreaPainter.MessageGroup mg) {
+    return ListSequence.fromList(myFoldingAreaPainter.getMessageGroups()).findFirst(new IWhereFilter<OldChangesFoldingAreaPainter.MessageGroup>() {
+      public boolean accept(OldChangesFoldingAreaPainter.MessageGroup mg) {
         return bottomY < mg.getY();
       }
     });
   }
 
-  private void goToMessageGroup(@Nullable ChangesFoldingAreaPainter.MessageGroup messageGroup) {
+  private void goToMessageGroup(@Nullable OldChangesFoldingAreaPainter.MessageGroup messageGroup) {
     if (messageGroup == null) {
       return;
     }
@@ -303,8 +303,8 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public void rollbackChanges(@NotNull EditorContext editorContext) {
-    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, OldChange>() {
-      public OldChange select(EditorComponentChangesHighligher.ChangeEditorMessage msg) {
+    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).select(new ISelector<OldEditorComponentChangesHighligher.ChangeEditorMessage, OldChange>() {
+      public OldChange select(OldEditorComponentChangesHighligher.ChangeEditorMessage msg) {
         return msg.getChange();
       }
     }));
@@ -312,7 +312,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   private NodeHighlightManager getHighlightManager() {
-    return check_7ugudc_a0a41(myEditorComponent);
+    return check_w2a75v_a0a41(myEditorComponent);
   }
 
   private static boolean hasChildrenWithDifferentNode(EditorCell cell) {
@@ -328,7 +328,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     }
   }
 
-  private static NodeHighlightManager check_7ugudc_a0a41(EditorComponent checkedDotOperand) {
+  private static NodeHighlightManager check_w2a75v_a0a41(EditorComponent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getHighlightManager();
     }
@@ -340,7 +340,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     private boolean myHighlighted = false;
 
     public ChangeEditorMessage(@NotNull OldChange change, @NotNull SNode node, Color color, MessageTarget messageTarget) {
-      super(node, MessageStatus.OK, messageTarget, color, "", EditorComponentChangesHighligher.this);
+      super(node, MessageStatus.OK, messageTarget, color, "", OldEditorComponentChangesHighligher.this);
       myChange = change;
     }
 
@@ -384,7 +384,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       } else if (myEnabled) {
         return defaultColor;
       } else {
-        return EditorComponentChangesHighligher.TRANSPARENT_COLOR;
+        return OldEditorComponentChangesHighligher.TRANSPARENT_COLOR;
       }
     }
 
@@ -439,8 +439,8 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
           }
         }
         graphics.setColor(getActualColor((isDeletedChild() ?
-          EditorComponentChangesHighligher.HIGHLIGHT_COLOR_DELETED :
-          EditorComponentChangesHighligher.HIGHLIGHT_COLOR_CHANGED_FRAME
+          OldEditorComponentChangesHighligher.HIGHLIGHT_COLOR_DELETED :
+          OldEditorComponentChangesHighligher.HIGHLIGHT_COLOR_CHANGED_FRAME
         )));
         Rectangle bounds = cell.getBounds();
         graphics.drawRect(bounds.x, bounds.y, bounds.width, bounds.height);
@@ -470,7 +470,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     @Override
     @NotNull
     public Color getColorInGutter() {
-      return EditorComponentChangesHighligher.GUTTER_COLOR;
+      return OldEditorComponentChangesHighligher.GUTTER_COLOR;
     }
 
     @Override
@@ -497,7 +497,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     }
   }
 
-  private class MyChangeListener implements ChangeListener {
+  private class MyChangeListener implements OldChangeListener {
     private List<EditorMessage> myAddedMessages = ListSequence.fromList(new ArrayList<EditorMessage>());
     private List<EditorMessage> myRemovedMessages = ListSequence.fromList(new ArrayList<EditorMessage>());
 

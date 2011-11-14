@@ -44,15 +44,15 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.ide.ThreadUtils;
 
-public class ChangesManager extends AbstractProjectComponent {
-  private SModelListener myGlobalModelListener = new ChangesManager.MyGlobalSModelListener();
-  private ChangeListListener myChangeListListener = new ChangesManager.MyChangeListListener();
+public class OldChangesManager extends AbstractProjectComponent {
+  private SModelListener myGlobalModelListener = new OldChangesManager.MyGlobalSModelListener();
+  private ChangeListListener myChangeListListener = new OldChangesManager.MyChangeListListener();
   private final Map<SModelReference, OldModelChangesManager> myModelChanges = MapSequence.fromMap(new HashMap<SModelReference, OldModelChangesManager>());
-  private ReloadListener myReloadListener = new ChangesManager.MyReloadListener();
-  private SModelRepositoryListener myModelRepositoryListener = new ChangesManager.MySModelRepositoryListener();
+  private ReloadListener myReloadListener = new OldChangesManager.MyReloadListener();
+  private SModelRepositoryListener myModelRepositoryListener = new OldChangesManager.MySModelRepositoryListener();
   private SimpleCommandQueue myCommandQueue = new SimpleCommandQueue("ChangesManager command queue");
 
-  public ChangesManager(@NotNull Project project) {
+  public OldChangesManager(@NotNull Project project) {
     super(project);
   }
 
@@ -195,8 +195,8 @@ public class ChangesManager extends AbstractProjectComponent {
     return myCommandQueue;
   }
 
-  public static ChangesManager getInstance(Project project) {
-    return project.getComponent(ChangesManager.class);
+  public static OldChangesManager getInstance(Project project) {
+    return project.getComponent(OldChangesManager.class);
   }
 
   private class MyChangeListListener extends ChangeListAdapter {

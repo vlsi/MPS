@@ -62,19 +62,19 @@
       <implementation-class>jetbrains.mps.vcs.MPSVcsManager</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.ChangesManager</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.OldChangesManager</implementation-class>
       <skipForDefaultProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.ProjectTreeChangesHighlighter</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.OldProjectTreeChangesHighlighter</implementation-class>
       <skipForDefaultProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.OldEditorChangesHighlighter</implementation-class>
       <skipForDefaultProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.OldRootNodeFileStatusManager</implementation-class>
       <skipForDefaultProject/>
     </component>
     <component>
@@ -102,7 +102,7 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider"/>
+    <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.OldChangesManagerFileStatusProvider"/>
     <checkoutListener implementation="jetbrains.mps.vcs.integration.ProjectCheckoutListener"/>
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy"/>

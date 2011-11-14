@@ -90,7 +90,7 @@ public class OldModelChangesManager {
   private SModelDescriptor myModelDescriptor;
   private List<OldChange> myChangeList = ListSequence.fromList(new ArrayList<OldChange>());
   private OldModelChangesManager.MyModelListener myModelListener = new OldModelChangesManager.MyModelListener();
-  private final List<ChangeListener> myChangeListeners = ListSequence.fromList(new ArrayList<ChangeListener>());
+  private final List<OldChangeListener> myChangeListeners = ListSequence.fromList(new ArrayList<OldChangeListener>());
   private SModel myBaseVersionModel = null;
   private Set<SNodeId> myAddedNodeIds = SetSequence.fromSet(new HashSet<SNodeId>());
   private Map<SNodeId, Integer> myChangesCountsForRoots = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
@@ -103,7 +103,7 @@ public class OldModelChangesManager {
   @Deprecated
   public OldModelChangesManager(@NotNull Project project, @NotNull SModelDescriptor modelDescriptor) {
     myProject = project;
-    myCommandQueue = ChangesManager.getInstance(project).getCommandQueue();
+    myCommandQueue = OldChangesManager.getInstance(project).getCommandQueue();
     myModelDescriptor = modelDescriptor;
     modelDescriptor.addModelListener(myModelListener);
     myCommandQueue.addTask(new Runnable() {
@@ -133,28 +133,28 @@ public class OldModelChangesManager {
     return ListSequence.fromListWithValues(new ArrayList<OldChange>(), myChangeList);
   }
 
-  public void addChangeListener(@NotNull ChangeListener listener) {
+  public void addChangeListener(@NotNull OldChangeListener listener) {
     synchronized (myChangeListeners) {
       ListSequence.fromList(myChangeListeners).addElement(listener);
     }
   }
 
-  public void removeChangeListener(@NotNull ChangeListener listener) {
+  public void removeChangeListener(@NotNull OldChangeListener listener) {
     synchronized (myChangeListeners) {
       ListSequence.fromList(myChangeListeners).removeElement(listener);
     }
   }
 
   @NotNull
-  private List<ChangeListener> copyListeners() {
+  private List<OldChangeListener> copyListeners() {
     synchronized (myChangeListeners) {
-      return ListSequence.fromListWithValues(new ArrayList<ChangeListener>(), myChangeListeners);
+      return ListSequence.fromListWithValues(new ArrayList<OldChangeListener>(), myChangeListeners);
     }
   }
 
   private void fireChangeAdded(@NotNull OldChange change) {
     myCommandQueue.assertSoftlyIsCommandThread();
-    for (ChangeListener listener : ListSequence.fromList(copyListeners())) {
+    for (OldChangeListener listener : ListSequence.fromList(copyListeners())) {
       try {
         listener.changeAdded(change, getModel());
       } catch (Throwable t) {
@@ -167,7 +167,7 @@ public class OldModelChangesManager {
 
   private void fireChangeRemoved(@NotNull OldChange change) {
     myCommandQueue.assertSoftlyIsCommandThread();
-    for (ChangeListener listener : ListSequence.fromList(copyListeners())) {
+    for (OldChangeListener listener : ListSequence.fromList(copyListeners())) {
       try {
         listener.changeRemoved(change, getModel());
       } catch (Throwable t) {
@@ -183,7 +183,7 @@ public class OldModelChangesManager {
 
   private void fireFileStatusChanged(@Nullable FileStatus newFileStatus) {
     myCommandQueue.assertSoftlyIsCommandThread();
-    for (ChangeListener listener : ListSequence.fromList(copyListeners())) {
+    for (OldChangeListener listener : ListSequence.fromList(copyListeners())) {
       try {
         listener.fileStatusChanged(newFileStatus, getModel());
       } catch (Throwable t) {
@@ -196,7 +196,7 @@ public class OldModelChangesManager {
 
   public void fireChangeUpdateStarted() {
     myCommandQueue.assertSoftlyIsCommandThread();
-    for (ChangeListener listener : ListSequence.fromList(copyListeners())) {
+    for (OldChangeListener listener : ListSequence.fromList(copyListeners())) {
       try {
         listener.changeUpdateStarted();
       } catch (Throwable t) {
@@ -209,7 +209,7 @@ public class OldModelChangesManager {
 
   public void fireChangeUpdateFinished() {
     myCommandQueue.assertSoftlyIsCommandThread();
-    for (ChangeListener listener : ListSequence.fromList(copyListeners())) {
+    for (OldChangeListener listener : ListSequence.fromList(copyListeners())) {
       try {
         listener.changeUpdateFinished();
       } catch (Throwable t) {
@@ -232,7 +232,7 @@ public class OldModelChangesManager {
     if (rootNode == null) {
       return;
     }
-    RootNodeFileStatusManager.getInstance(myProject).nodeFileStatusChanged(rootNode);
+    OldRootNodeFileStatusManager.getInstance(myProject).nodeFileStatusChanged(rootNode);
     FileStatusManager.getInstance(myProject).fileStatusChanged(MPSNodesVirtualFileSystem.getInstance().getFileFor(rootNode));
   }
 

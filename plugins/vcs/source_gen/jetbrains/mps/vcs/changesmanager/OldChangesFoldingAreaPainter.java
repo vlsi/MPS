@@ -44,18 +44,18 @@ import javax.swing.event.PopupMenuListener;
 import javax.swing.event.PopupMenuEvent;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 
-public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
+public class OldChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   private static final int AREA_WIDTH = 6;
   private static final int ARROW_HEIGHT = 8;
   private static final Color AREA_FRAME_COLOR = Color.GRAY;
 
-  private EditorComponentChangesHighligher myEditorComponentChangesHighligher;
-  private List<ChangesFoldingAreaPainter.MessageGroup> myMessageGroups;
-  private ChangesFoldingAreaPainter.MessageGroup myCurrentMessageGroup = null;
-  private ChangesFoldingAreaPainter.MessageGroup myMessageGroupUnderMouse = null;
-  private ChangesFoldingAreaPainter.MyPopupMenu myPopupMenu = null;
+  private OldEditorComponentChangesHighligher myEditorComponentChangesHighligher;
+  private List<OldChangesFoldingAreaPainter.MessageGroup> myMessageGroups;
+  private OldChangesFoldingAreaPainter.MessageGroup myCurrentMessageGroup = null;
+  private OldChangesFoldingAreaPainter.MessageGroup myMessageGroupUnderMouse = null;
+  private OldChangesFoldingAreaPainter.MyPopupMenu myPopupMenu = null;
 
-  public ChangesFoldingAreaPainter(@NotNull EditorComponentChangesHighligher editorComponentChangesHighligher) {
+  public OldChangesFoldingAreaPainter(@NotNull OldEditorComponentChangesHighligher editorComponentChangesHighligher) {
     super(editorComponentChangesHighligher.getEditorComponent().getLeftEditorHighlighter());
     myEditorComponentChangesHighligher = editorComponentChangesHighligher;
   }
@@ -73,15 +73,15 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     if (clipBounds.x + clipBounds.width < -AREA_WIDTH - 1 || 0 < clipBounds.x) {
       return;
     }
-    for (ChangesFoldingAreaPainter.MessageGroup messageGroup : ListSequence.fromList(myMessageGroups)) {
+    for (OldChangesFoldingAreaPainter.MessageGroup messageGroup : ListSequence.fromList(myMessageGroups)) {
       int y = messageGroup.getY();
       g.setColor(messageGroup.getColor());
-      if (messageGroup instanceof ChangesFoldingAreaPainter.ThinMessageGroup) {
+      if (messageGroup instanceof OldChangesFoldingAreaPainter.ThinMessageGroup) {
         Graphics2D g2d = ((Graphics2D) g);
         Object oldAntialiasing = g2d.getRenderingHint(RenderingHints.KEY_ANTIALIASING);
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         int[] xPoints = new int[]{-AREA_WIDTH, -AREA_WIDTH, -1};
-        int[] yPoints = new int[]{y, y + ChangesFoldingAreaPainter.ARROW_HEIGHT, y + ChangesFoldingAreaPainter.ARROW_HEIGHT / 2};
+        int[] yPoints = new int[]{y, y + OldChangesFoldingAreaPainter.ARROW_HEIGHT, y + OldChangesFoldingAreaPainter.ARROW_HEIGHT / 2};
         g.fillPolygon(xPoints, yPoints, 3);
 
         g.setColor(AREA_FRAME_COLOR);
@@ -115,7 +115,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     myMessageGroups = null;
   }
 
-  private Rectangle getMessageBounds(@NotNull EditorComponent editorComponent, @NotNull EditorComponentChangesHighligher.ChangeEditorMessage message) {
+  private Rectangle getMessageBounds(@NotNull EditorComponent editorComponent, @NotNull OldEditorComponentChangesHighligher.ChangeEditorMessage message) {
     EditorCell cell = message.getCell(editorComponent);
     int x = cell.getX();
     int y = cell.getY();
@@ -129,16 +129,16 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   }
 
   private void initMessageGroups() {
-    myMessageGroups = ListSequence.fromList(new ArrayList<ChangesFoldingAreaPainter.MessageGroup>());
+    myMessageGroups = ListSequence.fromList(new ArrayList<OldChangesFoldingAreaPainter.MessageGroup>());
     final EditorComponent editorComponent = getEditorComponent();
-    List<EditorComponentChangesHighligher.ChangeEditorMessage> messagesWithCells = ListSequence.fromList(myEditorComponentChangesHighligher.getEditorMessages()).where(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
-      public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
+    List<OldEditorComponentChangesHighligher.ChangeEditorMessage> messagesWithCells = ListSequence.fromList(myEditorComponentChangesHighligher.getEditorMessages()).where(new IWhereFilter<OldEditorComponentChangesHighligher.ChangeEditorMessage>() {
+      public boolean accept(OldEditorComponentChangesHighligher.ChangeEditorMessage m) {
         return m.getCell(editorComponent) != null;
       }
     }).toListSequence();
 
-    messagesWithCells = ListSequence.fromList(messagesWithCells).sort(new Comparator<EditorComponentChangesHighligher.ChangeEditorMessage>() {
-      public int compare(EditorComponentChangesHighligher.ChangeEditorMessage aMsg, EditorComponentChangesHighligher.ChangeEditorMessage bMsg) {
+    messagesWithCells = ListSequence.fromList(messagesWithCells).sort(new Comparator<OldEditorComponentChangesHighligher.ChangeEditorMessage>() {
+      public int compare(OldEditorComponentChangesHighligher.ChangeEditorMessage aMsg, OldEditorComponentChangesHighligher.ChangeEditorMessage bMsg) {
         Rectangle a = getMessageBounds(editorComponent, aMsg);
         Rectangle b = getMessageBounds(editorComponent, bMsg);
         if (a.y == b.y) {
@@ -153,9 +153,9 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
       }
     }, true).toListSequence();
 
-    List<EditorComponentChangesHighligher.ChangeEditorMessage> currentGroupMessages = ListSequence.fromList(new ArrayList<EditorComponentChangesHighligher.ChangeEditorMessage>());
+    List<OldEditorComponentChangesHighligher.ChangeEditorMessage> currentGroupMessages = ListSequence.fromList(new ArrayList<OldEditorComponentChangesHighligher.ChangeEditorMessage>());
     double currentMaxY = 0;
-    for (EditorComponentChangesHighligher.ChangeEditorMessage message : ListSequence.fromList(messagesWithCells)) {
+    for (OldEditorComponentChangesHighligher.ChangeEditorMessage message : ListSequence.fromList(messagesWithCells)) {
       Rectangle cellBounds = getMessageBounds(editorComponent, message);
       if (ListSequence.fromList(currentGroupMessages).isNotEmpty()) {
         if (currentMaxY < cellBounds.getMinY()) {
@@ -172,11 +172,11 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   }
 
   @Nullable
-  private ChangesFoldingAreaPainter.MessageGroup findMessageGroupUnder(@NotNull final Point p) {
+  private OldChangesFoldingAreaPainter.MessageGroup findMessageGroupUnder(@NotNull final Point p) {
     double localX = p.getX() - getLeftHighlighter().getFoldingLineX();
-    if (localX >= -ChangesFoldingAreaPainter.AREA_WIDTH && localX < 0) {
-      return ListSequence.fromList(myMessageGroups).findFirst(new IWhereFilter<ChangesFoldingAreaPainter.MessageGroup>() {
-        public boolean accept(ChangesFoldingAreaPainter.MessageGroup mg) {
+    if (localX >= -OldChangesFoldingAreaPainter.AREA_WIDTH && localX < 0) {
+      return ListSequence.fromList(myMessageGroups).findFirst(new IWhereFilter<OldChangesFoldingAreaPainter.MessageGroup>() {
+        public boolean accept(OldChangesFoldingAreaPainter.MessageGroup mg) {
           return mg.getY() <= p.getY() && mg.getY() + mg.getHeight() >= p.getY();
         }
       });
@@ -185,14 +185,14 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
   }
 
-  private void setCurrentMessageGroup(@Nullable ChangesFoldingAreaPainter.MessageGroup group) {
+  private void setCurrentMessageGroup(@Nullable OldChangesFoldingAreaPainter.MessageGroup group) {
     if (myCurrentMessageGroup == group) {
       return;
     }
     _FunctionTypes._void_P1_E0<? super Boolean> setHighlighted = new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean highlighted) {
         if (myCurrentMessageGroup != null) {
-          for (EditorComponentChangesHighligher.ChangeEditorMessage message : ListSequence.fromList(myCurrentMessageGroup.getMessages())) {
+          for (OldEditorComponentChangesHighligher.ChangeEditorMessage message : ListSequence.fromList(myCurrentMessageGroup.getMessages())) {
             message.setHighlighted(highlighted);
           }
         }
@@ -207,7 +207,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public void mouseMoved(MouseEvent event) {
-    ChangesFoldingAreaPainter.MessageGroup messageGroup = findMessageGroupUnder(event.getPoint());
+    OldChangesFoldingAreaPainter.MessageGroup messageGroup = findMessageGroupUnder(event.getPoint());
     if (messageGroup != null) {
       event.consume();
     }
@@ -237,16 +237,16 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
   }
 
-  private ChangesFoldingAreaPainter.MyPopupMenu getPopupMenu() {
+  private OldChangesFoldingAreaPainter.MyPopupMenu getPopupMenu() {
     if (myPopupMenu == null) {
-      myPopupMenu = new ChangesFoldingAreaPainter.MyPopupMenu();
+      myPopupMenu = new OldChangesFoldingAreaPainter.MyPopupMenu();
     }
     return myPopupMenu;
   }
 
   @Override
   public void mousePressed(MouseEvent event) {
-    ChangesFoldingAreaPainter.MessageGroup messageGroup = findMessageGroupUnder(event.getPoint());
+    OldChangesFoldingAreaPainter.MessageGroup messageGroup = findMessageGroupUnder(event.getPoint());
     if (messageGroup != null) {
       setCurrentMessageGroup(messageGroup);
       EditorCell cell = getEditorComponent().findCellWeak(event.getX(), event.getY());
@@ -258,11 +258,11 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   }
 
   @Nullable
-  public List<ChangesFoldingAreaPainter.MessageGroup> getMessageGroups() {
+  public List<OldChangesFoldingAreaPainter.MessageGroup> getMessageGroups() {
     return myMessageGroups;
   }
 
-  public void updateAfterTransfer(@NotNull ChangesFoldingAreaPainter.MessageGroup messageGroup) {
+  public void updateAfterTransfer(@NotNull OldChangesFoldingAreaPainter.MessageGroup messageGroup) {
     if (myPopupMenu != null && myPopupMenu.isVisible()) {
       getPopupMenu().updateAfterTransfer(messageGroup);
     } else {
@@ -275,30 +275,30 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   }
 
   @NotNull
-  public ChangesFoldingAreaPainter.MessageGroup getCurrentMessageGroup() {
+  public OldChangesFoldingAreaPainter.MessageGroup getCurrentMessageGroup() {
     return myCurrentMessageGroup;
   }
 
   @Override
   public String getToolTipText() {
-    return check_kvu3z4_a0a61(myCurrentMessageGroup);
+    return check_sli9os_a0a61(myCurrentMessageGroup);
   }
 
   @NotNull
-  public ChangesFoldingAreaPainter.MessageGroup createMessageGroup(@NotNull List<EditorComponentChangesHighligher.ChangeEditorMessage> messages) {
+  public OldChangesFoldingAreaPainter.MessageGroup createMessageGroup(@NotNull List<OldEditorComponentChangesHighligher.ChangeEditorMessage> messages) {
     final EditorComponent editorComponent = getEditorComponent();
-    if (ListSequence.fromList(messages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
-      public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
+    if (ListSequence.fromList(messages).all(new IWhereFilter<OldEditorComponentChangesHighligher.ChangeEditorMessage>() {
+      public boolean accept(OldEditorComponentChangesHighligher.ChangeEditorMessage m) {
         return m.isThinDeletedMessage(editorComponent);
       }
     })) {
-      return new ChangesFoldingAreaPainter.ThinMessageGroup(messages);
+      return new OldChangesFoldingAreaPainter.ThinMessageGroup(messages);
     } else {
-      return new ChangesFoldingAreaPainter.MessageGroup(messages);
+      return new OldChangesFoldingAreaPainter.MessageGroup(messages);
     }
   }
 
-  private static String check_kvu3z4_a0a61(ChangesFoldingAreaPainter.MessageGroup checkedDotOperand) {
+  private static String check_sli9os_a0a61(OldChangesFoldingAreaPainter.MessageGroup checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getToolTipText();
     }
@@ -306,17 +306,17 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   }
 
   public class MessageGroup {
-    private List<EditorComponentChangesHighligher.ChangeEditorMessage> myMessages = ListSequence.fromList(new ArrayList<EditorComponentChangesHighligher.ChangeEditorMessage>());
+    private List<OldEditorComponentChangesHighligher.ChangeEditorMessage> myMessages = ListSequence.fromList(new ArrayList<OldEditorComponentChangesHighligher.ChangeEditorMessage>());
     private int myY = 0;
     private int myHeight = 0;
 
-    private MessageGroup(@NotNull List<EditorComponentChangesHighligher.ChangeEditorMessage> messages) {
+    private MessageGroup(@NotNull List<OldEditorComponentChangesHighligher.ChangeEditorMessage> messages) {
       // messages should be sorted by y, then by x, then by height 
-      myMessages = ListSequence.fromListWithValues(new ArrayList<EditorComponentChangesHighligher.ChangeEditorMessage>(), messages);
+      myMessages = ListSequence.fromListWithValues(new ArrayList<OldEditorComponentChangesHighligher.ChangeEditorMessage>(), messages);
       final EditorComponent editorComponent = getEditorComponent();
       myY = getMessageBounds(editorComponent, ListSequence.fromList(messages).first()).y;
-      int bottomY = ListSequence.fromList(messages).foldLeft(0, new ILeftCombinator<EditorComponentChangesHighligher.ChangeEditorMessage, Integer>() {
-        public Integer combine(Integer by, EditorComponentChangesHighligher.ChangeEditorMessage msg) {
+      int bottomY = ListSequence.fromList(messages).foldLeft(0, new ILeftCombinator<OldEditorComponentChangesHighligher.ChangeEditorMessage, Integer>() {
+        public Integer combine(Integer by, OldEditorComponentChangesHighligher.ChangeEditorMessage msg) {
           return Math.max(by, (int) getMessageBounds(editorComponent, msg).getMaxY());
         }
       });
@@ -324,7 +324,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
 
     @NotNull
-    public List<EditorComponentChangesHighligher.ChangeEditorMessage> getMessages() {
+    public List<OldEditorComponentChangesHighligher.ChangeEditorMessage> getMessages() {
       return myMessages;
     }
 
@@ -337,14 +337,14 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
 
     private OldChangeType getUnitedChangeType() {
-      if (ListSequence.fromList(myMessages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
-        public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
+      if (ListSequence.fromList(myMessages).all(new IWhereFilter<OldEditorComponentChangesHighligher.ChangeEditorMessage>() {
+        public boolean accept(OldEditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.getChange().getChangeType() == OldChangeType.ADD;
         }
       })) {
         return OldChangeType.ADD;
-      } else if (ListSequence.fromList(myMessages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
-        public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
+      } else if (ListSequence.fromList(myMessages).all(new IWhereFilter<OldEditorComponentChangesHighligher.ChangeEditorMessage>() {
+        public boolean accept(OldEditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.getChange().getChangeType() == OldChangeType.DELETE;
         }
       })) {
@@ -388,24 +388,24 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
   }
 
-  private class ThinMessageGroup extends ChangesFoldingAreaPainter.MessageGroup {
+  private class ThinMessageGroup extends OldChangesFoldingAreaPainter.MessageGroup {
     private int myY;
 
-    public ThinMessageGroup(@NotNull List<EditorComponentChangesHighligher.ChangeEditorMessage> messages) {
+    public ThinMessageGroup(@NotNull List<OldEditorComponentChangesHighligher.ChangeEditorMessage> messages) {
       super(messages);
       final EditorComponent editorComponent = getEditorComponent();
-      assert ListSequence.fromList(messages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
-        public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
+      assert ListSequence.fromList(messages).all(new IWhereFilter<OldEditorComponentChangesHighligher.ChangeEditorMessage>() {
+        public boolean accept(OldEditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.isThinDeletedMessage(editorComponent);
         }
       });
-      Set<Integer> ys = SetSequence.fromSetWithValues(new HashSet<Integer>(), ListSequence.fromList(messages).select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, Integer>() {
-        public Integer select(EditorComponentChangesHighligher.ChangeEditorMessage m) {
+      Set<Integer> ys = SetSequence.fromSetWithValues(new HashSet<Integer>(), ListSequence.fromList(messages).select(new ISelector<OldEditorComponentChangesHighligher.ChangeEditorMessage, Integer>() {
+        public Integer select(OldEditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.getY(editorComponent);
         }
       }));
       assert (int) SetSequence.fromSet(ys).count() == 1;
-      myY = SetSequence.fromSet(ys).first() - ChangesFoldingAreaPainter.ARROW_HEIGHT / 2;
+      myY = SetSequence.fromSet(ys).first() - OldChangesFoldingAreaPainter.ARROW_HEIGHT / 2;
     }
 
     @NotNull
@@ -416,7 +416,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
 
     @Override
     public int getHeight() {
-      return ChangesFoldingAreaPainter.ARROW_HEIGHT;
+      return OldChangesFoldingAreaPainter.ARROW_HEIGHT;
     }
 
     @Override
@@ -454,7 +454,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
       }
     }
 
-    public void updateAfterTransfer(@NotNull ChangesFoldingAreaPainter.MessageGroup messageGroup) {
+    public void updateAfterTransfer(@NotNull OldChangesFoldingAreaPainter.MessageGroup messageGroup) {
       if (isVisible()) {
         setVisible(false);
         LeftEditorHighlighter leftHighlighter = getLeftHighlighter();

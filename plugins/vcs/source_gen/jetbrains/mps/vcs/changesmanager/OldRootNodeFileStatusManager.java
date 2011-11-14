@@ -24,14 +24,14 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class RootNodeFileStatusManager extends AbstractProjectComponent {
-  protected static Log log = LogFactory.getLog(RootNodeFileStatusManager.class);
+public class OldRootNodeFileStatusManager extends AbstractProjectComponent {
+  protected static Log log = LogFactory.getLog(OldRootNodeFileStatusManager.class);
 
-  private ChangesManager myChangesManager;
+  private OldChangesManager myChangesManager;
   private final List<NodeFileStatusListener> myNodeFileStatusListeners = ListSequence.fromList(new ArrayList<NodeFileStatusListener>());
   private final Map<SNodePointer, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodePointer, FileStatus>());
 
-  public RootNodeFileStatusManager(@NotNull Project project, @NotNull ChangesManager changesManager) {
+  public OldRootNodeFileStatusManager(@NotNull Project project, @NotNull OldChangesManager changesManager) {
     super(project);
     myChangesManager = changesManager;
   }
@@ -140,7 +140,7 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
     }
   }
 
-  public static RootNodeFileStatusManager getInstance(Project project) {
-    return project.getComponent(RootNodeFileStatusManager.class);
+  public static OldRootNodeFileStatusManager getInstance(Project project) {
+    return project.getComponent(OldRootNodeFileStatusManager.class);
   }
 }

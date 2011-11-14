@@ -19,20 +19,20 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
-public class EditorChangesHighlighter extends AbstractProjectComponent implements EditorMessageOwner {
-  private Map<EditorComponent, EditorComponentChangesHighligher> myEditorsHighlighters = MapSequence.fromMap(new HashMap<EditorComponent, EditorComponentChangesHighligher>());
+public class OldEditorChangesHighlighter extends AbstractProjectComponent implements EditorMessageOwner {
+  private Map<EditorComponent, OldEditorComponentChangesHighligher> myEditorsHighlighters = MapSequence.fromMap(new HashMap<EditorComponent, OldEditorComponentChangesHighligher>());
   private MessageBusConnection myMessageBusConnection;
   private EditorSettingsListener myEditorSettingsListener;
 
-  public EditorChangesHighlighter(@NotNull final Project project) {
+  public OldEditorChangesHighlighter(@NotNull final Project project) {
     super(project);
   }
 
   public void projectOpened() {
     myMessageBusConnection = myProject.getMessageBus().connect();
-    myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new EditorChangesHighlighter.MyEditorComponentCreateListener());
+    myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new OldEditorChangesHighlighter.MyEditorComponentCreateListener());
 
-    myEditorSettingsListener = new EditorChangesHighlighter.MyEditorSettingsListener();
+    myEditorSettingsListener = new OldEditorChangesHighlighter.MyEditorSettingsListener();
     EditorSettings.getInstance().addEditorSettingsListener(myEditorSettingsListener);
   }
 
@@ -42,7 +42,7 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
   }
 
   private void addHighighlighter(@NotNull EditorComponent editorComponent, boolean enabled) {
-    MapSequence.fromMap(myEditorsHighlighters).put(editorComponent, new EditorComponentChangesHighligher(myProject, editorComponent, enabled));
+    MapSequence.fromMap(myEditorsHighlighters).put(editorComponent, new OldEditorComponentChangesHighligher(myProject, editorComponent, enabled));
   }
 
   private void disposeHighlighter(@NotNull EditorComponent editorComponent) {
@@ -89,8 +89,8 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
     }
   }
 
-  public static EditorChangesHighlighter getInstance(@NotNull Project project) {
-    return project.getComponent(EditorChangesHighlighter.class);
+  public static OldEditorChangesHighlighter getInstance(@NotNull Project project) {
+    return project.getComponent(OldEditorChangesHighlighter.class);
   }
 
   private class MyEditorComponentCreateListener implements EditorComponentCreateListener {
@@ -117,7 +117,7 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
     public void settingsChanged() {
       boolean currentHighlightChanges = EditorSettings.getInstance().isHighightChanges();
       if (myLastHighlightChanges != currentHighlightChanges) {
-        for (EditorComponentChangesHighligher changesHighligher : Sequence.fromIterable(MapSequence.fromMap(myEditorsHighlighters).values())) {
+        for (OldEditorComponentChangesHighligher changesHighligher : Sequence.fromIterable(MapSequence.fromMap(myEditorsHighlighters).values())) {
           changesHighligher.setEnabled(currentHighlightChanges);
         }
       }

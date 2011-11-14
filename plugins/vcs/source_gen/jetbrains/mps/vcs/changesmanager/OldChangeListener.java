@@ -9,13 +9,14 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vcs.FileStatus;
 
-public interface ChangeListener extends EventListener {
+@Deprecated
+public interface OldChangeListener extends EventListener {
   public void changeAdded(@NotNull OldChange change, @NotNull SModel model);
   public void changeRemoved(@NotNull OldChange change, @NotNull SModel model);
   public void fileStatusChanged(@Nullable FileStatus newFileStatus, @NotNull SModel model);
   public void changeUpdateStarted();
   public void changeUpdateFinished();
-  public static class ChangeAdapter implements ChangeListener {
+  public static class ChangeAdapter implements OldChangeListener {
     public ChangeAdapter() {
     }
 
