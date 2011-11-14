@@ -41,13 +41,13 @@ public class ModuleDependencyNode extends MPSTreeNode {
     setNodeIdentifier(text);
   }
 
-  public void doInit() {
+  protected void doInit() {
     Set<IModule> reqModules = SetSequence.fromSet(new HashSet<IModule>());
     Set<Language> usedLanguages = SetSequence.fromSet(new HashSet<Language>());
 
     for (IModule module : ListSequence.fromList(myModules)) {
       DependenciesManager depManager = module.getDependenciesManager();
-      SetSequence.fromSet(reqModules).addSequence(SetSequence.fromSet(depManager.getRequiredModules()));
+      SetSequence.fromSet(reqModules).addSequence(SetSequence.fromSet(depManager.getAllRequiredModules()));
       SetSequence.fromSet(usedLanguages).addSequence(SetSequence.fromSet(depManager.getAllUsedLanguages()));
     }
 
