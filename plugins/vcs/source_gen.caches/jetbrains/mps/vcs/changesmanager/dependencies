@@ -56,11 +56,29 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.ChangesTracker" file="ChangesTracker.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
+    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.impl.VcsFileStatusProvider" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.BaseVersionUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetImpl" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
   </dependency>
@@ -71,6 +89,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
@@ -78,10 +97,12 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetImpl" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" file="CurrentDifferenceAdapter.java">
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />

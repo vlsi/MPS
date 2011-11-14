@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.changesmanager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vcs.diff.ChangeSet;
+import jetbrains.mps.vcs.diff.ChangeSetImpl;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -13,6 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.vcs.diff.ChangeSet;
 
 public class CurrentDifference {
   protected static Log log = LogFactory.getLog(CurrentDifference.class);
@@ -20,9 +23,9 @@ public class CurrentDifference {
   private SimpleCommandQueue myCommandQueue;
   private EditableSModelDescriptor myModelDescriptor;
   private ChangesTracker myChangesTracker;
-  private ChangeSet myChangeSet;
+  private ChangeSetImpl myChangeSet;
   private List<CurrentDifferenceListener> myListeners = ListSequence.fromList(new ArrayList<CurrentDifferenceListener>());
-  private boolean myEnabled = true;
+  private boolean myEnabled = false;
 
   public CurrentDifference(@NotNull Project project, @NotNull EditableSModelDescriptor modelDescriptor) {
     myCommandQueue = ChangesManager.getInstance(project).getCommandQueue();
@@ -98,11 +101,54 @@ public class CurrentDifference {
     });
   }
 
+  /*package*/ void removeChangeSet() {
+    myCommandQueue.assertSoftlyIsCommandThread();
+    if (myChangeSet != null) {
+      ListSequence.fromList(myChangeSet.getModelChanges()).visitAll(new IVisitor<ModelChange>() {
+        public void visit(ModelChange ch) {
+          fireChangeRemoved(ch);
+        }
+      });
+      myChangeSet = null;
+    }
+  }
+
+  /*package*/ void setChangeSet(@NotNull ChangeSetImpl changeSetImpl) {
+    myCommandQueue.assertSoftlyIsCommandThread();
+    removeChangeSet();
+    myChangeSet = changeSetImpl;
+    ListSequence.fromList(myChangeSet.getModelChanges()).visitAll(new IVisitor<ModelChange>() {
+      public void visit(ModelChange ch) {
+        fireChangeAdded(ch);
+      }
+    });
+  }
+
   /*package*/ EditableSModelDescriptor getModelDescriptor() {
     return myModelDescriptor;
   }
 
   /*package*/ ChangesTracker getChangesTracker() {
     return myChangesTracker;
+  }
+
+  /*package*/ boolean isEnabled() {
+    return myEnabled;
+  }
+
+  public void setEnabled(boolean enabled) {
+    if (myEnabled != enabled) {
+      myEnabled = enabled;
+      if (enabled) {
+        myChangesTracker.scheduleFullUpdate();
+      } else {
+        // TODO disable 
+      }
+    }
+  }
+
+  @Nullable
+  public ChangeSet getChangeSet() {
+    return myChangeSet;
   }
 }
