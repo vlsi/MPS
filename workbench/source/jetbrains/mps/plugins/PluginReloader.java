@@ -67,8 +67,6 @@ public class PluginReloader implements ApplicationComponent {
     for (PluginReloadingListener l : getListeners()) {
       l.afterPluginsLoaded();
     }
-
-    loadConfigurations();
   }
 
   private void disposePlugins() {
@@ -77,30 +75,11 @@ public class PluginReloader implements ApplicationComponent {
     for (PluginReloadingListener l : getListeners()) {
       l.beforePluginsDisposed();
     }
-    disposeConfigurations();
 
     for (Project p : myProjectManager.getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).disposePlugins();
     }
     myPluginManager.disposePlugins();
-  }
-
-  private void loadConfigurations() {
-    if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
-      return;
-    }
-    for (Project p : myProjectManager.getOpenProjects()) {
-      p.getComponent(jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager.class).initRunConfigurations();
-    }
-  }
-
-  private void disposeConfigurations() {
-    if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
-      return;
-    }
-    for (Project p : myProjectManager.getOpenProjects()) {
-      p.getComponent(RunConfigurationsStateManager.class).disposeRunConfigurations();
-    }
   }
 
   public void addReloadingListener(@NotNull PluginReloadingListener listener) {
