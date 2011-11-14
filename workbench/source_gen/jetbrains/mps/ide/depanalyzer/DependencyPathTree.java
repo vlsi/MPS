@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -35,32 +34,6 @@ public class DependencyPathTree extends MPSTree {
 
   public void addDependency(Iterable<IModule> from, Iterable<IModule> to, Iterable<Language> usedLanguage) {
     ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<IModule>,Set<IModule>,Set<Language>>from(SetSequence.fromSetWithValues(new HashSet<IModule>(), from), SetSequence.fromSetWithValues(new HashSet<IModule>(), to), SetSequence.fromSetWithValues(new HashSet<Language>(), usedLanguage)));
-  }
-
-  private List<MPSTreeNode> buildPath(Set<IModule> from, Set<IModule> dependency, Set<Language> usedLanguage, Set<IModule> visited) {
-    List<MPSTreeNode> result = ListSequence.fromList(new ArrayList<MPSTreeNode>());
-    for (IModule m : SetSequence.fromSet(from)) {
-      if (SetSequence.fromSet(visited).contains(m)) {
-        continue;
-      }
-      if (SetSequence.fromSet(dependency).contains(m)) {
-        ListSequence.fromList(result).addElement(new DependencyTreeLeafNode(m, null));
-      } else {
-        SetSequence.fromSet(visited).addElement(m);
-        Set<IModule> mdep = m.getDependenciesManager().getRequiredModules();
-        List<MPSTreeNode> m2 = buildPath(mdep, dependency, usedLanguage, visited);
-        if (ListSequence.fromList(m2).isNotEmpty()) {
-          final MPSTreeNode node = new DependencyTreeNode(m, null);
-          ListSequence.fromList(m2).visitAll(new IVisitor<MPSTreeNode>() {
-            public void visit(MPSTreeNode it) {
-              node.add(it);
-            }
-          });
-          ListSequence.fromList(result).addElement(node);
-        }
-      }
-    }
-    return result;
   }
 
   private void addChildDep(MPSTreeNode parent, IModule m, DependencyPathTree.DepType type, Set<IModule> dep, Set<Language> ulang, Set<DependencyPathTree.Dep> visited) {
