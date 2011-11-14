@@ -368,7 +368,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.libs" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations.deprecated" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations.runtime" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions" />

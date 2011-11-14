@@ -24,6 +24,7 @@
       <modulePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="usages.junit" />
       <modulePath path="${mps_home}/core/debug-api/languages/api/api.mpl" />
       <modulePath path="${mps_home}/core/dependencies/dependencies.msd" />
+      <modulePath path="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
       <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" folder="deprecated" />
       <modulePath path="${mps_home}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" folder="usages.junit" />
       <modulePath path="${mps_home}/languages/languageDesign/test/test.mpl" folder="usages.junit" />
@@ -31,7 +32,6 @@
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/custommps/custommps.mpl" folder="usages.ant" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/packaging/packaging.mpl" folder="usages.ant" />
       <modulePath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
-      <modulePath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" folder="usages.java" />
       <modulePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="usages.implicit" />
       <modulePath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="usages.implicit" />
       <modulePath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/jetbrains.mps.samples.lambdaCalculus.sandbox.msd" folder="usages.implicit" />
