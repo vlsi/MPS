@@ -16,6 +16,7 @@ import com.intellij.util.messages.MessageBusConnection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.ide.editor.EditorUtil;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
