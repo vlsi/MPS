@@ -33,11 +33,15 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class PluginReloader implements ApplicationComponent {
   private ReloadAdapter myReloadListener = new MyReloadAdapter();
   private IMakeNotificationListener myMakeListener = new MyMakeListener();
+
+  private final List<PluginReloadingListener> myListeners = new ArrayList<PluginReloadingListener>();
 
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
@@ -60,12 +64,19 @@ public class PluginReloader implements ApplicationComponent {
       p.getComponent(ProjectPluginManager.class).loadPlugins();
     }
 
+    for (PluginReloadingListener l : getListeners()) {
+      l.afterPluginsLoaded();
+    }
+
     loadConfigurations();
   }
 
   private void disposePlugins() {
     if (isDisposed()) return;
 
+    for (PluginReloadingListener l : getListeners()) {
+      l.beforePluginsDisposed();
+    }
     disposeConfigurations();
 
     for (Project p : myProjectManager.getOpenProjects()) {
@@ -90,6 +101,26 @@ public class PluginReloader implements ApplicationComponent {
     for (Project p : myProjectManager.getOpenProjects()) {
       p.getComponent(RunConfigurationsStateManager.class).disposeRunConfigurations();
     }
+  }
+
+  public void addReloadingListener(@NotNull PluginReloadingListener listener) {
+    synchronized (myListeners) {
+      myListeners.add(listener);
+    }
+  }
+
+  public void removeReloadingListener(PluginReloadingListener listener) {
+    synchronized (myListeners) {
+      myListeners.remove(listener);
+    }
+  }
+
+  private List<PluginReloadingListener> getListeners() {
+    List<PluginReloadingListener> result = new ArrayList<PluginReloadingListener>();
+    synchronized (myListeners) {
+      result.addAll(myListeners);
+    }
+    return result;
   }
 
   public void setMakeService(IMakeService makeService) {
