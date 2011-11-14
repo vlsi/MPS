@@ -63,23 +63,50 @@
     <scopeInfo nodeId="3778783095369073622" fileName="CustomConstructorParameterReference_Constraints.java" startLine="83" startPosition="126" endLine="86" endPosition="28">
       <varInfo nodeId="4739047193854568225" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="5379647004618378867" varName="_context" />
+      <varInfo nodeId="5379647004618378867" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="5379647004618378867" varName="_context" />
+      <varInfo nodeId="5379647004618378867" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="50" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="70" startPosition="91" endLine="75" endPosition="0" />
     <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="41" startPosition="166" endLine="48" endPosition="18" />
-    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="57" startPosition="155" endLine="64" endPosition="18" />
+    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="41" startPosition="166" endLine="48" endPosition="18">
+      <varInfo nodeId="5379647004618378867" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="57" startPosition="155" endLine="64" endPosition="18">
+      <varInfo nodeId="5379647004618378867" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="3778783095368652010" fileName="CustomConstructorParameterReference_Constraints.java" startLine="81" startPosition="142" endLine="91" endPosition="13">
       <varInfo nodeId="3778783095369073643" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="39" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="55" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="79" startPosition="49" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="39" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="5379647004618378867" varName="checkingNodeContext" />
+      <varInfo nodeId="5379647004618378867" varName="node" />
+      <varInfo nodeId="5379647004618378867" varName="node1" />
+      <varInfo nodeId="5379647004618378867" varName="node2" />
+      <varInfo nodeId="5379647004618378867" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="55" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="5379647004618378867" varName="checkingNodeContext" />
+      <varInfo nodeId="5379647004618378867" varName="node" />
+      <varInfo nodeId="5379647004618378867" varName="node1" />
+      <varInfo nodeId="5379647004618378867" varName="node2" />
+      <varInfo nodeId="5379647004618378867" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="79" startPosition="49" endLine="93" endPosition="0">
+      <varInfo nodeId="5379647004618378867" varName="_context" />
+      <varInfo nodeId="5379647004618378867" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="78" startPosition="56" endLine="98" endPosition="10" />
     <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="75" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="68" startPosition="83" endLine="101" endPosition="22" />
+    <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="68" startPosition="83" endLine="101" endPosition="22">
+      <varInfo nodeId="5379647004618378867" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="66" startPosition="0" endLine="103" endPosition="0" />
     <unitInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="26" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints" />
     <unitInfo nodeId="5379647004618378867" fileName="CustomConstructorParameterReference_Constraints.java" startLine="70" startPosition="36" endLine="100" endPosition="5" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$1" />

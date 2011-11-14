@@ -616,7 +616,7 @@ public class TestMain {
 
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            List<BaseTestConfiguration> configurations = new ArrayList<BaseTestConfiguration>(myProject.getComponent(MPSProject.class).getProjectDescriptor().getTestConfigurations());
+            List<BaseTestConfiguration> configurations = new ArrayList<BaseTestConfiguration>(((StandaloneMPSProject)myProject).getProjectDescriptor().getTestConfigurations());
 
             if (configurations.isEmpty()) {
               throw new RuntimeException("tested project has no test configurations");

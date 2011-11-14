@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -46,7 +46,7 @@ public class ProjectProperties {
     return !(myTestConfigsChanged);
   }
 
-  public void loadFrom(MPSProject project) {
+  public void loadFrom(StandaloneMPSProject project) {
     myProjectDescriptor = project.getProjectDescriptor();
     myModules.clear();
     myModules.addAll(myProjectDescriptor.getModules());
@@ -54,7 +54,7 @@ public class ProjectProperties {
     myTestConfigs.addAll(myProjectDescriptor.getTestConfigurations());
   }
 
-  public void saveTo(MPSProject project) {
+  public void saveTo(StandaloneMPSProject project) {
     ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<Path>(), myProjectDescriptor.getModules())).visitAll(new IVisitor<Path>() {
       public void visit(Path it) {
         myProjectDescriptor.removeModule(it.getPath());

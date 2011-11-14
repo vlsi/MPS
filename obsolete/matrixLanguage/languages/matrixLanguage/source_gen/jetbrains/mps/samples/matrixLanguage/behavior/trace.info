@@ -24,11 +24,15 @@
     <nodeInfo nodeId="1215414020889" fileName="MatrixType_Behavior.java" startLine="11" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1215414020891" fileName="MatrixType_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="1215414028688" fileName="MatrixType_Behavior.java" startLine="14" startPosition="25" endLine="15" endPosition="23" />
-    <scopeInfo nodeId="1215414020889" fileName="MatrixType_Behavior.java" startLine="8" startPosition="34" endLine="11" endPosition="0" />
+    <scopeInfo nodeId="1215414020889" fileName="MatrixType_Behavior.java" startLine="8" startPosition="34" endLine="11" endPosition="0">
+      <varInfo nodeId="1215414020889" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1215414028677" fileName="MatrixType_Behavior.java" startLine="12" startPosition="78" endLine="17" endPosition="34">
       <varInfo nodeId="1215414028679" varName="scalar" />
     </scopeInfo>
-    <scopeInfo nodeId="1215414020889" fileName="MatrixType_Behavior.java" startLine="11" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1215414020889" fileName="MatrixType_Behavior.java" startLine="11" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1215414020889" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1215414020889" fileName="MatrixType_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.behavior.MatrixType_Behavior" />
   </root>
 </debugInfo>

@@ -5,7 +5,6 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.fileEditor.FileEditorManager;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import java.util.HashMap;
@@ -25,6 +24,7 @@ import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.NullLocation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
@@ -33,7 +33,6 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(CurrentLinePositionComponent.class);
 
   private final FileEditorManager myFileEditorManager;
-  private final MPSEditorOpener myEditorOpener;
   private final Map<AbstractDebugSession, CurrentLinePainter> mySessionToContextPainterMap = new HashMap<AbstractDebugSession, CurrentLinePainter>();
   private final Project myProject;
   private final SessionChangeListener myChangeListener = new CurrentLinePositionComponent.MySessionChangeListener();
@@ -42,9 +41,8 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   private final EditorComponentCreateListener myEditorComponentCreationHandler = new CurrentLinePositionComponent.MyEditorComponentCreateListener();
   private MessageBusConnection myMessageBusConnection;
 
-  public CurrentLinePositionComponent(Project project, FileEditorManager fileEditorManager, MPSEditorOpener editorOpener) {
+  public CurrentLinePositionComponent(Project project, FileEditorManager fileEditorManager) {
     myFileEditorManager = fileEditorManager;
-    myEditorOpener = editorOpener;
     myProject = project;
   }
 
@@ -145,7 +143,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   }
 
   private void attachPainterAndOpenEditor(@NotNull final CurrentLinePainter painter) {
-    EditorComponent currentEditorComponent = myEditorOpener.openNode(painter.getItem(), new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
+    EditorComponent currentEditorComponent = new MPSEditorOpener(myProject).openNode(painter.getItem(), new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
     currentEditorComponent = EditorUtil.scrollToNode(painter.getItem(), currentEditorComponent, myFileEditorManager);
     if (currentEditorComponent != null) {
       attach(painter, currentEditorComponent);

@@ -19,7 +19,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.project.ReferenceUpdater;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
@@ -43,8 +42,6 @@ public class LanguageRenamer {
   }
 
   public void rename(boolean deleteOldFiles) {
-    checkPreconditions();
-
     String oldFqName = myLanguage.getModuleFqName();
     IFile oldOutputDir = FileSystem.getInstance().getFileByPath(myLanguage.getGeneratorOutputPath());
     IFile oldCachesDir = FileGenerationUtil.getCachesDir(oldOutputDir);
@@ -64,10 +61,6 @@ public class LanguageRenamer {
   }
 
   private void renameLanguage(String oldFqName) {
-    for (SModelRoot root : myLanguage.getSModelRoots()) {
-      root.setPrefix(myNewName);
-    }
-
     for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
       if (!(sm instanceof EditableSModelDescriptor)) continue;
@@ -91,19 +84,13 @@ public class LanguageRenamer {
       int sharpIndex = uid.indexOf('#');
       genDesc.setGeneratorUID(myNewName + "#" + uid.substring(sharpIndex + 1));
 
-      for (SModelRoot root : g.getSModelRoots()) {
-        String oldPrefix = root.getPrefix();
-        if (oldPrefix != null && oldPrefix.startsWith(oldFqName)) {
-          String newPrefix = myNewName + oldPrefix.substring(oldFqName.length());
+      String newPrefix = myNewName + oldFqName.substring(oldFqName.length());
 
-          root.setPrefix(newPrefix);
-          for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
-            if (!SModelStereotype.isUserModel(sm)) continue;
-            if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldPrefix + ".")) {
-              String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
-              myContext.changeModelName(((DefaultSModelDescriptor) sm), newPrefix + suffix);
-            }
-          }
+      for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
+        if (!SModelStereotype.isUserModel(sm)) continue;
+        if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
+          String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
+          myContext.changeModelName(((DefaultSModelDescriptor) sm), newPrefix + suffix);
         }
       }
     }
@@ -120,14 +107,6 @@ public class LanguageRenamer {
   private void updateReferences() {
     ReferenceUpdater.getInstance().updateModelReferences();
     ReferenceUpdater.getInstance().updateModuleReferences();
-  }
-
-  private void checkPreconditions() {
-    for (SModelRoot root : myLanguage.getSModelRoots()) {
-      if (!root.getPrefix().equals(myLanguage.getModuleFqName())) {
-        throw new IllegalArgumentException();
-      }
-    }
   }
 
   public static class MyRefactoring extends AbstractLoggableRefactoring {

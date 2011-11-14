@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.StandaloneMPSProject;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 
@@ -72,14 +73,14 @@ public class SetModuleFolder_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
-      String oldFolder = ((MPSProject) MapSequence.fromMap(_params).get("project")).getFolderFor(((IModule) MapSequence.fromMap(_params).get("module")));
+      String oldFolder = ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).getFolderFor(((IModule) MapSequence.fromMap(_params).get("module")));
       String newFolder = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter new folder", oldFolder);
       if (newFolder != null) {
         if (newFolder.equals("")) {
           newFolder = null;
         }
         for (IModule m : pane.getSelectedModules()) {
-          ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(m, newFolder);
+          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(m, newFolder);
         }
         pane.rebuild();
       }

@@ -20,7 +20,9 @@
     <nodeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getVisibleCustomOperators_1141736782992984505#(Ljetbrains/mps/smodel/SModel;)Ljava/util/List;" />
     <scopeInfo nodeId="1141736782992984504" fileName="CustomOperatorUsage_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1141736782992986381" fileName="CustomOperatorUsage_Behavior.java" startLine="21" startPosition="40" endLine="22" endPosition="135" />
-    <scopeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="14" startPosition="43" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="14" startPosition="43" endLine="17" endPosition="0">
+      <varInfo nodeId="1141736782992984502" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1141736782992986380" fileName="CustomOperatorUsage_Behavior.java" startLine="20" startPosition="194" endLine="23" endPosition="5">
       <varInfo nodeId="1141736782992986405" varName="container" />
     </scopeInfo>
@@ -48,12 +50,18 @@
     <scopeInfo nodeId="6677452554239147652" fileName="OverloadedBinaryOperator_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="67" />
     <scopeInfo nodeId="1569627462441168509" fileName="OverloadedBinaryOperator_Behavior.java" startLine="22" startPosition="179" endLine="23" endPosition="274" />
     <scopeInfo nodeId="1569627462441168560" fileName="OverloadedBinaryOperator_Behavior.java" startLine="24" startPosition="12" endLine="25" endPosition="103" />
-    <scopeInfo nodeId="6677452554239147646" fileName="OverloadedBinaryOperator_Behavior.java" startLine="12" startPosition="48" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="6677452554239147646" fileName="OverloadedBinaryOperator_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="6677452554239147646" fileName="OverloadedBinaryOperator_Behavior.java" startLine="12" startPosition="48" endLine="15" endPosition="0">
+      <varInfo nodeId="6677452554239147646" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6677452554239147646" fileName="OverloadedBinaryOperator_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="6677452554239147646" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="6677452554240637509" fileName="OverloadedBinaryOperator_Behavior.java" startLine="20" startPosition="81" endLine="27" endPosition="330">
       <varInfo nodeId="1569627462441168527" varName="operatorName" />
     </scopeInfo>
-    <scopeInfo nodeId="6677452554239147646" fileName="OverloadedBinaryOperator_Behavior.java" startLine="19" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="6677452554239147646" fileName="OverloadedBinaryOperator_Behavior.java" startLine="19" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="6677452554239147646" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="6677452554239147646" fileName="OverloadedBinaryOperator_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_Behavior" />
   </root>
 </debugInfo>

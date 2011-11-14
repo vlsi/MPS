@@ -13,9 +13,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.smodel.LanguageID;
 import java.io.OutputStream;
 
 public class DevkitDescriptorPersistence {
@@ -24,7 +21,7 @@ public class DevkitDescriptorPersistence {
   private DevkitDescriptorPersistence() {
   }
 
-  public static DevkitDescriptor loadDevKitDescriptor(final IFile file) {
+  public static DevkitDescriptor loadDevKitDescriptor(IFile file) {
     try {
       Document document = JDOMUtil.loadDocument(file);
       final Element root = ((Element) document.getRootElement());
@@ -48,14 +45,6 @@ public class DevkitDescriptorPersistence {
 
           for (Element xse : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "exported-solutions")).first(), "exported-solution"))) {
             result_raojav_a0a0c0a0a.getExportedSolutions().add(ModuleReference.fromString(xse.getText()));
-          }
-
-          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "runtimeClassPath")).first(), "entry")))) {
-            // runtimeClassPath is left for compatibility 
-            ModelRoot entry = new ModelRoot();
-            entry.setPath(MacrosFactory.devkitMacros().expandPath(entryElement.getAttributeValue("path"), file));
-            entry.setManager(LanguageID.JAVA_MANAGER);
-            result_raojav_a0a0c0a0a.getStubModelEntries().add(entry);
           }
           return result_raojav_a0a0c0a0a;
         }

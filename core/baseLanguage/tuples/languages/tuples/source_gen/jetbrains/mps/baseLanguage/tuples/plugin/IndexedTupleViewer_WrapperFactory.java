@@ -15,7 +15,7 @@ import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy;
-import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 
 public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
   public IndexedTupleViewer_WrapperFactory() {
@@ -33,7 +33,7 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
         if (value == null) {
           return false;
         }
-        if (!(EvaluationUtils.isInstanceOf(value.type(), "Ljetbrains/mps/baseLanguage/tuples/runtime/MultiTuple;", value.virtualMachine()))) {
+        if (!(EvaluationUtils.getInstance().instanceOf(value.type(), "Ljetbrains/mps/baseLanguage/tuples/runtime/MultiTuple;", value.virtualMachine()))) {
           return false;
         }
         return true;
@@ -58,7 +58,7 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
       IArrayValueProxy values = ((IArrayValueProxy) value.getFieldValue("values"));
       for (int i = 0; i < ((IArrayValueProxy) values).getLength(); i++) {
-        result.add(new TuplesWatchables.MyWatchable_element(AbstractValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) values.getElementAt(i)).getJDIValue(), getThreadReference()), "element"));
+        result.add(new TuplesWatchables.MyWatchable_element(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) values.getElementAt(i)).getJDIValue(), getThreadReference()), "element"));
       }
       return result;
     }

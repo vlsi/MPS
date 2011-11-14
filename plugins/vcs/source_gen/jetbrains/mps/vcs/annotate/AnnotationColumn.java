@@ -95,17 +95,9 @@ import com.intellij.openapi.vcs.changes.Change;
 import com.intellij.openapi.vcs.changes.ChangesUtil;
 import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
-import javax.swing.JFrame;
-import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.vcs.integration.ModelDiffTool;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
-import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import com.intellij.openapi.vcs.VcsException;
 
 public class AnnotationColumn extends AbstractLeftColumn {
@@ -747,52 +739,25 @@ __switch__:
                   }
                 }));
 
-                final JFrame frame = WindowManager.getInstance().getFrame(project);
-                final ModuleContext operationContext = new ModuleContext(myModelDescriptor.getModule(), ProjectHelper.toMPSProject(project));
                 final String beforeRevNumber = (before == null ?
                   "<no revision>" :
                   before.getRevisionNumber().asString()
                 );
                 final String afterRevNumber = after.getRevisionNumber().asString();
                 if (node.value == null) {
-                  ModelAccess.instance().runReadInEDT(new Runnable() {
+                  ApplicationManager.getApplication().invokeLater(new Runnable() {
                     public void run() {
-                      final Wrappers._T<BaseDialog> dialog = new Wrappers._T<BaseDialog>();
-                      if (ModelDiffTool.isNewDiffEnabled()) {
-                        dialog.value = new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(ProjectHelper.toIdeaProject(operationContext.getProject()), beforeRevNumber, afterRevNumber));
-                      } else {
-                        dialog.value = new OldModelDifferenceDialog(operationContext, frame, beforeModel.value, afterModel, "Model Difference", false, new String[]{beforeRevNumber, afterRevNumber});
-                      }
-                      ApplicationManager.getApplication().invokeLater(new Runnable() {
-                        public void run() {
-                          dialog.value.showDialog();
-                        }
-                      });
+                      new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(project, beforeRevNumber, afterRevNumber)).showDialog();
                     }
                   });
-
                 } else {
                   ModelAccess.instance().runReadInEDT(new Runnable() {
                     public void run() {
-                      if (ModelDiffTool.isNewDiffEnabled()) {
-                        final Wrappers._T<ModelDifferenceDialog> modelDialog = new Wrappers._T<ModelDifferenceDialog>();
-                        final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
-                        ModelAccess.instance().runReadAction(new Runnable() {
-                          public void run() {
-                            modelDialog.value = new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(project, beforeRevNumber, afterRevNumber));
-                            id.value = node.value.getSNodeId();
-                          }
-                        });
-                        modelDialog.value.invokeRootDifference(id.value);
-                      } else {
-                        final OldRootDifferenceDialog dialog = new OldRootDifferenceDialog(frame, afterModel, beforeModel.value, false, false);
-                        dialog.init(operationContext, node.value, afterRevNumber, beforeRevNumber);
-                        ApplicationManager.getApplication().invokeLater(new Runnable() {
-                          public void run() {
-                            dialog.showDialog();
-                          }
-                        });
-                      }
+                      ModelDifferenceDialog modelDialog;
+                      SNodeId id;
+                      modelDialog = new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(project, beforeRevNumber, afterRevNumber));
+                      id = node.value.getSNodeId();
+                      modelDialog.invokeRootDifference(id);
                     }
                   });
                 }

@@ -7,7 +7,6 @@ import jetbrains.mps.logging.Logger;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.diff.DiffRequest;
-import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -16,21 +15,14 @@ import jetbrains.mps.vcs.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
+import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog;
 import java.io.IOException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 import java.lang.reflect.Method;
 
@@ -42,13 +34,6 @@ public class ModelMergeTool extends MergeTool {
   protected static Log log = LogFactory.getLog(ModelMergeTool.class);
 
   public ModelMergeTool() {
-  }
-
-  private void showTextMerge(DiffRequest request) {
-    DiffTool ideaMergeTool = new MergeTool();
-    if (ideaMergeTool.canShow(request)) {
-      ideaMergeTool.show(request);
-    }
   }
 
   public void show(final DiffRequest request) {
@@ -68,8 +53,8 @@ public class ModelMergeTool extends MergeTool {
       final SModel newModel;
       try {
         baseModel = ModelPersistence.readModel(contents[ORIGINAL].getDocument().getText(), false);
-        mineModel = ModelPersistence.readModel(new String(contents[CURRENT].getBytes(), "UTF-8"), false);
-        newModel = ModelPersistence.readModel(new String(contents[LAST_REVISION].getBytes(), "UTF-8"), false);
+        mineModel = ModelPersistence.readModel(new String(contents[CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), false);
+        newModel = ModelPersistence.readModel(new String(contents[LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), false);
       } catch (ModelReadException e) {
         if (log.isWarnEnabled()) {
           log.warn("Couldn't read model, invoking text merge", e);
@@ -78,50 +63,17 @@ public class ModelMergeTool extends MergeTool {
         return;
       }
 
-      if (isNewMergeEnabled()) {
-        final MergeModelsDialog dialog = new MergeModelsDialog(baseModel, mineModel, newModel, mrequest);
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            dialog.toFront();
-          }
-        });
-        dialog.showDialog();
-        if (dialog.getResultModel() != null) {
-          String asString = ModelPersistence.modelToString(dialog.getResultModel());
-          resolved(mrequest, asString);
-          MergeBackupUtil.packMergeResult(backupFile, file.getName(), asString);
+      final MergeModelsDialog dialog = new MergeModelsDialog(baseModel, mineModel, newModel, mrequest);
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          dialog.toFront();
         }
-      } else {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(baseModel.getSModelReference());
-        if (modelDescriptor == null) {
-          modelDescriptor = SModelRepository.getInstance().getModelDescriptor(mineModel.getSModelFqName());
-        }
-        String errorMsg = null;
-        if (modelDescriptor == null) {
-          errorMsg = "Model " + mineModel.getLongName() + " is not in model repository.";
-        } else if (modelDescriptor.getModule() == null) {
-          errorMsg = "Model " + mineModel.getLongName() + " is not owned by any module.";
-        }
-        if (errorMsg != null) {
-          int result = Messages.showYesNoDialog(request.getProject(), errorMsg + " If you want to merge it using MPS merger," + " you need to cancel it now and invoke merge tool from project where this model" + "is owned by any visible module. Also, you can use text merge.\n" + "Do you want to use text merge tool?", "Can't Merge Model", Messages.getErrorIcon());
-          if (result == 0) {
-            showTextMerge(request);
-          }
-          return;
-        }
-        assert modelDescriptor != null;
-        IOperationContext context = new ModuleContext(modelDescriptor.getModule(), ProjectHelper.toMPSProject(request.getProject()));
-        final OldMergeModelsDialog dialog = new OldMergeModelsDialog(context, baseModel, mineModel, newModel);
-
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            dialog.toFront();
-          }
-        });
-        dialog.showDialog();
-        if (dialog.getResultModel() != null) {
-          resolved(mrequest, ModelPersistence.modelToString(dialog.getResultModel()));
-        }
+      });
+      dialog.showDialog();
+      if (dialog.getResultModel() != null) {
+        String asString = ModelPersistence.modelToString(dialog.getResultModel());
+        resolved(mrequest, asString);
+        MergeBackupUtil.packMergeResult(backupFile, file.getName(), asString);
       }
     } catch (IOException e) {
       LOG.error(e);
@@ -130,10 +82,6 @@ public class ModelMergeTool extends MergeTool {
 
   public boolean canShow(DiffRequest request) {
     return super.canShow(request) && request.getContents()[ORIGINAL].getContentType() == MPSFileTypeFactory.MODEL_FILE_TYPE;
-  }
-
-  public static boolean isNewMergeEnabled() {
-    return !("false".equals(System.getProperty("mps.newmerge")));
   }
 
   private static void resolved(MergeRequestImpl req, final String result) {

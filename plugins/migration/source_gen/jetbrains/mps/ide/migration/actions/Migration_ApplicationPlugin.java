@@ -52,6 +52,6 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(MakeAddition_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(Migrations20_ActionGroup.ID, ToolsAddition_ActionGroup.ID, ToolsAddition_ActionGroup.LABEL_ID_migrationGroup);
     insertGroupIntoAnother(PersistenceAddition_ActionGroup.ID, Migrations20_ActionGroup.ID, null);
-    insertGroupIntoAnother(ToolsAddition_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_migration20);
+    insertGroupIntoAnother(ToolsAddition_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_migration);
   }
 }

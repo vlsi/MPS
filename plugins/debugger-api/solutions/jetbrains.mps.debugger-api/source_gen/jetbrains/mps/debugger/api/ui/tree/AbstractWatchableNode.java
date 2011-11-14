@@ -13,9 +13,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.MPSTree;
 
 /*package*/ abstract class AbstractWatchableNode extends MPSTreeNode {
@@ -32,11 +33,9 @@ import jetbrains.mps.ide.ui.MPSTree;
         e.getPresentation().setEnabled(true);
         ModelAccess.instance().executeCommand(new Runnable() {
           public void run() {
-            MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
-            assert opener != null;
-            opener.openNode(node, context, true, true);
+            NavigationSupport.getInstance().openNode(context, node, true, true);
           }
-        }, project.getComponent(MPSProject.class));
+        }, ProjectHelper.toMPSProject(project));
       }
     }
   });
@@ -74,9 +73,7 @@ import jetbrains.mps.ide.ui.MPSTree;
     if (project != null && context != null) {
       ModelAccess.instance().executeCommand(new Runnable() {
         public void run() {
-          MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
-          assert opener != null;
-          opener.openNode(myNode, context, focus, select);
+          NavigationSupport.getInstance().openNode(context, myNode, focus, select);
         }
       }, project.getComponent(MPSProject.class));
     }

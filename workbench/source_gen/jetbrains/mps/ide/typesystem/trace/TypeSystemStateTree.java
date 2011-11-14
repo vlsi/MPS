@@ -28,7 +28,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
@@ -170,7 +170,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
           if (node != null && node.isRegistered()) {
             group.add(new BaseAction("Go to node with type " + var) {
               public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-                myOperationContext.getComponent(MPSEditorOpener.class).editNode(node, myOperationContext);
+                NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
               }
             });
           }

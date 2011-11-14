@@ -15,14 +15,14 @@
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
-    <orderEntry type="library" name="commons-lang" level="project" />
-    <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="typesystemEngine" />
-    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="library" name="Commons-lang" level="project" />
+    <orderEntry type="library" name="Commons-logging" level="project" />
   </component>
 </module>
 

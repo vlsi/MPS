@@ -38,6 +38,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ChangesStrip_ActionGroup());
     addGroup(new GoToVCS_ActionGroup());
     addGroup(new InstallVcsAddons_ActionGroup());
+    addGroup(new MakeFromChangesView_ActionGroup());
     addGroup(new ModuleVcsActions_ActionGroup());
     addGroup(new ShowDiffWithCurrRev_ActionGroup());
     addGroup(new VCSModelActions_ActionGroup());
@@ -47,6 +48,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(MakeFromChangesView_ActionGroup.ID, "ChangesViewPopupMenu", null);
     insertGroupIntoAnother(GoToVCS_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoVCS);
     insertGroupIntoAnother(VCSModelActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_mpsvcs);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_diff);

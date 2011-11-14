@@ -81,32 +81,6 @@ public class SModelRoot {
     myModelRoot.setPath(newPath);
   }
 
-  public String getPrefix() {
-    return myModelRoot.getPrefix();
-  }
-
-  public void setPrefix(String newPrefix) {
-    myModelRoot.setPrefix(newPrefix);
-  }
-
-  public void changePrefix(String newPrefix, AbstractModule owner) {
-    String oldPrefix = getPrefix();
-    myModelRoot.setPrefix(newPrefix);
-    for (SModelDescriptor sm : owner.getOwnModelDescriptors()) {
-      if (!SModelStereotype.isUserModel(sm)) continue;
-      if (!(sm instanceof EditableSModelDescriptor)) continue;
-
-      if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldPrefix + ".")) {
-        String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldPrefix.length());
-        ((EditableSModelDescriptor) sm).rename(SModelFqName.fromString(newPrefix + suffix), false);
-      }
-    }
-  }
-
-  public boolean isCorrectModelFqName(SModelFqName fqName) {
-    return fqName.getLongName().startsWith(getPrefix());
-  }
-
   public ModelRoot getModelRoot() {
     return myModelRoot;
   }

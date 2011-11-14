@@ -118,7 +118,8 @@ public abstract class MpsWorker {
 
   protected Project createDummyProject() {
     File projectFile = FileUtil.createTmpFile();
-    final Project project = new FileMPSProject(projectFile);
+    FileMPSProject project = new FileMPSProject(projectFile);
+    project.init(new FileMPSProject.ProjectDescriptor(projectFile));
     projectFile.deleteOnExit();
     return project;
   }
@@ -572,7 +573,7 @@ public abstract class MpsWorker {
     public ObjectsToProcess() {
     }
 
-    public ObjectsToProcess(Set<Project> mpsProjects, Set<IModule> modules, Set<SModelDescriptor> models) {
+    public ObjectsToProcess(Set<? extends Project> mpsProjects, Set<IModule> modules, Set<SModelDescriptor> models) {
       myProjects.addAll(mpsProjects);
       myModules.addAll(modules);
       myModels.addAll(models);

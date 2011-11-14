@@ -135,14 +135,26 @@
     <scopeInfo nodeId="1213877219599" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="29" startPosition="109" endLine="30" endPosition="111" />
     <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="35" startPosition="52" endLine="37" endPosition="5" />
     <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="53" startPosition="53" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="16" startPosition="50" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="72" startPosition="9" endLine="75" endPosition="59" />
-    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="43" startPosition="7" endLine="47" endPosition="31" />
-    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="66" startPosition="9" endLine="70" endPosition="59" />
+    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="16" startPosition="50" endLine="19" endPosition="0">
+      <varInfo nodeId="1213877219536" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="72" startPosition="9" endLine="75" endPosition="59">
+      <varInfo nodeId="1213877219536" varName="quotedNode1_6" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="43" startPosition="7" endLine="47" endPosition="31">
+      <varInfo nodeId="1213877219536" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="66" startPosition="9" endLine="70" endPosition="59">
+      <varInfo nodeId="1213877219536" varName="quotedNode1_5" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="71" startPosition="9" endLine="76" endPosition="9" />
     <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="42" startPosition="32" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="65" startPosition="43" endLine="71" endPosition="9" />
-    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="39" startPosition="49" endLine="49" endPosition="20" />
+    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="39" startPosition="49" endLine="49" endPosition="20">
+      <varInfo nodeId="1213877219536" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1213877219536" varName="quotedNode_1" />
+      <varInfo nodeId="1213877219536" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877219538" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="20" startPosition="83" endLine="32" endPosition="28">
       <varInfo nodeId="1213877219548" varName="attributedNode" />
       <varInfo nodeId="1213877219591" varName="expectedNodeType" />
@@ -152,12 +164,26 @@
       <varInfo nodeId="1213877219540" varName="referenceMacro" />
       <varInfo nodeId="1213877219585" varName="targetConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="38" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="63" startPosition="7" endLine="77" endPosition="31" />
-    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="19" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="38" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1213877219536" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="63" startPosition="7" endLine="77" endPosition="31">
+      <varInfo nodeId="1213877219536" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="19" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1213877219536" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="62" startPosition="32" endLine="78" endPosition="7" />
-    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="57" startPosition="49" endLine="79" endPosition="20" />
-    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="56" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="57" startPosition="49" endLine="79" endPosition="20">
+      <varInfo nodeId="1213877219536" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1213877219536" varName="quotedNode_1" />
+      <varInfo nodeId="1213877219536" varName="quotedNode_2" />
+      <varInfo nodeId="1213877219536" varName="quotedNode_3" />
+      <varInfo nodeId="1213877219536" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="56" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1213877219536" varName="parameter_7" />
+    </scopeInfo>
     <unitInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_Behavior" />
     <unitInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="53" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_Behavior$QuotationClass_mxwyp3_a0a0i0b" />
     <unitInfo nodeId="1213877219536" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="35" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_Behavior$QuotationClass_mxwyp3_a0a6a1" />
@@ -222,36 +248,61 @@
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="67" startPosition="69" endLine="68" endPosition="81" />
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="73" startPosition="51" endLine="74" endPosition="34" />
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="30" startPosition="0" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="11" startPosition="40" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="11" startPosition="40" endLine="14" endPosition="0">
+      <varInfo nodeId="1213877222908" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="66" startPosition="71" endLine="69" endPosition="7" />
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="72" startPosition="51" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1213877222908" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="50" startPosition="119" endLine="54" endPosition="111" />
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="72" startPosition="51" endLine="76" endPosition="18" />
-    <scopeInfo nodeId="1213877222921" fileName="CopySrcListMacro_Behavior.java" startLine="17" startPosition="5" endLine="23" endPosition="7" />
-    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="48" startPosition="13" endLine="54" endPosition="111" />
-    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="65" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="71" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="46" startPosition="11" endLine="55" endPosition="13" />
+    <scopeInfo nodeId="1213877222921" fileName="CopySrcListMacro_Behavior.java" startLine="17" startPosition="5" endLine="23" endPosition="7">
+      <varInfo nodeId="1213877222921" varName="coercedNode_26ny8p_b0a" />
+      <varInfo nodeId="1213877222921" varName="pattern_26ny8p_b0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="48" startPosition="13" endLine="54" endPosition="111">
+      <varInfo nodeId="1213877222908" varName="nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="65" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1213877222908" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="71" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1213877222908" varName="fieldName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="46" startPosition="11" endLine="55" endPosition="13">
+      <varInfo nodeId="1213877222908" varName="childVar_CopySrcListMacro_Behavior_26ny8p_a0a0b0a" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877222912" fileName="CopySrcListMacro_Behavior.java" startLine="15" startPosition="91" endLine="25" endPosition="16">
       <varInfo nodeId="1213877222914" varName="queryType" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="14" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="14" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1213877222908" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="42" startPosition="77" endLine="56" endPosition="11" />
-    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="41" startPosition="9" endLine="56" endPosition="11" />
+    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="41" startPosition="9" endLine="56" endPosition="11">
+      <varInfo nodeId="1213877222908" varName="childRole_CopySrcListMacro_Behavior_26ny8p_" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="40" startPosition="9" endLine="57" endPosition="9" />
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="37" startPosition="74" endLine="57" endPosition="9" />
-    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="35" startPosition="7" endLine="57" endPosition="9" />
+    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="35" startPosition="7" endLine="57" endPosition="9">
+      <varInfo nodeId="1213877222908" varName="nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a1a0" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="34" startPosition="45" endLine="59" endPosition="18" />
-    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="33" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="33" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1213877222908" varName="nodeToMatch" />
+    </scopeInfo>
     <unitInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="11" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_Behavior" />
     <unitInfo nodeId="1213877222908" fileName="CopySrcListMacro_Behavior.java" startLine="28" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_Behavior$Pattern_26ny8p_a0a0a1a1" />
   </root>
   <root nodeId="1213877250500">
     <nodeInfo nodeId="1213877250500" fileName="IfMacro_Behavior.java" startLine="7" startPosition="31" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877250502" fileName="IfMacro_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877250500" fileName="IfMacro_Behavior.java" startLine="7" startPosition="31" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="1213877250500" fileName="IfMacro_Behavior.java" startLine="7" startPosition="31" endLine="10" endPosition="0">
+      <varInfo nodeId="1213877250500" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1213877250500" fileName="IfMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IfMacro_Behavior" />
   </root>
   <root nodeId="1213877263098">
@@ -265,12 +316,16 @@
     <nodeInfo nodeId="1213877263098" fileName="CreateRootRule_Behavior.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1213877263161" fileName="CreateRootRule_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1213877263140" fileName="CreateRootRule_Behavior.java" startLine="18" startPosition="31" endLine="19" endPosition="55" />
-    <scopeInfo nodeId="1213877263098" fileName="CreateRootRule_Behavior.java" startLine="10" startPosition="38" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="1213877263098" fileName="CreateRootRule_Behavior.java" startLine="10" startPosition="38" endLine="13" endPosition="0">
+      <varInfo nodeId="1213877263098" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877263100" fileName="CreateRootRule_Behavior.java" startLine="14" startPosition="78" endLine="21" endPosition="25">
       <varInfo nodeId="1213877263121" varName="mappingLabel" />
       <varInfo nodeId="1213877263102" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877263098" fileName="CreateRootRule_Behavior.java" startLine="13" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1213877263098" fileName="CreateRootRule_Behavior.java" startLine="13" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="1213877263098" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1213877263098" fileName="CreateRootRule_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CreateRootRule_Behavior" />
   </root>
   <root nodeId="1213877284681">
@@ -332,27 +387,50 @@
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="66" startPosition="69" endLine="67" endPosition="81" />
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="72" startPosition="51" endLine="73" endPosition="34" />
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="29" startPosition="0" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="11" startPosition="39" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="11" startPosition="39" endLine="14" endPosition="0">
+      <varInfo nodeId="1213877284681" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="65" startPosition="71" endLine="68" endPosition="7" />
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="71" startPosition="51" endLine="74" endPosition="7" />
-    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="1213877284681" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="49" startPosition="117" endLine="53" endPosition="110" />
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="71" startPosition="51" endLine="75" endPosition="18" />
-    <scopeInfo nodeId="1213877284684" fileName="MapSrcListMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7" />
-    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="47" startPosition="13" endLine="53" endPosition="110" />
-    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="64" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="70" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1213877284684" fileName="MapSrcListMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7">
+      <varInfo nodeId="1213877284684" varName="coercedNode_wn5chh_a0a" />
+      <varInfo nodeId="1213877284684" varName="pattern_wn5chh_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="47" startPosition="13" endLine="53" endPosition="110">
+      <varInfo nodeId="1213877284681" varName="nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="64" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1213877284681" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="70" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1213877284681" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877284683" fileName="MapSrcListMacro_Behavior.java" startLine="15" startPosition="91" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="45" startPosition="11" endLine="54" endPosition="13" />
-    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="45" startPosition="11" endLine="54" endPosition="13">
+      <varInfo nodeId="1213877284681" varName="childVar_MapSrcListMacro_Behavior_wn5chh_a0a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1213877284681" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="41" startPosition="76" endLine="55" endPosition="11" />
-    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="40" startPosition="9" endLine="55" endPosition="11" />
+    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="40" startPosition="9" endLine="55" endPosition="11">
+      <varInfo nodeId="1213877284681" varName="childRole_MapSrcListMacro_Behavior_wn5chh_" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="39" startPosition="9" endLine="56" endPosition="9" />
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="36" startPosition="73" endLine="56" endPosition="9" />
-    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="34" startPosition="7" endLine="56" endPosition="9" />
+    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="34" startPosition="7" endLine="56" endPosition="9">
+      <varInfo nodeId="1213877284681" varName="nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="33" startPosition="45" endLine="58" endPosition="18" />
-    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="32" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="32" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1213877284681" varName="nodeToMatch" />
+    </scopeInfo>
     <unitInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="11" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_Behavior" />
     <unitInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="27" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_Behavior$Pattern_wn5chh_a0a0a0a1" />
   </root>
@@ -418,12 +496,23 @@
     <scopeInfo nodeId="1213877290916" fileName="NodeMacro_Behavior.java" startLine="77" startPosition="107" endLine="78" endPosition="157" />
     <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="89" startPosition="121" endLine="90" endPosition="261" />
     <scopeInfo nodeId="8807286715961529179" fileName="NodeMacro_Behavior.java" startLine="39" startPosition="35" endLine="41" endPosition="17" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="84" startPosition="88" endLine="86" endPosition="216" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="84" startPosition="88" endLine="86" endPosition="216">
+      <varInfo nodeId="1213877290798" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1213877290798" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1213877290798" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877290857" fileName="NodeMacro_Behavior.java" startLine="59" startPosition="111" endLine="63" endPosition="108" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1213877290798" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877290798" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="83" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1213877290798" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877290801" fileName="NodeMacro_Behavior.java" startLine="22" startPosition="91" endLine="28" endPosition="5">
       <varInfo nodeId="1213877290803" varName="prevNodeMacro" />
     </scopeInfo>
@@ -431,7 +520,9 @@
     <scopeInfo nodeId="1213877290848" fileName="NodeMacro_Behavior.java" startLine="57" startPosition="24" endLine="65" endPosition="5">
       <varInfo nodeId="1213877290853" varName="currentAttribute" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="21" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="21" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1213877290798" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877290894" fileName="NodeMacro_Behavior.java" startLine="72" startPosition="90" endLine="81" endPosition="168">
       <varInfo nodeId="1213877290896" varName="ancestor" />
       <varInfo nodeId="1213877290927" varName="rootAnnotation" />
@@ -440,7 +531,9 @@
     <scopeInfo nodeId="8807286715961529133" fileName="NodeMacro_Behavior.java" startLine="37" startPosition="28" endLine="49" endPosition="5">
       <varInfo nodeId="8807286715961529137" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="71" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="71" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1213877290798" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8807286715961509433" fileName="NodeMacro_Behavior.java" startLine="35" startPosition="78" endLine="50" endPosition="30">
       <varInfo nodeId="8807286715961509954" varName="builder" />
       <varInfo nodeId="8807286715961529198" varName="newWord" />
@@ -448,10 +541,13 @@
     <scopeInfo nodeId="1213877290836" fileName="NodeMacro_Behavior.java" startLine="53" startPosition="115" endLine="69" endPosition="123">
       <varInfo nodeId="1213877290845" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="34" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="34" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1213877290798" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="52" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="1213877290888" varName="currentMacro" />
       <varInfo nodeId="1213877290890" varName="currentNode" />
+      <varInfo nodeId="1213877290798" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.NodeMacro_Behavior" />
   </root>
@@ -505,27 +601,42 @@
     <scopeInfo nodeId="390427525177434697" fileName="MappingConfiguration_Behavior.java" startLine="64" startPosition="99" endLine="65" endPosition="17" />
     <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="78" startPosition="128" endLine="79" endPosition="285" />
     <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="82" startPosition="128" endLine="83" endPosition="280" />
-    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="68" startPosition="95" endLine="70" endPosition="240" />
-    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="73" startPosition="95" endLine="75" endPosition="235" />
-    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="68" startPosition="95" endLine="70" endPosition="240">
+      <varInfo nodeId="1213877354940" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="73" startPosition="95" endLine="75" endPosition="235">
+      <varInfo nodeId="1213877354940" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1213877354940" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="3166264919334429432" fileName="MappingConfiguration_Behavior.java" startLine="39" startPosition="212" endLine="42" endPosition="145">
       <varInfo nodeId="3166264919334429470" varName="ruleNode" />
     </scopeInfo>
     <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="390427525177434698" varName="candidate" />
+      <varInfo nodeId="1213877354940" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1213877354940" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877354940" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="1213877354940" varName="callerConceptFqName" />
       <varInfo nodeId="390427525177434698" varName="candidate" />
+      <varInfo nodeId="1213877354940" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="3166264919334429448" fileName="MappingConfiguration_Behavior.java" startLine="43" startPosition="119" endLine="48" endPosition="83">
       <varInfo nodeId="3166264919334429592" varName="mappingRule" />
       <varInfo nodeId="3166264919334432284" varName="templateRef" />
     </scopeInfo>
     <scopeInfo nodeId="8360039740498071274" fileName="MappingConfiguration_Behavior.java" startLine="54" startPosition="70" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="67" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="67" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="1213877354940" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="72" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="390427525177434698" varName="candidate" />
+      <varInfo nodeId="1213877354940" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="8360039740498071273" fileName="MappingConfiguration_Behavior.java" startLine="53" startPosition="48" endLine="60" endPosition="5">
       <varInfo nodeId="8360039740498071318" varName="mapConfChild" />
@@ -537,10 +648,15 @@
       <varInfo nodeId="1213877354944" varName="members" />
     </scopeInfo>
     <scopeInfo nodeId="3166264919334415808" fileName="MappingConfiguration_Behavior.java" startLine="38" startPosition="90" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="51" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="24" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="51" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="1213877354940" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1213877354940" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="37" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="3166264919334422162" varName="newMember" />
+      <varInfo nodeId="1213877354940" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior" />
   </root>
@@ -603,27 +719,50 @@
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="66" startPosition="69" endLine="67" endPosition="81" />
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="72" startPosition="51" endLine="73" endPosition="34" />
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="29" startPosition="0" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="11" startPosition="33" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="11" startPosition="33" endLine="14" endPosition="0">
+      <varInfo nodeId="1213877361819" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="65" startPosition="71" endLine="68" endPosition="7" />
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="71" startPosition="51" endLine="74" endPosition="7" />
-    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="1213877361819" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="49" startPosition="105" endLine="53" endPosition="104" />
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="71" startPosition="51" endLine="75" endPosition="18" />
-    <scopeInfo nodeId="1213877361822" fileName="LoopMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7" />
-    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="47" startPosition="13" endLine="53" endPosition="104" />
-    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="64" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="70" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1213877361822" fileName="LoopMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7">
+      <varInfo nodeId="1213877361822" varName="coercedNode_cdqxf8_a0a" />
+      <varInfo nodeId="1213877361822" varName="pattern_cdqxf8_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="47" startPosition="13" endLine="53" endPosition="104">
+      <varInfo nodeId="1213877361819" varName="nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="64" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1213877361819" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="70" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="1213877361819" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877361821" fileName="LoopMacro_Behavior.java" startLine="15" startPosition="91" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="45" startPosition="11" endLine="54" endPosition="13" />
-    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="45" startPosition="11" endLine="54" endPosition="13">
+      <varInfo nodeId="1213877361819" varName="childVar_LoopMacro_Behavior_cdqxf8_a0a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1213877361819" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="41" startPosition="70" endLine="55" endPosition="11" />
-    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="40" startPosition="9" endLine="55" endPosition="11" />
+    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="40" startPosition="9" endLine="55" endPosition="11">
+      <varInfo nodeId="1213877361819" varName="childRole_LoopMacro_Behavior_cdqxf8_" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="39" startPosition="9" endLine="56" endPosition="9" />
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="36" startPosition="67" endLine="56" endPosition="9" />
-    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="34" startPosition="7" endLine="56" endPosition="9" />
+    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="34" startPosition="7" endLine="56" endPosition="9">
+      <varInfo nodeId="1213877361819" varName="nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="33" startPosition="45" endLine="58" endPosition="18" />
-    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="32" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="32" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1213877361819" varName="nodeToMatch" />
+    </scopeInfo>
     <unitInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="11" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LoopMacro_Behavior" />
     <unitInfo nodeId="1213877361819" fileName="LoopMacro_Behavior.java" startLine="27" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LoopMacro_Behavior$Pattern_cdqxf8_a0a0a0a1" />
   </root>
@@ -670,21 +809,38 @@
     <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="50" startPosition="69" endLine="51" endPosition="81" />
     <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="56" startPosition="51" endLine="57" endPosition="34" />
     <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="29" startPosition="0" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="11" startPosition="36" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="11" startPosition="36" endLine="14" endPosition="0">
+      <varInfo nodeId="1213877378066" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="49" startPosition="71" endLine="52" endPosition="7" />
     <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="55" startPosition="51" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1213877378066" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="36" startPosition="70" endLine="40" endPosition="100" />
     <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="55" startPosition="51" endLine="59" endPosition="18" />
-    <scopeInfo nodeId="1213877378069" fileName="IncludeMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7" />
-    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="34" startPosition="7" endLine="40" endPosition="100" />
-    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1213877378069" fileName="IncludeMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7">
+      <varInfo nodeId="1213877378069" varName="coercedNode_wfrqja_a0a" />
+      <varInfo nodeId="1213877378069" varName="pattern_wfrqja_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="34" startPosition="7" endLine="40" endPosition="100">
+      <varInfo nodeId="1213877378066" varName="nodeToMatch_IncludeMacro_Behavior_wfrqja_a0a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1213877378066" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1213877378066" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877378068" fileName="IncludeMacro_Behavior.java" startLine="15" startPosition="91" endLine="24" endPosition="149" />
     <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="33" startPosition="45" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="32" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1213877378066" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="32" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1213877378066" varName="nodeToMatch" />
+    </scopeInfo>
     <unitInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IncludeMacro_Behavior" />
     <unitInfo nodeId="1213877378066" fileName="IncludeMacro_Behavior.java" startLine="27" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IncludeMacro_Behavior$Pattern_wfrqja_a0a0a0a1" />
   </root>
@@ -731,21 +887,38 @@
     <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="50" startPosition="69" endLine="51" endPosition="81" />
     <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="56" startPosition="51" endLine="57" endPosition="34" />
     <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="29" startPosition="0" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="11" startPosition="40" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="11" startPosition="40" endLine="14" endPosition="0">
+      <varInfo nodeId="1213877426757" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="49" startPosition="71" endLine="52" endPosition="7" />
     <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="55" startPosition="51" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1213877426757" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="36" startPosition="73" endLine="40" endPosition="103" />
     <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="55" startPosition="51" endLine="59" endPosition="18" />
-    <scopeInfo nodeId="1213877426761" fileName="CopySrcNodeMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7" />
-    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="34" startPosition="7" endLine="40" endPosition="103" />
-    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1213877426761" fileName="CopySrcNodeMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7">
+      <varInfo nodeId="1213877426761" varName="coercedNode_7c1mz_a0a" />
+      <varInfo nodeId="1213877426761" varName="pattern_7c1mz_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="34" startPosition="7" endLine="40" endPosition="103">
+      <varInfo nodeId="1213877426757" varName="nodeToMatch_CopySrcNodeMacro_Behavior_7c1mz_a0a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1213877426757" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1213877426757" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877426760" fileName="CopySrcNodeMacro_Behavior.java" startLine="15" startPosition="91" endLine="24" endPosition="16" />
     <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="33" startPosition="45" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="32" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1213877426757" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="32" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1213877426757" varName="nodeToMatch" />
+    </scopeInfo>
     <unitInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_Behavior" />
     <unitInfo nodeId="1213877426757" fileName="CopySrcNodeMacro_Behavior.java" startLine="27" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_Behavior$Pattern_7c1mz_a0a0a0a1" />
   </root>
@@ -772,15 +945,25 @@
     <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="29" startPosition="42" endLine="29" endPosition="42" />
     <scopeInfo nodeId="1213877473051" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="22" startPosition="27" endLine="23" endPosition="90" />
     <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="28" startPosition="51" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="15" startPosition="54" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="36" startPosition="7" endLine="39" endPosition="31" />
+    <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="15" startPosition="54" endLine="18" endPosition="0">
+      <varInfo nodeId="1213877472999" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="36" startPosition="7" endLine="39" endPosition="31">
+      <varInfo nodeId="1213877472999" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="35" startPosition="32" endLine="40" endPosition="7" />
     <scopeInfo nodeId="1213877473001" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="19" startPosition="83" endLine="25" endPosition="98">
       <varInfo nodeId="1213877473045" varName="dataType" />
       <varInfo nodeId="1213877473003" varName="propertyMacro" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="18" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="32" startPosition="31" endLine="41" endPosition="20" />
+    <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="18" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1213877472999" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="32" startPosition="31" endLine="41" endPosition="20">
+      <varInfo nodeId="1213877472999" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1213877472999" varName="quotedNode_1" />
+      <varInfo nodeId="1213877472999" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="31" startPosition="0" endLine="43" endPosition="0" />
     <unitInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_Behavior" />
     <unitInfo nodeId="1213877472999" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_Behavior$QuotationClass_90g9ox_a0d0b" />
@@ -791,8 +974,12 @@
     <nodeInfo nodeId="1213877486464" fileName="Root_MappingRule_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTemplateType_1213877498511#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1213877486475" fileName="Root_MappingRule_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1213877486466" fileName="Root_MappingRule_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="105" />
-    <scopeInfo nodeId="1213877486464" fileName="Root_MappingRule_Behavior.java" startLine="9" startPosition="40" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="1213877486464" fileName="Root_MappingRule_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="1213877486464" fileName="Root_MappingRule_Behavior.java" startLine="9" startPosition="40" endLine="12" endPosition="0">
+      <varInfo nodeId="1213877486464" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877486464" fileName="Root_MappingRule_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="1213877486464" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1213877486464" fileName="Root_MappingRule_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.Root_MappingRule_Behavior" />
   </root>
   <root nodeId="1213877498462">
@@ -822,20 +1009,35 @@
     <scopeInfo nodeId="1213877498513" fileName="BaseMappingRule_Behavior.java" startLine="30" startPosition="77" endLine="31" endPosition="16" />
     <scopeInfo nodeId="1213877498528" fileName="BaseMappingRule_Behavior.java" startLine="36" startPosition="31" endLine="37" endPosition="26" />
     <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="47" startPosition="107" endLine="48" endPosition="253" />
-    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="42" startPosition="74" endLine="44" endPosition="208" />
-    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="42" startPosition="74" endLine="44" endPosition="208">
+      <varInfo nodeId="1213877498462" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1213877498462" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1213877498462" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1213877498462" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877498462" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877498518" fileName="BaseMappingRule_Behavior.java" startLine="34" startPosition="79" endLine="39" endPosition="16">
       <varInfo nodeId="1213877498520" varName="mappingLabel" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="41" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1213877498462" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877498464" fileName="BaseMappingRule_Behavior.java" startLine="20" startPosition="78" endLine="27" endPosition="25">
       <varInfo nodeId="1213877498485" varName="mappingLabel" />
       <varInfo nodeId="1213877498466" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="33" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="19" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="33" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1213877498462" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="19" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1213877498462" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1213877498462" fileName="BaseMappingRule_Behavior.java" startLine="14" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.BaseMappingRule_Behavior" />
   </root>
   <root nodeId="1213877522462">
@@ -881,28 +1083,47 @@
     <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="50" startPosition="69" endLine="51" endPosition="81" />
     <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="56" startPosition="51" endLine="57" endPosition="34" />
     <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="29" startPosition="0" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="11" startPosition="35" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="11" startPosition="35" endLine="14" endPosition="0">
+      <varInfo nodeId="1213877522462" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="49" startPosition="71" endLine="52" endPosition="7" />
     <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="55" startPosition="51" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1213877522462" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="36" startPosition="69" endLine="40" endPosition="99" />
     <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="55" startPosition="51" endLine="59" endPosition="18" />
-    <scopeInfo nodeId="1213877522465" fileName="SwitchMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7" />
-    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="34" startPosition="7" endLine="40" endPosition="99" />
-    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1213877522465" fileName="SwitchMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7">
+      <varInfo nodeId="1213877522465" varName="coercedNode_i6m7ss_a0a" />
+      <varInfo nodeId="1213877522465" varName="pattern_i6m7ss_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="34" startPosition="7" endLine="40" endPosition="99">
+      <varInfo nodeId="1213877522462" varName="nodeToMatch_SwitchMacro_Behavior_i6m7ss_a0a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1213877522462" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1213877522462" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877522464" fileName="SwitchMacro_Behavior.java" startLine="15" startPosition="91" endLine="24" endPosition="148" />
     <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="33" startPosition="45" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="32" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1213877522462" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="32" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1213877522462" varName="nodeToMatch" />
+    </scopeInfo>
     <unitInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.SwitchMacro_Behavior" />
     <unitInfo nodeId="1213877522462" fileName="SwitchMacro_Behavior.java" startLine="27" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.SwitchMacro_Behavior$Pattern_i6m7ss_a0a0a0a1" />
   </root>
   <root nodeId="1311078761699602468">
     <nodeInfo nodeId="1311078761699602468" fileName="InsertMacro_Behavior.java" startLine="7" startPosition="35" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1311078761699602470" fileName="InsertMacro_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1311078761699602468" fileName="InsertMacro_Behavior.java" startLine="7" startPosition="35" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="1311078761699602468" fileName="InsertMacro_Behavior.java" startLine="7" startPosition="35" endLine="10" endPosition="0">
+      <varInfo nodeId="1311078761699602468" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1311078761699602468" fileName="InsertMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.InsertMacro_Behavior" />
   </root>
   <root nodeId="1510949579266902209">
@@ -948,28 +1169,47 @@
     <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="50" startPosition="69" endLine="51" endPosition="81" />
     <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="56" startPosition="51" endLine="57" endPosition="34" />
     <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="29" startPosition="0" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="11" startPosition="41" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="11" startPosition="41" endLine="14" endPosition="0">
+      <varInfo nodeId="1510949579266902209" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="49" startPosition="71" endLine="52" endPosition="7" />
     <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="55" startPosition="51" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1510949579266902209" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="36" startPosition="75" endLine="40" endPosition="105" />
     <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="55" startPosition="51" endLine="59" endPosition="18" />
-    <scopeInfo nodeId="1510949579266902214" fileName="TemplateCallMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7" />
-    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="34" startPosition="7" endLine="40" endPosition="105" />
-    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1510949579266902214" fileName="TemplateCallMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7">
+      <varInfo nodeId="1510949579266902214" varName="coercedNode_4ckpni_a0a" />
+      <varInfo nodeId="1510949579266902214" varName="pattern_4ckpni_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="34" startPosition="7" endLine="40" endPosition="105">
+      <varInfo nodeId="1510949579266902209" varName="nodeToMatch_TemplateCallMacro_Behavior_4ckpni_a0a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1510949579266902209" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1510949579266902209" varName="fieldName" />
+    </scopeInfo>
     <scopeInfo nodeId="1510949579266902213" fileName="TemplateCallMacro_Behavior.java" startLine="15" startPosition="91" endLine="24" endPosition="154" />
     <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="33" startPosition="45" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="32" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="14" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1510949579266902209" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="32" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1510949579266902209" varName="nodeToMatch" />
+    </scopeInfo>
     <unitInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_Behavior" />
     <unitInfo nodeId="1510949579266902209" fileName="TemplateCallMacro_Behavior.java" startLine="27" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_Behavior$Pattern_4ckpni_a0a0a0a1" />
   </root>
   <root nodeId="1722980698497616258">
     <nodeInfo nodeId="1722980698497616258" fileName="TemplateDeclarationReference_Behavior.java" startLine="7" startPosition="52" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1722980698497616260" fileName="TemplateDeclarationReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1722980698497616258" fileName="TemplateDeclarationReference_Behavior.java" startLine="7" startPosition="52" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="1722980698497616258" fileName="TemplateDeclarationReference_Behavior.java" startLine="7" startPosition="52" endLine="10" endPosition="0">
+      <varInfo nodeId="1722980698497616258" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1722980698497616258" fileName="TemplateDeclarationReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior" />
   </root>
   <root nodeId="1722980698497626475">
@@ -991,17 +1231,24 @@
     <nodeInfo nodeId="1722980698497626475" fileName="ITemplateCall_Behavior.java" startLine="18" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_deriveType_1213877435747#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1722980698497626477" fileName="ITemplateCall_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="1722980698497626475" fileName="ITemplateCall_Behavior.java" startLine="37" startPosition="126" endLine="38" endPosition="264" />
-    <scopeInfo nodeId="1722980698497626475" fileName="ITemplateCall_Behavior.java" startLine="32" startPosition="93" endLine="34" endPosition="219" />
-    <scopeInfo nodeId="1722980698497626475" fileName="ITemplateCall_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1722980698497626475" fileName="ITemplateCall_Behavior.java" startLine="32" startPosition="93" endLine="34" endPosition="219">
+      <varInfo nodeId="1722980698497626475" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1722980698497626475" fileName="ITemplateCall_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1722980698497626475" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1722980698497626581" fileName="ITemplateCall_Behavior.java" startLine="23" startPosition="103" endLine="26" endPosition="23">
       <varInfo nodeId="1722980698497626583" varName="parameterDeclaration" />
       <varInfo nodeId="1722980698497626592" varName="rawType" />
     </scopeInfo>
     <scopeInfo nodeId="1722980698497626475" fileName="ITemplateCall_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1722980698497626475" varName="callerConceptFqName" />
       <varInfo nodeId="1722980698497626494" varName="expression" />
+      <varInfo nodeId="1722980698497626475" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1722980698497626475" fileName="ITemplateCall_Behavior.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1722980698497626494" varName="expression" />
+      <varInfo nodeId="1722980698497626475" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1722980698497626567" fileName="ITemplateCall_Behavior.java" startLine="20" startPosition="173" endLine="27" endPosition="7">
       <varInfo nodeId="1722980698497626575" varName="i" />
@@ -1010,6 +1257,7 @@
     <scopeInfo nodeId="1722980698497626493" fileName="ITemplateCall_Behavior.java" startLine="19" startPosition="90" endLine="29" endPosition="16" />
     <scopeInfo nodeId="1722980698497626475" fileName="ITemplateCall_Behavior.java" startLine="18" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1722980698497626494" varName="expression" />
+      <varInfo nodeId="1722980698497626475" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1722980698497626475" fileName="ITemplateCall_Behavior.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ITemplateCall_Behavior" />
   </root>
@@ -1021,10 +1269,16 @@
     <nodeInfo nodeId="1805153994417064760" fileName="PatternReduction_MappingRule_Behavior.java" startLine="12" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getConcept_1805153994417064763#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1805153994417064762" fileName="PatternReduction_MappingRule_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1805153994417123444" fileName="PatternReduction_MappingRule_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="1805153994417064760" fileName="PatternReduction_MappingRule_Behavior.java" startLine="9" startPosition="52" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="1805153994417064760" fileName="PatternReduction_MappingRule_Behavior.java" startLine="9" startPosition="52" endLine="12" endPosition="0">
+      <varInfo nodeId="1805153994417064760" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1805153994417064766" fileName="PatternReduction_MappingRule_Behavior.java" startLine="13" startPosition="75" endLine="17" endPosition="6" />
-    <scopeInfo nodeId="1805153994417064760" fileName="PatternReduction_MappingRule_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1805153994417064760" fileName="PatternReduction_MappingRule_Behavior.java" startLine="12" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1805153994417064760" fileName="PatternReduction_MappingRule_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="1805153994417064760" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1805153994417064760" fileName="PatternReduction_MappingRule_Behavior.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1805153994417064760" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="1805153994417064760" fileName="PatternReduction_MappingRule_Behavior.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_Behavior" />
   </root>
   <root nodeId="2902001550281906068">
@@ -1037,10 +1291,19 @@
     <nodeInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVariableName_2902001550281937661#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="2902001550281906070" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="22" startPosition="114" endLine="23" endPosition="277" />
-    <scopeInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="17" startPosition="81" endLine="19" endPosition="232" />
-    <scopeInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="17" startPosition="81" endLine="19" endPosition="232">
+      <varInfo nodeId="2902001550281906068" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="2902001550281906068" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="2902001550281906068" varName="callerConceptFqName" />
+      <varInfo nodeId="2902001550281906068" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="2902001550281906068" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="2902001550281906068" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_Behavior" />
   </root>
   <root nodeId="2902001550281949293">
@@ -1056,11 +1319,22 @@
     <scopeInfo nodeId="2902001550281949295" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="2902001550281949298" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="19" startPosition="84" endLine="20" endPosition="102" />
     <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="28" startPosition="114" endLine="29" endPosition="290" />
-    <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="23" startPosition="81" endLine="25" endPosition="245" />
-    <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="23" startPosition="81" endLine="25" endPosition="245">
+      <varInfo nodeId="2902001550281949293" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="2902001550281949293" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="2902001550281949293" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2902001550281949293" varName="callerConceptFqName" />
+      <varInfo nodeId="2902001550281949293" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="2902001550281949293" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="2902001550281949293" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternVarRefExpression_Behavior" />
   </root>
   <root nodeId="2902001550282064500">
@@ -1076,11 +1350,22 @@
     <scopeInfo nodeId="2902001550282064502" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="2902001550282064505" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="19" startPosition="84" endLine="20" endPosition="98" />
     <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="28" startPosition="114" endLine="29" endPosition="291" />
-    <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="23" startPosition="81" endLine="25" endPosition="246" />
-    <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="23" startPosition="81" endLine="25" endPosition="246">
+      <varInfo nodeId="2902001550282064500" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="2902001550282064500" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="2902001550282064500" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2902001550282064500" varName="callerConceptFqName" />
+      <varInfo nodeId="2902001550282064500" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="2902001550282064500" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="2902001550282064500" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentLinkPatternRefExpression_Behavior" />
   </root>
   <root nodeId="2902001550282064516">
@@ -1096,23 +1381,38 @@
     <scopeInfo nodeId="2902001550282064518" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="2902001550282064521" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="19" startPosition="84" endLine="20" endPosition="103" />
     <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="28" startPosition="114" endLine="29" endPosition="295" />
-    <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="23" startPosition="81" endLine="25" endPosition="250" />
-    <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="23" startPosition="81" endLine="25" endPosition="250">
+      <varInfo nodeId="2902001550282064516" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="2902001550282064516" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="2902001550282064516" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2902001550282064516" varName="callerConceptFqName" />
+      <varInfo nodeId="2902001550282064516" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="2902001550282064516" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="2902001550282064516" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentPropertyPatternRefExpression_Behavior" />
   </root>
   <root nodeId="3462145372627957703">
     <nodeInfo nodeId="3462145372627957703" fileName="LabelMacro_Behavior.java" startLine="7" startPosition="34" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="3462145372627957705" fileName="LabelMacro_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="3462145372627957703" fileName="LabelMacro_Behavior.java" startLine="7" startPosition="34" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="3462145372627957703" fileName="LabelMacro_Behavior.java" startLine="7" startPosition="34" endLine="10" endPosition="0">
+      <varInfo nodeId="3462145372627957703" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="3462145372627957703" fileName="LabelMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LabelMacro_Behavior" />
   </root>
   <root nodeId="3462145372628083275">
     <nodeInfo nodeId="3462145372628083275" fileName="WeaveMacro_Behavior.java" startLine="7" startPosition="34" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="3462145372628083277" fileName="WeaveMacro_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="3462145372628083275" fileName="WeaveMacro_Behavior.java" startLine="7" startPosition="34" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="3462145372628083275" fileName="WeaveMacro_Behavior.java" startLine="7" startPosition="34" endLine="10" endPosition="0">
+      <varInfo nodeId="3462145372628083275" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="3462145372628083275" fileName="WeaveMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.WeaveMacro_Behavior" />
   </root>
   <root nodeId="4035562641222622440">
@@ -1148,20 +1448,37 @@
     <scopeInfo nodeId="4035562641222665328" fileName="TemplateArgumentQuery_Behavior.java" startLine="27" startPosition="380" endLine="29" endPosition="98">
       <varInfo nodeId="4035562641222665444" varName="templateParameter" />
     </scopeInfo>
-    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="34" startPosition="86" endLine="36" endPosition="226" />
+    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="34" startPosition="86" endLine="36" endPosition="226">
+      <varInfo nodeId="4035562641222622440" varName="descriptor" />
+    </scopeInfo>
     <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="43" startPosition="51" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="51" startPosition="7" endLine="54" endPosition="31" />
-    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="4035562641222622440" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="51" startPosition="7" endLine="54" endPosition="31">
+      <varInfo nodeId="4035562641222622440" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="4035562641222622440" varName="callerConceptFqName" />
+      <varInfo nodeId="4035562641222622440" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="33" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="4035562641222622440" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="50" startPosition="32" endLine="55" endPosition="7" />
     <scopeInfo nodeId="4035562641222622445" fileName="TemplateArgumentQuery_Behavior.java" startLine="23" startPosition="83" endLine="31" endPosition="89">
       <varInfo nodeId="4035562641222665303" varName="call" />
       <varInfo nodeId="4035562641222637926" varName="expr" />
       <varInfo nodeId="4035562641222665316" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="47" startPosition="31" endLine="56" endPosition="20" />
-    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="22" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="47" startPosition="31" endLine="56" endPosition="20">
+      <varInfo nodeId="4035562641222622440" varName="_parameterValues_129834374" />
+      <varInfo nodeId="4035562641222622440" varName="quotedNode_1" />
+      <varInfo nodeId="4035562641222622440" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="22" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="4035562641222622440" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="46" startPosition="0" endLine="58" endPosition="0" />
     <unitInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_Behavior" />
     <unitInfo nodeId="4035562641222622440" fileName="TemplateArgumentQuery_Behavior.java" startLine="43" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_Behavior$QuotationClass_8mmc34_a0e0b" />
@@ -1169,7 +1486,9 @@
   <root nodeId="5023471013036171786">
     <nodeInfo nodeId="5023471013036171786" fileName="GeneratorDescriptor_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="5023471013036171788" fileName="GeneratorDescriptor_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="5023471013036171786" fileName="GeneratorDescriptor_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="5023471013036171786" fileName="GeneratorDescriptor_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0">
+      <varInfo nodeId="5023471013036171786" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="5023471013036171786" fileName="GeneratorDescriptor_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.GeneratorDescriptor_Behavior" />
   </root>
   <root nodeId="650531548511609558">
@@ -1182,10 +1501,19 @@
     <nodeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getUniqueId_650531548511609559#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="650531548511609564" fileName="IGeneratorParameter_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="22" startPosition="109" endLine="23" endPosition="264" />
-    <scopeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="17" startPosition="76" endLine="19" endPosition="219" />
-    <scopeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="17" startPosition="76" endLine="19" endPosition="219">
+      <varInfo nodeId="650531548511609558" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="650531548511609558" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="650531548511609558" varName="callerConceptFqName" />
+      <varInfo nodeId="650531548511609558" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="650531548511609558" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior" />
   </root>
   <root nodeId="8360039740498070952">
@@ -1215,30 +1543,47 @@
     <scopeInfo nodeId="8360039740498070966" fileName="TemplateSwitch_Behavior.java" startLine="25" startPosition="98" endLine="26" endPosition="115" />
     <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="47" startPosition="128" endLine="48" endPosition="279" />
     <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="51" startPosition="130" endLine="52" endPosition="261" />
-    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="37" startPosition="95" endLine="39" endPosition="234" />
-    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="42" startPosition="97" endLine="44" endPosition="216" />
-    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="37" startPosition="95" endLine="39" endPosition="234">
+      <varInfo nodeId="8360039740498070952" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="42" startPosition="97" endLine="44" endPosition="216">
+      <varInfo nodeId="8360039740498070952" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="8360039740498070952" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8360039740498070965" fileName="TemplateSwitch_Behavior.java" startLine="24" startPosition="48" endLine="27" endPosition="5">
       <varInfo nodeId="8360039740498070969" varName="mappingRule" />
     </scopeInfo>
     <scopeInfo nodeId="7656801780400891054" fileName="TemplateSwitch_Behavior.java" startLine="31" startPosition="100" endLine="34" endPosition="111">
       <varInfo nodeId="7656801780400897416" varName="rule" />
     </scopeInfo>
-    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="8360039740498070952" varName="callerConceptFqName" />
+      <varInfo nodeId="8360039740498070952" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="7656801780400891055" varName="baseConcept" />
+      <varInfo nodeId="8360039740498070952" varName="callerConceptFqName" />
+      <varInfo nodeId="8360039740498070952" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="8360039740498070957" fileName="TemplateSwitch_Behavior.java" startLine="23" startPosition="98" endLine="28" endPosition="18">
       <varInfo nodeId="8360039740498071157" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="36" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="8360039740498070952" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="41" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="7656801780400891055" varName="baseConcept" />
+      <varInfo nodeId="8360039740498070952" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="7656801780400891055" varName="baseConcept" />
+      <varInfo nodeId="8360039740498070952" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="22" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="8360039740498070952" varName="thisNode" />
+    </scopeInfo>
     <unitInfo nodeId="8360039740498070952" fileName="TemplateSwitch_Behavior.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateSwitch_Behavior" />
   </root>
   <root nodeId="8952337903384729124">
@@ -1265,20 +1610,37 @@
     <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="39" startPosition="112" endLine="40" endPosition="268" />
     <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="43" startPosition="129" endLine="44" endPosition="265" />
     <scopeInfo nodeId="390427525177435269" fileName="TemplateDeclaration_Behavior.java" startLine="24" startPosition="100" endLine="26" endPosition="110" />
-    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="29" startPosition="79" endLine="31" endPosition="223" />
-    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="34" startPosition="96" endLine="36" endPosition="220" />
-    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="29" startPosition="79" endLine="31" endPosition="223">
+      <varInfo nodeId="8952337903384729124" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="34" startPosition="96" endLine="36" endPosition="220">
+      <varInfo nodeId="8952337903384729124" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="8952337903384729124" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="8952337903384729124" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="8952337903384729124" varName="callerConceptFqName" />
+      <varInfo nodeId="8952337903384729124" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="390427525177435270" varName="baseConcept" />
+      <varInfo nodeId="8952337903384729124" varName="callerConceptFqName" />
+      <varInfo nodeId="8952337903384729124" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="23" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="390427525177435270" varName="baseConcept" />
+      <varInfo nodeId="8952337903384729124" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="8952337903384729124" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="33" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="390427525177435270" varName="baseConcept" />
+      <varInfo nodeId="8952337903384729124" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="8952337903384729124" fileName="TemplateDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_Behavior" />
   </root>

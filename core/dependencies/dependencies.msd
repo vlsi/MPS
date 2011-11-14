@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.dependencies" uuid="3fd20bbb-7c73-461b-af20-a79009ee5639" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/models" namespacePrefix="jetbrains.mps.dependencies" />
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/models" />
+    <modelRoot path="${solution_descriptor}/" />
   </models>
   <sourcePath />
   <dependencies>

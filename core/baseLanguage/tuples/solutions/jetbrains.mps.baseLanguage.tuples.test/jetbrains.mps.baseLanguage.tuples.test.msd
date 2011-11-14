@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.baseLanguage.tuples.test" uuid="993e3b08-9f44-43cf-b983-e474ac66855b" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" />
   </models>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">02f6bdf3-0540-48d1-8551-1d3619454f47(jetbrains.mps.baseLanguage.tuples.shared)</dependency>
   </dependencies>

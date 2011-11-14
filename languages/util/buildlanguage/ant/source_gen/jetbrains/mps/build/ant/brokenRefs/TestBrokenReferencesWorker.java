@@ -7,7 +7,11 @@ import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import java.lang.management.MemoryMXBean;
 import java.lang.management.ManagementFactory;
-import jetbrains.mps.project.Project;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import java.io.File;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.build.ant.FileMPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -21,7 +25,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodeUtil;
-import java.io.File;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
 
 public class TestBrokenReferencesWorker extends MpsWorker {
@@ -38,7 +41,13 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
   public void work() {
     setupEnvironment();
-    Project project = createDummyProject();
+    Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+
+    File projectFile = FileUtil.createTmpFile();
+    FileMPSProject project = new FileMPSProject(projectFile);
+    project.init(new FileMPSProject.ProjectDescriptor(projectFile));
+    projectFile.deleteOnExit();
+
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess();
     collectModelsToGenerate(go);
     reload();
@@ -47,8 +56,8 @@ public class TestBrokenReferencesWorker extends MpsWorker {
   }
 
   @Override
-  protected void executeTask(Project project, final MpsWorker.ObjectsToProcess go) {
-    for (Project p : go.getProjects()) {
+  protected void executeTask(jetbrains.mps.project.Project project, final MpsWorker.ObjectsToProcess go) {
+    for (jetbrains.mps.project.Project p : go.getProjects()) {
       extractModels(go.getModels(), p);
     }
     for (IModule m : go.getModules()) {

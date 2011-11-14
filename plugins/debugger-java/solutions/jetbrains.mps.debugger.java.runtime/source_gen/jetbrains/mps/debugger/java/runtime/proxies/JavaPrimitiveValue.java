@@ -52,6 +52,6 @@ import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
     if (myValue == null) {
       return null;
     }
-    return MirrorUtil.getJavaValue(myValue);
+    return MirrorUtil.getInstance().getJavaValue(myValue);
   }
 }

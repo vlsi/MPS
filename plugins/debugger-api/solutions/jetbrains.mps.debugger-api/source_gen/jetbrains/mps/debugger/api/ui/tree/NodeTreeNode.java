@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.api.ui.tree;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public class NodeTreeNode extends AbstractWatchableNode {
   public NodeTreeNode(@NotNull SNode node) {
@@ -15,6 +15,6 @@ public class NodeTreeNode extends AbstractWatchableNode {
   public NodeTreeNode(IOperationContext context, @NotNull SNode node) {
     super(context, node);
     setNodeIdentifier(myNode.toString());
-    setIcon(Icons.DEFAULT_ICON);
+    setIcon(IdeIcons.DEFAULT_ICON);
   }
 }

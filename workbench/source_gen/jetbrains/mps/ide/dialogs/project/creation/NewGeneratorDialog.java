@@ -182,9 +182,7 @@ public class NewGeneratorDialog extends BaseDialog {
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
     generatorDescriptor.setNamespace(name);
-    String templateModelNamePrefix = getTemplateModelPrefix(language);
     ModelRoot templateModelsRoot = new ModelRoot();
-    templateModelsRoot.setPrefix(templateModelNamePrefix);
     templateModelsRoot.setPath(templateModelsDir.getAbsolutePath());
     generatorDescriptor.getModelRoots().add(templateModelsRoot);
     generatorDescriptor.getUsedDevkits().add(GeneralPurpose_DevKit.MODULE_REFERENCE);

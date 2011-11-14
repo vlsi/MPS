@@ -4,6 +4,7 @@ package jetbrains.mps.ide.hierarchy.icons;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public class Icons {
   public static final Icon CHILDREN_ICON = new ImageIcon(Icons.class.getResource("subtypes.png"));
@@ -12,7 +13,7 @@ public class Icons {
   public static final Icon ZOOM_OUT_ICON = new ImageIcon(Icons.class.getResource("zoomOut.png"));
   public static final Icon ACTUAL_ZOOM_ICON = new ImageIcon(Icons.class.getResource("actualZoom.png"));
   public static final Icon REFRESH_ICON = new ImageIcon(Icons.class.getResource("refresh.png"));
-  public static final Icon THIS_MODEL_ICON = jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
+  public static final Icon THIS_MODEL_ICON = IdeIcons.MODEL_ICON;
   public static final Icon GENERATOR_ICON = new ImageIcon(Icons.class.getResource("generator.png"));
 
   public Icons() {

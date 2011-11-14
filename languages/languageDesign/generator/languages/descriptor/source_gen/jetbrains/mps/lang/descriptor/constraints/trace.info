@@ -17,11 +17,18 @@
     <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="14" startPosition="43" endLine="15" endPosition="72" />
     <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
     <scopeInfo nodeId="8780540425167303922" fileName="LanguageDescriptor_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="28" />
-    <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="28" startPosition="56" endLine="30" endPosition="28" />
+    <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="28" startPosition="56" endLine="30" endPosition="28">
+      <varInfo nodeId="8780540425167303919" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="13" startPosition="79" endLine="16" endPosition="3" />
     <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="21" startPosition="80" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="8780540425167303919" varName="node" />
+      <varInfo nodeId="8780540425167303919" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
+      <varInfo nodeId="8780540425167303919" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="17" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_Constraints" />
     <unitInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="21" startPosition="31" endLine="32" endPosition="5" unitName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_Constraints$1" />

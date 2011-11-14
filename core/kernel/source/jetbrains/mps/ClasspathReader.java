@@ -16,6 +16,7 @@
 package jetbrains.mps;
 
 import jetbrains.mps.util.Callback;
+import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -38,7 +39,7 @@ public class ClasspathReader {
     try {
       Scanner sc;
       boolean skipMode = false;
-      for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine(); ) {
+      for (sc = new Scanner(acp, FileUtil.DEFAULT_CHARSET_NAME); sc.hasNextLine(); ) {
         String line = sc.nextLine().trim();
         if (line.startsWith(":")) {
           skipMode = !sTypes.contains(line.substring(1));

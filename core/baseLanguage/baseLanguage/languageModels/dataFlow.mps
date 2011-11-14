@@ -272,7 +272,7 @@
       <link role="analyzer" roleId="bj1v.4130591939054429248" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     </node>
     <node type="bj1v.Rule" typeId="bj1v.430844094082168520" id="5730083271929368106">
-      <property name="name" nameId="tpck.1169194664001" value="RuleAssertNull" />
+      <property name="name" nameId="tpck.1169194664001" value="RuleAssertNotNull" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nullable" />
       <link role="analyzer" roleId="bj1v.4130591939054429248" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     </node>
@@ -4441,33 +4441,33 @@
               <property name="varName" nameId="tp3t.1136720037780" value="p" />
             </node>
             <node role="clause" roleId="tp3t.2879868312062970574" type="tp3t.OrPatternClause" typeId="tp3t.4855904478356877904" id="5730083271929373008">
-              <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5730083271929368112">
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5730083271929373006" />
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tp3t.OrPatternVariableReference" typeId="tp3t.4264731254635442556" id="5730083271929373014">
-                  <link role="declaration" roleId="tp3t.4264731254635442557" targetNodeId="5730083271929373013" resolveInfo="#p" />
+              <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="7788661681319653153">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tp3t.OrPatternVariableReference" typeId="tp3t.4264731254635442556" id="7788661681319653154">
+                  <link role="declaration" roleId="tp3t.4264731254635442557" targetNodeId="5730083271929373013" />
                 </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7788661681319653155" />
               </node>
             </node>
             <node role="clause" roleId="tp3t.2879868312062970574" type="tp3t.OrPatternClause" typeId="tp3t.4855904478356877904" id="5730083271929373009">
-              <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5730083271929373010">
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tp3t.OrPatternVariableReference" typeId="tp3t.4264731254635442556" id="5730083271929373016">
-                  <link role="declaration" roleId="tp3t.4264731254635442557" targetNodeId="5730083271929373013" resolveInfo="#p" />
+              <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="7788661681319653156">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7788661681319653157" />
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tp3t.OrPatternVariableReference" typeId="tp3t.4264731254635442556" id="7788661681319653158">
+                  <link role="declaration" roleId="tp3t.4264731254635442557" targetNodeId="5730083271929373013" />
                 </node>
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5730083271929373015" />
               </node>
             </node>
-          </node>
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.ActionAsPattern" typeId="tp3t.4413230749907733332" id="1508313647019626151">
-            <property name="varName" nameId="tp3t.1136720037780" value="action_var_5730083271929368110" />
-            <node role="position" roleId="tp3t.8990057180226016446" type="tp3t.InsertAfterPosition" typeId="tp3t.1649655856141352248" id="1508313647019626154" />
-            <node role="action" roleId="tp3t.4413230749907733337" type="bj1v.EmitInstruction" typeId="bj1v.4217760266503579796" id="1508313647019626155">
-              <node role="instructionRef" roleId="bj1v.4217760266503650651" type="bj1v.InstructionReference" typeId="bj1v.4217760266503638748" id="1508313647019626158">
-                <link role="instruction" roleId="bj1v.4217760266503638757" targetNodeId="6868777471677432047" resolveInfo="notNull" />
-                <node role="argument" roleId="bj1v.4217760266503638749" type="tp3t.PatternVariableReference" typeId="tp3t.3133930811460119173" id="1508313647019626159">
-                  <link role="variable" roleId="tp3t.3133930811460119174" targetNodeId="5730083271929373013" resolveInfo="#p" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.ActionAsPattern" typeId="tp3t.4413230749907733332" id="1490803006783708858">
+              <property name="varName" nameId="tp3t.1136720037780" value="action_var_5730083271929373007" />
+              <node role="position" roleId="tp3t.8990057180226016446" type="tp3t.InsertAfterPosition" typeId="tp3t.1649655856141352248" id="1490803006783708861" />
+              <node role="action" roleId="tp3t.4413230749907733337" type="bj1v.EmitInstruction" typeId="bj1v.4217760266503579796" id="1490803006783710006">
+                <node role="instructionRef" roleId="bj1v.4217760266503650651" type="bj1v.InstructionReference" typeId="bj1v.4217760266503638748" id="1490803006783710009">
+                  <link role="instruction" roleId="bj1v.4217760266503638757" targetNodeId="6868777471677432047" resolveInfo="notNull" />
+                  <node role="argument" roleId="bj1v.4217760266503638749" type="tp3t.PatternVariableReference" typeId="tp3t.3133930811460119173" id="1490803006783710011">
+                    <link role="variable" roleId="tp3t.3133930811460119174" targetNodeId="5730083271929373013" />
+                  </node>
                 </node>
+                <node role="position" roleId="bj1v.24089196731087404" type="tp3t.InsertPosition" typeId="tp3t.1649655856141352252" id="1490803006783710008" />
               </node>
-              <node role="position" roleId="bj1v.24089196731087404" type="tp3t.InsertPosition" typeId="tp3t.1649655856141352252" id="1508313647019626157" />
             </node>
           </node>
         </node>

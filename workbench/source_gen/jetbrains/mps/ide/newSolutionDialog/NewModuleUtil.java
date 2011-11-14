@@ -15,6 +15,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 
@@ -59,7 +60,8 @@ public class NewModuleUtil {
         module.save();
       }
     });
-    project.addProjectModule(module);
+    project.addModule(module.getModuleReference());
+    ((StandaloneMPSProject) project).update();
     return ((T) module);
   }
 
@@ -71,7 +73,6 @@ public class NewModuleUtil {
     }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
       public void invoke(ModuleDescriptor d) {
         ModelRoot modelRoot = new ModelRoot();
-        modelRoot.setPrefix("");
         modelRoot.setPath(rootPath);
         d.getModelRoots().add(modelRoot);
 

@@ -15,11 +15,11 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="plugin-runtime" />
-    <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="library" name="Commons-logging" level="project" />
   </component>
 </module>
 

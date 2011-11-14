@@ -37,8 +37,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/stubUtils/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../workbench/idea-workbench">
-      <sourceFolder url="file://$MODULE_DIR$/../../workbench/idea-workbench/source" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../../workbench/mps-platform">
+      <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-platform/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-platform/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="module-library">
       <library name="MPS-core">

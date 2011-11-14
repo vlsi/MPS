@@ -48,7 +48,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Language extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
-  private static final String LANGUAGE_MODELS = "languageModels";
+  public static final String LANGUAGE_MODELS = "languageModels";
 
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators = new ArrayList<Generator>();
@@ -699,7 +699,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     // default descriptorModel roots
     jetbrains.mps.project.structure.model.ModelRoot modelRoot = new jetbrains.mps.project.structure.model.ModelRoot();
     modelRoot.setPath(languageModels.getPath());
-    modelRoot.setPrefix(languageNamespace);
     languageDescriptor.getModelRoots().add(modelRoot);
     return languageDescriptor;
   }

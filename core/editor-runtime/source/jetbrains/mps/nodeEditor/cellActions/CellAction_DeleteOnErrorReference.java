@@ -38,7 +38,9 @@ public class CellAction_DeleteOnErrorReference extends EditorCellAction {
     } else {
       List<SNode> nodes = new ArrayList<SNode>();
       nodes.add(mySource);
-      new DeleteNodesHelper(nodes, context.getOperationContext(), false).deleteNodes(false);
+      for (SNode node : nodes) {
+        node.delete();
+      }
     }
   }
 }

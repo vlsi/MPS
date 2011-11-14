@@ -27,10 +27,15 @@
     <scopeInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
     <scopeInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="30" startPosition="83" endLine="35" endPosition="0" />
     <scopeInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="39" startPosition="49" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="39" startPosition="49" endLine="45" endPosition="0">
+      <varInfo nodeId="1241364804758" varName="_context" />
+      <varInfo nodeId="1241364804758" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="38" startPosition="56" endLine="50" endPosition="10" />
     <scopeInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="35" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="28" startPosition="83" endLine="53" endPosition="22" />
+    <scopeInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="28" startPosition="83" endLine="53" endPosition="22">
+      <varInfo nodeId="1241364804758" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="26" startPosition="0" endLine="55" endPosition="0" />
     <unitInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.calculator.constraints.InputFieldReference_Constraints" />
     <unitInfo nodeId="1241364804758" fileName="InputFieldReference_Constraints.java" startLine="30" startPosition="32" endLine="52" endPosition="5" unitName="jetbrains.mps.calculator.constraints.InputFieldReference_Constraints$1" />

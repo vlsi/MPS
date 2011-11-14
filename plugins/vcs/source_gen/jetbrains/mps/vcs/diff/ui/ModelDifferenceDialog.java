@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.vcs.diff.changes.ChangeSet;
+import jetbrains.mps.vcs.diff.ChangeSet;
 import java.util.Map;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.List;
@@ -20,10 +20,12 @@ import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vcs.diff.changes.ChangeSetBuilder;
+import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction;
 import com.intellij.openapi.diff.DiffManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -41,11 +43,13 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Arrays;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
+import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class ModelDifferenceDialog extends BaseDialog {
@@ -84,6 +88,7 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   private void fillRootToChange() {
     MapSequence.fromMap(myRootToChanges).clear();
+    ListSequence.fromList(myMetadataChanges).clear();
     for (ModelChange c : ListSequence.fromList(myChangeSet.getModelChanges())) {
       SNodeId id = c.getRootId();
       if (id == null) {
@@ -197,6 +202,10 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   public List<ModelChange> getChangesForRoot(SNodeId rootId) {
     return MapSequence.fromMap(myRootToChanges).get(rootId);
+  }
+
+  public List<ModelChange> getMetadataChanges() {
+    return myMetadataChanges;
   }
 
   @Override

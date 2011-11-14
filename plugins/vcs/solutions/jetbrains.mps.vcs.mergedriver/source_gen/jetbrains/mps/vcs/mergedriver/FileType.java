@@ -9,8 +9,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.io.Reader;
 import java.io.InputStreamReader;
 import java.io.FileInputStream;
-import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
+import java.io.IOException;
 
 public enum FileType {
   MODEL(".mps", "model"),
@@ -49,7 +49,7 @@ public enum FileType {
     char[] buf = new char[100];
     Reader reader = null;
     try {
-      reader = new InputStreamReader(new FileInputStream(file), "utf-8");
+      reader = new InputStreamReader(new FileInputStream(file), FileUtil.DEFAULT_CHARSET);
       int read = reader.read(buf);
       if (read == -1) {
         return null;

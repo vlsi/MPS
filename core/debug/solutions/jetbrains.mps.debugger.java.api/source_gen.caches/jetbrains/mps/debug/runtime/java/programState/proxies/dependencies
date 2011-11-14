@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil" file="AbstractValueUtil.java">
-    <classNode dependClassName="com.sun.jdi.ThreadReference" />
-    <classNode dependClassName="com.sun.jdi.Value" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-  </dependency>
   <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.JavaLocation" file="JavaLocation.java">
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.Location" />
@@ -37,9 +29,9 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaLocation" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject" />
@@ -78,6 +70,17 @@
   <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.ProxyForJava" file="ProxyForJava.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" file="ValueUtil.java">
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper" file="ValueWrapper.java">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />

@@ -32,7 +32,7 @@
       <modulePath path="${project}/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="" />
       <modulePath path="${mps_home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
       <modulePath path="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
-      <modulePath path="${mps_home}/core/languageDesign/editor/languages/editorTest/editorTest.mpl" />
+      <modulePath path="${mps_home}/languages/languageDesign/editor/languages/editorTest/editorTest.mpl" />
     </projectModules>
     <genConfs>
       <genConfModule name="baseLanguage" moduleRef="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />

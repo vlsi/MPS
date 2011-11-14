@@ -17,7 +17,7 @@ public class ModelRootChooser implements Computable<ModelRoot> {
 
   public ModelRoot compute() {
     TreeFileChooser chooser = new TreeFileChooser();
-    chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+    chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
     IFile dir = chooser.showDialog(myOwner.getMainComponent());
     if (dir == null) {
       return null;

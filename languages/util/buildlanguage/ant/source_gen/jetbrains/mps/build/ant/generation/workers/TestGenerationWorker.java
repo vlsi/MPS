@@ -266,7 +266,8 @@ public class TestGenerationWorker extends MpsWorker {
       if (!(file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
         continue;
       }
-      Project p = new FileMPSProject(file);
+      FileMPSProject p = new FileMPSProject(file);
+      p.init(new FileMPSProject.ProjectDescriptor(file));
       info("Loaded project " + p);
       executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<IModule>(), new HashSet<SModelDescriptor>()));
       disposeProject(p);
@@ -318,8 +319,8 @@ public class TestGenerationWorker extends MpsWorker {
           if (isWholeProject(prj)) {
             _modules.value = Sequence.fromIterable(_modules.value).concat(ListSequence.fromList(prj.getModules()));
           } else
-          if (!(prj.getProjectDescriptor().getTestConfigurations().isEmpty())) {
-            for (BaseTestConfiguration tconf : prj.getProjectDescriptor().getTestConfigurations()) {
+          if (!(((FileMPSProject) prj).getDescriptor().getTestConfiturations().isEmpty())) {
+            for (BaseTestConfiguration tconf : ((FileMPSProject) prj).getDescriptor().getTestConfiturations()) {
               try {
                 result.value = Sequence.fromIterable(result.value).concat(ListSequence.fromList(tconf.getGenParams(prj, true).getModelDescriptors()));
               } catch (IllegalGeneratorConfigurationException e) {
@@ -327,7 +328,7 @@ public class TestGenerationWorker extends MpsWorker {
               }
             }
           } else {
-            warning("No test configurations for project " + prj.getProjectDescriptor().getName());
+            warning("No test configurations for project " + prj.getName());
           }
         }
         result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(_modules.value).translate(new ITranslator2<IModule, SModelDescriptor>() {

@@ -15,7 +15,7 @@ import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy;
-import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 
 public class MapViewer_WrapperFactory extends ValueWrapperFactory {
   public MapViewer_WrapperFactory() {
@@ -33,7 +33,7 @@ public class MapViewer_WrapperFactory extends ValueWrapperFactory {
         if (value == null) {
           return false;
         }
-        if (!(EvaluationUtils.isInstanceOf(value.type(), "Ljava/util/Map;", value.virtualMachine()))) {
+        if (!(EvaluationUtils.getInstance().instanceOf(value.type(), "Ljava/util/Map;", value.virtualMachine()))) {
           return false;
         }
         return true;
@@ -58,11 +58,11 @@ public class MapViewer_WrapperFactory extends ValueWrapperFactory {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
 
       PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I"));
-      result.add(new CollectionsWatchables.MyWatchable_size(AbstractValueUtil.getInstance().fromJDIValue(size.getJDIValue(), getThreadReference()), "size"));
+      result.add(new CollectionsWatchables.MyWatchable_size(ValueUtil.getInstance().fromJDIValue(size.getJDIValue(), getThreadReference()), "size"));
 
       IObjectValueProxy entries = ((IObjectValueProxy) value.invokeMethod("entrySet", "()Ljava/util/Set;"));
-      for (IObjectValueProxy entry : EvaluationUtils.<IObjectValueProxy>toIterable(entries)) {
-        result.add(new CollectionsWatchables.MyWatchable_entry(AbstractValueUtil.getInstance().fromJDIValue(entry.getJDIValue(), getThreadReference()), "entry"));
+      for (IObjectValueProxy entry : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(entries)) {
+        result.add(new CollectionsWatchables.MyWatchable_entry(ValueUtil.getInstance().fromJDIValue(entry.getJDIValue(), getThreadReference()), "entry"));
       }
 
       return result;

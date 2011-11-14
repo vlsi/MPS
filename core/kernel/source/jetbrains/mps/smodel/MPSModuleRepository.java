@@ -136,15 +136,6 @@ public class MPSModuleRepository implements CoreComponent {
     return myFqNameToModulesMap.get(ref.getModuleFqName());
   }
 
-  @Deprecated
-  public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
-    ModuleDescriptor moduleDescriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
-    if (moduleDescriptor == null) {
-      throw new IllegalArgumentException("Unknown module " + file.getName());
-    }
-    return this.<TM>registerModule(new ModuleHandle(file, moduleDescriptor), owner);
-  }
-
   /*
    *   TODO merge with addModule
    */

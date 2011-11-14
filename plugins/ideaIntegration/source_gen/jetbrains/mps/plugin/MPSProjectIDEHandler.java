@@ -13,14 +13,15 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import java.awt.Frame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
@@ -108,25 +109,22 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showNode(final String namespace, final String id) throws RemoteException {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
-              if (!(namespace.equals(descriptor.getSModelReference().getLongName()))) {
-                continue;
-              }
-              if (descriptor.getStereotype().equals(SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
-                continue;
-              }
-              SNode node = descriptor.getSModel().getNodeById(id);
-              if (node != null) {
-                myProject.getComponent(MPSEditorOpener.class).openNode(node);
-              }
-            }
-            FrameUtil.activateFrame(getMainFrame());
+        for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
+          if (!(namespace.equals(descriptor.getSModelReference().getLongName()))) {
+            continue;
           }
-        });
+          if (descriptor.getStereotype().equals(SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
+            continue;
+          }
+          SNode node = descriptor.getSModel().getNodeById(id);
+          if (node != null) {
+            ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
+            NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+          }
+        }
+        FrameUtil.activateFrame(getMainFrame());
       }
     });
   }
@@ -141,7 +139,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode concept = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
-        myProject.getComponent(MPSEditorOpener.class).openNode(concept);
+        NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), concept, true, false);
         FrameUtil.activateFrame(getMainFrame());
       }
     });

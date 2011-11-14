@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
 public class CardinalitiesChecker extends AbstractConstraintsChecker {
@@ -43,7 +42,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
             component.addError(node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", null);
           }
         } else {
-          if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
+          if (SNodeOperations.getReference(node, link) == null) {
             component.addError(node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", null, new ReferenceMessageTarget(SPropertyOperations.getString(link, "role")));
           }
         }

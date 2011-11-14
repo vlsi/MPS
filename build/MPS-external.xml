@@ -37,6 +37,8 @@
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />
@@ -86,6 +88,7 @@
     <copy todir="${deploy.dir}/MPS/lib">
       <fileset dir="${mps_home}/lib" excludes="src/, **/*.zip, " />
     </copy>
+    <antcall target="pack.branding_b1a" />
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/MPSPlugin">
       <fileset dir="${mps_home}/MPSPlugin" excludes="**/sandbox/**, " includes="**/*.java, **/*.java" />
     </copy>
@@ -207,23 +210,30 @@
       <fileset dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
+      <fileset dir="${mps_home}/workbench/baseLanguageIndex/classes_gen" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
+      <fileset dir="${mps_home}/workbench/mps-platform/classes" />
+    </copy>
+    <antcall target="MPS-languages.pack.jetbrains.mps.ide.platform" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.index" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules" />
+    <jar destfile="${deploy.dir}/MPS/lib/mps-platform.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/core/plugin-runtime/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/workbench/baseLanguageIndex/classes_gen" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/core/baseLanguage/runConfigurations/runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/core/languageDesign/test/classes_gen" />
+      <fileset dir="${mps_home}/languages/languageDesign/test/classes_gen" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/workbench/idea-workbench/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/workbench/mps-workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
@@ -251,7 +261,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.mps" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.workbench.make" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.index" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-workbench.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
@@ -267,14 +276,10 @@
     <copy todir="${deploy.dir}/MPS/lib/mps-test.jar.tmp">
       <fileset dir="${mps_home}/testbench/classes" />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-test.jar.tmp">
-      <fileset dir="${mps_home}/classes" excludes="production/, test/, " />
-    </copy>
     <jar destfile="${deploy.dir}/MPS/lib/mps-test.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
-    <antcall target="pack.branding_i1a" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <copy todir="${deploy.dir}/MPS/license">
       <fileset dir="${mps_home}/license" />
@@ -529,16 +534,17 @@
     <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
   </target>
-  <target name="pack.branding_i1a">
-    <property name="tmpdir" value="${java.io.tmpdir}/branding_i1a_0" />
+  <target name="pack.branding_b1a">
+    <property name="tmpdir" value="${java.io.tmpdir}/branding_b1a_0" />
     <property name="idea.application.info" value="${tmpdir}/IdeaApplicationInfo.xml" />
     <mkdir dir="${tmpdir}/" />
-    <loadfile srcfile="${scripts.dir}/branding_i1a.xml" property="idea.application.info.contents">
+    <loadfile srcfile="${scripts.dir}/branding_b1a.xml" property="idea.application.info.contents">
       <filterchain>
         <expandproperties />
       </filterchain>

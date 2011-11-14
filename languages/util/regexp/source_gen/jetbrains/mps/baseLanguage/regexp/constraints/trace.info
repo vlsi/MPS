@@ -23,11 +23,16 @@
     <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="43" startPosition="61" endLine="44" endPosition="58" />
     <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="27" startPosition="83" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="36" startPosition="49" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="36" startPosition="49" endLine="41" endPosition="0">
+      <varInfo nodeId="1213104858749" varName="_context" />
+      <varInfo nodeId="1213104858749" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="35" startPosition="56" endLine="46" endPosition="10" />
     <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="32" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="25" startPosition="83" endLine="49" endPosition="22" />
+    <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="25" startPosition="83" endLine="49" endPosition="22">
+      <varInfo nodeId="1213104858749" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="51" endPosition="0" />
     <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints" />
     <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="27" startPosition="32" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints$1" />
@@ -71,15 +76,23 @@
     <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="34" startPosition="83" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="43" startPosition="49" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="48" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1213104860358" varName="_context" />
+      <varInfo nodeId="1213104860358" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104860361" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="58" startPosition="142" endLine="68" endPosition="27">
       <varInfo nodeId="1222876750635" varName="matches" />
       <varInfo nodeId="1213104860370" varName="top" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="56" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="56" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1213104860358" varName="_context" />
+      <varInfo nodeId="1213104860358" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="42" startPosition="56" endLine="75" endPosition="10" />
     <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="39" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="32" startPosition="83" endLine="78" endPosition="22" />
+    <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="32" startPosition="83" endLine="78" endPosition="22">
+      <varInfo nodeId="1213104860358" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="30" startPosition="0" endLine="80" endPosition="0" />
     <unitInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="24" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints" />
     <unitInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="34" startPosition="32" endLine="77" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints$1" />
@@ -115,9 +128,20 @@
     <scopeInfo nodeId="1231768606718" fileName="ReplaceWithRegexpOperation_Constraints.java" startLine="40" startPosition="121" endLine="46" endPosition="15">
       <varInfo nodeId="1231768622583" varName="can" />
     </scopeInfo>
-    <scopeInfo nodeId="1231768529435" fileName="ReplaceWithRegexpOperation_Constraints.java" startLine="30" startPosition="166" endLine="37" endPosition="18" />
-    <scopeInfo nodeId="1231768529435" fileName="ReplaceWithRegexpOperation_Constraints.java" startLine="39" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1231768529435" fileName="ReplaceWithRegexpOperation_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1231768529435" fileName="ReplaceWithRegexpOperation_Constraints.java" startLine="30" startPosition="166" endLine="37" endPosition="18">
+      <varInfo nodeId="1231768529435" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231768529435" fileName="ReplaceWithRegexpOperation_Constraints.java" startLine="39" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1231768529435" varName="_context" />
+      <varInfo nodeId="1231768529435" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231768529435" fileName="ReplaceWithRegexpOperation_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1231768529435" varName="checkingNodeContext" />
+      <varInfo nodeId="1231768529435" varName="node" />
+      <varInfo nodeId="1231768529435" varName="node1" />
+      <varInfo nodeId="1231768529435" varName="node2" />
+      <varInfo nodeId="1231768529435" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1231768529435" fileName="ReplaceWithRegexpOperation_Constraints.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.ReplaceWithRegexpOperation_Constraints" />
   </root>
   <root nodeId="1231768928736">
@@ -150,9 +174,20 @@
     <scopeInfo nodeId="1231768942677" fileName="MatchRegexpOperation_Constraints.java" startLine="40" startPosition="121" endLine="46" endPosition="15">
       <varInfo nodeId="1231768963652" varName="can" />
     </scopeInfo>
-    <scopeInfo nodeId="1231768928736" fileName="MatchRegexpOperation_Constraints.java" startLine="30" startPosition="166" endLine="37" endPosition="18" />
-    <scopeInfo nodeId="1231768928736" fileName="MatchRegexpOperation_Constraints.java" startLine="39" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1231768928736" fileName="MatchRegexpOperation_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1231768928736" fileName="MatchRegexpOperation_Constraints.java" startLine="30" startPosition="166" endLine="37" endPosition="18">
+      <varInfo nodeId="1231768928736" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231768928736" fileName="MatchRegexpOperation_Constraints.java" startLine="39" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1231768928736" varName="_context" />
+      <varInfo nodeId="1231768928736" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231768928736" fileName="MatchRegexpOperation_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1231768928736" varName="checkingNodeContext" />
+      <varInfo nodeId="1231768928736" varName="node" />
+      <varInfo nodeId="1231768928736" varName="node1" />
+      <varInfo nodeId="1231768928736" varName="node2" />
+      <varInfo nodeId="1231768928736" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1231768928736" fileName="MatchRegexpOperation_Constraints.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchRegexpOperation_Constraints" />
   </root>
   <root nodeId="3796137614137203372">
@@ -185,9 +220,20 @@
     <scopeInfo nodeId="3796137614137203374" fileName="ReplaceRegexpOperation_Constraints.java" startLine="40" startPosition="121" endLine="46" endPosition="15">
       <varInfo nodeId="3796137614137203376" varName="can" />
     </scopeInfo>
-    <scopeInfo nodeId="3796137614137203372" fileName="ReplaceRegexpOperation_Constraints.java" startLine="30" startPosition="166" endLine="37" endPosition="18" />
-    <scopeInfo nodeId="3796137614137203372" fileName="ReplaceRegexpOperation_Constraints.java" startLine="39" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="3796137614137203372" fileName="ReplaceRegexpOperation_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="3796137614137203372" fileName="ReplaceRegexpOperation_Constraints.java" startLine="30" startPosition="166" endLine="37" endPosition="18">
+      <varInfo nodeId="3796137614137203372" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137203372" fileName="ReplaceRegexpOperation_Constraints.java" startLine="39" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="3796137614137203372" varName="_context" />
+      <varInfo nodeId="3796137614137203372" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137203372" fileName="ReplaceRegexpOperation_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="3796137614137203372" varName="checkingNodeContext" />
+      <varInfo nodeId="3796137614137203372" varName="node" />
+      <varInfo nodeId="3796137614137203372" varName="node1" />
+      <varInfo nodeId="3796137614137203372" varName="node2" />
+      <varInfo nodeId="3796137614137203372" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="3796137614137203372" fileName="ReplaceRegexpOperation_Constraints.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.ReplaceRegexpOperation_Constraints" />
   </root>
   <root nodeId="3796137614137558190">
@@ -228,11 +274,19 @@
       <varInfo nodeId="3796137614137558197" varName="matches" />
       <varInfo nodeId="3796137614137558203" varName="top" />
     </scopeInfo>
-    <scopeInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="49" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="57" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="49" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="3796137614137558190" varName="_context" />
+      <varInfo nodeId="3796137614137558190" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="57" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="3796137614137558190" varName="_context" />
+      <varInfo nodeId="3796137614137558190" varName="operationContext" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="43" startPosition="56" endLine="72" endPosition="10" />
     <scopeInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="40" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="33" startPosition="83" endLine="75" endPosition="22" />
+    <scopeInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="33" startPosition="83" endLine="75" endPosition="22">
+      <varInfo nodeId="3796137614137558190" varName="references" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="31" startPosition="0" endLine="77" endPosition="0" />
     <unitInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="25" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_Constraints" />
     <unitInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="35" startPosition="32" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_Constraints$1" />
@@ -254,11 +308,19 @@
     <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="15" startPosition="43" endLine="16" endPosition="76" />
     <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" />
     <scopeInfo nodeId="3796137614137565255" fileName="LiteralReplacement_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="79" />
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="29" startPosition="84" endLine="31" endPosition="79" />
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="29" startPosition="84" endLine="31" endPosition="79">
+      <varInfo nodeId="3796137614137565252" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="14" startPosition="79" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="22" startPosition="80" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="3796137614137565252" varName="node" />
+      <varInfo nodeId="3796137614137565252" varName="propertyValue" />
+      <varInfo nodeId="3796137614137565252" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
+      <varInfo nodeId="3796137614137565252" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_Constraints" />
     <unitInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_Constraints$1" />
@@ -279,11 +341,18 @@
     <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="15" startPosition="57" endLine="16" endPosition="90" />
     <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" />
     <scopeInfo nodeId="5533535376639427529" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="66" />
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="29" startPosition="56" endLine="31" endPosition="66" />
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="29" startPosition="56" endLine="31" endPosition="66">
+      <varInfo nodeId="5533535376639427526" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="14" startPosition="93" endLine="17" endPosition="3" />
     <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="22" startPosition="104" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="5533535376639427526" varName="node" />
+      <varInfo nodeId="5533535376639427526" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
+      <varInfo nodeId="5533535376639427526" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_Constraints" />
     <unitInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="22" startPosition="43" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_Constraints$1" />
@@ -306,9 +375,16 @@
     <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="15" startPosition="78" endLine="18" endPosition="3" />
     <scopeInfo nodeId="5533535376639522938" fileName="RegexpDeclaration_Constraints.java" startLine="31" startPosition="49" endLine="35" endPosition="10" />
     <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="23" startPosition="104" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="30" startPosition="56" endLine="35" endPosition="10" />
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="21" startPosition="82" endLine="38" endPosition="22" />
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="30" startPosition="56" endLine="35" endPosition="10">
+      <varInfo nodeId="5533535376639522935" varName="propertyName" />
+    </scopeInfo>
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="28" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5533535376639522935" varName="node" />
+      <varInfo nodeId="5533535376639522935" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="21" startPosition="82" endLine="38" endPosition="22">
+      <varInfo nodeId="5533535376639522935" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="19" startPosition="0" endLine="40" endPosition="0" />
     <unitInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_Constraints" />
     <unitInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="23" startPosition="43" endLine="37" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_Constraints$1" />
@@ -329,11 +405,19 @@
     <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="15" startPosition="44" endLine="16" endPosition="77" />
     <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" />
     <scopeInfo nodeId="698920857052391454" fileName="StringLiteralRegexp_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="79" />
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="29" startPosition="84" endLine="31" endPosition="79" />
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="29" startPosition="84" endLine="31" endPosition="79">
+      <varInfo nodeId="698920857052391451" varName="propertyName" />
+    </scopeInfo>
     <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="14" startPosition="80" endLine="17" endPosition="3" />
     <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="22" startPosition="80" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22" />
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="698920857052391451" varName="node" />
+      <varInfo nodeId="698920857052391451" varName="propertyValue" />
+      <varInfo nodeId="698920857052391451" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
+      <varInfo nodeId="698920857052391451" varName="properties" />
+    </scopeInfo>
     <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints" />
     <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints$1" />

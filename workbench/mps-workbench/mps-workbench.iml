@@ -11,11 +11,11 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS-platform" />
-    <orderEntry type="module" module-name="idea-workbench" />
-    <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="library" name="JDOM" level="project" />
-    <orderEntry type="library" name="httpclient" level="project" />
+    <orderEntry type="library" name="Commons-logging" level="project" />
+    <orderEntry type="library" name="Httpclient" level="project" />
   </component>
 </module>
 

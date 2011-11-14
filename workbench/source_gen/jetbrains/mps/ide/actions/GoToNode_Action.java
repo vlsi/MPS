@@ -11,8 +11,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
@@ -56,7 +56,7 @@ public class GoToNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getComponent(MPSEditorOpener.class).openNode(((SNode) MapSequence.fromMap(_params).get("source")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), false, true);
+      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((SNode) MapSequence.fromMap(_params).get("source")), false, true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToNode", t);

@@ -351,9 +351,7 @@
     <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="368" startPosition="0" endLine="372" endPosition="0" />
     <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="121" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="126" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="135" startPosition="25" endLine="140" endPosition="5">
-      <varInfo nodeId="1104580685292496805" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="135" startPosition="25" endLine="140" endPosition="5" />
     <scopeInfo nodeId="1104580685292496805" fileName="JUnitConfigEditor.java" startLine="255" startPosition="45" endLine="260" endPosition="21">
       <varInfo nodeId="1104580685292496805" varName="component" />
     </scopeInfo>
@@ -1431,7 +1429,7 @@
     <nodeInfo nodeId="1208942216844" fileName="TestCaseTreeNode.java" startLine="30" startPosition="25" endLine="31" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1208791363454" fileName="TestCaseTreeNode.java" startLine="33" startPosition="7" endLine="34" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="840235346667233516" fileName="TestCaseTreeNode.java" startLine="38" startPosition="39" endLine="39" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1211488149877" fileName="TestCaseTreeNode.java" startLine="42" startPosition="29" endLine="43" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1071422968910375370" fileName="TestCaseTreeNode.java" startLine="42" startPosition="29" endLine="43" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1208769428007" fileName="TestCaseTreeNode.java" startLine="46" startPosition="36" endLine="47" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1341091614641577159" fileName="TestCaseTreeNode.java" startLine="51" startPosition="33" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1208284819949" fileName="TestCaseTreeNode.java" startLine="15" startPosition="56" endLine="17" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestCase" />
@@ -1445,7 +1443,7 @@
     <nodeInfo nodeId="1208778452614" fileName="TestCaseTreeNode.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassName#()Ljava/lang/String;" />
     <scopeInfo nodeId="1208942216843" fileName="TestCaseTreeNode.java" startLine="30" startPosition="25" endLine="31" endPosition="71" />
     <scopeInfo nodeId="840235346667152945" fileName="TestCaseTreeNode.java" startLine="38" startPosition="39" endLine="39" endPosition="94" />
-    <scopeInfo nodeId="1208769143833" fileName="TestCaseTreeNode.java" startLine="42" startPosition="29" endLine="43" endPosition="139" />
+    <scopeInfo nodeId="1208769143833" fileName="TestCaseTreeNode.java" startLine="42" startPosition="29" endLine="43" endPosition="108" />
     <scopeInfo nodeId="1208769417194" fileName="TestCaseTreeNode.java" startLine="46" startPosition="36" endLine="47" endPosition="14" />
     <scopeInfo nodeId="1341091614641577153" fileName="TestCaseTreeNode.java" startLine="51" startPosition="33" endLine="52" endPosition="27" />
     <scopeInfo nodeId="1208942216842" fileName="TestCaseTreeNode.java" startLine="29" startPosition="57" endLine="33" endPosition="0" />
@@ -3293,9 +3291,7 @@
     <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5">
-      <varInfo nodeId="145554711892089591" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5" />
     <scopeInfo nodeId="145554711892089591" fileName="ModelChooserComponent.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="145554711892089591" varName="newValue" />
     </scopeInfo>

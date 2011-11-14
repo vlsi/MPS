@@ -9,65 +9,81 @@
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="32" startPosition="108" endLine="41" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.RunConfigurationsInitializer_CustomApplicationPlugin$1" />
   <root nodeId="1241450087965">
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="18" startPosition="84" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="19" startPosition="40" endLine="20" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="22" startPosition="58" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="23" startPosition="47" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="24" startPosition="35" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="29" startPosition="9" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="29" startPosition="9" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="31" startPosition="27" endLine="32" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="32" startPosition="111" endLine="33" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="38" startPosition="53" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="40" startPosition="5" endLine="41" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="42" startPosition="65" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="44" startPosition="5" endLine="45" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="46" startPosition="62" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="48" startPosition="5" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241460722379" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="53" startPosition="9" endLine="54" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241450087971" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="54" startPosition="132" endLine="55" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241450087985" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="55" startPosition="176" endLine="56" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450088001" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="58" startPosition="27" endLine="59" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="62" startPosition="27" endLine="63" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="37" startPosition="95" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="41" startPosition="91" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="45" startPosition="84" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="40" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="44" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1241450087997" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="57" startPosition="70" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="21" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateCustomMPSBuildForProjectAction_Action#()V" />
-    <nodeInfo nodeId="1241450087989" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="56" startPosition="26" endLine="61" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="28" startPosition="89" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="52" startPosition="96" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="36" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="51" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="29" startPosition="9" endLine="30" endPosition="43" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="38" startPosition="53" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="42" startPosition="65" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="46" startPosition="62" endLine="47" endPosition="19" />
-    <scopeInfo nodeId="1241450088000" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="58" startPosition="27" endLine="59" endPosition="24" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="62" startPosition="0" endLine="63" endPosition="110" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="62" startPosition="27" endLine="63" endPosition="110" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="31" startPosition="0" endLine="33" endPosition="44" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="31" startPosition="27" endLine="33" endPosition="44" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="22" startPosition="58" endLine="25" endPosition="40" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="40" startPosition="5" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="44" startPosition="5" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="1241450087997" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="57" startPosition="70" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="21" startPosition="0" endLine="26" endPosition="3" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="28" startPosition="89" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="53" startPosition="9" endLine="61" endPosition="34">
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="19" startPosition="84" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="20" startPosition="40" endLine="21" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="23" startPosition="58" endLine="24" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="24" startPosition="47" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="25" startPosition="35" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="32" startPosition="27" endLine="33" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="33" startPosition="111" endLine="34" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="39" startPosition="53" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="41" startPosition="5" endLine="42" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="43" startPosition="65" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="45" startPosition="5" endLine="46" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="47" startPosition="62" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="49" startPosition="5" endLine="50" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="49" startPosition="5" endLine="50" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="50" startPosition="103" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241460722379" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="55" startPosition="9" endLine="56" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241450087971" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="56" startPosition="208" endLine="57" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241450087985" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="57" startPosition="176" endLine="58" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450088001" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="60" startPosition="27" endLine="61" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="64" startPosition="27" endLine="65" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="38" startPosition="95" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="42" startPosition="91" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="46" startPosition="84" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="41" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="45" startPosition="5" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1241450087997" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="59" startPosition="70" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateCustomMPSBuildForProjectAction_Action#()V" />
+    <nodeInfo nodeId="1241450087989" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="58" startPosition="26" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="29" startPosition="89" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="54" startPosition="96" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="53" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="37" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="43" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="39" startPosition="53" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="43" startPosition="65" endLine="44" endPosition="19" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="47" startPosition="62" endLine="48" endPosition="19" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="49" startPosition="5" endLine="50" endPosition="103" />
+    <scopeInfo nodeId="1241450088000" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="60" startPosition="27" endLine="61" endPosition="24" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="64" startPosition="0" endLine="65" endPosition="110">
+      <varInfo nodeId="1241450087965" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="64" startPosition="27" endLine="65" endPosition="110" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="32" startPosition="0" endLine="34" endPosition="44">
+      <varInfo nodeId="1241450087965" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="32" startPosition="27" endLine="34" endPosition="44" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="23" startPosition="58" endLine="26" endPosition="40" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="41" startPosition="5" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="45" startPosition="5" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="1241450087997" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="59" startPosition="70" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="29" startPosition="89" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="55" startPosition="9" endLine="63" endPosition="34">
       <varInfo nodeId="1241460722380" varName="buildGenerator" />
       <varInfo nodeId="1241450087972" varName="wizard" />
     </scopeInfo>
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="27" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="37" startPosition="95" endLine="49" endPosition="16" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="52" startPosition="96" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="36" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="51" startPosition="0" endLine="66" endPosition="0" />
-    <unitInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.GenerateCustomMPSBuildForProjectAction_Action" />
-    <unitInfo nodeId="1241450087995" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="57" startPosition="58" endLine="61" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.GenerateCustomMPSBuildForProjectAction_Action$1" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="28" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1241450087965" varName="_params" />
+      <varInfo nodeId="1241450087965" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="54" startPosition="96" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="38" startPosition="95" endLine="51" endPosition="16" />
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="53" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1241450087965" varName="_params" />
+      <varInfo nodeId="1241450087965" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="37" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="1241450087965" varName="_params" />
+      <varInfo nodeId="1241450087965" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="1241450087965" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="19" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.GenerateCustomMPSBuildForProjectAction_Action" />
+    <unitInfo nodeId="1241450087995" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="59" startPosition="58" endLine="63" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.GenerateCustomMPSBuildForProjectAction_Action$1" />
   </root>
   <root nodeId="1241450126378">
     <nodeInfo nodeId="1241450214700" fileName="GenerateCustomMpsBuildWizard.java" startLine="9" startPosition="105" endLine="10" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -159,99 +175,104 @@
     <nodeInfo nodeId="1241455730164" fileName="ProjectAddition_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1241455730164" fileName="ProjectAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectAddition_ActionGroup#()V" />
     <scopeInfo nodeId="1241455730164" fileName="ProjectAddition_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="135" />
-    <scopeInfo nodeId="1241455730164" fileName="ProjectAddition_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39" />
+    <scopeInfo nodeId="1241455730164" fileName="ProjectAddition_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39">
+      <varInfo nodeId="1241455730164" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1241455730164" fileName="ProjectAddition_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
     <scopeInfo nodeId="1241455730164" fileName="ProjectAddition_ActionGroup.java" startLine="12" startPosition="40" endLine="20" endPosition="5" />
     <scopeInfo nodeId="1241455730164" fileName="ProjectAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
     <unitInfo nodeId="1241455730164" fileName="ProjectAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup" />
   </root>
   <root nodeId="1241460295003">
-    <nodeInfo nodeId="1241460436577" fileName="CustomMPSBuildGenerator.java" startLine="25" startPosition="65" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPathToBuildTools" />
-    <nodeInfo nodeId="1241460347292" fileName="CustomMPSBuildGenerator.java" startLine="28" startPosition="51" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1241460463116" fileName="CustomMPSBuildGenerator.java" startLine="32" startPosition="48" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241460480370" fileName="CustomMPSBuildGenerator.java" startLine="36" startPosition="39" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241530183517" fileName="CustomMPSBuildGenerator.java" startLine="40" startPosition="28" endLine="41" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1068566623012711115" fileName="CustomMPSBuildGenerator.java" startLine="44" startPosition="62" endLine="45" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241461874413" fileName="CustomMPSBuildGenerator.java" startLine="48" startPosition="140" endLine="49" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6696460285989678931" fileName="CustomMPSBuildGenerator.java" startLine="49" startPosition="101" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1241513427963" fileName="CustomMPSBuildGenerator.java" startLine="50" startPosition="0" endLine="51" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462457541" fileName="CustomMPSBuildGenerator.java" startLine="51" startPosition="177" endLine="52" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462046533" fileName="CustomMPSBuildGenerator.java" startLine="52" startPosition="177" endLine="53" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462080184" fileName="CustomMPSBuildGenerator.java" startLine="53" startPosition="80" endLine="54" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462090778" fileName="CustomMPSBuildGenerator.java" startLine="54" startPosition="112" endLine="55" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6696460285989678932" fileName="CustomMPSBuildGenerator.java" startLine="55" startPosition="105" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1241462265545" fileName="CustomMPSBuildGenerator.java" startLine="56" startPosition="0" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462286494" fileName="CustomMPSBuildGenerator.java" startLine="59" startPosition="98" endLine="60" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241462537227" fileName="CustomMPSBuildGenerator.java" startLine="61" startPosition="105" endLine="62" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462543957" fileName="CustomMPSBuildGenerator.java" startLine="62" startPosition="104" endLine="63" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462547837" fileName="CustomMPSBuildGenerator.java" startLine="63" startPosition="57" endLine="64" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241513050069" fileName="CustomMPSBuildGenerator.java" startLine="64" startPosition="173" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241514497971" fileName="CustomMPSBuildGenerator.java" startLine="68" startPosition="103" endLine="69" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241513551034" fileName="CustomMPSBuildGenerator.java" startLine="70" startPosition="5" endLine="71" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6696460285989678933" fileName="CustomMPSBuildGenerator.java" startLine="71" startPosition="40" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7376433222636454285" fileName="CustomMPSBuildGenerator.java" startLine="72" startPosition="0" endLine="73" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1241528711530" fileName="CustomMPSBuildGenerator.java" startLine="73" startPosition="36" endLine="74" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241528703986" fileName="CustomMPSBuildGenerator.java" startLine="74" startPosition="114" endLine="75" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241528704001" fileName="CustomMPSBuildGenerator.java" startLine="75" startPosition="130" endLine="76" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241528704010" fileName="CustomMPSBuildGenerator.java" startLine="77" startPosition="21" endLine="78" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241528774338" fileName="CustomMPSBuildGenerator.java" startLine="78" startPosition="70" endLine="79" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241528975016" fileName="CustomMPSBuildGenerator.java" startLine="80" startPosition="12" endLine="81" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241529084902" fileName="CustomMPSBuildGenerator.java" startLine="82" startPosition="5" endLine="83" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7819841746799323909" fileName="CustomMPSBuildGenerator.java" startLine="85" startPosition="25" endLine="86" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241462370968" fileName="CustomMPSBuildGenerator.java" startLine="91" startPosition="66" endLine="92" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462373817" fileName="CustomMPSBuildGenerator.java" startLine="92" startPosition="122" endLine="93" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241462389829" fileName="CustomMPSBuildGenerator.java" startLine="93" startPosition="129" endLine="94" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241462413207" fileName="CustomMPSBuildGenerator.java" startLine="94" startPosition="119" endLine="95" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241462443966" fileName="CustomMPSBuildGenerator.java" startLine="95" startPosition="240" endLine="96" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241528704037" fileName="CustomMPSBuildGenerator.java" startLine="80" startPosition="10" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1241460295005" fileName="CustomMPSBuildGenerator.java" startLine="27" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomMPSBuildGenerator#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="1241514482054" fileName="CustomMPSBuildGenerator.java" startLine="67" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1241460422222" fileName="CustomMPSBuildGenerator.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPathToBuildTools#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1241460466826" fileName="CustomMPSBuildGenerator.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPathToBuildTools#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1241530165165" fileName="CustomMPSBuildGenerator.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
-    <nodeInfo nodeId="1068566623012711112" fileName="CustomMPSBuildGenerator.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModuleReferencesToAdd#()Ljava/util/List;" />
-    <nodeInfo nodeId="7819841746799323905" fileName="CustomMPSBuildGenerator.java" startLine="84" startPosition="27" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7819841746799323898" fileName="CustomMPSBuildGenerator.java" startLine="83" startPosition="85" endLine="88" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241528704008" fileName="CustomMPSBuildGenerator.java" startLine="76" startPosition="40" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1241462141060" fileName="CustomMPSBuildGenerator.java" startLine="58" startPosition="56" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1241462303819" fileName="CustomMPSBuildGenerator.java" startLine="90" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createLibraryFolder#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1241462111814" fileName="CustomMPSBuildGenerator.java" startLine="57" startPosition="58" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1241461874401" fileName="CustomMPSBuildGenerator.java" startLine="47" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljava/lang/Runnable;" />
-    <scopeInfo nodeId="1241460295008" fileName="CustomMPSBuildGenerator.java" startLine="28" startPosition="51" endLine="29" endPosition="19" />
-    <scopeInfo nodeId="1241460422225" fileName="CustomMPSBuildGenerator.java" startLine="32" startPosition="48" endLine="33" endPosition="35" />
-    <scopeInfo nodeId="1241460466829" fileName="CustomMPSBuildGenerator.java" startLine="36" startPosition="39" endLine="37" endPosition="35" />
-    <scopeInfo nodeId="1241530165168" fileName="CustomMPSBuildGenerator.java" startLine="40" startPosition="28" endLine="41" endPosition="78" />
-    <scopeInfo nodeId="1068566623012711114" fileName="CustomMPSBuildGenerator.java" startLine="44" startPosition="62" endLine="45" endPosition="178" />
-    <scopeInfo nodeId="1241462141062" fileName="CustomMPSBuildGenerator.java" startLine="59" startPosition="98" endLine="60" endPosition="106" />
-    <scopeInfo nodeId="1241514482055" fileName="CustomMPSBuildGenerator.java" startLine="68" startPosition="103" endLine="69" endPosition="107" />
-    <scopeInfo nodeId="1241528704038" fileName="CustomMPSBuildGenerator.java" startLine="80" startPosition="12" endLine="81" endPosition="89" />
-    <scopeInfo nodeId="7819841746799323908" fileName="CustomMPSBuildGenerator.java" startLine="85" startPosition="25" endLine="86" endPosition="88" />
-    <scopeInfo nodeId="1241528704009" fileName="CustomMPSBuildGenerator.java" startLine="77" startPosition="21" endLine="79" endPosition="96">
+    <nodeInfo nodeId="1241460436577" fileName="CustomMPSBuildGenerator.java" startLine="26" startPosition="65" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPathToBuildTools" />
+    <nodeInfo nodeId="1241460347292" fileName="CustomMPSBuildGenerator.java" startLine="29" startPosition="87" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1241460463116" fileName="CustomMPSBuildGenerator.java" startLine="33" startPosition="48" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241460480370" fileName="CustomMPSBuildGenerator.java" startLine="37" startPosition="39" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241530183517" fileName="CustomMPSBuildGenerator.java" startLine="41" startPosition="28" endLine="42" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1068566623012711115" fileName="CustomMPSBuildGenerator.java" startLine="45" startPosition="62" endLine="46" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241461874413" fileName="CustomMPSBuildGenerator.java" startLine="49" startPosition="140" endLine="50" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6696460285989678931" fileName="CustomMPSBuildGenerator.java" startLine="50" startPosition="101" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1241513427963" fileName="CustomMPSBuildGenerator.java" startLine="51" startPosition="0" endLine="52" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462457541" fileName="CustomMPSBuildGenerator.java" startLine="52" startPosition="177" endLine="53" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462046533" fileName="CustomMPSBuildGenerator.java" startLine="53" startPosition="177" endLine="54" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462080184" fileName="CustomMPSBuildGenerator.java" startLine="54" startPosition="80" endLine="55" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462090778" fileName="CustomMPSBuildGenerator.java" startLine="55" startPosition="112" endLine="56" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6696460285989678932" fileName="CustomMPSBuildGenerator.java" startLine="56" startPosition="105" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1241462265545" fileName="CustomMPSBuildGenerator.java" startLine="57" startPosition="0" endLine="58" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462286494" fileName="CustomMPSBuildGenerator.java" startLine="60" startPosition="98" endLine="61" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241462537227" fileName="CustomMPSBuildGenerator.java" startLine="62" startPosition="105" endLine="63" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462543957" fileName="CustomMPSBuildGenerator.java" startLine="63" startPosition="104" endLine="64" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462547837" fileName="CustomMPSBuildGenerator.java" startLine="64" startPosition="57" endLine="65" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241513050069" fileName="CustomMPSBuildGenerator.java" startLine="65" startPosition="173" endLine="66" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241514497971" fileName="CustomMPSBuildGenerator.java" startLine="69" startPosition="103" endLine="70" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241513551034" fileName="CustomMPSBuildGenerator.java" startLine="71" startPosition="5" endLine="72" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6696460285989678933" fileName="CustomMPSBuildGenerator.java" startLine="72" startPosition="40" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7376433222636454285" fileName="CustomMPSBuildGenerator.java" startLine="73" startPosition="0" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1241528711530" fileName="CustomMPSBuildGenerator.java" startLine="74" startPosition="36" endLine="75" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241528703986" fileName="CustomMPSBuildGenerator.java" startLine="75" startPosition="114" endLine="76" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241528704001" fileName="CustomMPSBuildGenerator.java" startLine="76" startPosition="130" endLine="77" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241528704010" fileName="CustomMPSBuildGenerator.java" startLine="78" startPosition="21" endLine="79" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241528774338" fileName="CustomMPSBuildGenerator.java" startLine="79" startPosition="70" endLine="80" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241528975016" fileName="CustomMPSBuildGenerator.java" startLine="81" startPosition="12" endLine="82" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241529084902" fileName="CustomMPSBuildGenerator.java" startLine="83" startPosition="5" endLine="84" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7819841746799323909" fileName="CustomMPSBuildGenerator.java" startLine="86" startPosition="25" endLine="87" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241462370968" fileName="CustomMPSBuildGenerator.java" startLine="92" startPosition="66" endLine="93" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462373817" fileName="CustomMPSBuildGenerator.java" startLine="93" startPosition="122" endLine="94" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241462389829" fileName="CustomMPSBuildGenerator.java" startLine="94" startPosition="129" endLine="95" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241462413207" fileName="CustomMPSBuildGenerator.java" startLine="95" startPosition="119" endLine="96" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241462443966" fileName="CustomMPSBuildGenerator.java" startLine="96" startPosition="240" endLine="97" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241528704037" fileName="CustomMPSBuildGenerator.java" startLine="81" startPosition="10" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1241460295005" fileName="CustomMPSBuildGenerator.java" startLine="28" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomMPSBuildGenerator#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="1241514482054" fileName="CustomMPSBuildGenerator.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241460422222" fileName="CustomMPSBuildGenerator.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPathToBuildTools#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1241460466826" fileName="CustomMPSBuildGenerator.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPathToBuildTools#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1241530165165" fileName="CustomMPSBuildGenerator.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
+    <nodeInfo nodeId="1068566623012711112" fileName="CustomMPSBuildGenerator.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModuleReferencesToAdd#()Ljava/util/List;" />
+    <nodeInfo nodeId="7819841746799323905" fileName="CustomMPSBuildGenerator.java" startLine="85" startPosition="27" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7819841746799323898" fileName="CustomMPSBuildGenerator.java" startLine="84" startPosition="85" endLine="89" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241528704008" fileName="CustomMPSBuildGenerator.java" startLine="77" startPosition="40" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241462141060" fileName="CustomMPSBuildGenerator.java" startLine="59" startPosition="56" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241462303819" fileName="CustomMPSBuildGenerator.java" startLine="91" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createLibraryFolder#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1241462111814" fileName="CustomMPSBuildGenerator.java" startLine="58" startPosition="58" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1241461874401" fileName="CustomMPSBuildGenerator.java" startLine="48" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljava/lang/Runnable;" />
+    <scopeInfo nodeId="1241460295008" fileName="CustomMPSBuildGenerator.java" startLine="29" startPosition="87" endLine="30" endPosition="37" />
+    <scopeInfo nodeId="1241460422225" fileName="CustomMPSBuildGenerator.java" startLine="33" startPosition="48" endLine="34" endPosition="35" />
+    <scopeInfo nodeId="1241460466829" fileName="CustomMPSBuildGenerator.java" startLine="37" startPosition="39" endLine="38" endPosition="35" />
+    <scopeInfo nodeId="1241530165168" fileName="CustomMPSBuildGenerator.java" startLine="41" startPosition="28" endLine="42" endPosition="78" />
+    <scopeInfo nodeId="1068566623012711114" fileName="CustomMPSBuildGenerator.java" startLine="45" startPosition="62" endLine="46" endPosition="178" />
+    <scopeInfo nodeId="1241462141062" fileName="CustomMPSBuildGenerator.java" startLine="60" startPosition="98" endLine="61" endPosition="106" />
+    <scopeInfo nodeId="1241514482055" fileName="CustomMPSBuildGenerator.java" startLine="69" startPosition="103" endLine="70" endPosition="107" />
+    <scopeInfo nodeId="1241528704038" fileName="CustomMPSBuildGenerator.java" startLine="81" startPosition="12" endLine="82" endPosition="89" />
+    <scopeInfo nodeId="7819841746799323908" fileName="CustomMPSBuildGenerator.java" startLine="86" startPosition="25" endLine="87" endPosition="88" />
+    <scopeInfo nodeId="1241528704009" fileName="CustomMPSBuildGenerator.java" startLine="78" startPosition="21" endLine="80" endPosition="96">
       <varInfo nodeId="1241528704011" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="1241460295005" fileName="CustomMPSBuildGenerator.java" startLine="27" startPosition="0" endLine="30" endPosition="3">
+    <scopeInfo nodeId="1241460295005" fileName="CustomMPSBuildGenerator.java" startLine="28" startPosition="0" endLine="31" endPosition="3">
+      <varInfo nodeId="1071422968910382448" varName="operationContext" />
       <varInfo nodeId="1241460342896" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1241460422222" fileName="CustomMPSBuildGenerator.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1241460422222" fileName="CustomMPSBuildGenerator.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1241460432427" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1241460466826" fileName="CustomMPSBuildGenerator.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1241530165165" fileName="CustomMPSBuildGenerator.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1068566623012711112" fileName="CustomMPSBuildGenerator.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1241462499492" fileName="CustomMPSBuildGenerator.java" startLine="61" startPosition="105" endLine="65" endPosition="105">
+    <scopeInfo nodeId="1241460466826" fileName="CustomMPSBuildGenerator.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1241530165165" fileName="CustomMPSBuildGenerator.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1068566623012711112" fileName="CustomMPSBuildGenerator.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1241462499492" fileName="CustomMPSBuildGenerator.java" startLine="62" startPosition="105" endLine="66" endPosition="105">
       <varInfo nodeId="1241462543958" varName="newFolder" />
       <varInfo nodeId="1241462537228" varName="oldFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="7819841746799323905" fileName="CustomMPSBuildGenerator.java" startLine="84" startPosition="27" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1241462303822" fileName="CustomMPSBuildGenerator.java" startLine="91" startPosition="66" endLine="96" endPosition="25">
+    <scopeInfo nodeId="7819841746799323905" fileName="CustomMPSBuildGenerator.java" startLine="85" startPosition="27" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="1241462303822" fileName="CustomMPSBuildGenerator.java" startLine="92" startPosition="66" endLine="97" endPosition="25">
       <varInfo nodeId="1241462370969" varName="libraryFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="1241462111817" fileName="CustomMPSBuildGenerator.java" startLine="58" startPosition="56" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="1241462303819" fileName="CustomMPSBuildGenerator.java" startLine="90" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="1241462111817" fileName="CustomMPSBuildGenerator.java" startLine="59" startPosition="56" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="1241462303819" fileName="CustomMPSBuildGenerator.java" startLine="91" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="1241462336068" varName="prototypeFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="1241462111814" fileName="CustomMPSBuildGenerator.java" startLine="57" startPosition="58" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="1241461874412" fileName="CustomMPSBuildGenerator.java" startLine="48" startPosition="140" endLine="88" endPosition="6">
+    <scopeInfo nodeId="1241462111814" fileName="CustomMPSBuildGenerator.java" startLine="58" startPosition="58" endLine="68" endPosition="5">
+      <varInfo nodeId="1241462111814" varName="entry" />
+    </scopeInfo>
+    <scopeInfo nodeId="1241461874412" fileName="CustomMPSBuildGenerator.java" startLine="49" startPosition="140" endLine="89" endPosition="6">
       <varInfo nodeId="1241528711531" varName="buildToolsPath" />
       <varInfo nodeId="1241462046534" varName="entries" />
       <varInfo nodeId="1241528704002" varName="index" />
@@ -262,14 +283,14 @@
       <varInfo nodeId="1241462457542" varName="rootFolder" />
       <varInfo nodeId="1241513427964" varName="zipNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1241461874401" fileName="CustomMPSBuildGenerator.java" startLine="47" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="1241461874401" fileName="CustomMPSBuildGenerator.java" startLine="48" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="1241461874407" varName="basedir" />
       <varInfo nodeId="1241461874405" varName="name" />
       <varInfo nodeId="1241461874409" varName="selectedData" />
       <varInfo nodeId="1241461874403" varName="targetModelDescriptor" />
     </scopeInfo>
-    <unitInfo nodeId="1241460295003" fileName="CustomMPSBuildGenerator.java" startLine="25" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSBuildGenerator" />
-    <unitInfo nodeId="7819841746799323903" fileName="CustomMPSBuildGenerator.java" startLine="84" startPosition="15" endLine="88" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSBuildGenerator$1" />
+    <unitInfo nodeId="1241460295003" fileName="CustomMPSBuildGenerator.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSBuildGenerator" />
+    <unitInfo nodeId="7819841746799323903" fileName="CustomMPSBuildGenerator.java" startLine="85" startPosition="15" endLine="89" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSBuildGenerator$1" />
   </root>
   <root nodeId="1289308558160174593">
     <nodeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Factory.java" startLine="11" startPosition="68" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -420,7 +441,9 @@
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="110" startPosition="50" endLine="111" endPosition="22" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="114" startPosition="48" endLine="115" endPosition="38" />
     <scopeInfo nodeId="1289308558160174602" fileName="CustomMPSApplication_Configuration.java" startLine="121" startPosition="25" endLine="122" endPosition="269" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="137" startPosition="0" endLine="138" endPosition="55" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="137" startPosition="0" endLine="138" endPosition="55">
+      <varInfo nodeId="1289308558160174593" varName="ex" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="137" startPosition="45" endLine="138" endPosition="55" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="144" startPosition="132" endLine="145" endPosition="95" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="149" startPosition="91" endLine="150" endPosition="16" />
@@ -431,30 +454,57 @@
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="170" startPosition="48" endLine="171" endPosition="85" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="174" startPosition="45" endLine="175" endPosition="122" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="31" startPosition="127" endLine="33" endPosition="26" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="92" startPosition="5" endLine="94" endPosition="40" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="96" startPosition="5" endLine="98" endPosition="44" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="92" startPosition="5" endLine="94" endPosition="40">
+      <varInfo nodeId="1289308558160174593" varName="fieldElement" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="96" startPosition="5" endLine="98" endPosition="44">
+      <varInfo nodeId="1289308558160174593" varName="fieldElement" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="180" startPosition="0" endLine="182" endPosition="5" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Factory.java" startLine="10" startPosition="86" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Factory.java" startLine="10" startPosition="86" endLine="13" endPosition="3">
+      <varInfo nodeId="1289308558160174593" varName="type" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="36" startPosition="31" endLine="39" endPosition="33" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="58" startPosition="0" endLine="61" endPosition="3" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="58" startPosition="0" endLine="61" endPosition="3">
+      <varInfo nodeId="1289308558160174593" varName="factory" />
+      <varInfo nodeId="1289308558160174593" varName="name" />
+      <varInfo nodeId="1289308558160174593" varName="project" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="63" startPosition="115" endLine="66" endPosition="78" />
     <scopeInfo nodeId="1289308558160174799" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="63" startPosition="115" endLine="66" endPosition="78" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="69" startPosition="87" endLine="72" endPosition="180" />
     <scopeInfo nodeId="1289308558160174763" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="69" startPosition="87" endLine="72" endPosition="180" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="74" startPosition="5" endLine="77" endPosition="39" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="79" startPosition="5" endLine="82" endPosition="39" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="185" startPosition="61" endLine="188" endPosition="19" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Factory.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="30" startPosition="0" endLine="34" endPosition="3" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="74" startPosition="5" endLine="77" endPosition="39">
+      <varInfo nodeId="1289308558160174593" varName="fieldElement" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="79" startPosition="5" endLine="82" endPosition="39">
+      <varInfo nodeId="1289308558160174593" varName="fieldElement" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="185" startPosition="61" endLine="188" endPosition="19">
+      <varInfo nodeId="1289308558160174593" varName="state" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Factory.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1289308558160174593" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="30" startPosition="0" endLine="34" endPosition="3">
+      <varInfo nodeId="1289308558160174593" varName="node" />
+      <varInfo nodeId="1289308558160174593" varName="settings" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174627" fileName="CustomMPSApplication_Configuration.java" startLine="42" startPosition="123" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1289308558160175777" fileName="CustomMPSApplication_Configuration.java" startLine="49" startPosition="59" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174749" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="54" startPosition="67" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174749" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="54" startPosition="67" endLine="58" endPosition="0">
+      <varInfo nodeId="1289308558160174749" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="1289308558160174593" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174601" fileName="CustomMPSApplication_Configuration.java" startLine="120" startPosition="57" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="152" startPosition="0" endLine="156" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="152" startPosition="0" endLine="156" endPosition="0">
+      <varInfo nodeId="1289308558160174593" varName="provider" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="156" startPosition="0" endLine="160" endPosition="0" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="160" startPosition="0" endLine="164" endPosition="0" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="164" startPosition="0" endLine="168" endPosition="0" />
@@ -463,12 +513,23 @@
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="63" startPosition="73" endLine="68" endPosition="5" />
     <scopeInfo nodeId="1289308558160176042" fileName="CustomMPSApplication_Configuration.java" startLine="63" startPosition="73" endLine="68" endPosition="5" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="131" startPosition="9" endLine="136" endPosition="19" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="142" startPosition="0" endLine="147" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="147" startPosition="0" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="168" startPosition="0" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="142" startPosition="0" endLine="147" endPosition="0">
+      <varInfo nodeId="1289308558160174593" varName="environment" />
+      <varInfo nodeId="1289308558160174593" varName="executor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="147" startPosition="0" endLine="152" endPosition="0">
+      <varInfo nodeId="1289308558160174593" varName="runner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="168" startPosition="0" endLine="173" endPosition="0">
+      <varInfo nodeId="1289308558160174593" varName="executorId" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="62" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="68" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1289308558160174593" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="68" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1289308558160174593" varName="configuration" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174629" fileName="CustomMPSApplication_Configuration.java" startLine="47" startPosition="45" endLine="54" endPosition="32">
       <varInfo nodeId="1289308558160175774" varName="isApplicable" />
     </scopeInfo>
@@ -477,14 +538,22 @@
     </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="183" startPosition="0" endLine="190" endPosition="0" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="62" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174628" fileName="CustomMPSApplication_Configuration.java" startLine="46" startPosition="58" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174628" fileName="CustomMPSApplication_Configuration.java" startLine="46" startPosition="58" endLine="56" endPosition="0">
+      <varInfo nodeId="1289308558160174628" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="117" startPosition="0" endLine="127" endPosition="0" />
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="72" startPosition="76" endLine="83" endPosition="5" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="129" startPosition="53" endLine="140" endPosition="17" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="129" startPosition="53" endLine="140" endPosition="17">
+      <varInfo nodeId="1289308558160174593" varName="clone" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="87" startPosition="73" endLine="99" endPosition="5" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="70" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="70" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="1289308558160174593" varName="element" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="127" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="85" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration.java" startLine="85" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="1289308558160174593" varName="element" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174668" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="43" startPosition="32" endLine="60" endPosition="17">
       <varInfo nodeId="1289308558160174670" varName="panel" />
     </scopeInfo>
@@ -554,7 +623,11 @@
       <varInfo nodeId="1289308558160196433" varName="path" />
       <varInfo nodeId="1289308558160196439" varName="suffix" />
     </scopeInfo>
-    <scopeInfo nodeId="1289308558160174838" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="40" startPosition="0" endLine="44" endPosition="3" />
+    <scopeInfo nodeId="1289308558160174838" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="40" startPosition="0" endLine="44" endPosition="3">
+      <varInfo nodeId="1289308558160174838" varName="configuration" />
+      <varInfo nodeId="1289308558160174838" varName="environment" />
+      <varInfo nodeId="1289308558160174838" varName="executor" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174838" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1289308558160174838" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1289308558160174841" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="90" startPosition="148" endLine="94" endPosition="0" />
@@ -562,16 +635,25 @@
     <scopeInfo nodeId="1289308558160196365" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="66" startPosition="25" endLine="71" endPosition="122">
       <varInfo nodeId="1289308558160196367" varName="mpsbuild" />
     </scopeInfo>
-    <scopeInfo nodeId="1289308558160174838" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="97" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174838" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="97" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1289308558160174838" varName="executorId" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160196364" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="65" startPosition="57" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174841" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="83" startPosition="5" endLine="94" endPosition="10" />
+    <scopeInfo nodeId="1289308558160174841" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="83" startPosition="5" endLine="94" endPosition="10">
+      <varInfo nodeId="1289308558160174841" varName="_consoleView" />
+      <varInfo nodeId="1289308558160174841" varName="_processHandler" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174838" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="55" startPosition="110" endLine="95" endPosition="5">
       <varInfo nodeId="1289308558160196337" varName="configuration" />
       <varInfo nodeId="1289308558160196423" varName="file" />
       <varInfo nodeId="1289308558160196361" varName="isMPSBuildIncluded" />
       <varInfo nodeId="1289308558160196400" varName="layout" />
+      <varInfo nodeId="1289308558160174838" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1289308558160174838" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="53" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174838" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="53" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1289308558160174838" varName="executor" />
+      <varInfo nodeId="1289308558160174838" varName="runner" />
+    </scopeInfo>
     <unitInfo nodeId="1289308558160174838" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="35" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSApplication_Configuration_RunProfileState" />
     <unitInfo nodeId="1289308558160196364" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="65" startPosition="45" endLine="73" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSApplication_Configuration_RunProfileState$1" />
     <unitInfo nodeId="1289308558160174841" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="90" startPosition="118" endLine="94" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSApplication_Configuration_RunProfileState$2" />
@@ -676,22 +758,43 @@
     <scopeInfo nodeId="1289308558160207811" fileName="CustomMPSApplication_Producer.java" startLine="139" startPosition="34" endLine="140" endPosition="20" />
     <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="150" startPosition="85" endLine="151" endPosition="94" />
     <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="35" startPosition="96" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="35" startPosition="96" endLine="38" endPosition="5">
+      <varInfo nodeId="1289308558160174864" varName="configurationType" />
+      <varInfo nodeId="1289308558160174864" varName="factoryName" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174879" fileName="CustomMPSApplication_Producer.java" startLine="50" startPosition="27" endLine="53" endPosition="49" />
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="72" startPosition="89" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="112" startPosition="91" endLine="115" endPosition="5" />
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="72" startPosition="89" endLine="75" endPosition="5">
+      <varInfo nodeId="1289308558160174864" varName="configurationType" />
+      <varInfo nodeId="1289308558160174864" varName="factoryName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="112" startPosition="91" endLine="115" endPosition="5">
+      <varInfo nodeId="1289308558160174864" varName="configurationType" />
+      <varInfo nodeId="1289308558160174864" varName="factoryName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1289308558160174864" varName="source" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="1289308558160174864" varName="source" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174954" fileName="CustomMPSApplication_Producer.java" startLine="84" startPosition="59" endLine="88" endPosition="0" />
     <scopeInfo nodeId="1289308558160174978" fileName="CustomMPSApplication_Producer.java" startLine="94" startPosition="59" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="1289308558160207790" fileName="CustomMPSApplication_Producer.java" startLine="131" startPosition="156" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="27" startPosition="102" endLine="32" endPosition="20" />
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="116" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="1289308558160174864" varName="source" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160207790" fileName="CustomMPSApplication_Producer.java" startLine="131" startPosition="156" endLine="135" endPosition="0">
+      <varInfo nodeId="1289308558160207790" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="27" startPosition="102" endLine="32" endPosition="20">
+      <varInfo nodeId="1289308558160174864" varName="creators" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="65" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="105" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="148" startPosition="0" endLine="153" endPosition="0" />
     <scopeInfo nodeId="1289308558160174878" fileName="CustomMPSApplication_Producer.java" startLine="49" startPosition="59" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="26" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="26" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1289308558160174864" varName="configurationType" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160207767" fileName="CustomMPSApplication_Producer.java" startLine="128" startPosition="27" endLine="136" endPosition="62" />
     <scopeInfo nodeId="1289308558160207766" fileName="CustomMPSApplication_Producer.java" startLine="127" startPosition="59" endLine="138" endPosition="0" />
     <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="44" startPosition="92" endLine="63" endPosition="27">
@@ -700,13 +803,17 @@
       <varInfo nodeId="1289308558160174872" varName="isApplicable" />
       <varInfo nodeId="1289308558160174869" varName="layout" />
     </scopeInfo>
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="43" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="43" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1289308558160174864" varName="source" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="81" startPosition="92" endLine="103" endPosition="27">
       <varInfo nodeId="1289308558160174993" varName="configuration" />
       <varInfo nodeId="1289308558160174975" varName="configurationId" />
       <varInfo nodeId="1289308558160174951" varName="isApplicable" />
     </scopeInfo>
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="80" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="80" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="1289308558160174864" varName="source" />
+    </scopeInfo>
     <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="121" startPosition="92" endLine="146" endPosition="30">
       <varInfo nodeId="1289308558160207763" varName="configuration" />
       <varInfo nodeId="1289308558160207760" varName="configurationId" />
@@ -714,7 +821,9 @@
       <varInfo nodeId="1289308558160207754" varName="layout" />
       <varInfo nodeId="1289308558160207717" varName="runConfiguration" />
     </scopeInfo>
-    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="120" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="120" startPosition="0" endLine="148" endPosition="0">
+      <varInfo nodeId="1289308558160174864" varName="source" />
+    </scopeInfo>
     <unitInfo nodeId="1289308558160174864" fileName="CustomMPSApplication_Producer.java" startLine="21" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSApplication_Producer" />
     <unitInfo nodeId="1289308558160174954" fileName="CustomMPSApplication_Producer.java" startLine="84" startPosition="47" endLine="88" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSApplication_Producer$1" />
     <unitInfo nodeId="1289308558160174878" fileName="CustomMPSApplication_Producer.java" startLine="49" startPosition="47" endLine="55" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSApplication_Producer$1" />
@@ -830,7 +939,9 @@
     <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="76" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="74" startPosition="31" endLine="74" endPosition="31" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="205" startPosition="31" endLine="205" endPosition="31" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="227" startPosition="0" endLine="227" endPosition="37" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="227" startPosition="0" endLine="227" endPosition="37">
+      <varInfo nodeId="834312300517849416" varName="re" />
+    </scopeInfo>
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="227" startPosition="37" endLine="227" endPosition="37" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="40" startPosition="37" endLine="41" endPosition="95" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="44" startPosition="38" endLine="45" endPosition="19" />
@@ -861,10 +972,14 @@
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="223" startPosition="129" endLine="224" endPosition="152" />
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="73" startPosition="0" endLine="75" endPosition="5" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="204" startPosition="74" endLine="206" endPosition="5" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="211" startPosition="45" endLine="213" endPosition="152" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="211" startPosition="45" endLine="213" endPosition="152">
+      <varInfo nodeId="834312300517849416" varName="props" />
+    </scopeInfo>
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="39" startPosition="0" endLine="42" endPosition="3" />
     <scopeInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="180" startPosition="66" endLine="183" endPosition="7" />
-    <scopeInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="184" startPosition="0" endLine="187" endPosition="7" />
+    <scopeInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="184" startPosition="0" endLine="187" endPosition="7">
+      <varInfo nodeId="834312300517864417" varName="destination" />
+    </scopeInfo>
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
@@ -875,7 +990,9 @@
       <varInfo nodeId="834312300517875098" varName="copy" />
       <varInfo nodeId="834312300517864837" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="6648795410103988215" fileName="CopyBuildArtifacts_Facet.java" startLine="109" startPosition="104" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="6648795410103988215" fileName="CopyBuildArtifacts_Facet.java" startLine="109" startPosition="104" endLine="113" endPosition="0">
+      <varInfo nodeId="6648795410103988215" varName="ftc" />
+    </scopeInfo>
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
@@ -886,28 +1003,50 @@
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="155" startPosition="0" endLine="159" endPosition="0" />
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="159" startPosition="0" endLine="163" endPosition="0" />
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="163" startPosition="0" endLine="167" endPosition="0" />
-    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="167" startPosition="0" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="188" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="167" startPosition="0" endLine="171" endPosition="0">
+      <varInfo nodeId="1670948443106462369" varName="cls" />
+    </scopeInfo>
+    <scopeInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="188" startPosition="0" endLine="192" endPosition="0">
+      <varInfo nodeId="834312300517864417" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="192" startPosition="0" endLine="196" endPosition="0" />
     <scopeInfo nodeId="3736430118459669530" fileName="CopyBuildArtifacts_Facet.java" startLine="108" startPosition="41" endLine="113" endPosition="27" />
-    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="172" startPosition="61" endLine="177" endPosition="15" />
-    <scopeInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="196" startPosition="0" endLine="201" endPosition="0" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="209" startPosition="7" endLine="214" endPosition="9" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="220" startPosition="9" endLine="225" endPosition="11" />
+    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="172" startPosition="61" endLine="177" endPosition="15">
+      <varInfo nodeId="1670948443106462369" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="196" startPosition="0" endLine="201" endPosition="0">
+      <varInfo nodeId="834312300517864417" varName="from" />
+    </scopeInfo>
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="209" startPosition="7" endLine="214" endPosition="9">
+      <varInfo nodeId="834312300517849416" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="220" startPosition="9" endLine="225" endPosition="11">
+      <varInfo nodeId="834312300517849416" varName="name" />
+      <varInfo nodeId="834312300517849416" varName="props" />
+    </scopeInfo>
     <scopeInfo nodeId="1670948443106485499" fileName="CopyBuildArtifacts_Facet.java" startLine="92" startPosition="64" endLine="99" endPosition="36" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="208" startPosition="84" endLine="215" endPosition="7" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="219" startPosition="11" endLine="226" endPosition="9" />
     <scopeInfo nodeId="3736430118459669527" fileName="CopyBuildArtifacts_Facet.java" startLine="107" startPosition="72" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="171" startPosition="0" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="171" startPosition="0" endLine="179" endPosition="0">
+      <varInfo nodeId="1670948443106462369" varName="cls" />
+      <varInfo nodeId="1670948443106462369" varName="copyFrom" />
+    </scopeInfo>
     <scopeInfo nodeId="1986840443401665514" fileName="CopyBuildArtifacts_Facet.java" startLine="106" startPosition="37" endLine="115" endPosition="23" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="207" startPosition="0" endLine="217" endPosition="0" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="207" startPosition="0" endLine="217" endPosition="0">
+      <varInfo nodeId="834312300517849416" varName="properties" />
+      <varInfo nodeId="834312300517849416" varName="store" />
+    </scopeInfo>
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="218" startPosition="83" endLine="228" endPosition="7" />
     <scopeInfo nodeId="1670948443106485494" fileName="CopyBuildArtifacts_Facet.java" startLine="90" startPosition="89" endLine="101" endPosition="0">
       <varInfo nodeId="1670948443106485497" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="834312300517864815" fileName="CopyBuildArtifacts_Facet.java" startLine="89" startPosition="66" endLine="101" endPosition="23" />
     <scopeInfo nodeId="1986840443401665513" fileName="CopyBuildArtifacts_Facet.java" startLine="105" startPosition="65" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="217" startPosition="0" endLine="230" endPosition="0" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="217" startPosition="0" endLine="230" endPosition="0">
+      <varInfo nodeId="834312300517849416" varName="properties" />
+      <varInfo nodeId="834312300517849416" varName="store" />
+    </scopeInfo>
     <scopeInfo nodeId="834312300517945701" fileName="CopyBuildArtifacts_Facet.java" startLine="87" startPosition="35" endLine="102" endPosition="19">
       <varInfo nodeId="834312300517945722" varName="destDir" />
     </scopeInfo>
@@ -921,8 +1060,14 @@
     <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="82" startPosition="19" endLine="120" endPosition="15">
       <varInfo nodeId="834312300517875109" varName="toCopy" />
     </scopeInfo>
-    <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="79" startPosition="122" endLine="123" endPosition="11" />
-    <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="78" startPosition="30" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="79" startPosition="122" endLine="123" endPosition="11">
+      <varInfo nodeId="1670948443106462371" varName="_output_srsvb8_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="78" startPosition="30" endLine="125" endPosition="0">
+      <varInfo nodeId="1670948443106462371" varName="input" />
+      <varInfo nodeId="1670948443106462371" varName="monitor" />
+      <varInfo nodeId="1670948443106462371" varName="pa" />
+    </scopeInfo>
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="77" startPosition="29" endLine="125" endPosition="8" />
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="76" startPosition="0" endLine="127" endPosition="0" />
     <unitInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="36" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet" />

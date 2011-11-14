@@ -115,10 +115,10 @@ public class ProjectTree extends MPSTree {
   }
 
   private class ModulesNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
-    private MPSProject myProject;
+    private StandaloneMPSProject myProject;
 
     protected ModulesNamespaceTreeBuilder(MPSProject project) {
-      myProject = project;
+      myProject = (StandaloneMPSProject) project;
     }
 
     protected String getNamespace(MPSTreeNode node) {

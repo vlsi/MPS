@@ -9,7 +9,7 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.StackFrame;
-import jetbrains.mps.debug.runtime.java.programState.proxies.AbstractValueUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
@@ -27,7 +27,7 @@ import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
  * * Time: 18:43:09
  * * To change this template use File | Settings | File Templates.
  */
-public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatchable {
+public class JavaLocalVariable extends JavaWatchable implements IWatchable {
   private static final Logger LOG = Logger.getLogger(JavaLocalVariable.class);
 
   private final LocalVariable myLocalVariable;
@@ -40,7 +40,7 @@ public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatch
     myStackFrame = stackFrame;
     StackFrame javaStackFrame = myStackFrame.getStackFrame();
     if (javaStackFrame != null) {
-      myCachedValue = AbstractValueUtil.getInstance().fromJDIValue(javaStackFrame.getValue(myLocalVariable), classFqName, threadReference);
+      myCachedValue = ValueUtil.getInstance().fromJDI(javaStackFrame.getValue(myLocalVariable), classFqName, threadReference);
     }
   }
 

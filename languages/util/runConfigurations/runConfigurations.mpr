@@ -24,9 +24,9 @@
       <modulePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="usages.junit" />
       <modulePath path="${mps_home}/core/debug-api/languages/api/api.mpl" />
       <modulePath path="${mps_home}/core/dependencies/dependencies.msd" />
-      <modulePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" folder="deprecated" />
-      <modulePath path="${mps_home}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" folder="usages.junit" />
-      <modulePath path="${mps_home}/core/languageDesign/test/test.mpl" folder="usages.junit" />
+      <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" folder="deprecated" />
+      <modulePath path="${mps_home}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" folder="usages.junit" />
+      <modulePath path="${mps_home}/languages/languageDesign/test/test.mpl" folder="usages.junit" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="usages.ant" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/custommps/custommps.mpl" folder="usages.ant" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/packaging/packaging.mpl" folder="usages.ant" />

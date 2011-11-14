@@ -41,20 +41,20 @@
   <path id="core.behavior.sources">
 
     <!-- behavior -->
-    <path path="core/languageDesign/behavior/languages/behavior/source_gen/jetbrains/mps/lang/behavior/behavior"/>
+    <path path="languages/languageDesign/behavior/languages/behavior/source_gen/jetbrains/mps/lang/behavior/behavior"/>
     <path path="languages/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generationContext/behavior"/>
     <path path="languages/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/behavior"/>
-    <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/behavior"/>
-    <path path="core/languageDesign/sharedConcepts/source_gen/jetbrains/mps/lang/sharedConcepts/behavior"/>
+    <path path="languages/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/behavior"/>
+    <path path="languages/languageDesign/sharedConcepts/source_gen/jetbrains/mps/lang/sharedConcepts/behavior"/>
     <path path="languages/languageDesign/core/source_gen/jetbrains/mps/lang/core/behavior"/>
-    <path path="core/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/behavior"/>
-    <path path="core/languageDesign/structure/source_gen/jetbrains/mps/lang/structure/behavior"/>
+    <path path="languages/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/behavior"/>
+    <path path="languages/languageDesign/structure/source_gen/jetbrains/mps/lang/structure/behavior"/>
 
-    <!--TODO <path path="core/languageDesign/constraints/source_gen/jetbrains/mps/lang/constraints/behavior"/>-->
-    <!--TODO<path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/behavior"/>-->
-    <!--TODO<path path="core/languageDesign/stubs/source_gen/jetbrains/mps/lang/stubs/behavior"/>-->
-    <!--TODO<path path="core/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/behavior"/>-->
-    <!--TODO<path path="core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/behavior"/>-->
+    <!--TODO <path path="languages/languageDesign/constraints/source_gen/jetbrains/mps/lang/constraints/behavior"/>-->
+    <!--TODO<path path="languages/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/behavior"/>-->
+    <!--TODO<path path="languages/languageDesign/stubs/source_gen/jetbrains/mps/lang/stubs/behavior"/>-->
+    <!--TODO<path path="languages/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/behavior"/>-->
+    <!--TODO<path path="languages/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/behavior"/>-->
 
     <!-- baseLanguage -->
     <path path="core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage/icons"/>

@@ -14,8 +14,8 @@
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="typesystemEngine" />
-    <orderEntry type="library" name="commons-lang" level="project" />
-    <orderEntry type="module" module-name="idea-workbench" />
+    <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="library" name="Commons-lang" level="project" />
   </component>
 </module>
 

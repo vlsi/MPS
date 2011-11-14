@@ -276,7 +276,6 @@ public class TestMakeOnRealProject {
     solutionDescriptor.setNamespace(name);
 
     ModelRoot modelRoot = new ModelRoot();
-    modelRoot.setPrefix("");
     modelRoot.setPath(runtimeSolutionDescriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRoots().add(modelRoot);
@@ -307,7 +306,6 @@ public class TestMakeOnRealProject {
     solutionDescriptor.getUsedLanguages().add(myCreatedLanguage.getModuleReference());
 
     ModelRoot modelRoot = new ModelRoot();
-    modelRoot.setPrefix("");
     modelRoot.setPath(descriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRoots().add(modelRoot);

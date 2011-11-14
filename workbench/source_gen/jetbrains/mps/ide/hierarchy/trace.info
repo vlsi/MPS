@@ -1153,7 +1153,7 @@
     <nodeInfo nodeId="5797068448049413843" fileName="LanguageHierarchiesComponent.java" startLine="392" startPosition="35" endLine="393" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5797068448049413860" fileName="LanguageHierarchiesComponent.java" startLine="396" startPosition="38" endLine="397" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5797068448049413820" fileName="LanguageHierarchiesComponent.java" startLine="399" startPosition="15" endLine="400" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049413833" fileName="LanguageHierarchiesComponent.java" startLine="401" startPosition="41" endLine="402" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1071422968910416974" fileName="LanguageHierarchiesComponent.java" startLine="401" startPosition="41" endLine="402" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5797068448049413854" fileName="LanguageHierarchiesComponent.java" startLine="408" startPosition="35" endLine="409" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5797068448049412888" fileName="LanguageHierarchiesComponent.java" startLine="415" startPosition="28" endLine="416" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5797068448049412896" fileName="LanguageHierarchiesComponent.java" startLine="419" startPosition="42" endLine="420" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1440,7 +1440,7 @@
     <scopeInfo nodeId="5797068448049412829" fileName="LanguageHierarchiesComponent.java" startLine="379" startPosition="30" endLine="380" endPosition="73" />
     <scopeInfo nodeId="5797068448049413842" fileName="LanguageHierarchiesComponent.java" startLine="392" startPosition="35" endLine="393" endPosition="44" />
     <scopeInfo nodeId="5797068448049413859" fileName="LanguageHierarchiesComponent.java" startLine="396" startPosition="38" endLine="397" endPosition="33" />
-    <scopeInfo nodeId="5797068448049413832" fileName="LanguageHierarchiesComponent.java" startLine="401" startPosition="41" endLine="402" endPosition="104" />
+    <scopeInfo nodeId="5797068448049413832" fileName="LanguageHierarchiesComponent.java" startLine="401" startPosition="41" endLine="402" endPosition="93" />
     <scopeInfo nodeId="5797068448049413853" fileName="LanguageHierarchiesComponent.java" startLine="408" startPosition="35" endLine="409" endPosition="44" />
     <scopeInfo nodeId="5797068448049412887" fileName="LanguageHierarchiesComponent.java" startLine="415" startPosition="28" endLine="416" endPosition="120" />
     <scopeInfo nodeId="5797068448049412932" fileName="LanguageHierarchiesComponent.java" startLine="426" startPosition="23" endLine="427" endPosition="40" />

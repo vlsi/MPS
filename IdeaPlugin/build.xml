@@ -16,8 +16,8 @@
 <project name="IDEA-plugin-compile" default="compile" basedir=".">
 
     <property name="base_dir" value=".."/>
-    <property name="artifacts" value="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <property name="build_dir" value="${base_dir}/IdeaPlugin/build"/>
+    <property name="artifacts" value="${base_dir}/IdeaPlugin/build/artifacts"/>
     <property file="build.properties"/>
     <property name="ideaPath" value="${home.idea_ce}"/>
 
@@ -43,6 +43,19 @@
         <path path="${base_dir}/lib/asm.jar"/>
         <path path="${base_dir}/lib/diffutils-1.2.1.jar"/>
     </path>
+
+    <target name="prepare">
+        <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
+        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
+        <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
+            <resources>
+                <file file="${base_dir}/lib/asm.jar"/>
+                <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
+            </resources>
+        </copy>
+        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
+        <!-- TODO build languages -->
+    </target>
 
     <target name="clean">
         <delete dir="${artifacts}"/>
@@ -142,7 +155,7 @@
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- idea-workbench -->
-                <path path="${base_dir}/workbench/idea-workbench/source"/>
+                <path path="${base_dir}/workbench/mps-platform/source"/>
             </src>
             <classpath>
                 <fileset dir="${artifacts}" includes="*.jar"/>
@@ -150,8 +163,8 @@
             </classpath>
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench_jar">
-            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="META-INF/*"/>
-            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.png"/>
         </copy>
         <jar destfile="${artifacts}/mps-workbench.jar">
             <fileset dir="${build_dir}/mpsworkbench_jar"/>
@@ -166,7 +179,7 @@
         <!-- IDEA workbench sources -->
         <mkdir dir="${build_dir}/mpsworkbench-src_jar"/>
         <copy includeemptydirs="false" todir="${build_dir}/mpsworkbench-src_jar">
-            <fileset dir="${base_dir}/workbench/idea-workbench/source" includes="**/*.java"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source" includes="**/*.java"/>
         </copy>
         <jar destfile="${artifacts}/mps-workbench-src.jar">
             <fileset dir="${build_dir}/mpsworkbench-src_jar"/>

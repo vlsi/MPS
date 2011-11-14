@@ -11,6 +11,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.build.packaging.plugin.GenerateBuildWizard;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -46,12 +47,13 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CustomMPSBuildGenerator buildGenerator = new CustomMPSBuildGenerator(((Project) MapSequence.fromMap(_params).get("project")));
+      CustomMPSBuildGenerator buildGenerator = new CustomMPSBuildGenerator(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
       final GenerateBuildWizard wizard = new GenerateCustomMpsBuildWizard("Generate Custom MPS Build", ((Project) MapSequence.fromMap(_params).get("project")), buildGenerator);
       wizard.initWizard();
       ApplicationManager.getApplication().invokeLater(new Runnable() {

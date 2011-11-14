@@ -10,7 +10,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 
 public class TestCaseTreeNode extends BaseTestTreeNode {
   @NotNull
@@ -40,7 +40,7 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
   }
 
   public void doubleClick() {
-    this.getOperationContext().getComponent(MPSEditorOpener.class).openNode(this.myTestCase.getNode(), getOperationContext(), true, false);
+    NavigationSupport.getInstance().openNode(getOperationContext(), this.myTestCase.getNode(), true, false);
   }
 
   public int getToggleClickCount() {

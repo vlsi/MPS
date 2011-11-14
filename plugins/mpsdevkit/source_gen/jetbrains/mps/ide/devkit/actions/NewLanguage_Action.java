@@ -15,6 +15,7 @@ import jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialog;
 import java.awt.Frame;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import javax.swing.ImageIcon;
@@ -71,7 +72,7 @@ public class NewLanguage_Action extends GeneratedAction {
       if (l == null) {
         return;
       }
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(l, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
+      ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(l, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
         "" :
         ((String) MapSequence.fromMap(_params).get("namespace"))
       ));
