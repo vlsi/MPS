@@ -289,11 +289,11 @@ public class DebugVMEventsProcessor {
     /*package*/ DebuggerEventThread() {
     }
 
-    public void stopListening() {
+    public synchronized void stopListening() {
       myIsStopped = true;
     }
 
-    private boolean isStopped() {
+    private synchronized boolean isStopped() {
       return myIsStopped;
     }
 

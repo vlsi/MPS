@@ -38,7 +38,8 @@ public class TargetsView extends UsagesView {
     usagesTree.addTreeSelectionListener(new TargetsView.MyTreeSelectionListener(usagesTree, parent));
     myParent = parent;
     setCustomNodeRepresentator(new TargetsView.MyNodeRepresentator());
-    getTreeComponent().getTree().setSelectionRow(0);
+    usagesTree.setSelectionRow(0);
+    usagesTree.setShowPopupMenu(false);
   }
 
   public void close() {

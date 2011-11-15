@@ -10,7 +10,7 @@ public abstract class DebuggerCommand implements IDebuggerCommand {
   }
 
   @Override
-  public final void release() {
+  public final synchronized void release() {
     if (myOnHold) {
       myOnHold = false;
       notifyAll();
@@ -18,12 +18,12 @@ public abstract class DebuggerCommand implements IDebuggerCommand {
   }
 
   @Override
-  public final void hold() {
+  public final synchronized void hold() {
     myOnHold = true;
   }
 
   @Override
-  public final void waitFor() {
+  public final synchronized void waitFor() {
     while (myOnHold) {
       try {
         wait();
