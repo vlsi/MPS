@@ -182,9 +182,9 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeSessionState" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeTrapeciumStrip" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser" />

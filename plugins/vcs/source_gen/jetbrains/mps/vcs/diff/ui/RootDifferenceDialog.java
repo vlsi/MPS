@@ -10,7 +10,7 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.vcs.diff.ui.common.ChangeTrapeciumStrip;
+import jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
@@ -50,7 +50,7 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
   private DiffEditor myOldEditor;
   private DiffEditor myNewEditor;
   private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
-  private List<ChangeTrapeciumStrip> myTrapeciumStrips = ListSequence.fromList(new ArrayList<ChangeTrapeciumStrip>());
+  private List<DiffEditorSeparator> myTrapeciumStrips = ListSequence.fromList(new ArrayList<DiffEditorSeparator>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
@@ -153,13 +153,13 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
     ChangeGroupBuilder changeGroupBuilder = new DiffChangeGroupBuilder(null, myModelDialog.getChangeSet(), myOldEditor, myNewEditor, inspector);
     ListSequence.fromList(myChangeGroupBuilders).addElement(changeGroupBuilder);
-    ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(changeGroupBuilder);
+    DiffEditorSeparator separator = new DiffEditorSeparator(changeGroupBuilder);
     GridBagConstraints gbc = new GridBagConstraints(1, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);
     ((inspector ?
       myBottomPanel :
       myTopPanel
-    )).add(strip, gbc);
-    ListSequence.fromList(myTrapeciumStrips).addElement(strip);
+    )).add(separator, gbc);
+    ListSequence.fromList(myTrapeciumStrips).addElement(separator);
     if (!(myModelDialog.getChangeSet().getNewModel().isNotEditable())) {
       DiffButtonsPainter.addTo(this, myOldEditor, changeGroupBuilder, inspector);
       DiffButtonsPainter.addTo(this, myNewEditor, changeGroupBuilder, inspector);
@@ -207,8 +207,8 @@ public class RootDifferenceDialog extends BaseDialog implements DataProvider {
       myOldEditor = null;
       myNewEditor.dispose();
       myNewEditor = null;
-      ListSequence.fromList(myTrapeciumStrips).visitAll(new IVisitor<ChangeTrapeciumStrip>() {
-        public void visit(ChangeTrapeciumStrip s) {
+      ListSequence.fromList(myTrapeciumStrips).visitAll(new IVisitor<DiffEditorSeparator>() {
+        public void visit(DiffEditorSeparator s) {
           s.dispose();
         }
       });

@@ -27,14 +27,14 @@ import java.awt.event.MouseEvent;
 import java.awt.Point;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
-public class ChangeTrapeciumStrip extends JComponent implements TooltipComponent {
+public class DiffEditorSeparator extends JComponent implements TooltipComponent {
   private static final int WIDTH = 30;
 
   private ChangeGroupBuilder myChangeGroupBuilder;
   private Map<ChangeGroup, Tuples._2<Bounds, Bounds>> myGroupsWithBounds;
   private Map<ChangeGroup, String> myChangeGroupDescriptions;
 
-  public ChangeTrapeciumStrip(ChangeGroupBuilder changeGroupBuilder) {
+  public DiffEditorSeparator(ChangeGroupBuilder changeGroupBuilder) {
     myChangeGroupBuilder = changeGroupBuilder;
     ChangeListener viewportListener = new ChangeListener() {
       public void stateChanged(ChangeEvent e) {

@@ -94,7 +94,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ChangeGroupInvalidateListener" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4652592318748337778">
-      <property name="name" nameId="tpck.1169194664001" value="ChangeTrapeciumStrip" />
+      <property name="name" nameId="tpck.1169194664001" value="DiffEditorSeparator" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4652592318748338308">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />

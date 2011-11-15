@@ -14,7 +14,7 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.vcs.diff.ui.common.ChangeTrapeciumStrip;
+import jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup;
 import jetbrains.mps.vcs.diff.merge.MergeSessionState;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
@@ -60,7 +60,7 @@ public class MergeRootsDialog extends BaseDialog {
   private DiffEditor myMineEditor;
   private DiffEditor myRepositoryEditor;
   private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
-  private List<ChangeTrapeciumStrip> myTrapeciumStrips = ListSequence.fromList(new ArrayList<ChangeTrapeciumStrip>());
+  private List<DiffEditorSeparator> myTrapeciumStrips = ListSequence.fromList(new ArrayList<DiffEditorSeparator>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private MergeSessionState myStateToRestore;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.MERGE_TYPES);
@@ -186,7 +186,7 @@ public class MergeRootsDialog extends BaseDialog {
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
     ChangeGroupBuilder changeGroupBuilder = createChangeGroupBuilder(mine, inspector);
     ListSequence.fromList(myChangeGroupBuilders).addElement(changeGroupBuilder);
-    ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(changeGroupBuilder);
+    DiffEditorSeparator separator = new DiffEditorSeparator(changeGroupBuilder);
     JPanel panel = (inspector ?
       myBottomPanel :
       myTopPanel
@@ -195,8 +195,8 @@ public class MergeRootsDialog extends BaseDialog {
       1 :
       3
     ), 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);
-    panel.add(strip, gbc);
-    ListSequence.fromList(myTrapeciumStrips).addElement(strip);
+    panel.add(separator, gbc);
+    ListSequence.fromList(myTrapeciumStrips).addElement(separator);
     MergeButtonsPainter.addTo(this, (mine ?
       myMineEditor :
       myRepositoryEditor
@@ -309,8 +309,8 @@ public class MergeRootsDialog extends BaseDialog {
     myResultEditor = null;
     myRepositoryEditor.dispose();
     myRepositoryEditor = null;
-    ListSequence.fromList(myTrapeciumStrips).visitAll(new IVisitor<ChangeTrapeciumStrip>() {
-      public void visit(ChangeTrapeciumStrip s) {
+    ListSequence.fromList(myTrapeciumStrips).visitAll(new IVisitor<DiffEditorSeparator>() {
+      public void visit(DiffEditorSeparator s) {
         s.dispose();
       }
     });
