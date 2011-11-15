@@ -2,7 +2,6 @@
 <solution name="jetbrains.mps.baseLanguage.tuples.customViewers" uuid="15979c6a-944c-47d7-971f-e73259dce95e" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot path="${solution_descriptor}/" />
-    <modelRoot path="${solution_descriptor}/models" />
   </models>
   <sourcePath />
   <dependencies>

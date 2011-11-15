@@ -488,6 +488,11 @@
       <property name="role" nameId="tpce.1071599776563" value="cycle" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1216905728562" resolveInfo="ModuleCycle" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1278811218404598041">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="pluginXml" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1220973916698" resolveInfo="Path" />
+    </node>
   </root>
   <root id="1203617883391">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1203619938976">

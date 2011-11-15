@@ -364,6 +364,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.AbstractProjectComponent" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.ModuleCycle" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.structure.Path" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

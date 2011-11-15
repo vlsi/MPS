@@ -327,14 +327,8 @@
     <copy todir="${deploy.dir}/MPS/plugins/svn4idea">
       <fileset dir="${mps_home}/plugins/svn4idea" excludes="**/*.zip, " />
     </copy>
-    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/debugger-api/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/debugger-api/classes" prefix="" />
-    </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/debugger-java/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/debugger-java/classes" prefix="" />
-    </jar>
+    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.debugger.java.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel.customViewers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections.customViewers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.customViewers" />

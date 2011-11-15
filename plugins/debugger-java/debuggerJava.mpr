@@ -44,7 +44,7 @@
       <modulePath path="${mps_home}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.customViewers/customViewers.msd" folder="java.languages.usages" />
       <modulePath path="${mps_home}/languages/languageDesign/textGen/textGen.mpl" folder="trace" />
       <modulePath path="${mps_home}/languages/languageDesign/traceable/traceable.mpl" folder="trace" />
-      <modulePath path="${mps_home}/plugins/debugger-api/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" folder="api" />
+      <modulePath path="${mps_home}/plugins/debugger-api/jetbrains.mps.debugger-api.msd" folder="api" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="usages" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="usages" />
       <modulePath path="${project}/jetbrains.mps.debugger.java.runtime.msd" folder="java" />

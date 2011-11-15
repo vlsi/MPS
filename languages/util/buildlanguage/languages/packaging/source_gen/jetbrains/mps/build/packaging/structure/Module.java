@@ -14,6 +14,7 @@ public class Module extends AbstractProjectComponent {
   public static final String EXCLUDE_RESOURCES = "excludeResources";
   public static final String DO_NOT_JAR = "doNotJar";
   public static final String CYCLE = "cycle";
+  public static final String PLUGIN_XML = "pluginXml";
 
   public Module(SNode node) {
     super(node);
@@ -57,6 +58,14 @@ public class Module extends AbstractProjectComponent {
 
   public void setCycle(ModuleCycle node) {
     super.setReferent(Module.CYCLE, node);
+  }
+
+  public Path getPluginXml() {
+    return (Path) this.getChild(Path.class, Module.PLUGIN_XML);
+  }
+
+  public void setPluginXml(Path node) {
+    super.setChild(Module.PLUGIN_XML, node);
   }
 
   public static Module newInstance(SModel sm, boolean init) {
