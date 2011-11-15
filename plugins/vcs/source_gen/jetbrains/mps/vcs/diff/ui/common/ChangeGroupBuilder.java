@@ -111,10 +111,12 @@ public abstract class ChangeGroupBuilder {
     ListSequence.fromList(myInvalidateListeners).removeElement(listener);
   }
 
+  @NotNull
   public List<ChangeGroup> getChangeGroups() {
     if (myChangeGroups == null) {
       calculateChangeGroups();
     }
+    assert myChangeGroups != null;
     return myChangeGroups;
   }
 
