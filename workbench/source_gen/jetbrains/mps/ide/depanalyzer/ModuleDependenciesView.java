@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.CloseAction;
+import jetbrains.mps.ide.moduleDependencies.icons.Icons;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -41,11 +42,11 @@ public class ModuleDependenciesView extends JPanel {
     myRightTree = new DependencyPathTree();
 
 
-    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", null, false, new _FunctionTypes._void_P1_E0<Boolean>() {
+    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", Icons.DEPENDENCY_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowRuntime(b);
       }
-    }), new ModuleDependenciesView.MyToggleAction("Show Used Languages", null, true, new _FunctionTypes._void_P1_E0<Boolean>() {
+    }), new ModuleDependenciesView.MyToggleAction("Show Used Languages", Icons.USED_LANGUAGES_ICON, true, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowUsedLanguages(b);
       }

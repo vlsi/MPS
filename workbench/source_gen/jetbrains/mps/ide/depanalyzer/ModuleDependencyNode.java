@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.moduleDependencies.icons.Icons;
 import javax.swing.tree.TreeNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -41,6 +42,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
       if (ListSequence.fromList(modules).count() > 2) {
         text += ", ... (" + ListSequence.fromList(modules).count() + " modules)";
       }
+      setIcon(Icons.MODULES_GROUP_ICON);
     }
     setNodeIdentifier(text);
   }
