@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.deprecated.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 
-public class ProcessHandlerStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
+public class ProcessHandlerStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements ExecuteSpecific_BehaviorDescriptor {
   public ProcessHandlerStatement_BehaviorDescriptor() {
   }
 
