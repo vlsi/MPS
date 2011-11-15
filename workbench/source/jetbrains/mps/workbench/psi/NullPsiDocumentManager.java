@@ -20,10 +20,21 @@ import com.intellij.openapi.editor.impl.DocumentImpl;
 import com.intellij.openapi.util.Computable;
 import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiFile;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class NullPsiDocumentManager extends PsiDocumentManager {
+  @Override
+  public boolean isCommitted(@NotNull Document document) {
+    return false;
+  }
+
+  @Override
+  public boolean cancelAndRunWhenAllCommitted(@NonNls @NotNull Object key, @NotNull Runnable action) {
+    return false;
+  }
+
   @Nullable
   public PsiFile getPsiFile(@NotNull Document document) {
     return null;
