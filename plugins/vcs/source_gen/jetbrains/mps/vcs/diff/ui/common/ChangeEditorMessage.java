@@ -43,11 +43,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ChangeEditorMessage extends EditorMessageWithTarget {
   private ModelChange myChange;
   private ChangeEditorMessage.ConflictChecker myConflictsChecker;
+  private boolean myHighlighted;
 
-  private ChangeEditorMessage(SNode node, MessageTarget target, EditorMessageOwner owner, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
+  private ChangeEditorMessage(SNode node, MessageTarget target, EditorMessageOwner owner, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker, boolean highlighted) {
     super(node, MessageStatus.OK, target, null, "", owner);
     myChange = change;
     myConflictsChecker = conflictChecker;
+    myHighlighted = highlighted;
   }
 
   public boolean isConflicted() {
@@ -73,6 +75,9 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
   @Override
   public void paint(Graphics graphics, EditorComponent component, EditorCell cell) {
+    if (!(myHighlighted)) {
+      return;
+    }
     boolean targetIsNode = myMessageTarget.getTarget() == MessageTargetEnum.NODE;
     boolean shouldPaintSelection = (targetIsNode ?
       getNode() == cell.getSNode() :
@@ -229,6 +234,10 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     return getBounds(component).length();
   }
 
+  public void setHighlighted(boolean highlighted) {
+    myHighlighted = highlighted;
+  }
+
   private static boolean hasChildrenWithDifferentNode(EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
       final EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
@@ -267,6 +276,10 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   public static List<ChangeEditorMessage> createMessages(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker) {
+    return createMessages(editedModel, change, owner, conflictChecker, true);
+  }
+
+  public static List<ChangeEditorMessage> createMessages(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker, boolean highlighted) {
     List<ChangeEditorMessage> messages = ListSequence.fromList(new LinkedList<ChangeEditorMessage>());
     SNodeId id;
     MessageTarget messageTarget;
@@ -329,7 +342,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       } else {
         List<SNode> editedChildren = editedModel.getNodeById(parentId).getChildren(role);
         for (int i = beginIndex; i < endIndex; i++) {
-          ListSequence.fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker));
+          ListSequence.fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker, highlighted));
         }
         return messages;
       }
@@ -337,7 +350,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       return null;
     }
     SNode node = editedModel.getNodeById(id);
-    ListSequence.fromList(messages).addElement(new ChangeEditorMessage(node, messageTarget, owner, change, conflictChecker));
+    ListSequence.fromList(messages).addElement(new ChangeEditorMessage(node, messageTarget, owner, change, conflictChecker, highlighted));
     return messages;
   }
 
