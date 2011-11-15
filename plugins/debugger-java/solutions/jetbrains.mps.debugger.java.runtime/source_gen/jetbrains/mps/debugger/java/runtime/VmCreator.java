@@ -54,6 +54,9 @@ public class VmCreator extends AbstractDebugSessionCreator {
   private final DebugVMEventsProcessor myDebugVMEventsProcessor;
   private final DebuggerManagerThread myDebuggerManagerThread;
   private boolean myIsFailed = false;
+  /**
+   * holds listeners before process is executed; then adds them to process handler.
+   */
   private final List<ProcessListener> myProcessListeners = new ArrayList<ProcessListener>();
   private ExecutionResult myExecutionResult;
   private final DebugSession myDebuggerSession;
@@ -365,7 +368,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
       myRunnable = runnable;
     }
 
-    public void run() {
+    public synchronized void run() {
       if (!(alreadyRun)) {
         alreadyRun = true;
         myRunnable.run();

@@ -49,6 +49,9 @@ public class JavaUiStateImpl extends JavaUiState {
     }
   }
 
+  /**
+   * This constructor is called when user selects some thread from ui
+   */
   /*package*/ JavaUiStateImpl(@NotNull JavaUiStateImpl previousState, @Nullable JavaThread thread, DebugSession debugSession) {
     super(debugSession);
     myDebugSession = debugSession;
@@ -65,6 +68,9 @@ public class JavaUiStateImpl extends JavaUiState {
     }
   }
 
+  /**
+   * This constructor is called when user selects some frame from ui
+   */
   /*package*/ JavaUiStateImpl(@NotNull JavaUiStateImpl previousState, int frameIndex, DebugSession debugSession) {
     super(debugSession);
     myDebugSession = debugSession;

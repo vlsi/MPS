@@ -35,7 +35,7 @@ public class SystemMessagesReporter {
     reportOrPostpone(message, ProcessOutputTypes.STDERR);
   }
 
-  private void reportOrPostpone(String message, Key key) {
+  private synchronized void reportOrPostpone(String message, Key key) {
     if (myProcessHandler == null) {
       myPostponedMessages.add(new Pair<String, Key>(message, key));
     } else {
@@ -43,7 +43,7 @@ public class SystemMessagesReporter {
     }
   }
 
-  public void setProcessHandler(ProcessHandler processHandler) {
+  public synchronized void setProcessHandler(ProcessHandler processHandler) {
     myProcessHandler = processHandler;
     for (Pair<String, Key> message : myPostponedMessages) {
       reportInternal(message.first, message.second);

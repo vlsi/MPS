@@ -27,7 +27,16 @@ public class SuspendManager {
 
   private final DebugVMEventsProcessor myDebugProcess;
   private final LinkedList<SuspendContext> myEventContexts = new LinkedList<SuspendContext>();
+  /**
+   * Contexts, paused at breakpoint or another debugger event requests.
+   * Note that thread, explicitly paused by user is not considered as
+
+   * "paused at breakpoint" and JDI prohibits data queries on its stackframes
+   */
   private final LinkedList<SuspendContext> myPausedContexts = new LinkedList<SuspendContext>();
+  /**
+   * context paused by user
+   */
   @Nullable
   private SuspendContext myPausedByUserContext;
 
@@ -191,14 +200,14 @@ public class SuspendManager {
     @Override
     protected void resumeImpl() {
       SuspendManager.LOG.debug("Start resuming...");
-      //  TODO: well, this call not just MAY produce NPE, it WILL, if we ever get here (but we won't AFAIK) 
-      //  TODO why don't we repeat 5 times here? 
       switch (getSuspendPolicy()) {
         case EventRequest.SUSPEND_ALL:
           tryResume5Times();
           SuspendManager.LOG.debug("VM resumed ");
           break;
         case EventRequest.SUSPEND_EVENT_THREAD:
+          //  TODO: well, this call not just MAY produce NPE, it WILL, if we ever get here (but we won't AFAIK) 
+          //  TODO why don't we repeat 5 times here? 
           ThreadReference thread = getThread();
           SuspendManager.LOG.assertLog(thread != null);
           thread.resume();
