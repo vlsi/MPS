@@ -33,14 +33,14 @@
     </scopeInfo>
     <scopeInfo nodeId="1880762541167901396" fileName="SwingDemo.java" startLine="26" startPosition="9" endLine="31" endPosition="9" />
     <scopeInfo nodeId="1880762541167901345" fileName="SwingDemo.java" startLine="14" startPosition="28" endLine="22" endPosition="24">
-      <varInfo nodeId="1880762541167901347" varName="jf" />
       <varInfo nodeId="1880762541167901358" varName="cmp" />
+      <varInfo nodeId="1880762541167901347" varName="jf" />
     </scopeInfo>
     <scopeInfo nodeId="1880762541167901394" fileName="SwingDemo.java" startLine="25" startPosition="22" endLine="34" endPosition="5" />
     <scopeInfo nodeId="1880762541167901342" fileName="SwingDemo.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1880762541167901391" fileName="SwingDemo.java" startLine="24" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1880762541167901399" fileName="SwingDemo.java" startLine="27" startPosition="37" endLine="31" endPosition="7" unitName="jetbrains.mps.ui.sandbox.swing.SwingDemo$1" />
     <unitInfo nodeId="1880762541167901329" fileName="SwingDemo.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ui.sandbox.swing.SwingDemo" />
+    <unitInfo nodeId="1880762541167901399" fileName="SwingDemo.java" startLine="27" startPosition="37" endLine="31" endPosition="7" unitName="jetbrains.mps.ui.sandbox.swing.SwingDemo$1" />
   </root>
 </debugInfo>
 

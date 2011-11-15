@@ -6,12 +6,12 @@
          classpath="${mps_home}/languages/generate.ant.task.jar"/>
 
   <target name="test">
-    <mps.test.generation fork="true" mpshome="${mps_home}" loglevel="info" invokeTests="true">
+    <mps.test.generation fork="true" mpshome="${mps_home}" loglevel="info" invokeTests="false">
           <jvmargs>            
             <arg value="-Xmx1200m"/>
             <arg value="-XX:MaxPermSize=100m"/>
             <arg value="-Xdebug"/>
-            <arg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"/>
+            <arg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>
           </jvmargs>
           <macro name="mps_home" path="${mps_home}"/>          
           <project dir="." wholeProject="true">

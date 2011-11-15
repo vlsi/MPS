@@ -30,8 +30,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4983682755224323291" fileName="StubDialog.java" startLine="16" startPosition="46" endLine="21" endPosition="42" />
     <scopeInfo nodeId="4983682755224323288" fileName="StubDialog.java" startLine="15" startPosition="0" endLine="22" endPosition="3">
-      <varInfo nodeId="4983682755224323299" varName="style" />
       <varInfo nodeId="4983682755224323297" varName="parent" />
+      <varInfo nodeId="4983682755224323299" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="4983682755224323296" fileName="StubDialog.java" startLine="28" startPosition="22" endLine="36" endPosition="5">
       <varInfo nodeId="4983682755224323374" varName="display" />
@@ -169,24 +169,24 @@
       <varInfo nodeId="9201869079511555508" varName="ei" />
     </scopeInfo>
     <scopeInfo nodeId="9201869079511555702" fileName="ExpandController.java" startLine="68" startPosition="26" endLine="75" endPosition="13">
-      <varInfo nodeId="9201869079511555711" varName="expande" />
       <varInfo nodeId="9201869079511555534" varName="expHeight" />
+      <varInfo nodeId="9201869079511555711" varName="expande" />
     </scopeInfo>
     <scopeInfo nodeId="9201869079511518055" fileName="ExpandController.java" startLine="84" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="9201869079511508360" fileName="ExpandController.java" startLine="21" startPosition="47" endLine="31" endPosition="0">
       <varInfo nodeId="9201869079511508363" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="9201869079511517343" fileName="ExpandController.java" startLine="33" startPosition="58" endLine="49" endPosition="13">
-      <varInfo nodeId="9201869079511554319" varName="height" />
       <varInfo nodeId="9201869079511554296" varName="carea" />
-      <varInfo nodeId="9201869079511518013" varName="expanded" />
       <varInfo nodeId="9201869079511554369" varName="expHeight" />
+      <varInfo nodeId="9201869079511518013" varName="expanded" />
+      <varInfo nodeId="9201869079511554319" varName="height" />
     </scopeInfo>
     <scopeInfo nodeId="9201869079511508371" fileName="ExpandController.java" startLine="32" startPosition="51" endLine="50" endPosition="9" />
     <scopeInfo nodeId="9201869079511555469" fileName="ExpandController.java" startLine="57" startPosition="50" endLine="76" endPosition="9">
+      <varInfo nodeId="9201869079511555485" varName="carea" />
       <varInfo nodeId="9201869079511555686" varName="exp" />
       <varInfo nodeId="9201869079511555491" varName="height" />
-      <varInfo nodeId="9201869079511555485" varName="carea" />
     </scopeInfo>
     <scopeInfo nodeId="9201869079511508366" fileName="ExpandController.java" startLine="31" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="9201869079511508369" varName="event" />
@@ -198,11 +198,11 @@
     <scopeInfo nodeId="9201869079511503269" fileName="ExpandController.java" startLine="19" startPosition="0" endLine="79" endPosition="3">
       <varInfo nodeId="9201869079511508347" varName="eb" />
     </scopeInfo>
-    <unitInfo nodeId="9201869079511555551" fileName="ExpandController.java" startLine="71" startPosition="45" endLine="75" endPosition="11" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$3" />
+    <unitInfo nodeId="9201869079511503267" fileName="ExpandController.java" startLine="17" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController" />
+    <unitInfo nodeId="9201869079511508358" fileName="ExpandController.java" startLine="21" startPosition="29" endLine="52" endPosition="5" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$1" />
     <unitInfo nodeId="9201869079511518163" fileName="ExpandController.java" startLine="44" startPosition="45" endLine="49" endPosition="11" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$2" />
     <unitInfo nodeId="9201869079511555456" fileName="ExpandController.java" startLine="53" startPosition="30" endLine="78" endPosition="5" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$2" />
-    <unitInfo nodeId="9201869079511508358" fileName="ExpandController.java" startLine="21" startPosition="29" endLine="52" endPosition="5" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$1" />
-    <unitInfo nodeId="9201869079511503267" fileName="ExpandController.java" startLine="17" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController" />
+    <unitInfo nodeId="9201869079511555551" fileName="ExpandController.java" startLine="71" startPosition="45" endLine="75" endPosition="11" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$3" />
   </root>
 </debugInfo>
 

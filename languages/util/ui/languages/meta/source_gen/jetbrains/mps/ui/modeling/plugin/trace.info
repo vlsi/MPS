@@ -32,12 +32,23 @@
     <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="12" startPosition="68" endLine="14" endPosition="3" />
     <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="2542706524531725542" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2542706524531725542" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="32" startPosition="43" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="31" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="2542706524531725542" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="32" startPosition="43" endLine="39" endPosition="16">
+      <varInfo nodeId="2542706524531725542" varName="list" />
+      <varInfo nodeId="2542706524531725542" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="31" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="2542706524531725542" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2542706524531725542" fileName="UIStructure_TabDescriptor.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.UIStructure_TabDescriptor" />
   </root>
   <root nodeId="2542706524531725610">
@@ -70,12 +81,23 @@
     <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="12" startPosition="66" endLine="14" endPosition="3" />
     <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="2542706524531725610" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2542706524531725610" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="32" startPosition="43" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="31" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="2542706524531725610" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="32" startPosition="43" endLine="39" endPosition="16">
+      <varInfo nodeId="2542706524531725610" varName="list" />
+      <varInfo nodeId="2542706524531725610" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="31" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="2542706524531725610" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2542706524531725610" fileName="Structure_TabDescriptor.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Structure_TabDescriptor" />
   </root>
   <root nodeId="2542706524531725727">
@@ -120,15 +142,25 @@
     <scopeInfo nodeId="6661832029302856908" fileName="UICode_TabDescriptor.java" startLine="66" startPosition="37" endLine="68" endPosition="18" />
     <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5630235838746991001" fileName="UICode_TabDescriptor.java" startLine="45" startPosition="125" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="2542706524531725727" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2542706524531725727" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5630235838746991001" fileName="UICode_TabDescriptor.java" startLine="45" startPosition="125" endLine="49" endPosition="0">
+      <varInfo nodeId="5630235838746991001" varName="tpl" />
+    </scopeInfo>
     <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="2542706524531725727" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4643695836678843350" fileName="UICode_TabDescriptor.java" startLine="40" startPosition="43" endLine="49" endPosition="24">
       <varInfo nodeId="5630235838746997150" varName="base" />
     </scopeInfo>
-    <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="39" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="39" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2542706524531725727" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="380233880019560526" fileName="UICode_TabDescriptor.java" startLine="60" startPosition="66" endLine="73" endPosition="6">
       <varInfo nodeId="6661832029302753170" varName="creatorInfo" />
       <varInfo nodeId="6661832029302747592" varName="defVal" />
@@ -136,7 +168,10 @@
       <varInfo nodeId="6661832029302467270" varName="msg" />
       <varInfo nodeId="6661832029302753147" varName="selVals" />
     </scopeInfo>
-    <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="59" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="59" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="2542706524531725727" varName="concept" />
+      <varInfo nodeId="2542706524531725727" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2542706524531725727" fileName="UICode_TabDescriptor.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.UICode_TabDescriptor" />
     <unitInfo nodeId="5630235838746991001" fileName="UICode_TabDescriptor.java" startLine="45" startPosition="102" endLine="49" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.UICode_TabDescriptor$1" />
   </root>
@@ -182,15 +217,25 @@
     <scopeInfo nodeId="5275753781174797641" fileName="Code_TabDescriptor.java" startLine="66" startPosition="37" endLine="68" endPosition="18" />
     <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="3302932283760467262" fileName="Code_TabDescriptor.java" startLine="45" startPosition="129" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="2542706524531725743" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2542706524531725743" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3302932283760467262" fileName="Code_TabDescriptor.java" startLine="45" startPosition="129" endLine="49" endPosition="0">
+      <varInfo nodeId="3302932283760467262" varName="eht" />
+    </scopeInfo>
     <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="2542706524531725743" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1790847182535108029" fileName="Code_TabDescriptor.java" startLine="40" startPosition="43" endLine="49" endPosition="24">
       <varInfo nodeId="5725024602606149920" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="39" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="39" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2542706524531725743" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5275753781174797590" fileName="Code_TabDescriptor.java" startLine="60" startPosition="66" endLine="73" endPosition="6">
       <varInfo nodeId="5275753781174797630" varName="creatorInfo" />
       <varInfo nodeId="5275753781174797594" varName="defVal" />
@@ -198,7 +243,10 @@
       <varInfo nodeId="5275753781174797598" varName="msg" />
       <varInfo nodeId="5275753781174797606" varName="selVals" />
     </scopeInfo>
-    <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="59" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="59" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="2542706524531725743" varName="concept" />
+      <varInfo nodeId="2542706524531725743" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Code_TabDescriptor" />
     <unitInfo nodeId="3302932283760467262" fileName="Code_TabDescriptor.java" startLine="45" startPosition="106" endLine="49" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.Code_TabDescriptor$1" />
   </root>
@@ -367,12 +415,24 @@
     <scopeInfo nodeId="3302932283760467021" fileName="EditorExtensions.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="3302932283760467064" varName="prov" />
     </scopeInfo>
-    <scopeInfo nodeId="5630235838746755320" fileName="EditorExtensions.java" startLine="49" startPosition="134" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3302932283760467096" fileName="EditorExtensions.java" startLine="57" startPosition="138" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="380233880019585782" fileName="EditorExtensions.java" startLine="65" startPosition="129" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="5275753781174797684" fileName="EditorExtensions.java" startLine="73" startPosition="133" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="380233880019585971" fileName="EditorExtensions.java" startLine="84" startPosition="156" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="5275753781174797855" fileName="EditorExtensions.java" startLine="99" startPosition="160" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="5630235838746755320" fileName="EditorExtensions.java" startLine="49" startPosition="134" endLine="53" endPosition="0">
+      <varInfo nodeId="5630235838746755320" varName="prov" />
+    </scopeInfo>
+    <scopeInfo nodeId="3302932283760467096" fileName="EditorExtensions.java" startLine="57" startPosition="138" endLine="61" endPosition="0">
+      <varInfo nodeId="3302932283760467096" varName="prov" />
+    </scopeInfo>
+    <scopeInfo nodeId="380233880019585782" fileName="EditorExtensions.java" startLine="65" startPosition="129" endLine="69" endPosition="0">
+      <varInfo nodeId="380233880019585782" varName="tc" />
+    </scopeInfo>
+    <scopeInfo nodeId="5275753781174797684" fileName="EditorExtensions.java" startLine="73" startPosition="133" endLine="77" endPosition="0">
+      <varInfo nodeId="5275753781174797684" varName="tc" />
+    </scopeInfo>
+    <scopeInfo nodeId="380233880019585971" fileName="EditorExtensions.java" startLine="84" startPosition="156" endLine="88" endPosition="0">
+      <varInfo nodeId="380233880019585971" varName="tc" />
+    </scopeInfo>
+    <scopeInfo nodeId="5275753781174797855" fileName="EditorExtensions.java" startLine="99" startPosition="160" endLine="103" endPosition="0">
+      <varInfo nodeId="5275753781174797855" varName="tc" />
+    </scopeInfo>
     <scopeInfo nodeId="5630235838746751349" fileName="EditorExtensions.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="5630235838746755250" fileName="EditorExtensions.java" startLine="163" startPosition="53" endLine="167" endPosition="20" />
     <scopeInfo nodeId="5894005964488932129" fileName="EditorExtensions.java" startLine="169" startPosition="0" endLine="173" endPosition="0" />
@@ -518,8 +578,12 @@
     </scopeInfo>
     <scopeInfo nodeId="9003987136928286578" fileName="EditorExtensionHelper.java" startLine="45" startPosition="71" endLine="50" endPosition="0" />
     <scopeInfo nodeId="9003987136928286556" fileName="EditorExtensionHelper.java" startLine="73" startPosition="71" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6661832029303943186" fileName="EditorExtensionHelper.java" startLine="86" startPosition="84" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="4033850706583692359" fileName="EditorExtensionHelper.java" startLine="92" startPosition="86" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="6661832029303943186" fileName="EditorExtensionHelper.java" startLine="86" startPosition="84" endLine="91" endPosition="0">
+      <varInfo nodeId="6661832029303943186" varName="ee" />
+    </scopeInfo>
+    <scopeInfo nodeId="4033850706583692359" fileName="EditorExtensionHelper.java" startLine="92" startPosition="86" endLine="97" endPosition="0">
+      <varInfo nodeId="4033850706583692359" varName="ee" />
+    </scopeInfo>
     <scopeInfo nodeId="6661832029303857616" fileName="EditorExtensionHelper.java" startLine="99" startPosition="0" endLine="104" endPosition="0" />
     <scopeInfo nodeId="6661832029303943086" fileName="EditorExtensionHelper.java" startLine="35" startPosition="74" endLine="42" endPosition="0" />
     <scopeInfo nodeId="6661832029303943155" fileName="EditorExtensionHelper.java" startLine="63" startPosition="70" endLine="70" endPosition="0" />

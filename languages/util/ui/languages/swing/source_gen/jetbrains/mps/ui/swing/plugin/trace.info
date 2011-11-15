@@ -25,12 +25,20 @@
     <scopeInfo nodeId="2441084687258581579" fileName="Variant_CustomApplicationPlugin.java" startLine="26" startPosition="41" endLine="27" endPosition="242" />
     <scopeInfo nodeId="2441084687258581572" fileName="Variant_CustomApplicationPlugin.java" startLine="20" startPosition="82" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2441084687258581572" fileName="Variant_CustomApplicationPlugin.java" startLine="32" startPosition="64" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="2441084687258581578" fileName="Variant_CustomApplicationPlugin.java" startLine="25" startPosition="66" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="2441084687258581572" fileName="Variant_CustomApplicationPlugin.java" startLine="40" startPosition="7" endLine="44" endPosition="31" />
+    <scopeInfo nodeId="2441084687258581578" fileName="Variant_CustomApplicationPlugin.java" startLine="25" startPosition="66" endLine="29" endPosition="0">
+      <varInfo nodeId="2441084687258581578" varName="vars" />
+    </scopeInfo>
+    <scopeInfo nodeId="2441084687258581572" fileName="Variant_CustomApplicationPlugin.java" startLine="40" startPosition="7" endLine="44" endPosition="31">
+      <varInfo nodeId="2441084687258581572" varName="quotedNode1_2" />
+    </scopeInfo>
     <scopeInfo nodeId="2441084687258581574" fileName="Variant_CustomApplicationPlugin.java" startLine="24" startPosition="24" endLine="29" endPosition="7" />
     <scopeInfo nodeId="2441084687258581572" fileName="Variant_CustomApplicationPlugin.java" startLine="39" startPosition="32" endLine="45" endPosition="7" />
     <scopeInfo nodeId="2441084687258581572" fileName="Variant_CustomApplicationPlugin.java" startLine="23" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2441084687258581572" fileName="Variant_CustomApplicationPlugin.java" startLine="36" startPosition="31" endLine="46" endPosition="20" />
+    <scopeInfo nodeId="2441084687258581572" fileName="Variant_CustomApplicationPlugin.java" startLine="36" startPosition="31" endLine="46" endPosition="20">
+      <varInfo nodeId="2441084687258581572" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2441084687258581572" varName="quotedNode_1" />
+      <varInfo nodeId="2441084687258581572" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2441084687258581572" fileName="Variant_CustomApplicationPlugin.java" startLine="35" startPosition="0" endLine="48" endPosition="0" />
     <unitInfo nodeId="2441084687258581572" fileName="Variant_CustomApplicationPlugin.java" startLine="20" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ui.swing.plugin.Variant_CustomApplicationPlugin" />
     <unitInfo nodeId="2441084687258581578" fileName="Variant_CustomApplicationPlugin.java" startLine="25" startPosition="26" endLine="29" endPosition="5" unitName="jetbrains.mps.ui.swing.plugin.Variant_CustomApplicationPlugin$1" />
