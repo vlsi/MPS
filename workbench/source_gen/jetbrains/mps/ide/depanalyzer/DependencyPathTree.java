@@ -24,8 +24,17 @@ import jetbrains.mps.ide.ui.TextMPSTreeNode;
 
 public class DependencyPathTree extends MPSTree {
   private List<Tuples._3<Set<IModule>, Set<IModule>, Set<Language>>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._3<Set<IModule>, Set<IModule>, Set<Language>>>());
+  private boolean myShowRuntime;
 
   public DependencyPathTree() {
+  }
+
+  public void setShowRuntime(boolean showRuntime) {
+    myShowRuntime = showRuntime;
+  }
+
+  public boolean isShowRuntime() {
+    return myShowRuntime;
   }
 
   public void resetDependencies() {
@@ -92,8 +101,10 @@ public class DependencyPathTree extends MPSTree {
         for (Language l : ListSequence.fromList(ul.getExtendedLanguages())) {
           addChildDep(result, l, DependencyPathTree.DepType.UL, "extends language ", dependency, usedlangauge, visited);
         }
-        for (ModuleReference m : ListSequence.fromList(ul.getRuntimeModulesReferences())) {
-          addChildDep(result, MPSModuleRepository.getInstance().getModule(m), DependencyPathTree.DepType.R, "exports runtime ", dependency, usedlangauge, visited);
+        if (isShowRuntime()) {
+          for (ModuleReference m : ListSequence.fromList(ul.getRuntimeModulesReferences())) {
+            addChildDep(result, MPSModuleRepository.getInstance().getModule(m), DependencyPathTree.DepType.R, "exports runtime ", dependency, usedlangauge, visited);
+          }
         }
         for (Dependency d : ListSequence.fromList(ul.getDependencies())) {
           if (d.isReexport()) {
@@ -104,13 +115,12 @@ public class DependencyPathTree extends MPSTree {
 
       case D:
         for (Dependency d : ListSequence.fromList(from.getDependencies())) {
-          addChildDep(result, MPSModuleRepository.getInstance().getModule(d.getModuleRef()), (d.isReexport() ?
-            DependencyPathTree.DepType.D :
-            DependencyPathTree.DepType.R
-          ), (d.isReexport() ?
-            "re-exports dependency on " :
-            "depends on "
-          ), dependency, usedlangauge, visited);
+          if (d.isReexport()) {
+            addChildDep(result, MPSModuleRepository.getInstance().getModule(d.getModuleRef()), DependencyPathTree.DepType.D, "re-exports dependency on ", dependency, usedlangauge, visited);
+
+          } else if (isShowRuntime()) {
+            addChildDep(result, MPSModuleRepository.getInstance().getModule(d.getModuleRef()), DependencyPathTree.DepType.R, "depends on ", dependency, usedlangauge, visited);
+          }
 
         }
         if (from instanceof Language) {

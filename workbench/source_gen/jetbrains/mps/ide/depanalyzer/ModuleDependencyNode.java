@@ -72,24 +72,32 @@ public class ModuleDependencyNode extends MPSTreeNode {
       SetSequence.fromSet(usedLanguages).addSequence(SetSequence.fromSet(depManager.getAllUsedLanguages()));
     }
 
+    DependencyTree tree = (DependencyTree) getTree();
     MPSTreeNode dependencies = new TextMPSTreeNode("Dependencies", getOperationContext());
-    MPSTreeNode usedlanguages = new TextMPSTreeNode("Used languages", getOperationContext());
-    for (IModule m : SetSequence.fromSet(reqModules).sort(new ISelector<IModule, Comparable<?>>() {
+    Set<IModule> allModules = (tree.isShowRuntime() ?
+      rtModules :
+      reqModules
+    );
+    for (IModule m : SetSequence.fromSet(allModules).sort(new ISelector<IModule, Comparable<?>>() {
       public Comparable<?> select(IModule it) {
         return it.getModuleFqName();
       }
     }, true)) {
       dependencies.add(new ModuleDependencyNode(m, !(SetSequence.fromSet(reqModules).contains(m)), getOperationContext()));
     }
-    for (Language l : SetSequence.fromSet(usedLanguages).sort(new ISelector<Language, Comparable<?>>() {
-      public Comparable<?> select(Language it) {
-        return it.getModuleFqName();
-      }
-    }, true)) {
-      usedlanguages.add(new ModuleDependencyNode(l, false, getOperationContext()));
-    }
     add(dependencies);
-    add(usedlanguages);
+
+    if (tree.isShowUsedLanguage()) {
+      MPSTreeNode usedlanguages = new TextMPSTreeNode("Used languages", getOperationContext());
+      for (Language l : SetSequence.fromSet(usedLanguages).sort(new ISelector<Language, Comparable<?>>() {
+        public Comparable<?> select(Language it) {
+          return it.getModuleFqName();
+        }
+      }, true)) {
+        usedlanguages.add(new ModuleDependencyNode(l, false, getOperationContext()));
+      }
+      add(usedlanguages);
+    }
     myInitialized = true;
   }
 

@@ -9,8 +9,7 @@ import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.CloseAction;
-import com.intellij.openapi.actionSystem.ToggleAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -28,39 +27,40 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import com.intellij.openapi.actionSystem.ToggleAction;
+import javax.swing.Icon;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class ModuleDependenciesView extends JPanel {
   private DependencyTree myLeftTree;
   private DependencyPathTree myRightTree;
-  private boolean isShowRTDep = true;
-  private boolean isShowUsedLang = true;
 
   public ModuleDependenciesView(BaseTool tool, Project project) {
     super(new BorderLayout());
     myLeftTree = new DependencyTree(project, this);
     myRightTree = new DependencyPathTree();
 
-    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ToggleAction("Show Runtime Dependencies") {
-      public boolean isSelected(AnActionEvent e) {
-        return isShowRTDep;
-      }
 
-      public void setSelected(AnActionEvent e, boolean b) {
-        isShowRTDep = b;
+    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", null, false, new _FunctionTypes._void_P1_E0<Boolean>() {
+      public void invoke(Boolean b) {
+        setShowRuntime(b);
       }
-    });
+    }), new ModuleDependenciesView.MyToggleAction("Show Used Languages", null, true, new _FunctionTypes._void_P1_E0<Boolean>() {
+      public void invoke(Boolean b) {
+        setShowUsedLanguages(b);
+      }
+    }));
 
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
+    add(toolbar, BorderLayout.NORTH);
 
     Splitter splitter = new Splitter();
-
-    add(toolbar, BorderLayout.NORTH);
     add(splitter, BorderLayout.CENTER);
     splitter.setFirstComponent(new JBScrollPane(myLeftTree));
     splitter.setSecondComponent(new JBScrollPane(myRightTree));
 
     myLeftTree.addTreeSelectionListener(new TreeSelectionListener() {
-      public void valueChanged(TreeSelectionEvent p0) {
+      public void valueChanged(TreeSelectionEvent e) {
         resetDependencies();
       }
     });
@@ -98,6 +98,17 @@ public class ModuleDependenciesView extends JPanel {
     myRightTree.rebuildLater();
   }
 
+  public void setShowRuntime(boolean b) {
+    myLeftTree.setShowRuntime(b);
+    myRightTree.setShowRuntime(b);
+    resetAll();
+  }
+
+  public void setShowUsedLanguages(boolean b) {
+    myLeftTree.setShowUsedLanguage(b);
+    resetAll();
+  }
+
   public void resetAll() {
     myLeftTree.rebuildLater();
     myRightTree.resetDependencies();
@@ -108,5 +119,24 @@ public class ModuleDependenciesView extends JPanel {
       return checkedDotOperand.getModules();
     }
     return null;
+  }
+
+  public static class MyToggleAction extends ToggleAction {
+    private boolean myValue;
+    private _FunctionTypes._void_P1_E0<? super Boolean> mySetValue;
+
+    public MyToggleAction(String title, Icon icon, boolean value, _FunctionTypes._void_P1_E0<? super Boolean> setValue) {
+      super(title, title, icon);
+      myValue = value;
+      mySetValue = setValue;
+    }
+
+    public void setSelected(AnActionEvent event, boolean b) {
+      mySetValue.invoke(myValue = b);
+    }
+
+    public boolean isSelected(AnActionEvent event) {
+      return myValue;
+    }
   }
 }

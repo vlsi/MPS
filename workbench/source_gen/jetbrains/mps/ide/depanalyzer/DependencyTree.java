@@ -20,6 +20,8 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 public class DependencyTree extends MPSTree {
   private Project myProject;
   private List<IModule> myModules;
+  private boolean myShowRuntime;
+  private boolean myShowUsedLanguage = true;
 
   public DependencyTree(Project project, JComponent viewer) {
     myProject = project;
@@ -27,6 +29,22 @@ public class DependencyTree extends MPSTree {
 
   public void setModules(List<IModule> modules) {
     myModules = modules;
+  }
+
+  public void setShowRuntime(boolean showRuntime) {
+    myShowRuntime = showRuntime;
+  }
+
+  public boolean isShowRuntime() {
+    return myShowRuntime;
+  }
+
+  public boolean isShowUsedLanguage() {
+    return myShowUsedLanguage;
+  }
+
+  public void setShowUsedLanguage(boolean showUsedLanguage) {
+    myShowUsedLanguage = showUsedLanguage;
   }
 
   protected MPSTreeNode rebuild() {
