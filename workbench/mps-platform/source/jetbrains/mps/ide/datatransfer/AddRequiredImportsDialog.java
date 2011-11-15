@@ -51,7 +51,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
   private SModelReference[] mySelectedImports;
   private ModuleReference[] mySelectedLanguages;
 
-  public AddRequiredImportsDialog(Project project, SModelReference[] requiredImports, ModuleReference[] requiredLanguages) {
+  public AddRequiredImportsDialog(Project project, @NotNull SModelReference[] requiredImports, @NotNull ModuleReference[] requiredLanguages) {
     super(project, true);
     myRequiredImports = requiredImports;
     myRequiredLanguages = requiredLanguages;
@@ -60,13 +60,13 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       public void run() {
         for (SModelReference ref : myRequiredImports) {
           SModelDescriptor descr = SModelRepository.getInstance().getModelDescriptor(ref);
-          if(descr == null) continue;
+          if (descr == null) continue;
           IModule module = descr.getModule();
-          if(module == null) continue;
+          if (module == null) continue;
           myImport2Module.put(ref, module.getModuleFqName());
-          if(module instanceof Language) {
+          if (module instanceof Language) {
             LanguageAspect modelAspect = Language.getModelAspect(descr);
-            if(modelAspect != null) {
+            if (modelAspect != null) {
               myImport2Aspect.put(ref, modelAspect);
             }
           }
@@ -91,12 +91,17 @@ public class AddRequiredImportsDialog extends DialogWrapper {
   }
 
   protected void doOKAction() {
-    Object[] values = myModelsList.getSelectedValues();
-    mySelectedImports = new SModelReference[values.length];
-    System.arraycopy(values, 0, mySelectedImports, 0, values.length);
-    values = myLanguagesList.getSelectedValues();
-    mySelectedLanguages = new ModuleReference[values.length];
-    System.arraycopy(values, 0, mySelectedLanguages, 0, values.length);
+    Object[] values;
+    if (myModelsList != null) {
+      values = myModelsList.getSelectedValues();
+      mySelectedImports = new SModelReference[values.length];
+      System.arraycopy(values, 0, mySelectedImports, 0, values.length);
+    }
+    if (myLanguagesList != null) {
+      values = myLanguagesList.getSelectedValues();
+      mySelectedLanguages = new ModuleReference[values.length];
+      System.arraycopy(values, 0, mySelectedLanguages, 0, values.length);
+    }
     super.doOKAction();
   }
 
@@ -105,35 +110,38 @@ public class AddRequiredImportsDialog extends DialogWrapper {
     final JPanel panel = new JPanel(new BorderLayout());
     JTextArea area = new JTextArea(
       "The code fragment which you have pasted requires model imports\n" +
-      "and languages that are not accessible in the new context.");
+        "and languages that are not accessible in the new context.");
     area.setEditable(false);
     area.setBackground(this.getContentPane().getBackground());
     area.setBorder(BorderFactory.createEmptyBorder(5, 5, 3, 5));
     panel.add(area, BorderLayout.NORTH);
 
     JPanel center = new JPanel(new GridBagLayout());
-    JTextArea label = new JTextArea("Select models that you want to import:");
-    label.setEditable(false);
-    label.setBackground(this.getContentPane().getBackground());
-    label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-    center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
+    if (myRequiredImports.length > 0) {
+      JTextArea label = new JTextArea("Select models that you want to import:");
+      label.setEditable(false);
+      label.setBackground(this.getContentPane().getBackground());
+      label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+      center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
 
-    myModelsList = new JBList(myRequiredImports);
-    myModelsList.setCellRenderer(new MyCellRenderer());
-    myModelsList.setBorder(BorderFactory.createEtchedBorder());
-    center.add(ScrollPaneFactory.createScrollPane(myModelsList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
+      myModelsList = new JBList(myRequiredImports);
+      myModelsList.setCellRenderer(new MyCellRenderer());
+      myModelsList.setBorder(BorderFactory.createEtchedBorder());
+      center.add(ScrollPaneFactory.createScrollPane(myModelsList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
+    }
 
-    //
-    label = new JTextArea("Use languages:");
-    label.setEditable(false);
-    label.setBackground(this.getContentPane().getBackground());
-    label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-    center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(5, 0, 0, 0), 0, 0));
+    if (myRequiredLanguages.length > 0) {
+      JTextArea label = new JTextArea("Use languages:");
+      label.setEditable(false);
+      label.setBackground(this.getContentPane().getBackground());
+      label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+      center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(myRequiredImports.length > 0 ? 5 : 0, 0, 0, 0), 0, 0));
 
-    myLanguagesList = new JBList(myRequiredLanguages);
-    myLanguagesList.setCellRenderer(new MyCellRenderer());
-    myLanguagesList.setBorder(BorderFactory.createEtchedBorder());
-    center.add(ScrollPaneFactory.createScrollPane(myLanguagesList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
+      myLanguagesList = new JBList(myRequiredLanguages);
+      myLanguagesList.setCellRenderer(new MyCellRenderer());
+      myLanguagesList.setBorder(BorderFactory.createEtchedBorder());
+      center.add(ScrollPaneFactory.createScrollPane(myLanguagesList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
+    }
 
     panel.add(center, BorderLayout.CENTER);
     panel.setPreferredSize(new Dimension(500, 400));
@@ -146,12 +154,12 @@ public class AddRequiredImportsDialog extends DialogWrapper {
 
   @NotNull
   public SModelReference[] getSelectedImports() {
-    return mySelectedImports;
+    return mySelectedImports != null ? mySelectedImports : new SModelReference[0];
   }
 
   @NotNull
   public ModuleReference[] getSelectedLanguages() {
-    return mySelectedLanguages;
+    return mySelectedLanguages != null ? mySelectedLanguages : new ModuleReference[0];
   }
 
   public class MyCellRenderer extends SimpleColoredComponent implements ListCellRenderer {
@@ -175,7 +183,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       if (value instanceof SModelReference) {
         SModelReference ref = (SModelReference) value;
         LanguageAspect languageAspect = myImport2Aspect.get(ref);
-        if(languageAspect != null) {
+        if (languageAspect != null) {
           setIcon(IconManager.getIconForAspect(languageAspect));
         } else {
           setIcon(IconManager.getIconForModelReference(ref));
@@ -186,7 +194,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
           append("@" + ref.getStereotype(), SimpleTextAttributes.REGULAR_ATTRIBUTES);
         }
         String module = myImport2Module.get(ref);
-        if(module != null && !module.isEmpty()) {
+        if (module != null && !module.isEmpty()) {
           append(" (" + module + ")", SimpleTextAttributes.GRAY_ATTRIBUTES);
         }
 
