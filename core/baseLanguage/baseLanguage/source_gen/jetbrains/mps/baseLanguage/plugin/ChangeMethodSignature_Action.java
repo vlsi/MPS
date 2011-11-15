@@ -111,7 +111,6 @@ public class ChangeMethodSignature_Action extends GeneratedAction {
       public void run() {
         ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(((SNode) MapSequence.fromMap(_params).get("method")), context);
         dialog.showDialog();
-        dialog.pack();
         result[0] = dialog.getAllRefactorings();
       }
     });
