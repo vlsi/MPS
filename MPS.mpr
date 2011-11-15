@@ -231,6 +231,7 @@
       <modulePath path="${project}/languages/util/runConfigurations/languages/settings/settings.mpl" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/languages/util/util.mpl" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" folder="languages.execution" />
+      <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl.tests.sandbox/sandbox.msd" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl.tests/tests.msd" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl/impl.msd" folder="languages.execution" />
       <modulePath path="${project}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/startup.msd" folder="languages.execution" />
