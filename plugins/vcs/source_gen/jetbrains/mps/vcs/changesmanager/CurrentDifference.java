@@ -104,11 +104,13 @@ public class CurrentDifference {
   /*package*/ void removeChangeSet() {
     myCommandQueue.assertSoftlyIsCommandThread();
     if (myChangeSet != null) {
+      fireChangeUpdateStarted();
       ListSequence.fromList(myChangeSet.getModelChanges()).visitAll(new IVisitor<ModelChange>() {
         public void visit(ModelChange ch) {
           fireChangeRemoved(ch);
         }
       });
+      fireChangeUpdateFinished();
       myChangeSet = null;
     }
   }
@@ -117,11 +119,13 @@ public class CurrentDifference {
     myCommandQueue.assertSoftlyIsCommandThread();
     removeChangeSet();
     myChangeSet = changeSetImpl;
+    fireChangeUpdateStarted();
     ListSequence.fromList(myChangeSet.getModelChanges()).visitAll(new IVisitor<ModelChange>() {
       public void visit(ModelChange ch) {
         fireChangeAdded(ch);
       }
     });
+    fireChangeUpdateFinished();
   }
 
   /*package*/ EditableSModelDescriptor getModelDescriptor() {

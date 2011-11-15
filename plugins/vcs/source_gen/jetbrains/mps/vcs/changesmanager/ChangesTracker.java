@@ -44,7 +44,7 @@ public class ChangesTracker {
   }
 
   /*package*/ void scheduleFullUpdate() {
-    myQueue.runTask(new Runnable() {
+    myQueue.addTask(new Runnable() {
       public void run() {
         update();
       }

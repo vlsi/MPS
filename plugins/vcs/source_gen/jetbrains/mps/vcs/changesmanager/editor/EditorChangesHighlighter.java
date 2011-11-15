@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -63,8 +64,9 @@ public class EditorChangesHighlighter implements EditorMessageOwner {
               }
               if (myListener != null) {
                 myCurrentDifference.setEnabled(true);
-                if (myCurrentDifference.getChangeSet() != null) {
-                  ListSequence.fromList(myCurrentDifference.getChangeSet().getModelChanges()).visitAll(new IVisitor<ModelChange>() {
+                ChangeSet changeSet = myCurrentDifference.getChangeSet();
+                if (changeSet != null) {
+                  ListSequence.fromList(changeSet.getModelChanges()).visitAll(new IVisitor<ModelChange>() {
                     public void visit(ModelChange c) {
                       createMessages(c);
                     }
@@ -161,7 +163,38 @@ public class EditorChangesHighlighter implements EditorMessageOwner {
   }
 
   public class MyCurrentDifferenceListener extends CurrentDifferenceAdapter {
+    private List<ChangeEditorMessage> myAddedMessages = ListSequence.fromList(new ArrayList<ChangeEditorMessage>());
+    private List<ChangeEditorMessage> myRemovedMessages = ListSequence.fromList(new ArrayList<ChangeEditorMessage>());
+
     public MyCurrentDifferenceListener() {
+    }
+
+    public void changeAdded(@NotNull ModelChange change) {
+      List<ChangeEditorMessage> messages = createMessages(change);
+      ListSequence.fromList(myRemovedMessages).removeSequence(ListSequence.fromList(messages));
+      ListSequence.fromList(myAddedMessages).addSequence(ListSequence.fromList(messages));
+    }
+
+    public void changeRemoved(@NotNull ModelChange change) {
+      List<ChangeEditorMessage> messages = removeMessages(change);
+      ListSequence.fromList(myRemovedMessages).addSequence(ListSequence.fromList(messages));
+      ListSequence.fromList(myAddedMessages).removeSequence(ListSequence.fromList(messages));
+    }
+
+    @Override
+    public void changeUpdateFinished() {
+      if (!(ListSequence.fromList(myAddedMessages).isEmpty()) || !(ListSequence.fromList(myRemovedMessages).isEmpty())) {
+        NodeHighlightManager nodeHighlightManager = getHighlightManager();
+        for (ChangeEditorMessage removedMessage : ListSequence.fromList(myRemovedMessages)) {
+          nodeHighlightManager.unmark(removedMessage);
+        }
+        for (ChangeEditorMessage addedMessage : ListSequence.fromList(myAddedMessages)) {
+          nodeHighlightManager.mark(addedMessage);
+        }
+        nodeHighlightManager.repaintAndRebuildEditorMessages();
+        ListSequence.fromList(myAddedMessages).clear();
+        ListSequence.fromList(myRemovedMessages).clear();
+      }
     }
   }
 }
