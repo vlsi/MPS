@@ -17,6 +17,7 @@ import java.awt.Color;
 public class DependencyTreeLeafNode extends DependencyTreeNode {
   public DependencyTreeLeafNode(IModule module, String role, IOperationContext operationContext) {
     super(module, role, operationContext);
+    setText("<html>" + "<i>" + role + "</i>" + "<b>" + module.getModuleFqName() + "</b>" + "</html>");
   }
 
   public DependencyTreeLeafNode(IModule module, String role, IOperationContext operationContext, Color color) {

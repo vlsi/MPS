@@ -25,6 +25,7 @@ public class DependencyTreeNode extends MPSTreeNode {
     myModule = module;
     setIcon(IconManager.getIconFor(myModule));
     setNodeIdentifier(role + module.getModuleFqName());
+    setText("<html>" + "<i>" + role + "</i>" + module.getModuleFqName() + "</html>");
   }
 
   public DependencyTreeNode(IModule module, String role, IOperationContext operationContext, Color color) {
