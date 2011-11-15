@@ -16,8 +16,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.dependency.DependenciesManager;
-import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.ide.ui.TextMPSTreeNode;
 
 public class ModuleDependencyNode extends MPSTreeNode {
   private List<IModule> myModules;
@@ -53,7 +53,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   public ModuleDependencyNode getFromNode() {
     TreeNode n = getParent();
-    if (n != null) {
+    if (n != null && !(n instanceof ModuleDependencyNode)) {
       n = n.getParent();
     }
     if (n != null && n instanceof ModuleDependencyNode) {
@@ -75,7 +75,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
     }
 
     DependencyTree tree = (DependencyTree) getTree();
-    MPSTreeNode dependencies = new TextMPSTreeNode("Dependencies", getOperationContext());
+
     Set<IModule> allModules = (tree.isShowRuntime() ?
       rtModules :
       reqModules
@@ -85,9 +85,8 @@ public class ModuleDependencyNode extends MPSTreeNode {
         return it.getModuleFqName();
       }
     }, true)) {
-      dependencies.add(new ModuleDependencyNode(m, !(SetSequence.fromSet(reqModules).contains(m)), getOperationContext()));
+      add(new ModuleDependencyNode(m, !(SetSequence.fromSet(reqModules).contains(m)), getOperationContext()));
     }
-    add(dependencies);
 
     if (tree.isShowUsedLanguage()) {
       MPSTreeNode usedlanguages = new TextMPSTreeNode("Used languages", getOperationContext());
