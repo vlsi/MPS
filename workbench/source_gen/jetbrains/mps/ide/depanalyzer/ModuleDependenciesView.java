@@ -50,6 +50,10 @@ public class ModuleDependenciesView extends JPanel {
       public void invoke(Boolean b) {
         setShowUsedLanguages(b);
       }
+    }), new ModuleDependenciesView.MyToggleAction("Show cycles", Icons.CYCLE_ICON, true, new _FunctionTypes._void_P1_E0<Boolean>() {
+      public void invoke(Boolean b) {
+        setShowCycles(b);
+      }
     }));
 
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
@@ -108,6 +112,9 @@ public class ModuleDependenciesView extends JPanel {
   public void setShowUsedLanguages(boolean b) {
     myLeftTree.setShowUsedLanguage(b);
     resetAll();
+  }
+
+  public void setShowCycles(boolean b) {
   }
 
   public void resetAll() {
