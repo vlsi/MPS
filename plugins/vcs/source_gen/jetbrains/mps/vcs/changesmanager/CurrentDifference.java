@@ -146,7 +146,11 @@ public class CurrentDifference {
       if (enabled) {
         myChangesTracker.scheduleFullUpdate();
       } else {
-        // TODO disable 
+        myCommandQueue.addTask(new Runnable() {
+          public void run() {
+            setChangeSet(null);
+          }
+        });
       }
     }
   }
