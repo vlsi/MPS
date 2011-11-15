@@ -34,6 +34,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.lang.reflect.Method;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
@@ -202,6 +203,18 @@ public class IconManager {
       LOG.error(e);
     }
     return EMPTY_ICON;
+  }
+
+  public static Icon getIconForModelReference(@NotNull SModelReference modelReference) {
+    String stereotype = modelReference.getStereotype();
+    if (stereotype != null) {
+      if (SModelStereotype.isGeneratorModelStereotype(stereotype)) {
+        return IdeIcons.TEMPLATES_MODEL_ICON;
+      } else if (SModelStereotype.isTestModelStereotype(stereotype)) {
+        return IdeIcons.TEST_MODEL_ICON;
+      }
+    }
+    return IdeIcons.MODEL_ICON;
   }
 
   public static Icon getIconFor(SModelDescriptor modelDescriptor) {

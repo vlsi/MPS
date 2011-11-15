@@ -86,7 +86,7 @@ public class SModelStereotype {
     return languageId + STUB_SUFFIX;
   }
 
-  private static boolean isGeneratorModelStereotype(String stereotype) {
+  public static boolean isGeneratorModelStereotype(String stereotype) {
     return GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype);
   }
 }

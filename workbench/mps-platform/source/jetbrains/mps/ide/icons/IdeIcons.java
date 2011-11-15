@@ -51,6 +51,7 @@ public class IdeIcons {
 
   public static final Icon PROJECT_ICON = FileIcons.PROJECT_ICON;
   public static final Icon SOLUTION_ICON = FileIcons.SOLUTION_ICON;
+  public static final Icon LANGUAGE_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/language.png"));
   public static final Icon DEVKIT_ICON = FileIcons.DEVKIT_ICON;
   public static final Icon GENERATOR_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/generator.png"));
   public static final Icon PROJECT_LANGUAGE_ICON = FileIcons.PROJECT_LANGUAGE_ICON;

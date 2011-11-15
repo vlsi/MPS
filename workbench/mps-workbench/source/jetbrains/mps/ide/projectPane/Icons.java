@@ -25,7 +25,6 @@ public class Icons extends IdeIcons {
   // nodes: modelStub.png, libraryModels.png, moduleSkeleton.png, mps.png, projectProperties.png, script1.png, script2.png, script3.png, view.png
   // other: addFavoritesList.png, closedFolder.png, closedFolder_glamour.png, menu-replace.png, openedFolder.png, openedFolder_glamour.png
 
-  public static final Icon LANGUAGE_ICON = new ImageIcon(Icons.class.getResource("nodes/language.png"));
   public static final Icon JAVA_ICON = new ImageIcon(Icons.class.getResource("nodes/java.png"));
   public static final Icon TEXT_ICON = new ImageIcon(Icons.class.getResource("nodes/text.png"));
   public static final Icon LIB_ICON = new ImageIcon(Icons.class.getResource("nodes/ppLib.png"));

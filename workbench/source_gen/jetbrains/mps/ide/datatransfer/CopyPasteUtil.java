@@ -36,8 +36,12 @@ import java.awt.datatransfer.DataFlavor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class CopyPasteUtil {
@@ -347,17 +351,72 @@ public class CopyPasteUtil {
         necessaryLanguages.retainAll(additionalLanguages);
       }
     });
-    if ((!(necessaryImports.isEmpty())) || (!(necessaryLanguages.isEmpty()))) {
-      AddRequiredModelImportsDialog dialog = ModelAccess.instance().runReadAction(new Computable<AddRequiredModelImportsDialog>() {
-        public AddRequiredModelImportsDialog compute() {
-          return new AddRequiredModelImportsDialog(context, sourceModule, targetModel, necessaryImports, necessaryLanguages);
-        }
-      });
-      dialog.setModal(true);
-      dialog.showDialog();
-      return !(dialog.isCancelled());
+    if ((!((necessaryImports.isEmpty()))) || (!((necessaryLanguages.isEmpty())))) {
+      AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(ProjectHelper.toIdeaProject(context.getProject()), necessaryImports.toArray(new SModelReference[necessaryImports.size()]), necessaryLanguages.toArray(new ModuleReference[necessaryLanguages.size()]));
+      dialog.show();
+      if (dialog.isOK()) {
+        addImports(context.getProject(), targetModel, dialog.getSelectedLanguages(), dialog.getSelectedImports());
+        return true;
+      }
+      return false;
     }
     return true;
+  }
+
+  private static void addImports(Project p, final SModel targetModel, @NotNull final ModuleReference[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {
+    if (requiredLanguages.length == 0 && requiredImports.length == 0) {
+      return;
+    }
+
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
+      @Override
+      public void run() {
+        //  model properties 
+        for (SModelReference imported : requiredImports) {
+          targetModel.addModelImport(imported, false);
+        }
+        for (ModuleReference language : requiredLanguages) {
+          targetModel.addLanguage(language);
+        }
+        //  model's module properties 
+        IModule targetModule = targetModel.getModelDescriptor().getModule();
+        if (targetModule == null) {
+          return;
+        }
+
+        ModuleDescriptor moduleDescriptor = targetModule.getModuleDescriptor();
+        assert moduleDescriptor != null : targetModel.getSModelFqName().toString();
+
+        for (ModuleReference language : requiredLanguages) {
+          moduleDescriptor.getUsedLanguages().add(language);
+        }
+        Set<ModuleReference> moduleDependencies = new HashSet<ModuleReference>();
+        for (SModelReference model : requiredImports) {
+          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
+          if (modelDescriptor == null) {
+            continue;
+          }
+          IModule module = modelDescriptor.getModule();
+          ModuleReference prefModule = (module != null ?
+            module.getModuleReference() :
+            null
+          );
+          if (prefModule != null) {
+            moduleDependencies.add(prefModule);
+          }
+        }
+        if (!(moduleDependencies.isEmpty())) {
+          for (ModuleReference ref : moduleDependencies) {
+            Dependency dep = new Dependency();
+            dep.setModuleRef(ref);
+            dep.setReexport(false);
+            moduleDescriptor.getDependencies().add(dep);
+          }
+          targetModule.setModuleDescriptor(moduleDescriptor, true);
+        }
+        targetModule.save();
+      }
+    }, p);
   }
 
   public static boolean doesClipboardContainNode() {

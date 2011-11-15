@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.ide.resolve.Resolver;
 import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
@@ -63,8 +64,9 @@ public class PasteNode_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("pack", event.getData(MPSDataKeys.VIRTUAL_PACKAGE));
@@ -92,7 +94,7 @@ public class PasteNode_Action extends GeneratedAction {
       if (pasteNodes == null || pasteNodes.size() == 0) {
         return;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
           if (((SNode) MapSequence.fromMap(_params).get("node")) == null) {
             NodePaster paster = new NodePaster(pasteNodes);
@@ -118,7 +120,7 @@ public class PasteNode_Action extends GeneratedAction {
             }
           });
         }
-      });
+      }, ((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "PasteNode", t);

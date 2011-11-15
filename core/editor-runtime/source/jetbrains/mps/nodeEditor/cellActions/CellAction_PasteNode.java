@@ -87,7 +87,7 @@ public class CellAction_PasteNode extends EditorCellAction {
           if (!successfull) return;
         }
 
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
           public void run() {
             SNode selectedNode = selectedNodePointer.getNode();
             assert !selectedNode.isDisposed();
@@ -131,7 +131,7 @@ public class CellAction_PasteNode extends EditorCellAction {
               }
             }
           }
-        });
+        }, context.getOperationContext().getProject());
 
       }
     });

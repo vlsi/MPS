@@ -329,9 +329,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleDescriptor" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleImportDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.PriorityRuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.RuleTypeDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor" />
@@ -347,7 +344,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.ImportProperties" />
     <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
     <classNode dependClassName="org.jdesktop.beansbinding.BeanProperty" />
     <classNode dependClassName="org.jdesktop.beansbinding.Bindings" />
