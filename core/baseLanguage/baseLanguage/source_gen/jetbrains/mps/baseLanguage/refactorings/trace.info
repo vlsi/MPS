@@ -361,70 +361,59 @@
   <root nodeId="5161277940733430086">
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="14" startPosition="52" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="18" startPosition="41" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="21" startPosition="34" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="20" startPosition="34" endLine="21" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="22" startPosition="64" endLine="23" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="25" startPosition="39" endLine="26" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="24" startPosition="39" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="27" startPosition="51" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="28" startPosition="32" endLine="29" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="29" startPosition="5" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5161277940733430299" fileName="ChangeMethodSignature_Target.java" startLine="29" startPosition="5" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="29" startPosition="32" endLine="30" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="33" startPosition="52" endLine="34" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5161277940733430320" fileName="ChangeMethodSignature.java" startLine="37" startPosition="68" endLine="38" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5161277940733430355" fileName="ChangeMethodSignature.java" startLine="38" startPosition="160" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5161277940733446020" fileName="ChangeMethodSignature.java" startLine="39" startPosition="24" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5161277940733430362" fileName="ChangeMethodSignature.java" startLine="40" startPosition="18" endLine="41" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5161277940733431339" fileName="ChangeMethodSignature.java" startLine="42" startPosition="136" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5161277940733431344" fileName="ChangeMethodSignature.java" startLine="44" startPosition="12" endLine="45" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5161277940733431566" fileName="ChangeMethodSignature.java" startLine="50" startPosition="166" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5161277940733431433" fileName="ChangeMethodSignature.java" startLine="55" startPosition="86" endLine="56" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5161277940733431486" fileName="ChangeMethodSignature.java" startLine="57" startPosition="166" endLine="58" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5161277940733431522" fileName="ChangeMethodSignature.java" startLine="58" startPosition="210" endLine="59" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5161277940733431536" fileName="ChangeMethodSignature.java" startLine="60" startPosition="95" endLine="61" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5161277940733431551" fileName="ChangeMethodSignature.java" startLine="62" startPosition="7" endLine="63" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5161277940733431452" fileName="ChangeMethodSignature.java" startLine="63" startPosition="28" endLine="64" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5161277940733431443" fileName="ChangeMethodSignature.java" startLine="65" startPosition="5" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="69" startPosition="46" endLine="70" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="32" startPosition="52" endLine="33" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5957075241641501854" fileName="ChangeMethodSignature.java" startLine="37" startPosition="166" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5161277940733431433" fileName="ChangeMethodSignature.java" startLine="42" startPosition="86" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5161277940733431486" fileName="ChangeMethodSignature.java" startLine="44" startPosition="166" endLine="45" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5161277940733431522" fileName="ChangeMethodSignature.java" startLine="45" startPosition="210" endLine="46" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5161277940733431536" fileName="ChangeMethodSignature.java" startLine="47" startPosition="95" endLine="48" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5957075241641501862" fileName="ChangeMethodSignature.java" startLine="49" startPosition="7" endLine="50" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5161277940733431452" fileName="ChangeMethodSignature.java" startLine="50" startPosition="28" endLine="51" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5161277940733431443" fileName="ChangeMethodSignature.java" startLine="52" startPosition="5" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="56" startPosition="46" endLine="57" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="10" startPosition="73" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeMethodSignature_Target#()V" />
-    <nodeInfo nodeId="5161277940733431342" fileName="ChangeMethodSignature.java" startLine="44" startPosition="10" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="20" startPosition="60" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeMethodSignature#()V" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="19" startPosition="60" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeMethodSignature#()V" />
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="26" startPosition="52" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5161277940733431560" fileName="ChangeMethodSignature.java" startLine="49" startPosition="69" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5161277940733431517" fileName="ChangeMethodSignature.java" startLine="59" startPosition="50" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5161277940733431560" fileName="ChangeMethodSignature.java" startLine="36" startPosition="69" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5161277940733431517" fileName="ChangeMethodSignature.java" startLine="46" startPosition="50" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allowMultipleTargets#()Z" />
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyStroke_static#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5161277940733431325" fileName="ChangeMethodSignature.java" startLine="41" startPosition="83" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyStroke_static#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
     <nodeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5161277940733431447" fileName="ChangeMethodSignature.java" startLine="56" startPosition="58" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="36" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
-    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="54" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="5161277940733431447" fileName="ChangeMethodSignature.java" startLine="43" startPosition="58" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="41" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="11" startPosition="41" endLine="11" endPosition="41" />
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="14" startPosition="52" endLine="15" endPosition="46" />
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="18" startPosition="41" endLine="19" endPosition="17" />
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="21" startPosition="34" endLine="22" endPosition="49" />
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="20" startPosition="34" endLine="21" endPosition="49" />
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="22" startPosition="64" endLine="23" endPosition="120" />
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="25" startPosition="39" endLine="26" endPosition="37" />
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="24" startPosition="39" endLine="25" endPosition="37" />
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="27" startPosition="51" endLine="28" endPosition="19" />
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="28" startPosition="32" endLine="29" endPosition="33" />
     <scopeInfo nodeId="5161277940733430298" fileName="ChangeMethodSignature_Target.java" startLine="29" startPosition="5" endLine="30" endPosition="75" />
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="29" startPosition="32" endLine="30" endPosition="33" />
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="33" startPosition="52" endLine="34" endPosition="46" />
-    <scopeInfo nodeId="5161277940733431326" fileName="ChangeMethodSignature.java" startLine="42" startPosition="136" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="5161277940733431343" fileName="ChangeMethodSignature.java" startLine="44" startPosition="12" endLine="45" endPosition="18" />
-    <scopeInfo nodeId="5161277940733431563" fileName="ChangeMethodSignature.java" startLine="50" startPosition="166" endLine="51" endPosition="26" />
-    <scopeInfo nodeId="5161277940733431520" fileName="ChangeMethodSignature.java" startLine="60" startPosition="95" endLine="61" endPosition="69" />
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="69" startPosition="46" endLine="70" endPosition="21" />
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="32" startPosition="52" endLine="33" endPosition="46" />
+    <scopeInfo nodeId="5161277940733431563" fileName="ChangeMethodSignature.java" startLine="37" startPosition="166" endLine="38" endPosition="26" />
+    <scopeInfo nodeId="5161277940733431520" fileName="ChangeMethodSignature.java" startLine="47" startPosition="95" endLine="48" endPosition="69" />
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="56" startPosition="46" endLine="57" endPosition="14" />
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="10" startPosition="73" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="20" startPosition="60" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="5161277940733430089" fileName="ChangeMethodSignature.java" startLine="49" startPosition="69" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="5161277940733431560" fileName="ChangeMethodSignature.java" startLine="49" startPosition="69" endLine="52" endPosition="5">
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="19" startPosition="60" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="5161277940733430089" fileName="ChangeMethodSignature.java" startLine="36" startPosition="69" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="5161277940733431560" fileName="ChangeMethodSignature.java" startLine="36" startPosition="69" endLine="39" endPosition="5">
       <varInfo nodeId="5161277940733431560" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733431517" fileName="ChangeMethodSignature.java" startLine="59" startPosition="50" endLine="62" endPosition="7">
+    <scopeInfo nodeId="5161277940733431517" fileName="ChangeMethodSignature.java" startLine="46" startPosition="50" endLine="49" endPosition="7">
       <varInfo nodeId="5161277940733431517" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
@@ -432,37 +421,31 @@
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="5161277940733430261" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="26" startPosition="52" endLine="30" endPosition="75" />
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5161277940733430086" varName="refactoringContext" />
     </scopeInfo>
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="5161277940733430261" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733431450" fileName="ChangeMethodSignature.java" startLine="57" startPosition="166" endLine="64" endPosition="36">
+    <scopeInfo nodeId="5161277940733431450" fileName="ChangeMethodSignature.java" startLine="44" startPosition="166" endLine="51" endPosition="36">
       <varInfo nodeId="5161277940733431487" varName="curResults" />
       <varInfo nodeId="5161277940733431523" varName="usages" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733430310" fileName="ChangeMethodSignature.java" startLine="37" startPosition="68" endLine="46" endPosition="5">
-      <varInfo nodeId="5161277940733430321" varName="dialog" />
-    </scopeInfo>
-    <scopeInfo nodeId="5161277940733431447" fileName="ChangeMethodSignature.java" startLine="56" startPosition="58" endLine="65" endPosition="5">
+    <scopeInfo nodeId="5161277940733431447" fileName="ChangeMethodSignature.java" startLine="43" startPosition="58" endLine="52" endPosition="5">
       <varInfo nodeId="5161277940733431447" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733431348" fileName="ChangeMethodSignature.java" startLine="55" startPosition="86" endLine="66" endPosition="22">
+    <scopeInfo nodeId="5161277940733431348" fileName="ChangeMethodSignature.java" startLine="42" startPosition="86" endLine="53" endPosition="22">
       <varInfo nodeId="5161277940733431434" varName="allResults" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="36" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="41" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="5161277940733430086" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="54" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="5161277940733430086" varName="refactoringContext" />
-    </scopeInfo>
-    <unitInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature" />
+    <unitInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature" />
     <unitInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature_Target" />
   </root>
   <root nodeId="7874812549549771289">

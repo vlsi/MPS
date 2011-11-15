@@ -97,6 +97,7 @@ public class ExtractMethod_Action extends GeneratedAction {
       });
       ExtractMethodDialog dialog = new ExtractMethodDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
       dialog.showDialog();
+
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
     }
