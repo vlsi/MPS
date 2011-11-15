@@ -79,10 +79,6 @@
       <skipForDefaultProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.OldEditorChangesHighlighter</implementation-class>
-      <skipForDefaultProject/>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.OldRootNodeFileStatusManager</implementation-class>
       <skipForDefaultProject/>
     </component>
