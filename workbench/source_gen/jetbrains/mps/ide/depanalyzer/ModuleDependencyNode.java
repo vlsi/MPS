@@ -22,9 +22,11 @@ import jetbrains.mps.ide.ui.TextMPSTreeNode;
 public class ModuleDependencyNode extends MPSTreeNode {
   private List<IModule> myModules;
   private boolean myInitialized;
+  private boolean myUsedLanguage;
 
-  public ModuleDependencyNode(IModule module, boolean isRuntime, IOperationContext context) {
+  public ModuleDependencyNode(IModule module, boolean isUsedLanguage, boolean isRuntime, IOperationContext context) {
     this(ListSequence.fromListAndArray(new ArrayList<IModule>(), module), context);
+    myUsedLanguage = isUsedLanguage;
     if (isRuntime) {
       setNodeIdentifier(getNodeIdentifier() + " (runtime)");
     }
@@ -51,9 +53,13 @@ public class ModuleDependencyNode extends MPSTreeNode {
     return myModules;
   }
 
+  public boolean isUsedLanguage() {
+    return myUsedLanguage;
+  }
+
   public ModuleDependencyNode getFromNode() {
     TreeNode n = getParent();
-    if (n != null && !(n instanceof ModuleDependencyNode)) {
+    if (n != null && isUsedLanguage()) {
       n = n.getParent();
     }
     if (n != null && n instanceof ModuleDependencyNode) {
@@ -85,7 +91,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
         return it.getModuleFqName();
       }
     }, true)) {
-      add(new ModuleDependencyNode(m, !(SetSequence.fromSet(reqModules).contains(m)), getOperationContext()));
+      add(new ModuleDependencyNode(m, false, !(SetSequence.fromSet(reqModules).contains(m)), getOperationContext()));
     }
 
     if (tree.isShowUsedLanguage()) {
@@ -95,7 +101,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
           return it.getModuleFqName();
         }
       }, true)) {
-        usedlanguages.add(new ModuleDependencyNode(l, false, getOperationContext()));
+        usedlanguages.add(new ModuleDependencyNode(l, true, false, getOperationContext()));
       }
       add(usedlanguages);
     }

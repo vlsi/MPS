@@ -27,7 +27,7 @@ import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -80,25 +80,32 @@ public class ModuleDependenciesView extends JPanel {
 
   public void resetDependencies() {
     myRightTree.resetDependencies();
+
     Map<List<IModule>, List<IModule>> dependencies = MapSequence.fromMap(new HashMap<List<IModule>, List<IModule>>());
+    Map<List<IModule>, List<IModule>> usedlanguages = MapSequence.fromMap(new HashMap<List<IModule>, List<IModule>>());
+
     TreePath[] paths = myLeftTree.getSelectionPaths();
     if (paths != null) {
       for (TreePath path : paths) {
         MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
         if (node instanceof ModuleDependencyNode) {
           ModuleDependencyNode n = (ModuleDependencyNode) node;
-          List<IModule> from = check_jxc64t_a0b0b0a0d0b(n.getFromNode());
+          List<IModule> from = check_jxc64t_a0b0b0a0g0b(n.getFromNode());
           if (from != null) {
-            if (!(MapSequence.fromMap(dependencies).containsKey(from))) {
-              MapSequence.fromMap(dependencies).put(from, ListSequence.fromList(new ArrayList<IModule>()));
+            Map<List<IModule>, List<IModule>> collection = (n.isUsedLanguage() ?
+              usedlanguages :
+              dependencies
+            );
+            if (!(MapSequence.fromMap(collection).containsKey(from))) {
+              MapSequence.fromMap(collection).put(from, ListSequence.fromList(new ArrayList<IModule>()));
             }
-            ListSequence.fromList(MapSequence.fromMap(dependencies).get(from)).addSequence(ListSequence.fromList(n.getModules()));
+            ListSequence.fromList(MapSequence.fromMap(collection).get(from)).addSequence(ListSequence.fromList(n.getModules()));
           }
         }
       }
     }
-    for (IMapping<List<IModule>, List<IModule>> dep : MapSequence.fromMap(dependencies)) {
-      myRightTree.addDependency(dep.key(), dep.value(), null);
+    for (List<IModule> key : SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(usedlanguages).keySet()))) {
+      myRightTree.addDependency(key, MapSequence.fromMap(dependencies).get(key), MapSequence.fromMap(usedlanguages).get(key));
     }
     myRightTree.rebuildLater();
   }
@@ -122,7 +129,7 @@ public class ModuleDependenciesView extends JPanel {
     myRightTree.resetDependencies();
   }
 
-  private static List<IModule> check_jxc64t_a0b0b0a0d0b(ModuleDependencyNode checkedDotOperand) {
+  private static List<IModule> check_jxc64t_a0b0b0a0g0b(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModules();
     }

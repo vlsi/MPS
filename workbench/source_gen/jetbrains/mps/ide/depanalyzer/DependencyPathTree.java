@@ -8,7 +8,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -18,6 +17,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
@@ -32,7 +32,7 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
-  private List<Tuples._3<Set<IModule>, Set<IModule>, Set<Language>>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._3<Set<IModule>, Set<IModule>, Set<Language>>>());
+  private List<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>>());
   private boolean myShowRuntime;
 
   public DependencyPathTree() {
@@ -50,11 +50,11 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     ListSequence.fromList(myAllDependencies).clear();
   }
 
-  public void addDependency(Iterable<IModule> from, Iterable<IModule> to, Iterable<Language> usedLanguage) {
-    ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<IModule>,Set<IModule>,Set<Language>>from(SetSequence.fromSetWithValues(new HashSet<IModule>(), from), SetSequence.fromSetWithValues(new HashSet<IModule>(), to), SetSequence.fromSetWithValues(new HashSet<Language>(), usedLanguage)));
+  public void addDependency(Iterable<IModule> from, Iterable<IModule> to, Iterable<IModule> usedLanguage) {
+    ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<IModule>,Set<IModule>,Set<IModule>>from(SetSequence.fromSetWithValues(new HashSet<IModule>(), from), SetSequence.fromSetWithValues(new HashSet<IModule>(), to), SetSequence.fromSetWithValues(new HashSet<IModule>(), usedLanguage)));
   }
 
-  private void addChildDep(MPSTreeNode parent, IModule m, DependencyPathTree.DepType type, String role, Set<IModule> dep, Set<Language> ulang, Set<DependencyPathTree.Dep> visited) {
+  private void addChildDep(MPSTreeNode parent, IModule m, DependencyPathTree.DepType type, String role, Set<IModule> dep, Set<IModule> ulang, Set<DependencyPathTree.Dep> visited) {
     MPSTreeNode child = buildDependency(m, type, role, dep, ulang, visited);
     if (child != null) {
       parent.add(child);
@@ -62,8 +62,11 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   }
 
   @Nullable
-  private MPSTreeNode buildDependency(IModule from, DependencyPathTree.DepType type, String role, Set<IModule> dependency, Set<Language> usedlangauge, Set<DependencyPathTree.Dep> visited) {
-    if (SetSequence.fromSet(dependency).contains(from)) {
+  private MPSTreeNode buildDependency(IModule from, DependencyPathTree.DepType type, String role, Set<IModule> dependency, Set<IModule> usedlangauge, Set<DependencyPathTree.Dep> visited) {
+    if ((type == DependencyPathTree.DepType.D || type == DependencyPathTree.DepType.R) && SetSequence.fromSet(dependency).contains(from)) {
+      return new DependencyTreeLeafNode(from, role, null);
+    }
+    if (type == DependencyPathTree.DepType.UL && SetSequence.fromSet(usedlangauge).contains(from)) {
       return new DependencyTreeLeafNode(from, role, null);
     }
     DependencyPathTree.Dep dep = new DependencyPathTree.Dep(from, type);
@@ -157,7 +160,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       "no dependencies selected" :
       "Dependencies found"
     ), null);
-    for (Tuples._3<Set<IModule>, Set<IModule>, Set<Language>> dep : ListSequence.fromList(myAllDependencies)) {
+    for (Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>> dep : ListSequence.fromList(myAllDependencies)) {
       for (IModule m : SetSequence.fromSet(dep._0())) {
         addChildDep(result, m, DependencyPathTree.DepType.M, "", dep._1(), dep._2(), SetSequence.fromSet(new HashSet<DependencyPathTree.Dep>()));
       }
