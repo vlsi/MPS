@@ -36,7 +36,6 @@ import java.util.HashMap;
       file = "$APP_CONFIG$/mpsDialogDimensionSettings.xml"
     )}
 )
-@Deprecated
 public class DialogDimensionsSettings implements PersistentStateComponent<MyState> {
   public static DialogDimensionsSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(DialogDimensionsSettings.class);

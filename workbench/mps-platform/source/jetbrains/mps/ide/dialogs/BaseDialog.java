@@ -17,7 +17,6 @@ package jetbrains.mps.ide.dialogs;
 
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
@@ -152,7 +151,7 @@ public abstract class BaseDialog extends JDialog {
   }
 
   public void showDialog() {
-    if (!ThreadUtils.isEventDispatchThread()) {
+    if (!ModelAccess.instance().isInEDT()) {
       LOG.error("Dialogs should be shown in EDT ", new Throwable());
     }
 
@@ -334,7 +333,7 @@ public abstract class BaseDialog extends JDialog {
     }
 
     public String toString() {
-      return "Containing class: "+BaseDialog.this.getClass().getName();
+      return "Containing class: " + BaseDialog.this.getClass().getName();
     }
   }
 }
