@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
+import jetbrains.mps.workbench.make.TextPreviewFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -48,6 +49,8 @@ public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
 
   @Nullable
   public Icon getIcon(final VirtualFile file, int flags, final Project project) {
+    if (file instanceof TextPreviewFile) return jetbrains.mps.workbench.make.Icons.GENERATED;
+
     if (file instanceof MPSNodeVirtualFile) {
       final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
       return ModelAccess.instance().runReadAction(new Computable<Icon>() {
