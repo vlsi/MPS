@@ -28,7 +28,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
