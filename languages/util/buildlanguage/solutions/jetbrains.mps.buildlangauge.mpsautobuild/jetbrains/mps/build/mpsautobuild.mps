@@ -2086,10 +2086,6 @@
         <property name="id" nameId="tps4.1222447189012" value="134ef213-c518-42b0-b12c-c109aa13d320" />
         <property name="name" nameId="tpck.1169194664001" value="collections_trove.runtime" />
       </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="189664211928741049">
-        <property name="id" nameId="tps4.1222447189012" value="86a19c07-32b2-45ce-bd31-bf9ee1df0921" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.idea.plugin" />
-      </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="1527228114010785721">
         <property name="name" nameId="tps4.1223641503366" value="util" />
       </node>
