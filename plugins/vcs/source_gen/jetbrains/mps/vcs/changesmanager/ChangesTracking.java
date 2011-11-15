@@ -23,21 +23,21 @@ import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
 import jetbrains.mps.smodel.SModelAdapter;
 
-public class ChangesTracker {
-  protected static Log log = LogFactory.getLog(ChangesTracker.class);
+public class ChangesTracking {
+  protected static Log log = LogFactory.getLog(ChangesTracking.class);
 
   private Project myProject;
   private CurrentDifference myDifference;
   private SimpleCommandQueue myQueue;
   private EditableSModelDescriptor myModelDescriptor;
-  private ChangesTracker.MyModelListener myModelListener = new ChangesTracker.MyModelListener();
+  private ChangesTracking.MyModelListener myModelListener = new ChangesTracking.MyModelListener();
   private boolean myDisposed = false;
 
-  public ChangesTracker(@NotNull Project project, @NotNull CurrentDifference difference) {
+  public ChangesTracking(@NotNull Project project, @NotNull CurrentDifference difference) {
     myDifference = difference;
     myProject = project;
     myModelDescriptor = myDifference.getModelDescriptor();
-    myQueue = ChangesManager.getInstance(project).getCommandQueue();
+    myQueue = CurrentDifferenceRegistry.getInstance(project).getCommandQueue();
     synchronized (this) {
       myModelDescriptor.addModelListener(myModelListener);
     }

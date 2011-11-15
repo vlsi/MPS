@@ -35,15 +35,15 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 
-public class ChangesManager extends AbstractProjectComponent {
-  private final SModelListener myGlobalModelListener = new ChangesManager.MyGlobalSModelListener();
-  private final ChangeListListener myChangeListListener = new ChangesManager.MyChangeListListener();
+public class CurrentDifferenceRegistry extends AbstractProjectComponent {
+  private final SModelListener myGlobalModelListener = new CurrentDifferenceRegistry.MyGlobalSModelListener();
+  private final ChangeListListener myChangeListListener = new CurrentDifferenceRegistry.MyChangeListListener();
   private final Map<SModelReference, CurrentDifference> myCurrentDifferences = MapSequence.fromMap(new HashMap<SModelReference, CurrentDifference>());
-  private final ReloadListener myReloadListener = new ChangesManager.MyReloadListener();
-  private final SModelRepositoryListener myModelRepositoryListener = new ChangesManager.MySModelRepositoryListener();
+  private final ReloadListener myReloadListener = new CurrentDifferenceRegistry.MyReloadListener();
+  private final SModelRepositoryListener myModelRepositoryListener = new CurrentDifferenceRegistry.MySModelRepositoryListener();
   private final SimpleCommandQueue myCommandQueue = new SimpleCommandQueue("ChangesManager command queue");
 
-  public ChangesManager(@NotNull Project project) {
+  public CurrentDifferenceRegistry(@NotNull Project project) {
     super(project);
   }
 
@@ -131,8 +131,8 @@ public class ChangesManager extends AbstractProjectComponent {
     return myCommandQueue;
   }
 
-  public static ChangesManager getInstance(Project project) {
-    return project.getComponent(ChangesManager.class);
+  public static CurrentDifferenceRegistry getInstance(Project project) {
+    return project.getComponent(CurrentDifferenceRegistry.class);
   }
 
   private class MyChangeListListener extends ChangeListAdapter {

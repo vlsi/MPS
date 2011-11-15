@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.changesmanager.editor.EditorChangesHighlighter" file="EditorChangesHighlighter.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.editor.ChangesEditorHighlighter" file="ChangesEditorHighlighter.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -23,8 +23,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
@@ -32,7 +32,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.editor.EditorChangesHighlighterManager" file="EditorChangesHighlighterManager.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.editor.ChangesEditorHighlighterFactory" file="ChangesEditorHighlighterFactory.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
     <classNode dependClassName="java.lang.Override" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.InspectorTool" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.NodeEditorComponent" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.EditorChangesHighlighter" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesEditorHighlighter" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.workbench.highlighter.EditorComponentCreateListener" />

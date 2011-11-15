@@ -22,19 +22,19 @@ public class CurrentDifference {
 
   private SimpleCommandQueue myCommandQueue;
   private EditableSModelDescriptor myModelDescriptor;
-  private ChangesTracker myChangesTracker;
+  private ChangesTracking myTracking;
   private ChangeSetImpl myChangeSet;
   private List<CurrentDifferenceListener> myListeners = ListSequence.fromList(new ArrayList<CurrentDifferenceListener>());
   private boolean myEnabled = false;
 
   public CurrentDifference(@NotNull Project project, @NotNull EditableSModelDescriptor modelDescriptor) {
-    myCommandQueue = ChangesManager.getInstance(project).getCommandQueue();
+    myCommandQueue = CurrentDifferenceRegistry.getInstance(project).getCommandQueue();
     myModelDescriptor = modelDescriptor;
-    myChangesTracker = new ChangesTracker(project, this);
+    myTracking = new ChangesTracking(project, this);
   }
 
   public void dispose() {
-    myChangesTracker.dispose();
+    myTracking.dispose();
   }
 
   public void addDifferenceListener(@NotNull CurrentDifferenceListener listener) {
@@ -132,8 +132,8 @@ public class CurrentDifference {
     return myModelDescriptor;
   }
 
-  /*package*/ ChangesTracker getChangesTracker() {
-    return myChangesTracker;
+  /*package*/ ChangesTracking getChangesTracker() {
+    return myTracking;
   }
 
   /*package*/ boolean isEnabled() {
@@ -144,7 +144,7 @@ public class CurrentDifference {
     if (myEnabled != enabled) {
       myEnabled = enabled;
       if (enabled) {
-        myChangesTracker.scheduleFullUpdate();
+        myTracking.scheduleFullUpdate();
       } else {
         myCommandQueue.addTask(new Runnable() {
           public void run() {

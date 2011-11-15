@@ -13,7 +13,7 @@ import java.util.HashMap;
 import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.vcs.changesmanager.ChangesManager;
+import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
@@ -30,18 +30,18 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
 
-public class EditorChangesHighlighter implements EditorMessageOwner {
+public class ChangesEditorHighlighter implements EditorMessageOwner {
   private EditorComponent myEditorComponent;
   private final Map<ModelChange, List<ChangeEditorMessage>> myChangesMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
   private CurrentDifference myCurrentDifference;
-  private EditorChangesHighlighter.MyCurrentDifferenceListener myListener;
+  private ChangesEditorHighlighter.MyCurrentDifferenceListener myListener;
   private Object myDisposedLock = new Object();
   private boolean myDisposed = false;
 
-  public EditorChangesHighlighter(@NotNull final Project project, @NotNull final EditorComponent editorComponent) {
+  public ChangesEditorHighlighter(@NotNull final Project project, @NotNull final EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
 
-    ChangesManager.getInstance(project).getCommandQueue().runTask(new Runnable() {
+    CurrentDifferenceRegistry.getInstance(project).getCommandQueue().runTask(new Runnable() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
@@ -59,8 +59,8 @@ public class EditorChangesHighlighter implements EditorMessageOwner {
                 null
               );
               if (descriptor instanceof EditableSModelDescriptor) {
-                myCurrentDifference = ChangesManager.getInstance(project).getCurrentDifference((EditableSModelDescriptor) descriptor);
-                myListener = new EditorChangesHighlighter.MyCurrentDifferenceListener();
+                myCurrentDifference = CurrentDifferenceRegistry.getInstance(project).getCurrentDifference((EditableSModelDescriptor) descriptor);
+                myListener = new ChangesEditorHighlighter.MyCurrentDifferenceListener();
               }
               if (myListener != null) {
                 myCurrentDifference.setEnabled(true);
@@ -106,7 +106,7 @@ public class EditorChangesHighlighter implements EditorMessageOwner {
         if (model == null || model.isDisposed()) {
           return;
         }
-        messages.value = ChangeEditorMessage.createMessages(model, change, EditorChangesHighlighter.this, null);
+        messages.value = ChangeEditorMessage.createMessages(model, change, ChangesEditorHighlighter.this, null);
       }
     });
     synchronized (myChangesMessages) {
@@ -146,7 +146,7 @@ public class EditorChangesHighlighter implements EditorMessageOwner {
                 }
               });
             }
-            getHighlightManager().clearForOwner(EditorChangesHighlighter.this);
+            getHighlightManager().clearForOwner(ChangesEditorHighlighter.this);
           } finally {
             if (myCurrentDifference != null) {
               myCurrentDifference.removeDifferenceListener(myListener);

@@ -14,18 +14,18 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 
-public class EditorChangesHighlighterManager extends AbstractProjectComponent {
-  private Map<EditorComponent, EditorChangesHighlighter> myEditorsHighlighters = MapSequence.fromMap(new HashMap<EditorComponent, EditorChangesHighlighter>());
+public class ChangesEditorHighlighterFactory extends AbstractProjectComponent {
+  private Map<EditorComponent, ChangesEditorHighlighter> myEditorsHighlighters = MapSequence.fromMap(new HashMap<EditorComponent, ChangesEditorHighlighter>());
   private MessageBusConnection myMessageBusConnection;
 
-  public EditorChangesHighlighterManager(Project project) {
+  public ChangesEditorHighlighterFactory(Project project) {
     super(project);
   }
 
   @Override
   public void projectOpened() {
     myMessageBusConnection = myProject.getMessageBus().connect();
-    myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new EditorChangesHighlighterManager.MyEditorComponentCreateListener());
+    myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new ChangesEditorHighlighterFactory.MyEditorComponentCreateListener());
   }
 
   @Override
@@ -35,7 +35,7 @@ public class EditorChangesHighlighterManager extends AbstractProjectComponent {
 
   private void addHighighlighterIfNeeded(@NotNull EditorComponent editorComponent) {
     if (editorComponent instanceof NodeEditorComponent || editorComponent == myProject.getComponent(InspectorTool.class).getInspector()) {
-      MapSequence.fromMap(myEditorsHighlighters).put(editorComponent, new EditorChangesHighlighter(myProject, editorComponent));
+      MapSequence.fromMap(myEditorsHighlighters).put(editorComponent, new ChangesEditorHighlighter(myProject, editorComponent));
     }
   }
 

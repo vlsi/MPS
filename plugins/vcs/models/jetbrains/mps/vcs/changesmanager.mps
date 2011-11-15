@@ -139,14 +139,14 @@
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161776655522589894">
-      <property name="name" nameId="tpck.1169194664001" value="ChangesManager" />
+      <property name="name" nameId="tpck.1169194664001" value="CurrentDifferenceRegistry" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161776655522572366">
       <property name="name" nameId="tpck.1169194664001" value="CurrentDifference" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161776655522682154">
-      <property name="name" nameId="tpck.1169194664001" value="ChangesTracker" />
+      <property name="name" nameId="tpck.1169194664001" value="ChangesTracking" />
     </node>
   </roots>
   <root id="23553604208246606">
@@ -29578,7 +29578,7 @@
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="3161776655522590016">
       <property name="name" nameId="tpck.1169194664001" value="getInstance" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3161776655522590017">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3161776655522589894" resolveInfo="ChangesManager" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3161776655522589894" resolveInfo="CurrentDifferenceRegistry" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3161776655522590018" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3161776655522590019">
@@ -29590,7 +29590,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3161776655522590023">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1bi5.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="3161776655522590024">
-                <link role="classifier" roleId="tpee.1116615189566" targetNodeId="3161776655522589894" resolveInfo="ChangesManager" />
+                <link role="classifier" roleId="tpee.1116615189566" targetNodeId="3161776655522589894" resolveInfo="CurrentDifferenceRegistry" />
               </node>
             </node>
           </node>
@@ -29612,7 +29612,7 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3161776655522590030">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3161776655522590031">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522590011" resolveInfo="ChangesManager.MyGlobalSModelListener" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522590011" resolveInfo="CurrentDifferenceRegistry.MyGlobalSModelListener" />
         </node>
       </node>
     </node>
@@ -29625,7 +29625,7 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3161776655522590035">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3161776655522590036">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522589980" resolveInfo="ChangesManager.MyChangeListListener" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522589980" resolveInfo="CurrentDifferenceRegistry.MyChangeListListener" />
         </node>
       </node>
     </node>
@@ -29661,7 +29661,7 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3161776655522590049">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3161776655522590050">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522590524" resolveInfo="ChangesManager.MyReloadListener" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522590524" resolveInfo="CurrentDifferenceRegistry.MyReloadListener" />
         </node>
       </node>
     </node>
@@ -29674,7 +29674,7 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3161776655522590054">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3161776655522590055">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522590538" resolveInfo="ChangesManager.MySModelRepositoryListener" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522590538" resolveInfo="CurrentDifferenceRegistry.MySModelRepositoryListener" />
         </node>
       </node>
     </node>
@@ -30436,7 +30436,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3161776655522682303">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3161776655522682305">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3161776655522682304">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682290" resolveInfo="myChangesTracker" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682290" resolveInfo="myTracking" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3161776655522682309">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522682241" resolveInfo="dispose" />
@@ -30967,10 +30967,10 @@
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3161776655522682290">
-      <property name="name" nameId="tpck.1169194664001" value="myChangesTracker" />
+      <property name="name" nameId="tpck.1169194664001" value="myTracking" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3161776655522682291" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3161776655522682293">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3161776655522682154" resolveInfo="ChangesTracker" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3161776655522682154" resolveInfo="ChangesTracking" />
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3161776655522589831">
@@ -31013,7 +31013,7 @@
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3161776655522594001">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3161776655522593999">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522590016" resolveInfo="getInstance" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3161776655522589894" resolveInfo="ChangesManager" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3161776655522589894" resolveInfo="CurrentDifferenceRegistry" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3161776655522594000">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522589878" resolveInfo="project" />
                 </node>
@@ -31041,7 +31041,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3161776655522682297">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3161776655522682300">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3161776655522682301">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522682164" resolveInfo="ChangesTracker" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522682164" resolveInfo="ChangesTracking" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3161776655522682392">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522589878" resolveInfo="project" />
                 </node>
@@ -31049,7 +31049,7 @@
               </node>
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3161776655522682296">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682290" resolveInfo="myChangesTracker" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682290" resolveInfo="myTracking" />
             </node>
           </node>
         </node>
@@ -31089,12 +31089,12 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3161776655522682310">
       <property name="name" nameId="tpck.1169194664001" value="getChangesTracker" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3161776655522682314">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3161776655522682154" resolveInfo="ChangesTracker" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3161776655522682154" resolveInfo="ChangesTracking" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3161776655522682313">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3161776655522682315">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3161776655522682316">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682290" resolveInfo="myChangesTracker" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682290" resolveInfo="myTracking" />
           </node>
         </node>
       </node>
@@ -31135,7 +31135,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3161776655522689391">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3161776655522689393">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3161776655522689392">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682290" resolveInfo="myChangesTracker" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682290" resolveInfo="myTracking" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3161776655522689397">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522682317" resolveInfo="scheduleFullUpdate" />
@@ -31721,11 +31721,11 @@
       <property name="name" nameId="tpck.1169194664001" value="myModelListener" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3161776655522682232" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3161776655522682234">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3161776655522682224" resolveInfo="ChangesTracker.MyModelListener" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3161776655522682224" resolveInfo="ChangesTracking.MyModelListener" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3161776655522682237">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3161776655522682238">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522682226" resolveInfo="ChangesTracker.MyModelListener" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522682226" resolveInfo="ChangesTracking.MyModelListener" />
         </node>
       </node>
     </node>
@@ -31782,7 +31782,7 @@
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3161776655522682383">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3161776655522682384">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3161776655522590016" resolveInfo="getInstance" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3161776655522589894" resolveInfo="ChangesManager" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3161776655522589894" resolveInfo="CurrentDifferenceRegistry" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3161776655522682385">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682364" resolveInfo="project" />
                 </node>
