@@ -41,6 +41,7 @@
       <modulePath path="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="trace" />
       <modulePath path="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
       <modulePath path="${mps_home}/languages/languageDesign/smodel/smodel.mpl" folder="java.languages.usages" />
+      <modulePath path="${mps_home}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.customViewers/customViewers.msd" folder="java.languages.usages" />
       <modulePath path="${mps_home}/languages/languageDesign/textGen/textGen.mpl" folder="trace" />
       <modulePath path="${mps_home}/languages/languageDesign/traceable/traceable.mpl" folder="trace" />
       <modulePath path="${mps_home}/languages/util/ideaPlugin/plugin.mpl" folder="" />

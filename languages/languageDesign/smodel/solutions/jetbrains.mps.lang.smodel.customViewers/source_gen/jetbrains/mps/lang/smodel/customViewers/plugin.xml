@@ -1,0 +1,17 @@
+<!DOCTYPE idea-plugin
+  PUBLIC
+    "Plugin/DTD"
+    "http://plugins.intellij.net/plugin.dtd"
+>
+<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude"><id>jetbrains.mps.lang.smodel.customViewers</id>
+<name>SModel CustomViewers</name>
+<description>SModel CustomViewers</description>
+<version>1.0</version>
+<vendor url="url">JetBrains</vendor>
+<idea-version since-build="ver"></idea-version>
+
+
+<application-components><component><implementation-class>jetbrains.mps.lang.smodel.customViewers.CustomViewers_PluginInitializer</implementation-class>
+</component>
+</application-components>
+</idea-plugin>
