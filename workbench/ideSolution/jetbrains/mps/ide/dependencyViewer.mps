@@ -3099,20 +3099,44 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6135653370488155769">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6135653370488158042">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6135653370488155771">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6135653370488155770">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="940765150354985141">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="940765150354985142">
+            <property name="name" nameId="tpck.1169194664001" value="usagesTree" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="940765150354985143">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1nra.~UsagesTree" resolveInfo="UsagesTree" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="940765150354985144">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="940765150354985145">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ogel.~UsagesView%dgetTreeComponent()%cjetbrains%dmps%dide%dfindusages%dview%dtreeholder%dtreeview%dUsagesTreeComponent" resolveInfo="getTreeComponent" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6135653370488158041">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="940765150354985146">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1nra.~UsagesTreeComponent%dgetTree()%cjetbrains%dmps%dide%dfindusages%dview%dtreeholder%dtreeview%dUsagesTree" resolveInfo="getTree" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6135653370488155769">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6135653370488158042">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="940765150354985147">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="940765150354985142" resolveInfo="usagesTree" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6135653370488158046">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JTree%dsetSelectionRow(int)%cvoid" resolveInfo="setSelectionRow" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6135653370488158047">
                 <property name="value" nameId="tpee.1068580320021" value="0" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="940765150354985149">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="940765150354985151">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="940765150354985150">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="940765150354985142" resolveInfo="usagesTree" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="940765150354985155">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1nra.~UsagesTree%dsetShowPopupMenu(boolean)%cvoid" resolveInfo="setShowPopupMenu" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="940765150354985156">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
               </node>
             </node>
           </node>
@@ -4844,18 +4868,26 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6135653370488158049">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6135653370488158050">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6135653370488158051">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6135653370488158052">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ogel.~UsagesView%dgetTreeComponent()%cjetbrains%dmps%dide%dfindusages%dview%dtreeholder%dtreeview%dUsagesTreeComponent" resolveInfo="getTreeComponent" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6135653370488158053">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1nra.~UsagesTreeComponent%dgetTree()%cjetbrains%dmps%dide%dfindusages%dview%dtreeholder%dtreeview%dUsagesTree" resolveInfo="getTree" />
-              </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="940765150354985131">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8294989614925458774" resolveInfo="usagesTree" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6135653370488158054">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JTree%dsetSelectionRow(int)%cvoid" resolveInfo="setSelectionRow" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6135653370488158055">
                 <property name="value" nameId="tpee.1068580320021" value="0" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="940765150354985133">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="940765150354985135">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="940765150354985134">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8294989614925458774" resolveInfo="usagesTree" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="940765150354985139">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1nra.~UsagesTree%dsetShowPopupMenu(boolean)%cvoid" resolveInfo="setShowPopupMenu" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="940765150354985140">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
               </node>
             </node>
           </node>
