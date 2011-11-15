@@ -39,7 +39,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
   private CurrentDifference myCurrentDifference;
   private ChangeStripsPainter myFoldingAreaPainter;
   private ChangesEditorHighlighter.MyCurrentDifferenceListener myListener;
-  private Object myDisposedLock = new Object();
+  private final Object myDisposedLock = new Object();
   private boolean myDisposed = false;
 
   public ChangesEditorHighlighter(@NotNull final Project project, @NotNull final EditorComponent editorComponent) {
@@ -118,7 +118,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
         if (model == null || model.isDisposed()) {
           return;
         }
-        messages.value = ChangeEditorMessage.createMessages(model, change, ChangesEditorHighlighter.this, null);
+        messages.value = ChangeEditorMessage.createMessages(model, change, ChangesEditorHighlighter.this, null, false);
       }
     });
     if (messages.value == null) {
