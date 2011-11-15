@@ -23,17 +23,21 @@ import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
+import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
 
 public class ChangesEditorHighlighter implements EditorMessageOwner {
   private EditorComponent myEditorComponent;
   private final Map<ModelChange, List<ChangeEditorMessage>> myChangesMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
   private CurrentDifference myCurrentDifference;
+  private ChangeStripsPainter myFoldingAreaPainter;
   private ChangesEditorHighlighter.MyCurrentDifferenceListener myListener;
   private Object myDisposedLock = new Object();
   private boolean myDisposed = false;
@@ -64,6 +68,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
               }
               if (myListener != null) {
                 myCurrentDifference.setEnabled(true);
+
                 ChangeSet changeSet = myCurrentDifference.getChangeSet();
                 if (changeSet != null) {
                   ListSequence.fromList(changeSet.getModelChanges()).visitAll(new IVisitor<ModelChange>() {
@@ -84,6 +89,13 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
                   });
                 }
                 getHighlightManager().repaintAndRebuildEditorMessages();
+                ThreadUtils.runInUIThreadNoWait(new Runnable() {
+                  public void run() {
+                    myFoldingAreaPainter = new ChangeStripsPainter(ChangesEditorHighlighter.this);
+                    myEditorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(myFoldingAreaPainter);
+                    myFoldingAreaPainter.relayout();
+                  }
+                });
                 myCurrentDifference.addDifferenceListener(myListener);
               }
             }
@@ -94,7 +106,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
   }
 
   private List<ChangeEditorMessage> createMessages(final ModelChange change) {
-    final Wrappers._T<List<ChangeEditorMessage>> messages = new Wrappers._T<List<ChangeEditorMessage>>();
+    final Wrappers._T<List<ChangeEditorMessage>> messages = new Wrappers._T<List<ChangeEditorMessage>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModel model;
@@ -109,6 +121,9 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
         messages.value = ChangeEditorMessage.createMessages(model, change, ChangesEditorHighlighter.this, null);
       }
     });
+    if (messages.value == null) {
+      messages.value = ListSequence.fromList(new ArrayList<ChangeEditorMessage>());
+    }
     synchronized (myChangesMessages) {
       if (MapSequence.fromMap(myChangesMessages).containsKey(change)) {
         return ListSequence.fromList(new ArrayList<ChangeEditorMessage>());
@@ -133,6 +148,16 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
     }
   }
 
+  @NotNull
+  /*package*/ List<ChangeEditorMessage> getMessages(ModelChange change) {
+    synchronized (myChangesMessages) {
+      return (MapSequence.fromMap(myChangesMessages).containsKey(change) ?
+        MapSequence.fromMap(myChangesMessages).get(change) :
+        ListSequence.fromList(new ArrayList<ChangeEditorMessage>())
+      );
+    }
+  }
+
   public void dispose() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -147,6 +172,9 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
               });
             }
             getHighlightManager().clearForOwner(ChangesEditorHighlighter.this);
+            if (myFoldingAreaPainter != null) {
+              getLeftEditorHighlighter().removeFoldingAreaPainter(myFoldingAreaPainter);
+            }
           } finally {
             if (myCurrentDifference != null) {
               myCurrentDifference.removeDifferenceListener(myListener);
@@ -158,8 +186,28 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
     });
   }
 
+  @Nullable
+  /*package*/ ChangeSet getChangeSet() {
+    return check_z1nuaw_a0a4(myCurrentDifference);
+  }
+
+  /*package*/ EditorComponent getEditorComponent() {
+    return myEditorComponent;
+  }
+
   /*package*/ NodeHighlightManager getHighlightManager() {
     return myEditorComponent.getHighlightManager();
+  }
+
+  /*package*/ LeftEditorHighlighter getLeftEditorHighlighter() {
+    return myEditorComponent.getLeftEditorHighlighter();
+  }
+
+  private static ChangeSet check_z1nuaw_a0a4(CurrentDifference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getChangeSet();
+    }
+    return null;
   }
 
   public class MyCurrentDifferenceListener extends CurrentDifferenceAdapter {
@@ -191,6 +239,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
         for (ChangeEditorMessage addedMessage : ListSequence.fromList(myAddedMessages)) {
           nodeHighlightManager.mark(addedMessage);
         }
+        myFoldingAreaPainter.relayout();
         nodeHighlightManager.repaintAndRebuildEditorMessages();
         ListSequence.fromList(myAddedMessages).clear();
         ListSequence.fromList(myRemovedMessages).clear();
