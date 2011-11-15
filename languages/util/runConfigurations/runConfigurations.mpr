@@ -46,6 +46,7 @@
       <modulePath path="${project}/languages/settings/settings.mpl" folder="" />
       <modulePath path="${project}/languages/util/util.mpl" folder="" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" folder="runtime" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.impl.tests.sandbox/sandbox.msd" folder="runtime" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.impl.tests/tests.msd" folder="runtime" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.impl/impl.msd" folder="runtime" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.lib.startup/startup.msd" folder="library" />
