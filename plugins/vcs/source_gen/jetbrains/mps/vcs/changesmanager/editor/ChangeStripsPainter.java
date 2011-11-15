@@ -5,15 +5,28 @@ package jetbrains.mps.vcs.changesmanager.editor;
 import jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter;
 import java.awt.Color;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder;
+import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import org.jetbrains.annotations.NotNull;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
+import org.jetbrains.annotations.Nullable;
+import java.awt.Point;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.awt.event.MouseEvent;
+import java.awt.Cursor;
 
 public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private static final int AREA_WIDTH = 6;
@@ -22,6 +35,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
 
   private ChangesEditorHighlighter myEditorHighlighter;
   private ChangeGroupBuilder myChangeGroupBuilder;
+  private ChangeGroup myGroupUnderMouse;
 
   public ChangeStripsPainter(@NotNull ChangesEditorHighlighter editorHighlighter) {
     super(editorHighlighter.getLeftEditorHighlighter());
@@ -84,7 +98,78 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public String getToolTipText() {
-    // TODO 
-    return null;
+    if (myGroupUnderMouse == null) {
+      return null;
+    } else {
+      // TODO avoid read in EDT 
+      return ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return IterableUtils.join(ListSequence.fromList(myGroupUnderMouse.getChanges()).select(new ISelector<ModelChange, String>() {
+            public String select(ModelChange ch) {
+              return ch.getDescription();
+            }
+          }), "\n\n");
+        }
+      });
+    }
+  }
+
+  @Nullable
+  private ChangeGroup findMessageGroupUnder(@NotNull final Point p) {
+    double localX = p.getX() - getLeftHighlighter().getFoldingLineX();
+    if (localX >= -AREA_WIDTH && localX < 0) {
+      return ListSequence.fromList(myChangeGroupBuilder.getChangeGroups()).findFirst(new IWhereFilter<ChangeGroup>() {
+        public boolean accept(ChangeGroup cg) {
+          return (int) cg.getBounds(true).start() <= p.getY() && (int) cg.getBounds(true).end() >= p.getY();
+        }
+      });
+    } else {
+      return null;
+    }
+  }
+
+  private void setGroupHighlighted(@Nullable ChangeGroup group, final boolean highlighted) {
+    if (group != null) {
+      ListSequence.fromList(group.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
+        public Iterable<ChangeEditorMessage> translate(ModelChange ch) {
+          return myEditorHighlighter.getMessages(ch);
+        }
+      }).visitAll(new IVisitor<ChangeEditorMessage>() {
+        public void visit(ChangeEditorMessage m) {
+          m.setHighlighted(highlighted);
+        }
+      });
+    }
+  }
+
+  private void setGroupUnderMouse(@Nullable ChangeGroup group) {
+    if (myGroupUnderMouse == group) {
+      return;
+    }
+
+    setGroupHighlighted(myGroupUnderMouse, false);
+    myGroupUnderMouse = group;
+    setGroupHighlighted(myGroupUnderMouse, true);
+    myEditorHighlighter.getHighlightManager().repaintAndRebuildEditorMessages();
+  }
+
+  @Override
+  public void mouseMoved(MouseEvent event) {
+    ChangeGroup changeGroup = findMessageGroupUnder(event.getPoint());
+    if (changeGroup != null) {
+      event.consume();
+    }
+    setGroupUnderMouse(changeGroup);
+    if (changeGroup != null) {
+      event.getComponent().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    } else {
+      event.getComponent().setCursor(null);
+    }
+  }
+
+  @Override
+  public void mouseExited(MouseEvent event) {
+    event.getComponent().setCursor(null);
+    setGroupUnderMouse(null);
   }
 }
