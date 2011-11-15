@@ -22,7 +22,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <xi:include href="/META-INF/MPSCorePlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
     <xi:include href="/META-INF/MPSPlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
-    <xi:include href="/META-INF/MPSVcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
+    <xi:include href="/META-INF/VcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
 
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
 
@@ -57,6 +57,8 @@
                     serviceImplementation="jetbrains.mps.ide.vcs.ExtendedDefaultVcsRootPolicy"/>
     <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
                     serviceImplementation="com.intellij.psi.search.ProjectScopeBuilder"/>
+    <projectService serviceInterface="com.intellij.openapi.roots.FileIndexFacade"
+                    serviceImplementation="com.intellij.openapi.vcs.impl.DefaultFileIndexFacade"/>
 
     <applicationService serviceInterface="com.intellij.openapi.wm.impl.FrameTitleBuilder"
                         serviceImplementation="com.intellij.openapi.wm.impl.PlatformFrameTitleBuilder"/>
