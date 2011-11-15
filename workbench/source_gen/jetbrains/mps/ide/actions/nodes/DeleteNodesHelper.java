@@ -105,7 +105,8 @@ public class DeleteNodesHelper {
     refactoringContext.setSelectedProject(context.getProject());
     new Thread() {
       public void run() {
-        new RefactoringFacade().execute(refactoring, refactoringContext);
+        refactoringContext.setRefactoring(refactoring);
+        new RefactoringFacade().execute(refactoringContext);
       }
     }.start();
   }

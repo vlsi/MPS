@@ -29,6 +29,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new ChangeMethodSignature_Action());
     addAction(new CommentLine_Action());
     addAction(new CommentStatements_Action());
     addAction(new ExtractMethod_Action());
@@ -40,6 +41,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new IntroduceConstant_Action());
     addAction(new IntroduceField_Action());
     addAction(new IntroduceVariable_Action());
+    addAction(new MakeFieldStatic_Action());
     addAction(new OverrideMethod_Action());
     addAction(new RenameVariable_Action());
     addAction(new ShowMembers_Action());

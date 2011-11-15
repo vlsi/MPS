@@ -413,12 +413,11 @@ public class ExtractMethodDialog extends BaseDialog {
             public void run() {
               if (ExtractMethodDialog.this.myStaticTarget != null) {
                 if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-                  myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "name"));
-                  myChooseContainerButton.setIcon(IconContainer.ICON_a0a1a0a0a0b0a0a0a0e0a1);
+                  myChooseContainerButton.setIcon(IconContainer.ICON_a0a0a0a0a0b0a0a0a0e0a1);
                 } else if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
-                  myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), "name"));
-                  myChooseContainerButton.setIcon(IconContainer.ICON_a0a1a0a0a0a1a0a0a0a4a0b);
-                } else if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+                  myChooseContainerButton.setIcon(IconContainer.ICON_a0a0a0a0a0a1a0a0a0a4a0b);
+                }
+                if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.core.structure.INamedConcept")) {
                   myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.core.structure.INamedConcept")), "name"));
                 }
 

@@ -2031,6 +2031,19 @@
                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4832363360995122450" />
                     <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4832363360995122451" />
                     <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4832363360995122462">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4846444759635206063">
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4846444759635206065">
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4846444759635206064">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4832363360995122405" resolveInfo="refactoringContext" />
+                          </node>
+                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4846444759635206069">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="176a.~RefactoringContext%dsetRefactoring(jetbrains%dmps%drefactoring%dframework%dIRefactoring)%cvoid" resolveInfo="setRefactoring" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4846444759635206070">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4832363360995122400" resolveInfo="refactoring" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4832363360995122463">
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4832363360995122464">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4832363360995122465">
@@ -2039,10 +2052,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4832363360995122467">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xxyd.~RefactoringFacade%dexecute(jetbrains%dmps%drefactoring%dframework%dIRefactoring,jetbrains%dmps%drefactoring%dframework%dRefactoringContext)%cvoid" resolveInfo="execute" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4778270058595407296">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4832363360995122400" resolveInfo="refactoring" />
-                            </node>
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xxyd.~RefactoringFacade%dexecute(jetbrains%dmps%drefactoring%dframework%dRefactoringContext)%cvoid" resolveInfo="execute" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4832363360995122469">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4832363360995122405" resolveInfo="refactoringContext" />
                             </node>

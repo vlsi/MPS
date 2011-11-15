@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.RefactoringArgument_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.RequiredAdditionalArgument_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />

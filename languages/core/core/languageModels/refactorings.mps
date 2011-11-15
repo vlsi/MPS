@@ -69,6 +69,7 @@
           </node>
         </node>
       </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3795717784226477776" />
     </node>
     <node role="target" roleId="tp1h.6895093993902310998" type="tp1h.NodeTarget" typeId="tp1h.6895093993902310764" id="1347577327951770668">
       <link role="concept" roleId="tp1h.6895093993902310806" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
@@ -283,6 +284,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3795717784226477781">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
       </node>
     </node>
     <node role="target" roleId="tp1h.6895093993902310998" type="tp1h.NodeTarget" typeId="tp1h.6895093993902310764" id="7012097027058633806">

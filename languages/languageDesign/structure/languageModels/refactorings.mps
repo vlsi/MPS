@@ -99,6 +99,7 @@
           </node>
         </node>
       </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3795717784226477787" />
     </node>
     <node role="target" roleId="tp1h.6895093993902310998" type="tp1h.NodeTarget" typeId="tp1h.6895093993902310764" id="1347577327951781521">
       <link role="concept" roleId="tp1h.6895093993902310806" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
@@ -344,6 +345,7 @@
           </node>
         </node>
       </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3795717784226477788" />
     </node>
     <node role="target" roleId="tp1h.6895093993902310998" type="tp1h.NodeTarget" typeId="tp1h.6895093993902310764" id="1347577327951781653">
       <link role="concept" roleId="tp1h.6895093993902310806" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
@@ -629,6 +631,7 @@
           </node>
         </node>
       </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3795717784226477789" />
     </node>
     <node role="target" roleId="tp1h.6895093993902310998" type="tp1h.NodeTarget" typeId="tp1h.6895093993902310764" id="1347577327951781789">
       <link role="concept" roleId="tp1h.6895093993902310806" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
@@ -949,6 +952,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3795717784226477783">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
       </node>
     </node>
     <node role="target" roleId="tp1h.6895093993902310998" type="tp1h.NodeTarget" typeId="tp1h.6895093993902310764" id="3068114543317961951">
@@ -1959,7 +1965,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3068114543317980423" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3068114543317979377">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3068114543317979378">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3068114543317979333" resolveInfo="result" />
@@ -2032,6 +2037,9 @@
           </node>
         </node>
       </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3795717784226477784">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
     </node>
     <node role="parameter" roleId="tp1h.6895093993902236376" type="tp1h.RefactoringParameter" typeId="tp1h.6895093993902311012" id="2893383476258734862">
       <property name="name" nameId="tpck.1169194664001" value="mergeLinks" />
@@ -2047,6 +2055,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3795717784226477785">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
       </node>
     </node>
     <node role="target" roleId="tp1h.6895093993902310998" type="tp1h.NodeTarget" typeId="tp1h.6895093993902310764" id="3068114543317979891">
@@ -2600,6 +2611,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3795717784226477786">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       </node>
     </node>
     <node role="target" roleId="tp1h.6895093993902310998" type="tp1h.NodeTarget" typeId="tp1h.6895093993902310764" id="3068114543317980452">

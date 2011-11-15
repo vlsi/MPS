@@ -65,7 +65,8 @@ public class GenericRefactoringAction extends BaseAction {
     context.setCurrentScope(e.getData(MPSCommonDataKeys.SCOPE));
     new Thread() {
       public void run() {
-        new RefactoringFacade().execute(myRefactoring, context);
+        context.setRefactoring(myRefactoring);
+        new RefactoringFacade().execute(context);
       }
     }.start();
   }

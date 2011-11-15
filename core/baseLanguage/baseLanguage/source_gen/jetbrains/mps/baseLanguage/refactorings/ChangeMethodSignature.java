@@ -5,10 +5,9 @@ package jetbrains.mps.baseLanguage.refactorings;
 import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -34,18 +33,6 @@ public class ChangeMethodSignature extends BaseRefactoring {
     return new ChangeMethodSignature_Target();
   }
 
-  public boolean init(final RefactoringContext refactoringContext) {
-    ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(refactoringContext.getSelectedNode(), refactoringContext.getCurrentOperationContext());
-    dialog.showDialog();
-    dialog.pack();
-    refactoringContext.setParameter("myRefactorings", dialog.getAllRefactorings());
-    if (ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings"))).isEmpty()) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
   public void refactor(final RefactoringContext refactoringContext) {
     for (ChangeMethodSignatureRefactoring ref : ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings")))) {
       ref.doRefactoring();
@@ -67,6 +54,6 @@ public class ChangeMethodSignature extends BaseRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return "ctrl F6";
+    return "";
   }
 }

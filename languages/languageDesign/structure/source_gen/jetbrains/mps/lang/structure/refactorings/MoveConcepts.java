@@ -165,7 +165,6 @@ public class MoveConcepts extends BaseLoggableRefactoring {
         ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SModel>) list));
       }
     }
-
     return result;
   }
 

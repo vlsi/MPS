@@ -96,7 +96,8 @@ public class GenericRefactoringAction_Action extends GeneratedAction {
       context.setCurrentScope(event.getData(MPSCommonDataKeys.SCOPE));
       new Thread() {
         public void run() {
-          new RefactoringFacade().execute(GenericRefactoringAction_Action.this.refactoring, context);
+          context.setRefactoring(GenericRefactoringAction_Action.this.refactoring);
+          new RefactoringFacade().execute(context);
         }
       }.start();
     } catch (Throwable t) {

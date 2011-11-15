@@ -28,17 +28,43 @@ public class RefactoringParameter_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_u416ht_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u416ht_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_u416ht_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_u416ht_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_u416ht_e0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_u416ht_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "chooser:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_u416ht_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
+  private EditorCell createConstant_u416ht_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "chooser:");
+    editorCell.setCellId("Constant_u416ht_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNode_u416ht_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("type");
+    provider.setNoTargetText("<no type>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_u416ht_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("chooser");
     provider.setNoTargetText("<no chooser>");

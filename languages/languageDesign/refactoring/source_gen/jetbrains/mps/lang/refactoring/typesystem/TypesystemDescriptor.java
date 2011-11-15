@@ -57,6 +57,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_CreateRefactoringContext_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_CustomParameterChooser_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -89,6 +93,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ModelTarget_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_ModelsToGenerateByDefault_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -118,6 +126,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_NodeExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_NodeTarget_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

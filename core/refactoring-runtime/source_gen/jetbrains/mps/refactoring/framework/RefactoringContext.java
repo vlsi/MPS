@@ -20,10 +20,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationData;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.Collection;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -43,6 +44,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.lang.reflect.Constructor;
+import java.util.Arrays;
+import jetbrains.mps.project.ProjectOperationContext;
 
 public class RefactoringContext {
   private static final Logger LOG = Logger.getLogger(RefactoringContext.class);
@@ -103,6 +106,18 @@ public class RefactoringContext {
 
   public void setParameter(String parameterName, Object parameter) {
     myParametersMap.put(parameterName, parameter);
+  }
+
+  public void setParameters(List<Object> names, List<Object> parameters) {
+    Iterator<Object> name_it = ListSequence.fromList(names).iterator();
+    Iterator<Object> param_it = ListSequence.fromList(parameters).iterator();
+    Object name_var;
+    Object param_var;
+    while (name_it.hasNext() && param_it.hasNext()) {
+      name_var = name_it.next();
+      param_var = param_it.next();
+      setParameter((String) name_var, param_var);
+    }
   }
 
   public void clearParameters() {
@@ -562,6 +577,42 @@ public class RefactoringContext {
     return myDoesGenerateModels;
   }
 
+  private void setTarget(Object target) {
+    IRefactoringTarget refTarget = myRefactoring.getRefactoringTarget();
+    if (!(refTarget.allowMultipleTargets())) {
+      switch (myRefactoring.getRefactoringTarget().getTarget()) {
+        case NODE:
+          setSelectedNode((SNode) target);
+          // <node> 
+          // <node> 
+          break;
+        case MODEL:
+          setSelectedModel(((SModel) target).getModelDescriptor());
+          // <node> 
+          break;
+        case MODULE:
+          setSelectedModule((IModule) target);
+          break;
+        default:
+          throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());
+      }
+    } else {
+      switch (myRefactoring.getRefactoringTarget().getTarget()) {
+        case NODE:
+          setSelectedNodes((List) target);
+          break;
+        case MODEL:
+          setSelectedModels((List) target);
+          break;
+        case MODULE:
+          setSelectedModules((List) target);
+          break;
+        default:
+          throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());
+      }
+    }
+  }
+
   private static String getRefactoringClassName(IRefactoring refactoring) {
     if (refactoring instanceof OldRefactoringAdapter) {
       return ((OldRefactoringAdapter) refactoring).getRefactoringClassName();
@@ -602,6 +653,29 @@ public class RefactoringContext {
     if (result == null) {
       LOG.error("refactoring for " + className + " was not loaded");
     }
+    return result;
+  }
+
+  public static RefactoringContext createRefactoringContext(IRefactoring refactoring, List names, List parameters, Object target, Project project) {
+    IRefactoringTarget refTarget = refactoring.getRefactoringTarget();
+    boolean oneEntity = !(refTarget.allowMultipleTargets());
+    List targetList;
+    if (!(oneEntity)) {
+      targetList = ((List) target);
+    } else {
+      targetList = Arrays.asList(target);
+    }
+    boolean disabled = (RefactoringUtil.getApplicability(refactoring, targetList).lessThan(RefactoringUtil.Applicability.APPLICABLE));
+    if (disabled) {
+      return null;
+    }
+
+    RefactoringContext result = new RefactoringContext(refactoring);
+    result.setSelectedProject(project);
+    result.setCurrentOperationContext(new ProjectOperationContext(project));
+
+    result.setParameters(names, parameters);
+    result.setTarget(target);
     return result;
   }
 }
