@@ -645,7 +645,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -840,7 +839,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -990,7 +988,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -1140,7 +1137,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -1290,7 +1286,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -1441,7 +1436,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -1455,6 +1449,7 @@
   <path id="cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc.classpaths">
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
@@ -1602,7 +1597,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -1752,7 +1746,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -1902,7 +1895,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -2051,7 +2043,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -2201,7 +2192,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -2214,6 +2204,7 @@
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths">
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
@@ -2372,7 +2363,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -2529,7 +2519,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -2542,6 +2531,7 @@
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths">
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
@@ -2708,7 +2698,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -2858,7 +2847,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -3012,7 +3000,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -3162,7 +3149,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -3313,7 +3299,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -3462,7 +3447,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -3613,7 +3597,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -3763,7 +3746,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -3912,7 +3894,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -4061,7 +4042,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -4261,7 +4241,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -4419,7 +4398,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -4568,7 +4546,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -4719,7 +4696,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -4869,7 +4845,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -5019,7 +4994,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -5168,7 +5142,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -5318,7 +5291,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -5467,7 +5439,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -5617,7 +5588,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -5766,7 +5736,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -5916,7 +5885,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -6065,7 +6033,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -6265,7 +6232,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -6418,7 +6384,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -6571,7 +6536,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -6721,7 +6685,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -6875,7 +6838,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -7041,7 +7003,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -7199,7 +7160,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -7349,7 +7309,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -7498,7 +7457,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -7649,7 +7607,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -7798,7 +7755,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -7948,7 +7904,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -7961,6 +7916,7 @@
   </path>
   <path id="cycle.jetbrains.mps.ypath.runtime_tjc.classpaths">
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
@@ -8119,7 +8075,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -8269,7 +8224,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
@@ -8420,7 +8374,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/lib/util.jar" />
-    <path path="${base_dir}/plugins/debugger-api/classes" />
     <path path="${base_dir}/plugins/debugger-java/classes" />
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
