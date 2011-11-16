@@ -40,7 +40,11 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
   }
 
   public void doubleClick() {
-    NavigationSupport.getInstance().openNode(getOperationContext(), this.myTestCase.getNode(), true, false);
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        NavigationSupport.getInstance().openNode(getOperationContext(), TestCaseTreeNode.this.myTestCase.getNode(), true, false);
+      }
+    });
   }
 
   public int getToggleClickCount() {

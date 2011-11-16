@@ -95,26 +95,23 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
-    SwingUtilities.invokeAndWait(new Runnable() {
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              try {
-                SNode editedNode = BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode().getNode();
-                Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
-                Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
-                if (BaseEditorTestBody.this.myFinish != null) {
-                  BaseEditorTestBody.this.myFinish.assertEditor(BaseEditorTestBody.this.myEditor, map);
-                }
-              } catch (Throwable t) {
-                throwable.value = t;
-              }
+          try {
+            SNode editedNode = BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode().getNode();
+            Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
+            Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
+            if (BaseEditorTestBody.this.myFinish != null) {
+              BaseEditorTestBody.this.myFinish.assertEditor(BaseEditorTestBody.this.myEditor, map);
             }
-          });
+          } catch (Throwable t) {
+            throwable.value = t;
+          }
         }
       }
-    });
+    }, myEditor.getOperationContext().getProject());
+    ModelAccess.instance().flushEventQueue();
     if (throwable.value != null) {
       throw throwable.value;
     }
