@@ -61,7 +61,7 @@ public class DebuggerToolContentBuilder implements Disposable {
     RunProfile profile = myEnvironment.getRunProfile();
     ExecutionConsole console = myExecutionResult.getExecutionConsole();
     String runnerType = (console instanceof ExecutionConsoleEx ?
-      JAVA_RUNNER + "" + ((ExecutionConsoleEx) console).getExecutionConsoleId() :
+      JAVA_RUNNER + "." + ((ExecutionConsoleEx) console).getExecutionConsoleId() :
       JAVA_RUNNER
     );
     RunnerLayoutUi ui = RunnerLayoutUi.Factory.getInstance(myProject).create(runnerType, myExecutor.getId(), profile.getName(), this);
