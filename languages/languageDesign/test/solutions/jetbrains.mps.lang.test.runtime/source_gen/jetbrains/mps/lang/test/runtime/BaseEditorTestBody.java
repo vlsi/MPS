@@ -208,5 +208,12 @@ public class BaseEditorTestBody extends BaseTestBody {
         action.actionPerformed(event);
       }
     });
+    // flush queue 
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        // empty task 
+      }
+    });
+    ModelAccess.instance().flushEventQueue();
   }
 }
