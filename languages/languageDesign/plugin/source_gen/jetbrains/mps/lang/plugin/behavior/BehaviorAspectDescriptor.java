@@ -7,16 +7,16 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.plugin.structure.ActionAccessOperation", "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReference", "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionType", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.AddTabOperation", "jetbrains.mps.lang.plugin.structure.AfterGenerationBlock", "jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration", "jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock", "jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock", "jetbrains.mps.lang.plugin.structure.ApplicationPluginType", "jetbrains.mps.lang.plugin.structure.AskBlock", "jetbrains.mps.lang.plugin.structure.AskStatement", "jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.plugin.structure.BaseNodeBlock", "jetbrains.mps.lang.plugin.structure.BaseProjectOperation", "jetbrains.mps.lang.plugin.structure.BeforeGenerationBlock", "jetbrains.mps.lang.plugin.structure.BuildGroupBlock", "jetbrains.mps.lang.plugin.structure.ButtonCreator", "jetbrains.mps.lang.plugin.structure.CloseTabOperation", "jetbrains.mps.lang.plugin.structure.CommandClosureLiteral", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Concept", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Contents", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_InputModel", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OriginalInputNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootDir", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ScopeNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_UnitNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ask", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.plugin.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.lang.plugin.structure.ConceptFunction_GetUnitName", "jetbrains.mps.lang.plugin.structure.ConceptFunction_GetVariables", "jetbrains.mps.lang.plugin.structure.ConceptFunction_PropertyStringGetter", "jetbrains.mps.lang.plugin.structure.CreateBlock", "jetbrains.mps.lang.plugin.structure.CreateModelRunConfigBlock", "jetbrains.mps.lang.plugin.structure.CreateModuleRunConfigBlock", "jetbrains.mps.lang.plugin.structure.CreateNodeAspectBlock", "jetbrains.mps.lang.plugin.structure.CreateNodeRunConfigBlock", "jetbrains.mps.lang.plugin.structure.CreateTabBlock", "jetbrains.mps.lang.plugin.structure.CustomCondition", "jetbrains.mps.lang.plugin.structure.DebugInfoInitializer", "jetbrains.mps.lang.plugin.structure.DebuggableNodeItem", "jetbrains.mps.lang.plugin.structure.DisposeBlock", "jetbrains.mps.lang.plugin.structure.DoUpdateBlock", "jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock", "jetbrains.mps.lang.plugin.structure.EditableModel", "jetbrains.mps.lang.plugin.structure.EditorTab", "jetbrains.mps.lang.plugin.structure.EditorTabReference", "jetbrains.mps.lang.plugin.structure.ElementListContents", "jetbrains.mps.lang.plugin.structure.EnumerateChildrenFunction", "jetbrains.mps.lang.plugin.structure.EverywhereActionPlace", "jetbrains.mps.lang.plugin.structure.ExecuteBlock", "jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement", "jetbrains.mps.lang.plugin.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration", "jetbrains.mps.lang.plugin.structure.FileGeneratorType", "jetbrains.mps.lang.plugin.structure.GenerateFileBlock", "jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration", "jetbrains.mps.lang.plugin.structure.GenerationListener_models", "jetbrains.mps.lang.plugin.structure.GenerationListener_options", "jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock", "jetbrains.mps.lang.plugin.structure.GetComponentBlock", "jetbrains.mps.lang.plugin.structure.GetConceptsBlock", "jetbrains.mps.lang.plugin.structure.GetGroupOperation", "jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock", "jetbrains.mps.lang.plugin.structure.GetNodeBlock", "jetbrains.mps.lang.plugin.structure.GetNodesBlock", "jetbrains.mps.lang.plugin.structure.GetPreferencesComponentInProjectOperation", "jetbrains.mps.lang.plugin.structure.GetPreferencesComponentOperation", "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation", "jetbrains.mps.lang.plugin.structure.GetToolInProjectOperation", "jetbrains.mps.lang.plugin.structure.GetToolOperation", "jetbrains.mps.lang.plugin.structure.GroupAccessOperation", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.GroupType", "jetbrains.mps.lang.plugin.structure.IconResource", "jetbrains.mps.lang.plugin.structure.IconResourceExpression", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.IdeaPluginDependency", "jetbrains.mps.lang.plugin.structure.InitBlock", "jetbrains.mps.lang.plugin.structure.InitTabBlock", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.InterfaceGroup", "jetbrains.mps.lang.plugin.structure.IsApplicableBlock", "jetbrains.mps.lang.plugin.structure.IsApplicableTabBlock", "jetbrains.mps.lang.plugin.structure.IsDefaultBlock", "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke", "jetbrains.mps.lang.plugin.structure.KeyStrokeType", "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", "jetbrains.mps.lang.plugin.structure.ListenBlock", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab", "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTabType", "jetbrains.mps.lang.plugin.structure.NewCreateBlock", "jetbrains.mps.lang.plugin.structure.OnAfterReadBlock", "jetbrains.mps.lang.plugin.structure.OnBeforeWriteBlock", "jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock", "jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock_success", "jetbrains.mps.lang.plugin.structure.Order", "jetbrains.mps.lang.plugin.structure.OrderReference", "jetbrains.mps.lang.plugin.structure.OverridesDefaultBlock", "jetbrains.mps.lang.plugin.structure.ParameterCondition_ConceptFunctionParameter", "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration", "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference", "jetbrains.mps.lang.plugin.structure.PopupCreator", "jetbrains.mps.lang.plugin.structure.PreferencePage", "jetbrains.mps.lang.plugin.structure.PreferencePageCommitBlock", "jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock", "jetbrains.mps.lang.plugin.structure.PreferencePageResetBlock", "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", "jetbrains.mps.lang.plugin.structure.PreferencesComponentType", "jetbrains.mps.lang.plugin.structure.ProjectOperation", "jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration", "jetbrains.mps.lang.plugin.structure.ProjectPluginDisposeBlock", "jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock", "jetbrains.mps.lang.plugin.structure.ProjectPluginType", "jetbrains.mps.lang.plugin.structure.PropertyRefExpression", "jetbrains.mps.lang.plugin.structure.PropertyRefType", "jetbrains.mps.lang.plugin.structure.RequiredCondition", "jetbrains.mps.lang.plugin.structure.ScopeNodeItem", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.SimpleActionPlace", "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange", "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab", "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTabType", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToStringConceptFunction", "jetbrains.mps.lang.plugin.structure.ToStringParameter", "jetbrains.mps.lang.plugin.structure.ToolActionPlace", "jetbrains.mps.lang.plugin.structure.ToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.ToolTab", "jetbrains.mps.lang.plugin.structure.ToolType", "jetbrains.mps.lang.plugin.structure.ToolbarCreator", "jetbrains.mps.lang.plugin.structure.UnitNodeItem", "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock", "jetbrains.mps.lang.plugin.structure.UpdateGroupFunction", "jetbrains.mps.lang.plugin.structure.VariableNodeExpression", "jetbrains.mps.lang.plugin.structure.VariableNodeItem"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.plugin.structure.ActionAccessOperation", "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReference", "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionType", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.AddTabOperation", "jetbrains.mps.lang.plugin.structure.AfterGenerationBlock", "jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration", "jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock", "jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock", "jetbrains.mps.lang.plugin.structure.ApplicationPluginType", "jetbrains.mps.lang.plugin.structure.AskBlock", "jetbrains.mps.lang.plugin.structure.AskStatement", "jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.plugin.structure.BaseNodeBlock", "jetbrains.mps.lang.plugin.structure.BaseProjectOperation", "jetbrains.mps.lang.plugin.structure.BeforeGenerationBlock", "jetbrains.mps.lang.plugin.structure.BuildGroupBlock", "jetbrains.mps.lang.plugin.structure.ButtonCreator", "jetbrains.mps.lang.plugin.structure.CloseTabOperation", "jetbrains.mps.lang.plugin.structure.CommandClosureLiteral", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Concept", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Contents", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_InputModel", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OriginalInputNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootDir", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ScopeNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_UnitNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ask", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.plugin.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.lang.plugin.structure.ConceptFunction_GetUnitName", "jetbrains.mps.lang.plugin.structure.ConceptFunction_GetVariables", "jetbrains.mps.lang.plugin.structure.ConceptFunction_PropertyStringGetter", "jetbrains.mps.lang.plugin.structure.CreateBlock", "jetbrains.mps.lang.plugin.structure.CreateModelRunConfigBlock", "jetbrains.mps.lang.plugin.structure.CreateModuleRunConfigBlock", "jetbrains.mps.lang.plugin.structure.CreateNodeAspectBlock", "jetbrains.mps.lang.plugin.structure.CreateNodeRunConfigBlock", "jetbrains.mps.lang.plugin.structure.CreateTabBlock", "jetbrains.mps.lang.plugin.structure.CustomCondition", "jetbrains.mps.lang.plugin.structure.DebugInfoInitializer", "jetbrains.mps.lang.plugin.structure.DebuggableNodeItem", "jetbrains.mps.lang.plugin.structure.DisposeBlock", "jetbrains.mps.lang.plugin.structure.DoUpdateBlock", "jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock", "jetbrains.mps.lang.plugin.structure.EditableModel", "jetbrains.mps.lang.plugin.structure.EditorTab", "jetbrains.mps.lang.plugin.structure.EditorTabReference", "jetbrains.mps.lang.plugin.structure.ElementListContents", "jetbrains.mps.lang.plugin.structure.EnumerateChildrenFunction", "jetbrains.mps.lang.plugin.structure.EverywhereActionPlace", "jetbrains.mps.lang.plugin.structure.ExecuteBlock", "jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement", "jetbrains.mps.lang.plugin.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration", "jetbrains.mps.lang.plugin.structure.FileGeneratorType", "jetbrains.mps.lang.plugin.structure.GenerateFileBlock", "jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration", "jetbrains.mps.lang.plugin.structure.GenerationListener_models", "jetbrains.mps.lang.plugin.structure.GenerationListener_options", "jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock", "jetbrains.mps.lang.plugin.structure.GetComponentBlock", "jetbrains.mps.lang.plugin.structure.GetConceptsBlock", "jetbrains.mps.lang.plugin.structure.GetGroupOperation", "jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock", "jetbrains.mps.lang.plugin.structure.GetNodeBlock", "jetbrains.mps.lang.plugin.structure.GetNodesBlock", "jetbrains.mps.lang.plugin.structure.GetPreferencesComponentInProjectOperation", "jetbrains.mps.lang.plugin.structure.GetPreferencesComponentOperation", "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation", "jetbrains.mps.lang.plugin.structure.GetToolInProjectOperation", "jetbrains.mps.lang.plugin.structure.GetToolOperation", "jetbrains.mps.lang.plugin.structure.GroupAccessOperation", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.GroupType", "jetbrains.mps.lang.plugin.structure.IconResource", "jetbrains.mps.lang.plugin.structure.IconResourceExpression", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.IdeaPluginDependency", "jetbrains.mps.lang.plugin.structure.InitBlock", "jetbrains.mps.lang.plugin.structure.InitTabBlock", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.InterfaceGroup", "jetbrains.mps.lang.plugin.structure.IsApplicableBlock", "jetbrains.mps.lang.plugin.structure.IsApplicableTabBlock", "jetbrains.mps.lang.plugin.structure.IsDefaultBlock", "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke", "jetbrains.mps.lang.plugin.structure.KeyStrokeType", "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", "jetbrains.mps.lang.plugin.structure.ListenBlock", "jetbrains.mps.lang.plugin.structure.MPSPluginDependency", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab", "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTabType", "jetbrains.mps.lang.plugin.structure.NewCreateBlock", "jetbrains.mps.lang.plugin.structure.OnAfterReadBlock", "jetbrains.mps.lang.plugin.structure.OnBeforeWriteBlock", "jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock", "jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock_success", "jetbrains.mps.lang.plugin.structure.Order", "jetbrains.mps.lang.plugin.structure.OrderReference", "jetbrains.mps.lang.plugin.structure.OverridesDefaultBlock", "jetbrains.mps.lang.plugin.structure.ParameterCondition_ConceptFunctionParameter", "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration", "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference", "jetbrains.mps.lang.plugin.structure.PopupCreator", "jetbrains.mps.lang.plugin.structure.PreferencePage", "jetbrains.mps.lang.plugin.structure.PreferencePageCommitBlock", "jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock", "jetbrains.mps.lang.plugin.structure.PreferencePageResetBlock", "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", "jetbrains.mps.lang.plugin.structure.PreferencesComponentType", "jetbrains.mps.lang.plugin.structure.ProjectOperation", "jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration", "jetbrains.mps.lang.plugin.structure.ProjectPluginDisposeBlock", "jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock", "jetbrains.mps.lang.plugin.structure.ProjectPluginType", "jetbrains.mps.lang.plugin.structure.PropertyRefExpression", "jetbrains.mps.lang.plugin.structure.PropertyRefType", "jetbrains.mps.lang.plugin.structure.RequiredCondition", "jetbrains.mps.lang.plugin.structure.ScopeNodeItem", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.SimpleActionPlace", "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange", "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab", "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTabType", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToStringConceptFunction", "jetbrains.mps.lang.plugin.structure.ToStringParameter", "jetbrains.mps.lang.plugin.structure.ToolActionPlace", "jetbrains.mps.lang.plugin.structure.ToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.ToolTab", "jetbrains.mps.lang.plugin.structure.ToolType", "jetbrains.mps.lang.plugin.structure.ToolbarCreator", "jetbrains.mps.lang.plugin.structure.UnitNodeItem", "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock", "jetbrains.mps.lang.plugin.structure.UpdateGroupFunction", "jetbrains.mps.lang.plugin.structure.VariableNodeExpression", "jetbrains.mps.lang.plugin.structure.VariableNodeItem"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 149:
+      case 150:
         return new SingletabbedEditorTab_BehaviorDescriptor();
-      case 157:
+      case 158:
         return new ToolDeclaration_BehaviorDescriptor();
       case 65:
         return new DoUpdateBlock_BehaviorDescriptor();
@@ -28,11 +28,11 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ActionGroupDeclaration_BehaviorDescriptor();
       case 7:
         return new ActionInstance_BehaviorDescriptor();
-      case 115:
+      case 116:
         return new ModificationStatement_BehaviorDescriptor();
       case 98:
         return new GroupAnchor_BehaviorDescriptor();
-      case 116:
+      case 117:
         return new MultitabbedEditorTab_BehaviorDescriptor();
       case 55:
         return new CreateBlock_BehaviorDescriptor();
@@ -44,7 +44,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new GetInnerTabCaptionBlock_BehaviorDescriptor();
       case 50:
         return new ConceptFunctionParameter_node_BehaviorDescriptor();
-      case 152:
+      case 153:
         return new TabbedEditorDeclaration_BehaviorDescriptor();
       case 85:
         return new GetBaseNodeBlock_BehaviorDescriptor();
@@ -54,13 +54,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new InterfaceGroup_BehaviorDescriptor();
       case 106:
         return new InterfaceExtentionPoint_BehaviorDescriptor();
-      case 158:
+      case 159:
         return new ToolInstanceExpression_BehaviorDescriptor();
       case 37:
         return new ConceptFunctionParameter_IModule_BehaviorDescriptor();
       case 39:
         return new ConceptFunctionParameter_MPSProject_BehaviorDescriptor();
-      case 146:
+      case 147:
         return new Separator_BehaviorDescriptor();
       case 8:
         return new ActionParameterDeclaration_BehaviorDescriptor();
@@ -70,13 +70,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ActionType_BehaviorDescriptor();
       case 10:
         return new ActionParameterReferenceOperation_BehaviorDescriptor();
-      case 138:
-        return new ProjectPluginDeclaration_BehaviorDescriptor();
-      case 140:
-        return new ProjectPluginInitBlock_BehaviorDescriptor();
       case 139:
-        return new ProjectPluginDisposeBlock_BehaviorDescriptor();
+        return new ProjectPluginDeclaration_BehaviorDescriptor();
       case 141:
+        return new ProjectPluginInitBlock_BehaviorDescriptor();
+      case 140:
+        return new ProjectPluginDisposeBlock_BehaviorDescriptor();
+      case 142:
         return new ProjectPluginType_BehaviorDescriptor();
       case 28:
         return new BuildGroupBlock_BehaviorDescriptor();
@@ -90,9 +90,9 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new DoUpdateGroupBlock_BehaviorDescriptor();
       case 99:
         return new GroupType_BehaviorDescriptor();
-      case 160:
+      case 161:
         return new ToolType_BehaviorDescriptor();
-      case 137:
+      case 138:
         return new ProjectOperation_BehaviorDescriptor();
       case 96:
         return new GetToolOperation_BehaviorDescriptor();
@@ -100,37 +100,37 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new GetGroupOperation_BehaviorDescriptor();
       case 82:
         return new GenerationListenerDeclaration_BehaviorDescriptor();
-      case 121:
-        return new OnModelsGeneratedBlock_BehaviorDescriptor();
       case 122:
+        return new OnModelsGeneratedBlock_BehaviorDescriptor();
+      case 123:
         return new OnModelsGeneratedBlock_success_BehaviorDescriptor();
       case 27:
         return new BeforeGenerationBlock_BehaviorDescriptor();
       case 83:
         return new GenerationListener_models_BehaviorDescriptor();
-      case 135:
-        return new PreferencesComponentDeclaration_BehaviorDescriptor();
-      case 128:
-        return new PersistentPropertyDeclaration_BehaviorDescriptor();
-      case 129:
-        return new PersistentPropertyReference_BehaviorDescriptor();
       case 136:
+        return new PreferencesComponentDeclaration_BehaviorDescriptor();
+      case 129:
+        return new PersistentPropertyDeclaration_BehaviorDescriptor();
+      case 130:
+        return new PersistentPropertyReference_BehaviorDescriptor();
+      case 137:
         return new PreferencesComponentType_BehaviorDescriptor();
       case 93:
         return new GetPreferencesComponentOperation_BehaviorDescriptor();
-      case 120:
+      case 121:
         return new OnBeforeWriteBlock_BehaviorDescriptor();
-      case 119:
+      case 120:
         return new OnAfterReadBlock_BehaviorDescriptor();
-      case 131:
-        return new PreferencePage_BehaviorDescriptor();
-      case 134:
-        return new PreferencePageResetBlock_BehaviorDescriptor();
       case 132:
+        return new PreferencePage_BehaviorDescriptor();
+      case 135:
+        return new PreferencePageResetBlock_BehaviorDescriptor();
+      case 133:
         return new PreferencePageCommitBlock_BehaviorDescriptor();
       case 45:
         return new ConceptFunctionParameter_PreferencePage_component_BehaviorDescriptor();
-      case 133:
+      case 134:
         return new PreferencePageIsModifiedBlock_BehaviorDescriptor();
       case 16:
         return new AfterGenerationBlock_BehaviorDescriptor();
@@ -160,7 +160,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new GenerateFileBlock_BehaviorDescriptor();
       case 80:
         return new FileGeneratorType_BehaviorDescriptor();
-      case 125:
+      case 126:
         return new OverridesDefaultBlock_BehaviorDescriptor();
       case 110:
         return new IsDefaultBlock_BehaviorDescriptor();
@@ -196,39 +196,39 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ActionConstructorParameterReferenceOperation_BehaviorDescriptor();
       case 14:
         return new AddStatement_BehaviorDescriptor();
-      case 154:
-        return new ToStringConceptFunction_BehaviorDescriptor();
       case 155:
+        return new ToStringConceptFunction_BehaviorDescriptor();
+      case 156:
         return new ToStringParameter_BehaviorDescriptor();
       case 24:
         return new BaseExecuteCommandStatementSync_BehaviorDescriptor();
-      case 163:
-        return new UpdateGroupBlock_BehaviorDescriptor();
       case 164:
+        return new UpdateGroupBlock_BehaviorDescriptor();
+      case 165:
         return new UpdateGroupFunction_BehaviorDescriptor();
       case 71:
         return new EnumerateChildrenFunction_BehaviorDescriptor();
       case 113:
         return new KeymapChangesDeclaration_BehaviorDescriptor();
-      case 148:
+      case 149:
         return new SimpleShortcutChange_BehaviorDescriptor();
-      case 127:
+      case 128:
         return new ParameterizedShortcutChange_BehaviorDescriptor();
-      case 142:
-        return new PropertyRefExpression_BehaviorDescriptor();
       case 143:
+        return new PropertyRefExpression_BehaviorDescriptor();
+      case 144:
         return new PropertyRefType_BehaviorDescriptor();
-      case 147:
+      case 148:
         return new SimpleActionPlace_BehaviorDescriptor();
-      case 156:
+      case 157:
         return new ToolActionPlace_BehaviorDescriptor();
       case 72:
         return new EverywhereActionPlace_BehaviorDescriptor();
       case 105:
         return new InitTabBlock_BehaviorDescriptor();
-      case 150:
+      case 151:
         return new SingletabbedEditorTabType_BehaviorDescriptor();
-      case 117:
+      case 118:
         return new MultitabbedEditorTabType_BehaviorDescriptor();
       case 59:
         return new CreateNodeRunConfigBlock_BehaviorDescriptor();
@@ -238,7 +238,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CreateModuleRunConfigBlock_BehaviorDescriptor();
       case 56:
         return new CreateModelRunConfigBlock_BehaviorDescriptor();
-      case 153:
+      case 154:
         return new TabbedToolDeclaration_BehaviorDescriptor();
       case 15:
         return new AddTabOperation_BehaviorDescriptor();
@@ -250,9 +250,9 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new DebuggableNodeItem_BehaviorDescriptor();
       case 62:
         return new DebugInfoInitializer_BehaviorDescriptor();
-      case 151:
+      case 152:
         return new SmartDisposeClosureParameterDeclaration_BehaviorDescriptor();
-      case 159:
+      case 160:
         return new ToolTab_BehaviorDescriptor();
       case 21:
         return new AskBlock_BehaviorDescriptor();
@@ -260,15 +260,15 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new AskStatement_BehaviorDescriptor();
       case 87:
         return new GetConceptsBlock_BehaviorDescriptor();
-      case 118:
+      case 119:
         return new NewCreateBlock_BehaviorDescriptor();
       case 33:
         return new ConceptFunctionParameter_Concept_BehaviorDescriptor();
-      case 166:
+      case 167:
         return new VariableNodeItem_BehaviorDescriptor();
-      case 165:
+      case 166:
         return new VariableNodeExpression_BehaviorDescriptor();
-      case 145:
+      case 146:
         return new ScopeNodeItem_BehaviorDescriptor();
       case 53:
         return new ConceptFunction_GetVariables_BehaviorDescriptor();
@@ -290,7 +290,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ActionAccessOperation_BehaviorDescriptor();
       case 97:
         return new GroupAccessOperation_BehaviorDescriptor();
-      case 162:
+      case 163:
         return new UnitNodeItem_BehaviorDescriptor();
       case 52:
         return new ConceptFunction_GetUnitName_BehaviorDescriptor();
@@ -318,11 +318,11 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new BaseNodeBlock_BehaviorDescriptor();
       case 114:
         return new ListenBlock_BehaviorDescriptor();
-      case 123:
+      case 124:
         return new Order_BehaviorDescriptor();
       case 69:
         return new EditorTabReference_BehaviorDescriptor();
-      case 124:
+      case 125:
         return new OrderReference_BehaviorDescriptor();
       case 5:
         return new ActionDeclaration_BehaviorDescriptor();
@@ -332,22 +332,24 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new IconResourceExpression_BehaviorDescriptor();
       case 29:
         return new ButtonCreator_BehaviorDescriptor();
-      case 130:
+      case 131:
         return new PopupCreator_BehaviorDescriptor();
-      case 161:
+      case 162:
         return new ToolbarCreator_BehaviorDescriptor();
       case 60:
         return new CreateTabBlock_BehaviorDescriptor();
       case 61:
         return new CustomCondition_BehaviorDescriptor();
-      case 126:
+      case 127:
         return new ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor();
-      case 144:
+      case 145:
         return new RequiredCondition_BehaviorDescriptor();
       case 67:
         return new EditableModel_BehaviorDescriptor();
       case 103:
         return new IdeaPluginDependency_BehaviorDescriptor();
+      case 115:
+        return new MPSPluginDependency_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

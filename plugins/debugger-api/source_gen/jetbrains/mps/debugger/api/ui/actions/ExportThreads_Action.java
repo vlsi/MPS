@@ -78,7 +78,7 @@ public class ExportThreads_Action extends GeneratedAction {
           sb.append('\t');
           sb.append("at ");
           sb.append(location.getUnitName());
-          sb.append("");
+          sb.append(".");
           sb.append(location.getRoutineName());
           sb.append("(");
           sb.append(frame.getLocation().getFileName());

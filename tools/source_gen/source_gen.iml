@@ -69,15 +69,6 @@
     <content url="file://$MODULE_DIR$/../../core/debug-api/languages/api/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/debug-api/languages/api/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../core/debug/languages/customViewers/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/debug/languages/customViewers/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/debug/languages/evaluation/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/debug/languages/evaluation/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../core/debug/languages/privateMembers/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/debug/languages/privateMembers/source_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../core/dependencies/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../core/dependencies/source_gen" isTestSource="false" />
     </content>
@@ -422,6 +413,15 @@
     </content>
     <content url="file://$MODULE_DIR$/../../obsolete/matrixLanguage/languages/matrixLanguage/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../obsolete/matrixLanguage/languages/matrixLanguage/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/customViewers/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/customViewers/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/evaluation/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/evaluation/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/privateMembers/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java-languages/privateMembers/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen" isTestSource="false" />

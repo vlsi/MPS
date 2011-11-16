@@ -36,6 +36,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.OrderConstraints_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.Order_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PluginDependency_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ProjectPluginDeclaration_Behavior" />

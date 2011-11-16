@@ -7,6 +7,7 @@
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <import index="upz5" modelUID="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
+  <import index="k9d8" modelUID="r:e5b66eab-bae0-4889-9fd0-cc3e2a8efa70(jetbrains.mps.debugger.java.languages)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="kisg" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)" version="1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
@@ -22,12 +23,12 @@
     </node>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="5494815557703847191">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.baseLanguage.tuples.customViewers" />
-      <property name="name" nameId="tp4k.5023285075122009367" value="Tuples CustomViewers" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Tuples CustomViewers" />
+      <property name="name" nameId="tpck.1169194664001" value="Tuples Custom Viewers" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Custom Presentation For Tuples In Debugger" />
       <property name="version" nameId="tp4k.5023285075122009369" value="1.0" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="url" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="ver" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
     </node>
   </roots>
   <root id="4427301416938274528">
@@ -141,6 +142,10 @@
       </node>
     </node>
   </root>
-  <root id="5494815557703847191" />
+  <root id="5494815557703847191">
+    <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.MPSPluginDependency" typeId="tp4k.203415309825565488" id="203415309825756640">
+      <link role="plugin" roleId="tp4k.203415309825565489" targetNodeId="k9d8.203415309825224444" resolveInfo="Java Debugger Languages" />
+    </node>
+  </root>
 </model>
 

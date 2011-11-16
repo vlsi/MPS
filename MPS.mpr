@@ -97,9 +97,9 @@
       <modulePath path="${project}/core/baseLanguage/unitTest/unitTest.mpl" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/core/debug-api/languages/api/api.mpl" folder="debug.api" />
       <modulePath path="${project}/core/debug-api/solutions/jetbrains.mps.debugger.api.api/api.msd" folder="debug.api" />
-      <modulePath path="${project}/core/debug/languages/customViewers/customViewers.mpl" folder="debug.java" />
-      <modulePath path="${project}/core/debug/languages/evaluation/evaluation.mpl" folder="debug.java" />
-      <modulePath path="${project}/core/debug/languages/privateMembers/privateMembers.mpl" folder="debug.java" />
+      <modulePath path="${project}/plugins/debugger-java-languages/customViewers/customViewers.mpl" folder="debug.java" />
+      <modulePath path="${project}/plugins/debugger-java-languages/evaluation/evaluation.mpl" folder="debug.java" />
+      <modulePath path="${project}/plugins/debugger-java-languages/privateMembers/privateMembers.mpl" folder="debug.java" />
       <modulePath path="${project}/core/debug/solutions/jetbrains.mps.debugger.java.api/jetbrains.mps.debugger.java.api.msd" folder="debug.java" />
       <modulePath path="${project}/core/dependencies/dependencies.msd" folder="core" />
       <modulePath path="${project}/core/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="core.editor" />

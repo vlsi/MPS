@@ -4,12 +4,13 @@
     "http://plugins.intellij.net/plugin.dtd"
 >
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude"><id>jetbrains.mps.lang.smodel.customViewers</id>
-<name>SModel CustomViewers</name>
-<description>SModel CustomViewers</description>
+<name>SModel Custom Viewers</name>
+<description>Custom Presentation For SModel In Debugger</description>
 <version>1.0</version>
-<vendor url="url">JetBrains</vendor>
-<idea-version since-build="ver"></idea-version>
+<vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
+<idea-version since-build="3000"></idea-version>
 
+<depends>jetbrains.mps.debugger.java.languages</depends>
 
 <application-components><component><implementation-class>jetbrains.mps.lang.smodel.customViewers.CustomViewers_PluginInitializer</implementation-class>
 </component>
