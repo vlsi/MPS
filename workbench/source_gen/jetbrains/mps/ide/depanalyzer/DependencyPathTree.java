@@ -10,6 +10,7 @@ import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -41,6 +42,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   private boolean myShowRuntime;
 
   public DependencyPathTree() {
+    this.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
   }
 
   public void setShowRuntime(boolean showRuntime) {
