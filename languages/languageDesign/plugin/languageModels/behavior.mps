@@ -189,6 +189,14 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp4k.144706109457489882" resolveInfo="MultitabbedEditorTabType" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5864553086652219128">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp4k.5864553086652219113" resolveInfo="PluginDependency" />
+    </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5864553086652236717">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp4k.5864553086652219116" resolveInfo="IdeaPluginDependency" />
+    </node>
   </roots>
   <root id="1213877188145">
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877188146">
@@ -3821,6 +3829,42 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="8405639817129381671">
         <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tp4f.1205752032448" resolveInfo="IMember" />
       </node>
+    </node>
+  </root>
+  <root id="5864553086652219128">
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="5864553086652219131">
+      <property name="name" nameId="tpck.1169194664001" value="getPluginId" />
+      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
+      <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5864553086652219132" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5864553086652236716" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5864553086652219134" />
+    </node>
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="5864553086652219129">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5864553086652219130" />
+    </node>
+  </root>
+  <root id="5864553086652236717">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="5864553086652236718">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5864553086652236719" />
+    </node>
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="5864553086652236720">
+      <property name="name" nameId="tpck.1169194664001" value="getPluginId" />
+      <property name="isVirtual" nameId="1i04.1225194472832" value="false" />
+      <property name="isAbstract" nameId="1i04.1225194472834" value="false" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="5864553086652219131" resolveInfo="getPluginId" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5864553086652236721" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5864553086652236722">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5864553086652236724">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5864553086652236726">
+            <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="5864553086652236725" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="5864553086652236730">
+              <link role="property" roleId="tp25.1138056395725" targetNodeId="tp4k.5864553086652219119" resolveInfo="pluginId" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5864553086652236723" />
     </node>
   </root>
 </model>

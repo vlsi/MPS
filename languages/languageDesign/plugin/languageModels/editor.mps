@@ -334,6 +334,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4k.1225441257564" resolveInfo="ExecuteCommandInEDTStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5023285075122009915">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4k.5023285075122009364" resolveInfo="IdeaInitializerDescriptor" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8817525066851790102">
@@ -392,6 +393,10 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5678361901872075173">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4k.5678361901872075170" resolveInfo="EditableModel" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5864553086652219120">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4k.5864553086652219116" resolveInfo="IdeaPluginDependency" />
     </node>
   </roots>
   <root id="1203088085791">
@@ -4602,6 +4607,27 @@
         </node>
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="5023285075122020708" />
       </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5864553086652331777" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5864553086652331778">
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="5864553086652331779">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5864553086652331782">
+          <property name="text" nameId="tpc2.1073389577007" value="dependency:" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5864553086652331784">
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="5864553086652331785">
+            <property name="flag" nameId="tpc2.1186414551515" value="false" />
+          </node>
+          <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="5864553086652331788" />
+          <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="5864553086652331790">
+            <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp4k.5864553086652219115" />
+            <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="5864553086652331792" />
+          </node>
+          <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="5864553086652331787" />
+        </node>
+        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="5864553086652331781" />
+      </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_VerticalGrid" typeId="tpc2.1239814640496" id="5023285075122020683" />
     </node>
   </root>
@@ -5339,6 +5365,17 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5678361901872075947">
       <property name="text" nameId="tpc2.1073389577007" value="editable" />
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </root>
+  <root id="5864553086652219120">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5864553086652219122">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5864553086652219125">
+        <property name="text" nameId="tpc2.1073389577007" value="idea plugin" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5864553086652219127">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp4k.5864553086652219119" resolveInfo="pluginId" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5864553086652219124" />
     </node>
   </root>
 </model>

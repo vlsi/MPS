@@ -393,12 +393,12 @@
     </node>
     <node type="tpjh.XmlFile" typeId="tpjh.1166472279594" id="880980402160494591">
       <property name="name" nameId="tpck.1169194664001" value="_name_" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Plugin.Init" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <property name="extension" nameId="tpjh.1188753321461" value="xml" />
       <property name="fileName" nameId="tpjh.1167755304238" value="plugin" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3005430634737882358">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Plugin.Init" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <property name="name" nameId="tpck.1169194664001" value="IdeaPluginInitializerClass" />
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="4930090896471982417">
@@ -13291,7 +13291,46 @@
             </node>
           </node>
           <node role="content" roleId="tpjo.1163629255661" type="tpjo.Text" typeId="tpjo.1161373262136" id="3005430634737954799" />
-          <node role="content" roleId="tpjo.1163629255661" type="tpjo.Text" typeId="tpjo.1161373262136" id="3005430634737954800" />
+          <node role="content" roleId="tpjo.1163629255661" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="5864553086652236732">
+            <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="5864553086652236733">
+              <property name="text" nameId="tpjo.1161373273669" value="depends" />
+            </node>
+            <node role="contentList" roleId="tpjo.1179114219774" type="tpjo.ContentList" typeId="tpjo.1163629230879" id="5864553086652236734">
+              <node role="content" roleId="tpjo.1163629255661" type="tpjo.Text" typeId="tpjo.1161373262136" id="5864553086652236736">
+                <property name="text" nameId="tpjo.1161373273669" value="plugin.id" />
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="5864553086652236748">
+                  <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
+                  <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="5864553086652236749">
+                    <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5864553086652236750">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5864553086652236751">
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5864553086652236755">
+                          <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5864553086652236752" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5864553086652236762">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4s.5864553086652219131" resolveInfo="getPluginId" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="5864553086652236738">
+              <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="5864553086652236739">
+                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5864553086652236740">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5864553086652236741">
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5864553086652236743">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5864553086652236742" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="5864553086652236747">
+                        <link role="link" roleId="tp25.1138056546658" targetNodeId="tp4k.5864553086652219115" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="tpjo.1163629255661" type="tpjo.Text" typeId="tpjo.1161373262136" id="5864553086652236731" />
           <node role="content" roleId="tpjo.1163629255661" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="3005430634737954802">
             <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="3005430634737954803">
               <property name="text" nameId="tpjo.1161373273669" value="application-components" />
@@ -13534,14 +13573,17 @@
   </root>
   <root id="4930090896471982417">
     <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="5023285075122038924">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="tp4k.5023285075122009364" resolveInfo="IdeaInitializerDescriptor" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="5023285075122040409">
       <property name="keepSourceRoot" nameId="tpf8.1177959072138" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.5023285075122009364" resolveInfo="IdeaInitializerDescriptor" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="880980402160494591" resolveInfo="_name_" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="5023285075122040410">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.5023285075122009364" resolveInfo="IdeaInitializerDescriptor" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="3005430634737882358" resolveInfo="IdeaPluginInitializerClass" />
     </node>

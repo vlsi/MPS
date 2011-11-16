@@ -35,7 +35,7 @@
   <unitInfo fileName="BaseProjectOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseProjectOperation_BehaviorDescriptor" />
   <unitInfo fileName="BaseToolDeclaration_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="BeforeGenerationBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BeforeGenerationBlock_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="354" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="356" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildGroupBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BuildGroupBlock_BehaviorDescriptor" />
   <unitInfo fileName="ButtonCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ButtonCreator_BehaviorDescriptor" />
   <unitInfo fileName="CloseTabOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.CloseTabOperation_BehaviorDescriptor" />
@@ -116,6 +116,7 @@
   <unitInfo fileName="IconResourceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResourceExpression_BehaviorDescriptor" />
   <unitInfo fileName="IconResource_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResource_BehaviorDescriptor" />
   <unitInfo fileName="IdeaInitializerDescriptor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_BehaviorDescriptor" />
+  <unitInfo fileName="IdeaPluginDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaPluginDependency_BehaviorDescriptor" />
   <unitInfo fileName="InitBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.InitBlock_BehaviorDescriptor" />
   <unitInfo fileName="InitTabBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.InitTabBlock_BehaviorDescriptor" />
   <unitInfo fileName="InterfaceExtentionPoint_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.InterfaceExtentionPoint_BehaviorDescriptor" />
@@ -144,6 +145,7 @@
   <unitInfo fileName="ParameterizedShortcutChange_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ParameterizedShortcutChange_BehaviorDescriptor" />
   <unitInfo fileName="PersistentPropertyDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PersistentPropertyDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="PersistentPropertyReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PersistentPropertyReference_BehaviorDescriptor" />
+  <unitInfo fileName="PluginDependency_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PluginDependency_BehaviorDescriptor" />
   <unitInfo fileName="PopupCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PopupCreator_BehaviorDescriptor" />
   <unitInfo fileName="PreferencePageCommitBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencePageCommitBlock_BehaviorDescriptor" />
   <unitInfo fileName="PreferencePageIsModifiedBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencePageIsModifiedBlock_BehaviorDescriptor" />
@@ -1479,6 +1481,45 @@
       <varInfo nodeId="3743831881070611775" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="3743831881070611775" fileName="EditorTab_Behavior.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.EditorTab_Behavior" />
+  </root>
+  <root nodeId="5864553086652219128">
+    <nodeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="11" startPosition="40" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_5864553086652219131" />
+    <nodeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="17" startPosition="77" endLine="18" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="22" startPosition="110" endLine="23" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPluginId_5864553086652219131#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPluginId_5864553086652219131#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="5864553086652219130" fileName="PluginDependency_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="22" startPosition="110" endLine="23" endPosition="260" />
+    <scopeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="17" startPosition="77" endLine="19" endPosition="215">
+      <varInfo nodeId="5864553086652219128" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="5864553086652219128" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5864553086652219128" varName="callerConceptFqName" />
+      <varInfo nodeId="5864553086652219128" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5864553086652219128" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="5864553086652219128" fileName="PluginDependency_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PluginDependency_Behavior" />
+  </root>
+  <root nodeId="5864553086652236717">
+    <nodeInfo nodeId="5864553086652236724" fileName="IdeaPluginDependency_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5864553086652236717" fileName="IdeaPluginDependency_Behavior.java" startLine="8" startPosition="44" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5864553086652236717" fileName="IdeaPluginDependency_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPluginId_5864553086652219131#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="5864553086652236719" fileName="IdeaPluginDependency_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="5864553086652236722" fileName="IdeaPluginDependency_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="63" />
+    <scopeInfo nodeId="5864553086652236717" fileName="IdeaPluginDependency_Behavior.java" startLine="8" startPosition="44" endLine="11" endPosition="0">
+      <varInfo nodeId="5864553086652236717" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5864553086652236717" fileName="IdeaPluginDependency_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="5864553086652236717" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="5864553086652236717" fileName="IdeaPluginDependency_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaPluginDependency_Behavior" />
   </root>
   <root nodeId="6277721878946468937">
     <nodeInfo nodeId="6277721878946468946" fileName="KeymapChangesDeclaration_Behavior.java" startLine="14" startPosition="82" endLine="15" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
