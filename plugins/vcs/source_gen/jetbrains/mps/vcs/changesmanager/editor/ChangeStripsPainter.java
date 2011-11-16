@@ -108,6 +108,9 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   public String getToolTipText() {
     if (myGroupUnderMouse == null) {
       return null;
+
+
+
     } else {
       // TODO avoid read in EDT 
       return ModelAccess.instance().runReadAction(new Computable<String>() {

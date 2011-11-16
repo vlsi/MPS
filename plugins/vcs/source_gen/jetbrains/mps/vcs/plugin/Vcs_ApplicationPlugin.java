@@ -25,20 +25,20 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new AddModuleToVcs_Action());
     addAction(new Annotate_Action());
-    addAction(new GoToNextChange_Action());
-    addAction(new GoToPreviousChange_Action());
     addAction(new IgnoreModuleInVcs_Action());
     addAction(new InstalVcsAddons_Action());
+    addAction(new OldGoToNextChange_Action());
+    addAction(new OldGoToPreviousChange_Action());
+    addAction(new OldRollbackChanges_Action());
     addAction(new ReRunMergeFromBackup_Action());
-    addAction(new RollbackChanges_Action());
     addAction(new ShowDifferencesWithModelOnDisk_Action());
     addAction(new ShowDiffererenceWithCurrentRevision_Action());
     // groups 
     addGroup(new AnnotateGroup_ActionGroup());
-    addGroup(new ChangesStrip_ActionGroup());
     addGroup(new GoToVCS_ActionGroup());
     addGroup(new InstallVcsAddons_ActionGroup());
     addGroup(new ModuleVcsActions_ActionGroup());
+    addGroup(new OldChangesStrip_ActionGroup());
     addGroup(new ShowDiffWithCurrRev_ActionGroup());
     addGroup(new VCSModelActions_ActionGroup());
   }

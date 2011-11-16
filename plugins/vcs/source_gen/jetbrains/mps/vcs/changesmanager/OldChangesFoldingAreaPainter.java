@@ -429,7 +429,7 @@ public class OldChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     private ActionToolbar myActionToolbar;
 
     public MyPopupMenu() {
-      myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup")), true);
+      myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.vcs.plugin.OldChangesStrip_ActionGroup")), true);
       myActionToolbar.setTargetComponent(getEditorComponent());
       add(myActionToolbar.getComponent());
       setBorder(BorderFactory.createLineBorder(Color.BLACK));

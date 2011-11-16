@@ -18,12 +18,12 @@ import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
 import java.io.IOException;
 
-public class GoToNextChange_Action extends GeneratedAction {
+public class OldGoToPreviousChange_Action extends GeneratedAction {
   private static final Icon ICON = getIcon();
-  protected static Log log = LogFactory.getLog(GoToNextChange_Action.class);
+  protected static Log log = LogFactory.getLog(OldGoToPreviousChange_Action.class);
 
-  public GoToNextChange_Action() {
-    super("Next Change", "Go to next change", ICON);
+  public OldGoToPreviousChange_Action() {
+    super("Previous Change", "Go to previous change", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -31,10 +31,10 @@ public class GoToNextChange_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setVisible(true);
-      event.getPresentation().setEnabled(OldEditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).isNextChangeAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
+      event.getPresentation().setEnabled(OldEditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).isPreviousChangeAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToNextChange", t);
+        log.error("User's action doUpdate method failed. Action:" + "OldGoToPreviousChange", t);
       }
       this.disable(event.getPresentation());
     }
@@ -57,20 +57,20 @@ public class GoToNextChange_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      OldEditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).goToNextChange(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+      OldEditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).goToPreviousChange(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToNextChange", t);
+        log.error("User's action execute method failed. Action:" + "OldGoToPreviousChange", t);
       }
     }
   }
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(GoToNextChange_Action.class.getResourceAsStream("nextOccurence.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(OldGoToPreviousChange_Action.class.getResourceAsStream("previousOccurence.png")));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for GoToNextChange", e);
+        log.warn("Couldn't load icon for OldGoToPreviousChange", e);
       }
       return null;
     }

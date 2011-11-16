@@ -9,33 +9,32 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.vcs.changesmanager.OldEditorChangesHighlighter;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
 import java.io.IOException;
 
-public class RollbackChanges_Action extends GeneratedAction {
+public class OldGoToNextChange_Action extends GeneratedAction {
   private static final Icon ICON = getIcon();
-  protected static Log log = LogFactory.getLog(RollbackChanges_Action.class);
+  protected static Log log = LogFactory.getLog(OldGoToNextChange_Action.class);
 
-  public RollbackChanges_Action() {
-    super("Rollback", "", ICON);
+  public OldGoToNextChange_Action() {
+    super("Next Change", "Go to next change", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setVisible(true);
-      event.getPresentation().setEnabled(true);
-
+      event.getPresentation().setEnabled(OldEditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).isNextChangeAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RollbackChanges", t);
+        log.error("User's action doUpdate method failed. Action:" + "OldGoToNextChange", t);
       }
       this.disable(event.getPresentation());
     }
@@ -58,20 +57,20 @@ public class RollbackChanges_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      OldEditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).rollbackChanges(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+      OldEditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).goToNextChange(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RollbackChanges", t);
+        log.error("User's action execute method failed. Action:" + "OldGoToNextChange", t);
       }
     }
   }
 
   private static Icon getIcon() {
     try {
-      return new ImageIcon(StreamUtil.loadFromStream(RollbackChanges_Action.class.getResourceAsStream("reset.png")));
+      return new ImageIcon(StreamUtil.loadFromStream(OldGoToNextChange_Action.class.getResourceAsStream("nextOccurence.png")));
     } catch (IOException e) {
       if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for RollbackChanges", e);
+        log.warn("Couldn't load icon for OldGoToNextChange", e);
       }
       return null;
     }

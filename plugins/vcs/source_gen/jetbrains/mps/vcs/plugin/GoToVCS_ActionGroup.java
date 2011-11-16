@@ -14,8 +14,8 @@ public class GoToVCS_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      GoToVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToNextChange_Action");
-      GoToVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToPreviousChange_Action");
+      GoToVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.OldGoToNextChange_Action");
+      GoToVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.OldGoToPreviousChange_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

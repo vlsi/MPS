@@ -54,27 +54,27 @@
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6763225944573363022">
-      <property name="name" nameId="tpck.1169194664001" value="ChangesStrip" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Groups" />
+      <property name="name" nameId="tpck.1169194664001" value="OldChangesStrip" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6763225944573363027">
-      <property name="name" nameId="tpck.1169194664001" value="GoToNextChange" />
+      <property name="name" nameId="tpck.1169194664001" value="OldGoToNextChange" />
       <property name="caption" nameId="tp4k.1205250923097" value="Next Change" />
       <property name="description" nameId="tp4k.1213273179528" value="Go to next change" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6763225944573363067">
-      <property name="name" nameId="tpck.1169194664001" value="GoToPreviousChange" />
+      <property name="name" nameId="tpck.1169194664001" value="OldGoToPreviousChange" />
       <property name="caption" nameId="tp4k.1205250923097" value="Previous Change" />
       <property name="description" nameId="tp4k.1213273179528" value="Go to previous change" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6763225944573363107">
-      <property name="name" nameId="tpck.1169194664001" value="RollbackChanges" />
+      <property name="name" nameId="tpck.1169194664001" value="OldRollbackChanges" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rollback" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6763225944573505210">
       <property name="name" nameId="tpck.1169194664001" value="GoToVCS" />
@@ -164,13 +164,13 @@
   <root id="6763225944573363022">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6763225944573363023">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6763225944573363024">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363027" resolveInfo="GoToNextChange" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363027" resolveInfo="OldGoToNextChange" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6763225944573363025">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363067" resolveInfo="GoToPreviousChange" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363067" resolveInfo="OldGoToPreviousChange" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6763225944573363026">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363107" resolveInfo="RollbackChanges" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363107" resolveInfo="OldRollbackChanges" />
       </node>
     </node>
   </root>
@@ -183,7 +183,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6763225944573363030">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6763225944573363031">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6763225944573363032">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lcr.3549425352859600642" resolveInfo="EditorChangesHighlighter" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lcr.3549425352859600642" resolveInfo="OldEditorChangesHighlighter" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lcr.5444017747357180216" resolveInfo="getInstance" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6763225944573363033">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6763225944573363034" />
@@ -249,7 +249,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1qcs.~Presentation%dsetEnabled(boolean)%cvoid" resolveInfo="setEnabled" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6763225944573363058">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6763225944573363059">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lcr.3549425352859600642" resolveInfo="EditorChangesHighlighter" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lcr.3549425352859600642" resolveInfo="OldEditorChangesHighlighter" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lcr.5444017747357180216" resolveInfo="getInstance" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6763225944573363060">
                     <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6763225944573363061" />
@@ -293,7 +293,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6763225944573363072">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6763225944573363073">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6763225944573363074">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lcr.3549425352859600642" resolveInfo="EditorChangesHighlighter" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lcr.3549425352859600642" resolveInfo="OldEditorChangesHighlighter" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lcr.5444017747357180216" resolveInfo="getInstance" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6763225944573363075">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6763225944573363076" />
@@ -350,7 +350,7 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6763225944573363098">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6763225944573363099">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lcr.5444017747357180216" resolveInfo="getInstance" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lcr.3549425352859600642" resolveInfo="EditorChangesHighlighter" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lcr.3549425352859600642" resolveInfo="OldEditorChangesHighlighter" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6763225944573363100">
                     <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6763225944573363101" />
                     <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="6763225944573363102">
@@ -394,7 +394,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6763225944573363113">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6763225944573363114">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lcr.5444017747357180216" resolveInfo="getInstance" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lcr.3549425352859600642" resolveInfo="EditorChangesHighlighter" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lcr.3549425352859600642" resolveInfo="OldEditorChangesHighlighter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6763225944573363115">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6763225944573363116" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="6763225944573363117">
@@ -456,10 +456,10 @@
   <root id="6763225944573505210">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6763225944573505212">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6763225944573505213">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363027" resolveInfo="GoToNextChange" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363027" resolveInfo="OldGoToNextChange" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6763225944573505215">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363067" resolveInfo="GoToPreviousChange" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363067" resolveInfo="OldGoToPreviousChange" />
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6763225944573505216">
