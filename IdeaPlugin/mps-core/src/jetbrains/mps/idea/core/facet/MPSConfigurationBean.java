@@ -18,7 +18,6 @@ package jetbrains.mps.idea.core.facet;
 
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import org.jetbrains.annotations.NonNls;
 
 import java.util.ArrayList;
@@ -35,11 +34,11 @@ public class MPSConfigurationBean {
     //TODO: create accessor for this field
     final SolutionDescriptor myDescriptor;
     private boolean myUseModuleSourceFolder = true;
+    private String[] myUsedLanguages;
 
     public MPSConfigurationBean() {
         myDescriptor = new SolutionDescriptor();
         myDescriptor.setUUID(UUID.randomUUID().toString());
-        myDescriptor.getUsedLanguages().add(BootstrapLanguages.BASE_LANGUAGE);
     }
 
     public String getUUID() {
@@ -89,5 +88,13 @@ public class MPSConfigurationBean {
             modelRoot.setPath(path);
             myDescriptor.getModelRoots().add(modelRoot);
         }
+    }
+
+    public String[] getUsedLanguages() {
+        return myUsedLanguages;
+    }
+
+    public void setUsedLanguages(String[] myUsedLanguages) {
+        this.myUsedLanguages = myUsedLanguages;
     }
 }

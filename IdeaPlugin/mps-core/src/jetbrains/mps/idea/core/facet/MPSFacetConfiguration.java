@@ -29,6 +29,7 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
@@ -83,6 +84,9 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
         }
         if (configurationBean.getNamespace() == null || configurationBean.getNamespace().isEmpty()) {
             configurationBean.setNamespace(myMpsFacet.getModule().getName());
+        }
+        if (configurationBean.getUsedLanguages() == null) {
+            configurationBean.setUsedLanguages(new String[]{BootstrapLanguages.BASE_LANGUAGE.toString()});
         }
     }
 

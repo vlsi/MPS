@@ -20,6 +20,7 @@ import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.Disposable;
 import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.idea.core.MPSBundle;
+import jetbrains.mps.idea.core.facet.ui.UsedLanguagesTab;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 
 import javax.swing.*;
@@ -37,6 +38,7 @@ public class MPSFacetCommonTabUI {
     private MPSFacetSourcesTab mySourcesTab;
     private MPSFacetPathsTab myPathsTab;
     private FacetEditorContext myContext;
+    private UsedLanguagesTab myUsedLanguagesTab;
 
     public MPSFacetCommonTabUI(FacetEditorContext context, Disposable parentDisposable) {
         myParentDisposable = parentDisposable;
@@ -47,18 +49,20 @@ public class MPSFacetCommonTabUI {
         namespace.setText(data.getNamespace());
         mySourcesTab.setData(data);
         myPathsTab.setData(data);
+        myUsedLanguagesTab.setData(data);
     }
 
     public void getData(MPSConfigurationBean data) {
         data.setNamespace(namespace.getText());
         mySourcesTab.getData(data);
         myPathsTab.getData(data);
+        myUsedLanguagesTab.getData(data);
     }
 
     public boolean isModified(MPSConfigurationBean data) {
         if (namespace.getText() != null ? !namespace.getText().equals(data.getNamespace()) : data.getNamespace() != null)
             return true;
-        return mySourcesTab.isModified(data) || myPathsTab.isModified(data);
+        return mySourcesTab.isModified(data) || myPathsTab.isModified(data) || myUsedLanguagesTab.isModified(data);
     }
 
     public JPanel getRootPanel() {
@@ -73,6 +77,7 @@ public class MPSFacetCommonTabUI {
         TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(myParentDisposable);
         tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, (mySourcesTab = new MPSFacetSourcesTab(myContext, myParentDisposable)).getRootPanel(), null);
         tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, (myPathsTab = new MPSFacetPathsTab(myContext)).getRootPanel(), null);
+        tabbedPane.addTab(MPSBundle.message("facet.languages.tab.name"), MPSIcons.LANGUAGES_TAB_ICON, (myUsedLanguagesTab = new UsedLanguagesTab()).createComponent(), null);
         myCentralComponent = tabbedPane.getComponent();
     }
 
