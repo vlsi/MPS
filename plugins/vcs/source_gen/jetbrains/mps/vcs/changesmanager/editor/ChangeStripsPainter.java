@@ -47,7 +47,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   }
 
   @NotNull
-  public EditorComponent getEditorComponent() {
+  protected EditorComponent getEditorComponent() {
     return super.getEditorComponent();
   }
 
