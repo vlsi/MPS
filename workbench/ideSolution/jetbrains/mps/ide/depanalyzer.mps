@@ -2727,8 +2727,8 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1599873085866638500" resolveInfo="dk" />
                     </node>
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7183951016707668772">
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1599873085866638064" resolveInfo="DK" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7669485148636660926">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1599873085866638065" resolveInfo="UL" />
                     <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1599873085866638054" resolveInfo="DependencyPathTree.DepType" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7183951016707668773">
@@ -2759,9 +2759,9 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqhl.~DevkitDescriptor%dgetExportedSolutions()%cjava%dutil%dList" resolveInfo="getExportedSolutions" />
                     </node>
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7183951016707668784">
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7669485148636660927">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1599873085866638066" resolveInfo="D" />
                     <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1599873085866638054" resolveInfo="DependencyPathTree.DepType" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1599873085866638064" resolveInfo="DK" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7183951016707668785">
                     <property name="value" nameId="tpee.1070475926801" value="exports solution " />
@@ -3064,7 +3064,7 @@
                     <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1599873085866638054" resolveInfo="DependencyPathTree.DepType" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7183951016707678625">
-                    <property name="value" nameId="tpee.1070475926801" value="re-export dependency on " />
+                    <property name="value" nameId="tpee.1070475926801" value="re-exports dependency on " />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7183951016707678626">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1599873085866544347" resolveInfo="dependency" />

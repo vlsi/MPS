@@ -114,8 +114,8 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       case DK:
         DevkitDescriptor dk = ((DevKit) from).getModuleDescriptor();
         addChildDeps(result, dk.getExtendedDevkits(), DependencyPathTree.DepType.DK, "extends devkit ", dependency, usedlangauge, visited);
-        addChildDeps(result, dk.getExportedLanguages(), DependencyPathTree.DepType.DK, "exports language ", dependency, usedlangauge, visited);
-        addChildDeps(result, dk.getExportedSolutions(), DependencyPathTree.DepType.DK, "exports solution ", dependency, usedlangauge, visited);
+        addChildDeps(result, dk.getExportedLanguages(), DependencyPathTree.DepType.UL, "exports language ", dependency, usedlangauge, visited);
+        addChildDeps(result, dk.getExportedSolutions(), DependencyPathTree.DepType.D, "exports solution ", dependency, usedlangauge, visited);
         break;
 
       case UL:
@@ -145,7 +145,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
           public ModuleReference select(Dependency it) {
             return it.getModuleRef();
           }
-        }), DependencyPathTree.DepType.D, "re-export dependency on ", dependency, usedlangauge, visited);
+        }), DependencyPathTree.DepType.D, "re-exports dependency on ", dependency, usedlangauge, visited);
         addChildDeps(result, ListSequence.fromList(((List<Dependency>) m2.getDependencies())).where(new IWhereFilter<Dependency>() {
           public boolean accept(Dependency it) {
             return !(it.isReexport());
