@@ -95,6 +95,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
+    ModelAccess.instance().flushEventQueue();
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
