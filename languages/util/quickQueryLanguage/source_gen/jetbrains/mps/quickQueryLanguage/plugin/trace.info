@@ -382,17 +382,16 @@
     <nodeInfo nodeId="7003329281689298932" fileName="ReplaceDialog.java" startLine="121" startPosition="30" endLine="122" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7003329281689298841" fileName="ReplaceDialog.java" startLine="123" startPosition="5" endLine="124" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7003329281689298861" fileName="ReplaceDialog.java" startLine="126" startPosition="25" endLine="127" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7003329281689298874" fileName="ReplaceDialog.java" startLine="129" startPosition="7" endLine="130" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7003329281689298880" fileName="ReplaceDialog.java" startLine="130" startPosition="34" endLine="131" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5567550172873246152" fileName="ReplaceDialog.java" startLine="135" startPosition="30" endLine="136" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235929460014" fileName="ReplaceDialog.java" startLine="139" startPosition="96" endLine="140" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235929460022" fileName="ReplaceDialog.java" startLine="143" startPosition="88" endLine="144" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235929460040" fileName="ReplaceDialog.java" startLine="145" startPosition="16" endLine="146" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235929460046" fileName="ReplaceDialog.java" startLine="149" startPosition="7" endLine="150" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9187915919898141335" fileName="ReplaceDialog.java" startLine="154" startPosition="25" endLine="155" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7438865109565559146" fileName="ReplaceDialog.java" startLine="157" startPosition="25" endLine="158" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9187915919898141339" fileName="ReplaceDialog.java" startLine="158" startPosition="33" endLine="159" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235929460038" fileName="ReplaceDialog.java" startLine="145" startPosition="14" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7003329281689298880" fileName="ReplaceDialog.java" startLine="129" startPosition="7" endLine="130" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5567550172873246152" fileName="ReplaceDialog.java" startLine="134" startPosition="30" endLine="135" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235929460014" fileName="ReplaceDialog.java" startLine="138" startPosition="96" endLine="139" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235929460022" fileName="ReplaceDialog.java" startLine="142" startPosition="88" endLine="143" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235929460040" fileName="ReplaceDialog.java" startLine="144" startPosition="16" endLine="145" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235929460046" fileName="ReplaceDialog.java" startLine="148" startPosition="7" endLine="149" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9187915919898141335" fileName="ReplaceDialog.java" startLine="153" startPosition="25" endLine="154" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7438865109565559146" fileName="ReplaceDialog.java" startLine="156" startPosition="25" endLine="157" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9187915919898141339" fileName="ReplaceDialog.java" startLine="157" startPosition="33" endLine="158" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235929460038" fileName="ReplaceDialog.java" startLine="144" startPosition="14" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1220270176389" fileName="ReplaceDialog.java" startLine="66" startPosition="7" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7003329281689298789" fileName="ReplaceDialog.java" startLine="100" startPosition="54" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7003329281689298923" fileName="ReplaceDialog.java" startLine="120" startPosition="5" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -408,22 +407,22 @@
     <nodeInfo nodeId="5658679531526822185" fileName="ReplaceDialog.java" startLine="90" startPosition="71" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7003329281689298798" fileName="ReplaceDialog.java" startLine="104" startPosition="64" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7003329281689298858" fileName="ReplaceDialog.java" startLine="124" startPosition="110" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5567550172873246142" fileName="ReplaceDialog.java" startLine="133" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" />
-    <nodeInfo nodeId="1235929460020" fileName="ReplaceDialog.java" startLine="142" startPosition="25" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7438865109565559141" fileName="ReplaceDialog.java" startLine="156" startPosition="57" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5567550172873246142" fileName="ReplaceDialog.java" startLine="132" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" />
+    <nodeInfo nodeId="1235929460020" fileName="ReplaceDialog.java" startLine="141" startPosition="25" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7438865109565559141" fileName="ReplaceDialog.java" startLine="155" startPosition="57" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="2268726300190430260" fileName="ReplaceDialog.java" startLine="49" startPosition="139" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7438865109565559128" fileName="ReplaceDialog.java" startLine="155" startPosition="20" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7438865109565559128" fileName="ReplaceDialog.java" startLine="154" startPosition="20" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7003329281689298889" fileName="ReplaceDialog.java" startLine="113" startPosition="66" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1219749141717" fileName="ReplaceDialog.java" startLine="79" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setConceptDeclaration#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1235929460018" fileName="ReplaceDialog.java" startLine="141" startPosition="57" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1235929460017" fileName="ReplaceDialog.java" startLine="140" startPosition="80" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9187915919898141330" fileName="ReplaceDialog.java" startLine="152" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="1235929460018" fileName="ReplaceDialog.java" startLine="140" startPosition="57" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1235929460017" fileName="ReplaceDialog.java" startLine="139" startPosition="80" endLine="148" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9187915919898141330" fileName="ReplaceDialog.java" startLine="151" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <nodeInfo nodeId="2268726300190430250" fileName="ReplaceDialog.java" startLine="47" startPosition="67" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1219748065866" fileName="ReplaceDialog.java" startLine="87" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonReplace#()V" />
     <nodeInfo nodeId="2268726300190430249" fileName="ReplaceDialog.java" startLine="46" startPosition="29" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235929460010" fileName="ReplaceDialog.java" startLine="138" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/project/Project;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)V" />
+    <nodeInfo nodeId="1235929460010" fileName="ReplaceDialog.java" startLine="137" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/project/Project;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)V" />
     <nodeInfo nodeId="1219746404212" fileName="ReplaceDialog.java" startLine="43" startPosition="0" endLine="74" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/Language;)V" />
-    <nodeInfo nodeId="7003329281689298763" fileName="ReplaceDialog.java" startLine="99" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doProcessClassesData#(Ljetbrains/mps/compiler/IClassesData;)V" />
+    <nodeInfo nodeId="7003329281689298763" fileName="ReplaceDialog.java" startLine="99" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doProcessClassesData#(Ljetbrains/mps/compiler/IClassesData;)V" />
     <scopeInfo nodeId="7003329281689298892" fileName="ReplaceDialog.java" startLine="116" startPosition="0" endLine="116" endPosition="45">
       <varInfo nodeId="7003329281689298893" varName="ignore" />
     </scopeInfo>
@@ -447,10 +446,10 @@
     <scopeInfo nodeId="7003329281689298900" fileName="ReplaceDialog.java" startLine="117" startPosition="45" endLine="118" endPosition="0" />
     <scopeInfo nodeId="7003329281689298924" fileName="ReplaceDialog.java" startLine="121" startPosition="30" endLine="122" endPosition="13" />
     <scopeInfo nodeId="7003329281689298860" fileName="ReplaceDialog.java" startLine="126" startPosition="25" endLine="127" endPosition="184" />
-    <scopeInfo nodeId="5567550172873246145" fileName="ReplaceDialog.java" startLine="135" startPosition="30" endLine="136" endPosition="19" />
-    <scopeInfo nodeId="1235929460021" fileName="ReplaceDialog.java" startLine="143" startPosition="88" endLine="144" endPosition="136" />
-    <scopeInfo nodeId="1235929460039" fileName="ReplaceDialog.java" startLine="145" startPosition="16" endLine="146" endPosition="53" />
-    <scopeInfo nodeId="7438865109565559144" fileName="ReplaceDialog.java" startLine="157" startPosition="25" endLine="159" endPosition="44" />
+    <scopeInfo nodeId="5567550172873246145" fileName="ReplaceDialog.java" startLine="134" startPosition="30" endLine="135" endPosition="19" />
+    <scopeInfo nodeId="1235929460021" fileName="ReplaceDialog.java" startLine="142" startPosition="88" endLine="143" endPosition="136" />
+    <scopeInfo nodeId="1235929460039" fileName="ReplaceDialog.java" startLine="144" startPosition="16" endLine="145" endPosition="53" />
+    <scopeInfo nodeId="7438865109565559144" fileName="ReplaceDialog.java" startLine="156" startPosition="25" endLine="158" endPosition="44" />
     <scopeInfo nodeId="1220270176389" fileName="ReplaceDialog.java" startLine="66" startPosition="7" endLine="69" endPosition="5">
       <varInfo nodeId="1220270176393" varName="extendedLanguage" />
     </scopeInfo>
@@ -464,25 +463,25 @@
       <varInfo nodeId="7003329281689298755" varName="cd" />
     </scopeInfo>
     <scopeInfo nodeId="1219749141720" fileName="ReplaceDialog.java" startLine="80" startPosition="62" endLine="85" endPosition="7" />
-    <scopeInfo nodeId="5567550172873246142" fileName="ReplaceDialog.java" startLine="133" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="1235929460019" fileName="ReplaceDialog.java" startLine="142" startPosition="25" endLine="147" endPosition="9" />
-    <scopeInfo nodeId="7438865109565559141" fileName="ReplaceDialog.java" startLine="156" startPosition="57" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="9187915919898141333" fileName="ReplaceDialog.java" startLine="154" startPosition="25" endLine="161" endPosition="7" />
+    <scopeInfo nodeId="5567550172873246142" fileName="ReplaceDialog.java" startLine="132" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="1235929460019" fileName="ReplaceDialog.java" startLine="141" startPosition="25" endLine="146" endPosition="9" />
+    <scopeInfo nodeId="7438865109565559141" fileName="ReplaceDialog.java" startLine="155" startPosition="57" endLine="160" endPosition="0" />
+    <scopeInfo nodeId="9187915919898141333" fileName="ReplaceDialog.java" startLine="153" startPosition="25" endLine="160" endPosition="7" />
     <scopeInfo nodeId="1219749141717" fileName="ReplaceDialog.java" startLine="79" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="1219749141734" varName="declaration" />
     </scopeInfo>
     <scopeInfo nodeId="1219748065869" fileName="ReplaceDialog.java" startLine="89" startPosition="31" endLine="97" endPosition="76">
       <varInfo nodeId="5658679531526383187" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="1235929460018" fileName="ReplaceDialog.java" startLine="141" startPosition="57" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="1235929460018" fileName="ReplaceDialog.java" startLine="140" startPosition="57" endLine="148" endPosition="0" />
     <scopeInfo nodeId="2268726300190430251" fileName="ReplaceDialog.java" startLine="48" startPosition="25" endLine="57" endPosition="102" />
-    <scopeInfo nodeId="1235929460013" fileName="ReplaceDialog.java" startLine="139" startPosition="96" endLine="150" endPosition="150">
+    <scopeInfo nodeId="1235929460013" fileName="ReplaceDialog.java" startLine="138" startPosition="96" endLine="149" endPosition="150">
       <varInfo nodeId="1235929460015" varName="searchQuery" />
     </scopeInfo>
-    <scopeInfo nodeId="9187915919898141330" fileName="ReplaceDialog.java" startLine="152" startPosition="0" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="9187915919898141330" fileName="ReplaceDialog.java" startLine="151" startPosition="0" endLine="162" endPosition="0" />
     <scopeInfo nodeId="2268726300190430250" fileName="ReplaceDialog.java" startLine="47" startPosition="67" endLine="59" endPosition="0" />
     <scopeInfo nodeId="1219748065866" fileName="ReplaceDialog.java" startLine="87" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1235929460010" fileName="ReplaceDialog.java" startLine="138" startPosition="0" endLine="152" endPosition="0">
+    <scopeInfo nodeId="1235929460010" fileName="ReplaceDialog.java" startLine="137" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="1235929460054" varName="project" />
       <varInfo nodeId="1235929460056" varName="query" />
       <varInfo nodeId="1235929460058" varName="queryNode" />
@@ -491,27 +490,27 @@
     <scopeInfo nodeId="1219746404215" fileName="ReplaceDialog.java" startLine="44" startPosition="82" endLine="73" endPosition="25">
       <varInfo nodeId="1220271011315" varName="languageList" />
     </scopeInfo>
-    <scopeInfo nodeId="1219746404212" fileName="ReplaceDialog.java" startLine="43" startPosition="0" endLine="74" endPosition="3">
-      <varInfo nodeId="1219746535418" varName="context" />
-      <varInfo nodeId="1219747590277" varName="language" />
-    </scopeInfo>
-    <scopeInfo nodeId="7003329281689298766" fileName="ReplaceDialog.java" startLine="100" startPosition="54" endLine="131" endPosition="19">
+    <scopeInfo nodeId="7003329281689298766" fileName="ReplaceDialog.java" startLine="100" startPosition="54" endLine="130" endPosition="19">
       <varInfo nodeId="7003329281689298809" varName="fqName" />
       <varInfo nodeId="7003329281689298822" varName="loader" />
       <varInfo nodeId="7003329281689298796" varName="model" />
       <varInfo nodeId="7003329281689298831" varName="query" />
       <varInfo nodeId="7003329281689298842" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="7003329281689298763" fileName="ReplaceDialog.java" startLine="99" startPosition="0" endLine="133" endPosition="0">
+    <scopeInfo nodeId="1219746404212" fileName="ReplaceDialog.java" startLine="43" startPosition="0" endLine="74" endPosition="3">
+      <varInfo nodeId="1219746535418" varName="context" />
+      <varInfo nodeId="1219747590277" varName="language" />
+    </scopeInfo>
+    <scopeInfo nodeId="7003329281689298763" fileName="ReplaceDialog.java" startLine="99" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="7003329281689298778" varName="cd" />
     </scopeInfo>
-    <unitInfo nodeId="1219746404210" fileName="ReplaceDialog.java" startLine="36" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog" />
+    <unitInfo nodeId="1219746404210" fileName="ReplaceDialog.java" startLine="36" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog" />
     <unitInfo nodeId="1219749141722" fileName="ReplaceDialog.java" startLine="81" startPosition="55" endLine="85" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$1" />
     <unitInfo nodeId="5658679531526822186" fileName="ReplaceDialog.java" startLine="91" startPosition="46" endLine="95" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$2" />
     <unitInfo nodeId="7003329281689298799" fileName="ReplaceDialog.java" startLine="105" startPosition="45" endLine="109" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$3" />
     <unitInfo nodeId="7003329281689298859" fileName="ReplaceDialog.java" startLine="125" startPosition="45" endLine="129" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$4" />
-    <unitInfo nodeId="1235929460018" fileName="ReplaceDialog.java" startLine="141" startPosition="45" endLine="149" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$5" />
-    <unitInfo nodeId="7438865109565559139" fileName="ReplaceDialog.java" startLine="156" startPosition="45" endLine="161" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$6" />
+    <unitInfo nodeId="1235929460018" fileName="ReplaceDialog.java" startLine="140" startPosition="45" endLine="148" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$5" />
+    <unitInfo nodeId="7438865109565559139" fileName="ReplaceDialog.java" startLine="155" startPosition="45" endLine="160" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$6" />
     <unitInfo nodeId="2268726300190430250" fileName="ReplaceDialog.java" startLine="47" startPosition="55" endLine="59" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$7" />
     <unitInfo nodeId="1220271002686" fileName="ReplaceDialog.java" startLine="62" startPosition="45" endLine="66" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$8" />
     <unitInfo nodeId="7003329281689298749" fileName="ReplaceDialog.java" startLine="50" startPosition="42" endLine="55" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog$8" />

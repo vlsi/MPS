@@ -127,7 +127,6 @@ public class ReplaceDialog extends BaseDialog {
         ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
       }
     });
-    this.myEditor.disposeEditor();
     this.dispose();
   }
 
