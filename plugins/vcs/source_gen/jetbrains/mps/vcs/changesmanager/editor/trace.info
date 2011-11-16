@@ -779,8 +779,8 @@
   </root>
   <root nodeId="867367425399245463">
     <nodeInfo nodeId="867367425399245502" fileName="StripsChangeGroupLayout.java" startLine="15" startPosition="64" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorHighlighter" />
-    <nodeInfo nodeId="867367425399296040" fileName="StripsChangeGroupLayout.java" startLine="18" startPosition="78" endLine="19" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="867367425399296055" fileName="StripsChangeGroupLayout.java" startLine="19" startPosition="92" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="867367425399296040" fileName="StripsChangeGroupLayout.java" startLine="18" startPosition="78" endLine="19" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="867367425399296055" fileName="StripsChangeGroupLayout.java" startLine="19" startPosition="98" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="867367425399245507" fileName="StripsChangeGroupLayout.java" startLine="24" startPosition="45" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="867367425399245523" fileName="StripsChangeGroupLayout.java" startLine="29" startPosition="46" endLine="30" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="867367425399245527" fileName="StripsChangeGroupLayout.java" startLine="33" startPosition="75" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

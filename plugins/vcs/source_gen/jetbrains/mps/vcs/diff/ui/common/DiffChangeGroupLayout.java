@@ -15,7 +15,7 @@ public class DiffChangeGroupLayout extends ChangeGroupLayout {
   private ChangeSet myChangeSet;
 
   public DiffChangeGroupLayout(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, @NotNull ChangeSet changeSet, @NotNull DiffEditor leftEditor, @NotNull DiffEditor rightEditor, boolean inspector) {
-    super(conflictChecker, inspector);
+    super(conflictChecker, inspector, false);
     myLeftEditor = leftEditor;
     myRightEditor = rightEditor;
     myChangeSet = changeSet;
@@ -45,7 +45,7 @@ public class DiffChangeGroupLayout extends ChangeGroupLayout {
   }
 
   protected List<ChangeEditorMessage> getRightMessages(ModelChange change) {
-    return myLeftEditor.getMessagesForChange(change);
+    return myRightEditor.getMessagesForChange(change);
   }
 
   @Nullable

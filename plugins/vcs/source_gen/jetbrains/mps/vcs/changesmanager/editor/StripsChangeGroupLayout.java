@@ -16,7 +16,7 @@ public class StripsChangeGroupLayout extends ChangeGroupLayout {
   private ChangesEditorHighlighter myEditorHighlighter;
 
   public StripsChangeGroupLayout(ChangesEditorHighlighter editorHighlighter) {
-    super(null, editorHighlighter.getEditorComponent() instanceof InspectorEditorComponent);
+    super(null, editorHighlighter.getEditorComponent() instanceof InspectorEditorComponent, true);
     myEditorHighlighter = editorHighlighter;
   }
 

@@ -25,12 +25,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public abstract class ChangeGroupLayout {
   private ChangeEditorMessage.ConflictChecker myConflictChecker;
   protected boolean myInspector = false;
+  private boolean myMergeAdjacent;
   private List<ChangeGroup> myChangeGroups = null;
   private List<ChangeGroupInvalidateListener> myInvalidateListeners = ListSequence.fromList(new ArrayList<ChangeGroupInvalidateListener>());
 
-  public ChangeGroupLayout(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, boolean inspector) {
+  protected ChangeGroupLayout(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, boolean inspector, boolean mergeAdjacent) {
     myConflictChecker = conflictChecker;
     myInspector = inspector;
+    myMergeAdjacent = mergeAdjacent;
   }
 
   @NotNull
@@ -64,10 +66,7 @@ public abstract class ChangeGroupLayout {
     DisjointSets<ModelChange> ds = new DisjointSets<ModelChange>(changes);
     for (ModelChange a : SetSequence.fromSet(changes)) {
       for (ModelChange b : SetSequence.fromSet(changes)) {
-        if (!((int) MapSequence.fromMap(left).get(a).end() - 1 < (int) MapSequence.fromMap(left).get(b).start() || (int) MapSequence.fromMap(left).get(b).end() - 1 < (int) MapSequence.fromMap(left).get(a).start())) {
-          ds.unite(a, b);
-        }
-        if (!((int) MapSequence.fromMap(right).get(a).end() - 1 < (int) MapSequence.fromMap(right).get(b).start() || (int) MapSequence.fromMap(right).get(b).end() - 1 < (int) MapSequence.fromMap(right).get(a).start())) {
+        if (!(areBoundsSeparate(MapSequence.fromMap(left).get(a), MapSequence.fromMap(left).get(b), myMergeAdjacent)) || !(areBoundsSeparate(MapSequence.fromMap(right).get(a), MapSequence.fromMap(right).get(b), myMergeAdjacent))) {
           ds.unite(a, b);
         }
       }
@@ -159,6 +158,14 @@ public abstract class ChangeGroupLayout {
     } else {
       return bounds;
     }
+  }
+
+  private static boolean areBoundsSeparate(Bounds a, Bounds b, boolean canBeAdjacent) {
+    int tolerance = (canBeAdjacent ?
+      0 :
+      1
+    );
+    return (int) a.end() - tolerance < (int) b.start() || (int) b.end() - tolerance < (int) a.start();
   }
 
   private static List<ModelChange> check_cuq72k_a2a5(ChangeSet checkedDotOperand, ChangeGroupLayout checkedDotThisExpression) {
