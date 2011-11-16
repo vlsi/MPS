@@ -388,23 +388,37 @@
     <scopeInfo nodeId="5264204858747865439" fileName="EditorComponentChangesHighligher.java" startLine="503" startPosition="0" endLine="505" endPosition="5" />
     <scopeInfo nodeId="967454776205090454" fileName="EditorComponentChangesHighligher.java" startLine="509" startPosition="33" endLine="511" endPosition="72" />
     <scopeInfo nodeId="967454776205091105" fileName="EditorComponentChangesHighligher.java" startLine="517" startPosition="35" endLine="519" endPosition="77" />
-    <scopeInfo nodeId="1998524321632141961" fileName="EditorComponentChangesHighligher.java" startLine="96" startPosition="45" endLine="99" endPosition="17" />
+    <scopeInfo nodeId="1998524321632141961" fileName="EditorComponentChangesHighligher.java" startLine="96" startPosition="45" endLine="99" endPosition="17">
+      <varInfo nodeId="1998524321632141961" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="3375103409259077545" fileName="EditorComponentChangesHighligher.java" startLine="100" startPosition="50" endLine="103" endPosition="19" />
-    <scopeInfo nodeId="8974964540305863410" fileName="EditorComponentChangesHighligher.java" startLine="100" startPosition="50" endLine="103" endPosition="19" />
+    <scopeInfo nodeId="8974964540305863410" fileName="EditorComponentChangesHighligher.java" startLine="100" startPosition="50" endLine="103" endPosition="19">
+      <varInfo nodeId="8974964540305863410" varName="message" />
+    </scopeInfo>
     <scopeInfo nodeId="9048291698849221224" fileName="EditorComponentChangesHighligher.java" startLine="241" startPosition="94" endLine="244" endPosition="5" />
     <scopeInfo nodeId="1041446044406864801" fileName="EditorComponentChangesHighligher.java" startLine="522" startPosition="0" endLine="525" endPosition="0">
       <varInfo nodeId="1041446044406864806" varName="model" />
       <varInfo nodeId="1041446044406864804" varName="newFileStatus" />
     </scopeInfo>
     <scopeInfo nodeId="7542415519011416804" fileName="EditorComponentChangesHighligher.java" startLine="525" startPosition="0" endLine="528" endPosition="0" />
-    <scopeInfo nodeId="967454776205093008" fileName="EditorComponentChangesHighligher.java" startLine="531" startPosition="74" endLine="534" endPosition="9" />
-    <scopeInfo nodeId="967454776205093019" fileName="EditorComponentChangesHighligher.java" startLine="534" startPosition="9" endLine="537" endPosition="9" />
+    <scopeInfo nodeId="967454776205093008" fileName="EditorComponentChangesHighligher.java" startLine="531" startPosition="74" endLine="534" endPosition="9">
+      <varInfo nodeId="967454776205093008" varName="removedMessage" />
+    </scopeInfo>
+    <scopeInfo nodeId="967454776205093019" fileName="EditorComponentChangesHighligher.java" startLine="534" startPosition="9" endLine="537" endPosition="9">
+      <varInfo nodeId="967454776205093019" varName="addedMessage" />
+    </scopeInfo>
     <scopeInfo nodeId="8974964540305863464" fileName="EditorComponentChangesHighligher.java" startLine="106" startPosition="64" endLine="110" endPosition="0" />
     <scopeInfo nodeId="7627490208786700325" fileName="EditorComponentChangesHighligher.java" startLine="159" startPosition="57" endLine="163" endPosition="0" />
-    <scopeInfo nodeId="4209733725028887859" fileName="EditorComponentChangesHighligher.java" startLine="216" startPosition="136" endLine="220" endPosition="0" />
+    <scopeInfo nodeId="4209733725028887859" fileName="EditorComponentChangesHighligher.java" startLine="216" startPosition="136" endLine="220" endPosition="0">
+      <varInfo nodeId="4209733725028887859" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="9018999988555488437" fileName="EditorComponentChangesHighligher.java" startLine="224" startPosition="21" endLine="228" endPosition="13" />
-    <scopeInfo nodeId="3499023120082619109" fileName="EditorComponentChangesHighligher.java" startLine="258" startPosition="143" endLine="262" endPosition="0" />
-    <scopeInfo nodeId="3499023120082621850" fileName="EditorComponentChangesHighligher.java" startLine="271" startPosition="144" endLine="275" endPosition="0" />
+    <scopeInfo nodeId="3499023120082619109" fileName="EditorComponentChangesHighligher.java" startLine="258" startPosition="143" endLine="262" endPosition="0">
+      <varInfo nodeId="3499023120082619109" varName="mg" />
+    </scopeInfo>
+    <scopeInfo nodeId="3499023120082621850" fileName="EditorComponentChangesHighligher.java" startLine="271" startPosition="144" endLine="275" endPosition="0">
+      <varInfo nodeId="3499023120082621850" varName="mg" />
+    </scopeInfo>
     <scopeInfo nodeId="5444017747357185959" fileName="EditorComponentChangesHighligher.java" startLine="288" startPosition="0" endLine="292" endPosition="0">
       <varInfo nodeId="5444017747357185960" varName="editorContext" />
     </scopeInfo>
@@ -417,9 +431,13 @@
     <scopeInfo nodeId="3499023120082624535" fileName="EditorComponentChangesHighligher.java" startLine="300" startPosition="0" endLine="304" endPosition="0">
       <varInfo nodeId="3499023120082624546" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="306" startPosition="214" endLine="310" endPosition="0" />
+    <scopeInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="306" startPosition="214" endLine="310" endPosition="0">
+      <varInfo nodeId="2107542654406138048" varName="msg" />
+    </scopeInfo>
     <scopeInfo nodeId="3525805834279458636" fileName="EditorComponentChangesHighligher.java" startLine="313" startPosition="0" endLine="317" endPosition="0" />
-    <scopeInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="321" startPosition="112" endLine="325" endPosition="0" />
+    <scopeInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="321" startPosition="112" endLine="325" endPosition="0">
+      <varInfo nodeId="7152638585749154664" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="331" startPosition="93" endLine="335" endPosition="16" />
     <scopeInfo nodeId="6149144798615862332" fileName="EditorComponentChangesHighligher.java" startLine="341" startPosition="0" endLine="345" endPosition="5">
       <varInfo nodeId="6746101208730314147" varName="change" />
@@ -465,7 +483,9 @@
     <scopeInfo nodeId="7429456937243134896" fileName="EditorComponentChangesHighligher.java" startLine="453" startPosition="0" endLine="459" endPosition="0" />
     <scopeInfo nodeId="4589042405947503392" fileName="EditorComponentChangesHighligher.java" startLine="469" startPosition="0" endLine="475" endPosition="0" />
     <scopeInfo nodeId="9048291698849221221" fileName="EditorComponentChangesHighligher.java" startLine="239" startPosition="0" endLine="246" endPosition="0" />
-    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="330" startPosition="0" endLine="337" endPosition="0" />
+    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="330" startPosition="0" endLine="337" endPosition="0">
+      <varInfo nodeId="166132277801266530" varName="checkedDotOperand" />
+    </scopeInfo>
     <scopeInfo nodeId="4410510979167112711" fileName="EditorComponentChangesHighligher.java" startLine="140" startPosition="63" endLine="148" endPosition="0" />
     <scopeInfo nodeId="3375103409259077551" fileName="EditorComponentChangesHighligher.java" startLine="184" startPosition="38" endLine="192" endPosition="66" />
     <scopeInfo nodeId="3768510864479102969" fileName="EditorComponentChangesHighligher.java" startLine="278" startPosition="96" endLine="286" endPosition="59">
@@ -835,20 +855,36 @@
     <scopeInfo nodeId="23553604208248975" fileName="ChangesManager.java" startLine="54" startPosition="0" endLine="57" endPosition="3">
       <varInfo nodeId="23553604208248980" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5962623969496447662" fileName="ChangesManager.java" startLine="73" startPosition="0" endLine="76" endPosition="5" />
+    <scopeInfo nodeId="5962623969496447662" fileName="ChangesManager.java" startLine="73" startPosition="0" endLine="76" endPosition="5">
+      <varInfo nodeId="5962623969496447662" varName="modelChangesManager" />
+    </scopeInfo>
     <scopeInfo nodeId="6058514296621167607" fileName="ChangesManager.java" startLine="115" startPosition="109" endLine="118" endPosition="7" />
-    <scopeInfo nodeId="8477273007880817029" fileName="ChangesManager.java" startLine="165" startPosition="0" endLine="168" endPosition="15" />
+    <scopeInfo nodeId="8477273007880817029" fileName="ChangesManager.java" startLine="165" startPosition="0" endLine="168" endPosition="15">
+      <varInfo nodeId="8477273007880817029" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="5569581551640544131" fileName="ChangesManager.java" startLine="206" startPosition="61" endLine="209" endPosition="7" />
-    <scopeInfo nodeId="5569581551640544132" fileName="ChangesManager.java" startLine="206" startPosition="61" endLine="209" endPosition="7" />
+    <scopeInfo nodeId="5569581551640544132" fileName="ChangesManager.java" startLine="206" startPosition="61" endLine="209" endPosition="7">
+      <varInfo nodeId="5569581551640544132" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="5569581551640544178" fileName="ChangesManager.java" startLine="218" startPosition="81" endLine="221" endPosition="7" />
-    <scopeInfo nodeId="6276661785379535590" fileName="ChangesManager.java" startLine="218" startPosition="81" endLine="221" endPosition="7" />
+    <scopeInfo nodeId="6276661785379535590" fileName="ChangesManager.java" startLine="218" startPosition="81" endLine="221" endPosition="7">
+      <varInfo nodeId="6276661785379535590" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="5752539231810454522" fileName="ChangesManager.java" startLine="230" startPosition="46" endLine="233" endPosition="7" />
-    <scopeInfo nodeId="5752539231810518951" fileName="ChangesManager.java" startLine="230" startPosition="46" endLine="233" endPosition="7" />
+    <scopeInfo nodeId="5752539231810518951" fileName="ChangesManager.java" startLine="230" startPosition="46" endLine="233" endPosition="7">
+      <varInfo nodeId="5752539231810518951" varName="virtualFile" />
+    </scopeInfo>
     <scopeInfo nodeId="3555722951728565722" fileName="ChangesManager.java" startLine="267" startPosition="27" endLine="270" endPosition="11" />
     <scopeInfo nodeId="5962623969496447619" fileName="ChangesManager.java" startLine="124" startPosition="25" endLine="128" endPosition="9" />
-    <scopeInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="159" startPosition="187" endLine="163" endPosition="0" />
-    <scopeInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="174" startPosition="187" endLine="178" endPosition="0" />
-    <scopeInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="182" startPosition="134" endLine="186" endPosition="0" />
+    <scopeInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="159" startPosition="187" endLine="163" endPosition="0">
+      <varInfo nodeId="8477273007880817003" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="174" startPosition="187" endLine="178" endPosition="0">
+      <varInfo nodeId="8477273007880817063" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="182" startPosition="134" endLine="186" endPosition="0">
+      <varInfo nodeId="1741994337989997195" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="15936038984552262" fileName="ChangesManager.java" startLine="197" startPosition="0" endLine="201" endPosition="0">
       <varInfo nodeId="15936038984552679" varName="project" />
     </scopeInfo>
@@ -861,7 +897,9 @@
       <varInfo nodeId="8096178926743427294" varName="oldState" />
     </scopeInfo>
     <scopeInfo nodeId="6058514296621167575" fileName="ChangesManager.java" startLine="114" startPosition="43" endLine="119" endPosition="5" />
-    <scopeInfo nodeId="6058514296621167602" fileName="ChangesManager.java" startLine="114" startPosition="43" endLine="119" endPosition="5" />
+    <scopeInfo nodeId="6058514296621167602" fileName="ChangesManager.java" startLine="114" startPosition="43" endLine="119" endPosition="5">
+      <varInfo nodeId="6058514296621167602" varName="md" />
+    </scopeInfo>
     <scopeInfo nodeId="2859527253109744354" fileName="ChangesManager.java" startLine="144" startPosition="76" endLine="149" endPosition="73">
       <varInfo nodeId="2034607283473161348" varName="descriptor" />
     </scopeInfo>
@@ -886,7 +924,9 @@
     <scopeInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="266" startPosition="54" endLine="272" endPosition="0" />
     <scopeInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="123" startPosition="43" endLine="130" endPosition="0" />
     <scopeInfo nodeId="8477273007880817016" fileName="ChangesManager.java" startLine="163" startPosition="17" endLine="170" endPosition="28" />
-    <scopeInfo nodeId="8477273007880817056" fileName="ChangesManager.java" startLine="173" startPosition="48" endLine="180" endPosition="13" />
+    <scopeInfo nodeId="8477273007880817056" fileName="ChangesManager.java" startLine="173" startPosition="48" endLine="180" endPosition="13">
+      <varInfo nodeId="8477273007880817056" varName="smrMcmPair" />
+    </scopeInfo>
     <scopeInfo nodeId="5569581551640544170" fileName="ChangesManager.java" startLine="216" startPosition="0" endLine="223" endPosition="0">
       <varInfo nodeId="5569581551640544173" varName="changes" />
       <varInfo nodeId="5569581551640544176" varName="fromList" />
@@ -918,7 +958,9 @@
       <varInfo nodeId="891158202133120915" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="23553604208247408" fileName="ChangesManager.java" startLine="67" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="8477273007880816996" fileName="ChangesManager.java" startLine="158" startPosition="0" endLine="171" endPosition="13" />
+    <scopeInfo nodeId="8477273007880816996" fileName="ChangesManager.java" startLine="158" startPosition="0" endLine="171" endPosition="13">
+      <varInfo nodeId="8477273007880816996" varName="smrMcmPair" />
+    </scopeInfo>
     <scopeInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="82" startPosition="43" endLine="96" endPosition="0" />
     <scopeInfo nodeId="1552342397249028024" fileName="ChangesManager.java" startLine="81" startPosition="122" endLine="96" endPosition="7" />
     <scopeInfo nodeId="5392440913055405811" fileName="ChangesManager.java" startLine="98" startPosition="0" endLine="113" endPosition="0">
@@ -1125,7 +1167,9 @@
     </scopeInfo>
     <scopeInfo nodeId="5267577397386525101" fileName="EditorChangesHighlighter.java" startLine="100" startPosition="82" endLine="103" endPosition="7" />
     <scopeInfo nodeId="5267577397386525169" fileName="EditorChangesHighlighter.java" startLine="119" startPosition="62" endLine="122" endPosition="9" />
-    <scopeInfo nodeId="5267577397386525170" fileName="EditorChangesHighlighter.java" startLine="119" startPosition="62" endLine="122" endPosition="9" />
+    <scopeInfo nodeId="5267577397386525170" fileName="EditorChangesHighlighter.java" startLine="119" startPosition="62" endLine="122" endPosition="9">
+      <varInfo nodeId="5267577397386525170" varName="changesHighligher" />
+    </scopeInfo>
     <scopeInfo nodeId="1682111275047034270" fileName="EditorChangesHighlighter.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1682111275047043004" varName="editorComponent" />
       <varInfo nodeId="8601487597690777599" varName="enabled" />
@@ -1325,7 +1369,9 @@
     <scopeInfo nodeId="762570481842505897" fileName="SModelUtils.java" startLine="72" startPosition="12" endLine="73" endPosition="60" />
     <scopeInfo nodeId="7523553402533156445" fileName="SModelUtils.java" startLine="21" startPosition="26" endLine="23" endPosition="3" />
     <scopeInfo nodeId="4056424511791981494" fileName="SModelUtils.java" startLine="56" startPosition="26" endLine="58" endPosition="45" />
-    <scopeInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="27" startPosition="80" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="27" startPosition="80" endLine="31" endPosition="0">
+      <varInfo nodeId="4056424511791981374" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4056424511791981400" fileName="SModelUtils.java" startLine="35" startPosition="57" endLine="39" endPosition="7">
       <varInfo nodeId="4056424511791981402" varName="annotationLinkDeclaration" />
     </scopeInfo>
@@ -1335,7 +1381,9 @@
     <scopeInfo nodeId="4056424511791981454" fileName="SModelUtils.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="4056424511791981469" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="762570481842505907" fileName="SModelUtils.java" startLine="68" startPosition="72" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="762570481842505907" fileName="SModelUtils.java" startLine="68" startPosition="72" endLine="72" endPosition="0">
+      <varInfo nodeId="762570481842505907" varName="major" />
+    </scopeInfo>
     <scopeInfo nodeId="4056424511791981368" fileName="SModelUtils.java" startLine="26" startPosition="61" endLine="31" endPosition="24" />
     <scopeInfo nodeId="4056424511791981482" fileName="SModelUtils.java" startLine="54" startPosition="64" endLine="61" endPosition="17">
       <varInfo nodeId="4056424511791981484" varName="nodes" />
@@ -1344,7 +1392,9 @@
     <scopeInfo nodeId="4056424511791981364" fileName="SModelUtils.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="4056424511791981384" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="762570481842505893" fileName="SModelUtils.java" startLine="66" startPosition="75" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="762570481842505893" fileName="SModelUtils.java" startLine="66" startPosition="75" endLine="75" endPosition="5">
+      <varInfo nodeId="762570481842505893" varName="minor" />
+    </scopeInfo>
     <scopeInfo nodeId="4056424511791981478" fileName="SModelUtils.java" startLine="52" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="4056424511791981514" varName="node" />
     </scopeInfo>
@@ -1853,28 +1903,48 @@
     <scopeInfo nodeId="5052922865790891802" fileName="ProjectTreeChangesHighlighter.java" startLine="691" startPosition="67" endLine="693" endPosition="36" />
     <scopeInfo nodeId="5052922865790891810" fileName="ProjectTreeChangesHighlighter.java" startLine="696" startPosition="69" endLine="698" endPosition="35" />
     <scopeInfo nodeId="5052922865790629137" fileName="ProjectTreeChangesHighlighter.java" startLine="66" startPosition="106" endLine="69" endPosition="56" />
-    <scopeInfo nodeId="2361569284773587230" fileName="ProjectTreeChangesHighlighter.java" startLine="108" startPosition="140" endLine="111" endPosition="15" />
+    <scopeInfo nodeId="2361569284773587230" fileName="ProjectTreeChangesHighlighter.java" startLine="108" startPosition="140" endLine="111" endPosition="15">
+      <varInfo nodeId="2361569284773587230" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="4344428334011849688" fileName="ProjectTreeChangesHighlighter.java" startLine="155" startPosition="99" endLine="158" endPosition="9" />
     <scopeInfo nodeId="5433128934919610389" fileName="ProjectTreeChangesHighlighter.java" startLine="169" startPosition="126" endLine="172" endPosition="75">
       <varInfo nodeId="5433128934919610398" varName="modelChangesManager" />
     </scopeInfo>
     <scopeInfo nodeId="1794625231785958358" fileName="ProjectTreeChangesHighlighter.java" startLine="213" startPosition="29" endLine="216" endPosition="13" />
-    <scopeInfo nodeId="5962623969496447878" fileName="ProjectTreeChangesHighlighter.java" startLine="213" startPosition="29" endLine="216" endPosition="13" />
-    <scopeInfo nodeId="5962623969496447924" fileName="ProjectTreeChangesHighlighter.java" startLine="231" startPosition="11" endLine="234" endPosition="11" />
-    <scopeInfo nodeId="1794625231785958469" fileName="ProjectTreeChangesHighlighter.java" startLine="305" startPosition="31" endLine="308" endPosition="15" />
+    <scopeInfo nodeId="5962623969496447878" fileName="ProjectTreeChangesHighlighter.java" startLine="213" startPosition="29" endLine="216" endPosition="13">
+      <varInfo nodeId="5962623969496447878" varName="ancestor" />
+    </scopeInfo>
+    <scopeInfo nodeId="5962623969496447924" fileName="ProjectTreeChangesHighlighter.java" startLine="231" startPosition="11" endLine="234" endPosition="11">
+      <varInfo nodeId="5962623969496447924" varName="treeNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1794625231785958469" fileName="ProjectTreeChangesHighlighter.java" startLine="305" startPosition="31" endLine="308" endPosition="15">
+      <varInfo nodeId="1794625231785958469" varName="ancestor" />
+    </scopeInfo>
     <scopeInfo nodeId="1794625231785958614" fileName="ProjectTreeChangesHighlighter.java" startLine="305" startPosition="31" endLine="308" endPosition="15" />
     <scopeInfo nodeId="1794625231785958517" fileName="ProjectTreeChangesHighlighter.java" startLine="320" startPosition="46" endLine="323" endPosition="11" />
-    <scopeInfo nodeId="1794625231785958518" fileName="ProjectTreeChangesHighlighter.java" startLine="320" startPosition="46" endLine="323" endPosition="11" />
-    <scopeInfo nodeId="1064435610503036365" fileName="ProjectTreeChangesHighlighter.java" startLine="350" startPosition="83" endLine="353" endPosition="5" />
-    <scopeInfo nodeId="1064435610503045333" fileName="ProjectTreeChangesHighlighter.java" startLine="362" startPosition="47" endLine="365" endPosition="5" />
+    <scopeInfo nodeId="1794625231785958518" fileName="ProjectTreeChangesHighlighter.java" startLine="320" startPosition="46" endLine="323" endPosition="11">
+      <varInfo nodeId="1794625231785958518" varName="treeNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1064435610503036365" fileName="ProjectTreeChangesHighlighter.java" startLine="350" startPosition="83" endLine="353" endPosition="5">
+      <varInfo nodeId="1064435610503036365" varName="descendant" />
+    </scopeInfo>
+    <scopeInfo nodeId="1064435610503045333" fileName="ProjectTreeChangesHighlighter.java" startLine="362" startPosition="47" endLine="365" endPosition="5">
+      <varInfo nodeId="1064435610503045333" varName="descendant" />
+    </scopeInfo>
     <scopeInfo nodeId="5962623969496446677" fileName="ProjectTreeChangesHighlighter.java" startLine="403" startPosition="60" endLine="406" endPosition="11" />
     <scopeInfo nodeId="5962623969496446704" fileName="ProjectTreeChangesHighlighter.java" startLine="407" startPosition="60" endLine="410" endPosition="11" />
     <scopeInfo nodeId="5962623969496446958" fileName="ProjectTreeChangesHighlighter.java" startLine="464" startPosition="33" endLine="467" endPosition="17" />
-    <scopeInfo nodeId="5404955839398602113" fileName="ProjectTreeChangesHighlighter.java" startLine="521" startPosition="31" endLine="524" endPosition="5" />
+    <scopeInfo nodeId="5404955839398602113" fileName="ProjectTreeChangesHighlighter.java" startLine="521" startPosition="31" endLine="524" endPosition="5">
+      <varInfo nodeId="5404955839398602113" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="8899216664493121339" fileName="ProjectTreeChangesHighlighter.java" startLine="605" startPosition="49" endLine="608" endPosition="7" />
-    <scopeInfo nodeId="8899216664493121416" fileName="ProjectTreeChangesHighlighter.java" startLine="605" startPosition="49" endLine="608" endPosition="7" />
+    <scopeInfo nodeId="8899216664493121416" fileName="ProjectTreeChangesHighlighter.java" startLine="605" startPosition="49" endLine="608" endPosition="7">
+      <varInfo nodeId="8899216664493121416" varName="sNodeTreeNode" />
+    </scopeInfo>
     <scopeInfo nodeId="8899216664493121345" fileName="ProjectTreeChangesHighlighter.java" startLine="611" startPosition="52" endLine="614" endPosition="7" />
-    <scopeInfo nodeId="8899216664493121461" fileName="ProjectTreeChangesHighlighter.java" startLine="611" startPosition="52" endLine="614" endPosition="7" />
+    <scopeInfo nodeId="8899216664493121461" fileName="ProjectTreeChangesHighlighter.java" startLine="611" startPosition="52" endLine="614" endPosition="7">
+      <varInfo nodeId="8899216664493121461" varName="sNodeTreeNode" />
+    </scopeInfo>
     <scopeInfo nodeId="7542415519011387474" fileName="ProjectTreeChangesHighlighter.java" startLine="679" startPosition="0" endLine="682" endPosition="0" />
     <scopeInfo nodeId="7542415519011387595" fileName="ProjectTreeChangesHighlighter.java" startLine="682" startPosition="0" endLine="685" endPosition="0" />
     <scopeInfo nodeId="3360080708000238091" fileName="ProjectTreeChangesHighlighter.java" startLine="700" startPosition="0" endLine="703" endPosition="0">
@@ -1904,7 +1974,9 @@
     <scopeInfo nodeId="5962623969496446642" fileName="ProjectTreeChangesHighlighter.java" startLine="395" startPosition="94" endLine="399" endPosition="17" />
     <scopeInfo nodeId="5962623969496446765" fileName="ProjectTreeChangesHighlighter.java" startLine="422" startPosition="94" endLine="426" endPosition="17" />
     <scopeInfo nodeId="5962623969496446844" fileName="ProjectTreeChangesHighlighter.java" startLine="441" startPosition="94" endLine="445" endPosition="17" />
-    <scopeInfo nodeId="365157171029572546" fileName="ProjectTreeChangesHighlighter.java" startLine="500" startPosition="138" endLine="504" endPosition="0" />
+    <scopeInfo nodeId="365157171029572546" fileName="ProjectTreeChangesHighlighter.java" startLine="500" startPosition="138" endLine="504" endPosition="0">
+      <varInfo nodeId="365157171029572546" varName="tn" />
+    </scopeInfo>
     <scopeInfo nodeId="5404955839398584619" fileName="ProjectTreeChangesHighlighter.java" startLine="520" startPosition="76" endLine="524" endPosition="5" />
     <scopeInfo nodeId="704512678984999389" fileName="ProjectTreeChangesHighlighter.java" startLine="535" startPosition="15" endLine="539" endPosition="38" />
     <scopeInfo nodeId="5052922865790629132" fileName="ProjectTreeChangesHighlighter.java" startLine="549" startPosition="90" endLine="553" endPosition="16" />
@@ -1940,7 +2012,9 @@
       <varInfo nodeId="5052922865790891815" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="4344428334011849665" fileName="ProjectTreeChangesHighlighter.java" startLine="154" startPosition="52" endLine="159" endPosition="7" />
-    <scopeInfo nodeId="4344428334011849685" fileName="ProjectTreeChangesHighlighter.java" startLine="154" startPosition="52" endLine="159" endPosition="7" />
+    <scopeInfo nodeId="4344428334011849685" fileName="ProjectTreeChangesHighlighter.java" startLine="154" startPosition="52" endLine="159" endPosition="7">
+      <varInfo nodeId="4344428334011849685" varName="descendant" />
+    </scopeInfo>
     <scopeInfo nodeId="5962623969496447866" fileName="ProjectTreeChangesHighlighter.java" startLine="205" startPosition="44" endLine="210" endPosition="13" />
     <scopeInfo nodeId="1794625231785958420" fileName="ProjectTreeChangesHighlighter.java" startLine="283" startPosition="44" endLine="288" endPosition="13" />
     <scopeInfo nodeId="8481344865489231566" fileName="ProjectTreeChangesHighlighter.java" startLine="294" startPosition="68" endLine="299" endPosition="17" />
@@ -1969,14 +2043,28 @@
     <scopeInfo nodeId="5433128934919610378" fileName="ProjectTreeChangesHighlighter.java" startLine="167" startPosition="99" endLine="173" endPosition="15" />
     <scopeInfo nodeId="5235541930886077848" fileName="ProjectTreeChangesHighlighter.java" startLine="184" startPosition="23" endLine="190" endPosition="7" />
     <scopeInfo nodeId="1794625231785958357" fileName="ProjectTreeChangesHighlighter.java" startLine="212" startPosition="61" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="5962623969496447958" fileName="ProjectTreeChangesHighlighter.java" startLine="236" startPosition="78" endLine="242" endPosition="11" />
-    <scopeInfo nodeId="5962623969496448001" fileName="ProjectTreeChangesHighlighter.java" startLine="244" startPosition="67" endLine="250" endPosition="11" />
+    <scopeInfo nodeId="5962623969496447958" fileName="ProjectTreeChangesHighlighter.java" startLine="236" startPosition="78" endLine="242" endPosition="11">
+      <varInfo nodeId="5962623969496447958" varName="treeNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5962623969496448001" fileName="ProjectTreeChangesHighlighter.java" startLine="244" startPosition="67" endLine="250" endPosition="11">
+      <varInfo nodeId="5962623969496448001" varName="treeNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1794625231785958613" fileName="ProjectTreeChangesHighlighter.java" startLine="304" startPosition="63" endLine="310" endPosition="0" />
-    <scopeInfo nodeId="1794625231785958546" fileName="ProjectTreeChangesHighlighter.java" startLine="325" startPosition="78" endLine="331" endPosition="11" />
-    <scopeInfo nodeId="1794625231785958583" fileName="ProjectTreeChangesHighlighter.java" startLine="333" startPosition="67" endLine="339" endPosition="11" />
-    <scopeInfo nodeId="5962623969496446637" fileName="ProjectTreeChangesHighlighter.java" startLine="394" startPosition="15" endLine="400" endPosition="15" />
-    <scopeInfo nodeId="5962623969496446760" fileName="ProjectTreeChangesHighlighter.java" startLine="421" startPosition="15" endLine="427" endPosition="15" />
-    <scopeInfo nodeId="5962623969496446839" fileName="ProjectTreeChangesHighlighter.java" startLine="440" startPosition="15" endLine="446" endPosition="15" />
+    <scopeInfo nodeId="1794625231785958546" fileName="ProjectTreeChangesHighlighter.java" startLine="325" startPosition="78" endLine="331" endPosition="11">
+      <varInfo nodeId="1794625231785958546" varName="treeNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1794625231785958583" fileName="ProjectTreeChangesHighlighter.java" startLine="333" startPosition="67" endLine="339" endPosition="11">
+      <varInfo nodeId="1794625231785958583" varName="treeNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5962623969496446637" fileName="ProjectTreeChangesHighlighter.java" startLine="394" startPosition="15" endLine="400" endPosition="15">
+      <varInfo nodeId="5962623969496446637" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="5962623969496446760" fileName="ProjectTreeChangesHighlighter.java" startLine="421" startPosition="15" endLine="427" endPosition="15">
+      <varInfo nodeId="5962623969496446760" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="5962623969496446839" fileName="ProjectTreeChangesHighlighter.java" startLine="440" startPosition="15" endLine="446" endPosition="15">
+      <varInfo nodeId="5962623969496446839" varName="c" />
+    </scopeInfo>
     <scopeInfo nodeId="5962623969496446947" fileName="ProjectTreeChangesHighlighter.java" startLine="462" startPosition="52" endLine="468" endPosition="15">
       <varInfo nodeId="5962623969496446949" varName="node" />
     </scopeInfo>
@@ -1987,13 +2075,21 @@
       <varInfo nodeId="8899216664493121343" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="3208730671234903098" fileName="ProjectTreeChangesHighlighter.java" startLine="622" startPosition="49" endLine="628" endPosition="7" />
-    <scopeInfo nodeId="3208730671234903099" fileName="ProjectTreeChangesHighlighter.java" startLine="622" startPosition="49" endLine="628" endPosition="7" />
+    <scopeInfo nodeId="3208730671234903099" fileName="ProjectTreeChangesHighlighter.java" startLine="622" startPosition="49" endLine="628" endPosition="7">
+      <varInfo nodeId="3208730671234903099" varName="sNodeTreeNode" />
+    </scopeInfo>
     <scopeInfo nodeId="3208730671234903119" fileName="ProjectTreeChangesHighlighter.java" startLine="631" startPosition="52" endLine="637" endPosition="7" />
-    <scopeInfo nodeId="3208730671234903545" fileName="ProjectTreeChangesHighlighter.java" startLine="631" startPosition="52" endLine="637" endPosition="7" />
+    <scopeInfo nodeId="3208730671234903545" fileName="ProjectTreeChangesHighlighter.java" startLine="631" startPosition="52" endLine="637" endPosition="7">
+      <varInfo nodeId="3208730671234903545" varName="sNodeTreeNode" />
+    </scopeInfo>
     <scopeInfo nodeId="2018072152268789312" fileName="ProjectTreeChangesHighlighter.java" startLine="645" startPosition="49" endLine="651" endPosition="7" />
-    <scopeInfo nodeId="2018072152268789313" fileName="ProjectTreeChangesHighlighter.java" startLine="645" startPosition="49" endLine="651" endPosition="7" />
+    <scopeInfo nodeId="2018072152268789313" fileName="ProjectTreeChangesHighlighter.java" startLine="645" startPosition="49" endLine="651" endPosition="7">
+      <varInfo nodeId="2018072152268789313" varName="sNodeTreeNode" />
+    </scopeInfo>
     <scopeInfo nodeId="2018072152268789343" fileName="ProjectTreeChangesHighlighter.java" startLine="654" startPosition="52" endLine="660" endPosition="7" />
-    <scopeInfo nodeId="2018072152268789344" fileName="ProjectTreeChangesHighlighter.java" startLine="654" startPosition="52" endLine="660" endPosition="7" />
+    <scopeInfo nodeId="2018072152268789344" fileName="ProjectTreeChangesHighlighter.java" startLine="654" startPosition="52" endLine="660" endPosition="7">
+      <varInfo nodeId="2018072152268789344" varName="sNodeTreeNode" />
+    </scopeInfo>
     <scopeInfo nodeId="7601193928418877026" fileName="ProjectTreeChangesHighlighter.java" startLine="79" startPosition="92" endLine="86" endPosition="0">
       <varInfo nodeId="7601193928418877029" varName="pane" />
     </scopeInfo>
@@ -2016,10 +2112,18 @@
     <scopeInfo nodeId="5404955839398584616" fileName="ProjectTreeChangesHighlighter.java" startLine="519" startPosition="0" endLine="526" endPosition="0">
       <varInfo nodeId="5404955839398602105" varName="treeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5052922865790629132" fileName="ProjectTreeChangesHighlighter.java" startLine="548" startPosition="0" endLine="555" endPosition="0" />
-    <scopeInfo nodeId="5052922865790629132" fileName="ProjectTreeChangesHighlighter.java" startLine="555" startPosition="0" endLine="562" endPosition="0" />
-    <scopeInfo nodeId="5052922865790629132" fileName="ProjectTreeChangesHighlighter.java" startLine="562" startPosition="0" endLine="569" endPosition="0" />
-    <scopeInfo nodeId="5052922865790629132" fileName="ProjectTreeChangesHighlighter.java" startLine="569" startPosition="0" endLine="576" endPosition="0" />
+    <scopeInfo nodeId="5052922865790629132" fileName="ProjectTreeChangesHighlighter.java" startLine="548" startPosition="0" endLine="555" endPosition="0">
+      <varInfo nodeId="5052922865790629132" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="5052922865790629132" fileName="ProjectTreeChangesHighlighter.java" startLine="555" startPosition="0" endLine="562" endPosition="0">
+      <varInfo nodeId="5052922865790629132" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="5052922865790629132" fileName="ProjectTreeChangesHighlighter.java" startLine="562" startPosition="0" endLine="569" endPosition="0">
+      <varInfo nodeId="5052922865790629132" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="5052922865790629132" fileName="ProjectTreeChangesHighlighter.java" startLine="569" startPosition="0" endLine="576" endPosition="0">
+      <varInfo nodeId="5052922865790629132" varName="checkedDotOperand" />
+    </scopeInfo>
     <scopeInfo nodeId="6023428257643014528" fileName="ProjectTreeChangesHighlighter.java" startLine="580" startPosition="50" endLine="587" endPosition="8" />
     <scopeInfo nodeId="2838566016556352222" fileName="ProjectTreeChangesHighlighter.java" startLine="78" startPosition="12" endLine="86" endPosition="9" />
     <scopeInfo nodeId="5433128934919610375" fileName="ProjectTreeChangesHighlighter.java" startLine="166" startPosition="29" endLine="174" endPosition="13" />
@@ -2083,7 +2187,9 @@
     <scopeInfo nodeId="1794625231785958658" fileName="ProjectTreeChangesHighlighter.java" startLine="435" startPosition="63" endLine="448" endPosition="0" />
     <scopeInfo nodeId="704512678984999260" fileName="ProjectTreeChangesHighlighter.java" startLine="533" startPosition="88" endLine="546" endPosition="5" />
     <scopeInfo nodeId="3935103675993767267" fileName="ProjectTreeChangesHighlighter.java" startLine="493" startPosition="61" endLine="507" endPosition="19" />
-    <scopeInfo nodeId="3935103675993769247" fileName="ProjectTreeChangesHighlighter.java" startLine="493" startPosition="61" endLine="507" endPosition="19" />
+    <scopeInfo nodeId="3935103675993769247" fileName="ProjectTreeChangesHighlighter.java" startLine="493" startPosition="61" endLine="507" endPosition="19">
+      <varInfo nodeId="3935103675993769247" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5052922865790892977" fileName="ProjectTreeChangesHighlighter.java" startLine="72" startPosition="31" endLine="87" endPosition="5">
       <varInfo nodeId="2838566016556342461" varName="projectPane" />
       <varInfo nodeId="4347917388473370670" varName="tree" />
@@ -2129,7 +2235,9 @@
     <scopeInfo nodeId="5962623969496448896" fileName="ProjectTreeChangesHighlighter.java" startLine="487" startPosition="142" endLine="514" endPosition="11">
       <varInfo nodeId="7430908097350477916" varName="wereMessages" />
     </scopeInfo>
-    <scopeInfo nodeId="5962623969496448894" fileName="ProjectTreeChangesHighlighter.java" startLine="486" startPosition="59" endLine="515" endPosition="9" />
+    <scopeInfo nodeId="5962623969496448894" fileName="ProjectTreeChangesHighlighter.java" startLine="486" startPosition="59" endLine="515" endPosition="9">
+      <varInfo nodeId="5962623969496448894" varName="modelTreeNode" />
+    </scopeInfo>
     <scopeInfo nodeId="5962623969496448866" fileName="ProjectTreeChangesHighlighter.java" startLine="484" startPosition="25" endLine="515" endPosition="9">
       <varInfo nodeId="5962623969496448882" varName="color" />
       <varInfo nodeId="2261642348366451461" varName="fileStatus" />
@@ -2330,7 +2438,9 @@
     <scopeInfo nodeId="1671489224027673032" fileName="RootNodeFileStatusManager.java" startLine="123" startPosition="65" endLine="129" endPosition="0" />
     <scopeInfo nodeId="3722815385094384687" fileName="RootNodeFileStatusManager.java" startLine="71" startPosition="153" endLine="78" endPosition="15" />
     <scopeInfo nodeId="3722815385094384684" fileName="RootNodeFileStatusManager.java" startLine="70" startPosition="29" endLine="79" endPosition="13" />
-    <scopeInfo nodeId="3722815385094384685" fileName="RootNodeFileStatusManager.java" startLine="70" startPosition="29" endLine="79" endPosition="13" />
+    <scopeInfo nodeId="3722815385094384685" fileName="RootNodeFileStatusManager.java" startLine="70" startPosition="29" endLine="79" endPosition="13">
+      <varInfo nodeId="3722815385094384685" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="3722815385094378200" fileName="RootNodeFileStatusManager.java" startLine="93" startPosition="44" endLine="104" endPosition="13" />
     <scopeInfo nodeId="3722815385094384683" fileName="RootNodeFileStatusManager.java" startLine="69" startPosition="60" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1142852935921022289" fileName="RootNodeFileStatusManager.java" startLine="121" startPosition="29" endLine="133" endPosition="13">
@@ -2422,11 +2532,21 @@
     <scopeInfo nodeId="6753405296903809204" fileName="MPSTreeUtils.java" startLine="32" startPosition="97" endLine="35" endPosition="7" />
     <scopeInfo nodeId="6753405296903809260" fileName="MPSTreeUtils.java" startLine="41" startPosition="60" endLine="44" endPosition="7" />
     <scopeInfo nodeId="6753405296903809292" fileName="MPSTreeUtils.java" startLine="50" startPosition="97" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="833977803389943643" fileName="MPSTreeUtils.java" startLine="60" startPosition="100" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="6753405296903809160" fileName="MPSTreeUtils.java" startLine="22" startPosition="91" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="6753405296903809202" fileName="MPSTreeUtils.java" startLine="31" startPosition="108" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="6753405296903809257" fileName="MPSTreeUtils.java" startLine="40" startPosition="91" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="6753405296903809290" fileName="MPSTreeUtils.java" startLine="49" startPosition="102" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="833977803389943643" fileName="MPSTreeUtils.java" startLine="60" startPosition="100" endLine="64" endPosition="5">
+      <varInfo nodeId="833977803389943643" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="6753405296903809160" fileName="MPSTreeUtils.java" startLine="22" startPosition="91" endLine="27" endPosition="5">
+      <varInfo nodeId="6753405296903809160" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="6753405296903809202" fileName="MPSTreeUtils.java" startLine="31" startPosition="108" endLine="36" endPosition="5">
+      <varInfo nodeId="6753405296903809202" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="6753405296903809257" fileName="MPSTreeUtils.java" startLine="40" startPosition="91" endLine="45" endPosition="5">
+      <varInfo nodeId="6753405296903809257" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="6753405296903809290" fileName="MPSTreeUtils.java" startLine="49" startPosition="102" endLine="54" endPosition="5">
+      <varInfo nodeId="6753405296903809290" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="6753405296903718776" fileName="MPSTreeUtils.java" startLine="22" startPosition="91" endLine="28" endPosition="16" />
     <scopeInfo nodeId="6753405296903809181" fileName="MPSTreeUtils.java" startLine="31" startPosition="108" endLine="37" endPosition="16" />
     <scopeInfo nodeId="6753405296903809251" fileName="MPSTreeUtils.java" startLine="40" startPosition="91" endLine="46" endPosition="16" />
@@ -2435,15 +2555,23 @@
       <varInfo nodeId="833977803389943630" varName="children" />
       <varInfo nodeId="833977803389943637" varName="descendants" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="21" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="21" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="6753405296903707476" varName="_this" />
+    </scopeInfo>
     <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="6753405296903707476" varName="_this" />
       <varInfo nodeId="6753405296903809238" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="39" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="39" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="6753405296903707476" varName="_this" />
+    </scopeInfo>
     <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="6753405296903707476" varName="_this" />
       <varInfo nodeId="6753405296903809254" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="57" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="57" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="6753405296903707476" varName="_this" />
+    </scopeInfo>
     <unitInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.MPSTreeUtils" />
   </root>
   <root nodeId="8006781392765204425">
@@ -3660,22 +3788,34 @@
     <scopeInfo nodeId="7542415519011395026" fileName="ModelChangesManager.java" startLine="213" startPosition="29" endLine="216" endPosition="9" />
     <scopeInfo nodeId="7542415519011395027" fileName="ModelChangesManager.java" startLine="213" startPosition="29" endLine="216" endPosition="9" />
     <scopeInfo nodeId="4373338147090813054" fileName="ModelChangesManager.java" startLine="237" startPosition="69" endLine="240" endPosition="5" />
-    <scopeInfo nodeId="4373338147090813408" fileName="ModelChangesManager.java" startLine="237" startPosition="69" endLine="240" endPosition="5" />
+    <scopeInfo nodeId="4373338147090813408" fileName="ModelChangesManager.java" startLine="237" startPosition="69" endLine="240" endPosition="5">
+      <varInfo nodeId="4373338147090813408" varName="root" />
+    </scopeInfo>
     <scopeInfo nodeId="3367145324776993279" fileName="ModelChangesManager.java" startLine="272" startPosition="56" endLine="275" endPosition="7" />
     <scopeInfo nodeId="3367145324776993296" fileName="ModelChangesManager.java" startLine="299" startPosition="56" endLine="302" endPosition="7" />
-    <scopeInfo nodeId="7939577653110509046" fileName="ModelChangesManager.java" startLine="324" startPosition="0" endLine="327" endPosition="5" />
-    <scopeInfo nodeId="2050662657648717586" fileName="ModelChangesManager.java" startLine="357" startPosition="27" endLine="360" endPosition="11" />
+    <scopeInfo nodeId="7939577653110509046" fileName="ModelChangesManager.java" startLine="324" startPosition="0" endLine="327" endPosition="5">
+      <varInfo nodeId="7939577653110509046" varName="change" />
+    </scopeInfo>
+    <scopeInfo nodeId="2050662657648717586" fileName="ModelChangesManager.java" startLine="357" startPosition="27" endLine="360" endPosition="11">
+      <varInfo nodeId="2050662657648717586" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="7617953927522650993" fileName="ModelChangesManager.java" startLine="357" startPosition="27" endLine="360" endPosition="11" />
-    <scopeInfo nodeId="967641992124638726" fileName="ModelChangesManager.java" startLine="385" startPosition="61" endLine="388" endPosition="9" />
+    <scopeInfo nodeId="967641992124638726" fileName="ModelChangesManager.java" startLine="385" startPosition="61" endLine="388" endPosition="9">
+      <varInfo nodeId="967641992124638726" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="967641992124637122" fileName="ModelChangesManager.java" startLine="409" startPosition="54" endLine="412" endPosition="9" />
     <scopeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="477" startPosition="27" endLine="480" endPosition="34" />
     <scopeInfo nodeId="399572749666384532" fileName="ModelChangesManager.java" startLine="556" startPosition="66" endLine="559" endPosition="7" />
     <scopeInfo nodeId="1981440534894370287" fileName="ModelChangesManager.java" startLine="574" startPosition="39" endLine="577" endPosition="122" />
     <scopeInfo nodeId="5045020112651939532" fileName="ModelChangesManager.java" startLine="582" startPosition="25" endLine="585" endPosition="9" />
-    <scopeInfo nodeId="5045020112651939579" fileName="ModelChangesManager.java" startLine="582" startPosition="25" endLine="585" endPosition="9" />
+    <scopeInfo nodeId="5045020112651939579" fileName="ModelChangesManager.java" startLine="582" startPosition="25" endLine="585" endPosition="9">
+      <varInfo nodeId="5045020112651939579" varName="root" />
+    </scopeInfo>
     <scopeInfo nodeId="83742232301382707" fileName="ModelChangesManager.java" startLine="630" startPosition="96" endLine="633" endPosition="9" />
     <scopeInfo nodeId="83742232301382749" fileName="ModelChangesManager.java" startLine="630" startPosition="96" endLine="633" endPosition="9" />
-    <scopeInfo nodeId="1281598945698463601" fileName="ModelChangesManager.java" startLine="657" startPosition="0" endLine="660" endPosition="7" />
+    <scopeInfo nodeId="1281598945698463601" fileName="ModelChangesManager.java" startLine="657" startPosition="0" endLine="660" endPosition="7">
+      <varInfo nodeId="1281598945698463601" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="1281598945698463634" fileName="ModelChangesManager.java" startLine="666" startPosition="49" endLine="669" endPosition="55">
       <varInfo nodeId="1281598945698463636" varName="node" />
       <varInfo nodeId="1281598945698463647" varName="virtualFile" />
@@ -3686,10 +3826,18 @@
     <scopeInfo nodeId="1281598945698463661" fileName="ModelChangesManager.java" startLine="672" startPosition="35" endLine="675" endPosition="7" />
     <scopeInfo nodeId="1281598945698463662" fileName="ModelChangesManager.java" startLine="672" startPosition="35" endLine="675" endPosition="7" />
     <scopeInfo nodeId="3767959966756100127" fileName="ModelChangesManager.java" startLine="684" startPosition="24" endLine="687" endPosition="13" />
-    <scopeInfo nodeId="1998279847126832470" fileName="ModelChangesManager.java" startLine="729" startPosition="34" endLine="732" endPosition="9" />
-    <scopeInfo nodeId="2698665420347317080" fileName="ModelChangesManager.java" startLine="760" startPosition="48" endLine="763" endPosition="5" />
-    <scopeInfo nodeId="1998279847126788679" fileName="ModelChangesManager.java" startLine="813" startPosition="9" endLine="816" endPosition="9" />
-    <scopeInfo nodeId="762570481842487007" fileName="ModelChangesManager.java" startLine="860" startPosition="5" endLine="863" endPosition="5" />
+    <scopeInfo nodeId="1998279847126832470" fileName="ModelChangesManager.java" startLine="729" startPosition="34" endLine="732" endPosition="9">
+      <varInfo nodeId="1998279847126832470" varName="nodeIdRolePair" />
+    </scopeInfo>
+    <scopeInfo nodeId="2698665420347317080" fileName="ModelChangesManager.java" startLine="760" startPosition="48" endLine="763" endPosition="5">
+      <varInfo nodeId="2698665420347317080" varName="change" />
+    </scopeInfo>
+    <scopeInfo nodeId="1998279847126788679" fileName="ModelChangesManager.java" startLine="813" startPosition="9" endLine="816" endPosition="9">
+      <varInfo nodeId="1998279847126788679" varName="nodeId" />
+    </scopeInfo>
+    <scopeInfo nodeId="762570481842487007" fileName="ModelChangesManager.java" startLine="860" startPosition="5" endLine="863" endPosition="5">
+      <varInfo nodeId="762570481842487007" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5890845648943271" fileName="ModelChangesManager.java" startLine="891" startPosition="12" endLine="894" endPosition="20" />
     <scopeInfo nodeId="977382291400364291" fileName="ModelChangesManager.java" startLine="926" startPosition="33" endLine="929" endPosition="26" />
     <scopeInfo nodeId="5687497293128274353" fileName="ModelChangesManager.java" startLine="963" startPosition="44" endLine="966" endPosition="42">
@@ -3697,30 +3845,48 @@
     </scopeInfo>
     <scopeInfo nodeId="5687497293128274384" fileName="ModelChangesManager.java" startLine="967" startPosition="16" endLine="970" endPosition="11" />
     <scopeInfo nodeId="5687497293128274385" fileName="ModelChangesManager.java" startLine="967" startPosition="16" endLine="970" endPosition="11" />
-    <scopeInfo nodeId="9017393975293865018" fileName="ModelChangesManager.java" startLine="1149" startPosition="59" endLine="1152" endPosition="7" />
-    <scopeInfo nodeId="5463005411127860476" fileName="ModelChangesManager.java" startLine="1169" startPosition="9" endLine="1172" endPosition="9" />
-    <scopeInfo nodeId="5463005411127860646" fileName="ModelChangesManager.java" startLine="1172" startPosition="9" endLine="1175" endPosition="9" />
+    <scopeInfo nodeId="9017393975293865018" fileName="ModelChangesManager.java" startLine="1149" startPosition="59" endLine="1152" endPosition="7">
+      <varInfo nodeId="9017393975293865018" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5463005411127860476" fileName="ModelChangesManager.java" startLine="1169" startPosition="9" endLine="1172" endPosition="9">
+      <varInfo nodeId="5463005411127860476" varName="property" />
+    </scopeInfo>
+    <scopeInfo nodeId="5463005411127860646" fileName="ModelChangesManager.java" startLine="1172" startPosition="9" endLine="1175" endPosition="9">
+      <varInfo nodeId="5463005411127860646" varName="reference" />
+    </scopeInfo>
     <scopeInfo nodeId="2352903979085962806" fileName="ModelChangesManager.java" startLine="1297" startPosition="48" endLine="1300" endPosition="17" />
     <scopeInfo nodeId="9042451232534986452" fileName="ModelChangesManager.java" startLine="1557" startPosition="45" endLine="1560" endPosition="19" />
     <scopeInfo nodeId="3767959966756100146" fileName="ModelChangesManager.java" startLine="107" startPosition="43" endLine="111" endPosition="0" />
     <scopeInfo nodeId="993300782394691575" fileName="ModelChangesManager.java" startLine="116" startPosition="57" endLine="120" endPosition="0" />
     <scopeInfo nodeId="3958959855415952422" fileName="ModelChangesManager.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="3464311049966838686" fileName="ModelChangesManager.java" startLine="222" startPosition="76" endLine="226" endPosition="0" />
+    <scopeInfo nodeId="3464311049966838686" fileName="ModelChangesManager.java" startLine="222" startPosition="76" endLine="226" endPosition="0">
+      <varInfo nodeId="3464311049966838686" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4691995209017140025" fileName="ModelChangesManager.java" startLine="272" startPosition="56" endLine="276" endPosition="13" />
     <scopeInfo nodeId="2698665420347282910" fileName="ModelChangesManager.java" startLine="292" startPosition="0" endLine="296" endPosition="0">
       <varInfo nodeId="2698665420347283133" varName="affectedRoot" />
       <varInfo nodeId="2698665420347283131" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="3367145324776993295" fileName="ModelChangesManager.java" startLine="299" startPosition="56" endLine="303" endPosition="13" />
-    <scopeInfo nodeId="8279184985700098687" fileName="ModelChangesManager.java" startLine="319" startPosition="107" endLine="323" endPosition="0" />
+    <scopeInfo nodeId="8279184985700098687" fileName="ModelChangesManager.java" startLine="319" startPosition="107" endLine="323" endPosition="0">
+      <varInfo nodeId="8279184985700098687" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="2698665420347283160" fileName="ModelChangesManager.java" startLine="331" startPosition="0" endLine="335" endPosition="0">
       <varInfo nodeId="2698665420347283221" varName="changeClass" />
       <varInfo nodeId="2698665420347283224" varName="condition" />
     </scopeInfo>
-    <scopeInfo nodeId="7437676040054230647" fileName="ModelChangesManager.java" startLine="337" startPosition="98" endLine="341" endPosition="0" />
-    <scopeInfo nodeId="3948998586072267672" fileName="ModelChangesManager.java" startLine="402" startPosition="116" endLine="406" endPosition="0" />
-    <scopeInfo nodeId="6198597596203365615" fileName="ModelChangesManager.java" startLine="416" startPosition="115" endLine="420" endPosition="0" />
-    <scopeInfo nodeId="4604734785880288074" fileName="ModelChangesManager.java" startLine="500" startPosition="126" endLine="504" endPosition="0" />
+    <scopeInfo nodeId="7437676040054230647" fileName="ModelChangesManager.java" startLine="337" startPosition="98" endLine="341" endPosition="0">
+      <varInfo nodeId="7437676040054230647" varName="change" />
+    </scopeInfo>
+    <scopeInfo nodeId="3948998586072267672" fileName="ModelChangesManager.java" startLine="402" startPosition="116" endLine="406" endPosition="0">
+      <varInfo nodeId="3948998586072267672" varName="a" />
+    </scopeInfo>
+    <scopeInfo nodeId="6198597596203365615" fileName="ModelChangesManager.java" startLine="416" startPosition="115" endLine="420" endPosition="0">
+      <varInfo nodeId="6198597596203365615" varName="a" />
+    </scopeInfo>
+    <scopeInfo nodeId="4604734785880288074" fileName="ModelChangesManager.java" startLine="500" startPosition="126" endLine="504" endPosition="0">
+      <varInfo nodeId="4604734785880288074" varName="snCh" />
+    </scopeInfo>
     <scopeInfo nodeId="7055875085428864160" fileName="ModelChangesManager.java" startLine="510" startPosition="45" endLine="514" endPosition="11">
       <varInfo nodeId="7055875085428865489" varName="deletedNode" />
     </scopeInfo>
@@ -3731,12 +3897,22 @@
       <varInfo nodeId="1867894338779676699" varName="role" />
       <varInfo nodeId="1867894338779676702" varName="silent" />
     </scopeInfo>
-    <scopeInfo nodeId="353838656593057545" fileName="ModelChangesManager.java" startLine="781" startPosition="97" endLine="785" endPosition="0" />
-    <scopeInfo nodeId="4558935990114282047" fileName="ModelChangesManager.java" startLine="794" startPosition="99" endLine="798" endPosition="0" />
-    <scopeInfo nodeId="1998279847126788463" fileName="ModelChangesManager.java" startLine="818" startPosition="5" endLine="822" endPosition="5" />
+    <scopeInfo nodeId="353838656593057545" fileName="ModelChangesManager.java" startLine="781" startPosition="97" endLine="785" endPosition="0">
+      <varInfo nodeId="353838656593057545" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="4558935990114282047" fileName="ModelChangesManager.java" startLine="794" startPosition="99" endLine="798" endPosition="0">
+      <varInfo nodeId="4558935990114282047" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="1998279847126788463" fileName="ModelChangesManager.java" startLine="818" startPosition="5" endLine="822" endPosition="5">
+      <varInfo nodeId="1998279847126788463" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="977382291400364265" fileName="ModelChangesManager.java" startLine="854" startPosition="40" endLine="858" endPosition="79" />
-    <scopeInfo nodeId="2107542654406137995" fileName="ModelChangesManager.java" startLine="868" startPosition="119" endLine="872" endPosition="0" />
-    <scopeInfo nodeId="2107542654406138019" fileName="ModelChangesManager.java" startLine="873" startPosition="77" endLine="877" endPosition="0" />
+    <scopeInfo nodeId="2107542654406137995" fileName="ModelChangesManager.java" startLine="868" startPosition="119" endLine="872" endPosition="0">
+      <varInfo nodeId="2107542654406137995" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="2107542654406138019" fileName="ModelChangesManager.java" startLine="873" startPosition="77" endLine="877" endPosition="0">
+      <varInfo nodeId="2107542654406138019" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="5687497293128274259" fileName="ModelChangesManager.java" startLine="950" startPosition="56" endLine="954" endPosition="111">
       <varInfo nodeId="5687497293128274270" varName="node" />
       <varInfo nodeId="5687497293128274261" varName="role" />
@@ -3763,29 +3939,63 @@
     <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1109" startPosition="85" endLine="1113" endPosition="16" />
     <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1116" startPosition="83" endLine="1120" endPosition="16" />
     <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1123" startPosition="103" endLine="1127" endPosition="16" />
-    <scopeInfo nodeId="5494534766666319272" fileName="ModelChangesManager.java" startLine="1135" startPosition="101" endLine="1139" endPosition="0" />
-    <scopeInfo nodeId="5494534766666319870" fileName="ModelChangesManager.java" startLine="1140" startPosition="107" endLine="1144" endPosition="0" />
+    <scopeInfo nodeId="5494534766666319272" fileName="ModelChangesManager.java" startLine="1135" startPosition="101" endLine="1139" endPosition="0">
+      <varInfo nodeId="5494534766666319272" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="5494534766666319870" fileName="ModelChangesManager.java" startLine="1140" startPosition="107" endLine="1144" endPosition="0">
+      <varInfo nodeId="5494534766666319870" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="3854217528818475430" fileName="ModelChangesManager.java" startLine="1164" startPosition="96" endLine="1168" endPosition="11">
       <varInfo nodeId="3854217528818475680" varName="thisChild" />
     </scopeInfo>
-    <scopeInfo nodeId="7601193928418818305" fileName="ModelChangesManager.java" startLine="1186" startPosition="117" endLine="1190" endPosition="0" />
-    <scopeInfo nodeId="7601193928418818778" fileName="ModelChangesManager.java" startLine="1216" startPosition="121" endLine="1220" endPosition="0" />
-    <scopeInfo nodeId="7601193928418818336" fileName="ModelChangesManager.java" startLine="1247" startPosition="117" endLine="1251" endPosition="0" />
-    <scopeInfo nodeId="7601193928418818359" fileName="ModelChangesManager.java" startLine="1289" startPosition="123" endLine="1293" endPosition="0" />
-    <scopeInfo nodeId="7601193928418818402" fileName="ModelChangesManager.java" startLine="1337" startPosition="125" endLine="1341" endPosition="0" />
-    <scopeInfo nodeId="2435943716190207884" fileName="ModelChangesManager.java" startLine="1371" startPosition="125" endLine="1375" endPosition="0" />
-    <scopeInfo nodeId="7601193928418818534" fileName="ModelChangesManager.java" startLine="1402" startPosition="115" endLine="1406" endPosition="0" />
-    <scopeInfo nodeId="8032267859367081364" fileName="ModelChangesManager.java" startLine="1407" startPosition="119" endLine="1411" endPosition="0" />
-    <scopeInfo nodeId="7476788099984142960" fileName="ModelChangesManager.java" startLine="1436" startPosition="101" endLine="1440" endPosition="0" />
-    <scopeInfo nodeId="8032267859367081464" fileName="ModelChangesManager.java" startLine="1442" startPosition="119" endLine="1446" endPosition="0" />
-    <scopeInfo nodeId="4106098632826232713" fileName="ModelChangesManager.java" startLine="1474" startPosition="101" endLine="1478" endPosition="0" />
-    <scopeInfo nodeId="7601193928418818626" fileName="ModelChangesManager.java" startLine="1485" startPosition="113" endLine="1489" endPosition="0" />
+    <scopeInfo nodeId="7601193928418818305" fileName="ModelChangesManager.java" startLine="1186" startPosition="117" endLine="1190" endPosition="0">
+      <varInfo nodeId="7601193928418818305" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="7601193928418818778" fileName="ModelChangesManager.java" startLine="1216" startPosition="121" endLine="1220" endPosition="0">
+      <varInfo nodeId="7601193928418818778" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="7601193928418818336" fileName="ModelChangesManager.java" startLine="1247" startPosition="117" endLine="1251" endPosition="0">
+      <varInfo nodeId="7601193928418818336" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="7601193928418818359" fileName="ModelChangesManager.java" startLine="1289" startPosition="123" endLine="1293" endPosition="0">
+      <varInfo nodeId="7601193928418818359" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="7601193928418818402" fileName="ModelChangesManager.java" startLine="1337" startPosition="125" endLine="1341" endPosition="0">
+      <varInfo nodeId="7601193928418818402" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="2435943716190207884" fileName="ModelChangesManager.java" startLine="1371" startPosition="125" endLine="1375" endPosition="0">
+      <varInfo nodeId="2435943716190207884" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="7601193928418818534" fileName="ModelChangesManager.java" startLine="1402" startPosition="115" endLine="1406" endPosition="0">
+      <varInfo nodeId="7601193928418818534" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032267859367081364" fileName="ModelChangesManager.java" startLine="1407" startPosition="119" endLine="1411" endPosition="0">
+      <varInfo nodeId="8032267859367081364" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="7476788099984142960" fileName="ModelChangesManager.java" startLine="1436" startPosition="101" endLine="1440" endPosition="0">
+      <varInfo nodeId="7476788099984142960" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032267859367081464" fileName="ModelChangesManager.java" startLine="1442" startPosition="119" endLine="1446" endPosition="0">
+      <varInfo nodeId="8032267859367081464" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="4106098632826232713" fileName="ModelChangesManager.java" startLine="1474" startPosition="101" endLine="1478" endPosition="0">
+      <varInfo nodeId="4106098632826232713" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="7601193928418818626" fileName="ModelChangesManager.java" startLine="1485" startPosition="113" endLine="1489" endPosition="0">
+      <varInfo nodeId="7601193928418818626" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="118178915293552733" fileName="ModelChangesManager.java" startLine="1500" startPosition="41" endLine="1504" endPosition="25">
       <varInfo nodeId="118178915293557484" varName="baseChild" />
     </scopeInfo>
-    <scopeInfo nodeId="9042451232535044243" fileName="ModelChangesManager.java" startLine="1549" startPosition="121" endLine="1553" endPosition="0" />
-    <scopeInfo nodeId="4829161031017898762" fileName="ModelChangesManager.java" startLine="1562" startPosition="117" endLine="1566" endPosition="0" />
-    <scopeInfo nodeId="7132911809917961388" fileName="ModelChangesManager.java" startLine="1567" startPosition="111" endLine="1571" endPosition="0" />
+    <scopeInfo nodeId="9042451232535044243" fileName="ModelChangesManager.java" startLine="1549" startPosition="121" endLine="1553" endPosition="0">
+      <varInfo nodeId="9042451232535044243" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="4829161031017898762" fileName="ModelChangesManager.java" startLine="1562" startPosition="117" endLine="1566" endPosition="0">
+      <varInfo nodeId="4829161031017898762" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="7132911809917961388" fileName="ModelChangesManager.java" startLine="1567" startPosition="111" endLine="1571" endPosition="0">
+      <varInfo nodeId="7132911809917961388" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="3464311049966838316" fileName="ModelChangesManager.java" startLine="221" startPosition="75" endLine="226" endPosition="7" />
     <scopeInfo nodeId="6105600802953097009" fileName="ModelChangesManager.java" startLine="229" startPosition="71" endLine="234" endPosition="125" />
     <scopeInfo nodeId="7437676040054230187" fileName="ModelChangesManager.java" startLine="336" startPosition="34" endLine="341" endPosition="14" />
@@ -3799,7 +4009,9 @@
       <varInfo nodeId="5815473025919856867" varName="thisNodeInBase" />
     </scopeInfo>
     <scopeInfo nodeId="4604734785880205954" fileName="ModelChangesManager.java" startLine="499" startPosition="49" endLine="504" endPosition="11" />
-    <scopeInfo nodeId="399572749666384529" fileName="ModelChangesManager.java" startLine="555" startPosition="48" endLine="560" endPosition="5" />
+    <scopeInfo nodeId="399572749666384529" fileName="ModelChangesManager.java" startLine="555" startPosition="48" endLine="560" endPosition="5">
+      <varInfo nodeId="399572749666384529" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="1281598945698463629" fileName="ModelChangesManager.java" startLine="665" startPosition="72" endLine="670" endPosition="9" />
     <scopeInfo nodeId="1741994337989997161" fileName="ModelChangesManager.java" startLine="696" startPosition="0" endLine="701" endPosition="0" />
     <scopeInfo nodeId="5962623969496361306" fileName="ModelChangesManager.java" startLine="704" startPosition="25" endLine="709" endPosition="35" />
@@ -3877,7 +4089,9 @@
     <scopeInfo nodeId="977382291400365729" fileName="ModelChangesManager.java" startLine="941" startPosition="16" endLine="947" endPosition="75">
       <varInfo nodeId="3368272443920363759" varName="anchorChild" />
     </scopeInfo>
-    <scopeInfo nodeId="3854217528818475427" fileName="ModelChangesManager.java" startLine="1163" startPosition="77" endLine="1169" endPosition="9" />
+    <scopeInfo nodeId="3854217528818475427" fileName="ModelChangesManager.java" startLine="1163" startPosition="77" endLine="1169" endPosition="9">
+      <varInfo nodeId="3854217528818475427" varName="baseChild" />
+    </scopeInfo>
     <scopeInfo nodeId="2352903979085962819" fileName="ModelChangesManager.java" startLine="1301" startPosition="22" endLine="1307" endPosition="17">
       <varInfo nodeId="2352903979085962826" varName="basePresentableValue" />
       <varInfo nodeId="2352903979085962833" varName="newPresentableValue" />
@@ -3895,33 +4109,88 @@
     <scopeInfo nodeId="6680062558770264583" fileName="ModelChangesManager.java" startLine="355" startPosition="26" endLine="362" endPosition="9" />
     <scopeInfo nodeId="5045020112651939026" fileName="ModelChangesManager.java" startLine="580" startPosition="40" endLine="587" endPosition="7" />
     <scopeInfo nodeId="3517376222317992712" fileName="ModelChangesManager.java" startLine="589" startPosition="0" endLine="596" endPosition="0" />
-    <scopeInfo nodeId="1281598945698463624" fileName="ModelChangesManager.java" startLine="664" startPosition="32" endLine="671" endPosition="7" />
+    <scopeInfo nodeId="1281598945698463624" fileName="ModelChangesManager.java" startLine="664" startPosition="32" endLine="671" endPosition="7">
+      <varInfo nodeId="1281598945698463624" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="1390130991678031622" fileName="ModelChangesManager.java" startLine="737" startPosition="0" endLine="744" endPosition="0">
       <varInfo nodeId="1390130991678041222" varName="parentNode" />
       <varInfo nodeId="1390130991678041224" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="975" startPosition="0" endLine="982" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="982" startPosition="0" endLine="989" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="989" startPosition="0" endLine="996" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="996" startPosition="0" endLine="1003" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1003" startPosition="0" endLine="1010" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1010" startPosition="0" endLine="1017" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1017" startPosition="0" endLine="1024" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1024" startPosition="0" endLine="1031" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1031" startPosition="0" endLine="1038" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1038" startPosition="0" endLine="1045" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1045" startPosition="0" endLine="1052" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1052" startPosition="0" endLine="1059" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1059" startPosition="0" endLine="1066" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1066" startPosition="0" endLine="1073" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1073" startPosition="0" endLine="1080" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1080" startPosition="0" endLine="1087" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1087" startPosition="0" endLine="1094" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1094" startPosition="0" endLine="1101" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1101" startPosition="0" endLine="1108" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1108" startPosition="0" endLine="1115" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1115" startPosition="0" endLine="1122" endPosition="0" />
-    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1122" startPosition="0" endLine="1129" endPosition="0" />
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="975" startPosition="0" endLine="982" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="982" startPosition="0" endLine="989" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="989" startPosition="0" endLine="996" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+      <varInfo nodeId="8006781392765204425" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="996" startPosition="0" endLine="1003" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1003" startPosition="0" endLine="1010" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1010" startPosition="0" endLine="1017" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1017" startPosition="0" endLine="1024" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+      <varInfo nodeId="8006781392765204425" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1024" startPosition="0" endLine="1031" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+      <varInfo nodeId="8006781392765204425" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1031" startPosition="0" endLine="1038" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1038" startPosition="0" endLine="1045" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1045" startPosition="0" endLine="1052" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+      <varInfo nodeId="8006781392765204425" varName="deleteChange" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1052" startPosition="0" endLine="1059" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1059" startPosition="0" endLine="1066" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+      <varInfo nodeId="8006781392765204425" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1066" startPosition="0" endLine="1073" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+      <varInfo nodeId="8006781392765204425" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1073" startPosition="0" endLine="1080" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1080" startPosition="0" endLine="1087" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1087" startPosition="0" endLine="1094" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+      <varInfo nodeId="8006781392765204425" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1094" startPosition="0" endLine="1101" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+      <varInfo nodeId="8006781392765204425" varName="reference" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1101" startPosition="0" endLine="1108" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1108" startPosition="0" endLine="1115" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1115" startPosition="0" endLine="1122" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1122" startPosition="0" endLine="1129" endPosition="0">
+      <varInfo nodeId="8006781392765204425" varName="checkedDotOperand" />
+      <varInfo nodeId="8006781392765204425" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="118178915293552732" fileName="ModelChangesManager.java" startLine="1499" startPosition="73" endLine="1506" endPosition="0" />
     <scopeInfo nodeId="3464311049966838313" fileName="ModelChangesManager.java" startLine="220" startPosition="0" endLine="228" endPosition="0">
       <varInfo nodeId="3464311049966838674" varName="pathToRoot" />
@@ -3930,7 +4199,9 @@
       <varInfo nodeId="6105600802953124474" varName="rootNode" />
     </scopeInfo>
     <scopeInfo nodeId="7437676040054230184" fileName="ModelChangesManager.java" startLine="335" startPosition="0" endLine="343" endPosition="0" />
-    <scopeInfo nodeId="4604734785880205953" fileName="ModelChangesManager.java" startLine="498" startPosition="81" endLine="506" endPosition="0" />
+    <scopeInfo nodeId="4604734785880205953" fileName="ModelChangesManager.java" startLine="498" startPosition="81" endLine="506" endPosition="0">
+      <varInfo nodeId="4604734785880205953" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="7055875085428864155" fileName="ModelChangesManager.java" startLine="508" startPosition="45" endLine="516" endPosition="21">
       <varInfo nodeId="4959636007936558539" varName="newCh" />
     </scopeInfo>
@@ -3948,10 +4219,18 @@
     </scopeInfo>
     <scopeInfo nodeId="118178915293552723" fileName="ModelChangesManager.java" startLine="1498" startPosition="43" endLine="1506" endPosition="23" />
     <scopeInfo nodeId="3766380978283789391" fileName="ModelChangesManager.java" startLine="102" startPosition="99" endLine="111" endPosition="7" />
-    <scopeInfo nodeId="3187554551048036619" fileName="ModelChangesManager.java" startLine="154" startPosition="49" endLine="163" endPosition="5" />
-    <scopeInfo nodeId="3187554551048035419" fileName="ModelChangesManager.java" startLine="183" startPosition="49" endLine="192" endPosition="5" />
-    <scopeInfo nodeId="7542415519011390349" fileName="ModelChangesManager.java" startLine="196" startPosition="49" endLine="205" endPosition="5" />
-    <scopeInfo nodeId="7542415519011395014" fileName="ModelChangesManager.java" startLine="209" startPosition="49" endLine="218" endPosition="5" />
+    <scopeInfo nodeId="3187554551048036619" fileName="ModelChangesManager.java" startLine="154" startPosition="49" endLine="163" endPosition="5">
+      <varInfo nodeId="3187554551048036619" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="3187554551048035419" fileName="ModelChangesManager.java" startLine="183" startPosition="49" endLine="192" endPosition="5">
+      <varInfo nodeId="3187554551048035419" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="7542415519011390349" fileName="ModelChangesManager.java" startLine="196" startPosition="49" endLine="205" endPosition="5">
+      <varInfo nodeId="7542415519011390349" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="7542415519011395014" fileName="ModelChangesManager.java" startLine="209" startPosition="49" endLine="218" endPosition="5">
+      <varInfo nodeId="7542415519011395014" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="967641992124637041" fileName="ModelChangesManager.java" startLine="399" startPosition="44" endLine="408" endPosition="9">
       <varInfo nodeId="3958959855415944328" varName="node" />
     </scopeInfo>
@@ -3990,8 +4269,12 @@
     <scopeInfo nodeId="5045020112651939023" fileName="ModelChangesManager.java" startLine="579" startPosition="0" endLine="589" endPosition="0" />
     <scopeInfo nodeId="1998279847126831926" fileName="ModelChangesManager.java" startLine="725" startPosition="49" endLine="735" endPosition="7" />
     <scopeInfo nodeId="1998279847126788021" fileName="ModelChangesManager.java" startLine="792" startPosition="82" endLine="802" endPosition="9" />
-    <scopeInfo nodeId="1998279847126788762" fileName="ModelChangesManager.java" startLine="792" startPosition="82" endLine="802" endPosition="9" />
-    <scopeInfo nodeId="977382291400364254" fileName="ModelChangesManager.java" startLine="850" startPosition="80" endLine="860" endPosition="5" />
+    <scopeInfo nodeId="1998279847126788762" fileName="ModelChangesManager.java" startLine="792" startPosition="82" endLine="802" endPosition="9">
+      <varInfo nodeId="1998279847126788762" varName="nodeId" />
+    </scopeInfo>
+    <scopeInfo nodeId="977382291400364254" fileName="ModelChangesManager.java" startLine="850" startPosition="80" endLine="860" endPosition="5">
+      <varInfo nodeId="977382291400364254" varName="descendant" />
+    </scopeInfo>
     <scopeInfo nodeId="977382291400365624" fileName="ModelChangesManager.java" startLine="938" startPosition="62" endLine="948" endPosition="9" />
     <scopeInfo nodeId="4106098632826232573" fileName="ModelChangesManager.java" startLine="1134" startPosition="68" endLine="1144" endPosition="9" />
     <scopeInfo nodeId="3766380978283789387" fileName="ModelChangesManager.java" startLine="101" startPosition="0" endLine="112" endPosition="3">
@@ -4002,7 +4285,9 @@
     <scopeInfo nodeId="3501823384977736616" fileName="ModelChangesManager.java" startLine="318" startPosition="189" endLine="329" endPosition="51">
       <varInfo nodeId="8279184985700098679" varName="toRemove" />
     </scopeInfo>
-    <scopeInfo nodeId="7055875085428864154" fileName="ModelChangesManager.java" startLine="507" startPosition="97" endLine="518" endPosition="0" />
+    <scopeInfo nodeId="7055875085428864154" fileName="ModelChangesManager.java" startLine="507" startPosition="97" endLine="518" endPosition="0">
+      <varInfo nodeId="7055875085428864154" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="6242709253723538402" fileName="ModelChangesManager.java" startLine="562" startPosition="0" endLine="573" endPosition="0" />
     <scopeInfo nodeId="1142852935920991543" fileName="ModelChangesManager.java" startLine="681" startPosition="25" endLine="692" endPosition="9" />
     <scopeInfo nodeId="353838656593057524" fileName="ModelChangesManager.java" startLine="778" startPosition="49" endLine="789" endPosition="176">
@@ -4016,7 +4301,9 @@
     <scopeInfo nodeId="118178915293552638" fileName="ModelChangesManager.java" startLine="1496" startPosition="31" endLine="1507" endPosition="19">
       <varInfo nodeId="118178915293552710" varName="baseParent" />
     </scopeInfo>
-    <scopeInfo nodeId="3187554551048036378" fileName="ModelChangesManager.java" startLine="167" startPosition="49" endLine="179" endPosition="5" />
+    <scopeInfo nodeId="3187554551048036378" fileName="ModelChangesManager.java" startLine="167" startPosition="49" endLine="179" endPosition="5">
+      <varInfo nodeId="3187554551048036378" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="3811819025881728319" fileName="ModelChangesManager.java" startLine="431" startPosition="97" endLine="443" endPosition="11" />
     <scopeInfo nodeId="1281598945698463567" fileName="ModelChangesManager.java" startLine="643" startPosition="59" endLine="655" endPosition="0" />
     <scopeInfo nodeId="2253323551303596875" fileName="ModelChangesManager.java" startLine="701" startPosition="0" endLine="713" endPosition="0">
@@ -4086,7 +4373,9 @@
     </scopeInfo>
     <scopeInfo nodeId="2352903979085962642" fileName="ModelChangesManager.java" startLine="1180" startPosition="45" endLine="1196" endPosition="0" />
     <scopeInfo nodeId="2352903979085962669" fileName="ModelChangesManager.java" startLine="1210" startPosition="45" endLine="1226" endPosition="0" />
-    <scopeInfo nodeId="967641992124622351" fileName="ModelChangesManager.java" startLine="379" startPosition="80" endLine="396" endPosition="5" />
+    <scopeInfo nodeId="967641992124622351" fileName="ModelChangesManager.java" startLine="379" startPosition="80" endLine="396" endPosition="5">
+      <varInfo nodeId="967641992124622351" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="5687497293128274302" fileName="ModelChangesManager.java" startLine="955" startPosition="57" endLine="972" endPosition="7">
       <varInfo nodeId="5687497293128274327" varName="br" />
       <varInfo nodeId="5687497293128274313" varName="node" />
@@ -4106,7 +4395,9 @@
     </scopeInfo>
     <scopeInfo nodeId="5433436225280059479" fileName="ModelChangesManager.java" startLine="1239" startPosition="90" endLine="1257" endPosition="9" />
     <scopeInfo nodeId="6186253165936375113" fileName="ModelChangesManager.java" startLine="1400" startPosition="63" endLine="1418" endPosition="0" />
-    <scopeInfo nodeId="9017393975293865203" fileName="ModelChangesManager.java" startLine="1157" startPosition="59" endLine="1176" endPosition="7" />
+    <scopeInfo nodeId="9017393975293865203" fileName="ModelChangesManager.java" startLine="1157" startPosition="59" endLine="1176" endPosition="7">
+      <varInfo nodeId="9017393975293865203" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="3501823384977736264" fileName="ModelChangesManager.java" startLine="270" startPosition="99" endLine="290" endPosition="5" />
     <scopeInfo nodeId="5433436225280057667" fileName="ModelChangesManager.java" startLine="1178" startPosition="0" endLine="1198" endPosition="0">
       <varInfo nodeId="5433436225280057718" varName="modelImportChange" />
@@ -4144,7 +4435,9 @@
       <varInfo nodeId="3501823384977736409" varName="change" />
       <varInfo nodeId="2698665420347282503" varName="silent" />
     </scopeInfo>
-    <scopeInfo nodeId="3913480212906640437" fileName="ModelChangesManager.java" startLine="527" startPosition="30" endLine="551" endPosition="5" />
+    <scopeInfo nodeId="3913480212906640437" fileName="ModelChangesManager.java" startLine="527" startPosition="30" endLine="551" endPosition="5">
+      <varInfo nodeId="3913480212906640437" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="9017393975293865189" fileName="ModelChangesManager.java" startLine="1154" startPosition="0" endLine="1178" endPosition="0">
       <varInfo nodeId="9017393975293865193" varName="subtreeRoot" />
     </scopeInfo>
@@ -4213,7 +4506,9 @@
     <scopeInfo nodeId="5433436225280057842" fileName="ModelChangesManager.java" startLine="1350" startPosition="0" endLine="1390" endPosition="0">
       <varInfo nodeId="5433436225280057845" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="455" startPosition="137" endLine="497" endPosition="0" />
+    <scopeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="455" startPosition="137" endLine="497" endPosition="0">
+      <varInfo nodeId="4604734785880205984" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="2352903979085962633" fileName="ModelChangesManager.java" startLine="1273" startPosition="45" endLine="1315" endPosition="0" />
     <scopeInfo nodeId="1281598945698463542" fileName="ModelChangesManager.java" startLine="628" startPosition="9" endLine="671" endPosition="7">
       <varInfo nodeId="7437676040054230165" varName="changeList" />
@@ -4238,7 +4533,9 @@
     <scopeInfo nodeId="6186253165936375122" fileName="ModelChangesManager.java" startLine="1467" startPosition="31" endLine="1511" endPosition="15">
       <varInfo nodeId="2352903979085963410" varName="isSingle" />
     </scopeInfo>
-    <scopeInfo nodeId="1998279847126777997" fileName="ModelChangesManager.java" startLine="772" startPosition="85" endLine="818" endPosition="5" />
+    <scopeInfo nodeId="1998279847126777997" fileName="ModelChangesManager.java" startLine="772" startPosition="85" endLine="818" endPosition="5">
+      <varInfo nodeId="1998279847126777997" varName="nodeGroups" />
+    </scopeInfo>
     <scopeInfo nodeId="6186253165936375129" fileName="ModelChangesManager.java" startLine="1534" startPosition="63" endLine="1580" endPosition="0" />
     <scopeInfo nodeId="6186253165936375121" fileName="ModelChangesManager.java" startLine="1466" startPosition="63" endLine="1513" endPosition="0" />
     <scopeInfo nodeId="5433436225280057600" fileName="ModelChangesManager.java" startLine="1269" startPosition="0" endLine="1317" endPosition="0">
@@ -4248,7 +4545,9 @@
     <scopeInfo nodeId="2352903979085962705" fileName="ModelChangesManager.java" startLine="1460" startPosition="27" endLine="1514" endPosition="37" />
     <scopeInfo nodeId="967641992124637036" fileName="ModelChangesManager.java" startLine="398" startPosition="66" endLine="453" endPosition="7" />
     <scopeInfo nodeId="2352903979085962713" fileName="ModelChangesManager.java" startLine="1527" startPosition="45" endLine="1583" endPosition="0" />
-    <scopeInfo nodeId="967641992124637033" fileName="ModelChangesManager.java" startLine="397" startPosition="0" endLine="454" endPosition="5" />
+    <scopeInfo nodeId="967641992124637033" fileName="ModelChangesManager.java" startLine="397" startPosition="0" endLine="454" endPosition="5">
+      <varInfo nodeId="967641992124637033" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="2352903979085962704" fileName="ModelChangesManager.java" startLine="1459" startPosition="45" endLine="1516" endPosition="0" />
     <scopeInfo nodeId="5433436225280058138" fileName="ModelChangesManager.java" startLine="1524" startPosition="89" endLine="1583" endPosition="9">
       <varInfo nodeId="1867894338779676278" varName="currentChildren" />
@@ -4685,7 +4984,9 @@
     <scopeInfo nodeId="1216620237029549074" fileName="ChangesFoldingAreaPainter.java" startLine="161" startPosition="49" endLine="163" endPosition="62" />
     <scopeInfo nodeId="6208564103581785208" fileName="ChangesFoldingAreaPainter.java" startLine="451" startPosition="52" endLine="453" endPosition="24" />
     <scopeInfo nodeId="7429456937243136232" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="44" endLine="197" endPosition="11" />
-    <scopeInfo nodeId="7429456937243136233" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="44" endLine="197" endPosition="11" />
+    <scopeInfo nodeId="7429456937243136233" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="44" endLine="197" endPosition="11">
+      <varInfo nodeId="7429456937243136233" varName="message" />
+    </scopeInfo>
     <scopeInfo nodeId="9173051028496928516" fileName="ChangesFoldingAreaPainter.java" startLine="444" startPosition="0" endLine="447" endPosition="0">
       <varInfo nodeId="9173051028496928519" varName="event" />
     </scopeInfo>
@@ -4693,20 +4994,37 @@
       <varInfo nodeId="9048291698849215511" varName="editorComponentChangesHighligher" />
     </scopeInfo>
     <scopeInfo nodeId="8274502957383614780" fileName="ChangesFoldingAreaPainter.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="6746101208730361851" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="241" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="6746101208730361851" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="241" endLine="138" endPosition="0">
+      <varInfo nodeId="6746101208730361851" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="1216620237029549046" fileName="ChangesFoldingAreaPainter.java" startLine="160" startPosition="69" endLine="164" endPosition="9" />
-    <scopeInfo nodeId="7429456937243135909" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="122" endLine="182" endPosition="0" />
+    <scopeInfo nodeId="7429456937243135909" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="122" endLine="182" endPosition="0">
+      <varInfo nodeId="7429456937243135909" varName="mg" />
+    </scopeInfo>
     <scopeInfo nodeId="5921685378876737844" fileName="ChangesFoldingAreaPainter.java" startLine="240" startPosition="64" endLine="244" endPosition="23" />
     <scopeInfo nodeId="7317795005505883205" fileName="ChangesFoldingAreaPainter.java" startLine="272" startPosition="0" endLine="276" endPosition="0" />
-    <scopeInfo nodeId="4434895596490172170" fileName="ChangesFoldingAreaPainter.java" startLine="290" startPosition="118" endLine="294" endPosition="0" />
+    <scopeInfo nodeId="4434895596490172170" fileName="ChangesFoldingAreaPainter.java" startLine="290" startPosition="118" endLine="294" endPosition="0">
+      <varInfo nodeId="4434895596490172170" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="301" startPosition="102" endLine="305" endPosition="16" />
-    <scopeInfo nodeId="1488166530899637887" fileName="ChangesFoldingAreaPainter.java" startLine="318" startPosition="150" endLine="322" endPosition="0" />
+    <scopeInfo nodeId="1488166530899637887" fileName="ChangesFoldingAreaPainter.java" startLine="318" startPosition="150" endLine="322" endPosition="0">
+      <varInfo nodeId="1488166530899637887" varName="by" />
+      <varInfo nodeId="1488166530899637887" varName="msg" />
+    </scopeInfo>
     <scopeInfo nodeId="6746101208730364068" fileName="ChangesFoldingAreaPainter.java" startLine="330" startPosition="0" endLine="334" endPosition="0" />
     <scopeInfo nodeId="6746101208730364076" fileName="ChangesFoldingAreaPainter.java" startLine="334" startPosition="0" endLine="338" endPosition="0" />
-    <scopeInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="122" endLine="344" endPosition="0" />
-    <scopeInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="346" startPosition="129" endLine="350" endPosition="0" />
-    <scopeInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="397" startPosition="123" endLine="401" endPosition="0" />
-    <scopeInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="197" endLine="406" endPosition="0" />
+    <scopeInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="122" endLine="344" endPosition="0">
+      <varInfo nodeId="3322868409858674645" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="346" startPosition="129" endLine="350" endPosition="0">
+      <varInfo nodeId="3322868409858674666" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="397" startPosition="123" endLine="401" endPosition="0">
+      <varInfo nodeId="4434895596490169019" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="197" endLine="406" endPosition="0">
+      <varInfo nodeId="4434895596490172040" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="9173051028496928504" fileName="ChangesFoldingAreaPainter.java" startLine="436" startPosition="52" endLine="440" endPosition="0">
       <varInfo nodeId="9173051028496928507" varName="event" />
     </scopeInfo>
@@ -4732,7 +5050,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4434895596490168998" fileName="ChangesFoldingAreaPainter.java" startLine="410" startPosition="0" endLine="416" endPosition="0" />
     <scopeInfo nodeId="5921685378876737841" fileName="ChangesFoldingAreaPainter.java" startLine="239" startPosition="0" endLine="246" endPosition="0" />
-    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="300" startPosition="0" endLine="307" endPosition="0" />
+    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="300" startPosition="0" endLine="307" endPosition="0">
+      <varInfo nodeId="8274502957383551392" varName="checkedDotOperand" />
+    </scopeInfo>
     <scopeInfo nodeId="6208564103581783468" fileName="ChangesFoldingAreaPainter.java" startLine="449" startPosition="0" endLine="456" endPosition="0">
       <varInfo nodeId="6208564103581783921" varName="event" />
     </scopeInfo>
@@ -4740,7 +5060,9 @@
       <varInfo nodeId="6378762527268296968" varName="leftHighlighter" />
       <varInfo nodeId="6378762527268302493" varName="selectedCell" />
     </scopeInfo>
-    <scopeInfo nodeId="7429456937243136224" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="108" endLine="200" endPosition="0" />
+    <scopeInfo nodeId="7429456937243136224" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="108" endLine="200" endPosition="0">
+      <varInfo nodeId="7429456937243136224" varName="highlighted" />
+    </scopeInfo>
     <scopeInfo nodeId="1216620237029569553" fileName="ChangesFoldingAreaPainter.java" startLine="229" startPosition="45" endLine="237" endPosition="5" />
     <scopeInfo nodeId="6378762527268289355" fileName="ChangesFoldingAreaPainter.java" startLine="264" startPosition="0" endLine="272" endPosition="0">
       <varInfo nodeId="3821603290882626779" varName="messageGroup" />
@@ -4782,7 +5104,9 @@
       <varInfo nodeId="2792704635247522121" varName="a" />
       <varInfo nodeId="2792704635247522128" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6746101208730363621" fileName="ChangesFoldingAreaPainter.java" startLine="157" startPosition="27" endLine="168" endPosition="5" />
+    <scopeInfo nodeId="6746101208730363621" fileName="ChangesFoldingAreaPainter.java" startLine="157" startPosition="27" endLine="168" endPosition="5">
+      <varInfo nodeId="6746101208730363621" varName="message" />
+    </scopeInfo>
     <scopeInfo nodeId="1216620237029569548" fileName="ChangesFoldingAreaPainter.java" startLine="227" startPosition="0" endLine="239" endPosition="0">
       <varInfo nodeId="1216620237029569551" varName="event" />
     </scopeInfo>
@@ -4802,7 +5126,10 @@
     <scopeInfo nodeId="2331005757591009628" fileName="ChangesFoldingAreaPainter.java" startLine="363" startPosition="65" endLine="376" endPosition="26">
       <varInfo nodeId="2331005757591015012" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="142" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="142" endLine="154" endPosition="0">
+      <varInfo nodeId="480390906262810818" varName="aMsg" />
+      <varInfo nodeId="480390906262810818" varName="bMsg" />
+    </scopeInfo>
     <scopeInfo nodeId="7429456937243135759" fileName="ChangesFoldingAreaPainter.java" startLine="173" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="7429456937243135804" varName="p" />
     </scopeInfo>
@@ -4838,7 +5165,9 @@
       <varInfo nodeId="9213787164325786207" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="8332220865210648779" fileName="ChangesFoldingAreaPainter.java" startLine="361" startPosition="0" endLine="389" endPosition="0" />
-    <scopeInfo nodeId="6746101208730364039" fileName="ChangesFoldingAreaPainter.java" startLine="75" startPosition="5" endLine="105" endPosition="5" />
+    <scopeInfo nodeId="6746101208730364039" fileName="ChangesFoldingAreaPainter.java" startLine="75" startPosition="5" endLine="105" endPosition="5">
+      <varInfo nodeId="6746101208730364039" varName="messageGroup" />
+    </scopeInfo>
     <scopeInfo nodeId="8274502957383614818" fileName="ChangesFoldingAreaPainter.java" startLine="68" startPosition="54" endLine="105" endPosition="5">
       <varInfo nodeId="6923910471520917317" varName="clipBounds" />
     </scopeInfo>

@@ -73,6 +73,7 @@
       <modulePath path="${project}/core/baseLanguage/collections/solutions/collections/sandbox/collections_sandbox.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/core/baseLanguage/collections/solutions/collections/unittest/collections_unittest.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/core/baseLanguage/collections/solutions/collections_trove.test/collections_trove.test.msd" folder="baseLanguage.collections" />
+      <modulePath path="${project}/core/baseLanguage/collections/solutions/customViewers/customViewers.msd" folder="debugger.java" />
       <modulePath path="${project}/core/baseLanguage/collections/solutions/internalCollections.sandbox/internalCollections.sandbox.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/core/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/core/baseLanguage/constructors/constructors.mpl" folder="baseLanguage.constructors" />
@@ -88,6 +89,7 @@
       <modulePath path="${project}/core/baseLanguage/runConfigurations/runtime/runtime.msd" folder="baseLanguage.runConfigurations" />
       <modulePath path="${project}/core/baseLanguage/tuples/languages/tuples/tuples.mpl" folder="baseLanguage.tuples" />
       <modulePath path="${project}/core/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" folder="baseLanguage.tuples" />
+      <modulePath path="${project}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.customViewers/customViewers.msd" folder="debugger.java" />
       <modulePath path="${project}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.sandbox/jetbrains.mps.baseLanguage.tuples.sandbox.msd" folder="baseLanguage.tuples" />
       <modulePath path="${project}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.shared/jetbrains.mps.baseLanguage.tuples.shared.msd" folder="baseLanguage.tuples" />
       <modulePath path="${project}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/jetbrains.mps.baseLanguage.tuples.test.msd" folder="baseLanguage.tuples" />
@@ -97,9 +99,6 @@
       <modulePath path="${project}/core/baseLanguage/unitTest/unitTest.mpl" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/core/debug-api/languages/api/api.mpl" folder="debug.api" />
       <modulePath path="${project}/core/debug-api/solutions/jetbrains.mps.debugger.api.api/api.msd" folder="debug.api" />
-      <modulePath path="${project}/plugins/debugger-java-languages/customViewers/customViewers.mpl" folder="debug.java" />
-      <modulePath path="${project}/plugins/debugger-java-languages/evaluation/evaluation.mpl" folder="debug.java" />
-      <modulePath path="${project}/plugins/debugger-java-languages/privateMembers/privateMembers.mpl" folder="debug.java" />
       <modulePath path="${project}/core/debug/solutions/jetbrains.mps.debugger.java.api/jetbrains.mps.debugger.java.api.msd" folder="debug.java" />
       <modulePath path="${project}/core/dependencies/dependencies.msd" folder="core" />
       <modulePath path="${project}/core/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="core.editor" />
@@ -161,6 +160,7 @@
       <modulePath path="${project}/languages/languageDesign/smodel/languages/smodelTests/smodelTests.mpl" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/languages/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/smodel.mpl" folder="core.smodel" />
+      <modulePath path="${project}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.customViewers/customViewers.msd" folder="debugger.java" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/samples/smodelLanguage-samples.msd" folder="samples" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/sandbox/sandbox.msd" folder="core.smodel" />
@@ -269,10 +269,14 @@
       <modulePath path="${project}/obsolete/matrixLanguage/languages/matrixLanguage/matrixLanguage.mpl" folder="samples" />
       <modulePath path="${project}/obsolete/matrixLanguage/solutions/jetbrains.mps.matrixLanguage.runtime/jetbrains.mps.matrixLanguage.runtime.msd" folder="samples" />
       <modulePath path="${project}/obsolete/matrixLanguage/solutions/jetbrains.mps.matrixLanguage.sandbox/jetbrains.mps.matrixLanguage.sandbox.msd" folder="samples" />
-      <modulePath path="${project}/plugins/debugger-api/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" folder="debug.api" />
+      <modulePath path="${project}/plugins/debugger-api/jetbrains.mps.debugger-api.msd" folder="debug.api" />
+      <modulePath path="${project}/plugins/debugger-java-languages/customViewers/customViewers.mpl" folder="debug.java" />
+      <modulePath path="${project}/plugins/debugger-java-languages/evaluation/evaluation.mpl" folder="debug.java" />
+      <modulePath path="${project}/plugins/debugger-java-languages/plugin/languages.msd" folder="debugger.java" />
+      <modulePath path="${project}/plugins/debugger-java-languages/privateMembers/privateMembers.mpl" folder="debug.java" />
+      <modulePath path="${project}/plugins/debugger-java/jetbrains.mps.debugger.java.runtime.msd" folder="debug.java" />
       <modulePath path="${project}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" folder="debug.java" />
       <modulePath path="${project}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.runtime.tests/jetbrains.mps.debugger.java.runtime.tests.msd" folder="debug.java" />
-      <modulePath path="${project}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.runtime/jetbrains.mps.debugger.java.runtime.msd" folder="debug.java" />
       <modulePath path="${project}/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="workbench" />
       <modulePath path="${project}/plugins/migration/solution/jetbrains.mps.ide.migration.msd" folder="plugins" />
       <modulePath path="${project}/plugins/migration21/solution/migration21.msd" folder="plugins" />
