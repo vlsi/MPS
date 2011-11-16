@@ -40,12 +40,10 @@ public class DiffChangeGroupBuilder extends ChangeGroupBuilder {
     return myRightEditor.getEditorComponent(myInspector);
   }
 
-  @NotNull
   protected List<ChangeEditorMessage> getLeftMessages(ModelChange change) {
     return myLeftEditor.getMessagesForChange(change);
   }
 
-  @NotNull
   protected List<ChangeEditorMessage> getRightMessages(ModelChange change) {
     return myLeftEditor.getMessagesForChange(change);
   }

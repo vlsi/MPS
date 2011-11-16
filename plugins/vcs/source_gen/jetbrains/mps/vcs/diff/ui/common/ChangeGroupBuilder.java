@@ -39,10 +39,8 @@ public abstract class ChangeGroupBuilder {
   @NotNull
   public abstract EditorComponent getRightComponent();
 
-  @NotNull
   protected abstract List<ChangeEditorMessage> getLeftMessages(ModelChange change);
 
-  @NotNull
   protected abstract List<ChangeEditorMessage> getRightMessages(ModelChange change);
 
   @Nullable
