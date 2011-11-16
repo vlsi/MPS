@@ -129,6 +129,9 @@
         </group>
         <separator/>
         <action id="SaveAll" class="com.intellij.ide.actions.SaveAllAction" icon="/actions/menu-saveall.png"/>
+        <action id="SaveAsNewFormat" class="com.intellij.ide.actions.SaveAsDirectoryBasedFormatAction" text="Save as Directory-Based Format...">
+        </action>
+
         <group id="ExportImportGroup">
           <action id="ExportSettings" class="com.intellij.ide.actions.ExportSettingsAction"/>
           <action id="ImportSettings" class="com.intellij.ide.actions.ImportSettingsAction"/>
