@@ -3869,8 +3869,18 @@
                           </node>
                         </node>
                       </node>
-                      <node role="titleExpression" roleId="tp4k.6938053545825381649" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6298087286665083298">
-                        <property name="value" nameId="tpee.1070475926801" value="Query" />
+                      <node role="titleExpression" roleId="tp4k.6938053545825381649" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5074987133576044110">
+                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6298087286665083298">
+                          <property name="value" nameId="tpee.1070475926801" value="for " />
+                        </node>
+                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5074987133576044114">
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5074987133576044113">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6298087286665083266" resolveInfo="query" />
+                          </node>
+                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5074987133576044118">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="r172.3882421039144497493" resolveInfo="getConcept" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>

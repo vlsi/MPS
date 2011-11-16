@@ -36,7 +36,7 @@ public class RunReplacement_Tool extends GeneratedTabbedTool {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         final ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.myProject, FindUtils.makeProvider(new QueryFinder(query)), searchQuery, query);
-        RunReplacement_Tool.this.addTab(view.getComponent(), "Query", jetbrains.mps.ide.findusages.view.icons.IconManager.getIconForIHolder(searchQuery.getObjectHolder()), new IComponentDisposer<JComponent>() {
+        RunReplacement_Tool.this.addTab(view.getComponent(), "for " + query.getConcept(), jetbrains.mps.ide.findusages.view.icons.IconManager.getIconForIHolder(searchQuery.getObjectHolder()), new IComponentDisposer<JComponent>() {
           public void disposeComponent(JComponent component) {
             view.dispose();
           }

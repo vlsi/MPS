@@ -749,7 +749,7 @@
     <nodeInfo nodeId="1453248744423411966" fileName="RunReplacement_Tool.java" startLine="40" startPosition="62" endLine="41" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6298087286665077834" fileName="RunReplacement_Tool.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunReplacement_Tool#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="6298087286665083383" fileName="RunReplacement_Tool.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeTab#(Ljetbrains/mps/quickQueryLanguage/plugin/ReplacementView;)V" />
-    <nodeInfo nodeId="1453248744423411964" fileName="RunReplacement_Tool.java" startLine="39" startPosition="210" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(Ljavax/swing/JComponent;)V" />
+    <nodeInfo nodeId="1453248744423411964" fileName="RunReplacement_Tool.java" startLine="39" startPosition="230" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(Ljavax/swing/JComponent;)V" />
     <nodeInfo nodeId="6298087286665077834" fileName="RunReplacement_Tool.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="1453248744423411952" fileName="RunReplacement_Tool.java" startLine="38" startPosition="187" endLine="43" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6298087286665083271" fileName="RunReplacement_Tool.java" startLine="36" startPosition="57" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -765,7 +765,7 @@
     <scopeInfo nodeId="6298087286665083383" fileName="RunReplacement_Tool.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="6298087286665083411" varName="view" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423411964" fileName="RunReplacement_Tool.java" startLine="39" startPosition="210" endLine="43" endPosition="0">
+    <scopeInfo nodeId="1453248744423411964" fileName="RunReplacement_Tool.java" startLine="39" startPosition="230" endLine="43" endPosition="0">
       <varInfo nodeId="1453248744423411964" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="6298087286665077834" fileName="RunReplacement_Tool.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
@@ -782,7 +782,7 @@
     </scopeInfo>
     <unitInfo nodeId="6298087286665077834" fileName="RunReplacement_Tool.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool" />
     <unitInfo nodeId="6298087286665083271" fileName="RunReplacement_Tool.java" startLine="36" startPosition="45" endLine="45" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool$1" />
-    <unitInfo nodeId="1453248744423411964" fileName="RunReplacement_Tool.java" startLine="39" startPosition="176" endLine="43" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool$2" />
+    <unitInfo nodeId="1453248744423411964" fileName="RunReplacement_Tool.java" startLine="39" startPosition="196" endLine="43" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool$2" />
   </root>
 </debugInfo>
 
