@@ -29,6 +29,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.awt.event.MouseEvent;
 import java.awt.Cursor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import java.util.List;
 
 public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private static final int AREA_WIDTH = 6;
@@ -108,9 +109,6 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   public String getToolTipText() {
     if (myGroupUnderMouse == null) {
       return null;
-
-
-
     } else {
       // TODO avoid read in EDT 
       return ModelAccess.instance().runReadAction(new Computable<String>() {
@@ -194,23 +192,58 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     if (event.getButton() == MouseEvent.BUTTON1) {
       ChangeGroup changeGroup = findMessageGroupUnder(event.getPoint());
       if (changeGroup != null) {
-        EditorCell cell = getEditorComponent().findCellWeak(event.getX(), event.getY());
-        if (cell != null) {
-          getEditorComponent().changeSelection(cell);
-        }
-        myPopupToolbar = new PopupToolbar(this, changeGroup);
-        myPopupToolbar.show(event.getComponent(), getEditorComponent().getLeftEditorHighlighter().getFoldingLineX(), event.getY());
+        showPopupForGroup(changeGroup, event.getY());
 
         event.consume();
       }
     }
   }
 
+  private void showPopupForGroup(@NotNull ChangeGroup changeGroup, int y) {
+    int foldingLineX = getEditorComponent().getLeftEditorHighlighter().getFoldingLineX();
+    EditorCell cell = getEditorComponent().findCellWeak(foldingLineX, y);
+    if (cell != null) {
+      getEditorComponent().changeSelection(cell);
+    }
+    myPopupToolbar = new PopupToolbar(this, changeGroup);
+    myPopupToolbar.show(getEditorComponent(), foldingLineX, y);
+  }
+
   /*package*/ void popupClosed() {
     myPopupToolbar = null;
   }
 
+  @Nullable
+  /*package*/ ChangeGroup getNeighbourChangeGroup(boolean next) {
+    if (myPopupToolbar == null) {
+      return null;
+    }
+    List<ChangeGroup> groups = myChangeGroupLayout.getChangeGroups();
+    ChangeGroup current = myPopupToolbar.getChangeGroup();
+    int index = ListSequence.fromList(groups).indexOf(current);
+    index = (next ?
+      index + 1 :
+      index - 1
+    );
+    if (0 <= index && index < ListSequence.fromList(groups).count()) {
+      return ListSequence.fromList(groups).getElement(index);
+    }
+    return null;
+  }
+
+  /*package*/ void showPopupForGroup(@NotNull ChangeGroup group) {
+    check_h84zmo_a0a51(myPopupToolbar);
+    showPopupForGroup(group, (int) group.getBounds(true).start());
+  }
+
   private static void check_h84zmo_a0a11(PopupToolbar checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.setVisible(false);
+    }
+
+  }
+
+  private static void check_h84zmo_a0a51(PopupToolbar checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setVisible(false);
     }

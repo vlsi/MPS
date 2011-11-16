@@ -37,7 +37,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
   private EditorComponent myEditorComponent;
   private final Map<ModelChange, List<ChangeEditorMessage>> myChangesMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
   private CurrentDifference myCurrentDifference;
-  private ChangeStripsPainter myFoldingAreaPainter;
+  private ChangeStripsPainter myStripsPainter;
   private ChangesEditorHighlighter.MyCurrentDifferenceListener myListener;
   private final Object myDisposedLock = new Object();
   private boolean myDisposed = false;
@@ -91,9 +91,9 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
                 getHighlightManager().repaintAndRebuildEditorMessages();
                 ThreadUtils.runInUIThreadNoWait(new Runnable() {
                   public void run() {
-                    myFoldingAreaPainter = new ChangeStripsPainter(ChangesEditorHighlighter.this);
-                    myEditorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(myFoldingAreaPainter);
-                    myFoldingAreaPainter.relayout();
+                    myStripsPainter = new ChangeStripsPainter(ChangesEditorHighlighter.this);
+                    myEditorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(myStripsPainter);
+                    myStripsPainter.relayout();
                   }
                 });
                 myCurrentDifference.addDifferenceListener(myListener);
@@ -168,8 +168,8 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
               });
             }
             getHighlightManager().clearForOwner(ChangesEditorHighlighter.this);
-            if (myFoldingAreaPainter != null) {
-              getLeftEditorHighlighter().removeFoldingAreaPainter(myFoldingAreaPainter);
+            if (myStripsPainter != null) {
+              getLeftEditorHighlighter().removeFoldingAreaPainter(myStripsPainter);
             }
           } finally {
             if (myCurrentDifference != null) {
@@ -185,6 +185,10 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
   @Nullable
   /*package*/ ChangeSet getChangeSet() {
     return check_z1nuaw_a0a4(myCurrentDifference);
+  }
+
+  /*package*/ ChangeStripsPainter getStripsPainter() {
+    return myStripsPainter;
   }
 
   /*package*/ EditorComponent getEditorComponent() {
@@ -242,7 +246,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
         for (ChangeEditorMessage addedMessage : ListSequence.fromList(myAddedMessages)) {
           nodeHighlightManager.mark(addedMessage);
         }
-        check_z1nuaw_a3a0a2a(myFoldingAreaPainter);
+        check_z1nuaw_a3a0a2a(myStripsPainter);
         nodeHighlightManager.repaintAndRebuildEditorMessages();
         ListSequence.fromList(myAddedMessages).clear();
         ListSequence.fromList(myRemovedMessages).clear();

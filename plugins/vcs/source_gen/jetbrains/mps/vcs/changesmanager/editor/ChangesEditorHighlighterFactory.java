@@ -46,6 +46,10 @@ public class ChangesEditorHighlighterFactory extends AbstractProjectComponent {
     }
   }
 
+  public ChangesEditorHighlighter getHighlighter(@NotNull EditorComponent editorComponent) {
+    return MapSequence.fromMap(myEditorsHighlighters).get(editorComponent);
+  }
+
   private class MyEditorComponentCreateListener implements EditorComponentCreateListener {
     public MyEditorComponentCreateListener() {
     }

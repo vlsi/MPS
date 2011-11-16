@@ -13,6 +13,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -86,6 +87,17 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.workbench.highlighter.EditorComponentCreateListener" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" file="ChangesStripActionsHelper.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesEditorHighlighter" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesEditorHighlighterFactory" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.PopupToolbar" file="PopupToolbar.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />

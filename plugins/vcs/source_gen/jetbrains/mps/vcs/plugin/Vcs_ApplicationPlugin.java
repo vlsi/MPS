@@ -25,6 +25,8 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new AddModuleToVcs_Action());
     addAction(new Annotate_Action());
+    addAction(new GoToNextChange_Action());
+    addAction(new GoToPreviousChange_Action());
     addAction(new IgnoreModuleInVcs_Action());
     addAction(new InstalVcsAddons_Action());
     addAction(new OldGoToNextChange_Action());
@@ -35,6 +37,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowDiffererenceWithCurrentRevision_Action());
     // groups 
     addGroup(new AnnotateGroup_ActionGroup());
+    addGroup(new ChangesStrip_ActionGroup());
     addGroup(new GoToVCS_ActionGroup());
     addGroup(new InstallVcsAddons_ActionGroup());
     addGroup(new ModuleVcsActions_ActionGroup());
