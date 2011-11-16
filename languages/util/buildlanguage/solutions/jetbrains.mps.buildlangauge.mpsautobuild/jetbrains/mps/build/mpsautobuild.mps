@@ -3033,6 +3033,9 @@
           <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="5864553086651991021">
             <property name="path" nameId="tps4.1220974398640" value="customViewers" />
           </node>
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3052616291217572647">
+            <property name="path" nameId="tps4.1220974398640" value="plugin" />
+          </node>
           <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="5864553086651991023">
             <property name="path" nameId="tps4.1220974398640" value="plugin.xml" />
           </node>
@@ -3080,6 +3083,9 @@
           <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="5864553086652016579">
             <property name="path" nameId="tps4.1220974398640" value="customViewers" />
           </node>
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3052616291217572649">
+            <property name="path" nameId="tps4.1220974398640" value="plugin" />
+          </node>
           <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="5864553086652016581">
             <property name="path" nameId="tps4.1220974398640" value="plugin.xml" />
           </node>
@@ -3126,6 +3132,9 @@
           </node>
           <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3605744949478275964">
             <property name="path" nameId="tps4.1220974398640" value="customViewers" />
+          </node>
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3052616291217572651">
+            <property name="path" nameId="tps4.1220974398640" value="plugin" />
           </node>
           <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3605744949478275966">
             <property name="path" nameId="tps4.1220974398640" value="plugin.xml" />

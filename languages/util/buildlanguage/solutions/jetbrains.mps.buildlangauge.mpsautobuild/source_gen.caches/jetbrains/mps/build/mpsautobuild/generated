@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="57t0pp8iou8wc92wdvfm4rvw4v39oes">
+<dependencies version="2" modelHash="-8vyrgsvi8m1sinpqc3kpyzcep3rmzb4">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="auc6jui7deer5vkr9v1h1ws94bw74n1" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
   <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" hash="caob73bt010qamop72qesq01lhfoeik" />
@@ -107,6 +107,6 @@
   <source id="5428983789737854768" name="mps-editor.jar" hash="-7u26g73045fu380tk4nx23fnvcengjd" />
   <source id="2901107368280525965" name="redist" hash="-5y1micluv26ldpxuf61kxk1r7u4f6yx" />
   <source id="6700426045796013947" name="mps-platform.jar" hash="-x9dtjrxg79odo4luh00p017qw2dpy8" />
-  <source id="938551967734106063" name="debugger" hash="-2l0o5mhp6txal3qxoi0s94sufimvvvi" />
+  <source id="938551967734106063" name="debugger" hash="-eftoa7eaehrtn9uyixtxmhd2gim7puv" />
 </dependencies>
 

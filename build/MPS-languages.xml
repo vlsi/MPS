@@ -1201,7 +1201,7 @@
     </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/plugins/jetbrains.mps.lang.smodel.customViewers.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset file="${mps_home}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.customViewers/source_gen/jetbrains/mps/lang/smodel/customViewers/plugin.xml" prefix="META-INF" />
+      <zipfileset file="${mps_home}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.customViewers/source_gen/jetbrains/mps/lang/smodel/customViewers/plugin/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.customViewers" includes="icons/**, resources/**" />
       <zipfileset dir="${base_dir}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.customViewers/classes_gen" />
     </jar>
@@ -1376,7 +1376,7 @@
     </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.collections.customViewers.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset file="${mps_home}/core/baseLanguage/collections/solutions/customViewers/source_gen/jetbrains/mps/baseLanguage/collections/customViewers/plugin.xml" prefix="META-INF" />
+      <zipfileset file="${mps_home}/core/baseLanguage/collections/solutions/customViewers/source_gen/jetbrains/mps/baseLanguage/collections/customViewers/plugin/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/solutions/customViewers" includes="icons/**, resources/**" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/solutions/customViewers/classes_gen" />
     </jar>
@@ -1551,7 +1551,7 @@
     </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/plugins/jetbrains.mps.baseLanguage.tuples.customViewers.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset file="${mps_home}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.customViewers/source_gen/jetbrains/mps/baseLanguage/tuples/customViewers/plugin.xml" prefix="META-INF" />
+      <zipfileset file="${mps_home}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.customViewers/source_gen/jetbrains/mps/baseLanguage/tuples/customViewers/plugin/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.customViewers" includes="icons/**, resources/**" />
       <zipfileset dir="${base_dir}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.customViewers/classes_gen" />
     </jar>
