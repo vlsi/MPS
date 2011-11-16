@@ -29,7 +29,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.awt.event.MouseEvent;
 import java.awt.Cursor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import java.util.List;
 
 public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private static final int AREA_WIDTH = 6;
@@ -214,21 +213,25 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   }
 
   @Nullable
-  /*package*/ ChangeGroup getNeighbourChangeGroup(boolean next) {
-    if (myPopupToolbar == null) {
+  /*package*/ ChangeGroup getNeighbourChangeGroup(@Nullable EditorCell contextCell, boolean next) {
+    if (contextCell == null) {
       return null;
     }
-    List<ChangeGroup> groups = myChangeGroupLayout.getChangeGroups();
-    ChangeGroup current = myPopupToolbar.getChangeGroup();
-    int index = ListSequence.fromList(groups).indexOf(current);
-    index = (next ?
-      index + 1 :
-      index - 1
-    );
-    if (0 <= index && index < ListSequence.fromList(groups).count()) {
-      return ListSequence.fromList(groups).getElement(index);
+    if (next) {
+      final int bottomY = contextCell.getY() + contextCell.getHeight();
+      return ListSequence.fromList(myChangeGroupLayout.getChangeGroups()).findFirst(new IWhereFilter<ChangeGroup>() {
+        public boolean accept(ChangeGroup g) {
+          return bottomY < (int) g.getBounds(true).start();
+        }
+      });
+    } else {
+      final int topY = contextCell.getY();
+      return ListSequence.fromList(myChangeGroupLayout.getChangeGroups()).findLast(new IWhereFilter<ChangeGroup>() {
+        public boolean accept(ChangeGroup g) {
+          return topY > (int) g.getBounds(true).end();
+        }
+      });
     }
-    return null;
   }
 
   /*package*/ void showPopupForGroup(@NotNull ChangeGroup group) {

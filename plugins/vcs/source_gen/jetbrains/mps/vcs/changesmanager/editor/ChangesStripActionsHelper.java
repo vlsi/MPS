@@ -17,7 +17,7 @@ public class ChangesStripActionsHelper {
   private static ChangeGroup getNeighbourChangeGroup(@NotNull EditorContext editorContext, boolean next) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     ChangesEditorHighlighter highlighter = check_ikrecr_a0b0a(editorContext.getOperationContext().getComponent(ChangesEditorHighlighterFactory.class), editorComponent);
-    return check_ikrecr_a0c0a(highlighter).getNeighbourChangeGroup(next);
+    return check_ikrecr_a0c0a(highlighter).getNeighbourChangeGroup(check_ikrecr_a0a2a0(editorContext), next);
   }
 
   public static boolean isNeighbourGroupAvailable(@NotNull EditorContext editorContext, boolean next) {
@@ -53,6 +53,13 @@ public class ChangesStripActionsHelper {
   private static ChangeStripsPainter check_ikrecr_a0c0a(ChangesEditorHighlighter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStripsPainter();
+    }
+    return null;
+  }
+
+  private static EditorCell check_ikrecr_a0a2a0(EditorContext checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getContextCell();
     }
     return null;
   }
