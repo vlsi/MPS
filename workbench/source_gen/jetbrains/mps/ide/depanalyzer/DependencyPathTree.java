@@ -163,11 +163,26 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
       case R:
         ModuleDescriptor m3 = from.getModuleDescriptor();
-        addChildDeps(result, ListSequence.fromList(((List<Dependency>) m3.getDependencies())).select(new ISelector<Dependency, ModuleReference>() {
+        addChildDeps(result, ListSequence.fromList(((List<Dependency>) m3.getDependencies())).where(new IWhereFilter<Dependency>() {
+          public boolean accept(Dependency it) {
+            return it.isReexport();
+          }
+        }).select(new ISelector<Dependency, ModuleReference>() {
+          public ModuleReference select(Dependency it) {
+            return it.getModuleRef();
+          }
+        }), DependencyPathTree.DepType.R, "re-exports dependency on ", dependency, usedlangauge, visited);
+        addChildDeps(result, ListSequence.fromList(((List<Dependency>) m3.getDependencies())).where(new IWhereFilter<Dependency>() {
+          public boolean accept(Dependency it) {
+            return !(it.isReexport());
+          }
+        }).select(new ISelector<Dependency, ModuleReference>() {
           public ModuleReference select(Dependency it) {
             return it.getModuleRef();
           }
         }), DependencyPathTree.DepType.R, "depends on ", dependency, usedlangauge, visited);
+        break;
+
       default:
     }
 
