@@ -148,13 +148,9 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
     }
   }
 
-  @NotNull
   /*package*/ List<ChangeEditorMessage> getMessages(ModelChange change) {
     synchronized (myChangesMessages) {
-      return (MapSequence.fromMap(myChangesMessages).containsKey(change) ?
-        MapSequence.fromMap(myChangesMessages).get(change) :
-        ListSequence.fromList(new ArrayList<ChangeEditorMessage>())
-      );
+      return MapSequence.fromMap(myChangesMessages).get(change);
     }
   }
 
@@ -210,6 +206,13 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
     return null;
   }
 
+  private static void check_z1nuaw_a3a0a2a(ChangeStripsPainter checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.relayout();
+    }
+
+  }
+
   public class MyCurrentDifferenceListener extends CurrentDifferenceAdapter {
     private List<ChangeEditorMessage> myAddedMessages = ListSequence.fromList(new ArrayList<ChangeEditorMessage>());
     private List<ChangeEditorMessage> myRemovedMessages = ListSequence.fromList(new ArrayList<ChangeEditorMessage>());
@@ -239,7 +242,7 @@ public class ChangesEditorHighlighter implements EditorMessageOwner {
         for (ChangeEditorMessage addedMessage : ListSequence.fromList(myAddedMessages)) {
           nodeHighlightManager.mark(addedMessage);
         }
-        myFoldingAreaPainter.relayout();
+        check_z1nuaw_a3a0a2a(myFoldingAreaPainter);
         nodeHighlightManager.repaintAndRebuildEditorMessages();
         ListSequence.fromList(myAddedMessages).clear();
         ListSequence.fromList(myRemovedMessages).clear();

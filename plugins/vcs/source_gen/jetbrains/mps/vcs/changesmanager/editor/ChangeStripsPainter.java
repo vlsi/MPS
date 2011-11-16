@@ -7,6 +7,7 @@ import java.awt.Color;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,6 +28,7 @@ import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.awt.event.MouseEvent;
 import java.awt.Cursor;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private static final int AREA_WIDTH = 6;
@@ -36,11 +38,17 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private ChangesEditorHighlighter myEditorHighlighter;
   private ChangeGroupBuilder myChangeGroupBuilder;
   private ChangeGroup myGroupUnderMouse;
+  private PopupToolbar myPopupToolbar = null;
 
   public ChangeStripsPainter(@NotNull ChangesEditorHighlighter editorHighlighter) {
     super(editorHighlighter.getLeftEditorHighlighter());
     myEditorHighlighter = editorHighlighter;
     myChangeGroupBuilder = new StripsChangeGroupBuilder(myEditorHighlighter);
+  }
+
+  @NotNull
+  public EditorComponent getEditorComponent() {
+    return super.getEditorComponent();
   }
 
   public int getWeight() {
@@ -120,7 +128,8 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     if (localX >= -AREA_WIDTH && localX < 0) {
       return ListSequence.fromList(myChangeGroupBuilder.getChangeGroups()).findFirst(new IWhereFilter<ChangeGroup>() {
         public boolean accept(ChangeGroup cg) {
-          return (int) cg.getBounds(true).start() <= p.getY() && (int) cg.getBounds(true).end() >= p.getY();
+          Bounds b = cg.getBounds(true);
+          return (int) b.start() <= p.getY() && p.getY() <= (int) b.end() || b.length() <= 1 && (int) b.start() - ARROW_HEIGHT / 2 <= p.getY() && p.getY() <= (int) b.end() + ARROW_HEIGHT / 2;
         }
       });
     } else {
@@ -128,7 +137,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     }
   }
 
-  private void setGroupHighlighted(@Nullable ChangeGroup group, final boolean highlighted) {
+  /*package*/ void setGroupHighlighted(@Nullable ChangeGroup group, final boolean highlighted) {
     if (group != null) {
       ListSequence.fromList(group.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
         public Iterable<ChangeEditorMessage> translate(ModelChange ch) {
@@ -150,6 +159,9 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     setGroupHighlighted(myGroupUnderMouse, false);
     myGroupUnderMouse = group;
     setGroupHighlighted(myGroupUnderMouse, true);
+    if (myPopupToolbar != null) {
+      setGroupHighlighted(myPopupToolbar.getChangeGroup(), true);
+    }
     myEditorHighlighter.getHighlightManager().repaintAndRebuildEditorMessages();
   }
 
@@ -171,5 +183,34 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   public void mouseExited(MouseEvent event) {
     event.getComponent().setCursor(null);
     setGroupUnderMouse(null);
+  }
+
+  @Override
+  public void mousePressed(MouseEvent event) {
+    check_h84zmo_a0a11(myPopupToolbar);
+    if (event.getButton() == MouseEvent.BUTTON1) {
+      ChangeGroup changeGroup = findMessageGroupUnder(event.getPoint());
+      if (changeGroup != null) {
+        EditorCell cell = getEditorComponent().findCellWeak(event.getX(), event.getY());
+        if (cell != null) {
+          getEditorComponent().changeSelection(cell);
+        }
+        myPopupToolbar = new PopupToolbar(this, changeGroup);
+        myPopupToolbar.show(event.getComponent(), getEditorComponent().getLeftEditorHighlighter().getFoldingLineX(), event.getY());
+
+        event.consume();
+      }
+    }
+  }
+
+  /*package*/ void popupClosed() {
+    myPopupToolbar = null;
+  }
+
+  private static void check_h84zmo_a0a11(PopupToolbar checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.setVisible(false);
+    }
+
   }
 }

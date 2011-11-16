@@ -30,12 +30,10 @@ public class StripsChangeGroupBuilder extends ChangeGroupBuilder {
     return myEditorHighlighter.getEditorComponent();
   }
 
-  @NotNull
   protected List<ChangeEditorMessage> getLeftMessages(ModelChange change) {
     return myEditorHighlighter.getMessages(change);
   }
 
-  @NotNull
   protected List<ChangeEditorMessage> getRightMessages(ModelChange change) {
     return myEditorHighlighter.getMessages(change);
   }
