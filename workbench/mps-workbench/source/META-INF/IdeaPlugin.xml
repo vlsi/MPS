@@ -37,6 +37,8 @@
     <applicationService serviceInterface="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"
                         serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"/>
 
+    <projectService serviceInterface="com.intellij.openapi.roots.ProjectFileIndex"
+                    serviceImplementation="com.intellij.openapi.roots.impl.ProjectFileIndexImpl"/>
     <projectService serviceInterface="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"
                     serviceImplementation="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"/>
     <projectService serviceInterface="com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetector"
