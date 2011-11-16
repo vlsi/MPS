@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.changesmanager.editor;
 
 import jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter;
 import java.awt.Color;
-import jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder;
+import jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -36,14 +36,14 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private static final Color AREA_FRAME_COLOR = Color.GRAY;
 
   private ChangesEditorHighlighter myEditorHighlighter;
-  private ChangeGroupBuilder myChangeGroupBuilder;
+  private ChangeGroupLayout myChangeGroupLayout;
   private ChangeGroup myGroupUnderMouse;
   private PopupToolbar myPopupToolbar = null;
 
   public ChangeStripsPainter(@NotNull ChangesEditorHighlighter editorHighlighter) {
     super(editorHighlighter.getLeftEditorHighlighter());
     myEditorHighlighter = editorHighlighter;
-    myChangeGroupBuilder = new StripsChangeGroupBuilder(myEditorHighlighter);
+    myChangeGroupLayout = new StripsChangeGroupLayout(myEditorHighlighter);
   }
 
   @NotNull
@@ -61,7 +61,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     if (clipBounds.x + clipBounds.width < -AREA_WIDTH - 1 || 0 < clipBounds.x) {
       return;
     }
-    for (ChangeGroup changeGroup : ListSequence.fromList(myChangeGroupBuilder.getChangeGroups())) {
+    for (ChangeGroup changeGroup : ListSequence.fromList(myChangeGroupLayout.getChangeGroups())) {
       Bounds bounds = changeGroup.getBounds(true);
       int y = (int) bounds.start();
       g.setColor(ChangeColors.get(changeGroup.getChangeType()));
@@ -101,7 +101,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public void relayout() {
-    myChangeGroupBuilder.invalidate();
+    myChangeGroupLayout.invalidate();
   }
 
   @Override
@@ -126,7 +126,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private ChangeGroup findMessageGroupUnder(@NotNull final Point p) {
     double localX = p.getX() - getLeftHighlighter().getFoldingLineX();
     if (localX >= -AREA_WIDTH && localX < 0) {
-      return ListSequence.fromList(myChangeGroupBuilder.getChangeGroups()).findFirst(new IWhereFilter<ChangeGroup>() {
+      return ListSequence.fromList(myChangeGroupLayout.getChangeGroups()).findFirst(new IWhereFilter<ChangeGroup>() {
         public boolean accept(ChangeGroup cg) {
           Bounds b = cg.getBounds(true);
           return (int) b.start() <= p.getY() && p.getY() <= (int) b.end() || b.length() <= 1 && (int) b.start() - ARROW_HEIGHT / 2 <= p.getY() && p.getY() <= (int) b.end() + ARROW_HEIGHT / 2;

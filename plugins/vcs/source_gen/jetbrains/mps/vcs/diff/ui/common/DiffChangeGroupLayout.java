@@ -9,12 +9,12 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 
-public class DiffChangeGroupBuilder extends ChangeGroupBuilder {
+public class DiffChangeGroupLayout extends ChangeGroupLayout {
   private DiffEditor myLeftEditor;
   private DiffEditor myRightEditor;
   private ChangeSet myChangeSet;
 
-  public DiffChangeGroupBuilder(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, @NotNull ChangeSet changeSet, @NotNull DiffEditor leftEditor, @NotNull DiffEditor rightEditor, boolean inspector) {
+  public DiffChangeGroupLayout(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, @NotNull ChangeSet changeSet, @NotNull DiffEditor leftEditor, @NotNull DiffEditor rightEditor, boolean inspector) {
     super(conflictChecker, inspector);
     myLeftEditor = leftEditor;
     myRightEditor = rightEditor;

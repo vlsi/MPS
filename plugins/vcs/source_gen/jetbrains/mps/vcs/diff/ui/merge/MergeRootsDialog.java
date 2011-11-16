@@ -11,7 +11,7 @@ import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
 import java.util.List;
-import jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder;
+import jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator;
@@ -30,7 +30,7 @@ import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupBuilder;
+import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
@@ -59,8 +59,8 @@ public class MergeRootsDialog extends BaseDialog {
   private DiffEditor myResultEditor;
   private DiffEditor myMineEditor;
   private DiffEditor myRepositoryEditor;
-  private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
-  private List<DiffEditorSeparator> myTrapeciumStrips = ListSequence.fromList(new ArrayList<DiffEditorSeparator>());
+  private List<ChangeGroupLayout> myChangeGroupLayouts = ListSequence.fromList(new ArrayList<ChangeGroupLayout>());
+  private List<DiffEditorSeparator> myEdtiorSeparators = ListSequence.fromList(new ArrayList<DiffEditorSeparator>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private MergeSessionState myStateToRestore;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.MERGE_TYPES);
@@ -99,7 +99,7 @@ public class MergeRootsDialog extends BaseDialog {
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
     MergeRootsDialog.MyGoToNeighbourRootActions neighbourActions = new MergeRootsDialog.MyGoToNeighbourRootActions();
-    NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupBuilders, myResultEditor.getMainEditor());
+    NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myResultEditor.getMainEditor());
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(this), Separator.getInstance(), neighbourActions.previous(), neighbourActions.next(), Separator.getInstance(), neighbourTraverser.previousAction(), neighbourTraverser.nextAction());
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     neighbourTraverser.setActionToolbar(toolbar);
@@ -112,8 +112,8 @@ public class MergeRootsDialog extends BaseDialog {
     neighbourTraverser.goToFirstChangeLater();
   }
 
-  private ChangeGroupBuilder createChangeGroupBuilder(boolean mine, boolean inspector) {
-    return new DiffChangeGroupBuilder(myConflictChecker, (mine ?
+  private ChangeGroupLayout createChangeGroupLayout(boolean mine, boolean inspector) {
+    return new DiffChangeGroupLayout(myConflictChecker, (mine ?
       myMergeSession.getMyChangeSet() :
       myMergeSession.getRepositoryChangeSet()
     ), (mine ?
@@ -147,8 +147,8 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   private void highlightAllChanges() {
-    ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
-      public void visit(ChangeGroupBuilder b) {
+    ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
+      public void visit(ChangeGroupLayout b) {
         b.invalidate();
       }
     });
@@ -184,9 +184,9 @@ public class MergeRootsDialog extends BaseDialog {
   private void linkEditors(boolean mine, boolean inspector) {
     // create change group builder, trapecium strip and merge buttons painter 
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
-    ChangeGroupBuilder changeGroupBuilder = createChangeGroupBuilder(mine, inspector);
-    ListSequence.fromList(myChangeGroupBuilders).addElement(changeGroupBuilder);
-    DiffEditorSeparator separator = new DiffEditorSeparator(changeGroupBuilder);
+    ChangeGroupLayout changeGroupLayout = createChangeGroupLayout(mine, inspector);
+    ListSequence.fromList(myChangeGroupLayouts).addElement(changeGroupLayout);
+    DiffEditorSeparator separator = new DiffEditorSeparator(changeGroupLayout);
     JPanel panel = (inspector ?
       myBottomPanel :
       myTopPanel
@@ -196,11 +196,11 @@ public class MergeRootsDialog extends BaseDialog {
       3
     ), 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);
     panel.add(separator, gbc);
-    ListSequence.fromList(myTrapeciumStrips).addElement(separator);
+    ListSequence.fromList(myEdtiorSeparators).addElement(separator);
     MergeButtonsPainter.addTo(this, (mine ?
       myMineEditor :
       myRepositoryEditor
-    ), changeGroupBuilder, inspector);
+    ), changeGroupLayout, inspector);
   }
 
   private SNode getRootNode(SModel model) {
@@ -309,12 +309,12 @@ public class MergeRootsDialog extends BaseDialog {
     myResultEditor = null;
     myRepositoryEditor.dispose();
     myRepositoryEditor = null;
-    ListSequence.fromList(myTrapeciumStrips).visitAll(new IVisitor<DiffEditorSeparator>() {
+    ListSequence.fromList(myEdtiorSeparators).visitAll(new IVisitor<DiffEditorSeparator>() {
       public void visit(DiffEditorSeparator s) {
         s.dispose();
       }
     });
-    ListSequence.fromList(myTrapeciumStrips).clear();
+    ListSequence.fromList(myEdtiorSeparators).clear();
     myDisposed = true;
     super.dispose();
   }

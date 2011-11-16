@@ -25,13 +25,13 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesEditorHighlighter" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.PopupToolbar" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.StripsChangeGroupBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.StripsChangeGroupLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeColors" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter" />
@@ -100,7 +100,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseGroup" />
     <classNode extendsClassName="javax.swing.JPopupMenu" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.editor.StripsChangeGroupBuilder" file="StripsChangeGroupBuilder.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.editor.StripsChangeGroupLayout" file="StripsChangeGroupLayout.java">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent" />
@@ -110,7 +110,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
   </dependency>
 </dependenciesRoot>
 

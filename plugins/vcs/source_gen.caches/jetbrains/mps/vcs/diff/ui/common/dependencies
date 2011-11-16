@@ -43,8 +43,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupInvalidateListener" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -116,7 +116,8 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" file="ChangeGroupBuilder.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.common.ChangeGroupInvalidateListener" file="ChangeGroupInvalidateListener.java" />
+  <dependency className="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" file="ChangeGroupLayout.java">
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -143,8 +144,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.common.ChangeGroupInvalidateListener" file="ChangeGroupInvalidateListener.java" />
-  <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupBuilder" file="DiffChangeGroupBuilder.java">
+  <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout" file="DiffChangeGroupLayout.java">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
@@ -153,7 +153,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffEditor" file="DiffEditor.java">
     <classNode dependClassName="java.awt.BorderLayout" />
@@ -213,8 +213,8 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeColors" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupInvalidateListener" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
     <classNode extendsClassName="javax.swing.JComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.tooltips.TooltipComponent" />
   </dependency>
@@ -386,8 +386,8 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupInvalidateListener" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

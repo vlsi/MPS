@@ -45,7 +45,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeSession" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeRootsDialog" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ButtonsPainter" />
@@ -181,8 +181,8 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeSession" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeSessionState" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup" />

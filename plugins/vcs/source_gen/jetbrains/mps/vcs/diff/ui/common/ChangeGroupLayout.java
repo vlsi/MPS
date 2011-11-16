@@ -22,13 +22,13 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
-public abstract class ChangeGroupBuilder {
+public abstract class ChangeGroupLayout {
   private ChangeEditorMessage.ConflictChecker myConflictChecker;
   protected boolean myInspector = false;
   private List<ChangeGroup> myChangeGroups = null;
   private List<ChangeGroupInvalidateListener> myInvalidateListeners = ListSequence.fromList(new ArrayList<ChangeGroupInvalidateListener>());
 
-  public ChangeGroupBuilder(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, boolean inspector) {
+  public ChangeGroupLayout(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, boolean inspector) {
     myConflictChecker = conflictChecker;
     myInspector = inspector;
   }
@@ -49,7 +49,7 @@ public abstract class ChangeGroupBuilder {
   private void calculateChangeGroups() {
     final Map<ModelChange, Bounds> left = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
     final Map<ModelChange, Bounds> right = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
-    for (ModelChange change : ListSequence.fromList(check_a1l5hi_a2a5(getChangeSet(), this))) {
+    for (ModelChange change : ListSequence.fromList(check_cuq72k_a2a5(getChangeSet(), this))) {
       Bounds leftBounds = findBounds(getLeftMessages(change), getLeftComponent());
       Bounds rightBounds = findBounds(getRightMessages(change), getRightComponent());
 
@@ -161,7 +161,7 @@ public abstract class ChangeGroupBuilder {
     }
   }
 
-  private static List<ModelChange> check_a1l5hi_a2a5(ChangeSet checkedDotOperand, ChangeGroupBuilder checkedDotThisExpression) {
+  private static List<ModelChange> check_cuq72k_a2a5(ChangeSet checkedDotOperand, ChangeGroupLayout checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }

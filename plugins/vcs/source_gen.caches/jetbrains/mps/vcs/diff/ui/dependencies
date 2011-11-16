@@ -13,7 +13,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ButtonsPainter" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton" />
@@ -141,8 +141,8 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup" />

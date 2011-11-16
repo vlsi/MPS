@@ -30,12 +30,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class DiffEditorSeparator extends JComponent implements TooltipComponent {
   private static final int WIDTH = 30;
 
-  private ChangeGroupBuilder myChangeGroupBuilder;
+  private ChangeGroupLayout myChangeGroupLayout;
   private Map<ChangeGroup, Tuples._2<Bounds, Bounds>> myGroupsWithBounds;
   private Map<ChangeGroup, String> myChangeGroupDescriptions;
 
-  public DiffEditorSeparator(ChangeGroupBuilder changeGroupBuilder) {
-    myChangeGroupBuilder = changeGroupBuilder;
+  public DiffEditorSeparator(ChangeGroupLayout changeGroupLayout) {
+    myChangeGroupLayout = changeGroupLayout;
     ChangeListener viewportListener = new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
         invalidateAndRepaint();
@@ -45,7 +45,7 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
     getRightViewport().addChangeListener(viewportListener);
     setMinimumSize(new Dimension(WIDTH, 1));
     setPreferredSize(new Dimension(WIDTH, 1));
-    myChangeGroupBuilder.addInvalidateListener(new ChangeGroupInvalidateListener() {
+    myChangeGroupLayout.addInvalidateListener(new ChangeGroupInvalidateListener() {
       public void changeGroupsInvalidated() {
         invalidateAndRepaint();
       }
@@ -61,7 +61,7 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
     int leftOffset = getOffset(getLeftViewport());
     int rightOffset = getOffset(getRightViewport());
 
-    for (ChangeGroup group : ListSequence.fromList(myChangeGroupBuilder.getChangeGroups())) {
+    for (ChangeGroup group : ListSequence.fromList(myChangeGroupLayout.getChangeGroups())) {
       int leftStart = (int) group.getLeftBounds().start() + leftOffset;
       int leftEnd = (int) group.getLeftBounds().end() + leftOffset;
       int rightStart = (int) group.getRightBounds().start() + rightOffset;
@@ -72,7 +72,7 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myChangeGroupDescriptions = MapSequence.fromMap(new HashMap<ChangeGroup, String>());
-        for (ChangeGroup group : ListSequence.fromList(myChangeGroupBuilder.getChangeGroups())) {
+        for (ChangeGroup group : ListSequence.fromList(myChangeGroupLayout.getChangeGroups())) {
           MapSequence.fromMap(myChangeGroupDescriptions).put(group, IterableUtils.join(ListSequence.fromList(group.getChanges()).select(new ISelector<ModelChange, String>() {
             public String select(ModelChange ch) {
               return ch.getDescription();
@@ -112,15 +112,15 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
   }
 
   private JViewport getLeftViewport() {
-    return myChangeGroupBuilder.getLeftComponent().getViewport();
+    return myChangeGroupLayout.getLeftComponent().getViewport();
   }
 
   private JViewport getRightViewport() {
-    return myChangeGroupBuilder.getRightComponent().getViewport();
+    return myChangeGroupLayout.getRightComponent().getViewport();
   }
 
   private int getOffset(JViewport viewport) {
-    return -viewport.getViewPosition().y + myChangeGroupBuilder.getEditorVerticalOffset();
+    return -viewport.getViewPosition().y + myChangeGroupLayout.getEditorVerticalOffset();
   }
 
   public String getMPSTooltipText(MouseEvent mouseEvent) {

@@ -29,17 +29,17 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
   protected static final Icon MIRRORED_APPLY_ICON;
 
   private int myWidth;
-  private ChangeGroupBuilder myChangeGroupBuilder;
+  private ChangeGroupLayout myChangeGroupLayout;
   private boolean myHighlightLeft;
   private List<FoldingAreaButton> myButtons = null;
   private FoldingAreaButton myCurrentButton = null;
 
-  public ButtonsPainter(int iconCount, EditorComponent editorComponent, ChangeGroupBuilder changeGroupBuilder) {
+  public ButtonsPainter(int iconCount, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
     super(editorComponent.getLeftEditorHighlighter());
     myWidth = (GAP + ICON_SIZE) * iconCount + LEFT_MARGIN;
-    myChangeGroupBuilder = changeGroupBuilder;
-    myHighlightLeft = changeGroupBuilder.getLeftComponent() == editorComponent;
-    myChangeGroupBuilder.addInvalidateListener(new ChangeGroupInvalidateListener() {
+    myChangeGroupLayout = changeGroupLayout;
+    myHighlightLeft = changeGroupLayout.getLeftComponent() == editorComponent;
+    myChangeGroupLayout.addInvalidateListener(new ChangeGroupInvalidateListener() {
       public void changeGroupsInvalidated() {
         relayout();
       }
@@ -48,10 +48,6 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
 
   protected boolean isHighlightLeft() {
     return myHighlightLeft;
-  }
-
-  protected ChangeGroupBuilder getChangeGroupBuilder() {
-    return myChangeGroupBuilder;
   }
 
   public int getWeight() {
@@ -88,7 +84,7 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
       myButtons = ListSequence.fromList(new ArrayList<FoldingAreaButton>());
 
       int previousStart = Integer.MIN_VALUE;
-      for (ChangeGroup cg : ListSequence.fromList(myChangeGroupBuilder.getChangeGroups())) {
+      for (ChangeGroup cg : ListSequence.fromList(myChangeGroupLayout.getChangeGroups())) {
         int y = Math.max((int) cg.getBounds(myHighlightLeft).start(), previousStart + GAP + ICON_SIZE);
         ListSequence.fromList(myButtons).addSequence(Sequence.fromIterable(createButtonsForChangeGroup(cg, y)));
         previousStart = y;
@@ -110,13 +106,13 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public String getToolTipText() {
-    return check_of7u5x_a0a9(myCurrentButton);
+    return check_of7u5x_a0a8(myCurrentButton);
   }
 
   @Override
   public void mousePressed(MouseEvent event) {
     if (event.getButton() == MouseEvent.BUTTON1 && event.getID() == MouseEvent.MOUSE_CLICKED) {
-      check_of7u5x_a0a0a01(myCurrentButton);
+      check_of7u5x_a0a0a9(myCurrentButton);
       event.consume();
     }
   }
@@ -152,14 +148,14 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
     return x;
   }
 
-  private static String check_of7u5x_a0a9(FoldingAreaButton checkedDotOperand) {
+  private static String check_of7u5x_a0a8(FoldingAreaButton checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getToolTipText();
     }
     return null;
   }
 
-  private static void check_of7u5x_a0a0a01(FoldingAreaButton checkedDotOperand) {
+  private static void check_of7u5x_a0a0a9(FoldingAreaButton checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.performAction();
     }

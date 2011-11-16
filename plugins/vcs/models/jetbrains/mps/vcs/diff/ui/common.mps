@@ -87,7 +87,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ChangeGroup" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4652592318748337213">
-      <property name="name" nameId="tpck.1169194664001" value="ChangeGroupBuilder" />
+      <property name="name" nameId="tpck.1169194664001" value="ChangeGroupLayout" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="4652592318748337772">
@@ -131,7 +131,7 @@
       <property name="name" nameId="tpck.1169194664001" value="SimpleDiffRequest" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6402272430682108518">
-      <property name="name" nameId="tpck.1169194664001" value="DiffChangeGroupBuilder" />
+      <property name="name" nameId="tpck.1169194664001" value="DiffChangeGroupLayout" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
     </node>
   </roots>
@@ -473,10 +473,10 @@
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4652592318748335111" />
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4652592318748335112">
-      <property name="name" nameId="tpck.1169194664001" value="myChangeGroupBuilder" />
+      <property name="name" nameId="tpck.1169194664001" value="myChangeGroupLayout" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4652592318748335113" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652592318748335114">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupLayout" />
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4652592318748335115">
@@ -515,20 +515,6 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4652592318748335133">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748335134">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335115" resolveInfo="myHighlightLeft" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4652592318748335135">
-      <property name="name" nameId="tpck.1169194664001" value="getChangeGroupBuilder" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652592318748335136">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="4652592318748335137" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4652592318748335138">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4652592318748335139">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748335140">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335112" resolveInfo="myChangeGroupBuilder" />
           </node>
         </node>
       </node>
@@ -590,10 +576,10 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4652592318748335166">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="4652592318748335167">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4652592318748335168">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335190" resolveInfo="changeGroupBuilder" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335190" resolveInfo="changeGroupLayout" />
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748335169">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335112" resolveInfo="myChangeGroupBuilder" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335112" resolveInfo="myChangeGroupLayout" />
             </node>
           </node>
         </node>
@@ -605,7 +591,7 @@
               </node>
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748335174">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4652592318748335175">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335190" resolveInfo="changeGroupBuilder" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335190" resolveInfo="changeGroupLayout" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4652592318748335176">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337301" resolveInfo="getLeftComponent" />
@@ -620,7 +606,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4652592318748335178">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748335179">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748335180">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335112" resolveInfo="myChangeGroupBuilder" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335112" resolveInfo="myChangeGroupLayout" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4652592318748335181">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337585" resolveInfo="addInvalidateListener" />
@@ -648,9 +634,9 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4652592318748335190">
-        <property name="name" nameId="tpck.1169194664001" value="changeGroupBuilder" />
+        <property name="name" nameId="tpck.1169194664001" value="changeGroupLayout" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652592318748335191">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupLayout" />
         </node>
       </node>
     </node>
@@ -783,7 +769,7 @@
               </node>
               <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748335250">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748335251">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335112" resolveInfo="myChangeGroupBuilder" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748335112" resolveInfo="myChangeGroupLayout" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4652592318748335252">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337609" resolveInfo="getChangeGroups" />
@@ -6917,10 +6903,10 @@
   </root>
   <root id="4652592318748337778">
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4652592318748337779">
-      <property name="name" nameId="tpck.1169194664001" value="myChangeGroupBuilder" />
+      <property name="name" nameId="tpck.1169194664001" value="myChangeGroupLayout" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4652592318748337780" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652592318748337781">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupLayout" />
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4652592318748337782">
@@ -7173,7 +7159,7 @@
           </node>
           <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748337888">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748337889">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupBuilder" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupLayout" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4652592318748337890">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337609" resolveInfo="getChangeGroups" />
@@ -7256,7 +7242,7 @@
                 </node>
                 <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748337926">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748337927">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupBuilder" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupLayout" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4652592318748337928">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337609" resolveInfo="getChangeGroups" />
@@ -7587,10 +7573,10 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4652592318748338065">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="4652592318748338066">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4652592318748338067">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748338113" resolveInfo="changeGroupBuilder" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748338113" resolveInfo="changeGroupLayout" />
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748338068">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupBuilder" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupLayout" />
             </node>
           </node>
         </node>
@@ -7678,7 +7664,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4652592318748338100">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748338101">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748338102">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupBuilder" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupLayout" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4652592318748338103">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337585" resolveInfo="addInvalidateListener" />
@@ -7708,9 +7694,9 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4652592318748338113">
-        <property name="name" nameId="tpck.1169194664001" value="changeGroupBuilder" />
+        <property name="name" nameId="tpck.1169194664001" value="changeGroupLayout" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652592318748338114">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupLayout" />
         </node>
       </node>
     </node>
@@ -7725,7 +7711,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748338120">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748338121">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748338122">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupBuilder" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupLayout" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4652592318748338123">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337301" resolveInfo="getLeftComponent" />
@@ -7749,7 +7735,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748338130">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748338131">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748338132">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupBuilder" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupLayout" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4652592318748338133">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337310" resolveInfo="getRightComponent" />
@@ -7792,7 +7778,7 @@
             </node>
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748338148">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748338149">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupBuilder" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748337779" resolveInfo="myChangeGroupLayout" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4652592318748338150">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337743" resolveInfo="getEditorVerticalOffset" />
@@ -13548,11 +13534,11 @@
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4652592318748340574">
-      <property name="name" nameId="tpck.1169194664001" value="myChangeGroupBuilders" />
+      <property name="name" nameId="tpck.1169194664001" value="myChangeGroupLayouts" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4652592318748340575" />
       <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="4652592318748340576">
         <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652592318748340577">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupLayout" />
         </node>
       </node>
     </node>
@@ -13571,10 +13557,10 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4652592318748340586">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="4652592318748340587">
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748340588">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupBuilders" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupLayouts" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4652592318748340589">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340659" resolveInfo="changeGroupBuilders" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340659" resolveInfo="changeGroupLayouts" />
             </node>
           </node>
         </node>
@@ -13635,7 +13621,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4652592318748340611">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748340612">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748340613">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupBuilders" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupLayouts" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.VisitAllOperation" typeId="tp2q.1204980550705" id="4652592318748340614">
               <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="4652592318748340615">
@@ -13677,7 +13663,7 @@
                 </node>
                 <node role="copyFrom" roleId="tp2q.1237731803878" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748340632">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748340633">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupBuilders" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupLayouts" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp2q.TranslateOperation" typeId="tp2q.1201792049884" id="4652592318748340634">
                     <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="4652592318748340635">
@@ -13746,10 +13732,10 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4652592318748340659">
-        <property name="name" nameId="tpck.1169194664001" value="changeGroupBuilders" />
+        <property name="name" nameId="tpck.1169194664001" value="changeGroupLayouts" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="4652592318748340660">
           <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652592318748340661">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupLayout" />
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="4652592318748340662">
@@ -13832,17 +13818,17 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4652592318748340695">
-      <property name="name" nameId="tpck.1169194664001" value="getBuilderAsLeft" />
+      <property name="name" nameId="tpck.1169194664001" value="getLayoutAsLeft" />
       <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652592318748340696">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupLayout" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4652592318748340697" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4652592318748340698">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4652592318748340699">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748340700">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748340701">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupBuilders" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupLayouts" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.FindFirstOperation" typeId="tp2q.1225727723840" id="4652592318748340702">
               <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="4652592318748340703">
@@ -13877,17 +13863,17 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4652592318748340714">
-      <property name="name" nameId="tpck.1169194664001" value="getBuilderAsRight" />
+      <property name="name" nameId="tpck.1169194664001" value="getLayoutAsRight" />
       <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652592318748340715">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupLayout" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4652592318748340716" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4652592318748340717">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4652592318748340718">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748340719">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748340720">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupBuilders" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupLayouts" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.FindFirstOperation" typeId="tp2q.1225727723840" id="4652592318748340721">
               <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="4652592318748340722">
@@ -13966,7 +13952,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="4652592318748340751">
             <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748340752">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4652592318748340753">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupBuilders" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340574" resolveInfo="myChangeGroupLayouts" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.AnyOperation" typeId="tp2q.1235566554328" id="4652592318748340754">
                 <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="4652592318748340755">
@@ -14035,16 +14021,16 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4652592318748340780">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4652592318748340781">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4652592318748340782">
-            <property name="name" nameId="tpck.1169194664001" value="builder" />
+            <property name="name" nameId="tpck.1169194664001" value="layout" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652592318748340783">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupLayout" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="4652592318748340784">
               <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="4652592318748340785">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748340695" resolveInfo="getBuilderAsLeft" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748340695" resolveInfo="getLayoutAsLeft" />
               </node>
               <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="4652592318748340786">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748340714" resolveInfo="getBuilderAsRight" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748340714" resolveInfo="getLayoutAsRight" />
               </node>
               <node role="condition" roleId="tpee.1163668914799" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4652592318748340787">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340777" resolveInfo="left" />
@@ -14061,7 +14047,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="4652592318748340792">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4652592318748340793" />
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4652592318748340794">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340782" resolveInfo="builder" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340782" resolveInfo="layout" />
             </node>
           </node>
         </node>
@@ -14075,7 +14061,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652592318748340799">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4652592318748340800">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340782" resolveInfo="builder" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748340782" resolveInfo="layout" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4652592318748340801">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337609" resolveInfo="getChangeGroups" />
@@ -15270,7 +15256,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6402272430682109003" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6402272430682109004">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="6402272430682109101">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337672" resolveInfo="ChangeGroupBuilder" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4652592318748337672" resolveInfo="ChangeGroupLayout" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6402272430682109102">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6402272430682109051" resolveInfo="conflictChecker" />
           </node>
@@ -15417,7 +15403,7 @@
       </node>
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6402272430682109099">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupBuilder" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4652592318748337213" resolveInfo="ChangeGroupLayout" />
     </node>
   </root>
 </model>
