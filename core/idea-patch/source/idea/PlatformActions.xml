@@ -117,7 +117,9 @@
 
     <action id="CloseEditor" class="com.intellij.ide.actions.CloseEditorAction"/>
 
+<!--  strange - I can't found this class in platform though it's there as I see it from repo. Maybe a bit different version
     <action id="WelcomeScreen.ReopenRecent" class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction" icon="/general/reopenRecentProject.png"/>
+-->
 
     <group id="MainMenu">
       <group id="FileMenu" popup="true">
