@@ -3895,6 +3895,9 @@
         </node>
       </node>
     </node>
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5074987133576051027">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/ide/projectPane/other/find.png" />
+    </node>
   </root>
 </model>
 

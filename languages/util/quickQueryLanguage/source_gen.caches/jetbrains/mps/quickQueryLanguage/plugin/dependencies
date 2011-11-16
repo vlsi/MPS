@@ -215,10 +215,11 @@
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.IComponentDisposer" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.QueryFinder" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView" />
