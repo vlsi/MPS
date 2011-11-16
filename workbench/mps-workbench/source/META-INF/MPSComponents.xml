@@ -251,11 +251,13 @@
     <component>
       <interface-class>com.intellij.psi.PsiManager</interface-class>
       <implementation-class>jetbrains.mps.workbench.psi.NullPsiManager</implementation-class>
+      <loadForDefaultProject/>
     </component>
 
     <component>
       <interface-class>com.intellij.psi.PsiDocumentManager</interface-class>
       <implementation-class>jetbrains.mps.workbench.psi.NullPsiDocumentManager</implementation-class>
+      <loadForDefaultProject/>
     </component>
 
     <component>
