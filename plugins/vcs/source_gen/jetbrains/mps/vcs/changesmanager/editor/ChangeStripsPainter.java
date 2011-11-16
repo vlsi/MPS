@@ -234,9 +234,16 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     }
   }
 
-  /*package*/ void showPopupForGroup(@NotNull ChangeGroup group) {
-    check_h84zmo_a0a51(myPopupToolbar);
-    showPopupForGroup(group, (int) group.getBounds(true).start());
+  @Nullable
+  /*package*/ ChangeGroup getCurrentChangeGroup() {
+    return check_h84zmo_a0a51(myPopupToolbar);
+  }
+
+  /*package*/ void showPopupForGroup(@Nullable ChangeGroup group) {
+    check_h84zmo_a0a61(myPopupToolbar);
+    if (group != null) {
+      showPopupForGroup(group, (int) group.getBounds(true).start());
+    }
   }
 
   private static void check_h84zmo_a0a11(PopupToolbar checkedDotOperand) {
@@ -246,7 +253,14 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
 
   }
 
-  private static void check_h84zmo_a0a51(PopupToolbar checkedDotOperand) {
+  private static ChangeGroup check_h84zmo_a0a51(PopupToolbar checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getChangeGroup();
+    }
+    return null;
+  }
+
+  private static void check_h84zmo_a0a61(PopupToolbar checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setVisible(false);
     }

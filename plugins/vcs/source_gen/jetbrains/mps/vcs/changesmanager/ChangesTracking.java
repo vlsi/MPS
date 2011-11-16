@@ -99,7 +99,7 @@ public class ChangesTracking {
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, currentModel);
+        ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, currentModel, true);
         myDifference.setChangeSet((ChangeSetImpl) changeSet);
       }
     });
