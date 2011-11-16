@@ -2955,56 +2955,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private class MPSActionProxy extends AbstractAction {
-    private List<BaseAction> myActions = new ArrayList<BaseAction>();
-    private String myPlace = ActionPlaces.UNKNOWN;
-
-    public void add(String place, BaseAction a) {
-      myPlace = place;
-      myActions.add(a);
-    }
-
-    public List<String> getActionNames() {
-      List<String> result = new ArrayList<String>();
-      for (BaseAction baseAction : myActions) {
-        result.add(baseAction.getClass().getSimpleName());
-      }
-      return result;
-    }
-
-    public List<BaseAction> getActiveActions() {
-      List<BaseAction> result = new ArrayList<BaseAction>();
-      for (final BaseAction action : myActions) {
-        if (isActionActive(action)) {
-          result.add(action);
-        }
-      }
-      return result;
-    }
-
-    public boolean isActionActive(BaseAction action) {
-      EditorCell selectedCell = getSelectedCell();
-      if (selectedCell == null || selectedCell.getSNode() == null) {
-        return false;
-      }
-      DataContext context = DataManager.getInstance().getDataContext(EditorComponent.this);
-      AnActionEvent event = ActionUtils.createEvent(myPlace, context);
-
-      action.update(event);
-      return event.getPresentation().isEnabled();
-    }
-
-    public void actionPerformed(ActionEvent e) {
-      for (final BaseAction action : myActions) {
-        if (isActionActive(action)) {
-          DataContext context = DataManager.getInstance().getDataContext(EditorComponent.this);
-          AnActionEvent event = ActionUtils.createEvent(myPlace, context);
-          action.actionPerformed(event);
-        }
-      }
-    }
-  }
-
   private class ReferenceUnderliner {
     private EditorCell myLastReferenceCell;
 

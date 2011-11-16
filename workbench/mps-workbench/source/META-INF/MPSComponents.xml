@@ -368,7 +368,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.search.SearchHistoryComponent</implementation-class>
+      <implementation-class>jetbrains.mps.nodeEditor.SearchHistoryComponent</implementation-class>
     </component>
 
     <component>

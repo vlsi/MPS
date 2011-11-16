@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.search;
+package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import jetbrains.mps.ide.search.SearchHistoryComponent.MyState;
+import jetbrains.mps.nodeEditor.SearchHistoryComponent.MyState;
+import jetbrains.mps.ide.search.SearchHistoryStorage;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

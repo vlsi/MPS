@@ -13,23 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.tools;
+package jetbrains.mps.ide.tools;
 
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.findusages.view.icons.Icons;
-import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.ide.icons.IdeIcons;
 
-import java.util.Map;
-
-public class CloseAction extends BaseAction {
+public class CloseAction extends AnAction {
   private BaseTool myTool;
 
   public CloseAction(BaseTool tool) {
-    super("Close", "Close tool", Icons.CLOSE_ICON);
+    super("Close", "Close tool", IdeIcons.CLOSE_ICON);
     myTool = tool;
   }
 
-  protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+  @Override
+  public void actionPerformed(AnActionEvent e) {
     myTool.makeUnavailableLater();
   }
 }

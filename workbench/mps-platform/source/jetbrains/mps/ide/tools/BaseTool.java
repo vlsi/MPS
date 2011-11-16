@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.tools;
+package jetbrains.mps.ide.tools;
 
 import com.intellij.ide.actions.ActivateToolWindowAction;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
@@ -30,7 +31,6 @@ import com.intellij.ui.content.ContentManagerListener;
 
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -97,7 +97,7 @@ public abstract class BaseTool {
     return getToolWindow().isVisible();
   }
 
-  /**
+  /*
    * Opens the tool's window, shows tool if invisible at the moment
    */
   public void openToolLater(final boolean setActive) {
@@ -252,7 +252,7 @@ public abstract class BaseTool {
     return contentManager.getIndexOfContent(contentManager.getSelectedContent());
   }
 
-  protected BaseAction createCloseAction() {
+  protected AnAction createCloseAction() {
     return new CloseAction(this);
   }
 

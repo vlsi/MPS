@@ -3449,62 +3449,61 @@
     <unitInfo nodeId="8970236339104100147" fileName="ShowNodeIn_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ShowNodeIn_ActionGroup" />
   </root>
   <root nodeId="8970236339104100153">
-    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="22" startPosition="54" endLine="23" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="8970236339104100160" fileName="NodeExplorer_Tool.java" startLine="24" startPosition="0" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeExplorer" />
-    <nodeInfo nodeId="8970236339104100163" fileName="NodeExplorer_Tool.java" startLine="25" startPosition="47" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="28" startPosition="45" endLine="29" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="32" startPosition="37" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553183892" fileName="NodeExplorer_Tool.java" startLine="33" startPosition="24" endLine="34" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553183899" fileName="NodeExplorer_Tool.java" startLine="34" startPosition="72" endLine="35" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553183908" fileName="NodeExplorer_Tool.java" startLine="35" startPosition="68" endLine="36" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553183920" fileName="NodeExplorer_Tool.java" startLine="36" startPosition="114" endLine="37" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7779150961553183943" fileName="NodeExplorer_Tool.java" startLine="40" startPosition="78" endLine="41" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553183947" fileName="NodeExplorer_Tool.java" startLine="41" startPosition="36" endLine="42" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553183955" fileName="NodeExplorer_Tool.java" startLine="44" startPosition="7" endLine="45" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7779150961553183966" fileName="NodeExplorer_Tool.java" startLine="45" startPosition="124" endLine="46" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6205303070091375769" fileName="NodeExplorer_Tool.java" startLine="49" startPosition="25" endLine="50" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6205303070091392175" fileName="NodeExplorer_Tool.java" startLine="51" startPosition="28" endLine="52" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6982149494251384272" fileName="NodeExplorer_Tool.java" startLine="53" startPosition="5" endLine="54" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6982149494251384281" fileName="NodeExplorer_Tool.java" startLine="54" startPosition="42" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6982149494251384291" fileName="NodeExplorer_Tool.java" startLine="55" startPosition="50" endLine="56" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="56" startPosition="49" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8970236339104100169" fileName="NodeExplorer_Tool.java" startLine="60" startPosition="50" endLine="61" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8970236339104100156" fileName="NodeExplorer_Tool.java" startLine="64" startPosition="36" endLine="65" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="27" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeExplorer_Tool#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="6205303070091392166" fileName="NodeExplorer_Tool.java" startLine="50" startPosition="69" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8970236339104100166" fileName="NodeExplorer_Tool.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeExplorer#()Ljetbrains/mps/ide/devkit/components/NodeExplorerComponent;" />
-    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="7779150961553183933" fileName="NodeExplorer_Tool.java" startLine="38" startPosition="55" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="7779150961553183925" fileName="NodeExplorer_Tool.java" startLine="37" startPosition="56" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="31" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
-    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="28" startPosition="45" endLine="29" endPosition="78" />
-    <scopeInfo nodeId="6205303070091392167" fileName="NodeExplorer_Tool.java" startLine="51" startPosition="28" endLine="52" endPosition="55" />
-    <scopeInfo nodeId="8970236339104100168" fileName="NodeExplorer_Tool.java" startLine="60" startPosition="50" endLine="61" endPosition="49" />
-    <scopeInfo nodeId="8970236339104100155" fileName="NodeExplorer_Tool.java" startLine="64" startPosition="36" endLine="65" endPosition="42" />
-    <scopeInfo nodeId="7779150961553183942" fileName="NodeExplorer_Tool.java" startLine="40" startPosition="78" endLine="42" endPosition="54" />
-    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="27" startPosition="0" endLine="30" endPosition="3">
+    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="21" startPosition="54" endLine="22" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8970236339104100160" fileName="NodeExplorer_Tool.java" startLine="23" startPosition="0" endLine="24" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeExplorer" />
+    <nodeInfo nodeId="8970236339104100163" fileName="NodeExplorer_Tool.java" startLine="24" startPosition="47" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="27" startPosition="45" endLine="28" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="31" startPosition="37" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553183892" fileName="NodeExplorer_Tool.java" startLine="32" startPosition="24" endLine="33" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553183899" fileName="NodeExplorer_Tool.java" startLine="33" startPosition="72" endLine="34" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553183908" fileName="NodeExplorer_Tool.java" startLine="34" startPosition="68" endLine="35" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553183920" fileName="NodeExplorer_Tool.java" startLine="35" startPosition="114" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4415621581132892321" fileName="NodeExplorer_Tool.java" startLine="39" startPosition="56" endLine="40" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553183947" fileName="NodeExplorer_Tool.java" startLine="40" startPosition="37" endLine="41" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553183955" fileName="NodeExplorer_Tool.java" startLine="43" startPosition="7" endLine="44" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7779150961553183966" fileName="NodeExplorer_Tool.java" startLine="44" startPosition="124" endLine="45" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6205303070091375769" fileName="NodeExplorer_Tool.java" startLine="48" startPosition="25" endLine="49" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6205303070091392175" fileName="NodeExplorer_Tool.java" startLine="50" startPosition="28" endLine="51" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6982149494251384272" fileName="NodeExplorer_Tool.java" startLine="52" startPosition="5" endLine="53" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6982149494251384281" fileName="NodeExplorer_Tool.java" startLine="53" startPosition="42" endLine="54" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6982149494251384291" fileName="NodeExplorer_Tool.java" startLine="54" startPosition="50" endLine="55" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="55" startPosition="49" endLine="56" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8970236339104100169" fileName="NodeExplorer_Tool.java" startLine="59" startPosition="50" endLine="60" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8970236339104100156" fileName="NodeExplorer_Tool.java" startLine="63" startPosition="36" endLine="64" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="26" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeExplorer_Tool#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="6205303070091392166" fileName="NodeExplorer_Tool.java" startLine="49" startPosition="69" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8970236339104100166" fileName="NodeExplorer_Tool.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeExplorer#()Ljetbrains/mps/ide/devkit/components/NodeExplorerComponent;" />
+    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="4415621581132892314" fileName="NodeExplorer_Tool.java" startLine="37" startPosition="55" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="7779150961553183925" fileName="NodeExplorer_Tool.java" startLine="36" startPosition="56" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="47" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="30" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
+    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="27" startPosition="45" endLine="28" endPosition="78" />
+    <scopeInfo nodeId="6205303070091392167" fileName="NodeExplorer_Tool.java" startLine="50" startPosition="28" endLine="51" endPosition="55" />
+    <scopeInfo nodeId="8970236339104100168" fileName="NodeExplorer_Tool.java" startLine="59" startPosition="50" endLine="60" endPosition="49" />
+    <scopeInfo nodeId="8970236339104100155" fileName="NodeExplorer_Tool.java" startLine="63" startPosition="36" endLine="64" endPosition="42" />
+    <scopeInfo nodeId="4415621581132892319" fileName="NodeExplorer_Tool.java" startLine="39" startPosition="56" endLine="41" endPosition="54" />
+    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="26" startPosition="0" endLine="29" endPosition="3">
       <varInfo nodeId="8970236339104100153" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8970236339104100166" fileName="NodeExplorer_Tool.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="7779150961553183933" fileName="NodeExplorer_Tool.java" startLine="38" startPosition="55" endLine="44" endPosition="0">
-      <varInfo nodeId="7779150961553183936" varName="event" />
-      <varInfo nodeId="7779150961553183938" varName="map" />
+    <scopeInfo nodeId="8970236339104100166" fileName="NodeExplorer_Tool.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="4415621581132892314" fileName="NodeExplorer_Tool.java" startLine="37" startPosition="55" endLine="43" endPosition="0">
+      <varInfo nodeId="4415621581132892317" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="49" startPosition="25" endLine="57" endPosition="20">
+    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="48" startPosition="25" endLine="56" endPosition="20">
       <varInfo nodeId="6205303070091375770" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="48" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="32" startPosition="37" endLine="46" endPosition="67">
+    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="47" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="31" startPosition="37" endLine="45" endPosition="67">
       <varInfo nodeId="7779150961553183921" varName="group" />
       <varInfo nodeId="7779150961553183956" varName="toolbar" />
     </scopeInfo>
-    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="31" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="30" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="8970236339104100153" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="22" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NodeExplorer_Tool" />
-    <unitInfo nodeId="7779150961553183931" fileName="NodeExplorer_Tool.java" startLine="38" startPosition="18" endLine="44" endPosition="5" unitName="jetbrains.mps.ide.devkit.actions.NodeExplorer_Tool$1" />
+    <unitInfo nodeId="8970236339104100153" fileName="NodeExplorer_Tool.java" startLine="21" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NodeExplorer_Tool" />
+    <unitInfo nodeId="7779150961553183931" fileName="NodeExplorer_Tool.java" startLine="37" startPosition="18" endLine="43" endPosition="5" unitName="jetbrains.mps.ide.devkit.actions.NodeExplorer_Tool$1" />
   </root>
 </debugInfo>
 

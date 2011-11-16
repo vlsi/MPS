@@ -431,14 +431,14 @@ public class QueriesGenerated {
     return IconResource_Behavior.call_getFilename_6759767305208076279(SLinkOperations.getTarget(_context.getNode(), "toolIcon", true));
   }
 
-  public static Object propertyMacro_GetPropertyValue_5508914264443135784(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4415621581132897595(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return (SPropertyOperations.getString(_context.getNode(), "caption") == null ?
       SPropertyOperations.getString(_context.getNode(), "name") :
       SPropertyOperations.getString(_context.getNode(), "caption")
     );
   }
 
-  public static Object propertyMacro_GetPropertyValue_5508914264443135801(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4415621581132897611(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return (SPropertyOperations.getString(_context.getNode(), "number") == null ?
       -1 :
       Integer.parseInt(SPropertyOperations.getString(_context.getNode(), "number"))
@@ -744,7 +744,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false), "map_PreferenceComponentClass");
   }
 
-  public static Object referenceMacro_GetReferent_2498620720770793696(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4415621581132897626(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (SPropertyOperations.hasValue(_context.getNode(), "position", "TOP", "BOTTOM")) {
       return "TOP";
     }
@@ -1315,7 +1315,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "componentExpression", true);
   }
 
-  public static SNode sourceNodeQuery_5508914264443135873(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4415621581132897665(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ToolDeclaration")) {
       return new QueriesGenerated.QuotationClass_x583g4_a0a0a0jl().createNode();
     } else if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration")) {

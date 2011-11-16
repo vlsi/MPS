@@ -25,7 +25,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.ide.tools.BaseProjectTool;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;

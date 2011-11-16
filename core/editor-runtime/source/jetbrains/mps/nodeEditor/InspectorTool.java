@@ -23,12 +23,12 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.ui.LightColors;
 import com.intellij.ui.HyperlinkLabel;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -49,7 +49,7 @@ public class InspectorTool extends BaseProjectTool {
   private FileEditor myFileEditor;
 
   public InspectorTool(Project project) {
-    super(project, ID, 2, Icons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
+    super(project, ID, 2, IdeIcons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
   }
 
   public void initComponent() {

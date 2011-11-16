@@ -117,6 +117,7 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JSplitPane" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.ide.tools.BaseTool" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TraceSettings" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree" />
@@ -129,7 +130,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
-    <classNode dependClassName="jetbrains.mps.workbench.tools.BaseTool" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree" file="TypeSystemTraceTree.java">

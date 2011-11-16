@@ -4,7 +4,7 @@ package jetbrains.mps.ide.typesystem.trace;
 
 import javax.swing.JPanel;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.workbench.tools.BaseTool;
+import jetbrains.mps.ide.tools.BaseTool;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.SwingUtilities;

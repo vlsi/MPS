@@ -147,7 +147,7 @@ public class ReplaceDialog extends BaseDialog {
         }
       }
     });
-    project.getComponent(ProjectPluginManager.class).getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query);
+    ProjectHelper.toIdeaProject(project).getComponent(ProjectPluginManager.class).getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query);
   }
 
   @Override

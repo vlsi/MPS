@@ -11,9 +11,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.workbench.tools.CloseAction;
+import jetbrains.mps.ide.tools.CloseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import java.util.Map;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -37,8 +36,8 @@ public class NodeExplorer_Tool extends GeneratedTool {
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new CloseAction(NodeExplorer_Tool.this) {
       @Override
-      protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-        super.doExecute(event, map);
+      public void actionPerformed(AnActionEvent event) {
+        super.actionPerformed(event);
         NodeExplorer_Tool.this.myNodeExplorer.clear();
       }
     });

@@ -77,7 +77,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.ide.OccurenceNavigator" />
     <classNode extendsClassName="javax.swing.JPanel" />
-    <classNode extendsClassName="jetbrains.mps.workbench.tools.BaseProjectTool" />
+    <classNode extendsClassName="jetbrains.mps.ide.tools.BaseProjectTool" />
   </dependency>
   <dependency className="jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool" file="BaseLanguageHierarchyViewTool.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

@@ -35,7 +35,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.search.AbstractSearchPanel;
-import jetbrains.mps.ide.search.SearchHistoryComponent;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
