@@ -476,11 +476,11 @@
   </root>
   <root id="6763225944573505210">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6763225944573505212">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6763225944573505213">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363027" resolveInfo="OldGoToNextChange" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="231774447597960023">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7239344515229757919" resolveInfo="GoToNextChange" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6763225944573505215">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6763225944573363067" resolveInfo="OldGoToPreviousChange" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="231774447597960024">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7239344515229757962" resolveInfo="GoToPreviousChange" />
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6763225944573505216">

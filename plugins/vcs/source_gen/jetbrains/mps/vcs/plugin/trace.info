@@ -380,8 +380,8 @@
     <nodeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="12" startPosition="32" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="13" startPosition="25" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6763225944573505213" fileName="GoToVCS_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6763225944573505215" fileName="GoToVCS_ActionGroup.java" startLine="17" startPosition="94" endLine="18" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="231774447597960023" fileName="GoToVCS_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="231774447597960024" fileName="GoToVCS_ActionGroup.java" startLine="17" startPosition="91" endLine="18" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoToVCS_ActionGroup#()V" />
@@ -389,7 +389,7 @@
       <varInfo nodeId="6763225944573505210" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
-    <scopeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="16" startPosition="9" endLine="18" endPosition="98" />
+    <scopeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="16" startPosition="9" endLine="18" endPosition="95" />
     <scopeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="12" startPosition="32" endLine="21" endPosition="5" />
     <scopeInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" />
     <unitInfo nodeId="6763225944573505210" fileName="GoToVCS_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup" />
