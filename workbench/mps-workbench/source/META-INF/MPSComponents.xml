@@ -395,7 +395,7 @@
 
     <component>
       <interface-class>com.intellij.openapi.module.ModuleManager</interface-class>
-      <implementation-class>com.intellij.openapi.module.impl.ModuleManagerImpl</implementation-class>
+      <implementation-class>jetbrains.mps.EmptyModuleManager</implementation-class>
     </component>
 
     <component>
