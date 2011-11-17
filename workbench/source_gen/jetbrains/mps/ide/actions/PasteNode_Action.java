@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;
-import jetbrains.mps.ide.resolve.Resolver;
+import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
