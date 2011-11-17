@@ -50,22 +50,22 @@ public class CurrentDifference {
           myBroadcaster.changeRemoved(ch);
         }
       });
-      myBroadcaster.changeUpdateStarted();
       myChangeSet = null;
+      myBroadcaster.changeUpdateFinished();
     }
   }
 
   /*package*/ void setChangeSet(@NotNull ChangeSetImpl changeSetImpl) {
     myCommandQueue.assertSoftlyIsCommandThread();
     removeChangeSet();
-    myChangeSet = changeSetImpl;
     myBroadcaster.changeUpdateStarted();
+    myChangeSet = changeSetImpl;
     ListSequence.fromList(myChangeSet.getModelChanges()).visitAll(new IVisitor<ModelChange>() {
       public void visit(ModelChange ch) {
         myBroadcaster.changeAdded(ch);
       }
     });
-    myBroadcaster.changeUpdateStarted();
+    myBroadcaster.changeUpdateFinished();
   }
 
   /*package*/ EditableSModelDescriptor getModelDescriptor() {
