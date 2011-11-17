@@ -197,7 +197,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
     IOperationContext context = createOperationContext();
     IEditor oldNodeEditor = myNodeEditor;
-    myNodeEditor = myProject.getComponent(MPSEditorOpener.class).createEditorFor(context, myFile.getNode());
+    myNodeEditor = new MPSEditorOpener(myProject).createEditorFor(context, myFile.getNode());
     if (oldNodeEditor != null) {
       oldNodeEditor.dispose();
     }

@@ -17,9 +17,12 @@ package jetbrains.mps.workbench.choose.nodes;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
   public BaseNodeModel(Project project) {
@@ -49,7 +52,16 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
       private Project myProject = getProject();
 
       public void navigate(boolean requestFocus) {
-        myProject.getComponent(MPSEditorOpener.class).openNode(getNode());
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode node = getNode();
+            if (node == null) {
+              return;
+            }
+            ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
+            NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+          }
+        });
       }
     };
   }

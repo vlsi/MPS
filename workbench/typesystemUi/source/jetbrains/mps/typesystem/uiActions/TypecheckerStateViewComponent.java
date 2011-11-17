@@ -18,7 +18,7 @@ package jetbrains.mps.typesystem.uiActions;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.nodeEditor.IEditor;
+import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -26,12 +26,12 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.IEditor;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.*;
 import java.awt.Color;
@@ -178,11 +178,11 @@ public class TypecheckerStateViewComponent extends JPanel {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
       return;
     }
-    ModelAccess.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myOperationContext.getComponent(MPSEditorOpener.class).openNode(rule);
+        NavigationSupport.getInstance().openNode(myOperationContext, rule, true, !(rule.isRoot()));
       }
-    }, myOperationContext.getProject());
+    });
   }
 
   public class SNodeTree extends MPSTree {

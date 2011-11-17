@@ -74,7 +74,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private FileEditorManager myManager;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager, MPSEditorOpener editorOpener) {
+  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager) {
     myProject = project;
     myManager = manager;
   }

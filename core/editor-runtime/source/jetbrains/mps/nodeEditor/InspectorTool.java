@@ -24,12 +24,14 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.ui.LightColors;
 import com.intellij.ui.HyperlinkLabel;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.tools.BaseProjectTool;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
@@ -126,7 +128,8 @@ public class InspectorTool extends BaseProjectTool {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               SNode concept = SNodeOperations.getConceptDeclaration(myNode);
-              getProject().getComponent(MPSEditorOpener.class).openNode(concept);
+              ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
+              NavigationSupport.getInstance().openNode(context, concept, true, false);
             }
           });
         }

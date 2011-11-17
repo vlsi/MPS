@@ -17,13 +17,13 @@ package jetbrains.mps.ide.bookmark;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.ide.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import java.util.List;
 import java.util.Map;
@@ -210,7 +209,14 @@ public class BookmarksTree extends MPSTree {
     }
 
     public void doubleClick() {
-      getOperationContext().getComponent(MPSEditorOpener.class).openNode(getSNode());
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          SNode openNode = getSNode();
+          if (openNode == null) return;
+          NavigationSupport.getInstance().openNode(getOperationContext(), openNode, true, !(openNode.isRoot()));
+        }
+      });
     }
 
     public ActionGroup getActionGroup() {

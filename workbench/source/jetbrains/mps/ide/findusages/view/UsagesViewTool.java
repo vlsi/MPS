@@ -34,12 +34,15 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
+import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -128,7 +131,8 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
             public void run() {
               SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
               if (node != null) {
-                getProject().getComponent(MPSEditorOpener.class).openNode(node);
+                IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
+                NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
               }
             }
           });
